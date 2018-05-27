@@ -6,6 +6,7 @@ import styled from 'styled-components';
 const BoardDiv = styled.div`
 display: flex;
 position: relative;
+
 `;
 
 class App extends Component {
