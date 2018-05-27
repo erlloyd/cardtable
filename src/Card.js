@@ -6,12 +6,9 @@ import { DraggableCore } from 'react-draggable';
 
 const SLOPPY_THRESHOLD = 10; // pixels
 
-const WrapperDiv = styled.div`
-width: 100px;
-height: 200px;
-`;
-
 const CardDiv = styled.div`
+border: solid 1px black;
+position: absolute;
 background: ${ props => props.exhausted ? 'blue' : 'red'};
 width: 100px;
 height: 200px;
@@ -30,8 +27,8 @@ export class Card extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dx: 0,
-      dy: 0
+      dx: props.initialOffsetX || 0,
+      dy: props.initialOffsetY || 0
     };
   }
 
@@ -79,7 +76,6 @@ export class Card extends Component {
     <DraggableCore 
       onStart={this.handleStart}
       onDrag={this.handleDrag}>
-      <WrapperDiv>
       <CardDiv
         dx={this.state.dx}
         dy={this.state.dy}
@@ -88,7 +84,6 @@ export class Card extends Component {
         onClick={this.handleClick}>
         Hi There
       </CardDiv>
-      </WrapperDiv>
     </DraggableCore>
     );
   }

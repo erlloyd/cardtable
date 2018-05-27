@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Card } from './Card';
+import styled from 'styled-components';
+
+const BoardDiv = styled.div`
+display: flex;
+position: relative;
+`;
 
 class App extends Component {
 
@@ -9,6 +15,7 @@ class App extends Component {
     this.state = {
       cards: [
         { id: 1, exhausted: false, rotating: false },
+        { id: 2, exhausted: false, rotating: false },
       ]
     };
   }
@@ -36,9 +43,20 @@ class App extends Component {
   }
 
   render() {
-    const cards = this.state.cards.map( (card) => <Card key={card.id} id={card.id} exhausted={card.exhausted} rotating={card.rotating} onClick={this.startExhaustCard} onClickCompleted={this.finishExhaustCard}></Card> );
+    const cards = this.state.cards.map( 
+      (card) => 
+      <Card 
+        key={card.id}
+        id={card.id}
+        exhausted={card.exhausted}
+        rotating={card.rotating}
+        onClick={this.startExhaustCard}
+        onClickCompleted={this.finishExhaustCard}
+        initialOffsetX={(card.id - 1) * 200}>
+      </Card>
+    );
     return (
-      <div> {cards} </div>
+      <BoardDiv> {cards} </BoardDiv>
     );
   }
 }
