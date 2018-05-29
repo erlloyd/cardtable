@@ -72,7 +72,6 @@ export class Card extends Component {
   }
 
   handleClick = () => {
-    console.log('handleClick');
     if (!this.wasDragged) {
       this.props.onClick(this.props.id);
       setTimeout(() => {
@@ -82,8 +81,6 @@ export class Card extends Component {
   }
 
   render() {
-    console.log('exhausted? ' + this.props.exhausted);
-    console.log('rotating? ' + this.props.rotating);
     return (
     <DraggableCore 
       onStart={this.handleStart}
