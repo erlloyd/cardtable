@@ -4,9 +4,10 @@ import { Component } from 'react';
 import styled from 'styled-components';
 import { DraggableCore } from 'react-draggable';
 
-const SLOPPY_THRESHOLD = 2; // pixels
+const SLOPPY_THRESHOLD = 3; // pixels
 
 const CardDiv = styled.div`
+opacity: ${ props => props.ghost ? '0.5' : '1'}
 border: solid 1px black;
 position: absolute;
 background: ${ props => props.exhausted ? 'blue' : 'red'};
@@ -19,8 +20,12 @@ z-index: ${props => props.dragging ? '1000' : '0'};
 
 export class Card extends Component {
   wasDragged = false;
-
   dragStartPos = {
+    x: 0,
+    y: 0,
+  };
+
+  objectStartPosition = {
     x: 0,
     y: 0,
   };
@@ -39,6 +44,11 @@ export class Card extends Component {
     this.dragStartPos = {
       x: draggableData.x,
       y: draggableData.y,
+    }
+
+    this.objectStartPosition = {
+      x: this.state.dx,
+      y: this.state.dy,
     }
 
     this.setState({
@@ -68,6 +78,8 @@ export class Card extends Component {
   handleStop = () => {
    this.setState({
      activelyDragging: false,
+     dx: this.wasDragged ? this.state.dx : this.objectStartPosition.x,
+     dy: this.wasDragged ? this.state.dy : this.objectStartPosition.y,
    });
   }
 
@@ -81,21 +93,38 @@ export class Card extends Component {
   }
 
   render() {
-    return (
-    <DraggableCore 
-      onStart={this.handleStart}
-      onStop={this.handleStop}
-      onDrag={this.handleDrag}>
+
+    const ghostCard = this.state.activelyDragging ? 
       <CardDiv
-        dragging={this.state.activelyDragging}
-        dx={this.state.dx}
-        dy={this.state.dy}
+        dragging={false}
+        ghost={true}
+        dx={this.objectStartPosition.x}
+        dy={this.objectStartPosition.y}
         exhausted={this.props.exhausted}
         rotating={this.props.rotating}
-        onDoubleClick={this.handleClick}>
-        Hi There
+        onDoubleClick={()=> {}}>
       </CardDiv>
-    </DraggableCore>
+      :
+      null;
+
+    return (
+      <div>
+        <DraggableCore 
+          onStart={this.handleStart}
+          onStop={this.handleStop}
+          onDrag={this.handleDrag}>
+          <CardDiv
+            dragging={this.state.activelyDragging}
+            dx={this.state.dx}
+            dy={this.state.dy}
+            exhausted={this.props.exhausted}
+            rotating={this.props.rotating}
+            onDoubleClick={this.handleClick}>
+            Hi There
+          </CardDiv>
+        </DraggableCore>
+        {ghostCard}
+      </div>
     );
   }
 };
