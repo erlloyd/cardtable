@@ -3,6 +3,9 @@ import React from 'react';
 import { Component } from 'react';
 import styled from 'styled-components';
 import { DraggableCore } from 'react-draggable';
+import { createSelectable } from 'react-selectable';
+
+const SelectableDraggableCore = createSelectable(DraggableCore);
 
 const SLOPPY_THRESHOLD = 3; // pixels
 
@@ -109,7 +112,8 @@ export class Card extends Component {
 
     return (
       <div>
-        <DraggableCore 
+        <SelectableDraggableCore
+          selectableKey={this.props.selectableKey}
           onStart={this.handleStart}
           onStop={this.handleStop}
           onDrag={this.handleDrag}>
@@ -122,7 +126,7 @@ export class Card extends Component {
             onDoubleClick={this.handleClick}>
             Hi There
           </CardDiv>
-        </DraggableCore>
+        </SelectableDraggableCore>
         {ghostCard}
       </div>
     );

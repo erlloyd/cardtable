@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 import { Card } from './Card';
 import styled from 'styled-components';
+import { SelectableGroup, createSelectable } from 'react-selectable';
+
+// const SelectableCard  = createSelectable(Card);
 
 const BoardDiv = styled.div`
 display: flex;
 position: relative;
+width: 100%;
+height: 1000px;
 
 `;
 
@@ -14,11 +19,28 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectionEnabled: true,
       cards: [
         { id: 1, exhausted: false, rotating: false },
         { id: 2, exhausted: false, rotating: false },
       ]
     };
+  }
+
+  cardMoveStarted = () => {
+    this.setState({
+      selectionEnabled: false
+    })
+  }
+
+  cardMoveEnded = () => {
+    this.setState({
+      selectionEnabled: true
+    })
+  }
+
+  handleSelection = selectedKeys => {
+    console.log('handleSelection: ' + selectedKeys);
   }
 
   startExhaustCard = id => {
@@ -48,6 +70,7 @@ class App extends Component {
       (card) => 
       <Card 
         key={card.id}
+        selectableKey={card.id}
         id={card.id}
         exhausted={card.exhausted}
         rotating={card.rotating}
@@ -56,8 +79,15 @@ class App extends Component {
         initialOffsetX={(card.id - 1) * 200}>
       </Card>
     );
+
     return (
-      <BoardDiv> {cards} </BoardDiv>
+      <SelectableGroup 
+        fixedPosition={true}
+        onSelection={this.handleSelection}>
+        <BoardDiv> 
+            {cards}
+        </BoardDiv>
+      </SelectableGroup>
     );
   }
 }
