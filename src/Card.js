@@ -1,13 +1,11 @@
 // This is better mainly because it uses no external dependencies.
 import React from 'react';
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import styled from 'styled-components';
 import { DraggableCore } from 'react-draggable';
 import { createSelectable } from 'react-selectable';
 
 const SelectableDraggableCore = createSelectable(DraggableCore);
-
-const SLOPPY_THRESHOLD = 3; // pixels
 
 const CardDiv = styled.div`
 opacity: ${ props => props.ghost ? '0.5' : '1'}
@@ -21,73 +19,22 @@ transform: translate(${props => props.dx}px, ${props => props.dy}px) rotate(${ p
 z-index: ${props => props.dragging ? '1000' : '0'};
 `;
 
-export class Card extends Component {
-  wasDragged = false;
-  dragStartPos = {
-    x: 0,
-    y: 0,
-  };
-
-  objectStartPosition = {
-    x: 0,
-    y: 0,
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      dx: props.initialOffsetX || 0,
-      dy: props.initialOffsetY || 0,
-      activelyDragging: false,
-    };
-  }
+export class Card extends PureComponent {
 
   handleStart = (event, draggableData) => {
-    this.wasDragged = false;
-    this.dragStartPos = {
-      x: draggableData.x,
-      y: draggableData.y,
-    }
-
-    this.objectStartPosition = {
-      x: this.state.dx,
-      y: this.state.dy,
-    }
-
-    this.setState({
-      activelyDragging: false,
-    });
+    this.props.handleStart(this.props.id, draggableData);
   }
 
   handleDrag = (event, draggableData) => {
-    let dragging = this.state.activelyDragging;
-    if (
-      draggableData.x - this.dragStartPos.x > SLOPPY_THRESHOLD ||
-      draggableData.y - this.dragStartPos.y > SLOPPY_THRESHOLD ||
-      this.dragStartPos.x - draggableData.x > SLOPPY_THRESHOLD ||
-      this.dragStartPos.y - draggableData.y > SLOPPY_THRESHOLD
-    ) {
-      this.wasDragged = true;
-      dragging = true;
-    }
-
-    this.setState({
-      dx: this.state.dx + draggableData.deltaX,
-      dy: this.state.dy + draggableData.deltaY,
-      activelyDragging: dragging,
-    })
+    this.props.handleDrag(this.props.id, draggableData);
   }
 
   handleStop = () => {
-   this.setState({
-     activelyDragging: false,
-     dx: this.wasDragged ? this.state.dx : this.objectStartPosition.x,
-     dy: this.wasDragged ? this.state.dy : this.objectStartPosition.y,
-   });
+    this.props.handleStop(this.props.id);
   }
 
   handleClick = () => {
-    if (!this.wasDragged) {
+    if (!this.props.wasDragged) {
       this.props.onClick(this.props.id);
       setTimeout(() => {
         this.props.onClickCompleted(this.props.id);
@@ -97,12 +44,12 @@ export class Card extends Component {
 
   render() {
 
-    const ghostCard = this.state.activelyDragging ? 
+    const ghostCard = this.props.dragging ? 
       <CardDiv
         dragging={false}
         ghost={true}
-        dx={this.objectStartPosition.x}
-        dy={this.objectStartPosition.y}
+        dx={this.props.objectStartPosition.x}
+        dy={this.props.objectStartPosition.y}
         exhausted={this.props.exhausted}
         rotating={this.props.rotating}
         onDoubleClick={()=> {}}>
@@ -118,9 +65,9 @@ export class Card extends Component {
           onStop={this.handleStop}
           onDrag={this.handleDrag}>
           <CardDiv
-            dragging={this.state.activelyDragging}
-            dx={this.state.dx}
-            dy={this.state.dy}
+            dragging={this.props.dragging}
+            dx={this.props.x}
+            dy={this.props.y}
             exhausted={this.props.exhausted}
             rotating={this.props.rotating}
             onDoubleClick={this.handleClick}>
