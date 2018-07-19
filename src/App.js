@@ -30,8 +30,26 @@ class App extends Component {
     this.state = {
       selectionEnabled: true,
       cards: [
-        { id: 1, wasDragged: false, dragging: false, exhausted: false, rotating: false, x: 0, y: 0 },
-        { id: 2, wasDragged: false, dragging: false, exhausted: false, rotating: false, x: 200, y: 0 },
+        { 
+          id: 1,
+          selected: false,
+          wasDragged: false,
+          dragging: false,
+          exhausted: false,
+          rotating: false,
+          x: 0,
+          y: 0 
+        },
+        {
+          id: 2,
+          selected: false,
+          wasDragged: false,
+          dragging: false,
+          exhausted: false,
+          rotating: false,
+          x: 200,
+          y: 0 
+        },
       ]
     };
   }
@@ -47,12 +65,10 @@ class App extends Component {
       y: this.state.cards.find((card) => card.id === id).y,
     };
 
-    console.log(this.objectStartPosition);
-
     this.setState(prevState => {
       return {
         cards: prevState.cards.map(card => {
-          return card.id === id ? 
+          return (card.id === id || card.selected) ? 
           {
             ...card,
             wasDragged: false,
@@ -80,7 +96,7 @@ class App extends Component {
     this.setState(prevState => {
       return {
         cards: prevState.cards.map(card => {
-          return card.id === id ? 
+          return (card.id === id || card.selected) ? 
           {
             ...card,
             wasDragged: card.wasDragged || wasDragged,
@@ -98,7 +114,7 @@ class App extends Component {
     this.setState(prevState => {
       return {
         cards: prevState.cards.map(card => {
-          return card.id === id ? 
+          return (card.id === id || card.selected) ? 
           {
             ...card,
             dragging: false,
@@ -119,6 +135,23 @@ class App extends Component {
 
   handleSelection = selectedKeys => {
     console.log('handleSelection: ' + selectedKeys);
+    this.setState(prevState => {
+      return {
+        cards: prevState.cards.map(card => {
+          return selectedKeys.find(val => val === card.id) ?
+          {
+            ...card,
+            selected: true,
+          }
+          :
+          {
+            ...card,
+            selected: false,
+          }
+        })
+      }
+    });
+    console.log(this.state);
   }
 
   startExhaustCard = id => {
@@ -152,6 +185,7 @@ class App extends Component {
         id={card.id}
         exhausted={card.exhausted}
         rotating={card.rotating}
+        selected={card.selected}
         onClick={this.startExhaustCard}
         onClickCompleted={this.finishExhaustCard}
         x={card.x}

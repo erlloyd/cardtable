@@ -9,7 +9,7 @@ const SelectableDraggableCore = createSelectable(DraggableCore);
 
 const CardDiv = styled.div`
 opacity: ${ props => props.ghost ? '0.5' : '1'}
-border: solid 1px black;
+border: ${ props => props.selected ? 'solid 3px green' : 'solid 1px black'};
 position: absolute;
 background: ${ props => props.exhausted ? 'blue' : 'red'};
 width: 150px;
@@ -65,6 +65,8 @@ export class Card extends PureComponent {
           onStop={this.handleStop}
           onDrag={this.handleDrag}>
           <CardDiv
+            selected={this.props.selected}
+            draggable={!this.props.dragging}
             dragging={this.props.dragging}
             dx={this.props.x}
             dy={this.props.y}
