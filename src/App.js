@@ -4,6 +4,20 @@ import { Card } from './Card';
 import styled from 'styled-components';
 import { SelectableGroup } from 'react-selectable';
 
+const cardBase = {
+  selected: false,
+  wasDragged: false,
+  dragging: false,
+  exhausted: false,
+  rotating: false,
+  x: 0,
+  y: 0,
+  startPosition: {
+    x: 0,
+    y: 0,
+  }
+}
+
 const SLOPPY_THRESHOLD = 3; // pixels
 
 const BoardDiv = styled.div`
@@ -20,35 +34,59 @@ class App extends Component {
     y: 0,
   };
 
-  objectStartPosition = {
-    x: 0,
-    y: 0,
-  }
-
   constructor(props) {
     super(props);
     this.state = {
       selectionEnabled: true,
       cards: [
         { 
+          ...cardBase,
           id: 1,
-          selected: false,
-          wasDragged: false,
-          dragging: false,
-          exhausted: false,
-          rotating: false,
           x: 0,
-          y: 0 
+          y: 0,
         },
-        {
+        { 
+          ...cardBase,
           id: 2,
-          selected: false,
-          wasDragged: false,
-          dragging: false,
-          exhausted: false,
-          rotating: false,
           x: 200,
-          y: 0 
+          y: 0,
+        },
+        { 
+          ...cardBase,
+          id: 3,
+          x: 400,
+          y: 0,
+        },
+        { 
+          ...cardBase,
+          id: 4,
+          x: 600,
+          y: 0,
+        },
+
+        { 
+          ...cardBase,
+          id: 5,
+          x: 0,
+          y: 300,
+        },
+        { 
+          ...cardBase,
+          id: 6,
+          x: 200,
+          y: 300,
+        },
+        { 
+          ...cardBase,
+          id: 7,
+          x: 400,
+          y: 300,
+        },
+        { 
+          ...cardBase,
+          id: 8,
+          x: 600,
+          y: 300,
         },
       ]
     };
@@ -60,10 +98,10 @@ class App extends Component {
       y: draggableData.y,
     };
 
-    this.objectStartPosition = {
-      x: this.state.cards.find((card) => card.id === id).x,
-      y: this.state.cards.find((card) => card.id === id).y,
-    };
+    // this.objectStartPosition = {
+    //   x: this.state.cards.find((card) => card.id === id).x,
+    //   y: this.state.cards.find((card) => card.id === id).y,
+    // };
 
     this.setState(prevState => {
       return {
@@ -73,6 +111,10 @@ class App extends Component {
             ...card,
             wasDragged: false,
             dragging: false,
+            startPosition: {
+              x: card.x,
+              y: card.y
+            }
           } 
           : card;
         })
@@ -118,8 +160,8 @@ class App extends Component {
           {
             ...card,
             dragging: false,
-            x: card.wasDragged ? card.x : this.objectStartPosition.x,
-            y: card.wasDragged ? card.y : this.objectStartPosition.y,
+            x: card.wasDragged ? card.x : card.startPosition.x,
+            y: card.wasDragged ? card.y : card.startPosition.y,
           } 
           : card;
         })
@@ -195,7 +237,7 @@ class App extends Component {
         handleStart={this.handleStart}
         handleDrag={this.handleDrag}
         handleStop={this.handleStop}
-        objectStartPosition={this.objectStartPosition}>
+        objectStartPosition={card.startPosition}>
       </Card>
     );
 
