@@ -23,23 +23,29 @@ export class Card extends PureComponent {
 
   handleStart = (event, draggableData) => {
     this.props.handleStart(this.props.id, draggableData);
+    event.stopPropagation();
   }
 
   handleDrag = (event, draggableData) => {
     this.props.handleDrag(this.props.id, draggableData);
   }
 
-  handleStop = () => {
+  handleStop = (event, draggableData) => {
     this.props.handleStop(this.props.id);
+    event.stopPropagation();
   }
 
-  handleClick = () => {
+  handleDblClick = () => {
     if (!this.props.wasDragged) {
       this.props.onClick(this.props.id);
       setTimeout(() => {
         this.props.onClickCompleted(this.props.id);
       }, 200);
     }
+  }
+
+  handleClick = (event) => {
+    event.stopPropagation();
   }
 
   render() {
@@ -72,7 +78,8 @@ export class Card extends PureComponent {
             dy={this.props.y}
             exhausted={this.props.exhausted}
             rotating={this.props.rotating}
-            onDoubleClick={this.handleClick}>
+            onDoubleClick={this.handleDblClick}
+            onClick={this.handleClick}>
             Hi There
           </CardDiv>
         </SelectableDraggableCore>

@@ -18,7 +18,7 @@ const cardBase = {
   }
 }
 
-const SLOPPY_THRESHOLD = 3; // pixels
+const SLOPPY_THRESHOLD = 0; // pixels
 
 const BoardDiv = styled.div`
 display: flex;
@@ -176,7 +176,6 @@ class App extends Component {
   }
 
   handleSelection = selectedKeys => {
-    console.log('handleSelection: ' + selectedKeys);
     this.setState(prevState => {
       return {
         cards: prevState.cards.map(card => {
@@ -193,7 +192,21 @@ class App extends Component {
         })
       }
     });
-    console.log(this.state);
+  }
+
+  onClick = data => {
+    if (this.state.cards.find(card => card.selected)) {
+      this.setState(prevState => {
+        return {
+          cards: prevState.cards.map(card => {
+            return {
+              ...card,
+              selected: false,
+            };
+          })
+        };
+      })
+    }
   }
 
   startExhaustCard = id => {
@@ -245,7 +258,8 @@ class App extends Component {
       <SelectableGroup 
         fixedPosition={true}
         onSelection={this.handleSelection}>
-        <BoardDiv> 
+        <BoardDiv
+          onClick={this.onClick}> 
             {cards}
         </BoardDiv>
       </SelectableGroup>
