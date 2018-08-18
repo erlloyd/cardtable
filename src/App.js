@@ -22,8 +22,6 @@ class App extends Component {
   }  
 
   handleDoubleClick = (event) => {
-    console.log('double clicked')
-    console.log(this.state);
     this.setState((prevState) => {
       return {
         ...prevState,
@@ -33,12 +31,10 @@ class App extends Component {
   }
 
   handleClick = (event) => {
-    console.log('clicked')
-    console.log(this.state)
     this.setState((prevState) => {
       return {
         ...prevState,
-        selected: !prevState.selected
+        selected: true
       }
     })
   }
