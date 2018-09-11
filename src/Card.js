@@ -2,6 +2,30 @@ import React, { PureComponent } from 'react';
 import { Spring, animated } from 'react-spring/dist/konva';
 
 class Card extends PureComponent {
+    
+    handleDoubleClick = () => {
+        this.props.handleDoubleClick(this.props.id);
+    }
+
+    handleDragStart = () => {
+        this.props.handleDragStart(this.props.id);
+    }
+
+    handleDragMove = (event) => {
+        this.props.handleDragMove(
+            this.props.id,
+            event.target.x(),
+            event.target.y());
+    }
+
+    handleDragEnd = () => {
+        this.props.handleDragEnd(this.props.id);
+    }
+
+    handleClick = () => {
+        this.props.handleClick(this.props.id);
+    }
+
     render() {
         return (
           <Spring
@@ -23,12 +47,12 @@ class Card extends PureComponent {
                 fill={this.props.fill}
                 shadowBlur={this.props.dragging ? 10 : 0}
                 draggable
-                onDragStart={this.props.handleDragStart}
-                onDragMove={this.props.handleDragMove}
-                onDragEnd={this.props.handleDragEnd}
-                onDblClick={this.props.handleDoubleClick}
-                onDblTap={this.props.handleDoubleClick} 
-                onClick={this.props.handleClick}/>
+                onDragStart={this.handleDragStart}
+                onDragMove={this.handleDragMove}
+                onDragEnd={this.handleDragEnd}
+                onDblClick={this.handleDoubleClick}
+                onDblTap={this.handleDoubleClick}
+                onClick={this.handleClick}/>
             )}
           </Spring>
         );
