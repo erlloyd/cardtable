@@ -26,6 +26,10 @@ class Card extends PureComponent {
         this.props.handleClick(this.props.id);
     }
 
+    handleMouseDown = (event) => {
+        event.cancelBubble = true;
+    }
+
     render() {
         return (
           <Spring
@@ -52,7 +56,8 @@ class Card extends PureComponent {
                 onDragEnd={this.handleDragEnd}
                 onDblClick={this.handleDoubleClick}
                 onDblTap={this.handleDoubleClick}
-                onClick={this.handleClick}/>
+                onClick={this.handleClick}
+                onMouseDown={this.handleMouseDown}/>
             )}
           </Spring>
         );

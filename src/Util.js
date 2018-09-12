@@ -21,7 +21,6 @@ export const preventDoubleTapZoom = (event) => {
     // event.touches.length === 1 &&
     timeDiff < delay
   ) {
-    console.log('DOUBLE CLICK');
     event.preventDefault();
     // Trigger a fake click for the tap we just prevented
     event.target.click()
