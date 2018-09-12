@@ -21,7 +21,6 @@ class App extends Component {
   }
 
   handleMouseDown = (event) => {
-    console.log(`${event.target.x()},${event.target.y()}`);
     this.setState({
       selecting: true,
       selectStartPos: {
@@ -47,7 +46,6 @@ class App extends Component {
 
   handleMouseMove = (event) => {
     if (this.state.selecting) {
-      console.log(`${event.evt.layerX},${event.evt.layerY}`);
       this.setState({
         selectRect: {
           width: event.evt.layerX - this.state.selectStartPos.x,
