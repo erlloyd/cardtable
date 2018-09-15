@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Stage, Layer, Rect } from 'react-konva';
 import Card from './Card';
-
+import * as Intersects from 'intersects';
 class App extends Component {
 
   constructor(props) {
@@ -30,7 +30,43 @@ class App extends Component {
     });
   }
 
+  getSelectionRectInfo = () => {
+    const selectStartPos = this.state.selectStartPos;
+    const selectRect = this.state.selectRect;
+    return {
+      x: selectRect.width < 0 ? selectStartPos.x + selectRect.width : selectStartPos.x,
+      y: selectRect.height < 0 ? selectStartPos.y + selectRect.height : selectStartPos.y,
+      width: Math.abs(selectRect.width),
+      height: Math.abs(selectRect.height),
+    };
+  }
+
   handleMouseUp = () => {
+    //if we were selecting, check for intersection
+    if (this.state.selecting) {
+      const selectRect = this.getSelectionRectInfo();
+      const selectedCards = this.props.cards.reduce( 
+        (currSelectedCards, card) =>{
+          const intersects = Intersects.boxBox(
+            selectRect.x,
+            selectRect.y,
+            selectRect.width,
+            selectRect.height,
+            card.x - 50, 
+            card.y - 75,
+            100,
+            150)
+
+          if (intersects) {
+            currSelectedCards.push(card);
+          }
+
+          return currSelectedCards;
+        },[]);
+
+      this.props.selectMultipleCards(selectedCards.map(card => card.id));
+    }
+    
     this.setState({
       selecting: false,
       selectStartPos: {
@@ -65,6 +101,7 @@ class App extends Component {
             y={card.y}
             exhausted={card.exhausted}
             fill={card.fill}
+            selected={card.selected}
             dragging={card.dragging}
             handleDragStart={this.props.startCardMove}
             handleDragMove={this.props.cardMove}
@@ -78,6 +115,7 @@ class App extends Component {
       <Stage
         width={window.innerWidth}
         height={window.innerHeight}
+        onClick={this.props.unselectAllCards}
         onMouseDown={this.handleMouseDown}
         onMouseUp={this.handleMouseUp}
         onMouseMove={this.handleMouseMove}

@@ -1,6 +1,11 @@
 import {connect} from 'react-redux';
 import App from './App';
-import { simpleCardAction, cardMove } from './actions/cardActions';
+import {
+  simpleCardAction,
+  cardMove,
+  selectMultipleCards,
+  unselectAllCards
+} from './actions/cardActions';
 import { 
   EXHAUST_CARD,
   START_CARD_MOVE,
@@ -30,6 +35,12 @@ const mapDispatchToProps = dispatch => {
     },
     selectCard: id => {
       return dispatch(simpleCardAction(SELECT_CARD, id));
+    },
+    selectMultipleCards: ids => {
+      return dispatch(selectMultipleCards(ids));
+    },
+    unselectAllCards: () => {
+      return dispatch(unselectAllCards());
     }
   }
 }

@@ -7,23 +7,28 @@ class Card extends PureComponent {
         this.props.handleDoubleClick(this.props.id);
     }
 
-    handleDragStart = () => {
+    handleDragStart = (event) => {
+        this.dragStart = {
+            x: event.target.x(),
+            y: event.target.y()
+        }
         this.props.handleDragStart(this.props.id);
     }
 
     handleDragMove = (event) => {
         this.props.handleDragMove(
             this.props.id,
-            event.target.x(),
-            event.target.y());
+            event.target.x() - this.props.x,
+            event.target.y() - this.props.y);
     }
 
     handleDragEnd = () => {
         this.props.handleDragEnd(this.props.id);
     }
 
-    handleClick = () => {
+    handleClick = (event) => {
         this.props.handleClick(this.props.id);
+        event.cancelBubble = true;
     }
 
     handleMouseDown = (event) => {
@@ -48,7 +53,7 @@ class Card extends PureComponent {
                     x: 50,
                     y: 75
                 }}
-                fill={this.props.fill}
+                fill={this.props.selected ? 'blue' : this.props.fill}
                 shadowBlur={this.props.dragging ? 10 : 0}
                 draggable
                 onDragStart={this.handleDragStart}
