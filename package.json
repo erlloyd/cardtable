@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^1.2.0",
     "intersects": "^2.2.0",
     "konva": "^2.2.1",
     "prop-types": "^15.6.2",
@@ -21,6 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
+  },
+  "homepage": "http://erlloyd.github.io/card-game-playground"
 }
