@@ -24,8 +24,8 @@ class App extends Component {
     this.setState({
       selecting: true,
       selectStartPos: {
-        x: event.evt.layerX,
-        y: event.evt.layerY,
+        x: event.currentTarget.getPointerPosition().x,
+        y: event.currentTarget.getPointerPosition().y,
       }
     });
   }
@@ -84,8 +84,8 @@ class App extends Component {
     if (this.state.selecting) {
       this.setState({
         selectRect: {
-          width: event.evt.layerX - this.state.selectStartPos.x,
-          height: event.evt.layerY - this.state.selectStartPos.y
+          width: event.currentTarget.getPointerPosition().x - this.state.selectStartPos.x,
+          height: event.currentTarget.getPointerPosition().y - this.state.selectStartPos.y
         }
       })
     }
@@ -116,9 +116,13 @@ class App extends Component {
         width={window.innerWidth}
         height={window.innerHeight}
         onClick={this.props.unselectAllCards}
+        onTap={this.props.unselectAllCards}
         onMouseDown={this.handleMouseDown}
+        onTouchStart={this.handleMouseDown}
         onMouseUp={this.handleMouseUp}
+        onTouchEnd={this.handleMouseUp}
         onMouseMove={this.handleMouseMove}
+        onTouchMove={this.handleMouseMove}
         onDragStart={() => {console.log('STAGE onDragStart')}}
         onDragMove={() => {console.log('STAGE onDragMove')}}
         onDragEnd={() => {console.log('STAGE onDragEnd')}}>
