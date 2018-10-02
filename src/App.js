@@ -21,6 +21,7 @@ class App extends Component {
   }
 
   handleMouseDown = (event) => {
+
     this.setState({
       selecting: true,
       selectStartPos: {
@@ -89,6 +90,7 @@ class App extends Component {
         }
       })
     }
+    event.cancelBubble = true;
   }
 
   render() {
@@ -125,9 +127,11 @@ class App extends Component {
         onTouchMove={this.handleMouseMove}
         onDragStart={() => {console.log('STAGE onDragStart')}}
         onDragMove={() => {console.log('STAGE onDragMove')}}
-        onDragEnd={() => {console.log('STAGE onDragEnd')}}>
+        onDragEnd={() => {console.log('STAGE onDragEnd')}}
+        preventDefault={true}>
 
-        <Layer>
+        <Layer
+          preventDefault={true}>
           {cards}
         </Layer>
         <Layer>

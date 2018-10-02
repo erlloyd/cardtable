@@ -63,7 +63,8 @@ class Card extends PureComponent {
                 onDblTap={this.handleDoubleClick}
                 onClick={this.handleClick}
                 onTap={this.handleClick}
-                onMouseDown={this.handleMouseDown}/>
+                onMouseDown={this.handleMouseDown}
+                onTouchStart={this.handleMouseDown}/>
             )}
           </Spring>
         );
