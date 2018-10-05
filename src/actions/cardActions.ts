@@ -1,9 +1,10 @@
+// tslint:disable:object-literal-sort-keys
 import { CARD_MOVE, SELECT_MUTLIPLE_CARDS, UNSELECT_ALL_CARDS } from "./actionTypes";
 
-export const simpleCardAction = (type, id) => {
-  return (dispatch) => {
+export const simpleCardAction = (type: any, id: any) => {
+  return (dispatch: any) => {
     dispatch({
-      type: type,
+      type,
       payload: {
         id
       }
@@ -11,8 +12,8 @@ export const simpleCardAction = (type, id) => {
   }
 }
 
-export const cardMove = (id, dx, dy) => {
-  return (dispatch) => {
+export const cardMove = (id: any, dx: any, dy: any) => {
+  return (dispatch: any) => {
     dispatch({
       type: CARD_MOVE,
       payload: {
@@ -24,8 +25,8 @@ export const cardMove = (id, dx, dy) => {
   }
 }
 
-export const selectMultipleCards = (ids) => {
-  return (dispatch) => {
+export const selectMultipleCards = (ids: any) => {
+  return (dispatch: any) => {
     dispatch({
       type: SELECT_MUTLIPLE_CARDS,
       payload: {
@@ -36,7 +37,7 @@ export const selectMultipleCards = (ids) => {
 }
 
 export const unselectAllCards = () => {
-  return (dispatch) => {
+  return (dispatch: any) => {
     dispatch({
       type: UNSELECT_ALL_CARDS,
       payload: {}
