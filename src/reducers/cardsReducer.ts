@@ -1,35 +1,29 @@
-import {
-  CARD_MOVE,
-  END_CARD_MOVE,
-  EXHAUST_CARD,
-  SELECT_CARD,
-  SELECT_MUTLIPLE_CARDS,
-  START_CARD_MOVE,
-  UNSELECT_ALL_CARDS,
-} from '../actions/actionTypes';
-import initialState from './initialState';
+import { ActionType, getType } from 'typesafe-actions';
+import * as cardActions from '../actions/cardActions';
+import initialState, { ICard } from './initialState';
+export type CardsAction = ActionType<typeof cardActions>;
 
-export default function app(state = initialState.cards, action: any) {
-  let newState;
+export default (state = initialState.cards, action: CardsAction): ICard[] => {
+  let newState: ICard[];
   switch (action.type) {
-    case EXHAUST_CARD:
-      newState = state.map((card: any) => {
+    case getType(cardActions.exhaustCard):
+      newState = state.map((card) => {
         if(action.payload.id === card.id || card.selected) {
           card = Object.assign({}, card, {exhausted: !card.exhausted});
         }
         return card;
       });
       return newState;
-    case START_CARD_MOVE:
-      newState = state.map((card: any) => {
+    case getType(cardActions.startCardMove):
+      newState = state.map((card) => {
         if(action.payload.id === card.id || card.selected) {
           card = Object.assign({}, card, {dragging: true});
         }
         return card;
       });
       return newState;
-    case CARD_MOVE:
-      newState = state.map((card: any) => {
+    case getType(cardActions.moveCard):
+      newState = state.map((card) => {
         if(action.payload.id === card.id || card.selected) {
           card = Object.assign(
             {},
@@ -42,32 +36,32 @@ export default function app(state = initialState.cards, action: any) {
         return card;
       });
       return newState;
-    case END_CARD_MOVE:
-      newState = state.map((card: any) => {
+    case getType(cardActions.endCardMove):
+      newState = state.map((card) => {
         if(action.payload.id === card.id || card.selected) {
           card = Object.assign({}, card, {dragging: false});
         }
         return card;
       });
       return newState;
-    case SELECT_CARD:
-      newState = state.map((card: any) => {
+    case getType(cardActions.selectCard):
+      newState = state.map((card) => {
         if(action.payload.id === card.id) {
           card = Object.assign({}, card, {selected: true});
         }
         return card;
       });
       return newState;
-    case SELECT_MUTLIPLE_CARDS:
-      newState = state.map((card: any) => {
-        if(action.payload.ids.some((id: any) => id === card.id)) {
+    case getType(cardActions.selectMultipleCards):
+      newState = state.map((card) => {
+        if(action.payload.ids.some((id) => id === card.id)) {
           card = Object.assign({}, card, {selected: true});
         }
         return card;
       });
       return newState;
-    case UNSELECT_ALL_CARDS:
-    newState = state.map((card: any) => {
+    case getType(cardActions.unselectAllCards):
+    newState = state.map((card) => {
       return Object.assign({}, card, {selected: false});
     });
     return newState;

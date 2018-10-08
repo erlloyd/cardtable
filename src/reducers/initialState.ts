@@ -1,4 +1,18 @@
-export default {
+export interface ICard {
+  dragging: boolean;
+  exhausted: boolean;
+  fill: string;
+  id: number;
+  selected: boolean;
+  x: number;
+  y: number;
+}
+
+export interface ICardsState {
+  cards: ICard[];
+}
+
+const state: ICardsState = {
   cards: [
     {
       dragging: false,
@@ -19,4 +33,6 @@ export default {
       y: 400
     }
   ]
-}
+}; 
+
+export default state;
