@@ -4,9 +4,10 @@ import * as React from 'react';
 import { Layer, Rect, Stage } from 'react-konva';
 import './App.css';
 import Card from './Card';
+import { ICard } from './reducers/initialState';
 
 interface IProps {
-  cards: any[];
+  cards: ICard[];
   cardMove: (id: number, dx: number, dy: number) => void;
   endCardMove: (id: number) => void;
   exhaustCard: (id: number) => void;
@@ -126,7 +127,7 @@ class App extends Component<IProps, IState> {
     // if we were selecting, check for intersection
     if (this.state.selecting) {
       const selectRect = this.getSelectionRectInfo();
-      const selectedCards: any[] = this.props.cards.reduce( 
+      const selectedCards: any[] = this.props.cards.reduce<ICard[]>( 
         (currSelectedCards, card) =>{
           const intersects = Intersects.boxBox(
             selectRect.x,

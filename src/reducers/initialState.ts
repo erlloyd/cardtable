@@ -31,7 +31,16 @@ const state: ICardsState = {
       selected: false,
       x: 400,
       y: 400
-    }
+    },
+    {
+      dragging: false,
+      exhausted: false,
+      fill: 'red',
+      id: 2,
+      selected: false,
+      x: 400,
+      y: 600
+    },
   ]
 }; 
 

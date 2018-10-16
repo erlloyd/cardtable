@@ -1,1 +1,1 @@
-declare module "react-spring/dist/konva";
+declare module 'react-spring/dist/konva';

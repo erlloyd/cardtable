@@ -1,8 +1,9 @@
 import {connect} from 'react-redux';
+import Types from 'Types';
 import * as cardActions from './actions/cardActions';
 import App from './App';
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: Types.RootState) => {
   return {
     cards: state.cards
   }
