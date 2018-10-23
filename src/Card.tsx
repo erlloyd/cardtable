@@ -37,7 +37,6 @@ class Card extends PureComponent<IProps> {
                 x: 50,
                 y: 75
             }}
-            zIndex={this.props.dragging ? 100 : 1}
             fill={this.props.selected ? 'green' : this.props.fill}
             shadowBlur={this.props.dragging ? 10 : 0}
             draggable={true}

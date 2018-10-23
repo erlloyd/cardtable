@@ -46,7 +46,8 @@ class App extends Component<IProps, IState> {
   }
 
   public render() {
-    const cards = this.props.cards.map(
+    const allCards = this.props.cards
+    .map(
       card => (
         <Card
             key={card.id}
@@ -64,7 +65,30 @@ class App extends Component<IProps, IState> {
             handleClick={this.props.selectCard}
           />
       )
-    )
+    );
+
+    const movingCards = this.props.cards
+    .filter(card => card.dragging)
+    .map(
+      card => (
+        <Card
+            key={card.id}
+            id={card.id}
+            x={card.x}
+            y={card.y}
+            exhausted={card.exhausted}
+            fill={card.fill}
+            selected={card.selected}
+            dragging={card.dragging}
+            handleDragStart={this.props.startCardMove}
+            handleDragMove={this.props.cardMove}
+            handleDragEnd={this.props.endCardMove}
+            handleDoubleClick={this.props.exhaustCard}
+            handleClick={this.props.selectCard}
+          />
+      )
+    );
+
     return (
       <Stage
         width={window.innerWidth}
@@ -87,7 +111,8 @@ class App extends Component<IProps, IState> {
 
         <Layer
           preventDefault={true}>
-          {cards}
+          {allCards}
+          {movingCards}
         </Layer>
         <Layer>
           <Rect
