@@ -46,7 +46,8 @@ class App extends Component<IProps, IState> {
   }
 
   public render() {
-    const allCards = this.props.cards
+    const staticCards = this.props.cards
+    .filter(card => !card.dragging)
     .map(
       card => (
         <Card
@@ -111,8 +112,7 @@ class App extends Component<IProps, IState> {
 
         <Layer
           preventDefault={true}>
-          {allCards}
-          {movingCards}
+          {staticCards.concat(movingCards)}
         </Layer>
         <Layer>
           <Rect
