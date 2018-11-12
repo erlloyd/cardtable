@@ -1,5 +1,5 @@
-import * as cardsActions from '../../actions/cardActions';
-import cardsReducer, { CardsAction } from '../../reducers/cardsReducer';
+import * as cardsActions from './actions';
+import cardsReducer, { CardsAction } from './reducer';
 
 export {
   cardsActions,
