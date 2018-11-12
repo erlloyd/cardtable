@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Layer, Rect, Stage } from 'react-konva';
 import './App.css';
 import Card from './Card';
-import { ICard } from './reducers/initialState';
+import { ICard } from './features/cards/initialState';
 
 interface IProps {
   cards: ICard[];

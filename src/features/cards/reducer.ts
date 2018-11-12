@@ -1,5 +1,5 @@
 import { ActionType, getType } from 'typesafe-actions';
-import * as cardActions from '../actions/cardActions';
+import * as cardActions from './actions';
 import initialState, { ICard } from './initialState';
 export type CardsAction = ActionType<typeof cardActions>;
 
