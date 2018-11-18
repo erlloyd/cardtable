@@ -15,6 +15,7 @@ interface IProps {
   startCardMove: (id: number) => void;
   unselectAllCards: () => void;
   selectMultipleCards: (cardIds: number[]) => void;
+  zFetchData: any;
 }
 
 interface IState {
@@ -45,7 +46,12 @@ class App extends Component<IProps, IState> {
     }
   }
 
+  public componentDidMount() {
+    this.props.zFetchData();
+  }
+
   public render() {
+    
     const staticCards = this.props.cards
     .filter(card => !card.dragging)
     .map(
