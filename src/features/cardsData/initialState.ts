@@ -1,20 +1,22 @@
+import { CardData } from 'src/external-api/rings-db';
+
 export interface ICardMetadata {
-  id: string;
+  id: number;
   loading: boolean;
+  data?: CardData;
+  error?: Error;
 }
 
 export interface ICardMetadataMap {
-  [s: string]: ICardMetadata
+  [n: number]: ICardMetadata
 };
 
 // Map from id to metadata
 export interface ICardMetadataState {
-  loading: boolean
-  metadata: ICardMetadataMap
+  metadata: ICardMetadataMap;
 }
 
 const state: ICardMetadataState = {
-  loading: false,
   metadata: {}
 }; 
 

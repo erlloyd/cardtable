@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { PureComponent } from 'react';
 import { animated, Spring } from 'react-spring/dist/konva';
+import { cardConstants } from 'src/constants/card-constants';
 
 interface IProps {
   dragging: boolean,
@@ -14,7 +15,8 @@ interface IProps {
   id: number,
   selected: boolean,
   x: number,
-  y: number
+  y: number,
+  img: any,
 }
 
 class Card extends PureComponent<IProps> {
@@ -29,15 +31,21 @@ class Card extends PureComponent<IProps> {
         {(animatedProps: any) => (
             <animated.Rect
             {...animatedProps}
+            cornerRadius={7}
             x={this.props.x}
             y={this.props.y}
-            width={100}
-            height={150}
+            width={cardConstants.CARD_WIDTH}
+            height={cardConstants.CARD_HEIGHT}
             offset={{
-                x: 50,
-                y: 75
+                x: cardConstants.CARD_WIDTH / 2,
+                y: cardConstants.CARD_HEIGHT / 2,
             }}
-            fill={this.props.selected ? 'green' : this.props.fill}
+            // fill={this.props.selected ? 'green' : this.props.fill}
+            stroke={'blue'}
+            strokeWidth= {this.props.selected ? 8 : 0}
+            fillPatternImage={this.props.img}
+            fillPatternScaleX={0.5}
+            fillPatternScaleY={0.5}
             shadowBlur={this.props.dragging ? 10 : 0}
             draggable={true}
             onDragStart={this.handleDragStart}

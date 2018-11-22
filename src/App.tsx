@@ -2,6 +2,7 @@ import * as Intersects from 'intersects';
 import { Component } from 'react';
 import * as React from 'react';
 import { Layer, Rect, Stage } from 'react-konva';
+import { cardConstants } from 'src/constants/card-constants';
 import './App.css';
 import Card from './Card';
 import { ICard } from './features/cards/initialState';
@@ -47,7 +48,7 @@ class App extends Component<IProps, IState> {
   }
 
   public componentDidMount() {
-    this.props.zFetchData();
+    this.props.zFetchData(18001);
   }
 
   public render() {
@@ -55,7 +56,10 @@ class App extends Component<IProps, IState> {
     const staticCards = this.props.cards
     .filter(card => !card.dragging)
     .map(
-      card => (
+      card => {
+        const img = new Image();
+        img.src = 'https://ringsdb.com/bundles/cards/18001.png'
+        return (
         <Card
             key={card.id}
             id={card.id}
@@ -70,14 +74,18 @@ class App extends Component<IProps, IState> {
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.props.exhaustCard}
             handleClick={this.props.selectCard}
+            img={img}
           />
-      )
+      )}
     );
 
     const movingCards = this.props.cards
     .filter(card => card.dragging)
     .map(
-      card => (
+      card => {
+        const img = new Image();
+        img.src = 'https://ringsdb.com/bundles/cards/18001.png'
+        return (
         <Card
             key={card.id}
             id={card.id}
@@ -92,8 +100,9 @@ class App extends Component<IProps, IState> {
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.props.exhaustCard}
             handleClick={this.props.selectCard}
+            img={img}
           />
-      )
+      )}
     );
 
     return (
@@ -167,8 +176,8 @@ class App extends Component<IProps, IState> {
             selectRect.height,
             card.x - 50, 
             card.y - 75,
-            100,
-            150)
+            cardConstants.CARD_WIDTH,
+            cardConstants.CARD_HEIGHT)
 
           if (intersects) {
             currSelectedCards.push(card);
