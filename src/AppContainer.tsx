@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import Types from 'Types';
 import App from './App';
 import * as cardActions from './features/cards/actions';
+import * as cardThunks from './features/cardsData/thunks';
 
 const mapStateToProps = (state: Types.RootState) => {
   return {
@@ -18,7 +19,8 @@ const AppContainer = connect(
     selectCard: cardActions.selectCard,
     selectMultipleCards: cardActions.selectMultipleCards,
     startCardMove: cardActions.startCardMove,
-    unselectAllCards: cardActions.unselectAllCards
+    unselectAllCards: cardActions.unselectAllCards,
+    zFetchData: cardThunks.loadCard,
   }
 )(App);
 

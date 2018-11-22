@@ -18,9 +18,7 @@ export const endCardMove = createAction('cards/END_MOVE', resolve => {
 });
 
 export const selectCard = createAction('cards/SELECT', resolve => {
-  return (id: number) => {
-    return resolve({id})
-  };
+  return (id: number) => resolve({id});
 });
 
 export const selectMultipleCards = createAction('cards/SELECT_MULTIPLE', resolve => {
