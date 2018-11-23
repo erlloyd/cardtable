@@ -1,0 +1,41 @@
+{
+  "name": "my-temp-ts-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/react-redux": "^6.0.9",
+    "axios": "^0.18.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "react-konva": "^16.6.11",
+    "react-scripts-ts": "3.1.0",
+    "typesafe-actions": "^2.0.4",
+    "utility-types": "^2.1.0"
+  },
+  "scripts": {
+    "start:win": "CHOKIDAR_USEPOLLING=true react-scripts-ts start",
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "test:ci": "CI=true react-scripts-ts test --env=jsdom --ci",
+    "eject": "react-scripts-ts eject",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.5",
+    "@types/react": "^16.7.3",
+    "@types/react-dom": "^16.0.9",
+    "gh-pages": "^2.0.1",
+    "intersects": "^2.2.0",
+    "konva": "^2.5.1",
+    "react-redux": "^5.1.1",
+    "react-spring": "^6.1.8",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.0.3",
+    "typescript": "^3.1.6"
+  },
+  "homepage": "http://erlloyd.github.io/card-game-playground"
+}

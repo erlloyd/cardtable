@@ -1,0 +1,22 @@
+sudo: required
+language: node_js
+node_js:
+  - "node"
+services:
+  - docker
+
+install: true
+script:
+  - docker-compose run app -c yarn; yarn test:ci
+  - docker-compose run app -c yarn build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of the travis repository, as a secure variable
+  keep-history: true
+  on:
+    branch: master
+
+notifications:
+  email: false
