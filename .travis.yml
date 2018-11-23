@@ -7,8 +7,8 @@ services:
 
 install: true
 script:
-  - docker-compose run app -c yarn; yarn test:ci
-  - docker-compose run app -c yarn build
+  - docker-compose run app -c "yarn; yarn test:ci"
+  - docker-compose run app -c "yarn build"
 
 deploy:
   provider: pages
