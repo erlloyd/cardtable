@@ -38,7 +38,7 @@ const state: ICardsState = {
       fill: 'red',
       id: 2,
       selected: false,
-      x: 400,
+      x: 200,
       y: 600
     },
   ]

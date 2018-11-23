@@ -40,8 +40,7 @@ class Card extends PureComponent<IProps> {
                 x: cardConstants.CARD_WIDTH / 2,
                 y: cardConstants.CARD_HEIGHT / 2,
             }}
-            // fill={this.props.selected ? 'green' : this.props.fill}
-            stroke={'blue'}
+            stroke={this.props.selected ? 'blue' : ''}
             strokeWidth= {this.props.selected ? 8 : 0}
             fillPatternImage={this.props.img}
             fillPatternScaleX={0.5}
