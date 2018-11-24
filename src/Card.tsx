@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PureComponent } from 'react';
+import { Component } from 'react';
 import { animated, Spring } from 'react-spring/dist/konva';
 import { cardConstants } from 'src/constants/card-constants';
 
@@ -16,12 +16,41 @@ interface IProps {
   selected: boolean,
   x: number,
   y: number,
-  img: any,
+  imgUrl: string,
 }
 
-class Card extends PureComponent<IProps> {
+interface IState {
+  imageLoaded: boolean;
+}
+
+class Card extends Component<IProps, IState> {
   
+  private img?: any;
+  // private cardNode: any;
+
+  constructor(props: IProps) {
+    super(props)
+    this.state = {
+      imageLoaded: false,
+    }
+  }
+
+  public componentDidMount() {
+    this.img = undefined;
+    if (this.props.imgUrl) {
+      this.img = new Image();
+      this.img.onload = () => {
+        this.setState({
+          imageLoaded: true
+        });
+      };
+      this.img.src = this.props.imgUrl;
+    }
+  }
+
   public render() {
+    this.img = new Image();
+    this.img.src = this.props.imgUrl;
     return (
       <Spring
         native={true}
@@ -42,7 +71,8 @@ class Card extends PureComponent<IProps> {
             }}
             stroke={this.props.selected ? 'blue' : ''}
             strokeWidth= {this.props.selected ? 8 : 0}
-            fillPatternImage={this.props.img}
+            fill={this.state.imageLoaded ? undefined : 'blue'}
+            fillPatternImage={this.state.imageLoaded ? this.img : undefined}
             fillPatternScaleX={0.5}
             fillPatternScaleY={0.5}
             shadowBlur={this.props.dragging ? 10 : 0}
@@ -55,7 +85,8 @@ class Card extends PureComponent<IProps> {
             onClick={this.handleClick}
             onTap={this.handleClick}
             onMouseDown={this.handleMouseDown}
-            onTouchStart={this.handleMouseDown}/>
+            onTouchStart={this.handleMouseDown}
+            />
         )}
       </Spring>
     );

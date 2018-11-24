@@ -57,8 +57,6 @@ class App extends Component<IProps, IState> {
     .filter(card => !card.dragging)
     .map(
       card => {
-        const img = new Image();
-        img.src = 'https://ringsdb.com/bundles/cards/18001.png'
         return (
         <Card
             key={card.id}
@@ -74,7 +72,7 @@ class App extends Component<IProps, IState> {
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.props.exhaustCard}
             handleClick={this.props.selectCard}
-            img={img}
+            imgUrl={'https://ringsdb.com/bundles/cards/18001.png'}
           />
       )}
     );
@@ -83,8 +81,6 @@ class App extends Component<IProps, IState> {
     .filter(card => card.dragging)
     .map(
       card => {
-        const img = new Image();
-        img.src = 'https://ringsdb.com/bundles/cards/18001.png'
         return (
         <Card
             key={card.id}
@@ -100,7 +96,7 @@ class App extends Component<IProps, IState> {
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.props.exhaustCard}
             handleClick={this.props.selectCard}
-            img={img}
+            imgUrl={'https://ringsdb.com/bundles/cards/18001.png'}
           />
       )}
     );
