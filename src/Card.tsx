@@ -52,6 +52,7 @@ class Card extends Component<IProps, IState> {
     this.img = new Image();
     this.img.src = this.props.imgUrl;
     return (
+      this.state.imageLoaded ? 
       <Spring
         native={true}
         to={{
@@ -71,8 +72,7 @@ class Card extends Component<IProps, IState> {
             }}
             stroke={this.props.selected ? 'blue' : ''}
             strokeWidth= {this.props.selected ? 8 : 0}
-            fill={this.state.imageLoaded ? undefined : 'blue'}
-            fillPatternImage={this.state.imageLoaded ? this.img : undefined}
+            fillPatternImage={this.img}
             fillPatternScaleX={0.5}
             fillPatternScaleY={0.5}
             shadowBlur={this.props.dragging ? 10 : 0}
@@ -88,7 +88,7 @@ class Card extends Component<IProps, IState> {
             onTouchStart={this.handleMouseDown}
             />
         )}
-      </Spring>
+      </Spring> : null
     );
   }
 
