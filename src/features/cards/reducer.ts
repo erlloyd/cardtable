@@ -23,6 +23,7 @@ export default (state = initialState.cards, action: CardsAction): ICard[] => {
       });
       return newState;
     case getType(cardActions.moveCard):
+      const movedCards: ICard[] = [];
       newState = state.map((card) => {
         if(action.payload.id === card.id || card.selected) {
           card = Object.assign(
@@ -32,9 +33,18 @@ export default (state = initialState.cards, action: CardsAction): ICard[] => {
               x: card.x + action.payload.dx,
               y: card.y + action.payload.dy
             });
+
+            movedCards.push(card);
         }
         return card;
       });
+
+      // move that cards that were moved to the end. TODO: we could just store the move order or move time 
+      // or something, and the array could be a selector
+      movedCards.forEach(movedCard => {
+        newState.push(newState.splice(newState.indexOf(movedCard), 1)[0]);
+      });
+      
       return newState;
     case getType(cardActions.endCardMove):
       newState = state.map((card) => {
