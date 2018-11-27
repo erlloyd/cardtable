@@ -15,7 +15,17 @@ export default (state = initialState.cards, action: CardsAction): ICard[] => {
       });
       return newState;
     case getType(cardActions.startCardMove):
-      newState = state.map((card) => {
+      newState = state;
+      // first, if the current card isn't selected, clear the selection
+      if (state.some(card => card.id === action.payload.id && !card.selected)) {
+        newState = state.map((card) => {
+          if(card.selected) {
+            card = Object.assign({}, card, {selected: false});
+          }
+          return card;
+        });
+      }
+      newState = newState.map((card) => {
         if(action.payload.id === card.id || card.selected) {
           card = Object.assign({}, card, {dragging: true});
         }
@@ -57,7 +67,7 @@ export default (state = initialState.cards, action: CardsAction): ICard[] => {
     case getType(cardActions.selectCard):
       newState = state.map((card) => {
         if(action.payload.id === card.id) {
-          card = Object.assign({}, card, {selected: true});
+          card = Object.assign({}, card, {selected: !card.selected});
         }
         return card;
       });

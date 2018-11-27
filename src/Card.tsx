@@ -26,7 +26,6 @@ interface IState {
 class Card extends Component<IProps, IState> {
   
   private img?: any;
-  // private cardNode: any;
 
   constructor(props: IProps) {
     super(props)

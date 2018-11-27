@@ -113,12 +113,12 @@ class App extends Component<IProps, IState> {
         onTouchEnd={this.handleMouseUp}
         onMouseMove={this.handleMouseMove}
         onTouchMove={this.handleMouseMove}
-        // tslint:disable-next-line:jsx-no-lambda no-console
-        onDragStart={() => {console.log('STAGE onDragStart')}}
-        // tslint:disable-next-line:jsx-no-lambda no-console
-        onDragMove={() => {console.log('STAGE onDragMove')}}
-        // tslint:disable-next-line:jsx-no-lambda no-console
-        onDragEnd={() => {console.log('STAGE onDragEnd')}}
+        // // tslint:disable-next-line:jsx-no-lambda no-console
+        // onDragStart={() => {console.log('STAGE onDragStart')}}
+        // // tslint:disable-next-line:jsx-no-lambda no-console
+        // onDragMove={() => {console.log('STAGE onDragMove')}}
+        // // tslint:disable-next-line:jsx-no-lambda no-console
+        // onDragEnd={() => {console.log('STAGE onDragEnd')}}
         preventDefault={true}>
 
         <Layer
