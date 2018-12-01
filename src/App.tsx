@@ -5,10 +5,10 @@ import { Layer, Rect, Stage } from 'react-konva';
 import { cardConstants } from 'src/constants/card-constants';
 import './App.css';
 import Card from './Card';
-import { ICard } from './features/cards/initialState';
+import { ICard, ICardsState } from './features/cards/initialState';
 
 interface IProps {
-  cards: ICard[];
+  cards: ICardsState;
   cardMove: (id: number, dx: number, dy: number) => void;
   endCardMove: (id: number) => void;
   exhaustCard: (id: number) => void;
@@ -53,7 +53,7 @@ class App extends Component<IProps, IState> {
 
   public render() {
     
-    const staticCards = this.props.cards
+    const staticCards = this.props.cards.cards
     .filter(card => !card.dragging)
     .map(
       card => {
@@ -77,7 +77,7 @@ class App extends Component<IProps, IState> {
       )}
     );
 
-    const movingCards = this.props.cards
+    const movingCards = this.props.cards.cards
     .filter(card => card.dragging)
     .map(
       card => {
@@ -163,7 +163,7 @@ class App extends Component<IProps, IState> {
     // if we were selecting, check for intersection
     if (this.state.selecting) {
       const selectRect = this.getSelectionRectInfo();
-      const selectedCards: any[] = this.props.cards.reduce<ICard[]>( 
+      const selectedCards: any[] = this.props.cards.cards.reduce<ICard[]>( 
         (currSelectedCards, card) =>{
           const intersects = Intersects.boxBox(
             selectRect.x,

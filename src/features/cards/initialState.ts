@@ -10,6 +10,7 @@ export interface ICard {
 
 export interface ICardsState {
   cards: ICard[];
+  ghostCards: ICard[];
 }
 
 const state: ICardsState = {
@@ -41,7 +42,8 @@ const state: ICardsState = {
       x: 200,
       y: 600
     },
-  ]
+  ],
+  ghostCards: []
 }; 
 
 export default state;
