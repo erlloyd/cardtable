@@ -1,6 +1,7 @@
+// tslint:disable:no-console
 import * as React from 'react';
 import { Component } from 'react';
-import { animated, Spring } from 'react-spring/dist/konva';
+import { animated, Spring } from 'react-spring/renderprops-konva';
 import { cardConstants } from 'src/constants/card-constants';
 
 interface IProps {
@@ -96,10 +97,12 @@ class Card extends Component<IProps, IState> {
   }
 
   private handleDragStart = (event: any) => {
+    console.log('card drag started')
       this.props.handleDragStart(this.props.id);
   }
 
   private handleDragMove = (event: any) => {
+    console.log('card moved')
       this.props.handleDragMove(
           this.props.id,
           event.target.x() - this.props.x,
@@ -107,7 +110,9 @@ class Card extends Component<IProps, IState> {
   }
 
   private handleDragEnd = () => {
+    if (this.props.dragging) {
       this.props.handleDragEnd(this.props.id);
+    }
   }
 
   private handleClick = (event: any) => {
