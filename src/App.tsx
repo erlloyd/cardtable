@@ -20,6 +20,7 @@ interface IProps {
 }
 
 interface IState {
+  drewASelectionRect: boolean;
   selectRect: {
     height: number;
     width: number;
@@ -35,6 +36,7 @@ class App extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props)
     this.state = {
+      drewASelectionRect: false,
       selectRect: {
         height: 0,
         width: 0,
@@ -108,9 +110,7 @@ class App extends Component<IProps, IState> {
         onClick={this.props.unselectAllCards}
         onTap={this.props.unselectAllCards}
         onMouseDown={this.handleMouseDown}
-        onTouchStart={this.handleMouseDown}
         onMouseUp={this.handleMouseUp}
-        onTouchEnd={this.handleMouseUp}
         onMouseMove={this.handleMouseMove}
         onTouchMove={this.handleMouseMove}
         // // tslint:disable-next-line:jsx-no-lambda no-console
@@ -161,7 +161,7 @@ class App extends Component<IProps, IState> {
 
   private handleMouseUp = () => {
     // if we were selecting, check for intersection
-    if (this.state.selecting) {
+    if (this.state.drewASelectionRect) {
       const selectRect = this.getSelectionRectInfo();
       const selectedCards: any[] = this.props.cards.cards.reduce<ICard[]>( 
         (currSelectedCards, card) =>{
@@ -186,6 +186,7 @@ class App extends Component<IProps, IState> {
     }
     
     this.setState({
+      drewASelectionRect: false,
       selectRect: {
         height: 0,
         width: 0,
@@ -201,10 +202,11 @@ class App extends Component<IProps, IState> {
   private handleMouseMove = (event: any) => {
     if (this.state.selecting) {
       this.setState({
+        drewASelectionRect: true,
         selectRect: {
           height: event.currentTarget.getPointerPosition().y - this.state.selectStartPos.y,
           width: event.currentTarget.getPointerPosition().x - this.state.selectStartPos.x,
-        }
+        },
       })
     }
     event.cancelBubble = true;
