@@ -8,11 +8,11 @@ interface IProps {
   dragging: boolean,
   exhausted: boolean,
   fill: string,
-  handleClick: (id: number) => void,
-  handleDoubleClick: (id: number) => void,
-  handleDragStart: (id: number) => void,
-  handleDragMove: (id: number, dx: number, dy: number) => void,
-  handleDragEnd: (id: number) => void,
+  handleClick?: (id: number) => void,
+  handleDoubleClick?: (id: number) => void,
+  handleDragStart?: (id: number) => void,
+  handleDragMove?: (id: number, dx: number, dy: number) => void,
+  handleDragEnd?: (id: number) => void,
   id: number,
   selected: boolean,
   x: number,
@@ -93,31 +93,37 @@ class Card extends Component<IProps, IState> {
   }
 
   private handleDoubleClick = () => {
+    if(this.props.handleDoubleClick) {
       this.props.handleDoubleClick(this.props.id);
+    }
   }
 
   private handleDragStart = (event: any) => {
-    console.log('card drag started')
+    if(this.props.handleDragStart) {
       this.props.handleDragStart(this.props.id);
+    }
   }
 
   private handleDragMove = (event: any) => {
-    console.log('card moved')
+    if(this.props.handleDragMove) {
       this.props.handleDragMove(
           this.props.id,
           event.target.x() - this.props.x,
           event.target.y() - this.props.y);
+    }
   }
 
   private handleDragEnd = () => {
-    if (this.props.dragging) {
+    if (this.props.handleDragEnd && this.props.dragging) {
       this.props.handleDragEnd(this.props.id);
     }
   }
 
   private handleClick = (event: any) => {
+    if(this.props.handleClick) {
       this.props.handleClick(this.props.id);
       event.cancelBubble = true;
+    }
   }
 
   private handleMouseDown = (event: any) => {

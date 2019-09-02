@@ -79,6 +79,24 @@ class App extends Component<IProps, IState> {
       )}
     );
 
+    const ghostCards = this.props.cards.ghostCards
+    .map(
+      card => {
+        return (
+          <Card key={`ghost${card.id}`}
+            id={card.id}
+            x={card.x}
+            y={card.y}
+            exhausted={card.exhausted}
+            fill={card.fill}
+            selected={false}
+            dragging={false}
+            imgUrl={'https://ringsdb.com/bundles/cards/18001.png'}
+          />
+        );
+      }
+    )
+
     const movingCards = this.props.cards.cards
     .filter(card => card.dragging)
     .map(
@@ -123,7 +141,7 @@ class App extends Component<IProps, IState> {
 
         <Layer
           preventDefault={true}>
-          {staticCards.concat(movingCards)}
+          {staticCards.concat(ghostCards).concat(movingCards)}
         </Layer>
         <Layer>
           <Rect

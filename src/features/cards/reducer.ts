@@ -37,7 +37,16 @@ export default (baseState = initialState, action: CardsAction): ICardsState => {
         }
         return card;
       });
+      const ghostCards = prevCards.reduce<ICard[]>( 
+        (currGhostCards, card) =>{
+          if(action.payload.id === card.id || card.selected) {
+            currGhostCards.push(Object.assign({}, card));
+          }
+          return currGhostCards;
+        },[]);
+
       newState.cards = newCards;
+      newState.ghostCards = ghostCards;
       return newState;
     case getType(cardActions.moveCard):
       const movedCards: ICard[] = [];
@@ -72,6 +81,7 @@ export default (baseState = initialState, action: CardsAction): ICardsState => {
         return card;
       });
       newState.cards = newCards;
+      newState.ghostCards = [];
       return newState;
     case getType(cardActions.selectCard):
       newCards = prevCards.map((card) => {
