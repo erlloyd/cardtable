@@ -92,6 +92,7 @@ class App extends Component<IProps, IState> {
             selected={false}
             dragging={false}
             imgUrl={'https://ringsdb.com/bundles/cards/18001.png'}
+            isGhost={true}
           />
         );
       }

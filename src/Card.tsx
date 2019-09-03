@@ -18,6 +18,7 @@ interface IProps {
   x: number,
   y: number,
   imgUrl: string,
+  isGhost?: boolean,
 }
 
 interface IState {
@@ -76,6 +77,7 @@ class Card extends Component<IProps, IState> {
             fillPatternScaleX={0.5}
             fillPatternScaleY={0.5}
             shadowBlur={this.props.dragging ? 10 : 0}
+            opacity={this.props.isGhost ? 0.5 : 1}
             draggable={true}
             onDragStart={this.handleDragStart}
             onDragMove={this.handleDragMove}
