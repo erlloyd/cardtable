@@ -1,0 +1,3601 @@
+{
+    "Name": "The Road Darkens",
+    "Cycle": "The Lord of the Rings",
+    "SetType": "Saga_Expansion",
+    "cards": [
+        {
+            "Title": "Gandalf",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Gandalf.jpg",
+                "Stats": {
+                    "ThreatCost": "14",
+                    "Willpower": "3",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Istari."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play with the top card of your deck faceup. Once per phase, you may play the top card of your deck as if it was in your hand. When playing a card this way, Gandalf is considered to have the printed Leadership, Lore, Tactics, and Spirit icons."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I am a servant of the Secret Fire, wielder of the flame of Anor.` -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Matt Stewart",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Galadriel",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Galadriel.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "3",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "At the end of the round, discard Galadriel from play.",
+                    "Response: After you play Galadriel from your hand, search the top 5 cards of your deck for an attachment of cost 3 or less and put it into play. Put the remaining cards back in any order."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gandalf's Staff",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Gandalf's-Staff.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Staff."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to Gandalf.",
+                    "Action: Exhaust Gandalf`s Staff to (choose one): choose a player to draw 1 card, add 1 resource to a hero`s resource pool, or discard a shadow card from a non-unique enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": "...he held his staff aloft, and from its tip there came a feint radiance. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Victor Maury",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wizard Pipe",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Wizard-Pipe.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item.",
+                    "Pipe."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to an Istari character. Limit 1 per character.",
+                    "Action: Exhaust Wizard Pipe to exchange a card in your hand with the top card of your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "...there was a long silence, broken only by the soft puffs of Gandalf`s pipe, as he blew white smoke-rings out of the window. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Bilbo Baggins",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Bilbo-Baggins.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Bilbo Baggins enters play, search your deck for a Pipe attachment and add it to your hand. Shuffle your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Elves may thrive on speech alone, and Dwarves endure great weariness, but I am an old Hobbit, and I miss my meal at noon.` -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Boromir",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Boromir.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Boromir gets +2 Defense while defending against an enemy with an engagement cost higher than your threat.",
+                    "Response: After Boromir takes any amount of damage, ready him."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Chris Rahn",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Flame of Anor",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Flame-of-Anor.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Spell."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Action: Add Flame of Anor to the victory display and discard the top card of your deck to ready an Istari character you control. That character gets +X Attack until the end of the phase where X is the discarded card`s cost."
+                ],
+                "Shadow": null,
+                "FlavorText": "`You cannot pass!` -Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Diego Gisbert Llorens",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Elrond",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Elrond.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "3",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Healer."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "At the end of the round, discard Elrond from play.",
+                    "Response: After Elrond enters play, choose one: heal all damage on a hero, discard a Condition attachment, or each player draws 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Allen Douglas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fellowship of the Ring",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Fellowship-of-the-Ring.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Fellowship."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to the Ring-bearer.",
+                    "Each hero gets +1 Willpower.",
+                    "Forced: After a character is destroyed, discard Fellowship of the Ring."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Michael Komarck",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Frodo Baggins",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Frodo-Baggins.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit.",
+                    "Ring-bearer."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Frodo Baggins exhausts to defend an attack, exhaust The One Ring and spend 1 Fellowship resource to target the attacking enemy. Then, this attack deals no damage and each player raises his threat by 2."
+                ],
+                "Shadow": null,
+                "FlavorText": "`But there is more about you now than appears on the surface.` -Bilbo, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sting",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Sting.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Hobbit hero.",
+                    "Attached hero gets +1 Willpower, +1 Attack, and +1 Defense.",
+                    "Response: After attached hero exhausts to defend an attack, discard the top card of the encounter deck. Deal damage to the attacking enemy equal to the discarded card`s Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mithril Shirt",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Mithril-Shirt.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Armor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to Ring-bearer.",
+                    "Attached hero gets +1 Defense and +1 hit point."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I should feel happier if I knew you were wearing it. I have a fancy it would turn even the knives of the Black Riders...` -Bilbo, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 12,
+            "Quantity": 1,
+            "Artist": "Sara Betsy",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Glamdring",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Glamdring.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Warrior hero or Gandalf. Attached character gets +2 Attack.",
+                    "Response: After attached character destroys an Orc enemy, draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...at his side was the elven-sword Glamdring, the mate of Orcrist that lay now upon the breast of Thorin under the Lonely Mountain.` -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 13,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Andúril",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Andúril.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Noble hero or Aragorn.",
+                    "Attached hero gets +1 Willpower, +1 Attack, and +1 Defense.",
+                    "Response: After an attack in which the attached hero defended resolves, exhaust Andúril to target the enemy that just attacked. Declare attached hero as an attacker against that enemy (and resolve the attack)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 14,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Phial of Galadriel",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Phial-of-Galadriel.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Gift."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Setup: Attach to a hero in play.",
+                    "Add Phial of Galadriel to the victory display and remove it from the campaign pool, to give each enemy engaged with you -4 Attack until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`May it be a light to you in dark places, when all other lights go out.` -Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 15,
+            "Quantity": 1,
+            "Artist": "Cynthia Sheppard",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Three Golden Hairs",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Three-Golden-Hairs.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Gift."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Setup: Attach to a hero in play.",
+                    "Action: Add Three Golden Hairs to the victory display and remove it from the campaign pool, to lower each player`s threat by 3. Then, each player draws 3 cards."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...your hands shall flow with gold, and yet over you gold shall have no dominion.` -Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 16,
+            "Quantity": 1,
+            "Artist": "Rovina Cai",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lórien Rope",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Lórien-Rope.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Gift."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Setup: Attach to a hero in play.",
+                    "Action: Add Lórien Rope to the victory display, and remove it from the campaign pool to give each location in the staging area -2 Threat until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`What a piece of luck you had that rope!` -Frodo, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 17,
+            "Quantity": 1,
+            "Artist": "Rick Price",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Leaf-wrapped Lembas",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Leaf-wrapped-Lembas.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Gift."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Setup: Attach to a hero in play.",
+                    "Action: Add Leaf-wrapped Lembas to the victory display, and remove it from the campaign pool, to ready all heroes in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "Often in their hearts they thanked the lady of Lórien for the gift of lembas, for they could eat of it and find new strength even as they ran. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 18,
+            "Quantity": 1,
+            "Artist": "Owen William Weber",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Ring Goes South",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/The-Ring-Goes-South-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing in Campaign Mode.",
+                    "Setup: Each player may change hero cards he controls without incurring the +1 threat penalty. The players have earned the boon cards: Sting, Mithril Shirt, Glamdring, and Andúril. Each player chooses one and adds it to his hand. If any of those boon cards remain unchosen, shuffle them into the first player`s deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I think that this task is appointed for you, Frodo; and that if you do not find a way, no one will.` -Elrond, The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Resolution: If Lust for the Ring is attached to a hero, the players have earned that burden."
+                ],
+                "Shadow": null,
+                "FlavorText": "They were just in time. Sam and Frodo were only a few steps up, and Gandalf had just begun to climb, when the groping tentacles writhed across the narrow shore and fingered the cliff-wall and the doors. One came wriggling over the threshold, glistening in the starlight. Gandalf turned and paused. If he was considering what word would close the gate again from within, there was no need. Many coiling arms seized the doors on either side, and with horrible strength, swung them round. With a shattering echo they slammed, and all light was lost. -The Fellowship of the Ring"
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 19,
+            "Quantity": 1,
+            "Artist": "Ignacio Bazan Lazcano",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Council of Elrond",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/The-Council-of-Elrond-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set Lust for the Ring, Redhorn Pass, Doors of Durin and Watcher in the Water aside, out of play. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "In the House of Elrond, the evil wound that Frodo received on Weathertop is healed and he is reunited with his uncle Bilbo. The One Ring cannot remain hidden in Rivendell for long, so Lord Elrond summons a council to decide what should be done to protect the Free Peoples of Middle-earth."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the planning phase, each player places the top card of his deck faceup in front of him, in player order, until there are a total of 4 faceup cards between the players. The first player chooses 1 faceup card to be played for 0 cost, 1 to add to its owner`s hand, 1 to discard, and 1 to shuffle into its owner`s deck. Then, either shuffle Lust for the Ring into the encounter deck, or raise each player`s threat by 5. Advance to stage 2."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 20,
+            "Quantity": 1,
+            "Artist": "Ignacio Bazan Lazcano",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Nine Walkers",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/The-Nine-Walkers-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Make Redhorn Pass the active location. The first player reveals cards from the encounter deck until there is at least X Threat in the staging area. X is twice the number of players in the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Council decides The One Ring must be cast into Mount Doom. Frodo is appointed eight companions to help him compete this quest and the Company of the Ring sets out from Rivendell into Hollin on their way to Mordor..."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "During the travel phase, the players must travel to a location, if able.",
+                    "Forced: After an enemy engages a player, place 1 damage on the active location, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Hollin is no longer wholesome for us: it is being watched.` -Aragorn, The Fellowship of the Ring"
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 21,
+            "Quantity": 1,
+            "Artist": "Matt Bradbury",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Hunt is Up!",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/The-Hunt-is-Up-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player searches the encounter deck and discard pile for an enemy and adds it to the staging area. One of those enemies must be Great Warg Chief, if able. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "Suddenly Aragorn leapt to his feet, `How the wind howls!` he cried. `It is howling with wolf-voices. The Wargs have come west of the Mountains!` -The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "During the travel phase, the players must travel to a location, if able.",
+                    "Forced: After an enemy engages a player, place 1 damage on the active location, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Fellowship is being hunted by Wargs!"
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 22,
+            "Quantity": 1,
+            "Artist": "Mark Bulahao",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Gates of Moria",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/The-Gates-of-Moria-4A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Make Doors of Durin the active location. Add Watcher in the Water to the staging area. Discard all tokens from the Ring-bearer and place it (and each card attached to it) facedown under Watcher in the Water."
+                ],
+                "Shadow": null,
+                "FlavorText": "Pursued by evil Wargs and foul weather, the Company of the Ring decides to enter the Mines of Moria. But as they seek the hidden gate, a foul creature seizes the Ring-bearer with one of its many groping arms..."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "There can be 2 active locations. During the travel phase, the players must travel to a location, if able.",
+                    "Forced: After an enemy engages a player, place 1 damage on each active location.",
+                    "If Doors of Durin is explored, the players win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Fellowship is being hunted by Wargs!"
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 4,
+                "StageLetter": "A"
+            },
+            "Number": 23,
+            "Quantity": 1,
+            "Artist": "Mark Bulahao",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Watcher in the Water",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Watcher-in-the-Water.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "5",
+                    "Attack": "6",
+                    "Defense": "5",
+                    "HitPoints": "12"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [
+                    "Indestructible."
+                ],
+                "Text": [
+                    "Immune to player card effects. Cannot leave the staging area but is considered to be engaged with each player.",
+                    "Forced: After placing the 6th damage here, the first player takes control of the Ring-bearer, exhausted with 1 damage on it."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 24,
+            "Quantity": 1,
+            "Artist": "Florian Devos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Great Warg Chief",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Great-Warg-Chief.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "4",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Warg."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Forced: After Great Warg Chief enages you, discard cards from the encounter deck until a Warg enemy is discarded. Put that enemy into play engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 25,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hound of Sauron",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Hound-of-Sauron.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "1",
+                    "Attack": "4",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Warg."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Hound of Sauron gets -5 engagement cost for each enemy in the staging area."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if it was engaged with round).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 26,
+            "Quantity": 4,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Howling Warg",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Howling-Warg.jpg",
+                "Stats": {
+                    "EngagementCost": "38",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Warg."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Howling Warg attacks, place 1 damage on an active location."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, place 1 damage on an active location.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 27,
+            "Quantity": 4,
+            "Artist": "Dylan Pierpont",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Crebain from Dunland",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Crebain-from-Dunland.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "3",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [
+                    "Peril."
+                ],
+                "Text": [
+                    "When Revealed: Either exhaust a hero you control, or engaged Crebain from Dunland.",
+                    "Forced: After Crebain from Dunland engages a player, reveal the top card of the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 28,
+            "Quantity": 2,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Redhorn Pass",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Redhorn-Pass.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Forced: When Redhorn Pass is explored, each player assigns X damage among characters he controls. X is the number of damage here."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We may well be seen by watchers on that narrow path...` -Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 29,
+            "Quantity": 1,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Doors of Durin",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Doors-of-Durin.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "9"
+                },
+                "Traits": [
+                    "Gate."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Progress cannot be placed on each other active location before it can be placed here. Progress cannot be placed here unless the first player controls the Ring-bearer.",
+                    "                ",
+                    "If there are 9 damage tokens, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 30,
+            "Quantity": 1,
+            "Artist": "Nate Abell",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Tree-crowned Hill",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Tree-crowned-Hill.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Hills."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "While Tree-crowned hill is the active location, each enemy gets -1 Threat.",
+                    "                ",
+                    "Forced: When Tree-crowned hill is explored, the players, as a group, exhaust X characters in play. X is the number of damage here."
+                ],
+                "Shadow": null,
+                "FlavorText": "For their defense in the night the Company climbed to the top of the small hill... -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 31,
+            "Quantity": 1,
+            "Artist": "Ferdinand Dumago Ladera",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hills of Hollin",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Hills-of-Hollin.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Hills."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "While Hills of Hollin is the active location, each enemy in the staging area gets +5 engagement cost.",
+                    "                ",
+                    "Forced: When Hills of Hollin is explored, each player raises his threat by 1 for each damage here."
+                ],
+                "Shadow": null,
+                "FlavorText": "For their defense in the night the Company climbed to the top of the small hill... -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 32,
+            "Quantity": 3,
+            "Artist": "Mikhail Yakovlev",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Redhorn Foothills",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Redhorn-Foothills.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Hills of Hollin is the active location, it gains: `Forced: After an enemy is added to the staging area, it gets -5 engagement cost until the end of the round.`",
+                    "Forced: When Redhorn Foothills is explored, each player must discard X cards from his hand at random. X is the number of damage here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 33,
+            "Quantity": 3,
+            "Artist": "Victor Garcia",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Eregion",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Eregion.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Eregion is explored, the players, as a group, must discard X allies from play. X is the number of damage here."
+                ],
+                "Shadow": "Shadow: Defending player discards a non-objective attachment he controls.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 34,
+            "Quantity": 3,
+            "Artist": "Michael Rasmussen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Regiments of Crows",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Regiments-of-Crows.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Place 3 damage on each active location."
+                ],
+                "Shadow": "Shadow: Undefended damage from this attack must be assigned to the active location.",
+                "FlavorText": "`I think they are spying out the land.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 35,
+            "Quantity": 2,
+            "Artist": "Sandra Duchiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Snowdrifts",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Snowdrifts.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Weather."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach to the active location. (Countss as a Condition attachment with the text, `Limit 1 per location. No more than 3 progress can be placed on attached location each round.`) If Snowdrifts is not attached to the active location, it gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": "Soon even Boromir found it hard to keep going. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 36,
+            "Quantity": 2,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Bitter Cold",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Bitter-Cold.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Weather."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must choose: either discard each ally he controls, or raise his threat by 1 for each ally he controls."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 37,
+            "Quantity": 2,
+            "Artist": "Carly Janine Mazur",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Storm of Howls",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Storm-of-Howls.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril."
+                ],
+                "Text": [
+                    "When Revealed: Either the Warg enemy in the staging area with the highest engagement cost attacks you, or each Warg enemy gets -20 engagement until the end of the round. If no Warg enemy is in the staging area, Storm of Howls gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 38,
+            "Quantity": 3,
+            "Artist": "Jake Bullock",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Journey in the Dark",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Journey-in-the-Dark-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing in Campaign Mode.",
+                    "Setup: Shuffle the burder treachery cards Pursued by the Enemy and Shadow of Fear, into the encounter deck. Add the burden objective cards Grievous Wound and Overcome by Grief to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Well, well!` said the wizard. `The passage is blocked behind us now and there is only one way out - on the other side of the mountains.` -The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Resolution: The first player must choose one of the burden treachery cards (Pursued by the Enemy or Shadow of Fear), and one of the burden objective cards (Grievous Wound or Overcome by Grief) and add to the Campaign Pool. If The Balrog is still in play, the first player must choose all 4 burden cards instead. The chosen burdens have been earned by the players."
+                ],
+                "Shadow": null,
+                "FlavorText": "They ran on. The light grew before them; great shafts pierced the roof. They ran swifter. They passed into a hall, bright with daylight from its high windows in the east. They fled across it. Through its huge broken doors they passed, and suddenly before them the Great Gates opened, an arch of blazing light. -The Fellowship of the Ring"
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 39,
+            "Quantity": 1,
+            "Artist": "Juan Carlos Barquet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Long Dark of Moria",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/The-Long-Dark-of-Moria-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set The Balrog, The Great Bridge, and Chamber of Mazarbul aside out of play. Add Doom, Doom, Doom to the staging area and place 10 damage tokens on it. Each player adds 1 different location to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "Trapped inside the Mines of Moria, the Company of the Ring must find their way through many twisting passages to reach the eastern door. But with every step they take into the Mines, there is a growing sense of dread..."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After a player optionally engages an enemy, remove 1 damage from Doom, Doom, Doom."
+                ],
+                "Shadow": null,
+                "FlavorText": "There were not only many roads to choose from, there were also in many places holes and pitfalls, and dark wells beside the path in which their passing feet echoed. -The Fellowship of the Ring"
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 40,
+            "Quantity": 1,
+            "Artist": "Juan Carlos Barquet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Drums in the Deep",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Drums-in-the-Deep-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add Chamber of Mazarbul to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "Then there came an echoing blast: a great horn was blown in the hall, and answering horns and harsh cries were heard further off. There was a hurrying sound of many feet. -The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "If there are no enemies in the staging area at the beginning of the quest phase, the first player reveals an additional encounter card during the staging step.",
+                    "The players cannot advance unless there are X resource tokens on this stage. X is the number of players times 3.",
+                    "Forced: After an enemy is defeated, place 1 resource token on this stage."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 41,
+            "Quantity": 1,
+            "Artist": "Nate Abell",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Bridge of Khazad-dûm",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/The-Bridge-of-Khazad-dûm-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add The Great Bridge to the staging area. Each player reveals 1 encounter card and removes 1 damage token from Doom, Doom, Doom."
+                ],
+                "Shadow": null,
+                "FlavorText": "The outer door could only be reached by a slender bridge of stone, without kerb or rail, that spanned the chasm with one curving spring of fifty feet. -The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "No more than 5 progress can be placed on this stage each round.",
+                    "The players cannot defeat this stage while The Great Bridge is in play. If the players defeat this stage, they win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Now for the last race!` said Gandalf. `If the sun is shining outside we may still escape. After me!` -The Fellowship of the Ring"
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 42,
+            "Quantity": 1,
+            "Artist": "Silver Saaremäel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Doom, Doom, Doom",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Doom-Doom-Doom.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Shadow.",
+                    "Flame."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the quest phase, remove 1 damage token from Doom, Doom, Doom. Then, if there are no damage tokens here, add The Balrog to the staging area.",
+                    "Forced: At the end of the quest phase, The Balrog makes an attack if it is in play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 43,
+            "Quantity": 1,
+            "Artist": "Silver Saaremäel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Balrog",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/The-Balrog.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "5",
+                    "Attack": "8",
+                    "Defense": "9",
+                    "HitPoints": "25"
+                },
+                "Traits": [
+                    "Balrog.",
+                    "Shadow.",
+                    "Flame."
+                ],
+                "Keywords": [
+                    "Indestructible.",
+                    "Victory 50."
+                ],
+                "Text": [
+                    "Cannot be optionally engaged. The Balrog and shadow cards dealt to The Balrog are immune to player card effects.",
+                    "While in the staging area, The Balrog is considered to be engaged with the first player and only the first player can declare attackers against The Balrog."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 44,
+            "Quantity": 1,
+            "Artist": "Jim Pavelec",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc-chieftain",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Orc-chieftain.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "4",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachmnets. Allies cannot defend against Orc-chieftain.",
+                    "Forced: At the beginning of the encounter phase, Orc-chieftain engages the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": "...he charged into the Company and thrust his spear straight at Frodo. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 45,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Great Cave-troll",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Great-Cave-troll.jpg",
+                "Stats": {
+                    "EngagementCost": "36",
+                    "Threat": "3",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Troll."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments.",
+                    "For each point of excess damage dealt by Cave-troll (damage that is dealt beyond the remaining hit points of the character damaged by its attack) remove 1 progress from the current quest."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 46,
+            "Quantity": 2,
+            "Artist": "Nicholas Gregory",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Uruk from Mordor",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Uruk-from-Mordor.jpg",
+                "Stats": {
+                    "EngagementCost": "34",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Uruk from Mordor makes an immediate attack against the first player."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, attacking enemy makes an additional attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 47,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Moria Orc",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Moria-Orc.jpg",
+                "Stats": {
+                    "EngagementCost": "38",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either remove 1 damage from Doom, Doom, Doom, or reveal an additional encounter card."
+                ],
+                "Shadow": "Shadow: The defending player raises his threat by 1 for each enemy engaged with him.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 48,
+            "Quantity": 3,
+            "Artist": "Ben Peek",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Moria Archer",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Moria-Archer.jpg",
+                "Stats": {
+                    "EngagementCost": "42",
+                    "Threat": "X",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Archery 2."
+                ],
+                "Text": [
+                    "X is the number of players in the game.",
+                    "When Revealed: Assign X damage among characters you control."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 49,
+            "Quantity": 3,
+            "Artist": "Ben Peek",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Great Bridge",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/The-Great-Bridge.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Underground.",
+                    "Bridge."
+                ],
+                "Keywords": [
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Response: When The Great Bridge is explored, discard a hero from play to deal X damage to The Balrog. X is that hero`s threat cost. Then, The Balrog loses all keywords for the remainder of the game. Any player may trigger this response."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 50,
+            "Quantity": 1,
+            "Artist": "Emilio Rodriguez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Chamber of Mazarbul",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Chamber-of-Mazarbul.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [
+                    "Victory 4."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "The player cannot advance to the next stage.",
+                    "Travel: Each player searches the encounter deck and discard pile for a different enemy and adds it to the staging area to travel here. One of those enemies must be Orc-chieftain, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 51,
+            "Quantity": 1,
+            "Artist": "Emilio Rodriguez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mines of Moria",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Mines-of-Moria.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Whiles Mines of Moria is in the staging area, progress must be placed on Mines of Moria before it can be placed on the current quest."
+                ],
+                "Shadow": "Shadow: Defending player discards a non-objective attachment he controls (2 non-objective attachments instead if his threat is 35 or higher).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 52,
+            "Quantity": 4,
+            "Artist": "Juan Carlos Barquet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Many-pillared Hall",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Many-pillared-Hall.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Many-pillared Hall gets +1 Threat for each Many-pillared Hall in play."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if the defending player`s threat is 35 or higher).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 3,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 53,
+            "Quantity": 4,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Darkened Stairway",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Darkened-Stairway.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Darkened Stairway is explored, discard the top card of the encounter deck. If the discarded card is a location, add it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "Frodo caught glimpses of stairs and arches and of other passages and tunnels, sloping up, or running steeply down, or opening blankly dakr on either side. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 54,
+            "Quantity": 2,
+            "Artist": "Nate Abell",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ancient Guardroom",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Ancient-Guardroom.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Ancient Guardroom is the active location, each enemy in play gets -1 Attack.",
+                    "Travel: Discard the top card of the encounter deck to travel here. Each player raises his threat by X, where X is the discarded card`s Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 55,
+            "Quantity": 2,
+            "Artist": "Pedro Amato",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "They Are Coming!",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/They-Are-Coming.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "When Revealed: Shuffle the encounter discard pile into the encounter deck and discard cards from the top of the encounter deck until X enemies are discarded. X is the number of players in the game. Add each enemy discarded this way to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 56,
+            "Quantity": 2,
+            "Artist": "Sara Betsy",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "We Cannot Get Out",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/We-Cannot-Get-Out.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player assigns X damage among characters he controls. X is the number of exhausted characters he controls."
+                ],
+                "Shadow": "Shadow: Assign X damage among characters you control. X is the number of enemies engaged with you.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 57,
+            "Quantity": 3,
+            "Artist": "Nate Abell",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Deep Fissure",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Deep-Fissure.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Hazard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove a character you control from the quest and discard the top card of the encounter deck. If that character`s printed Willpower is less than the discarded card`s Threat, discard that character."
+                ],
+                "Shadow": null,
+                "FlavorText": "...it was long before Pippin could summon enough courage to leap... -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 58,
+            "Quantity": 3,
+            "Artist": "Pedro Amato",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fool of a Took!",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Fool-of-a-Took.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: Remove 1 damage token from Doom, Doom, Doom, or The Balrog makes an attack, if able."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, reveal 1 card from the encounter deck.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 59,
+            "Quantity": 2,
+            "Artist": "Chris Rahn",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Breaking of the Fellowship",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Breaking-of-the-Fellowship-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing in Campaign Mode.",
+                    "Setup: Starting with the first player, each player chooses 1 of the following boon cards: Phial of Galadriel, Three Golden Hairs, Lórien Rope, or Leaf-wrapped Lembas, and attaches it to a hero he controls. The chosen boon cards have been earned by the players. Shuffle Followed by Night and Ill Fate into the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`But this I will say to you: your Quest stands upon the edge of a knife. Stray but a little and it will fail, to the ruin of all.` -Galadriel, The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Resolution: If Fallen into Evil is attached to a hero, add that hero to the list of Fallen Heroes in the Campaign Log.",
+                    "The first player chooses either Followed by Night or Ill Fate to be added to the campaign pool. The chosen burden card has been earned by the players.",
+                    "Each player chooses 1 hero he controls (other than the Ring-bearer or Aragorn) to be taken captive. Record the name of each `captive` in the Notes section of the Campaign Log."
+                ],
+                "Shadow": null,
+                "FlavorText": "I would have guided Frodo to Mordor and gone with him to the end; but if I seek him now in the wilderness, I must abandon the captives to torment and death. My heart speaks clearly at last: the fate of the Bearer is in my hands no longer. The Company has played its part. Yet we that remain cannot forsake our companions while we have strength left. Come! We will go now. Leave all that can be spared behind! We will press on by day and dark! -Aragorn, The Two Towers"
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 60,
+            "Quantity": 1,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Great River",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/The-Great-River-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set Frodo`s Choice, Seat of Seeing, and Parth Galen aside, out of play. Add The Argonath and Sarn Gebir to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "Having barely escaped from Moria, the Company of the Ring flees into the forest of Lórien where they are welcomed by the Elves of the Golden Wood and supplied with boats and other gifts by their Lord and Lady, Celeborn and Galadriel. Then, after a brief rest, they set out upon the River Anduin."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Enemies get +2 Defense and cannot be engaged. Skip the encounter phase.",
+                    "The players cannot advance while The Argonath is in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "So the Company went on their long way, down the wide hurrying waters, borne ever southwards. Bare woods stalked along either bank, and they could not see any glimpse of the lands behind. -The Fellowship of the Ring"
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 61,
+            "Quantity": 1,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Company Divided",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/The-Company-Divided-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove the Ring-bearer, and each card attached to it, from the game (treat The One Ring`s text as blank while resolving this effect). Reduce each enemy`s engagement cost to 0 until the end of the encounter phase. Skip the travel phase this round."
+                ],
+                "Shadow": null,
+                "FlavorText": "The river has carried the Company as far as it can and the time has come for Frodo to choose which way to go. He asks for an hour to decide, but after he disappears Orcs are discovered prowling the woods and the Company scatters to find him..."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the refresh phase, shuffle Seat of Seeing and Forod`s Choice into the encounter discard pile. Then, place the encounter discard pile on the bottom of the encounter deck. Starting with the first player, each player creates his own staging area and advances to a different stage 3A of his choice. In player order, each player moves 1 encounter card from this staging area to his. When there are no encounter cards left at this stage, discard it."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 62,
+            "Quantity": 1,
+            "Artist": "Claudio Pozas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Searching the Woods",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Searching-the-Woods-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After stage 2B is discarded, if the total Threat of the encounter cards in this staging area is less than 4, reveal 1 encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "Sam had dashed off first. Merry and Pippin had followed, and were already disappearing westward into the trees by the shore, shouting: Frodo! Frodo! in their clear, high hobbit-voices. -The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "If Frodo`s Choice is not in play, any time players would place progress on this quest, discard an equal number of cards from the encounter deck instead.",
+                    "Forced: After Frodo`s Choice is revealed at this stage, advance to stage 4A.",
+                    "Response: After you quest successfully, discard a non-unique location in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 63,
+            "Quantity": 1,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Guard the Hobbits",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Guard-the-Hobbits-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After stage 2B is discarded, if the total Threat of encounter cards in this staging area is less than 4, reveal 1 encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Boromir! I do not know what part you have played in this mischief, but help now! Go after those two young hobbits, and guard them at the least, even if you cannot find Frod.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "If Frodo`s Choice is not in play, any time players would place progress on this quest, discard an equal number of cards from the encounter deck instead.",
+                    "Forced: After Frodo`s Choice is revealed at this stage, advance to stage 4A.",
+                    "Response: After you quest successfully, choose a player. Ready each of that player`s heroes."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 64,
+            "Quantity": 1,
+            "Artist": "Rovina Cai",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Seat of Amon Hen",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/The-Seat-of-Amon-Hen-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After stage 2B is discarded, if the total Threat of encounter cards in this staging area is less than 4, reveal 1 encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I am going to the top, to the Seat of Amon Hen, to see what may be seen. And look! It is as my heart guessed, Frodo went this way. Follow me, and keep your eyes open!` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "If Frodo`s Choice is not in play, any time players would place progress on this quest, discard an equal number of cards from the encounter deck instead.",
+                    "Forced: After Frodo`s Choice is revealed at this stage, advance to stage 4A.",
+                    "Response: After you quest successfully, choose a player. That player draws 2 cards and lowers his threat by 2."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 65,
+            "Quantity": 1,
+            "Artist": "Stacey Diana Clark",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Hunting",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Orc-Hunting-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After stage 2B is discarded, if the total Threat of encounter cards in this staging area is less than 4, reveal 1 encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "So it was that Legolas and Gimli found him. They came from the western slopes of the hill, silently, creeping through the trees as if they were hunting. Gimli had his axe in hand, and Legolas his long knife: all his arrows were spent. -The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "If Frodo`s Choice is not in play, any time players would place progress on this quest, discard an equal number of cards from the encounter deck instead.",
+                    "Forced: After Frodo`s Choice is revealed at this stage, advance to stage 4A.",
+                    "Response: After you quest successfully, discard an enemy engaged with a player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 66,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Ring-bearer Sets Out",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/The-Ring-bearer-Sets-Out-4A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add Parth Galen to the staging area. If it is your quest phase, end the phase (do not resolve the quest)."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Now, Sam,` said Frodo, `don`t hinder me! The others will be coming back at any minute. If they catch me here, I shall have to argue and explain, and I shall never have the heart of the chance to get off. But I must go at once. It`s the only way.` -The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "During the quest phase, reveal 1 additional encounter card for each player in the game.",
+                    "Response: After an enemy is revealed at this stage, raise your threat by X to engage that enemy. X is that enemy`s Threat. Each player (at any stage) may trigger this ability once per round.",
+                    "When this stage is defeated, the players win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 4,
+                "StageLetter": "A"
+            },
+            "Number": 67,
+            "Quantity": 1,
+            "Artist": "Gabriel Verdon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Frodo's Choice",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Frodo's-Choice.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Doom."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If Frodo`s Choice is discarded, reveal it instead.",
+                    "When Revealed: Take control of the first player token and the Ring-bearer (and each card attached to it). Attach to the Ring-bearer. For the rest of the game, you cannot lose control of the first player token."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I will go alone.` -Frodo, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 68,
+            "Quantity": 1,
+            "Artist": "Sandra Duchiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Uruk-hai Captain",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Uruk-hai-Captain.jpg",
+                "Stats": {
+                    "EngagementCost": "36",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk-hai"
+                ],
+                "Keywords": [
+                    "Toughness 2."
+                ],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Allies with fewer printed hit points than Uruk-hai Captain cannot defend against Uruk-hai Captain."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 69,
+            "Quantity": 2,
+            "Artist": "Joel Hustak",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Uruk-hai Archer",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Uruk-hai-Archer.jpg",
+                "Stats": {
+                    "EngagementCost": "44",
+                    "Threat": "X",
+                    "Attack": "4",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk-hai"
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Toughness 1.",
+                    "Archery X."
+                ],
+                "Text": [
+                    "X is the number of players at this stage.",
+                    "When Revealed: Discard an ally you control."
+                ],
+                "Shadow": null,
+                "FlavorText": "...they had bows of yew, in length and shape like the bows of Men. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 3,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 70,
+            "Quantity": 4,
+            "Artist": "Florian Devos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Uruk-hai Tracker",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Uruk-hai-Tracker.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "1",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk-hai"
+                ],
+                "Keywords": [
+                    "Surge.",
+                    "Toughness 1.",
+                    "Archery 1."
+                ],
+                "Text": [
+                    "Uruk-hai Tracker gets +2 Attack against characters with 2 or fewer printed hit points."
+                ],
+                "Shadow": "Shadow: Discard a non-objective attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 71,
+            "Quantity": 3,
+            "Artist": "Tey Bartolome",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Uruk-hai Hunter",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Uruk-hai-Hunter.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk-hai"
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Toughness 1."
+                ],
+                "Text": [
+                    "When Revealed: Either choose a player to reveal an additional encounter card, or Uruk-hai Hunter makes an immediate attack against you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I fear that the Orcs may already be on this side of the water.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 72,
+            "Quantity": 3,
+            "Artist": "Gabriel Verdon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Parth Galen",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Parth-Galen.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "River.",
+                    "Lawn."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Travel: Search the encounter deck and discard pile for an enemy and add it to the staging area to travel here. Shuffle the encounter deck.",
+                    "While Parth Galen is in play, the players cannot win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 73,
+            "Quantity": 1,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Seat of Seeing",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Seat-of-Seeing.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Hills."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Response: When Seat of Seeing is explored, choose a burden card in play, in the encounter deck, or in the discard pile, and remove it from the game. Shuffle the encounter deck. (If you are playing campaign mode, remove that card from the campaign pool.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 74,
+            "Quantity": 1,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Argonath",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/The-Argonath.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "River."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Immune to player card effects. X is the number of players in the game.",
+                    "The players cannot travel here while Sarn Gebir is in play. While The Argonath is the active location, skip the combat phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Behold the Argonath, the Pillars of the Kings!` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 75,
+            "Quantity": 1,
+            "Artist": "Juan Carlos Barquet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sarn Gebir",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Sarn-Gebir.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "River."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Forced: When Sarn Gebir is explored, deal 1 damage to each exhausted character."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Boats of the Elves would not sink, maybe.` he said, `but that does not say that we should come through Sarn Gebir alive. None have ever done so yet.` -Boromir, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 76,
+            "Quantity": 1,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "River Anduin",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/River-Anduin.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "River."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While River Anduin is in the staging area it gains: `Forced: At the end of the travel phase, each player at this stage raises his threat by 1. Then, River Anduin moves to the staging area to the left, if able.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "`Anduin flows faster than I thought.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 77,
+            "Quantity": 4,
+            "Artist": "Victor Garcia",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wooded Shoreline",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Wooded-Shoreline.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "River.",
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Wooded Shoreline is in the staging area, it gains archery 2.",
+                    "Travel: Search the encounter deck and discard pile for an enemy and add it to the staging area to travel here. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 78,
+            "Quantity": 3,
+            "Artist": "Anthony Feliciano",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Slopes of Amon Hen",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Slopes-of-Amon-Hen.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Forest.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Travel: A player at this staging area must engage an enemy in any staging area to travel here."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if the defending character has fewer printed hit points than the attacking enemy).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 79,
+            "Quantity": 3,
+            "Artist": "Michael Rasmussen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Growing Threat",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Growing-Threat.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril."
+                ],
+                "Text": [
+                    "When Revealed: Either move 1 enemy engaged with you to the first player`s staging area, or Growing Threat gains doomed 2 and surge."
+                ],
+                "Shadow": "Shadow: After this attack, move attacking enemy to the first player`s staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 80,
+            "Quantity": 2,
+            "Artist": "Greg Opalinski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orcs of the White Hand",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Orcs-of-the-White-Hand.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove all damage from each enemy at this stage. Each enemy at this stage gets +1 Threat, +1 Attack, and +1 Defense until the end of the round."
+                ],
+                "Shadow": "Shadow: If the defending character has fewer printed hit points than the attacking enemy, this attack is considered undefended.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 81,
+            "Quantity": 2,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Black Feathered Arrows",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Black-Feathered-Arrows.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Until the end of the round, add 1 to the archery total at this stage for each ally currently at this stage."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if the defending character has fewer printed hit points than the attacking enemy).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 82,
+            "Quantity": 3,
+            "Artist": "Mark Erwan Tarrisse",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fallen Into Evil",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Fallen-Into-Evil.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Corruption."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach to a non-Fellowship hero and move it to the first player`s staging area. (Counts as a Condition attachment with the text: `Attached hero loses the hero card type and gains the enemy card type with Threat equal to its Willpower and engagement cost equal to its threat cost. If Fallen into Evil is discarded, return attached hero to its owner`s control`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 83,
+            "Quantity": 1,
+            "Artist": "Claudio Pozas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lust for the Ring",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Lust-for-the-Ring.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Corruption."
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to a non-Fellowship hero in play. Counts as a Condition attachment with the text: `Forced: After The One Ring exhausts, raise each player`s threat by 1 and reduce attached hero`s Willpower to 0 until the end of the round.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 84,
+            "Quantity": 1,
+            "Artist": "Arden Beckwith",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Shadow of Fear",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Shadow-of-Fear.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1.",
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Treat the printed text box of each character in play as blank (except for Traits) until the end of the round."
+                ],
+                "Shadow": "Shadow: Defending character does not count its Defense.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 85,
+            "Quantity": 1,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pursued by the Enemy",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Pursued-by-the-Enemy.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1.",
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Each enemy engaged with a player, and not in the staging area, makes an immediate attack."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 86,
+            "Quantity": 1,
+            "Artist": "Claudio Pozas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Overcome by Grief",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Overcome-by-Grief.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Despair."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Add Overcome by Grief to the staging area.",
+                    "Forced: After a character is destroyed, if Overcome by Grief is unattached, attach to a hero. (Counts as a Condition attachment with the text: `Forced: After a character you control is destroyed, exhaust attached hero. Until the end of the round, attached hero cannot ready.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 87,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Grievous Wound",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Grievous-Wound.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Wound."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Add Grievous Wound to the staging area.",
+                    "`Forced: After a hero takes damage, if Grievous Wound is unattached, attach to that hero. (Counts as a Condition attachment with the text: `Forced: After attached hero exhausts, deal 1 damage to it.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 88,
+            "Quantity": 1,
+            "Artist": "Sara K. Diesel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Followed by Night",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Followed-by-Night.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril.",
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Put the topmost enemy of the encounter deck discard pile into play engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Quite apart from murder by night on his own account, he may put any enemy that is about on our track.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 89,
+            "Quantity": 1,
+            "Artist": "Gabriel Verdon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ill Fate",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Ill-Fate.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Despair."
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to a hero you control. (Counts as a Condition attachment with the text: `Forced: After a character you control is destroyed, raise your threat by 2.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`Alas! An ill fate is on me this day, and all that I do goes amiss.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 90,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The One Ring",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/The-One-Ring.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Ring."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Setup: The first player claims The One Ring and attaches it to the Ring-bearer.",
+                    "Attached hero does not count against the hero limit. The first player gains control of attached hero.",
+                    "If The One Ring leaves play, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": null,
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 91,
+            "Quantity": 1,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

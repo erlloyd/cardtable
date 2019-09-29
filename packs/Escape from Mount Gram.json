@@ -1,0 +1,970 @@
+{
+    "Name": "Escape from Mount Gram",
+    "Cycle": "Angmar Awakened",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Derndingle Warrior",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Derndingle-Warrior.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Ent.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Cannot have restricted attachments. Enters play exhausted.",
+                    " While Derndingle Warrior is defending, it gains: `Action: Deal 1 damage to Derndingle Warrior to give it +3 Defense for this attack.` (Limit once per attack.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": null,
+            "Number": 31,
+            "Quantity": 3,
+            "Artist": "Oscar Römer",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Elven Jeweler",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Elven-Jeweler.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Craftsman."
+                ],
+                "Keywords": [],
+                "Text": [
+                    " Discard 2 cards from your hand to put Elven Jeweler into play from your hand, under your control."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...to the Elven-smiths they were but trifles...` -Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": null,
+            "Number": 33,
+            "Quantity": 3,
+            "Artist": "Cassandre Bolan",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Double Back",
+            "IsUnique": false,
+            "CardType": "Player_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Double-Back.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Limit 1 per deck.",
+                    "Response: When this stage is defeated, reduce each player`s threat by 5."
+                ],
+                "Shadow": null,
+                "FlavorText": "He was taking a wandering course with many turns and doublings, to put off any pursuit. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": null,
+            "Number": 34,
+            "Quantity": 3,
+            "Artist": "Jorge Borrero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Keen as Lances",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Keen-as-Lances.jpg",
+                "Stats": {
+                    "ResourceCost": "5"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Reduce the cost to play Keen as Lances by 1 for each card worth no victory points in the victory display.",
+                    "Action: Add Keen as Lances to the victory display. Then, choose one: add 2 resources to a hero`s resource pool, draw 3 cards, or reduce your threat by 4."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": null,
+            "Number": 37,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rossiel",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Rossiel.jpg",
+                "Stats": {
+                    "ThreatCost": "8",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Silvan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If the active location shares a Trait with a location in the victory display, Rossiel gets +2 Willpower.",
+                    "If the attacking enemy shares a Trait with an enemy in the victory display, Rossiel gets +2 Defense."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Did you not say that you wished to see Elf-magic?` —Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": null,
+            "Number": 28,
+            "Quantity": 1,
+            "Artist": "Alexandre Dainche",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Boomed and Trumpeted",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Boomed-and-Trumpeted.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After an Ent character takes any amount of damage, ready it. That character gets +3 Attack until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`They roared and boomed and trumpeted, until stones began to crack and fall at the mere noise of them.` —Merry, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": null,
+            "Number": 32,
+            "Quantity": 3,
+            "Artist": "Jordan Saia",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Veteran of Osgiliath",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Veteran-of-Osgiliath.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Veteran of Osgiliath gets +1 Willpower, +1 Attack, and +1 Defense while your threat is 40 or higher."
+                ],
+                "Shadow": null,
+                "FlavorText": "`So do we ever watch the shores nigh Osgiliath, which our enemies now partly hold, and issue from it to harry our lands.` —Faramir, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": null,
+            "Number": 29,
+            "Quantity": 3,
+            "Artist": "John Stanko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Leave No Trace",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Leave-No-Trace.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Limit 3 copies of Leave No Trace in the victory display.",
+                    "Response: After a non-unique location is explored, add Leave No Trace to the victory display to add that location to the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": null,
+            "Number": 35,
+            "Quantity": 3,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Descendants of Kings",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Descendants-of-Kings.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Ready up to X Dúnedain characters you control. X is the number of enemies engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`But when dark things come from the houseless hills, or creep from sunless woods, they fly from us.` —Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": null,
+            "Number": 30,
+            "Quantity": 3,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Distant Stars",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Distant-Stars.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust a Ranger or Scout character to discard a non-unique active location. Then, search the encounter deck and discard pile for a non-unique location and make it the active location. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I have crossed many mountains and many rivers, and trodden many plains, even into the far countries of Rhûn and Harad where the stars are strange...` —Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": null,
+            "Number": 36,
+            "Quantity": 3,
+            "Artist": "John Stanko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Unexpected Rescue",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Unexpected-Rescue-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Each player shuffles his starting hand into his deck. Each player prepares a separate captured deck (see insert). Each player adds 2 resources to his starting hero and sets his threat to that hero`s threat cost. Set Southern Gate, Jailor Gornákh and the Angmar Orcs encounter set aside, out of play. Shuffle the encounter deck. Each player draws a new starting hand of 3 cards."
+                ],
+                "Shadow": null,
+                "FlavorText": "You have been captured and imprisoned by the goblins of Mount Gram."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player creates his own staging area and advances to a different stage 2A."
+                ],
+                "Shadow": null,
+                "FlavorText": "You have endured much during your imprisonment in Mount Gram at the hands of a cruel goblin known as Gornákh. But before you are taken north as prizes for `Lord Daechanar,` Amarthiúl comes to your rescue. After he frees you, he slips off to find Iârion, whom you suspect is imprisoned nearby. Armed with only your wits and resolve, you must find the rest of your company."
+            },
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 38,
+            "Quantity": 1,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gornákh's Dungeons",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Gornákh's-Dungeons-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Capture 7."
+                ],
+                "Text": [
+                    "When Revealed: Search the encounter deck for 1 copy of Prison Cell, reveal it, and add it to your staging area. Then capture an additional 2 cards from the top of your captured deck underneath that copy of Prison Cell."
+                ],
+                "Shadow": null,
+                "FlavorText": "Alone and without your equipment, you steel yourself and being to search for your companions and belongings."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Any time players would place progress on this quest, resuce an equal number of captured cards at random from underneath it instead. (Progress is placed on the active location before triggering this effect.)",
+                    "Forced: If there are no captured cards underneath Gornákh`s Dungeons, join another player at the beginning of the travel phase. If you cannot join another player, all players advance to stage 3A together."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 39,
+            "Quantity": 4,
+            "Artist": "Katayanagi",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Flight from Mount Gram",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Flight-from-Mount-Gram-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add Southern Gate and Jailor Gornakh to the staging area. Shuffle the Angmar Orcs encounter set into the encounter deck. Then, reveal 1 encounter card per player from the top of the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "Having rescued as many of your companions as you can find, you begin to make your way towards the dungeon`s hidden exit. By now Gornákh is surely aware of your escape, and the orcs that were with Thaurdir are now searching for you, as well."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "The player cannot travel to Southern Gate unless there is at least 16 progress on this stage.",
+                    "The players cannot defeat this stage while Souther Gate is in play. If the players defeat this stage, they have escaped Mount Gram and win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "Orcs and Goblins rush to find you before you can make your escape. You must make haste if you wish to make it out of Mount Gram alive!"
+            },
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 40,
+            "Quantity": 1,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Jailor Gornákh",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Jailor-Gornákh.jpg",
+                "Stats": {
+                    "EngagementCost": "44",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Forced: After 1 or more captured cards are rescued, Jailor Gornákh engages the player with the highest threat and makes an immediate attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Come on now! We`ve talked enough. Let`s go and have a look at the prisoner!`\r\n-Shagrat, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 41,
+            "Quantity": 1,
+            "Artist": "Joel Hustak",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Southern Gate",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Southern-Gate.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "8"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [
+                    "Victory 2."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "White Southern Gate s the active location, each Orc enemy gets +2 Attack.",
+                    "Forced: When Southern Gate becomes the active location, each player with less than 35 threat must raise his threat to 35."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 42,
+            "Quantity": 1,
+            "Artist": "Jake Bullock",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Cruel Torturer",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Cruel-Torturer.jpg",
+                "Stats": {
+                    "EngagementCost": "36",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Capture 1."
+                ],
+                "Text": [
+                    "Forced: When Cruel Torturer would damage an ally by an attack, capture that ally underneath Cruel Torturer instead."
+                ],
+                "Shadow": null,
+                "FlavorText": "`You`ll get bed and breakfast all right: more than you can stomach`\r\n-Uglúk, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 43,
+            "Quantity": 2,
+            "Artist": "Nicholas Gregory",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dungeon Guard",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Dungeon-Guard.jpg",
+                "Stats": {
+                    "EngagementCost": "16",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Capture 1."
+                ],
+                "Text": [
+                    "Response: After the captured card(s) underneath Dungeon Guard are rescued, the players may put 1 of them into play at no cost."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 44,
+            "Quantity": 3,
+            "Artist": "Anthony Feliciano",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Goblin Tormentor",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Goblin-Tormentor.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "2",
+                    "Attack": "X",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Capture 1."
+                ],
+                "Text": [
+                    "X is the number of cards in play with 1 or more captured cards underneath them."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if it has no captured cards underneath it).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 45,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Prison Cell",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Prison-Cell.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [
+                    "Capture 1."
+                ],
+                "Text": [
+                    "Response: After the players travel to Prison Cell, look at the captured card(s) underneath it and choose 1 to put into play at no cost. Place the other cards back underneath Prison Cell."
+                ],
+                "Shadow": null,
+                "FlavorText": "...goblins don`t care who they catch, as long as it isa done smart and secret, and the prisoners are not able to defend themselves.\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 46,
+            "Quantity": 4,
+            "Artist": "Ferdinand Dumago Ladera",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Patrol Room",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Patrol-Room.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [
+                    "Capture 2."
+                ],
+                "Text": [
+                    "Travel: Each player raises his threat by 3 to travel here."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if the defending player`s threat is 20 or higher).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 47,
+            "Quantity": 2,
+            "Artist": "Jordan Saia",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Tunnels of Mount Gram",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Tunnels-of-Mount-Gram.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [
+                    "Capture 1."
+                ],
+                "Text": [
+                    "X is the number of captured cards underneath Tunnels of Mount Gram."
+                ],
+                "Shadow": "Shadow: Capture each attachment attached to the defending character underneath the attacking enemy.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 48,
+            "Quantity": 2,
+            "Artist": "Ferdinand Dumago Ladera",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sound the Alarm!",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Sound-the-Alarm.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 3."
+                ],
+                "Text": [
+                    "When Revealed: Until the end of the round, each enemy gets -10 engagement cost and +1 Attack. If there are no enemies in play, search the encounter deck and discard pile for an enemy and add it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 49,
+            "Quantity": 2,
+            "Artist": "Owen William Weber",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Feeble and Weary",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Feeble-and-Weary.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must either deal 1 damage to each exhausted character he controls, or remove each exhausted character he controls from the quest."
+                ],
+                "Shadow": "Shadow: Exhaust a character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 50,
+            "Quantity": 2,
+            "Artist": "Tawny Fritzinger",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Captives of Gornákh",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Captives-of-Gornákh.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player chooses one of his allies and captures it underneath the encounter card with the highest Threat."
+                ],
+                "Shadow": "Shadow: If this attack would damage an ally, capture that ally underneath the attacking enemy instead.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 51,
+            "Quantity": 2,
+            "Artist": "Kaija Rudkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Interrogation",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Interrogation.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player discards the top card of his captured deck and raises his threat by that card`s printed resource cost. If at least 1 player discarded no cards from this effect, Interrogation gains Doomed 2."
+                ],
+                "Shadow": "Shadow: Discard a random card from your hand and raise your threat by its printed cost.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 52,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Stop the Executioners!",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Stop-the-Executioners.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Capture 5.",
+                    "Time 4.",
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Forced: When the last time counter is removed from this quest, discard its captured cards and remove this quest from the game. Then, raise each player`s threat by 3 for each of his characters that was discarded by this effect."
+                ],
+                "Shadow": null,
+                "FlavorText": "Several of your captured companions are being sent to the executioner`s block. If you make it in time, you might be able to save them before they are slain!"
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": null,
+            "Number": 53,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

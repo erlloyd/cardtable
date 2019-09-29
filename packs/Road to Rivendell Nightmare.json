@@ -1,0 +1,374 @@
+{
+    "Name": "Road to Rivendell Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Road to Rivendell Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell-Nightmare/Road-to-Rivendell-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing in Nightmare mode.\n\nForced: When an enemy with the ambush keyword engages a player during the quest phase, it contributes its Threat to the total Threat in the staging area until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Road to Rivendell scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter and quest deck:\n\n1x Orc Outpost (quest stage 2)\n2x Ruined Road\n2x Barren Hills\n1x Goblin Taskmaster\n4x Black Uruks\n3x Mountain Warg\n3x Bitter Wind\n2x Warg Lair\n5x Goblin Spearman\n2x Goblin Archer\n2x Plundered Armoury\n\nAdd the new quest card in this Nightmare Deck to the normal quest deck, in stage order. Then, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Road to Rivendell encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Road to Rivendell Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Oleg Saakyan",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ambush in the Night",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell-Nightmare/Ambush-in-the-Night-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Search the encounter deck, discard pile and victory display for Goblin Gate and add it to the staging area, if able. Shuffle the encounter discard pile into the encounter deck. Discard cards from the top of the encounter deck until X enemies have been discarded, where X is the number of players in the game. Reveal all enemies discarded by this effect."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player loses control of Arwen Undómiel and attaches her to Goblin Gate (she is now guarded by Goblin Gate). While she is guarded, the first player cannot gain control of Arwen Undómiel.\n\nGoblin Gate gets +1 quest point for each enemy engaged with a player.\n\nProgress cannot be placed on this stage unless the players control Arwen Undómiel."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Road to Rivendell Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Road to Rivendell Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Oleg Saakyan",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Uruk Elf-stalker",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell-Nightmare/Uruk-Elf-stalker.jpg",
+                "Stats": {
+                    "EngagementCost": "5",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Uruk.",
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Ambush."
+                ],
+                "Text": [
+                    "Forced: When Uruk Elf-stalker attacks and destroys a character, deal 1 damage to Arwen Undómiel."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Road to Rivendell Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Road to Rivendell Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Goblin Trapper",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell-Nightmare/Goblin-Trapper.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Ambush."
+                ],
+                "Text": [
+                    "Forced: After Goblin Trapper engages a player, that player must exhaust a character he controls."
+                ],
+                "Shadow": "Shadow: Add Goblin Trapper to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Road to Rivendell Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Road to Rivendell Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raiding Party",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell-Nightmare/Raiding-Party.jpg",
+                "Stats": {
+                    "EngagementCost": "34",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "1",
+                    "HitPoints": "7"
+                },
+                "Traits": [
+                    "Mountain.",
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Ambush."
+                ],
+                "Text": [
+                    "Forced: After Raiding Party engages a player, each player discards the top card of the encounter deck, starting with the first player. Each player who discards an enemy with the ambush keyword must make an engagement check against that enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Road to Rivendell Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Road to Rivendell Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Vicious Trackers",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell-Nightmare/Vicious-Trackers.jpg",
+                "Stats": {
+                    "EngagementCost": "16",
+                    "Threat": "1",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "While Vicious Tracker is engaged with a player, that player is considered to have +20 threat for purposes of engagement checks only."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Road to Rivendell Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Road to Rivendell Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Treacherous Bluffs",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell-Nightmare/Treacherous-Bluffs.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "7"
+                },
+                "Traits": [
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When an engaged enemy with the ambush keyword engages a player, Treacherous Bluffs gets +2 Threat until the end of the phase."
+                ],
+                "Shadow": "Shadow: Excess damage dealt by this attack must be assigned to Arwen Undómiel.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Road to Rivendell Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Road to Rivendell Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Concealed Woods",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell-Nightmare/Concealed-Woods.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Concealed Woods is the active location, the first enemy with the ambush keyword revealed from the encounter deck each round gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack if engaged with the first player.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Road to Rivendell Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Road to Rivendell Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Jake Bullock",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Tumultuous Assault",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell-Nightmare/Tumultuous-Assault.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Return each engaged enemy with the ambush keyword to the staging area. Each player makes engagement checks against each enemy in the staging area, as if it were the encounter phase. If there are no enemies with the ambush keyword in play, Tumultuous Assault gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Road to Rivendell Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Road to Rivendell Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

@@ -1,0 +1,3156 @@
+{
+    "Name": "The Treason of Saruman",
+    "Cycle": "The Lord of the Rings",
+    "SetType": "Saga_Expansion",
+    "cards": [
+        {
+            "Title": "Quickbeam",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Quickbeam.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have restricted attachments. Enters play exhausted.",
+                    "Response: After Quickbeam enters play, deal 1 damage to him to ready him."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I am Bregalad, that is Quickbeam in your language. But it is only a nickname, of course.` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Legolas",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Legolas.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Ranged."
+                ],
+                "Text": [
+                    "Response: After Legolas participates in an attack that destroys an enemy, draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`He stands not alone,` said Legolas, bending his bow and fitting an arrow with hands that moved quicker than sight. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Théoden",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Théoden.jpg",
+                "Stats": {
+                    "ThreatCost": "12",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Noble.",
+                    "Rohan.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Reduce the cost of the first Rohan ally you play from your hand each round by 1 (to a minimum of 0)."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Arise now, arise, Riders of Théoden!` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ent Draught",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Ent-Draught.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item.",
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control at least 1 Ent character.",
+                    "Attach to a character. Limit 1 per character.",
+                    "Attached character gets +2 hit points."
+                ],
+                "Shadow": null,
+                "FlavorText": "The effect of the draught began at the toes, and rose steadily through every limb, bringing refreshment and vigour as it coursed upwards, right to the tips of the hair. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Herugrim",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Herugrim.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Rohan hero. Restricted.",
+                    "Reduce the cost to play Herugrim on Théoden by 1.",
+                    "Response: After attached hero is declared as an attacker, exhaust Herugrim to add attached hero`s Willpower to its Attack for this attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Here, lord, is Herugrim, your ancient blade.` -Háma, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gimli",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Gimli.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dwarf.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Response: After an enemy is revealed from the encounter deck, ready Gimli."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Shadowfax",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Shadowfax.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [
+                    "Mount.",
+                    "Mearas."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to Gandalf.",
+                    "Gandalf gains ranged and sentinel.",
+                    "Action: Exhaust Shadowfax to ready Gandalf."
+                ],
+                "Shadow": null,
+                "FlavorText": "`He is the chief of the Mearas, lords of horses, and not even Théoden, King of Rohan, has ever looked on a better.` -Gandalf, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 14,
+            "Quantity": 3,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Entmoot",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Entmoot.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control at least 1 Ent character.",
+                    "Action: Search the top 5 cards of your deck for any number of Ent cards and add them to your hand. Shuffle the other cards back into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...it is a gathering of Ents - which does not often happen nowadays.` -Treebeard, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 3,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Háma",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Háma.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Combat Action: Ready Háma. He gets +3 Defense until the end of the phase. At the end of the phase, discard Háma. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`I am the Doorward of Théoden,` he said. `Háma is my name.` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Sara Betsy",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Treebeard",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Treebeard.jpg",
+                "Stats": {
+                    "ThreatCost": "13",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have restricted attachments.",
+                    "Action: Deal 1 damage to Treebeard to give him +1 Willpower and +1 Attack until the end of the phase. (Limit 5 times per phase.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Arod",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Arod.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Mount."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero or Legolas.",
+                    "Response: After attached character participates in an attack that destroys an enemy, exhaust Arod to place 1 progress token on any location."
+                ],
+                "Shadow": null,
+                "FlavorText": "`A smaller and lighter horse, but restive and fiery, was brought to Legolas. Arod was his name.` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Helm! Helm!",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Helm-Helm.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only after the resolving enemy attacks step is complete.",
+                    "Combat Action: Exhaust and discard a Rohan ally you control to choose and discard a non-unique enemy engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Helm is arisen and comes back to war. Helm for Théoden King!` -Riders of Rohan, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 12,
+            "Quantity": 3,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Three Hunters",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/The-Three-Hunters.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control Fellowship Aragorn.",
+                    "Quest Action: Choose 3 heroes committed to the quest. Ready those heroes. Until the end of the round, each of the chosen heroes gets +1 Willpower, +1 Attack and +1 Defense."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We shall makes such a chase as shall be accounted a marvel among the Three Kindreds: Elves, Dwarves, and Men. Forth the Three Hunters!` -Aragorn, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 13,
+            "Quantity": 3,
+            "Artist": "Nicholas Gregory",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Aragorn",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Aragorn.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Noble.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The first player gains control of Aragorn. If Aragorn leaves play, the players lose the game.",
+                    "Action: Spend 2 resources from Aragorn`s resource pool to ready a hero."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Intimidation",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Intimidation.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Setup: Attach to a Warrior hero.",
+                    "Response: After attached hero is declared as the only attacker against a non-unique enemy, exhaust Intimidation to give that enemy -2 Defense for this attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "`None knows what the new day shall bring him,` said Aragorn. `Get you gone, ere it turn to your evil!` -Aragorn, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 15,
+            "Quantity": 1,
+            "Artist": "Matt Stawicki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hands of a Healer",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Hands-of-a-Healer.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Setup: Attach to a Healer hero.",
+                    "Action: Exhaust attached hero and Hands of a Healer to heal up to 3 damage from a hero."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Life to the dying\r\nIn the king`s hand lying!`\r\n-Herb-master, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 16,
+            "Quantity": 1,
+            "Artist": "Kristina Gehrmann",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Forewarned",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Forewarned.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Setup: Attach to a Ranger hero.",
+                    "Response: After attached hero is declared as a defender against a non-unique enemy, exhaust Forewarned to discard 1 shadow card from that enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Faint and far are the feet of our enemies.`\r\n-Aragorn, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 17,
+            "Quantity": 1,
+            "Artist": "Carly Janine Mazur",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Leader of Men",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Leader-of-Men.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Setup: Attach to a Noble hero.",
+                    "Response: After attached hero quests successfully, exhaust Leader of Men to add 1 resource to attached hero`s pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Take this, dear lord!` said a clear voice. `It was ever at your service.` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 18,
+            "Quantity": 1,
+            "Artist": "Arden Beckwith",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Beyond All Hope",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Beyond-All-Hope.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Favor."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Setup: Attach to a hero.",
+                    "Attached hero gets +1 Willpower, +1 Attack, +1 Defense and cannot have treachery card attachments."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Beyond all hope you return to us in our need!` -Aragorn, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 19,
+            "Quantity": 1,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Palantír of Orthanc",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Palantír-of-Orthanc.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Attach to Fellowship Aragorn.",
+                    "Quest Action: Exhaust Aragorn and Palantír of Orthanc to discard the top card of the encounter deck. If Aragorn`s Willpower is greater than the discarded card`s Threat, you may add Palantír of Orthanc to the victory display and remove it from the campaign pool to choose a player. That player reveals 1 fewer encounter card this phase (to a minimum of 0)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 20,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Poisoned Counsels",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Poisoned-Counsels.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Corruption."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Poisoned Counsels functions like a player card.",
+                    "Forced: After you draw this card, discard all other cards in your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "`And ever Wormtongue`s whispering was in your ears, poisoning your thought, chilling your heart, weakening your limbs...` -Gandalf, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 4,
+            "Artist": "John Gravato",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "To Isengard!",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/To-Isengard.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Treat each Captive`s text box as blank. Captives are in play but are not under any player`s control. If there are no Captives in play, the players lose the game.",
+                    "Forced: At the end of the refresh phase, increase the pursuit value by 1. Then, if the pursuit value is 30 or greater, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 22,
+            "Quantity": 1,
+            "Artist": "Niten",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Uglúk",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Uglúk.jpg",
+                "Stats": {
+                    "EngagementCost": "10",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "1",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk-hai."
+                ],
+                "Keywords": [
+                    "Toughness 3.",
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Allies cannot be declared as attackers or defenders against Uglúk."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I am Uglúk. I command.` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 23,
+            "Quantity": 1,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Grishnákh",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Grishnákh.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "4",
+                    "Attack": "3",
+                    "Defense": "4",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Mordor."
+                ],
+                "Keywords": [
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Forced: After Grishnákh enters play, the first player attached 1 of the Captives to him. If Grishnákh is defeated, place the attached Captive faceup underneath To Isengard!",
+                    "Forced: At the end of the quest phase, deal 1 damage to the attached Captive."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 24,
+            "Quantity": 1,
+            "Artist": "Claudio Pozas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Uglúk's Uruk-hai",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Uglúk's-Uruk-hai.jpg",
+                "Stats": {
+                    "EngagementCost": "38",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk-hai"
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Toughness 1.",
+                    "Archery 1."
+                ],
+                "Text": [
+                    "When Revealed: Either increase the pursuit value by 3, or reveal an additional encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "Uglúk shouted, and a number of other Orcs of nearly his own size ran up. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 25,
+            "Quantity": 3,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Wold",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/The-Wold.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Plains.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While the Wold is the active location, it gains: `Response: After The Wold is explored, each player draws 1 card.`",
+                    "Travel: Increase the pursuit value by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "Ahead and eastward they saw the windy uplands of the Wold of Rohan that they had already glimpsed many days ago from the Great River. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 26,
+            "Quantity": 3,
+            "Artist": "Jake Bullock",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Eastemnet",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Eastemnet.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Plains."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Eastemnet is the active location, it gains: `Response: After Eastemnet is explored, add 1 resource to each hero`s resource pool.`",
+                    "Travel: Increase the pursuit value by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "...the Horse-lords had formerly kept many herds and studs in the Eastemnet, this easterly region of their realm... -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 27,
+            "Quantity": 3,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Plains of Rohan",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Plains-of-Rohan.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Plains."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the number of locations in the staging area."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, increase the pursuit value by 1.",
+                "FlavorText": "...the green plains of the Rohirrim stretched away before them to the edge of sight. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai",
+                "EasyModeQuantity": 3,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 28,
+            "Quantity": 4,
+            "Artist": "Lino Drieghe",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Banks of Entwash",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Banks-of-Entwash.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Plains.",
+                    "River."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After any amount of progress is placed on Banks of Entwash, increase the pursuit value by 1."
+                ],
+                "Shadow": "Shadow: Either increase the pursuit value by 1, or this attack is considered undefended.",
+                "FlavorText": "`...north-west to the issuing of the Entwash there lies still a wide land.` -Aragorn, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 29,
+            "Quantity": 2,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rest by Night?",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Rest-by-Night.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either immediately end the quest phase and increase the pursuit value by 3, or deal 1 damage to each character commited to the quest. This effect cannot be canceled."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We have come at last to a hard choice,` he said. `Shall we rest by night, or shall we go on while our will and strength hold?` -Aragorn, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 30,
+            "Quantity": 2,
+            "Artist": "Tey Bartolome",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Strange Weariness",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Strange-Weariness.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Enchantment."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each character commited to the quest gets -1 Willpower until the end of the round."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": "`I am weary as I have seldom been before, weary as no Ranger should be with a clear trail to follow.` -Aragorn, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 31,
+            "Quantity": 2,
+            "Artist": "Romana Kendelic",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Unseen Barrier",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Unseen-Barrier.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Enchantment."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The players cannot place more than 3 progress on the current quest this round. (The does not count progress placed on the active location.)"
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, increase the pursuit value by 1.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 32,
+            "Quantity": 2,
+            "Artist": "Arden Beckwith",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Defense of Helm's Deep",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/The-Defense-of-Helm's-Deep.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Siege."
+                ],
+                "Keywords": [
+                    "Victory 8."
+                ],
+                "Text": [
+                    "Add 1 to the total Threat in the staging area for each resource token here.",
+                    "Forced: At the end of the quest phase, place 1 resource token here.",
+                    "If there are 8 resource tokens here, add The Defense of Helm`s Deep to the victory display and advance to stage 5A."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 33,
+            "Quantity": 1,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wild Hillman",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Wild-Hillman.jpg",
+                "Stats": {
+                    "EngagementCost": "24",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Wild Hillman attacks, place 1 progress on the active location."
+                ],
+                "Shadow": "Shadow: Place 1 progress on the active location. Attacking enemy gets +1 Attack for each progress on the active location.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 34,
+            "Quantity": 3,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Warrior of Dunland",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Warrior-of-Dunland.jpg",
+                "Stats": {
+                    "EngagementCost": "44",
+                    "Threat": "4",
+                    "Attack": "5",
+                    "Defense": "1",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Archery."
+                ],
+                "Text": [
+                    "When Revealed: Warrior of Dunland makes an immediate attack against you.",
+                    "Forced: After Warrior of Dunland attacks and destroys a character, place 3 progress on the active location."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 35,
+            "Quantity": 2,
+            "Artist": "Claudio Pozas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Soldier of Isengard",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Soldier-of-Isengard.jpg",
+                "Stats": {
+                    "EngagementCost": "39",
+                    "Threat": "4",
+                    "Attack": "4",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk-hai."
+                ],
+                "Keywords": [
+                    "Toughness 1.",
+                    "Archery 1."
+                ],
+                "Text": [
+                    "Forced: After Soldier of Isengard attacks and destroys a character, place 1 progress on the current quest."
+                ],
+                "Shadow": "Shadow: Exhaust a character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 36,
+            "Quantity": 4,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Hornburg",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/The-Hornburg.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Helm's Deep."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While The Hornburg is the active location, reduce the archery total by 1 for each player in the game.",
+                    "Forced: When The Hornburg is explored, assign X damage among characters in play. X is the number of enemies in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "But the Hornburg still held fast, like an island in the sea. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 37,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Deeping Wall",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Deeping-Wall.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Helm's Deep."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Deeping Wall is the active location, each hero gets +1 Defense.",
+                    "Forced: When Deeping Wall is explored, raise each player`s threat by 4."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Deeping Wall was twenty feet high, and so thick that four men could walk abreast along the top, sheltered by a parapet over which only a tall man could look. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 38,
+            "Quantity": 4,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Deeping Culvert",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Deeping-Culvert.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Helm's Deep."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the 1 more than the number of allies controlled by the first player.",
+                    "Forced: When Deeping Culvert is explored, each player searches the encounter deck and discard pile for an enemy, reveals it, and adds it to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "Orcs had crept like rats through the culvert through which the stream flowed out. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 39,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Postern Door",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Postern-Door.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Helm's Deep."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Postern Door is the active location, each hero gets +1 Attack.",
+                    "Forced: When Postern Door is explored, until the end of the round, players cannot declare attacks."
+                ],
+                "Shadow": null,
+                "FlavorText": "There was a small postern-door that opened in an angle of the burg-wall on the west, where the cliff stretched out to meet it. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 40,
+            "Quantity": 2,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Helm's Gate",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Helm's-Gate.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Helm's Deep."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Helm`s Gate is the active location, if any player is not engaged with an enemy, the first player reveals an encounter card at the end of each staging step.",
+                    "Forced: When Helm`s Gate is explored, each enemy gets -20 engagement cost and +2 Attack until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 41,
+            "Quantity": 2,
+            "Artist": "Ed Mattinian",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Scaling Ladders",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Scaling-Ladders.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to the active location. (Counts a Siege attachment with the text: `Each enemy gets +1 Threat.`)"
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, place 1 progress on the current quest.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 42,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Devilry of Saruman",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Devilry-of-Saruman.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Place 3 progress on the main quest (bypassing any active location). Until the end of the round, treat each character`s text box as if it was blank (except for Traits)."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack and gains Toughness 2 until the end of the round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 43,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": true,
+            "Categories": null
+        },
+        {
+            "Title": "Reckless Hate",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Reckless-Hate.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril."
+                ],
+                "Text": [
+                    "When Revealed: The enemy in the staging area with the highest Attack makes an immediate attack against you. If no attack is made this way, Reckless Hate gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 44,
+            "Quantity": 2,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Night Without End",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Night-Without-End.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril.",
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "When Revealed: Either remove 1 resource token from The Defense of Helm`s Deep, or reveal 2 additional encounter cards."
+                ],
+                "Shadow": "Shadow: Return attacking enemy to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 45,
+            "Quantity": 2,
+            "Artist": "Arden Beckwith",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ent of Fangorn",
+            "IsUnique": false,
+            "CardType": "Objective_Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Ent-of-Fangorn.jpg",
+                "Stats": {
+                    "Willpower": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Ent of Fangorn is in the staging area, it gains: `Quest Action: Exhaust a hero you control to discard the top card of the encounter deck. If that hero`s Willpower is greater than the discarded card`s Threat, place 1 resource here. Then, if there are 3 resources here, discard them to take control of Ent of Fangorn. Any player may trigger this effect.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 46,
+            "Quantity": 4,
+            "Artist": "Mark Bulahao",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Saruman",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Saruman.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "4",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Istari.",
+                    "Traitor."
+                ],
+                "Keywords": [
+                    "Indestructible."
+                ],
+                "Text": [
+                    "Immune to player card effects. Cannot leave the staging area.",
+                    "Forced: When Saruman is dealt a shadow card with a Wizardry effect, the defending player resolves that Wizardry effect as if he is the only player in the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 47,
+            "Quantity": 1,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Saruman's Staff",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Saruman's-Staff.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Staff."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After a player draws any number of cards, Saruman attacks that player. Deal and resolve 2 shadow cards for this attack. Then, remove 1 damage from Saruman.",
+                    "While Saruman has any hit points remaining, the players cannot win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 48,
+            "Quantity": 1,
+            "Artist": "Alexandr Elichev",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gríma",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Gríma.jpg",
+                "Stats": {
+                    "EngagementCost": "1",
+                    "Threat": "3",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "Forced: After Gríma attacks a player, that player shuffles Gríma back into the encounter deck and reveals an encounter card."
+                ],
+                "Shadow": "Shadow: This attack is considered undefended.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 49,
+            "Quantity": 1,
+            "Artist": "Dleoblack",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lieutenant of Orthanc",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Lieutenant-of-Orthanc.jpg",
+                "Stats": {
+                    "EngagementCost": "36",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Isengard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Lieutenant of Orthanc attacks and destroys a character, that character`s controller discards 1 random card from his hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Saruman kept enough wisdom not to trust his Orcs. He had Men to guard his gates...` -Merry, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 50,
+            "Quantity": 2,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Isengard Orc",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Isengard-Orc.jpg",
+                "Stats": {
+                    "EngagementCost": "29",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Archery 1."
+                ],
+                "Text": [
+                    "When Revealed: Either discard 1 random card from your hand, or reveal an encounter card."
+                ],
+                "Shadow": "Shadow: Until the end of the round, attacking enemy gets +2 Defense.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 51,
+            "Quantity": 2,
+            "Artist": "Romana Kendelic",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wolf of Isengard",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Wolf-of-Isengard.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Wolf of Isengard is dealt a shadow card with a Wizardry effect, either discard 1 card from your hand, or Wolf of Isengard makes an additional attack against you after this one."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to the defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 52,
+            "Quantity": 2,
+            "Artist": "Piya Wannachaiwong",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orthanc",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Orthanc.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "1"
+                },
+                "Traits": [
+                    "Isengard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "While Orthanc is in the staging area, it gains: `Forced: After the players quest successfully, the first player looks at the top 3 cards of the encounter deck, reveals 1, and discards the others.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "Still dark and tall, unbroken by the storm, the tower of Orthanc stood. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 53,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gates of Isengard",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Gates-of-Isengard.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "1"
+                },
+                "Traits": [
+                    "Isengard."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Forced: When the Gates of Isengard is explored, each player searches the encounter deck and discard pile for an enemy and puts it into play engaged with him. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "Here through the black rock a long tunnel had been hewn, close at either end with mighty doors of iron. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 54,
+            "Quantity": 1,
+            "Artist": "Lino Drieghe",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ring-wall of Isengard",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Ring-wall-of-Isengard.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Isengard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Ring-wall of Isengard is in the staging area, it gains: `Forced: After any amount of damage is healed from a character, its owner discards 1 card from his hand.`",
+                    "Wizardry: Each player discards 1 random card from his hand."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 55,
+            "Quantity": 3,
+            "Artist": "Ed Mattinian",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Underground Armoury",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Underground-Armoury.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Isengard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Underground Armoury is in the staging area, it gains: `Forced: After an enemy engages a player, deal it a shadow card.`",
+                    "Wizardry: Each player exhausts a character he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "The shafts ran down by many slopes and spiral stairs to caverns far under; there Saruman had treasuries, store-houses, armouries, smithies, and great furnaces. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 56,
+            "Quantity": 2,
+            "Artist": "Niten",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Steaming Vent",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Steaming-Vent.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Isengard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Steaming Vent is in the staging area, it gains: `Forced: After a player commits characters to the quest, he deals 1 damage to a questing character he controls.`",
+                    "Wizardry: Assign X damage among characters in play. X is 1 more than the number of players in the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 57,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Plain of Isengard",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Plain-of-Isengard.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Isengard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the number of players in the game.",
+                    "While Plain of Isengard is in the staging area, archery damage must be assigned to allies, if able.",
+                    "Wizardry: Each player discards 1 ally he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 58,
+            "Quantity": 2,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Open Pit",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Open-Pit.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Isengard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Open Pit is in the staging area, it gains: `Forced: After a player draws any number of cards from a player card effect, he raises his threat by 2.`",
+                    "Wizardry: Each player raises his threat by 2."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 59,
+            "Quantity": 2,
+            "Artist": "Julian Kok",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Blast of Sorcery",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Blast-of-Sorcery.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Assign X damage among characters committed to the quest. X is one more than the number of players in the game."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if the defending player has 1 or fewer cards in his hand).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 60,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Poisoned Vapour",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Poisoned-Vapour.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Exhaust each damaged character. Until the end of the combat phase, treat each damaged character`s text box as if it were blank (except for Traits)."
+                ],
+                "Shadow": "Shadow: Discard a non-objective attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 61,
+            "Quantity": 2,
+            "Artist": "Romana Kendelic",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Machines of Isengard",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Machines-of-Isengard.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Trigger the Wizardry effect on the active location. If no Wizardry effect is triggered this way, Machines of Isengard gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, discard 1 random card from your hand.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 62,
+            "Quantity": 3,
+            "Artist": "Julian Kok",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Isengard Uruk",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Isengard-Uruk.jpg",
+                "Stats": {
+                    "EngagementCost": "34",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk-hai"
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Toughness 1.",
+                    "Archery 2."
+                ],
+                "Text": [
+                    "When Revealed: Either assign 3 damage among characters you control, or reveal an additional encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Seldom will Orcs journey in the open under the sun, yet these have done so.` -Legolas, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Orcs of the White Hand",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 63,
+            "Quantity": 3,
+            "Artist": "Tey Bartolome",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Uruk-hai Fighter",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Uruk-hai-Fighter.jpg",
+                "Stats": {
+                    "EngagementCost": "29",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk-hai"
+                ],
+                "Keywords": [
+                    "Toughness 2."
+                ],
+                "Text": [
+                    "Forced: After Uruk-hai Fighter attacks and destroys a character, return it to the staging area."
+                ],
+                "Shadow": "Shadow: Discard a non-objective attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Orcs of the White Hand",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 64,
+            "Quantity": 3,
+            "Artist": "JB Casacop",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fighting Uruk-hai",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Fighting-Uruk-hai.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril."
+                ],
+                "Text": [
+                    "When Revealed: Search the encounter deck and discard pile for an Uruk-hai enemy, reveal it, and put it into play engaged with you. Shuffle the encounter deck. Until the end of the round, each enemy engaged with you adds its Threat to the total Threat in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Orcs of the White Hand",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 65,
+            "Quantity": 2,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Snaga",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Snaga.jpg",
+                "Stats": {
+                    "EngagementCost": "44",
+                    "Threat": "1",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Archery 1"
+                ],
+                "Text": [
+                    "When Revealed: Discard 1 random card from your hand. Snaga gets +X Threat until the end of the round, where X is the discarded card`s printed cost."
+                ],
+                "Shadow": null,
+                "FlavorText": "Round them were many smaller goblins. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Snaga Orcs",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 66,
+            "Quantity": 3,
+            "Artist": "Jake Bullock",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Saruman's Orders",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Saruman's-Orders.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must choose: either return an enemy engaged with him to the staging area, or reveal an encounter card."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, return attacking enemy to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Snaga Orcs",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 67,
+            "Quantity": 2,
+            "Artist": "Niten",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Saruman's Voice",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Saruman's-Voice.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Enchantment."
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "When Revealed: Remove a hero from the quest and attach Saruman`s Voice to that hero. (Counts as a Condition attachment with the text: `Forced: When attached hero commits to a quest, is declared and attacker or defender, or triggers its ability, its controller must discard 1 card from his hand.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 68,
+            "Quantity": 1,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Follow the Orcs",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Follow-the-Orcs-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Make Estemnet the active location. Add Uglúk and To Isengard! to the staging area. Each player chooses 1 non-Fellowship hero he controls to be a Captive and places it faceup underneath to Isengard! (If playing campaign mode, choose each `captive` from the Campaign Log instead). Set the pursuit value to 10."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Orcs that attached the Fellowship at Amon Hen captured several members of the Company and are carrying them to Isengard. Aragorn and his companions decide to chase the Uruk-hai in an effort to rescue their friends..."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "X is the Pursuit value.",
+                    "Uglúk cannot leave the staging area or take damage.",
+                    "Forced: At the end of the combat phase, increase the pursuit value by 1 for each enemy in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "`With hope or without hope we will follow the trail of our enemies. And woe to them, if we prove the swifter!` -Aragorn, The Two Towers"
+            },
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 69,
+            "Quantity": 1,
+            "Artist": "Nicholas Gregory",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rescue the Captives",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Rescue-the-Captives-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player searches the encounter deck and discard pile for an Uruk-hai enemy, reveals it, and adds it to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "As their pursuers close in on them, the Uruk-hai race towards the forest of Fangorn with redoubled speed. If the Orcs reach its borders, they will escape into the woods, taking their captives with them..."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "X is the pursuit value.",
+                    "Response: After an enemy is defeated, reduce the pursuit value by 1.",
+                    "The players cannot defeat this stage while Uglúk is in play. If the players defeat this stage, they have rescued each Captive hero and won the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Run! There`s the forest,` he shouted, pointing ahead. `Get to it! It`s your best hope. Off you go!` -Uglúk, The Two Towers"
+            },
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 70,
+            "Quantity": 1,
+            "Artist": "Romana Kendelic",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Uruk-hai",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/The-Uruk-hai-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing campaign mode.",
+                    "Setup: Remove Gildor Inglorion and Mr. Underhill from the Campaign Pool. Remove each burder with the following burden set icons from the encounter deck:",
+                    "A Shadow of the Past, Flight to the Ford, The Ring Goes South"
+                ],
+                "Shadow": null,
+                "FlavorText": "They followed their enemies now by the clear light of day. It seemed that the Orcs had pressed on with all possible speed. -The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Resolution: If the pursuit value is 25 or lower, the players must choose: either each player earns one of the Skill boons (Intimidation, Hands of a Healer, Forewarned, or Leader of Men) and attached it to a hero he controls, or one player ears the boon Beyond All Hope and chooses a hero from the list of fallen heroes. That player takes control of the chosen hero (removing it from the list of fallen heroes) and attaches Beyond All Hope to it. If a player controls more than 3 non-Fellowship heroes, he must remove heroes from the Campaign Log until he controls only 3 heroes. Changing heroes as a result of earning Beyond All Hope does not incur a +1 threat penalty. Add the earned cards to the Campaign Pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "Then when they had laid their fallen comrades in a mound and had sung their praises, the Riders made a great fire and scattered the ashes of their enemies. So ended the raid, and no news of it came ever back either to Mordor or Isengard; but the smoke of the burning rose hight ot heaven and was seen by many watchful eyes. -The Two Towers"
+            },
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 71,
+            "Quantity": 1,
+            "Artist": "Nicholas Gregory",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The King of the Golden Hall",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/The-King-of-the-Golden-Hall-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set The Defense of Helm`s Deep and 1 copy of Deeping Wall aside, out of play. Each player sets 1 copy of Soldier of Isengard aside, out of play. Then, the players must choose: either each player shuffles 1 copy of Poisoned Counsels into his deck, or advance to stage 2A (bypassing stage 1B)."
+                ],
+                "Shadow": null,
+                "FlavorText": "The pursuit of the Uruk-hai has brought the Heir of Elendil to Rohan just as Saruman declares war on that land. Aragorn and his companions travel to Edoras to aid King Théoden, but their arrival is met with suspicion..."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player chooses 1 ally in his hand that matches the sphere of a hero he controls and puts it into play under his control.",
+                    "Skip the quest phase and combat phase.",
+                    "Forced: At the end of the round, advance to stage 2A."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Hail, Théoden son of Thengel! I have returned. For behold! the storm comes, and now all friends should gather together...` -Gandalf, The Two Towers"
+            },
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 72,
+            "Quantity": 1,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Assault on Helm's Deep",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Assault-on-Helm's-Deep-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Defense."
+                ],
+                "Text": [
+                    "When Revealed: Add the Defense of Helm`s Deep and each set aside copy of Soldier of Isengard to the staging area. Make Deeping Wall the active location. Shuffle the encounter deck. Then, each player reveals 1 encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "At the behest of Gandalf, Aragorn and his companions ride to Helm`s Deep with the men of Rohan and their King. As the sun goes down, the valley below the Deeping Wall fills with the approaching army of Isengard..."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the combat phase, if the number of enemies in the staging area is less than the number of players in the game, the first player reveals an encounter card.",
+                    "Forced: At the end of the round place 1 progress here for each enemy in the staging area (bypassing the active location)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 73,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Hosts of Isengard",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/The-Hosts-of-Isengard-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Defense."
+                ],
+                "Text": [
+                    "When Revealed: Search the encounter deck, discard pile, and victory display for Helm`s Gate and add it to the staging area. Shuffle the encounter deck. Make Helm`s Gate the active location, returning any previous active location to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "Against the Deeping Wall the hosts of Isengard roared like a sea. Orcs and hillmen swarmed about its feet from end to end. -The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After resolving the quest, if the encounter deck did not place at least 1 progress on this stage as the result of questing, the first player reveals 1 encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "Hundreds of long ladders were lifted up. Many were cast down in ruin, but many more replaced them... -The Two Towers"
+            },
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 74,
+            "Quantity": 1,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Wall is Breached!",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/The-Wall-is-Breached-4A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Defense."
+                ],
+                "Text": [
+                    "When Revealed: Shuffle the encounter discard pile into the encounter deck. Discard cards from the encounter deck until X enemies are discarded. X is the number of players. Add each enemy discarded this way to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "Then there was a crash and a flash of flame and smoke. The waters of the Deeping-stream poured out hissing and foaming: they were choked no longer, a gaping hole was blasted in the wall. A host of dark shapes poured in. -The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After a character is destroyed, place 1 progress on this stage (bypassing any active location).",
+                    "If this stage is defeated, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "Over the wall and under the wall the last assault came sweeping like a dark wave upon a hill of sand. -The Two Towers"
+            },
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 4,
+                "StageLetter": "A"
+            },
+            "Number": 75,
+            "Quantity": 1,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The King Rides Out",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/The-King-Rides-Out-5A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Shuffle the encounter discard pile into the encounter deck. Discard cards from the encounter deck until X enemies are discarded. X is the number of players. Add each enemy discarded this way to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "As dawn breaks in the East, a blast from Helm`s Horn echoes in the valley and the Riders of Rohan charge out from Helm`s Gate with King Théoden and Aragorn at their head."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Skip the quest phase. Players cannot reduce their threat.",
+                    "If there are no enemies in play, the players win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "With a cry and a great noise they charged. Down from the gates they roared, over the causeway they swept, and they drove through the hosts of Isengard as a wind among grass. -The Two Towers"
+            },
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 5,
+                "StageLetter": "A"
+            },
+            "Number": 76,
+            "Quantity": 1,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Helm's Deep",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Helm's-Deep-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing campaign mode.",
+                    "Setup: Each player may change hero cards without incurring the +1 threat penalty. Remove each burden with the following burden set icons from the encounter deck:",
+                    "A Shadow of the Past, Flight to the Ford, The Ring Goes South"
+                ],
+                "Shadow": null,
+                "FlavorText": "`The shield-wall was broken. Erkenbrand of Westfold has drawn off those men he could gather towards his fastness in Helm`s Deep.` -Ceorl, The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Resolution: Each player with a copy of Poisoned Counsels in his hand, deck or discard pile has earned that burden. Add the earned cards to the campaign pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "Down through the breach of the Dike charged the king`s company. Down from the hills leaped Erkenbrand, lord of Westfold. Down leaped Shadowfax, like a deer that runs surefooted in the mountains. The White Rider was upon them, and the terror of his coming filled the enemy with madness. The wild men fell on their faces before him. The Orcs reeled and screamed and cast aside both sword and spear. Like a black smoke driven by a mounting wind they fled. -The Two Towers"
+            },
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 77,
+            "Quantity": 1,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rouse the Ents",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Rouse-the-Ents-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set Gates of Isengard, Orthanc, Saruman, and Saruman`s Staff aside, out of play. Add each copy of Ent of Fangorn to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "Saruman`s army has been defeated at Helm`s Deep, but the Wizard`s fortress is beyond Rohan`s power to capture. However, the Ents of Fangorn have also suffered great injury because of Saruman and his Orcs. They have the strength to break Isengard, but only if they can be roused to attack."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Players cannot draw cards or gain resources. Do not commit to the quest or reveal encounter cards during the quest phase.",
+                    "Forced: At the end of the round, place 1 resource here. Then, the players may advance to stage 2. If the players advance, the first player shuffle the encounter discard pile into the encounter deck and reveals 1 encounter card for each resource here. Then, remove each Ent objective in the staging area from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 78,
+            "Quantity": 1,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Breaking Isengard",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Breaking-Isengard-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Make Gates of Isengard the active location. Add Saruman and Orthanc to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "`To Isengard! Though Isengard be ringed and barred with doors of stone;\r\nThough Isengard be strong and hard, as cold as stone and bare as bone,\r\nWe go, we go, we go to war, to hew the stone and break the door;\r\nFor bole and bough are burning now, the furnace roars - we go to war!`\r\n-The Ents, The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "The players cannot travel to Orthanc.",
+                    "Forced: After a non-unique location is explored, place 1 damage here. Then, if there are 5 damage tokens here, advance to stage 3A.",
+                    "Quest Action: Exhaust Ent of Fangorn to place 2 progress on a non-unique location."
+                ],
+                "Shadow": null,
+                "FlavorText": "The power of Saruman must be broken and the fortress of Isengard destroyed!"
+            },
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 79,
+            "Quantity": 1,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Voice of Saruman",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/The-Voice-of-Saruman-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player draws 6 cards. Each player with more than 6 cards in his hand discards cards from his hand until he has only 6. Attach Saruman`s Staff to Saruman."
+                ],
+                "Shadow": null,
+                "FlavorText": "Suddenly another voice spoke, low and melodious, its very sound an enchantment. Those who listened unwarily to that voice could seldom report the words that they heard... -The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "While Orthanc is the active location, Saruman is considered to be engaged with the first player.",
+                    "Forced: When Orthanc is explored, cancel any progress placed on the quest this phase and return Orthanc to the staging area.",
+                    "If a player has 0 cards in his hand, he is eliminated from the game. If the players defeat this stage, they win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 80,
+            "Quantity": 1,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Road to Isengard",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/The-Road-to-Isengard-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing campaign mode.",
+                    "Setup: Shuffle Saruman`s Voice into the encounter deck. Remove each burden with these burden set icons from the encounter deck:",
+                    "A Shadow of the Past, Flight to the Ford, The Ring Goes South"
+                ],
+                "Shadow": null,
+                "FlavorText": "`Only lately did I guess that Saruman was to blame, and that long ago he had been spying out all the ways, and discovering my secrets. He and his folk are making havoc now.` -Treebeard, The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Resolution: If any player has 3 or fewer cards in his hand, the players have earned the Saruman`s Voice burden card. If any player has 3 or more cards in his hand, the first player has earned the Palantír of Orthanc boon card. Add the earned cards to the Campaign Pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "`You have become a fool, Saruman, and yet pitiable. You might still have turned away from folly and evil, and have been of service. But you choose to stay and gnaw the ends of your old plots. Stay then! But I warn you, you will not easily come out again. Not unless the dark hands of the East stretch out to take you.`\r\n-Gandalf, The Two Towers"
+            },
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 81,
+            "Quantity": 1,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

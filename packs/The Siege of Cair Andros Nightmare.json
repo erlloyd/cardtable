@@ -1,0 +1,324 @@
+{
+    "Name": "The Siege of Cair Andros Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Siege of Cair Andros Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Siege-of-Cair-Andros-Nightmare/The-Siege-of-Cair-Andros-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nUntil the end of the game, player cards in the victory display do not contribute their victory points."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Much must be risked in war,` said Denethor. `Cair Andros is manned and no more can be sent so far.` -The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Siege of Cair Andros scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Southron Mercenaries\n2x Orc Arsonists\n2x Orc Rabble\n3x Orc Arbalesters\n1x The Power of Mordor\n2x Scourge of Mordor\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Siege of Cair Andros encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Siege of Cair Andros Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Southron Mounted Archer",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Siege-of-Cair-Andros-Nightmare/Southron-Mounted-Archer.jpg",
+                "Stats": {
+                    "EngagementCost": "45",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [
+                    "Archery 5."
+                ],
+                "Text": [
+                    "Damage from each round`s achery total may be assigned to Battleground locations, as well as characters."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Siege of Cair Andros Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Siege of Cair Andros Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Dleoblack",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Saboteur",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Siege-of-Cair-Andros-Nightmare/Orc-Saboteur.jpg",
+                "Stats": {
+                    "EngagementCost": "21",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Damage dealt by Orc Saboteur`s attacks must be dealt to a Battleground location in play, if able."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, deal 2 damage to a Battleground location in play.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Siege of Cair Andros Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Siege of Cair Andros Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Ravager",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Siege-of-Cair-Andros-Nightmare/Orc-Ravager.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Orc Ravager is dealt a shadow card, it gets +2 Defense until the end of the phase."
+                ],
+                "Shadow": "Shadow: Exhaust a character you control. Deal attacking enemy another shadow card.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Siege of Cair Andros Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Siege of Cair Andros Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 4,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Besieged Courtyard",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Siege-of-Cair-Andros-Nightmare/Besieged-Courtyard.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Cair Andros.",
+                    "Battleground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If Besieged Courtyard has 5 or more damage, discard it and exhaust each ready character."
+                ],
+                "Shadow": "Shadow: Choose one: either attacking enemy makes an additional attack after this one, or deal 10 damage to a Battleground location.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Siege of Cair Andros Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Siege of Cair Andros Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Wibben",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Walls of Cair Andros",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Siege-of-Cair-Andros-Nightmare/Walls-of-Cair-Andros.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Cair Andros.",
+                    "Battleground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If Walls of Cair Andros has 4 or more damage, discard it and each player must assign 4 damage amoung characters he controls."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +X, where X is the amount of damage on the active location.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Siege of Cair Andros Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Siege of Cair Andros Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Anduin Wharf",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Siege-of-Cair-Andros-Nightmare/Anduin-Wharf.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Cair Andros.",
+                    "Battleground.",
+                    "Riverland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If Anduin Wharf has 6 or more damage, discard it and reveal 2 cards from the top of the encounter deck.",
+                    "While Anduin Wharf is the active location, allies cost 1 additional matching resource to play from hand."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Siege of Cair Andros Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Siege of Cair Andros Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Wibben",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ruin and Wroth",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Siege-of-Cair-Andros-Nightmare/Ruin-and-Wroth.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "When Revealed: Deal 2 shadow cards to each enemy in play. Deal 2 damage to each Battleground location in play."
+                ],
+                "Shadow": "Shadow: Discard an attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Siege of Cair Andros Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Siege of Cair Andros Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Julian Kok",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

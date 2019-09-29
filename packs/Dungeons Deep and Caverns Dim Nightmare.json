@@ -1,0 +1,309 @@
+{
+    "Name": "Dungeons Deep and Caverns Dim Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Dungeons Deep and Caverns Dim Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dungeons-Deep-and-Caverns-Dim-Nightmare/Dungeons-Deep-and-Caverns-Dim-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nGollum cannot take damage.\n\nSetup: Search the encounter deck for The Lower Gate and set it aside, out of play.\n\nForced: When stage 3B is revealed, add The Lower Gate to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Dungeons Deep and Caverns Dim scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Goblin Miners\n3x Goblin Axeman\n3x The Goblins` Caves\n3x Grip, grab! Pinch, nab!\n1x Not fair! Not fair!\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Dungeons Deep and Caverns Dim encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Dungeons Deep and Caverns Dim Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Lower Gate",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dungeons-Deep-and-Caverns-Dim-Nightmare/The-Lower-Gate.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "8"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "No more than 4 progress can be placed on the current quest each round.\n\nCreature enemies get +1 Attack.\n\nGoblin enemies get +1 Defense."
+                ],
+                "Shadow": null,
+                "FlavorText": "It was still ajar, but a goblin had pushed it nearly to. Bilbo struggled but he could not move it. -The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Dungeons Deep and Caverns Dim Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Dungeons Deep and Caverns Dim Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Nicholas Gregory",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wicked Wolf",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dungeons-Deep-and-Caverns-Dim-Nightmare/Wicked-Wolf.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "4",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: If Wicked Wolf is dealt a shadow card with a riddle, the defending player must exhaust a character he controls."
+                ],
+                "Shadow": "Shadow: Return attacking enemy to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Dungeons Deep and Caverns Dim Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Dungeons Deep and Caverns Dim Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "JB Casacop",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lower Gate Sentries",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dungeons-Deep-and-Caverns-Dim-Nightmare/Lower-Gate-Sentries.jpg",
+                "Stats": {
+                    "EngagementCost": "15",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "4",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Bilbo`s Magic Ring does not ready during the refresh phase."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. (+3 Attack instead if Bilbo`s Magic Ring is exhausted.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Dungeons Deep and Caverns Dim Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Dungeons Deep and Caverns Dim Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pine Slopes",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dungeons-Deep-and-Caverns-Dim-Nightmare/Pine-Slopes.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: Each time a Baggins resource is spent or discarded, raise each player`s threat by 1."
+                ],
+                "Shadow": "Shadow: Deal attacking enemy 2 additional shadow cards for this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Dungeons Deep and Caverns Dim Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Dungeons Deep and Caverns Dim Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Alyn Spiller",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fallen Stones",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dungeons-Deep-and-Caverns-Dim-Nightmare/Fallen-Stones.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Travel: Deal 3 damage to each ready character. The first player may spend up to 3 Baggins resources to reduce the damage dealt to each character by 1 for each Baggins resource spent.\n\nRiddle: The first player names a card title, shuffles his deck, and discards the top 5 cards. For each card that matches, place 1 progress on stage 2."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Dungeons Deep and Caverns Dim Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Dungeons Deep and Caverns Dim Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Where Isss It?",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dungeons-Deep-and-Caverns-Dim-Nightmare/Where-Isss-It.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Discard 2 resources from Bilbo Baggins`s resource pool, or Gollum makes an attack against Bilbo Baggins.\n\nRiddle: The first player names a sphere, a cost, and a card type, shuffles his deck, and discards the top 3 cards. For each card that matches all three items, place 1 progress on stage 2."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Dungeons Deep and Caverns Dim Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Dungeons Deep and Caverns Dim Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "We Hates It!",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dungeons-Deep-and-Caverns-Dim-Nightmare/We-Hates-It.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach We Hates Is! to Gollum. (Counts as a Condition attachment with the text: `If the players are on stage 3, Gollum gets +2 Attack.`)",
+                    "Riddle: The first player names a Trait, shuffles his deck, and discards the top card. For each card that has at least 1 matching Trait, place 1 progress on stage 2."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Dungeons Deep and Caverns Dim Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Dungeons Deep and Caverns Dim Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

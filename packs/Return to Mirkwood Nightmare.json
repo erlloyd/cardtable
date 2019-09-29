@@ -1,0 +1,353 @@
+{
+    "Name": "Return to Mirkwood Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Return to Mirkwood Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood-Nightmare/Return-to-Mirkwood-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Forced: At the beginning of the quest phase, the player who is guarding Gollum must either exhaust a hero he controls or resolve the `when revealed` effect of the topmost Tantrum card in the encounter discard pile.",
+                    "Forced: When Stage 4A is revealed, search the encounter deck and discard pile for 1 copy of Attercop, Attercop and add it to the staging area, if able. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Return to Mirkwood scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Woodman`s Glade\n3x Wood Elf Path\n3x Mountains of Mirkwood\n2x Goblin Sniper\n1x Marsh Adder\n2x Wargs\n2x Despair\n2x The Brown Lands\n2x The East Bight\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Return to Mirkwood encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Return to Mirkwood Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ambushing Orcs",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood-Nightmare/Ambushing-Orcs.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "7"
+                },
+                "Traits": [
+                    "Mordor.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Ambushing Orcs is dealt a shadow card that targets the player guarding Gollum, that shadow card also targets each other player"
+                ],
+                "Shadow": null,
+                "FlavorText": "`It was that very night of summer, yet moonless and starless, that Orcs came on us at unawares.` -Legolas, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pursuing Warg-rider",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood-Nightmare/Pursuing-Warg-rider.jpg",
+                "Stats": {
+                    "EngagementCost": "48",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot be optionally engaged.",
+                    "Forced: After the player guarding Gollum changes, Pursuing Warg-rider engages the player guarding Gollum and makes an immediate attack against that player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 2,
+            "Artist": "Rick Price",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Web-spinner",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood-Nightmare/Web-spinner.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Spider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The player guarding Gollum must either exhaust a hero he controls or Web-spinner gains surge."
+                ],
+                "Shadow": "Shadow: The player guarding Gollum must exhaust a character he controls.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Deceptive Path",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood-Nightmare/Deceptive-Path.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "1"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Progress cannot be placed on Deceptive Path while it is in the staging area.\n\nForced: After Deceptive Path becomes the active location, shuffle the encounter discard pile into the encounter deck and discard cards from the top of the encounter deck until a location is discarded. Reveal that location and make it the active location. Then, discard Deceptive Path."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Web-wall",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood-Nightmare/Web-wall.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Reveal the topmost Spider enemy in the encounter discard pile and add it to the staging area."
+                ],
+                "Shadow": "Shadow: The player guarding Gollum must discard all resources from each of his heroes` resource pools.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Isolation",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood-Nightmare/Isolation.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach Isolation to the current quest. (Counts as a Condition attachment with the text: `All characters lost the ranged and sentinel keywords. The player guarding Gollum cannot choose a new player to guard Gollum.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": "And he was miserable, alone, lost. -The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Befouled Equipment",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood-Nightmare/Befouled-Equipment.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Tantrum."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Discard all attachments controlled by the player guarding Gollum. Then remove all cards in that player`s discard pile from the game. If no attachments are discarded as a result of this effect, Befouled Equipment gains surge."
+                ],
+                "Shadow": "Shadow: Discard all attachments controlled by the player guarding Gollum.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Ed Mattinian",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wickedness and Mischief",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood-Nightmare/Wickedness-and-Mischief.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The player guarding Gollum must either reveal the topmost Tantrum card in the encounter discard pile, or reveal 2 additional encounter cards from the encounter deck."
+                ],
+                "Shadow": "Shadow: Deal the topmost Tantrum card in the encounter discard pile as a new shadow card for this attack, if able.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Gabriel Verdon",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

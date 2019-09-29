@@ -1,0 +1,316 @@
+{
+    "Name": "The Dunland Trap Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Dunland Trap Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap-Nightmare/The-Dunland-Trap-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I hear them,` said Éomer; `but they are only the screams of birds and the bellowing of beasts to my ears.`\r\n-The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Dunland Trap scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n4x Boar Clan Warrior\n4x Hithaeglir Stream\n3x Plains of Enedwaith\n1x Dunlending Ambush\n1x Frenzied Attack\n1x Low on Provisions\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Dunland Trap encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Dunland Trap Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Boar Clan Ambusher",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap-Nightmare/Boar-Clan-Ambusher.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dunland.",
+                    "Boar Clan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Boar Clan Ambusher attacks and destroys a character, discard a random card from your hand."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, discard a random card from your hand.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Jessica Savard",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Boar Clan Skirmisher",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap-Nightmare/Boar-Clan-Skirmisher.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Dunland.",
+                    "Boar Clan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After the engaged player draws any number of cards, deal 1 damage to a hero he controls."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to a hero you control (2 damage instead if undefended).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 4,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Plains of Dunland",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap-Nightmare/Plains-of-Dunland.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Enedwaith.",
+                    "Plains."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Whiles Plains of Dunland is in the staging area, each Dunland enemy gets -20 engagement cost and cannot be optionally engaged.",
+                    "Travel: The first player engages the highest Attack enemy in the staging area to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Munuv Dûv River",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap-Nightmare/Munuv-Dûv-River.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Enedwaith.",
+                    "Hills.",
+                    "River."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Munuv Dûv River is in the staging area, it gainst: `Forced: After a player draws any number of cards, he deals 1 shadow card to an enemy engaged with him.`"
+                ],
+                "Shadow": "Shadow: Raise your threat by 1 for each enemy engaged with you.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hithaeglir Woods",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap-Nightmare/Hithaeglir-Woods.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Enedwaith.",
+                    "Forest.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Hithaeglir Woods is in the staging area, each Dunland enemy in the staging area cannot take damage.",
+                    "Travel: Deal each Dunland enemy a shadow card to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Boar Clan Assault",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap-Nightmare/Boar-Clan-Assault.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each engaged enemy makes an immediate attack. If no attacks are made this way, Boar Clan Assault gains surge."
+                ],
+                "Shadow": "Shadow: Each enemy engaged with you gets +1 Attack until the end of the phase.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Stalked by Dunlendings",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap-Nightmare/Stalked-by-Dunlendings.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player draws 1 card. Until the end of the round, add X Threat to the total Threat in the staging area. X is the number of card in the first player`s hand."
+                ],
+                "Shadow": "Shadow: Put the topmost enemy in the discard pile into play engaged with you and deal it a shadow card.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

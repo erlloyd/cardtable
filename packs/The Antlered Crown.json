@@ -1,0 +1,951 @@
+{
+    "Name": "The Antlered Crown",
+    "Cycle": "The Ring-maker",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Treebeard",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Treebeard.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have restricted attachments. Treebeard enters play exhausted and collects 1 resource each resource phase. These resources can be used to pay for Ent cards played from your hand.",
+                    "Action: Pay 2 resources from Treebeard`s pool to ready an Ent character."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 146,
+            "Quantity": 3,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Booming Ent",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Booming-Ent.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "0",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have restricted attachments. Enters play exhausted.",
+                    "Booming Ent gets +1 Attack for each damaged Ent character you control."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...a man that hacks once at an Ent never gets a chance of a second blow.` -Merry, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 141,
+            "Quantity": 3,
+            "Artist": "Jarreau Wimberly",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Captain of Gondor",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Captain-of-Gondor.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Warrior hero.",
+                    "Response: After you optionally engage an enemy, exhaust Captain of Gondor to give attached hero +1 Attack and +1 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Boromir it was that drove the enemy at last back from this western shore...` -Beregond, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 140,
+            "Quantity": 3,
+            "Artist": "Jarreau Wimberly",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Erkenbrand",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Erkenbrand.jpg",
+                "Stats": {
+                    "ThreatCost": "10",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "While Erkenbrand is defending, he gains: `Response: Deal 1 damage to Erkenbrand to cancel a shadow effect just triggered.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "Down from the hills leaped Erkenbrand, lord of Westfold. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 137,
+            "Quantity": 1,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Warden of Helm's Deep",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Warden-of-Helm's-Deep.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "0",
+                    "Attack": "1",
+                    "Defense": "3",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": "They now learned to their joy that Erkenbrand had left many men to hold Helm`s Gate, and more had since escaped thither. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 138,
+            "Quantity": 3,
+            "Artist": "Jarreau Wimberly",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Day's Rising",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/The-Day's-Rising.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero with sentinel.",
+                    "Response: After attached hero defends against an attack and takes no damage while defending that attack, exhaust Day`s Rising to add 1 resource to the attached hero`s resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "Out of doubt, out of dark to the day`s rising\r\nI came singing in the sun, sword unsheathing.\r\n-Éomer, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 139,
+            "Quantity": 3,
+            "Artist": "Jarreau Wimberly",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Waters of Nimrodel",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Waters-of-Nimrodel.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 3."
+                ],
+                "Text": [
+                    "Action: Heal all damage on each character in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "For a moment Frodo stood near the brink and let the water flow over his tired feet. It was cold but its touch was clean, and as he went on and it mounted to his knees, he felt that the strain of travel and all weariness was washed from his limbs. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 145,
+            "Quantity": 3,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ride Them Down",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Ride-Them-Down.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Quest Action: Choose a non-unique enemy in the staging area. Until the end of the phase, progress that would be placed on the quest from questing successfully is instead assigned as damage to the chosen enemy. (Progress must still be placed on any active location first.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "Like thunder they broke upon the enemy... -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 142,
+            "Quantity": 3,
+            "Artist": "Emile Denis",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Shadows Give Way",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Shadows-Give-Way.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You must use resources from 3 different heroes` pools to pay for this card.",
+                    "Action: Discard each shadow card from each enemy in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "At that moment he caught a flash of white and silver coming from the North, like a small star down on the dusky fields. -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 143,
+            "Quantity": 3,
+            "Artist": "Jordy Lakiere",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Don't Be Hasty!",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Don't-Be-Hasty.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: When an encounter card is revealed but before resolving any of that card`s keywords or `when revealed` effects, choose a character comited to the quest. Ready that character and remove it from the quest."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Don`t be hasty, that is my motto.` -Treebeard, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 144,
+            "Quantity": 3,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Battle for Dunland",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Battle-for-Dunland-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Time 3."
+                ],
+                "Text": [
+                    "Setup: The first player takes control of Chief Turch. Set Raven Chief and Raven Chief`s Camp aside, out of play. Reveal 1 copy of Dunland Battlefield and make it the active location. Reveal 1 copy of Raven War-camp and add it to the staging area. Create the Raven deck (see insert) and set it next to the quest deck. Each player chooses 1 different enemy from the Raven deck and adds it to the staging area. Shuffle the encounter deck and Raven deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After the last time counter is removed from this stage, remove 1 time counter from each location in play. Place 3 time counters on this stage."
+                ],
+                "Shadow": null,
+                "FlavorText": "On your return journey to Isengard, you find war in Dunland. The Raven Clan has refused the Boar`s claim to The Antlered Crown, and chief Turch asks you to join his Clan as they march to battle. Seeing an opportunity to earn Saruman the friendship of a unified Dunland, you agree to join forces and fight..."
+            },
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 147,
+            "Quantity": 1,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Raven Clan",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/The-Raven-Clan-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Time 3."
+                ],
+                "Text": [
+                    "When Revealed: Shuffle the Raven deck discard pile into the Raven deck. Then, starting with the first player, each player takes the top card of the Raven deck and adds it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "Chief Turch`s goal is to defeat the Raven Clan before they can marshal their full strength, but Dunland is a vast country and there is much ground to cover. The longer it takes to subdue the enemy, the more time they have to gather..."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After the last time counter is removed from this stage, reveal the top card of the Raven deck and add it to the staging area. Place 3 time counters on this stage.",
+                    "Each location in the staging area gets +2 quest points."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 148,
+            "Quantity": 1,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Last Stage",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/The-Last-Stage-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Time 2."
+                ],
+                "Text": [
+                    "When Revealed: Add Raven Chief and Raven Chief`s Camp to the staging area. Take the top X cards from the Raven deck and add them to the staging area. X is the number of players minus 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "The warriors of the Raven Clan won`t stop figting as long as their leader spurs them on. You must find the Raven Chief and defeat him in order to break the spirit of his men and bring and end to this conflict..."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After the last time counter is removed from this stage, each engaged enemy makes an attack. Place 2 time counter on this stage.",
+                    "At the end of the round, if Raven Chief is in the victory display, the players win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 149,
+            "Quantity": 1,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Chief Turch",
+            "IsUnique": true,
+            "CardType": "Objective_Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Chief-Turch.jpg",
+                "Stats": {
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dunland.",
+                    "Boar Clan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The first player gains control of Chief Turch.",
+                    "Immune to player card effects. Chief Turch does not exhaust to defend.",
+                    "If Chief Tuch leaves play, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 150,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raven Chief",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Raven-Chief.jpg",
+                "Stats": {
+                    "EngagementCost": "15",
+                    "Threat": "4",
+                    "Attack": "5",
+                    "Defense": "5",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Dunland.",
+                    "Raven Clan."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Cannot have attachments. While Raven Chief`s Camp is in play, Raven Chief cannot be damaged.",
+                    "Forced: When Raven Chief attacks, remove 1 time counter from the active location, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 151,
+            "Quantity": 1,
+            "Artist": "Scott Murphy",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raven Chief's Camp",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Raven-Chief's-Camp.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "9"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [
+                    "Time 3.",
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Forced: After the last time counter is removed from this location, exhaust each damaged character. Place 3 time counters on this location."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 152,
+            "Quantity": 1,
+            "Artist": "Victor Garcia",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raven Warrior",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Raven-Warrior.jpg",
+                "Stats": {
+                    "EngagementCost": "36",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dunland.",
+                    "Raven Clan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Raven Warrior engages a player. remove X time counters from locations in play. X is the number of cards in engaged player`s hand."
+                ],
+                "Shadow": "Shadow: Defending player discards an attachment he controls.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown",
+                "EasyModeQuantity": 3,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 153,
+            "Quantity": 4,
+            "Artist": "Nicholas Gregory",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raven Skirmisher",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Raven-Skirmisher.jpg",
+                "Stats": {
+                    "EngagementCost": "26",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dunland.",
+                    "Raven Clan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either remove 1 time counter from the active location, or reveal an additional encounter card."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +X Attack, where X is the Time X value on the active location.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 154,
+            "Quantity": 3,
+            "Artist": "Nicholas Gregory",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raven War-camp",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Raven-War-camp.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [
+                    "Time 3."
+                ],
+                "Text": [
+                    "Forced: After the last time counter is removed from this location, starting with the first player, each player draws the top card of the Raven deck and puts it into play engaged with him."
+                ],
+                "Shadow": null,
+                "FlavorText": "All the camp was soon astir. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 155,
+            "Quantity": 4,
+            "Artist": "Ben Zweifel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raven Village",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Raven-Village.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [
+                    "Time 2."
+                ],
+                "Text": [
+                    "Forced: After the last time counter is removed from this location, reveal the top card of the Raven deck and add it to the staging area."
+                ],
+                "Shadow": "Shadow: Deal attacking enemy 2 additional shadow cards from the Raven deck.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 156,
+            "Quantity": 3,
+            "Artist": "Lino Drieghe",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dunland Battlefield",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Dunland-Battlefield.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [
+                    "Time 3."
+                ],
+                "Text": [
+                    "Forced: After the last time counter is removed from this location, each player assigns X damage among characters he controls, where X is the number of cards in his hand."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to the defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 157,
+            "Quantity": 3,
+            "Artist": "Victor Garcia",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raven Country",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Raven-Country.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [
+                    "Time 4."
+                ],
+                "Text": [
+                    "Forced: After the last time counter is removed from this location, each player raises his threat by the number of cards in his hand."
+                ],
+                "Shadow": "Shadow: Defending player assigns X damage among characters he controls. X is the Time X value on the active location.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 158,
+            "Quantity": 2,
+            "Artist": "Victor Garcia",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raising the Cry",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Raising-the-Cry.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove 1 time counter from each location in play. Place X time counters on each location in play with no time counters on it. X is the `Time X` value on that location. If there are not locations in the staging area, Raising the Cry gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": "...a cry went up into the shuddering air...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 159,
+            "Quantity": 3,
+            "Artist": "Nicholas Gregory",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fierce Folk",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Fierce-Folk.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 3."
+                ],
+                "Text": [
+                    "When Revealed: Each player draws 3 cards. Until the end of the round, players cannot play events."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, remove 1 time counter from the active location.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 160,
+            "Quantity": 2,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Driven Back",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Driven-Back.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove all progress from each location in the staging area. Increase the total Threat in the staging area by 1 for each progress removed this way. If no progress was removed by this effect, Driven Back gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We are overmastered.` -Ceorl, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 161,
+            "Quantity": 2,
+            "Artist": "Igor Kieryluk",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

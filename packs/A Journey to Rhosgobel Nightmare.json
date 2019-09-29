@@ -1,0 +1,314 @@
+{
+    "Name": "A Journey to Rhosgobel Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "A Journey to Rhosgobel Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Journey-to-Rhosgobel-Nightmare/A-Journey-to-Rhosgobel-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nSetup: Search the encounter deck for 1 copy of Goblin Eagle-hunter and add it to the staging area. Then shuffle the encounter deck.\n\nForced: The first Creature enemy revealed during each quest phase gains surge.\n\nResponse: After an Athelas card is placed in the discard pile, you may shuffle it into the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for A Journey to Rhosgobel scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n4x Forest Grove\n1x Exhaustion\n2x Swarming Insects\n1x Festering Wounds\n3x Mountains of Mirkwood\n1x Chieftan Ufthak\n2x Dol Guldur Beastmaster\n1x Driven by Shadow\n1x The Necromancer`s Reach\n2x Necromancer`s Pass\n2x Enchanted Stream\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard A Journey to Rhosgobel encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "A Journey to Rhosgobel Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Goblin Eagle-hunter",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Journey-to-Rhosgobel-Nightmare/Goblin-Eagle-hunter.jpg",
+                "Stats": {
+                    "EngagementCost": "48",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Goblin Eagle-hunter gets +1 hit point per player.",
+                    "Forced: At the end of the combat phase, deal 1 damage to Wilyador"
+                ],
+                "Shadow": "Shadow: If Wilyador has 10 or less damage on him, deal 2 damage to Wilyador.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Journey to Rhosgobel Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Journey to Rhosgobel Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Treetop Bird-eater",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Journey-to-Rhosgobel-Nightmare/Treetop-Bird-eater.jpg",
+                "Stats": {
+                    "EngagementCost": "11",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Spider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Treetop Bird-eater is engaged with a player, characters controlled by that player cannot be healed.\n\nForced: At the beginning of the encounter phase, Treetop Bird-eater engages the player who controls Wilyador (regardless of threat)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Journey to Rhosgobel Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Journey to Rhosgobel Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 2,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dark-wood Grove",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Journey-to-Rhosgobel-Nightmare/Dark-wood-Grove.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Dark-wood Grove gets +1 Threat and +1 quest point for each Athelas card in play."
+                ],
+                "Shadow": "Shadow: If defending player controls at least 1 Athelas card, attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Journey to Rhosgobel Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Journey to Rhosgobel Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Trudi Castle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Labyrinthine Woods",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Journey-to-Rhosgobel-Nightmare/Labyrinthine-Woods.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Labyrinthine Woods is in the staging area, Creature enemies get +1 Threat and +1 Attack."
+                ],
+                "Shadow": "Shadow: After this attack, attacking enemy engages the next player and makes an immediate attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Journey to Rhosgobel Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Journey to Rhosgobel Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Trudi Castle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pitch-dark Thicket",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Journey-to-Rhosgobel-Nightmare/Pitch-dark-Thicket.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Pitch-dark Thicket is the active location, all characters lose the ranged keyword."
+                ],
+                "Shadow": "Shadow: Attacking enemy cannot be attacked by characters with the ranged keyword until the end of the phase.",
+                "FlavorText": "...so black that you really could see nothing. -The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "A Journey to Rhosgobel Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Journey to Rhosgobel Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Shot from the Sky",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Journey-to-Rhosgobel-Nightmare/Shot-from-the-Sky.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to an Eagle character (Counts as a Condition attachment with the text: `Limit 1 per character. Attached character loses the Eagle trait, and takes 1 damage each time it readies.`)"
+                ],
+                "Shadow": "Shadow: Resolve the `when revealed` effect of Shot from the Sky.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Journey to Rhosgobel Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Journey to Rhosgobel Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Gabriel Verdon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Noxious Supplies",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Journey-to-Rhosgobel-Nightmare/Noxious-Supplies.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to Wilyador. (Counts as a Condition attachment with the text: `Forced: When attached character is healed by a card effect other than Athelas, the amount of damage healed is reduced to 1. Then, discard Noxious Supplies.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Journey to Rhosgobel Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Journey to Rhosgobel Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Sandra Duchiewicz",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

@@ -1,0 +1,908 @@
+{
+    "Name": "The Dunland Trap",
+    "Cycle": "The Ring-maker",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Naith Guide",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Naith-Guide.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Naith Guide enters play, choose a hero. That hero does not exhaust to quest this round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...I shall lead you well...` -Haldir, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Tree People",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/The-Tree-People.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Return a Silvan ally you control to your hand to search the top 5 cards of your deck for a Silvan ally. Put that ally into play and shuffle the other cards back into your deck. You can only play 1 copy of The Tree People each phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "No folk could they see, nor hear any feet upon the paths; but there were many voices, about them, and in the air above. –The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Stacey Diana Clark",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Celeborn",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Celeborn.jpg",
+                "Stats": {
+                    "ThreatCost": "11",
+                    "Willpower": "3",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After a Silvan ally enters play, that ally gets +1 Willpower, +1 Attack and +1 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...the lord of the Galadhrim is accounted wisest of the Elves of Middle-earth, and a giver of gifts beyond the power of kings.` -Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ithilien Lookout",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Ithilien-Lookout.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Ranger."
+                ],
+                "Keywords": [
+                    "Secrecy 2."
+                ],
+                "Text": [
+                    "Response: After Ithilien Lookout enters play, look at the top card of the encounter deck. If it is an enemy, you may discard it."
+                ],
+                "Shadow": null,
+                "FlavorText": "All had swords at their sides... –The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Firefoot",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Firefoot.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Mount."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Tactics or Rohan hero.",
+                    "Attached hero gets +1 Attack (+2 Attack instead if attached hero is Éomer).",
+                    "Response: After attached hero attacks alone, exhaust Firefoot to choose a non-unique enemy engaged with you. Excess damage dealt by this attack is assigned to the chosen enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Nora Brisotti",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The White Council",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/The-White-Council.jpg",
+                "Stats": {
+                    "ResourceCost": "X"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "X is the number of players in the game.",
+                    "Action: Starting with the first player, each player chooses 1 different option: ready a hero he controls, add 1 resource to the resource pool of a hero he controls, draw 1 card, or shuffle 1 card from his discard pile into his deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I it was who first summoned the White Council.`\r\n–Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Sacha Diener",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Blue Mountain Trader",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Blue-Mountain-Trader.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose another player. That player gains control of Blue Mountain Trader. Then, that player moves 1 resource from the resource pool of a hero he controls to the resource pool of a hero you control, or Blue Mountain Trader is discarded. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Sara Betsy",
+            "HasErrata": true,
+            "Categories": null
+        },
+        {
+            "Title": "Close Call",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Close-Call.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Doomed X."
+                ],
+                "Text": [
+                    "Response: Cancel X damage just dealt to a hero."
+                ],
+                "Shadow": null,
+                "FlavorText": "`That spear-thrust would have skewered a wild boar!`–Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Swift and Silent",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Swift-and-Silent.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Ready a hero you control. Then, if your threat is 20 or less and this is the first time you played a copy of Swift and Silent this round, return this card to your hand instead of discarding it."
+                ],
+                "Shadow": null,
+                "FlavorText": "A marching host of Elves had come up silently...–The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Raymond Bonilla",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Fall of Gil-Galad",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/The-Fall-of-Gil-Galad.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Limit 1 per deck. Attach to a hero.",
+                    "Response: When attached hero is destroyed, add The Fall of Gil-galad to the victory display to reduce your threat by X, where X is the attached hero`s threat cost."
+                ],
+                "Shadow": null,
+                "FlavorText": "...for into darkness fell his star\nin Mordor where the shadows are.\n–The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Arden Beckwith",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Road to Tharbad",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/The-Road-to-Tharbad-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set Chief Turch and Munuv Dûv Ravine aside, out of play. Make Old South Road the active location. Each player searches the encounter deck for a Boar Clan enemy and puts it into play engaged with him. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "You are following the Old South Road from Isengard to Tharbad on an errand for Saruman when you are attacked by Wild Men of Dunland."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Time 2. \n\nForced: After the last time counter is removed from this stage, each player discards his hand and draws 2 cards. Place 2 time counters on this stage."
+                ],
+                "Shadow": null,
+                "FlavorText": "Already weary from a full day of travel, you struggle to hold off the ferocious Dunlending attack. You must rally your companions and drive back the enemy, or you will be defeated."
+            },
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 11,
+            "Quantity": 1,
+            "Artist": "Sacha Diener",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "A Well Laid Trap",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/A-Well-Laid-Trap-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Make Munuv Dûv Ravine the active location (returning any previous active location to the staging area). Each player discards each Item and each Mount attachment he controls. Each player chooses 1 ally he controls and discards each other ally he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "You`ve driven back the attackers, but some of them seized your bags during the fight and took them as they fled. Inside one of those bags is the gold that Saruman gave you for your quest, so you pursue the thieves deeper into Dunland."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player searches the encounter deck and discard pile for a Boar Clan enemy and puts it into play engaged with him. Shuffle the encounter deck. Each player shuffles his discard pile into his draw deck and draws 1 card.\n\nForced: At the end of the combat phase, advance to stage 3A."
+                ],
+                "Shadow": null,
+                "FlavorText": "In your zeal to recover the gold, you have been led into an ambush."
+            },
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 12,
+            "Quantity": 1,
+            "Artist": "Sacha Diener",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "No Way Out",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/No-Way-Out-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Put Chief Turch into play, engaged with the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Dunlendings are more clever than you thought: using your gear as bait, they have lured you into a deep ravine where you are surrounded. A large warrior wearing a boar mantle strides forward and signals the attack. With no hope of escape, your only option is to fight..."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Time X. X is 5 times the number of players in the game.\n\nIf a hero is destroyed at this stage, the players lose the game.\n\nForced: After the last time counter is removed from this stage, the players make engagement checks. Then, each engaged enemy makes an attack. If no heroes are destroyed by these attacks, the players win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 13,
+            "Quantity": 1,
+            "Artist": "Silver Saaremäel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Chief Turch",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Chief-Turch.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dunland.",
+                    "Boar Clan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments. Cannot leave play.\nChief Turch engages the first player.\n\nForced: After an enemy engages a player, remove 1 time counter from the current quest."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 14,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Munuv Dûv Ravine",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Munuv-Dûv-Ravine.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Enedwaith.",
+                    "Hills.",
+                    "River."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Dunland enemies get +1 Attack and +1 Defense."
+                ],
+                "Shadow": null,
+                "FlavorText": "...beyond them the green and tangled valley ran up into the long ravine between the dark arms of the mountains.\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 15,
+            "Quantity": 1,
+            "Artist": "Dominique Peyronnet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Old South Road",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Old-South-Road.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Road."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Forced: At the end of the refresh phase, remove 1 time counter from the current quest."
+                ],
+                "Shadow": null,
+                "FlavorText": "After some miles, however, the road ceased to roll up and down... –The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 16,
+            "Quantity": 1,
+            "Artist": "David Lecossu",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Boar Clan Stalker",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Boar-Clan-Stalker.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "3",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dunland.",
+                    "Boar Clan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Boar Clan Stalker gets +1 Attack and +1 Defense for each resource token on it (limit + 4).\n                \nForced: After the engaged player draws any number of cards, put a resource token on Boar Clan Stalker"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 17,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Boar Clan Warrior",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Boar-Clan-Warrior.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Dunland.",
+                    "Boar Clan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After the engaged player draws any number of cards, deal Boar Clan Warrior a shadow card."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each shadow card on it.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 18,
+            "Quantity": 4,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hithaeglir Foothills",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Hithaeglir-Foothills.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Enedwaith.",
+                    "Hills."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "X is the number of resource tokens on this card.",
+                    "Forced: After a player draws any number of cards, place 1 resource token here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 19,
+            "Quantity": 2,
+            "Artist": "Michael Rasmussen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hills of Dunland",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Hills-of-Dunland.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Enedwaith.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Hills of Dunland is in the staging area, it gains: `Forced: After a player draws any number of cards, discard the top card of the encounter deck. If the discarded card is a Dunland enemy, put it into play engaged with that player. This ability does not stack with other copies of Hills of Dunland.`",
+                    "Travel: Each player draws a card to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 20,
+            "Quantity": 4,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Plains of Enedwaith",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Plains-of-Enedwaith.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Enedwaith.",
+                    "Plains."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Plains of Enedwaith is the active location, players do not draw a card during the resource phase."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+3 Attack instead if undefended).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 3,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hithaeglir Stream",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Hithaeglir-Stream.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Enedwaith.",
+                    "River."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Hithaeglir Stream is the active location, players draw 2 cards during the resource phase instead of 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "Shadow: Attacking enemy gets +1 Attack. Deal it an additional shadow card."
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 22,
+            "Quantity": 4,
+            "Artist": "Michael Rasmussen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Frenzied Attack",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Frenzied-Attack.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player draws a card. Each player discard each ally from his hand. If no allies were discarded this way, Frenzied Attack gains surge."
+                ],
+                "Shadow": "Shadow: Until the end of the round, attacking enemy cannot take damage.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 23,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dunlending Ambush",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Dunlending-Ambush.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to the active location. (Counts as a Condition attachment with the text: `Limit 1 per location. Forced: After attached location is explored, each player searches the encounter deck and discard pile for a Dunland enemy and puts it into play engaged with him. Shuffle the encounter deck.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": {
+                "EncounterSet": "The Dunland Trap",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 24,
+            "Quantity": 3,
+            "Artist": "Claudio Pozas",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

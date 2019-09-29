@@ -1,0 +1,427 @@
+{
+    "Name": "Across the Ettenmoors Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Across the Ettenmoors Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors-Nightmare/Across-the-Ettenmoors-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Forced: When resolving the `when revealed` effect on stage 2A or stage 3A, also discard cards from the top of the encounter deck until a location with the safe keyword is discarded. Attach that location to the newly revealed side quest, as a guarded objective."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I reached here at last by a long hard road, up the Hoarwell and through the Ettenmoors, and down from the north. It took me nearly fourteen days from Weathertop, for I could not ride among the rocks of the troll-fells, and Shadowfax departed.`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Across the Ettenmoors scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n1x Into the Ettenmoors\n2x Shrouded Hills\n3x No Rest\n2x Arador`s Bane\n1x Troll-fells\n2x Goblin Pursuer\n2x Cold from Angmar\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Across the Ettenmoors encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Across the Ettenmoors Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Into the Ettenmoors",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors-Nightmare/Into-the-Ettenmoors-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set aside each side quest and each location with the safe keyword. Reveal 1 of those side quests and 1 of those safe locations at random, adding them to the staging area with the safe location guarded by the side quest. Shuffle the remaining side quests and safe location into the encounter deck. Discard cards from the top of the encounter deck until X enemies are discarded, where X is the number of players in the game. Add the discarded enemies to the staging area. The first player gains control of Amarthiúl."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the beginning of the quest phase, if there are no encounter side quests in play, discard cards from the top of the encounter deck until a side quest is discarded, reveal it, and add it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "You have escaped from the prisons of Mount Gram, but you are not safe yet."
+            },
+            "CardSet": "Across the Ettenmoors Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Across the Ettenmoors Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hoarwell River Serpent",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors-Nightmare/Hoarwell-River-Serpent.jpg",
+                "Stats": {
+                    "EngagementCost": "38",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "As an additional cost to travel to a safe location, one player must engaged Hoarwell River Serpent.",
+                    "Forced: When you engage Hoarwell River Serpent, deal 1 damage to each damaged character you control."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Across the Ettenmoors Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Across the Ettenmoors Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Scavenging Stone-troll",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors-Nightmare/Scavenging-Stone-troll.jpg",
+                "Stats": {
+                    "EngagementCost": "42",
+                    "Threat": "1",
+                    "Attack": "7",
+                    "Defense": "2",
+                    "HitPoints": "14"
+                },
+                "Traits": [
+                    "Troll."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "You cannot travel to a safe location while Scavenging Stone-troll has no damage on it.",
+                    "While Scavenging Stone-troll is in the staging area, cards in each player`s discard pule cannot leave that discard pile."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Across the Ettenmoors Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Across the Ettenmoors Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Giant Beetle",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors-Nightmare/Giant-Beetle.jpg",
+                "Stats": {
+                    "EngagementCost": "14",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Insect."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Giant Beetle is engaged with a player, it gains: `As an additional cost to travel to a safe location, Giant Beetle makes an immediate attack against the engaged player.`",
+                    "Damaged characters cannot be declared as attackers or defenders against Giant Beetle."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Across the Ettenmoors Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Across the Ettenmoors Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rocky Foothills",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors-Nightmare/Rocky-Foothills.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Ettenmoors."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When face with the otpion to travel, the players must travel to Rocky Foothills, if able.",
+                    "Rocky Foothills gets +2 quest points for each quest in play."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each damage on the defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Across the Ettenmoors Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Across the Ettenmoors Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Vast Troll-fells",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors-Nightmare/Vast-Troll-fells.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Ettenmoors."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "As an additional cost to travel to a safe location, each player must spend 1 resource.",
+                    "Heroes cannot gain resources by card effects."
+                ],
+                "Shadow": "Shadow: If no progress was placed on a side quest this round, attacking enemy gets +4 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Across the Ettenmoors Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Across the Ettenmoors Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Crashing Thunder",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors-Nightmare/Crashing-Thunder.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Weather."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player assigns X damage among characters he controls, where X is the number of quests in play. Exhaust each damaged character in play."
+                ],
+                "Shadow": "Shadow: Shuffle each Weather cards from the encounter discard pile into the encounter deck.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Across the Ettenmoors Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Across the Ettenmoors Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "JB Casacop",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Barren and Desolate",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors-Nightmare/Barren-and-Desolate.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to a side quest. (Counts as a Condition attachment with the text: `Limit 1 per quest. While attached quest is the current quest, each character gets -1 Willpower.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Across the Ettenmoors Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Across the Ettenmoors Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Lucas Staniec",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Isolated",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors-Nightmare/Isolated.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge.",
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Players cannot draw cards by card effects.",
+                    "Forced: When this stage is defeated, each player draws 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": "Caught in a dense fog, you suddenly find yourself separated from your companions."
+            },
+            "Back": null,
+            "CardSet": "Across the Ettenmoors Nightmare",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 1,
+            "Artist": "Michele Frigo",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rescue from the Trolls",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors-Nightmare/Rescue-from-the-Trolls.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "When Revealed: Each player places the lowest-threat-cost hero he controls facedown underneath Rescue from the Trolls, out of play.",
+                    "Response: After a Troll enemy is destroyed, place 3 progress on Rescue from the Trolls.",
+                    "Forced: When Rescue from the Trolls is defeated, each player takes control of each of his heroes underneath it."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Across the Ettenmoors Nightmare",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 1,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

@@ -1,0 +1,316 @@
+{
+    "Name": "The Weather Hills Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Weather Hills Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Weather-Hills-Nightmare/The-Weather-Hills-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Setup: Shuffle each copy of Captive Villager and Rearguard Ambusher into the Orc deck.",
+                    "The players cannot win the game while a Captive Villager is guarded by an encounter card. If a Captive Villager leaves play, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "The land before them began to rise again, Away in the distance eastward they could not see a line of hills.\r\n-The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Weather Hills scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Cornered Orc\n3x Sheltered Valley\n1x Concealed Orc-camp\n1x Angmar Marauder\n2x Angmar Orc\n3x Ruins of Arnor\n2x Tragic Discovery\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Weather Hills encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Weather Hills Nightmare",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 1,
+            "Artist": "Juan Carlos Barquet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Captive Villager",
+            "IsUnique": false,
+            "CardType": "Objective_Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Weather-Hills-Nightmare/Captive-Villager.jpg",
+                "Stats": {
+                    "Willpower": "0",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Bree."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Captive Villager enters play, reveal the top card of the Orc deck and attach it to Captie Villager, guarding it.",
+                    "While Captive Villager is free of encounters, the first player gains control of it and is considered to have +5 threat while making engagement checks."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Weather Hills Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Weather Hills Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 12,
+            "Quantity": 4,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rearguard Ambusher",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Weather-Hills-Nightmare/Rearguard-Ambusher.jpg",
+                "Stats": {
+                    "EngagementCost": "17",
+                    "Threat": "1",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot be optionally engaged.",
+                    "Forced: After Rearguard Ambusher engages you, exhaust each damaged character you control."
+                ],
+                "Shadow": null,
+                "FlavorText": "His broad flat face was swart, his eyes were like coals, and his tongue was red; he wielded a great spear.\r\n-THe Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Weather Hills Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Weather Hills Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 13,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Angmar Raider",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Weather-Hills-Nightmare/Angmar-Raider.jpg",
+                "Stats": {
+                    "EngagementCost": "44",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After a character the engaged player controls is healed, Angmar Raider makes an immediate attack."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Defense until the end of the phase.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Weather Hills Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Weather Hills Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 14,
+            "Quantity": 2,
+            "Artist": "JB Casacop",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Weather-torn Valley",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Weather-Hills-Nightmare/Weather-torn-Valley.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Arnor.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Progress cannot be placed on Weather-torn Valley while it is in the staging area.",
+                    "While Weather-torn valley is active location, Weather cards cannot be canceled."
+                ],
+                "Shadow": null,
+                "FlavorText": "...suddenly a light came in the sky, and there was a noise of thunder.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Weather Hills Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Weather Hills Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 15,
+            "Quantity": 2,
+            "Artist": "Juan Carlos Barquet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ruined Watch-tower",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Weather-Hills-Nightmare/Ruined-Watch-tower.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Arnor.",
+                    "Ruins."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Ruined Watch-tower is in the staging area, it gains: `Forced: When an Orc enemy is revealed, each player must deal 1 damage to a character he controls.",
+                    "While Ruined Watch-tower is the active location, each enemy gets +3 Defense."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Weather Hills Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Weather Hills Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 16,
+            "Quantity": 2,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rain-washed Tracks",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Weather-Hills-Nightmare/Rain-washed-Tracks.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Weather."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either remove 1 resource token from the Mission objective, or add 8 to the total Threat in the staging area this phase."
+                ],
+                "Shadow": "Shadow: Either remove 1 resource token from the Mission objective, or attacking enemy gets +3 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Weather Hills Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Weather Hills Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 17,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Track the Orcs",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Weather-Hills-Nightmare/Track-the-Orcs.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Each enemy gets +10 enagement cost and cannot be optionally engaged.",
+                    "When Revealed: Reveal the top of card of the Orc deck (reveal the top 2 card instead if there are 3 or more players in the game)."
+                ],
+                "Shadow": null,
+                "FlavorText": "The weather makes the Orcs difficult to track. It requires all of your skill to read the signs in the rough terrain."
+            },
+            "Back": null,
+            "CardSet": "The Weather Hills Nightmare",
+            "EncounterInfo": null,
+            "Number": 18,
+            "Quantity": 1,
+            "Artist": "Arden Beckwith",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

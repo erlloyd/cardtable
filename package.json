@@ -1,0 +1,23 @@
+{
+  "name": "ringsteki-json-data-importer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts/import.js",
+  "scripts": {
+    "import": "node scripts/import.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ringsteki/ringsteki-json-data.git"
+  },
+  "author": "Eric Lloyd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ringsteki/ringsteki-json-data/issues"
+  },
+  "homepage": "https://github.com/ringsteki/ringsteki-json-data#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}

@@ -1,0 +1,273 @@
+{
+    "Name": "The Lonely Mountain Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Lonely Mountain Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lonely-Mountain-Nightmare/The-Lonely-Mountain-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nWhile there is at least 1 card stacked underneath The Lonely Mountain, the players cannot advance to stage 3.\n\nSmaug the Magnificent cannot take damage unless A Bare Patch is attached to him."
+                ],
+                "Shadow": null,
+                "FlavorText": "The dwarves were still passing the cup from hand to hand and talking delightedly of the recovery of their treasure, when suddenly a vast rumbling woke in the mountain underneath as if it was an old volcano that had map up its mind to start eruptions once again. -The Hobbit"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Lonely Mountain scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Dark Bats\n2x Fighting Among Friends\n3x Western Slopes\n2x Secret Entrance\n4x Belching Fire\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Lonely Moutain encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Lonely Mountain Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Erebor Bats",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lonely-Mountain-Nightmare/Erebor-Bats.jpg",
+                "Stats": {
+                    "EngagementCost": "15",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Foced: When Erebor Bats attacks, the defending player discards 1 random card from his hand.\n\nBurgle: The first player shuffles his deck and reveals the top card. He may discard 2 cards from his hand that match the card`s cost and type."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Lonely Mountain Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Lonely Mountain Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 4,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Secret Tunnel",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lonely-Mountain-Nightmare/Secret-Tunnel.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Foced: After a player fails a burgle attempt, each player raises his threat by 2.",
+                    "Travel: Exhaust Bilbo Baggins and spend 1 Baggins resource to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": "It was a red light steadily getting redder and redder. Also it was now undoubtedly hot in the tunnel. Wisps of vapour floated up and past him and he began to sweat.\r\n -The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Lonely Mountain Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Lonely Mountain Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Southern Spur",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lonely-Mountain-Nightmare/Southern-Spur.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Foced: At the end of the planning phase, each player who played at least 1 ally this phase must raise his threat by 1."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack. If this attack destroys a character, raise each player`s threat by 3.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Lonely Mountain Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Lonely Mountain Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Titus Lunter",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Front Gate",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lonely-Mountain-Nightmare/The-Front-Gate.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Foced: When the Front Gate is explored, each Dragon enemy in play makes an attack against the first player. (Deal and resolve a shadow card for this attack.)",
+                    "Burgle: The first player shuffles his deck and reveals the top card. He may discard 3 cards from his hand that match the revealed card`s cost."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Lonely Mountain Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Lonely Mountain Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Dragon's Ire",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lonely-Mountain-Nightmare/The-Dragon's-Ire.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: Each Dragon enemy in play makes an immediate attack against each player in turn order. Do not deal shadow cards for these attacks. For each character that is destroyed by one of these attacks, place 1 progress on each Dragon enemy in play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Lonely Mountain Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Lonely Mountain Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 4,
+            "Artist": "Anthony Feliciano",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lust for Treasure",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lonely-Mountain-Nightmare/Lust-for-Treasure.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: Each player raises his threat by 1 for each attachment attached to a character he controls.",
+                    "Burgle: The first player shuffles his deck and reveals the top card. He may discard 1 card from his hand that matches the revealed card`s sphere, type, and cost."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Lonely Mountain Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Lonely Mountain Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

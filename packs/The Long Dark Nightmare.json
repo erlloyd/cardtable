@@ -1,0 +1,320 @@
+{
+    "Name": "The Long Dark Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Long Dark Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark-Nightmare/The-Long-Dark-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nDurin`s Greaves gains surge.\n\nLost: The first player must choose and discard an ally in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "The world is grey, the mountains old,\nThe forge`s fire is ashen cold\nNo harp is wrung, no hammer falls:\nThe darkness dwells in Durin`s halls\nThe shadow lies upon his tomb\nIn Moria, in Khazad-dûm\n-Gimli, The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Long Dark scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n4x Goblin Follower\n1x Branching Paths\n3x Burning Low\n2x Stray Goblin\n2x Chance Encounter\n2x The Mountains` Roots\n1x Abandoned Mine\n2x Fatigue\n4x Goblin Sneak\n3x Rock Adder\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Long Dark encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Long Dark Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Goblin Stalker",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark-Nightmare/Goblin-Stalker.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "3",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [
+                    "PASS."
+                ],
+                "Text": [
+                    "Forced: When Goblin Stalker attacks, deal it 1 additional shadow card.\n\nForced: When Goblin Stalker is dealt a shadow card with `PASS` printed in its text box, it gets +2 Attack until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Long Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Long Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 4,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Trapdoor Spider",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark-Nightmare/Trapdoor-Spider.jpg",
+                "Stats": {
+                    "EngagementCost": "42",
+                    "Threat": "4",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Spider."
+                ],
+                "Keywords": [
+                    "PASS."
+                ],
+                "Text": [
+                    "Forced: If Trapdoor Spider damage a character, discard that character from play.\n\nLost: Trapdoor Spider engages the last player and makes an immediate attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Long Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Long Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sentinel of the Deep",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark-Nightmare/Sentinel-of-the-Deep.jpg",
+                "Stats": {
+                    "EngagementCost": "12",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Sentinel of the Deep is engaged with a player, that player cannot draw cards from card effects."
+                ],
+                "Shadow": "Shadow: Defending player must choose and trigger 1 `Lost:` effect in play.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Long Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Long Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Eastern Mines",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark-Nightmare/Eastern-Mines.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Travel: The first player must make a locate test to travel here. If this test is failed, return Eastern Mines to the staging area and trigger all `Lost:` effects in play."
+                ],
+                "Shadow": "Shadow: Defending player must choose and trigger 1 `Lost:` effect in play.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Long Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Long Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Alyn Spiller",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Bottomless Chasm",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark-Nightmare/Bottomless-Chasm.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Underground.",
+                    "Dark."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "For each point of progress that is placed on Bottomless Chasm, the players must choose and discard 1 card from a player`s hand, if able"
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, the defending player discards all cards in his hand.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Long Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Long Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Jake Bullock",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dreadful Deep",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark-Nightmare/Dreadful-Deep.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Starting with the first player, each player must choose and trigger a different `Lost:` effect in play."
+                ],
+                "Shadow": "Shadow: Make a locate test. If this test is failed, return attacking enemy to the staging area after this attack and trigger all `Lost:` effects in play.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Long Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Long Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Brian Valenzuela",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lost and Helpless",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark-Nightmare/Lost-and-Helpless.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to a hero. (Counts as a Condition attachment with the text: `Lost: Discard attached hero.`)"
+                ],
+                "Shadow": "Shadow: If you have no cards in your hand, discard defending character from play.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Long Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Long Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

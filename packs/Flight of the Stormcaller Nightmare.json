@@ -1,0 +1,307 @@
+{
+    "Name": "Flight of the Stormcaller Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Flight of the Stormcaller Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-of-the-Stormcaller-Nightmare/Flight-of-the-Stormcaller-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "While you are at the same stage as the Stormcaller, the main quest gets +X quest points, where X is the Stormcaller`s remaining hit points."
+                ],
+                "Shadow": null,
+                "FlavorText": "...the Sea became a word of fear among them, and a token of death, and they turned their faces away from the hills in the west.\r\n-The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Flight of the Stormcaller scenario.\\r\\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n2x Calm Waters\n2x Corsair Skiff\n2x Southron Sailor\n2x Serpent`s Blade\n1x Hidden Cove\n2x Jagged Reef\n\nThen shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Flight on the Stormcaller encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin.\n\n☸*: Some Cards in the Flight of the Stormcaller Nightmare Deck have Sailing Success symbols (☸) with an asterisk (*) next to them. This indicates that the card has a Forced effect which will trigger when the card is discarded during a sailing test."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Flight of the Stormcaller Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Federico Musetti",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raider of the Storm",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-of-the-Stormcaller-Nightmare/Raider-of-the-Storm.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "0",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Corsair."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Raider of the Storm is engaged with you, each Ship enemy engaged with you gets +1 Threat, +1 Attack, +1 Defense, and contributes its Threat to the total Threat in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flight of the Stormcaller Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flight of the Stormcaller Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 2,
+            "Artist": "Monztre",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Tide-runner",
+            "IsUnique": false,
+            "CardType": "Ship_Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-of-the-Stormcaller-Nightmare/Tide-runner.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Corsair.",
+                    "Ship."
+                ],
+                "Keywords": [
+                    "Boarding 1."
+                ],
+                "Text": [
+                    "Cannot have attachments.",
+                    "While you are off-course (Cloudy, Rainy, or Stormy), Tide-runner is considered to be in the Stormcaller`s area and the staging area, regardless of its current location.",
+                    "When Revealed: Either choose a player to engage Tide-runner, or add Tide-runner to the Stormcaller`s area and it gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flight of the Stormcaller Nightmare",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Venom's Bite",
+            "IsUnique": true,
+            "CardType": "Ship_Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-of-the-Stormcaller-Nightmare/Venom's-Bite.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Corsair.",
+                    "Ship."
+                ],
+                "Keywords": [
+                    "Boarding 2.",
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Cannot have attachments.",
+                    "*Forced: After this Sailing test ends, if you are off-course (Cloudy, Rainy, or Stormy), put the Venom`s Bite into play in the staging area. If you are on-course (Sunny), put it into play in the Stormcaller`s area instead.",
+                    "☸*"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flight of the Stormcaller Nightmare",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sharp Jetties",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-of-the-Stormcaller-Nightmare/Sharp-Jetties.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Coastland.",
+                    "Ocean."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: If your heading is off-course (Cloudy, Rainy, or Stormy), make Sharp Jetties the active location, returning any currently active location to the staging area.",
+                    "Forced: When any amount of progress is placed on Sharp Jetties, either remove an equal amount of progress from the current quest, or deal an equal amount of damage to each Ship objective."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flight of the Stormcaller Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flight of the Stormcaller Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Jordan Saia",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Cliffside Inlet",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-of-the-Stormcaller-Nightmare/Cliffside-Inlet.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Coastland.",
+                    "Ocean."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Cliffside Inlet is in the staging area, the main quest gets +2 quest points.",
+                    "Travel: Discard cards from the top of the encounter deck until a Ship enemy is discarded. Put that enemy into play in the Stormcaller`s area.",
+                    "☸"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flight of the Stormcaller Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flight of the Stormcaller Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Jordan Saia",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dark and Stormy",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-of-the-Stormcaller-Nightmare/Dark-and-Stormy.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Weather."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Deal 1 shadow card to each Ship enemy in play. Until the end of the round, shadow effects cannot be canceled."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flight of the Stormcaller Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flight of the Stormcaller Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Federico Musetti",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sahír's Getting Away!",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-of-the-Stormcaller-Nightmare/Sahír's-Getting-Away.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: For each Ship enemy in the Stormcaller`s area, place 1 progress on the Stormcaller`s quest stage. Then, either shift your heading off-course or add 8 Threat to the staging area until the end of the phase."
+                ],
+                "Shadow": "Shadow: If this attack damages a Ship objective, place 1 progress on the Stormcaller`s quest stage.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flight of the Stormcaller Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flight of the Stormcaller Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

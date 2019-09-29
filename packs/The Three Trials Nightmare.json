@@ -1,0 +1,326 @@
+{
+    "Name": "The Three Trials Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Three Trials Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials-Nightmare/The-Three-Trials-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Each engaged Guardian enemy contributes its Threat to the total Threat in the staging area.",
+                    "While the Trial of Intuition is the current trial, each Guardian enemy cannot be damaged, and each Barrow location cannot be the active location and is immune to player card effects."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I am not ready for such a trial, if indeed I shall ever be so...`\r\n-Gandalf, The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Three Trials scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Spirit of the Wild\n3x Grim Foothills\n1x Tangled Woods\n3x Turned Around\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Three Trials encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Three Trials Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wolf Spirit",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials-Nightmare/Wolf-Spirit.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "1",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Undead.",
+                    "Spirit.",
+                    "Wolf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If Wolf`s Guardian is in play or in the victory display, each Wolf enemy gets +1 Attack.",
+                    "Forced: At the beginning of the encounter phase, Wolf Spirit engages the player who controls Key of the Wolf or is engaged with Wolf`s Guardian, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Three Trials Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Three Trials Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Boar Spirit",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials-Nightmare/Boar-Spirit.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "1",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Undead.",
+                    "Spirit.",
+                    "Boar."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If Boar`s Guardian is in play or in the victory display, each Boar enemy gets +1 Defense.",
+                    "Forced: At the beginning of the encounter phase, Boar Spirit engages the player who controls Key of the Boar or is engaged with Boar`s Guardian, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Three Trials Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Three Trials Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raven Spirit",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials-Nightmare/Raven-Spirit.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Undead.",
+                    "Spirit.",
+                    "Raven."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If Raven`s Guardian is in play or in the victory display, each Raven enemy gets +1 Threat.",
+                    "Forced: At the beginning of the encounter phase, Raven Spirit engages the player who controls Key of the Raven or is engaged with Raven`s Guardian, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Three Trials Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Three Trials Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sacred Forest",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials-Nightmare/Sacred-Forest.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Sacred Forest is in the staging area, each Guardian enemy gains: `Forced: After any number of time counters are removed from this enemy, heal 2 damage on it for each time counter removed.`",
+                    "Travel: Remove each time counter from an enemy in play to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Three Trials Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Three Trials Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Yoann Boissonnet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Haunted Pillars",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials-Nightmare/Haunted-Pillars.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Forest.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When faced with the option to travel, players must travel to Haunted Pillars, if able.",
+                    "When Revealed: Either return the active location to the staging area, or Haunted Pillars gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +3 Defense until the end of the phase.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Three Trials Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Three Trials Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Cursed Burden",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials-Nightmare/Cursed-Burden.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to a hero with a Key objective attached, if able. (Counts as a Condition attachment with the text: `Limit 1 per hero. Attached hero cannot commit to the quest, and cannot attack or defend against enemies with a Trait shared by any of that hero`s attached Key objectives.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Three Trials Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Three Trials Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Jessica Savard",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Trial of Ancestors",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials-Nightmare/Trial-of-Ancestors.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach to the current quest. (Counts as Condition attachment with the text: `Each non-unique characters gets -1 Willpower and cannot attack enemies that share a Trait with the current trial`s Key objective.`)"
+                ],
+                "Shadow": "Shadow: If the defending character is not unique, attacking enemy gets +10 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Three Trials Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Three Trials Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Davis Engel",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

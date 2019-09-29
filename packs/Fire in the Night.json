@@ -1,0 +1,986 @@
+{
+    "Name": "Fire in the Night",
+    "Cycle": "Ered Mithrin",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Thranduil",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Thranduil.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Combat Action: Play a Silvan ally from your hand. You do not need a resource match for this ally. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`It is a crime to wander in my realm without leave.`\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 56,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Elvenking",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/The-Elvenking.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Silvan hero.",
+                    "Action: Exhaust The Elvenking and return a Silvan ally you control to your hand to ready attached hero."
+                ],
+                "Shadow": null,
+                "FlavorText": "In a great hall with pillars hewn out of the living stong sat the Elvenking on a chair of carven wood.\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 57,
+            "Quantity": 3,
+            "Artist": "Tropa Entertainment",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Leather Boots",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Leather-Boots.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Lore or Ranger character. Limit 1 per character.",
+                    "Response: After a Location is revealed from the encounter deck, exhaust Leather Boots to ready attached character."
+                ],
+                "Shadow": null,
+                "FlavorText": "His legs were stretched out before him, showing high boots of supple leather the fitted him well...\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 60,
+            "Quantity": 3,
+            "Artist": "Yoann Boissonnet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Galion",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Galion.jpg",
+                "Stats": {
+                    "ResourceCost": "0",
+                    "Willpower": "0",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Silvan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot attack or defend.",
+                    "Response: After Galion enters play, he gets +1 Willpower until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Here am I waiting and waiting down hero, while you fellows drink and make merry and forget your tasks. Small wonder if I fall asleep from weariness!`\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 63,
+            "Quantity": 3,
+            "Artist": "Torbjörn Källström",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orcrist",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Orcrist.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Guarded (enemy or location).",
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a hero.",
+                    "Attached hero gets +2 Attack.",
+                    "Response: After attached hero drestroys an enemy, add 1 resource to attached hero`s pool."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 58,
+            "Quantity": 3,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Giant Bear",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Giant-Bear.jpg",
+                "Stats": {
+                    "ResourceCost": "5",
+                    "Willpower": "0",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Beorning."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Action: Ready Giant Bear. At the end of the phase in which you trigger this effect, shuffle Giant Bear into your deck. (Limit once per phase.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`As a bear he ranged far and wide`\r\n-Gandalf, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 61,
+            "Quantity": 3,
+            "Artist": "Brendan C. Murphy",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Forest Road Traveler",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Forest-Road-Traveler.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Woodman.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forest Road Traveler gets +1 Willpower, +1 Attack, and +1 Defense for each attachment on the active location."
+                ],
+                "Shadow": null,
+                "FlavorText": "Only on the Road would travellers be found...\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 59,
+            "Quantity": 3,
+            "Artist": "Derek D. Edgell",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Quicker Than Sight",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Quicker-Than-Sight.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: Return a Silvan ally you control to your hand to cancel a shadow effect just triggered during combat."
+                ],
+                "Shadow": null,
+                "FlavorText": "`You would die before your stroke fell.`\r\n-Legolas, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 64,
+            "Quantity": 3,
+            "Artist": "Monztre",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Outmatched",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Outmatched.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Condition.",
+                    "Trap."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play into your play area unattached.",
+                    "If unattached, attach to the next eligible enemy that engages you.",
+                    "Response: After attached enemy resolves its attack, ready the defending character."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 62,
+            "Quantity": 3,
+            "Artist": "Preston Stone",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Thalion",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Thalion.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While there is at least 1 side quest in the victory display, ready Thalion at the beginning of the combat phase.",
+                    "While there are at least 3 side quests in the victory display, Thalion loses the ally card type, gains the hero card type and the resource icons of each sphere on a side quest in the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 65,
+            "Quantity": 3,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Draw Her Fire",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Draw-Her-Fire.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Shadow cards dealt to Dagnir are immune to player card effects and their effects cannot be canceled.",
+                    "Forced: After Draw Her Fire becomes the current quest, Dagnir makes an immediate attack against the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": "Dagnir`s assault is relentless and the people of Hrogar’s Hill need time to regroup. Someone mst draw the Dragon’s attention away from the town."
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 66,
+            "Quantity": 1,
+            "Artist": "Antonio José Manzanedo",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fortify the Defense",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Fortify-the-Defense.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Characters do not count their Defense when defending against Dagnir.",
+                    "Response: When Fortify the Defense is defeated, each player chooses: either draw 3 cards, or each hero he controls gains 1 resource."
+                ],
+                "Shadow": null,
+                "FlavorText": "Hrogar`s Hill was built to defend against Goblins and forest creatures; no one ever imagined a Dragon attack. You hurry to organize a proper defense."
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 67,
+            "Quantity": 1,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rally the Woodmen",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Rally-the-Woodmen.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Allies cannot be declared as attackers against Dagnir.",
+                    "Response: When Rally the Woodmen is defeated, each player searches the top 5 cards of his deck for an ally, puts it into play and shuffles his deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "The men of Hrogar`s Hill are strong and brave, but Dagnir’s mere presence weakens the resolve of even the mightiest warrior. The Woodmen need strong leadership to hold together."
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 68,
+            "Quantity": 1,
+            "Artist": "Nikolas Hagialas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Douse the Flames",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Douse-the-Flames.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Forced: At the end of the quest phase, deal 5 damage to Hrogar`s Hill.",
+                    "Response: When Douse the Flames is defeated, remove 10 damage from Hrogar`s Hill."
+                ],
+                "Shadow": null,
+                "FlavorText": "Dagnir`s fire spread from the outer wall to the nearby rooftops. If you don’t put them out quickly, Hrogar`s Hill will burn."
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 69,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hold the Door",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Hold-the-Door.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Each player`s threat cannot be reduced.",
+                    "Response: When Hold the Door is defeated, reduce each player`s threat by 5."
+                ],
+                "Shadow": null,
+                "FlavorText": "The enraged Dagnir batters the gate to Hrogar`s Hill and mighty doors of oak crack and split. You call for sturdy beams to brace the gate while you lean desperately against the doors."
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 70,
+            "Quantity": 1,
+            "Artist": "David Keen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Defend the Town",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Defend-the-Town.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "While Defend the Town is the current quest, reveal an additional encounter card during the quest phase.",
+                    "Forced: At the end of the encounter phase, deal 1 damage to Hrogar`s Hill for each enemy in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Goblins of Mount Gundabad follow Dagnir in her assault on Hrogar’s Hill. Their attacks spread the defense thin across the outer wall."
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 71,
+            "Quantity": 1,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rout the Goblins",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Rout-the-Goblins.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Rout the Goblins gets +5 quest points for each Goblin enemy in play.",
+                    "When Revealed: Each player searches the encounter deck and discard pile for a different Goblin enemy and puts it into play engaged with him. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "Goblins stream across the draw-bridge toward Hrogar’s Gate. They cannot be allowed into the town!"
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 72,
+            "Quantity": 1,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Face the Dragon",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Face-the-Dragon.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Forced: After Dagnir attacks and destroys a character, heal 5 damage from her.",
+                    "Forced: After Face the Dragon is defeated, deal 5 damage to Dagnir."
+                ],
+                "Shadow": null,
+                "FlavorText": "Arrows and spears bounce off Dagnir`s armored hide like raindrops. Nothing seems to slow her assault. Perhaps if you cold strike at her underbelly you wold find a way to injure the Dragon."
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 73,
+            "Quantity": 1,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dagnir",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Dagnir.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "X",
+                    "Attack": "7",
+                    "Defense": "5",
+                    "HitPoints": "20"
+                },
+                "Traits": [
+                    "Dragon."
+                ],
+                "Keywords": [
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Immune to player card effects. X is 1 more than the number of side quests in the victory display.",
+                    "Cannot leave the staging are or take more than X damage from non-quest effects each round.",
+                    "While at least 3 side quests are in the victory display, Dagnir is considered to be engaged with each player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": {
+                "EncounterSet": "Fire in the Night",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 74,
+            "Quantity": 1,
+            "Artist": "Antonio José Manzanedo",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dragon's Thrall",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Dragon's-Thrall.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After The Dragon’s Thrall engages you, either deal 3 damage to Hrogar’s Hill, or it makes an immediate attack against you."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, deal 3 damage to Hrogar`s Hill.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": {
+                "EncounterSet": "Fire in the Night",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 75,
+            "Quantity": 3,
+            "Artist": "Martin de Diego Sádaba",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc of the Flame",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Orc-of-the-Flame.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player must either deal 2 damage to a hero he controls, or deal 3 damage to Hrogar`s Hill."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if Hrogar`s Hill has at least 25 damage on it).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": {
+                "EncounterSet": "Fire in the Night",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 76,
+            "Quantity": 4,
+            "Artist": "Martin de Diego Sádaba",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Town Gate",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Town-Gate.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Town."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Town Gate is in the staging area, it gains: `Forced: At the end of the quest phase, place 1 resource here. Then, if there are 3 resources here, discard Town Gate and deal 4 damage to Hrogar`s Hill.`",
+                    "Travel: Dagnir makes an immediate attack against the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": {
+                "EncounterSet": "Fire in the Night",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 77,
+            "Quantity": 2,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wooden Palisade",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Wooden-Palisade.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Town."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Wooden Palisade is the active location, Dagnir gets -2 Attack.",
+                    "Travel: The first player readies a hero he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Within there rise the roofs of houses; and in the midst, set upon a green terrace, there stands aloft a great hall of Men.`\r\n-Legolas, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": {
+                "EncounterSet": "Fire in the Night",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 78,
+            "Quantity": 3,
+            "Artist": "Davis Engel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Burning Watchtower",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Burning-Watchtower.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Town."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is 1 more than the number of side quests in the victory display.",
+                    "Travel: Each player assigns X damage among characters he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": {
+                "EncounterSet": "Fire in the Night",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 79,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Powerful in Wrath",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Powerful-in-Wrath.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: Discard the active location and deal X damage to Hrogar’s Hill, where X is that location’s [Threat]. If no damage is dealt this way, Powerful in Wraith gains surge."
+                ],
+                "Shadow": "Shadow: Excess damage from this attack must be dealt to Hrogar`s Hill.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": {
+                "EncounterSet": "Fire in the Night",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 80,
+            "Quantity": 2,
+            "Artist": "Antonio José Manzanedo",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Dragon's Fury",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/The-Dragon's-Fury.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Dagnir makes an immediate attack against the first player. Undefended damage from this attack must be dealt to Hrogar`s Hill."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": {
+                "EncounterSet": "Fire in the Night",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 81,
+            "Quantity": 3,
+            "Artist": "Preston Stone",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Bright Flames",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Bright-Flames.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player assigns X damage among characters he controls, where X is 1 more than the number of side quests in the victory display."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each side quest in the victory display.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": {
+                "EncounterSet": "Fire in the Night",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 82,
+            "Quantity": 2,
+            "Artist": "Alyn Spiller",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hrogar's Hill",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Hrogar's-Hill-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Search the encounter deck for all 8 encounter side quests, shuffle them together, and place them facedown next to the quest deck. This is the side quest deck. The first player adds Dagnir to the staging area and shuffles the encounter deck. Each other player reveals an encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Woodmen of Hrogar’s Hill have agreed to help you in your quest, but shortly after they welcome you to their town it is attacked by the very Dragon you seek: Dagnir has come to take vengeance on Wilderland!"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the planning phase, reveal the top card of the side quest deck and add it to the staging area. Dagnir makes an attack against Hrogar’s Hill. Do not deal a shadow card for this attack. The first player may declare a defender for this attack. Excess damage must be dealt to Hrogar`s Hill.",
+                    "This stage cannot be defeated while Dagnir has hit points remaining. If Dagnir has no hit points remaining, the players win the game. If this stage has damage equal to its quest points, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": {
+                "EncounterSet": "Fire in the Night",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 83,
+            "Quantity": 1,
+            "Artist": "Andreas Adamek",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

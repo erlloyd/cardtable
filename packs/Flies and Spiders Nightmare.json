@@ -1,0 +1,318 @@
+{
+    "Name": "Flies and Spiders Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Flies and Spiders Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/Flies-and-Spiders-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nSetup: Each player gives 1 poison to a hero he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "Hundreds of angry spiders were goggling at them all round and about and above. It looked pretty hopeless. -The Hobbit"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Flies and Spiders scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Dark Bats\n3x Hidden Path\n2x Fighting Among Friends\n5x Wicked Spider\n1x Fat Spider\n1x Giant Web\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Flies and Spiders encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Flies and Spiders Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Jon Bosco",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Attercop",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/Attercop.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "4",
+                    "Attack": "6",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Spider."
+                ],
+                "Keywords": [
+                    "Venom."
+                ],
+                "Text": [
+                    "Attercop gets -1 engagement cost for each poison in play.",
+                    "Poisoned characters cannot be declared as attackers or defenders against Attercop."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flies and Spiders Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flies and Spiders Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Jon Bosco",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Venomous Spider",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/Venomous-Spider.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Spider."
+                ],
+                "Keywords": [
+                    "Venom."
+                ],
+                "Text": [
+                    "Forced: After a character is declared as a defender against Venomous Spider, give it 1 poison."
+                ],
+                "Shadow": "Shadow: Give 2 poison to the defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flies and Spiders Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flies and Spiders Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 5,
+            "Artist": "Florian Devos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dark Colony",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/Dark-Colony.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Dark Colony is the active location, poisoned characters cannot ready.",
+                    "Travel: A player at this stage must give 1 poison to a hero he controls to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": "Suddenly he saw, too, that there were spiders huge and horrible sitting in the branches above him, and ring or no ring he trembled with fear lest they should discover him.\r\n -The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Flies and Spiders Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flies and Spiders Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mirkwood Path",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/Mirkwood-Path.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the number of poison in play.",
+                    "Forced: When this location is explored, make 1 hero unconscious."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each poisoned character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flies and Spiders Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flies and Spiders Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Trudi Castle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Patch of Midnight",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/Patch-of-Midnight.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Patch of Midnight is the active location, treat the text box of each poisoned character as if it were blank (except for Traits)."
+                ],
+                "Shadow": "Shadow: Raise your threat by 1 for each poisoned character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flies and Spiders Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flies and Spiders Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "A Horrible Battle",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/A-Horrible-Battle.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must either give 1 poison to each hero he controls, or reveal an encounter card."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack against the defending player after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flies and Spiders Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flies and Spiders Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Diego Gisbert Llorens",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Spider Bite",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/Spider-Bite.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to a hero that is not unconscious. (Counts as a Condition attachment with the text: `Limit 1 per hero. Forced: At the end of the refresh phase, give attached hero 1 poison. When attached hero becomes unconscious, discard Spider Bite.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flies and Spiders Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flies and Spiders Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Florian Devos",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}
