@@ -1,0 +1,317 @@
+{
+    "Name": "Trouble in Tharbad Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Trouble in Tharbad Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad-Nightmare/Trouble-in-Tharbad-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Setup: Raise each player`s starting threat by 5.",
+                    "Progress cannot be placed on Crossing at Tharbad while Bellach is in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "The houses looked large and strange to them. Sam stared up at the inn with its three storeys and many windows, and felt his heart sink.\r\n-The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for Trouble in Tharbad scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n1x Orc Hunter\n2x Orc Skirmisher\n2x Tharbad Hideout\n2x Hidden Alleyway\n1x Decrepit Rooftops\n2x Orc Hunting Party\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Trouble in Tharbad encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Trouble in Tharbad Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Bellach's Hunter",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad-Nightmare/Bellach's-Hunter.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "3",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Spy."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While a player controls 5 or more allies, Bellach`s Hunter gets -20 engagement cost.",
+                    "Forced: When Bellach`s Hunter engages a player, that player must either remove all time counters from the current quest or deal 5 damage to a hero he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Trouble in Tharbad Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Trouble in Tharbad Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Seeker",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad-Nightmare/Orc-Seeker.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either reduce each player`s threat elimination level by 2, or Orc Seeker engages the first player and makes an immediate attack."
+                ],
+                "Shadow": "Shadow: Reduce each player`s threat elimination level by 2 (5 instead if undefended).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Trouble in Tharbad Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Trouble in Tharbad Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Nicholas Gregory",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Blood Hound",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad-Nightmare/Blood-Hound.jpg",
+                "Stats": {
+                    "EngagementCost": "0",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Blood Hound engages you, raise your threat by 5."
+                ],
+                "Shadow": "Shadow: Either raise your threat by 10, or attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Trouble in Tharbad Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Trouble in Tharbad Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "City of Spies",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad-Nightmare/City-of-Spies.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "City.",
+                    "Ruins."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While City of Spies is in the staging area, it gains: `Forced: When you commit a character to the quest, raise your threat by 1. This effect does not stack with other copies of City of Spies.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Trouble in Tharbad Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Trouble in Tharbad Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Davis Engel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dark Pathway",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad-Nightmare/Dark-Pathway.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Dark Pathway is the active location, the first treachery card without the printed surge keyword revealed during the quest phase gains surge."
+                ],
+                "Shadow": "Shadow: Either remove 1 time counter from the current quest or treat this attack as undefended.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Trouble in Tharbad Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Trouble in Tharbad Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Yoann Boissonnet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Waylaid by Agents",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad-Nightmare/Waylaid-by-Agents.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must choose: either remove 1 time counter from the quest or discard an ally he controls from play. Then, if any player`s threat is 20 or less, Waylaid by Agents gains doomed 3."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+3 Attack instead if your threat is 20 or less).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Trouble in Tharbad Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Trouble in Tharbad Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Taylor Ingvarsson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Tharbad Patrol",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad-Nightmare/Tharbad-Patrol.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach Tharbad Patrol to a non-unique location in the staging area without a copy of Tharbad Patrol attached. (Counts as a Condition attachment with the text: `Forced: After the players travel to attached location, each player must discard the top 2 cards from the encounter deck and engage each enemy he discarded in this way.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Trouble in Tharbad Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Trouble in Tharbad Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

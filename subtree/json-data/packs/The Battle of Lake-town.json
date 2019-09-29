@@ -1,0 +1,948 @@
+{
+    "Name": "The Battle of Lake-town",
+    "Cycle": "GenCon",
+    "SetType": "GenCon_Expansion",
+    "cards": [
+        {
+            "Title": "Terror from the Mountain",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Terror-from-the-Mountain-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Shuffle all copies of Smaug into a separate Smaug Deck. Search the encounter deck for Lake-town and add it to the staging area. Shuffle the encounter deck. Then reveal 1 card from the encounter deck per player, and add it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Then warning trumpets were suddenly sounded, and echoed along the rocky shores. The cheering stopped and the joy was quickly turned to dread. So it was that the dragon did not find them quite unprepared.` - The Hobbit"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Smaug cannot have more than 6 damage on him.",
+                    "When Revealed: Deal 1 damage to Lake-town for each player in the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "David A. Nash",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fire and Water",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Fire-and-Water-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": "`...every vessel in the town was filled with water, every warrior was armed... before the roar of Smaug`s terrible approach grew loud, and the lake rippled red as fire beneath the awful beating of his wings.` - The Hobbit "
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Smaug cannot have more than 12 damage on him.",
+                    "When the players quest successfully, any number of progress tokens that would be placed on this quest may instead be discarded to remove the same amount of damage from Lake-town."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Sabin Boykinov",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Dragon's Wrath",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/The-Dragon's-Wrath-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": "`Roaring he swept back over the town. A hail of dark arrows leaped up and snapped and rattled on his scales and jewels, and their shafts fell back kindled by his breath burning and hissing into the lake.` - The Hobbit"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: During the quest phase, reveal 1 additional card from the encounter deck.",
+                    "Refresh Action: Reset the quest deck to stage 2B.",
+                    "The players must defeat Smaug to defeat this stage. When Smaug is defeated, compare the number of damage tokens on Lake-town with the number of Victory points in the victory display. If the players have more victory points, they have won the game. Otherwise, Lake-town has burned and the players have lost."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 3,
+            "Quantity": 1,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Smaug the Mighty",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Smaug-the-Mighty.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "7",
+                    "Attack": "5",
+                    "Defense": "9",
+                    "HitPoints": "20"
+                },
+                "Traits": [
+                    "Dragon."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "When Revealed: Smaug the Mighty makes an immediate attack against each player (deal and resolve a shodow card for each attack)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Christopher Burdett",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Smaug the Terrible",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Smaug-the-Terrible.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "6",
+                    "Attack": "7",
+                    "Defense": "7",
+                    "HitPoints": "20"
+                },
+                "Traits": [
+                    "Dragon."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "When Revealed: Resolve all burn damage from all locations in play"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Christopher Burdett",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Smaug the Magnificent",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Smaug-the-Magnificent.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "5",
+                    "Attack": "8",
+                    "Defense": "8",
+                    "HitPoints": "20"
+                },
+                "Traits": [
+                    "Dragon."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Excess damage from attacks by Smaug the Magnificent must be assigned to Lake-town.When Revealed: Move 3 damage from Smaug the Magnificent to Lake-town."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Christopher Burdett",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lake-town",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Lake-town.jpg",
+                "Stats": {},
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If Lake-town has 50 or more damage on it, Lake-town has completely burned and the players have lost the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 1,
+            "Artist": "Paulo Puggioni",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Old Thrush",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/The-Old-Thrush.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [
+                    "Guarded."
+                ],
+                "Text": [
+                    "Action: Exhaust a hero to claim this objective and attach it to that hero when it is free of encounters. (Counts as an attachment with the text:`If detached discard The Old ThrushResponse: After attached hero exhausts to attack Smaug, discard X cards from hand to reduce Smaug`s Defense by X.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 1,
+            "Artist": "Paulo Puggioni",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Close to the Flame",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Close-to-the-Flame.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Deal 1 damage to each character in play"
+                ],
+                "Shadow": "Shadow: Deal 1 damage to each character in play. Any player may discard a hero to cancel this effect",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Michael Rasmussen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Scorching Blast",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Scorching-Blast.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Resolve all burn damage from all locations in play."
+                ],
+                "Shadow": "Shadow: Resolve this card`s `When Revealed` effect. Any player may discard a hero to cancell this effect.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "David Demaret",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Town-Baiting",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Town-Baiting.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Smaug make an attack against Lake-town. The last player may declare a defender against this attack. Excess damage from this attack must be placed on Lake-town. This effect cannot be canceled."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 11,
+            "Quantity": 3,
+            "Artist": "Christopher Burdett",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dire Magnificence",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Dire-Magnificence.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must choose and discard 1 ally he controls if able. Deal 2 damage to Lake-town for each player that cannot."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, Smaug engages the next player and makes an immediate attack against that player.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 12,
+            "Quantity": 3,
+            "Artist": "Diego Gisbert Llorens",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Catching Fire",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Catching-Fire.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Choose and shuffle 1 Pier location from the victory display back into the encounter deck. If no location was shuffled into the encounter deck by this effect, Catching Fire gains surge"
+                ],
+                "Shadow": "Shadow: Defending character gets -2 Defense",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 13,
+            "Quantity": 2,
+            "Artist": "Lino Drieghe",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Reckless in His Rage",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Reckless-in-His-Rage.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: If Smaug is in play, he gets +2 Threat, +2 Attack, -2 Defense and gains the text: `Allies cannot be declared as defenders`. This effect lasts until the end of the round"
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, resolve all burn damage on locations in play.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 14,
+            "Quantity": 2,
+            "Artist": "Alexandre Dainche",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "West Pier",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/West-Pier.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Lake-town.",
+                    "Pier."
+                ],
+                "Keywords": [
+                    "Victory 2."
+                ],
+                "Text": [
+                    "Each location in play gains Burn 1."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 15,
+            "Quantity": 1,
+            "Artist": "David A. Nash",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Master's Manor",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/The-Master's-Manor.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "8"
+                },
+                "Traits": [
+                    "Lake-town."
+                ],
+                "Keywords": [
+                    "Burn 3.",
+                    "Victory 8."
+                ],
+                "Text": [
+                    "When Revealed: Move all damage from Smaug to Lake-town"
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, defending player discards his hand.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 16,
+            "Quantity": 1,
+            "Artist": "Alexandre Dainche",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "South Pier",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/South-Pier.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Lake-town.",
+                    "Pier."
+                ],
+                "Keywords": [
+                    "Burn 2.",
+                    "Victory 4."
+                ],
+                "Text": [
+                    "When faced with the option to travel, players cannot travel to other locations."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 17,
+            "Quantity": 1,
+            "Artist": "David A. Nash",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "North Pier",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/North-Pier.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Lake-town.",
+                    "Pier."
+                ],
+                "Keywords": [
+                    "Burn 2.",
+                    "Victory 2."
+                ],
+                "Text": [
+                    "Smaug cannot be damaged."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 18,
+            "Quantity": 1,
+            "Artist": "David A. Nash",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Merchant's District",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Merchant's-District.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Lake-town."
+                ],
+                "Keywords": [
+                    "Burn 1.",
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Travel Action: Deal 2 damage per player to Lake-town to add this location to the victory display."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to Lake-town (4 damage instead if undefended.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 19,
+            "Quantity": 4,
+            "Artist": "Stu Barnes",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "East Pier",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/East-Pier.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Lake-town.",
+                    "Pier."
+                ],
+                "Keywords": [
+                    "Burn 1.",
+                    "Victory 2."
+                ],
+                "Text": [
+                    "`When Revealed` effects cannot be canceled"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 20,
+            "Quantity": 1,
+            "Artist": "David A. Nash",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Great House",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Great-House.jpg",
+                "Stats": {
+                    "Threat": "6",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Lake-town."
+                ],
+                "Keywords": [
+                    "Burn 3.",
+                    "Victory 6."
+                ],
+                "Text": [
+                    "When Revealed: Resolve all burn damage from all locations in play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 1,
+            "Artist": "Titus Lunter",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Great Bridge",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Great-Bridge.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Lake-town."
+                ],
+                "Keywords": [
+                    "Burn 2.",
+                    "Victory 4."
+                ],
+                "Text": [
+                    "When Revealed: Discard X cards from each player`s deck. X is the ammount of damage on Lake-town. (If no cards are discarded by this effect, Great Bridge gains surge.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 22,
+            "Quantity": 1,
+            "Artist": "Michael Rasmussen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fisherman's Dock",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Fisherman's-Dock.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Lake-town."
+                ],
+                "Keywords": [
+                    "Burn 1.",
+                    "Victory 2."
+                ],
+                "Text": [
+                    "Travel: If there is 1 active location exhaust a hero to travel here (There are now 2 active locations)"
+                ],
+                "Shadow": "Shadow: Add this location to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 23,
+            "Quantity": 4,
+            "Artist": "Alexandre Dainche",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Esgaroth Wharf",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Lake-town/Esgaroth-Wharf.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Lake-town."
+                ],
+                "Keywords": [
+                    "Burn 1.",
+                    "Victory 4."
+                ],
+                "Text": [
+                    "All locations are immune to player card effects."
+                ],
+                "Shadow": "Shadow: attacking enemy gets +2 Attack. Then it make an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Lake-town",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Lake-town",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 24,
+            "Quantity": 4,
+            "Artist": "David Demaret",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

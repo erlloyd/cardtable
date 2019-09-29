@@ -1,0 +1,577 @@
+{
+    "Name": "The Fate of Númenor Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Fate of Númenor Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/The-Fate-of-Númenor-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Progress cannot be placed on non-Uncharted locations in the staging area.",
+                    "Forced: When the players would travel to Shrine of Morgoth, if there are 3 or fewer double-sided locations in the victory display, return Shrine to Morgoth to the staging area and flip it to its Lost Island side. Remove all progress from each Uncharted location in the staging area and shuffle them so that the players do not know which one is which. Then, choose a new location to travel to."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Fate of Númenor scenario.\\r\\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n2x Forbidden Coast\n2x Cursed Temple\n2x Flooded Ruins\n2x Drowned Graves\n2x Lush Jungle\n1x Shrine of Morgoth\n3x Steep Plateau\n3x Aimless Wandering\n1x Mysterious Fog\n1x Servant of the Deceiver\n1x Lingering Malevolence\n1x Drowned Dead\n\nThen shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Fate of Númenor encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin.\n",
+                    "Note: As print-on-demand cardstock does not match that in the original scenario, the Uncharted deck from the original scenario should be replaced with the Uncharted deck reprinted in this Nightmare deck. This has already been taken into account in the cards listed above."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Fate of Númenor Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Shrine to Morgoth",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Shrine-to-Morgoth-Lost-Island.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "8"
+                },
+                "Traits": [
+                    "Ruins."
+                ],
+                "Keywords": [
+                    "Uncharted.",
+                    "Victory 5."
+                ],
+                "Text": [
+                    "While Shrine to Morgoth is the active location, players cannot draw cards or search their decks.",
+                    "Forced: After Shrine to Morgoth is flipped over while active, exhaust each ally in play with printed cost 2 or less. Then, each player must search the encounter deck and discard pile for an Undead enemy and put it into play engaged with him. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Uncharted.",
+                    "Cannot have player card attachments.",
+                    "Forced: After Lost Island becomes the active location, flip it over.",
+                    "Action: Remove 4 progress from Lost Island to look at its facedown side."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Fate of Númenor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fate of Númenor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Jokubas Uoginitas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Cursed Temple",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Cursed-Temple-Lost-Island.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Ruins."
+                ],
+                "Keywords": [
+                    "Uncharted."
+                ],
+                "Text": [
+                    "While Cursed Temple is the active location, characters with less than 2 Willpower do not ready during the refresh phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "It was not long before he had bewitched the King and was master of his counsel... –The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have player card attachments.",
+                    "Forced: After Lost Island becomes the active location, flip it over.",
+                    "Action: Remove 4 progress from Lost Island to look at its facedown side."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Fate of Númenor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fate of Númenor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 1,
+            "Artist": "Davis Engel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Drowned Graves",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Drowned-Graves-Lost-Island.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Ruins."
+                ],
+                "Keywords": [
+                    "Uncharted."
+                ],
+                "Text": [
+                    "Forced: After Drowned Graves is flipped to this side while active, discard the top X cards of the encounter deck. Each player adds an Undead enemy discarded from this effect to the staging area. X is 2 more than the number of players in the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "...their years lessened as their fear of death grew, and their joy departed. –The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have player card attachments.",
+                    "Forced: After Lost Island becomes the active location, flip it over.",
+                    "Action: Remove 4 progress from Lost Island to look at its facedown side."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Fate of Númenor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fate of Númenor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Juan Carlos Barquet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Flooded Ruins",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Flooded-Ruins-Lost-Island.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Ruins."
+                ],
+                "Keywords": [
+                    "Uncharted."
+                ],
+                "Text": [
+                    "While Flooded Ruins is the active location, it contributes its Threat to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "Númenor was thrown down and swallowed in the sea... –The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have player card attachments.",
+                    "Forced: After Lost Island becomes the active location, flip it over.",
+                    "Action: Remove 4 progress from Lost Island to look at its facedown side."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Fate of Númenor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fate of Númenor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 1,
+            "Artist": "Juan Carlos Barquet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lush Jungle",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Lush-Jungle-Lost-Island.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [
+                    "Uncharted."
+                ],
+                "Text": [
+                    "While Lush Jungle is in the staging area, characters get –1 Attack and lose ranged.",
+                    "Forced: After Lush Jungle is flipped over while active, return it to the staging area unless each player exhausts each ready hero he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Uncharted.",
+                    "Cannot have player card attachments.",
+                    "Forced: After Lost Island becomes the active location, flip it over.",
+                    "Action: Remove 4 progress from Lost Island to look at its facedown side."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Fate of Númenor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fate of Númenor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Desecrated Grounds",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Desecrated-Grounds-Lost-Island.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Ruins."
+                ],
+                "Keywords": [
+                    "Uncharted."
+                ],
+                "Text": [
+                    "Each Undead enemy gets +1 Threat and +1 Attack.",
+                    "Forced: After Desecrated Grounds is flipped over while active, deal 1 damage to each exhausted character."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Uncharted.",
+                    "Cannot have player card attachments.",
+                    "Forced: After Lost Island becomes the active location, flip it over.",
+                    "Action: Remove 4 progress from Lost Island to look at its facedown side."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Fate of Númenor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fate of Númenor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Forsaken City",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Forsaken-City-Lost-Island.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Ruins."
+                ],
+                "Keywords": [
+                    "Uncharted."
+                ],
+                "Text": [
+                    "Each Undead enemy gains `immune to player card effects.`",
+                    "Forced: After Forsaken City is flipped over while active, each engaged Undead enemy makes an immediate attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Uncharted.",
+                    "Cannot have player card attachments.",
+                    "Forced: After Lost Island becomes the active location, flip it over.",
+                    "Action: Remove 4 progress from Lost Island to look at its facedown side."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Fate of Númenor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fate of Númenor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Guardian of the Golden King",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Guardian-of-the-Golden-King.jpg",
+                "Stats": {
+                    "EngagementCost": "41",
+                    "Threat": "4",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "10"
+                },
+                "Traits": [
+                    "Undead."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After attackers are declared during an attack against Guardian of the Golden King, look at the bottom card of the first player`s deck. Choose and remove characters from the attack until only X or fewer characters are attacking, where X is the looked-at-card`s printed cost (those characters do not ready)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fate of Númenor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fate of Númenor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Sam Lamont",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Overgrown Steps",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Overgrown-Steps.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "1"
+                },
+                "Traits": [
+                    "Forest.",
+                    "Ruins."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Overgrown Steps is in the staging area, it gains: `Each Uncharted location in the staging area gets +1 Threat.`",
+                    "Travel: Raise each player`s threat by 2 to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fate of Númenor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fate of Númenor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Adam Duff",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Corrupted Flora",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Corrupted-Flora.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Hazard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player discards the bottom card of his deck. Each player player chooses and removes his characters from the until only X or fewer of his characters are questing, where X is the printed cost of the card that player discarded. Deal 1 damage to each character still committed to the quest."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fate of Númenor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fate of Númenor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 11,
+            "Quantity": 3,
+            "Artist": "Jeff Lee Johnson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Calphon's Folly",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Calphon's-Folly.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Choose an Uncharted location in the staging area and flip it over. If it has a Forced effect, resolve it as if that location were active. If it does not have a Forced effect, switch it with the active location, if able."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +X Attack, where X is the active location`s Threat.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fate of Númenor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fate of Númenor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 12,
+            "Quantity": 2,
+            "Artist": "Joshua Cairós",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

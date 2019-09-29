@@ -1,0 +1,347 @@
+{
+    "Name": "Journey Along the Anduin Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Journey Along the Anduin Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Journey-Along-the-Anduin-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "All Troll enemies gain the text: `Cannot have attachments.`",
+                    "If the encounter deck is empty (at any time), shuffle the encounter discard pile back into the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Journey Along the Anduin scenario found in the LOTR LCG core set.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Evil Storm\n2x Treacherous Fog\n2x Banks of the Anduin\n3x Dol Guldur Orcs\n2x Enchanted Stream\n2x Despair\n3x Misty Mountain Goblins\n2x Necromancer`s Pass\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Journey Along the Anduin encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Journey Along the Anduin Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Alexandre Dainche",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Marshland Outlaws",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Marshland-Outlaws.jpg",
+                "Stats": {
+                    "EngagementCost": "21",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Marshland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If you are engaged with this enemy, you cannot attack or deal damage (through effects) to enemies with a title other than Marshland Outlaws."
+                ],
+                "Shadow": "Shadow: Raise your threat by X. X is the amount of damage dealt by this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey Along the Anduin Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey Along the Anduin Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Anduin Troll Spawn",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Anduin-Troll-Spawn.jpg",
+                "Stats": {
+                    "EngagementCost": "26",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Troll."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If there is no Hill Troll in play, Anduin Troll Spawn gains surge.\n\nForced: At the beginning of the combat phase, Anduin Troll Spawn engages a player engaged with a Hill Troll."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey Along the Anduin Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey Along the Anduin Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Chun Lo",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Brown Water Rats",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Brown-Water-Rats.jpg",
+                "Stats": {
+                    "EngagementCost": "1",
+                    "Threat": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "-"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Rat."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Brown Water Rats cannot be damaged.",
+                    "Forced: If the players are on stage 3 and all remaining enemies have the printed Rat trait, discard Brown Water Rats from play."
+                ],
+                "Shadow": "Shadow: Attacking enemy cannot be damaged this round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey Along the Anduin Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey Along the Anduin Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "A Flooded Ford",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/A-Flooded-Ford.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Riverland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Each card revealed by the encounter deck gains doomed X. X is the number of progress tokens on this card."
+                ],
+                "Shadow": "Shadow: If this attack is undefended, put A Flooded Ford into the staging area with 1 progress token on it.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey Along the Anduin Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey Along the Anduin Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 1,
+            "Artist": "Alexandre Dainche",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gladden Marshlands",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Gladden-Marshlands.jpg",
+                "Stats": {
+                    "Threat": "10",
+                    "QuestPoints": "10"
+                },
+                "Traits": [
+                    "Marshland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Deal 1 damage to a hero you control to reduce Gladden Marshlands Threat by 1 until the end of the phase. Any player may trigger this effect."
+                ],
+                "Shadow": "Shadow: Each enemy engaged with the defender player gets +1 Attack until the end of the phase. (+2 Attack instead if this attack is undefended.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey Along the Anduin Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey Along the Anduin Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Trudi Castle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pursuit on the Shore",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Pursuit-on-the-Shore.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Search the victory display and encounter discard pile for the enemy with the most hit points. Return that enemy to the staging area. If no enemy is returned by this effect, Pursuit on the Shore gains surge. (Cannot be canceled.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey Along the Anduin Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey Along the Anduin Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Allison Theus",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Troll Attack",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Troll-Attack.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: All engaged Troll enemies attack. If no Troll enemies are engaged, Troll Attack gains surge."
+                ],
+                "Shadow": "Shadow: If attacking enemy is a Troll, resolve this attack against each player. (Attack is undefended against each player not engaged with this enemy.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey Along the Anduin Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey Along the Anduin Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Smoking Blood",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Smoking-Blood.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove all damage from all enemies. Then, each player raises his threat by the amount of just removed from his engaged enemies. If no damage is removed by this effect, Smoking Blood gains surge."
+                ],
+                "Shadow": "Shadow: Move all damage on this enemy to the defending character. (If undefended, move the damage to the hero damaged by this attack.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey Along the Anduin Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey Along the Anduin Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

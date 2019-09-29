@@ -1,0 +1,358 @@
+{
+    "Name": "A Knife in the Dark Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "A Knife in the Dark Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Knife-in-the-Dark-Nightmare/A-Knife-in-the-Dark-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "While Bill Ferny is in the staging area, he gains: `Immune to player card effects.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "The night deepened. There came the soft sound of horses led with stealth along the lane. Outside the gate they stopped, and three black figures entered, like shades of night creeping across the ground. -The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the A Knife in the Dark scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n4x Shady Bree-lander\n3x Weather Hills\n1x Unwanted Attention\n3x Pathless Country\n1x Weathertop\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard A Knife in the Dark encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "A Knife in the Dark Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Juan Carlos Barquet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Menacing Wraith",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Knife-in-the-Dark-Nightmare/Menacing-Wraith.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "4",
+                    "Attack": "5",
+                    "Defense": "4",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Nazgûl"
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have non-Morgul attachments.",
+                    "Forced: After The One Ring is exhausted, Menacing Weath engages the first player and makes an immediate attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Open, in the name of Mordor!` said a voice thin and menacing, -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "A Knife in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Knife in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 2,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Southern Spy",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Knife-in-the-Dark-Nightmare/Southern-Spy.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Spy."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either shuffle an out of play Ringwraith into the encounter deck, or Southern Spy makes an immediate attack against you."
+                ],
+                "Shadow": "Shadow: Defending character gets -1 Defense (-3 Defense instead if The One Ring is exhausted).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Knife in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Knife in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 4,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Weathertop",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Knife-in-the-Dark-Nightmare/Weathertop.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Hills.",
+                    "Ruins."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "The Witch-king cannot be damaged.",
+                    "Forced: After Weathertop becomes the active location, exhaust The One Ring. The One Ring cannot ready while Weathertop is the active location."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Knife in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Knife in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 1,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Weather Hills",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Knife-in-the-Dark-Nightmare/Weather-Hills.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While the players are at stage 1, progress cannot be placed here.",
+                    "While The One Ring is exhausted, Weather Hills gets +2 Threat."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Knife in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Knife in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Jake Bullock",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Old Road",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Knife-in-the-Dark-Nightmare/The-Old-Road.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "8"
+                },
+                "Traits": [
+                    "Road."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The Old Road enters play with 3 resource tokens on it.",
+                    "Forced: At the end of the round, discard 1 resource token here. Then, if there are no resource tokens here, shuffle 1 out of play Ringwraith into the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Knife in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Knife in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Juan Carlos Barquet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Forsaken Inn",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Knife-in-the-Dark-Nightmare/Forsaken-Inn.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Inn."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the number of characters the first player controls.",
+                    "Travel: The first player searches the encounter deck and discard pile for a Spy enemy, reveals it, and adds it to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I don`t know if the Road has ever been measured in miles beyond the Forsaken Inn...` -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "A Knife in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Knife in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Ring's Will",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Knife-in-the-Dark-Nightmare/The-Ring's-Will.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Raise each player`s threat by 5. This effect cannot be canceled by the Ring-bearer`s effect, or if The One Ring is exhausted."
+                ],
+                "Shadow": "Shadow: After this attack, attacking enemy engages the next player then makes an immediate attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Knife in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Knife in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Sara Betsy",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Blade Tip",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Knife-in-the-Dark-Nightmare/Blade-Tip.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Morgul."
+                ],
+                "Keywords": [
+                    "Surge.",
+                    "Doomed 1."
+                ],
+                "Text": [],
+                "Shadow": "Shadow: If the defending character is damaged by this attack, attach Blade Tip to that character. (Counts as a Condition attachment with the text: `Forced: At the end of the refresh phase, raise your threat by 2.`)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Knife in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Knife in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Florian Devos",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

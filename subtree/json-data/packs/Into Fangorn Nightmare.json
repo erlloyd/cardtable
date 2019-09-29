@@ -1,0 +1,367 @@
+{
+    "Name": "Into Fangorn Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Into Fangorn Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-Fangorn-Nightmare/Into-Fangorn-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Setup: Each player searches the encounter deck for a Huorn enemy and puts it into play engaged with him. Shuffle the encounter deck.",
+                    "The Player cannot defeat stage 1B or 2B unless Edge of Fangorn is in the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": "Ever nearer the tree-clad slopes of Fangorn loomed, slowly darkling as the sun went west. -The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Into Fangorn scenario.",
+                    "Remove the following cards, in the specified quantities, from the standard encounter deck:",
+                    "3x Deadly Huorn",
+                    "3x Tangled Wood",
+                    "3x Turned Around",
+                    "Then, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Into Fangorn encounter deck.",
+                    "Finally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Into Fangorn Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Huorn of Fangorn",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-Fangorn-Nightmare/Huorn-of-Fangorn.jpg",
+                "Stats": {
+                    "EngagementCost": "23",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Huorn."
+                ],
+                "Keywords": [
+                    "Hinder."
+                ],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Forced: At the beginning of each resource phase, the engaged player discards 1 attachment he controls."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to the defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Into Fangorn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Into Fangorn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Blocking Huorn",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-Fangorn-Nightmare/Blocking-Huorn.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Huorn."
+                ],
+                "Keywords": [
+                    "Hinder."
+                ],
+                "Text": [
+                    "Cannot have attachments.",
+                    "While Blocking Huorn is engaged with a player, it adds its Threat to the staging area."
+                ],
+                "Shadow": "Shadow: Put Blocking Huorn into play engaged with you.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Into Fangorn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Into Fangorn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 2,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wicked Huorn",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-Fangorn-Nightmare/Wicked-Huorn.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "3",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "7"
+                },
+                "Traits": [
+                    "Huorn."
+                ],
+                "Keywords": [
+                    "Hinder."
+                ],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Forced: At the beginning of each resource phase, the engaged player exhausts a hero he controls."
+                ],
+                "Shadow": "Shadow: Attacking enemy cannot take damage until the end of the round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Into Fangorn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Into Fangorn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Tangled Forest",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-Fangorn-Nightmare/Tangled-Forest.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Tangled Forest is in the staging area, it gains: `Forced: After any amount of progress is removed from the current quest, assign X damage amoung characters in play. X is the number of progress just removed. This ability does not stack with other copies of Tangled Forest.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Into Fangorn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Into Fangorn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Entwood",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-Fangorn-Nightmare/Entwood.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Entwood is in the staging area, each Huorn enemy in the staging area gains: `Immune to player card effects.`",
+                    "Travel: The first player engages the highest engagement cost Huorn enemy in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Into Fangorn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Into Fangorn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Julian Kok",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dark Corner of Fangorn",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-Fangorn-Nightmare/Dark-Corner-of-Fangorn.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Dark Corner of Fangorn is in the staging area, each Huorn enemy loses the hunder keyword.",
+                    "Forced: After Dark Corner of Fangorn becomes the active location, each engaged Huorn enemy makes an immediate attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...it is perilous to touch the trees of that wood, it is said.`\r\n-Aragorn, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Into Fangorn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Into Fangorn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Julian Kok",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Stifling Woods",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-Fangorn-Nightmare/Stifling-Woods.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either remove 6 progress from the current quest, or remove 1 time counter from the current quest."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, remove all progress from the current quest.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Into Fangorn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Into Fangorn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Suzanne Helmigh",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fangorn's Anger",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-Fangorn-Nightmare/Fangorn's-Anger.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: If Mugash is attached to a hero, deal 2 damage to that hero. If Mugash is not attached to a hero, Fangorn`s Anger gains surge and doomed 2."
+                ],
+                "Shadow": "Shadow: After this attack, if Mugash is attached to a hero, attacking enemy engages the player who controls that hero.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Into Fangorn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Into Fangorn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

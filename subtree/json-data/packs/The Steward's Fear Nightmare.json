@@ -1,0 +1,395 @@
+{
+    "Name": "The Steward's Fear Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Steward's Fear Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Steward's-Fear-Nightmare/The-Steward's-Fear-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Steup: Shuffle each copy of False Accusations into the underworld deck. When randomly determining which Plot is the `hidden` plot card, include the 2 new Plot cards from the Nightmare Deck, as well as the 3 Plot cards from the original scenario.",
+                    "Forced: After an enemy is destroyed, shuffle it into the underworld deck if you are not at stage 3.",
+                    "Forced: At the beginning of the refresh phase, if there is a Clue card in the staging area, shuffle it back into the underworld deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Thus the will of Sauron entered into Minas Tirith...` -Gandalf, The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Steward`s Fear scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Pickpocket\n3x Underworld Dissident\n2x Storehouse\n2x Market Square\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Steward`s Fear encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Steward's Fear Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rise to Power",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Steward's-Fear-Nightmare/Rise-to-Power.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Plot."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Rise to Power contributes X Threat to the staging area during the quest phase, where X is the number of resources on it.",
+                    "Forced: At the end of the round, place 2 resources on Rise to Power."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Steward's Fear Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Steward's Fear Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Dleoblack",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Assassination",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Steward's-Fear-Nightmare/Assassination.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Plot."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach Assassination to the hero with the highest threat cost. (Counts as a Plot attachment with the text: `Each enemy gets +1 Attack. Attached hero cannot be healed. Damage from undefended attacks and A Knife in the Back must be assigned to attached hero. If attached hero leaves play, the players lose the game.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Steward's Fear Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Steward's Fear Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 1,
+            "Artist": "Arden Beckwith",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Murderous Turncoat",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Steward's-Fear-Nightmare/Murderous-Turncoat.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "1",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Brigand."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Murderous Turncoat makes an immediate attack against the first player.",
+                    "Forced: At the end of the combat phase, place Murderous Turncoat facedown underneath the active location if you are not at stage 3."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Steward's Fear Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Brigands Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Jon Bosco",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Faithless Conspirator",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Steward's-Fear-Nightmare/Faithless-Conspirator.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "4",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Brigand."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If the active location has at least 1 facedown card underneath it, Faithless Conspirator cannot take damage."
+                ],
+                "Shadow": "Shadow: Return attacking enemy to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Steward's Fear Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Steward's Fear Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Rick Price",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Traitors' Den",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Steward's-Fear-Nightmare/Traitors'-Den.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Underworld.",
+                    "City."
+                ],
+                "Keywords": [
+                    "Underworld 1."
+                ],
+                "Text": [
+                    "Forced: At the end of the round, place 1 resource token on Traitors` Den. Then, if it has 4 or more resource tokens on it, remove all tokens from it and reveal at random one of the Plot cards removed from the game during setup. Add that card to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Steward's Fear Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Steward's Fear Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rath Celerdain",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Steward's-Fear-Nightmare/Rath-Celerdain.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Rath Celerdain is in the staging area, it gains: `Forced: At the beginning of the encounter phase, reveal the top card of the underworld deck. If it is an objective, discard it.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "`...go down to the lowest circle and ask for the Old Guesthouse in the Rath Celerdain, the Lampwrights` Street.` -Beregond, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Steward's Fear Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Steward's Fear Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Arched Tunnel",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Steward's-Fear-Nightmare/Arched-Tunnel.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Underworld.",
+                    "City."
+                ],
+                "Keywords": [
+                    "Underworld 1."
+                ],
+                "Text": [
+                    "Travel: Reveal all facedown cards underneath Arched Tunnel, one at a time. Then, place the top card of the underworld deck facedown underneath Arched Tunnel, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": "And each time that it passed the line of the Great Gate it went through an arched tunnel... -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Steward's Fear Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Steward's Fear Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "False Accusations",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Steward's-Fear-Nightmare/False-Accusations.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Scheme."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must either raise his threat by 5 or exhaust each ready character he controls."
+                ],
+                "Shadow": "Shadow: After this attack, return attacking enemy to the staging area. Then, it makes engagement checks against each player.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Steward's Fear Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Steward's Fear Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Cabal's Champion",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Steward's-Fear-Nightmare/The-Cabal's-Champion.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [
+                    "Surge.",
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "If The Cabal`s Champion is unattached and in the staging area, attach it to a Villain enemy, if able. (Counts as a Title attachment with the text: `Attached enemy gets +1 Threat, +1 Attack, +1 Defense, and +2 hit points.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Steward's Fear Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Steward's Fear Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Ed Mattinian",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

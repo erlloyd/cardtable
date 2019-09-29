@@ -1,0 +1,319 @@
+{
+    "Name": "The Antlered Crown Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Antlered Crown Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown-Nightmare/The-Antlered-Crown-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Locations with time counters on them cannot be discarded from play by player card effect."
+                ],
+                "Shadow": null,
+                "FlavorText": "A smoke as of fire and battle arose, and again the sun went down in a burning red that faded into a grey mist...\r\n-The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for THe Antlered Crown scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n1x Dunland Prowler\n1x Dunland Berserker\n2x Dunlending Bandit\n3x Raven Skirmisher\n3x Raven War-camp\n2x Driven Back\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Antlered Crown encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin.\\r\\nNote: Dunlending Horde has the `Dunlending Warriors` encounter set icon and should be shuffled into the Raven deck during setup."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Antlered Crown Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Yog Joshi",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dunlending Horde",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown-Nightmare/Dunlending-Horde.jpg",
+                "Stats": {
+                    "EngagementCost": "32",
+                    "Threat": "4",
+                    "Attack": "6",
+                    "Defense": "3",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments or take non-combat damage.",
+                    "Forced: After the engaged player draws any number of cards, heal all damage from Dunlending Horde."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 2,
+            "Artist": "David Keen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raven Clan Elite",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown-Nightmare/Raven-Clan-Elite.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Dunland.",
+                    "Raven Clan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either remove 1 time counter from a location in play, or Raven Clan Elite make an immediate attack against the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Death to the Fogoil! Death to the Strawheads!`\r\n-Dunlending, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 4,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raven Clan Druid",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown-Nightmare/Raven-Clan-Druid.jpg",
+                "Stats": {
+                    "EngagementCost": "26",
+                    "Threat": "3",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dunland.",
+                    "Raven Clan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After the engaged player draws any number of cards, remove 1 time counter from a location play."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +X Attack, where X is the Time X value on the active location.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "David Keen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raven Stronghold",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown-Nightmare/Raven-Stronghold.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [
+                    "Time 3."
+                ],
+                "Text": [
+                    "Forced: After the last time counter is removed from this location, each player reveals the top card of the Raven deck and adds it to the staging area.",
+                    "Forced: When this location is explored, add the top card of the Raven deck to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 4,
+            "Artist": "Yog Joshi",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Highlands of Dunland",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown-Nightmare/Highlands-of-Dunland.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [
+                    "Time 2."
+                ],
+                "Text": [
+                    "Forced: After the last time counter is removed from this location, return each enemy in play to the staging area."
+                ],
+                "Shadow": "Shadow: Either remove 1 time counter from a location in play, or return attacking enemy to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Michael Rasmussen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raven Talisman",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown-Nightmare/Raven-Talisman.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player draws 1 card. Until the end of the round, add 1 to the total Threat in the staging area for each card in the first player`s hand."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, discard your hand and draw 3 cards.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Ivan Dixon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gathering Forces",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown-Nightmare/Gathering-Forces.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add the top 2 cards of the Raven deck to the staging area. If any player has 5 or more cards in hand, this effect cannot be cancelled."
+                ],
+                "Shadow": "Shadow: Put the top card of the Raven deck into play, engaged with you.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Antlered Crown Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "David Keen",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

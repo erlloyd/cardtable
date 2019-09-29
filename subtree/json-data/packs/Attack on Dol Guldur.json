@@ -1,0 +1,1391 @@
+{
+    "Name": "Attack on Dol Guldur",
+    "Cycle": "GenCon",
+    "SetType": "Fellowship_Deck",
+    "cards": [
+        {
+            "Title": "Celeborn",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Celeborn.jpg",
+                "Stats": {
+                    "ThreatCost": "11",
+                    "Willpower": "3",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After a Silvan ally enters play, that ally gets +1 Willpower, +1 Attack, and +1 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Drazenka Kimpel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Galadriel",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Galadriel.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "4",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Galadriel cannot quest, attack or defend. Allies you control do not exhaust to commit to the quest during the round they enter play.",
+                    "Action: Exhaust Galadriel to choose a player. That player reduces his threat by 1 and draws 1 card. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": null,
+            "Number": 112,
+            "Quantity": 1,
+            "Artist": "Drazenka Kimpel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Assault on the Golden Wood",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Assault-on-the-Golden-Wood-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set Host of Lórien and all 4 Lieutenant enemies aside, out of play. Add Power of Lórien and 1 copy of Dol Guldur Marauder per player to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Dark Lord of Mordor has declared war across Middle-earth. His Nazgûl lead the Morgul host against Minas Tirith in the south, while Easterlings lay siege to Erebor in the north. And in a move long-prepared, the armies of Dol Guldur cross the Anduin to assault Lórien..."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the round, place 1 resource here and move all progress from this stage to Power of Lórien. If there are 3 resources here, advance to stage 2A.",
+                    "Response: At the end of the round, raise each player`s threat by 1 to choose a stage. Each player at that stage draws 1 card and adds 1 resource to a hero`s resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Crossing the Anduin",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Crossing-the-Anduin-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player may remove 10 progress from Power of Lórien to take control of the set-aside Host of Lórien. Then, he may remove an additional 20 progress from Power of Lórien to place it in his play area under his control, otherwise discard it."
+                ],
+                "Shadow": null,
+                "FlavorText": "Three times Lórien had been assailed from Dol Guldur, but besides the valour of the eleven people of that land, the power that dwelt there was too great for any to overcome...\r\n-The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player searches the encounter deck and discard pile for a Dol Guldur location and adds it to the staging area. Shuffle the encounter deck. Advance to a stage 3 of your choice. If you are playing epic multiplayer mode, each team must choose a different stage."
+                ],
+                "Shadow": null,
+                "FlavorText": "Though grievous harm was done to the fair woods on the borders, the assaults were driven back; and when the Shadow passed, Celeborn came forth and led the host of Lórien over Anduin in many boats.\r\n-The Return of the King"
+            },
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Siege of Dol Guldur",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/The-Siege-of-Dol-Guldur-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove all tokens from the Lieutenant enemy at this stage and set it aside, out of play. Add the set aside Bane of Amon Lanc to the staging area, unless it is in a victory display. If Dol Guldur`s city strength is 5 or lower (10 or lower if playing epic multiplayer mode), Bane of Amon Lanc makes an immediate attack against each player in turn order."
+                ],
+                "Shadow": null,
+                "FlavorText": "Sauron took Amon Lanc from the Elves at the beginning of the Third Age. Now the Elves lay siege to reclaim the fortress and cleanse the forest."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Bane of Amon Lanc gets -1 engagement cost for each progress token on this stage.",
+                    "Forced: At the end of the round, remove 5 progress from this stage or increase Dol Guldur`s city strength by 3. The first player may remove an additional 5 progress to reduce Dol Guldur`s city strength by 3."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 3,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Tower of Sorcery",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/The-Tower-of-Sorcery-C-3C.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove all tokens from the Lieutenant enemy at this stage and set it aside, out of play. Add the set aside Sorcerer of Dol Guldur to the staging area, unless it is in a victory display. If Dol Guldur`s city strength is 5 or lower (10 or lower if playing epic multiplayer mode), Sorcerer of Dol Guldur makes an immediate attack against each player in turn order."
+                ],
+                "Shadow": null,
+                "FlavorText": "Though Sauron moved his seat of power to Barad-dûr, the fortress of Dol Guldur remains a stronghold of dark sorcery."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Sorcerer of Dol Guldur gets -1 engagement cost for each progress token on this stage.",
+                    "Forced: At the end of the round, remove 5 progress from this stage or each player at each stage discards all but 1 card from his hand. The first player may remove an additional 5 progress from this stage to choose a player at any stage. That player searches his deck for a card, adds it to his hand, and shuffles his deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "C"
+            },
+            "Number": 4,
+            "Quantity": 1,
+            "Artist": "Julian Kok",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Battle Under the Trees",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Battle-Under-the-Trees-E-3E.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove all tokens from the Lieutenant enemy at this stage and set it aside, out of play. Add the set aside Chieftain Morlug to the staging area, unless it is in a victory display. If Dol Guldur`s city strength is 5 or lower (10 or lower if playing epic multiplayer mode), Chieftain Morlug makes an immediate attack against each player in turn order."
+                ],
+                "Shadow": null,
+                "FlavorText": "A sortie from Dol Guldur charges into the woods that surround the fortress in an attempt to divide the Elves and break the siege."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Chieftain Morlug gets -1 engagement cost for each progress token on this stage.",
+                    "Forced: At the end of the round, remove 5 progress from this stage or each player at each stage discards cards from the top of the encounter deck until an enemy is discarded and puts it into play engaged with him. (If the last card of the encounter deck is discarded resolving this effect, shuffle the discard pile back into the encounter deck.) The first player may remove an additional 5 progress from this stage to choose a non-unique enemy at any stage and destroy it."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "E"
+            },
+            "Number": 5,
+            "Quantity": 1,
+            "Artist": "Carlos Palma Cruchaga",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dungeons of the Necromancer",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Dungeons-of-the-Necromancer-G-3G.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove all tokens from the Lieutenant enemy at this stage and set it aside, out of play. Add the set aside Dungeon Dweller to the staging area, unless it is in a victory display. If Dol Guldur`s city strength is 5 or lower (10 or lower if playing epic multiplayer mode), Dungeon Dweller makes an immediate attack against each player in turn order."
+                ],
+                "Shadow": null,
+                "FlavorText": "Amidst the battle, you gain entrance into the dungeons beneath Dol Guldur. You slip inside to release what captives you can, but an evil creature awaits."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Dungeon Dweller gets -1 engagement cost for each progress token on this stage.",
+                    "Forced: At the end of the round, remove 5 progress from this stage or each player at each stage discards an ally he controls. The first player may remove an additional 5 progress from this stage to choose a player at any stage. That player searches the top 10 cards of his deck for an ally an puts it into play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "G"
+            },
+            "Number": 6,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dol Guldur",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Dol-Guldur.jpg",
+                "Stats": {},
+                "Traits": [
+                    "City.",
+                    "Stronghold."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While the players are at stage 3, Dol Guldur gains: `Forced: At the end of the round, after resolving the Forced effect on each stage 3 in play, reduce Dol Guldur`s city strength by X, where X is the total siege value of each location explored and each enemy destroyed at each stage this round.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Power of Lórien",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Power-of-Lórien.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Lórien."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While you control Power of Lórien, it gains: `Response: Add Power of Lórien to the victory display to cancel and discard an encounter card just revealed from the encounter deck.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "`...do not think that only by singing amid the trees, nor even by the slender arrows of elven-bows, is this land of Lothlórien maintained and defended...`\r\n-Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 1,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Host of Lórien",
+            "IsUnique": false,
+            "CardType": "Objective_Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Host-of-Lórien.jpg",
+                "Stats": {
+                    "Willpower": "3",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Silvan."
+                ],
+                "Keywords": [
+                    "Ranged.",
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Does not exhaust to quest.",
+                    "If Host of Lórien leaves play, remove it from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 1,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Bane of Amon Lanc",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Bane-of-Amon-Lanc.jpg",
+                "Stats": {
+                    "EngagementCost": "45",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Lieutenant.",
+                    "Troll.",
+                    "Olog-hai."
+                ],
+                "Keywords": [
+                    "Indestructible.",
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Forced: When Bane of Amon Lanc attacks you, discard a random card from your hand. Bane of Amon Lanc gets +X Attack for this attack, where X is that card`s printed cost."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 10,
+            "Quantity": 1,
+            "Artist": "Alexander Kozachenko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sorcerer of Dol Guldur",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Sorcerer-of-Dol-Guldur.jpg",
+                "Stats": {
+                    "EngagementCost": "45",
+                    "Threat": "3",
+                    "Attack": "6",
+                    "Defense": "2",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Lieutenant.",
+                    "Sorcerer."
+                ],
+                "Keywords": [
+                    "Indestructible.",
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Forced: When Sorcerer of Dol Guldur attacks you, discard the top card of your deck. Then, discard each copy of that card from play."
+                ],
+                "Shadow": null,
+                "FlavorText": "`A great kind and sorcerer he was of old, and now he wields a deadly fear.`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 11,
+            "Quantity": 1,
+            "Artist": "Gabriel Verdon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Chieftain Morlug",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Chieftain-Morlug.jpg",
+                "Stats": {
+                    "EngagementCost": "45",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "4",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Lieutenant.",
+                    "Orc.",
+                    "Uruk."
+                ],
+                "Keywords": [
+                    "Indestructible.",
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Forced: When Chieftain Morlug attacks you, discard cards from the top of the encounter deck until an enemy is discarded and put it into play engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 12,
+            "Quantity": 1,
+            "Artist": "Ivan Dixon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dungeon Dweller",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Dungeon-Dweller.jpg",
+                "Stats": {
+                    "EngagementCost": "45",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Lieutenant.",
+                    "Spider."
+                ],
+                "Keywords": [
+                    "Indestructible.",
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Forced: When Dungeon Dweller attacks you, discard an ally you control."
+                ],
+                "Shadow": null,
+                "FlavorText": "Sauron would send her prisoners that he had no better uses for: he would have them driven to her hold, and report brought back to him of the play she made.\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 13,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Host of Dol Guldur",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Host-of-Dol-Guldur.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "X",
+                    "Attack": "8",
+                    "Defense": "4",
+                    "HitPoints": "12"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Archery X."
+                ],
+                "Text": [
+                    "X is the number of players.",
+                    "Cannot have attachments.",
+                    "Forced: At the end of the encounter phase, if Host of Dol Guldur is in the staging area, remove X progress from the main quest."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 14,
+            "Quantity": 2,
+            "Artist": "Joel Hustak",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mirkwood Olog-hai",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Mirkwood-Olog-hai.jpg",
+                "Stats": {
+                    "EngagementCost": "34",
+                    "Threat": "4",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Troll.",
+                    "Olog-hai."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Mirkwood Olog-hai attacks and destroys a character, remove 1 progress from the main quest for each excess point of damage."
+                ],
+                "Shadow": "Shadow: Either remove 2 progress from the main quest, or return attacking enemy to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 15,
+            "Quantity": 2,
+            "Artist": "Ivan Dixon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Beast of Taur-nu-Fuin",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Beast-of-Taur-nu-Fuin.jpg",
+                "Stats": {
+                    "EngagementCost": "31",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Werewolf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Beast of Taur-nu-Fuin cannot have attachments and its shadow cards cannot be canceled.",
+                    "Forced: When Beast of Taur-nu-Fuin attacks, either remove 2 progress from the main quest or deal it an additional shadow card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 16,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Amon Lanc Archer",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Amon-Lanc-Archer.jpg",
+                "Stats": {
+                    "EngagementCost": "36",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Archery 2."
+                ],
+                "Text": [
+                    "Forced: After Amon Lanc Archer engages you, either remove 2 progress from the main quest, or deal 2 damage to an ally you control."
+                ],
+                "Shadow": "Shadow: Exhaust a character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 17,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dol Guldur Marauder",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Dol-Guldur-Marauder.jpg",
+                "Stats": {
+                    "EngagementCost": "24",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Dol Guldur Marauder gets +1 Attack and +1 Defense for each resource on it.",
+                    "Forced: When Dol Guldur Marauder attacks, either remove 1 progress from the main quest or place 1 resource on Dol Guldur Marauder."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 18,
+            "Quantity": 4,
+            "Artist": "Joel Hustak",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Battle Warg",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Battle-Warg.jpg",
+                "Stats": {
+                    "EngagementCost": "18",
+                    "Threat": "1",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Warg."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Forced: After Battle Warg engages you, either remove 1 progress from the main quest or discard an attachment you control."
+                ],
+                "Shadow": "Shadow: Discard an attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 19,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gate of Dol Guldur",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Gate-of-Dol-Guldur.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Dol Guldur."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Gate of Dol Guldur is in the staging area, it gains: `The player cannot travel or place progress here unless they are at stage 3B. Each player`s threat cannot be reduced by more than 1 each round by player card effects.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "`Before you could get round it in the South, you would get into the land of the Necromancer...`\r\n-Gandalf, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 20,
+            "Quantity": 2,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Sorcerer's Tower",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/The-Sorcerer's-Tower.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Dol Guldur."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While The Sorcerer`s Tower is in the staging area, it gains: `The players cannot travel or place progress here unless they are at stage 3D. Forced: After a `when revealed` effect is canceled, reveal the top card of the encounter deck.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "`I don`t advise you to go anywhere near the places overlooked by his dark tower!`\r\n-Gandalf, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 2,
+            "Artist": "Julian Kok",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Shadow Road",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/The-Shadow-Road.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Dol Guldur."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The Shadow Road gets +2 Threat for each facedown card attached to it.",
+                    "While The Shadow Road is in the staging area, it gains: `The players cannot travel or place progress here unless they are at stage 3F. Forced: After an event is played during the quest phase, attach it facedown to The Shadow Road.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 22,
+            "Quantity": 2,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dungeon Door",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Dungeon-Door.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Dol Guldur."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Dungeon Door is in the staging area, it gains: `The players cannot travel or place progress here unless they are at stage 3H. No more than 1 damage can be healed from each character each round.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "`I alone of you have been in the dungeons of the Dark Lord, and only in his older and lesser dwelling...`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 23,
+            "Quantity": 2,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Forest Battleground",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Forest-Battleground.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forest Battleground gets +1 Threat for each ally controlled by the player with the most allies.",
+                    "Forced: When Forest Battleground is explored, each player searches the encounter deck and discard pile for an Orc enemy and adds it to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 24,
+            "Quantity": 2,
+            "Artist": "Carlos Palma Cruchaga",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Blackened Woods",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Blackened-Woods.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Blackened Woods is explored, discard the top card of the encounter deck and raise each player`s threat by X, where X is that card`s printed Threat."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, remove 3 progress from the main quest.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 25,
+            "Quantity": 3,
+            "Artist": "Alyn Spiller",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Servant of Sauron",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Servant-of-Sauron.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: The enemy in the staging area with the highest engagement cost makes an immediate attack against the first player."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 26,
+            "Quantity": 3,
+            "Artist": "Alexander Kozachenko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Power Sevenfold",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Power-Sevenfold.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: Each player must choose: either search the encounter deck and discard pile for a Dol Guldur location and add it to the staging area, or search the encounter deck and discard pile for an Orc enemy and put it into play engaged with him."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 27,
+            "Quantity": 2,
+            "Artist": "Carlos Palma Cruchaga",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Necromancer's Rage",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/The-Necromancer's-Rage.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Deal 1 damage to each exhausted character. Until the end of the phase, each damaged character gets -1 Willpower."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to the defending character. Until the end of the phase, the defending character gets -1 Defense for each damage on it.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 28,
+            "Quantity": 2,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fear and Despair",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Fear-and-Despair.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: Each player exhausts a character he controls. Until the end of the round, characters cannot be readied by player card effects."
+                ],
+                "Shadow": "Shadow: Defending character cannot ready until the end of the round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 29,
+            "Quantity": 2,
+            "Artist": "Gabriel Verdon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fastness of Mirkwood",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Fastness-of-Mirkwood.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: No more than 5 progress can be placed on the current quest this round. If Dol Guldur`s city strength is 5 or lower, Fastness of Mirkwood gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack and +1 Defense until the end of the phase (+2 Attack and +2 Defense instead if at least 5 progress is on the quest).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": {
+                "EncounterSet": "Attack on Dol Guldur",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 30,
+            "Quantity": 2,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Standard Game Mode",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Standard-Game-Mode-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Add Dol Guldur to the staging area, attach a threat dial to it, and set its value to 5. Then, increase it`s value by 5 for each player. For the rest of the game, that threat dial is the siege tracker and it displays the city strength of Dol Guldur. Flip this card over."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...we were drawing nigh to Dol Guldur, and that is still a very evil place; we do not go that way.`\r\n-Legolas, The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "While Dol Guldur`s city strength is 0, each Lieutenant enemy loses indestructible.",
+                    "While the players are at stage 3, this card gains: `Forced: After resolving the Forced effect on Dol Guldur, randomly select a stage 3 that was not in play this round and resolve its Forced effect. Then, discard all progress from the current stage 3 and advance to a new stage 3 of your choice.`",
+                    "At the end of the round, if Dol Guldur`s city strength is 0 and there are no Lieutenant enemies in play, Dol Guldur is captured and the players win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "After the fall of the Dark Tower and the passing of Sauron the Shadow was lifted from the hearts of all who opposed him, but fear and despair fell upon his servants and allies. -The Return of the King"
+            },
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": null,
+            "Number": 31,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Epic Multiplayer Mode",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Attack-on-Dol-Guldur/Epic-Multiplayer-Mode-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Create 3 separate staging area, each with its own quest deck and encounter deck. Divide the players into 3 teams, one for each staging area. One team puts Dol Guldur into play in their staging area, attaches a threat dial to it, and sets its value to 5. Then, increase its value by 5 for each player at each stage. For the rest of the game, that threat dial is the siege tracker and it displays the city strength of Dol Guldur. Each other team removes their copy of Dol Guldur. Each other team removes their copy of Dol Guldur from the game. Flip this card over."
+                ],
+                "Shadow": null,
+                "FlavorText": "...there was long battle under the trees and great ruin of fire...\r\n-The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "While Dol Guldur`s city strength is 0, each Lieutenant enemy loses indestructible.",
+                    "While the players are at stage 3, this card gains: `Forced: After resolving the Forced effect on Dol Guldur, the team with Dol Guldur in their staging area resolves the forced effect on the stage 3 that was not in play at any stage this round. Then, each team discards all progress from their stage 3 and advances to a new stage 3 of their choice. Each team must choose a different stage.`",
+                    "Response: At the end of the round, a player who controls Host of Lórien or Power of Lórien may give control of that card to another player at any stage.",
+                    "If the last player at a stage is eliminated, the siege falls and the entire group loses the game. At the end of the round, if Dol Guldur`s city strength is 0 and there are no Lieutenant enemies in play at each stage, Dol Guldur is captured and the players win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "They took Dol Guldur, and Galadriel threw down its walls and laid bare its pits, and the forest was cleared.\r\n-The Return of the King"
+            },
+            "CardSet": "Attack on Dol Guldur",
+            "EncounterInfo": null,
+            "Number": 32,
+            "Quantity": 1,
+            "Artist": "Carlos Palma Cruchaga",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

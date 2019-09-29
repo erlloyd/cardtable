@@ -1,0 +1,323 @@
+{
+    "Name": "The Redhorn Gate Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Redhorn Gate Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate-Nightmare/The-Redhorn-Gate-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing in Nightmare mode.\n\nSetup: Remove all copies of Blinding Blizzard from the encounter deck and set them aside, out of play. During this game, player cards in the victory display do not count their victory points.\n\nForced: When stage 2b is revealed, shuffle each set aside copy of Blinding Blizzard into the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "A cold wind flowed down behind them, as they turned their backs on the Redhorn Gate, and stumbled wearily down the slope. Caradhras had defeated them.\r\n-The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Redhorn Gate scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n1x Black Uruks\n3x Mountain Warg\n1x Knees of the Mountain\n2x Turbulent Waters\n2x Warg Lair\n1x The Dimrill Stair\n2x Fell Voices\n2x Fallen Stones\n3x Mountain Goblin\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Redhorn Gate encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Redhorn Gate Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Alyn Spiller",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wolfpelt Goblin",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate-Nightmare/Wolfpelt-Goblin.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc.",
+                    "Snow."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Forced: After engaging Wolfpelt Goblin, the engaged player must deal X damage to 1 character he controls, where X is the active location`s remaining quest points. Then, remove 2 progress from the active location, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Diego Gisbert Llorens",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Silvertine Marauder",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate-Nightmare/Silvertine-Marauder.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While attacking, Silvertine Marauder gets +2 Attack if the defending character has less than 2 Willpower."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack if the defending character has less than 2 Willpower.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 4,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Snow-Giant",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate-Nightmare/Snow-Giant.jpg",
+                "Stats": {
+                    "EngagementCost": "42",
+                    "Threat": "4",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "10"
+                },
+                "Traits": [
+                    "Giant.",
+                    "Snow."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "While Snow-Giant is in the staging area, it attacks the first player during the combat phase, as if it were engaged.",
+                    "Forced: After Snow-Giant engages you, discard the ally you control with the highest Willpower."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Icy Cavern",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate-Nightmare/Icy-Cavern.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Mountain.",
+                    "Snow."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the number of Snow cards in the staging area.",
+                    "Travel: Search the encounter deck and discard pile for 1 copy of Freezing Cold and reveal it to travel here. Shuffle the encounter deck."
+                ],
+                "Shadow": "Shadow: Defending character gets -1 Willpower. Deal the attacking enemy 1 additional shadow card.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Julian Kok",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Frozen Silverlode",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate-Nightmare/Frozen-Silverlode.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Mountain.",
+                    "River."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Frozen Silverlode is in the staging area, characters cannot gain Willpower from player card effects."
+                ],
+                "Shadow": "Shadow: Defending character gets -1 Willpower. Deal the attacking enemy 1 additional shadow card.",
+                "FlavorText": "`...and there the River Silverlode rises in its icy springs.`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Alyn Spiller",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Blinding Blizzard",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate-Nightmare/Blinding-Blizzard.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Snow."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Blinding Blizzard is in play, heroes do not collect resources during the resource phase.\n\nWhen Revealed: Add Blinding Blizzard to the staging area. Progress that would be placed on the current quest or on Snow locations are instead placed on Blinding Blizzard. When the 5th progress is placed on Blinding Blizzard, discard it."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Julian Kok",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Caradhras the Cruel",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate-Nightmare/Caradhras-the-Cruel.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Return all Snow cards in the encounter discard pile to the top of the encounter deck, in random order. Reveal the top card of the encounter deck (reveal the top 2 cards instead if there are 3 or 4 players in the game)."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Caradhras has not forgiven us,` he said. `He has more snow yet to fling at us, if we go on.`\r\n-Gimli, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

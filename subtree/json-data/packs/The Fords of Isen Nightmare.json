@@ -1,0 +1,332 @@
+{
+    "Name": "The Fords of Isen Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Fords of Isen Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fords-of-Isen-Nightmare/The-Fords-of-Isen-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Forced: After the players advance to a new quest stage, each player with fewer than 3 cards in his hand draws 3 cards."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Not in half a thousand years have they forgotten their grievance that the lords of Gondor gave the Mark to Eorl the young and made alliance with him.` -Gamling, The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the The Fords of Isen scenario.",
+                    "Remove the following cards, in the specified quantities, from the standard encounter deck:",
+                    "3x Dunland Prowler",
+                    "2x Dunlending Bandit",
+                    "1x Dunland Berserker",
+                    "2x Gap of Rohan",
+                    "2x The King`s Road",
+                    "Then, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Fords of Isen encounter deck.",
+                    "Finally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Fords of Isen Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dunland Assassin",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fords-of-Isen-Nightmare/Dunland-Assassin.jpg",
+                "Stats": {
+                    "EngagementCost": "45",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Dunland Assassin cannot be optionally engaged by a player with 3 or more cards in his hand.",
+                    "While Dunland Assassin is in the staging area, it gains: `Forced: After the first player draws any number of cards, Dunland Assassin makes an immediate attack against him.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fords of Isen Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fords of Isen Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Vengeful Hillman",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fords-of-Isen-Nightmare/Vengeful-Hillman.jpg",
+                "Stats": {
+                    "EngagementCost": "27",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Vengeful Hillman attacks and destroys a character, remove 1 progress the current quest card for each card in the defending player`s hand."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fords of Isen Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fords of Isen Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Savage Hillman",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fords-of-Isen-Nightmare/Savage-Hillman.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "While the engaged player has 3 or more cards in hand, Savage Hillman cannot take damage.",
+                    "While the engaged player has 5 or more cards in hand, Savage Hillman gets +2 Attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fords of Isen Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fords of Isen Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Suzanne Helmigh",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Western Shore",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fords-of-Isen-Nightmare/Western-Shore.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "River.",
+                    "Valley."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the number of cards in the first player`s hand.",
+                    "While Western Shore is in the staging area, each enemy gets -X enegagement cost."
+                ],
+                "Shadow": "Shadow: If you have 5 or more cards in your hand, this attack is considered undefended.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fords of Isen Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fords of Isen Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Julian Kok",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Eastern Shore",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fords-of-Isen-Nightmare/Eastern-Shore.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "River.",
+                    "Valley."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Eastern Shore is in the staging area, each player cannot play more than 1 even each round."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, remove 1 time counter from the current quest.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fords of Isen Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fords of Isen Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Julian Kok",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Isen River",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fords-of-Isen-Nightmare/Isen-River.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "River."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Isen River is in the staging area, each player cannot discard cards from his hand.",
+                    "Forced: After Isen River becomes the active location, each player draws a card"
+                ],
+                "Shadow": null,
+                "FlavorText": "Now further, and now nearer Isen flowed in its stony bed.\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Fords of Isen Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fords of Isen Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Brutal Assault",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fords-of-Isen-Nightmare/Brutal-Assault.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player assigns X damage among characters he controls, where X is the number of cards in his hand."
+                ],
+                "Shadow": "Shadow: Assign X damage among characters you control. X is the number of cards in your hand.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fords of Isen Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Fords of Isen Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "JB Casacop",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

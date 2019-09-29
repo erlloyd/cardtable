@@ -1,0 +1,900 @@
+{
+    "Name": "The Drúadan Forest",
+    "Cycle": "Against the Shadow",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Silvan Refugee",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Silvan-Refugee.jpg",
+                "Stats": {
+                    "ResourceCost": "1",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Silvan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After a character leaves play, discard Silvan Refugee from play."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The Elves have their own labours and their own sorrows...` -Gildor, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": null,
+            "Number": 37,
+            "Quantity": 3,
+            "Artist": "Lorraine Schleter",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mirlonde",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Mirlonde.jpg",
+                "Stats": {
+                    "ThreatCost": "8",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Silvan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Each hero you control with a printed Lore resource icon gets -1 threat cost."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...the Elves feared and distrusted the world outside...`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": null,
+            "Number": 32,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "White Tower Watchman",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/White-Tower-Watchman.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Gondor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If each hero you control belongs to the same sphere of influence, you may assign damage from undefended enemy attacks to White Tower Watchman instead of a hero you control."
+                ],
+                "Shadow": null,
+                "FlavorText": "The watchmen cried aloud, and all men in the City stood to arms. -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": null,
+            "Number": 41,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Strength of Arms",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Strength-of-Arms.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if each hero you control has a printed Leadership resource icon.",
+                    "Action: Ready each ally in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "And so the companies came and were hailed and cheered and passed through the Gate, men of the Outlands marching to defend the City of Gondor in a dark hour... -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": null,
+            "Number": 34,
+            "Quantity": 3,
+            "Artist": "Jon Bosco",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Forlong",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Forlong.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Outlands."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While you control Outlands allies that belong to 4 different spheres, ready Forlong at the beginning of each phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Forlong!` men shouted. `True heart, true friend!` -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": null,
+            "Number": 33,
+            "Quantity": 3,
+            "Artist": "Emile Denis",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Advance Warning",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Advance-Warning.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if each hero you control has a printed Lore resource icon.",
+                    "Action: Until the end of the phase, enemies do not make engagement checks"
+                ],
+                "Shadow": null,
+                "FlavorText": "Suddenly he halted and listened. Had he heard a whistle or not? Or was it the call of some strange bird? -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": null,
+            "Number": 40,
+            "Quantity": 3,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mighty Prowess",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Mighty-Prowess.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Tactics hero. Limit 1 per hero.",
+                    "Response: After attached hero attacks and destroys an enemy, deal 1 damage to another enemy that shares a Trait with the enemy just destroyed."
+                ],
+                "Shadow": null,
+                "FlavorText": "He slew many of them and the rest fled. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": null,
+            "Number": 35,
+            "Quantity": 3,
+            "Artist": "Blake Henriksen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Trained for War",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Trained-for-War.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if each hero you control has the printed Tactics resource icon.",
+                    "Action: Until the end of the phase, if the current quest does not have Siege, it gains Battle."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": null,
+            "Number": 36,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": true,
+            "Categories": null
+        },
+        {
+            "Title": "Harbor Master",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Harbor-Master.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Noldor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After a card effect adds any number of resources to the resource pool of a hero you control, Harbor Master gains +1 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "For the Elves of the High Kindred had not yet forsaken Middle-earth, and they dwelt still at that time at the Grey Havens...-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": null,
+            "Number": 39,
+            "Quantity": 3,
+            "Artist": "Kristina Gehrmann",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Against the Shadow",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Against-the-Shadow.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if each hero you control has the printed Spirit resource icon.",
+                    "Action: Until the end of the phase, Spirit characters use their Willpower instead of Defense."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Courage will now be your best defense against the storm that is at hand...` -Gandalf, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": null,
+            "Number": 38,
+            "Quantity": 3,
+            "Artist": "Andrew Ryan",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Drû-buri-Drû",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Drû-buri-Drû.jpg",
+                "Stats": {
+                    "EngagementCost": "1",
+                    "Threat": "4",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Wose."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Allies cannot defend against Drû-buri-Drû.",
+                    "While Drû-buri-Drû is in the victory display, characters get +1 Willpower and +1 Defense.",
+                    "Unless Drû-buri-Drû is in the victory display, the players cannot win."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 45,
+            "Quantity": 1,
+            "Artist": "David A. Nash",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Drúadan Drummer",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Drúadan-Drummer.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "0",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Wose."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Each Wose enemy in the staging area gets +2 Threat."
+                ],
+                "Shadow": "Shadow: Each Wose enemy engaged with the defending player gets +1 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 46,
+            "Quantity": 3,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Drúadan Elite",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Drúadan-Elite.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Wose."
+                ],
+                "Keywords": [
+                    "Archery 2.",
+                    "Prowl X."
+                ],
+                "Text": [
+                    "X is the number of players in the game."
+                ],
+                "Shadow": "Shadow: Return attacking enemy to the staging area after it attacks unless any player pays 1 resource.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 47,
+            "Quantity": 3,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Drúadan Hunter",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Drúadan-Hunter.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Wose."
+                ],
+                "Keywords": [
+                    "Prowl 1.",
+                    "Archery X."
+                ],
+                "Text": [
+                    "X is the number of heroes in play with no resources in their resource pool."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 48,
+            "Quantity": 4,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Drúadan Thief",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Drúadan-Thief.jpg",
+                "Stats": {
+                    "EngagementCost": "5",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Wose."
+                ],
+                "Keywords": [
+                    "Surge.",
+                    "Prowl 1."
+                ],
+                "Text": [],
+                "Shadow": "Shadow: Return attacking enemy to the staging area after it attacks unless any player pays 1 resource.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 49,
+            "Quantity": 3,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ancestral Clearing",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Ancestral-Clearing.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The cost to play each player card is increased by 1.",
+                    "Travel: Exhaust a hero to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": "`They still haunt The Drúadan Forest...` -Elfhelm, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 50,
+            "Quantity": 1,
+            "Artist": "Grzegorz Pedrycz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Garden of Poisons",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Garden-of-Poisons.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Heroes cannot gain resources from card effects.",
+                    "Travel: Each player must pay 1 resource to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...they use poisoned arrows, it is said...` - Elfhelm, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 51,
+            "Quantity": 3,
+            "Artist": "Simon Dominic",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Glade of Cleansing",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Glade-of-Cleansing.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Each Wose enemy gains Archery 1.",
+                    "X is equal to the total archery value of the highest archery Wose enemy in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...they are woodcrafty beyond compare.` -Elfhelm, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 52,
+            "Quantity": 3,
+            "Artist": "Titus Lunter",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Men in the Dark",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Men-in-the-Dark.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each hero must pay 1 resource or take 1 damage. If no hero takes damage from this effect, Men in the Dark gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each hero the defending player controls with no resources.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 53,
+            "Quantity": 3,
+            "Artist": "Marcia George-Bogdan",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Stars in Sky",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Stars-in-Sky.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Prowl 2."
+                ],
+                "Text": [
+                    "When Revealed: Each questing hero must pay 1 resource or it is removed from the quest."
+                ],
+                "Shadow": "Shadow: Discard all resources from the defending character`s resource pool.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 54,
+            "Quantity": 3,
+            "Artist": "Blake Henriksen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Leaves on Tree",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Leaves-on-Tree.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Each player must pay 1 resource for each attachment he controls or discard all attachments he controls."
+                ],
+                "Shadow": "Shadow: Discard an attachment from the defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 55,
+            "Quantity": 2,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Pursuit",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/The-Pursuit-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Search the encounter deck for Drû-buri-Drû and set him aside, out of play. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "The leader of the underworld cabal from Minas Tirith has fled with his remaining henchmen. You have followed his trail to The Drúadan Forest, hoping to bring the nameless villain to justice."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Reveal 1 card from the encounter deck per player and add it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Drúadan Forest is a wild and dangerous place. It is said that Woses, reclusive forest dwellers, still reside among the trees. You wonder if your quarry has considered the dangers of this course."
+            },
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 42,
+            "Quantity": 1,
+            "Artist": "Emile Denis",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "An Untimely End",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/An-Untimely-End-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": "As you move deeper into the forest, the wilderness quickly swallows all trace of civilization. Pushing through a dense patch of undergrowth, you came upon a dark and tangled grove. The scent of death strikes you."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Archery damage must be assigned to allies, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": "In the grove, the fleeing traitors lie slain, pierced by poisoned arrows. As you search the pain-wracked corpses for the body of their leader, the ominous echo of drums begins to sound among the trees. You desperately begin to retrace your steps from the woods, lest the fate of the traitors becomes your own."
+            },
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 43,
+            "Quantity": 1,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Passage Out",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/The-Passage-Out-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Siege."
+                ],
+                "Text": [
+                    "When Revealed: Add Drû-buri-Drû to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "You sense that the edge of the forest must be near at hand, but Woses are master huntsmen and a band of them block your path. your situation seems hopeless: there are simply too many of them. As they begin their attack, you realize your only hope of survival is to convince the Pukel-men that you are not their enemy."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Characters use their Willpower instead of Attack when attacking enemies. If an enemy would be damaged this way, place progress tokens on it instead of damage tokens. When an enemy has progress equal to its hit points, add it to the victory display and place those progress tokens on the quest.\n\nIf the players defeat this stage, they have won the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 44,
+            "Quantity": 1,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

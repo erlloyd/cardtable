@@ -1,0 +1,883 @@
+{
+    "Name": "Return to Mirkwood",
+    "Cycle": "Shadows of Mirkwood",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Dain Ironfoot",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Dain-Ironfoot.jpg",
+                "Stats": {
+                    "ThreatCost": "11",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Dain Ironfoot is ready, Dwarf characters get +1 Attack and +1 Willpower."
+                ],
+                "Shadow": null,
+                "FlavorText": "`You have not heard of Dain and the dwarves of the Iron Hills?` -Bilbo Baggins, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": null,
+            "Number": 116,
+            "Quantity": 1,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "West Road Traveller",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/West-Road-Traveller.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Rohan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After you play West Road Traveller from your hand, switch the active location with any other location in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "The dark world was rushing by, and the wind sang loudly in his ears. -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": null,
+            "Number": 121,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Eagles of the Misty Mountains",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Eagles-of-the-Misty-Mountains.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Eagle."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Eagles of the Misty Mountains cannot have restricted attachments. Eagles of the Misty Mountains gets +1 Attack and +1 Defense for each facedown attachment it has.",
+                    "Response: After another Eagle character leaves play, you may attach that card facedown to Eagles of the Misty Mountains."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": null,
+            "Number": 119,
+            "Quantity": 3,
+            "Artist": "Sandara Tang",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Support of the Eagles",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Support-of-the-Eagles.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [
+                    "Boon."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Tactics hero.",
+                    "Action: Exhaust Support of the Eagles to choose an Eagle ally. Until the end of the phase, attached hero adds that ally`s Attack or Defense (choose 1) to its own."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I would bear you, whither you will, even were you made of stone.` -Gwaihir, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": null,
+            "Number": 120,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mirkwood Runner",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Mirkwood-Runner.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Mirkwood Runner is attacking alone, the defending enemy does not count its Defense."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...let a ploughman plough, but choose an otter for swimming, and for running light over grass and leaf or over snow-an Elf.` -Legolas, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": null,
+            "Number": 123,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Astonishing Speed",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Astonishing-Speed.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Until the end of the phase, all Rohan characters get +2 Willpower."
+                ],
+                "Shadow": null,
+                "FlavorText": "With astonishing speed and skill they checked their steeds, wheeled, and came charging round. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": null,
+            "Number": 122,
+            "Quantity": 3,
+            "Artist": "Anna Christenson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dúnedain Signal",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Dúnedain-Signal.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Signal."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero. Attached hero gains sentinel.",
+                    "Action: Pay 1 resource from attached hero`s pool to attach Dunedain Signal to another hero."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": null,
+            "Number": 117,
+            "Quantity": 3,
+            "Artist": "Ijur",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rumour from the Earth",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Rumour-from-the-Earth.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Look at the top card of the encounter deck. Then, you may pay 1 Lore resource to return Rumour from the Earth to your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Where sight fails the earth may bring us rumour,` said Aragorn. `The land must groan under their hated feet.` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": null,
+            "Number": 124,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Shadow of the Past",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Shadow-of-the-Past.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Move the top card of the encounter discard pile to the top of the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "The wizard`s face remained grave and attentive, and only a flicker in his deep eyes showed that he was startled and indeed alarmed. `It has been called that before,` he said, `but not by you.` -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": null,
+            "Number": 125,
+            "Quantity": 3,
+            "Artist": "Henning Ludvigsen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dawn Take You All",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Dawn-Take-You-All.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play after shadow cards have been dealt, before any attacks have resolved.",
+                    "Combat Action: Each player may choose and discard 1 facedown shadow card from an enemy with which he is engaged."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Dawn take you all, and be stone to you!` -Gandalf, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": null,
+            "Number": 118,
+            "Quantity": 3,
+            "Artist": "Ben Zweifel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ambush",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Ambush-4A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": "As you make the final push to Thranduil`s Palace, your enemies make a desperate attempt to ambush your party, and seize Gollum for themselves."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the beginning of the combat phase, all enemies in play enage the player guarding Gollum.",
+                    "Player cannot defeat this stage if there are any enemies in play. If players defeat this stage, they have won the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 4,
+                "StageLetter": "A"
+            },
+            "Number": 129,
+            "Quantity": 1,
+            "Artist": "John Gravato",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Attercop, Attercop",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Attercop-Attercop.jpg",
+                "Stats": {
+                    "EngagementCost": "44",
+                    "Threat": "2",
+                    "Attack": "8",
+                    "Defense": "4",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Spider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the beginning of the encounter phase, Attercop, Attercop automatically engages the player guarding Gollum, regardless of his threat."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Attercop! Attercop! Won`t you stop...` -Bilbo Baggins, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 139,
+            "Quantity": 3,
+            "Artist": "Aaron B. Miller",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dry Watercourse",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Dry-Watercourse.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Dry Watercourse is the active location, all treachery card effects that target the player guarding Gollum also target each other player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 132,
+            "Quantity": 3,
+            "Artist": "Bill Corbett",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Escape Attempt",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Escape-Attempt-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": "As soon as he thinks that no one is watching, Gollum attempts to slip his bonds and escape."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "The player guarding Gollum cannot commit characters to this quest (unless he is the only player in the game).",
+                    "If the players quest unsuccessfully, Gollum escapes and the players have lost the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 127,
+            "Quantity": 1,
+            "Artist": "Tom Garden",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gollum",
+            "IsUnique": true,
+            "CardType": "Objective_Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Gollum.jpg",
+                "Stats": {
+                    "Willpower": "-",
+                    "Attack": "-",
+                    "Defense": "-",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Damage from undefended attacks against you must be dealt to Gollum. If Gollum is destroyed, or if the player guarding Gollum is eliminated, the players have lost the game.\n                \nForced: At the end of each round, raise the threat of the player guarding Gollum by 3. Then, that player may choose a new player to guard Gollum."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 130,
+            "Quantity": 1,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gollum's Anguish",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Gollum's-Anguish.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Tantrum."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Raise the threat of the player guarding Gollum by 8. That player must choose a new player to guard Gollum, if able."
+                ],
+                "Shadow": "Shadow: Raise the threat of the player guarding Gollum by 4.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 135,
+            "Quantity": 2,
+            "Artist": "Tom Garden",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gollum's Bite",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Gollum's-Bite.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Tantrum."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Deal 4 damage to a hero controlled by the player guarding Gollum. That player must choose a new player to guard Gollum, if able."
+                ],
+                "Shadow": "Shadow: Deal 2 damage to a hero controlled by the player guarding Gollum.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 136,
+            "Quantity": 2,
+            "Artist": "Tom Garden",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mirkwood Bats",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Mirkwood-Bats.jpg",
+                "Stats": {
+                    "EngagementCost": "22",
+                    "Threat": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Forced: After Mirkwood Bats engages a player, deal 1 damage to each character controlled by the player guarding Gollum."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 138,
+            "Quantity": 4,
+            "Artist": "Felicia Cano",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Spiders' Ring",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/The-Spiders'-Ring.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While The Spider`s Ring is the active location, the player guarding Gollum cannot change."
+                ],
+                "Shadow": "Shadow: If this attack is undefended, return any current active location to the staging area. The Spider`s Ring becomes the active location.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 131,
+            "Quantity": 4,
+            "Artist": "Andrew Johanson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Through the Forest",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Through-the-Forest-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Search the encounter deck for Gollum. Choose a player to guard Gollum at the start of the game, and place Gollum in front of that player. Then shuffle the encounter deck. Reveal 1 card per player from the encounter deck, and add it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": "Mirkwood is always a dangerous place, but it is even worse with Gollum. Between the outbursts, tantrums, and the flying provisions, you are not afforded a moment`s peace"
+            },
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 126,
+            "Quantity": 1,
+            "Artist": "Ignacio Bazan Lazcano",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "To the Elvin King's Halls",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/To-the-Elvin-King's-Halls-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": "Having thwarted Gollum`s escape attempt, you tighten his rope and push on through Mirkwood, to Thranduil`s palace."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "The player guarding Gollum cannot play cards from his hand."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 128,
+            "Quantity": 1,
+            "Artist": "Timo Karhula",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wasted Provisions",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Wasted-Provisions.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Tantrum."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Discard the top 10 cards from the deck of the player guarding Gollum. That player must choose a new player to guard Gollum, if able."
+                ],
+                "Shadow": "Shadow: Discard the top 5 cards from the deck of the player guarding Gollum.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 137,
+            "Quantity": 3,
+            "Artist": "David A. Nash",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wood Elf Path",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Wood-Elf-Path.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After the players travel to Wood Elf Path, the player guarding Gollum may choose a new player to guard him."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 134,
+            "Quantity": 3,
+            "Artist": "Stacey Diana Clark",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Woodman's Glade",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Return-to-Mirkwood/Woodman's-Glade.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Travel: The player guarding Gollum must exhaust a hero he controls to travel to Woodman`s Glade.Response: After exploring Woodman`s Glade, reduce the threat of each player not guarding Gollum by 2."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Return to Mirkwood",
+            "EncounterInfo": {
+                "EncounterSet": "Return to Mirkwood",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 133,
+            "Quantity": 3,
+            "Artist": "Mark Poole",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

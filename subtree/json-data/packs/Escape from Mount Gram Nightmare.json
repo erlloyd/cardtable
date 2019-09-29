@@ -1,0 +1,359 @@
+{
+    "Name": "Escape from Mount Gram Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Escape from Mount Gram Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram-Nightmare/Escape-from-Mount-Gram-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Forced: After choosing a starting hero and randomly setting another hero aside facedown, instead of the standard captured deck setup, shuffle any remaining heroes into your captured deck, then place the facedown set aside hero on the bottom of your captured deck.",
+                    "The players cannot win the game while a hero is captured (underneath an encounter card, or in their captured deck)."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Slash them! Beat them! Bite them! Gnash them! Take them away to dark holes full of snakes, and never let them see the light again!`\r\n-The Great Goblin, The Hobbit"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Escape from Mount Gram scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n4x Prison Cell\n3x Dungeon Guard\n1x Jailor Gornákh\n2x Interrogation\n1x Goblin Tormentor\n1x Cruel Torturer\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Escape from Mount Gram encounter deck.\n\nNote: This Nightmare Deck includes a card for the Angmar Orcs encounter set, Orc of Thaurdir. During setup, this card should be set aside along with the rest of the Angmar Orcs encounter set.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Escape from Mount Gram Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Jailor Gornákh",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram-Nightmare/Jailor-Gornákh.jpg",
+                "Stats": {
+                    "EngagementCost": "45",
+                    "Threat": "4",
+                    "Attack": "5",
+                    "Defense": "5",
+                    "HitPoints": "14"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Forced: After Jailor Gornákh enters playt each player searches his captured deck for each hero and captures thme underneath Jailor Gornákh.",
+                    "Forced: After a player rescues any number of cards, Jailor Gornákh attacks that player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Prison Guard",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram-Nightmare/Prison-Guard.jpg",
+                "Stats": {
+                    "EngagementCost": "26",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Capture 1."
+                ],
+                "Text": [
+                    "While you are engaged with Prison Guard, it gainst: `Planning Action: Rescue a random card from underneath Prison Guard. Then, raise each player`s threat by X, where X is that card`s printed cost. (Limit once per round).`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 2,
+            "Artist": "Ivan Dixon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Prison Cell",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram-Nightmare/Prison-Cell.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [
+                    "Capture 1."
+                ],
+                "Text": [
+                    "While Prison Cell is the active location, it gains: `Planning Action: Rescue a random card from underneath Prison Cell. Then, raise each player`s threat by X, where X is that card`s printed cost. (Limit once per round).`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Torture Chamber",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram-Nightmare/Torture-Chamber.jpg",
+                "Stats": {
+                    "Threat": "0",
+                    "QuestPoints": "-"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [
+                    "Capture 1.",
+                    "Surge."
+                ],
+                "Text": [
+                    "X is twice the number of cards captured underneath Torture Chamber.",
+                    "Forced: At the end of the combat phase, if Torture Chamber is in the staging area, deal 1 damage to each exhausted character."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Ivan Dixon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Cruel Torment",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram-Nightmare/Cruel-Torment.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to the current quest. Counts as a Condition attachment with the text: `Each player cannot have more than 6 cards in his hand. (Each player with more than 6 cards in his hand must immediately discard cards until he has 6 cards in his hand.)`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Goblin Patrol",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram-Nightmare/Goblin-Patrol.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player may capture any number of random cards from his hand underneat the current quest. Each player raises his threat by the number of cards in his hand."
+                ],
+                "Shadow": "Shadow: Capture 3 random cards from your hand underneath attacking enemy.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Mount Gram Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raid Golfimbul's Vault",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram-Nightmare/Raid-Golfimbul's-Vault.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge.",
+                    "Capture 3.",
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Forced: After a card is captured by another card effect, capture a random cards from each player`s hand underneath Raid Golfimbul`s Vault.",
+                    "Forced: When the captured cards underneath Golfimbul`s Vault are rescued, put each rescued Item card into its owner`s hand and discard the rest."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram Nightmare",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 1,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc of Thaurdir",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram-Nightmare/Orc-of-Thaurdir.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Orc of Thaurdir attacks you, either discard the top 2 cards of your captured deck, or deal Orc of Thaurdir 2 additional shadow cards."
+                ],
+                "Shadow": "Shadow: For each damage dealt by this attack, discard the top card of your captured deck.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Angmar Orcs Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

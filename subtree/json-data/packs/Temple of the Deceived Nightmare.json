@@ -1,0 +1,392 @@
+{
+    "Name": "Temple of the Deceived Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Temple of the Deceived Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Temple-of-the-Deceived-Nightmare/Temple-of-the-Deceived-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Forced: When preparing the Island Map, instead of the normal map placement, create the first three leftmost columns using the nine `Lost Island` cards, then create two middle columns using the siz new `Edge of the Temple` cards, and finally one rightmost column using the three `Temple of the Deceived` cards.",
+                    "Forced: After the active location is explored, discard all player cards attached to that location."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Temple of the Deceived scenario.\\r\\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n1x Jungle Path\n2x Cursed Temple\n1x Deeper into the Ruins\n3x Sunken Ruins\n2x Aimless Wandering\n2x Curse of the Downfallen\n1x Dwindling Supplies\n3x Faithless Desecrator\n\nThen shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Temple of the Deceived encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Temple of the Deceived Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Federico Musetti",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Desecrated Ruins",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Temple-of-the-Deceived-Nightmare/Desecrated-Ruins-Edge-of-the-Temple.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Ruins."
+                ],
+                "Keywords": [
+                    "Uncharted."
+                ],
+                "Text": [
+                    "Forced: When Desecrated Ruins is flipped over while active, remove all resources from each hero and objective-ally."
+                ],
+                "Shadow": null,
+                "FlavorText": "Tar-Palantir attempted to ammend the evil: but it was too late, and there was rebellion and strife in Númenor\r\n-The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Uncharted. Cannot have player card attachments.",
+                    "Forced: After Edge of the Temple becomes the active location, flip it over.",
+                    "Action: Remove 8 progress from Edge of the Temple to look at its facedown side."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Temple of the Deceived Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Temple of the Deceived Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 2,
+            "Artist": "Federico Musetti",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Temple Foothills",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Temple-of-the-Deceived-Nightmare/Temple-Foothills-Edge-of-the-Temple.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Ruins."
+                ],
+                "Keywords": [
+                    "Uncharted."
+                ],
+                "Text": [
+                    "While Temple Foothills is the active location, the players, as a group, cannot play more than 1 card each round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Uncharted. Cannot have player card attachments.",
+                    "Forced: After Edge of the Temple becomes the active location, flip it over.",
+                    "Action: Remove 8 progress from Edge of the Temple to look at its facedown side."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Temple of the Deceived Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Temple of the Deceived Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 2,
+            "Artist": "Julian Kok",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Cursed Temple",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Temple-of-the-Deceived-Nightmare/Cursed-Temple-Edge-of-the-Temple.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Ruins."
+                ],
+                "Keywords": [
+                    "Uncharted."
+                ],
+                "Text": [
+                    "Forced: When Cursed Temple is flipped over while active, discard 3 cards at random from each player`s hand.",
+                    "While Cursed Temple is the active location, each player cannot draw cards by card effects."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Uncharted. Cannot have player card attachments.",
+                    "Forced: After Edge of the Temple becomes the active location, flip it over.",
+                    "Action: Remove 8 progress from Edge of the Temple to look at its facedown side."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Temple of the Deceived Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Temple of the Deceived Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Julian Kok",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "King's Knight",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Temple-of-the-Deceived-Nightmare/King's-Knight.jpg",
+                "Stats": {
+                    "EngagementCost": "23",
+                    "Threat": "4",
+                    "Attack": "4",
+                    "Defense": "4",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Undead."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After King`s Knight attacks, if no damage was dealt by its attack, return it to the staging area."
+                ],
+                "Shadow": "Shadow: If no damage is dealt by this attack, return attacking enemy to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Temple of the Deceived Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Temple of the Deceived Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Chris Grun",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Cursed Soldier",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Temple-of-the-Deceived-Nightmare/Cursed-Soldier.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Undead."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While the active location is in the top rown, Cursed Soldier gets +3 Threat.",
+                    "While the active location is in the middle row, Cursed Soldier gets +3 Attack.",
+                    "While the active location is in the bottom row, Cursed Soldier gets +3 Defense."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Temple of the Deceived Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Temple of the Deceived Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Chris Grun",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Deceitful Island",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Temple-of-the-Deceived-Nightmare/Deceitful-Island.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 3."
+                ],
+                "Text": [
+                    "When Revealed: Switch the placement of the active location with the location above or below it, or to its left (the active location does not change). Then, flip each adjacement location to its `Lost Island` or `Edge of the Temple` side."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Temple of the Deceived Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Temple of the Deceived Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Jordan Saia",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Call of the Curse",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Temple-of-the-Deceived-Nightmare/Call-of-the-Curse.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Until the end of the round, each Undead enemy gets +X Attack and +X Defense. X is the number of locations to the left of the active location (in its row). If X is 0 or 1, Call of the Curse gains surge."
+                ],
+                "Shadow": "Shadow: Resolve the `when revealed` effect of Call of the Curse.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Temple of the Deceived Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Temple of the Deceived Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Monztre",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sudden Precipice",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Temple-of-the-Deceived-Nightmare/Sudden-Precipice.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach to the active location. (Counts as a Condition attachment with the text: `Forced: After you travel from attached location to the right, deal 2 damage to each exhausted character.`)"
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Temple of the Deceived Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Temple of the Deceived Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Federico Musetti",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

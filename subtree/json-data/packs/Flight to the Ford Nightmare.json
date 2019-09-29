@@ -1,0 +1,358 @@
+{
+    "Name": "Flight to the Ford Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Flight to the Ford Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-to-the-Ford-Nightmare/Flight-to-the-Ford-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nThe players cannot win while Ford of Bruinen is in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "`There seem only to have been five of the enemy. Why they were not all here, I don`t know; but I don`t think they expected to be resisted. They have drawn off for the time being. But not far, I fear. They will come again another night, if we cannot escape.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Flight to the Ford scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n4x Fell Rider\n1x Ford of Bruinen\n1x The Troll`s Camp\n3x Ettenmoors\n3x Pain Assailed Him\n3x The Old Road\n3x Pathless Country\n3x Striken Dumb\n2x Rode Like a Gale\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Flight to the Ford encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Flight to the Ford Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Julian Kok",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fell Rider",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-to-the-Ford-Nightmare/Fell-Rider.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "4",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Nazgûl"
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have non-Morgul attachments.",
+                    "Forced: After Fell Rider attacks and destroys a character, reduce the Ring-bearer`s life by 1."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if The One Ring is exhausted).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flight to the Ford Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flight to the Ford Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 4,
+            "Artist": "Dleoblack",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ford of Bruinen",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-to-the-Ford-Nightmare/Ford-of-Bruinen.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "River."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Travel: Each player searches the encounter deck and discard pile for a Nazgûl enemy and puts it into play engaged with him. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flight to the Ford Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flight to the Ford Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 1,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Trollshaw Forest",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-to-the-Ford-Nightmare/Trollshaw-Forest.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Trollshaw Forest is in the staging area, it gains: `Forced: After a `when revealed` effect is canceled, reduce the Ring-bearer`s life by 1.`",
+                    "Travel: Reduce the Ring-bearer`s life by 1 to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flight to the Ford Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flight to the Ford Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Julian Kok",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Great East Road",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-to-the-Ford-Nightmare/Great-East-Road.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Road."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is 1 plus the number of Nazgûl enemies in play.",
+                    "While Great East Road is in the staging area, each Nazgûl enemy gets -5 engagement cost."
+                ],
+                "Shadow": "Shadow: After this attack, attacking enemy engages the next player then makes an immediate attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flight to the Ford Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flight to the Ford Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pathless Wilderness",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-to-the-Ford-Nightmare/Pathless-Wilderness.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Forest.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Pathless Wilderness enters play with 3 resource tokens on it.",
+                    "Forced: At the end of the round, discard 1 resource token here. Then, if there are no resource tokens here, reduce the Ring-bearer`s life by 3."
+                ],
+                "Shadow": null,
+                "FlavorText": "Before the first day`s march was over Frodo`s pain began to grow again. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Flight to the Ford Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flight to the Ford Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ettendales",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-to-the-Ford-Nightmare/Ettendales.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Forest.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Ettendales is explored, shuffle the top card of the burden deck into the encounter deck."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack. If this attack destroys a character, reduce the Ring-bearer`s life by 1.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flight to the Ford Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flight to the Ford Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Come Back!",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-to-the-Ford-Nightmare/Come-Back.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Enchantment."
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: Reduce the Ring-bearer`s life by 1 and remove all progress from the current quest."
+                ],
+                "Shadow": "Shadow: Either reduce the Ring-bearer`s life by 1, or this attack is considered undefended.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flight to the Ford Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flight to the Ford Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Twilight World",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flight-to-the-Ford-Nightmare/The-Twilight-World.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Morgul."
+                ],
+                "Keywords": [
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "When Revealed: Attach to the Ring-bearer. Limit 1 per hero. (Counts as a Condition attachment with the text: `Forced: At the beginning of the planning phase, either exhaust The One Ring, or reduce the Ring-bearer`s life by 1.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Flight to the Ford Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Flight to the Ford Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

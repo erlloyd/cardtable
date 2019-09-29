@@ -1,0 +1,325 @@
+{
+    "Name": "Foundations of Stone Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Foundations of Stone Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone-Nightmare/Foundations-of-Stone-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nForced: When stage 3b is revealed, discard all Mount and Artifact cards from play. Each player must also discard allies he controls until the total printed cost of allies he controls is 6 or less."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Far, far below the deepest delving of the Dwarves, the world is gnawed by nameless things. Even Sauron knows them not.`\r\n-Gandalf, The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for Foundations of Stone scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Goblin Scout\n2x Goblin Swordsman\n1x Goblin Follower\n3x Burning Low\n1x Branching Paths\n1x Many Roads\n3x Cave In\n3x Drowned Treasury\n1x Mitril Lode\n4x Moria Bats\n\nDuring setup, players are instructed to set the Foundations of Stone encounter set aside, out of play. Shuffle the encounter cards in this Nightmare Deck with the Goblins of the Deep encounter set icon into the standard encounter deck. Then shuffle the encounter cards in this Nightmare Deck with the Foundations of Stone encounter set icon into the remainder of the set aside Foundations of Stone encounter set.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Foundations of Stone Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mithril Seeker",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone-Nightmare/Mithril-Seeker.jpg",
+                "Stats": {
+                    "EngagementCost": "18",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Mithril Seeker gets +1 Attack for each resource on it.\n\nForced: When Mithril Seeker attacks, move 1 resource from each of the defending player`s heroes to Mithril Seeker."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Of what they brought to light the Orcs have gathered nearly all, and given it in tribute to Sauron, who covets it.`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Foundations of Stone Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Goblins of the Deep Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Giant Cave Centipede",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone-Nightmare/Giant-Cave-Centipede.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "5",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Insect."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player at this stage shuffles the card in his hand with the highest printed cost back into his deck.\n\nForced: At the end of the combat phase, if Giant Centipede is engaged with a player, that player chooses and adds it to a different player`s staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Foundations of Stone Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Goblins of the Deep Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 2,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Unspeakable Thing",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone-Nightmare/Unspeakable-Thing.jpg",
+                "Stats": {
+                    "EngagementCost": "15",
+                    "Threat": "5",
+                    "Attack": "X",
+                    "Defense": "5",
+                    "HitPoints": "X"
+                },
+                "Traits": [
+                    "Nameless."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Unspeakable Thing enages a player or attacks a player, attach the top card of that player`s deck to it.",
+                    "X is the printed cost of all attached cards on this card. If there are no cards attached, X is 5."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Foundations of Stone Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Foundations of Stone Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Florian Devos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Primeval Thing",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone-Nightmare/Primeval-Thing.jpg",
+                "Stats": {
+                    "EngagementCost": "45",
+                    "Threat": "6",
+                    "Attack": "X",
+                    "Defense": "6",
+                    "HitPoints": "X"
+                },
+                "Traits": [
+                    "Nameless."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Primeval Thing enters play, attach cards from the top of the first player`s deck to it until the total printed cost of all attached cards is 6 or higher.",
+                    "X is the printed cost of all attached cards on this card. If there are no cards attached, X is 6."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Foundations of Stone Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Foundations of Stone Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Nest of Horrors",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone-Nightmare/Nest-of-Horrors.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Underground.",
+                    "Dark."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Nest of Horrors is in the staging area, it gains: `Forced: When one or more cards are attached to a Nameless enemy from the top of a player`s deck, attach an additional card from the top of that player`s deck.`",
+                    "Travel: Each player at this stage discards the top card of the encounter deck to travel here. Reveal each Nameless enemy discarded by this effect."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Foundations of Stone Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Foundations of Stone Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Shivering River",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone-Nightmare/Shivering-River.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "7"
+                },
+                "Traits": [
+                    "Underground.",
+                    "River."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Shivering River is in the staging area, it contributes its Threat to the total Threat in each other player`s staging area."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. (+3 Attack instead if there is more than one player at this staging area.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Foundations of Stone Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Foundations of Stone Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Jake Bullock",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Chill of the Roots",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone-Nightmare/Chill-of-the-Roots.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must either discard his hand, or raise his threat by the number of cards in his hand. If no cards were discarded by this effect, Chill of the Roots gains surge."
+                ],
+                "Shadow": "Shadow: If attacking enemy is Nameless, attach the top card of the defending player`s deck to it.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Foundations of Stone Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Foundations of Stone Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Dleoblack",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

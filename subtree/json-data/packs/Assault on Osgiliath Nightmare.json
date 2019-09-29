@@ -1,0 +1,390 @@
+{
+    "Name": "Assault on Osgiliath Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Assault on Osgiliath Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Assault-on-Osgiliath-Nightmare/Assault-on-Osgiliath-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Setup: Add Palace Remains to the staging area.",
+                    "If there are more Osgiliath locations in the staging area than players in the game, this card gains: `Response: At the beginning of the quest phase, choose 1 non-unique location. If the players quest successfully this phase, remaining progress made beyond the active location`s quest points is placed on the chosen location"
+                ],
+                "Shadow": null,
+                "FlavorText": "`This great array of spears and swords is going to Osgiliath.` -Frodo, The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Assault on Osgiliath scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n4x Uruk Soldier\n3x Southron Phalanx\n2x West Quarter\n2x East Quarter\n1x Ruined Tower\n1x Ruined Square\n2x The Master`s Malice\n2x Street Fighting\n3x Southron Mercenaries\n1x Uruk Lieutenant\n1x Orc Arbalasters\n1x The Power of Mordor\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard the Assault on Osgiliath encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Assault on Osgiliath Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Invading Orc",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Assault-on-Osgiliath-Nightmare/Invading-Orc.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Invading Orc attacks and destroys a character, that character`s controller returns a location he controls to the staging area."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, return a location you control to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Assault on Osgiliath Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Assault on Osgiliath Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Haradrim Warrior",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Assault-on-Osgiliath-Nightmare/Haradrim-Warrior.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "X",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [
+                    "Archery X."
+                ],
+                "Text": [
+                    "X is the number of locations controlled by the first player.",
+                    "Forced: After Haradrim Warrior engages a player, it gets +X Attack and +X Defense until the end of the round."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Assault on Osgiliath Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Assault on Osgiliath Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Palace Remains",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Assault-on-Osgiliath-Nightmare/Palace-Remains.jpg",
+                "Stats": {
+                    "Threat": "0",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Osgiliath."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects. Palace Remains gets +1 Threat for each resource token on it.",
+                    "The players cannot travel here unless there are at least 5 resource tokens on Palace Remains.",
+                    "While Palace Remains is in the staging area, it gains `Forced: After a player takes control of a location, place 1 resource token here.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Assault on Osgiliath Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Assault on Osgiliath Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 1,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Crumbled Battlements",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Assault-on-Osgiliath-Nightmare/Crumbled-Battlements.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Osgiliath."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When you take control of Crumbled Battlements, shuffle the encounter discard pile into the encounter deck and discard cards from the encounter deck until an enemy is discarded. Put the discarded enemy into play engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Here they come pouring through the breaches!` -Man of Gondor, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Assault on Osgiliath Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Assault on Osgiliath Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Eastern Quarter",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Assault-on-Osgiliath-Nightmare/Eastern-Quarter.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Osgiliath."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When you take control of Eastern Quarter, discard each event card in your hand.",
+                    "While a player controls Eastern Quarter it gains: `Forced: After the `when revealed` effect of a treachery is canceled, return Easter Quarter to the staging area.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Assault on Osgiliath Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Assault on Osgiliath Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Western Quarter",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Assault-on-Osgiliath-Nightmare/Western-Quarter.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Osgiliath."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When you take control of Western Quarter, discard the highest cost attachment you control.",
+                    "While a player controls Western Quarter it gains: `Forced: After the `when revealed` effect of a treachery is canceled, return Western Quarter to the staging area.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Assault on Osgiliath Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Assault on Osgiliath Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Relentless Attack",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Assault-on-Osgiliath-Nightmare/Relentless-Attack.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: Attach to the current quest. (Counts as a Condition attachment with the text: `Each enemy gets -X engagement cost. X is the number of locations controlled by players. Forced: At the beginning of the encounter phase, if there are fewer than X enemies in the staging area, reveal an encounter card.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Assault on Osgiliath Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Assault on Osgiliath Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Jon Bosco",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Overrun Defenses",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Assault-on-Osgiliath-Nightmare/Overrun-Defenses.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add X to the total Threat in the staging area this phase. X is the number of locations the players control. If X is less than 4, Overrun Defenses gains doomed 2."
+                ],
+                "Shadow": "Shadow: Exhaust a character you control (2 characters instead of you control 4 or more locations).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Assault on Osgiliath Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Assault on Osgiliath Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pressed on All Sides",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Assault-on-Osgiliath-Nightmare/Pressed-on-All-Sides.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: If the total Threat of locations controlled by players is greater than the total Threat in the staging area, raise each player`s threat by 2 and immediately end the quest phase without resolving the quest."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each location you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Assault on Osgiliath Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Assault on Osgiliath Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 10,
+            "Quantity": 2,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}
