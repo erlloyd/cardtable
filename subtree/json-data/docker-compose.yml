@@ -1,9 +1,0 @@
-version: '3.1'
-
-services:
-
-  importer:
-    image: node:11.11.0
-    working_dir: /app
-    volumes:
-      - .:/app
