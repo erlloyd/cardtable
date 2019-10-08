@@ -1,0 +1,327 @@
+{
+    "Name": "Breaking of the Fellowship Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Breaking of the Fellowship Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Breaking-of-the-Fellowship-Nightmare/Breaking-of-the-Fellowship-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The day has come at last.` her said: `the day of choice which we have long delayed. What shall now become of our Company that has travelled so far in fellowship?`\r\n-Aragorn, The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard and encounter deck for the Breaking of the Fellowship scenario.",
+                    "Remove the following cards, in the specified quantities, from the standard encounter deck:",
+                    "4x Uruk-hai Archer",
+                    "2x River Anduin",
+                    "1x Slopes of Amon Hen",
+                    "2x Black Feathered Arrows",
+                    "Then, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Breaking of the Fellowship encounter deck.",
+                    "Finally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Breaking of the Fellowship Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Matthew Cowdery",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Isengard Archer",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Breaking-of-the-Fellowship-Nightmare/Isengard-Archer.jpg",
+                "Stats": {
+                    "EngagementCost": "44",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk-hai."
+                ],
+                "Keywords": [
+                    "Toughness 1.",
+                    "Archery 2."
+                ],
+                "Text": [
+                    "Forced: After Isengard Archer enters the staging area, each player at this stage deals 2 damage to a character he controls."
+                ],
+                "Shadow": "Shadow: Deal 2 damage to an ally you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Breaking of the Fellowship Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Tristan Denecke",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Isengard Tracker",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Breaking-of-the-Fellowship-Nightmare/Isengard-Tracker.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk-hai."
+                ],
+                "Keywords": [
+                    "Toughness 2.",
+                    "Archery 1."
+                ],
+                "Text": [
+                    "Forced: After Isengard Tracker destroys a character, move it to the first player`s staging area."
+                ],
+                "Shadow": "Shadow: After this attack, move attacking enemy to the first player`s staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Breaking of the Fellowship Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 4,
+            "Artist": "Victor Manuel Leza Moreno",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Langflood River",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Breaking-of-the-Fellowship-Nightmare/Langflood-River.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "River.",
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Langflood River is in the staging area, no more than 4 progress can be placed on this quest stage each round.",
+                    "Forced: When Langflood River leaves play as an explored location, add it to the staging area to the left, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Breaking of the Fellowship Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Michael Rasmussen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Western Emyn Muil",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Breaking-of-the-Fellowship-Nightmare/Western-Emyn-Muil.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Western Emyn Muil is in the staging area, each Uruk-hai enemy at this stage gains Toughness 1.",
+                    "Travel: A player at this stage must engage the highest toughness enemy in the staging area to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Breaking of the Fellowship Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Michael Rasmussen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Arrows in the Night",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Breaking-of-the-Fellowship-Nightmare/Arrows-in-the-Night.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril."
+                ],
+                "Text": [
+                    "When Revealed: Until the end of the round, add 6 to the archery total at this stage. You may discard X cards from hand to reduce the archery total at this stage by X until the end of the round."
+                ],
+                "Shadow": "Shadow: Discard 1 random card from your hand.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Breaking of the Fellowship Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Matthew Cowdery",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hunting the Ring",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Breaking-of-the-Fellowship-Nightmare/Hunting-the-Ring.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to the current quest. (Counts a Condition attachment with the text: `Forced: At the end of the round, each player at this stage raises his threat by 1 for each enemy in the staging area. Then, discard Hunting the Ring and move each enemy in this staging area to the first player`s staging area.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Breaking of the Fellowship Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Tawny Fritzinger",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Discord and Distrust",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Breaking-of-the-Fellowship-Nightmare/Discord-and-Distrust.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "When Revealed: Until the end of the round, players cannot trigger Action or Response effects."
+                ],
+                "Shadow": "Shadow: Until the end of the round, defending character cannot ready.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Breaking of the Fellowship Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "JB Casacop",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

@@ -1,0 +1,334 @@
+{
+    "Name": "The Passage of the Marshes Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Passage of the Marshes Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Passage-of-the-Marshes-Nightmare/The-Passage-of-the-Marshes-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Forced: When a location in the staging are is explored, raise each player`s threat by X, where X is that location`s Mire value."
+                ],
+                "Shadow": null,
+                "FlavorText": "Often they floundered, stepping or falling hands-first into waters as noisome as a cesspool, till they were slimed and fouled almost up to their necks and stank in one another`s nostrils. -The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Passage of the Marshes scenario.",
+                    "Remove the following cards, in the specified quantities, from the standard encounter deck:",
+                    "3x Groping Dead",
+                    "3x Dead Things",
+                    "3x Soft Mires",
+                    "3x Haunted Mere",
+                    "3x Bitter Reek",
+                    "Then, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Passage of the Marshes encounter deck.",
+                    "Finally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Passage of the Marshes Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Lucas Staniec",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Festering Mire",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Passage-of-the-Marshes-Nightmare/Festering-Mire.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Marsh."
+                ],
+                "Keywords": [
+                    "Mire 2.",
+                    "Victory 2."
+                ],
+                "Text": [
+                    "Forced: When Festering Mire is discarded by the Mire keyword, each player discards his hand.",
+                    "Travel: Each player discard 1 random card from his hand to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Passage of the Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Passage of the Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Lucas Staniec",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Candle-lit Pool",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Passage-of-the-Marshes-Nightmare/Candle-lit-Pool.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Marhs."
+                ],
+                "Keywords": [
+                    "Mire 3.",
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Forced: When Candle-lit Pool is discarded by the Mire keyword, each player searches the encounter deck and discard pile for an Undead enemy and puts it into play engaged with him.",
+                    "Travel: Spend 2 Fellowship resources to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Passage of the Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Passage of the Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Great Reed Thicket",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Passage-of-the-Marshes-Nightmare/Great-Reed-Thicket.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Marsh."
+                ],
+                "Keywords": [
+                    "Mire 2.",
+                    "Victory 2."
+                ],
+                "Text": [
+                    "Forced: When Great Reed Thicket is discarded by the Mire keyword, either flip Sméagol to Gollum, or Gollum makes an immediate attack.",
+                    "Travel: Exhaust Sméagol to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Passage of the Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Passage of the Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Lucas Staniec",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pale Faces",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Passage-of-the-Marshes-Nightmare/Pale-Faces.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Undead."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The engaged player cannot reduce his threat.",
+                    "Forced: When Pale Faces attacks, raise your threat by 4."
+                ],
+                "Shadow": "Shadow: Attacking enemy get +X Attack, where X is the Mire X value of the active location.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Passage of the Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Passage of the Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Alexander Kozachenko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rotting Thing",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Passage-of-the-Marshes-Nightmare/Rotting-Thing.jpg",
+                "Stats": {
+                    "EngagementCost": "34",
+                    "Threat": "4",
+                    "Attack": "6",
+                    "Defense": "3",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Undead."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments.",
+                    "The engaged player cannot reduce his threat.",
+                    "Forced: After Rotting Thing attacks and destroys a character, place 1 mire token on the active location for each excess point of damage."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Passage of the Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Passage of the Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rot and Vapors",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Passage-of-the-Marshes-Nightmare/Rot-and-Vapors.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must choose: either raise your threat by 1 for each questing character you control, or deal 1 damage to each character you control."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, place 1 mire token on the active location.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Passage of the Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Passage of the Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gollum's Rage",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Passage-of-the-Marshes-Nightmare/Gollum's-Rage.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril.",
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Deal Gollum`s Rage to Gollum as a facedown shadow card, if able."
+                ],
+                "Shadow": "Shadow: If attacking enemy is Gollum, it gets +1 Attack and makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Passage of the Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Passage of the Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

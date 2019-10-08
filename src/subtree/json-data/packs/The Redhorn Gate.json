@@ -1,0 +1,998 @@
+{
+    "Name": "The Redhorn Gate",
+    "Cycle": "Dwarrowdelf",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Bofur",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Bofur.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Quest Action: Spend 1 Spirit resource to put Bofur into play from your hand, exhausted and committed to a quest. If you quest successfully this phase and Bofur is still in play, return him to your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Get up lazy-bones...` -The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Timely Aid",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Timely-Aid.jpg",
+                "Stats": {
+                    "ResourceCost": "4"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Secrecy 3."
+                ],
+                "Text": [
+                    "Action: Reveal the top 5 cards of your deck and put 1 revealed ally into play, if able. Shuffle all other revealed cards back into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Sandara Tang",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Elrohir",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Elrohir.jpg",
+                "Stats": {
+                    "ThreatCost": "10",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Noble.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Elladan is in play, Elrohir gets +2 Defense.",
+                    "Response: After Elrohir is declared as a defender, pay 1 resource from his resource pool to ready him."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Good Meal",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Good-Meal.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Hobbit hero.",
+                    "Action: Discard Good Meal to lower the cost of the next event you play this round that matches attached hero`s sphere by 2."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "David A. Nash",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Unseen Strike",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Unseen-Strike.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose a character you control. Until the end of the phase, that character gets +3 Attack while attacking an enemy with a higher engagement cost than your threat."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Even Mehl Amundsen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Keeping Count",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Keeping-Count.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero. Limit 1 per hero.",
+                    "Attached hero gets +1 Attack for each resource token on another copy of Keeping Count that is above the current number of resource tokens on this card.",
+                    "Forced: After attached hero attacks and destroys an enemy, place 1 resource token on this card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Mark Tarrisse",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Needful to Know",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Needful-to-Know.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Secrecy 2."
+                ],
+                "Text": [
+                    "Action: Raise your threat by 1 to look at the top card of the encounter deck. Then, reduce your threat by X, where X is the threat of that card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Renewed Friendship",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Renewed-Friendship.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: After another player plays an attachment on a hero you control, you may (choose 1): ready 1 of that player`s heroes, have that player draw 1 card, or lower that player`s threat by 2."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Taking Initiative",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Taking-Initiative.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Discard the top card of your deck. If the discarded card`s printed cost is equal to or higher than the number of characters you control, draw 2 cards and deal 2 damage to any enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Melissa Findley",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ravenhill Scout",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Ravenhill-Scout.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "0",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dale.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust Ravenhill Scout to move up to 2 progress tokens from 1 location to another location."
+                ],
+                "Shadow": null,
+                "FlavorText": "`They made their first camp on the western side of the great southern spur, which ended in a height called Ravenhill.` -The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Garret DeChellis",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Arwen Undómiel",
+            "IsUnique": true,
+            "CardType": "Objective_Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Arwen-Undómiel.jpg",
+                "Stats": {
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Noble.",
+                    "Ally."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The first player gains control of Arwen Undomiel, as an ally.Response: After Arwen Undomiel exhausts, choose a hero. Add 1 resource to that hero`s resource pool.If Arwen Undomiel leaves play, the players are defeated."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 14,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Avalanche!",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Avalanche.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Snow."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Exhaust each ready character and if it is the quest phase commit them to the quest."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 24,
+            "Quantity": 1,
+            "Artist": "David Lecossu",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Caradhras",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Caradhras.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "9"
+                },
+                "Traits": [
+                    "Mountain.",
+                    "Snow."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "While Caradhras is the active location, questing characters get -1 Willpower.",
+                    "Players cannot travel to Caradhras except by quest card effects."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 15,
+            "Quantity": 1,
+            "Artist": "Cristi Balanescu",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Celebdil",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Celebdil.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "7"
+                },
+                "Traits": [
+                    "Mountain.",
+                    "Snow."
+                ],
+                "Keywords": [
+                    "Victory 2."
+                ],
+                "Text": [
+                    "While Celebdil is the active location, remove 2 progress tokens from it at the end of each round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 17,
+            "Quantity": 1,
+            "Artist": "Cristi Balanescu",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fallen Stones",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Fallen-Stones.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player (choose 1): removes all progress tokens from play, or reveals 2 cards from the encounter deck and adds them to the staging area."
+                ],
+                "Shadow": "Shadow: attacking enemy gets +1 Attack for each progress token on the active location.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 2,
+            "Artist": "Cristi Balanescu",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fanuidhol",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Fanuidhol.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "7"
+                },
+                "Traits": [
+                    "Mountain.",
+                    "Snow."
+                ],
+                "Keywords": [
+                    "Victory 2."
+                ],
+                "Text": [
+                    "While Fanuidhol is the active loction, heroes must spend 1 resource from their resource pool to count their Willpower during the quest phase."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 16,
+            "Quantity": 1,
+            "Artist": "Cristi Balanescu",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fell Voices",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Fell-Voices.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Return the top 2 Snow cards in the encounter discard pile to the top of the encounter deck. If this effect returned less than 2 Snow treachery cards, Fell Voices gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 20,
+            "Quantity": 2,
+            "Artist": "K. R. Harris",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Freezing Cold",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Freezing-Cold.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Snow."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player attaches this card to a hero he controls. Counts as a Condition Attachment with the text: `Attached hero gets -2 Willpower and cannot commit to a quest. If attached hero has more than 1 copy of Freezing Cold attached, discard attached hero from play.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 23,
+            "Quantity": 3,
+            "Artist": "Eric Braddock",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mountain Goblin",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Mountain-Goblin.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Mountain Goblin gets +1 Attack for each Mountain location in the staging area."
+                ],
+                "Shadow": "Shadow: attacking enemy gets +1 Attack. (+2 Attack instead if the active location is a Mountain.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 25,
+            "Quantity": 3,
+            "Artist": "Dmitry Burmak",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mountain Troll",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Mountain-Troll.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "5",
+                    "HitPoints": "7"
+                },
+                "Traits": [
+                    "Troll."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Mountain Troll gets +1 Attack for each Mountain location in the staging area."
+                ],
+                "Shadow": "Shadow: attacking enemy gets +1 Attack. (+2 Attack instead if the active location is a Mountain.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 26,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rocky Crags",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Rocky-Crags.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Travel: Each player must deal 2 damage to 1 character he controls to travel here."
+                ],
+                "Shadow": "Shadow: attacking enemy gets +1 Attack for each progress token on the active location.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 19,
+            "Quantity": 3,
+            "Artist": "David Lecossu",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Snowstorm",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Snowstorm.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Snow."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each questing character gets -1 Willpower until the end of the phase."
+                ],
+                "Shadow": "Shadow: Until the end of the phase, characters defending this attack get -1 Willpower and are discarded if their Willpower is 0.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 22,
+            "Quantity": 5,
+            "Artist": "David Lecossu",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Snow Warg",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Snow-Warg.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Snow."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Allies cannot defend while Snow Warg is attacking.",
+                    "Forced: After a character is declared as a defender against Snow Warg, deal 1 damage to the defending character, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 27,
+            "Quantity": 3,
+            "Artist": "Allison Theus",
+            "HasErrata": true,
+            "Categories": null
+        },
+        {
+            "Title": "The Dimrill Stair",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/The-Dimrill-Stair.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Stair."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Travel: Reshuffle all locations in the discard pile and victory display back into the encounter deck. If you reshuffled at least two locations, reduce each player`s threat by 11 and discard all copies of Freezing Cold from play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 18,
+            "Quantity": 1,
+            "Artist": "Trudi Castle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Snowdrifts",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Snowdrifts-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Shuffle 1 more copy of Snowstorm into the encounter deck than the number of players in the game.",
+                    "Forced: After playing the 11th progress token on Snowdrifts, discard any active location. Caradhras becomes the active location."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 12,
+            "Quantity": 1,
+            "Artist": "Stu Barnes",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Mountains' Peaks",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/The-Mountains'-Peaks-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Shuffle all copies of Snowstorm in the encounter discard pile back into the encounter deck.",
+                    "Characters are discarded from play if their Willpower is ever 0.",
+                    "Players cannot defeat this stage unless they have 5 victory points. If the players defeat this stage, they have won the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 13,
+            "Quantity": 1,
+            "Artist": "Cristi Balanescu",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Up the Pass",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Up-the-Pass-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Add Caradhras to the staging area. Remove all copies of Snowstorm from the encounter deck and set them aside, out of play. Put Arwen Undomiel into play under the control of the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Reveal 1 card from the encounter deck per player, and add it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": {
+                "EncounterSet": "The Redhorn Gate",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 11,
+            "Quantity": 1,
+            "Artist": "Jason Juta",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

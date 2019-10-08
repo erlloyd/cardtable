@@ -1,0 +1,1303 @@
+{
+    "Name": "Mount Gundabad",
+    "Cycle": "Ered Mithrin",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Bilbo Baggins",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Bilbo-Baggins.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit.",
+                    "Burglar."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Bilbo Baggins commits to the quest, choose an enemy in the staging area. Until the end of the phase, Bilbo Baggins gets +X Willpower where X is that enemy`s Threat. If the players quest successfully, deal 1 damage to that enemy (2 damage instead if it is guarding a card)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": null,
+            "Number": 112,
+            "Quantity": 1,
+            "Artist": "Tropa Entertainment",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Greenwood Defender",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Greenwood-Defender.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "0",
+                    "Attack": "0",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Greenwood Defender enters play, it does not exhaust to defend until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "...after the coming of Men they took ever more and more to the gloaming and the dusk.\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": null,
+            "Number": 113,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Elf Guide",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Elf-Guide.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Return a Silvan ally you control to your hand to choose a hero. Add 1 resource to that hero`s pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "...soon Haldir turned aside into the trees and halted on the bank of the river under their shadows.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": null,
+            "Number": 114,
+            "Quantity": 3,
+            "Artist": "John Howe",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gaffer Gamgee",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Gaffer-Gamgee.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Combat Action: Return Gaffer Gamgee to your hand to choose an enemy with engagement cost higher than your threat. Until the end of the round, that enemy cannot attack you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Why? Why`s none of my business, or yours.`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": null,
+            "Number": 115,
+            "Quantity": 3,
+            "Artist": "Romana Kendelic",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Drinking Song",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Drinking-Song.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Count the number of cards in your hand and shuffle your hand into your deck. Then, draw an equal number of cards. Draw 1 additional card if you control a unique Hobbit character."
+                ],
+                "Shadow": null,
+                "FlavorText": "Ho! Ho! Ho! to the bottle I go\r\nTo heal my heart and drown my woe.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": null,
+            "Number": 116,
+            "Quantity": 3,
+            "Artist": "Romana Kendelic",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sting",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Sting.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Guarded (enemy).",
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Hobbit hero.",
+                    "Attached hero gets +1 Willpower, +1 Attack, and +1 Defense.",
+                    "Response: After attached hero is declared as an attacker or defender against an enemy, deal 1 damage to that enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": null,
+            "Number": 117,
+            "Quantity": 3,
+            "Artist": "Tropa Entertainment",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Round Shield",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Round-Shield.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Armor."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a character. Restricted.",
+                    "Response: After a shadow effect is triggered during combat, exhaust Round Shield to give attached character +2 Defense for this attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": null,
+            "Number": 118,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Erebor Toymaker",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Erebor-Toymaker.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dwarf.",
+                    "Craftsman."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After you play Erebor Toymaker from your hand, reduce the cost of the next attachment played this phase by 2."
+                ],
+                "Shadow": null,
+                "FlavorText": "There were toys the like of which they had never seen before, all beautiful and some obviously magical.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": null,
+            "Number": 119,
+            "Quantity": 3,
+            "Artist": "Ryan Valle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Armor of Erebor",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Armor-of-Erebor.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Item.",
+                    "Armor."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Dale or Dwarf character.",
+                    "Attached character gets +1 Defense and gains sentinel."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We make good armour and keen swords, but we cannot again make mail or blade to match those that were made before the dragon came.`\r\n-Glóin, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": null,
+            "Number": 120,
+            "Quantity": 3,
+            "Artist": "Alexander Kozachenko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Shirefolk",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/The-Shirefolk.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if each of your heroes is a Hobbit.",
+                    "Action: Reduce your threat by 4."
+                ],
+                "Shadow": null,
+                "FlavorText": "`If more of us valued food and cheer and song above hoarded gold, it would be a merrier world.`\r\n-Thorin Oakenshield, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": null,
+            "Number": 121,
+            "Quantity": 3,
+            "Artist": "Carmen Cianelti",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The First Forge",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/The-First-Forge.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "1"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Forced: After The First Forge becomes the active location, exhaust the hero with Wormsbane attached. That hero cannot ready while The First Forge is the active location.",
+                    "Response: After the First Forge is explored, flip Wormsbane to its Reforged side and attach it to any hero."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 122,
+            "Quantity": 1,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dagnir's Hoard",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Dagnir's-Hoard.jpg",
+                "Stats": {
+                    "Threat": "7",
+                    "QuestPoints": "7"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Forced: When Dagnir`s Hoard is explored, Dagnir returns to the staging area and makes an immediate attack against each player in turn order.",
+                    "Response: After Dagnir`s Hoard is explored, each player may search his deck for an Item attachment, add it to his hand, and shuffle his deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 123,
+            "Quantity": 1,
+            "Artist": "Nele Diel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Throat of the Mountain",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Throat-of-the-Mountain.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Underground.",
+                    "Dark."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Response: When Throat of the Mountain is explored, search the quest deck for a quest card and make it the current main quest. Then, flip it over. Shuffle the rest of the quest deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "At the end of the hall the floor vanished and fell to an unknown depth.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 124,
+            "Quantity": 1,
+            "Artist": "Lucas Staniec",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dagnir",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Dagnir.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "X",
+                    "Attack": "7",
+                    "Defense": "5",
+                    "HitPoints": "20"
+                },
+                "Traits": [
+                    "Dragon."
+                ],
+                "Keywords": [
+                    "Indestructible."
+                ],
+                "Text": [
+                    "Immune to player card effects. X is 1 more than the number of quest cards in the victory display.",
+                    "Cannot take more than X damage each round.",
+                    "While there are 5 or more quest cards in the victory display, Dagnir cannot leave the staging area and is considered to be engaged with each player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 125,
+            "Quantity": 1,
+            "Artist": "Antonio José Manzanedo",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Guardian of Gundabad",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Guardian-of-Gundabad.jpg",
+                "Stats": {
+                    "EngagementCost": "39",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "1",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Goblin."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While there are 3 or more quest cards in the victory display, Guardian of Gundabad gets +2 Defense."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Defense until the end of the phase.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 126,
+            "Quantity": 3,
+            "Artist": "Martin de Diego Sádaba",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dagnir's Slave",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Dagnir's-Slave.jpg",
+                "Stats": {
+                    "EngagementCost": "26",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Goblin."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Dagnir cannot take damage from non-quest effects."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if Dagnir is engaged with you).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 127,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Deep-dweller",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Deep-dweller.jpg",
+                "Stats": {
+                    "EngagementCost": "32",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Spider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Deep-dweller engages you, it makes an immediate attack.",
+                    "Forced: After Deep-dweller take any amount of damage (and survives), return it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 128,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mines of Gundabad",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Mines-of-Gundabad.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Underground.",
+                    "Dark."
+                ],
+                "Keywords": [
+                    "Deep."
+                ],
+                "Text": [
+                    "Dagnir gets -10 engagement cost."
+                ],
+                "Shadow": "Shadow: If attacking enemy is Dagnir, the defending player must assign X damage among characters he controls, where X is 1 more than the number of quest cards in the victory display.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 129,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Narrow Stair",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Narrow-Stair.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [
+                    "Deep."
+                ],
+                "Text": [
+                    "When faced with the option to travel, the players must travel to Narrow Stair."
+                ],
+                "Shadow": "Shadow: Until the end of the round, defending character cannot be readied by player card effects.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 130,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Desecrated Ruins",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Desecrated-Ruins.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Underground.",
+                    "Dark."
+                ],
+                "Keywords": [
+                    "Deep."
+                ],
+                "Text": [
+                    "While there are 3 or more quest cards in the victory display, Desecrated Ruins gets +2 Threat."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, each player discards a random card from his hand.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 131,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wilderland's Bane",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Wilderland's-Bane.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Dagnir makes an immediate attack against each engaged player. If no attacks were made this way, Dagnir gets -30 engagement cost until the end of the round."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 132,
+            "Quantity": 2,
+            "Artist": "Jokubas Uoginitas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Suffocating Shadows",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Suffocating-Shadows.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player assigns X damage among allies he controls, where X is 1 more than the number of quest cards in the victory display."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+3 Attack instead if there are 3 or more quests in the victory display).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 133,
+            "Quantity": 2,
+            "Artist": "Jokubas Uoginitas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Side Door",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/The-Side-Door-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Setup: Add Dagnir to the staging area and set The First Forge aside, out of play. Create the Caves deck and the quest deck (see insert). Attach Wormsbane to a hero, Broken side face-up. Shuffle the encounter deck and discard cards from the top until X locations have been discarded, where X is 1 less than the number of players in the game. Add those locations to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "Mount Gundabad rises before you, and the Dragon, Dagnir, waits within."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the planning phase, the first player looks at the top 2 cards of the quest deck and chooses 1 to place on the bottom of the quest deck. Then, add The Side Door to the victory display and advance to the top stage 2A of the quest deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "It doesn`t take you long to discover Urdug`s secret entrance, and with a turn from Durin`s Key the way into Mount Gundabad lies open before you. You must find Durin`s Forge, repair Wormsbane, and use it to kill Dagnir."
+            },
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 134,
+            "Quantity": 1,
+            "Artist": "Andreas Adamek",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Exploring Gundabad",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Exploring-Gundabad-The-Upper-Levels-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Return Dagnir to the staging area.",
+                    "If Exploring Gundabad is the current main quest, do not flip it over until the beginning of the quest phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "The interior of Gundabad is dark and  vast. Only by exploring the mines can you find your way."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After characters are committed to the quest, raise each player`s threat by 1.",
+                    "Forced: When this stage is defeated, shuffle The First Forge into the Caves deck.",
+                    "At the end of the combat phase, the players may bypass this stage."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 135,
+            "Quantity": 1,
+            "Artist": "David Keen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Exploring Gundabad",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Exploring-Gundabad-The-Lower-Deeps-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Return Dagnir to the staging area.",
+                    "If Exploring Gundabad is the current main quest, do not flip it over until the beginning of the quest phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "The interior of Gundabad is dark and  vast. Only by exploring the mines can you find your way."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "The `when revealed` effects of the first treachery revealed each round cannot be canceled.",
+                    "Forced: When this stage is defeated, search the Caves deck for a location and make it the active location. Shuffle the Caves deck.",
+                    "At the end of the combat phase, the players may bypass this stage."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 137,
+            "Quantity": 1,
+            "Artist": "David Keen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Exploring Gundabad",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Exploring-Gundabad-Frenzied-Warrens-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Return Dagnir to the staging area.",
+                    "If Exploring Gundabad is the current main quest, do not flip it over until the beginning of the quest phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "The interior of Gundabad is dark and  vast. Only by exploring the mines can you find your way."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After characters are committed to the quest, discard the top 5 cards of the encounter deck. Add a random enemy discarded this way to the staging area.",
+                    "Forced: When this stage is defeated, reduce each player`s threat by 5.",
+                    "At the end of the combat phase, the players may bypass this stage."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 138,
+            "Quantity": 1,
+            "Artist": "David Keen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Exploring Gundabad",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Exploring-Gundabad-Dagnir's-Wrath-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Return Dagnir to the staging area.",
+                    "If Exploring Gundabad is the current main quest, do not flip it over until the beginning of the quest phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "The interior of Gundabad is dark and  vast. Only by exploring the mines can you find your way."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After characters are committed to the quest, Dagnir makes an immediate attack against each player with 6 or more characters.",
+                    "Forced: When this stage is defeated, deal 5 damage to Dagnir. This damage is not limited by Dagnir`s text, and does not count toward her X value.",
+                    "At the end of the combat phase, the players may bypass this stage."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 139,
+            "Quantity": 1,
+            "Artist": "David Keen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Exploring Gundabad",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Exploring-Gundabad-Foreboding-Darkness-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Return Dagnir to the staging area.",
+                    "If Exploring Gundabad is the current main quest, do not flip it over until the beginning of the quest phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "The interior of Gundabad is dark and  vast. Only by exploring the mines can you find your way."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Each player cannot play more than 1 card each phase.",
+                    "Forced: When this stage is defeated, the first player looks at the top 2 cards of the quest deck and chooses 1 to place on the bottom of the quest deck. Then, flip over the top card of the quest deck.",
+                    "At the end of the combat phase, the players may bypass this stage."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 140,
+            "Quantity": 1,
+            "Artist": "David Keen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Exploring Gundabad",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Exploring-Gundabad-Imminent-Pursuit-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Return Dagnir to the staging area.",
+                    "If Exploring Gundabad is the current main quest, do not flip it over until the beginning of the quest phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "The interior of Gundabad is dark and  vast. Only by exploring the mines can you find your way."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After characters are committed to the quest, each player must deal 2 damage to a questing character he controls.",
+                    "Forced: When this stage is defeated, discard a non-unique enemy from play.",
+                    "At the end of the combat phase, the players may bypass this stage."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 141,
+            "Quantity": 1,
+            "Artist": "David Keen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Exploring Gundabad",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Exploring-Gundabad-The-Great-Worm-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Return Dagnir to the staging area.",
+                    "If Exploring Gundabad is the current main quest, do not flip it over until the beginning of the quest phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "The interior of Gundabad is dark and  vast. Only by exploring the mines can you find your way."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Dagnir gets -5 engagement cost for each character the first player controls.",
+                    "Response: After a player resolve an attack against Dagnir, if Dagnir has no hit points remaining, that player may discard a Reforged Wormsbane he controls to add Dagnir to the victory display. Then, the players win the game.",
+                    "At the end of the combat phase, if there are 4 or fewer quests in the victory display, the players must bypass this stage."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 142,
+            "Quantity": 1,
+            "Artist": "David Keen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wormsbane",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Wormsbane-Broken.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Artifact.",
+                    "Weapon.",
+                    "Broken."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a hero.",
+                    "Attached hero gets +1 Attack.",
+                    "If attached hero leaves play, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "...they tell that he slew Scatha, the great Dragon of Ered Mithrin, and the land had peace from the long-worms afterwards.\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 143,
+            "Quantity": 1,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wormsbane",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Wormsbane-Reforged.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Artifact.",
+                    "Weapon.",
+                    "Reforged."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a hero.",
+                    "Attached hero gets +X Attack, where X is 1 more than the number of quest cards in the victory display.",
+                    "If attached hero leaves play, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Gundabad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 144,
+            "Quantity": 1,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

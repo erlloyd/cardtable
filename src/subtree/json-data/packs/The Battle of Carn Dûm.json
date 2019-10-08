@@ -1,0 +1,940 @@
+{
+    "Name": "The Battle of Carn Dûm",
+    "Cycle": "Angmar Awakened",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Amarthiúl",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Amarthiúl.jpg",
+                "Stats": {
+                    "ThreatCost": "10",
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While you are engaged with at least 1 enemy, Amarthiúl gains the Tactics resource icon.",
+                    "While you are engaged with at least 2 enemies, add 1 additional resource to Amarthiúl`s resource pool when you collect resources during the resource phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The heirs of Elendil do not forget all things past...` -Aragorn, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 115,
+            "Quantity": 1,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Guardian of Arnor",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Guardian-of-Arnor.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Guardian of Arnor gets +1 Defense for each enemy engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Travellers scowl at us, and countrymen give us scornful names.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 116,
+            "Quantity": 3,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Long Defeat",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/The-Long-Defeat.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a quest card in play. Limit 1 per quest.",
+                    "Response: After attached quest card is defeated, each player either draws 2 cards or heals up to 5 damage from among characters he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...for ere the fall of Nargothrond or Gondolin I passed over the mountains, and together through ages of the world we have fought the long defeat.` -Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 122,
+            "Quantity": 3,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lindir",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Lindir.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Noldor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Lindir enters play, if you have less than 3 cards in your hand, draw until you have 3 cards in your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "`To sheep other sheep no doubt appear different,` laughed Lindir. `Or to shepherds. But Mortals have not been our study. We have other business.` -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 120,
+            "Quantity": 3,
+            "Artist": "Tawny Fritzinger",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Beechbone",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Beechbone.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have restricted attachments.",
+                    "Enters play exhausted.",
+                    "Response: After Beechbone is declared as an attacker, deal 1 damage to him to deal X damage to the defending enemy. X is the amount of damage on Beechbone."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 118,
+            "Quantity": 3,
+            "Artist": "Katayanagi",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Favor of the Valar",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Favor-of-the-Valar.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a player`s threat dial. Limit 1 per player.",
+                    "Forced: When you would be eliminated by reaching your threat elimination level, instead discard Favor of the Valar and reduce your threat to 5 less than your threat elimination level. You are not eliminated."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...their hearts were lifted up in such a hope as they had not known since the darkness came out of the East...` -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 124,
+            "Quantity": 3,
+            "Artist": "Matthew Cowdery",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lords of the Eldar",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Lords-of-the-Eldar.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Lords of the Eldar can only be played from your discard pile.",
+                    "Action: Place Lords of the Eldar on the bottom of your deck from your discard pile. Then, until the end of the round all Noldor characters get +1 Willpower, +1 Attack, and +1 Defense."
+                ],
+                "Shadow": null,
+                "FlavorText": "`And here in Rivendell there live still some of his chief foes: the Elven-wise, lords of the Eldar...` -Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 121,
+            "Quantity": 3,
+            "Artist": "Rovina Cai",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hold Your Ground!",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Hold-Your-Ground.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose and ready a sentinel character.",
+                    "Valour Action: Ready all sentinel characters."
+                ],
+                "Shadow": null,
+                "FlavorText": "Aragorn and Boromir did not heed the command, but still held their ground, side by side, behind Gandalf at the far end of the bridge. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 119,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Quick Ears",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Quick-Ears.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: Exhaust a Dúnedain or Ranger hero to cancel an enemy card just revealed from the encounter deck. Then, shuffle it back into the encounter deck and reveal an additional encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`... though I cannot disappear, I have hunted many wild and wary things and I can usually avoid being seen, if I wish.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 123,
+            "Quantity": 3,
+            "Artist": "Eva Maria Toker",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Doom Hangs Still",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Doom-Hangs-Still.jpg",
+                "Stats": {
+                    "ResourceCost": "5"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Planning Action: Until the end of the round, players do not raise their threat from questing unsuccessfully.",
+                    "Valour Planning Action: Raise each player`s threat by 2 to skip the quest phase this round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Dooms hangs still on a thread. Yet hope there is still, if we can stand but unconquered for a little while.` -Gandalf, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 117,
+            "Quantity": 3,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Clutches of Carn Dûm",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/The-Clutches-of-Carn-Dûm-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Add Thaurdir to the staging area, Captain side faceup. Add 1 copy of Carn Dûm garrison per player to the staging area. Search the encounter deck for 1 copy of Accursed Battlefield and make it the active location. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "Your company has made its way swiftly north, and finally the fortress of Carn Dûm looms before you. Unsure if you have arrived in time, you can only hope beyond hope that Iârion is still alive."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Thaurdir cannot leave the staging area and cannot take damage. At the end of the round, if Thaurdir is Champion side faceup, flip him.",
+                    "Do not discard unresolved shadow cards at the end of the combat phase.",
+                    "Forced: If there are 3 shadow cards dealt to Thaurdir, flip him."
+                ],
+                "Shadow": null,
+                "FlavorText": "Thaurdir has mustered the defense of Carn Dûm. There is no turning back now. `For Iârion!` the Rangers begin to shout, unsheathing their swords."
+            },
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 125,
+            "Quantity": 1,
+            "Artist": "Wibben",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Midwinter's Crux",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Midwinter's-Crux-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Raise each player`s threat by X, where X is the number of shadow cards in play. If Thaurdir is Captain side faceup, flip him."
+                ],
+                "Shadow": null,
+                "FlavorText": "A swirling dark cloud starts to gather above you, and a cold wind tenses your muscles. `I have a bad feeling about this...` you hear Amarthiúl mutter. It seems Daechanar`s ritual has begun. Sensing you have little time to spare, your company rushes to the gates of Carn Dûm"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Thaurdir cannot leave the staging area, is considered to be engaged with each player, and attacks each player in turn during the combat phase (deal and discard a new shadow card for each attack). At the end of the round, if Thaurdir is Captain side faceup, flip him.",
+                    "While Midwinter`s Crux has 15 or more progress on it, Thaurdir loses indestructible. You cannot defeat this stage while Thaurdir is in play.",
+                    "If Thaurdir is defeated, you win the game"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 126,
+            "Quantity": 1,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Thaurdir",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Thaurdir-Captain.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "4",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Undead.",
+                    "Wraith.",
+                    "Captain."
+                ],
+                "Keywords": [
+                    "Indestructible."
+                ],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Each other enemy gets +10 engagement cost.",
+                    "Forced: After Thaurdir is flipped or a treachery card with the Sorcery trait is revealed, deal 1 shadow card to each enemy in play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 127,
+            "Quantity": 1,
+            "Artist": "Brian Valenzuela",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Thaurdir",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Thaurdir-Champion.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "4",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Undead.",
+                    "Wraith.",
+                    "Champion."
+                ],
+                "Keywords": [
+                    "Indestructible."
+                ],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Each other enemy gets -10 engagement cost.",
+                    "Forced: After Thaurdir is flipped or a treachery with the Sorcery trait is revealed, Thaurdir heals 3 damage and makes an immediate attack against the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 128,
+            "Quantity": 1,
+            "Artist": "Brian Valenzuela",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Carn Dûm Garrison",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Carn-Dûm-Garrison.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "1",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Carn Dûm gets +1 Threat for each shadow card currently dealt to it."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each shadow card currently dealt to it.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm",
+                "EasyModeQuantity": 3,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 129,
+            "Quantity": 4,
+            "Artist": "Brian Valenzuela",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Grunts",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Orc-Grunts.jpg",
+                "Stats": {
+                    "EngagementCost": "8",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Doomed 1.",
+                    "Surge."
+                ],
+                "Text": [
+                    "Any time progress is placed on the current quest, reduce the amount of progress placed by 1."
+                ],
+                "Shadow": "Shadow: Add Orc Grunts to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 130,
+            "Quantity": 4,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Werewolf of Angmar",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Werewolf-of-Angmar.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "4",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Werewolf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After an event card is played, deal 1 shadow card to Werewolf of Angmar.",
+                    "Forced: If there are 3 shadow cards dealt to Werewolf of Angmar and it is in the staging area, it engages the first player and makes an immediate attack (do not deal it a shadow card for this attack)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 131,
+            "Quantity": 2,
+            "Artist": "Matthew Starbuck",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Accursed Battlefield",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Accursed-Battlefield.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Carn Dûm."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Accursed Battlefield is the active location, each quest card in play gains the battle keyword."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+3 Attack instead if the defending player`s threat is higher than the attacking enemy`s engagement cost).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 132,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mountains of Angmar",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Mountains-of-Angmar.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Mountains of Angmar is the active location, each shadow card with no shadow effect gains: `Shadow: Raise defending player`s threat by 2.`"
+                ],
+                "Shadow": "Shadow: Raise defending player`s threat by 2.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 133,
+            "Quantity": 2,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Blight of Carn Dûm",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Blight-of-Carn-Dûm.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Blight.",
+                    "Plains."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After an enemy attacks, heal 1 damage from it.",
+                    "Travel: Deal each enemy in play 1 shadow card to travel here."
+                ],
+                "Shadow": "Shadow: If the attacking enemy is Thaurdir, heal 3 damage from him.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 134,
+            "Quantity": 3,
+            "Artist": "Logan Feliciano",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fortress Walls",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Fortress-Walls.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Carn Dûm."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Fortress Walls is the active location, for each resource spent by a player, raise that player`s threat by 1."
+                ],
+                "Shadow": "Shadow: If your threat is 40 or higher, attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 135,
+            "Quantity": 3,
+            "Artist": "Mikail Greuli",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Sky Darkens",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/The-Sky-Darkens.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Sorcery."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must discard a random card from his hand. Each player then searces his deck for each other copy of the card he discarded, and discards those as well. Shuffle each searched deck."
+                ],
+                "Shadow": "Shadow: Discard a random card from the defending player`s hand.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 136,
+            "Quantity": 2,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Vile Afflication",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Vile-Afflication.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Sorcery."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must distribute damage among questing characters equal to the printed cost of the highest cost card in that player`s discard pile."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys an ally, search your deck for another copy of that ally and discard it, if able.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 137,
+            "Quantity": 3,
+            "Artist": "Beth Sobel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Daechanar's Will",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Daechanar's-Will.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Flip Thaurdir. Then, if he is Captain side faceup, Daechanar`s Will gains surge."
+                ],
+                "Shadow": "Shadow: Flip Thaurdir after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 138,
+            "Quantity": 2,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Furious Charge",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Furious-Charge.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge.",
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Forced: When at least 1 progress is placed on Furious Charge, each character gets -2 Defense until the end of the round. If Thaurdir is Captain side faceup, flip him.",
+                    "Response: After Furious Charge is defeated, add 10 progress to the main quest."
+                ],
+                "Shadow": null,
+                "FlavorText": "With reckless abandon, your company makes a mad dash for the gates!"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 139,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

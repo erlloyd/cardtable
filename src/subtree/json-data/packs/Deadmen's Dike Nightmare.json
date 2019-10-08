@@ -1,0 +1,353 @@
+{
+    "Name": "Deadmen's Dike Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Deadmen's Dike Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Deadmen's-Dike-Nightmare/Deadmen's-Dike-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Each player`s deck cannot include more than 50 total cards.",
+                    "Setup: Each player searches the encounter deck for a copy of Cursed Dead and places it in the encounter discard pile. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Men call it Deadmen`s Dike, and they fear to tread there. For the folk of Arnor dwindled, and their foes devoured them...`\r\n-Elrond, The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Deadmen`s Dike scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n2x Fornost Square\n3x Broken Battlements\n2x Norbury Tombs\n2x Restless Evil\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Deadmen`s Dike encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Deadmen's Dike Nightmare",
+            "EncounterInfo": null,
+            "Number": 19,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Undead Horde",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Deadmen's-Dike-Nightmare/Undead-Horde.jpg",
+                "Stats": {
+                    "EngagementCost": "34",
+                    "Threat": "4",
+                    "Attack": "6",
+                    "Defense": "3",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Undead."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments.",
+                    "For each excess point of combat damage deal by Undead Horde (damage that is dealt beyond the remaining hit points of the character damaged by its attack) you must discard 1 card from the top of your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Deadmen's Dike Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Deadmen's Dike Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 20,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Cursed Dead",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Deadmen's-Dike-Nightmare/Cursed-Dead.jpg",
+                "Stats": {
+                    "EngagementCost": "27",
+                    "Threat": "1",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Undead."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Put each copy of Cursed Dead in the discard pile into play in the staging area."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if there is a copy of the defending character in its owner`s discard pile.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Deadmen's Dike Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Deadmen's Dike Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 4,
+            "Artist": "Helge C. Balzer",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Palace Ruins",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Deadmen's-Dike-Nightmare/Palace-Ruins.jpg",
+                "Stats": {
+                    "Threat": "9",
+                    "QuestPoints": "9"
+                },
+                "Traits": [
+                    "Fornost.",
+                    "Ruins."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Discard the top X of your deck to reduce Palace Ruins` Threat by X until the end of the phase. Any player may trigger this action. (Limit once per phase.)"
+                ],
+                "Shadow": "Shadow: Discard 1 card from the top of your deck for each Undead enemy engaged with you.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Deadmen's Dike Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Deadmen's Dike Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 22,
+            "Quantity": 2,
+            "Artist": "Joel Hustak",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fornost Street",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Deadmen's-Dike-Nightmare/Fornost-Street.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Fornost.",
+                    "Ruins."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Fornost Street is in the staging area, each other Fornost location gets +1 Threat.",
+                    "Travel: Return the topmost enemy in the encounter discard pile to the staging area."
+                ],
+                "Shadow": "Shadow: Each Undead enemy engaged with you gets +1 Attack and +1 Defense until the end of the phase.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Deadmen's Dike Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Deadmen's Dike Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 23,
+            "Quantity": 2,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Decrepit City",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Deadmen's-Dike-Nightmare/Decrepit-City.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Fornost.",
+                    "Ruins."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Decrepit City is the active location, `when revealed` effects cannot be canceled."
+                ],
+                "Shadow": "Shadow: Either discard 3 cards from the top of your deck, or this attack is considered undefended.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Deadmen's Dike Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Deadmen's Dike Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 24,
+            "Quantity": 2,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Paralyzing Fear",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Deadmen's-Dike-Nightmare/Paralyzing-Fear.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Sorcery."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to a hero and exhaust that hero. (Counts as a Condition attachment with the text: `Forced: When attached hero would ready, it does not ready unless attached hero`s controller discard a card from the top of his deck.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Deadmen's Dike Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Deadmen's Dike Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 25,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Curse of Angmar",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Deadmen's-Dike-Nightmare/Curse-of-Angmar.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Sorcery."
+                ],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: Each player discards each card in his hand that has the same title as a card in his discard pile. If no cards are discarded by this effect, Curse of Angmar gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": "...the Dúnedain were now few and all the peoples of Eriador diminished. -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Deadmen's Dike Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Deadmen's Dike Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 26,
+            "Quantity": 2,
+            "Artist": "Anthony Feliciano",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gather Your Courage",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Deadmen's-Dike-Nightmare/Gather-Your-Courage.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge.",
+                    "Victory 10."
+                ],
+                "Text": [
+                    "When Revealed: Each player placed the top 8 cards fo his deck facedown under this quest.",
+                    "Forced: When this quest is defeated, shuffle each card under this quest into its owner`s deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "Battling the dead drains your spirit as well as your body."
+            },
+            "Back": null,
+            "CardSet": "Deadmen's Dike Nightmare",
+            "EncounterInfo": null,
+            "Number": 27,
+            "Quantity": 1,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

@@ -1,0 +1,322 @@
+{
+    "Name": "The City of Ulfast",
+    "Cycle": "Vengeance of Mordor",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Lothíriel",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-City-of-Ulfast/Lothíriel.jpg",
+                "Stats": {
+                    "ThreatCost": "8",
+                    "Willpower": "3",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If Éomer is in play, Lothíriel gains the Rohan trait.",
+                    "Response: After Lothíriel commits to a quest, choose an ally in your hand. If that ally shares a Trait with her, put that ally into play exhausted and committed to the quest. At the end of the phase, if that ally is still in play, shuffle it into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The City of Ulfast",
+            "EncounterInfo": null,
+            "Number": 27,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Angbor the Fearless",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-City-of-Ulfast/Angbor-the-Fearless.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While your threat is 40 or higher, Angbor the Fearless gets +2 Attack and does not exhaust to quest."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Four thousands I sent marching from Pelargir through Lossarnach two days ago; and Angbor the fearless rides before them.`\r\n-Aragorn, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The City of Ulfast",
+            "EncounterInfo": null,
+            "Number": 28,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Need Drives Them",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-City-of-Ulfast/Need-Drives-Them.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Each player whose threat is 40 or higher readies all characters he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The City of Ulfast",
+            "EncounterInfo": null,
+            "Number": 29,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Keen Longbow",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-City-of-Ulfast/Keen-Longbow.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Lore hero. Limit 1 per hero.",
+                    "Restricted.",
+                    "Attached hero gains ranged.",
+                    "Response: After attached hero is declared an as attacker against an enemy, discard up to 3 cards from your hand to deal 1 damage to that enemy for each card discarded this way."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The City of Ulfast",
+            "EncounterInfo": null,
+            "Number": 31,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "War Axe",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-City-of-Ulfast/War-Axe.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Tactics character. Limit 1 per character. Restricted.",
+                    "Attached characters gets +1 Attack for each attachment it has with the restricted keyword."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Gimli Glóin`s son, have you your axe ready?`\r\n-Éomer, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The City of Ulfast",
+            "EncounterInfo": null,
+            "Number": 32,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Woodland Sentry",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-City-of-Ulfast/Woodland-Sentry.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Silvan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After you play Woodland Sentry from your hand, choose an enemy or location in play. If there is a copy of that card in the victory display, discard the chosen card."
+                ],
+                "Shadow": null,
+                "FlavorText": "In the Wide World the Wood-elves lingered in the twilight of our Sun and Moon but loved best the stars...\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The City of Ulfast",
+            "EncounterInfo": null,
+            "Number": 30,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Knight of Belfalas",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-City-of-Ulfast/Knight-of-Belfalas.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Knight of Belfalas enters play, return a Gondor ally from your discard pile to your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "The mounted knights returned, and at their rear the banner of Dol Amroth...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The City of Ulfast",
+            "EncounterInfo": null,
+            "Number": 34,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Forth, The Three Hunters!",
+            "IsUnique": false,
+            "CardType": "Contract",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-City-of-Ulfast/Forth-The-Three-Hunters-SideA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Your deck cannot include ally cards.",
+                    "Each of your heroes can have 1 additional restricted attachment. Reduce the cost of the first restricted attachment you play on each of your heroes each round by 1.",
+                    "Refresh Action: If each of your heroes has at least 2 restricted attachments, flip this card over."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...we that remain cannot forsake our companions while we have strength left.`\r\n-Aragorn, The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Each of your heroes can have 1 additional restricted attachment and gets +1 Willpower for each restricted attachment on it.",
+                    "Action: Exhaust this card to heal 1 damage from each of your heroes."
+                ],
+                "Shadow": null,
+                "FlavorText": "`With hope or without hope we will follow the trail of our enemies. And woe to them, if we prove the swifter!`\r\n-Aragorn, The Two Towers"
+            },
+            "CardSet": "The City of Ulfast",
+            "EncounterInfo": null,
+            "Number": 49,
+            "Quantity": 1,
+            "Artist": "Justin Gerard",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Host of Galadhrim",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-City-of-Ulfast/Host-of-Galadhrim.jpg",
+                "Stats": {
+                    "ResourceCost": "4"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Planning Action: Return each Silvan ally you control to your hand. Then, play each of those allies from your hand one at a time at no cost."
+                ],
+                "Shadow": null,
+                "FlavorText": "Celeborn came forth and led the host of Lórien...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The City of Ulfast",
+            "EncounterInfo": null,
+            "Number": 36,
+            "Quantity": 3,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

@@ -1,0 +1,1003 @@
+{
+    "Name": "The Mûmakil",
+    "Cycle": "Haradrim",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Firyal",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Firyal.jpg",
+                "Stats": {
+                    "ResourceCost": "5",
+                    "Willpower": "3",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Harad.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Firyal commits to the quest, look at the top card of the encounter deck. Then, you may discard the looked at card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Tawny Fritzinger",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Jubayr",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Jubayr.jpg",
+                "Stats": {
+                    "ResourceCost": "5",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Harad.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Response: After Jubayr exhausts to defend an attack, discard 1 facedown shadow card from a non-unique enemy. (Limit once per phase.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Colin Boyer",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Yazan",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Yazan.jpg",
+                "Stats": {
+                    "ResourceCost": "5",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Harad.",
+                    "Ranger."
+                ],
+                "Keywords": [
+                    "Ranged."
+                ],
+                "Text": [
+                    "Response: After Yazan is declared as an attacker, deal 1 damage to a non-unique enemy in play. (Limit once per phase.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "David A. Nash",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wait no Longer",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Wait-no-Longer.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: At the beginning of the quest phase, search the top 5 cards of the encounter deck for an enemy and put it into play engaged with you. Then, reveal 1 less encounter card this phase (to a minimum of 0). Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We must press our Enemy, and no longer wait upon him for the move.`\r\n-Aragorn, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "John Pacer",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Kahliel",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Kahliel.jpg",
+                "Stats": {
+                    "ThreatCost": "10",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Harad.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "You may use resources from Kahliel`s resource pool to pay for Harad ally cards of any sphere.",
+                    "Action: Discard a Harad ally card from your hand to ready a Harad character in play. (Limit once per phase.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "...the Southrons were bold men and grim...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Ryan Valle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Andrath Guardsman",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Andrath-Guardsman.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After you play Andrath Guardsman from your hand, choose a non-unique enemy engaged with you. That enemy cannot attack you this round."
+                ],
+                "Shadow": null,
+                "FlavorText": "They forgot or ignored what little they had known of the Guardians, and of the labours of those that made possible the long peace of the Shire.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Coney in a Trap",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Coney-in-a-Trap.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control a unique character with the Ranger trait and another unique character with the Warrior trait.",
+                    "Response: After you engage an enemy, that enemy cannot attack you until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Jon Bosco",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Kahliel's Headdress",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Kahliel's-Headdress.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to Kahliel. Each Harad character gets +1 Willpower.",
+                    "Refresh Action: Exhaust Kahliel`s Headdress to shuffle the topmost Harad ally in your discard pile into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Lucas Durham",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Prepare for Battle",
+            "IsUnique": false,
+            "CardType": "Player_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Prepare-for-Battle.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Limit 1 copy of Prepare for Battle in the victory display.",
+                    "While this quest is in the victory display, the first player draws an additional card during the resource phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Soon there will be battle on the fields. A sortie must be made ready.`\r\n-Gandalf, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dwarf Pipe",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Dwarf-Pipe.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item.",
+                    "Pipe."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Dwarf character. Limit 1 per character.",
+                    "Response: After a card is discarded from the top of your deck, exhaust Dwarf Pipe to place that card on the bottom of your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "He held a small pipe with a wide flattened bowl...\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Mark Bulahao",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Horse-hair Lasso",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Horse-hair-Lasso.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Capture."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Response: After the attached enemy is dealt any amount of damage, the engaged player shuffles his deck and discards the top card. If the discarded card’s cost is equal to or greater than the attached enemy’s remaining hit points, add Horse-hair Lasso and attached enemy to the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 11,
+            "Quantity": 1,
+            "Artist": "Nikolas Hagialas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Poisoned Spear",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Poisoned-Spear.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Capture."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Response: After the players quest successfully, the engaged player discards the top card of the encounter deck. If the discarded card’s [Threat] is equal to or greater than the attached enemy’s remaining hit points, add Poisoned Spear and attached enemy to the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 12,
+            "Quantity": 1,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pit Trap",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Pit-Trap.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Capture."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Response: After the players travel to a location, if the active location`s printed Threat is equal to or greater than the attached enemy`s remaining hit points, the engaged player adds Pit Trap and attached enemy to the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 13,
+            "Quantity": 1,
+            "Artist": "Lucas Staniec",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Noose of Vines",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Noose-of-Vines.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Capture."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Response: After a character defends an attack against the attached enemy, if the defending character has more remaining hit points than the attached enemy, add Noose of Vines and attached enemy to the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 14,
+            "Quantity": 1,
+            "Artist": "Dani Hartel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wild Mûmak",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Wild-Mûmak.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "3",
+                    "Attack": "6",
+                    "Defense": "3",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [
+                    "Indestructible.",
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Cannot take more tha 3 damage each round.",
+                    "Forced: At the end of the round, the engaged player must choose: either return Wild Mûmak to the staging area, or it makes an immediate attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 15,
+            "Quantity": 4,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Harad Tiger",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Harad-Tiger.jpg",
+                "Stats": {
+                    "EngagementCost": "0",
+                    "Threat": "4",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot be optionally engaged.",
+                    "Forced: After Harad Tiger attacks and destroys a character, return it to the staging area."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 16,
+            "Quantity": 1,
+            "Artist": "Ramon Puasa Jr.",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Territorial Ape",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Territorial-Ape.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Territorial Ape gets +X Threat and + X Attack, where X is the Threat of the active location."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if a location was explored this round).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 17,
+            "Quantity": 4,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Strangling Python",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Strangling-Python.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "1",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Forced: After Strangling Python damages a character, attach it to that character. (Counts as a Condition attachment with the text: `Attached character cannot ready.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 18,
+            "Quantity": 2,
+            "Artist": "Dmitry Prosvirnin",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Giant Centipede",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Giant-Centipede.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Giant Centipede damages a character, treat that character’s text box as if it were blank until the end of the round (except for Traits)."
+                ],
+                "Shadow": "Shadow: Treat the defending character’s text box as blank until the end of the round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 19,
+            "Quantity": 2,
+            "Artist": "Dmitry Prosvirnin",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mûmak Trail",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Mûmak-Trail.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Mumak Trail is the active location, it gains: `Response: When Mumak Trail leaves play as an explored location, search the encounter deck and discard pile for a Wild Mumak and add it to the staging area. Shuffle the encounter deck.`",
+                    "Travel: Raise each player`s threat by 1 to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 20,
+            "Quantity": 4,
+            "Artist": "Lucas Staniec",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Stampeding Oliphaunt",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Stampeding-Oliphaunt.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: Choose a Wild Mûmak in the staging area to attack the first player. If no attacks are made this way, search the encounter deck and discard pile for a Mûmak Trail and add it to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "On the great beast thundered, blundering in blind wrath through pool and thicket. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 2,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Savage South",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/The-Savage-South.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player discards the top 5 cards of his deck. Each player discards each card he controls that shares a title with any of the 5 cards he just discarded."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, return attacking enemy to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 22,
+            "Quantity": 2,
+            "Artist": "Dimitri Bielak",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Terrible Fever",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Terrible-Fever.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove a hero from the quest and attach Terrible Fever to that hero. (Counts as a Condition attachment with the text: `Forced: At the end of the round, deal 1 damage to attached character.`)"
+                ],
+                "Shadow": "Shadow: Defending character cannot ready until the end of the round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 23,
+            "Quantity": 2,
+            "Artist": "Marius Bota",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Biting Insects",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Biting-Insects.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player discards a random card from his hand and assigns X damage among characters he controls. X is the discarded card`s cost."
+                ],
+                "Shadow": "Shadow: Discard a random card from your hand and assign X damage among characters you control. X is the discarded card`s cost.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 24,
+            "Quantity": 2,
+            "Artist": "Alexandr Elichev",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Guardians of the Jungle",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Guardians-of-the-Jungle.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Each location gets +1 Threat.",
+                    "Forced: When Guardians of the Jungle becomes the current quest, search the encounter deck and discard pile for a Territorial Ape and put it into play engaged with the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": "The great apes of the jungle gather in the trees around you. They shadow your steps and slow your progress."
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": null,
+            "Number": 25,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Welcome to the Jungle",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Welcome-to-the-Jungle-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set each copy of Wild Mûmak and each Capture objective aside, out of play. Each player adds 1 different location to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "After seeing his village destroyed by Sauron’s Orcs, Kahliel has decided to travel north with you to Gondor. But it is a long road, and you will need mounts to ride. So your Haradrim allies have led you into the great jungle of Harad in search of the might Mumakil."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After the active location leaves play as an explored location, shuffle 1 set aside Wild Mûmak into the encounter deck.",
+                    "The players cannot advance unless the number of Wild Mûmak in play is equal to the number of players."
+                ],
+                "Shadow": null,
+                "FlavorText": "The jungle is full of danger. The Haradrim warn you to stay alert lest the hunters become the hunted."
+            },
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 26,
+            "Quantity": 1,
+            "Artist": "Joshua Cairós",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Capture the Oliphaunts",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Capture-the-Oliphaunts-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Starting with the first player, each player attaches 1 random set-aside Capture objective to a Wild Mûmak in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "You’ve tracked the Mûmakil through miles of dense jungle and battled with the creatures that dwell therein, but now comes the hard part: you must actually capture the Oliphaunts alive."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the beginning of the quest phase, if there is no active location, reveal an additional encounter card this phase.",
+                    "This stage cannot be defeated while there are any Capture objectives in play. If the players defeat this stage, they win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": {
+                "EncounterSet": "The Mûmakil",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 27,
+            "Quantity": 1,
+            "Artist": "Alexander Gustafson",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

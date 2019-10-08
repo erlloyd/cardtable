@@ -1,0 +1,403 @@
+{
+    "Name": "The Seventh Level Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Seventh Level Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Seventh-Level-Nightmare/The-Seventh-Level-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nSetup: Set Overseer Maurûl and Chamber of Records aside, out of play.\n\nForced: When stage 2B is revealed, make Chamber of Records the active location (returning any currently active location to the staging area) and add Overseer Maurûl to the staging area. Then, shuffle all copies of Balin`s Doom in the encounter discard pile back into the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`They seem to have made a last stand by both doors,` he said; `but there were not many left by that time. So ended the attempt to retake Moria! It was valiant but foolish.`. -Gandalf, The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Seventh Level scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n2x Plundered Armoury\n2x Hidden Threat\n2x Upper Hall\n2x Goblin Scout\n2x Goblin Swordsman\n2x Goblin Spearman\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Seventh Level encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin.`Does not stack`",
+                    "Some cards have passive abilities with the text `This ability does not stack with...` While two or more effects that do not stack with one another are active, only one of them will affect the game state."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Seventh Level Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Mark Bulahao",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Overseer Maurûl",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Seventh-Level-Nightmare/Overseer-Maurûl.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "12"
+                },
+                "Traits": [
+                    "Mordor.",
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Overseer Maurûl gets +X Threat, +X Attack and +X Defense, where X is the highest number of resources on a Goblin enemy in play.\n                \n                The Players cannot win the game unless Overseer Maurûl is in the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Seventh Level Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Seventh Level Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Chamber of Records",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Seventh-Level-Nightmare/Chamber-of-Records.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "8"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Each Goblin enemy with at least 1 resource on it is immune to player events.",
+                    "Forced: When a Goblin enemy engages a player, add 2 resources to that enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Now, I fear, we must say farewell to Balin son of Fundin.`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Seventh Level Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Seventh Level Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 1,
+            "Artist": "Juan Carlos Barquet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Taskmaster",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Seventh-Level-Nightmare/Orc-Taskmaster.jpg",
+                "Stats": {
+                    "EngagementCost": "44",
+                    "Threat": "1",
+                    "Attack": "4",
+                    "Defense": "4",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Mordor.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add 1 resource to each Goblin enemy in play.\n                \nForced: When a Goblin enemy with at least 1 resource on it is dealt any amount of damage, remove 1 resource from that enemy and cancel all damage just dealt to it."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Seventh Level Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Seventh Level Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Goblin Skirmisher",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Seventh-Level-Nightmare/Goblin-Skirmisher.jpg",
+                "Stats": {
+                    "EngagementCost": "15",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Each Goblin enemy gets +1 Attack for each resource on it. This ability does not stack with other copies of Goblin Skirmisher."
+                ],
+                "Shadow": "Shadow: Deal X damage to the defending character. X is the number of resources on attacking enemy.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Seventh Level Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Seventh Level Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Rick Price",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pit Goblin",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Seventh-Level-Nightmare/Pit-Goblin.jpg",
+                "Stats": {
+                    "EngagementCost": "36",
+                    "Threat": "3",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add 2 resources to Pit Goblin."
+                ],
+                "Shadow": "Shadow: If attacking enemy is a Goblin, add 1 resource to it.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Seventh Level Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Seventh Level Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Deep-Mines",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Seventh-Level-Nightmare/Deep-Mines.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When a Goblin enemy enters play, add 1 resource to that enemy if Deep-Mines is in the staging area."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. Then, if attacking enemy is a Goblin, deal it another shadow card.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Seventh Level Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Seventh Level Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Trudi Castle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Western Hall",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Seventh-Level-Nightmare/Western-Hall.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Each Goblin in play gets +1 Threat for each resource on it. This ability does not stack with other copies of Western Hall"
+                ],
+                "Shadow": null,
+                "FlavorText": "Away beyond the shadows at the western end of the hall there came cries and horn-calls.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Seventh Level Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Seventh Level Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Michael Rasmussen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Balin's Doom",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Seventh-Level-Nightmare/Balin's-Doom.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge.",
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: Add 1 resource to each Goblin enemy in play."
+                ],
+                "Shadow": "Shadow: If attacking enemy is a Goblin, add 1 resource to it.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Seventh Level Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Seventh Level Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Beats and Echoes",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Seventh-Level-Nightmare/Beats-and-Echoes.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Reveal the top X cards of the encounter deck, adding all enemies to the staging area. Discard the other revealed cards without resolving them. X is 2 plus the number of players not engaged with a Goblin enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": "Eachoes ran along as they hurried forward; and there seemed to be the sound of many footfalls following their own. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Seventh Level Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Seventh Level Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 10,
+            "Quantity": 2,
+            "Artist": "Mark Bulahao",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

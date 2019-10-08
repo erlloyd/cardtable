@@ -1,0 +1,1013 @@
+{
+    "Name": "The Morgul Vale",
+    "Cycle": "Against the Shadow",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Hidden Cache",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Hidden-Cache.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Hidden Cache is discarded from your deck, add 2 resources to the resource pool of a hero you control.",
+                    "Action: Spend 1 resource to draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": "...there was a good deal of food jumbled carlessly on shelves and on the ground, among an untidy litter of plunder...\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": null,
+            "Number": 143,
+            "Quantity": 3,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Théoden",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Théoden.jpg",
+                "Stats": {
+                    "ThreatCost": "12",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Noble.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Each hero with a printed Tactics resource icon gets +1 Willpower."
+                ],
+                "Shadow": null,
+                "FlavorText": "`To me! To me!` cried Théoden. `Up Eorlingas! Fear no darkness!` -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": null,
+            "Number": 134,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Visionary Leadership",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Visionary-Leadership.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Gondor hero.",
+                    "While attached hero has at least 1 resource in its resource pool, Gondor characters get +1 Willpower."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...still the lords of Gondor have keener sight than lesser men...` -Denethor, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": null,
+            "Number": 136,
+            "Quantity": 3,
+            "Artist": "Milek Jakubiec",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Spear of the Mark",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Spear-of-the-Mark.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Rohan character.",
+                    "Attached character gets +1 Attack. (+2 Attack instead if attacking an enemy in the staging area)."
+                ],
+                "Shadow": null,
+                "FlavorText": "Right through the press drove Théoden Thengel`s son, and his spear was shivered as he threw down thier chieftan. -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": null,
+            "Number": 137,
+            "Quantity": 3,
+            "Artist": "Jon Bosco",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pelargir Ship Captain",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Pelargir-Ship-Captain.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Gondor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Pelargir Ship Captain enters play, move 1 resource from the resource pool of a hero you control to another hero`s resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": null,
+            "Number": 135,
+            "Quantity": 3,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ered Nimrais Prospector",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Ered-Nimrais-Prospector.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Ered Nimrais Prospector enters play, discard the top 3 cards of your deck. Then, choose and shuffle 1 card from your discard pile back into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": null,
+            "Number": 141,
+            "Quantity": 3,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Scroll of Isildur",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Scroll-of-Isildur.jpg",
+                "Stats": {
+                    "ResourceCost": "4"
+                },
+                "Traits": [
+                    "Record."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Lore hero.",
+                    "Reduce the cost to play Scroll of Isildur by 1 for each hero you control with a printed Lore resource icon.",
+                    "Action: Discard Scroll of Isildur to play any Lore event card in your discard pile as if it were in your hand. Then, place that event on the bottom of your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": null,
+            "Number": 142,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Steed of the Mark",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Steed-of-the-Mark.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Mount."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Gondor or Rohan hero.",
+                    "Response: after attached hero commits to a quest, spend 1 resource from attached hero`s resource pool to ready attached hero."
+                ],
+                "Shadow": null,
+                "FlavorText": "...fresh horses were always in readiness to bear his errand-riders to Rohan in the Noth... -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": null,
+            "Number": 139,
+            "Quantity": 3,
+            "Artist": "Sandara Tang",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Forth Eorlingas!",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Forth-Eorlingas.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Combat Action: Each Rohan hero can be declared as an attacker against enemies in the staging area this phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Oaths ye have taken: now fulfill them all, to lord and land and league of friendship!` -Théoden, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": null,
+            "Number": 138,
+            "Quantity": 3,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lay of Nimrodel",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Lay-of-Nimrodel.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose a Spirit hero. Until the end of the phase, that hero gets +1 Willpower for each resource in its resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "An Elven-maid there was of old.\r\nA shining star by day:\r\nHer mantle white was hemmed with hold,\r\nHer shoes of silver-grey.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": null,
+            "Number": 140,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Rearguard",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/The-Rearguard-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Set aside Lord Alcaron, Nazgûl of Minas Morgul, and The White Bridge. Add To the Tower, Murzag and 1 copy of Morgul Vale to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "Lord Alcaron and Faramir have been captured by forces from Minas Morgul. You pursue their captors eastward into the dreaded vale."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Murzag cannot leave play unless destroyed. If Murzag is defeated, advance to the next stage."
+                ],
+                "Shadow": null,
+                "FlavorText": "You are betrayed! Lord Alcaron has revealed himself as in league with the Enemy. A large Uruk, Murzag, has been left in charge of finishing you off while Faramir is rushed ahead to the Dead City."
+            },
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 144,
+            "Quantity": 1,
+            "Artist": "Sidharth Chatursedi",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Betrayal",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/The-Betrayal-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add Lord Alcaron to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "You`ve defeated Murzag and his kin. There is no time for rest as you follow Faramir depper into the vale. Soon you find the traitor Alcaron blocking the road, a grimace of anger on his formerly handsome face. `By the the thousand thorn-drakes of Morgai, you do temp my patience!` he sneers."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Lord Alcaron cannot leave play unless destroyed. If Lord Alcaron is defeated, advance to the next stage."
+                ],
+                "Shadow": null,
+                "FlavorText": "Alcaron utters an ancient word, and a ghastly shriek rises from Minas Morgul. Something cold and terrible has awoken. Something that is aware of your presence. A short distance ahread, the Uruk carrying Faramir pauses, intimidated by the carrion cry from the city. There may still be time. But first you must deal with the traitor..."
+            },
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 145,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Morgul Rider",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/The-Morgul-Rider-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add Nazgûl of Minas Morgul and The White Bridge to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "You`ve delivered justice to the traitor Alcaron. You rush forward to help Lord Faramir, who is still struggling with his captors. Then another shrill crwy emanates from the city. It pierces your ears and chills your heart. With a dull clangor; the gates of Minas Morgul open. Mounted on a great black horse, a Nazgûl rides forth to claim Sauron`s prize."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Reveal 1 card per player from the encounter deck and add it to the staging area.",
+                    "Nazgûl of Minas Morgul cannot leave play unless destroyed.",
+                    "If Nazgûl of Minas Morgul is defeated, the players have won the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 146,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "To the Tower",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/To-the-Tower.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Captured."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "To the Tower cannot leave the staging area.",
+                    "Remove Faramir from the game.",
+                    "If 10 or more progress tokens are on To the Tower, the players have lost the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 147,
+            "Quantity": 1,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Morgul Bodyguard",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Morgul-Bodyguard.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Any damage that would be dealt to a Captain enemy is dealt to 1 Morgul Bodyguard instead."
+                ],
+                "Shadow": "Shadow: Attacking enemy engages the next player and makes an immediate attack, if able.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 148,
+            "Quantity": 4,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Morgul Sorcerer",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Morgul-Sorcerer.jpg",
+                "Stats": {
+                    "EngagementCost": "5",
+                    "Threat": "1",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After any number of progress tokens are placed on To the Tower, deal Morgul Sorcerer a shadow card."
+                ],
+                "Shadow": "Shadow: Defending player must place 1 progress token on To the Tower or treat this attack as undefended.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 149,
+            "Quantity": 2,
+            "Artist": "Jim Pavelec",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Morgul Tracker",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Morgul-Tracker.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "4",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Morgul Tracker is optionally engaged, place 1 progress token on To the Tower."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If undefended, place 1 progress token on To the Tower as well.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 150,
+            "Quantity": 3,
+            "Artist": "Yigit Koroglu",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Murzag",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Murzag.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "2",
+                    "HitPoints": "7"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk.",
+                    "Captain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Murzag attacks, reveal the top card of the encounter deck. If that card is an enemy, put it into play engaged with the defending player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 151,
+            "Quantity": 1,
+            "Artist": "Jim Pavelec",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lord Alcaron",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Lord-Alcaron.jpg",
+                "Stats": {
+                    "EngagementCost": "10",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Traitor.",
+                    "Captain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Lord Alcaron attacks, place 1 progress token on To the Tower.",
+                    "Forced: When Lord Alcaron is dealt a shadow card with no shadow effect, he makes an additional attack after this one (deal and resolve another shadow card)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 152,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Nazgûl of Minas Morgul",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Nazgûl-of-Minas-Morgul.jpg",
+                "Stats": {
+                    "EngagementCost": "1",
+                    "Threat": "4",
+                    "Attack": "7",
+                    "Defense": "4",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Nazgûl.",
+                    "Captain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Reduce any amount of damage dealt to Nazgûl of Minas Morgul to 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Come not between the Nazgûl and his prey!`\r\n-The Witch King, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 153,
+            "Quantity": 1,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Morgul Road",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Morgul-Road.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Road."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Morgul Road leaves play as an explored location, the first player may remove 1 progress token from To the Tower or deal 1 damage to any enemy in play."
+                ],
+                "Shadow": "Shadow: Return attacking enemy to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 154,
+            "Quantity": 3,
+            "Artist": "Trudi Castle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Morgul Vale",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Morgul-Vale.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Valley."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the round, each player returns 1 enemy engaged with him to the staging area."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, place 1 progress token on To the Tower.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 155,
+            "Quantity": 3,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The White Bridge",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/The-White-Bridge.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "X"
+                },
+                "Traits": [
+                    "Bridge."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the number of progress tokens on To the Tower."
+                ],
+                "Shadow": null,
+                "FlavorText": "So they came slowly to the white bridge.\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 156,
+            "Quantity": 1,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Impenetrable Fog",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Impenetrable-Fog.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player either places 3 progress tokens on To the Tower or reveals X additional cards from the encounter deck and adds them to the staging area. X is the number of players in the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "The air above was heavy with fog, and a reek lay on the land about them.\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 157,
+            "Quantity": 2,
+            "Artist": "Oleg Saakyan",
+            "HasErrata": true,
+            "Categories": null
+        },
+        {
+            "Title": "Sleepless Malice",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Sleepless-Malice.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "When Revealed: Each player must discard 3 random cards from his hand or place 1 progress token on To the Tower."
+                ],
+                "Shadow": "Shadow: Return attacking enemy to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 158,
+            "Quantity": 2,
+            "Artist": "Jim Pavelec",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Terror Drives Them",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Terror-Drives-Them.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Place 1 progress token on To the Tower."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each progress token on To the Tower.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 159,
+            "Quantity": 3,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Dead City Looms",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/The-Dead-City-Looms.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Raise each players` threat by the number of progress tokens on To the Tower. If there are no progress tokens on To the Tower, The Dead City Looms gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each progress token on To the Tower.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 160,
+            "Quantity": 2,
+            "Artist": "Igor Kieryluk",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

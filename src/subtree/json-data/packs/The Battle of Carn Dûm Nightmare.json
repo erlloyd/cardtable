@@ -1,0 +1,359 @@
+{
+    "Name": "The Battle of Carn Dûm Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Battle of Carn Dûm Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum-Nightmare/The-Battle-of-Carn-Dûm-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode."
+                ],
+                "Shadow": null,
+                "FlavorText": "Fear fell on all who beheld him; be he singled out the Captain of Gondor for the fullness of his hatred, and with a terrible cry he rode straight upon him.\r\n-The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Battle of Carn Dûm scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n1x Vile Afflication\n1x Furious Charge\n1x Orc Ambush\n1x Angmar Orc\n3x Angmar Marauder\n3x Terror of the North\n2x Accursed Battlefield\n1x Blight of Carn Dûm\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Battle of Carn Dûm encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin.\n\nKeyword: Siege\n\nIf a quest card has the siege keyword, when characters are commited to that quest, they count their total Defense instead of their total Willpower when resolving the quest. Enemies and locations in the staging area still use their Threat in opposition to this quest attempt."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Battle of Carn Dûm Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Wight",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum-Nightmare/Orc-Wight.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Undead."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Orc Wight enters play, deal it 2 shadow cards."
+                ],
+                "Shadow": "Shadow: If attacking enemy has at least 1 other shadow card currently dealt to it, return it to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Alexander Kozachenko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Thaurdir's Elite",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum-Nightmare/Thaurdir's-Elite.jpg",
+                "Stats": {
+                    "EngagementCost": "45",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "4",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: If there are 3 shadow cards dealt to Thaurdir`s Elite, discard all shadow cards dealt to it and each player must discard an ally he controls."
+                ],
+                "Shadow": "Shadow: Either raise your threat by 4, or discard an ally you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Stronghold Tower",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum-Nightmare/Stronghold-Tower.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Carn Dûm."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Stronghold Tower is in the staging area, shadow effects cannot be canceled.",
+                    "Travel: Each player must deal 2 damage to a character he controls to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Jokubas Uoginitas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Black Mare",
+            "IsUnique": true,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum-Nightmare/Black-Mare.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach to Thaurdir. (Counts as a Mount attachment with the text: `Black Mare remains attached even if Thaurdir flips. Thaurdir gets +3 hit points. Forced: After Thaurdir is flipped, raise each player`s threat by 1.`)"
+                ],
+                "Shadow": "Shadow: Attach Black Mare to Thaurdir.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Death and Decay",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum-Nightmare/Death-and-Decay.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Sorcery."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Discard the top 3 cards of each player`s deck. Each player discards each attachment he controls that has the same title as a card in his discard pile. If no attachments are discarded from play by this effect, Death and Decay gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Howling of Wargs",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum-Nightmare/Howling-of-Wargs.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either deal 1 shadow card to each enemy in the staging area, or search the encounter deck and discard pile for a side quest and add it to the staging area. Shuffle the encounter deck if it is searched."
+                ],
+                "Shadow": "Shadow: Deal 1 shadow card to each enemy engaged with you that has not attacked this phase.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Carn Dûm Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Protect the Flanks",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum-Nightmare/Protect-the-Flanks.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Siege.",
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Forced: At the end of the combat phase, assign X damage among characters in play, where X is the total number of shadow cards dealt to enemies in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "Orcs close in on all sides. If you do not hold them back, your forces will not survive long."
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm Nightmare",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 1,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rally the Fighters",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum-Nightmare/Rally-the-Fighters.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge.",
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Shadow cards are immune to player card effects.",
+                    "Response: After this quest is defeated, discard 1 shadow card from each enemy in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "Your task seems hopeless and your fate dire, but somehow you must inspire your companions to fight onward!"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm Nightmare",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 1,
+            "Artist": "Arden Beckwith",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sever the Head",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum-Nightmare/Sever-the-Head.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Battle.",
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Thaurdir gets +2 Threat, +2 Attack, and cannot take damage."
+                ],
+                "Shadow": null,
+                "FlavorText": "Your adversary Thaurdir will not let you interrupt his master`s ritual. Only by fighting through his ranks of Orcs can you hope to do battle with the wraith himself."
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm Nightmare",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}
