@@ -16,7 +16,7 @@ interface IProps {
   startCardMove: (id: number) => void;
   unselectAllCards: () => void;
   selectMultipleCards: (cardIds: number[]) => void;
-  zFetchData: any;
+  loadData: any;
 }
 
 interface IState {
@@ -50,7 +50,7 @@ class App extends Component<IProps, IState> {
   }
 
   public componentDidMount() {
-    this.props.zFetchData(18001);
+    this.props.loadData();
   }
 
   public render() {

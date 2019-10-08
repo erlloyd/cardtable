@@ -1,23 +1,11 @@
-import { CardData } from 'src/external-api/rings-db';
+import { CardData } from 'src/external-api/beorn-json-data';
 
-export interface ICardMetadata {
-  id: number;
-  loading: boolean;
-  data?: CardData;
-  error?: Error;
-}
-
-export interface ICardMetadataMap {
-  [n: number]: ICardMetadata
-};
-
-// Map from id to metadata
 export interface ICardMetadataState {
-  metadata: ICardMetadataMap;
+  metadata: CardData[];
 }
 
 const state: ICardMetadataState = {
-  metadata: {}
+  metadata: []
 }; 
 
 export default state;

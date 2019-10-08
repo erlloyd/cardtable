@@ -16,11 +16,11 @@ const AppContainer = connect(
     cardMove: cardActions.moveCard,
     endCardMove: cardActions.endCardMove,
     exhaustCard: cardActions.exhaustCard,
+    loadData: cardThunks.loadAllCardDataFromJSON,
     selectCard: cardActions.selectCard,
     selectMultipleCards: cardActions.selectMultipleCards,
     startCardMove: cardActions.startCardMove,
     unselectAllCards: cardActions.unselectAllCards,
-    zFetchData: cardThunks.loadCard,
   }
 )(App);
 
