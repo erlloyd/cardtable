@@ -1,0 +1,361 @@
+{
+    "Name": "To Catch an Orc Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "To Catch an Orc Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/To-Catch-an-Orc-Nightmare/To-Catch-an-Orc-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Setup: Each player shuffles 1 copy of Vigilant Orc into his out of play deck. Set both copiues of Mugash`s Rage and any remaining copies of Vigilant Orc aside, out of play.",
+                    "Forced: When the players advance to stage 3A, shuffle both copies of Mugash`s Rage into the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "There they picked up the trail of the Orcs. It needed little skill to find. -The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the To Catch an Orc scenario.",
+                    "Remove the following cards, in the specified quantities, from the standard encounter deck:",
+                    "1x Methedras Orc",
+                    "1x Orc Skirmisher",
+                    "1x Orc Hunter",
+                    "3x Prowling Wolf",
+                    "2x Methedras",
+                    "1x Orc Cave",
+                    "2x Orc Hunting Party",
+                    "Then, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard To Catch an Orc encounter deck.",
+                    "Finally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "To Catch an Orc Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Vigilant Orc",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/To-Catch-an-Orc-Nightmare/Vigilant-Orc.jpg",
+                "Stats": {
+                    "EngagementCost": "1",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Victory 4."
+                ],
+                "Text": [
+                    "Forced: After Vigilant Orc enters the staging area, it makes an immediate attack against the first player. If this attack destroys a character, remove 1 time counter from the current quest."
+                ],
+                "Shadow": null,
+                "FlavorText": "Fierce and shrill rose the yells of the Orcs, and suddenly horn-calls ceased. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "To Catch an Orc Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "To Catch an Orc Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 4,
+            "Artist": "Anthony Feliciano",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Methedras Lookout",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/To-Catch-an-Orc-Nightmare/Methedras-Lookout.jpg",
+                "Stats": {
+                    "EngagementCost": "44",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "4",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Methedras Lookout is in the staging area, it gains: `Forced: At the end of the refresh phase, remove 1 time counter from the current quest.`"
+                ],
+                "Shadow": "Shadow: Either exhaust a character you control, or return attacking enemy to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "To Catch an Orc Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "To Catch an Orc Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Chris Grun",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Guard Wolf",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/To-Catch-an-Orc-Nightmare/Guard-Wolf.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "4",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After the engaged player discards any number of cards from his out-of-play deck, Guard Warg makes an immediate attack."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to the defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "To Catch an Orc Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "To Catch an Orc Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Joel Hustak",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Methedras Peak",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/To-Catch-an-Orc-Nightmare/Methedras-Peak.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the number of characters controlled by the first player.",
+                    "Forced: After Methedras Peak leaves play as an explored location, each player searches 3."
+                ],
+                "Shadow": null,
+                "FlavorText": "...they had come to the feet of the mountains, and to the green roots of tall Methedras. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "To Catch an Orc Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "To Catch an Orc Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Trail",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/To-Catch-an-Orc-Nightmare/Orc-Trail.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Orc Trail leaves play as an explored location, choose an out of play Orc enemy, either set aside or in the victory display, and add it to the staging area. Then, the first player searches 4."
+                ],
+                "Shadow": null,
+                "FlavorText": "`No other folk make such a trampling.`\r\n-Legolas, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "To Catch an Orc Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "To Catch an Orc Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mugash's Cunning",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/To-Catch-an-Orc-Nightmare/Mugash's-Cunning.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player discard the top 3 cards of his out-of-play deck. Add each enemy discarded this way to the staging area. If no enemies are added to the staging area this way, Mugash`s Cunning gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +3 Attack and +3 Defense until the end of the round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "To Catch an Orc Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "To Catch an Orc Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Suzanne Helmigh",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Patrolling Orcs",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/To-Catch-an-Orc-Nightmare/Patrolling-Orcs.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge.",
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: Attach to the current quest. (Counts as a Condition attachment with the text: `Forced: After a player engages an enemy, he must either exhaust a character he controls, or remove 1 time counter from the current quest.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "To Catch an Orc Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "To Catch an Orc Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mugash's Rage",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/To-Catch-an-Orc-Nightmare/Mugash's-Rage.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: If Mugash is attached to a hero, the player who controls that hero unattaches Mugash and engages it. Then, Mugash makes an immediate attack."
+                ],
+                "Shadow": "Shadow: Attacking enemy cannot take damage until the end of the round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "To Catch an Orc Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "To Catch an Orc Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

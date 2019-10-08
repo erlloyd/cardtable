@@ -1,0 +1,764 @@
+{
+    "Name": "The Dead Marshes",
+    "Cycle": "Shadows of Mirkwood",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Vassal of the Windlord",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Vassal-of-the-Windlord.jpg",
+                "Stats": {
+                    "ResourceCost": "1",
+                    "Willpower": "0",
+                    "Attack": "3",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Eagle."
+                ],
+                "Keywords": [
+                    "Ranged."
+                ],
+                "Text": [
+                    "Vassal of the Windlord cannot have restricted attachments.Forced: After an attack in which Vassal of the Windlord attacked resolves, discard Vassal of the Windlord from play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": null,
+            "Number": 98,
+            "Quantity": 3,
+            "Artist": "Anna Christenson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fast Hitch",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Fast-Hitch.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Hobbit character.",
+                    "Action: Exhaust Fast Hitch to ready attached character."
+                ],
+                "Shadow": null,
+                "FlavorText": "`And I put as fast a hitch over the stump as any one could have done, in the Shire or out of it.` -Sam, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": null,
+            "Number": 103,
+            "Quantity": 3,
+            "Artist": "David A. Nash",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Boromir",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Boromir.jpg",
+                "Stats": {
+                    "ThreatCost": "11",
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Noble.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Raise your threat by 1 to ready Boromir. (Limit once per phase.)",
+                    "Action: Discard Boromir to deal 2 damage to each enemy engaged with a single player."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...in Gondor we must trust to such weapons as we have.` -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": null,
+            "Number": 95,
+            "Quantity": 1,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": true,
+            "Categories": null
+        },
+        {
+            "Title": "Song of Battle",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Song-of-Battle.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero.",
+                    "Attached hero gains a Tactics resource icon."
+                ],
+                "Shadow": null,
+                "FlavorText": "We go, we go, we go to war, to hew the stone and break the door. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": null,
+            "Number": 104,
+            "Quantity": 3,
+            "Artist": "Leonardo Borazio",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Elfhelm",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Elfhelm.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Elfhelm is ready, he gains: `Response: After your threat is raised as the result of questing unsuccessfully, or by an encounter or quest card effect, reduce your threat by 1.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "`But my lord sends word that we must set ourselves in readiness: orders may come for a sudden move.` -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": null,
+            "Number": 100,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Silvan Tracker",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Silvan-Tracker.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Silvan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After a Silvan character readies during the refresh phase, heal 1 damage from that character."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The Wood-elves tracked him first, an easy task for them, for his trail was still fresh then.` -Gandalf, The Fellowship of the Rings"
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": null,
+            "Number": 102,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dúnedain Watcher",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Dúnedain-Watcher.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dúnedain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: Discard Dunedain Watcher from play to cancel the shadow effects of a card just triggered."
+                ],
+                "Shadow": null,
+                "FlavorText": "`If simple folk are free from care and fear, simple they will be, and we must be secret to keep them so. That has been the task of my kindred, while the years have lengthened and the grass has grown.` -Strider, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": null,
+            "Number": 96,
+            "Quantity": 3,
+            "Artist": "Lindsey Messecar",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dúnedain Cache",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Dúnedain-Cache.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero. Attached hero gains ranged.",
+                    "Action: Pay 1 resource from attached hero`s pool to attach Dunedain Cache to another hero."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": null,
+            "Number": 97,
+            "Quantity": 3,
+            "Artist": "Stephanie M. Brown",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Song of Mocking",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Song-of-Mocking.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero.",
+                    "Action: Exhaust Song of Mocking to choose another hero. Until the end of the phase, attached hero takes all damage assigned to the chosen hero."
+                ],
+                "Shadow": null,
+                "FlavorText": "Old fat spider spinning in a tree!\r\nOld fat spider can`t see me!\r\nAttercop! Attercop!\r\nWon`t you stop. Stop your spinning and look for me! \r\n-Bilbo Baggins, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": null,
+            "Number": 99,
+            "Quantity": 3,
+            "Artist": "Carolina Eade",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "We Do Not Sleep",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/We-Do-Not-Sleep.jpg",
+                "Stats": {
+                    "ResourceCost": "5"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Until the end of the phase, Rohan characters do not exhaust to commit to quests."
+                ],
+                "Shadow": null,
+                "FlavorText": "`But we must ride more warily; for war is abroad, and the Rohirrim, the Horse-lords, do not sleep, even if it seems so from afar.` -Gandalf, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": null,
+            "Number": 101,
+            "Quantity": 3,
+            "Artist": "Lin Bo",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "A Wisp of Pale Sheen",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/A-Wisp-of-Pale-Sheen.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Escape."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Place 2 resource tokens on Gollum. Any player may exhaust a Lore hero to reduce this effect to 1 resource token.Escape: 4"
+                ],
+                "Shadow": null,
+                "FlavorText": "Presently it grew altogether dark; the air itself seemed black and heavy to breathe. When lights appeared Sam rubbed his eyes: he thought his head was going queer. He first saw one with the corner of his left eye, a wisp of pale sheen that faded away... -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 108,
+            "Quantity": 3,
+            "Artist": "Carolina Eade",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fens and Mires",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Fens-and-Mires.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Dead Marshes."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After the players travel to this location, place 1 resource token on Gollum.Escape: 2"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 115,
+            "Quantity": 4,
+            "Artist": "Stacey Diana Clark",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Giant Marsh Worm",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Giant-Marsh-Worm.jpg",
+                "Stats": {
+                    "EngagementCost": "36",
+                    "Threat": "1",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: Remove 2 damage from Giant Marsh Worm at the end of each round.Escape: 2"
+                ],
+                "Shadow": null,
+                "FlavorText": "`No birds here. There are snakeses, wormses, things in the pools. Lot of things, lots of nasty things.` -Gollum, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 112,
+            "Quantity": 4,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gollum",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Gollum.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Gollum."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If Gollum ever has 8 or more resource tokens on him, shuffle him back into the encounter deck.",
+                    "Forced: At the end of the quest phase, the party must make an escape test, dealing 1 card per player from the encounter deck. If this test is failed, place 2 resource tokens on Gollum."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 107,
+            "Quantity": 1,
+            "Artist": "John Matson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Impassable Bog",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Impassable-Bog.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "12"
+                },
+                "Traits": [
+                    "Dead Marshes."
+                ],
+                "Keywords": [
+                    "Victory 7."
+                ],
+                "Text": [
+                    "When Revealed: Place 1 resource token on Gollum for each location card in the staging area.Escape: 2"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 113,
+            "Quantity": 4,
+            "Artist": "Yoann Boissonnet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Into the Marshes",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Into-the-Marshes-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Search the encounter deck for Gollum, and add it to the staging area. Shuffle the encounter deck, then reveal 1 card per player from the encounter deck and add it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "You have followed Gollum`s trail for days, and are now closing in fast pursuit. In a last ditch effort to escape you, the creature has fled to The Dead Marshes."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": "`Yes, yes,` said Gollum. `All dead, all rotten. Elves and Men and Orcs. The Dead Marshes. There was a great battle long ago, yes, so they told him when Smeagol was young, when I was young before teh Precious came. It was a great battle. Tall Men with long swords, and terrible Elves and Orcses shrieking. They fought on th eplain for days and months at the Black Gates. But the Marshes have grown since then, swallowed up the graves; always creeping, creeping.` -The Two Towers."
+            },
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 105,
+            "Quantity": 1,
+            "Artist": "Ignacio Bazan Lazcano",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Nightfall",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Nightfall.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Escape."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player makes an escape test, dealing 2 cards from the encounter deck. If this test is failed, place 1 resource token on Gollum and raise each player`s threat by 2.Escape: 2"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 109,
+            "Quantity": 3,
+            "Artist": "David Lecossu",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Capture",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/The-Capture-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": "After a tiring pursuit through the treacherous marshland, you have cornered Gollum, and move in for the capture."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After this stage is defeated, the first player chooses a player. That player must pass an Escape test, dealing 1 card from the encounter deck for each resource token on Gollum, to capture him. If Gollum is not captured at this time, reset the quest deck to stage 1B.",
+                    "If this final Escape test is passed, the players have captured Gollum and won the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 106,
+            "Quantity": 1,
+            "Artist": "Ignacio Bazan Lazcano",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Heart of the Marshes",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/The-Heart-of-the-Marshes.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Dead Marshes."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While The Heart of the Marshes is the active location, all cards dealt from the encounter deck for escape tests get +1 Escape. (Cards receive this bonus even if they do not have a printed escape value.)Escape: 1"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 114,
+            "Quantity": 4,
+            "Artist": "Noah Bradley",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Lights of the Dead",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/The-Lights-of-the-Dead.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Escape."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must make an escape test, dealing 2 cards from the encounter deck for each test. Each player that fails this test places 1 resource token on Gollum, and raises his threat by 1.Escape: 5"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 111,
+            "Quantity": 4,
+            "Artist": "Henning Ludvigsen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Through the Mist",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes/Through-the-Mist.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Escape."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player makes an escape test counting Attack instead of Willpower, dealing 2 cards from the encounter deck. If this test is failed, place 1 resource token on Gollum and raise each player`s threat by 1.Escape: 3"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 110,
+            "Quantity": 3,
+            "Artist": "Igor Kieryluk",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

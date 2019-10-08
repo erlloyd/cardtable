@@ -1,0 +1,1184 @@
+{
+    "Name": "Roam Across Rhovanion",
+    "Cycle": "Ered Mithrin",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Haldan",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Haldan.jpg",
+                "Stats": {
+                    "ThreatCost": "10",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Woodman.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While the active location has an attachment on it, Haldan does not exhaust to quest.",
+                    "Response: When the active location is explored, draw 1 card for each attachment on it."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": null,
+            "Number": 26,
+            "Quantity": 1,
+            "Artist": "Alexander Kozachenko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Woodmen's Path",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Woodmen's-Path.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a location with no progress tokens on it.",
+                    "While attached location is the active location, reduce its quest point value to 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "It was a path made by strong arms and heavy feet.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": null,
+            "Number": 30,
+            "Quantity": 3,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Meneldor",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Meneldor.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Eagle."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have restricted attachments.",
+                    "Response: After Meneldor enters or leaves play, place 2 progress on a location."
+                ],
+                "Shadow": null,
+                "FlavorText": "...Meneldor young and swift. -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": null,
+            "Number": 31,
+            "Quantity": 3,
+            "Artist": "Dmitry Prosvirnin",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Flight of the Eagles",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Flight-of-the-Eagles.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Return an Eagle ally to your hand to shuffle a set-aside Eagle of the North into the encounter deck. Then, remove Flight of the Eagles from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "Behind them in long swift lines came all their vassals from the northern mountains, speeding on a gathering wind.\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": null,
+            "Number": 32,
+            "Quantity": 3,
+            "Artist": "Carlos Palma Cruchaga",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Glamdring",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Glamdring.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Guarded (enemy or location).",
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a hero or Gandalf.",
+                    "Attached character gets +2 Attack.",
+                    "Response: After attached character destroys an enemy, draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": null,
+            "Number": 29,
+            "Quantity": 3,
+            "Artist": "Tropa Entertainment",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ancestral Armor",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Ancestral-Armor.jpg",
+                "Stats": {
+                    "ResourceCost": "4"
+                },
+                "Traits": [
+                    "Item.",
+                    "Armor."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Leadership or Noble character. Limit 1 per character",
+                    "Attached character gets +2 Defense and +2 hit points."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": null,
+            "Number": 28,
+            "Quantity": 3,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wild Stallion",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Wild-Stallion.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Planning Action: Attach Wild Stallion to an ally you control. (Counts as a Mount attachment with the text: `Restricted. Limit 1 per ally. Attached ally gets +1 Willpower, +1 Attack, +1 Defense, and +1 hit point.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": null,
+            "Number": 33,
+            "Quantity": 3,
+            "Artist": "Carlos Palma Cruchaga",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "South Away!",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/South-Away.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Travel Action: Choose a location in the staging area with a player card attachment and make it the active location, returning any previous active location to the staging area. Reduce each player`s threat by X, where X is the number of attachments on the active location."
+                ],
+                "Shadow": null,
+                "FlavorText": "South away! and South away!\r\nSeek the sunlight and the day.\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": null,
+            "Number": 34,
+            "Quantity": 3,
+            "Artist": "Yoann Boissonnet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Eagle of the North",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Eagle-of-the-North.jpg",
+                "Stats": {
+                    "ResourceCost": "-",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Eagle."
+                ],
+                "Keywords": [
+                    "Encounter.",
+                    "Surge."
+                ],
+                "Text": [
+                    "Cannot have restricted attachments.",
+                    "When Revealed: The first player chooses a player to take control of Eagle of the North. The chosen player may choose and discard a non-unique enemy in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": null,
+            "Number": 35,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wiglaf",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Wiglaf.jpg",
+                "Stats": {
+                    "ResourceCost": "5",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dale.",
+                    "Scout.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After you play Wiglaf, play an Item attachment on him from your hand for no cost.",
+                    "Action: Exhaust an attachment on Wiglaf to ready him. (Limit once per phase.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": null,
+            "Number": 27,
+            "Quantity": 3,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Durin's Key",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Durin's-Key.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Artifact.",
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Durin`s Key is free of encounters, the first player attached it to a hero he controls.",
+                    "Action: Exhaust Durin`s Key to give each location -1 Threat until the end of the phase.",
+                    "Forced: At the beginning of the quest phase, the player who controls Durin`s Key looks at the top 3 cards of the encounter deck, chooses 1 to reveal, and discards the rest."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 36,
+            "Quantity": 1,
+            "Artist": "Igor Burlakov",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Urdug's Horn",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Urdug's-Horn.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Artifact.",
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Urdug`s Horn is free ot encounters attack it to Urdug.",
+                    "Forced: When Urdug attacks, discard the top card of the encounter deck and add it`s Threat to his Attack until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 37,
+            "Quantity": 1,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Grey Mountain Giant",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Grey-Mountain-Giant.jpg",
+                "Stats": {
+                    "EngagementCost": "44",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "2",
+                    "HitPoints": "11"
+                },
+                "Traits": [
+                    "Giant."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have non-objective attachments.",
+                    "Forced: When Grey Mountain Giant engages you, discard the top 5 cards of your deck. Assign damage among characters you control equal to the number of allies discarded by this effect."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 38,
+            "Quantity": 2,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hunting Eagle",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Hunting-Eagle.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "1",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Eagle."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Cannot be optionally engaged.",
+                    "Forced: When the encounter phase begins, Hunting Eagle engages the first player."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if attacking enemy has the Creature trait).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 39,
+            "Quantity": 3,
+            "Artist": "Carlos Palma Cruchaga",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wilderland Bear",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Wilderland-Bear.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "1",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player must choose: either Wilderland Bear makes an immediate attack against him, or each player discards 1 random card from his hand."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 40,
+            "Quantity": 2,
+            "Artist": "Brendan C. Murphy",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Grey Moorland",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Grey-Moorland.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Grey Moorland becomes the active location, shuffle the encunter discard pile into the encounter deck and discard cards from it until a treachery is discarded. Resolve the `When Revealed` effect on that treachery."
+                ],
+                "Shadow": "Shadow: Return attacking enemy to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 41,
+            "Quantity": 2,
+            "Artist": "Matthew Cowdery",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Deep Ravine",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Deep-Ravine.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Deep Ravine is in the staging area, no more than 1 progress can be placed on locations in the staging area each round.",
+                    "Travel: The first player must either exhaust Urdug, or raise each player`s threat by 2 to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 42,
+            "Quantity": 3,
+            "Artist": "Derek D. Edgell",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Slopes of Ered Mithrin",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Slopes-of-Ered-Mithrin.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Hills."
+                ],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "Response: After the players travel to Slopes of Ered Mithrin, the first player may ready a character he controls."
+                ],
+                "Shadow": "Shadow: If the first player controls Urdug, exhaust him.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 43,
+            "Quantity": 3,
+            "Artist": "Yog Joshi",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sneaking Off",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Sneaking-Off.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player loses control of Urdug, then attach Urdug to a location in the staging area as a guarded objective. If he cannot, add 5 to the total Threat in the staging area until the end of the phase. In either case, remove Sneaking Off from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 44,
+            "Quantity": 3,
+            "Artist": "Ivan Dixon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Harsh Weather",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Harsh-Weather.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Weather."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: For each ready character a player controls, he must choose: either exhaust that character or raise his threat by 1."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, exhaust a character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 45,
+            "Quantity": 3,
+            "Artist": "Tyler Edlin",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wild Creatures",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Wild-Creatures.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Starting with the first player, each player chooses an enemy in the staging area and engages it. Then, if any player did not engage an enemy this way, discard cards from the encounter deck until a Creature enemy is discarded and add it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 46,
+            "Quantity": 2,
+            "Artist": "Carlos Palma Cruchaga",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Goblin's Task",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/The-Goblin's-Task-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: The first player takes control of Urdug, objective side face-up. Set each other objective and objective-ally aside, out of play. Shuffle the encounter deck and discard cards from the top until X locations are discarded, where X is the number of players. Add each discarded location to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Goblin, Urdug, has agreed to show you a secret entrance to Mount Gundabad, but only if you help him recover some things he lost in Rhovanion."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Progress cannot be placed on locations in the staging area.",
+                    "Forced: When the active location is explored, if the first player controls Urdug, advance to a random stage 2A."
+                ],
+                "Shadow": null,
+                "FlavorText": "You have agreed to help the Goblin in return for his assistance, but you keep a wary eye on him all the same."
+            },
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 47,
+            "Quantity": 1,
+            "Artist": "Marius Bota",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rescue Tiny",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Rescue-Tiny-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "The `when revealed` effects of treachery cards cannot be canceled.",
+                    "Forced: When the players defeat this stage, remove it from the game. Advance to a random stage 2A, if able. Otherwise, advance to stage 3A.",
+                    "The players cannot travel to the Grey Moorland guarding Tiny unless there is at least 5 progress on this stage. This stage cannot be defeated unless the first player controls Urdug and Tiny."
+                ],
+                "Shadow": null,
+                "FlavorText": "Urdug`s friend, Tiny, turns out to be an enormous Hill-troll. You find him trapped in a deep bog and Urdug begs you to help rescue him."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 48,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Retrieve Urdug's Horn",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Retrieve-Urdug's-Horn-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player searches the encounter deck, discard pile, and victory display for a Grey Mountain Giant, adds it to the staging area, and attaches the set-aside Urdug`s Horn to it as a guarded objective. Shuffle the encounter deck. Each other player reveals an encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "You thought Urdug`s story about being chased by a Giant sounded funny until you come upon a mean-looking Giant using the Goblin`s horn as a tooth-pick. Urdug insists he won`t lead you anywhere without that horn."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Each enemy with 1 or more guarded attachments gets +2 Threat and +2 Defense.",
+                    "Forced: When the players defeat this stage, remove it from the game. Advance to a random stage 2A, if able. Otherwise, advane to stage 3A.",
+                    "The Grey Mountain Giant guarding Urdug`s Horn cannot take damage unless there is at least 5 progress on this stage. This stage cannot be defeated unless the first player controls Urdug with Urdug`s Horn attached."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 49,
+            "Quantity": 1,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Find Durin's Key",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Find-Durin's-Key-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player searches the encounter deck, discrd pile, and victory display for a Deep Ravine, adds it to the staging area, and attaches the set-aside Durin`s Key to it as a guarded objective. Shuffle the encounter deck. Each player reveals an encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "You have your doubts about Durin`s Key, as well as Urdug, but the Goblin insists he dropped it in a ravine as he was fleeing for his life. You follow him as he retraces his steps back to the ravine."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Each encounter card guarding a card is immune to player card effects.",
+                    "Forced: When the players defeat this stage, remove it from the game. Advance to a random stage 2A, if able. Otherwise, advance to stage 3A.",
+                    "The players cannot travel to the Deep Ravine guarding Durin`s Key unless there is at least 5 progress on this stage. This stage cannot be defeated unless the players control Urdug and Durin`s Key."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 50,
+            "Quantity": 1,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Urdug's Gambit",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Urdug's-Gambit-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed:  The first player loses control of both Urdug and Tiny, flips them to their enemy sides, and adds them to the staging area. (Remove any damage that was one them.) Each other player reveals an encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "You suspected Urdug would betray you once you gathered the things he required, so you`re not surprised when he and Tiny try to sneak away in the night. Urdug hisses at Tiny to keep quiet, but the lumbering Troll is about as subtle as a thunder storm. You grab your weapons and chase after them."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Progress cannot be placed on this quest from questing successfully.",
+                    "Forced: When the players quest unsuccessfully, they do not raise their threat. Instead, place X progress here, where X is the amount by which they would have raised their threat. Then, if this stage has progress equal to its quest points, the player lose the game.",
+                    "When Urdug has no hit points remaining, the players win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 51,
+            "Quantity": 1,
+            "Artist": "Ivan Dixon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Urdug",
+            "IsUnique": true,
+            "CardType": "Objective_Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Urdug-Objective-Ally.jpg",
+                "Stats": {
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "While Urdug is free of encounters, the first player gains control of Urdug.",
+                    "If Urdug is destroyed, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 52,
+            "Quantity": 1,
+            "Artist": "Ivan Dixon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Urdug",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Urdug-Enemy.jpg",
+                "Stats": {
+                    "EngagementCost": "15",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Indestructible."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "While Urdug is engaged with a player, he gains, `Forced: At the beginning of the quest phase, Urdug makes an immediate attack. If this attack deals damage, return Urdug and Tiny (if he is in play) to the staging area.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 53,
+            "Quantity": 1,
+            "Artist": "Ivan Dixon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Tiny",
+            "IsUnique": true,
+            "CardType": "Objective_Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Tiny-Objective-Ally.jpg",
+                "Stats": {
+                    "Willpower": "1",
+                    "Attack": "6",
+                    "Defense": "3",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Troll."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "While Tiny is free of encounters, the first player gains control of Tiny.",
+                    "Forced: After Tiny exhausts, raise your threat by 2.",
+                    "If Tiny is destroyed, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 54,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Tiny",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Tiny-Enemy.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "1",
+                    "Attack": "6",
+                    "Defense": "3",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Troll."
+                ],
+                "Keywords": [
+                    "Victory 6."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Urdug cannot take damage.",
+                    "Forced: After Urdug engages a player, Tiny engages that player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Roam Across Rhovanion",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 55,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

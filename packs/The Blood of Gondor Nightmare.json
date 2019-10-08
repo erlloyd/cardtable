@@ -1,0 +1,322 @@
+{
+    "Name": "The Blood of Gondor Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Blood of Gondor Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor-Nightmare/The-Blood-of-Gondor-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\nSetup: Each player takes 1 hidden card.\nThe players cannot win the game unless The Crossroads and Black Númenórean are in the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": "Then they yelled and dozens of other goblins had sprung out of the trees. -The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the The Blood of Gondor scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n1x Black Númenorean\n2x Evil Crow\n2x Lying in Wait\n4x The Dark Woods\n1x Orc Rabble\n1x Orc Arsonist\n1x Scourge of Mordor\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Blood of Gondor encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Blood of Gondor Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Piya Wannachaiwong",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Black Númenorean",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor-Nightmare/Black-Númenorean.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "X",
+                    "Attack": "5",
+                    "Defense": "4",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the total number of hidden cards in the game.",
+                    "Forced: When Black Númenórean engages you, turn all hidden cards in your play area faceup.",
+                    "Forced: At the end of the round, each player must raise his threat by 1 for each hidden card in his play area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Blood of Gondor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Blood of Gondor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Melanie Maier",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Trickster",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor-Nightmare/Orc-Trickster.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Orc Trickster is turned faceup as a hidden card, it makes an immediate attack against the engaged player.",
+                    "Forced: When Orc Trickster would be damaged, a random player takes it facedown as a hidden card in his play area instead."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Blood of Gondor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Blood of Gondor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 4,
+            "Artist": "Piya Wannachaiwong",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Uruk Marksman",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor-Nightmare/Uruk-Marksman.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "4",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk.",
+                    "Mordor."
+                ],
+                "Keywords": [
+                    "Archery 3."
+                ],
+                "Text": [
+                    "Forced: After Uruk Marksman is turned faceup as a hidden card, deal 3 damage to a character controlled by the engaged player and return Uruk Marksman to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Blood of Gondor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Blood of Gondor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Niten",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Edge of Ithilien",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor-Nightmare/Edge-of-Ithilien.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Ithilien.",
+                    "Forest."
+                ],
+                "Keywords": [
+                    "Archery X."
+                ],
+                "Text": [
+                    "X is the highest number of hidden cards in any player`s play area."
+                ],
+                "Shadow": "Shadow: Turn 1 hidden card in your play area faceup. If it is a treachery card, attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Blood of Gondor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Blood of Gondor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mountains of Shadow",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor-Nightmare/Mountains-of-Shadow.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Mountains of Shadow is the active location, it gains: `Forced: After you turn 1 or more hidden cards faceup, take 1 hidden card.`"
+                ],
+                "Shadow": "Shadow: Either take 2 hidden cards, or this attack is considered undefended.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Blood of Gondor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Blood of Gondor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Surrounded by Shadow",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor-Nightmare/Surrounded-by-Shadow.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "When Revealed: Each player must either take 1 hidden card for each questing hero he controls, or remove one hero he controls from the quest for each hidden card in his play area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Blood of Gondor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Blood of Gondor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sudden Onslaught",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor-Nightmare/Sudden-Onslaught.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player turns each hidden card in his play area faceup. Each player then takes hidden cards equal to the number of hidden cards he just turned faceup."
+                ],
+                "Shadow": "Shadow: Take 1 hidden card. Then, turn 1 hidden card in your play area faceup.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Blood of Gondor Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Blood of Gondor Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

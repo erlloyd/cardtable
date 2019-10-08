@@ -1,0 +1,345 @@
+{
+    "Name": "The Hunt for Gollum Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Hunt for Gollum Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum-Nightmare/The-Hunt-for-Gollum-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nForced: At the end of the refresh phase, choose an unclaimed Clue card not attached to a Mordor enemy and attach it to a Mordor enemy, if able. (If it was guarded, detach the encounter guarding it first. The newly attached Mordor enemy is now guarding it.)\n\nIf at any point there are four or more Clue cards attached to Mordor enemies, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Through Mirkwood and back again it led them, though they never caught him.`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Hunt for Gollum scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n2x River Ninglor\n1x The Eaves of Mirkwood\n2x False Lead\n2x Misty Mountain Goblins\n2x Banks of the Anduin\n3x Gladden Fields\n3x Eastern Crows\n2x Treacherous Fog\n3x Evil Storm\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Hunt for Gollum encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Hunt for Gollum Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Ignacio Bazan Lazcano",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ravenous Hawk",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum-Nightmare/Ravenous-Hawk.jpg",
+                "Stats": {
+                    "EngagementCost": "42",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When a card effect instructs a player to `look` at cards in the encounter deck and Ravenous Hawk is among those cards, that player must put Ravenous Hawk into play engaged with him. (This does not satisfy the Forced effect of stage 1B or 2B)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Hunt for Gollum Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Hunt for Gollum Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Nacho Molina",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hunting Warg",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum-Nightmare/Hunting-Warg.jpg",
+                "Stats": {
+                    "EngagementCost": "15",
+                    "Threat": "1",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the beginning of the refresh phase, if Hunting Warg entered play this round, search the encounter deck and discard pile for 1 copy of Hunters from Mordor and add it to the staging area, if able. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...where the warg howls, there also the orc prowls.`\r\n-Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Hunt for Gollum Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Hunt for Gollum Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 2,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Watched Path",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum-Nightmare/Watched-Path.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest.",
+                    "Road."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Each player who does not control at least 1 Clue card cannot draw cards through card effects."
+                ],
+                "Shadow": "Shadow: If you do not control at least 1 Clue card, discard all cards from your hand.",
+                "FlavorText": "`The Road is watched, but we should have to cross it...`\r\n-Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Hunt for Gollum Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Hunt for Gollum Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hunter's Lookout",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum-Nightmare/Hunter's-Lookout.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Riverland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Each Mordor enemy with at least 1 Clue card attached gets +2 Defense."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Defense for each Clue card in play until the end of the round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Hunt for Gollum Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Hunt for Gollum Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dark Pools",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum-Nightmare/Dark-Pools.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Marshland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Progress cannot be placed on Dark Pools while it is in the staging area.\n\nForced: After Dark Pools becomes the active location, each player must discard an ally with the highest printed cost among the allies he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "`And there in the dark pools amid the Gladden Fields,`he said, `the Ring passed out of knowledge and legend...`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Hunt for Gollum Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Hunt for Gollum Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Enemy's Trail",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum-Nightmare/The-Enemy's-Trail.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Search the encounter discard pile for a Clue card and attach it to a Mordor enemy in play, if able. If no card is attached by this effect, The Enemy`s Trail gains surge."
+                ],
+                "Shadow": "Shadow: Search the encounter discard pile for a Clue card and attach it to a Mordor enemy in play, if able.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Hunt for Gollum Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Hunt for Gollum Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Cristi Balanescu",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Restless Hunters",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum-Nightmare/Restless-Hunters.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: The first player chooses a Clue card attached to a hero and attaches it to a Mordor enemy in play, if able."
+                ],
+                "Shadow": "Shadow: Damage from this attack must be applied to a hero you control with a Clue card attached, if able.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Hunt for Gollum Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Hunt for Gollum Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Trail Goes Cold",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum-Nightmare/The-Trail-Goes-Cold.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach to the active location and remove all progress from that location. (Counts as a Condition attachment with the text:`Limit 1 per location. Attached location contributes its Threat during the quest phase as if it were in the staging area.`)",
+                    "If The Trail Goes Cold does not attach to a location as a result of this effect, it gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Hunt for Gollum Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Hunt for Gollum Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Christine Mitzuk",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

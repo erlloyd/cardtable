@@ -1,0 +1,351 @@
+{
+    "Name": "Journey in the Dark Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Journey in the Dark Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-in-the-Dark-Nightmare/Journey-in-the-Dark-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Each hero in each player`s discard pile cannot leave the discard pile.",
+                    "The players cannot defeat stage 3B unless The Balrog is in the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": "`And I say to you: if you pass the doors of Moria, beware!` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard and encounter deck for The Journey in the Dark scenario.",
+                    "Remove the following cards, in the specified quantities, from the standard encounter deck:",
+                    "3x Moria Archer",
+                    "4x Mines of Moria",
+                    "1x We Cannot Get Out",
+                    "3x Deep Fissure",
+                    "Then, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Joruney in the Dark encounter deck.",
+                    "Finally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Journey in the Dark Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Javier Charro Martinez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Slab-bearer",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-in-the-Dark-Nightmare/Slab-bearer.jpg",
+                "Stats": {
+                    "EngagementCost": "32",
+                    "Threat": "4",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Troll."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Forced: When Slab-bearer is destroyed, discard the top card of the encounter deck. If the discarded card is an enemy, add it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "...they bore great slabs of stone, and flung them down to serve as gangways over the fire.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Journey in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Zirakzigil Archer",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-in-the-Dark-Nightmare/Zirakzigil-Archer.jpg",
+                "Stats": {
+                    "EngagementCost": "42",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Archery 2."
+                ],
+                "Text": [
+                    "When Revealed: Discard a randome card from your hand. Assign X damage among characters you control, where X is the cost of the discarded card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 4,
+            "Artist": "Javier Charro Martinez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Glowing Fissure",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-in-the-Dark-Nightmare/Glowing-Fissure.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is 1 more than the number of damaged characters.",
+                    "Forced: After a player commits characters to the quest, he deals 1 damage to a character he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "Out of it a fierce red light came, and now and again flames licked at the brink... -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Journey in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Pavel Kolomeyets",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Darkened Mine",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-in-the-Dark-Nightmare/Darkened-Mine.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Darkened Mine is in the staging area, progress cannot be placed on locations in the staging area."
+                ],
+                "Shadow": "Shadow: Discard 1 random card from your hand.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Igor Burlakov",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fiery Whip",
+            "IsUnique": true,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-in-the-Dark-Nightmare/Fiery-Whip.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach Fiery Whip to The Balrog (even if out of play) as a Weapon attachment with the text: `Attached enemy gets +1 Defense and gains Archery 4.`"
+                ],
+                "Shadow": "Shadow: If attacking enemy is The Balrog, attach Fiery Whip to it.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 1,
+            "Artist": "Florian Devos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Flaming Sword",
+            "IsUnique": true,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-in-the-Dark-Nightmare/Flaming-Sword.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach Fiery Whip to The Balrog (even if out of play) as a Weapon attachment with the text: `Attached enemy gets +1 Attack and gains Regenerate 4. (At the end of the refresh phase, remove 4 damage from the attached enemy.)`"
+                ],
+                "Shadow": "Shadow: If attacking enemy is The Balrog, attach Flaming Sword to it.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 1,
+            "Artist": "Florian Devos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Very Weary",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-in-the-Dark-Nightmare/Very-Weary.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player deals 1 damage to a questing character he controls. Until the end of the phase, each damaged character gets -2 Willpower."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to the defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Dleoblack",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Cut Off",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-in-the-Dark-Nightmare/Cut-Off.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril."
+                ],
+                "Text": [
+                    "When Revealed: Either deal 1 damage to each character you control, or progress cannot be placed on the quest until the end of the round."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, remove all progress from the quest.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey in the Dark Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Javier Charro Martinez",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

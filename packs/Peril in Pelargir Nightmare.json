@@ -1,0 +1,349 @@
+{
+    "Name": "Peril in Pelargir Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Peril in Pelargir Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Peril-in-Pelargir-Nightmare/Peril-in-Pelargir-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nForced; At the end of the combat phase, if Alcaron`s Scroll is in the staging area, attach it to the enemy in play with the highest Defense.\n\nForced: At the beginning of the refresh phase, if Alcaron`s Scroll is attached to an enemy, place 1 progress token on that enemy.\n\nIf at any point there are 3 or more progress tokens on any enemy, that enemy has escaped with the scroll, and the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Peril in Pelargir scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n4x Collateral Damage\n2x Harbor Storehouse\n3x Pickpocket\n1x Harbor Thug\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Peril in Pelargir encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Peril in Pelargir Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Dleoblack",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Cunning Informant",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Peril-in-Pelargir-Nightmare/Cunning-Informant.jpg",
+                "Stats": {
+                    "EngagementCost": "21",
+                    "Threat": "3",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Brigand."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Alcaron`s Scroll is attached to a hero, Cunning Informant gets +3 Attack.\n\nDuring the encounter phase, if Alcaron`s Scroll is attached to a hero, that hero`s controller is considered to have +10 threat for the purpose of engagement checks."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Peril in Pelargir Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Peril in Pelargir Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Harbor Brute",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Peril-in-Pelargir-Nightmare/Harbor-Brute.jpg",
+                "Stats": {
+                    "EngagementCost": "38",
+                    "Threat": "4",
+                    "Attack": "4",
+                    "Defense": "4",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Brigand.",
+                    "Thug."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: If Alcaron`s Scroll is attached to an enemy, detach it from that enemy and attach it to Harbor Brute. Move all progress tokens from that enemy to Harbor Brute."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Peril in Pelargir Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Peril in Pelargir Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 2,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pelargir Ringleader",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Peril-in-Pelargir-Nightmare/Pelargir-Ringleader.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Brigand."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Pelargir Ringleader engages a player, return the topmost Brigand enemy in the encounter discard pile to play, engaged with that player."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Peril in Pelargir Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Peril in Pelargir Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dockside Street",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Peril-in-Pelargir-Nightmare/Dockside-Street.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Dockside Street is in the staging area, enemies in the staging area cannot be damaged or optionally engaged.",
+                    "Travel: Exhaust the hero with Alcaron`s Scroll attached to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Peril in Pelargir Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Peril in Pelargir Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pelargir Alley",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Peril-in-Pelargir-Nightmare/Pelargir-Alley.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Alcaron`s Scroll is not attached to a hero, Pelargir Alley gets +3 Threat."
+                ],
+                "Shadow": "Shadow: If the defending player controls a hero with Alcaron`s Scroll attached, attach Alcaron`s Scroll to the attacking enemy.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Peril in Pelargir Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Peril in Pelargir Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Dleoblack",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Bedlam in the Streets",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Peril-in-Pelargir-Nightmare/Bedlam-in-the-Streets.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must either remove a hero he controls from the quest or engage an enemy in the staging area. Each enemy engaged by this effect makes an immediate attack."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Peril in Pelargir Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Peril in Pelargir Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Thieves' Ploy",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Peril-in-Pelargir-Nightmare/The-Thieves'-Ploy.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: If Alcaron`s Scroll is attached to a hero, choose an enemy engaged with that hero`s controller, if able. Attached Alcaron`s Scroll to that enemy, then add 1 progress to that enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Peril in Pelargir Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Peril in Pelargir Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "JB Casacop",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "They're Getting Away!",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Peril-in-Pelargir-Nightmare/They're-Getting-Away.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: If Alcaron`s Scroll is attached to an enemy, choose one: either add 1 progress token to that enemy, or each card in the staging area gets +2 Threat until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Peril in Pelargir Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Peril in Pelargir Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "JB Casacop",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

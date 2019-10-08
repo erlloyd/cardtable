@@ -1,0 +1,294 @@
+{
+    "Name": "The Wastes of Eriador Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Wastes of Eriador Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador-Nightmare/The-Wastes-of-Eriador-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode."
+                ],
+                "Shadow": null,
+                "FlavorText": "As the light grew stronger it showed a silent shrouded world. Below their refuge were white humps and domes and shapeless deeps beneath which the path that they had trodden was altogether lost...\r\n-The Fellowship of the Rings"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Wastes of Eriador scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n2x Northern Warg\n1x White Warg\n1x Sudden Darkness\n1x North Downs\n2x Eriador Wastes\n1x Cold from Angmar\n3x Biting Wind\n1x Freezing Blast\n1x Shrouded Hills\n3x Rugged Country\n2x Pressing Needs\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Wasts of Eriador encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Wastes of Eriador Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pack Hunters",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador-Nightmare/Pack-Hunters.jpg",
+                "Stats": {
+                    "EngagementCost": "45",
+                    "Threat": "3",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Warg."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While it is Night, Pack Hunters gets -30 engagement cost.",
+                    "Forced: When you engage Pack Hunters, search the top 5 cards of the encounter deck for a Warg enemy, and put it into play engaged with you (top 10 cards instead if it is Night). Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Wastes of Eriador Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Wastes of Eriador Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 5,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Shrouded Wilderness",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador-Nightmare/Shrouded-Wilderness.jpg",
+                "Stats": {
+                    "Threat": "6",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Arnor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While it is Night, progress cannot be placed on Shrouded Wilderness.",
+                    "Travel: Flip the Time objective from Daybreak to Nightfall."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. Then, if it is Night, deal attacking enemy another shadow card.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Wastes of Eriador Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Wastes of Eriador Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Snowy Badlands",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador-Nightmare/Snowy-Badlands.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Arnor.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Snowy Badlands is in the staging area, each enemy in the staging area cannot take damage.",
+                    "Travel: Each player deals 1 damage to an exhausted character he controls to travel here (2 damage instead if it is Night)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Wastes of Eriador Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Wastes of Eriador Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Cunning Wolves",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador-Nightmare/Cunning-Wolves.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach to the current quest. (Counts as a Condition attachment with the text: `Attached quest gets +3 quest points. Each Warg enemy cannot be optionally engaged.`)"
+                ],
+                "Shadow": "Shadow: If it is Night, deal attacking enemy 2 additional shadow cards",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Wastes of Eriador Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Wastes of Eriador Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Torrent of Hail",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador-Nightmare/Torrent-of-Hail.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Deal 1 damage to each questing character. If it is Night, discard an attachment from each character damaged by this effect."
+                ],
+                "Shadow": "Shadow: Discard 1 attachment you control (2 attachments instead if it is Night).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Wastes of Eriador Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Wastes of Eriador Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Make a Stand",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador-Nightmare/Make-a-Stand.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "When Revealed: If it is a Day, flip the Time objective to Nightfall, The Time objective cannot flip to Daybreak.",
+                    "Response: After an enemy is defeated, place 1 resource token on Make a Stand. Then, if there are 2 resource tokens per player on Make a Stand, or if there are no enemies in play, add Make a Stand to the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Wastes of Eriador Nightmare",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 1,
+            "Artist": "Michele Frigo",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Forced Off Track",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador-Nightmare/Forced-Off-Track.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge.",
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Forced: At the end of the round, remove X progress from the main quest, where X is the number of Warg enemies in play.",
+                    "Response: When this quest is defeated, discard a non-unique Warg enemy in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Wastes of Eriador Nightmare",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 1,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

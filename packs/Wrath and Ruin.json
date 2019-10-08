@@ -1,0 +1,111 @@
+{
+    "Name": "Wrath and Ruin",
+    "Cycle": "Vengeance of Mordor",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Tom Bombadillo!",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Tom-Bombadillo.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control a Hobbit hero. You cannot play this card if there is a copy of Tom Bombadillo! in the victory display.",
+                    "Planning Action: Add Tom Bombadillo the the victory display to shuffle a set-aside copy of Tom Bombadil into the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "David Keen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Cautious Halfling",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Cautious-Halfling.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Cautious Halfling enters play, look at the top card of the encounter deck. If that card is not an enemy, draw a card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I thought I had been both careful and clever.`\r\n-Frodo, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Tom Bombadil",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Tom-Bombadil.jpg",
+                "Stats": {
+                    "ResourceCost": "-",
+                    "Willpower": "3",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Legend."
+                ],
+                "Keywords": [
+                    "Encounter."
+                ],
+                "Text": [
+                    "When Revealed: Choose a player. That player gains control of Tom Bombadil, ready and committed to the quest. At the end of the round, remove Tom Bombadil and a copy of Tom Bombadillo! in the victory display from the game. This effect cannot be cancelled."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Borja Pindado",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

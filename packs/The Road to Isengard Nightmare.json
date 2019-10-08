@@ -1,0 +1,320 @@
+{
+    "Name": "The Road to Isengard Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Road to Isengard Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-to-Isengard-Nightmare/The-Road-to-Isengard-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Forced: When Ent of Fangorn leaves play, remove it from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Suddenly up came fires and foul flames: the vents and shafts all over the plain began to spout and belch. Several of the Ents got scorched and blistered.`\r\n-Pippin, The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Road to Isengard scenario.",
+                    "Remove the following cards, in the specified quantities, from the standard encounter deck:",
+                    "3x Snaga",
+                    "1x Ring-wall of Isengard",
+                    "2x Open Pit",
+                    "1x Machines of Isengard",
+                    "3x Blast of Sorcery",
+                    "Then, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Road to Isengard encounter deck.",
+                    "Finally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Road to Isengard Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Monztre",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orthanc Archer",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-to-Isengard-Nightmare/Orthanc-Archer.jpg",
+                "Stats": {
+                    "EngagementCost": "38",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Archery 2."
+                ],
+                "Text": [
+                    "When Revealed: Discard 1 random card from your hand and assign X damage among characters you control. X is the discarded card`s printed cost."
+                ],
+                "Shadow": null,
+                "FlavorText": "`There was no answer, except arrows and stones from the walls.` -Merry, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Road to Isengard Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Half-orc of Isengard",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-to-Isengard-Nightmare/Half-orc-of-Isengard.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Isengard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Half-orc of Isengard attacks, either discard 1 random card from your hand, or Half-orc of Isengard gets +3 Attack for this attack."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, discard 1 random card from your hand.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road to Isengard Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Poisonous Shaft",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-to-Isengard-Nightmare/Poisonous-Shaft.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Isengard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Poisonous Shaft is in the staging area, damaged characters cannot be readied by player card effects.",
+                    "Wizardry: Each player discards a damaged character he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "At night plumes of vapour steamed from the vents, lit from beneath with red light, or blue, or venomous green.\r\n-THe Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Road to Isengard Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fortress of Isengard",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-to-Isengard-Nightmare/Fortress-of-Isengard.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Isengard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Fortress of Isengard is in the staging area, each Orc enemy gets +1 Threat, +1 Attack and +1 Defense.",
+                    "Wizardry: Return the topmost enemy in the encounter discard pile to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "This was the stronghold of Saruman, as fame reported it; for within living memory the men of Rohan had not passed its gates...\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Road to Isengard Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Monztre",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Traitor of Many Colors",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-to-Isengard-Nightmare/Traitor-of-Many-Colors.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril.",
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: If Saruman is in play, he makes an immediate attack against you."
+                ],
+                "Shadow": "Shadow: Either discard 1 random card from your hand, or attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road to Isengard Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Tropa Entertainment",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fire and Foul Fumes",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-to-Isengard-Nightmare/Fire-and-Foul-Fumes.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player assigns X damage among questing characters he controls, where X is the Threat of the active location. If there is no active location, Fire and Foul Fumes gains surge."
+                ],
+                "Shadow": "Shadow: Assign X damage among characters you control. X is the Threat of the active location.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road to Isengard Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Daunting Power",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-to-Isengard-Nightmare/Daunting-Power.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Until the end of the round, characters cannot be declared as attackers. If there are no engaged enemies, raise each player`s threat by 4."
+                ],
+                "Shadow": "Shadow: Until the end of the round, defending character cannot ready.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road to Isengard Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Road to Isengard Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Tropa Entertainment",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

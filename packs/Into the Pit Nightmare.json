@@ -1,0 +1,336 @@
+{
+    "Name": "Into the Pit Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Into the Pit Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-the-Pit-Nightmare/Into-the-Pit-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nForced: After Cave Torch exhausts, place 1 damage token on this card. Then, if there are 5 or more damage tokens on this card, remove Cave Torch from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "All about them as they lay hung the darkness, hollow and immense, and they were oppressed by the lonliness and vastness of the dolven halls and endlessly branching stairs and passages. -The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Into the Pit scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n1x Goblin Patrol\n2x Stairs of Náin\n2x Goblin Follower\n2x Crumbling Ruin\n3x Cave In\n2x Fouled Well\n2x Goblin Tunnels\n5x Goblin Swordsman\n\nAdd the new quest card in this Nightmare Deck to the normal quest deck, in stage order. Then, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Into the Pit encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Into the Pit Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Goblin Ambush",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-the-Pit-Nightmare/Goblin-Ambush-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player must search the encounter deck and discard pile for X Orc enemies and add them to the staging area, where X is 1 plus the number of players in the game. One of these choices must be Patrol Sentry and one must be Patrol Leader, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": "You hear the sounds of many scampering feet. As you move closer to investiage, you find your party set upon on all sides by a patrol of Orcs!"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "X is 1 plus the number of players in the game.",
+                    "Forced: After an enemy is defeated, place 1 progress on this stage.",
+                    "Progress cannot be placed on Goblin Ambush expect by the above effect."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Into the Pit Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Into the Pit Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Patrol Sentry",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-the-Pit-Nightmare/Patrol-Sentry.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "1",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Cave Torch exhausts, Patrol Sentry makes an immediate attack against the engaged player, if able."
+                ],
+                "Shadow": "Shadow: Add Patrol Sentry to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Into the Pit Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Into the Pit Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 4,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Goblin Lurker",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-the-Pit-Nightmare/Goblin-Lurker.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "3",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot be optionally engaged.",
+                    "If the active location is a Dark location, Goblin Lurker gets +3 Attack and -40 engagement cost."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+3 Attack instead if the active location is a Dark location.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Into the Pit Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Into the Pit Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Piya Wannachaiwong",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Shadow Dweller",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-the-Pit-Nightmare/Shadow-Dweller.jpg",
+                "Stats": {
+                    "EngagementCost": "0",
+                    "Threat": "1",
+                    "Attack": "7",
+                    "Defense": "7",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Shadow Dweller does not make engagement checks while Cave Torch is in play."
+                ],
+                "Shadow": "Shadow: Shuffle Shadow Dweller back into the encounter deck.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Into the Pit Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Into the Pit Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Mark Bulahao",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Twisting Shadows",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-the-Pit-Nightmare/Twisting-Shadows.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "X"
+                },
+                "Traits": [
+                    "Underground.",
+                    "Dark."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the number of Dark locations in play.",
+                    "When Revealed: Remove all progress from each Dark location in play."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each Dark location in play.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Into the Pit Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Into the Pit Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Michael Rasmussen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Narrow Fissure",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-the-Pit-Nightmare/Narrow-Fissure.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "1"
+                },
+                "Traits": [
+                    "Underground.",
+                    "Hazard."
+                ],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "Each Dark location in play gets +2 quest points.",
+                    "While Cave Torch is ready, progress cannot be placed on Narrow Fissure."
+                ],
+                "Shadow": null,
+                "FlavorText": "There were fissures and chasms in the walls...\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Into the Pit Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Into the Pit Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Shadow-fall",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Into-the-Pit-Nightmare/Shadow-fall.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to a non-Dark location in play. (Counts as a Condition attachment with the text: `Attached location gains the Dark trait and gets +3 quest points.`)"
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +3 Defense this phase.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Into the Pit Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Into the Pit Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Anthony Feliciano",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

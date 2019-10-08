@@ -1,0 +1,1059 @@
+{
+    "Name": "Race Across Harad",
+    "Cycle": "Haradrim",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Thurindir",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Thurindir.jpg",
+                "Stats": {
+                    "ThreatCost": "8",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Thurindir gets +1 Willpower for each side quest in the victory display.",
+                    "Setup: Search your deck for a side quest and add it to your hand. Shuffle your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`He is one of the wandering folk - Rangers we call them.`\r\n-Barliman Butterbur, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": null,
+            "Number": 28,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Proud Hunters",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Proud-Hunters.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control a unique character with the Noble trait and another unique character with the Ranger trait.",
+                    "Response: After a hero you control participates in an attack that destroys an enemy, add X resources to that hero’s pool. X is the just destroyed enemy’s printed Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": null,
+            "Number": 32,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dúnedain Pathfinder",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Dúnedain-Pathfinder.jpg",
+                "Stats": {
+                    "ResourceCost": "0",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After this ally enters play, search the top 5 cards of the encounter deck for a non-unique location and add it to the staging area. If no location enters play by this effect, discard Dúnedain Pathfinder. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": null,
+            "Number": 33,
+            "Quantity": 3,
+            "Artist": "Michele Frigo",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Steed of the North",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Steed-of-the-North.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Mount."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Dúnedain or Ranger hero.",
+                    "Response: After you engage an enemy, exhaust Steed of the North to ready attached hero."
+                ],
+                "Shadow": null,
+                "FlavorText": "Their horses were strong and of proud bearing, but rough-haired...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": null,
+            "Number": 30,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Steward of Orthanc",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Steward-of-Orthanc.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Isengard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: When you play an event, give it Doomed 1 to draw a card. You cannot trigger this ability if you have already triggered the ability of a Steward of Orthanc this round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...the power of Orthanc cannot be lightly thrown aside...`\r\n-Saruman, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": null,
+            "Number": 37,
+            "Quantity": 3,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Kahliel's Tribesman",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Kahliel's-Tribesman.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust Kahliel’s Tribesman to choose another Harad character. That character gets +1 Willpower, +1 Attack, and +1 Defense until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "But the Haradrim, being now driven to the brink, turned at bay, and they were fierce in despair...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": null,
+            "Number": 29,
+            "Quantity": 3,
+            "Artist": "Ryan Valle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Eryn Galen Settler",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Eryn-Galen-Settler.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Woodman."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: When the active location leaves play as an explored location, discard Eryn Galen Settler to discard a location in the staging with the same title as the just explored location."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": null,
+            "Number": 35,
+            "Quantity": 3,
+            "Artist": "Michele Frigo",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mighty Warrior",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Mighty-Warrior.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero. Limit 1 per hero.",
+                    "Attached hero gains the Warrior trait.",
+                    "Response: After you play Mighty Warrior from your hand, draw a card."
+                ],
+                "Shadow": null,
+                "FlavorText": "Gimli hewed the legs from another that had sprung up on Balin’s tomb.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": null,
+            "Number": 31,
+            "Quantity": 3,
+            "Artist": "Marius Bota",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Explore Secret Ways",
+            "IsUnique": false,
+            "CardType": "Player_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Explore-Secret-Ways.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Limit 1 copy of Explore Secret Ways in the victory display.",
+                    "While Explore Secret Ways is in the victory display, each location in the staging area with the same title as the active location does not contribute its Threat to the total Threat in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I myself dared to pass the doors of the Necromancer in Dul Guldur, and secretly explored his ways...`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": null,
+            "Number": 36,
+            "Quantity": 3,
+            "Artist": "Andreia Ugrai",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Backtrack",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Backtrack.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if the main quest has no keywords.",
+                    "Action: Remove X progress from the main quest to place X progress on a location in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Well,` said Boromir, `when heads are at a loss bodies must serve...`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": null,
+            "Number": 34,
+            "Quantity": 3,
+            "Artist": "John Pacer",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Tamed Mûmak",
+            "IsUnique": false,
+            "CardType": "Objective_Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Tamed-Mûmak.jpg",
+                "Stats": {
+                    "Willpower": "2",
+                    "Attack": "5",
+                    "Defense": "2",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Harad.",
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Damage from undefended attacks against you must be assigned to Tamed Mûmak.",
+                    "If Tamed Mûmak leaves play, the controlling player is eliminated."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 38,
+            "Quantity": 4,
+            "Artist": "Piya Wannachaiwong",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "River Harnen",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/River-Harnen.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "10"
+                },
+                "Traits": [
+                    "Desert.",
+                    "River."
+                ],
+                "Keywords": [
+                    "Victory 4."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "The players cannot travel here unless there are at least 20 progress tokens on stage 4B.",
+                    "Travel: Reveal 1 encounter card per player.",
+                    "Stage 4B cannot be defeated while River Harnen is in play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 39,
+            "Quantity": 1,
+            "Artist": "Jokubas Uoginitas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Expanse of Harad",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Expanse-of-Harad.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Desert."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While the players are not at the same stage as the Orc`s stage, Expanse of Harad gets +2 Threat.",
+                    "Forced: After Expanse of Harad becomes the active location, raise each player’s threat by 2."
+                ],
+                "Shadow": null,
+                "FlavorText": "The wide plains opened grey before them.\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 40,
+            "Quantity": 2,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Blistering Erg",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Blistering-Erg.jpg",
+                "Stats": {
+                    "Threat": "-",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Desert."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the stage number of the main quest.",
+                    "Forced: After Blistering Erg becomes the active location, each player assigns X damage among characters he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "It seemed a long way, and he grew hot and very hungry...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 41,
+            "Quantity": 3,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Harad Road",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Harad-Road.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Desert.",
+                    "Road."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add Harad Road to the Orc`s area."
+                ],
+                "Shadow": "Shadow: If the players are not at the same stage as the Orcs, move attacking enemy to the Orc`s area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 42,
+            "Quantity": 2,
+            "Artist": "Jokubas Uoginitas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Uruk Pursuer",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Uruk-Pursuer.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add Uruk Pursuer to the Orc`s area. If the players are not at the same stage as the Orcs, Uruk Pursuer gains surge."
+                ],
+                "Shadow": "Shadow: If the players are not at the same stage as the Orcs, put Uruk Pursuer into play engaged with you.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 43,
+            "Quantity": 4,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Racing Warg",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Racing-Warg.jpg",
+                "Stats": {
+                    "EngagementCost": "10",
+                    "Threat": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to an Orc enemy. Limit 1 per enemy. (Counts as a Mount attachment with the text: `Attached enemy gets +1 Threat, +1 Attack, +1 Defense, and +1 hit point. Forced: When attached enemy leaves play, return Racing Warg to the staging area.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 44,
+            "Quantity": 3,
+            "Artist": "Alexander Gustafson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pursuers from Mordor",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Pursuers-from-Mordor.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "When Revealed: Discard cards from the top of the encounter deck until an Orc enemy is discarded. Add that enemy to the Orc`s area."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, place 2 progress on the Orc`s stage.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 45,
+            "Quantity": 2,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Howling at their Heels",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Howling-at-their-Heels.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: If the players are not at the same stage as the Orcs, add the total Threat of each card in the Orc`s area to the total Threat in the staging area until the end of the phase. If the players are at the same stage as the Orcs, each enemy gets +1 Threat until the end of the phase."
+                ],
+                "Shadow": "Shadow: Raise your threat by 1.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 46,
+            "Quantity": 3,
+            "Artist": "Alexander Gustafson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Setting Out",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Setting-Out-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set Ford of Harnen and 1 copy of Uruk Warg-rider aside, out of play. Each player takes control of a Tamed Mumak. Remove each remaining Tamed Mumak from the game. Create the Orc’s area with a second quest deck consisting of stage 1C, 2C, 3C, and 4C as well as Uruk Chieftain."
+                ],
+                "Shadow": null,
+                "FlavorText": "Emerging from your hunt in the great jungle of the south, you set out across the vast desert of Harad on your long journey north to Gondor."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player searches the encounter deck for 1 different location and adds it to the staging area. Shuffle the encounter deck. Advance to stage 2A."
+                ],
+                "Shadow": null,
+                "FlavorText": "Riding atop the Oliphaunts that you captured in the jungle, you set an easy pace."
+            },
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 47,
+            "Quantity": 1,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Racing North",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Racing-North-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Choose the staging area or the Orc`s area. Add the set aside Uruk Warg-rider to the chosen area."
+                ],
+                "Shadow": null,
+                "FlavorText": "During the night, you hear the howls of distant Wargs drawing nearer. The riders of Mordor are scouring the sandy plains for you and the remnant of Kahlie’s tribe. You give the Mumak’s reigns a hard shake and quicken the pace."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Uruk Chieftain cannot take damage.",
+                    "Forced: After characters are committed to quest, no more than 5 progress can be placed here this round (10 progress instead if each Tamed Mumak in play is committed to the quest)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 48,
+            "Quantity": 1,
+            "Artist": "Alexandr Elichev",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hunted in Harad",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Hunted-in-Harad-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Shuffle the encounter discard pile into the encounter deck and discard cards from the top until an Orc enemy is discarded. Add that enemy to the Orc`s area."
+                ],
+                "Shadow": null,
+                "FlavorText": "The hounds of Mordor have caught your scent and they close in on you from the south. Even riding on the tall Mumakil you are not safe from the barbed arrows of the Warg-riders. Your only hope is to reach the River Harnen before you are cut off."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Uruk Chieftain cannot take damage.",
+                    "Reveal an additional encounter card during the quest phase if Uruk Chieftain is at stage 2D.",
+                    "Forced: After characters are committed to quest, no more than 5 progress can be placed here this round (10 progress instead if each Tamed Mumak in play is committed to the quest)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 49,
+            "Quantity": 1,
+            "Artist": "S. C. Watson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Ford of Harnen",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/The-Ford-of-Harnen-4A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add River Harnen to the staging area. Shuffle the encounter discard pile into the encounter deck and discard cards from the top until an Orc enemy is discarded. Add that enemy to the Orc`s area."
+                ],
+                "Shadow": null,
+                "FlavorText": "You can see the river on the horizon. Your pursuers won`t dare to cross the water where it`s deep, but the large Mumakil can manage easily. If only you can reach the river in time..."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After characters are committed to quest, no more than 5 progress can be placed here this round (10 progress instead if each Tamed Mumak in play is committed to the quest).",
+                    "Forced: After an enemy attacks and destroys a character, place 1 progress on the Orc`s stage.",
+                    "If you defeat this stage, you have escaped the Orcs and win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 4,
+                "StageLetter": "A"
+            },
+            "Number": 50,
+            "Quantity": 1,
+            "Artist": "Uriah Voth",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Setting Out",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Setting-Out-C-1C.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": "The Orcs that attacked Kahliel`s village patrol the desert in search of survivors."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Uruk Chieftain cannot leave the Orc`s area.",
+                    "Forced: At the end of the quest phase, discard the top card of the encounter deck. Place X progress on this stage, where X is the discarded card`s Threat plus the total Threat in the Orc`s area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "C"
+            },
+            "Number": 51,
+            "Quantity": 1,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Racing North",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Racing-North-C-2C.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: If the players have already defeated stage 2B, discard cards from the top of the encounter deck until an Orc enemy is discarded. Add that enemy to the Orc`s area."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Wargs have caught the scent and they race north with the Orc riders on their backs."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "While the players are at stage 3B, Uruk Chieftain cannot leave the Orc`s area.",
+                    "Forced: At the end of the quest phase, return Uruk Chieftain to the Orc’s area and discard the top card of the encounter deck. Place X progress on this stage, where X is the discarded card`s Threat plus the total Threat in the Orc`s area.",
+                    "If you are at stage 2B when this stage is defeated, you lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "C"
+            },
+            "Number": 52,
+            "Quantity": 1,
+            "Artist": "Alexandr Elichev",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hunted in Harad",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Hunted-in-Harad-C-3C.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: If the players have already defeated stage 3B, discard cards from the top of the encounter deck until an Orc enemy is discarded. Add that enemy to the Orc`s area."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Orcs and their mounts move with great speed across the sandy waste. They can smell their prey on the air as they narrow the distance between them."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "While the players are at stage 4B, Uruk Chieftain cannot leave the Orc`s area and each enemy at this stage gets +1 Threat.",
+                    "Forced: At the end of the quest phase, return Uruk Chieftain to the Orc`s area and discard the top card of the encounter deck. Place X progress on this stage, where X is the total Threat of the discarded card plus the total Threat in the Orc`s area.",
+                    "If you are at stage 3B when this stage is defeated, you lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "C"
+            },
+            "Number": 53,
+            "Quantity": 1,
+            "Artist": "S. C. Watson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Ford of Harnen",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/The-Ford-of-Harnen-C-4C.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": "The Harnen cuts a line across the horizon and the Wargs race to reach its shore ahead of their prey. Their Orc riders urge them on with shouts and savage kicks. If they let their quarry cross the river, they will not be able to pursue, so they set a frenzied pace and tear across the sand."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Uruk Chieftain cannot take damage while River Harnen is in the staging area.",
+                    "Forced: At the end of the quest phase, discard the top card of the encounter deck. Place X progress on this stage, where X is the discarded card`s Threat plus the total Threat of each engaged enemy.",
+                    "If the Orcs defeat this stage, the Orcs have caught you and you lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Race Across Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 4,
+                "StageLetter": "C"
+            },
+            "Number": 54,
+            "Quantity": 1,
+            "Artist": "Uriah Voth",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

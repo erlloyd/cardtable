@@ -1,0 +1,975 @@
+{
+    "Name": "Beneath the Sands",
+    "Cycle": "Haradrim",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Hirgon",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Hirgon.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Hirgon quests successfully, play a Tactics ally from your hand, reducing its cost by 1 (to a minimum of 1). Then, you may raise your threat by 1 to give that ally +1 Attack and +1 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Hirgon I am, errand-rider of Denethor, who bring you this token of war.`\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 55,
+            "Quantity": 1,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rider of Rohan",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Rider-of-Rohan.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While a side quest is in the victory display, Rider of Rohan does not exaust to quest."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Who are you, and what are you doing in this land?` said the Rider, using the Common Speech of the West...\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 60,
+            "Quantity": 3,
+            "Artist": "Javier Charro Martinez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Red Arrow",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/The-Red-Arrow.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Limit 1 per deck. Attach to a Gondor hero.",
+                    "Attached hero gets +1 Willpower.",
+                    "Valour Response: After attached hero quests successfully, add The Red Arrow to the victory display to search the top 5 cards of your deck for an ally and put it into play."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The Red Arrow has not been seen in the Mark in all my years!`\r\n-Théoden, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 58,
+            "Quantity": 3,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Keep Watch",
+            "IsUnique": false,
+            "CardType": "Player_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Keep-Watch.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Limit 1 copy of Keep Watch in the victory display.",
+                    "While Keep Watch is in the victory display, each non-unique enemy engaged with a player gets -1 Attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I called for the help of the Dúnedain, and their watch was doubled...`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 59,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dúnedain Lookout",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Dúnedain-Lookout.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dúnedain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: Discard Dúnedain Lookout to cancel the `When Revealed` effects of an enemy just revealed from the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Travellers scowl at us, and countrymen gives us scornful names.`\r\n-Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 62,
+            "Quantity": 3,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fireside Song",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Fireside-Song.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Hobbit hero. Limit 1 per hero.",
+                    "Attached hero gets +1 Willpower for each Song attached to it."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I sit beside the fire and think\r\nof how the world will be\r\nwhen winter comes without a spring\r\nthat I shall ever see.`\r\n-Bilbo Baggins, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 61,
+            "Quantity": 3,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Haradrim Spear",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Haradrim-Spear.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Haradrim character.",
+                    "Attached character gets +1 Attack.",
+                    "Response: After attached character is declared as an attacker, it gets +3 Attack for this attack. After this attack resolves, discard Haradrim Spear."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 56,
+            "Quantity": 3,
+            "Artist": "Lucas Durham",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Free Peoples",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/The-Free-Peoples.jpg",
+                "Stats": {
+                    "ResourceCost": "5"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if the characters you control have a total of at least 9 different Traits between them.",
+                    "Action: Ready each character in play. Until the end of the phase, each character you control gets +1 Willpower."
+                ],
+                "Shadow": null,
+                "FlavorText": "`For the rest, they shall represent the other Free Peoples of the World: Elves, Dwarves and Men.`\r\n-Elrond, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 64,
+            "Quantity": 3,
+            "Artist": "Uriah Voth",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hunting Party",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Hunting-Party.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control a unique character with the Warrior trait and another unique character with the Scout trait.",
+                    "Response: After the players have committed characters to the quest, discard a non-unique enemy in the staging area. Then, reveal an encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 57,
+            "Quantity": 3,
+            "Artist": "Andreia Ugrai",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Doughty Ranger",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Doughty-Ranger.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero. Limit 1 per hero.",
+                    "Attached hero gains the Ranger trait.",
+                    "Response: After you play Doughty Ranger from your hand, draw a card."
+                ],
+                "Shadow": null,
+                "FlavorText": "...he went forth clad only in rusty green and brown, as a Ranger of the wilderness.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 63,
+            "Quantity": 3,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Brood Mother",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Brood-Mother.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "4",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "12"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Spider."
+                ],
+                "Keywords": [
+                    "Victory 4."
+                ],
+                "Text": [
+                    "Cannot have attachments. Cannot take damage.",
+                    "Brood Mother engages the first player.",
+                    "Forced: At the end of the round, search the encounter deck and discard pile for a Spider Broodling and add it to the staging area, if able. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": {
+                "EncounterSet": "Beneath the Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 65,
+            "Quantity": 1,
+            "Artist": "Dimitri Bielak",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hive Guardian",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Hive-Guardian.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Spider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While On Track is in play, Hive Guardian gets +2 Attack and -5 engagement cost."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if On Track is in play).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": {
+                "EncounterSet": "Beneath the Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 66,
+            "Quantity": 3,
+            "Artist": "Sandara Tang",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Spider Broodling",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Spider-Broodling.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Spider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While On Track is in play, Spider Broodling gains surge."
+                ],
+                "Shadow": "Shadow: If On Track is in play, put Spider Broodling into play engaged with you and deal it a shadow card.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": {
+                "EncounterSet": "Beneath the Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 67,
+            "Quantity": 5,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Spider Burrow",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Spider-Burrow.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Forced: After Spider Burrow becomes the active location, flip the Search objective to On Track and add Brood Mother to the staging area.",
+                    "Forced: When Spider Burrow leaves play as an explored location, set Brood Mother aside, out of play (unless the players are at stage 3B)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": {
+                "EncounterSet": "Beneath the Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 68,
+            "Quantity": 2,
+            "Artist": "Jokubas Uoginitas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pitch Black Tunnel",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Pitch-Black-Tunnel.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [
+                    "Track 4."
+                ],
+                "Text": [
+                    "X is the number of characters controlled by the first player.",
+                    "Travel: Reveal the top card of the encounter deck to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": {
+                "EncounterSet": "Beneath the Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 69,
+            "Quantity": 2,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Nest of Vermin",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Nest-of-Vermin.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [
+                    "Track 3."
+                ],
+                "Text": [
+                    "Travel: Shuffle the encounter discard pile into the encounter deck and discard cards from the top until a Creature enemy is discarded. Add the discarded enemy to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "...a nasty, dirty, wet hole, filled with the ends of worms and an oozy smell...\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": {
+                "EncounterSet": "Beneath the Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 70,
+            "Quantity": 2,
+            "Artist": "Jokubas Uoginitas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Cobwebbed Cavern",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Cobwebbed-Cavern.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While On Track is in play, Cobwebbed Cavern gets +2 Threat."
+                ],
+                "Shadow": "Shadow: Exhaust a character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": {
+                "EncounterSet": "Beneath the Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 71,
+            "Quantity": 3,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Blocked Passage",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Blocked-Passage.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [
+                    "Track 2."
+                ],
+                "Text": [
+                    "While On Track is in play, progress cannot be placed on locations in the staging area."
+                ],
+                "Shadow": "Shadow: Discard an attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": {
+                "EncounterSet": "Beneath the Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 72,
+            "Quantity": 3,
+            "Artist": "Jokubas Uoginitas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Forced Off Track",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Forced-Off-Track.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either flip the Search objective to Off Track, or deal 1 damage to each questing character."
+                ],
+                "Shadow": "Shadow: If On Track is in play, attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": {
+                "EncounterSet": "Beneath the Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 73,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Grabbed by Spiders",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Grabbed-by-Spiders.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge.",
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: Attach to the main quest. Limit 1 per quest. (Counts as a Condition attachment with the text: `Forced: After the Search objective is flipped to Off Track, each player discards an ally he controls. Then, discard Grabbed by Spiders.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": {
+                "EncounterSet": "Beneath the Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 74,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lost Underground",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Lost-Underground.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "When Revealed: Flip the Search objective to Off Track. While Lost Underground is in play, the Search objective cannot flip. (Do not resolve the Track keyword.)",
+                    "Response: When this stage is defeated, flip the Search objective to On Track and ignore its Forced effect until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "You`ve lost your way underground. You must retrace your steps to get on track."
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 75,
+            "Quantity": 1,
+            "Artist": "Jennifer Hrabota Lesser",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Searching the Caves",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Searching-the-Caves-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set Brood Mother aside, out of play. Add the Search objective to the staging area (Off Track face up)."
+                ],
+                "Shadow": null,
+                "FlavorText": "Several members of your group were seized by spiders in the night and dragged away from camp. When the sun came up, you followed their trail to a large cavern entrance and entered in."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Discard cards from the encounter deck until X locations are discarded, where X is the number of players. Add each location discarded by this effect to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "Inside the cavern entrance you find a large maze of tunnels criss-crossed with all manner of prints. It is impossible to discern which are the tracks you seek, so you begin to search all around."
+            },
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": {
+                "EncounterSet": "Beneath the Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 76,
+            "Quantity": 1,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Getting Closer",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Getting-Closer-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Flip the Search objective to Off Track. Shuffle the encounter discard pile into the encounter deck and discard cards from the top until X enemies are discarded, where X is the number of players. Add each enemy discarded by this effect to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "It is hard to keep your way in the dark labyrinth, but you are certain that you are headed in the right direction."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "While On Track is in play, encounter card effects cannot be canceled."
+                ],
+                "Shadow": null,
+                "FlavorText": "Cobwebs line the cavern walls and the spiders are growing more aggressive. You must be getting closer to their colony."
+            },
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": {
+                "EncounterSet": "Beneath the Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 77,
+            "Quantity": 1,
+            "Artist": "Marius Bota",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Spiders' Hive",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/The-Spiders'-Hive-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player adds Brood Mother to the staging area. Each other player reveals an encounter card. Flip the Search objective to Off Track."
+                ],
+                "Shadow": null,
+                "FlavorText": "Your search has led you far underground, to a large cavern full of giant spider eggs. Along the walls, you see the cocooned bodies of your friends bound with many strands. At the center of the chamber is the enormous brood mother. She glares at you through many bulbous eyes and a poisonous froth bubbles from her fangs. You must find a way to defeat her in order to rescue your friends."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "While there are at least 5 progress tokens on this stage, Brood Mother loses the text: `Cannot take damage.`",
+                    "Forced: After the Search objective is flipped to Off Track, remove all progress tokens from this stage.",
+                    "This stage cannot be defeated while Brood Mother is in play. If the players defeat this stage, they win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": {
+                "EncounterSet": "Beneath the Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 78,
+            "Quantity": 1,
+            "Artist": "Sandara Tang",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Off Track",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Off-Track.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Search."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the quest phase, place 1 progress here. Then, either return the topmost location in the encounter discard pile to the staging area, or raise each player`s threat by 1 for each resource here.",
+                    "Progress cannot be placed on the main quest."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": {
+                "EncounterSet": "Beneath the Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 79,
+            "Quantity": 1,
+            "Artist": "Andreia Ugrai",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "On Track",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/On-Track.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Search."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the quest phase, search the top 3 cards of the encounter deck for a card with `On Track` in the lower right corner, add it to the staging area and discard the rest. If no card enters play from this effect, flip this objective.",
+                    "Forced: After the players quest unsuccessfully, flip this objective."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": {
+                "EncounterSet": "Beneath the Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 80,
+            "Quantity": 1,
+            "Artist": "Jennifer Hrabota Lesser",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

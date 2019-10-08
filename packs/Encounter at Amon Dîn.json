@@ -1,0 +1,931 @@
+{
+    "Name": "Encounter at Amon Dîn",
+    "Cycle": "Against the Shadow",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Gondorian Discipline",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Gondorian-Discipline.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Gondor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: Cancel up to 2 points of damage just dealt to a Gondor character."
+                ],
+                "Shadow": null,
+                "FlavorText": "At last, less than a mile from the City, a more ordered mass of men came into view, marching not running, still holding together. -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": null,
+            "Number": 60,
+            "Quantity": 3,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pippin",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Pippin.jpg",
+                "Stats": {
+                    "ThreatCost": "6",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If each hero you control has the Hobbit trait, Pippin gains: `Response: After an enemy engages you, raise your threat by 3 to return it to the staging area. Until the end of the round, that enemy cannot engage you.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "`There must be someone with intelligence in the party.` -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": null,
+            "Number": 56,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Book of Eldacar",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Book-of-Eldacar.jpg",
+                "Stats": {
+                    "ResourceCost": "4"
+                },
+                "Traits": [
+                    "Record."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Tactics hero.",
+                    "Reduce the cost to play Book of Eldacar by 1 for each hero you control with a printed Tactics resource icon.Action: Discard Book of Eldacar to play any Tactics event card in your discard pile as if it were in your hand. Then, place that event on the bottom of your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": null,
+            "Number": 59,
+            "Quantity": 3,
+            "Artist": "Florian Stitz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ithilien Pit",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Ithilien-Pit.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Trap."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play Ithilien Pit into the staging area unattached.\n\nIf unattached, attach Ithilien Pit to the next eligible enemy that enters the staging area.\n\nAny character may choose attached enemy as the target of an attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": null,
+            "Number": 64,
+            "Quantity": 3,
+            "Artist": "David Gaillet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ithilien Archer",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Ithilien-Archer.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Ranger."
+                ],
+                "Keywords": [
+                    "Ranged."
+                ],
+                "Text": [
+                    "Response: After Ithilien Archer attacks and damages an enemy, return that enemy to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": null,
+            "Number": 63,
+            "Quantity": 3,
+            "Artist": "Carmen Cianelti",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lord of Morthond",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Lord-of-Morthond.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Gondor or Outlands hero.",
+                    "If each hero you control has a printed Leadership resource icon, Lord of Morthond gains: `Response: After you play a Lore, Spirit, or Tactics ally, draw 1 card.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "`The Captains of the Outlands are expected up the South Road ere sundown. Come with us and you will see.` -Bergil, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": null,
+            "Number": 58,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Minas Tirith Lampwright",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Minas-Tirith-Lampwright.jpg",
+                "Stats": {
+                    "ResourceCost": "1",
+                    "Willpower": "0",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Craftsman."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After an encounter card with surge is revealed, discard Minas Tirith Lampwright to name enemy, location, or treachery. If the next encounter card revealed is the named type, discard it without resolving its effects."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": null,
+            "Number": 61,
+            "Quantity": 3,
+            "Artist": "Melanie Maier",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hobbit-sense",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Hobbit-sense.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if each of your heroes is a Hobbit. Combat Action: Enemies engaged with you do not attack this round. You cannot declare attacks this round."
+                ],
+                "Shadow": null,
+                "FlavorText": "They possessed from the first the art of disappearing swiftly and silently, when large folk whom they do not wish to meet come blundering by... -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": null,
+            "Number": 65,
+            "Quantity": 3,
+            "Artist": "Blake Henriksen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Denethor",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Denethor.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "3",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Denethor gets -1 Willpower for each damaged hero you control.Discard Denethor if his Willpower is 0 or less."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Denethor is of another sort, proud and subtile, a man of far greater lineage and power, though he is not called a king.` -Gandalf, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": null,
+            "Number": 57,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Small Target",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Small-Target.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: After a Hobbit hero you control exhausts to defend an attack, choose another enemy engaged with you and reveal the attacking enemy`s shadow card. If that shadow card has no shadow effect, resolve this enemy`s attack against the chosen enemy. If that shadow card has a shadow effect, resolve this attack as normal."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": null,
+            "Number": 62,
+            "Quantity": 3,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Savagery of the Orcs",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Savagery-of-the-Orcs-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Villagers 5."
+                ],
+                "Text": [
+                    "Setup: Set Ghulat aside, out of play. Put Lord Alcaron into play. Make Burning Farmhouse the active location. Add the Rescued Villagers and Dead Villagers objectives to the staging area. Then, shuffle the encounter deck and reveal 1 encounter card per player and add it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "Emerging from the Druadan Forest with news of the conspirators` demise, you begin your journey to Minas Tirith. As you wake the following day, you see dark plumes of smoke rising across the lands of Anórien."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When progress would be placed on Savagery of the Orcs, move an equal number of villager tokens from this quest onto Rescued Villagers instead.\n\nIf there are no villager tokens on Savagery of the Orcs, advance to the next stage."
+                ],
+                "Shadow": null,
+                "FlavorText": "In a smoldering village near Amon Dîn, you find none other than a tired Lord Alcaron. Pleased to see you, he requests your assistance in protecting the village."
+            },
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 66,
+            "Quantity": 1,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Protect the Villagers",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Protect-the-Villagers-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add Ghulat to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "The orcs pillaging Anórien are remnants of the army defeated at Cair Andros. Stranded on the western bank of the Anduin, They are now punishing the local population. One of the roving bands is led by a cunning orc captain by the name of Ghulat. You must stop Ghulat and his orcs, or many innocents will die..."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "If an attack goes undefended, discard X villager tokens from Rescued Villagers instead of damaging a hero. X is the amount of damage that would have been dealt.\n\nWhen the players defeat this stage, end the game. Compare the number of tokens on Rescued Villagers to the number of tokens on Dead Villagers."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 67,
+            "Quantity": 1,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lord Alcaron",
+            "IsUnique": true,
+            "CardType": "Objective_Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Lord-Alcaron.jpg",
+                "Stats": {
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The first player gains control of Lord Alcaron.",
+                    "Response: After a villager token is discarded, exhaust Lord Alcaron to place that villager token on a location instead.",
+                    "If Lord Alcaron leaves play, the players have lost the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 70,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rescued Villagers",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Rescued-Villagers.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "If a location leaves play as an explored location, move any villager tokens from that location to Rescued Villagers.At the end of the game, if there are more villager tokens here than damage tokens on Dead Vilagers, the players have won."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 68,
+            "Quantity": 1,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dead Villagers",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Dead-Villagers.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "If a villager token is discarded from a location, objective or quest stage, place a damage token on Dead Villagers.At the end of the game, if there are more damage tokens here than villager tokens on Rescued Villagers, the players have lost."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 69,
+            "Quantity": 1,
+            "Artist": "Greg Opalinski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ghulat",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Ghulat.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "3",
+                    "Attack": "X",
+                    "Defense": "3",
+                    "HitPoints": "7"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk."
+                ],
+                "Keywords": [
+                    "Victory 2."
+                ],
+                "Text": [
+                    "X is the number of damage tokens on Dead Villagers.",
+                    "Forced: When Ghulat attacks, place 1 damage token on Dead Villagers.",
+                    "While Ghulat is in play, the game cannot end."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 71,
+            "Quantity": 1,
+            "Artist": "Diego Gisbert Llorens",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Marauding Orc",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Marauding-Orc.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Marauding Orc attacks and destroys a character, place 1 damage token on Dead Villagers."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, discard 1 villager token from Rescued Villagers.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 72,
+            "Quantity": 4,
+            "Artist": "Ellyson Ferrari Lifante",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Ravager",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Orc-Ravager.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Discard 1 villager token from the active location. If no villager token is discarded by this effect, Orc Ravager gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. (+2 Attack instead if undefended.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 73,
+            "Quantity": 3,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Craven Eagle",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Craven-Eagle.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Eagle."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Discard the character with the fewest remaining hit points. That character`s controller may discard 3 cards at random from his hand to prevent this effect."
+                ],
+                "Shadow": null,
+                "FlavorText": "Eagles are not kindly birds. Some are cowardly and cruel. -The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 74,
+            "Quantity": 2,
+            "Artist": "Dean Spencer",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Burning Farmhouse",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Burning-Farmhouse.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Gondor."
+                ],
+                "Keywords": [
+                    "Villagers 4.",
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Forced: At the end of the round, discard 1 villager token from Burning Farmhouse."
+                ],
+                "Shadow": null,
+                "FlavorText": "Houses and barns were burning. -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 75,
+            "Quantity": 4,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gondorian Hamlet",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Gondorian-Hamlet.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Gondor."
+                ],
+                "Keywords": [
+                    "Villagers 3.",
+                    "Victory 1."
+                ],
+                "Text": [
+                    "While Gondorian Hamlet is in the staging area it gains: `Forced: After a treachery card is revealed from the encounter deck, discard 1 villager token from Gondorian Hamlet.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "The townlands were rich, with wide tilth and many orchards... -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 76,
+            "Quantity": 4,
+            "Artist": "Sabin Boykinov",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Secluded Farmhouse",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Secluded-Farmhouse.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Gondor."
+                ],
+                "Keywords": [
+                    "Villagers 2.",
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Travel: Reveal the top card of the encounter deck and add it to the staging area to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...the herdsmen and husbandmen that dwelt there were not many...` -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 77,
+            "Quantity": 3,
+            "Artist": "Sabin Boykinov",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Burnt Homestead",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Burnt-Homestead.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Raise each player`s threat by the number of damage tokens on Dead Villagers."
+                ],
+                "Shadow": "Shadow: Defending player raises his threat by 1 for each damage token on Dead Villagers.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 78,
+            "Quantity": 2,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Trapped Inside",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Trapped-Inside.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "When Revealed: Discard 1 villager token from the active location for each player in the game. If no villager tokens were removed by this effect, Trapped Inside gains surge."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, discard 1 villager token from Rescued Villagers.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 79,
+            "Quantity": 2,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Panicked!",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din/Panicked.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must take a villager token from Rescued Villagers and place it on a location in the staging area, if able. If no villager tokens were placed on a location by this effect, Panicked! gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each damage token on Dead Villagers.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 80,
+            "Quantity": 2,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

@@ -1,0 +1,352 @@
+{
+    "Name": "The Morgul Vale Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Morgul Vale Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale-Nightmare/The-Morgul-Vale-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Setup: Place 1 progress on To the Tower."
+                ],
+                "Shadow": null,
+                "FlavorText": "`If a man must needs walk in sight of the Black Gate, or tread the deadly flowers of Morgul Vale, then perils he will have. -Aragorn, The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the The Morgul Vale scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Forest Bat\n1x Watcher in the Wood\n3x Orc Arbalesters\n1x The Power of Mordor\n2x Morgul Sorcerer\n2x Morgul Tracker\n3x Morgul Road\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Morgul Vale encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Morgul Vale Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Warrior of Nurn",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale-Nightmare/Warrior-of-Nurn.jpg",
+                "Stats": {
+                    "EngagementCost": "18",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Traitor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Each Captain enemy gets +1 Defense.",
+                    "Forced: At the end of the round, heal all damage from each Captain enemy in play."
+                ],
+                "Shadow": "Shadow: Heal all damage from each Captain enemy in play.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Captor",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale-Nightmare/Orc-Captor.jpg",
+                "Stats": {
+                    "EngagementCost": "18",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the round, if Orc Captor is in the staging area, place 1 progress token on To the Tower."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +3 Defense until the end of the combat phase.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Niten",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sentry of the White Bridge",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale-Nightmare/Sentry-of-the-White-Bridge.jpg",
+                "Stats": {
+                    "EngagementCost": "37",
+                    "Threat": "X",
+                    "Attack": "X",
+                    "Defense": "4",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the number of progress tokens on To the Tower."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, place 1 progress on To the Tower.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Piya Wannachaiwong",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Banks of Morgulduin",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale-Nightmare/Banks-of-Morgulduin.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "River."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Banks of Morgulduin is explored, deal it facedown as a shadow card to a Captain enemy."
+                ],
+                "Shadow": "Shadow: If attacking enemy is a Captain, deal it 3 additional shadow cards for this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ephel Dúath",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale-Nightmare/Ephel-Dúath.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Ephel Dúath is in the staging area, each Captain enemy gets +2 Attack."
+                ],
+                "Shadow": "Shadow: Defending player must either place 1 progress token on To the Tower or treat this attack as undefended.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Alyn Spiller",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "White-flowered Fields",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale-Nightmare/White-flowered-Fields.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Valley."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the round, each player must either exhaust a hero he controls or place 1 progress token on To the Tower."
+                ],
+                "Shadow": "Shadow: Return attacking enemy to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Matthew Cowdery",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Tower Beckons",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale-Nightmare/The-Tower-Beckons.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Place 1 progress token on To the Tower. Until the end of the phase, The Towers Beckons adds X Threat to the total Threat in the staging area, where X is the number of progress tokens on To the Tower."
+                ],
+                "Shadow": "Shadow: Place 1 progress token on To the Tower.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Noxious Fumes",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale-Nightmare/Noxious-Fumes.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Place 1 progress token on To the Tower. Each player must assign damage among characters he controls equal to the number of progress token on To the Tower."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, place 1 progress on To the Tower.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Morgul Vale Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Trudi Castle",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

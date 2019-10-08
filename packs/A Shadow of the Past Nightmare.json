@@ -1,0 +1,355 @@
+{
+    "Name": "A Shadow of the Past Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "A Shadow of the Past Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-of-the-Past-Nightmare/A-Shadow-of-the-Past-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nForced: When stage 3A is revealed, if Khamûl the Easterling is not in play, the first player searches the encounter deck, discard pile, and victory display for Khamûl the Easterling and adds it to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I do not know for what reason the Enemy is purusing you,` answered Gildor; `but I perceive that he is - strange indeed though that seems to me. And I warn you that peril is now both before you and behind you, and upon either side.` -The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the A Shadow of the Past scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Evil Crow\n1x Woody End\n1x Bamfurlong\n1x Stock-brook\n3x Green Hill Country\n3x Pathless Country\n2x Rode Like a Gale\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard A Shadow of the Past encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "A Shadow of the Past Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Helge C. Balzer",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Khamûl the Easterling",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-of-the-Past-Nightmare/Khamûl-the-Easterling.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "5",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Nazgûl."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have non-Morgul attachments.",
+                    "Khamûl the Easterling gets -30 engagement cost while The One Ring is exhausted.",
+                    "Forced: At the beginning of the refresh phase, the engaged player makes a Hide 2 test. If the engaged player fails the hide test, Khamûl the Easterling makes an immediate attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow of the Past Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Shadow of the Past Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dark Horseman",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-of-the-Past-Nightmare/Dark-Horseman.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "4",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Nazgûl."
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Hide 2."
+                ],
+                "Text": [
+                    "Cannot have non-Morgul attachments.",
+                    "While Dark Horseman is engaged with you, characters you control get -1 Willpower during Hide tests."
+                ],
+                "Shadow": null,
+                "FlavorText": "`There`s been a strange customer asking for Mr. Baggins of Bag End...` -THe Gaffer, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "A Shadow of the Past Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Shadow of the Past Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 2,
+            "Artist": "Helge C. Balzer",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Eastfarthing",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-of-the-Past-Nightmare/Eastfarthing.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "9"
+                },
+                "Traits": [
+                    "Shire."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Eastfarthing gets +2 Threat for each resource token on it.",
+                    "Forced: After a player fails a Hide test, place 1 resource token here."
+                ],
+                "Shadow": null,
+                "FlavorText": "After a while they plunged into a deeply cloven track between tall trees that rustled their dry leaves in the night. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "A Shadow of the Past Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Shadow of the Past Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Green-Hill Country",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-of-the-Past-Nightmare/Green-Hill-Country.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Green-Hill Country is in the staging area, add 1 to each Hide X value.",
+                    "Travel: The first player makes a Hide 1 test."
+                ],
+                "Shadow": "Shadow: After this attack, attacking enemy engages the next player then makes an immediate attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow of the Past Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Shadow of the Past Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Jake Bullock",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Stock Woods",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-of-the-Past-Nightmare/Stock-Woods.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Stock Woods is in the staging area, players cannot commit more than 2 characters to a Hide test.",
+                    "Travel: The first player makes a Hide 1 test."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack (+3 Attack instead if you have failed a Hide test this round).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow of the Past Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Shadow of the Past Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Dimitri Bielak",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "In the Name of Mordor!",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-of-the-Past-Nightmare/In-the-Name-of-Mordor.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to the current quest. (Counts as a Condition attachment with the text: `Forced: After a player fails a Hide test, he discards a random card from his hand.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow of the Past Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Shadow of the Past Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Piya Wannachaiwong",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Followed by Shadows",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-of-the-Past-Nightmare/Followed-by-Shadows.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Starting with the first player, each player makes a Hide 2 test. Each player who fails this Hide test raises his threat by 5."
+                ],
+                "Shadow": "Shadow: If the defending player has failed a Hide test this round, this attack is considered undefended.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow of the Past Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Shadow of the Past Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Helge C. Balzer",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sniffing and Hissing",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-of-the-Past-Nightmare/Sniffing-and-Hissing.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "When Revealed: The first player must either exhaust the One Ring and reveal an encounter card, or make a Hide 3 test."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack. If this attack destroys a character, raise your threat by 3.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow of the Past Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "A Shadow of the Past Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Oleg Saakyan",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

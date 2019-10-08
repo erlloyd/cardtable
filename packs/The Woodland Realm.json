@@ -1,0 +1,2023 @@
+{
+    "Name": "The Woodland Realm",
+    "Cycle": "GenCon",
+    "SetType": "Fellowship_Deck",
+    "cards": [
+        {
+            "Title": "Éowyn",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Éowyn.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "4",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Noble.",
+                    "Rohan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Discard 1 card from your hand to give Éowyn +1 Willpower until the end of the phase. This effect may be triggered by each player once each round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 1,
+            "Artist": "Audrey Hotte",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Captured by Spiders",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Captured-by-Spiders-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Add Spider Den to the staging area. The opposing team searches the encounter deck for one different 0 cost enemy or 0 cost location per player and adds it to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "You are traveling through Mirkwood forest in search of The Elvenking`s hidden halls, when you hear a desperate cry for help from a dark path of woods."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Spider Den is explored, flip it over and put Mendor into play under the first player`s control, ready.",
+                    "This stage cannot be defeated unless the first player controls Mendor."
+                ],
+                "Shadow": null,
+                "FlavorText": "The cries are those of an Elf who has been captured within a spider den. You must rescue him!"
+            },
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Woodland Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Ben Zweifel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "A Chosen Path",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/A-Chosen-Path-Lost-in-the-Dark-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The opposing teach searches the top 5 cards of the encounter deck for a card with cost 1 or less (2 or less if there are two or more players), sets it aside, and shuffles the encounter deck. Reveal the set aside card. Its `when revealed` effects cannot be canceled."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Elf you rescued is Mendor, a servant of the Elvenking. He offers to guide you to the hidden kingdom, yet even Mendor struggles to keep his way as night settles over Mirkwood."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "The first treachery revealed each round gains Doomed 1 and its `when revealed` effects cannot be canceled.",
+                    "Forced: After characters are committed to the quest, no more than 5 progress can be placed here this round (10 progress instead if Mendor is committed to the quest)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Woodland Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 3,
+            "Quantity": 1,
+            "Artist": "Yoann Boissonnet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "A Chosen Path",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/A-Chosen-Path-Don't-Leave-the-Path-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The opposing teach searches the top 5 cards of the encounter deck for a card with cost 1 or less (2 or less if there are two or more players), sets it aside, and shuffles the encounter deck. Reveal the set aside card. Its `when revealed` effects cannot be canceled."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Elf you rescued is Mendor, a servant of the Elvenking. He offers to guide you to the hidden kingdom, yet even Mendor struggles to keep his way as night settles over Mirkwood."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Progress cannot be placed on locations in the staging area.",
+                    "During the travel phase, the players must travel to a location, if able.",
+                    "Forced: After characters are committed to the quest, no more than 5 progress can be placed here this round (10 progress instead if Mendor is committed to the quest)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Woodland Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 4,
+            "Quantity": 1,
+            "Artist": "Yoann Boissonnet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "A Chosen Path",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/A-Chosen-Path-Ambushed-at-Night-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The opposing teach searches the top 5 cards of the encounter deck for a card with cost 1 or less (2 or less if there are two or more players), sets it aside, and shuffles the encounter deck. Reveal the set aside card. Its `when revealed` effects cannot be canceled."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Elf you rescued is Mendor, a servant of the Elvenking. He offers to guide you to the hidden kingdom, yet even Mendor struggles to keep his way as night settles over Mirkwood."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Each enemy in the staging area gets -10 engagement cost, cannot be optionally engaged and cannot take damage.",
+                    "Forced: After characters are committed to the quest, no more than 5 progress can be placed here this round (10 progress instead if Mendor is committed to the quest)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Woodland Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 5,
+            "Quantity": 1,
+            "Artist": "Yoann Boissonnet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "On the Trail",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/On-the-Trail-The-Forest-of-Great-Fear-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The opposing team searches the top 5 cards of the encounter deck for a card with cost 2 or less (3 or less if there are two or more players), sets it aside, and shuffles the encounter deck. Reveal the set aside card. It`s `when revealed` effects cannot be canceled."
+                ],
+                "Shadow": null,
+                "FlavorText": "Dawn comes and and pale streaks of light penetrate the dark forest, giving Mendor the light he needs to navigate. The Elf leads you with renewed confidence, but danger still lies between you and the safety of Thranduil`s halls."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The opposing team searches the encounter deck and discard pile for an enemy, adds it to the staging area, the places a resource on an enemy in play with cost 2 or higher. While this stage is in play, the enemy with a resource gets +2 Attack, +2 Defense, and is immune to player card effects.",
+                    "This stage cannot be defeated while the enemy witha resource is in play. When this stage is defeated, the players win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Woodland Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 7,
+            "Quantity": 1,
+            "Artist": "Carolina Eade",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "On the Trail",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/On-the-Trail-To-the-Elvenking's-Halls-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The opposing team searches the top 5 cards of the encounter deck for a card with cost 2 or less (3 or less if there are two or more players), sets it aside, and shuffles the encounter deck. Reveal the set aside card. It`s `when revealed` effects cannot be canceled."
+                ],
+                "Shadow": null,
+                "FlavorText": "Dawn comes and and pale streaks of light penetrate the dark forest, giving Mendor the light he needs to navigate. The Elf leads you with renewed confidence, but danger still lies between you and the safety of Thranduil`s halls."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "X is equal to the threat level of the player with the highest threat level.",
+                    "Each player`s threat cannot be reduced by more than 1 each round.",
+                    "Forced: After the players quest successfully, if 10 or more progress was placed here this phase, reveal the top card of the encounter deck.",
+                    "If the players defeat this stage, they win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Woodland Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 8,
+            "Quantity": 1,
+            "Artist": "Carolina Eade",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "On the Trail",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/On-the-Trail-Escape-from-Taur-nu-Fuin-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The opposing team searches the top 5 cards of the encounter deck for a card with cost 2 or less (3 or less if there are two or more players), sets it aside, and shuffles the encounter deck. Reveal the set aside card. It`s `when revealed` effects cannot be canceled."
+                ],
+                "Shadow": null,
+                "FlavorText": "Dawn comes and and pale streaks of light penetrate the dark forest, giving Mendor the light he needs to navigate. The Elf leads you with renewed confidence, but danger still lies between you and the safety of Thranduil`s halls."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the beginning of the quest phase, discard cards from the top of the encounter deck until a location is discarded. Add that location to the staging area.",
+                    "If the players defeat this stage, they win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Woodland Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 9,
+            "Quantity": 1,
+            "Artist": "Carolina Eade",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Spider Den",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Spider-Den.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "1"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Travel: The opposing team searches the encounter deck and discard pile for a 0 cost enemy and adds it to the staging area, if able (1 cost or less if there are two or more players). Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Woodland Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 10,
+            "Quantity": 1,
+            "Artist": "Jokubas Uoginitas",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mendor",
+            "IsUnique": true,
+            "CardType": "Objective_Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Mendor.jpg",
+                "Stats": {
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Scout."
+                ],
+                "Keywords": [
+                    "Ranged.",
+                    "Sentinel."
+                ],
+                "Text": [
+                    "The first player gains control of Mendor.",
+                    "If Mendor leaves play, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Woodland Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 11,
+            "Quantity": 1,
+            "Artist": "Cris Griffin",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ungoliant's Spawn",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Ungoliant's-Spawn.jpg",
+                "Stats": {
+                    "EngagementCost": "38",
+                    "Threat": "3",
+                    "Attack": "6",
+                    "Defense": "3",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Spider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have non-objective player card attachments or take non-combat damage.",
+                    "While Ungoliant`s Spawn is in the staging area, characters cannot be readied by player card effects."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 12,
+            "Quantity": 1,
+            "Artist": "Andrew Olson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Forest Grove",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Forest-Grove.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "X"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is 1 more than the stage number of the main quest.",
+                    "Travel: Each player deals X damage to a character he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 13,
+            "Quantity": 2,
+            "Artist": "Anna Mohrbacher",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Despair",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Despair.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Until the end of the round, treat each character`s printed text box as if it were blank (except for Traits)."
+                ],
+                "Shadow": "Shadow: Treat the defending character`s text box as if it were blank until the end of the phase (except for Traits).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 14,
+            "Quantity": 2,
+            "Artist": "Marc Scheff",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Chieftain Ufthak",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Chieftain-Ufthak.jpg",
+                "Stats": {
+                    "EngagementCost": "36",
+                    "Threat": "3",
+                    "Attack": "6",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have non-objective player card attachments or take non-combat damage.",
+                    "Forced: After Chieftain Ufthak engages you, the opposing team searches the encounter deck and discard pile for an Orc enemy of cost 1 or less and puts it into play engaged with you. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 15,
+            "Quantity": 1,
+            "Artist": "Mathias Kollros",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Abandoned Camp",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Abandoned-Camp.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Abandoned Camp leaves play as an explored location, the opposing team chooses a card in the encounter discard pile and shuffles it into the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 16,
+            "Quantity": 2,
+            "Artist": "Dana Li",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gathering Gloom",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Gathering-Gloom.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player raises his threat by X, where X is 1 more than the stage number of the main quest."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if your threat is 35 or higher)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 17,
+            "Quantity": 2,
+            "Artist": "Borja Pindado",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Black Forest Bats",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Black-Forest-Bats.jpg",
+                "Stats": {
+                    "EngagementCost": "13",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The opposing team chooses a questing character. Remove that character from the quest."
+                ],
+                "Shadow": "Shadow: Shuffle Black Forest Bats into the encounter deck.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 18,
+            "Quantity": 2,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Enchanted Steam",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Enchanted-Steam.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "6"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "While Enchanted Steam is in the staging area, progress cannot be placed on the main quest.",
+                    "Travel: Each player exhausts a hero he controls. Those heroes cannot ready while Enchanted Stream is the active location."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 19,
+            "Quantity": 1,
+            "Artist": "Ben Zweifel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Exhaustion",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Exhaustion.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player exhausts a character he controls. Until the end of the round, characters cannot be readied by player card effects."
+                ],
+                "Shadow": "Shadow: Defending character cannot ready until the end of the round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 20,
+            "Quantity": 2,
+            "Artist": "Marco Caradonna",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Spiders of Mirkwood",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Spiders-of-Mirkwood.jpg",
+                "Stats": {
+                    "EngagementCost": "22",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Spider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Spiders of Mirkwood engages you, exhaust a character you control."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if it has the Spider trait).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 3,
+            "Artist": "Andrew Ryan",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Spiders' Ring",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/The-Spiders'-Ring.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While The Spiders` Ring is in the staging area, each Spider enemy gets +1 Threat.",
+                    "Forced: When The Spiders` Ring is explored, the opposing team searches the encounter deck and discard pile for a non-unique Spider enemy and adds it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 22,
+            "Quantity": 1,
+            "Artist": "Andrew Johanson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Caught in a Web",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Caught-in-a-Web.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The opposing team attaches Caught in a Web to a hero and exhausts that hero. (Counts as a Condition attachment with the text: `Limit 1 per hero. Attached hero cannot ready unless its controller first spends 2 resource from its pool.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 23,
+            "Quantity": 1,
+            "Artist": "Daryl Mandryk",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wolf Rider",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Wolf-Rider.jpg",
+                "Stats": {
+                    "EngagementCost": "23",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: If there is another Orc enemy in the staging area, Wolf Rider gains surge."
+                ],
+                "Shadow": "Shadow: If attacking enemy is an Orc, put Wolf Rider into play engaged with you.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 24,
+            "Quantity": 3,
+            "Artist": "Alexandru Sabo",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Goblins' Cave",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/The-Goblins'-Cave.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Mountain.",
+                    "Cave."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While The Goblins` Cave is in the staging area, each Orc enemy gets +1 Attack.",
+                    "Forced: When The Goblin`s Cave is explored, the opposing team searches the encounter deck and discard pile for a non-unique Orc enemy and adds it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 25,
+            "Quantity": 1,
+            "Artist": "David Demaret",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Driven by Shadow",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Driven-by-Shadow.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The opposing team attaches Driven by Shadow to an enemy and returns it to the staging area. (Counts as a Condition attachment with the text: `Limit 1 per enemy. Attached enemy gets +2 Threat, +2 Attack, +2 Defense and is immune to player card effects.`) If there is no enemy in play, Driven by Shadow gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 26,
+            "Quantity": 1,
+            "Artist": "Alexandru Sabo",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Beast of Taur-nu-Fuin",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Beast-of-Taur-nu-Fuin.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Beast of Taur-nu-Fuin gets +1 Attack for each damage on it.",
+                    "Forced: When Beast of Taur-nu-Fuin is dealt a shadow card with no shadow effect, deal 1 damage to it and the defending character."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 27,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dark Black Woods",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Dark-Black-Woods.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Dark Black Woods gets +1 Threat for each Dark Black Woods in the staging area.",
+                    "Travel: Each player must discard 1 card from his hand for each Dark Black Woods in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 28,
+            "Quantity": 3,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wind-whipped Rain",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Wind-whipped-Rain.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Weather."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must choose: either choose 1 card from his hand and discard the rest, or assign X damage among characters he controls, where X is the number of cards in his hand."
+                ],
+                "Shadow": "Shadow: Discard 1 random card from your hand.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 29,
+            "Quantity": 1,
+            "Artist": "Blake Henriksen",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Giant Spider",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Giant-Spider.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Spider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player exhausts a character he controls."
+                ],
+                "Shadow": "Shadow: Exhaust a character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 30,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Giant Web",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Giant-Web.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Make Giant Web the active location. Return any previous location to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 31,
+            "Quantity": 2,
+            "Artist": "Trudi Castle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Eyes of the Forest",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Eyes-of-the-Forest.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: The opposing team looks at each player`s hand and discards 1 card from each."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +X Attack, where X is the stage number of the current quest.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 32,
+            "Quantity": 1,
+            "Artist": "Yoann Boissonnet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mirkwood Patrol",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Mirkwood-Patrol.jpg",
+                "Stats": {
+                    "EngagementCost": "34",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Mirkwood Patrol is in the staging area, enemies cannot be optionally engaged."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if it was engaged this round).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 33,
+            "Quantity": 2,
+            "Artist": "Matt Stewart",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mountains of Mirkwood",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Mountains-of-Mirkwood.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Mountains of Mirkwood is in the staging area, it gains: `Forced: At the end of the round, raise each player`s threat by 2.`"
+                ],
+                "Shadow": "Shadow: Either raise your threat by 2, or the attacking enemy gets +2 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 34,
+            "Quantity": 2,
+            "Artist": "Ben Zweifel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hatred Rekindled",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Hatred-Rekindled.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each engaged enemy makes an immediate attack. If no attacks were made this way, Hatred Rekindled gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. Deal it an additional shadow card. That card`s shadow effects cannot be canceled.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 35,
+            "Quantity": 1,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wild Bear",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Wild-Bear.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "X",
+                    "Attack": "4",
+                    "Defense": "X",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is 1 more than the stage number of the main quest."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +X Defense until the end of the phase, where X is the stage number of the main quest.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 36,
+            "Quantity": 2,
+            "Artist": "Salvador Trakal",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Labyrinthine Woods",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Labyrinthine-Woods.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Until the end of the phase, each location in the staging area gets +1 Threat."
+                ],
+                "Shadow": "Shadow: Each enemy engaged with you gets +1 Attack until the end of the phase.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 37,
+            "Quantity": 2,
+            "Artist": "Trudi Castle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Vastness of Mirkwood",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Vastness-of-Mirkwood.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The opposing team searches the top 5 cards of the encounter deck for a card with cost equal to or less than the stage number of the main quest, sets it aside and shuffles the encounter deck. Then, reveal the set aside card."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, reveal the top card of the encounter deck.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 38,
+            "Quantity": 1,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mirkwood Flock",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Mirkwood-Flock.jpg",
+                "Stats": {
+                    "EngagementCost": "12",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [],
+                "Shadow": "Shadow: Add Mirkwood Flock to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 39,
+            "Quantity": 2,
+            "Artist": "Brandon Leach",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Eaves of Mirkwood",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/The-Eaves-of-Mirkwood.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While The Eaves of Mirkwood is in the staging area, no more than 1 progress can be placed on each location in the staging area each round.",
+                    "Travel: Each player discards 1 random card from his hand."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 40,
+            "Quantity": 2,
+            "Artist": "Timo Karhula",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Massing at Night",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Massing-at-Night.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The opposing team searches the encounter deck and discard pile for one different 0 cost enemy per player (limit 2) and adds them to the staging area."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 41,
+            "Quantity": 1,
+            "Artist": "Mathias Kollros",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wild Wargs",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Wild-Wargs.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Warg."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Wild Wargs is dealt a shadow card with no shadow effect, return it to the staging area."
+                ],
+                "Shadow": "Shadow: Return attacking enemy to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 42,
+            "Quantity": 2,
+            "Artist": "Piya Wannachaiwong",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dry Watercourse",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Dry-Watercourse.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Dry Watercourse in in the staging area, each player cannot reduce his threat by more than 1 each round.",
+                    "Travel: Raise each player`s threat by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 43,
+            "Quantity": 2,
+            "Artist": "Bill Corbett",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Turned Around",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Turned-Around.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove 5 progress tokens from the main quest and attach Turned Around to it. (Counts as a Condition attachment with the text: `Attached quest gets +5 quest points.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 44,
+            "Quantity": 1,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pack of Wargs",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Pack-of-Wargs.jpg",
+                "Stats": {
+                    "EngagementCost": "36",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "6"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have non-objective player card attachments or take non-combat damage.",
+                    "Forced: After Pack of Wargs is dealt a shadow card with no shadow effect, it makes an additional attack after this one. Do not deal it a shadow card for this attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 45,
+            "Quantity": 1,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dark-wood Grove",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Dark-wood-Grove.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Dark-wood Grove is in the staging area, it gains: `Forced: After a `when revealed` effect is canceled, raise each player`s threat by 3.`",
+                    "Travel: Reveal the top card of the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 46,
+            "Quantity": 2,
+            "Artist": "Trudi Castle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lost and Witless",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Lost-and-Witless.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player reveals his hand and discards each ally card revealed this way."
+                ],
+                "Shadow": "Shadow: If this attack is undefended, discard an ally you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 47,
+            "Quantity": 2,
+            "Artist": "Romana Kendelic",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wicked Spider",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Wicked-Spider.jpg",
+                "Stats": {
+                    "EngagementCost": "34",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Spider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Wicked Spider engages you, discard an exhausted character you control."
+                ],
+                "Shadow": "Shadow: Attacking enemy cannot take damage this phase.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 48,
+            "Quantity": 1,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Old Forest Road",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Old-Forest-Road.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: After the players travel to Old Forest Road, the first player discards the top card of his deck. If that card is an ally, he puts it into play.",
+                    "Travel: Discard the top card of the encounter deck, if that card is an enemy, add it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 49,
+            "Quantity": 2,
+            "Artist": "Ben Zweifel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "A Frightened Beast",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/A-Frightened-Beast.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must choose: either raise your threat by 1 for each questing character you control, or discard a questing character you control."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, raise each player`s threat by 1.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 50,
+            "Quantity": 2,
+            "Artist": "David A. Nash",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ambushing Orcs",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Ambushing-Orcs.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Ambushing Orcs makes an immediate attack against the first player."
+                ],
+                "Shadow": "Shadow: Engaged the lowest engagement cost enemy in the staging area and deal it a shadow card.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 51,
+            "Quantity": 1,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mirkwood Path",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Mirkwood-Path.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "1"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Mirkwood Path is explored, discard the top card of the encounter deck. If that card is a location, add it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 52,
+            "Quantity": 2,
+            "Artist": "Trudi Castle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wasted Provisions",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Woodland-Realm/Wasted-Provisions.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player discards each resource from each of his heroes` resource pools and raises his threat by 1 for each resource he discarded this way. If no resources were discarded this way, Wasted Provisions gains surge."
+                ],
+                "Shadow": "Shadow: Discard an attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Woodland Realm",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 53,
+            "Quantity": 2,
+            "Artist": "David A. Nash",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

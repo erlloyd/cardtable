@@ -1,0 +1,348 @@
+{
+    "Name": "Encounter at Amon Dîn Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Encounter at Amon Dîn Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din-Nightmare/Encounter-at-Amon-Dîn-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nGhulat cannot take damage unless there is at least 15 progress tokens on Protect the Villagers.\n\nSetup: Place 1 progress token on Rescued Villagers.\n\nForced: At the beginning of the quest phase, either discard 1 villager token from Rescued Villagers, or reveal an encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`They are burning or despoiling all that is left in the vale.` -Éomer, The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Encounter at Amon Dîn scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n2x Burning Farmhouse\n2x Gondorian Hamlet\n1x Marauding Orc\n1x Orc Rabble\n3x Orc Ravager\n2x Craven Eagle\n2x Trapped Inside\n2x Panicked!\n2x Scourge of Mordor\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard the Encounter at Amon Dîn encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Encounter at Amon Dîn Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Raiders",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din-Nightmare/Orc-Raiders.jpg",
+                "Stats": {
+                    "EngagementCost": "32",
+                    "Threat": "4",
+                    "Attack": "5",
+                    "Defense": "2",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either discard 1 villager token from Rescued Villagers, or Orc Raiders makes an immediate attack against the first player."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 2,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Pillaging Orc",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din-Nightmare/Pillaging-Orc.jpg",
+                "Stats": {
+                    "EngagementCost": "34",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either discard 1 villager token from Rescued Villagers, or reveal an additional encounter card."
+                ],
+                "Shadow": "Shadow: Deal attacking enemy 1 shadow card for each villager token on the active location.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Diego Gisbert Llorens",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Besieged Homestead",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din-Nightmare/Besieged-Homestead.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Gondor."
+                ],
+                "Keywords": [
+                    "Villagers 2.",
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Forced: When any amount of progress is placed on a location in the staging area, discard 1 villager token from that location.",
+                    "Travel: The first player searches the encounter deck for an enemy, reveals it, and puts it into play engaged with him. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Lino Drieghe",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Overrun Village",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din-Nightmare/Overrun-Village.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Gondor."
+                ],
+                "Keywords": [
+                    "Villagers 2.",
+                    "Victory 1."
+                ],
+                "Text": [
+                    "While Overrun Village is in the staging area, it gains: `Forced: After an enemy engages a player, discard 1 villager token from Overrun Village.`",
+                    "Travel: Place 1 damage token on Dead Villagers."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Trapped Villagers",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din-Nightmare/Trapped-Villagers.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Place 3 damage tokens on Dead Villagers. Until the end of the round, add 1 to the total Threat in the staging area for each damage token on Dead Villagers."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack. If this attack destroys an ally, place 1 damage token on Dead Villagers.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Run for your Lives!",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din-Nightmare/Run-for-your-Lives.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Discard 1 villager token from Rescued Villagers. Assign X damage among characters in play. X is the number of damage tokens on Dead Villagers."
+                ],
+                "Shadow": "Shadow: Either discard 1 villager token from Rescued Villagers, or this attack is considered undefended.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Save Us!",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din-Nightmare/Save-Us.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must choose: either discard 2 villager tokens from Rescued Villagers, or search the encounter deck and discard pile for an enemy, reveal it, and add it to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. Deal is another shadow card.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Romana Kendelic",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Those Now Sundered",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Encounter-at-Amon-Din-Nightmare/Those-Now-Sundered.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Panic."
+                ],
+                "Keywords": [
+                    "Surge.",
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: Attach to Rescued Villagers. (Counts as a Condition attachment with the text: `Forced: At the end of the round, discard 1 villager token from Rescued Villagers.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`Few maybe, of those now sundered will meet again.` -Beregond, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Encounter at Amon Dîn Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Encounter at Amon Dîn Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

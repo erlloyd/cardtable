@@ -1,0 +1,395 @@
+{
+    "Name": "The Dead Marshes Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Dead Marshes Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes-Nightmare/The-Dead-Marshes-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nPlayers cannot reduce their threat.\n\nSetup: Search the encounter deck for The Mere of Dead Faces, and add it to the stage area. Then, shuffle the encounter deck.\n\nForced: After Gollum is placed in the discard pile, shuffle him into the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`They lie in all the pools, pale faces, deep deep under the dark water.` -Frodo, The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Dead Marshes scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n1x A Wisp of Pale Sheen\n1x Through the Mist\n2x Great Marsh Worm\n4x Fens and Mires\n3x Eastern Crows\n2x Pursued by Shadow\n2x Treacherous Fog\n1x Wolf Rider\n2x Hill Troll\n2x Goblin Sniper\n2x Wargs\n2x Despair\n2x The Brown Lands\n2x The East Bight\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Dead Marshes encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Dead Marshes Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Diego Gisbert Llorens",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Mere of Dead Faces",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes-Nightmare/The-Mere-of-Dead-Faces.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "-"
+                },
+                "Traits": [
+                    "Dead Marshes."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the number of resource tokens here. Cannot leave the staging area.",
+                    "If Gollum is not in play, any resource tokens that would be placed on Gollum are placed here instead.",
+                    "Forced: After Gollum enters play, place 2 resource tokens on Gollum, then move all resource tokens from The Mere of Dead Faces to Gollum."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Alyn Spiller",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Stagnant Quagmire",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes-Nightmare/Stagnant-Quagmire.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Dead Marshes."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Stagnant Quagmire is in play, it adds its Escape value to all escape tests.\n                \nEscape: 2"
+                ],
+                "Shadow": "Shadow: Perform an escape test, dealing 1 card the encounter deck. If this test is failed, discard the defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Alexandr Shaldin",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Things in the Pools",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes-Nightmare/Things-in-the-Pools.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Undead."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After a character commit to an escape test, deal 1 damage to that character."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. (+2 Attack instead if attacking enemy is Undead.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Gabriel Verdon",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Marsh-wight",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes-Nightmare/Marsh-wight.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "4",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Undead.",
+                    "Wight."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Marsh-wight engages a player, that player makes an escape test, dealing 3 cards from the encounter deck. If this test is failed, place 2 resources on Gollum and Marsh-wigth makes an immediate attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "`But all foul, all rotting, all dead. A fell light is in them.` -Frodo, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Yan Wen Tang",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lost Soul of Lórien",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes-Nightmare/Lost-Soul-of-Lórien.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "1",
+                    "Attack": "5",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Spirit.",
+                    "Undead."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Lost Soul of Lórien is destroyed, attach it to a hero with 1 or more Willpower, if able. (Counts as a Condition attachment with the text: `Limit 1 per hero. Attached hero`s Willpower is reduced to 0.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`Many faces proud and fair, and weeds in their silver hair.` -Frodo, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Yan Wen Tang",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ill-fated Guard",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes-Nightmare/Ill-fated-Guard.jpg",
+                "Stats": {
+                    "EngagementCost": "18",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "7"
+                },
+                "Traits": [
+                    "Spirit.",
+                    "Undead."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Ill-fated Guard is engaged with a player, that player cannot commit more than 1 character to each escape test."
+                ],
+                "Shadow": "Shadow: Discard all attachments from each character you control with 3 or more Willpower.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Mariana Vieira",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Candles of Corpses",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes-Nightmare/Candles-of-Corpses.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Escape."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player makes an escape test, dealing 1 card from the encounter deck. Each player who fails this test must either discard a hero from play or raise his threat by 5.\n\nEscape: 5"
+                ],
+                "Shadow": null,
+                "FlavorText": "`You should not look in when the candles are lit.` -Gollum, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 1,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Swarming Mosquitos",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes-Nightmare/Swarming-Mosquitos.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Escape."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player makes an escape test counting Defense intead of Willpower, dealing 2 cards from the encounter deck. If this test is failed, place 1 resource token on Gollum and deal 1 damage to each character in play.\n\nEscape: 3"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Owen William Weber",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Devilry of the Dark Land",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dead-Marshes-Nightmare/Devilry-of-the-Dark-Land.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Corruption."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Return the top X Undead enemies in the encounter discard pile to the staging area, where X is the number of players. If no enemies were returned to the staging area as a result of this effect, Devilry of the Dark Land gains surge.\n                \nEscape: 10"
+                ],
+                "Shadow": null,
+                "FlavorText": "`But that is an age and more ago,` said Sam. `The Dead can`t be really there!` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Dead Marshes Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Dead Marshes Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 10,
+            "Quantity": 1,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

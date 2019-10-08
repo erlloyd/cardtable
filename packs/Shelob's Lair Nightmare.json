@@ -1,0 +1,324 @@
+{
+    "Name": "Shelob's Lair Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Shelob's Lair Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shelob's-Lair-Nightmare/Shelob's-Lair-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Do not discard unresolved shadow cards from Shelob at the end of the combat phase.",
+                    "While Cleft of Cirith Ungol is in the staging area, players cannot travel to locations not named Cleft of Cirith Ungol."
+                ],
+                "Shadow": null,
+                "FlavorText": "...she was there, who was there before Sauron, and before the first stone of Barad-dûr; and she served none but herself, drinking the blood of Elves and Men, bloated and grown fat with endless brooding on her feasts, weaving webs of shadow...\r\nThe Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Shelob`s Lair scenario.",
+                    "Remove the following cards, in the specified quantities, from the standard encounter deck:",
+                    "4x Mogul Orc",
+                    "2x The Under-way",
+                    "3x Deep Dark Passage",
+                    "2x Many Openings",
+                    "Then, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Shelob`s Lair encounter deck.",
+                    "Finally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Shelob's Lair Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Foul-smelling Cave",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shelob's-Lair-Nightmare/Foul-smelling-Cave.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "1"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Foul-smelling Cave is explored, place 1 resource on Shelob, if able."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if attacking enemy is Shelob).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shelob's Lair Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Shelob's Lair Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 2,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Torech Ungol",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shelob's-Lair-Nightmare/Torech-Ungol.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Torech Ungol is in the staging area, Shelob gets +1 Attack and +1 Defense.",
+                    "Travel: Exhaust Sméagol to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": "There agelong she had dwelt, and evil thing in spider-form, even such as once of old had lived in the Land of the Elves in the West that is now under the Sea...\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Shelob's Lair Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Shelob's Lair Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Cobwebbed Tunnel",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shelob's-Lair-Nightmare/Cobwebbed-Tunnel.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "While Cobwebbed Tunnel is in the staging area, each Underground location in the staging area gets +1 Threat and +5 quest points.",
+                    "Travel: The first player reveals an encounter card to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shelob's Lair Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Shelob's Lair Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Orc of Minas Morgul",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shelob's-Lair-Nightmare/Orc-of-Minas-Morgul.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Peril."
+                ],
+                "Text": [
+                    "When Revealed: Either discard a random card from your hand, or engage Orc of Minas Morgul and reveal an additional encounter card."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shelob's Lair Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Shelob's Lair Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Martin de Diego Sádaba",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Under-gate Sentry",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shelob's-Lair-Nightmare/Under-gate-Sentry.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Under-gate Sentry attacks and destroys a character you control, discard a random card from your hand."
+                ],
+                "Shadow": "Shadow: Either discard a random card from your hand, or exhaust a character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shelob's Lair Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Shelob's Lair Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Monztre",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Impenetrable Dark",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shelob's-Lair-Nightmare/Impenetrable-Dark.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player removes a character he controls from the quest and exhausts that character. Until the end of the round, characters cannot be readied by player card effects."
+                ],
+                "Shadow": "Shadow: Exhaust a character you control. Until the end of the round, that character cannot ready.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shelob's Lair Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Shelob's Lair Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Alexander Kozachenko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Growing Stench",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shelob's-Lair-Nightmare/Growing-Stench.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Deal Growing Stench to Shelob as a facedown shadow card."
+                ],
+                "Shadow": "Shadow: Defending character cannot ready. If the attacking enemy is Shelob and this attack destroys a character, place 1 progress on Shelob.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shelob's Lair Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Shelob's Lair Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

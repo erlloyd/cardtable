@@ -1,0 +1,418 @@
+{
+    "Name": "Voyage Across Belegaer Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "Voyage Across Belegaer Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Voyage-Across-Belegaer-Nightmare/Voyage-Across-Belegaer-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Then I thought in my heart that we drew near to the Sea; for wide was the water in the darkness, and sea-birds innumerable cried on its shores.`\r\n-Legolas, The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Voyage Across Belegaer scenario.\\r\\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n2x Southron Sailor\n1x Starlit Sea\n1x Fog Bank\n2x Calm Waters\n2x Thrown Off Course\n1x Scouting Ship\n\nThen shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Voyage Across Belegaer encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin.\n",
+                    "☸*: Some Cards in the Grey Havens Nightmare Decks have Sailing Success symbols (☸) with an asterisk (*) next to them. This indicates that the card has a Forced effect which will trigger when the card is discarded during a sailing test."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Voyage Across Belegaer Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Corsair Confrontation",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Voyage-Across-Belegaer-Nightmare/Corsair-Confrontation-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Sailing.",
+                    "Victory 3."
+                ],
+                "Text": [
+                    "When Revealed: Search the encounter deck, discard pile and victory display for 1 copy of Corsair Warship and add it to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Corsairs ahead!` an Elven lookout shouts. You are about to give the order to steer away from the warship, when Calaphon abruptly stops you. `Wait! In my dream, I remember a great battle against a powerful fleet. Could this mean we are on the right track?` Reluctantly, you prepare to fight."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Sailing.",
+                    "Forced: At the end of the quest phase, if there is no Corsair Warship in play, this stage is defeated.",
+                    "When this stage is defeated, if you are on course (☀), look at the top 2 stages of the quest deck and advance to one of your choice, placing the other on the bottom of the quest. Otherwise, advance to the top stage of the quest deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Voyage Across Belegaer Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Voyage Across Belegaer Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Borja Pindado",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Lost at Sea",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Voyage-Across-Belegaer-Nightmare/Lost-at-Sea-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Sailing.",
+                    "Victory 3."
+                ],
+                "Text": [
+                    "When Revealed: Set your heading to the worst setting (⚡)."
+                ],
+                "Shadow": null,
+                "FlavorText": "These seas are strange and bewildering. Try as you might, you cannot find any stars you recognize in the overcast sky. You realize now that you may never find your way back to shore."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Sailing. Cancel the first ☸ symbol found during each Sailing test.",
+                    "Forced: At the end of the quest phase, if your heading is on-course (☀), this stage is defeated.",
+                    "When this stage is defeated, look at the top 3 stages of the quest deck and advance to one of your choice, placing the others on the bottom of the quest deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Voyage Across Belegaer Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Voyage Across Belegaer Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 3,
+            "Quantity": 1,
+            "Artist": "Jeff Lee Johnson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Brash Corsair",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Voyage-Across-Belegaer-Nightmare/Brash-Corsair.jpg",
+                "Stats": {
+                    "EngagementCost": "16",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "4",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Corsair."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When the engaged player exhausts a Ship objective. Brash Corsair makes an immediate attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Voyage Across Belegaer Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Voyage Across Belegaer Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Suzanne Helmigh",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sahír's Pursuer",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Voyage-Across-Belegaer-Nightmare/Sahír's-Pursuer.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "3",
+                    "Attack": "7",
+                    "Defense": "3",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Corsair.",
+                    "Ship."
+                ],
+                "Keywords": [
+                    "Boarding 1."
+                ],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Forced: At the end of the encounter phase, if Sahír`s Pursuer is in the staging area, the first player must either engage it or shift your heading off-course."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Voyage Across Belegaer Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Voyage Across Belegaer Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Jessica Cheng",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Open Waters",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Voyage-Across-Belegaer-Nightmare/Open-Waters.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Ocean."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Open Waters is in the staging area, each Ship enemy gets -5 engagement cost and +1 Threat.",
+                    "Travel: One player must exhaust a Ship objective to travel here.",
+                    "☸"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Voyage Across Belegaer Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Voyage Across Belegaer Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Shattered Sea",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Voyage-Across-Belegaer-Nightmare/Shattered-Sea.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Ocean."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While your heading is ⛅, Shattered Sea gets +2 Threat and +2 quest points.",
+                    "While your heading is Rainy, Shattered Sea gets +4 Threat and +4 quest points.",
+                    "While your heading is ⚡, Shattered Sea gets +6 Threat and +6 quest points.",
+                    "☸"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Voyage Across Belegaer Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Voyage Across Belegaer Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Borja Pindado",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Rogue Wave",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Voyage-Across-Belegaer-Nightmare/Rogue-Wave.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Weather."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must either exhaust a Ship objective he controls or distribute 4 damage among characters he controls (6 damage instead if you are off course)."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each quest card in the victory display.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Voyage Across Belegaer Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Voyage Across Belegaer Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Oleg Saakyan",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dreams of Númenor",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Voyage-Across-Belegaer-Nightmare/Dreams-of-Númenor.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either set your heading to the worst setting (⚡) or exhaust all allies in play.",
+                    "☸"
+                ],
+                "Shadow": "Shadow: If you are off-coruse (Cloudy, Rainy, or Stormy), attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Voyage Across Belegaer Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Voyage Across Belegaer Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Raging Squall",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Voyage-Across-Belegaer-Nightmare/Raging-Squall.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Weather."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "*Forced: After Raging Squall is discarded from the encounter deck duirng a Sailing test, deal 1 damage to each character committed to that test.",
+                    "☸*"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Voyage Across Belegaer Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Voyage Across Belegaer Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 10,
+            "Quantity": 2,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

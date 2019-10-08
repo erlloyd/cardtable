@@ -1,0 +1,362 @@
+{
+    "Name": "The Drúadan Forest Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Drúadan Forest Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest-Nightmare/The-Drúadan-Forest-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nHeroes do not collect resources during the resource phase.\n\nSetup: Add resources to each hero`s resource pool until each hero has 5 resources. Search the encounter deck for 1 copy of Gard of Poisons and add it to the staging area. Shuffle the encounter deck.\n\nForced: After stage 2B is revealed, each hero with fewer than 3 resources gains resources until is has 3."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Remnants of an older time they be, living few and secretly, wild and wary as the beasts.` -Elfhelm, The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Drúadan Forest scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n2x Lost Companion\n3x Secluded Glade\n1x Overgrown Trail\n1x Drû-buri-Drû\n1x Drúadan Elite\n1x Drúadan Hunter\n1x Stars in the Sky\n1x Men in the Dark\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Drúadan Forest encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Drúadan Forest Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Drû-buri-Drû",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest-Nightmare/Drû-buri-Drû.jpg",
+                "Stats": {
+                    "EngagementCost": "1",
+                    "Threat": "4",
+                    "Attack": "5",
+                    "Defense": "4",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Wose."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Drû-buri-Drû cannot take more than 1 damage each round.",
+                    "While Drû-buri-Drû is in play, other Wose enemies get +1 Attack and +1 Defense.",
+                    "Unless Drû-buri-Drû is in the victory display, the players cannot win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Drúadan Warrior",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest-Nightmare/Drúadan-Warrior.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Wose."
+                ],
+                "Keywords": [
+                    "Prowl 2."
+                ],
+                "Text": [
+                    "Each hero with no resources in its resource pool cannot be declared as an attacker or defender against Drúadan Warrior."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Tey Bartolome",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Drúadan Stalker",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest-Nightmare/Drúadan-Stalker.jpg",
+                "Stats": {
+                    "EngagementCost": "43",
+                    "Threat": "4",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Wose."
+                ],
+                "Keywords": [
+                    "Archery 3."
+                ],
+                "Text": [
+                    "As an additional cost to optionally engage Drúadan Stalker, you must spend 2 resources."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Devil's Mirk",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest-Nightmare/Devil's-Mirk.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "While Devil`s Mirk is in the staging area, characters cannot be healed.",
+                    "While Devil`s Mirk is the active location, each Wose enemy gets +2 Defense."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Bill Thompson",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Eilenach",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest-Nightmare/Eilenach.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Players cannot travel to Eilenach unless there is at least 1 resource in each hero`s resource pool."
+                ],
+                "Shadow": "Shadow: If the defending character has no resources, deal it 1 damage.",
+                "FlavorText": "...standing up from the long ridges of the Drúadan Forest... -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Stonewain Valley",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest-Nightmare/Stonewain-Valley.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Stonewain Valley is in the staging area, resources discarded or spent by the first player for any reason are placed on Stonewain Valley.",
+                    "Stonewain Valley gets +1 Threat for each resource on it."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Way is wide for four horses in Stonewain Valley yonder,` he waved his hand southwards: `but narrow at beginning and at end.` -Ghân-buri-Ghân, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Jake Bullock",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Drums of the Wild Men",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest-Nightmare/Drums-of-the-Wild-Men.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must trigger the prowl keyword on each enemy engaged with him, as if that enemy had been revealed from the encounter deck. Then, return each engaged Wose enemy to the staging area. If no enemies are returned to the staging area by this effect, Drums of the Wild Men gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Poison-darts",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest-Nightmare/Poison-darts.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to the enemy in play with the highest engagement cost. (Counts as a Weapon attachment with the text: `Attached enemy gets +2 Attack and gains Archery 2.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": "Merry did not like this talk of wild men and poisoned darts... -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Drúadan Forest Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Melanie Maier",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

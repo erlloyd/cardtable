@@ -1,0 +1,301 @@
+{
+    "Name": "We Must Away, Ere Break of Day Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "We Must Away, Ere Break of Day Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/We-Must-Away-Ere-Break-of-Day-Nightmare/We-Must-Away-Ere-Break-of-Day-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.\n\nThe objective cards Troll Key and Troll Purse gain surge."
+                ],
+                "Shadow": null,
+                "FlavorText": "A nice pickle they were all in now: all neatly tied up in sacks, with three angry trolls (and two with burns and bashes to remember) sitting by them, arguing whether they should roast them slowly, or mince them fine and boil them, or just sit on them one by one and squash them into jelly... -The Hobbit"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the We Must Away, Ere Break of Day scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x A Suspicious Crow\n1x Lone-lands\n1x Dreary Hills\n2x Hobbit-lands\n2x A Nice Pickle\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard We Must Away, Ere Break of Day encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin.\n\nPlay Tip: The treachery card, Night Wanes Slow, has a Forced effect that triggers when it is discarded from the encounter deck as a result of stage 2B`s effect. When discarding cards from the encounter deck at stage 2B, discard them one at a time in case Night Wanes Slow is one of them."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "We Must Away, Ere Break of Day Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "A Murder of Crows",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/We-Must-Away-Ere-Break-of-Day-Nightmare/A-Murder-of-Crows.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "4",
+                    "Attack": "4",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Reveal a random card from the encounter discard pile and add it to the staging area, if able.\n\nForced: If A Murder of Crows would be destroyed, shuffle it back into the encounter deck instead."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "We Must Away, Ere Break of Day Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "We Must Away, Ere Break of Day Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Niten",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Red River-bank",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/We-Must-Away-Ere-Break-of-Day-Nightmare/Red-River-bank.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Western Lands.",
+                    "Riverland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the beginning of the refresh phase, place the top card of the encounter discard pile on the bottom of the encounter deck and raise each player`s threat bu that card`s Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": "I don`t know what river is way, a rushing red one, swollen with the rains of the last few days... -The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "We Must Away, Ere Break of Day Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "We Must Away, Ere Break of Day Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "JB Casacop",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wicked Hilltops",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/We-Must-Away-Ere-Break-of-Day-Nightmare/Wicked-Hilltops.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Western Lands.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After placing 1 or more progress tokens on Wicked Hilltops, each player must discard an ally he controls without an attached Sack card."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack. (+3 Attack instead if attacking enemy is a Troll.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "We Must Away, Ere Break of Day Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "We Must Away, Ere Break of Day Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Wibben",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Comfortable Light",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/We-Must-Away-Ere-Break-of-Day-Nightmare/Comfortable-Light.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "-"
+                },
+                "Traits": [
+                    "Trollshaws."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Progress cannot be placed here.\n\nTravel: Sack 1.\n\nForced: After Comfortable Light becomes the active location, discard it."
+                ],
+                "Shadow": null,
+                "FlavorText": "Out of the dark mass of the trees they could now see a light shining, a reddish comfortable-looking light... -The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "We Must Away, Ere Break of Day Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "We Must Away, Ere Break of Day Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Mince Them Fine",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/We-Must-Away-Ere-Break-of-Day-Nightmare/Mince-Them-Fine.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each engaged Troll enemy makes an immediate attack. If the players are at stage 1, immediately advance to stage 2A."
+                ],
+                "Shadow": "Shadow: If attacking enemy is a Troll, return it to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "We Must Away, Ere Break of Day Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "We Must Away, Ere Break of Day Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Night Wanes Slow",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/We-Must-Away-Ere-Break-of-Day-Nightmare/Night-Wanes-Slow.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When this card is discarded from the top of the encounter deck as a result of a quest card effect, immediately stop making progress and end the quest phase.\n\nWhen Revealed: Shuffle the encounter discard pile into the encounter deck. Reveal 1 additional encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "We Must Away, Ere Break of Day Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "We Must Away, Ere Break of Day Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Wibben",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "One By One",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/We-Must-Away-Ere-Break-of-Day-Nightmare/One-By-One.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Choose and destroy a character with a Sack card attached. Then, return that Sack card to the top of the Sack deck and Sack 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "...at last they decided to sit on the sacks one by one and squash them, and boil them next time. -The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "We Must Away, Ere Break of Day Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "We Must Away, Ere Break of Day Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

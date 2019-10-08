@@ -1,0 +1,932 @@
+{
+    "Name": "Shadow and Flame",
+    "Cycle": "Dwarrowdelf",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Elrond",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Elrond.jpg",
+                "Stats": {
+                    "ThreatCost": "13",
+                    "Willpower": "3",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "You may spend resources from Elrond`s resource pool to pay for Spirit, Leadership, and Tactics allies.",
+                    "Response: After a character is healed by another card effect, heal 1 damage on it."
+                ],
+                "Shadow": null,
+                "FlavorText": "`But you do not stand alone.`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": null,
+            "Number": 128,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Master of the Forge",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Master-of-the-Forge.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "0",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Craftsman."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust Master of the Forge to search the top 5 cards of your deck for any 1 attachment and add it to your hand. Shuffle the other cards back into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": null,
+            "Number": 134,
+            "Quantity": 3,
+            "Artist": "Paul Guzenko",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "We Are Not Idle",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/We-Are-Not-Idle.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust X Dwarf heroes to add X resources to a hero`s resource pool and draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`You should see the stone-paved roads of many colours! And the halls and cavernous streets under the earth with arches carved like trees; and the terraces and towers upon the Mountain`s sides! Then you would see that we have not been idle.` -Glóin, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": null,
+            "Number": 129,
+            "Quantity": 3,
+            "Artist": "Charles Urbach",
+            "HasErrata": true,
+            "Categories": null
+        },
+        {
+            "Title": "Vilya",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Vilya.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Ring.",
+                    "Artifact."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to Elrond. He gains a Spirit resource icon.",
+                    "Action: Exhaust Elrond and Vilya to reveal the top card of your deck. You can immediately play or put into play the revealed card for no cost, if able. Otherwise, move the revealed card to the bottom of your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "...mightiest of the Three. -Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": null,
+            "Number": 137,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hands Upon the Bow",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Hands-Upon-the-Bow.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust a character you control with ranged to immediately declare it as an attacker (and resolve its attack) against an enemy in the staging area. It gets +1 Attack during this attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": null,
+            "Number": 131,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Peace, and Thought",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Peace-and-Thought.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Refresh Action: Exhaust 2 heroes to draw 5 cards."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": null,
+            "Number": 135,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Miruvor",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Miruvor.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero.",
+                    "Action: Discard Miruvor to (choose two): ready attached hero, add 1 resource to attached hero`s resource pool, attached hero gets +1 Willpower until the end of the round, or put Miruvor on the top of your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": null,
+            "Number": 133,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hardy Leadership",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Hardy-Leadership.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Leadership hero.",
+                    "Each Dwarf character gets +1 hit point."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": null,
+            "Number": 130,
+            "Quantity": 3,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Risk Some Light",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Risk-Some-Light.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Secrecy 3."
+                ],
+                "Text": [
+                    "Action: Look at the top 3 cards of the encounter deck. You may select 1 card and move it to the bottom of the encounter deck. Return any unselected cards to the top of the encounter deck, in any order."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": null,
+            "Number": 136,
+            "Quantity": 3,
+            "Artist": "Dmitry Burmak",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "A Elbereth! Gilthoniel!",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/A-Elbereth-Gilthoniel.jpg",
+                "Stats": {
+                    "ResourceCost": "4"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Secrecy 4."
+                ],
+                "Text": [
+                    "Response: After a non-unique enemy attacks you, put that enemy on the bottom of the encounter deck. If your threat is lower than that enemy`s engagement cost, set your threat equal to the engagement cost of that enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": null,
+            "Number": 132,
+            "Quantity": 3,
+            "Artist": "Aaron B. Miller",
+            "HasErrata": true,
+            "Categories": null
+        },
+        {
+            "Title": "Counter-Spell",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Counter-Spell.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Shadow."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach Counter-spell to Durin`s Bane. (Counts as a Condition attachment with the text: `Forced: When a player plays an event, discard the top card of the encounter deck. If that card is a treachery card, cancel the effects of the event, discard the event player`s hand, and discard Counter-spell from play.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 145,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dark Pit",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Dark-Pit.jpg",
+                "Stats": {
+                    "Threat": "0",
+                    "QuestPoints": "11"
+                },
+                "Traits": [
+                    "Underground.",
+                    "Dark."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Dark Pit is the active location it gains: `Refresh Action: Exhaust X characters (maximum 3) you control to discard the top X cards of your deck. If all discarded cards have a higher combined printed cost than the remaining hit points of Durin`s Bane, discard Durin`s Bane from play.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 141,
+            "Quantity": 1,
+            "Artist": "Igor Kieryluk",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Durin's Bane",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Durin's-Bane.jpg",
+                "Stats": {
+                    "EngagementCost": "1",
+                    "Threat": "4",
+                    "Attack": "6",
+                    "Defense": "3",
+                    "HitPoints": "27"
+                },
+                "Traits": [
+                    "Balrog.",
+                    "Flame.",
+                    "Shadow."
+                ],
+                "Keywords": [
+                    "Regenerate 3.",
+                    "Indestructible."
+                ],
+                "Text": [
+                    "Players cannot play attachments on Durin`s Bane.Durin`s Bane cannot leave the staging area, is considered to be engaged with each player whose threat is 1 or greater, and attacks each of those players in turn during the combat phase (deal and discard a new shadow card each attack)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 150,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fiery Sword",
+            "IsUnique": true,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Fiery-Sword.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Weapon.",
+                    "Flame."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach Fiery Sword to Durin`s Bane as a Weapon attachment with the text: `Attached enemy gets +3 Attack.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 152,
+            "Quantity": 2,
+            "Artist": "Timo Karhula",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fires in the Deep",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Fires-in-the-Deep.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must discard 1 ally he controls, if able. If Fires in the Deep discarded no allies, it gains surge."
+                ],
+                "Shadow": "Shadow: The defending player discards 1 ally he controls, if able.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 144,
+            "Quantity": 2,
+            "Artist": "Nick Deligaris",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Inner Flame",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Inner-Flame.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Durin`s Bane gets +3 Attack until the end of the round. The first player may remove 1 questing hero he controls from the quest to cancel this effect."
+                ],
+                "Shadow": "Shadow: If attacking enemy is Durin`s Bane, it gets +3 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 146,
+            "Quantity": 3,
+            "Artist": "Matthew Starbuck",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Inner Shadow",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Inner-Shadow.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Heal 5 damage from Durin`s Bane, if able. The first player may remove 1 questing hero he controls from the quest to cancel this effect."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 147,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Last Lord of Moria",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Last-Lord-of-Moria-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": "There is a crumbling pile of boulders on the edge of a teetering cliff, and it gives you a sudden idea. There are chasms and pits along the path you are traveling, and perhaps a well-timed rockslide could send the Balrog down into the depths below..."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Durin`s Bane makes an immediate attack on the first player. Add Dark Pit to the staging area.",
+                    "Players cannot win the game while Durin`s Bane is in play. If Durin`s Bane leaves play by the effect on Dark Pit, the players have won the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 140,
+            "Quantity": 1,
+            "Artist": "Dmitry Burmak",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Leaping Flame",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Leaping-Flame.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Durin`s Bane makes an immediate attack against the first player (deal and resolve a shadow card)."
+                ],
+                "Shadow": "Shadow: If attacking enemy is Durin`s Bane, it gets +3 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 149,
+            "Quantity": 3,
+            "Artist": "Timo Karhula",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Many Thonged Whip",
+            "IsUnique": true,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Many-Thonged-Whip.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Weapon.",
+                    "Flame."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach Many Thonged Whip to Durin`s Bane as a Weapon attachment with the text: `Forced: When Durin`s Bane attacks, the defending player must discard 1 card at random from his hand.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 153,
+            "Quantity": 2,
+            "Artist": "Timo Karhula",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Nearing the Gate",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Nearing-the-Gate-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Remove Dark Pit from the encounter deck and place it aside, out of play. Add Durin`s Bane to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "As you reach the eastern realm of Darrowdelf the craftsmanship of the Dwarves is proudly displayed. But the sound of drums sound in the deep, and it appears that these halls are infested with Orcs."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Reduce each player`s threat to 0. Reveal X cards from the encounter deck, where X is one less than the number of players in the game, and add them to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "A crack like lightning sounds before you, and a creature of shadow and flame blocks your way. It is an ancient demon of Morgoth, and its presence explains the massing in Moria."
+            },
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 138,
+            "Quantity": 1,
+            "Artist": "Ben Zweifel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Ranging Goblin",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Ranging-Goblin.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "2",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must deal 1 damage to a hero he controls.",
+                    "Forced: After a character leaves play, shuffle Ranging Goblin and the top card in the encounter discard pile back into the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 151,
+            "Quantity": 3,
+            "Artist": "Jasper Sandner",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Second Deep",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Second-Deep.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Durin`s Bane has no damage on it, progress tokens cannot be placed on Second Deep."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 143,
+            "Quantity": 3,
+            "Artist": "Nick Deligaris",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Second Hall",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Second-Hall.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Second Hall is the active location, it gains: `Forced: After a character leaves play, reveal 1 card from the encounter deck and add it to the staging area.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "Down the centre stalked a double line of towering pillars. They were carved like boles of mighty trees whose boughs upheld the roof with a branching tracery of stone. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 142,
+            "Quantity": 1,
+            "Artist": "Ben Zweifel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Rear Guard",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/The-Rear-Guard-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": "The fire-demon is Durin`s Bane, doom of the Dwarves and the new Lord of Moria. It cannot be destroyed by mere strength of arms. You must find another way to deal with this Balrog as it relentlessly attacks, sword and whip weaving a deadly pattern of flame."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: If at least 1 hero committed to the quest this round, place 4 progress tokens on The Rear Guard (bypassing any active location) at the end of the quest phase.",
+                    "If Durin`s Bane has 0 hit points, advance to the next stage of the scenario immediately."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 139,
+            "Quantity": 1,
+            "Artist": "Jason Juta",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Whip Lash",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Whip-Lash.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must discard 1 attachment he controls, if able."
+                ],
+                "Shadow": "Shadow: If attacking enemy is Durin`s Bane, the defending player discards all attachments he controls.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": {
+                "EncounterSet": "Shadow and Flame",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 148,
+            "Quantity": 2,
+            "Artist": "Timo Karhula",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

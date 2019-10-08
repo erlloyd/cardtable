@@ -1,0 +1,959 @@
+{
+    "Name": "The Dread Realm",
+    "Cycle": "Angmar Awakened",
+    "SetType": "Adventure_Pack",
+    "cards": [
+        {
+            "Title": "Arwen Undómiel",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Arwen-Undómiel.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "3",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Discard a card from your hand to add 1 resource to a Noldor hero`s resource pool, or to Aragorn`s resource pool. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "...the light of stars was in her bright eyes, grey as a cloudless night; yet queenly she looked, and thought and knowledge were in her glance, as of one who has known many things that the years bring.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": null,
+            "Number": 140,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Elven-light",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Elven-light.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Elven-light can only be played from your discard pile.",
+                    "Action: Return Elven-light to your hand from your discard pile. Then, draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": "Then Aragorn was abashed, for he saw the elven-light in her eyes and the wisdom of many days...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": null,
+            "Number": 145,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sword-thain",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Sword-thain.jpg",
+                "Stats": {
+                    "ResourceCost": "4"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a unique ally belonging to any sphere of influence.",
+                    "Attached character loses the ally card type and gains the hero card type."
+                ],
+                "Shadow": null,
+                "FlavorText": "`But why, lord, did you receive me as sword-thain, if not to stay by your side?`\r\n-Merry, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": null,
+            "Number": 149,
+            "Quantity": 3,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Tale of Tinúviel",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Tale-of-Tinúviel.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust a Noldor character to ready a Dúnedain character, or vice-versa. Until the end of the phase, add the exhausted character`s printed Willpower to the other character`s Willpower, Attack, and Defense."
+                ],
+                "Shadow": null,
+                "FlavorText": "Long was the way that fate them bore,\r\nO`er stony mountains cold and grey,\r\nThrough halls of iron and darkling door,\r\nAnd woods of nightshade morrowless.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": null,
+            "Number": 146,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Fornost Bowman",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Fornost-Bowman.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger."
+                ],
+                "Keywords": [
+                    "Ranged."
+                ],
+                "Text": [
+                    "Fornost Bowman gets +1 Attack for each enemy engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "To the last battle at Fornost with the Witch-lord of Angmar they sent some bowmen to the aid of the king...\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": null,
+            "Number": 143,
+            "Quantity": 3,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Galadhrim Healer",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Galadhrim-Healer.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Healer."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Galadhrim Healer enters play, choose a player. Heal 1 damage from each hero controlled by that player."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Even if your Quest did not concern us closely, you should have refuge in this City, until you were healed and refreshed.`\r\n-Celeborn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": null,
+            "Number": 147,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sword of Númenor",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Sword-of-Númenor.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Dúnedain or Gondor hero.",
+                    "Attached hero gets +1 Attack.",
+                    "Response: After attached hero participates in an attack that destroys an enemy with 5 or more printed hit points, exhaust Sword of Númenor to add 1 resource to attached hero`s resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "...the flowing characters of Númenor glinted like fire upon the blade.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": null,
+            "Number": 142,
+            "Quantity": 3,
+            "Artist": "Romana Kendelic",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Hour of Wrath",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Hour-of-Wrath.jpg",
+                "Stats": {
+                    "ResourceCost": "4"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose a hero. Until the end of the phase, the chosen hero does not exhaust to attack or defend.",
+                    "Valour Action: Choose a player. Until the end of the phase, each of that player`s heroes do not exhaust to attack or defend."
+                ],
+                "Shadow": null,
+                "FlavorText": "These three were unscathed, for such was their fortune and the skill and might of their arms...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": null,
+            "Number": 144,
+            "Quantity": 3,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Éothain",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Éothain.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After a Rohan ally is discarded from play by a card effect, ready Éothain."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We must hasten south, lord. Let us leave these wild folk to their fancies. Or let us bind them and take them to our king.`\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": null,
+            "Number": 141,
+            "Quantity": 3,
+            "Artist": "Glen Osterberger",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Weather-stained Cloak",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Weather-stained-Cloak.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Ranger character. Limit 1 per character.",
+                    "While attached character is commited to the quest, Weather-stained cloak gains: `Response: Exhaust Weather-stained Cloak to cancel 1 point of damage just dealt to attached character.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "They were clad in warm raiment and heavy cloaks...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": null,
+            "Number": 148,
+            "Quantity": 3,
+            "Artist": "Jorge Borrero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "The Catacombs of Carn Dûm",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/The-Catacombs-of-Carn-Dûm-1A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set Daechanar and Altar of Midwinter aside, out of play. Each player reveals an encounter card from the top of the encounter deck. Each player reanimates the top card of his deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "As you descend into the catacombs beneath Carn Dûm, you find yourself overcome with terror. Still, you press onward, knowing that Iârion`s fate-and perhaps the fate of the north-lies in your hand."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Reanimated Dead are Undead enemies with 2 Threat, 2 Attack, 2 Defense and 2 hit points.",
+                    "When the players advance to stage 2, all Sorcery cards attached to this stage are attached to stage 2B."
+                ],
+                "Shadow": null,
+                "FlavorText": "Daechanar`s powers of sorcery and necromancy are strongest here, in the capital of the Witch-realm where the lord of the Nazgûl once resided."
+            },
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Dread Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 150,
+            "Quantity": 1,
+            "Artist": "Logan Feliciano",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Angmar Awakened",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Angmar-Awakened-2A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add Daechanar to the staging area. Make Altar of Midwinter the active location, returning any previously active location to the staging area. Each player reanimates the top card of his deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "A final scream fills the dreadful halls of Carn Dûm, and you suspect the worst. As you enter the site of Daechanar`s dark ritual, your fears come to life. Iârion stands before you, cracking his neck and gripping the blade at his side tightly, as though testing his muscles. Only it isn`t him."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Reanimated Dead are Undead enemies with 2 Threat, 2 Attack, 2 Defense and 2 hit points.",
+                    "When Daechanar is defeated, advance to the next stage."
+                ],
+                "Shadow": null,
+                "FlavorText": "Daechanar, in the body of your ally Iârion, laughs wickedly. Despair and frustration are the only thoughts that enter your mind. In the end, you were too late to stop this cruel fate. `Finally! Yes, this body will do nicely.` the wraith wearing the guise of your friend muses. He draws his blade."
+            },
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Dread Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 151,
+            "Quantity": 1,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Daechanar's Fall",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Daechanar's-Fall-3A.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: If there are less than X locations in the staging area, search the encounter deck and discard pile and add locations to the staging area until there are X locations in staging area. X is the number of players in the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "The imposter in Iârion`s body collapses in agony, and a piercing shriek echoes the halls as the sorcerer exits Iârion. `Thank you,` Iârion says with a pained smile before his eyes close for the last time. Before you can mourn your loss, the walls begin to shake and crack. The catacombs are collapsing!"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Reanimated Dead are Undead enemies with 2 Threat, 2 Attack, 2 Defense and 2 hit points.",
+                    "Progress that would be placed on this quest is instead placed on locations in the staging area, divided as you choose.",
+                    "Forced: At the end of the phase, if there are any locations in play, deal 1 damage to all characters in play. If there are no locations in play, the players have escaped Carn Dûm, and win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Dread Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 152,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Daechanar",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Daechanar.jpg",
+                "Stats": {
+                    "EngagementCost": "1",
+                    "Threat": "5",
+                    "Attack": "4",
+                    "Defense": "5",
+                    "HitPoints": "12"
+                },
+                "Traits": [
+                    "Undead.",
+                    "Dúnedain.",
+                    "Sorcerer."
+                ],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Daechanar gets +1 Attack for each Sorcery card in play, and gains indestructible while at least 1 Sorcery card is in play.",
+                    "Forced: When Daechanar is damaged, if there is at least 1 Sorcery card in play, cancel all damage just dealt and remove a Sorcery card from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Dread Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 153,
+            "Quantity": 1,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Altar of Midwinter",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Altar-of-Midwinter.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "9"
+                },
+                "Traits": [
+                    "Carn Dûm.",
+                    "Underground."
+                ],
+                "Keywords": [
+                    "Victory 5."
+                ],
+                "Text": [
+                    "While Daechanar is in play, progress cannot be placed on Altar of Widwinter.",
+                    "Forced: At the end of the staging step, the first player must either reveal 1 additional card from the encounter deck, or reanimate the top card of his deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Dread Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 154,
+            "Quantity": 1,
+            "Artist": "Yoann Boissonnet",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dwimmerlaik",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Dwimmerlaik.jpg",
+                "Stats": {
+                    "EngagementCost": "34",
+                    "Threat": "4",
+                    "Attack": "5",
+                    "Defense": "0",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Undead.",
+                    "Wraith."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Dwimmerlaik attacks and destroys a character, the defending player reanimates that character and deals it 1 shadow card."
+                ],
+                "Shadow": "Shadow: If this attacks destroys a character, reanimate that character and deal it 1 shadow card.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Dread Realm",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 155,
+            "Quantity": 3,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Witch of Angmar",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Witch-of-Angmar.jpg",
+                "Stats": {
+                    "EngagementCost": "26",
+                    "Threat": "3",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Undead.",
+                    "Sorcerer."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When you resolve shadow cards dealt to Witch of Angmar, if they have the Sorcery trait, resolve their `when revealed` effects. (Resolve any shadow effects first.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Dread Realm",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 156,
+            "Quantity": 3,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Wraith of Carn Dûm",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Wraith-of-Carn-Dûm.jpg",
+                "Stats": {
+                    "EngagementCost": "18",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "0",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Undead.",
+                    "Wraith."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Wraith of Carn Dûm leaves play, attach it to a character in play. (Counts as a Sorcery attachment with the text: `Attached character has -1 Willpower, -1 Attack, and -1 Defense. If the attached character leaves play, return Wraith of Carn Dûm to the staging area as an enemy.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Dread Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 157,
+            "Quantity": 2,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Sinister Dungeon",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Sinister-Dungeon.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "1"
+                },
+                "Traits": [
+                    "Carn Dûm.",
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Sinister Dungeon is explored, the first player reanimates a random card from his hand and deals Sinister Dungeon to it facedown as a shadow card."
+                ],
+                "Shadow": "Shadow: Discard the top 2 cards of the encounter deck. Resolve the `when revealed` effects of each Sorcery card discarded by this effect.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Dread Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 158,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Tombs of Carn Dûm",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Tombs-of-Carn-Dûm.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Carn Dûm.",
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "ForcedL At the end of the round, discard the top card of each player`s deck. Each player must reanimate each ally discarded by this effect.",
+                    "Travel: Deal 1 shadow card to each Undead enemy in play to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": "He could see nothing but the dim flame of the torches; but if the company halted, there seemed and endless whisper of voices all about him...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Dread Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 159,
+            "Quantity": 3,
+            "Artist": "Logan Feliciano",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dark Halls",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Dark-Halls.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Carn Dûm.",
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Dark Halls is in the staging area, each Reanimated Dead gets +1 Attack and +1 Defense."
+                ],
+                "Shadow": "Shadow: If there is a copy of the defending character in your discard pile, reanimate it and deal it 1 shadow card.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Dread Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 160,
+            "Quantity": 2,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Unholy Crypt",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Unholy-Crypt.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "7"
+                },
+                "Traits": [
+                    "Carn Dûm.",
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Unholy Crypt gets +1 Threat for each Reanimated Dead in play."
+                ],
+                "Shadow": "Shadow: if this attack destroys a character, reanimate that character and deal it 1 shadow card.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Dread Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 161,
+            "Quantity": 3,
+            "Artist": "Mikail Greuli",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Possession",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Possession.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Sorcery."
+                ],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "When Revealed: Destroy the highest cost ally in play. That ally`s controller reanimates that character, adds it to the staging area, and attaches Possesion to it. (Counts as a Condition attachment with the text: `If Possession is discarded, the attached card is also discarded.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Dread Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 162,
+            "Quantity": 2,
+            "Artist": "Victor Garcia",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "A Fell Dread",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/A-Fell-Dread.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Sorcery."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The player with the highest threat must attach A Fell Dread to a hero he controls without A Fell Dread Attached. (Counts as a Condition attachment with the text: `Attached hero`s Willpower is reduced to 0. During the quest phase, attached hero must commit to the quest, if able.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Dread Realm",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 163,
+            "Quantity": 2,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Death and Calamity",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dread-Realm/Death-and-Calamity.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Sorcery."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach Death and Calamity to the current quest. Then, the first player reanimates the top X cards of his deck, where X is the number of copies of Death and Calamity in play."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +X Attack, where X is the number of Sorcery cards in play.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dread Realm",
+            "EncounterInfo": {
+                "EncounterSet": "The Dread Realm",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 164,
+            "Quantity": 4,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}

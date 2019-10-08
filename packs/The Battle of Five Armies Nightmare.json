@@ -1,0 +1,287 @@
+{
+    "Name": "The Battle of Five Armies Nightmare",
+    "Cycle": "NIGHTMARE",
+    "SetType": "Nightmare_Expansion",
+    "cards": [
+        {
+            "Title": "The Battle of Five Armies Nightmare",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Five-Armies-Nightmare/The-Battle-of-Five-Armies-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "While the players are at stage 5b, this card gains: `Forced: When the players are instructed to remove any amount of progress from a quest stage, place 1 progress here instead.`",
+                    "If there are X progress tokens here, the players lose the game. X depends on the number of players in the game:",
+                    "1 player: X equals 5",
+                    "2 players: X equals 7",
+                    "3 players: X equals 9",
+                    "4 players: X equals 11"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Battle of Five Armies Nightmare scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Dark Bats\n3x Hidden Path\n2x Fighting Among Friends\n1x Vanguard of Bolg\n1x Ravenous Warg\n4x Gundabad Climber\n3x Gundabad Wolf Rider\n1x Misty Mountain Eagle\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Battle of Five Armies Nightmare encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Battle of Five Armies Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Great Warg",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Five-Armies-Nightmare/Great-Warg.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "4",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Great Warg attacks and destroys a character, remove all progress from the current quest."
+                ],
+                "Shadow": "Shadow: Defending player discards 1 attachment he controls.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Five Armies Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Five Armies Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Jon Bosco",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Frenzied Warg-Rider",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Five-Armies-Nightmare/Frenzied-Warg-Rider.jpg",
+                "Stats": {
+                    "EngagementCost": "15",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Frenzied Warg-Rider attacks, remove 1 progress from each quest stage."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to the defending character (2 damage instead if the current quest has no progress on it).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Five Armies Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Five Armies Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 4,
+            "Artist": "Beth Sobel",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Gundabad Elite",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Five-Armies-Nightmare/Gundabad-Elite.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Goblin.",
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot be optionally engaged.",
+                    "Forced: At the end of the round, if Gundabad Elite is in the staging area, either remove 2 progress from the current quest, or Gundabad Elite makes an attack against the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Five Armies Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Five Armies Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 4,
+            "Artist": "Florian Devos",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Embattled Valley",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Five-Armies-Nightmare/Embattled-Valley.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Valley."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the round, each player assigns X damage among heroes he controls. X is the number of quest stages with no progress on them.",
+                    "Travel: The players (as a group) exhaust X characters. X is the number of quest stages with no progress on them."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Five Armies Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Five Armies Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Eastern Ridge",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Five-Armies-Nightmare/Eastern-Ridge.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the round, raise each player`s threat by 1 for each quest stage with no progress on it."
+                ],
+                "Shadow": "Shadow: Until the end of the phase, attacking enemy gets +1 Defense for each quest stage with no progress on it.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Five Armies Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Five Armies Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Alyn Spiller",
+            "HasErrata": false,
+            "Categories": null
+        },
+        {
+            "Title": "Dread Has Come!",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Five-Armies-Nightmare/Dread-Has-Come.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Bolg makes an attack against each player in turn order. If at least 1 character is destroyed by one of these attacks, the players cannot place progress on the current quest phase this round."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Five Armies Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of Five Armies Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "Categories": null
+        }
+    ]
+}
