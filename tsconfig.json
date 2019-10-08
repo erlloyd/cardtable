@@ -17,7 +17,8 @@
     "importHelpers": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "resolveJsonModule": true
   },
   "exclude": [
     "node_modules",
@@ -27,6 +28,7 @@
     "webpack",
     "jest",
     "src/setupTests.ts",
-    "subtree"
+    "src/subtree",
+    "src/subtree/**.*"
   ]
 }

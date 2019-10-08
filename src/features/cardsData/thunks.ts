@@ -1,9 +1,11 @@
-import CoreSet from 'subtree/json-data/packs/Core Set.json';
+import { Dispatch } from 'redux';
+import * as CoreSet from 'src/subtree/json-data/packs/Core Set.json';
+import * as actions from './actions';
 
-export const loadAllCardDataFromJSON = () => {
-  // tslint:disable-next-line:no-console
-  console.log(CoreSet);
-}
+export const loadAllCardDataFromJSON = () => 
+  async (dispatch: Dispatch, getState: any) => {
+    dispatch(actions.addNewCardMetadata(CoreSet.cards));
+  };
 
 // export const loadCard = (id: number) => 
 //   async (dispatch: Dispatch, getState: any) => {
