@@ -15,4 +15,5 @@ import { createAction } from 'typesafe-actions';
 
 export const addNewCardMetadata = createAction('cardsData/ADD_NEW_CARD_METADATA', resolve => {
   return (metadata: CardData[]) => resolve({metadata});
+
 });

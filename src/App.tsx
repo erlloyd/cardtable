@@ -5,10 +5,12 @@ import { Layer, Rect, Stage } from 'react-konva';
 import { cardConstants } from 'src/constants/card-constants';
 import './App.css';
 import Card from './Card';
+import { CardData } from './external-api/beorn-json-data';
 import { ICard, ICardsState } from './features/cards/initialState';
 
 interface IProps {
   cards: ICardsState;
+  cardsData: CardData[]
   cardMove: (id: number, dx: number, dy: number) => void;
   endCardMove: (id: number) => void;
   exhaustCard: (id: number) => void;
@@ -74,7 +76,7 @@ class App extends Component<IProps, IState> {
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.props.exhaustCard}
             handleClick={this.props.selectCard}
-            imgUrl={'https://ringsdb.com/bundles/cards/18001.png'}
+            imgUrl={this.props.cardsData.length > 0 ? this.props.cardsData[card.id].Front.ImagePath : 'poop'}
           />
       )}
     );

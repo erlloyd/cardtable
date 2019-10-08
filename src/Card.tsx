@@ -36,16 +36,16 @@ class Card extends Component<IProps, IState> {
     }
   }
 
-  public componentDidMount() {
+  public componentWillReceiveProps(nextProps: IProps) {
     this.img = undefined;
-    if (this.props.imgUrl) {
+    if (this.props.imgUrl && this.props.imgUrl !== nextProps.imgUrl) {
       this.img = new Image();
       this.img.onload = () => {
         this.setState({
           imageLoaded: true
         });
       };
-      this.img.src = this.props.imgUrl;
+      this.img.src = nextProps.imgUrl;
     }
   }
 
