@@ -3,15 +3,31 @@ import Types from 'Types';
 
 export const getCardsData = (state: Types.RootState) => state.cardsData;
 
-export const get3RandomCards = createSelector(getCardsData, (cardsData) => {
+export const getPlayerCardsData = createSelector(getCardsData, (cardsData) => {
+  return cardsData.metadata
+    .filter(data => data.EncounterInfo === null);
+})
 
-  if (cardsData.metadata.length < 3) {
+export const get3RandomCardDatas = createSelector(getCardsData, (cardsData) => {
+  return getNRandomFromArray(3, cardsData.metadata)
+});
+
+export const get3RandomPlayerCardDatas = createSelector(getPlayerCardsData, (metadata) => {
+  return getNRandomFromArray(3, metadata)
+});
+
+const getNRandomFromArray = <T>(n: number, items: T[]): T[] => {
+  if (n < 0) {
+    throw new Error('Number of items specified must not be negative');
+  }
+
+  if (n === 0 || items.length < n) {
     return [];
   }
 
-  const randomNums = [Math.floor(Math.random()*cardsData.metadata.length),
-    Math.floor(Math.random()*cardsData.metadata.length),
-    Math.floor(Math.random()*cardsData.metadata.length)];
+  const randomNums = [Math.floor(Math.random()*items.length),
+    Math.floor(Math.random()*items.length),
+    Math.floor(Math.random()*items.length)];
   return randomNums
-    .map(index => cardsData.metadata[index]);
-});
+    .map(index => items[index]);
+}

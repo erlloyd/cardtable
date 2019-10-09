@@ -76,7 +76,7 @@ class App extends Component<IProps, IState> {
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.props.exhaustCard}
             handleClick={this.props.selectCard}
-            imgUrl={this.props.cardsData.length > 0 ? this.props.cardsData[card.id].Front.ImagePath : 'poop'}
+            imgUrl={this.props.cardsData.length > 0 ? this.props.cardsData[card.id].Front.ImagePath : ''}
           />
       )}
     );
@@ -93,7 +93,7 @@ class App extends Component<IProps, IState> {
             fill={card.fill}
             selected={false}
             dragging={false}
-            imgUrl={'https://ringsdb.com/bundles/cards/18001.png'}
+            imgUrl={this.props.cardsData.length > 0 ? this.props.cardsData[card.id].Front.ImagePath : ''}
             isGhost={true}
           />
         );
@@ -119,7 +119,7 @@ class App extends Component<IProps, IState> {
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.props.exhaustCard}
             handleClick={this.props.selectCard}
-            imgUrl={'https://ringsdb.com/bundles/cards/18001.png'}
+            imgUrl={this.props.cardsData.length > 0 ? this.props.cardsData[card.id].Front.ImagePath : ''}
           />
       )}
     );

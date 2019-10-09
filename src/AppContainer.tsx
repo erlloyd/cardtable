@@ -2,13 +2,13 @@ import {connect} from 'react-redux';
 import Types from 'Types';
 import App from './App';
 import * as cardActions from './features/cards/actions';
-import { get3RandomCards } from './features/cardsData/selectors';
+import { get3RandomPlayerCardDatas } from './features/cardsData/selectors';
 import * as cardThunks from './features/cardsData/thunks';
 
 const mapStateToProps = (state: Types.RootState) => {
   return {
     cards: state.cards,
-    cardsData: get3RandomCards(state)
+    cardsData: get3RandomPlayerCardDatas(state)
   }
 }
 

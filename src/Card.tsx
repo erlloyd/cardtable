@@ -23,35 +23,53 @@ interface IProps {
 
 interface IState {
   imageLoaded: boolean;
+  prevImgUrl: string;
 }
 
 class Card extends Component<IProps, IState> {
-  
-  private img?: any;
+
+  // tslint:disable-next-line:member-access
+  static getDerivedStateFromProps(props: IProps, state: IState): IState | null {
+    // Store prevImgUrl in state so we can compare when props change.
+    // Clear out previously-loaded data (so we don't render stale stuff).
+    if (props.imgUrl !== state.prevImgUrl) {
+      return {
+        imageLoaded: false,
+        prevImgUrl: props.imgUrl,
+      };
+    }
+
+    // No state update necessary
+    return null;
+  }
+
+  private img: HTMLImageElement = new Image();
 
   constructor(props: IProps) {
     super(props)
     this.state = {
       imageLoaded: false,
+      prevImgUrl: '',
     }
+
+    // When the image loads, set a flag in the state
+    this.img.onload = () => {
+      this.setState({
+        imageLoaded: true,
+      });
+    };
   }
 
-  public componentWillReceiveProps(nextProps: IProps) {
-    this.img = undefined;
-    if (this.props.imgUrl && this.props.imgUrl !== nextProps.imgUrl) {
-      this.img = new Image();
-      this.img.onload = () => {
-        this.setState({
-          imageLoaded: true
-        });
-      };
-      this.img.src = nextProps.imgUrl;
+  public componentDidUpdate(prevProps: IProps, prevState: IState) {
+    if (!this.state.imageLoaded && this.props.imgUrl) {
+      this.img.src = this.props.imgUrl;
     }
   }
 
   public render() {
-    this.img = new Image();
-    this.img.src = this.props.imgUrl;
+
+    // this.img = new Image();
+    // this.img.src = this.props.imgUrl;
     return (
       this.state.imageLoaded ? 
       <Spring
@@ -62,7 +80,7 @@ class Card extends Component<IProps, IState> {
         {(animatedProps: any) => (
             <animated.Rect
             {...animatedProps}
-            cornerRadius={7}
+            cornerRadius={9}
             x={this.props.x}
             y={this.props.y}
             width={cardConstants.CARD_WIDTH}
@@ -74,8 +92,8 @@ class Card extends Component<IProps, IState> {
             stroke={this.props.selected ? 'blue' : ''}
             strokeWidth= {this.props.selected ? 8 : 0}
             fillPatternImage={this.img}
-            fillPatternScaleX={0.5}
-            fillPatternScaleY={0.5}
+            fillPatternScaleX={cardConstants.CARD_WIDTH / this.img.naturalWidth}
+            fillPatternScaleY={cardConstants.CARD_HEIGHT / this.img.naturalHeight}
             shadowBlur={this.props.dragging ? 10 : 0}
             opacity={this.props.isGhost ? 0.5 : 1}
             draggable={true}
