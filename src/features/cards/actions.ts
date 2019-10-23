@@ -30,3 +30,7 @@ export const unselectAllCards = createAction('cards/UNSELECT_ALL');
 export const hoverCard = createAction('cards/HOVER', resolve => {
   return (id: number) => resolve({id});
 });
+
+export const hoverLeaveCard = createAction('cards/HOVER_LEAVE', resolve => {
+  return (id: number) => resolve({id});
+});

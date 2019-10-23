@@ -13,6 +13,8 @@ interface IProps {
   handleDragStart?: (id: number) => void,
   handleDragMove?: (id: number, dx: number, dy: number) => void,
   handleDragEnd?: (id: number) => void,
+  handleHover?: (id: number) => void,
+  handleHoverLeave?: (id: number) => void,
   id: number,
   selected: boolean,
   x: number,
@@ -32,27 +34,26 @@ class Card extends Component<IProps, IState> {
 
   // tslint:disable-next-line:member-access
   static getDerivedStateFromProps(props: IProps, state: IState): IState | null {
-    // Store prevImgUrl in state so we can compare when props change.
-    // Clear out previously-loaded data (so we don't render stale stuff).
     if (props.imgUrl !== state.prevImgUrl) {
       return {
         imageLoaded: false,
         prevImgUrl: props.imgUrl,
       };
     }
-
     // No state update necessary
     return null;
   }
 
-  private img: HTMLImageElement = new Image();
+  private img: HTMLImageElement;
 
   constructor(props: IProps) {
     super(props)
     this.state = {
       imageLoaded: false,
-      prevImgUrl: '',
+      prevImgUrl: this.props.imgUrl,
     }
+
+    this.img = new Image();
 
     // When the image loads, set a flag in the state
     this.img.onload = () => {
@@ -60,23 +61,24 @@ class Card extends Component<IProps, IState> {
         imageLoaded: true,
       });
     };
+
+    if (props.imgUrl) {
+      this.img.src = props.imgUrl;
+    }
   }
 
   public componentDidUpdate(prevProps: IProps, prevState: IState) {
-    if (!this.state.imageLoaded && this.props.imgUrl) {
+    if (!this.state.imageLoaded && this.props.imgUrl && this.props.imgUrl !== this.img.src) {
       this.img.src = this.props.imgUrl;
     }
   }
 
   public render() {
-
     const heightToUse = this.props.height || cardConstants.CARD_HEIGHT;
     const widthToUse = this.props.width || cardConstants.CARD_WIDTH;
 
-    // this.img = new Image();
-    // this.img.src = this.props.imgUrl;
     return (
-      this.state.imageLoaded ? 
+      this.state.imageLoaded ?
       <Spring
         native={true}
         to={{
@@ -97,8 +99,8 @@ class Card extends Component<IProps, IState> {
             stroke={this.props.selected ? 'blue' : ''}
             strokeWidth= {this.props.selected ? 8 : 0}
             fillPatternImage={this.img}
-            fillPatternScaleX={widthToUse / this.img.naturalWidth}
-            fillPatternScaleY={heightToUse / this.img.naturalHeight}
+            fillPatternScaleX={this.state.imageLoaded ? widthToUse / this.img.naturalWidth : widthToUse}
+            fillPatternScaleY={this.state.imageLoaded ? heightToUse / this.img.naturalHeight : heightToUse}
             shadowBlur={this.props.dragging ? 10 : 0}
             opacity={this.props.isGhost ? 0.5 : 1}
             draggable={true}
@@ -112,6 +114,7 @@ class Card extends Component<IProps, IState> {
             onMouseDown={this.handleMouseDown}
             onTouchStart={this.handleMouseDown}
             onMouseOver={this.handleMouseOver}
+            onMouseOut={this.handleMouseOut}
             />
         )}
       </Spring> : null
@@ -156,8 +159,16 @@ class Card extends Component<IProps, IState> {
     event.cancelBubble = true;
   }
 
-  private handleMouseOver = (event: any) => {
-    console.log(`mouse over card ${this.props.id}`)
+  private handleMouseOver = () => {
+    if(this.props.handleHover) {
+      this.props.handleHover(this.props.id);
+    }
+  }
+
+  private handleMouseOut = () => {
+    if(this.props.handleHoverLeave) {
+      this.props.handleHoverLeave(this.props.id);
+    }
   }
 };
 

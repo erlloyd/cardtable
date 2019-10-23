@@ -10,7 +10,8 @@ import { ICard, ICardsState } from './features/cards/initialState';
 
 interface IProps {
   cards: ICardsState;
-  cardsData: CardData[]
+  cardsData: CardData[];
+  showPreview: boolean;
   cardMove: (id: number, dx: number, dy: number) => void;
   endCardMove: (id: number) => void;
   exhaustCard: (id: number) => void;
@@ -18,6 +19,8 @@ interface IProps {
   startCardMove: (id: number) => void;
   unselectAllCards: () => void;
   selectMultipleCards: (cardIds: number[]) => void;
+  hoverCard: (id: number) => void;
+  hoverLeaveCard: (id: number) => void;
   loadData: any;
 }
 
@@ -76,6 +79,8 @@ class App extends Component<IProps, IState> {
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.props.exhaustCard}
             handleClick={this.props.selectCard}
+            handleHover={this.props.hoverCard}
+            handleHoverLeave={this.props.hoverLeaveCard}
             imgUrl={this.props.cardsData.length > 0 ? this.props.cardsData[card.id].Front.ImagePath : ''}
           />
       )}
@@ -124,6 +129,25 @@ class App extends Component<IProps, IState> {
       )}
     );
 
+    const previewCards = this.props.cards.cards
+    .filter(card => !this.state.selecting && this.props.showPreview && !!this.props.cards.previewCard && (card.id === this.props.cards.previewCard.id))
+    .map(
+      card => {
+        return (
+        <Card
+            key={`preview${card.id}`}
+            id={card.id}
+            x={400}
+            y={200}
+            exhausted={false}
+            fill={card.fill}
+            selected={false}
+            dragging={false}
+            imgUrl={this.props.cardsData.length > 0 ? this.props.cardsData[card.id].Front.ImagePath : ''}
+          />
+      )}
+    );
+
     return (
       <Stage
         width={window.innerWidth}
@@ -144,7 +168,7 @@ class App extends Component<IProps, IState> {
 
         <Layer
           preventDefault={true}>
-          {staticCards.concat(ghostCards).concat(movingCards)}
+          {staticCards.concat(ghostCards).concat(movingCards).concat(previewCards)}
         </Layer>
         <Layer>
           <Rect

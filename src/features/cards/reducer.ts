@@ -108,6 +108,16 @@ export default (baseState = initialState, action: CardsAction): ICardsState => {
       });
       newState.cards = newCards;
       return newState;
+    case getType(cardActions.hoverCard):
+      if (newState.previewCard === null || action.payload.id !== newState.previewCard.id) {
+        newState.previewCard = Object.assign({}, newState.previewCard, { id: action.payload.id });
+      }
+      return newState;
+    case getType(cardActions.hoverLeaveCard):
+        if (newState.previewCard !== null) {
+          newState.previewCard = null;
+        }
+        return newState;
     default:
       return baseState;
   }
