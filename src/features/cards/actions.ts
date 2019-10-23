@@ -26,3 +26,7 @@ export const selectMultipleCards = createAction('cards/SELECT_MULTIPLE', resolve
 });
 
 export const unselectAllCards = createAction('cards/UNSELECT_ALL');
+
+export const hoverCard = createAction('cards/HOVER', resolve => {
+  return (id: number) => resolve({id});
+});

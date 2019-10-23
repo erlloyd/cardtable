@@ -1,4 +1,6 @@
 export const cardConstants = {
   CARD_HEIGHT: 209,
   CARD_WIDTH: 150,
+  CARD_PREVIEW_HEIGHT: 418,
+  CARD_PREVIEW_WIDTH: 300,
 };

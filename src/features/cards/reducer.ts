@@ -8,7 +8,8 @@ export default (baseState = initialState, action: CardsAction): ICardsState => {
   let newCards: ICard[];
   const newState: ICardsState = {
     cards: baseState.cards,
-    ghostCards: baseState.ghostCards
+    ghostCards: baseState.ghostCards,
+    previewCard: baseState.previewCard,
   }
   switch (action.type) {
     case getType(cardActions.exhaustCard):

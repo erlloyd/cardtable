@@ -17,6 +17,8 @@ interface IProps {
   selected: boolean,
   x: number,
   y: number,
+  width?: number,
+  height?: number,
   imgUrl: string,
   isGhost?: boolean,
 }
@@ -68,6 +70,9 @@ class Card extends Component<IProps, IState> {
 
   public render() {
 
+    const heightToUse = this.props.height || cardConstants.CARD_HEIGHT;
+    const widthToUse = this.props.width || cardConstants.CARD_WIDTH;
+
     // this.img = new Image();
     // this.img.src = this.props.imgUrl;
     return (
@@ -92,8 +97,8 @@ class Card extends Component<IProps, IState> {
             stroke={this.props.selected ? 'blue' : ''}
             strokeWidth= {this.props.selected ? 8 : 0}
             fillPatternImage={this.img}
-            fillPatternScaleX={cardConstants.CARD_WIDTH / this.img.naturalWidth}
-            fillPatternScaleY={cardConstants.CARD_HEIGHT / this.img.naturalHeight}
+            fillPatternScaleX={widthToUse / this.img.naturalWidth}
+            fillPatternScaleY={heightToUse / this.img.naturalHeight}
             shadowBlur={this.props.dragging ? 10 : 0}
             opacity={this.props.isGhost ? 0.5 : 1}
             draggable={true}
@@ -106,6 +111,7 @@ class Card extends Component<IProps, IState> {
             onTap={this.handleClick}
             onMouseDown={this.handleMouseDown}
             onTouchStart={this.handleMouseDown}
+            onMouseOver={this.handleMouseOver}
             />
         )}
       </Spring> : null
@@ -147,7 +153,11 @@ class Card extends Component<IProps, IState> {
   }
 
   private handleMouseDown = (event: any) => {
-      event.cancelBubble = true;
+    event.cancelBubble = true;
+  }
+
+  private handleMouseOver = (event: any) => {
+    console.log(`mouse over card ${this.props.id}`)
   }
 };
 

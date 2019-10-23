@@ -8,9 +8,14 @@ export interface ICard {
   y: number;
 }
 
+export interface IPreviewCard {
+  id: number;
+}
+
 export interface ICardsState {
   cards: ICard[];
   ghostCards: ICard[];
+  previewCard: IPreviewCard | null;
 }
 
 const state: ICardsState = {
@@ -43,7 +48,8 @@ const state: ICardsState = {
       y: 600
     },
   ],
-  ghostCards: []
+  ghostCards: [],
+  previewCard: null
 }; 
 
 export default state;
