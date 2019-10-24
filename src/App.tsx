@@ -137,13 +137,15 @@ class App extends Component<IProps, IState> {
         <Card
             key={`preview${card.id}`}
             id={card.id}
-            x={400}
-            y={200}
+            x={window.innerWidth - (cardConstants.CARD_PREVIEW_WIDTH / 2)}
+            y={cardConstants.CARD_PREVIEW_HEIGHT / 2}
             exhausted={false}
             fill={card.fill}
             selected={false}
             dragging={false}
             imgUrl={this.props.cardsData.length > 0 ? this.props.cardsData[card.id].Front.ImagePath : ''}
+            height={cardConstants.CARD_PREVIEW_HEIGHT}
+            width={cardConstants.CARD_PREVIEW_WIDTH}
           />
       )}
     );

@@ -45,6 +45,7 @@ class Card extends Component<IProps, IState> {
   }
 
   private img: HTMLImageElement;
+  private unmounted: boolean;
 
   constructor(props: IProps) {
     super(props)
@@ -57,9 +58,11 @@ class Card extends Component<IProps, IState> {
 
     // When the image loads, set a flag in the state
     this.img.onload = () => {
-      this.setState({
-        imageLoaded: true,
-      });
+      if (!this.unmounted) {
+        this.setState({
+          imageLoaded: true,
+        });
+      }
     };
 
     if (props.imgUrl) {
@@ -71,6 +74,14 @@ class Card extends Component<IProps, IState> {
     if (!this.state.imageLoaded && this.props.imgUrl && this.props.imgUrl !== this.img.src) {
       this.img.src = this.props.imgUrl;
     }
+  }
+
+  public componentDidMount() {
+    this.unmounted = false;
+  }
+
+  public componentWillUnmount() {
+    this.unmounted = true;
   }
 
   public render() {
@@ -90,11 +101,11 @@ class Card extends Component<IProps, IState> {
             cornerRadius={9}
             x={this.props.x}
             y={this.props.y}
-            width={cardConstants.CARD_WIDTH}
-            height={cardConstants.CARD_HEIGHT}
+            width={widthToUse}
+            height={heightToUse}
             offset={{
-                x: cardConstants.CARD_WIDTH / 2,
-                y: cardConstants.CARD_HEIGHT / 2,
+                x: widthToUse / 2,
+                y: heightToUse / 2,
             }}
             stroke={this.props.selected ? 'blue' : ''}
             strokeWidth= {this.props.selected ? 8 : 0}
