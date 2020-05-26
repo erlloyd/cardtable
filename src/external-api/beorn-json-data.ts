@@ -1,17 +1,21 @@
 // tslint:disable-next-line:interface-name
 export interface CardStatsData {
-  EngagementCost: string;
-  Threat: string;
-  Attack: string;
-  Defense: string;
-  HitPoints: string;
+  ResourceCost?: string;
+  Willpower?: string;
+  EngagementCost?: string;
+  Threat?: string;
+  Attack?: string;
+  Defense?: string;
+  HitPoints?: string;
+  StageNumber?: string;
+  QuestPoints?: string;
 }
 
 // tslint:disable-next-line:interface-name
 export interface CardFaceData {
   Subtitle: string | null;
   ImagePath: string;
-  Stats: CardStatsData;
+  Stats: CardStatsData | null;
   Traits: string[];
   Keywords: string[];
   Text: string[];
@@ -31,17 +35,22 @@ export interface CardEncounterData {
 // tslint:disable-next-line:interface-name
 export interface CardData {
   Title: string;
+  Slug: string;
   IsUnique: boolean;
   CardType: string; // TODO make an enum?
   CardSubType: string;
-  Sphere: string;
+  Sphere: string | null;
   Front: CardFaceData;
   Back: CardFaceData | null;
   CardSet: string;
   EncounterInfo: CardEncounterData | null;
   Number: number;
-  Qunatity: number;
+  Quantity: number;
   Artist: string;
   HasErrata: boolean;
+  OctgnGuid: string;
+  RingsDbCardId: string;
+  RingsDbPopularity: number;
+  RingsDbVotes: number;
   Categories: any | null;
 }

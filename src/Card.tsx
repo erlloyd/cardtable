@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 import { animated, Spring } from 'react-spring/renderprops-konva';
-import { cardConstants } from 'src/constants/card-constants';
+import { cardConstants } from './constants/card-constants';
 
 interface IProps {
   dragging: boolean,
@@ -49,6 +49,9 @@ class Card extends Component<IProps, IState> {
 
   constructor(props: IProps) {
     super(props)
+
+    this.unmounted = true;
+
     this.state = {
       imageLoaded: false,
       prevImgUrl: this.props.imgUrl,
@@ -115,17 +118,17 @@ class Card extends Component<IProps, IState> {
             shadowBlur={this.props.dragging ? 10 : 0}
             opacity={this.props.isGhost ? 0.5 : 1}
             draggable={true}
-            onDragStart={this.handleDragStart}
-            onDragMove={this.handleDragMove}
-            onDragEnd={this.handleDragEnd}
-            onDblClick={this.handleDoubleClick}
-            onDblTap={this.handleDoubleClick}
+            // onDragStart={this.handleDragStart}
+            // onDragMove={this.handleDragMove}
+            // onDragEnd={this.handleDragEnd}
+            // onDblClick={this.handleDoubleClick}
+            // onDblTap={this.handleDoubleClick}
             onClick={this.handleClick}
-            onTap={this.handleClick}
-            onMouseDown={this.handleMouseDown}
-            onTouchStart={this.handleMouseDown}
-            onMouseOver={this.handleMouseOver}
-            onMouseOut={this.handleMouseOut}
+            // onTap={this.handleClick}
+            // onMouseDown={this.handleMouseDown}
+            // onTouchStart={this.handleMouseDown}
+            // onMouseOver={this.handleMouseOver}
+            // onMouseOut={this.handleMouseOut}
             />
         )}
       </Spring> : null

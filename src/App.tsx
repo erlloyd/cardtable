@@ -2,7 +2,7 @@ import * as Intersects from 'intersects';
 import { Component } from 'react';
 import * as React from 'react';
 import { Layer, Rect, Stage } from 'react-konva';
-import { cardConstants } from 'src/constants/card-constants';
+import { cardConstants } from './constants/card-constants';
 import './App.css';
 import Card from './Card';
 import { CardData } from './external-api/beorn-json-data';
@@ -55,7 +55,7 @@ class App extends Component<IProps, IState> {
   }
 
   public componentDidMount() {
-    this.props.loadData();
+    // this.props.loadData();
   }
 
   public render() {

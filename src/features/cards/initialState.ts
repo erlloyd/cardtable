@@ -18,7 +18,7 @@ export interface ICardsState {
   previewCard: IPreviewCard | null;
 }
 
-const state: ICardsState = {
+export const initialState: ICardsState = {
   cards: [
     {
       dragging: false,
@@ -50,6 +50,4 @@ const state: ICardsState = {
   ],
   ghostCards: [],
   previewCard: null
-}; 
-
-export default state;
+};
