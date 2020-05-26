@@ -11,7 +11,7 @@ interface IProps {
   handleClick?: (id: number) => void,
   handleDoubleClick?: (id: number) => void,
   handleDragStart?: (id: number) => void,
-  handleDragMove?: (id: number, dx: number, dy: number) => void,
+  handleDragMove?: (info: {id: number, dx: number, dy: number}) => void,
   handleDragEnd?: (id: number) => void,
   handleHover?: (id: number) => void,
   handleHoverLeave?: (id: number) => void,
@@ -118,15 +118,15 @@ class Card extends Component<IProps, IState> {
             shadowBlur={this.props.dragging ? 10 : 0}
             opacity={this.props.isGhost ? 0.5 : 1}
             draggable={true}
-            // onDragStart={this.handleDragStart}
-            // onDragMove={this.handleDragMove}
-            // onDragEnd={this.handleDragEnd}
-            // onDblClick={this.handleDoubleClick}
-            // onDblTap={this.handleDoubleClick}
+            onDragStart={this.handleDragStart}
+            onDragMove={this.handleDragMove}
+            onDragEnd={this.handleDragEnd}
+            onDblClick={this.handleDoubleClick}
+            onDblTap={this.handleDoubleClick}
             onClick={this.handleClick}
-            // onTap={this.handleClick}
-            // onMouseDown={this.handleMouseDown}
-            // onTouchStart={this.handleMouseDown}
+            onTap={this.handleClick}
+            onMouseDown={this.handleMouseDown}
+            onTouchStart={this.handleMouseDown}
             // onMouseOver={this.handleMouseOver}
             // onMouseOut={this.handleMouseOut}
             />
@@ -149,10 +149,11 @@ class Card extends Component<IProps, IState> {
 
   private handleDragMove = (event: any) => {
     if(this.props.handleDragMove) {
-      this.props.handleDragMove(
-          this.props.id,
-          event.target.x() - this.props.x,
-          event.target.y() - this.props.y);
+      this.props.handleDragMove({
+        id: this.props.id,
+        dx: event.target.x() - this.props.x,
+        dy: event.target.y() - this.props.y
+      });
     }
   }
 

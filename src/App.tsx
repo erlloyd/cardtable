@@ -12,7 +12,7 @@ interface IProps {
   cards: ICardsState;
   cardsData: CardData[];
   showPreview: boolean;
-  cardMove: (id: number, dx: number, dy: number) => void;
+  cardMove: (info: {id: number, dx: number, dy: number}) => void;
   endCardMove: (id: number) => void;
   exhaustCard: (id: number) => void;
   selectCard: (id: number) => void;

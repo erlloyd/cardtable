@@ -1,7 +1,13 @@
 import {connect} from 'react-redux';
 // import Types from 'Types';
 import App from './App';
-import { selectCard } from './features/cards/cards.slice'
+import { 
+  selectCard,
+  exhaustCard,
+  startCardMove,
+  cardMove,
+  endCardMove,
+} from './features/cards/cards.slice'
 // import * as cardActions from './features/cards/actions';
 // import { shouldShowPreview } from './features/cards/selectors';
 // import { get3RandomPlayerCardDatas } from './features/cardsData/selectors';
@@ -26,13 +32,13 @@ const mapStateToProps = (state: RootState) => {
 const AppContainer = connect(
   mapStateToProps,
   {
-    cardMove: () => {},
-    endCardMove: () => {},
-    exhaustCard: () => {},
+    cardMove,
+    endCardMove,
+    exhaustCard,
     loadData: () => {},
     selectCard,
     selectMultipleCards: () => {},
-    startCardMove: () => {},
+    startCardMove,
     unselectAllCards: () => {},
     hoverCard: () => {},
     hoverLeaveCard: () => {},
