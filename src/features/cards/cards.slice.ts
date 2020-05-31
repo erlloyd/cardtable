@@ -78,6 +78,43 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<number>> = (sta
   state.ghostCards = [];
 }
 
+const selectMultipleCardsReducer: CaseReducer<ICardsState, PayloadAction<{ ids: number[]}>> = (state, action) => {
+  action.payload.ids
+  .map( id => state.cards.find(card => card.id === id))
+  .forEach( card => {
+    if (card) {
+      card.selected = true;
+    }
+  });
+}
+
+const unselectAllCardsReducer: CaseReducer<ICardsState> = (state) => {
+  state.cards.forEach( (card) => {
+    card.selected = false;
+  });
+}
+
+const hoverCardReducer: CaseReducer<ICardsState, PayloadAction<number>> = (state, action) => {
+  if (state.previewCard === null) {
+    state.previewCard = {
+      id: action.payload,
+    }
+  } else if ( action.payload !== state.previewCard.id) {
+    state.previewCard.id = action.payload;
+  }
+}
+
+const hoverLeaveCardReducer: CaseReducer<ICardsState> = (state) => {
+  if (state.previewCard !== null) {
+    state.previewCard = null;
+  }
+}
+
+// Selectors
+
+
+// slice
+
 const cardsSlice = createSlice({
   name: 'cards',
   initialState: initialState,
@@ -87,6 +124,10 @@ const cardsSlice = createSlice({
     startCardMove: startCardMoveReducer,
     cardMove: cardMoveReducer,
     endCardMove: endCardMoveReducer,
+    selectMultipleCards: selectMultipleCardsReducer,
+    unselectAllCards: unselectAllCardsReducer,
+    hoverCard: hoverCardReducer,
+    hoverLeaveCard: hoverLeaveCardReducer,
   },
 });
 
@@ -96,6 +137,10 @@ export const {
   startCardMove,
   cardMove,
   endCardMove,
+  selectMultipleCards,
+  unselectAllCards,
+  hoverCard,
+  hoverLeaveCard,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

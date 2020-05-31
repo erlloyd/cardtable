@@ -127,8 +127,8 @@ class Card extends Component<IProps, IState> {
             onTap={this.handleClick}
             onMouseDown={this.handleMouseDown}
             onTouchStart={this.handleMouseDown}
-            // onMouseOver={this.handleMouseOver}
-            // onMouseOut={this.handleMouseOut}
+            onMouseOver={this.handleMouseOver}
+            onMouseOut={this.handleMouseOut}
             />
         )}
       </Spring> : null

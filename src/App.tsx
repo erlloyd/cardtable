@@ -18,7 +18,7 @@ interface IProps {
   selectCard: (id: number) => void;
   startCardMove: (id: number) => void;
   unselectAllCards: () => void;
-  selectMultipleCards: (cardIds: number[]) => void;
+  selectMultipleCards: (cards: {ids: number[]}) => void;
   hoverCard: (id: number) => void;
   hoverLeaveCard: (id: number) => void;
   loadData: any;
@@ -229,7 +229,7 @@ class App extends Component<IProps, IState> {
           return currSelectedCards;
         },[]);
 
-      this.props.selectMultipleCards(selectedCards.map(card => card.id));
+      this.props.selectMultipleCards({ ids: selectedCards.map(card => card.id) });
     }
     
     this.setState({

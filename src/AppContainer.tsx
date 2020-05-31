@@ -7,6 +7,10 @@ import {
   startCardMove,
   cardMove,
   endCardMove,
+  selectMultipleCards,
+  unselectAllCards,
+  hoverCard,
+  hoverLeaveCard,
 } from './features/cards/cards.slice'
 // import * as cardActions from './features/cards/actions';
 // import { shouldShowPreview } from './features/cards/selectors';
@@ -14,14 +18,14 @@ import {
 // import * as cardThunks from './features/cardsData/thunks';
 import * as CoreSet from './external/ringsteki-json-data/packs/Core Set.json';
 
-// import { initialState as initialCardsState } from './features/cards/initialState';
 import { RootState } from './store/rootReducer';
+import { shouldShowPreview, getCards } from './features/cards/cards.selectors';
 
 const mapStateToProps = (state: RootState) => {
   return {
-    cards: state.cards,
+    cards: getCards(state),
     cardsData: CoreSet.cards.slice(0, 3), //get3RandomPlayerCardDatas(state),
-    showPreview: false //shouldShowPreview(state)
+    showPreview: shouldShowPreview(state)
   }
 }
 
@@ -37,21 +41,12 @@ const AppContainer = connect(
     exhaustCard,
     loadData: () => {},
     selectCard,
-    selectMultipleCards: () => {},
+    selectMultipleCards,
     startCardMove,
-    unselectAllCards: () => {},
-    hoverCard: () => {},
-    hoverLeaveCard: () => {},
-    // cardMove: cardActions.moveCard,
-    // endCardMove: cardActions.endCardMove,
-    // exhaustCard: cardActions.exhaustCard,
+    unselectAllCards,
+    hoverCard,
+    hoverLeaveCard,
     // loadData: cardThunks.loadAllCardDataFromJSON,
-    // selectCard: cardActions.selectCard,
-    // selectMultipleCards: cardActions.selectMultipleCards,
-    // startCardMove: cardActions.startCardMove,
-    // unselectAllCards: cardActions.unselectAllCards,
-    // hoverCard: cardActions.hoverCard,
-    // hoverLeaveCard: cardActions.hoverLeaveCard
   }
 )(App);
 
