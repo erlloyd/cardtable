@@ -111,7 +111,7 @@ class Card extends Component<IProps, IState> {
                 y: heightToUse / 2,
             }}
             stroke={this.props.selected ? 'blue' : ''}
-            strokeWidth= {this.props.selected ? 8 : 0}
+            strokeWidth= {this.props.selected ? 2 : 0}
             fillPatternImage={this.img}
             fillPatternScaleX={this.state.imageLoaded ? widthToUse / this.img.naturalWidth : widthToUse}
             fillPatternScaleY={this.state.imageLoaded ? heightToUse / this.img.naturalHeight : heightToUse}
