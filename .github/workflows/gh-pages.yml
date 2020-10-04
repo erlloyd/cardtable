@@ -20,7 +20,7 @@ jobs:
         run: yarn install
 
       - name: Move Card Images
-        run: mv 055c536f-adba-4bc2-acbf-9aefb9756046/Sets/dea583bf-554b-43c8-a6ed-a44782094ad1/Cards/* public/images/cards
+        run: sudo mv 055c536f-adba-4bc2-acbf-9aefb9756046/Sets/dea583bf-554b-43c8-a6ed-a44782094ad1/Cards/* public/images/cards
 
       - name: Build 🔧
         run: yarn build
