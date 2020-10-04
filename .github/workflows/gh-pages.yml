@@ -11,18 +11,10 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Get Card Images
-        uses: wei/wget@v1
-        with:
-          args: -O mci.zip http://download912.mediafire.com/stt72n94jhtg/qgvmjqu0gpq6g63/Marvel_Champions_image_pack.zip
-
-      - name: foo
-        run: cat mci.zip
-
       - name: Unzip Card Images
         uses: montudor/action-zip@v0.1.0
         with:
-          args: unzip -qq mci.zip
+          args: unzip -qq .imagepacks/mc/core.zip
 
       - name: Move Card Images
         run: |
