@@ -16,7 +16,8 @@ import {
 // import { shouldShowPreview } from './features/cards/selectors';
 // import { get3RandomPlayerCardDatas } from './features/cardsData/selectors';
 // import * as cardThunks from './features/cardsData/thunks';
-import * as CoreSet from './external/ringsteki-json-data/packs/Core Set.json';
+// import * as CoreSet from './external/ringsteki-json-data/packs/Core Set.json';
+import CoreSet from './external/marvelsdb-json-data/pack/core.json'
 
 import { RootState } from './store/rootReducer';
 import { shouldShowPreview, getCards } from './features/cards/cards.selectors';
@@ -24,7 +25,7 @@ import { shouldShowPreview, getCards } from './features/cards/cards.selectors';
 const mapStateToProps = (state: RootState) => {
   return {
     cards: getCards(state),
-    cardsData: CoreSet.cards.slice(0, 3), //get3RandomPlayerCardDatas(state),
+    cardsData: /* CoreSet.cards.slice(0, 3) */CoreSet.slice(0, 3), //get3RandomPlayerCardDatas(state),
     showPreview: shouldShowPreview(state)
   }
 }

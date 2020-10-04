@@ -5,7 +5,7 @@ import { Layer, Rect, Stage } from 'react-konva';
 import { cardConstants } from './constants/card-constants';
 import './App.css';
 import Card from './Card';
-import { CardData } from './external-api/beorn-json-data';
+import { CardData } from './external-api/marvel-card-data';
 import { ICard, ICardsState } from './features/cards/initialState';
 
 interface IProps {
@@ -81,7 +81,7 @@ class App extends Component<IProps, IState> {
             handleClick={this.props.selectCard}
             handleHover={this.props.hoverCard}
             handleHoverLeave={this.props.hoverLeaveCard}
-            imgUrl={this.props.cardsData.length > 0 ? this.props.cardsData[card.id].Front.ImagePath : ''}
+            imgUrl={this.props.cardsData.length > 0 ? process.env.PUBLIC_URL + '/images/cards/18ae183c-de26-4369-8a41-424d58f01631.jpg'/*this.props.cardsData[card.id].Front.ImagePath*/  : ''}
           />
       )}
     );
@@ -98,7 +98,7 @@ class App extends Component<IProps, IState> {
             fill={card.fill}
             selected={false}
             dragging={false}
-            imgUrl={this.props.cardsData.length > 0 ? this.props.cardsData[card.id].Front.ImagePath : ''}
+            imgUrl={this.props.cardsData.length > 0 ? process.env.PUBLIC_URL + '/images/cards/18ae183c-de26-4369-8a41-424d58f01631.jpg'/*this.props.cardsData[card.id].Front.ImagePath*/  : ''}
             isGhost={true}
           />
         );
@@ -124,7 +124,7 @@ class App extends Component<IProps, IState> {
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.props.exhaustCard}
             handleClick={this.props.selectCard}
-            imgUrl={this.props.cardsData.length > 0 ? this.props.cardsData[card.id].Front.ImagePath : ''}
+            imgUrl={this.props.cardsData.length > 0 ? process.env.PUBLIC_URL + '/images/cards/18ae183c-de26-4369-8a41-424d58f01631.jpg'/*this.props.cardsData[card.id].Front.ImagePath*/  : ''}
           />
       )}
     );
@@ -143,7 +143,7 @@ class App extends Component<IProps, IState> {
             fill={card.fill}
             selected={false}
             dragging={false}
-            imgUrl={this.props.cardsData.length > 0 ? this.props.cardsData[card.id].Front.ImagePath : ''}
+            imgUrl={this.props.cardsData.length > 0 ? process.env.PUBLIC_URL + '/images/cards/18ae183c-de26-4369-8a41-424d58f01631.jpg'/*this.props.cardsData[card.id].Front.ImagePath*/  : ''}
             height={cardConstants.CARD_PREVIEW_HEIGHT}
             width={cardConstants.CARD_PREVIEW_WIDTH}
           />
