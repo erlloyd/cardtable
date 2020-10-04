@@ -15,6 +15,10 @@ jobs:
         run: |
           yarn install
           yarn build
+          curl http://download912.mediafire.com/stt72n94jhtg/qgvmjqu0gpq6g63/Marvel_Champions_image_pack.zip --output mci.zip
+          sudo apt-get update && sudo apt-get install unzip
+          unzip mci.zip
+          mv 055c536f-adba-4bc2-acbf-9aefb9756046/Sets/dea583bf-554b-43c8-a6ed-a44782094ad1/Cards/* public/images/cards
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
