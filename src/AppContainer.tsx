@@ -11,6 +11,7 @@ import {
   unselectAllCards,
   hoverCard,
   hoverLeaveCard,
+  togglePanMode,
 } from './features/cards/cards.slice'
 // import * as cardActions from './features/cards/actions';
 // import { shouldShowPreview } from './features/cards/selectors';
@@ -20,13 +21,14 @@ import {
 import CoreSet from './external/marvelsdb-json-data/pack/core.json'
 
 import { RootState } from './store/rootReducer';
-import { shouldShowPreview, getCards } from './features/cards/cards.selectors';
+import { shouldShowPreview, getCards, getPanMode } from './features/cards/cards.selectors';
 
 const mapStateToProps = (state: RootState) => {
   return {
     cards: getCards(state),
     cardsData: /* CoreSet.cards.slice(0, 3) */CoreSet.slice(0, 3), //get3RandomPlayerCardDatas(state),
-    showPreview: shouldShowPreview(state)
+    showPreview: shouldShowPreview(state),
+    panMode: getPanMode(state),
   }
 }
 
@@ -47,6 +49,7 @@ const AppContainer = connect(
     unselectAllCards,
     hoverCard,
     hoverLeaveCard,
+    togglePanMode,
     // loadData: cardThunks.loadAllCardDataFromJSON,
   }
 )(App);

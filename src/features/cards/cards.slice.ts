@@ -110,6 +110,9 @@ const hoverLeaveCardReducer: CaseReducer<ICardsState> = (state) => {
   }
 }
 
+const togglePanModeReducer: CaseReducer<ICardsState> = (state) => {
+  state.panMode = !state.panMode;
+}
 // Selectors
 
 
@@ -128,6 +131,7 @@ const cardsSlice = createSlice({
     unselectAllCards: unselectAllCardsReducer,
     hoverCard: hoverCardReducer,
     hoverLeaveCard: hoverLeaveCardReducer,
+    togglePanMode: togglePanModeReducer,
   },
 });
 
@@ -141,6 +145,7 @@ export const {
   unselectAllCards,
   hoverCard,
   hoverLeaveCard,
+  togglePanMode,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

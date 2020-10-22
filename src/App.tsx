@@ -12,6 +12,7 @@ interface IProps {
   cards: ICardsState;
   cardsData: CardData[];
   showPreview: boolean;
+  panMode: boolean;
   cardMove: (info: {id: number, dx: number, dy: number}) => void;
   endCardMove: (id: number) => void;
   exhaustCard: (id: number) => void;
@@ -21,6 +22,7 @@ interface IProps {
   selectMultipleCards: (cards: {ids: number[]}) => void;
   hoverCard: (id: number) => void;
   hoverLeaveCard: (id: number) => void;
+  togglePanMode: () => void;
   loadData: any;
 }
 
@@ -151,39 +153,49 @@ class App extends Component<IProps, IState> {
     );
 
     return (
-      <Stage
-        width={window.innerWidth}
-        height={window.innerHeight}
-        onClick={this.props.unselectAllCards}
-        onTap={this.props.unselectAllCards}
-        onMouseDown={this.handleMouseDown}
-        onMouseUp={this.handleMouseUp}
-        onMouseMove={this.handleMouseMove}
-        onTouchMove={this.handleMouseMove}
-        // // tslint:disable-next-line:jsx-no-lambda no-console
-        // onDragStart={() => {console.log('STAGE onDragStart')}}
-        // // tslint:disable-next-line:jsx-no-lambda no-console
-        // onDragMove={() => {console.log('STAGE onDragMove')}}
-        // // tslint:disable-next-line:jsx-no-lambda no-console
-        // onDragEnd={() => {console.log('STAGE onDragEnd')}}
-        preventDefault={true}>
-
-        <Layer
+      <div tabIndex={1} onKeyPress={this.handleKeyPress}>
+        <Stage
+          width={window.innerWidth}
+          height={window.innerHeight}
+          onClick={this.props.unselectAllCards}
+          onTap={this.props.unselectAllCards}
+          onMouseDown={this.props.panMode ? () => {} : this.handleMouseDown}
+          onMouseUp={this.props.panMode ? () => {} : this.handleMouseUp}
+          onMouseMove={this.props.panMode ? () => {} : this.handleMouseMove}
+          onTouchMove={this.props.panMode ? () => {} : this.handleMouseMove}
+          draggable={this.props.panMode}
+          // // tslint:disable-next-line:jsx-no-lambda no-console
+          // onDragStart={() => {console.log('STAGE onDragStart')}}
+          // // tslint:disable-next-line:jsx-no-lambda no-console
+          // onDragMove={() => {console.log('STAGE onDragMove')}}
+          // // tslint:disable-next-line:jsx-no-lambda no-console
+          // onDragEnd={() => {console.log('STAGE onDragEnd')}}
           preventDefault={true}>
-          {staticCards.concat(ghostCards).concat(movingCards).concat(previewCards)}
-        </Layer>
-        <Layer>
-          <Rect
-            x={this.state.selectStartPos.x}
-            y={this.state.selectStartPos.y}
-            width={this.state.selectRect.width}
-            height={this.state.selectRect.height}
-            stroke="black"/>
-        </Layer>
-      </Stage>
+
+          <Layer
+            preventDefault={true}>
+            {staticCards.concat(ghostCards).concat(movingCards).concat(previewCards)}
+          </Layer>
+          <Layer>
+            <Rect
+              x={this.state.selectStartPos.x}
+              y={this.state.selectStartPos.y}
+              width={this.state.selectRect.width}
+              height={this.state.selectRect.height}
+              stroke="black"/>
+          </Layer>
+        </Stage>
+      </div>
     );
   }
 
+  private handleKeyPress = (event: any) => {
+    const code = event.which || event.keyCode;
+    if(code === 115) {
+      this.props.togglePanMode();
+    }
+  }
+ 
   private handleMouseDown = (event: any) => {
 
     this.setState({

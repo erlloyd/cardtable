@@ -16,6 +16,7 @@ export interface ICardsState {
   cards: ICard[];
   ghostCards: ICard[];
   previewCard: IPreviewCard | null;
+  panMode: boolean;
 }
 
 export const initialState: ICardsState = {
@@ -49,5 +50,6 @@ export const initialState: ICardsState = {
     },
   ],
   ghostCards: [],
-  previewCard: null
+  previewCard: null,
+  panMode: true,
 };
