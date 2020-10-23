@@ -197,7 +197,7 @@ class App extends Component<IProps, IState> {
   }
  
   private getRelativePositionFromTarget= (target: any) => {
-    const transform = target.getAbsoluteTransform();
+    const transform = target.getAbsoluteTransform().copy();
     transform.invert();
     let pos = target.getPointerPosition();
     return transform.point(pos);
