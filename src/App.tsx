@@ -196,12 +196,21 @@ class App extends Component<IProps, IState> {
     }
   }
  
+  private getRelativePositionFromTarget= (target: any) => {
+    const transform = target.getAbsoluteTransform();
+    transform.invert();
+    let pos = target.getPointerPosition();
+    return transform.point(pos);
+  }
+
   private handleMouseDown = (event: any) => {
+
+    const pos = this.getRelativePositionFromTarget(event.currentTarget);
 
     this.setState({
       selectStartPos: {
-        x: event.currentTarget.getPointerPosition().x,
-        y: event.currentTarget.getPointerPosition().y,
+        x: pos.x,
+        y: pos.y,
       },
       selecting: true,
     });
@@ -260,11 +269,12 @@ class App extends Component<IProps, IState> {
 
   private handleMouseMove = (event: any) => {
     if (this.state.selecting) {
+      const pos = this.getRelativePositionFromTarget(event.currentTarget);
       this.setState({
         drewASelectionRect: true,
         selectRect: {
-          height: event.currentTarget.getPointerPosition().y - this.state.selectStartPos.y,
-          width: event.currentTarget.getPointerPosition().x - this.state.selectStartPos.x,
+          height: pos.y - this.state.selectStartPos.y,
+          width: pos.x - this.state.selectStartPos.x,
         },
       })
     }
