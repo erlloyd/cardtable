@@ -2,11 +2,13 @@ import * as Intersects from 'intersects';
 import { Component } from 'react';
 import * as React from 'react';
 import { Layer, Rect, Stage } from 'react-konva';
+import Konva from 'konva';
 import { cardConstants } from './constants/card-constants';
 import './App.css';
 import Card from './Card';
 import { CardData } from './external-api/marvel-card-data';
 import { ICard, ICardsState } from './features/cards/initialState';
+import { Vector2d } from 'konva/types/types';
 
 interface IProps {
   cards: ICardsState;
@@ -39,6 +41,8 @@ interface IState {
   selecting: boolean;
 }
 class App extends Component<IProps, IState> {
+
+  public stage: Konva.Stage | null = null;
 
   constructor(props: IProps) {
     super(props)
@@ -135,12 +139,17 @@ class App extends Component<IProps, IState> {
     .filter(card => !this.state.selecting && this.props.showPreview && !!this.props.cards.previewCard && (card.id === this.props.cards.previewCard.id))
     .map(
       card => {
+        const rawPos: Vector2d = {
+          x: window.innerWidth - (cardConstants.CARD_PREVIEW_WIDTH / 2),
+          y: cardConstants.CARD_PREVIEW_HEIGHT / 2,
+        };
+        const previewPos = this.getRelativePositionFromTarget(this.stage, rawPos);
         return (
         <Card
             key={`preview${card.id}`}
             id={card.id}
-            x={window.innerWidth - (cardConstants.CARD_PREVIEW_WIDTH / 2)}
-            y={cardConstants.CARD_PREVIEW_HEIGHT / 2}
+            x={previewPos.x}
+            y={previewPos.y}
             exhausted={false}
             fill={card.fill}
             selected={false}
@@ -155,6 +164,7 @@ class App extends Component<IProps, IState> {
     return (
       <div tabIndex={1} onKeyPress={this.handleKeyPress}>
         <Stage
+          ref={(ref) => {this.stage = ref;}}
           width={window.innerWidth}
           height={window.innerHeight}
           onClick={this.props.unselectAllCards}
@@ -196,10 +206,10 @@ class App extends Component<IProps, IState> {
     }
   }
  
-  private getRelativePositionFromTarget= (target: any) => {
+  private getRelativePositionFromTarget= (target: any, posParam?: Vector2d) => {
     const transform = target.getAbsoluteTransform().copy();
     transform.invert();
-    let pos = target.getPointerPosition();
+    let pos = posParam || target.getPointerPosition();
     return transform.point(pos);
   }
 
