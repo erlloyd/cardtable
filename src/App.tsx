@@ -139,10 +139,8 @@ class App extends Component<IProps, IState> {
     .filter(card => !this.state.selecting && this.props.showPreview && !!this.props.cards.previewCard && (card.id === this.props.cards.previewCard.id))
     .map(
       card => {
-        const rawPos: Vector2d = {
-          x: window.innerWidth - (cardConstants.CARD_PREVIEW_WIDTH / 2),
-          y: cardConstants.CARD_PREVIEW_HEIGHT / 2,
-        };
+        
+        const rawPos = this.getRawPreviewCardPosition();
         const previewPos = this.getRelativePositionFromTarget(this.stage, rawPos);
         return (
         <Card
@@ -206,6 +204,19 @@ class App extends Component<IProps, IState> {
     }
   }
  
+  private getRawPreviewCardPosition = (): Vector2d => {
+    const pointerPos = this.stage?.getPointerPosition() ?? { x: 0, y: 0 };
+    const screenMidPointX = window.innerWidth / 2;
+    return pointerPos.x < screenMidPointX ? {
+      x: window.innerWidth - (cardConstants.CARD_PREVIEW_WIDTH / 2),
+      y: cardConstants.CARD_PREVIEW_HEIGHT / 2,
+    } : 
+    {
+      x: cardConstants.CARD_PREVIEW_WIDTH / 2,
+      y: cardConstants.CARD_PREVIEW_HEIGHT / 2,
+    };
+  }
+
   private getRelativePositionFromTarget= (target: any, posParam?: Vector2d) => {
     const transform = target.getAbsoluteTransform().copy();
     transform.invert();
