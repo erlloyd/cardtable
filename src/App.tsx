@@ -79,6 +79,7 @@ class App extends Component<IProps, IState> {
             exhausted={card.exhausted}
             fill={card.fill}
             selected={card.selected}
+            dropTarget={card.id === this.props.cards.dropTargetCard?.id}
             dragging={card.dragging}
             handleDragStart={this.props.startCardMove}
             handleDragMove={this.props.cardMove}

@@ -17,6 +17,7 @@ interface IProps {
   handleHoverLeave?: (id: number) => void,
   id: number,
   selected: boolean,
+  dropTarget?: boolean,
   x: number,
   y: number,
   width?: number,
@@ -110,12 +111,12 @@ class Card extends Component<IProps, IState> {
                 x: widthToUse / 2,
                 y: heightToUse / 2,
             }}
-            stroke={this.props.selected ? 'blue' : ''}
-            strokeWidth= {this.props.selected ? 2 : 0}
+            stroke={this.props.dropTarget ? 'blue' : ''}
+            strokeWidth= {this.props.dropTarget ? 2 : 0}
             fillPatternImage={this.img}
             fillPatternScaleX={this.state.imageLoaded ? widthToUse / this.img.naturalWidth : widthToUse}
             fillPatternScaleY={this.state.imageLoaded ? heightToUse / this.img.naturalHeight : heightToUse}
-            shadowBlur={this.props.dragging ? 10 : 0}
+            shadowBlur={this.props.dragging ? 10 : this.props.selected ? 5 : 0}
             opacity={this.props.isGhost ? 0.5 : 1}
             draggable={true}
             onDragStart={this.handleDragStart}

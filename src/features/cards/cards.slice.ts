@@ -1,6 +1,8 @@
 import { createSlice, PayloadAction, CaseReducer } from '@reduxjs/toolkit'
 import { initialState, ICardsState, ICard } from './initialState';
 
+const CARD_DROP_TARGET_DISTANCE = 30;
+
 // Helper methods
 const getCardWithId = (state: ICardsState, id: number ): ICard | undefined => {
   return state.cards.find( (card) => card.id === id);
@@ -13,6 +15,10 @@ const mutateCardWithId = (state: ICardsState, id: number, callback: (card: ICard
 
 const foreachSelectedCard = (state: ICardsState, callback: (card: ICard) => void ) => {
   state.cards.filter(card => card.selected).forEach(card => callback(card));
+}
+
+const foreachUnselectedCard = (state: ICardsState, callback: (card: ICard) => void ) => {
+  state.cards.filter(card => !card.selected).forEach(card => callback(card));
 }
 
 // Reducers
@@ -52,14 +58,37 @@ const startCardMoveReducer: CaseReducer<ICardsState, PayloadAction<number>> = (s
 const cardMoveReducer: CaseReducer<ICardsState, PayloadAction<{id: number, dx: number, dy: number}>> = (state, action) => {
   const movedCards: ICard[] = [];
   
+  let primaryCard: ICard;
+
   state.cards
   .filter((card) => card.id === action.payload.id || card.selected)
   .forEach( (card) => {
+    if(card.id === action.payload.id) {
+      primaryCard = card;
+    }
+
     card.x += action.payload.dx;
     card.y += action.payload.dy;
 
     movedCards.push(card);
   });
+
+  // go through and find if any unselected cards are potential drop targets
+  // If so, get the closest one
+  const possibleDropTargets: {distance: number, card: ICard}[] = [];
+  foreachUnselectedCard(state, card => {
+    const deltaX = card.x - primaryCard.x;
+    const deltaY = card.y - primaryCard.y;
+    const distance = Math.sqrt(deltaX*deltaX + deltaY*deltaY);
+    if(distance < CARD_DROP_TARGET_DISTANCE) {
+      possibleDropTargets.push({
+        distance,
+        card
+      });
+    }
+  });
+
+  state.dropTargetCard = possibleDropTargets.sort((c1, c2) => c1.distance - c2.distance)[0]?.card ?? null;
 
   // put the moved cards at the end. TODO: we could just store the move order or move time 
   // or something, and the array could be a selector
@@ -73,9 +102,15 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<number>> = (sta
   .filter((card) => card.id === action.payload || card.selected)
   .forEach((card) =>{
     card.dragging = false;
+
+    if (!!state.dropTargetCard) {
+      card.x = state.dropTargetCard.x;
+      card.y = state.dropTargetCard.y;
+    }
   });
 
   state.ghostCards = [];
+  state.dropTargetCard = null;
 }
 
 const selectMultipleCardsReducer: CaseReducer<ICardsState, PayloadAction<{ ids: number[]}>> = (state, action) => {
