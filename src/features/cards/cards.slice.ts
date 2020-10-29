@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction, CaseReducer } from '@reduxjs/toolkit'
-import { initialState, ICardsState, ICard } from './initialState';
+import { initialState, ICardsState, ICard, ICardDetails } from './initialState';
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 
@@ -98,16 +98,33 @@ const cardMoveReducer: CaseReducer<ICardsState, PayloadAction<{id: number, dx: n
 }
 
 const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<number>> = (state, action) => {
+  const dropTargetCards: ICardDetails[] = [];
   state.cards
   .filter((card) => card.id === action.payload || card.selected)
   .forEach((card) =>{
     card.dragging = false;
 
     if (!!state.dropTargetCard) {
-      card.x = state.dropTargetCard.x;
-      card.y = state.dropTargetCard.y;
+      // Add the card to the drop Target card stack
+      dropTargetCards.push({id: card.id});    
     }
   });
+
+  // Now, if there was a drop target card, remove all those cards from the state
+  if (!!state.dropTargetCard) {
+    state.cards = state.cards.filter((card) => !(card.id === action.payload || card.selected));
+    
+    const dropTargetCard = state.cards.find(card => card.id === state.dropTargetCard?.id);
+    if (!!dropTargetCard && dropTargetCards.length > 0) {
+      // So, technically what we want to do is put the current cardstack at the end. First
+      // we need to make the current stacks card technically the one we're dropping on top
+      const currentId = dropTargetCard.id;
+      dropTargetCard.id = dropTargetCards[0].id;
+      dropTargetCards[0].id = currentId;
+      dropTargetCard.cardStack = dropTargetCards.concat(dropTargetCard.cardStack);
+    }
+    
+  }
 
   state.ghostCards = [];
   state.dropTargetCard = null;

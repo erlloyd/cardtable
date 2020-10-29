@@ -6,6 +6,11 @@ export interface ICard {
   selected: boolean;
   x: number;
   y: number;
+  cardStack: ICardDetails[];
+}
+
+export interface ICardDetails {
+  id: number
 }
 
 export interface IPreviewCard {
@@ -29,7 +34,8 @@ export const initialState: ICardsState = {
       id: 0,
       selected: false,
       x: 200,
-      y: 200
+      y: 200,
+      cardStack: [],
     },
     {
       dragging: false,
@@ -38,7 +44,8 @@ export const initialState: ICardsState = {
       id: 1,
       selected: false,
       x: 400,
-      y: 400
+      y: 400,
+      cardStack: [],
     },
     {
       dragging: false,
@@ -47,7 +54,8 @@ export const initialState: ICardsState = {
       id: 2,
       selected: false,
       x: 200,
-      y: 600
+      y: 600,
+      cardStack: [],
     },
   ],
   ghostCards: [],
