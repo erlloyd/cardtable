@@ -81,7 +81,7 @@ class App extends Component<IProps, IState> {
             selected={card.selected}
             dropTarget={card.id === this.props.cards.dropTargetCard?.id}
             dragging={card.dragging}
-            handleDragStart={this.props.startCardMove}
+            handleDragStart={this.handleCardDragStart}
             handleDragMove={this.props.cardMove}
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.props.exhaustCard}
@@ -126,7 +126,7 @@ class App extends Component<IProps, IState> {
             fill={card.fill}
             selected={card.selected}
             dragging={card.dragging}
-            handleDragStart={this.props.startCardMove}
+            handleDragStart={this.handleCardDragStart}
             handleDragMove={this.props.cardMove}
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.props.exhaustCard}
@@ -166,8 +166,8 @@ class App extends Component<IProps, IState> {
           ref={(ref) => {this.stage = ref;}}
           width={window.innerWidth}
           height={window.innerHeight}
-          onClick={this.props.unselectAllCards}
-          onTap={this.props.unselectAllCards}
+          onClick={() => this.props.unselectAllCards()}
+          onTap={() => this.props.unselectAllCards()}
           onMouseDown={this.props.panMode ? () => {} : this.handleMouseDown}
           onMouseUp={this.props.panMode ? () => {} : this.handleMouseUp}
           onMouseMove={this.props.panMode ? () => {} : this.handleMouseMove}
@@ -196,6 +196,23 @@ class App extends Component<IProps, IState> {
         </Stage>
       </div>
     );
+  }
+
+  private handleCardDragStart = (cardId: number, event: MouseEvent) => {
+    // If multiple things are selected, you can't pull something off the top of a stack,
+    // so just do a normal drag
+    const multipleSelected = this.props.cards.cards.filter(c => c.selected).length > 0;
+
+    if(!multipleSelected) {
+      const draggingCard = this.props.cards.cards.find(c => c.id === cardId);
+      const hasStack = (draggingCard?.cardStack || []).length > 0;
+      if (hasStack) {
+        // Check if we're dragging in the upper right corner of the card
+        // TODO: Start here
+      }
+    }
+    
+    this.props.startCardMove(cardId);
   }
 
   private handleKeyPress = (event: any) => {

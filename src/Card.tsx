@@ -10,7 +10,7 @@ interface IProps {
   fill: string,
   handleClick?: (id: number) => void,
   handleDoubleClick?: (id: number) => void,
-  handleDragStart?: (id: number) => void,
+  handleDragStart?: (id: number, event: MouseEvent) => void,
   handleDragMove?: (info: {id: number, dx: number, dy: number}) => void,
   handleDragEnd?: (id: number) => void,
   handleHover?: (id: number) => void,
@@ -142,9 +142,9 @@ class Card extends Component<IProps, IState> {
     }
   }
 
-  private handleDragStart = (event: any) => {
+  private handleDragStart = (event: MouseEvent) => {
     if(this.props.handleDragStart) {
-      this.props.handleDragStart(this.props.id);
+      this.props.handleDragStart(this.props.id, event);
     }
   }
 
