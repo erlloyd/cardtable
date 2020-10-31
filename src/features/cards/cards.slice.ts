@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction, CaseReducer } from '@reduxjs/toolkit'
+import { getDistance } from '../../utilities/geo';
 import { initialState, ICardsState, ICard, ICardDetails } from './initialState';
 
 const CARD_DROP_TARGET_DISTANCE = 30;
@@ -36,23 +37,43 @@ const exhaustCardReducer: CaseReducer<ICardsState, PayloadAction<number>> = (sta
     })
 }
 
-const startCardMoveReducer: CaseReducer<ICardsState, PayloadAction<number>> = (state, action) => {
-  // first, if the card moving isn't currently selected, clear all selected cards
-  const cardToStartMoving = getCardWithId(state, action.payload);
+const startCardMoveReducer: CaseReducer<ICardsState, PayloadAction<{id: number, splitTopCard: boolean}>> = (state, action) => {
+  // first, if the card moving isn't currently selected, clear all selected cards  
+  const cardToStartMoving = getCardWithId(state, action.payload.id);
   if (cardToStartMoving && !cardToStartMoving.selected) {
     state.cards = state.cards.map(card => {
-      card.selected = card.id === action.payload;
+      card.selected = card.id === action.payload.id;
       return card;
     });
   }
 
-  // Now all selected cards should be put into ghost cards
+  // If we are splitting, make a new stack of cards
+  if (action.payload.splitTopCard) {    
+    const cardToMove = state.cards.find(c => c.id === action.payload.id);
+
+    if (!cardToMove) {
+      throw new Error('Expected to find card');
+    }
+
+    const newCard = Object.assign({}, cardToMove, {
+      id: cardToMove.cardStack[0].id,
+      selected: false,
+    });
+    cardToMove.cardStack = [];
+    newCard.cardStack.shift();
+    state.cards.push(newCard);
+  }
+
+
+  // Now all selected cards should be put into ghost cards, unless we are splitting the top card
   state.ghostCards = [];
 
-  foreachSelectedCard(state, card => { 
-    card.dragging = true;
-    state.ghostCards.push(Object.assign({}, card));
-  });
+  if (!action.payload.splitTopCard) {
+    foreachSelectedCard(state, card => { 
+      card.dragging = true;
+      state.ghostCards.push(Object.assign({}, card));
+    });
+  }
 }
 
 const cardMoveReducer: CaseReducer<ICardsState, PayloadAction<{id: number, dx: number, dy: number}>> = (state, action) => {
@@ -77,9 +98,7 @@ const cardMoveReducer: CaseReducer<ICardsState, PayloadAction<{id: number, dx: n
   // If so, get the closest one
   const possibleDropTargets: {distance: number, card: ICard}[] = [];
   foreachUnselectedCard(state, card => {
-    const deltaX = card.x - primaryCard.x;
-    const deltaY = card.y - primaryCard.y;
-    const distance = Math.sqrt(deltaX*deltaX + deltaY*deltaY);
+    const distance = getDistance(card, primaryCard);
     if(distance < CARD_DROP_TARGET_DISTANCE) {
       possibleDropTargets.push({
         distance,

@@ -9,6 +9,7 @@ import Card from './Card';
 import { CardData } from './external-api/marvel-card-data';
 import { ICard, ICardsState } from './features/cards/initialState';
 import { Vector2d } from 'konva/types/types';
+import { getDistance } from './utilities/geo';
 
 interface IProps {
   cards: ICardsState;
@@ -19,7 +20,7 @@ interface IProps {
   endCardMove: (id: number) => void;
   exhaustCard: (id: number) => void;
   selectCard: (id: number) => void;
-  startCardMove: (id: number) => void;
+  startCardMove: (payload: {id: number, splitTopCard: boolean}) => void;
   unselectAllCards: () => void;
   selectMultipleCards: (cards: {ids: number[]}) => void;
   hoverCard: (id: number) => void;
@@ -199,20 +200,25 @@ class App extends Component<IProps, IState> {
   }
 
   private handleCardDragStart = (cardId: number, event: MouseEvent) => {
+    let splitTopCard = false;
     // If multiple things are selected, you can't pull something off the top of a stack,
     // so just do a normal drag
-    const multipleSelected = this.props.cards.cards.filter(c => c.selected).length > 0;
+    const multipleSelected = this.props.cards.cards.filter(c => c.selected).length > 1;
 
     if(!multipleSelected) {
       const draggingCard = this.props.cards.cards.find(c => c.id === cardId);
       const hasStack = (draggingCard?.cardStack || []).length > 0;
-      if (hasStack) {
+      if (!!draggingCard && hasStack) {
         // Check if we're dragging in the upper right corner of the card
-        // TODO: Start here
+        const upperRightPoint = { x: draggingCard.x + cardConstants.CARD_WIDTH/2, y: draggingCard.y - cardConstants.CARD_HEIGHT/2 };
+        const distance = getDistance(upperRightPoint, this.getRelativePositionFromTarget(this.stage));
+        if (distance < 30) {
+          splitTopCard = true;
+        }
       }
     }
     
-    this.props.startCardMove(cardId);
+    this.props.startCardMove({id: cardId, splitTopCard});
   }
 
   private handleKeyPress = (event: any) => {
