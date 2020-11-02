@@ -12,6 +12,7 @@ import {
   hoverCard,
   hoverLeaveCard,
   togglePanMode,
+  flipCards
 } from './features/cards/cards.slice'
 // import * as cardActions from './features/cards/actions';
 // import { shouldShowPreview } from './features/cards/selectors';
@@ -50,6 +51,7 @@ const AppContainer = connect(
     hoverCard,
     hoverLeaveCard,
     togglePanMode,
+    flipCards,
     // loadData: cardThunks.loadAllCardDataFromJSON,
   }
 )(App);
