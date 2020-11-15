@@ -57,6 +57,7 @@ const startCardMoveReducer: CaseReducer<ICardsState, PayloadAction<{id: number, 
 
     const newCard = Object.assign({}, cardToMove, {
       id: cardToMove.cardStack[0].id,
+      jsonId: cardToMove.cardStack[0].jsonId,
       selected: false,
     });
     cardToMove.cardStack = [];
@@ -125,7 +126,7 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<number>> = (sta
 
     if (!!state.dropTargetCard) {
       // Add the card to the drop Target card stack
-      dropTargetCards.push({id: card.id});    
+      dropTargetCards.push({id: card.id, jsonId: card.jsonId});    
     }
   });
 
@@ -140,6 +141,10 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<number>> = (sta
       const currentId = dropTargetCard.id;
       dropTargetCard.id = dropTargetCards[0].id;
       dropTargetCards[0].id = currentId;
+
+      const currentJsonId = dropTargetCard.jsonId;
+      dropTargetCard.jsonId = dropTargetCards[0].jsonId;
+      dropTargetCards[0].jsonId = currentJsonId;
       dropTargetCard.cardStack = dropTargetCards.concat(dropTargetCard.cardStack);
     }
     

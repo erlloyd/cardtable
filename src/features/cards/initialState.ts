@@ -12,7 +12,8 @@ export interface ICard {
 }
 
 export interface ICardDetails {
-  id: number
+  id: number;
+  jsonId: string;
 }
 
 export interface IPreviewCard {
