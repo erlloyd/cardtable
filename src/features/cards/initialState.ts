@@ -4,6 +4,7 @@ export interface ICard {
   faceup: boolean;
   fill: string;
   id: number;
+  jsonId: string;
   selected: boolean;
   x: number;
   y: number;
@@ -34,6 +35,7 @@ export const initialState: ICardsState = {
       faceup: true,
       fill: 'red',
       id: 0,
+      jsonId: '01001a',
       selected: false,
       x: 200,
       y: 200,
@@ -45,6 +47,7 @@ export const initialState: ICardsState = {
       faceup: true,
       fill: 'red',
       id: 1,
+      jsonId: '01027',
       selected: false,
       x: 400,
       y: 400,
@@ -53,9 +56,10 @@ export const initialState: ICardsState = {
     {
       dragging: false,
       exhausted: false,
-      faceup: false,
+      faceup: true,
       fill: 'red',
       id: 2,
+      jsonId: '01036',
       selected: false,
       x: 200,
       y: 600,

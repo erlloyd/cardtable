@@ -6,14 +6,14 @@ import Konva from 'konva';
 import { cardConstants } from './constants/card-constants';
 import './App.css';
 import Card from './Card';
-import { CardData } from './external-api/marvel-card-data';
 import { ICard, ICardsState } from './features/cards/initialState';
 import { Vector2d } from 'konva/types/types';
 import { getDistance } from './utilities/geo';
+import { ICardData } from './features/cards-data/initialState';
 
 interface IProps {
   cards: ICardsState;
-  cardsData: CardData[];
+  cardsData: ICardData;
   showPreview: boolean;
   panMode: boolean;
   cardMove: (info: {id: number, dx: number, dy: number}) => void;
@@ -27,7 +27,7 @@ interface IProps {
   hoverLeaveCard: (id: number) => void;
   togglePanMode: () => void;
   flipCards: () => void;
-  loadData: any;
+  loadCardsData: () => void;
 }
 
 interface IState {
@@ -48,6 +48,7 @@ class App extends Component<IProps, IState> {
 
   constructor(props: IProps) {
     super(props)
+
     this.state = {
       drewASelectionRect: false,
       selectRect: {
@@ -63,7 +64,7 @@ class App extends Component<IProps, IState> {
   }
 
   public componentDidMount() {
-    // this.props.loadData();
+    this.props.loadCardsData();
   }
 
   public render() {
@@ -331,11 +332,19 @@ class App extends Component<IProps, IState> {
   }
 
   private getImgUrl = (card: ICard): string => {
-    if (this.props.cardsData.length === 0) return '';
+    if (Object.keys(this.props.cardsData).length === 0) return '';
     
-    if (!card.faceup) return process.env.PUBLIC_URL + '/images/standard/card_back.png';
+    const cardData = this.props.cardsData[card.jsonId];
 
-    return process.env.PUBLIC_URL + '/images/cards/18ae183c-de26-4369-8a41-424d58f01631.jpg'/*this.props.cardsData[card.id].Front.ImagePath*/;
+    if (!card.faceup && !!cardData.back_link) {
+      return process.env.PUBLIC_URL + '/images/cards/' + cardData.octgn_id + '.b.jpg';
+    }
+    else if (!card.faceup) {
+      return process.env.PUBLIC_URL + '/images/standard/card_back.png';
+    } 
+
+    return process.env.PUBLIC_URL + '/images/cards/' + cardData.octgn_id + '.jpg';
+    // return process.env.PUBLIC_URL + '/images/cards/18ae183c-de26-4369-8a41-424d58f01631.jpg'/*this.props.cardsData[card.id].Front.ImagePath*/;
   }
 }
 
