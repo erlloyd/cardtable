@@ -166,11 +166,14 @@ const unselectAllCardsReducer: CaseReducer<ICardsState> = (state) => {
 }
 
 const hoverCardReducer: CaseReducer<ICardsState, PayloadAction<number>> = (state, action) => {
+  const cardToPreview = state.cards.find(c => c.id === action.payload);
+  if (!cardToPreview?.faceup) return;
+
   if (state.previewCard === null) {
     state.previewCard = {
       id: action.payload,
     }
-  } else if ( action.payload !== state.previewCard.id) {
+  } else if ( action.payload !== state.previewCard.id) {  
     state.previewCard.id = action.payload;
   }
 }
@@ -183,6 +186,14 @@ const hoverLeaveCardReducer: CaseReducer<ICardsState> = (state) => {
 
 const togglePanModeReducer: CaseReducer<ICardsState> = (state) => {
   state.panMode = !state.panMode;
+}
+
+const flipCardsReducer: CaseReducer<ICardsState> = (state, action) => {
+  state.cards
+    .filter( card => card.selected)
+    .forEach( (card) => {
+      card.faceup = !card.faceup;
+    })
 }
 // Selectors
 
@@ -203,6 +214,7 @@ const cardsSlice = createSlice({
     hoverCard: hoverCardReducer,
     hoverLeaveCard: hoverLeaveCardReducer,
     togglePanMode: togglePanModeReducer,
+    flipCards: flipCardsReducer,
   },
 });
 
@@ -217,6 +229,7 @@ export const {
   hoverCard,
   hoverLeaveCard,
   togglePanMode,
+  flipCards,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

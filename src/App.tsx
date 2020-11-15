@@ -26,6 +26,7 @@ interface IProps {
   hoverCard: (id: number) => void;
   hoverLeaveCard: (id: number) => void;
   togglePanMode: () => void;
+  flipCards: () => void;
   loadData: any;
 }
 
@@ -89,7 +90,7 @@ class App extends Component<IProps, IState> {
             handleClick={this.props.selectCard}
             handleHover={this.props.hoverCard}
             handleHoverLeave={this.props.hoverLeaveCard}
-            imgUrl={this.props.cardsData.length > 0 ? process.env.PUBLIC_URL + '/images/cards/18ae183c-de26-4369-8a41-424d58f01631.jpg'/*this.props.cardsData[card.id].Front.ImagePath*/  : ''}
+            imgUrl={this.getImgUrl(card)}
           />
       )}
     );
@@ -106,7 +107,7 @@ class App extends Component<IProps, IState> {
             fill={card.fill}
             selected={false}
             dragging={false}
-            imgUrl={this.props.cardsData.length > 0 ? process.env.PUBLIC_URL + '/images/cards/18ae183c-de26-4369-8a41-424d58f01631.jpg'/*this.props.cardsData[card.id].Front.ImagePath*/  : ''}
+            imgUrl={this.getImgUrl(card)}
             isGhost={true}
           />
         );
@@ -132,7 +133,7 @@ class App extends Component<IProps, IState> {
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.props.exhaustCard}
             handleClick={this.props.selectCard}
-            imgUrl={this.props.cardsData.length > 0 ? process.env.PUBLIC_URL + '/images/cards/18ae183c-de26-4369-8a41-424d58f01631.jpg'/*this.props.cardsData[card.id].Front.ImagePath*/  : ''}
+            imgUrl={this.getImgUrl(card)}
           />
       )}
     );
@@ -154,7 +155,7 @@ class App extends Component<IProps, IState> {
             fill={card.fill}
             selected={false}
             dragging={false}
-            imgUrl={this.props.cardsData.length > 0 ? process.env.PUBLIC_URL + '/images/cards/18ae183c-de26-4369-8a41-424d58f01631.jpg'/*this.props.cardsData[card.id].Front.ImagePath*/  : ''}
+            imgUrl={this.getImgUrl(card)}
             height={cardConstants.CARD_PREVIEW_HEIGHT}
             width={cardConstants.CARD_PREVIEW_WIDTH}
           />
@@ -225,6 +226,9 @@ class App extends Component<IProps, IState> {
     const code = event.which || event.keyCode;
     if(code === 115) {
       this.props.togglePanMode();
+    }
+    else if (code === 102) {
+      this.props.flipCards();
     }
   }
  
@@ -324,6 +328,14 @@ class App extends Component<IProps, IState> {
       })
     }
     event.cancelBubble = true;
+  }
+
+  private getImgUrl = (card: ICard): string => {
+    if (this.props.cardsData.length === 0) return '';
+    
+    if (!card.faceup) return process.env.PUBLIC_URL + '/images/standard/card_back.png';
+
+    return process.env.PUBLIC_URL + '/images/cards/18ae183c-de26-4369-8a41-424d58f01631.jpg'/*this.props.cardsData[card.id].Front.ImagePath*/;
   }
 }
 

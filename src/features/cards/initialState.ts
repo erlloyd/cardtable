@@ -1,6 +1,7 @@
 export interface ICard {
   dragging: boolean;
   exhausted: boolean;
+  faceup: boolean;
   fill: string;
   id: number;
   selected: boolean;
@@ -30,6 +31,7 @@ export const initialState: ICardsState = {
     {
       dragging: false,
       exhausted: false,
+      faceup: true,
       fill: 'red',
       id: 0,
       selected: false,
@@ -40,6 +42,7 @@ export const initialState: ICardsState = {
     {
       dragging: false,
       exhausted: false,
+      faceup: true,
       fill: 'red',
       id: 1,
       selected: false,
@@ -50,6 +53,7 @@ export const initialState: ICardsState = {
     {
       dragging: false,
       exhausted: false,
+      faceup: false,
       fill: 'red',
       id: 2,
       selected: false,
