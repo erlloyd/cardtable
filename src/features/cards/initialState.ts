@@ -1,10 +1,10 @@
-export interface ICard {
+import { v4 as uuidv4 } from 'uuid';
+export interface ICardStack {
   dragging: boolean;
   exhausted: boolean;
   faceup: boolean;
   fill: string;
-  id: number;
-  jsonId: string;
+  id: string;
   selected: boolean;
   x: number;
   y: number;
@@ -12,19 +12,18 @@ export interface ICard {
 }
 
 export interface ICardDetails {
-  id: number;
   jsonId: string;
 }
 
 export interface IPreviewCard {
-  id: number;
+  id: string;
 }
 
 export interface ICardsState {
-  cards: ICard[];
-  ghostCards: ICard[];
+  cards: ICardStack[];
+  ghostCards: ICardStack[];
   previewCard: IPreviewCard | null;
-  dropTargetCard: ICard | null;
+  dropTargetCard: ICardStack | null;
   panMode: boolean;
 }
 
@@ -35,36 +34,33 @@ export const initialState: ICardsState = {
       exhausted: false,
       faceup: true,
       fill: 'red',
-      id: 0,
-      jsonId: '01001a',
+      id: uuidv4(),
       selected: false,
       x: 200,
       y: 200,
-      cardStack: [],
+      cardStack: [{jsonId: '01001a'}],
     },
     {
       dragging: false,
       exhausted: false,
       faceup: true,
       fill: 'red',
-      id: 1,
-      jsonId: '01027',
+      id: uuidv4(),
       selected: false,
       x: 400,
       y: 400,
-      cardStack: [],
+      cardStack: [{jsonId: '01027'}],
     },
     {
       dragging: false,
       exhausted: false,
       faceup: true,
       fill: 'red',
-      id: 2,
-      jsonId: '01036',
+      id: uuidv4(),
       selected: false,
       x: 200,
       y: 600,
-      cardStack: [],
+      cardStack: [{jsonId: '01036'}],
     },
   ],
   ghostCards: [],

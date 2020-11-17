@@ -1,35 +1,36 @@
 import { createSlice, PayloadAction, CaseReducer } from '@reduxjs/toolkit'
 import { getDistance } from '../../utilities/geo';
-import { initialState, ICardsState, ICard, ICardDetails } from './initialState';
+import { initialState, ICardsState, ICardStack, ICardDetails } from './initialState';
+import { v4 as uuidv4 } from 'uuid';
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 
 // Helper methods
-const getCardWithId = (state: ICardsState, id: number ): ICard | undefined => {
+const getCardStackWithId = (state: ICardsState, id: string ): ICardStack | undefined => {
   return state.cards.find( (card) => card.id === id);
 }
 
-const mutateCardWithId = (state: ICardsState, id: number, callback: (card: ICard) => void ) => {
-  const cardToUpdate = getCardWithId(state, id);
+const mutateCardWithId = (state: ICardsState, id: string, callback: (card: ICardStack) => void ) => {
+  const cardToUpdate = getCardStackWithId(state, id);
   if (cardToUpdate) { callback(cardToUpdate) }
 }
 
-const foreachSelectedCard = (state: ICardsState, callback: (card: ICard) => void ) => {
+const foreachSelectedCard = (state: ICardsState, callback: (card: ICardStack) => void ) => {
   state.cards.filter(card => card.selected).forEach(card => callback(card));
 }
 
-const foreachUnselectedCard = (state: ICardsState, callback: (card: ICard) => void ) => {
+const foreachUnselectedCard = (state: ICardsState, callback: (card: ICardStack) => void ) => {
   state.cards.filter(card => !card.selected).forEach(card => callback(card));
 }
 
 // Reducers
-const selectCardReducer: CaseReducer<ICardsState, PayloadAction<number>> = (state, action) => {
+const selectCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (state, action) => {
   mutateCardWithId(state, action.payload, (card) => {
     card.selected = !card.selected; 
   });
 }
 
-const exhaustCardReducer: CaseReducer<ICardsState, PayloadAction<number>> = (state, action) => {
+const exhaustCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (state, action) => {
   state.cards
     .filter( card => card.id === action.payload || card.selected)
     .forEach( (card) => {
@@ -37,9 +38,9 @@ const exhaustCardReducer: CaseReducer<ICardsState, PayloadAction<number>> = (sta
     })
 }
 
-const startCardMoveReducer: CaseReducer<ICardsState, PayloadAction<{id: number, splitTopCard: boolean}>> = (state, action) => {
+const startCardMoveReducer: CaseReducer<ICardsState, PayloadAction<{id: string, splitTopCard: boolean}>> = (state, action) => {
   // first, if the card moving isn't currently selected, clear all selected cards  
-  const cardToStartMoving = getCardWithId(state, action.payload.id);
+  const cardToStartMoving = getCardStackWithId(state, action.payload.id);
   if (cardToStartMoving && !cardToStartMoving.selected) {
     state.cards = state.cards.map(card => {
       card.selected = card.id === action.payload.id;
@@ -55,13 +56,15 @@ const startCardMoveReducer: CaseReducer<ICardsState, PayloadAction<{id: number, 
       throw new Error('Expected to find card');
     }
 
+    cardToMove.selected = false;
+
+    const topCard = cardToMove.cardStack.shift();
     const newCard = Object.assign({}, cardToMove, {
-      id: cardToMove.cardStack[0].id,
-      jsonId: cardToMove.cardStack[0].jsonId,
-      selected: false,
+      cardStack: [topCard]
     });
-    cardToMove.cardStack = [];
-    newCard.cardStack.shift();
+
+    cardToMove.id = uuidv4();
+
     state.cards.push(newCard);
   }
 
@@ -77,10 +80,10 @@ const startCardMoveReducer: CaseReducer<ICardsState, PayloadAction<{id: number, 
   }
 }
 
-const cardMoveReducer: CaseReducer<ICardsState, PayloadAction<{id: number, dx: number, dy: number}>> = (state, action) => {
-  const movedCards: ICard[] = [];
+const cardMoveReducer: CaseReducer<ICardsState, PayloadAction<{id: string, dx: number, dy: number}>> = (state, action) => {
+  const movedCards: ICardStack[] = [];
   
-  let primaryCard: ICard;
+  let primaryCard: ICardStack;
 
   state.cards
   .filter((card) => card.id === action.payload.id || card.selected)
@@ -97,7 +100,7 @@ const cardMoveReducer: CaseReducer<ICardsState, PayloadAction<{id: number, dx: n
 
   // go through and find if any unselected cards are potential drop targets
   // If so, get the closest one
-  const possibleDropTargets: {distance: number, card: ICard}[] = [];
+  const possibleDropTargets: {distance: number, card: ICardStack}[] = [];
   foreachUnselectedCard(state, card => {
     const distance = getDistance(card, primaryCard);
     if(distance < CARD_DROP_TARGET_DISTANCE) {
@@ -117,17 +120,16 @@ const cardMoveReducer: CaseReducer<ICardsState, PayloadAction<{id: number, dx: n
   });
 }
 
-const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<number>> = (state, action) => {
-  const dropTargetCards: ICardDetails[] = [];
+const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<string>> = (state, action) => {
+  let dropTargetCards: ICardDetails[] = [];
   state.cards
   .filter((card) => card.id === action.payload || card.selected)
   .forEach((card) =>{
     card.dragging = false;
 
     if (!!state.dropTargetCard) {
-      // Add the card to the drop Target card stack
-      dropTargetCards.push({id: card.id, jsonId: card.jsonId});
-      card.cardStack.forEach(card => dropTargetCards.push(card));
+      // Add the cards to the drop Target card stack
+      dropTargetCards = dropTargetCards.concat(card.cardStack);
     }
   });
 
@@ -137,22 +139,25 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<number>> = (sta
     
     const dropTargetCard = state.cards.find(card => card.id === state.dropTargetCard?.id);
     if (!!dropTargetCard && dropTargetCards.length > 0) {
-      // So, technically what we want to do is put the current cardstack at the end. First
-      // we need to make the current stacks card technically the one we're dropping on top
-      const newCardDetails: ICardDetails = {id: -1, jsonId: ''};
-      const currentId = dropTargetCard.id;
-      dropTargetCard.id = dropTargetCards[0].id;
-      newCardDetails.id = currentId;
-
-      const currentJsonId = dropTargetCard.jsonId;
-      dropTargetCard.jsonId = dropTargetCards[0].jsonId;
-      newCardDetails.jsonId = currentJsonId;
-
-      // put the current card we're dropping on at the back of the current stack
-      dropTargetCards.shift();
-      dropTargetCards.push(newCardDetails);
 
       dropTargetCard.cardStack = dropTargetCards.concat(dropTargetCard.cardStack);
+
+      // So, technically what we want to do is put the current cardstack at the end. First
+      // we need to make the current stacks card technically the one we're dropping on top
+      // const newCardDetails: ICardDetails = {id: -1, jsonId: ''};
+      // const currentId = dropTargetCard.id;
+      // dropTargetCard.id = dropTargetCards[0].id;
+      // newCardDetails.id = currentId;
+
+      // const currentJsonId = dropTargetCard.jsonId;
+      // dropTargetCard.jsonId = dropTargetCards[0].jsonId;
+      // newCardDetails.jsonId = currentJsonId;
+
+      // // put the current card we're dropping on at the back of the current stack
+      // dropTargetCards.shift();
+      // dropTargetCards.push(newCardDetails);
+
+      // dropTargetCard.cardStack = dropTargetCards.concat(dropTargetCard.cardStack);
     }
     
   }
@@ -161,7 +166,7 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<number>> = (sta
   state.dropTargetCard = null;
 }
 
-const selectMultipleCardsReducer: CaseReducer<ICardsState, PayloadAction<{ ids: number[]}>> = (state, action) => {
+const selectMultipleCardsReducer: CaseReducer<ICardsState, PayloadAction<{ ids: string[]}>> = (state, action) => {
   action.payload.ids
   .map( id => state.cards.find(card => card.id === id))
   .forEach( card => {
@@ -177,7 +182,7 @@ const unselectAllCardsReducer: CaseReducer<ICardsState> = (state) => {
   });
 }
 
-const hoverCardReducer: CaseReducer<ICardsState, PayloadAction<number>> = (state, action) => {
+const hoverCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (state, action) => {
   const cardToPreview = state.cards.find(c => c.id === action.payload);
   if (!cardToPreview?.faceup) return;
 

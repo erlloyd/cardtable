@@ -6,7 +6,7 @@ import Konva from 'konva';
 import { cardConstants } from './constants/card-constants';
 import './App.css';
 import Card from './Card';
-import { ICard, ICardsState } from './features/cards/initialState';
+import { ICardStack, ICardsState } from './features/cards/initialState';
 import { Vector2d } from 'konva/types/types';
 import { getDistance } from './utilities/geo';
 import { ICardData } from './features/cards-data/initialState';
@@ -16,15 +16,15 @@ interface IProps {
   cardsData: ICardData;
   showPreview: boolean;
   panMode: boolean;
-  cardMove: (info: {id: number, dx: number, dy: number}) => void;
-  endCardMove: (id: number) => void;
-  exhaustCard: (id: number) => void;
-  selectCard: (id: number) => void;
-  startCardMove: (payload: {id: number, splitTopCard: boolean}) => void;
+  cardMove: (info: {id: string, dx: number, dy: number}) => void;
+  endCardMove: (id: string) => void;
+  exhaustCard: (id: string) => void;
+  selectCard: (id: string) => void;
+  startCardMove: (payload: {id: string, splitTopCard: boolean}) => void;
   unselectAllCards: () => void;
-  selectMultipleCards: (cards: {ids: number[]}) => void;
-  hoverCard: (id: number) => void;
-  hoverLeaveCard: (id: number) => void;
+  selectMultipleCards: (cards: {ids: string[]}) => void;
+  hoverCard: (id: string) => void;
+  hoverLeaveCard: (id: string) => void;
   togglePanMode: () => void;
   flipCards: () => void;
   loadCardsData: () => void;
@@ -201,7 +201,7 @@ class App extends Component<IProps, IState> {
     );
   }
 
-  private handleCardDragStart = (cardId: number, event: MouseEvent) => {
+  private handleCardDragStart = (cardId: string, event: MouseEvent) => {
     let splitTopCard = false;
     // If multiple things are selected, you can't pull something off the top of a stack,
     // so just do a normal drag
@@ -209,7 +209,7 @@ class App extends Component<IProps, IState> {
 
     if(!multipleSelected) {
       const draggingCard = this.props.cards.cards.find(c => c.id === cardId);
-      const hasStack = (draggingCard?.cardStack || []).length > 0;
+      const hasStack = (draggingCard?.cardStack || []).length > 1;
       if (!!draggingCard && hasStack) {
         // Check if we're dragging in the upper right corner of the card
         const upperRightPoint = { x: draggingCard.x + cardConstants.CARD_WIDTH/2, y: draggingCard.y - cardConstants.CARD_HEIGHT/2 };
@@ -281,7 +281,7 @@ class App extends Component<IProps, IState> {
     // if we were selecting, check for intersection
     if (this.state.drewASelectionRect) {
       const selectRect = this.getSelectionRectInfo();
-      const selectedCards: any[] = this.props.cards.cards.reduce<ICard[]>( 
+      const selectedCards: any[] = this.props.cards.cards.reduce<ICardStack[]>( 
         (currSelectedCards, card) =>{
           const intersects = Intersects.boxBox(
             selectRect.x,
@@ -331,10 +331,10 @@ class App extends Component<IProps, IState> {
     event.cancelBubble = true;
   }
 
-  private getImgUrl = (card: ICard): string => {
+  private getImgUrl = (card: ICardStack): string => {
     if (Object.keys(this.props.cardsData).length === 0) return '';
     
-    const cardData = this.props.cardsData[card.jsonId];
+    const cardData = this.props.cardsData[card.cardStack[0].jsonId];
 
     if (!card.faceup && !!cardData.back_link) {
       return process.env.PUBLIC_URL + '/images/cards/' + cardData.octgn_id + '.b.jpg';
