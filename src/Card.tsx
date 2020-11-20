@@ -1,8 +1,11 @@
 // tslint:disable:no-console
+import { KonvaEventObject } from 'konva/types/Node';
 import * as React from 'react';
 import { Component } from 'react';
 import { animated, Spring } from 'react-spring/renderprops-konva';
 import { cardConstants } from './constants/card-constants';
+// import Portal from './Portal';
+// import ContextMenu from './ContextMenu';
 
 interface IProps {
   dragging: boolean,
@@ -24,6 +27,8 @@ interface IProps {
   height?: number,
   imgUrl: string,
   isGhost?: boolean,
+  numCardsInStack?: number;
+  handleContextMenu?: (id: string, event: KonvaEventObject<PointerEvent>) => void,
 }
 
 interface IState {
@@ -89,51 +94,79 @@ class Card extends Component<IProps, IState> {
   }
 
   public render() {
+    return (
+      this.state.imageLoaded ?
+      this.renderCard()
+      : null
+    );
+  }
+
+  private renderContext() {
+    // return this.state.showContextMenu ? (
+    //   <Portal key={`${this.props.id}-context`}>
+    //     <div>HI THERE</div>
+    //   </Portal>
+    // ) : null;
+  }
+
+  private renderCard() {
     const heightToUse = this.props.height || cardConstants.CARD_HEIGHT;
     const widthToUse = this.props.width || cardConstants.CARD_WIDTH;
 
-    return (
-      this.state.imageLoaded ?
-      <Spring
-        native={true}
-        to={{
-            rotation: this.props.exhausted ? 90 : 0
-        }}>
-        {(animatedProps: any) => (
-            <animated.Rect
-            {...animatedProps}
-            cornerRadius={9}
-            x={this.props.x}
-            y={this.props.y}
-            width={widthToUse}
-            height={heightToUse}
-            offset={{
-                x: widthToUse / 2,
-                y: heightToUse / 2,
-            }}
-            stroke={this.props.dropTarget ? 'blue' : ''}
-            strokeWidth= {this.props.dropTarget ? 2 : 0}
-            fillPatternImage={this.img}
-            fillPatternScaleX={this.state.imageLoaded ? widthToUse / this.img.naturalWidth : widthToUse}
-            fillPatternScaleY={this.state.imageLoaded ? heightToUse / this.img.naturalHeight : heightToUse}
-            shadowBlur={this.props.dragging ? 10 : this.props.selected ? 5 : 0}
-            opacity={this.props.isGhost ? 0.5 : 1}
-            draggable={true}
-            onDragStart={this.handleDragStart}
-            onDragMove={this.handleDragMove}
-            onDragEnd={this.handleDragEnd}
-            onDblClick={this.handleDoubleClick}
-            onDblTap={this.handleDoubleClick}
-            onClick={this.handleClick}
-            onTap={this.handleClick}
-            onMouseDown={this.handleMouseDown}
-            onTouchStart={this.handleMouseDown}
-            onMouseOver={this.handleMouseOver}
-            onMouseOut={this.handleMouseOut}
-            />
-        )}
-      </Spring> : null
-    );
+    return <Spring
+    key={`${this.props.id}-card`}
+    native={true}
+    to={{
+        rotation: this.props.exhausted ? 90 : 0
+    }}>
+    {(animatedProps: any) => (
+        <animated.Rect
+        {...animatedProps}
+        cornerRadius={9}
+        x={this.props.x}
+        y={this.props.y}
+        width={widthToUse}
+        height={heightToUse}
+        offset={{
+            x: widthToUse / 2,
+            y: heightToUse / 2,
+        }}
+        stroke={this.props.dropTarget ? 'blue' : ''}
+        strokeWidth= {this.props.dropTarget ? 2 : 0}
+        fillPatternImage={this.img}
+        fillPatternScaleX={this.state.imageLoaded ? widthToUse / this.img.naturalWidth : widthToUse}
+        fillPatternScaleY={this.state.imageLoaded ? heightToUse / this.img.naturalHeight : heightToUse}
+        shadowBlur={this.props.dragging ? 10 : this.props.selected ? 5 : 0}
+        opacity={this.props.isGhost ? 0.5 : 1}
+        draggable={true}
+        onDragStart={this.handleDragStart}
+        onDragMove={this.handleDragMove}
+        onDragEnd={this.handleDragEnd}
+        onDblClick={this.handleDoubleClick}
+        onDblTap={this.handleDoubleClick}
+        onClick={this.handleClick}
+        onTap={this.handleClick}
+        onMouseDown={this.handleMouseDown}
+        onTouchStart={this.handleMouseDown}
+        onMouseOver={this.handleMouseOver}
+        onMouseOut={this.handleMouseOut}
+        onContextMenu={this.handleContextMenu}
+        />
+    )}</Spring>
+  }
+
+  private handleContextMenu = (event: KonvaEventObject<PointerEvent>): void => {
+    if (!!this.props.handleContextMenu) {
+      this.props.handleContextMenu(this.props.id, event);
+    }
+    // console.log('Context Menu in Card!');
+    // event.evt.preventDefault();
+    // event.cancelBubble = true;
+    // if (!!this.props.numCardsInStack && this.props.numCardsInStack > 1) {
+    //   console.log('Can shuffle!');
+    // } else {
+    //   console.log('Can\'t shuffle!');
+    // }
   }
 
   private handleDoubleClick = () => {

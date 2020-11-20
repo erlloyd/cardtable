@@ -10,6 +10,7 @@ import { ICardStack, ICardsState } from './features/cards/initialState';
 import { Vector2d } from 'konva/types/types';
 import { getDistance } from './utilities/geo';
 import { ICardData } from './features/cards-data/initialState';
+import { KonvaEventObject } from 'konva/types/Node';
 
 interface IProps {
   cards: ICardsState;
@@ -41,6 +42,11 @@ interface IState {
     y: number;
   },
   selecting: boolean;
+  showContextMenu: boolean;
+  contextMenuPosition: {
+    x: number;
+    y: number;
+  } | null;
 }
 class App extends Component<IProps, IState> {
 
@@ -60,6 +66,8 @@ class App extends Component<IProps, IState> {
         y: 0,
       },
       selecting: false,
+      showContextMenu: false,
+      contextMenuPosition: null,
     }
   }
 
@@ -91,7 +99,9 @@ class App extends Component<IProps, IState> {
             handleClick={this.props.selectCard}
             handleHover={this.props.hoverCard}
             handleHoverLeave={this.props.hoverLeaveCard}
+            handleContextMenu={this.handleCardContextMenu}
             imgUrl={this.getImgUrl(card)}
+            numCardsInStack={card.cardStack.length}
           />
       )}
     );
@@ -175,6 +185,7 @@ class App extends Component<IProps, IState> {
           onMouseUp={this.props.panMode ? () => {} : this.handleMouseUp}
           onMouseMove={this.props.panMode ? () => {} : this.handleMouseMove}
           onTouchMove={this.props.panMode ? () => {} : this.handleMouseMove}
+          onContextMenu={this.handleContextMenu}
           draggable={this.props.panMode}
           // // tslint:disable-next-line:jsx-no-lambda no-console
           // onDragStart={() => {console.log('STAGE onDragStart')}}
@@ -199,6 +210,19 @@ class App extends Component<IProps, IState> {
         </Stage>
       </div>
     );
+  }
+
+  private handleCardContextMenu = (cardId: string, event: KonvaEventObject<PointerEvent>) => {
+    event.evt.preventDefault();
+    event.cancelBubble = true;
+
+    const card = this.props.cards.cards.find(c => c.id === cardId);
+    const numCardsInStack = card?.cardStack?.length || 0;
+    if (numCardsInStack > 1) {
+      console.log('Can shuffle');
+    } else {
+      console.log('Cannot shuffle');
+    }
   }
 
   private handleCardDragStart = (cardId: string, event: MouseEvent) => {
@@ -331,6 +355,10 @@ class App extends Component<IProps, IState> {
     event.cancelBubble = true;
   }
 
+  private handleContextMenu = (event: KonvaEventObject<PointerEvent>): void => {
+    console.log('Context Menu in App!');
+  }
+
   private getImgUrl = (card: ICardStack): string => {
     if (Object.keys(this.props.cardsData).length === 0) return '';
     
@@ -344,7 +372,6 @@ class App extends Component<IProps, IState> {
     } 
 
     return process.env.PUBLIC_URL + '/images/cards/' + cardData.octgn_id + '.jpg';
-    // return process.env.PUBLIC_URL + '/images/cards/18ae183c-de26-4369-8a41-424d58f01631.jpg'/*this.props.cardsData[card.id].Front.ImagePath*/;
   }
 }
 

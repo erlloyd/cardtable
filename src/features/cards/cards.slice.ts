@@ -140,24 +140,8 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<string>> = (sta
     const dropTargetCard = state.cards.find(card => card.id === state.dropTargetCard?.id);
     if (!!dropTargetCard && dropTargetCards.length > 0) {
 
+      // add the cards we've collected to the top of the stack
       dropTargetCard.cardStack = dropTargetCards.concat(dropTargetCard.cardStack);
-
-      // So, technically what we want to do is put the current cardstack at the end. First
-      // we need to make the current stacks card technically the one we're dropping on top
-      // const newCardDetails: ICardDetails = {id: -1, jsonId: ''};
-      // const currentId = dropTargetCard.id;
-      // dropTargetCard.id = dropTargetCards[0].id;
-      // newCardDetails.id = currentId;
-
-      // const currentJsonId = dropTargetCard.jsonId;
-      // dropTargetCard.jsonId = dropTargetCards[0].jsonId;
-      // newCardDetails.jsonId = currentJsonId;
-
-      // // put the current card we're dropping on at the back of the current stack
-      // dropTargetCards.shift();
-      // dropTargetCards.push(newCardDetails);
-
-      // dropTargetCard.cardStack = dropTargetCards.concat(dropTargetCard.cardStack);
     }
     
   }
