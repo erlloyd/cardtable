@@ -43,10 +43,8 @@ interface IState {
   },
   selecting: boolean;
   showContextMenu: boolean;
-  contextMenuPosition: {
-    x: number;
-    y: number;
-  } | null;
+  contextMenuPosition: Vector2d | null;
+  contextMenuItems: string[];
 }
 class App extends Component<IProps, IState> {
 
@@ -68,6 +66,7 @@ class App extends Component<IProps, IState> {
       selecting: false,
       showContextMenu: false,
       contextMenuPosition: null,
+      contextMenuItems: [],
     }
   }
 
@@ -175,6 +174,7 @@ class App extends Component<IProps, IState> {
 
     return (
       <div tabIndex={1} onKeyPress={this.handleKeyPress}>
+        {this.renderContextMenu()}
         <Stage
           ref={(ref) => {this.stage = ref;}}
           width={window.innerWidth}
@@ -212,17 +212,47 @@ class App extends Component<IProps, IState> {
     );
   }
 
+  private renderContextMenu = () => {
+    if (!this.state.showContextMenu) return null;
+
+    const containerRect = this.stage?.container().getBoundingClientRect();
+    const pointerPosition = this.state.contextMenuPosition;
+    if (!containerRect || !pointerPosition) {
+      throw new Error('Problem computing context menu position');
+    }
+    
+  const menuItems = this.state.contextMenuItems.map(i => (<div>{i}</div>))
+
+    const menuStyle: React.CSSProperties = {
+      top: `${containerRect.top + pointerPosition.y + 8}px`,
+      left: `${containerRect.left + pointerPosition.x + 8}px`
+    }
+    return this.state.showContextMenu ? (<div className='context-menu' style={menuStyle}>
+      {menuItems}
+    </div>) : null;
+  }
+
   private handleCardContextMenu = (cardId: string, event: KonvaEventObject<PointerEvent>) => {
     event.evt.preventDefault();
     event.cancelBubble = true;
 
     const card = this.props.cards.cards.find(c => c.id === cardId);
     const numCardsInStack = card?.cardStack?.length || 0;
+
+    const menuItems = ['Flip'];
+
     if (numCardsInStack > 1) {
       console.log('Can shuffle');
+      menuItems.push('Shuffle');
     } else {
       console.log('Cannot shuffle');
     }
+
+    this.setState({
+      showContextMenu: true,
+      contextMenuPosition: this.stage?.getPointerPosition() ?? null,
+      contextMenuItems: menuItems,
+    })
   }
 
   private handleCardDragStart = (cardId: string, event: MouseEvent) => {
