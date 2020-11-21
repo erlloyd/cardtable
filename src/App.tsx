@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Layer, Rect, Stage } from 'react-konva';
 import Konva from 'konva';
 import { cardConstants } from './constants/card-constants';
-import './App.css';
+import './App.scss';
 import Card from './Card';
 import { ICardStack, ICardsState } from './features/cards/initialState';
 import { Vector2d } from 'konva/types/types';
@@ -221,15 +221,23 @@ class App extends Component<IProps, IState> {
       throw new Error('Problem computing context menu position');
     }
     
-  const menuItems = this.state.contextMenuItems.map(i => (<div>{i}</div>))
+  const menuItems = this.state.contextMenuItems.map((i, index) => (<div key={`context-menu-item-${index}`} className='context-menu-item'>{i}</div>))
 
     const menuStyle: React.CSSProperties = {
       top: `${containerRect.top + pointerPosition.y + 8}px`,
       left: `${containerRect.left + pointerPosition.x + 8}px`
     }
-    return this.state.showContextMenu ? (<div className='context-menu' style={menuStyle}>
+    return this.state.showContextMenu ? (<div id='context-menu-layer' onClick={this.clearContextMenu}> <div className='context-menu' style={menuStyle}>
       {menuItems}
-    </div>) : null;
+    </div></div>) : null;
+  }
+
+  private clearContextMenu = () => {
+    this.setState({
+      showContextMenu: false,
+      contextMenuPosition: null,
+      contextMenuItems: [],
+    });
   }
 
   private handleCardContextMenu = (cardId: string, event: KonvaEventObject<PointerEvent>) => {
