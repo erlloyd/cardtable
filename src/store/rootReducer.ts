@@ -1,6 +1,6 @@
-import {combineReducers} from 'redux';
-import cards from '../features/cards/cards.slice';
-import cardsData from '../features/cards-data/cards-data.slice'
+import { combineReducers } from "redux";
+import cards from "../features/cards/cards.slice";
+import cardsData from "../features/cards-data/cards-data.slice";
 
 const rootReducer = combineReducers({
   cards,

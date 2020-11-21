@@ -25,4 +25,4 @@ export interface CardData {
   has_errata: boolean;
   url: string;
   imagesrc: string;
-};
+}

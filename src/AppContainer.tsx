@@ -1,7 +1,7 @@
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
 // import Types from 'Types';
-import App from './App';
-import { 
+import App from "./App";
+import {
   selectCard,
   exhaustCard,
   startCardMove,
@@ -12,11 +12,9 @@ import {
   hoverCard,
   hoverLeaveCard,
   togglePanMode,
-  flipCards
-} from './features/cards/cards.slice'
-import { 
-  loadCardsData
-} from './features/cards-data/cards-data.slice'
+  flipCards,
+} from "./features/cards/cards.slice";
+import { loadCardsData } from "./features/cards-data/cards-data.slice";
 // import * as cardActions from './features/cards/actions';
 // import { shouldShowPreview } from './features/cards/selectors';
 // import { get3RandomPlayerCardDatas } from './features/cardsData/selectors';
@@ -24,9 +22,13 @@ import {
 // import * as CoreSet from './external/ringsteki-json-data/packs/Core Set.json';
 // import CoreSet from './external/marvelsdb-json-data/pack/core.json'
 
-import { RootState } from './store/rootReducer';
-import { shouldShowPreview, getCards, getPanMode } from './features/cards/cards.selectors';
-import { getCardsDataEntities } from './features/cards-data/cards-data.selectors';
+import { RootState } from "./store/rootReducer";
+import {
+  shouldShowPreview,
+  getCards,
+  getPanMode,
+} from "./features/cards/cards.selectors";
+import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -34,25 +36,22 @@ const mapStateToProps = (state: RootState) => {
     cardsData: getCardsDataEntities(state),
     showPreview: shouldShowPreview(state),
     panMode: getPanMode(state),
-  }
-}
+  };
+};
 
-const AppContainer = connect(
-  mapStateToProps,
-  {
-    cardMove,
-    endCardMove,
-    exhaustCard,
-    loadCardsData,
-    selectCard,
-    selectMultipleCards,
-    startCardMove,
-    unselectAllCards,
-    hoverCard,
-    hoverLeaveCard,
-    togglePanMode,
-    flipCards,
-  }
-)(App);
+const AppContainer = connect(mapStateToProps, {
+  cardMove,
+  endCardMove,
+  exhaustCard,
+  loadCardsData,
+  selectCard,
+  selectMultipleCards,
+  startCardMove,
+  unselectAllCards,
+  hoverCard,
+  hoverLeaveCard,
+  togglePanMode,
+  flipCards,
+})(App);
 
-export default AppContainer
+export default AppContainer;

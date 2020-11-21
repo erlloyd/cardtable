@@ -1,15 +1,14 @@
-import * as React from 'react';
-import { Component } from 'react';
+import * as React from "react";
+import { Component } from "react";
 
 interface IProps {
-    test?: string;
+  test?: string;
 }
 
 class ContextMenu extends Component<IProps> {
-
-    render() {
-        return (<div>I'M A CONTEXT MENU</div>)        
-    }
+  render() {
+    return <div>I'M A CONTEXT MENU</div>;
+  }
 }
 
 export default ContextMenu;

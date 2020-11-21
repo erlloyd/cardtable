@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 export interface ICardStack {
   dragging: boolean;
   exhausted: boolean;
@@ -33,34 +33,34 @@ export const initialState: ICardsState = {
       dragging: false,
       exhausted: false,
       faceup: true,
-      fill: 'red',
+      fill: "red",
       id: uuidv4(),
       selected: false,
       x: 200,
       y: 200,
-      cardStack: [{jsonId: '01001a'}],
+      cardStack: [{ jsonId: "01001a" }],
     },
     {
       dragging: false,
       exhausted: false,
       faceup: true,
-      fill: 'red',
+      fill: "red",
       id: uuidv4(),
       selected: false,
       x: 400,
       y: 400,
-      cardStack: [{jsonId: '01027'}],
+      cardStack: [{ jsonId: "01027" }],
     },
     {
       dragging: false,
       exhausted: false,
       faceup: true,
-      fill: 'red',
+      fill: "red",
       id: uuidv4(),
       selected: false,
       x: 200,
       y: 600,
-      cardStack: [{jsonId: '01036'}],
+      cardStack: [{ jsonId: "01036" }],
     },
   ],
   ghostCards: [],

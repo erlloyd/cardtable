@@ -1,13 +1,13 @@
-import { CardData } from '../../external-api/marvel-card-data';
+import { CardData } from "../../external-api/marvel-card-data";
 
 export interface ICardData {
-    [key: string]: CardData;
-};
+  [key: string]: CardData;
+}
 
 export interface ICardsDataState {
-    entities: ICardData, 
-};
+  entities: ICardData;
+}
 
 export const initialState: ICardsDataState = {
-    entities: {}
+  entities: {},
 };
