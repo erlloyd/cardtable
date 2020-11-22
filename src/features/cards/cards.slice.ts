@@ -45,6 +45,26 @@ const foreachUnselectedCard = (
     .forEach((card) => callback(card));
 };
 
+const shuffle = (array: ICardDetails[]) => {
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+};
+
 // Reducers
 const selectCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
   state,
@@ -244,6 +264,13 @@ const flipCardsReducer: CaseReducer<ICardsState> = (state, action) => {
       card.faceup = !card.faceup;
     });
 };
+
+const shuffleStackReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
+  state,
+  action
+) => {
+  shuffle(state.cards.find((c) => c.id === action.payload)?.cardStack || []);
+};
 // Selectors
 
 // slice
@@ -263,6 +290,7 @@ const cardsSlice = createSlice({
     hoverLeaveCard: hoverLeaveCardReducer,
     togglePanMode: togglePanModeReducer,
     flipCards: flipCardsReducer,
+    shuffleStack: shuffleStackReducer,
   },
 });
 
@@ -278,6 +306,7 @@ export const {
   hoverLeaveCard,
   togglePanMode,
   flipCards,
+  shuffleStack,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

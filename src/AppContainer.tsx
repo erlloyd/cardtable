@@ -13,6 +13,7 @@ import {
   hoverLeaveCard,
   togglePanMode,
   flipCards,
+  shuffleStack,
 } from "./features/cards/cards.slice";
 import { loadCardsData } from "./features/cards-data/cards-data.slice";
 // import * as cardActions from './features/cards/actions';
@@ -52,6 +53,7 @@ const AppContainer = connect(mapStateToProps, {
   hoverLeaveCard,
   togglePanMode,
   flipCards,
+  shuffleStack,
 })(App);
 
 export default AppContainer;

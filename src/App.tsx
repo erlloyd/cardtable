@@ -30,6 +30,7 @@ interface IProps {
   togglePanMode: () => void;
   flipCards: () => void;
   loadCardsData: () => void;
+  shuffleStack: (id: string) => void;
 }
 
 interface IState {
@@ -268,15 +269,12 @@ class App extends Component<IProps, IState> {
     ];
 
     if (numCardsInStack > 1) {
-      console.log("Can shuffle");
       menuItems.push({
         label: "Shuffle",
         action: () => {
-          console.log(`Shuffling ${cardId}!`);
+          this.props.shuffleStack(cardId);
         },
       });
-    } else {
-      console.log("Cannot shuffle");
     }
 
     this.setState({
