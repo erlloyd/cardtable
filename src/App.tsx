@@ -11,7 +11,7 @@ import { Vector2d } from "konva/types/types";
 import { getDistance } from "./utilities/geo";
 import { ICardData } from "./features/cards-data/initialState";
 import { KonvaEventObject } from "konva/types/Node";
-import ContextMenu from "./ContextMenu";
+import ContextMenu, { ContextMenuItem } from "./ContextMenu";
 
 interface IProps {
   cards: ICardsState;
@@ -45,7 +45,7 @@ interface IState {
   selecting: boolean;
   showContextMenu: boolean;
   contextMenuPosition: Vector2d | null;
-  contextMenuItems: string[];
+  contextMenuItems: ContextMenuItem[];
 }
 class App extends Component<IProps, IState> {
   public stage: Konva.Stage | null = null;
@@ -235,7 +235,7 @@ class App extends Component<IProps, IState> {
           y: containerRect.top + pointerPosition.y,
         }}
         items={this.state.contextMenuItems}
-        contextItemClicked={() => this.clearContextMenu()}
+        hideContextMenu={() => this.clearContextMenu()}
       ></ContextMenu>
     ) : null;
   };
@@ -258,11 +258,23 @@ class App extends Component<IProps, IState> {
     const card = this.props.cards.cards.find((c) => c.id === cardId);
     const numCardsInStack = card?.cardStack?.length || 0;
 
-    const menuItems = ["Flip"];
+    const menuItems = [
+      {
+        label: "Flip",
+        action: () => {
+          this.props.flipCards();
+        },
+      },
+    ];
 
     if (numCardsInStack > 1) {
       console.log("Can shuffle");
-      menuItems.push("Shuffle");
+      menuItems.push({
+        label: "Shuffle",
+        action: () => {
+          console.log(`Shuffling ${cardId}!`);
+        },
+      });
     } else {
       console.log("Cannot shuffle");
     }
@@ -428,7 +440,10 @@ class App extends Component<IProps, IState> {
     event.evt.preventDefault();
     event.cancelBubble = true;
 
-    const menuItems = ["Load Deck ID", "Load Encounter"];
+    const menuItems = [
+      { label: "Load Deck ID", action: () => {} },
+      { label: "Load Encounter", action: () => {} },
+    ];
 
     this.setState({
       showContextMenu: true,

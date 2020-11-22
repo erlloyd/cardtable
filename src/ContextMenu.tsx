@@ -2,12 +2,16 @@ import { Vector2d } from "konva/types/types";
 import * as React from "react";
 import { Component } from "react";
 
-export type ContextMenuItem = string;
+export interface ContextMenuItem {
+  label: string;
+  action: () => void;
+}
 
 interface IProps {
   position: Vector2d;
   items: ContextMenuItem[];
   contextItemClicked?: (item: ContextMenuItem) => void;
+  hideContextMenu: () => void;
 }
 
 class ContextMenu extends Component<IProps> {
@@ -20,20 +24,24 @@ class ContextMenu extends Component<IProps> {
     return (
       <div
         id="context-menu-layer"
-        onClick={this.handleContextItemClicked}
         onContextMenu={this.preventDefault}
+        onClick={this.props.hideContextMenu}
       >
         <div
           className="context-menu"
           style={menuStyle}
           onContextMenu={this.preventDefault}
+          onClick={this.props.hideContextMenu}
         >
           {this.props.items.map((i, index) => (
-            <div
-              key={`context-menu-item-${index}`}
-              className="context-menu-item"
-            >
-              {i}
+            <div key={`context-menu-item-${index}`}>
+              <button
+                className="context-menu-item"
+                onContextMenu={this.preventDefault}
+                onClick={this.handleContextItemClicked(i)}
+              >
+                {i.label}
+              </button>
             </div>
           ))}
         </div>
@@ -42,15 +50,17 @@ class ContextMenu extends Component<IProps> {
   }
 
   private preventDefault = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+    event: React.MouseEvent<HTMLElement, MouseEvent>
   ) => {
     event.preventDefault();
   };
 
-  private handleContextItemClicked = () => {
+  private handleContextItemClicked = (item: ContextMenuItem) => () => {
+    item.action();
     if (!!this.props.contextItemClicked) {
-      this.props.contextItemClicked("dummy");
+      this.props.contextItemClicked(this.props.items[0]);
     }
+    this.props.hideContextMenu();
   };
 }
 
