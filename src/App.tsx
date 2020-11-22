@@ -11,6 +11,7 @@ import { Vector2d } from "konva/types/types";
 import { getDistance } from "./utilities/geo";
 import { ICardData } from "./features/cards-data/initialState";
 import { KonvaEventObject } from "konva/types/Node";
+import ContextMenu from "./ContextMenu";
 
 interface IProps {
   cards: ICardsState;
@@ -227,23 +228,15 @@ class App extends Component<IProps, IState> {
       throw new Error("Problem computing context menu position");
     }
 
-    const menuItems = this.state.contextMenuItems.map((i, index) => (
-      <div key={`context-menu-item-${index}`} className="context-menu-item">
-        {i}
-      </div>
-    ));
-
-    const menuStyle: React.CSSProperties = {
-      top: `${containerRect.top + pointerPosition.y + 8}px`,
-      left: `${containerRect.left + pointerPosition.x + 8}px`,
-    };
     return this.state.showContextMenu ? (
-      <div id="context-menu-layer" onClick={this.clearContextMenu}>
-        {" "}
-        <div className="context-menu" style={menuStyle}>
-          {menuItems}
-        </div>
-      </div>
+      <ContextMenu
+        position={{
+          x: containerRect.left + pointerPosition.x,
+          y: containerRect.top + pointerPosition.y,
+        }}
+        items={this.state.contextMenuItems}
+        contextItemClicked={() => this.clearContextMenu()}
+      ></ContextMenu>
     ) : null;
   };
 
@@ -432,7 +425,16 @@ class App extends Component<IProps, IState> {
   };
 
   private handleContextMenu = (event: KonvaEventObject<PointerEvent>): void => {
-    console.log("Context Menu in App!");
+    event.evt.preventDefault();
+    event.cancelBubble = true;
+
+    const menuItems = ["Load Deck ID", "Load Encounter"];
+
+    this.setState({
+      showContextMenu: true,
+      contextMenuPosition: this.stage?.getPointerPosition() ?? null,
+      contextMenuItems: menuItems,
+    });
   };
 
   private getImgUrl = (card: ICardStack): string => {
