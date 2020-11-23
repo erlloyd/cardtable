@@ -1,8 +1,11 @@
 import { connect } from "react-redux";
 // import Types from 'Types';
 import App from "./App";
+import { fetchDecklistById } from "./features/cards/cards.async-thunks";
 import {
   selectCard,
+  unselectCard,
+  toggleSelectCard,
   exhaustCard,
   startCardMove,
   cardMove,
@@ -46,6 +49,8 @@ const AppContainer = connect(mapStateToProps, {
   exhaustCard,
   loadCardsData,
   selectCard,
+  unselectCard,
+  toggleSelectCard,
   selectMultipleCards,
   startCardMove,
   unselectAllCards,
@@ -54,6 +59,7 @@ const AppContainer = connect(mapStateToProps, {
   togglePanMode,
   flipCards,
   shuffleStack,
+  fetchDecklistById,
 })(App);
 
 export default AppContainer;

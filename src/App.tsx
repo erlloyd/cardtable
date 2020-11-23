@@ -12,6 +12,8 @@ import { getDistance } from "./utilities/geo";
 import { ICardData } from "./features/cards-data/initialState";
 import { KonvaEventObject } from "konva/types/Node";
 import ContextMenu, { ContextMenuItem } from "./ContextMenu";
+import TopLayer from "./TopLayer";
+import DeckLoader from "./DeckLoader";
 
 interface IProps {
   cards: ICardsState;
@@ -22,6 +24,8 @@ interface IProps {
   endCardMove: (id: string) => void;
   exhaustCard: (id: string) => void;
   selectCard: (id: string) => void;
+  unselectCard: (id: string) => void;
+  toggleSelectCard: (id: string) => void;
   startCardMove: (payload: { id: string; splitTopCard: boolean }) => void;
   unselectAllCards: () => void;
   selectMultipleCards: (cards: { ids: string[] }) => void;
@@ -31,6 +35,10 @@ interface IProps {
   flipCards: () => void;
   loadCardsData: () => void;
   shuffleStack: (id: string) => void;
+  fetchDecklistById: (payload: {
+    decklistId: number;
+    position: Vector2d;
+  }) => void;
 }
 
 interface IState {
@@ -47,6 +55,8 @@ interface IState {
   showContextMenu: boolean;
   contextMenuPosition: Vector2d | null;
   contextMenuItems: ContextMenuItem[];
+  showDeckImporter: boolean;
+  deckImporterPosition: Vector2d | null;
 }
 class App extends Component<IProps, IState> {
   public stage: Konva.Stage | null = null;
@@ -68,6 +78,8 @@ class App extends Component<IProps, IState> {
       showContextMenu: false,
       contextMenuPosition: null,
       contextMenuItems: [],
+      showDeckImporter: false,
+      deckImporterPosition: null,
     };
   }
 
@@ -93,8 +105,8 @@ class App extends Component<IProps, IState> {
             handleDragStart={this.handleCardDragStart}
             handleDragMove={this.props.cardMove}
             handleDragEnd={this.props.endCardMove}
-            handleDoubleClick={this.props.exhaustCard}
-            handleClick={this.props.selectCard}
+            handleDoubleClick={this.handleSelectAndExhaust}
+            handleClick={this.props.toggleSelectCard}
             handleHover={this.props.hoverCard}
             handleHoverLeave={this.props.hoverLeaveCard}
             handleContextMenu={this.handleCardContextMenu}
@@ -137,8 +149,8 @@ class App extends Component<IProps, IState> {
             handleDragStart={this.handleCardDragStart}
             handleDragMove={this.props.cardMove}
             handleDragEnd={this.props.endCardMove}
-            handleDoubleClick={this.props.exhaustCard}
-            handleClick={this.props.selectCard}
+            handleDoubleClick={this.handleSelectAndExhaust}
+            handleClick={this.props.toggleSelectCard}
             imgUrl={this.getImgUrl(card)}
           />
         );
@@ -178,6 +190,7 @@ class App extends Component<IProps, IState> {
     return (
       <div tabIndex={1} onKeyPress={this.handleKeyPress}>
         {this.renderContextMenu()}
+        {this.renderDeckImporter()}
         <Stage
           ref={(ref) => {
             this.stage = ref;
@@ -229,7 +242,7 @@ class App extends Component<IProps, IState> {
       throw new Error("Problem computing context menu position");
     }
 
-    return this.state.showContextMenu ? (
+    return (
       <ContextMenu
         position={{
           x: containerRect.left + pointerPosition.x,
@@ -238,7 +251,38 @@ class App extends Component<IProps, IState> {
         items={this.state.contextMenuItems}
         hideContextMenu={() => this.clearContextMenu()}
       ></ContextMenu>
-    ) : null;
+    );
+  };
+
+  private renderDeckImporter = () => {
+    if (!this.state.showDeckImporter) return null;
+
+    const containerRect = this.stage?.container().getBoundingClientRect();
+    const pointerPosition = this.state.deckImporterPosition;
+    if (!containerRect || !pointerPosition) {
+      throw new Error("Problem computing deck importer position");
+    }
+
+    return (
+      <TopLayer
+        position={{
+          x: containerRect.left + pointerPosition.x,
+          y: containerRect.top + pointerPosition.y,
+        }}
+        completed={this.clearDeckImporter}
+      >
+        <DeckLoader
+          loadDeckId={this.handleImportDeck(
+            this.getRelativePositionFromTarget(this.stage)
+          )}
+        />
+      </TopLayer>
+    );
+  };
+
+  private handleImportDeck = (position: Vector2d) => (id: number) => {
+    this.clearDeckImporter();
+    this.props.fetchDecklistById({ decklistId: id, position });
   };
 
   private clearContextMenu = () => {
@@ -249,12 +293,22 @@ class App extends Component<IProps, IState> {
     });
   };
 
+  private clearDeckImporter = () => {
+    this.setState({
+      showDeckImporter: false,
+      deckImporterPosition: null,
+    });
+  };
+
   private handleCardContextMenu = (
     cardId: string,
     event: KonvaEventObject<PointerEvent>
   ) => {
     event.evt.preventDefault();
     event.cancelBubble = true;
+
+    // First, select the card
+    this.props.selectCard(cardId);
 
     const card = this.props.cards.cards.find((c) => c.id === cardId);
     const numCardsInStack = card?.cardStack?.length || 0;
@@ -282,6 +336,11 @@ class App extends Component<IProps, IState> {
       contextMenuPosition: this.stage?.getPointerPosition() ?? null,
       contextMenuItems: menuItems,
     });
+  };
+
+  private handleSelectAndExhaust = (cardId: string) => {
+    this.props.selectCard(cardId);
+    this.props.exhaustCard(cardId);
   };
 
   private handleCardDragStart = (cardId: string, event: MouseEvent) => {
@@ -439,7 +498,15 @@ class App extends Component<IProps, IState> {
     event.cancelBubble = true;
 
     const menuItems = [
-      { label: "Load Deck ID", action: () => {} },
+      {
+        label: "Load Deck ID",
+        action: () => {
+          this.setState({
+            showDeckImporter: true,
+            deckImporterPosition: this.stage?.getPointerPosition() ?? null,
+          });
+        },
+      },
       { label: "Load Encounter", action: () => {} },
     ];
 

@@ -5,7 +5,7 @@ import {
 import rootReducer from "./rootReducer";
 
 const customizedMiddleware = getDefaultMiddleware({
-  thunk: false,
+  thunk: true,
 });
 
 export default function configureStore() {

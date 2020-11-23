@@ -7,6 +7,7 @@ import {
   ICardDetails,
 } from "./initialState";
 import { v4 as uuidv4 } from "uuid";
+import { fetchDecklistById } from "./cards.async-thunks";
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 
@@ -70,6 +71,24 @@ const selectCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
   state,
   action
 ) => {
+  mutateCardWithId(state, action.payload, (card) => {
+    card.selected = true;
+  });
+};
+
+const unselectCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
+  state,
+  action
+) => {
+  mutateCardWithId(state, action.payload, (card) => {
+    card.selected = false;
+  });
+};
+
+const toggleSelectCardReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<string>
+> = (state, action) => {
   mutateCardWithId(state, action.payload, (card) => {
     card.selected = !card.selected;
   });
@@ -274,12 +293,13 @@ const shuffleStackReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
 // Selectors
 
 // slice
-
 const cardsSlice = createSlice({
   name: "cards",
   initialState: initialState,
   reducers: {
     selectCard: selectCardReducer,
+    unselectCard: unselectCardReducer,
+    toggleSelectCard: toggleSelectCardReducer,
     exhaustCard: exhaustCardReducer,
     startCardMove: startCardMoveReducer,
     cardMove: cardMoveReducer,
@@ -292,10 +312,39 @@ const cardsSlice = createSlice({
     flipCards: flipCardsReducer,
     shuffleStack: shuffleStackReducer,
   },
+  extraReducers: (builder) => {
+    builder.addCase(fetchDecklistById.fulfilled, (state, action) => {
+      console.log("got decklist");
+      console.log(action);
+      let cardStack: ICardDetails[] = [];
+      Object.entries(action.payload.data.slots).forEach(([key, value]) => {
+        const cardDetails: ICardDetails[] = Array.from(Array(value).keys()).map(
+          (): ICardDetails => ({ jsonId: key })
+        );
+        cardStack = cardStack.concat(cardDetails);
+      });
+
+      const newDeck: ICardStack = {
+        x: action.payload.position.x,
+        y: action.payload.position.y,
+        dragging: false,
+        exhausted: false,
+        faceup: true,
+        fill: "red",
+        id: uuidv4(),
+        cardStack,
+        selected: false,
+      };
+
+      state.cards.push(newDeck);
+    });
+  },
 });
 
 export const {
   selectCard,
+  unselectCard,
+  toggleSelectCard,
   exhaustCard,
   startCardMove,
   cardMove,
