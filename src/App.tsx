@@ -345,10 +345,10 @@ class App extends Component<IProps, IState> {
     const pointer = this.stage.getPointerPosition() ?? { x: 0, y: 0 };
     //   console.log(`pointer: ${JSON.stringify(pointer)}`);
 
-    const mousePointTo = {
-      x: (pointer.x - this.stage.x()) / oldScale,
-      y: (pointer.y - this.stage.y()) / oldScale,
-    };
+    // const mousePointTo = {
+    //   x: (pointer.x - this.stage.x()) / oldScale,
+    //   y: (pointer.y - this.stage.y()) / oldScale,
+    // };
 
     const newScale =
       event.evt.deltaY < 0 ? oldScale * SCALE_BY : oldScale / SCALE_BY;
