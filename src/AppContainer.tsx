@@ -1,38 +1,34 @@
 import { connect } from "react-redux";
 // import Types from 'Types';
 import App from "./App";
+import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
+import { loadCardsData } from "./features/cards-data/cards-data.slice";
 import { fetchDecklistById } from "./features/cards/cards.async-thunks";
 import {
-  selectCard,
-  unselectCard,
-  toggleSelectCard,
-  exhaustCard,
-  startCardMove,
-  cardMove,
-  endCardMove,
-  selectMultipleCards,
-  unselectAllCards,
-  hoverCard,
-  hoverLeaveCard,
-  togglePanMode,
-  flipCards,
-  shuffleStack,
-} from "./features/cards/cards.slice";
-import { loadCardsData } from "./features/cards-data/cards-data.slice";
-// import * as cardActions from './features/cards/actions';
-// import { shouldShowPreview } from './features/cards/selectors';
-// import { get3RandomPlayerCardDatas } from './features/cardsData/selectors';
-// import * as cardThunks from './features/cardsData/thunks';
-// import * as CoreSet from './external/ringsteki-json-data/packs/Core Set.json';
-// import CoreSet from './external/marvelsdb-json-data/pack/core.json'
-
-import { RootState } from "./store/rootReducer";
-import {
-  shouldShowPreview,
   getCards,
   getPanMode,
+  shouldShowPreview,
 } from "./features/cards/cards.selectors";
-import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
+import {
+  cardMove,
+  endCardMove,
+  exhaustCard,
+  flipCards,
+  hoverCard,
+  hoverLeaveCard,
+  selectCard,
+  selectMultipleCards,
+  shuffleStack,
+  startCardMove,
+  togglePanMode,
+  toggleSelectCard,
+  unselectAllCards,
+  unselectCard,
+} from "./features/cards/cards.slice";
+
+import { updateZoom, updatePosition } from "./features/game/game.slice";
+import { getGame } from "./features/game/game.selectors";
+import { RootState } from "./store/rootReducer";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -40,6 +36,7 @@ const mapStateToProps = (state: RootState) => {
     cardsData: getCardsDataEntities(state),
     showPreview: shouldShowPreview(state),
     panMode: getPanMode(state),
+    gameState: getGame(state),
   };
 };
 
@@ -60,6 +57,8 @@ const AppContainer = connect(mapStateToProps, {
   flipCards,
   shuffleStack,
   fetchDecklistById,
+  updateZoom,
+  updatePosition,
 })(App);
 
 export default AppContainer;

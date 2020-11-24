@@ -14,10 +14,14 @@ import { KonvaEventObject } from "konva/types/Node";
 import ContextMenu, { ContextMenuItem } from "./ContextMenu";
 import TopLayer from "./TopLayer";
 import DeckLoader from "./DeckLoader";
+import { IGameState } from "./features/game/initialState";
+
+const SCALE_BY = 1.005;
 
 interface IProps {
   cards: ICardsState;
   cardsData: ICardData;
+  gameState: IGameState;
   showPreview: boolean;
   panMode: boolean;
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
@@ -39,6 +43,8 @@ interface IProps {
     decklistId: number;
     position: Vector2d;
   }) => void;
+  updateZoom: (zoom: Vector2d) => void;
+  updatePosition: (pos: Vector2d) => void;
 }
 
 interface IState {
@@ -193,10 +199,42 @@ class App extends Component<IProps, IState> {
         {this.renderDeckImporter()}
         <Stage
           ref={(ref) => {
+            if (!ref) return;
+
             this.stage = ref;
+            // var scaleBy = 1.005;
+            // this.stage.on("wheel", (e) => {
+            //   if (!this.stage) return;
+            //   e.evt.preventDefault();
+            //   var oldScale = this.stage.scaleX();
+            //   console.log(`oldScale: ${oldScale}`);
+
+            //   var pointer = this.stage.getPointerPosition() ?? { x: 0, y: 0 };
+            //   console.log(`pointer: ${JSON.stringify(pointer)}`);
+
+            //   var mousePointTo = {
+            //     x: (pointer.x - this.stage.x()) / oldScale,
+            //     y: (pointer.y - this.stage.y()) / oldScale,
+            //   };
+
+            //   var newScale =
+            //     e.evt.deltaY < 0 ? oldScale * scaleBy : oldScale / scaleBy;
+
+            //   console.log(`newScale: ${newScale}`);
+
+            //   this.stage.scale({ x: newScale, y: newScale });
+
+            //   var newPos = {
+            //     x: pointer.x - mousePointTo.x * newScale,
+            //     y: pointer.y - mousePointTo.y * newScale,
+            //   };
+            //   this.stage.position(newPos);
+            //   this.stage.batchDraw();
+            // });
           }}
           width={window.innerWidth}
           height={window.innerHeight}
+          offset={this.props.gameState.stagePosition}
           onClick={() => this.props.unselectAllCards()}
           onTap={() => this.props.unselectAllCards()}
           onMouseDown={this.props.panMode ? () => {} : this.handleMouseDown}
@@ -204,13 +242,9 @@ class App extends Component<IProps, IState> {
           onMouseMove={this.props.panMode ? () => {} : this.handleMouseMove}
           onTouchMove={this.props.panMode ? () => {} : this.handleMouseMove}
           onContextMenu={this.handleContextMenu}
+          scale={this.props.gameState.stageZoom}
+          onWheel={this.handleWheel}
           draggable={this.props.panMode}
-          // // tslint:disable-next-line:jsx-no-lambda no-console
-          // onDragStart={() => {console.log('STAGE onDragStart')}}
-          // // tslint:disable-next-line:jsx-no-lambda no-console
-          // onDragMove={() => {console.log('STAGE onDragMove')}}
-          // // tslint:disable-next-line:jsx-no-lambda no-console
-          // onDragEnd={() => {console.log('STAGE onDragEnd')}}
           preventDefault={true}
         >
           <Layer preventDefault={true}>
@@ -298,6 +332,35 @@ class App extends Component<IProps, IState> {
       showDeckImporter: false,
       deckImporterPosition: null,
     });
+  };
+
+  private handleWheel = (event: KonvaEventObject<WheelEvent>) => {
+    event.evt.preventDefault();
+
+    if (!this.stage) return;
+
+    var oldScale = this.props.gameState.stageZoom.x;
+    //   console.log(`oldScale: ${oldScale}`);
+
+    const pointer = this.stage.getPointerPosition() ?? { x: 0, y: 0 };
+    //   console.log(`pointer: ${JSON.stringify(pointer)}`);
+
+    const mousePointTo = {
+      x: (pointer.x - this.stage.x()) / oldScale,
+      y: (pointer.y - this.stage.y()) / oldScale,
+    };
+
+    const newScale =
+      event.evt.deltaY < 0 ? oldScale * SCALE_BY : oldScale / SCALE_BY;
+
+    this.props.updateZoom({ x: newScale, y: newScale });
+
+    const newPos = {
+      x: pointer.x - mousePointTo.x * newScale,
+      y: pointer.y - mousePointTo.y * newScale,
+    };
+    // This... isn't quite right
+    // this.props.updatePosition(newPos);
   };
 
   private handleCardContextMenu = (
