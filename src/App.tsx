@@ -342,7 +342,7 @@ class App extends Component<IProps, IState> {
     var oldScale = this.props.gameState.stageZoom.x;
     //   console.log(`oldScale: ${oldScale}`);
 
-    const pointer = this.stage.getPointerPosition() ?? { x: 0, y: 0 };
+    // const pointer = this.stage.getPointerPosition() ?? { x: 0, y: 0 };
     //   console.log(`pointer: ${JSON.stringify(pointer)}`);
 
     // const mousePointTo = {
