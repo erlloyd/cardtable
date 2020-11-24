@@ -355,10 +355,10 @@ class App extends Component<IProps, IState> {
 
     this.props.updateZoom({ x: newScale, y: newScale });
 
-    const newPos = {
-      x: pointer.x - mousePointTo.x * newScale,
-      y: pointer.y - mousePointTo.y * newScale,
-    };
+    // const newPos = {
+    //   x: pointer.x - mousePointTo.x * newScale,
+    //   y: pointer.y - mousePointTo.y * newScale,
+    // };
     // This... isn't quite right
     // this.props.updatePosition(newPos);
   };
