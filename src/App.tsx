@@ -16,7 +16,7 @@ import TopLayer from "./TopLayer";
 import DeckLoader from "./DeckLoader";
 import { IGameState } from "./features/game/initialState";
 
-const SCALE_BY = 1.005;
+const SCALE_BY = 1.02;
 
 interface IProps {
   cards: ICardsState;
@@ -202,39 +202,11 @@ class App extends Component<IProps, IState> {
             if (!ref) return;
 
             this.stage = ref;
-            // var scaleBy = 1.005;
-            // this.stage.on("wheel", (e) => {
-            //   if (!this.stage) return;
-            //   e.evt.preventDefault();
-            //   var oldScale = this.stage.scaleX();
-            //   console.log(`oldScale: ${oldScale}`);
-
-            //   var pointer = this.stage.getPointerPosition() ?? { x: 0, y: 0 };
-            //   console.log(`pointer: ${JSON.stringify(pointer)}`);
-
-            //   var mousePointTo = {
-            //     x: (pointer.x - this.stage.x()) / oldScale,
-            //     y: (pointer.y - this.stage.y()) / oldScale,
-            //   };
-
-            //   var newScale =
-            //     e.evt.deltaY < 0 ? oldScale * scaleBy : oldScale / scaleBy;
-
-            //   console.log(`newScale: ${newScale}`);
-
-            //   this.stage.scale({ x: newScale, y: newScale });
-
-            //   var newPos = {
-            //     x: pointer.x - mousePointTo.x * newScale,
-            //     y: pointer.y - mousePointTo.y * newScale,
-            //   };
-            //   this.stage.position(newPos);
-            //   this.stage.batchDraw();
-            // });
           }}
+          x={this.props.gameState.stagePosition.x}
+          y={this.props.gameState.stagePosition.y}
           width={window.innerWidth}
           height={window.innerHeight}
-          offset={this.props.gameState.stagePosition}
           onClick={() => this.props.unselectAllCards()}
           onTap={() => this.props.unselectAllCards()}
           onMouseDown={this.props.panMode ? () => {} : this.handleMouseDown}
@@ -340,27 +312,25 @@ class App extends Component<IProps, IState> {
     if (!this.stage) return;
 
     var oldScale = this.props.gameState.stageZoom.x;
-    //   console.log(`oldScale: ${oldScale}`);
 
-    // const pointer = this.stage.getPointerPosition() ?? { x: 0, y: 0 };
-    //   console.log(`pointer: ${JSON.stringify(pointer)}`);
+    const pointer = this.stage.getPointerPosition() ?? { x: 0, y: 0 };
 
-    // const mousePointTo = {
-    //   x: (pointer.x - this.stage.x()) / oldScale,
-    //   y: (pointer.y - this.stage.y()) / oldScale,
-    // };
+    const mousePointTo = {
+      x: (pointer.x - this.stage.x()) / oldScale,
+      y: (pointer.y - this.stage.y()) / oldScale,
+    };
 
     const newScale =
       event.evt.deltaY < 0 ? oldScale * SCALE_BY : oldScale / SCALE_BY;
 
     this.props.updateZoom({ x: newScale, y: newScale });
 
-    // const newPos = {
-    //   x: pointer.x - mousePointTo.x * newScale,
-    //   y: pointer.y - mousePointTo.y * newScale,
-    // };
-    // This... isn't quite right
-    // this.props.updatePosition(newPos);
+    const newPos = {
+      x: pointer.x - mousePointTo.x * newScale,
+      y: pointer.y - mousePointTo.y * newScale,
+    };
+
+    this.props.updatePosition(newPos);
   };
 
   private handleCardContextMenu = (
