@@ -17,3 +17,6 @@ else
   echo "Updating JSON card Data"
   git -C src/external/marvelsdb-json-data pull
 fi
+
+echo "Creating importable files"
+node scripts/createGeneratedFiles.js

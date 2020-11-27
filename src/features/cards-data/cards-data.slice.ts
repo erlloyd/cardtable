@@ -1,12 +1,13 @@
 import { createSlice, CaseReducer } from "@reduxjs/toolkit";
 import { initialState, ICardsDataState } from "./initialState";
 
-import CoreData from "../../external/marvelsdb-json-data/pack/core.json";
+import * as PackData from "../../external/generated/packs";
 
 // Reducers
 const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
+  Object.keys(PackData).forEach((pd) => console.log(pd));
   //This reducer is only intended to be called a single time each load.
-  CoreData.forEach((card) => {
+  PackData.core.forEach((card) => {
     if (state.entities[card.code]) {
       console.error("Found multiple cards with code " + card.code);
     }
