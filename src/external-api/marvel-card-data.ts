@@ -1,8 +1,8 @@
 export interface CardData {
-  attack?: number;
+  attack?: number | string | null;
   back_link?: string;
   code: string;
-  deck_limit: number;
+  deck_limit?: number;
   defense?: number;
   faction_code: string;
   flavor?: string;
@@ -10,7 +10,7 @@ export interface CardData {
   health?: number;
   is_unique?: boolean;
   name: string;
-  octgn_id: string;
+  octgn_id?: string;
   pack_code: string;
   position: number;
   quantity: number;

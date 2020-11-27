@@ -6,8 +6,10 @@ export interface ICardData {
 
 export interface ICardsDataState {
   entities: ICardData;
+  encounterEntities: ICardData;
 }
 
 export const initialState: ICardsDataState = {
   entities: {},
+  encounterEntities: {},
 };
