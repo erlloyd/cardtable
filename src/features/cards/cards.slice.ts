@@ -352,7 +352,21 @@ const cardsSlice = createSlice({
         selected: false,
       };
 
-      state.cards.push(heroCard, newDeck);
+      const encounterDeck: ICardStack = {
+        x: action.payload.position.x + cardPadding * 2,
+        y: action.payload.position.y,
+        dragging: false,
+        exhausted: false,
+        faceup: true,
+        fill: "red",
+        id: uuidv4(),
+        cardStack: action.payload.relatedEncounterDeck.map((jsonId) => ({
+          jsonId,
+        })),
+        selected: false,
+      };
+
+      state.cards.push(heroCard, newDeck, encounterDeck);
     });
   },
 });

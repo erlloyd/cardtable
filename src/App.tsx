@@ -195,6 +195,7 @@ class App extends Component<IProps, IState> {
 
     return (
       <div tabIndex={1} onKeyPress={this.handleKeyPress}>
+        {this.renderEmptyMessage()}
         {this.renderContextMenu()}
         {this.renderDeckImporter()}
         <Stage
@@ -238,6 +239,16 @@ class App extends Component<IProps, IState> {
       </div>
     );
   }
+
+  private renderEmptyMessage = () => {
+    if (this.props.cards.cards.length > 0) return null;
+
+    return (
+      <div>
+        Right click and select 'Load Deck ID' to load a deck from marvelcdb.com
+      </div>
+    );
+  };
 
   private renderContextMenu = () => {
     if (!this.state.showContextMenu) return null;
