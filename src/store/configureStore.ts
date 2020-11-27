@@ -6,6 +6,8 @@ import rootReducer from "./rootReducer";
 
 const customizedMiddleware = getDefaultMiddleware({
   thunk: true,
+  immutableCheck: false,
+  serializableCheck: false,
 });
 
 export default function configureStore() {
