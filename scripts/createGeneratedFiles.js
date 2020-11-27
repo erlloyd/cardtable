@@ -1,13 +1,17 @@
+const mkdirp = require("mkdirp");
 const fs = require("fs");
 const util = require("util");
 
 const readdir = util.promisify(fs.readdir);
 
 const inputFolder = "./src/external/marvelsdb-json-data/pack/";
-const outputFile = "./src/external/generated/packs.ts";
+const outputDir = "./src/external/generated";
+const outputFile = `${outputDir}/packs.ts`;
 
 const doWork = async () => {
   try {
+    console.log("create output folder");
+    await mkdirp(outputDir);
     console.log("reading input folder");
     const files = await readdir(inputFolder);
     const filesWithCodes = files.map((fname) => ({
@@ -18,7 +22,7 @@ const doWork = async () => {
     console.log(`found ${files.length} number of files`);
 
     fs.writeFile(outputFile, "", (e) => {
-      console.log(e);
+      if (!!e) console.log(e);
     });
 
     filesWithCodes
@@ -28,7 +32,7 @@ const doWork = async () => {
           outputFile,
           `import ${fileData.code} from "../../external/marvelsdb-json-data/pack/${fileData.fname}";\n`,
           (e) => {
-            console.log(e);
+            if (!!e) console.log(e);
           }
         );
       });
@@ -40,7 +44,7 @@ const doWork = async () => {
         .map((f) => f.code)
         .join(",\n")}};`,
       (e) => {
-        console.log(e);
+        if (!!e) console.log(e);
       }
     );
     console.log("Done!");
