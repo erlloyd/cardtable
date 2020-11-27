@@ -8,11 +8,14 @@ const outputFile = "./src/external/generated/packs.ts";
 
 const doWork = async () => {
   try {
+    console.log("reading input folder");
     const files = await readdir(inputFolder);
     const filesWithCodes = files.map((fname) => ({
       fname,
       code: fname.split(".")[0],
     }));
+
+    console.log(`found ${files.length} number of files`);
 
     fs.writeFile(outputFile, "", () => {});
 
@@ -34,6 +37,7 @@ const doWork = async () => {
         .join(",\n")}};`,
       () => {}
     );
+    console.log("Done!");
   } catch (e) {
     console.log(e);
   }

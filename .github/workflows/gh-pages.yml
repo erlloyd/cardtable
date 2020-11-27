@@ -1,7 +1,7 @@
 name: Build and Deploy
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -18,6 +18,9 @@ jobs:
 
       - name: Install
         run: yarn install
+
+      - name: Sanity check file got created
+        run: cat src/external/generated/packs.ts
 
       - name: Move Card Images
         run: sudo mv 055c536f-adba-4bc2-acbf-9aefb9756046/Sets/dea583bf-554b-43c8-a6ed-a44782094ad1/Cards/* public/images/cards
