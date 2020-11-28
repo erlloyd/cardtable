@@ -291,6 +291,10 @@ const shuffleStackReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
 ) => {
   shuffle(state.cards.find((c) => c.id === action.payload)?.cardStack || []);
 };
+
+const resetCardsReducer: CaseReducer<ICardsState> = (state) => {
+  state.cards = [];
+};
 // Selectors
 
 // slice
@@ -312,6 +316,7 @@ const cardsSlice = createSlice({
     togglePanMode: togglePanModeReducer,
     flipCards: flipCardsReducer,
     shuffleStack: shuffleStackReducer,
+    resetCards: resetCardsReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(fetchDecklistById.fulfilled, (state, action) => {
@@ -386,6 +391,7 @@ export const {
   togglePanMode,
   flipCards,
   shuffleStack,
+  resetCards,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

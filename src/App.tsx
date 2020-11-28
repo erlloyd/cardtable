@@ -45,6 +45,7 @@ interface IProps {
   }) => void;
   updateZoom: (zoom: Vector2d) => void;
   updatePosition: (pos: Vector2d) => void;
+  resetCards: () => void;
 }
 
 interface IState {
@@ -387,7 +388,10 @@ class App extends Component<IProps, IState> {
     this.props.exhaustCard(cardId);
   };
 
-  private handleCardDragStart = (cardId: string, event: MouseEvent) => {
+  private handleCardDragStart = (
+    cardId: string,
+    event: KonvaEventObject<DragEvent>
+  ) => {
     let splitTopCard = false;
     // If multiple things are selected, you can't pull something off the top of a stack,
     // so just do a normal drag
@@ -552,6 +556,7 @@ class App extends Component<IProps, IState> {
         },
       },
       { label: "Load Encounter", action: () => {} },
+      { label: "Reset", action: this.props.resetCards },
     ];
 
     this.setState({

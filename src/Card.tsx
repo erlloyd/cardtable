@@ -2,18 +2,18 @@
 import { KonvaEventObject } from "konva/types/Node";
 import * as React from "react";
 import { Component } from "react";
+import { Rect } from "react-konva";
 import { animated, Spring } from "react-spring/renderprops-konva";
 import { cardConstants } from "./constants/card-constants";
 // import Portal from './Portal';
 // import ContextMenu from './ContextMenu';
-
 interface IProps {
   dragging: boolean;
   exhausted: boolean;
   fill: string;
   handleClick?: (id: string) => void;
   handleDoubleClick?: (id: string) => void;
-  handleDragStart?: (id: string, event: MouseEvent) => void;
+  handleDragStart?: (id: string, event: KonvaEventObject<DragEvent>) => void;
   handleDragMove?: (info: { id: string; dx: number; dy: number }) => void;
   handleDragEnd?: (id: string) => void;
   handleHover?: (id: string) => void;
@@ -54,9 +54,14 @@ class Card extends Component<IProps, IState> {
 
   private img: HTMLImageElement;
   private unmounted: boolean;
+  private renderAnimated: boolean = false;
 
   constructor(props: IProps) {
     super(props);
+
+    if (localStorage.getItem("__render_animated__")) {
+      this.renderAnimated = true;
+    }
 
     this.unmounted = true;
 
@@ -115,6 +120,12 @@ class Card extends Component<IProps, IState> {
     const heightToUse = this.props.height || cardConstants.CARD_HEIGHT;
     const widthToUse = this.props.width || cardConstants.CARD_WIDTH;
 
+    return this.renderAnimated
+      ? this.renderAnimatedCard(heightToUse, widthToUse)
+      : this.renderUnanimatedCard(heightToUse, widthToUse);
+  }
+
+  private renderAnimatedCard = (heightToUse: number, widthToUse: number) => {
     return (
       <Spring
         key={`${this.props.id}-card`}
@@ -167,7 +178,54 @@ class Card extends Component<IProps, IState> {
         )}
       </Spring>
     );
-  }
+  };
+
+  private renderUnanimatedCard = (heightToUse: number, widthToUse: number) => {
+    return (
+      <Rect
+        key={`${this.props.id}-card`}
+        native={true}
+        rotation={this.props.exhausted ? 90 : 0}
+        cornerRadius={9}
+        x={this.props.x}
+        y={this.props.y}
+        width={widthToUse}
+        height={heightToUse}
+        offset={{
+          x: widthToUse / 2,
+          y: heightToUse / 2,
+        }}
+        stroke={this.props.dropTarget ? "blue" : ""}
+        strokeWidth={this.props.dropTarget ? 2 : 0}
+        fillPatternImage={this.img}
+        fillPatternScaleX={
+          this.state.imageLoaded
+            ? widthToUse / this.img.naturalWidth
+            : widthToUse
+        }
+        fillPatternScaleY={
+          this.state.imageLoaded
+            ? heightToUse / this.img.naturalHeight
+            : heightToUse
+        }
+        shadowBlur={this.props.dragging ? 10 : this.props.selected ? 5 : 0}
+        opacity={this.props.isGhost ? 0.5 : 1}
+        draggable={true}
+        onDragStart={this.handleDragStart}
+        onDragMove={this.handleDragMove}
+        onDragEnd={this.handleDragEnd}
+        onDblClick={this.handleDoubleClick}
+        onDblTap={this.handleDoubleClick}
+        onClick={this.handleClick}
+        onTap={this.handleClick}
+        onMouseDown={this.handleMouseDown}
+        onTouchStart={this.handleMouseDown}
+        onMouseOver={this.handleMouseOver}
+        onMouseOut={this.handleMouseOut}
+        onContextMenu={this.handleContextMenu}
+      />
+    );
+  };
 
   private handleContextMenu = (event: KonvaEventObject<PointerEvent>): void => {
     if (!!this.props.handleContextMenu) {
@@ -189,7 +247,7 @@ class Card extends Component<IProps, IState> {
     }
   };
 
-  private handleDragStart = (event: MouseEvent) => {
+  private handleDragStart = (event: KonvaEventObject<DragEvent>) => {
     if (this.props.handleDragStart) {
       this.props.handleDragStart(this.props.id, event);
     }

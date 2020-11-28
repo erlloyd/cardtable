@@ -24,6 +24,7 @@ import {
   toggleSelectCard,
   unselectAllCards,
   unselectCard,
+  resetCards,
 } from "./features/cards/cards.slice";
 
 import { updateZoom, updatePosition } from "./features/game/game.slice";
@@ -59,6 +60,7 @@ const AppContainer = connect(mapStateToProps, {
   fetchDecklistById,
   updateZoom,
   updatePosition,
+  resetCards,
 })(App);
 
 export default AppContainer;
