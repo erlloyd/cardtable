@@ -1,8 +1,10 @@
+import throttle from "lodash.throttle";
 import {
   configureStore as rtkConfigureStore,
   getDefaultMiddleware,
 } from "@reduxjs/toolkit";
 import rootReducer from "./rootReducer";
+import { saveState } from "./localStorage";
 
 const customizedMiddleware = getDefaultMiddleware({
   thunk: true,
@@ -11,8 +13,16 @@ const customizedMiddleware = getDefaultMiddleware({
 });
 
 export default function configureStore() {
-  return rtkConfigureStore({
+  const store = rtkConfigureStore({
     reducer: rootReducer,
     middleware: customizedMiddleware,
   });
+
+  store.subscribe(
+    throttle(() => {
+      saveState(store.getState());
+    }, 1000)
+  );
+
+  return store;
 }

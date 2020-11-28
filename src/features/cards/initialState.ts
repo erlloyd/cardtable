@@ -1,3 +1,5 @@
+import { loadState } from "../../store/localStorage";
+
 // import { v4 as uuidv4 } from "uuid";
 export interface ICardStack {
   dragging: boolean;
@@ -27,7 +29,8 @@ export interface ICardsState {
   panMode: boolean;
 }
 
-export const initialState: ICardsState = {
+const localStorageState: ICardsState = loadState("cards");
+const defaultState: ICardsState = {
   cards: [
     // {
     //   dragging: false,
@@ -67,4 +70,9 @@ export const initialState: ICardsState = {
   previewCard: null,
   dropTargetCard: null,
   panMode: true,
+};
+
+export const initialState: ICardsState = {
+  ...defaultState,
+  ...localStorageState,
 };
