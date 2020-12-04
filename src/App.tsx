@@ -209,12 +209,12 @@ class App extends Component<IProps, IState> {
           y={this.props.gameState.stagePosition.y}
           width={window.innerWidth}
           height={window.innerHeight}
-          onClick={() => this.props.unselectAllCards()}
-          onTap={() => this.props.unselectAllCards()}
-          onMouseDown={this.props.panMode ? () => {} : this.handleMouseDown}
-          onMouseUp={this.props.panMode ? () => {} : this.handleMouseUp}
-          onMouseMove={this.props.panMode ? () => {} : this.handleMouseMove}
-          onTouchMove={this.props.panMode ? () => {} : this.handleMouseMove}
+          onClick={this.handleStageClickOrTap}
+          onTap={this.handleStageClickOrTap}
+          onMouseDown={this.props.panMode ? this.noOp : this.handleMouseDown}
+          onMouseUp={this.props.panMode ? this.noOp : this.handleMouseUp}
+          onMouseMove={this.props.panMode ? this.noOp : this.handleMouseMove}
+          onTouchMove={this.props.panMode ? this.noOp : this.handleMouseMove}
           onContextMenu={this.handleContextMenu}
           scale={this.props.gameState.stageZoom}
           onWheel={this.handleWheel}
@@ -240,6 +240,8 @@ class App extends Component<IProps, IState> {
       </div>
     );
   }
+
+  private noOp = () => {};
 
   private renderEmptyMessage = () => {
     if (this.props.cards.cards.length > 0) return null;
@@ -316,6 +318,13 @@ class App extends Component<IProps, IState> {
       showDeckImporter: false,
       deckImporterPosition: null,
     });
+  };
+
+  private handleStageClickOrTap = (event: KonvaEventObject<MouseEvent>) => {
+    const mousePos = this.getRelativePositionFromTarget(this.stage);
+    if (getDistance(this.state.selectStartPos, mousePos) < 30) {
+      this.props.unselectAllCards();
+    }
   };
 
   private handleWheel = (event: KonvaEventObject<WheelEvent>) => {
@@ -450,11 +459,11 @@ class App extends Component<IProps, IState> {
     const transform = target.getAbsoluteTransform().copy();
     transform.invert();
     let pos = posParam || target.getPointerPosition();
-    return transform.point(pos);
+    return transform.point(pos) as Vector2d;
   };
 
   private handleMouseDown = (event: any) => {
-    const pos = this.getRelativePositionFromTarget(event.currentTarget);
+    const pos = this.getRelativePositionFromTarget(this.stage);
 
     this.setState({
       selectStartPos: {
@@ -463,6 +472,8 @@ class App extends Component<IProps, IState> {
       },
       selecting: true,
     });
+
+    return false;
   };
 
   private getSelectionRectInfo = () => {
@@ -519,12 +530,10 @@ class App extends Component<IProps, IState> {
         height: 0,
         width: 0,
       },
-      selectStartPos: {
-        x: 0,
-        y: 0,
-      },
       selecting: false,
     });
+
+    return false;
   };
 
   private handleMouseMove = (event: any) => {
