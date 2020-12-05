@@ -163,36 +163,38 @@ class App extends Component<IProps, IState> {
         );
       });
 
-    const previewCards = this.props.cards.cards
-      .filter(
-        (card) =>
-          !this.state.selecting &&
-          this.props.showPreview &&
-          !!this.props.cards.previewCard &&
-          card.id === this.props.cards.previewCard.id
-      )
-      .map((card) => {
-        const rawPos = this.getRawPreviewCardPosition();
-        const previewPos = this.getRelativePositionFromTarget(
-          this.stage,
-          rawPos
-        );
-        return (
-          <Card
-            key={`preview${card.id}`}
-            id={card.id}
-            x={previewPos.x}
-            y={previewPos.y}
-            exhausted={false}
-            fill={card.fill}
-            selected={false}
-            dragging={false}
-            imgUrl={this.getImgUrl(card)}
-            height={cardConstants.CARD_PREVIEW_HEIGHT}
-            width={cardConstants.CARD_PREVIEW_WIDTH}
-          />
-        );
-      });
+    const previewCards = this.stage
+      ? this.props.cards.cards
+          .filter(
+            (card) =>
+              !this.state.selecting &&
+              this.props.showPreview &&
+              !!this.props.cards.previewCard &&
+              card.id === this.props.cards.previewCard.id
+          )
+          .map((card) => {
+            const rawPos = this.getRawPreviewCardPosition();
+            const previewPos = this.getRelativePositionFromTarget(
+              this.stage,
+              rawPos
+            );
+            return (
+              <Card
+                key={`preview${card.id}`}
+                id={card.id}
+                x={previewPos.x}
+                y={previewPos.y}
+                exhausted={false}
+                fill={card.fill}
+                selected={false}
+                dragging={false}
+                imgUrl={this.getImgUrl(card)}
+                height={cardConstants.CARD_PREVIEW_HEIGHT}
+                width={cardConstants.CARD_PREVIEW_WIDTH}
+              />
+            );
+          })
+      : [];
 
     return (
       <div tabIndex={1} onKeyPress={this.handleKeyPress}>

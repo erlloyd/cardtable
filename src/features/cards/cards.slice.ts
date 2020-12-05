@@ -131,6 +131,8 @@ const startCardMoveReducer: CaseReducer<
 
     const topCard = cardToMove.cardStack.shift();
     const newCard = Object.assign({}, cardToMove, {
+      selected: true,
+      dragging: true,
       cardStack: [topCard],
     });
 
