@@ -43,7 +43,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "scripts/postinstall.sh"
+    "postinstall": "scripts/postinstall.sh",
+    "setup-images": "mkdir -p /tmp/images; unzip .imagepacks/mc/core.zip -d /tmp/images; find /tmp/images -name '*.jpg' -exec mv {} public/images/cards \\;"
   },
   "eslintConfig": {
     "extends": "react-app"

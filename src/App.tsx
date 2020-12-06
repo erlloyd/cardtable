@@ -15,6 +15,7 @@ import ContextMenu, { ContextMenuItem } from "./ContextMenu";
 import TopLayer from "./TopLayer";
 import DeckLoader from "./DeckLoader";
 import { IGameState } from "./features/game/initialState";
+import EncounterLoader from "./EncounterLoader";
 
 const SCALE_BY = 1.02;
 
@@ -64,6 +65,8 @@ interface IState {
   contextMenuItems: ContextMenuItem[];
   showDeckImporter: boolean;
   deckImporterPosition: Vector2d | null;
+  showEncounterImporter: boolean;
+  encounterImporterPosition: Vector2d | null;
 }
 class App extends Component<IProps, IState> {
   public stage: Konva.Stage | null = null;
@@ -87,6 +90,8 @@ class App extends Component<IProps, IState> {
       contextMenuItems: [],
       showDeckImporter: false,
       deckImporterPosition: null,
+      showEncounterImporter: false,
+      encounterImporterPosition: null,
     };
   }
 
@@ -201,6 +206,7 @@ class App extends Component<IProps, IState> {
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
         {this.renderDeckImporter()}
+        {this.renderEncounterImporter()}
         <Stage
           ref={(ref) => {
             if (!ref) return;
@@ -302,6 +308,28 @@ class App extends Component<IProps, IState> {
     );
   };
 
+  private renderEncounterImporter = () => {
+    if (!this.state.showEncounterImporter) return null;
+
+    const containerRect = this.stage?.container().getBoundingClientRect();
+    const pointerPosition = this.state.encounterImporterPosition;
+    if (!containerRect || !pointerPosition) {
+      throw new Error("Problem computing deck importer position");
+    }
+
+    return (
+      <TopLayer
+        position={{
+          x: containerRect.left + pointerPosition.x,
+          y: containerRect.top + pointerPosition.y,
+        }}
+        completed={this.clearEncounterImporter}
+      >
+        <EncounterLoader />
+      </TopLayer>
+    );
+  };
+
   private handleImportDeck = (position: Vector2d) => (id: number) => {
     this.clearDeckImporter();
     this.props.fetchDecklistById({ decklistId: id, position });
@@ -319,6 +347,13 @@ class App extends Component<IProps, IState> {
     this.setState({
       showDeckImporter: false,
       deckImporterPosition: null,
+    });
+  };
+
+  private clearEncounterImporter = () => {
+    this.setState({
+      showEncounterImporter: false,
+      encounterImporterPosition: null,
     });
   };
 
@@ -566,7 +601,15 @@ class App extends Component<IProps, IState> {
           });
         },
       },
-      { label: "Load Encounter", action: () => {} },
+      {
+        label: "Load Encounter",
+        action: () => {
+          this.setState({
+            showEncounterImporter: true,
+            encounterImporterPosition: this.stage?.getPointerPosition() ?? null,
+          });
+        },
+      },
       { label: "Reset", action: this.props.resetCards },
     ];
 
