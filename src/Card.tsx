@@ -7,6 +7,8 @@ import { animated, Spring } from "react-spring/renderprops-konva";
 import { cardConstants } from "./constants/card-constants";
 // import Portal from './Portal';
 // import ContextMenu from './ContextMenu';
+
+const HORIZONTAL_TYPE_CODES = ["main_scheme", "side_scheme"];
 interface IProps {
   dragging: boolean;
   exhausted: boolean;
@@ -28,6 +30,7 @@ interface IProps {
   imgUrl: string;
   isGhost?: boolean;
   numCardsInStack?: number;
+  typeCode?: string;
   handleContextMenu?: (
     id: string,
     event: KonvaEventObject<PointerEvent>
@@ -181,6 +184,12 @@ class Card extends Component<IProps, IState> {
   };
 
   private renderUnanimatedCard = (heightToUse: number, widthToUse: number) => {
+    const scale = this.getScale(widthToUse, heightToUse);
+    const offset = {
+      x: widthToUse / 2,
+      y: heightToUse / 2,
+    };
+
     return (
       <Rect
         key={`${this.props.id}-card`}
@@ -191,23 +200,20 @@ class Card extends Component<IProps, IState> {
         y={this.props.y}
         width={widthToUse}
         height={heightToUse}
-        offset={{
-          x: widthToUse / 2,
-          y: heightToUse / 2,
-        }}
+        offset={offset}
         stroke={this.props.dropTarget ? "blue" : ""}
         strokeWidth={this.props.dropTarget ? 2 : 0}
+        fillPatternRotation={
+          this.shouldRenderImageHorizontal(
+            this.props.typeCode || "",
+            HORIZONTAL_TYPE_CODES
+          )
+            ? 270
+            : 0
+        }
         fillPatternImage={this.img}
-        fillPatternScaleX={
-          this.state.imageLoaded
-            ? widthToUse / this.img.naturalWidth
-            : widthToUse
-        }
-        fillPatternScaleY={
-          this.state.imageLoaded
-            ? heightToUse / this.img.naturalHeight
-            : heightToUse
-        }
+        fillPatternScaleX={scale.width}
+        fillPatternScaleY={scale.height}
         shadowBlur={this.props.dragging ? 10 : this.props.selected ? 5 : 0}
         opacity={this.props.isGhost ? 0.5 : 1}
         draggable={true}
@@ -226,6 +232,38 @@ class Card extends Component<IProps, IState> {
       />
     );
   };
+
+  private shouldRenderImageHorizontal(
+    type: string,
+    typeCodes: string[]
+  ): boolean {
+    return typeCodes.includes(type);
+  }
+
+  private getScale(widthToUse: number, heightToUse: number) {
+    const width = this.state.imageLoaded
+      ? widthToUse / this.img.naturalWidth
+      : widthToUse;
+
+    const widthHorizontal = this.state.imageLoaded
+      ? heightToUse / this.img.naturalWidth
+      : widthToUse;
+
+    const height = this.state.imageLoaded
+      ? heightToUse / this.img.naturalHeight
+      : heightToUse;
+
+    const heightHorizontal = this.state.imageLoaded
+      ? widthToUse / this.img.naturalHeight
+      : heightToUse;
+
+    return this.shouldRenderImageHorizontal(
+      this.props.typeCode || "",
+      HORIZONTAL_TYPE_CODES
+    )
+      ? { width: widthHorizontal, height: heightHorizontal }
+      : { width, height };
+  }
 
   private handleContextMenu = (event: KonvaEventObject<PointerEvent>): void => {
     if (!!this.props.handleContextMenu) {

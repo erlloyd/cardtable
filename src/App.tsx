@@ -123,6 +123,7 @@ class App extends Component<IProps, IState> {
             handleHoverLeave={this.props.hoverLeaveCard}
             handleContextMenu={this.handleCardContextMenu}
             imgUrl={this.getImgUrl(card)}
+            typeCode={this.getCardType(card)}
             numCardsInStack={card.cardStack.length}
           />
         );
@@ -140,6 +141,7 @@ class App extends Component<IProps, IState> {
           selected={false}
           dragging={false}
           imgUrl={this.getImgUrl(card)}
+          typeCode={this.getCardType(card)}
           isGhost={true}
         />
       );
@@ -164,6 +166,7 @@ class App extends Component<IProps, IState> {
             handleDoubleClick={this.handleSelectAndExhaust}
             handleClick={this.props.toggleSelectCard}
             imgUrl={this.getImgUrl(card)}
+            typeCode={this.getCardType(card)}
           />
         );
       });
@@ -194,6 +197,7 @@ class App extends Component<IProps, IState> {
                 selected={false}
                 dragging={false}
                 imgUrl={this.getImgUrl(card)}
+                typeCode={this.getCardType(card)}
                 height={cardConstants.CARD_PREVIEW_HEIGHT}
                 width={cardConstants.CARD_PREVIEW_WIDTH}
               />
@@ -359,7 +363,10 @@ class App extends Component<IProps, IState> {
 
   private handleStageClickOrTap = (event: KonvaEventObject<MouseEvent>) => {
     const mousePos = this.getRelativePositionFromTarget(this.stage);
-    if (getDistance(this.state.selectStartPos, mousePos) < 30) {
+    if (
+      this.props.panMode ||
+      getDistance(this.state.selectStartPos, mousePos) < 30
+    ) {
       this.props.unselectAllCards();
     }
   };
@@ -618,6 +625,14 @@ class App extends Component<IProps, IState> {
       contextMenuPosition: this.stage?.getPointerPosition() ?? null,
       contextMenuItems: menuItems,
     });
+  };
+
+  private getCardType = (card: ICardStack): string => {
+    if (Object.keys(this.props.cardsData).length === 0) return "";
+
+    const cardData = this.props.cardsData[card.cardStack[0].jsonId];
+
+    return cardData.type_code;
   };
 
   private getImgUrl = (card: ICardStack): string => {
