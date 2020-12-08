@@ -1,21 +1,21 @@
 import * as Intersects from "intersects";
-import { Component } from "react";
-import * as React from "react";
-import { Layer, Rect, Stage } from "react-konva";
 import Konva from "konva";
-import { cardConstants } from "./constants/card-constants";
+import { KonvaEventObject } from "konva/types/Node";
+import { Vector2d } from "konva/types/types";
+import * as React from "react";
+import { Component } from "react";
+import { Layer, Rect, Stage } from "react-konva";
 import "./App.scss";
 import Card, { HORIZONTAL_TYPE_CODES } from "./Card";
-import { ICardStack, ICardsState } from "./features/cards/initialState";
-import { Vector2d } from "konva/types/types";
-import { getDistance } from "./utilities/geo";
-import { ICardData } from "./features/cards-data/initialState";
-import { KonvaEventObject } from "konva/types/Node";
+import { cardConstants } from "./constants/card-constants";
 import ContextMenu, { ContextMenuItem } from "./ContextMenu";
-import TopLayer from "./TopLayer";
 import DeckLoader from "./DeckLoader";
+import EncounterLoaderContainer from "./EncounterLoaderContainer";
+import { ICardData } from "./features/cards-data/initialState";
+import { ICardsState, ICardStack } from "./features/cards/initialState";
 import { IGameState } from "./features/game/initialState";
-import EncounterLoader from "./EncounterLoader";
+import TopLayer from "./TopLayer";
+import { getDistance } from "./utilities/geo";
 
 const SCALE_BY = 1.02;
 
@@ -331,7 +331,7 @@ class App extends Component<IProps, IState> {
         }}
         completed={this.clearEncounterImporter}
       >
-        <EncounterLoader />
+        <EncounterLoaderContainer />
       </TopLayer>
     );
   };

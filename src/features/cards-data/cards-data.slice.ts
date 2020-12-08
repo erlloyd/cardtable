@@ -3,6 +3,7 @@ import { initialState, ICardsDataState } from "./initialState";
 
 import * as PackData from "../../external/generated/packs";
 import { CardData } from "../../external-api/marvel-card-data";
+import SetData from "../../external/marvelsdb-json-data/sets.json";
 
 // Reducers
 const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
@@ -44,6 +45,14 @@ const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
       state.encounterEntities[card.code] = card;
     })
   );
+
+  SetData.forEach((set) => {
+    state.setData[set.code] = {
+      name: set.name,
+      setTypeCode: set.card_set_type_code,
+    };
+  });
+
   return state;
 };
 
