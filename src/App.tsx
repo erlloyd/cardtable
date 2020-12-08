@@ -5,7 +5,7 @@ import { Layer, Rect, Stage } from "react-konva";
 import Konva from "konva";
 import { cardConstants } from "./constants/card-constants";
 import "./App.scss";
-import Card from "./Card";
+import Card, { HORIZONTAL_TYPE_CODES } from "./Card";
 import { ICardStack, ICardsState } from "./features/cards/initialState";
 import { Vector2d } from "konva/types/types";
 import { getDistance } from "./utilities/geo";
@@ -192,7 +192,9 @@ class App extends Component<IProps, IState> {
                 id={card.id}
                 x={previewPos.x}
                 y={previewPos.y}
-                exhausted={false}
+                exhausted={HORIZONTAL_TYPE_CODES.includes(
+                  this.getCardType(card)
+                )}
                 fill={card.fill}
                 selected={false}
                 dragging={false}

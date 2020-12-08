@@ -8,7 +8,7 @@ import { cardConstants } from "./constants/card-constants";
 // import Portal from './Portal';
 // import ContextMenu from './ContextMenu';
 
-const HORIZONTAL_TYPE_CODES = ["main_scheme", "side_scheme"];
+export const HORIZONTAL_TYPE_CODES = ["main_scheme", "side_scheme"];
 interface IProps {
   dragging: boolean;
   exhausted: boolean;
