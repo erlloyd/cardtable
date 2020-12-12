@@ -1,6 +1,13 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { CardData } from "../../external-api/marvel-card-data";
 import { RootState } from "../../store/rootReducer";
+import { Set } from "../cards-data/initialState";
+
+export interface IEncounterEntity {
+  setCode: string;
+  setData: Set;
+  cards: CardData[];
+}
 
 export const getCardsData = (state: RootState) => state.cardsData;
 
@@ -32,7 +39,7 @@ export const getCardsDataSetData = createSelector(getCardsData, (cardsData) => {
 export const getCardsDataEncounterEntitiesBySetCode = createSelector(
   getCardsDataEncounterEntities,
   getCardsDataSetData,
-  (encounterEntities, setData) => {
+  (encounterEntities, setData): IEncounterEntity[] => {
     const setTypesEncounters: { [key: string]: CardData[] } = {};
 
     Object.values(encounterEntities).forEach((encounterCard) => {
@@ -44,7 +51,7 @@ export const getCardsDataEncounterEntitiesBySetCode = createSelector(
       }
     });
 
-    const toReturn = Object.entries(setTypesEncounters)
+    return Object.entries(setTypesEncounters)
       .map(([key, value]) => ({
         setCode: key,
         setData: setData[key],
@@ -56,9 +63,5 @@ export const getCardsDataEncounterEntitiesBySetCode = createSelector(
           set.setData.setTypeCode !== "hero"
       )
       .sort((a, b) => (a.setData.setTypeCode > b.setData.setTypeCode ? 1 : -1));
-
-    console.log(toReturn);
-
-    return toReturn;
   }
 );
