@@ -62,6 +62,6 @@ export const getCardsDataEncounterEntitiesBySetCode = createSelector(
           set.setData.setTypeCode !== "nemesis" &&
           set.setData.setTypeCode !== "hero"
       )
-      .sort((a, b) => (a.setData.setTypeCode > b.setData.setTypeCode ? 1 : -1));
+      .sort((a, b) => (a.setData.name > b.setData.name ? 1 : -1));
   }
 );

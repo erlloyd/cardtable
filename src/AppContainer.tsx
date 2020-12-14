@@ -25,6 +25,7 @@ import {
   unselectAllCards,
   unselectCard,
   resetCards,
+  addCardStack,
 } from "./features/cards/cards.slice";
 
 import { updateZoom, updatePosition } from "./features/game/game.slice";
@@ -61,6 +62,7 @@ const AppContainer = connect(mapStateToProps, {
   updateZoom,
   updatePosition,
   resetCards,
+  addCardStack,
 })(App);
 
 export default AppContainer;

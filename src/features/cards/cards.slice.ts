@@ -9,6 +9,7 @@ import {
 import { v4 as uuidv4 } from "uuid";
 import { fetchDecklistById } from "./cards.async-thunks";
 import { cardConstants } from "../../constants/card-constants";
+import { Vector2d } from "konva/types/types";
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 
@@ -297,6 +298,27 @@ const shuffleStackReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
 const resetCardsReducer: CaseReducer<ICardsState> = (state) => {
   state.cards = [];
 };
+
+const addCardStackReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{ cardJsonIds: string[]; position: Vector2d }>
+> = (state, action) => {
+  const newStack: ICardStack = {
+    x: action.payload.position.x,
+    y: action.payload.position.y,
+    dragging: false,
+    exhausted: false,
+    faceup: true,
+    fill: "red",
+    id: uuidv4(),
+    cardStack: action.payload.cardJsonIds.map((jsonId) => ({
+      jsonId,
+    })),
+    selected: false,
+  };
+
+  state.cards.push(newStack);
+};
 // Selectors
 
 // slice
@@ -319,6 +341,7 @@ const cardsSlice = createSlice({
     flipCards: flipCardsReducer,
     shuffleStack: shuffleStackReducer,
     resetCards: resetCardsReducer,
+    addCardStack: addCardStackReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(fetchDecklistById.fulfilled, (state, action) => {
@@ -394,6 +417,7 @@ export const {
   flipCards,
   shuffleStack,
   resetCards,
+  addCardStack,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

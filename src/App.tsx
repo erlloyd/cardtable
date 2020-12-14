@@ -47,6 +47,10 @@ interface IProps {
   updateZoom: (zoom: Vector2d) => void;
   updatePosition: (pos: Vector2d) => void;
   resetCards: () => void;
+  addCardStack: (payload: {
+    cardJsonIds: string[];
+    position: Vector2d;
+  }) => void;
 }
 
 interface IState {
@@ -323,17 +327,25 @@ class App extends Component<IProps, IState> {
       throw new Error("Problem computing deck importer position");
     }
 
+    const pos = {
+      x: containerRect.left + pointerPosition.x,
+      y: containerRect.top + pointerPosition.y,
+    };
+
     return (
-      <TopLayer
-        position={{
-          x: containerRect.left + pointerPosition.x,
-          y: containerRect.top + pointerPosition.y,
-        }}
-        completed={this.clearEncounterImporter}
-      >
-        <EncounterLoaderContainer />
+      <TopLayer position={pos} completed={this.clearEncounterImporter}>
+        <EncounterLoaderContainer
+          loadCards={this.handleLoadEncounter(
+            this.getRelativePositionFromTarget(this.stage)
+          )}
+        />
       </TopLayer>
     );
+  };
+
+  private handleLoadEncounter = (position: Vector2d) => (cards: string[]) => {
+    this.clearEncounterImporter();
+    this.props.addCardStack({ position, cardJsonIds: cards });
   };
 
   private handleImportDeck = (position: Vector2d) => (id: number) => {
