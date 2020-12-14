@@ -237,6 +237,8 @@ class App extends Component<IProps, IState> {
           scale={this.props.gameState.stageZoom}
           onWheel={this.handleWheel}
           draggable={this.props.panMode}
+          onDragMove={this.noOp}
+          onDragEnd={this.noOp}
           preventDefault={true}
         >
           <Layer preventDefault={true}>
@@ -652,18 +654,27 @@ class App extends Component<IProps, IState> {
   private getImgUrl = (card: ICardStack): string => {
     if (Object.keys(this.props.cardsData).length === 0) return "";
 
-    const cardData = this.props.cardsData[card.cardStack[0].jsonId];
+    const topCardData = this.props.cardsData[card.cardStack[0].jsonId];
+    const bottomCardData = this.props.cardsData[
+      card.cardStack[card.cardStack.length - 1].jsonId
+    ];
 
-    if (!card.faceup && !!cardData.back_link) {
+    if (
+      !card.faceup &&
+      (!!bottomCardData.back_link || !!bottomCardData.double_sided)
+    ) {
       return (
-        process.env.PUBLIC_URL + "/images/cards/" + cardData.octgn_id + ".b.jpg"
+        process.env.PUBLIC_URL +
+        "/images/cards/" +
+        bottomCardData.octgn_id +
+        ".b.jpg"
       );
     } else if (!card.faceup) {
       return process.env.PUBLIC_URL + "/images/standard/card_back.png";
     }
 
     return (
-      process.env.PUBLIC_URL + "/images/cards/" + cardData.octgn_id + ".jpg"
+      process.env.PUBLIC_URL + "/images/cards/" + topCardData.octgn_id + ".jpg"
     );
   };
 }

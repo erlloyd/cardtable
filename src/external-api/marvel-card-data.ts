@@ -4,6 +4,7 @@ export interface CardData {
   code: string;
   deck_limit?: number;
   defense?: number;
+  double_sided?: boolean;
   faction_code: string;
   flavor?: string;
   hand_size?: number;
