@@ -1,5 +1,6 @@
 import { createSlice, CaseReducer, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/types/types";
+import { resetApp } from "../../store/global.actions";
 import { initialState, IGameState } from "./initialState";
 
 // Reducers
@@ -26,6 +27,12 @@ const gameSlice = createSlice({
   reducers: {
     updateZoom: updateZoomReducer,
     updatePosition: updatePositionReducer,
+  },
+  extraReducers: (builder) => {
+    builder.addCase(resetApp, (state, action) => {
+      state.stagePosition = { x: 0, y: 0 };
+      state.stageZoom = { x: 1, y: 1 };
+    });
   },
 });
 

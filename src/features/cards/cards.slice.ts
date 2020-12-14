@@ -10,6 +10,7 @@ import { v4 as uuidv4 } from "uuid";
 import { fetchDecklistById } from "./cards.async-thunks";
 import { cardConstants } from "../../constants/card-constants";
 import { Vector2d } from "konva/types/types";
+import { resetApp } from "../../store/global.actions";
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 
@@ -344,6 +345,14 @@ const cardsSlice = createSlice({
     addCardStack: addCardStackReducer,
   },
   extraReducers: (builder) => {
+    builder.addCase(resetApp, (state, action) => {
+      state.cards = [];
+      state.previewCard = null;
+      state.dropTargetCard = null;
+      state.ghostCards = [];
+      state.panMode = true;
+    });
+
     builder.addCase(fetchDecklistById.fulfilled, (state, action) => {
       console.log("got decklist");
       console.log(action);

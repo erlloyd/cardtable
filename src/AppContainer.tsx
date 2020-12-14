@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-// import Types from 'Types';
 import App from "./App";
 import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
 import { loadCardsData } from "./features/cards-data/cards-data.slice";
@@ -10,6 +9,7 @@ import {
   shouldShowPreview,
 } from "./features/cards/cards.selectors";
 import {
+  addCardStack,
   cardMove,
   endCardMove,
   exhaustCard,
@@ -24,13 +24,11 @@ import {
   toggleSelectCard,
   unselectAllCards,
   unselectCard,
-  resetCards,
-  addCardStack,
 } from "./features/cards/cards.slice";
-
-import { updateZoom, updatePosition } from "./features/game/game.slice";
 import { getGame } from "./features/game/game.selectors";
+import { updatePosition, updateZoom } from "./features/game/game.slice";
 import { RootState } from "./store/rootReducer";
+import { resetApp } from "./store/global.actions";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -61,7 +59,7 @@ const AppContainer = connect(mapStateToProps, {
   fetchDecklistById,
   updateZoom,
   updatePosition,
-  resetCards,
+  resetApp,
   addCardStack,
 })(App);
 

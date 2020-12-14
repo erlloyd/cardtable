@@ -46,7 +46,7 @@ interface IProps {
   }) => void;
   updateZoom: (zoom: Vector2d) => void;
   updatePosition: (pos: Vector2d) => void;
-  resetCards: () => void;
+  resetApp: () => void;
   addCardStack: (payload: {
     cardJsonIds: string[];
     position: Vector2d;
@@ -631,7 +631,7 @@ class App extends Component<IProps, IState> {
           });
         },
       },
-      { label: "Reset", action: this.props.resetCards },
+      { label: "Reset", action: this.props.resetApp },
     ];
 
     this.setState({
