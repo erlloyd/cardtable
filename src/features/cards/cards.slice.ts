@@ -286,6 +286,7 @@ const flipCardsReducer: CaseReducer<ICardsState> = (state, action) => {
     .filter((card) => card.selected)
     .forEach((card) => {
       card.faceup = !card.faceup;
+      card.cardStack = card.cardStack.reverse();
     });
 };
 
@@ -405,7 +406,21 @@ const cardsSlice = createSlice({
         selected: false,
       };
 
-      state.cards.push(heroCard, newDeck, encounterDeck);
+      const obligationDeck: ICardStack = {
+        x: action.payload.position.x + cardPadding * 3,
+        y: action.payload.position.y,
+        dragging: false,
+        exhausted: false,
+        faceup: true,
+        fill: "red",
+        id: uuidv4(),
+        cardStack: action.payload.relatedObligationDeck.map((jsonId) => ({
+          jsonId,
+        })),
+        selected: false,
+      };
+
+      state.cards.push(heroCard, newDeck, encounterDeck, obligationDeck);
     });
   },
 });

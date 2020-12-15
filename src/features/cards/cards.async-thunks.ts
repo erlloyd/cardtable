@@ -17,6 +17,17 @@ export const fetchDecklistById = createAsyncThunk(
     const heroCardsData = getCardsDataHeroEntities(state);
     const heroSetCode = heroCardsData[response.data.investigator_code].set_code;
     const encounterCardsData = getCardsDataEncounterEntities(state);
+
+    const heroObligationDeck = Object.entries(encounterCardsData)
+      .filter(
+        ([_key, value]) =>
+          value.set_code === `${heroSetCode}` &&
+          value.type_code === "obligation"
+      )
+      .map(([key, _value]) => key);
+
+    console.log(heroObligationDeck);
+
     const heroEncounterDeck = Object.entries(encounterCardsData)
       .filter(([_key, value]) => value.set_code === `${heroSetCode}_nemesis`)
       .map(([key, _value]) => key);
@@ -25,6 +36,7 @@ export const fetchDecklistById = createAsyncThunk(
       position: payload.position,
       data: response.data,
       relatedEncounterDeck: heroEncounterDeck,
+      relatedObligationDeck: heroObligationDeck,
     };
   }
 );
