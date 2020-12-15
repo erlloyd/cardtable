@@ -31,6 +31,7 @@ interface IProps {
   isGhost?: boolean;
   numCardsInStack?: number;
   typeCode?: string;
+  faceup: boolean;
   handleContextMenu?: (
     id: string,
     event: KonvaEventObject<PointerEvent>
@@ -237,7 +238,11 @@ class Card extends Component<IProps, IState> {
     type: string,
     typeCodes: string[]
   ): boolean {
-    return typeCodes.includes(type);
+    return typeCodes.includes(type) && !this.plainCardBack;
+  }
+
+  private get plainCardBack() {
+    return this.props.imgUrl?.includes('standard') && this.props.imgUrl?.includes('_back');
   }
 
   private getScale(widthToUse: number, heightToUse: number) {

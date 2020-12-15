@@ -128,6 +128,7 @@ class App extends Component<IProps, IState> {
             handleContextMenu={this.handleCardContextMenu}
             imgUrl={this.getImgUrl(card)}
             typeCode={this.getCardType(card)}
+            faceup={card.faceup}
             numCardsInStack={card.cardStack.length}
           />
         );
@@ -146,6 +147,7 @@ class App extends Component<IProps, IState> {
           dragging={false}
           imgUrl={this.getImgUrl(card)}
           typeCode={this.getCardType(card)}
+          faceup={card.faceup}
           isGhost={true}
         />
       );
@@ -171,6 +173,7 @@ class App extends Component<IProps, IState> {
             handleClick={this.props.toggleSelectCard}
             imgUrl={this.getImgUrl(card)}
             typeCode={this.getCardType(card)}
+            faceup={card.faceup}
           />
         );
       });
@@ -204,6 +207,7 @@ class App extends Component<IProps, IState> {
                 dragging={false}
                 imgUrl={this.getImgUrl(card)}
                 typeCode={this.getCardType(card)}
+                faceup={card.faceup}
                 height={cardConstants.CARD_PREVIEW_HEIGHT}
                 width={cardConstants.CARD_PREVIEW_WIDTH}
               />
