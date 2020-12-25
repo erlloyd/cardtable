@@ -112,14 +112,6 @@ class Card extends Component<IProps, IState> {
     return this.state.imageLoaded ? this.renderCard() : null;
   }
 
-  private renderContext() {
-    // return this.state.showContextMenu ? (
-    //   <Portal key={`${this.props.id}-context`}>
-    //     <div>HI THERE</div>
-    //   </Portal>
-    // ) : null;
-  }
-
   private renderCard() {
     const heightToUse = this.props.height || cardConstants.CARD_HEIGHT;
     const widthToUse = this.props.width || cardConstants.CARD_WIDTH;
@@ -191,7 +183,7 @@ class Card extends Component<IProps, IState> {
       y: heightToUse / 2,
     };
 
-    return (
+    const card = (
       <Rect
         key={`${this.props.id}-card`}
         native={true}
@@ -232,6 +224,31 @@ class Card extends Component<IProps, IState> {
         onContextMenu={this.handleContextMenu}
       />
     );
+
+    const cardStackOffset = {
+      x: offset.x + 4,
+      y: offset.y - 4,
+    };
+
+    const cardStack =
+      (this.props.numCardsInStack || 1) > 1 ? (
+        <Rect
+          key={`${this.props.id}-cardStack`}
+          native={true}
+          rotation={this.props.exhausted ? 90 : 0}
+          cornerRadius={[9, 9, 9, 9]}
+          x={this.props.x}
+          y={this.props.y}
+          width={widthToUse}
+          height={heightToUse}
+          offset={cardStackOffset}
+          opacity={this.props.isGhost ? 0.5 : 1}
+          fill={"gray"}
+          shadowBlur={this.props.dragging ? 10 : this.props.selected ? 5 : 0}
+        />
+      ) : null;
+
+    return [cardStack, card];
   };
 
   private shouldRenderImageHorizontal(
@@ -242,7 +259,10 @@ class Card extends Component<IProps, IState> {
   }
 
   private get plainCardBack() {
-    return this.props.imgUrl?.includes('standard') && this.props.imgUrl?.includes('_back');
+    return (
+      this.props.imgUrl?.includes("standard") &&
+      this.props.imgUrl?.includes("_back")
+    );
   }
 
   private getScale(widthToUse: number, heightToUse: number) {
@@ -274,14 +294,6 @@ class Card extends Component<IProps, IState> {
     if (!!this.props.handleContextMenu) {
       this.props.handleContextMenu(this.props.id, event);
     }
-    // console.log('Context Menu in Card!');
-    // event.evt.preventDefault();
-    // event.cancelBubble = true;
-    // if (!!this.props.numCardsInStack && this.props.numCardsInStack > 1) {
-    //   console.log('Can shuffle!');
-    // } else {
-    //   console.log('Can\'t shuffle!');
-    // }
   };
 
   private handleDoubleClick = () => {

@@ -174,6 +174,7 @@ class App extends Component<IProps, IState> {
             imgUrl={this.getImgUrl(card)}
             typeCode={this.getCardType(card)}
             faceup={card.faceup}
+            numCardsInStack={card.cardStack.length}
           />
         );
       });
