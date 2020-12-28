@@ -71,9 +71,9 @@ class Card extends Component<IProps, IState> {
         imageLoaded: false,
         prevImgUrl: props.imgUrl,
         tokenImagesLoaded: {
-          stunned: false,
-          confused: false,
-          tough: false,
+          stunned: state.tokenImagesLoaded.stunned,
+          confused: state.tokenImagesLoaded.confused,
+          tough: state.tokenImagesLoaded.tough,
         },
       };
     }
@@ -372,8 +372,11 @@ class Card extends Component<IProps, IState> {
         />
       ) : null;
 
+    const shouldRenderStunned =
+      !!this.props.cardState?.stunned && this.state.tokenImagesLoaded.stunned;
+
     const stunnedToken = this.getTokenInSlot(
-      !!this.props.cardState?.stunned && this.state.tokenImagesLoaded.stunned,
+      shouldRenderStunned,
       this.stunnedImg,
       offset,
       0
