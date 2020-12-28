@@ -9,9 +9,24 @@ import { cardConstants } from "./constants/card-constants";
 // import ContextMenu from './ContextMenu';
 
 export const HORIZONTAL_TYPE_CODES = ["main_scheme", "side_scheme"];
+
+export interface CardTokens {
+  damage: number;
+  threat: number;
+  generic: number;
+}
+
+export interface CardUIState {
+  stunned: boolean;
+  confused: boolean;
+  tough: boolean;
+  tokens: CardTokens;
+}
+
 interface IProps {
   dragging: boolean;
   exhausted: boolean;
+  cardState?: CardUIState;
   fill: string;
   handleClick?: (id: string) => void;
   handleDoubleClick?: (id: string) => void;
@@ -41,6 +56,11 @@ interface IProps {
 interface IState {
   imageLoaded: boolean;
   prevImgUrl: string;
+  tokenImagesLoaded: {
+    stunned: boolean;
+    confused: boolean;
+    tough: boolean;
+  };
 }
 
 class Card extends Component<IProps, IState> {
@@ -50,6 +70,11 @@ class Card extends Component<IProps, IState> {
       return {
         imageLoaded: false,
         prevImgUrl: props.imgUrl,
+        tokenImagesLoaded: {
+          stunned: false,
+          confused: false,
+          tough: false,
+        },
       };
     }
     // No state update necessary
@@ -57,6 +82,12 @@ class Card extends Component<IProps, IState> {
   }
 
   private img: HTMLImageElement;
+  private stunnedImg: HTMLImageElement;
+  private confusedImg: HTMLImageElement;
+  private toughImg: HTMLImageElement;
+  private damageImg: HTMLImageElement;
+  private threatImg: HTMLImageElement;
+  private genericImg: HTMLImageElement;
   private unmounted: boolean;
   private renderAnimated: boolean = false;
 
@@ -72,9 +103,20 @@ class Card extends Component<IProps, IState> {
     this.state = {
       imageLoaded: false,
       prevImgUrl: this.props.imgUrl,
+      tokenImagesLoaded: {
+        stunned: false,
+        confused: false,
+        tough: false,
+      },
     };
 
     this.img = new Image();
+    this.stunnedImg = new Image();
+    this.confusedImg = new Image();
+    this.toughImg = new Image();
+    this.damageImg = new Image();
+    this.threatImg = new Image();
+    this.genericImg = new Image();
 
     // When the image loads, set a flag in the state
     this.img.onload = () => {
@@ -88,6 +130,59 @@ class Card extends Component<IProps, IState> {
     if (props.imgUrl) {
       this.img.src = props.imgUrl;
     }
+
+    // STUNNED
+    this.stunnedImg.onload = () => {
+      if (!this.unmounted) {
+        this.setState({
+          tokenImagesLoaded: {
+            stunned: true,
+            confused: this.state.tokenImagesLoaded.confused,
+            tough: this.state.tokenImagesLoaded.tough,
+          },
+        });
+      }
+    };
+
+    if (!!props.cardState?.stunned) {
+      this.stunnedImg.src =
+        process.env.PUBLIC_URL + "/images/standard/stunned.png";
+    }
+
+    // CONFUSED
+    this.confusedImg.onload = () => {
+      if (!this.unmounted) {
+        this.setState({
+          tokenImagesLoaded: {
+            stunned: this.state.tokenImagesLoaded.stunned,
+            confused: true,
+            tough: this.state.tokenImagesLoaded.tough,
+          },
+        });
+      }
+    };
+
+    if (!!props.cardState?.confused) {
+      this.confusedImg.src =
+        process.env.PUBLIC_URL + "/images/standard/confused.png";
+    }
+
+    // TOUGH
+    this.toughImg.onload = () => {
+      if (!this.unmounted) {
+        this.setState({
+          tokenImagesLoaded: {
+            stunned: this.state.tokenImagesLoaded.stunned,
+            confused: this.state.tokenImagesLoaded.confused,
+            tough: true,
+          },
+        });
+      }
+    };
+
+    if (!!props.cardState?.tough) {
+      this.toughImg.src = process.env.PUBLIC_URL + "/images/standard/tough.png";
+    }
   }
 
   public componentDidUpdate(prevProps: IProps, prevState: IState) {
@@ -97,6 +192,35 @@ class Card extends Component<IProps, IState> {
       this.props.imgUrl !== this.img.src
     ) {
       this.img.src = this.props.imgUrl;
+    }
+
+    // STUNNED
+    if (
+      !this.stunnedImg.loading &&
+      !prevProps.cardState?.stunned &&
+      !!this.props.cardState?.stunned
+    ) {
+      this.stunnedImg.src =
+        process.env.PUBLIC_URL + "/images/standard/stunned.png";
+    }
+
+    // CONFUSED
+    if (
+      !this.confusedImg.loading &&
+      !prevProps.cardState?.confused &&
+      !!this.props.cardState?.confused
+    ) {
+      this.confusedImg.src =
+        process.env.PUBLIC_URL + "/images/standard/confused.png";
+    }
+
+    // TOUGH
+    if (
+      !this.toughImg.loading &&
+      !prevProps.cardState?.tough &&
+      !!this.props.cardState?.tough
+    ) {
+      this.toughImg.src = process.env.PUBLIC_URL + "/images/standard/tough.png";
     }
   }
 
@@ -248,8 +372,60 @@ class Card extends Component<IProps, IState> {
         />
       ) : null;
 
-    return [cardStack, card];
+    const stunnedToken = this.getTokenInSlot(
+      !!this.props.cardState?.stunned && this.state.tokenImagesLoaded.stunned,
+      this.stunnedImg,
+      offset,
+      0
+    );
+    const confusedToken = this.getTokenInSlot(
+      !!this.props.cardState?.confused && this.state.tokenImagesLoaded.confused,
+      this.confusedImg,
+      offset,
+      1
+    );
+    const toughToken = this.getTokenInSlot(
+      !!this.props.cardState?.tough && this.state.tokenImagesLoaded.tough,
+      this.toughImg,
+      offset,
+      2
+    );
+
+    return [cardStack, card, stunnedToken, confusedToken, toughToken];
   };
+
+  private getTokenInSlot(
+    shouldRender: boolean,
+    img: HTMLImageElement,
+    offset: { x: number; y: number },
+    slot: 0 | 1 | 2
+  ) {
+    const dimensions = {
+      width: img.naturalWidth / 2,
+      height: img.naturalHeight / 2,
+    };
+
+    const stunnedOffset = {
+      x: offset.x - cardConstants.CARD_WIDTH + dimensions.width / 2,
+      y: offset.y - dimensions.height * slot - 5 * (slot + 1),
+    };
+
+    return shouldRender ? (
+      <Rect
+        key={`${this.props.id}-status${slot}`}
+        native={true}
+        cornerRadius={8}
+        x={this.props.x}
+        y={this.props.y}
+        width={dimensions.width}
+        height={dimensions.height}
+        fillPatternScaleX={0.5}
+        fillPatternScaleY={0.5}
+        offset={stunnedOffset}
+        fillPatternImage={img}
+      />
+    ) : null;
+  }
 
   private shouldRenderImageHorizontal(
     type: string,

@@ -130,6 +130,12 @@ class App extends Component<IProps, IState> {
             typeCode={this.getCardType(card)}
             faceup={card.faceup}
             numCardsInStack={card.cardStack.length}
+            cardState={{
+              stunned: true,
+              confused: true,
+              tough: true,
+              tokens: { damage: 0, threat: 0, generic: 0 },
+            }}
           />
         );
       });
