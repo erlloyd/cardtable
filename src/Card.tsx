@@ -4,6 +4,7 @@ import * as React from "react";
 import { Component } from "react";
 import { Rect } from "react-konva";
 import { animated, Spring } from "react-spring/renderprops-konva";
+import CardTokensContainer from "./CardTokensContainer";
 import { cardConstants } from "./constants/card-constants";
 // import Portal from './Portal';
 // import ContextMenu from './ContextMenu';
@@ -394,7 +395,23 @@ class Card extends Component<IProps, IState> {
       2
     );
 
-    return [cardStack, card, stunnedToken, confusedToken, toughToken];
+    const cardTokens = (
+      <CardTokensContainer
+        key={`${this.props.id}-cardTokens`}
+        id={this.props.id}
+        x={this.props.x}
+        y={this.props.y}
+      ></CardTokensContainer>
+    );
+
+    return [
+      cardStack,
+      card,
+      stunnedToken,
+      confusedToken,
+      toughToken,
+      cardTokens,
+    ];
   };
 
   private getTokenInSlot(

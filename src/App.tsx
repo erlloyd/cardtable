@@ -1,3 +1,4 @@
+import { ReactReduxContext, Provider } from "react-redux";
 import * as Intersects from "intersects";
 import Konva from "konva";
 import { KonvaEventObject } from "konva/types/Node";
@@ -234,46 +235,58 @@ class App extends Component<IProps, IState> {
         {this.renderContextMenu()}
         {this.renderDeckImporter()}
         {this.renderEncounterImporter()}
-        <Stage
-          ref={(ref) => {
-            if (!ref) return;
+        <ReactReduxContext.Consumer>
+          {({ store }) => (
+            <Stage
+              ref={(ref) => {
+                if (!ref) return;
 
-            this.stage = ref;
-          }}
-          x={this.props.gameState.stagePosition.x}
-          y={this.props.gameState.stagePosition.y}
-          width={window.innerWidth}
-          height={window.innerHeight}
-          onClick={this.handleStageClickOrTap}
-          onTap={this.handleStageClickOrTap}
-          onMouseDown={this.props.panMode ? this.noOp : this.handleMouseDown}
-          onMouseUp={this.props.panMode ? this.noOp : this.handleMouseUp}
-          onMouseMove={this.props.panMode ? this.noOp : this.handleMouseMove}
-          onTouchMove={this.props.panMode ? this.noOp : this.handleMouseMove}
-          onContextMenu={this.handleContextMenu}
-          scale={this.props.gameState.stageZoom}
-          onWheel={this.handleWheel}
-          draggable={this.props.panMode}
-          onDragMove={this.noOp}
-          onDragEnd={this.noOp}
-          preventDefault={true}
-        >
-          <Layer preventDefault={true}>
-            {staticCards
-              .concat(ghostCards)
-              .concat(movingCards)
-              .concat(previewCards)}
-          </Layer>
-          <Layer>
-            <Rect
-              x={this.state.selectStartPos.x}
-              y={this.state.selectStartPos.y}
-              width={this.state.selectRect.width}
-              height={this.state.selectRect.height}
-              stroke="black"
-            />
-          </Layer>
-        </Stage>
+                this.stage = ref;
+              }}
+              x={this.props.gameState.stagePosition.x}
+              y={this.props.gameState.stagePosition.y}
+              width={window.innerWidth}
+              height={window.innerHeight}
+              onClick={this.handleStageClickOrTap}
+              onTap={this.handleStageClickOrTap}
+              onMouseDown={
+                this.props.panMode ? this.noOp : this.handleMouseDown
+              }
+              onMouseUp={this.props.panMode ? this.noOp : this.handleMouseUp}
+              onMouseMove={
+                this.props.panMode ? this.noOp : this.handleMouseMove
+              }
+              onTouchMove={
+                this.props.panMode ? this.noOp : this.handleMouseMove
+              }
+              onContextMenu={this.handleContextMenu}
+              scale={this.props.gameState.stageZoom}
+              onWheel={this.handleWheel}
+              draggable={this.props.panMode}
+              onDragMove={this.noOp}
+              onDragEnd={this.noOp}
+              preventDefault={true}
+            >
+              <Provider store={store}>
+                <Layer preventDefault={true}>
+                  {staticCards
+                    .concat(ghostCards)
+                    .concat(movingCards)
+                    .concat(previewCards)}
+                </Layer>
+                <Layer>
+                  <Rect
+                    x={this.state.selectStartPos.x}
+                    y={this.state.selectStartPos.y}
+                    width={this.state.selectRect.width}
+                    height={this.state.selectRect.height}
+                    stroke="black"
+                  />
+                </Layer>
+              </Provider>
+            </Stage>
+          )}
+        </ReactReduxContext.Consumer>
       </div>
     );
   }
