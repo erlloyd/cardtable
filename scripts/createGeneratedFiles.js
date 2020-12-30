@@ -21,14 +21,14 @@ const doWork = async () => {
 
     console.log(`found ${files.length} number of files`);
 
-    fs.writeFile(outputFile, "", (e) => {
+    fs.writeFileSync(outputFile, "", (e) => {
       if (!!e) console.log(e);
     });
 
     filesWithCodes
       .filter((fd) => fd.code !== "wsp")
       .forEach((fileData) => {
-        fs.appendFile(
+        fs.appendFileSync(
           outputFile,
           `import ${fileData.code} from "../../external/marvelsdb-json-data/pack/${fileData.fname}";\n`,
           (e) => {
@@ -37,7 +37,7 @@ const doWork = async () => {
         );
       });
 
-    fs.appendFile(
+    fs.appendFileSync(
       outputFile,
       `export {${filesWithCodes
         .filter((fd) => fd.code !== "wsp")
