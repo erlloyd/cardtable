@@ -12,6 +12,7 @@ import ContextMenu, { ContextMenuItem } from "./ContextMenu";
 import DeckLoader from "./DeckLoader";
 import EncounterLoaderContainer from "./EncounterLoaderContainer";
 import { ICardData } from "./features/cards-data/initialState";
+import { StatusTokenType } from "./features/cards/cards.slice";
 import { ICardsState, ICardStack } from "./features/cards/initialState";
 import { IGameState } from "./features/game/initialState";
 import TopLayer from "./TopLayer";
@@ -50,6 +51,11 @@ interface IProps {
   addCardStack: (payload: {
     cardJsonIds: string[];
     position: Vector2d;
+  }) => void;
+  toggleToken: (payload: {
+    id: string;
+    tokenType: StatusTokenType;
+    value: boolean;
   }) => void;
 }
 
@@ -131,9 +137,9 @@ class App extends Component<IProps, IState> {
             faceup={card.faceup}
             numCardsInStack={card.cardStack.length}
             cardState={{
-              stunned: true,
-              confused: true,
-              tough: true,
+              stunned: card.statusTokens.stunned,
+              confused: card.statusTokens.confused,
+              tough: card.statusTokens.tough,
               tokens: { damage: 0, threat: 0, generic: 0 },
             }}
           />
@@ -437,6 +443,11 @@ class App extends Component<IProps, IState> {
 
     const card = this.props.cards.cards.find((c) => c.id === cardId);
     const numCardsInStack = card?.cardStack?.length || 0;
+    const currentStatusTokens = card?.statusTokens || {
+      stunned: false,
+      confused: false,
+      tough: false,
+    };
 
     const menuItems = [
       {
@@ -455,6 +466,39 @@ class App extends Component<IProps, IState> {
         },
       });
     }
+
+    menuItems.push({
+      label: !!currentStatusTokens.stunned ? "Remove Stun" : "Stun",
+      action: () => {
+        this.props.toggleToken({
+          id: card?.id || "",
+          tokenType: StatusTokenType.Stunned,
+          value: !currentStatusTokens.stunned,
+        });
+      },
+    });
+
+    menuItems.push({
+      label: !!currentStatusTokens.confused ? "Remove Confused" : "Confuse",
+      action: () => {
+        this.props.toggleToken({
+          id: card?.id || "",
+          tokenType: StatusTokenType.Confused,
+          value: !currentStatusTokens.confused,
+        });
+      },
+    });
+
+    menuItems.push({
+      label: !!currentStatusTokens.tough ? "Remove Tough" : "Tough",
+      action: () => {
+        this.props.toggleToken({
+          id: card?.id || "",
+          tokenType: StatusTokenType.Tough,
+          value: !currentStatusTokens.tough,
+        });
+      },
+    });
 
     this.setState({
       showContextMenu: true,

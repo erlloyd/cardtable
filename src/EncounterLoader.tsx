@@ -10,7 +10,6 @@ interface IProps {
 
 class EncounterLoader extends Component<IProps> {
   render() {
-    // console.log(this.props.encounterData);
     return (
       <div onClick={this.cancelBubble}>
         <Autocomplete

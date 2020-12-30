@@ -26,8 +26,6 @@ export const fetchDecklistById = createAsyncThunk(
       )
       .map(([key, _value]) => key);
 
-    console.log(heroObligationDeck);
-
     const heroEncounterDeck = Object.entries(encounterCardsData)
       .filter(([_key, value]) => value.set_code === `${heroSetCode}_nemesis`)
       .map(([key, _value]) => key);

@@ -196,7 +196,7 @@ class Card extends Component<IProps, IState> {
 
     // STUNNED
     if (
-      !this.stunnedImg.loading &&
+      !this.state.tokenImagesLoaded.stunned &&
       !prevProps.cardState?.stunned &&
       !!this.props.cardState?.stunned
     ) {
@@ -206,7 +206,7 @@ class Card extends Component<IProps, IState> {
 
     // CONFUSED
     if (
-      !this.confusedImg.loading &&
+      !this.state.tokenImagesLoaded.confused &&
       !prevProps.cardState?.confused &&
       !!this.props.cardState?.confused
     ) {
@@ -216,7 +216,7 @@ class Card extends Component<IProps, IState> {
 
     // TOUGH
     if (
-      !this.toughImg.loading &&
+      !this.state.tokenImagesLoaded.tough &&
       !prevProps.cardState?.tough &&
       !!this.props.cardState?.tough
     ) {
@@ -410,7 +410,7 @@ class Card extends Component<IProps, IState> {
 
     const stunnedOffset = {
       x: offset.x - cardConstants.CARD_WIDTH + dimensions.width / 2,
-      y: offset.y - dimensions.height * slot - 5 * (slot + 1),
+      y: offset.y - dimensions.height * slot - 5 * (slot + 1) - 10,
     };
 
     return shouldRender ? (

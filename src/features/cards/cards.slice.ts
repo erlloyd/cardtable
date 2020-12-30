@@ -14,6 +14,12 @@ import { resetApp } from "../../store/global.actions";
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 
+export enum StatusTokenType {
+  Stunned = "stunned",
+  Confused = "confused",
+  Tough = "tough",
+}
+
 // Helper methods
 const getCardStackWithId = (
   state: ICardsState,
@@ -317,9 +323,24 @@ const addCardStackReducer: CaseReducer<
       jsonId,
     })),
     selected: false,
+    statusTokens: {
+      stunned: false,
+      confused: false,
+      tough: false,
+    },
   };
 
   state.cards.push(newStack);
+};
+
+const toggleTokenReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{ id: string; tokenType: StatusTokenType; value: boolean }>
+> = (state, action) => {
+  const cardToToggle = state.cards.find((c) => c.id === action.payload.id);
+  if (!!cardToToggle) {
+    cardToToggle.statusTokens[action.payload.tokenType] = action.payload.value;
+  }
 };
 // Selectors
 
@@ -344,6 +365,7 @@ const cardsSlice = createSlice({
     shuffleStack: shuffleStackReducer,
     resetCards: resetCardsReducer,
     addCardStack: addCardStackReducer,
+    toggleToken: toggleTokenReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(resetApp, (state, action) => {
@@ -368,6 +390,11 @@ const cardsSlice = createSlice({
         id: uuidv4(),
         cardStack: [{ jsonId: action.payload.data.investigator_code }],
         selected: false,
+        statusTokens: {
+          stunned: false,
+          confused: false,
+          tough: false,
+        },
       };
 
       let mainDeckStack: ICardDetails[] = [];
@@ -390,6 +417,11 @@ const cardsSlice = createSlice({
         id: uuidv4(),
         cardStack: mainDeckStack,
         selected: false,
+        statusTokens: {
+          stunned: false,
+          confused: false,
+          tough: false,
+        },
       };
 
       const encounterDeck: ICardStack = {
@@ -404,6 +436,11 @@ const cardsSlice = createSlice({
           jsonId,
         })),
         selected: false,
+        statusTokens: {
+          stunned: false,
+          confused: false,
+          tough: false,
+        },
       };
 
       const obligationDeck: ICardStack = {
@@ -418,6 +455,11 @@ const cardsSlice = createSlice({
           jsonId,
         })),
         selected: false,
+        statusTokens: {
+          stunned: false,
+          confused: false,
+          tough: false,
+        },
       };
 
       state.cards.push(heroCard, newDeck, encounterDeck, obligationDeck);
@@ -442,6 +484,7 @@ export const {
   shuffleStack,
   resetCards,
   addCardStack,
+  toggleToken,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

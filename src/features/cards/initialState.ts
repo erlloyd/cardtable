@@ -1,4 +1,5 @@
 import { loadState } from "../../store/localStorage";
+import { StatusTokenType } from "./cards.slice";
 
 // import { v4 as uuidv4 } from "uuid";
 export interface ICardStack {
@@ -11,6 +12,9 @@ export interface ICardStack {
   x: number;
   y: number;
   cardStack: ICardDetails[];
+  statusTokens: {
+    [K in StatusTokenType]: boolean;
+  };
 }
 
 export interface ICardDetails {
