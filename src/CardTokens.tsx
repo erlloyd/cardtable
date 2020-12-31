@@ -53,8 +53,7 @@ class CardTokens extends Component<IProps, IState> {
       }
     };
 
-    if (true) {
-      // TODO: Replace with checking if there's damage
+    if (!!this.props.card.counterTokens.damage) {
       this.damageImg.src =
         process.env.PUBLIC_URL + "/images/standard/damage.png";
     }
@@ -72,8 +71,7 @@ class CardTokens extends Component<IProps, IState> {
       }
     };
 
-    if (true) {
-      // TODO: Replace with checking if there's threat
+    if (!!this.props.card.counterTokens.threat) {
       this.threatImg.src =
         process.env.PUBLIC_URL + "/images/standard/threat.png";
     }
@@ -91,8 +89,39 @@ class CardTokens extends Component<IProps, IState> {
       }
     };
 
-    if (true) {
-      // TODO: Replace with checking if there's generic
+    if (!!this.props.card.counterTokens.generic) {
+      this.genericImg.src =
+        process.env.PUBLIC_URL + "/images/standard/generic_counter.png";
+    }
+  }
+
+  public componentDidUpdate(prevProps: IProps, prevState: IState) {
+    // DAMAGE
+    if (
+      !this.state.imagesLoaded.damage &&
+      !prevProps.card?.counterTokens.damage &&
+      !!this.props.card?.counterTokens.damage
+    ) {
+      this.damageImg.src =
+        process.env.PUBLIC_URL + "/images/standard/damage.png";
+    }
+
+    // THREAT
+    if (
+      !this.state.imagesLoaded.threat &&
+      !prevProps.card?.counterTokens.threat &&
+      !!this.props.card?.counterTokens.threat
+    ) {
+      this.threatImg.src =
+        process.env.PUBLIC_URL + "/images/standard/threat.png";
+    }
+
+    // DAMAGE
+    if (
+      !this.state.imagesLoaded.generic &&
+      !prevProps.card?.counterTokens.generic &&
+      !!this.props.card?.counterTokens.generic
+    ) {
       this.genericImg.src =
         process.env.PUBLIC_URL + "/images/standard/generic_counter.png";
     }
@@ -109,7 +138,10 @@ class CardTokens extends Component<IProps, IState> {
   render() {
     const damageX = this.props.x - this.damageImg.naturalWidth / 2;
     const damageY = this.props.y - cardConstants.CARD_HEIGHT / 2 + 20;
-    const damageToken = this.state.imagesLoaded.damage ? (
+    const showDamage =
+      this.state.imagesLoaded.damage && !!this.props.card.counterTokens.damage;
+
+    const damageToken = showDamage ? (
       <Rect
         key={`${this.props.card.id}-damageToken`}
         x={damageX}
@@ -120,14 +152,14 @@ class CardTokens extends Component<IProps, IState> {
       ></Rect>
     ) : null;
 
-    const damageText = this.state.imagesLoaded.damage ? (
+    const damageText = showDamage ? (
       <Text
         key={`${this.props.card.id}-damageText`}
         x={damageX}
         y={damageY}
         width={this.damageImg.naturalWidth}
         height={this.damageImg.naturalHeight}
-        text="2"
+        text={`${this.props.card.counterTokens.damage}`}
         fill="white"
         align="center"
         verticalAlign="middle"
@@ -137,8 +169,10 @@ class CardTokens extends Component<IProps, IState> {
 
     const threatX = this.props.x - this.threatImg.naturalWidth / 2;
     const threatY = damageY + this.damageImg.naturalHeight + 5;
+    const showThreat =
+      this.state.imagesLoaded.threat && !!this.props.card.counterTokens.threat;
 
-    const threatToken = this.state.imagesLoaded.threat ? (
+    const threatToken = showThreat ? (
       <Rect
         key={`${this.props.card.id}-threatToken`}
         x={threatX}
@@ -149,14 +183,14 @@ class CardTokens extends Component<IProps, IState> {
       ></Rect>
     ) : null;
 
-    const threatText = this.state.imagesLoaded.threat ? (
+    const threatText = showThreat ? (
       <Text
         key={`${this.props.card.id}-threatText`}
         x={threatX}
         y={threatY}
         width={this.threatImg.naturalWidth}
         height={this.threatImg.naturalHeight}
-        text="3"
+        text={`${this.props.card.counterTokens.threat}`}
         fill="white"
         align="center"
         verticalAlign="middle"
@@ -166,8 +200,11 @@ class CardTokens extends Component<IProps, IState> {
 
     const genericX = this.props.x - this.threatImg.naturalWidth / 2;
     const genericY = threatY + this.threatImg.naturalHeight + 5;
+    const showGeneric =
+      this.state.imagesLoaded.generic &&
+      !!this.props.card.counterTokens.generic;
 
-    const genericToken = this.state.imagesLoaded.generic ? (
+    const genericToken = showGeneric ? (
       <Rect
         key={`${this.props.card.id}-genericToken`}
         x={genericX}
@@ -178,14 +215,14 @@ class CardTokens extends Component<IProps, IState> {
       ></Rect>
     ) : null;
 
-    const genericText = this.state.imagesLoaded.generic ? (
+    const genericText = showGeneric ? (
       <Text
         key={`${this.props.card.id}-genericText`}
         x={genericX}
         y={genericY}
         width={this.genericImg.naturalWidth}
         height={this.genericImg.naturalHeight}
-        text="4"
+        text={`${this.props.card.counterTokens.generic}`}
         fill="white"
         align="center"
         verticalAlign="middle"

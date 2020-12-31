@@ -20,6 +20,12 @@ export enum StatusTokenType {
   Tough = "tough",
 }
 
+export enum CounterTokenType {
+  Damage = "damage",
+  Threat = "threat",
+  Generic = "generic",
+}
+
 // Helper methods
 const getCardStackWithId = (
   state: ICardsState,
@@ -328,6 +334,11 @@ const addCardStackReducer: CaseReducer<
       confused: false,
       tough: false,
     },
+    counterTokens: {
+      damage: 0,
+      threat: 0,
+      generic: 0,
+    },
   };
 
   state.cards.push(newStack);
@@ -340,6 +351,20 @@ const toggleTokenReducer: CaseReducer<
   const cardToToggle = state.cards.find((c) => c.id === action.payload.id);
   if (!!cardToToggle) {
     cardToToggle.statusTokens[action.payload.tokenType] = action.payload.value;
+  }
+};
+
+const adjustCounterTokenReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{ id: string; tokenType: CounterTokenType; delta: number }>
+> = (state, action) => {
+  const cardToToggle = state.cards.find((c) => c.id === action.payload.id);
+  if (!!cardToToggle) {
+    cardToToggle.counterTokens[action.payload.tokenType] +=
+      action.payload.delta;
+    if (cardToToggle.counterTokens[action.payload.tokenType] < 0) {
+      cardToToggle.counterTokens[action.payload.tokenType] = 0;
+    }
   }
 };
 // Selectors
@@ -366,6 +391,7 @@ const cardsSlice = createSlice({
     resetCards: resetCardsReducer,
     addCardStack: addCardStackReducer,
     toggleToken: toggleTokenReducer,
+    adjustCounterToken: adjustCounterTokenReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(resetApp, (state, action) => {
@@ -395,6 +421,11 @@ const cardsSlice = createSlice({
           confused: false,
           tough: false,
         },
+        counterTokens: {
+          damage: 0,
+          threat: 0,
+          generic: 0,
+        },
       };
 
       let mainDeckStack: ICardDetails[] = [];
@@ -422,6 +453,11 @@ const cardsSlice = createSlice({
           confused: false,
           tough: false,
         },
+        counterTokens: {
+          damage: 0,
+          threat: 0,
+          generic: 0,
+        },
       };
 
       const encounterDeck: ICardStack = {
@@ -441,6 +477,11 @@ const cardsSlice = createSlice({
           confused: false,
           tough: false,
         },
+        counterTokens: {
+          damage: 0,
+          threat: 0,
+          generic: 0,
+        },
       };
 
       const obligationDeck: ICardStack = {
@@ -459,6 +500,11 @@ const cardsSlice = createSlice({
           stunned: false,
           confused: false,
           tough: false,
+        },
+        counterTokens: {
+          damage: 0,
+          threat: 0,
+          generic: 0,
         },
       };
 
@@ -485,6 +531,7 @@ export const {
   resetCards,
   addCardStack,
   toggleToken,
+  adjustCounterToken,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

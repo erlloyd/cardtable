@@ -13,7 +13,10 @@ import ContextMenu, { ContextMenuItem } from "./ContextMenu";
 import DeckLoader from "./DeckLoader";
 import EncounterLoaderContainer from "./EncounterLoaderContainer";
 import { ICardData } from "./features/cards-data/initialState";
-import { StatusTokenType } from "./features/cards/cards.slice";
+import {
+  CounterTokenType,
+  StatusTokenType,
+} from "./features/cards/cards.slice";
 import { ICardsState, ICardStack } from "./features/cards/initialState";
 import { IGameState } from "./features/game/initialState";
 import TopLayer from "./TopLayer";
@@ -57,6 +60,11 @@ interface IProps {
     id: string;
     tokenType: StatusTokenType;
     value: boolean;
+  }) => void;
+  adjustCounterToken: (payload: {
+    id: string;
+    tokenType: CounterTokenType;
+    delta: number;
   }) => void;
 }
 
@@ -509,6 +517,72 @@ class App extends Component<IProps, IState> {
           id: card?.id || "",
           tokenType: StatusTokenType.Tough,
           value: !currentStatusTokens.tough,
+        });
+      },
+    });
+
+    menuItems.push({
+      label: "Add 1 Damage",
+      action: () => {
+        this.props.adjustCounterToken({
+          id: card?.id || "",
+          tokenType: CounterTokenType.Damage,
+          delta: 1,
+        });
+      },
+    });
+
+    menuItems.push({
+      label: "Remove 1 Damage",
+      action: () => {
+        this.props.adjustCounterToken({
+          id: card?.id || "",
+          tokenType: CounterTokenType.Damage,
+          delta: -1,
+        });
+      },
+    });
+
+    menuItems.push({
+      label: "Add 1 Threat",
+      action: () => {
+        this.props.adjustCounterToken({
+          id: card?.id || "",
+          tokenType: CounterTokenType.Threat,
+          delta: 1,
+        });
+      },
+    });
+
+    menuItems.push({
+      label: "Remove 1 Threat",
+      action: () => {
+        this.props.adjustCounterToken({
+          id: card?.id || "",
+          tokenType: CounterTokenType.Threat,
+          delta: -1,
+        });
+      },
+    });
+
+    menuItems.push({
+      label: "Add 1 Generic Token",
+      action: () => {
+        this.props.adjustCounterToken({
+          id: card?.id || "",
+          tokenType: CounterTokenType.Generic,
+          delta: 1,
+        });
+      },
+    });
+
+    menuItems.push({
+      label: "Remove 1 Generic Token",
+      action: () => {
+        this.props.adjustCounterToken({
+          id: card?.id || "",
+          tokenType: CounterTokenType.Generic,
+          delta: -1,
         });
       },
     });
