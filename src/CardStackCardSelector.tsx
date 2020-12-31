@@ -13,10 +13,11 @@ interface IProps {
 class CardStackCardSelector extends Component<IProps> {
   private cardsDataInStack: CardData[] = [];
 
-  componentDidMount() {
-    this.cardsDataInStack = this.props.card.cardStack.map(
-      (c) => this.props.cardsDataEntities[c.jsonId]
-    );
+  constructor(props: IProps) {
+    super(props);
+    this.cardsDataInStack = props.card.cardStack.map((c) => {
+      return this.props.cardsDataEntities[c.jsonId];
+    });
   }
 
   render() {

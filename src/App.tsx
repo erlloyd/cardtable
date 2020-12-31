@@ -530,7 +530,6 @@ class App extends Component<IProps, IState> {
         label: "Find Specific Card",
         action: () => {
           if (!!card) {
-            console.log("opening card search for card id " + cardId);
             this.setState({
               showCardSearch: true,
               cardSearchPosition: this.stage?.getPointerPosition() ?? null,
