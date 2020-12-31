@@ -86,9 +86,6 @@ class Card extends Component<IProps, IState> {
   private stunnedImg: HTMLImageElement;
   private confusedImg: HTMLImageElement;
   private toughImg: HTMLImageElement;
-  private damageImg: HTMLImageElement;
-  private threatImg: HTMLImageElement;
-  private genericImg: HTMLImageElement;
   private unmounted: boolean;
   private renderAnimated: boolean = false;
 
@@ -115,9 +112,6 @@ class Card extends Component<IProps, IState> {
     this.stunnedImg = new Image();
     this.confusedImg = new Image();
     this.toughImg = new Image();
-    this.damageImg = new Image();
-    this.threatImg = new Image();
-    this.genericImg = new Image();
 
     // When the image loads, set a flag in the state
     this.img.onload = () => {
@@ -395,14 +389,15 @@ class Card extends Component<IProps, IState> {
       2
     );
 
-    const cardTokens = (
-      <CardTokensContainer
-        key={`${this.props.id}-cardTokens`}
-        id={this.props.id}
-        x={this.props.x}
-        y={this.props.y}
-      ></CardTokensContainer>
-    );
+    const cardTokens =
+      this.props.dragging || this.props.isGhost ? null : (
+        <CardTokensContainer
+          key={`${this.props.id}-cardTokens`}
+          id={this.props.id}
+          x={this.props.x}
+          y={this.props.y}
+        ></CardTokensContainer>
+      );
 
     return [
       cardStack,
