@@ -21,6 +21,7 @@ import { ICardsState, ICardStack } from "./features/cards/initialState";
 import { IGameState } from "./features/game/initialState";
 import TopLayer from "./TopLayer";
 import { getDistance } from "./utilities/geo";
+import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
 
 const SCALE_BY = 1.02;
 
@@ -86,6 +87,9 @@ interface IState {
   deckImporterPosition: Vector2d | null;
   showEncounterImporter: boolean;
   encounterImporterPosition: Vector2d | null;
+  showCardSearch: boolean;
+  cardSearchPosition: Vector2d | null;
+  cardStackForSearching: ICardStack | null;
 }
 class App extends Component<IProps, IState> {
   public stage: Konva.Stage | null = null;
@@ -111,6 +115,9 @@ class App extends Component<IProps, IState> {
       deckImporterPosition: null,
       showEncounterImporter: false,
       encounterImporterPosition: null,
+      showCardSearch: false,
+      cardSearchPosition: null,
+      cardStackForSearching: null,
     };
   }
 
@@ -243,6 +250,7 @@ class App extends Component<IProps, IState> {
         {this.renderContextMenu()}
         {this.renderDeckImporter()}
         {this.renderEncounterImporter()}
+        {this.renderCardSearch()}
         <ReactReduxContext.Consumer>
           {({ store }) => (
             <Stage
@@ -383,6 +391,29 @@ class App extends Component<IProps, IState> {
     );
   };
 
+  private renderCardSearch = () => {
+    if (!this.state.showCardSearch) return null;
+
+    const containerRect = this.stage?.container().getBoundingClientRect();
+    const pointerPosition = this.state.cardSearchPosition;
+    if (!containerRect || !pointerPosition) {
+      throw new Error("Problem computing card search position");
+    }
+
+    const pos = {
+      x: containerRect.left + pointerPosition.x,
+      y: containerRect.top + pointerPosition.y,
+    };
+
+    return !!this.state.cardStackForSearching ? (
+      <TopLayer position={pos} completed={this.clearCardSearch}>
+        <CardStackCardSelectorContainer
+          card={this.state.cardStackForSearching}
+        />
+      </TopLayer>
+    ) : null;
+  };
+
   private handleLoadEncounter = (position: Vector2d) => (cards: string[]) => {
     this.clearEncounterImporter();
     this.props.addCardStack({ position, cardJsonIds: cards });
@@ -412,6 +443,14 @@ class App extends Component<IProps, IState> {
     this.setState({
       showEncounterImporter: false,
       encounterImporterPosition: null,
+    });
+  };
+
+  private clearCardSearch = () => {
+    this.setState({
+      showCardSearch: false,
+      cardSearchPosition: null,
+      cardStackForSearching: null,
     });
   };
 
@@ -484,6 +523,20 @@ class App extends Component<IProps, IState> {
         label: "Shuffle",
         action: () => {
           this.props.shuffleStack(cardId);
+        },
+      });
+
+      menuItems.push({
+        label: "Find Specific Card",
+        action: () => {
+          if (!!card) {
+            console.log("opening card search for card id " + cardId);
+            this.setState({
+              showCardSearch: true,
+              cardSearchPosition: this.stage?.getPointerPosition() ?? null,
+              cardStackForSearching: card,
+            });
+          }
         },
       });
     }
