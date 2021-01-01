@@ -67,6 +67,11 @@ interface IProps {
     tokenType: CounterTokenType;
     delta: number;
   }) => void;
+  pullCardOutOfCardStack: (payload: {
+    cardStackId: string;
+    jsonId: string;
+    pos: Vector2d;
+  }) => void;
 }
 
 interface IState {
@@ -409,6 +414,10 @@ class App extends Component<IProps, IState> {
       <TopLayer position={pos} completed={this.clearCardSearch}>
         <CardStackCardSelectorContainer
           card={this.state.cardStackForSearching}
+          cardSelected={this.handleCardSelectedFromCardStack(
+            this.state.cardStackForSearching.id,
+            pos
+          )}
         />
       </TopLayer>
     ) : null;
@@ -422,6 +431,14 @@ class App extends Component<IProps, IState> {
   private handleImportDeck = (position: Vector2d) => (id: number) => {
     this.clearDeckImporter();
     this.props.fetchDecklistById({ decklistId: id, position });
+  };
+
+  private handleCardSelectedFromCardStack = (
+    cardStackId: string,
+    pos: Vector2d
+  ) => (jsonId: string) => {
+    this.clearCardSearch();
+    this.props.pullCardOutOfCardStack({ cardStackId, jsonId, pos });
   };
 
   private clearContextMenu = () => {

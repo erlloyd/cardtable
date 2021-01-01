@@ -367,6 +367,31 @@ const adjustCounterTokenReducer: CaseReducer<
     }
   }
 };
+
+const pullCardOutOfCardStackReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{ cardStackId: string; jsonId: string; pos: Vector2d }>
+> = (state, action) => {
+  const cardStackToUse = state.cards.find(
+    (c) => c.id === action.payload.cardStackId
+  );
+  if (!!cardStackToUse && cardStackToUse.cardStack.length > 1) {
+    const newCardStack: ICardDetails[] = [{ jsonId: action.payload.jsonId }];
+    const newCard = Object.assign({}, cardStackToUse, {
+      cardStack: newCardStack,
+    });
+    newCard.id = uuidv4();
+    newCard.selected = true;
+    newCard.x = newCard.x + cardConstants.CARD_WIDTH + 5;
+
+    cardStackToUse.cardStack = cardStackToUse.cardStack.filter(
+      (c) => c.jsonId !== action.payload.jsonId
+    );
+    cardStackToUse.selected = false;
+
+    state.cards.push(newCard);
+  }
+};
 // Selectors
 
 // slice
@@ -392,6 +417,7 @@ const cardsSlice = createSlice({
     addCardStack: addCardStackReducer,
     toggleToken: toggleTokenReducer,
     adjustCounterToken: adjustCounterTokenReducer,
+    pullCardOutOfCardStack: pullCardOutOfCardStackReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(resetApp, (state, action) => {
@@ -532,6 +558,7 @@ export const {
   addCardStack,
   toggleToken,
   adjustCounterToken,
+  pullCardOutOfCardStack,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

@@ -26,6 +26,7 @@ import {
   unselectCard,
   toggleToken,
   adjustCounterToken,
+  pullCardOutOfCardStack,
 } from "./features/cards/cards.slice";
 import { getGame } from "./features/game/game.selectors";
 import { updatePosition, updateZoom } from "./features/game/game.slice";
@@ -65,6 +66,7 @@ const AppContainer = connect(mapStateToProps, {
   addCardStack,
   toggleToken,
   adjustCounterToken,
+  pullCardOutOfCardStack,
 })(App);
 
 export default AppContainer;

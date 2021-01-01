@@ -8,6 +8,7 @@ import { ICardStack } from "./features/cards/initialState";
 interface IProps {
   cardsDataEntities: ICardData;
   card: ICardStack;
+  cardSelected: (jsonId: string) => void;
 }
 
 class CardStackCardSelector extends Component<IProps> {
@@ -38,8 +39,8 @@ class CardStackCardSelector extends Component<IProps> {
   }
 
   private handleSelected = (_event: any, value: CardData | null) => {
-    if (!!value) {
-      console.log(`pulling out card ${value.name}`);
+    if (!!value && !!this.props.cardSelected) {
+      this.props.cardSelected(value.code);
     }
   };
 
