@@ -22,6 +22,7 @@ import { IGameState } from "./features/game/initialState";
 import TopLayer from "./TopLayer";
 import { getDistance } from "./utilities/geo";
 import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
+import Counter from "./Counter";
 
 const SCALE_BY = 1.02;
 
@@ -72,6 +73,8 @@ interface IProps {
     jsonId: string;
     pos: Vector2d;
   }) => void;
+  addNewCounter: (pos: Vector2d) => void;
+  updateCounterValue: (payload: { id: string; delta: number }) => void;
 }
 
 interface IState {
@@ -289,6 +292,19 @@ class App extends Component<IProps, IState> {
               preventDefault={true}
             >
               <Provider store={store}>
+                <Layer>
+                  {this.props.gameState.counters.map((counter) => (
+                    <Counter
+                      key={`${counter.id}-counter`}
+                      id={counter.id}
+                      pos={counter.position}
+                      value={counter.value}
+                      updateCounterValueBy={this.handleCounterValueUpdate(
+                        counter.id
+                      )}
+                    ></Counter>
+                  ))}
+                </Layer>
                 <Layer preventDefault={true}>
                   {staticCards
                     .concat(ghostCards)
@@ -311,6 +327,10 @@ class App extends Component<IProps, IState> {
       </div>
     );
   }
+
+  private handleCounterValueUpdate = (id: string) => (delta: number) => {
+    this.props.updateCounterValue({ id, delta });
+  };
 
   private noOp = () => {};
 
@@ -842,6 +862,14 @@ class App extends Component<IProps, IState> {
             showEncounterImporter: true,
             encounterImporterPosition: this.stage?.getPointerPosition() ?? null,
           });
+        },
+      },
+      {
+        label: "Create new counter",
+        action: () => {
+          this.props.addNewCounter(
+            this.getRelativePositionFromTarget(this.stage) ?? { x: 0, y: 0 }
+          );
         },
       },
       { label: "Reset", action: this.props.resetApp },

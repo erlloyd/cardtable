@@ -29,7 +29,12 @@ import {
   pullCardOutOfCardStack,
 } from "./features/cards/cards.slice";
 import { getGame } from "./features/game/game.selectors";
-import { updatePosition, updateZoom } from "./features/game/game.slice";
+import {
+  updatePosition,
+  updateZoom,
+  addNewCounter,
+  updateCounterValue,
+} from "./features/game/game.slice";
 import { RootState } from "./store/rootReducer";
 import { resetApp } from "./store/global.actions";
 
@@ -67,6 +72,8 @@ const AppContainer = connect(mapStateToProps, {
   toggleToken,
   adjustCounterToken,
   pullCardOutOfCardStack,
+  addNewCounter,
+  updateCounterValue,
 })(App);
 
 export default AppContainer;
