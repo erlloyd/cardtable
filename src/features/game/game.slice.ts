@@ -45,6 +45,26 @@ const updateCounterValueReducer: CaseReducer<
   }
 };
 
+const removeCounterReducer: CaseReducer<IGameState, PayloadAction<string>> = (
+  state,
+  action
+) => {
+  state.counters = state.counters.filter((c) => c.id !== action.payload);
+};
+
+const moveCounterReducer: CaseReducer<
+  IGameState,
+  PayloadAction<{ id: string; newPos: Vector2d }>
+> = (state, action) => {
+  const counter = state.counters.find((c) => c.id === action.payload.id);
+  if (!!counter) {
+    counter.position = {
+      x: action.payload.newPos.x,
+      y: action.payload.newPos.y,
+    };
+  }
+};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -54,6 +74,8 @@ const gameSlice = createSlice({
     updatePosition: updatePositionReducer,
     addNewCounter: addNewCounterReducer,
     updateCounterValue: updateCounterValueReducer,
+    removeCounter: removeCounterReducer,
+    moveCounter: moveCounterReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(resetApp, (state, action) => {
@@ -69,6 +91,8 @@ export const {
   updatePosition,
   addNewCounter,
   updateCounterValue,
+  removeCounter,
+  moveCounter,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

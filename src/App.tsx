@@ -75,6 +75,8 @@ interface IProps {
   }) => void;
   addNewCounter: (pos: Vector2d) => void;
   updateCounterValue: (payload: { id: string; delta: number }) => void;
+  removeCounter: (id: string) => void;
+  moveCounter: (payload: { id: string; newPos: Vector2d }) => void;
 }
 
 interface IState {
@@ -302,6 +304,10 @@ class App extends Component<IProps, IState> {
                       updateCounterValueBy={this.handleCounterValueUpdate(
                         counter.id
                       )}
+                      handleContextMenu={this.handleCounterContextMenu(
+                        counter.id
+                      )}
+                      onDragEnd={this.handleCounterDrag(counter.id)}
                     ></Counter>
                   ))}
                 </Layer>
@@ -330,6 +336,18 @@ class App extends Component<IProps, IState> {
 
   private handleCounterValueUpdate = (id: string) => (delta: number) => {
     this.props.updateCounterValue({ id, delta });
+  };
+
+  private handleCounterDrag = (id: string) => (
+    event: KonvaEventObject<DragEvent>
+  ) => {
+    this.props.moveCounter({
+      id,
+      newPos: {
+        x: event.target.x(),
+        y: event.target.y(),
+      },
+    });
   };
 
   private noOp = () => {};
@@ -526,6 +544,28 @@ class App extends Component<IProps, IState> {
     };
 
     this.props.updatePosition(newPos);
+  };
+
+  private handleCounterContextMenu = (counterId: string) => (
+    event: KonvaEventObject<PointerEvent>
+  ) => {
+    event.evt.preventDefault();
+    event.cancelBubble = true;
+
+    const menuItems = [
+      {
+        label: "Remove",
+        action: () => {
+          this.props.removeCounter(counterId);
+        },
+      },
+    ];
+
+    this.setState({
+      showContextMenu: true,
+      contextMenuPosition: this.stage?.getPointerPosition() ?? null,
+      contextMenuItems: menuItems,
+    });
   };
 
   private handleCardContextMenu = (
