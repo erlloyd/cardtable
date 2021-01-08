@@ -13,9 +13,15 @@ services:
     commands:
       # Commands that set up the basic preview infrastructure
       init:
-        # Check for updates to apt-get, and then use it to install nodejs / npm
+        # Check for updates to apt-get, and then use it to install nodejs / npm / yarn
+        - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+        - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
         - apt-get update
         - apt-get install nodejs
+        - apt-get install yarn
+
+        - node --version
+        - yarn --version
 
         # Clean up apt artifacts to keep the Preview small
         - apt-get clean
