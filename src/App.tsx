@@ -35,7 +35,7 @@ interface IProps {
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
   endCardMove: (id: string) => void;
   exhaustCard: (id: string) => void;
-  selectCard: (id: string) => void;
+  selectCard: (payload: { id: string; unselectOtherCards: boolean }) => void;
   unselectCard: (id: string) => void;
   toggleSelectCard: (id: string) => void;
   startCardMove: (payload: { id: string; splitTopCard: boolean }) => void;
@@ -154,7 +154,7 @@ class App extends Component<IProps, IState> {
             handleDragMove={this.props.cardMove}
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.handleSelectAndExhaust}
-            handleClick={this.props.toggleSelectCard}
+            handleClick={this.handleCardClick}
             handleHover={this.props.hoverCard}
             handleHoverLeave={this.props.hoverLeaveCard}
             handleContextMenu={this.handleCardContextMenu}
@@ -576,7 +576,7 @@ class App extends Component<IProps, IState> {
     event.cancelBubble = true;
 
     // First, select the card
-    this.props.selectCard(cardId);
+    this.props.selectCard({ id: cardId, unselectOtherCards: false });
 
     const card = this.props.cards.cards.find((c) => c.id === cardId);
     const numCardsInStack = card?.cardStack?.length || 0;
@@ -723,8 +723,14 @@ class App extends Component<IProps, IState> {
     });
   };
 
+  private handleCardClick = (cardId: string) => {
+    // Here check if modifier held down
+
+    this.props.selectCard({ id: cardId, unselectOtherCards: true });
+  };
+
   private handleSelectAndExhaust = (cardId: string) => {
-    this.props.selectCard(cardId);
+    this.props.selectCard({ id: cardId, unselectOtherCards: true });
     this.props.exhaustCard(cardId);
   };
 
