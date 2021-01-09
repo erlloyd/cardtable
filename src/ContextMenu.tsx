@@ -1,6 +1,8 @@
 import { Vector2d } from "konva/types/types";
 import * as React from "react";
 import { Component } from "react";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 
 export interface ContextMenuItem {
   label: string;
@@ -16,35 +18,28 @@ interface IProps {
 
 class ContextMenu extends Component<IProps> {
   render() {
-    const menuStyle: React.CSSProperties = {
-      top: `${this.props.position.y + 8}px`,
-      left: `${this.props.position.x + 8}px`,
-    };
-
     return (
       <div
         id="context-menu-layer"
         onContextMenu={this.preventDefault}
         onClick={this.props.hideContextMenu}
       >
-        <div
-          className="context-menu"
-          style={menuStyle}
-          onContextMenu={this.preventDefault}
-          onClick={this.props.hideContextMenu}
+        <Menu
+          keepMounted
+          open={true}
+          onClose={this.props.hideContextMenu}
+          anchorReference="anchorPosition"
+          anchorPosition={{
+            top: this.props.position.y + 8,
+            left: this.props.position.x + 8,
+          }}
         >
           {this.props.items.map((i, index) => (
-            <div key={`context-menu-item-${index}`}>
-              <button
-                className="context-menu-item"
-                onContextMenu={this.preventDefault}
-                onClick={this.handleContextItemClicked(i)}
-              >
-                {i.label}
-              </button>
-            </div>
+            <MenuItem onClick={this.handleContextItemClicked(i)}>
+              {i.label}
+            </MenuItem>
           ))}
-        </div>
+        </Menu>
       </div>
     );
   }
