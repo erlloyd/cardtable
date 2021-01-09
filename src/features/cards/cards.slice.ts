@@ -82,11 +82,15 @@ const shuffle = (array: ICardDetails[]) => {
 };
 
 // Reducers
-const selectCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
-  state,
-  action
-) => {
-  mutateCardWithId(state, action.payload, (card) => {
+const selectCardReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{ id: string; unselectOtherCards: boolean }>
+> = (state, action) => {
+  if (action.payload.unselectOtherCards) {
+    unselectAllCardsReducer(state, action);
+  }
+
+  mutateCardWithId(state, action.payload.id, (card) => {
     card.selected = true;
   });
 };
