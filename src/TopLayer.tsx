@@ -24,13 +24,18 @@ class TopLayer extends Component<IProps> {
           className="top-layer-content-wrapper"
           style={containerStyle}
           onContextMenu={this.preventDefault}
-          onClick={this.props.completed}
+          onClick={this.handleClick}
         >
           {this.props.children}
         </div>
       </div>
     );
   }
+
+  private handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+    this.props.completed();
+  };
 
   private preventDefault = (
     event: React.MouseEvent<HTMLElement, MouseEvent>

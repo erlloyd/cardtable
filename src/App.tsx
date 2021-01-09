@@ -808,16 +808,19 @@ class App extends Component<IProps, IState> {
     return transform.point(pos) as Vector2d;
   };
 
-  private handleMouseDown = (event: any) => {
-    const pos = this.getRelativePositionFromTarget(this.stage);
+  private handleMouseDown = (event: KonvaEventObject<MouseEvent>) => {
+    if (event.evt.button === 0) {
+      // Only do something if it's the primary button (not a right-click)
+      const pos = this.getRelativePositionFromTarget(this.stage);
 
-    this.setState({
-      selectStartPos: {
-        x: pos.x,
-        y: pos.y,
-      },
-      selecting: true,
-    });
+      this.setState({
+        selectStartPos: {
+          x: pos.x,
+          y: pos.y,
+        },
+        selecting: true,
+      });
+    }
 
     return false;
   };
