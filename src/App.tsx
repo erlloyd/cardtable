@@ -207,7 +207,6 @@ class App extends Component<IProps, IState> {
             handleDragStart={this.handleCardDragStart}
             handleDragMove={this.props.cardMove}
             handleDragEnd={this.props.endCardMove}
-            handleDoubleClick={this.handleSelectAndExhaust}
             handleClick={this.props.toggleSelectCard}
             imgUrl={this.getImgUrl(card)}
             typeCode={this.getCardType(card)}
@@ -723,14 +722,24 @@ class App extends Component<IProps, IState> {
     });
   };
 
-  private handleCardClick = (cardId: string) => {
+  private handleCardClick = (
+    cardId: string,
+    event: KonvaEventObject<MouseEvent>
+  ) => {
     // Here check if modifier held down
-
-    this.props.selectCard({ id: cardId, unselectOtherCards: true });
+    const modifierKeyHeld =
+      event.evt.shiftKey || event.evt.metaKey || event.evt.ctrlKey;
+    this.props.selectCard({ id: cardId, unselectOtherCards: !modifierKeyHeld });
   };
 
-  private handleSelectAndExhaust = (cardId: string) => {
-    this.props.selectCard({ id: cardId, unselectOtherCards: true });
+  private handleSelectAndExhaust = (
+    cardId: string,
+    event: KonvaEventObject<MouseEvent>
+  ) => {
+    // Here check if modifier held down
+    const modifierKeyHeld =
+      event.evt.shiftKey || event.evt.metaKey || event.evt.ctrlKey;
+    this.props.selectCard({ id: cardId, unselectOtherCards: !modifierKeyHeld });
     this.props.exhaustCard(cardId);
   };
 

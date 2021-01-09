@@ -29,8 +29,8 @@ interface IProps {
   exhausted: boolean;
   cardState?: CardUIState;
   fill: string;
-  handleClick?: (id: string) => void;
-  handleDoubleClick?: (id: string) => void;
+  handleClick?: (id: string, event: KonvaEventObject<MouseEvent>) => void;
+  handleDoubleClick?: (id: string, event: KonvaEventObject<MouseEvent>) => void;
   handleDragStart?: (id: string, event: KonvaEventObject<DragEvent>) => void;
   handleDragMove?: (info: { id: string; dx: number; dy: number }) => void;
   handleDragEnd?: (id: string) => void;
@@ -487,9 +487,9 @@ class Card extends Component<IProps, IState> {
     }
   };
 
-  private handleDoubleClick = () => {
+  private handleDoubleClick = (event: KonvaEventObject<MouseEvent>) => {
     if (this.props.handleDoubleClick) {
-      this.props.handleDoubleClick(this.props.id);
+      this.props.handleDoubleClick(this.props.id, event);
     }
   };
 
@@ -515,9 +515,9 @@ class Card extends Component<IProps, IState> {
     }
   };
 
-  private handleClick = (event: any) => {
+  private handleClick = (event: KonvaEventObject<MouseEvent>) => {
     if (this.props.handleClick) {
-      this.props.handleClick(this.props.id);
+      this.props.handleClick(this.props.id, event);
       event.cancelBubble = true;
     }
   };
