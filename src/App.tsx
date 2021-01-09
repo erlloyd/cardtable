@@ -154,7 +154,7 @@ class App extends Component<IProps, IState> {
             handleDragMove={this.props.cardMove}
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.handleSelectAndExhaust}
-            handleClick={this.handleCardClick}
+            handleClick={this.handleCardClick(card)}
             handleHover={this.props.hoverCard}
             handleHoverLeave={this.props.hoverLeaveCard}
             handleContextMenu={this.handleCardContextMenu}
@@ -207,7 +207,6 @@ class App extends Component<IProps, IState> {
             handleDragStart={this.handleCardDragStart}
             handleDragMove={this.props.cardMove}
             handleDragEnd={this.props.endCardMove}
-            handleClick={this.props.toggleSelectCard}
             imgUrl={this.getImgUrl(card)}
             typeCode={this.getCardType(card)}
             faceup={card.faceup}
@@ -722,14 +721,22 @@ class App extends Component<IProps, IState> {
     });
   };
 
-  private handleCardClick = (
+  private handleCardClick = (card: ICardStack) => (
     cardId: string,
     event: KonvaEventObject<MouseEvent>
   ) => {
     // Here check if modifier held down
     const modifierKeyHeld =
       event.evt.shiftKey || event.evt.metaKey || event.evt.ctrlKey;
-    this.props.selectCard({ id: cardId, unselectOtherCards: !modifierKeyHeld });
+
+    if (card.selected && modifierKeyHeld) {
+      this.props.toggleSelectCard(cardId);
+    } else {
+      this.props.selectCard({
+        id: cardId,
+        unselectOtherCards: !modifierKeyHeld,
+      });
+    }
   };
 
   private handleSelectAndExhaust = (
