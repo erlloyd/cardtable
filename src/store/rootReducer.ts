@@ -15,12 +15,12 @@ import undoable, { excludeAction, groupByActionTypes } from "redux-undo";
 
 const rootReducer = combineReducers({
   game: undoable(game, {
-    limit: 10,
+    limit: 20,
     groupBy: groupByActionTypes([moveCounter.type]),
     filter: excludeAction([updateZoom.type, updatePosition.type]),
   }),
   cards: undoable(cards, {
-    limit: 10,
+    limit: 20,
     filter: excludeAction([
       startCardMove.type,
       cardMove.type,
