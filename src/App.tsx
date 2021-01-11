@@ -77,6 +77,8 @@ interface IProps {
   updateCounterValue: (payload: { id: string; delta: number }) => void;
   removeCounter: (id: string) => void;
   moveCounter: (payload: { id: string; newPos: Vector2d }) => void;
+  undo: () => void;
+  redo: () => void;
 }
 
 interface IState {
@@ -253,7 +255,11 @@ class App extends Component<IProps, IState> {
       : [];
 
     return (
-      <div tabIndex={1} onKeyPress={this.handleKeyPress}>
+      <div
+        tabIndex={1}
+        onKeyDown={this.handleKeyDown}
+        onKeyPress={this.handleKeyPress}
+      >
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
         {this.renderDeckImporter()}
@@ -782,12 +788,25 @@ class App extends Component<IProps, IState> {
     this.props.startCardMove({ id: cardId, splitTopCard });
   };
 
-  private handleKeyPress = (event: any) => {
+  private handleKeyPress = (event: React.KeyboardEvent<HTMLElement>) => {
     const code = event.which || event.keyCode;
     if (code === 115) {
       this.props.togglePanMode();
     } else if (code === 102) {
       this.props.flipCards();
+    }
+  };
+
+  private handleKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (
+      event.shiftKey &&
+      (event.ctrlKey || event.metaKey) &&
+      event.key === "z"
+    ) {
+      this.props.redo();
+    } else if ((event.ctrlKey || event.metaKey) && event.key === "z") {
+      event.preventDefault();
+      this.props.undo();
     }
   };
 

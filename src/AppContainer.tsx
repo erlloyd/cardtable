@@ -40,6 +40,8 @@ import {
 import { RootState } from "./store/rootReducer";
 import { resetApp } from "./store/global.actions";
 
+import { ActionCreators } from "redux-undo";
+
 const mapStateToProps = (state: RootState) => {
   return {
     cards: getCards(state),
@@ -78,6 +80,8 @@ const AppContainer = connect(mapStateToProps, {
   updateCounterValue,
   removeCounter,
   moveCounter,
+  undo: ActionCreators.undo,
+  redo: ActionCreators.redo,
 })(App);
 
 export default AppContainer;

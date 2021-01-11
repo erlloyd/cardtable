@@ -36,7 +36,7 @@ export interface ICardsState {
   panMode: boolean;
 }
 
-const localStorageState: ICardsState = loadState("cards");
+const localStorageState = loadState("cards");
 const defaultState: ICardsState = {
   cards: [
     // {

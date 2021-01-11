@@ -13,7 +13,7 @@ export interface ICounter {
   value: number;
 }
 
-const localStorageState: IGameState = loadState("game");
+const localStorageState = loadState("game");
 const defaultState: IGameState = {
   stageZoom: { x: 1, y: 1 },
   stagePosition: { x: 0, y: 0 },

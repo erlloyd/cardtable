@@ -35,7 +35,10 @@ class ContextMenu extends Component<IProps> {
           }}
         >
           {this.props.items.map((i, index) => (
-            <MenuItem onClick={this.handleContextItemClicked(i)}>
+            <MenuItem
+              key={`contextMenu-item-${index}`}
+              onClick={this.handleContextItemClicked(i)}
+            >
               {i.label}
             </MenuItem>
           ))}

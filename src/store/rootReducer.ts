@@ -1,11 +1,33 @@
 import { combineReducers } from "redux";
-import cards from "../features/cards/cards.slice";
+import cards, {
+  cardMove,
+  hoverCard,
+  hoverLeaveCard,
+  startCardMove,
+} from "../features/cards/cards.slice";
 import cardsData from "../features/cards-data/cards-data.slice";
-import game from "../features/game/game.slice";
+import game, {
+  moveCounter,
+  updatePosition,
+  updateZoom,
+} from "../features/game/game.slice";
+import undoable, { excludeAction, groupByActionTypes } from "redux-undo";
 
 const rootReducer = combineReducers({
-  game,
-  cards,
+  game: undoable(game, {
+    limit: 10,
+    groupBy: groupByActionTypes([moveCounter.type]),
+    filter: excludeAction([updateZoom.type, updatePosition.type]),
+  }),
+  cards: undoable(cards, {
+    limit: 10,
+    filter: excludeAction([
+      startCardMove.type,
+      cardMove.type,
+      hoverCard.type,
+      hoverLeaveCard.type,
+    ]),
+  }),
   cardsData,
 });
 

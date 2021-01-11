@@ -6,8 +6,9 @@ export const loadState = (key: string) => {
     if (serializedState === null) {
       return {};
     }
-    return JSON.parse(serializedState);
+    return JSON.parse(serializedState || "{}").present;
   } catch (err) {
+    console.error("problem parsing");
     return {};
   }
 };
@@ -23,5 +24,6 @@ export const saveState = (state: RootState) => {
     });
   } catch {
     // ignore write errors
+    console.error("Error writing state to local storage");
   }
 };
