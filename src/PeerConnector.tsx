@@ -1,23 +1,11 @@
 import { Component } from "react";
 import * as React from "react";
-import Peer from "peerjs";
 interface IProps {
-  complete: () => void;
+  connect: (peerId: string) => void;
 }
 
 class PeerConnector extends Component<IProps> {
   public inputRef: HTMLInputElement | null = null;
-  public peer: Peer = new Peer();
-  public conn: Peer.DataConnection | null = null;
-
-  constructor(props: any) {
-    super(props);
-    this.peer = new Peer();
-    this.peer.on("error", (err) => {
-      console.log("error");
-      console.log(err);
-    });
-  }
 
   render() {
     return (
@@ -36,22 +24,7 @@ class PeerConnector extends Component<IProps> {
   private connect = (_event: any) => {
     console.log("connecting with peer id " + this.inputRef?.value);
 
-    this.conn = this.peer.connect(this.inputRef?.value ?? "");
-
-    this.conn.on("open", () => {
-      console.log("connection opened");
-      if (!this.conn) {
-        return;
-      }
-      // Receive messages
-      this.conn.on("data", (data) => {
-        console.log("Client Received", data);
-      });
-
-      console.log("sending Hello");
-      // Send messages
-      this.conn.send("Hello!");
-    });
+    this.props.connect(this.inputRef?.value || "");
   };
 
   private cancelBubble = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {

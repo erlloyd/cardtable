@@ -36,6 +36,7 @@ import {
   updateCounterValue,
   removeCounter,
   moveCounter,
+  connectToRemoteGame,
 } from "./features/game/game.slice";
 import { RootState } from "./store/rootReducer";
 import { resetApp } from "./store/global.actions";
@@ -80,6 +81,7 @@ const AppContainer = connect(mapStateToProps, {
   updateCounterValue,
   removeCounter,
   moveCounter,
+  connectToRemoteGame,
   undo: ActionCreators.undo,
   redo: ActionCreators.redo,
 })(App);

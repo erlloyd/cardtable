@@ -78,6 +78,7 @@ interface IProps {
   updateCounterValue: (payload: { id: string; delta: number }) => void;
   removeCounter: (id: string) => void;
   moveCounter: (payload: { id: string; newPos: Vector2d }) => void;
+  connectToRemoteGame: (peerId: string) => void;
   undo: () => void;
   redo: () => void;
 }
@@ -486,8 +487,8 @@ class App extends Component<IProps, IState> {
     };
 
     return !!this.state.showPeerConnector ? (
-      <TopLayer position={pos} completed={this.clearCardSearch}>
-        <PeerConnector complete={() => {}}></PeerConnector>
+      <TopLayer position={pos} completed={this.clearPeerConnector}>
+        <PeerConnector connect={this.handlePeerConnect}></PeerConnector>
       </TopLayer>
     ) : null;
   };
@@ -500,6 +501,11 @@ class App extends Component<IProps, IState> {
   private handleImportDeck = (position: Vector2d) => (id: number) => {
     this.clearDeckImporter();
     this.props.fetchDecklistById({ decklistId: id, position });
+  };
+
+  private handlePeerConnect = (peerId: string) => {
+    this.clearPeerConnector();
+    this.props.connectToRemoteGame(peerId);
   };
 
   private handleCardSelectedFromCardStack = (
@@ -537,6 +543,13 @@ class App extends Component<IProps, IState> {
       showCardSearch: false,
       cardSearchPosition: null,
       cardStackForSearching: null,
+    });
+  };
+
+  private clearPeerConnector = () => {
+    this.setState({
+      showPeerConnector: false,
+      peerConnectorPosition: null,
     });
   };
 

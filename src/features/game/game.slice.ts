@@ -65,6 +65,11 @@ const moveCounterReducer: CaseReducer<
   }
 };
 
+const connectToRemoteGameReducer: CaseReducer<
+  IGameState,
+  PayloadAction<string>
+> = (state, action) => {};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -76,6 +81,7 @@ const gameSlice = createSlice({
     updateCounterValue: updateCounterValueReducer,
     removeCounter: removeCounterReducer,
     moveCounter: moveCounterReducer,
+    connectToRemoteGame: connectToRemoteGameReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(resetApp, (state, action) => {
@@ -93,6 +99,7 @@ export const {
   updateCounterValue,
   removeCounter,
   moveCounter,
+  connectToRemoteGame,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;
