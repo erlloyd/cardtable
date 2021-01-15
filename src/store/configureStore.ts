@@ -5,7 +5,6 @@ import {
 } from "@reduxjs/toolkit";
 import rootReducer from "./rootReducer";
 import { saveState } from "./localStorage";
-import Peer from "peerjs";
 import { peerJSMiddleware } from "./peer-js-redux-middleware";
 
 const customizedMiddleware = getDefaultMiddleware({
