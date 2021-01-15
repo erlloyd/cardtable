@@ -5,6 +5,25 @@ import {
 } from "@reduxjs/toolkit";
 import rootReducer from "./rootReducer";
 import { saveState } from "./localStorage";
+import Peer from "peerjs";
+
+const CGP_PEER = new Peer();
+
+CGP_PEER.on("error", (err) => {
+  console.log("server error");
+  console.log(err);
+});
+
+CGP_PEER.on("open", (id) => {
+  console.log("My peer ID is: " + id);
+});
+
+CGP_PEER.on("connection", (conn) => {
+  console.log("Connection made!");
+  conn.on("data", (data) => {
+    console.log("Server Received", data);
+  });
+});
 
 const customizedMiddleware = getDefaultMiddleware({
   thunk: true,
