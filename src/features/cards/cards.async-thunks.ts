@@ -6,6 +6,7 @@ import {
   getCardsDataEncounterEntities,
   getCardsDataHeroEntities,
 } from "../cards-data/cards-data.selectors";
+import { v4 as uuidv4 } from "uuid";
 
 export const fetchDecklistById = createAsyncThunk(
   "decklist/fetchByIdStatus",
@@ -32,9 +33,13 @@ export const fetchDecklistById = createAsyncThunk(
     // get the encounter cards for this deck
     return {
       position: payload.position,
+      heroId: uuidv4(),
       data: response.data,
+      dataId: uuidv4(),
       relatedEncounterDeck: heroEncounterDeck,
+      encounterDeckId: uuidv4(),
       relatedObligationDeck: heroObligationDeck,
+      obligationDeckId: uuidv4(),
     };
   }
 );

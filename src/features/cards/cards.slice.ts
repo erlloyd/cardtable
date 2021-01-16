@@ -443,7 +443,7 @@ const cardsSlice = createSlice({
         exhausted: false,
         faceup: true,
         fill: "red",
-        id: uuidv4(),
+        id: action.payload.heroId,
         cardStack: [{ jsonId: action.payload.data.investigator_code }],
         selected: false,
         statusTokens: {
@@ -475,7 +475,7 @@ const cardsSlice = createSlice({
         exhausted: false,
         faceup: true,
         fill: "red",
-        id: uuidv4(),
+        id: action.payload.dataId,
         cardStack: mainDeckStack,
         selected: false,
         statusTokens: {
@@ -497,7 +497,7 @@ const cardsSlice = createSlice({
         exhausted: false,
         faceup: true,
         fill: "red",
-        id: uuidv4(),
+        id: action.payload.encounterDeckId,
         cardStack: action.payload.relatedEncounterDeck.map((jsonId) => ({
           jsonId,
         })),
@@ -521,7 +521,7 @@ const cardsSlice = createSlice({
         exhausted: false,
         faceup: true,
         fill: "red",
-        id: uuidv4(),
+        id: action.payload.obligationDeckId,
         cardStack: action.payload.relatedObligationDeck.map((jsonId) => ({
           jsonId,
         })),

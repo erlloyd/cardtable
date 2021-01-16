@@ -1,4 +1,5 @@
 import Peer from "peerjs";
+import { fetchDecklistById } from "../features/cards/cards.async-thunks";
 import { exhaustCard } from "../features/cards/cards.slice";
 import { connectToRemoteGame } from "../features/game/game.slice";
 
@@ -34,8 +35,9 @@ export const peerJSMiddleware = (storeAPI: any) => {
 
     if (
       !action.REMOTE_ACTION &&
-      action.type === exhaustCard.type &&
-      !!activeCon
+      !!activeCon &&
+      (action.type === exhaustCard.type ||
+        action.type === fetchDecklistById.fulfilled.type)
     ) {
       console.log("going to send action to peer!");
       activeCon.send(action);
