@@ -1,7 +1,23 @@
 import Peer from "peerjs";
-import { fetchDecklistById } from "../features/cards/cards.async-thunks";
-import { exhaustCard } from "../features/cards/cards.slice";
-import { connectToRemoteGame } from "../features/game/game.slice";
+import {
+  hoverCard,
+  hoverLeaveCard,
+  togglePanMode,
+} from "../features/cards/cards.slice";
+import {
+  connectToRemoteGame,
+  updatePosition,
+  updateZoom,
+} from "../features/game/game.slice";
+
+const blacklistRemoteActions = {
+  [connectToRemoteGame.type]: true,
+  [updatePosition.type]: true,
+  [updateZoom.type]: true,
+  [hoverCard.type]: true,
+  [hoverLeaveCard.type]: true,
+  [togglePanMode.type]: true,
+};
 
 const setupConnection = (conn: any, storeAPI: any) => {
   conn.on("data", (data: any) => {
@@ -14,18 +30,18 @@ const setupConnection = (conn: any, storeAPI: any) => {
 
 export const peerJSMiddleware = (storeAPI: any) => {
   console.log("MIDDLEWARE TOP LEVEL");
-  const CGP_PEER = new Peer();
+  const cgpPeer = new Peer();
   let activeCon: Peer.DataConnection;
-  CGP_PEER.on("error", (err) => {
+  cgpPeer.on("error", (err) => {
     console.log("server error");
     console.log(err);
   });
 
-  CGP_PEER.on("open", (id) => {
+  cgpPeer.on("open", (id) => {
     console.log("My peer ID is: " + id);
   });
 
-  CGP_PEER.on("connection", (conn) => {
+  cgpPeer.on("connection", (conn) => {
     console.log("Connection received!");
     activeCon = conn;
     setupConnection(activeCon, storeAPI);
@@ -36,8 +52,7 @@ export const peerJSMiddleware = (storeAPI: any) => {
     if (
       !action.REMOTE_ACTION &&
       !!activeCon &&
-      (action.type === exhaustCard.type ||
-        action.type === fetchDecklistById.fulfilled.type)
+      !blacklistRemoteActions[action.type]
     ) {
       console.log("going to send action to peer!");
       activeCon.send(action);
@@ -45,7 +60,7 @@ export const peerJSMiddleware = (storeAPI: any) => {
 
     if (action.type === connectToRemoteGame.type) {
       console.log("going to connect to peer " + action.payload);
-      activeCon = CGP_PEER.connect(action.payload);
+      activeCon = cgpPeer.connect(action.payload);
       setupConnection(activeCon, storeAPI);
     }
 
