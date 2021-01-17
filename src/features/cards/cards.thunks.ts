@@ -1,4 +1,4 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { Action, createAsyncThunk, ThunkAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Vector2d } from "konva/types/types";
 import { RootState } from "../../store/rootReducer";
@@ -7,6 +7,41 @@ import {
   getCardsDataHeroEntities,
 } from "../cards-data/cards-data.selectors";
 import { v4 as uuidv4 } from "uuid";
+import {
+  addCardStackWithId,
+  pullCardOutOfCardStackWithId,
+} from "./cards.actions";
+
+interface AddCardStackPayload {
+  cardJsonIds: string[];
+  position: Vector2d;
+}
+
+export interface PullCardOutOfCardStackPayload {
+  cardStackId: string;
+  jsonId: string;
+  pos: Vector2d;
+}
+
+export const addCardStack = (
+  payload: AddCardStackPayload
+): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch) => {
+  const payloadWithId = {
+    ...payload,
+    id: uuidv4(),
+  };
+  dispatch(addCardStackWithId(payloadWithId));
+};
+
+export const pullCardOutOfCardStack = (
+  payload: PullCardOutOfCardStackPayload
+): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch) => {
+  const payloadWithId = {
+    ...payload,
+    id: uuidv4(),
+  };
+  dispatch(pullCardOutOfCardStackWithId(payloadWithId));
+};
 
 export const fetchDecklistById = createAsyncThunk(
   "decklist/fetchByIdStatus",

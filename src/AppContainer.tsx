@@ -2,14 +2,17 @@ import { connect } from "react-redux";
 import App from "./App";
 import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
 import { loadCardsData } from "./features/cards-data/cards-data.slice";
-import { fetchDecklistById } from "./features/cards/cards.async-thunks";
+import {
+  fetchDecklistById,
+  addCardStack,
+  pullCardOutOfCardStack,
+} from "./features/cards/cards.thunks";
 import {
   getCards,
   getPanMode,
   shouldShowPreview,
 } from "./features/cards/cards.selectors";
 import {
-  addCardStack,
   cardMove,
   endCardMove,
   exhaustCard,
@@ -26,7 +29,6 @@ import {
   unselectCard,
   toggleToken,
   adjustCounterToken,
-  pullCardOutOfCardStack,
 } from "./features/cards/cards.slice";
 import { getGame } from "./features/game/game.selectors";
 import {

@@ -7,10 +7,13 @@ import {
   ICardDetails,
 } from "./initialState";
 import { v4 as uuidv4 } from "uuid";
-import { fetchDecklistById } from "./cards.async-thunks";
+import { fetchDecklistById } from "./cards.thunks";
 import { cardConstants } from "../../constants/card-constants";
-import { Vector2d } from "konva/types/types";
 import { resetApp } from "../../store/global.actions";
+import {
+  addCardStackWithId,
+  pullCardOutOfCardStackWithId,
+} from "./cards.actions";
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 
@@ -317,37 +320,6 @@ const resetCardsReducer: CaseReducer<ICardsState> = (state) => {
   state.cards = [];
 };
 
-const addCardStackReducer: CaseReducer<
-  ICardsState,
-  PayloadAction<{ cardJsonIds: string[]; position: Vector2d }>
-> = (state, action) => {
-  const newStack: ICardStack = {
-    x: action.payload.position.x,
-    y: action.payload.position.y,
-    dragging: false,
-    exhausted: false,
-    faceup: true,
-    fill: "red",
-    id: uuidv4(),
-    cardStack: action.payload.cardJsonIds.map((jsonId) => ({
-      jsonId,
-    })),
-    selected: false,
-    statusTokens: {
-      stunned: false,
-      confused: false,
-      tough: false,
-    },
-    counterTokens: {
-      damage: 0,
-      threat: 0,
-      generic: 0,
-    },
-  };
-
-  state.cards.push(newStack);
-};
-
 const toggleTokenReducer: CaseReducer<
   ICardsState,
   PayloadAction<{ id: string; tokenType: StatusTokenType; value: boolean }>
@@ -369,31 +341,6 @@ const adjustCounterTokenReducer: CaseReducer<
     if (cardToToggle.counterTokens[action.payload.tokenType] < 0) {
       cardToToggle.counterTokens[action.payload.tokenType] = 0;
     }
-  }
-};
-
-const pullCardOutOfCardStackReducer: CaseReducer<
-  ICardsState,
-  PayloadAction<{ cardStackId: string; jsonId: string; pos: Vector2d }>
-> = (state, action) => {
-  const cardStackToUse = state.cards.find(
-    (c) => c.id === action.payload.cardStackId
-  );
-  if (!!cardStackToUse && cardStackToUse.cardStack.length > 1) {
-    const newCardStack: ICardDetails[] = [{ jsonId: action.payload.jsonId }];
-    const newCard = Object.assign({}, cardStackToUse, {
-      cardStack: newCardStack,
-    });
-    newCard.id = uuidv4();
-    newCard.selected = true;
-    newCard.x = newCard.x + cardConstants.CARD_WIDTH + 5;
-
-    cardStackToUse.cardStack = cardStackToUse.cardStack.filter(
-      (c) => c.jsonId !== action.payload.jsonId
-    );
-    cardStackToUse.selected = false;
-
-    state.cards.push(newCard);
   }
 };
 // Selectors
@@ -418,10 +365,8 @@ const cardsSlice = createSlice({
     flipCards: flipCardsReducer,
     shuffleStack: shuffleStackReducer,
     resetCards: resetCardsReducer,
-    addCardStack: addCardStackReducer,
     toggleToken: toggleTokenReducer,
     adjustCounterToken: adjustCounterTokenReducer,
-    pullCardOutOfCardStack: pullCardOutOfCardStackReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(resetApp, (state, action) => {
@@ -430,6 +375,58 @@ const cardsSlice = createSlice({
       state.dropTargetCard = null;
       state.ghostCards = [];
       state.panMode = true;
+    });
+
+    builder.addCase(addCardStackWithId, (state, action) => {
+      const newStack: ICardStack = {
+        x: action.payload.position.x,
+        y: action.payload.position.y,
+        dragging: false,
+        exhausted: false,
+        faceup: true,
+        fill: "red",
+        id: action.payload.id,
+        cardStack: action.payload.cardJsonIds.map((jsonId) => ({
+          jsonId,
+        })),
+        selected: false,
+        statusTokens: {
+          stunned: false,
+          confused: false,
+          tough: false,
+        },
+        counterTokens: {
+          damage: 0,
+          threat: 0,
+          generic: 0,
+        },
+      };
+
+      state.cards.push(newStack);
+    });
+
+    builder.addCase(pullCardOutOfCardStackWithId, (state, action) => {
+      const cardStackToUse = state.cards.find(
+        (c) => c.id === action.payload.cardStackId
+      );
+      if (!!cardStackToUse && cardStackToUse.cardStack.length > 1) {
+        const newCardStack: ICardDetails[] = [
+          { jsonId: action.payload.jsonId },
+        ];
+        const newCard = Object.assign({}, cardStackToUse, {
+          cardStack: newCardStack,
+        });
+        newCard.id = action.payload.id;
+        newCard.selected = true;
+        newCard.x = newCard.x + cardConstants.CARD_WIDTH + 5;
+
+        cardStackToUse.cardStack = cardStackToUse.cardStack.filter(
+          (c) => c.jsonId !== action.payload.jsonId
+        );
+        cardStackToUse.selected = false;
+
+        state.cards.push(newCard);
+      }
     });
 
     builder.addCase(fetchDecklistById.fulfilled, (state, action) => {
@@ -559,10 +556,8 @@ export const {
   flipCards,
   shuffleStack,
   resetCards,
-  addCardStack,
   toggleToken,
   adjustCounterToken,
-  pullCardOutOfCardStack,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;
