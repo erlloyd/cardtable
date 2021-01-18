@@ -6,6 +6,7 @@ import {
   fetchDecklistById,
   addCardStack,
   pullCardOutOfCardStack,
+  startCardMove,
 } from "./features/cards/cards.thunks";
 import {
   getCards,
@@ -22,7 +23,6 @@ import {
   selectCard,
   selectMultipleCards,
   shuffleStack,
-  startCardMove,
   togglePanMode,
   toggleSelectCard,
   unselectAllCards,

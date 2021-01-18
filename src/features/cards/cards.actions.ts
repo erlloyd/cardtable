@@ -14,10 +14,20 @@ export interface PullCardOutOfCardStackWithIdPayload {
   id: string;
 }
 
+export interface StartCardMoveWithSplitStackIdPayload {
+  id: string;
+  splitTopCard: boolean;
+  splitCardId: string;
+}
+
 export const addCardStackWithId = createAction<AddCardStackWithIdPayload>(
   "addCardStackWithId"
 );
 
 export const pullCardOutOfCardStackWithId = createAction<PullCardOutOfCardStackWithIdPayload>(
   "pullCardOutOfCardStackWithId"
+);
+
+export const startCardMoveWithSplitStackId = createAction<StartCardMoveWithSplitStackIdPayload>(
+  "startCardMoveWithSplitStackId"
 );

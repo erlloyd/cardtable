@@ -6,13 +6,13 @@ import {
   ICardStack,
   ICardDetails,
 } from "./initialState";
-import { v4 as uuidv4 } from "uuid";
 import { fetchDecklistById } from "./cards.thunks";
 import { cardConstants } from "../../constants/card-constants";
 import { resetApp } from "../../store/global.actions";
 import {
   addCardStackWithId,
   pullCardOutOfCardStackWithId,
+  startCardMoveWithSplitStackId,
 } from "./cards.actions";
 
 const CARD_DROP_TARGET_DISTANCE = 30;
@@ -125,52 +125,6 @@ const exhaustCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
     .forEach((card) => {
       card.exhausted = !card.exhausted;
     });
-};
-
-const startCardMoveReducer: CaseReducer<
-  ICardsState,
-  PayloadAction<{ id: string; splitTopCard: boolean }>
-> = (state, action) => {
-  // first, if the card moving isn't currently selected, clear all selected cards
-  const cardToStartMoving = getCardStackWithId(state, action.payload.id);
-  if (cardToStartMoving && !cardToStartMoving.selected) {
-    state.cards = state.cards.map((card) => {
-      card.selected = card.id === action.payload.id;
-      return card;
-    });
-  }
-
-  // If we are splitting, make a new stack of cards
-  if (action.payload.splitTopCard) {
-    const cardToMove = state.cards.find((c) => c.id === action.payload.id);
-
-    if (!cardToMove) {
-      throw new Error("Expected to find card");
-    }
-
-    cardToMove.selected = false;
-
-    const topCard = cardToMove.cardStack.shift();
-    const newCard = Object.assign({}, cardToMove, {
-      selected: true,
-      dragging: true,
-      cardStack: [topCard],
-    });
-
-    cardToMove.id = uuidv4();
-
-    state.cards.push(newCard);
-  }
-
-  // Now all selected cards should be put into ghost cards, unless we are splitting the top card
-  state.ghostCards = [];
-
-  if (!action.payload.splitTopCard) {
-    foreachSelectedCard(state, (card) => {
-      card.dragging = true;
-      state.ghostCards.push(Object.assign({}, card));
-    });
-  }
 };
 
 const cardMoveReducer: CaseReducer<
@@ -354,7 +308,6 @@ const cardsSlice = createSlice({
     unselectCard: unselectCardReducer,
     toggleSelectCard: toggleSelectCardReducer,
     exhaustCard: exhaustCardReducer,
-    startCardMove: startCardMoveReducer,
     cardMove: cardMoveReducer,
     endCardMove: endCardMoveReducer,
     selectMultipleCards: selectMultipleCardsReducer,
@@ -426,6 +379,49 @@ const cardsSlice = createSlice({
         cardStackToUse.selected = false;
 
         state.cards.push(newCard);
+      }
+    });
+
+    builder.addCase(startCardMoveWithSplitStackId, (state, action) => {
+      // first, if the card moving isn't currently selected, clear all selected cards
+      const cardToStartMoving = getCardStackWithId(state, action.payload.id);
+      if (cardToStartMoving && !cardToStartMoving.selected) {
+        state.cards = state.cards.map((card) => {
+          card.selected = card.id === action.payload.id;
+          return card;
+        });
+      }
+
+      // If we are splitting, make a new stack of cards
+      if (action.payload.splitTopCard) {
+        const cardToMove = state.cards.find((c) => c.id === action.payload.id);
+
+        if (!cardToMove) {
+          throw new Error("Expected to find card");
+        }
+
+        cardToMove.selected = false;
+
+        const topCard = cardToMove.cardStack.shift();
+        const newCard = Object.assign({}, cardToMove, {
+          selected: true,
+          dragging: true,
+          cardStack: [topCard],
+        });
+
+        cardToMove.id = action.payload.splitCardId;
+
+        state.cards.push(newCard);
+      }
+
+      // Now all selected cards should be put into ghost cards, unless we are splitting the top card
+      state.ghostCards = [];
+
+      if (!action.payload.splitTopCard) {
+        foreachSelectedCard(state, (card) => {
+          card.dragging = true;
+          state.ghostCards.push(Object.assign({}, card));
+        });
       }
     });
 
@@ -545,7 +541,6 @@ export const {
   unselectCard,
   toggleSelectCard,
   exhaustCard,
-  startCardMove,
   cardMove,
   endCardMove,
   selectMultipleCards,

@@ -10,6 +10,8 @@ import {
   updateZoom,
 } from "../features/game/game.slice";
 
+const DEBUG = false;
+
 const blacklistRemoteActions = {
   [connectToRemoteGame.type]: true,
   [updatePosition.type]: true,
@@ -19,17 +21,23 @@ const blacklistRemoteActions = {
   [togglePanMode.type]: true,
 };
 
+const log = (...args: any[]) => {
+  if (DEBUG) {
+    console.log(args);
+  }
+};
+
 const setupConnection = (conn: any, storeAPI: any) => {
   conn.on("data", (data: any) => {
-    console.log("recieved remote action", data);
+    log("recieved remote action", data);
     data.REMOTE_ACTION = true;
-    console.log("dispatching remote action", data);
+    log("dispatching remote action", data);
     storeAPI.dispatch(data);
   });
 };
 
 export const peerJSMiddleware = (storeAPI: any) => {
-  console.log("MIDDLEWARE TOP LEVEL");
+  log("MIDDLEWARE TOP LEVEL");
   const cgpPeer = new Peer();
   let activeCon: Peer.DataConnection;
   cgpPeer.on("error", (err) => {
@@ -47,14 +55,14 @@ export const peerJSMiddleware = (storeAPI: any) => {
     setupConnection(activeCon, storeAPI);
   });
   return (next: any) => (action: any) => {
-    console.log("received local action", action);
+    log("received local action", action);
 
     if (
       !action.REMOTE_ACTION &&
       !!activeCon &&
       !blacklistRemoteActions[action.type]
     ) {
-      console.log("going to send action to peer!");
+      log("going to send action to peer!");
       activeCon.send(action);
     }
 
