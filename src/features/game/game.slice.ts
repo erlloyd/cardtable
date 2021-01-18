@@ -1,8 +1,8 @@
-import { createSlice, CaseReducer, PayloadAction } from "@reduxjs/toolkit";
+import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/types/types";
 import { resetApp } from "../../store/global.actions";
-import { initialState, IGameState } from "./initialState";
-import { v4 as uuidv4 } from "uuid";
+import { addNewCounterWithId } from "./game.actions";
+import { IGameState, initialState } from "./initialState";
 
 // Reducers
 const updateZoomReducer: CaseReducer<IGameState, PayloadAction<Vector2d>> = (
@@ -19,17 +19,6 @@ const updatePositionReducer: CaseReducer<
 > = (state, action) => {
   state.stagePosition = action.payload;
   return state;
-};
-
-const addNewCounterReducer: CaseReducer<IGameState, PayloadAction<Vector2d>> = (
-  state,
-  action
-) => {
-  state.counters.push({
-    id: uuidv4(),
-    position: action.payload,
-    value: 0,
-  });
 };
 
 const updateCounterValueReducer: CaseReducer<
@@ -77,7 +66,6 @@ const gameSlice = createSlice({
   reducers: {
     updateZoom: updateZoomReducer,
     updatePosition: updatePositionReducer,
-    addNewCounter: addNewCounterReducer,
     updateCounterValue: updateCounterValueReducer,
     removeCounter: removeCounterReducer,
     moveCounter: moveCounterReducer,
@@ -89,13 +77,20 @@ const gameSlice = createSlice({
       state.stageZoom = { x: 1, y: 1 };
       state.counters = [];
     });
+
+    builder.addCase(addNewCounterWithId, (state, action) => {
+      state.counters.push({
+        id: action.payload.id,
+        position: action.payload.pos,
+        value: 0,
+      });
+    });
   },
 });
 
 export const {
   updateZoom,
   updatePosition,
-  addNewCounter,
   updateCounterValue,
   removeCounter,
   moveCounter,
