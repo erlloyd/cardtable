@@ -9,6 +9,7 @@ import {
   updatePosition,
   updateZoom,
 } from "../features/game/game.slice";
+import { receiveRemoteGameState } from "./global.actions";
 
 const DEBUG = false;
 
@@ -19,30 +20,41 @@ const blacklistRemoteActions = {
   [hoverCard.type]: true,
   [hoverLeaveCard.type]: true,
   [togglePanMode.type]: true,
+  [receiveRemoteGameState.type]: true,
 };
 
 const log = (...args: any[]) => {
   if (DEBUG) {
-    console.log(args);
+    console.log(args[0], args[1]);
   }
 };
 
 const setupConnection = (conn: any, storeAPI: any) => {
   conn.on("data", (data: any) => {
-    log("recieved remote action", data);
-    data.REMOTE_ACTION = true;
-    log("dispatching remote action", data);
-    storeAPI.dispatch(data);
+    if (!data.INITIAL_STATE_MSG) {
+      log("recieved remote action", data);
+      data.REMOTE_ACTION = true;
+      log("dispatching remote action", data);
+      storeAPI.dispatch(data);
+    } else {
+      console.log("going to replace (most of) state with", data.state);
+      setTimeout(() => {
+        storeAPI.dispatch(receiveRemoteGameState(data.state));
+      }, 0);
+    }
   });
 };
 
 export const peerJSMiddleware = (storeAPI: any) => {
-  log("MIDDLEWARE TOP LEVEL");
-  const cgpPeer = new Peer();
+  const cgpPeer = new Peer(undefined, { debug: 0 });
   let activeCon: Peer.DataConnection;
   cgpPeer.on("error", (err) => {
-    console.log("server error");
-    console.log(err);
+    console.error("*****************Server error");
+    console.error(err);
+  });
+
+  cgpPeer.on("disconnected", () => {
+    console.log("****Peer connection disconnected");
   });
 
   cgpPeer.on("open", (id) => {
@@ -53,6 +65,19 @@ export const peerJSMiddleware = (storeAPI: any) => {
     console.log("Connection received!");
     activeCon = conn;
     setupConnection(activeCon, storeAPI);
+
+    activeCon.on("open", () => {
+      console.log("connection ready for data");
+      log("going to send initial state", storeAPI.getState());
+      activeCon.send({
+        INITIAL_STATE_MSG: true,
+        state: storeAPI.getState(),
+      });
+    });
+
+    activeCon.on("error", (err) => {
+      console.error("****************Connection error:", err);
+    });
   });
   return (next: any) => (action: any) => {
     log("received local action", action);

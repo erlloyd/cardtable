@@ -1,6 +1,6 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/types/types";
-import { resetApp } from "../../store/global.actions";
+import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import { addNewCounterWithId } from "./game.actions";
 import { IGameState, initialState } from "./initialState";
 
@@ -72,6 +72,11 @@ const gameSlice = createSlice({
     connectToRemoteGame: connectToRemoteGameReducer,
   },
   extraReducers: (builder) => {
+    builder.addCase(receiveRemoteGameState, (state, action) => {
+      // TODO: find a way to keep this automatic
+      state.counters = action.payload.game.present.counters;
+    });
+
     builder.addCase(resetApp, (state, action) => {
       state.stagePosition = { x: 0, y: 0 };
       state.stageZoom = { x: 1, y: 1 };

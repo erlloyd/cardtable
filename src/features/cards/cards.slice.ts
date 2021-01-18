@@ -8,7 +8,7 @@ import {
 } from "./initialState";
 import { fetchDecklistById } from "./cards.thunks";
 import { cardConstants } from "../../constants/card-constants";
-import { resetApp } from "../../store/global.actions";
+import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import {
   addCardStackWithId,
   pullCardOutOfCardStackWithId,
@@ -322,7 +322,13 @@ const cardsSlice = createSlice({
     adjustCounterToken: adjustCounterTokenReducer,
   },
   extraReducers: (builder) => {
-    builder.addCase(resetApp, (state, action) => {
+    builder.addCase(receiveRemoteGameState, (state, action) => {
+      // TODO: find a way to keep this automatic
+      state.cards = action.payload.cards.present.cards;
+      state.ghostCards = action.payload.cards.present.ghostCards;
+    });
+
+    builder.addCase(resetApp, (state) => {
       state.cards = [];
       state.previewCard = null;
       state.dropTargetCard = null;

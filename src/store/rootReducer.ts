@@ -8,6 +8,7 @@ import cards, {
   hoverLeaveCard,
 } from "../features/cards/cards.slice";
 import game, {
+  connectToRemoteGame,
   moveCounter,
   updatePosition,
   updateZoom,
@@ -17,7 +18,11 @@ const rootReducer = combineReducers({
   game: undoable(game, {
     limit: 20,
     groupBy: groupByActionTypes([moveCounter.type]),
-    filter: excludeAction([updateZoom.type, updatePosition.type]),
+    filter: excludeAction([
+      updateZoom.type,
+      updatePosition.type,
+      connectToRemoteGame.type,
+    ]),
   }),
   cards: undoable(cards, {
     limit: 20,
