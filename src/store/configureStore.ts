@@ -17,6 +17,7 @@ export default function configureStore() {
   const store = rtkConfigureStore({
     reducer: rootReducer,
     middleware: customizedMiddleware,
+    devTools: process.env.NODE_ENV === "production",
   });
 
   store.subscribe(
