@@ -1,15 +1,15 @@
 import { connect } from "react-redux";
+import { ActionCreators } from "redux-undo";
 import App from "./App";
 import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
 import { loadCardsData } from "./features/cards-data/cards-data.slice";
-import { fetchDecklistById } from "./features/cards/cards.async-thunks";
 import {
   getCards,
   getPanMode,
   shouldShowPreview,
 } from "./features/cards/cards.selectors";
 import {
-  addCardStack,
+  adjustCounterToken,
   cardMove,
   endCardMove,
   exhaustCard,
@@ -19,28 +19,30 @@ import {
   selectCard,
   selectMultipleCards,
   shuffleStack,
-  startCardMove,
   togglePanMode,
   toggleSelectCard,
+  toggleToken,
   unselectAllCards,
   unselectCard,
-  toggleToken,
-  adjustCounterToken,
-  pullCardOutOfCardStack,
 } from "./features/cards/cards.slice";
+import {
+  addCardStack,
+  fetchDecklistById,
+  pullCardOutOfCardStack,
+  startCardMove,
+} from "./features/cards/cards.thunks";
 import { getGame } from "./features/game/game.selectors";
 import {
+  connectToRemoteGame,
+  moveCounter,
+  removeCounter,
+  updateCounterValue,
   updatePosition,
   updateZoom,
-  addNewCounter,
-  updateCounterValue,
-  removeCounter,
-  moveCounter,
 } from "./features/game/game.slice";
-import { RootState } from "./store/rootReducer";
+import { addNewCounter } from "./features/game/game.thunks";
 import { resetApp } from "./store/global.actions";
-
-import { ActionCreators } from "redux-undo";
+import { RootState } from "./store/rootReducer";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -80,6 +82,7 @@ const AppContainer = connect(mapStateToProps, {
   updateCounterValue,
   removeCounter,
   moveCounter,
+  connectToRemoteGame,
   undo: ActionCreators.undo,
   redo: ActionCreators.redo,
 })(App);

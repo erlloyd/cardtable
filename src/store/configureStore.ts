@@ -5,12 +5,13 @@ import {
 } from "@reduxjs/toolkit";
 import rootReducer from "./rootReducer";
 import { saveState } from "./localStorage";
+import { peerJSMiddleware } from "./peer-js-redux-middleware";
 
 const customizedMiddleware = getDefaultMiddleware({
   thunk: true,
   immutableCheck: false,
   serializableCheck: false,
-});
+}).concat(peerJSMiddleware);
 
 export default function configureStore() {
   const store = rtkConfigureStore({

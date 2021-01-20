@@ -1,8 +1,8 @@
-import { createSlice, CaseReducer, PayloadAction } from "@reduxjs/toolkit";
+import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/types/types";
-import { resetApp } from "../../store/global.actions";
-import { initialState, IGameState } from "./initialState";
-import { v4 as uuidv4 } from "uuid";
+import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
+import { addNewCounterWithId } from "./game.actions";
+import { IGameState, initialState } from "./initialState";
 
 // Reducers
 const updateZoomReducer: CaseReducer<IGameState, PayloadAction<Vector2d>> = (
@@ -19,17 +19,6 @@ const updatePositionReducer: CaseReducer<
 > = (state, action) => {
   state.stagePosition = action.payload;
   return state;
-};
-
-const addNewCounterReducer: CaseReducer<IGameState, PayloadAction<Vector2d>> = (
-  state,
-  action
-) => {
-  state.counters.push({
-    id: uuidv4(),
-    position: action.payload,
-    value: 0,
-  });
 };
 
 const updateCounterValueReducer: CaseReducer<
@@ -65,6 +54,11 @@ const moveCounterReducer: CaseReducer<
   }
 };
 
+const connectToRemoteGameReducer: CaseReducer<
+  IGameState,
+  PayloadAction<string>
+> = (state, action) => {};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -72,16 +66,29 @@ const gameSlice = createSlice({
   reducers: {
     updateZoom: updateZoomReducer,
     updatePosition: updatePositionReducer,
-    addNewCounter: addNewCounterReducer,
     updateCounterValue: updateCounterValueReducer,
     removeCounter: removeCounterReducer,
     moveCounter: moveCounterReducer,
+    connectToRemoteGame: connectToRemoteGameReducer,
   },
   extraReducers: (builder) => {
+    builder.addCase(receiveRemoteGameState, (state, action) => {
+      // TODO: find a way to keep this automatic
+      state.counters = action.payload.game.present.counters;
+    });
+
     builder.addCase(resetApp, (state, action) => {
       state.stagePosition = { x: 0, y: 0 };
       state.stageZoom = { x: 1, y: 1 };
       state.counters = [];
+    });
+
+    builder.addCase(addNewCounterWithId, (state, action) => {
+      state.counters.push({
+        id: action.payload.id,
+        position: action.payload.pos,
+        value: 0,
+      });
     });
   },
 });
@@ -89,10 +96,10 @@ const gameSlice = createSlice({
 export const {
   updateZoom,
   updatePosition,
-  addNewCounter,
   updateCounterValue,
   removeCounter,
   moveCounter,
+  connectToRemoteGame,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

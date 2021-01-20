@@ -1,7 +1,6 @@
 import { loadState } from "../../store/localStorage";
 import { CounterTokenType, StatusTokenType } from "./cards.slice";
 
-// import { v4 as uuidv4 } from "uuid";
 export interface ICardStack {
   dragging: boolean;
   exhausted: boolean;
@@ -38,41 +37,7 @@ export interface ICardsState {
 
 const localStorageState = loadState("cards");
 const defaultState: ICardsState = {
-  cards: [
-    // {
-    //   dragging: false,
-    //   exhausted: false,
-    //   faceup: true,
-    //   fill: "red",
-    //   id: uuidv4(),
-    //   selected: false,
-    //   x: 200,
-    //   y: 200,
-    //   cardStack: [{ jsonId: "01001a" }],
-    // },
-    // {
-    //   dragging: false,
-    //   exhausted: false,
-    //   faceup: true,
-    //   fill: "red",
-    //   id: uuidv4(),
-    //   selected: false,
-    //   x: 400,
-    //   y: 400,
-    //   cardStack: [{ jsonId: "01027" }],
-    // },
-    // {
-    //   dragging: false,
-    //   exhausted: false,
-    //   faceup: true,
-    //   fill: "red",
-    //   id: uuidv4(),
-    //   selected: false,
-    //   x: 200,
-    //   y: 600,
-    //   cardStack: [{ jsonId: "01036" }],
-    // },
-  ],
+  cards: [],
   ghostCards: [],
   previewCard: null,
   dropTargetCard: null,

@@ -23,6 +23,7 @@ import TopLayer from "./TopLayer";
 import { getDistance } from "./utilities/geo";
 import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
 import Counter from "./Counter";
+import PeerConnector from "./PeerConnector";
 
 const SCALE_BY = 1.02;
 
@@ -77,6 +78,7 @@ interface IProps {
   updateCounterValue: (payload: { id: string; delta: number }) => void;
   removeCounter: (id: string) => void;
   moveCounter: (payload: { id: string; newPos: Vector2d }) => void;
+  connectToRemoteGame: (peerId: string) => void;
   undo: () => void;
   redo: () => void;
 }
@@ -102,6 +104,8 @@ interface IState {
   showCardSearch: boolean;
   cardSearchPosition: Vector2d | null;
   cardStackForSearching: ICardStack | null;
+  showPeerConnector: boolean;
+  peerConnectorPosition: Vector2d | null;
 }
 class App extends Component<IProps, IState> {
   public stage: Konva.Stage | null = null;
@@ -130,6 +134,8 @@ class App extends Component<IProps, IState> {
       showCardSearch: false,
       cardSearchPosition: null,
       cardStackForSearching: null,
+      showPeerConnector: false,
+      peerConnectorPosition: null,
     };
   }
 
@@ -265,6 +271,7 @@ class App extends Component<IProps, IState> {
         {this.renderDeckImporter()}
         {this.renderEncounterImporter()}
         {this.renderCardSearch()}
+        {this.renderPeerConnector()}
         <ReactReduxContext.Consumer>
           {({ store }) => (
             <Stage
@@ -465,6 +472,27 @@ class App extends Component<IProps, IState> {
     ) : null;
   };
 
+  private renderPeerConnector = () => {
+    if (!this.state.showPeerConnector) return null;
+
+    const containerRect = this.stage?.container().getBoundingClientRect();
+    const pointerPosition = this.state.peerConnectorPosition;
+    if (!containerRect || !pointerPosition) {
+      throw new Error("Problem computing peer connector position");
+    }
+
+    const pos = {
+      x: containerRect.left + pointerPosition.x,
+      y: containerRect.top + pointerPosition.y,
+    };
+
+    return !!this.state.showPeerConnector ? (
+      <TopLayer position={pos} completed={this.clearPeerConnector}>
+        <PeerConnector connect={this.handlePeerConnect}></PeerConnector>
+      </TopLayer>
+    ) : null;
+  };
+
   private handleLoadEncounter = (position: Vector2d) => (cards: string[]) => {
     this.clearEncounterImporter();
     this.props.addCardStack({ position, cardJsonIds: cards });
@@ -473,6 +501,11 @@ class App extends Component<IProps, IState> {
   private handleImportDeck = (position: Vector2d) => (id: number) => {
     this.clearDeckImporter();
     this.props.fetchDecklistById({ decklistId: id, position });
+  };
+
+  private handlePeerConnect = (peerId: string) => {
+    this.clearPeerConnector();
+    this.props.connectToRemoteGame(peerId);
   };
 
   private handleCardSelectedFromCardStack = (
@@ -510,6 +543,13 @@ class App extends Component<IProps, IState> {
       showCardSearch: false,
       cardSearchPosition: null,
       cardStackForSearching: null,
+    });
+  };
+
+  private clearPeerConnector = () => {
+    this.setState({
+      showPeerConnector: false,
+      peerConnectorPosition: null,
     });
   };
 
@@ -957,6 +997,15 @@ class App extends Component<IProps, IState> {
         },
       },
       { label: "Reset", action: this.props.resetApp },
+      {
+        label: "Connect to Remote Game",
+        action: () => {
+          this.setState({
+            showPeerConnector: true,
+            peerConnectorPosition: this.stage?.getPointerPosition() ?? null,
+          });
+        },
+      },
     ];
 
     this.setState({
