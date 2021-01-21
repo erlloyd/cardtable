@@ -10,8 +10,11 @@ import { v4 as uuidv4 } from "uuid";
 import {
   addCardStackWithId,
   pullCardOutOfCardStackWithId,
+  replaceCardStack,
   startCardMoveWithSplitStackId,
 } from "./cards.actions";
+import { ICardDetails } from "./initialState";
+import { getCards } from "./cards.selectors";
 
 interface AddCardStackPayload {
   cardJsonIds: string[];
@@ -28,6 +31,20 @@ export interface StartCardMovePayload {
   id: string;
   splitTopCard: boolean;
 }
+
+export const shuffleStack = (
+  id: string
+): ThunkAction<void, RootState, unknown, Action<string>> => (
+  dispatch,
+  getState
+) => {
+  const cardsState = getCards(getState());
+  const stackToShuffle = cardsState.cards.find((c) => c.id === id);
+  if (!!stackToShuffle) {
+    const shuffledStack = shuffle(stackToShuffle.cardStack);
+    dispatch(replaceCardStack({ id, newStack: shuffledStack }));
+  }
+};
 
 export const addCardStack = (
   payload: AddCardStackPayload
@@ -94,3 +111,24 @@ export const fetchDecklistById = createAsyncThunk(
     };
   }
 );
+
+const shuffle = (array: ICardDetails[]): ICardDetails[] => {
+  const returnArray = JSON.parse(JSON.stringify(array));
+  var currentIndex = returnArray.length,
+    temporaryValue,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = returnArray[currentIndex];
+    returnArray[currentIndex] = returnArray[randomIndex];
+    returnArray[randomIndex] = temporaryValue;
+  }
+
+  return returnArray;
+};

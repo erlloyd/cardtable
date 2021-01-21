@@ -14,10 +14,11 @@ const customizedMiddleware = getDefaultMiddleware({
 }).concat(peerJSMiddleware);
 
 export default function configureStore() {
+  console.log("configuring store. NODE_ENV is " + process.env.NODE_ENV);
   const store = rtkConfigureStore({
     reducer: rootReducer,
     middleware: customizedMiddleware,
-    devTools: process.env.NODE_ENV === "production",
+    devTools: process.env.NODE_ENV !== "production",
   });
 
   store.subscribe(
