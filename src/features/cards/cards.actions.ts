@@ -1,5 +1,6 @@
 import { createAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/types/types";
+import { ICardDetails } from "./initialState";
 
 export interface AddCardStackWithIdPayload {
   cardJsonIds: string[];
@@ -20,6 +21,11 @@ export interface StartCardMoveWithSplitStackIdPayload {
   splitCardId: string;
 }
 
+export interface ReplaceCardStackPayload {
+  id: string;
+  newStack: ICardDetails[];
+}
+
 export const addCardStackWithId = createAction<AddCardStackWithIdPayload>(
   "addCardStackWithId"
 );
@@ -30,4 +36,8 @@ export const pullCardOutOfCardStackWithId = createAction<PullCardOutOfCardStackW
 
 export const startCardMoveWithSplitStackId = createAction<StartCardMoveWithSplitStackIdPayload>(
   "startCardMoveWithSplitStackId"
+);
+
+export const replaceCardStack = createAction<ReplaceCardStackPayload>(
+  "replaceCardStack"
 );

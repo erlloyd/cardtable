@@ -12,6 +12,7 @@ import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import {
   addCardStackWithId,
   pullCardOutOfCardStackWithId,
+  replaceCardStack,
   startCardMoveWithSplitStackId,
 } from "./cards.actions";
 
@@ -62,26 +63,6 @@ const foreachUnselectedCard = (
   state.cards
     .filter((card) => !card.selected)
     .forEach((card) => callback(card));
-};
-
-const shuffle = (array: ICardDetails[]) => {
-  var currentIndex = array.length,
-    temporaryValue,
-    randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
 };
 
 // Reducers
@@ -263,13 +244,6 @@ const flipCardsReducer: CaseReducer<ICardsState> = (state, action) => {
     });
 };
 
-const shuffleStackReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
-  state,
-  action
-) => {
-  shuffle(state.cards.find((c) => c.id === action.payload)?.cardStack || []);
-};
-
 const resetCardsReducer: CaseReducer<ICardsState> = (state) => {
   state.cards = [];
 };
@@ -316,7 +290,6 @@ const cardsSlice = createSlice({
     hoverLeaveCard: hoverLeaveCardReducer,
     togglePanMode: togglePanModeReducer,
     flipCards: flipCardsReducer,
-    shuffleStack: shuffleStackReducer,
     resetCards: resetCardsReducer,
     toggleToken: toggleTokenReducer,
     adjustCounterToken: adjustCounterTokenReducer,
@@ -326,6 +299,15 @@ const cardsSlice = createSlice({
       // TODO: find a way to keep this automatic
       state.cards = action.payload.cards.present.cards;
       state.ghostCards = action.payload.cards.present.ghostCards;
+    });
+
+    builder.addCase(replaceCardStack, (state, action) => {
+      const cardToReplaceStack = state.cards.find(
+        (c) => c.id === action.payload.id
+      );
+      if (!!cardToReplaceStack) {
+        cardToReplaceStack.cardStack = action.payload.newStack;
+      }
     });
 
     builder.addCase(resetApp, (state) => {
@@ -555,7 +537,6 @@ export const {
   hoverLeaveCard,
   togglePanMode,
   flipCards,
-  shuffleStack,
   resetCards,
   toggleToken,
   adjustCounterToken,

@@ -18,7 +18,6 @@ import {
   hoverLeaveCard,
   selectCard,
   selectMultipleCards,
-  shuffleStack,
   togglePanMode,
   toggleSelectCard,
   toggleToken,
@@ -30,6 +29,7 @@ import {
   fetchDecklistById,
   pullCardOutOfCardStack,
   startCardMove,
+  shuffleStack,
 } from "./features/cards/cards.thunks";
 import { getGame } from "./features/game/game.selectors";
 import {
