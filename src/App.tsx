@@ -40,7 +40,7 @@ interface IProps {
   unselectCard: (id: string) => void;
   toggleSelectCard: (id: string) => void;
   startCardMove: (payload: { id: string; splitTopCard: boolean }) => void;
-  unselectAllCards: () => void;
+  unselectAllCards: (payload?: any) => void;
   selectMultipleCards: (cards: { ids: string[] }) => void;
   hoverCard: (id: string) => void;
   hoverLeaveCard: (id: string) => void;

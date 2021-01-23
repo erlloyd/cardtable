@@ -41,10 +41,14 @@ const getCardStackWithId = (
 const mutateCardWithId = (
   state: ICardsState,
   id: string,
+  ref: string,
   callback: (card: ICardStack) => void
 ) => {
   const cardToUpdate = getCardStackWithId(state, id);
-  if (cardToUpdate) {
+  if (
+    cardToUpdate &&
+    (cardToUpdate.controlledBy === "" || cardToUpdate.controlledBy === ref)
+  ) {
     callback(cardToUpdate);
   }
 };
@@ -77,17 +81,22 @@ const selectCardReducer: CaseReducer<
     unselectAllCardsReducer(state, action);
   }
 
-  mutateCardWithId(state, action.payload.id, (card) => {
-    card.selected = true;
-    card.controlledBy = (action as any).ACTOR_REF;
-  });
+  mutateCardWithId(
+    state,
+    action.payload.id,
+    (action as any).ACTOR_REF,
+    (card) => {
+      card.selected = true;
+      card.controlledBy = (action as any).ACTOR_REF;
+    }
+  );
 };
 
 const unselectCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
   state,
   action
 ) => {
-  mutateCardWithId(state, action.payload, (card) => {
+  mutateCardWithId(state, action.payload, (action as any).ACTOR_REF, (card) => {
     card.selected = false;
     card.controlledBy = "";
   });
@@ -97,7 +106,7 @@ const toggleSelectCardReducer: CaseReducer<
   ICardsState,
   PayloadAction<string>
 > = (state, action) => {
-  mutateCardWithId(state, action.payload, (card) => {
+  mutateCardWithId(state, action.payload, (action as any).ACTOR_REF, (card) => {
     card.selected = !card.selected;
     if (!card.selected) {
       card.controlledBy = "";
@@ -215,10 +224,19 @@ const selectMultipleCardsReducer: CaseReducer<
     });
 };
 
-const unselectAllCardsReducer: CaseReducer<ICardsState> = (state) => {
-  state.cards.forEach((card) => {
-    card.selected = false;
-  });
+const unselectAllCardsReducer: CaseReducer<ICardsState, PayloadAction<any>> = (
+  state,
+  action
+) => {
+  state.cards
+    .filter(
+      (card) =>
+        card.controlledBy === "" ||
+        card.controlledBy === (action as any).ACTOR_REF
+    )
+    .forEach((card) => {
+      card.selected = false;
+    });
 };
 
 const hoverCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
