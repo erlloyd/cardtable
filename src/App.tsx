@@ -149,6 +149,7 @@ class App extends Component<IProps, IState> {
       .map((card) => {
         return (
           <Card
+            controlledBy={card.controlledBy}
             key={card.id}
             id={card.id}
             x={card.x}
@@ -183,6 +184,7 @@ class App extends Component<IProps, IState> {
     const ghostCards = this.props.cards.ghostCards.map((card) => {
       return (
         <Card
+          controlledBy={card.controlledBy}
           key={`ghost${card.id}`}
           id={card.id}
           x={card.x}
@@ -204,6 +206,7 @@ class App extends Component<IProps, IState> {
       .map((card) => {
         return (
           <Card
+            controlledBy={card.controlledBy}
             key={card.id}
             id={card.id}
             x={card.x}
@@ -240,6 +243,7 @@ class App extends Component<IProps, IState> {
             );
             return (
               <Card
+                controlledBy={card.controlledBy}
                 key={`preview${card.id}`}
                 id={card.id}
                 x={previewPos.x}

@@ -110,6 +110,8 @@ const toggleSelectCardReducer: CaseReducer<
     card.selected = !card.selected;
     if (!card.selected) {
       card.controlledBy = "";
+    } else {
+      card.controlledBy = (action as any).ACTOR_REF;
     }
   });
 };
@@ -138,7 +140,11 @@ const cardMoveReducer: CaseReducer<
   let primaryCard: ICardStack;
 
   state.cards
-    .filter((card) => card.id === action.payload.id || card.selected)
+    .filter(
+      (card) =>
+        card.id === action.payload.id ||
+        (card.selected && card.controlledBy === (action as any).ACTOR_REF)
+    )
     .forEach((card) => {
       if (card.id === action.payload.id) {
         primaryCard = card;
@@ -218,8 +224,13 @@ const selectMultipleCardsReducer: CaseReducer<
   action.payload.ids
     .map((id) => state.cards.find((card) => card.id === id))
     .forEach((card) => {
-      if (card) {
+      if (
+        card &&
+        (card.controlledBy === "" ||
+          card.controlledBy === (action as any).ACTOR_REF)
+      ) {
         card.selected = true;
+        card.controlledBy = (action as any).ACTOR_REF;
       }
     });
 };
@@ -236,6 +247,7 @@ const unselectAllCardsReducer: CaseReducer<ICardsState, PayloadAction<any>> = (
     )
     .forEach((card) => {
       card.selected = false;
+      card.controlledBy = "";
     });
 };
 
@@ -390,23 +402,35 @@ const cardsSlice = createSlice({
         });
         newCard.id = action.payload.id;
         newCard.selected = true;
+        newCard.controlledBy = (action as any).ACTOR_REF;
         newCard.x = newCard.x + cardConstants.CARD_WIDTH + 5;
 
         cardStackToUse.cardStack = cardStackToUse.cardStack.filter(
           (c) => c.jsonId !== action.payload.jsonId
         );
         cardStackToUse.selected = false;
+        cardStackToUse.controlledBy = "";
 
         state.cards.push(newCard);
       }
     });
 
     builder.addCase(startCardMoveWithSplitStackId, (state, action) => {
-      // first, if the card moving isn't currently selected, clear all selected cards
+      // first, if the card moving isn't currently selected, clear all _our_ selected cards
       const cardToStartMoving = getCardStackWithId(state, action.payload.id);
       if (cardToStartMoving && !cardToStartMoving.selected) {
         state.cards = state.cards.map((card) => {
-          card.selected = card.id === action.payload.id;
+          if (
+            card.controlledBy === "" ||
+            card.controlledBy === (action as any).ACTOR_REF
+          ) {
+            card.selected = card.id === action.payload.id;
+            if (card.selected) {
+              card.controlledBy = (action as any).ACTOR_REF;
+            } else {
+              card.controlledBy = "";
+            }
+          }
           return card;
         });
       }
@@ -420,10 +444,12 @@ const cardsSlice = createSlice({
         }
 
         cardToMove.selected = false;
+        cardToMove.controlledBy = "";
 
         const topCard = cardToMove.cardStack.shift();
         const newCard = Object.assign({}, cardToMove, {
           selected: true,
+          controlledBy: (action as any).ACTOR_REF,
           dragging: true,
           cardStack: [topCard],
         });

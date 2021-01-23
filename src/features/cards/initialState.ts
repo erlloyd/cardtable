@@ -38,9 +38,12 @@ export interface ICardsState {
 
 const localStorageState: ICardsState = loadState("cards");
 
-// Make sure initially, none of the cards are "owned"
+// Make sure initially, none of the cards are "owned" / "selected"
 if (!!localStorageState.cards) {
-  localStorageState.cards.forEach((c) => (c.controlledBy = ""));
+  localStorageState.cards.forEach((c) => {
+    c.controlledBy = "";
+    c.selected = false;
+  });
 }
 
 const defaultState: ICardsState = {
