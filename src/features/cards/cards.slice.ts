@@ -49,11 +49,14 @@ const mutateCardWithId = (
   }
 };
 
-const foreachSelectedCard = (
+const foreachSelectedAndControlledCard = (
   state: ICardsState,
+  actorRef: string,
   callback: (card: ICardStack) => void
 ) => {
-  state.cards.filter((card) => card.selected).forEach((card) => callback(card));
+  state.cards
+    .filter((card) => card.selected && card.controlledBy === actorRef)
+    .forEach((card) => callback(card));
 };
 
 const foreachUnselectedCard = (
@@ -76,6 +79,7 @@ const selectCardReducer: CaseReducer<
 
   mutateCardWithId(state, action.payload.id, (card) => {
     card.selected = true;
+    card.controlledBy = (action as any).ACTOR_REF;
   });
 };
 
@@ -85,6 +89,7 @@ const unselectCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
 ) => {
   mutateCardWithId(state, action.payload, (card) => {
     card.selected = false;
+    card.controlledBy = "";
   });
 };
 
@@ -94,6 +99,9 @@ const toggleSelectCardReducer: CaseReducer<
 > = (state, action) => {
   mutateCardWithId(state, action.payload, (card) => {
     card.selected = !card.selected;
+    if (!card.selected) {
+      card.controlledBy = "";
+    }
   });
 };
 
@@ -102,7 +110,11 @@ const exhaustCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
   action
 ) => {
   state.cards
-    .filter((card) => card.id === action.payload || card.selected)
+    .filter(
+      (card) =>
+        card.controlledBy === (action as any).ACTOR_REF &&
+        (card.id === action.payload || card.selected)
+    )
     .forEach((card) => {
       card.exhausted = !card.exhausted;
     });
@@ -320,6 +332,7 @@ const cardsSlice = createSlice({
 
     builder.addCase(addCardStackWithId, (state, action) => {
       const newStack: ICardStack = {
+        controlledBy: "",
         x: action.payload.position.x,
         y: action.payload.position.y,
         dragging: false,
@@ -406,10 +419,14 @@ const cardsSlice = createSlice({
       state.ghostCards = [];
 
       if (!action.payload.splitTopCard) {
-        foreachSelectedCard(state, (card) => {
-          card.dragging = true;
-          state.ghostCards.push(Object.assign({}, card));
-        });
+        foreachSelectedAndControlledCard(
+          state,
+          (action as any).ACTOR_REF,
+          (card) => {
+            card.dragging = true;
+            state.ghostCards.push(Object.assign({}, card));
+          }
+        );
       }
     });
 
@@ -418,6 +435,7 @@ const cardsSlice = createSlice({
       console.log(action);
 
       const heroCard: ICardStack = {
+        controlledBy: "",
         x: action.payload.position.x,
         y: action.payload.position.y,
         dragging: false,
@@ -450,6 +468,7 @@ const cardsSlice = createSlice({
       const cardPadding = cardConstants.CARD_WIDTH + 10;
 
       const newDeck: ICardStack = {
+        controlledBy: "",
         x: action.payload.position.x + cardPadding,
         y: action.payload.position.y,
         dragging: false,
@@ -472,6 +491,7 @@ const cardsSlice = createSlice({
       };
 
       const encounterDeck: ICardStack = {
+        controlledBy: "",
         x: action.payload.position.x + cardPadding * 2,
         y: action.payload.position.y,
         dragging: false,
@@ -496,6 +516,7 @@ const cardsSlice = createSlice({
       };
 
       const obligationDeck: ICardStack = {
+        controlledBy: "",
         x: action.payload.position.x + cardPadding * 3,
         y: action.payload.position.y,
         dragging: false,

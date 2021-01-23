@@ -2,6 +2,7 @@ import { loadState } from "../../store/localStorage";
 import { CounterTokenType, StatusTokenType } from "./cards.slice";
 
 export interface ICardStack {
+  controlledBy: string;
   dragging: boolean;
   exhausted: boolean;
   faceup: boolean;
@@ -35,7 +36,13 @@ export interface ICardsState {
   panMode: boolean;
 }
 
-const localStorageState = loadState("cards");
+const localStorageState: ICardsState = loadState("cards");
+
+// Make sure initially, none of the cards are "owned"
+if (!!localStorageState.cards) {
+  localStorageState.cards.forEach((c) => (c.controlledBy = ""));
+}
+
 const defaultState: ICardsState = {
   cards: [],
   ghostCards: [],

@@ -1,4 +1,5 @@
 import Peer from "peerjs";
+import { myPeerRef } from "../constants/app-constants";
 import {
   hoverCard,
   hoverLeaveCard,
@@ -46,7 +47,7 @@ const setupConnection = (conn: any, storeAPI: any) => {
 };
 
 export const peerJSMiddleware = (storeAPI: any) => {
-  const cgpPeer = new Peer(undefined, { debug: 0 });
+  const cgpPeer = new Peer(undefined, { debug: 3 });
   let activeCon: Peer.DataConnection;
   cgpPeer.on("error", (err) => {
     console.error("*****************Server error");
@@ -54,7 +55,7 @@ export const peerJSMiddleware = (storeAPI: any) => {
   });
 
   cgpPeer.on("disconnected", () => {
-    console.log("****Peer connection disconnected");
+    console.log("****Peer server connection disconnected");
   });
 
   cgpPeer.on("open", (id) => {
@@ -78,9 +79,43 @@ export const peerJSMiddleware = (storeAPI: any) => {
     activeCon.on("error", (err) => {
       console.error("****************Connection error:", err);
     });
+
+    activeCon.on("close", () => {
+      console.log("******connection closed for ref " + activeCon.metadata.ref);
+    });
+
+    activeCon.peerConnection.onconnectionstatechange = (ev: Event) => {
+      console.log(`connection state changed`);
+      console.log(ev);
+      console.log(activeCon.peerConnection.connectionState);
+      if (
+        activeCon.peerConnection.connectionState === "closed" ||
+        activeCon.peerConnection.connectionState === "disconnected"
+      ) {
+        console.log(
+          "CLEARING CLIENT OWNED CARDS for " + activeCon.metadata.ref
+        );
+      }
+    };
   });
   return (next: any) => (action: any) => {
     log("received local action", action);
+
+    // If this isn't a REMOTE action, add our ref onto it
+    if (!action.REMOTE_ACTION) {
+      action.ACTOR_REF = myPeerRef;
+    } else if (!action.ACTOR_REF) {
+      console.error(`Received a REMOTE action without an ACTOR_REF:`);
+      console.log(action);
+    }
+
+    if (action.type === connectToRemoteGame.type) {
+      console.log("going to connect to peer " + action.payload);
+      activeCon = cgpPeer.connect(action.payload, {
+        metadata: { ref: myPeerRef },
+      });
+      setupConnection(activeCon, storeAPI);
+    }
 
     if (
       !action.REMOTE_ACTION &&
@@ -89,12 +124,6 @@ export const peerJSMiddleware = (storeAPI: any) => {
     ) {
       log("going to send action to peer!");
       activeCon.send(action);
-    }
-
-    if (action.type === connectToRemoteGame.type) {
-      console.log("going to connect to peer " + action.payload);
-      activeCon = cgpPeer.connect(action.payload);
-      setupConnection(activeCon, storeAPI);
     }
 
     return next(action);
