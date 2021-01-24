@@ -7,6 +7,7 @@ import {
 } from "../features/cards/cards.slice";
 import {
   connectToRemoteGame,
+  setPlayerColor,
   updatePosition,
   updateZoom,
 } from "../features/game/game.slice";
@@ -74,6 +75,20 @@ export const peerJSMiddleware = (storeAPI: any) => {
         INITIAL_STATE_MSG: true,
         state: storeAPI.getState(),
       });
+      // TODO: more complicated logic to handle multiple connections. Right now
+      // this just changes the connecting client to blue
+      const setPlayerColorAction = setPlayerColor({
+        ref: activeCon.metadata.ref,
+        color: "blue",
+      });
+      activeCon.send(setPlayerColorAction);
+      activeCon.send(
+        setPlayerColor({
+          ref: myPeerRef,
+          color: "red",
+        })
+      );
+      storeAPI.dispatch(setPlayerColorAction);
     });
 
     activeCon.on("error", (err) => {
