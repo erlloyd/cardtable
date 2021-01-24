@@ -5,9 +5,8 @@ import { Component } from "react";
 import { Rect } from "react-konva";
 import { animated, Spring } from "react-spring/renderprops-konva";
 import CardTokensContainer from "./CardTokensContainer";
-import { myPeerRef } from "./constants/app-constants";
+import { myPeerRef, PlayerColor } from "./constants/app-constants";
 import { cardConstants } from "./constants/card-constants";
-import { stringToColor } from "./utilities/color-utils";
 // import Portal from './Portal';
 // import ContextMenu from './ContextMenu';
 
@@ -27,6 +26,7 @@ export interface CardUIState {
 }
 
 interface IProps {
+  selectedColor: PlayerColor;
   controlledBy: string;
   dragging: boolean;
   exhausted: boolean;
@@ -329,13 +329,11 @@ class Card extends Component<IProps, IState> {
         fillPatternImage={this.img}
         fillPatternScaleX={scale.width}
         fillPatternScaleY={scale.height}
+        // shadowOpacity={2}
         shadowColor={
-          !!this.props.controlledBy
-            ? stringToColor(this.props.controlledBy)
-            : "black"
+          !!this.props.controlledBy ? this.props.selectedColor : "black"
         }
-        // shadowOpacity={1}
-        shadowBlur={this.props.dragging ? 10 : this.props.selected ? 5 : 0}
+        shadowBlur={this.props.dragging ? 20 : this.props.selected ? 10 : 0}
         opacity={this.props.isGhost ? 0.5 : 1}
         draggable={
           this.props.controlledBy === "" ||

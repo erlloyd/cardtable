@@ -6,3 +6,7 @@ export const getGame = (state: RootState) => state.game.present;
 export const getCurrentZoom = createSelector(getGame, (game) => {
   return game.stageZoom;
 });
+
+export const getPlayerColors = createSelector(getGame, (game) => {
+  return game.playerColors;
+});

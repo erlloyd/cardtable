@@ -31,7 +31,7 @@ import {
   startCardMove,
   shuffleStack,
 } from "./features/cards/cards.thunks";
-import { getGame } from "./features/game/game.selectors";
+import { getGame, getPlayerColors } from "./features/game/game.selectors";
 import {
   connectToRemoteGame,
   moveCounter,
@@ -46,6 +46,7 @@ import { RootState } from "./store/rootReducer";
 
 const mapStateToProps = (state: RootState) => {
   return {
+    playerColors: getPlayerColors(state),
     cards: getCards(state),
     cardsData: getCardsDataEntities(state),
     showPreview: shouldShowPreview(state),

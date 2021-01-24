@@ -1,5 +1,6 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/types/types";
+import { PlayerColor } from "../../constants/app-constants";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import { addNewCounterWithId } from "./game.actions";
 import { IGameState, initialState } from "./initialState";
@@ -59,6 +60,13 @@ const connectToRemoteGameReducer: CaseReducer<
   PayloadAction<string>
 > = (state, action) => {};
 
+const setPlayerColorReducer: CaseReducer<
+  IGameState,
+  PayloadAction<{ ref: string; color: PlayerColor }>
+> = (state, action) => {
+  state.playerColors[action.payload.ref] = action.payload.color;
+};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -70,6 +78,7 @@ const gameSlice = createSlice({
     removeCounter: removeCounterReducer,
     moveCounter: moveCounterReducer,
     connectToRemoteGame: connectToRemoteGameReducer,
+    setPlayerColor: setPlayerColorReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -100,6 +109,7 @@ export const {
   removeCounter,
   moveCounter,
   connectToRemoteGame,
+  setPlayerColor,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

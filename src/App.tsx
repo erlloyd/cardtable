@@ -24,6 +24,7 @@ import { getDistance } from "./utilities/geo";
 import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
 import Counter from "./Counter";
 import PeerConnector from "./PeerConnector";
+import { PlayerColor } from "./constants/app-constants";
 
 const SCALE_BY = 1.02;
 
@@ -33,6 +34,7 @@ interface IProps {
   gameState: IGameState;
   showPreview: boolean;
   panMode: boolean;
+  playerColors: { [key: string]: PlayerColor };
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
   endCardMove: (id: string) => void;
   exhaustCard: (id: string) => void;
@@ -149,6 +151,9 @@ class App extends Component<IProps, IState> {
       .map((card) => {
         return (
           <Card
+            selectedColor={
+              this.props.playerColors[card.controlledBy] ?? "black"
+            }
             controlledBy={card.controlledBy}
             key={card.id}
             id={card.id}
@@ -184,6 +189,7 @@ class App extends Component<IProps, IState> {
     const ghostCards = this.props.cards.ghostCards.map((card) => {
       return (
         <Card
+          selectedColor={this.props.playerColors[card.controlledBy] ?? "black"}
           controlledBy={card.controlledBy}
           key={`ghost${card.id}`}
           id={card.id}
@@ -206,6 +212,9 @@ class App extends Component<IProps, IState> {
       .map((card) => {
         return (
           <Card
+            selectedColor={
+              this.props.playerColors[card.controlledBy] ?? "black"
+            }
             controlledBy={card.controlledBy}
             key={card.id}
             id={card.id}
@@ -243,6 +252,9 @@ class App extends Component<IProps, IState> {
             );
             return (
               <Card
+                selectedColor={
+                  this.props.playerColors[card.controlledBy] ?? "black"
+                }
                 controlledBy={card.controlledBy}
                 key={`preview${card.id}`}
                 id={card.id}
