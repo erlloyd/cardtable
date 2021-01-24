@@ -48,7 +48,7 @@ const setupConnection = (conn: any, storeAPI: any) => {
 };
 
 export const peerJSMiddleware = (storeAPI: any) => {
-  const cgpPeer = new Peer(undefined, { debug: 0 });
+  const cgpPeer = new Peer(undefined, { debug: 3 });
   let activeCon: Peer.DataConnection;
   cgpPeer.on("error", (err) => {
     console.error("*****************Server error");
