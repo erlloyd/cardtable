@@ -7,7 +7,6 @@ import { animated, Spring } from "react-spring/renderprops-konva";
 import CardTokensContainer from "./CardTokensContainer";
 import { myPeerRef, PlayerColor } from "./constants/app-constants";
 import { cardConstants } from "./constants/card-constants";
-import { stringToColor } from "./utilities/color-utils";
 // import Portal from './Portal';
 // import ContextMenu from './ContextMenu';
 
