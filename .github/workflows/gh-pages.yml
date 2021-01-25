@@ -16,14 +16,17 @@ jobs:
           sudo apt-get update
           sudo apt-get install -qq unzip
 
-      - name: Unzip Card Images
-        run: yarn setup-images
-
       - name: Install
         run: yarn install
 
       - name: Sanity check file got created
         run: cat src/external/generated/packs.ts
+
+      - name: make card dir
+        run: mkdir -p public/image/cards
+
+      - name: Unzip Card Images
+        run: yarn setup-images
 
       - name: Sanity check images
         run: |
