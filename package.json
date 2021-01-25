@@ -50,7 +50,7 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "postinstall": "scripts/postinstall.sh",
-    "setup-images": "mkdir -p /tmp/images; unzip .imagepacks/mc/core.zip -d /tmp/images; find /tmp/images -name '*.jpg' -exec mv {} public/images/cards \\;"
+    "setup-images": "scripts/setup-images.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
