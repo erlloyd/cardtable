@@ -12,9 +12,9 @@ jobs:
           persist-credentials: false
 
       - name: install unzip
-        run:
-          - sudo apt-get update
-          - sudo apt-get install -qq unzip
+        run: |
+          sudo apt-get update
+          sudo apt-get install -qq unzip
 
       - name: Unzip Card Images
         run: yarn setup-images
