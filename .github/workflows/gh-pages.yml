@@ -26,7 +26,9 @@ jobs:
         run: cat src/external/generated/packs.ts
 
       - name: Sanity check images
-        run: ls public/images/cards
+        run: |
+          cd public/images/cards
+          ls
 
       - name: Build 🔧
         run: yarn build:prod
