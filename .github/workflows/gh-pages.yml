@@ -14,7 +14,67 @@ jobs:
       - name: Unzip Card Images
         uses: montudor/action-zip@v0.1.0
         with:
+          args: unzip -qq .imagepacks/mc/core.zip
+
+      - name: Unzip Card Images
+        uses: montudor/action-zip@v0.1.0
+        with:
           args: unzip -qq .imagepacks/mc/Captain_America_Image_Pack.zip
+
+      - name: Unzip Card Images
+        uses: montudor/action-zip@v0.1.0
+        with:
+          args: unzip -qq .imagepacks/mc/Ronan_Image_Pack.zip
+
+      - name: Unzip Card Images
+        uses: montudor/action-zip@v0.1.0
+        with:
+          args: unzip -qq .imagepacks/mc/Black_Widow_Image_Pack.zip
+
+      - name: Unzip Card Images
+        uses: montudor/action-zip@v0.1.0
+        with:
+          args: unzip -qq .imagepacks/mc/Hulk_Image_Pack.zip
+
+      - name: Unzip Card Images
+        uses: montudor/action-zip@v0.1.0
+        with:
+          args: unzip -qq .imagepacks/mc/Ms_Marvel_Image_Pack.zip
+
+      - name: Unzip Card Images
+        uses: montudor/action-zip@v0.1.0
+        with:
+          args: unzip -qq .imagepacks/mc/Thor_Image_Pack.zip
+
+      - name: Unzip Card Images
+        uses: montudor/action-zip@v0.1.0
+        with:
+          args: unzip -qq .imagepacks/mc/Ant_Man_Image_Pack.zip
+
+      - name: Unzip Card Images
+        uses: montudor/action-zip@v0.1.0
+        with:
+          args: unzip -qq .imagepacks/mc/Doctor_Strange_Image_Pack.zip
+
+      - name: Unzip Card Images
+        uses: montudor/action-zip@v0.1.0
+        with:
+          args: unzip -qq .imagepacks/mc/Green_Goblin_Image_Pack.zip
+
+      - name: Unzip Card Images
+        uses: montudor/action-zip@v0.1.0
+        with:
+          args: unzip -qq .imagepacks/mc/Wrecking Crew Image Pack.zip
+
+      - name: Unzip Card Images
+        uses: montudor/action-zip@v0.1.0
+        with:
+          args: unzip -qq .imagepacks/mc/Red_Skull_Image_Pack.zip
+
+      - name: Unzip Card Images
+        uses: montudor/action-zip@v0.1.0
+        with:
+          args: unzip -qq .imagepacks/mc/Baron_Zemo_Firestarter_Image_Pack.zip
 
       - name: Install
         run: yarn install
