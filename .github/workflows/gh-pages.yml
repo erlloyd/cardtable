@@ -64,7 +64,7 @@ jobs:
       - name: Unzip Card Images
         uses: montudor/action-zip@v0.1.0
         with:
-          args: unzip -qq .imagepacks/mc/Wrecking Crew Image Pack.zip
+          args: unzip -qq .imagepacks/mc/Wrecking_Crew_Image_Pack.zip
 
       - name: Unzip Card Images
         uses: montudor/action-zip@v0.1.0

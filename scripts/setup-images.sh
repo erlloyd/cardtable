@@ -9,7 +9,7 @@ unzip .imagepacks/mc/Thor_Image_Pack.zip -d /tmp/images;
 unzip .imagepacks/mc/Ant_Man_Image_Pack.zip -d /tmp/images;
 unzip .imagepacks/mc/Doctor_Strange_Image_Pack.zip -d /tmp/images;
 unzip .imagepacks/mc/Green_Goblin_Image_Pack.zip -d /tmp/images;
-unzip .imagepacks/mc/Wrecking Crew Image Pack.zip -d /tmp/images;
+unzip .imagepacks/mc/Wrecking_Crew_Image_Pack.zip -d /tmp/images;
 unzip .imagepacks/mc/Red_Skull_Image_Pack.zip -d /tmp/images;
 unzip .imagepacks/mc/Baron_Zemo_Firestarter_Image_Pack.zip -d /tmp/images;
 
