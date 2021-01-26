@@ -151,6 +151,7 @@ class App extends Component<IProps, IState> {
       .map((card) => {
         return (
           <Card
+            name={this.getCardName(card)}
             selectedColor={
               this.props.playerColors[card.controlledBy] ?? "black"
             }
@@ -172,7 +173,7 @@ class App extends Component<IProps, IState> {
             handleHover={this.props.hoverCard}
             handleHoverLeave={this.props.hoverLeaveCard}
             handleContextMenu={this.handleCardContextMenu}
-            imgUrl={this.getImgUrl(card)}
+            imgUrls={this.getImgUrls(card)}
             typeCode={this.getCardType(card)}
             faceup={card.faceup}
             numCardsInStack={card.cardStack.length}
@@ -189,6 +190,7 @@ class App extends Component<IProps, IState> {
     const ghostCards = this.props.cards.ghostCards.map((card) => {
       return (
         <Card
+          name={this.getCardName(card)}
           selectedColor={this.props.playerColors[card.controlledBy] ?? "black"}
           controlledBy={card.controlledBy}
           key={`ghost${card.id}`}
@@ -199,7 +201,7 @@ class App extends Component<IProps, IState> {
           fill={card.fill}
           selected={false}
           dragging={false}
-          imgUrl={this.getImgUrl(card)}
+          imgUrls={this.getImgUrls(card)}
           typeCode={this.getCardType(card)}
           faceup={card.faceup}
           isGhost={true}
@@ -212,6 +214,7 @@ class App extends Component<IProps, IState> {
       .map((card) => {
         return (
           <Card
+            name={this.getCardName(card)}
             selectedColor={
               this.props.playerColors[card.controlledBy] ?? "black"
             }
@@ -227,7 +230,7 @@ class App extends Component<IProps, IState> {
             handleDragStart={this.handleCardDragStart}
             handleDragMove={this.props.cardMove}
             handleDragEnd={this.props.endCardMove}
-            imgUrl={this.getImgUrl(card)}
+            imgUrls={this.getImgUrls(card)}
             typeCode={this.getCardType(card)}
             faceup={card.faceup}
             numCardsInStack={card.cardStack.length}
@@ -252,6 +255,7 @@ class App extends Component<IProps, IState> {
             );
             return (
               <Card
+                name={this.getCardName(card)}
                 selectedColor={
                   this.props.playerColors[card.controlledBy] ?? "black"
                 }
@@ -266,7 +270,7 @@ class App extends Component<IProps, IState> {
                 fill={card.fill}
                 selected={false}
                 dragging={false}
-                imgUrl={this.getImgUrl(card)}
+                imgUrls={this.getImgUrls(card)}
                 typeCode={this.getCardType(card)}
                 faceup={card.faceup}
                 height={cardConstants.CARD_PREVIEW_HEIGHT}
@@ -1039,8 +1043,18 @@ class App extends Component<IProps, IState> {
     return cardData.type_code;
   };
 
-  private getImgUrl = (card: ICardStack): string => {
-    if (Object.keys(this.props.cardsData).length === 0) return "";
+  private getCardName = (card: ICardStack) => {
+    const cardInQuestion = card.faceup
+      ? card.cardStack[0]
+      : card.cardStack[card.cardStack.length - 1];
+    return this.props.cardsData[cardInQuestion.jsonId]?.name ?? "";
+  };
+
+  private getImgUrls = (
+    card: ICardStack
+  ): { primary: string; backup: string } => {
+    if (Object.keys(this.props.cardsData).length === 0)
+      return { primary: "", backup: "" };
 
     const topCardData = this.props.cardsData[card.cardStack[0].jsonId];
     const bottomCardData = this.props.cardsData[
@@ -1051,19 +1065,31 @@ class App extends Component<IProps, IState> {
       !card.faceup &&
       (!!bottomCardData.back_link || !!bottomCardData.double_sided)
     ) {
-      return (
-        process.env.PUBLIC_URL +
-        "/images/cards/" +
-        bottomCardData.octgn_id +
-        ".b.jpg"
-      );
+      // console.log("back side");
+      // console.log(bottomCardData);
+      return {
+        primary: `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.png`,
+        backup:
+          process.env.PUBLIC_URL +
+          "/images/cards/" +
+          bottomCardData.octgn_id +
+          ".b.jpg",
+      };
     } else if (!card.faceup) {
-      return process.env.PUBLIC_URL + "/images/standard/card_back.png";
+      return {
+        primary: process.env.PUBLIC_URL + "/images/standard/card_back.png",
+        backup: process.env.PUBLIC_URL + "/images/standard/card_back.png",
+      };
     }
 
-    return (
-      process.env.PUBLIC_URL + "/images/cards/" + topCardData.octgn_id + ".jpg"
-    );
+    return {
+      primary: `https://marvelcdb.com/bundles/cards/${topCardData.code}.png`,
+      backup:
+        process.env.PUBLIC_URL +
+        "/images/cards/" +
+        topCardData.octgn_id +
+        ".jpg",
+    };
   };
 }
 

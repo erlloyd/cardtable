@@ -3,12 +3,9 @@ import { KonvaEventObject } from "konva/types/Node";
 import * as React from "react";
 import { Component } from "react";
 import { Rect } from "react-konva";
-import { animated, Spring } from "react-spring/renderprops-konva";
 import CardTokensContainer from "./CardTokensContainer";
 import { myPeerRef, PlayerColor } from "./constants/app-constants";
 import { cardConstants } from "./constants/card-constants";
-// import Portal from './Portal';
-// import ContextMenu from './ContextMenu';
 
 export const HORIZONTAL_TYPE_CODES = ["main_scheme", "side_scheme"];
 
@@ -26,6 +23,7 @@ export interface CardUIState {
 }
 
 interface IProps {
+  name: string;
   selectedColor: PlayerColor;
   controlledBy: string;
   dragging: boolean;
@@ -46,7 +44,7 @@ interface IProps {
   y: number;
   width?: number;
   height?: number;
-  imgUrl: string;
+  imgUrls: { primary: string; backup: string };
   isGhost?: boolean;
   numCardsInStack?: number;
   typeCode?: string;
@@ -70,10 +68,10 @@ interface IState {
 class Card extends Component<IProps, IState> {
   // tslint:disable-next-line:member-access
   static getDerivedStateFromProps(props: IProps, state: IState): IState | null {
-    if (props.imgUrl !== state.prevImgUrl) {
+    if (props.imgUrls.primary !== state.prevImgUrl) {
       return {
         imageLoaded: false,
-        prevImgUrl: props.imgUrl,
+        prevImgUrl: props.imgUrls.primary,
         tokenImagesLoaded: {
           stunned: state.tokenImagesLoaded.stunned,
           confused: state.tokenImagesLoaded.confused,
@@ -90,20 +88,15 @@ class Card extends Component<IProps, IState> {
   private confusedImg: HTMLImageElement;
   private toughImg: HTMLImageElement;
   private unmounted: boolean;
-  private renderAnimated: boolean = false;
 
   constructor(props: IProps) {
     super(props);
-
-    if (localStorage.getItem("__render_animated__")) {
-      this.renderAnimated = true;
-    }
 
     this.unmounted = true;
 
     this.state = {
       imageLoaded: false,
-      prevImgUrl: this.props.imgUrl,
+      prevImgUrl: this.props.imgUrls.primary,
       tokenImagesLoaded: {
         stunned: false,
         confused: false,
@@ -125,8 +118,14 @@ class Card extends Component<IProps, IState> {
       }
     };
 
-    if (props.imgUrl) {
-      this.img.src = props.imgUrl;
+    this.img.onerror = () => {
+      // console.log("error loading " + this.img.src + " for " + this.props.name);
+      // console.log("now going to load " + this.props.imgUrls.backup);
+      this.img.src = this.props.imgUrls.backup;
+    };
+
+    if (props.imgUrls.primary) {
+      this.img.src = props.imgUrls.primary;
     }
 
     // STUNNED
@@ -186,10 +185,10 @@ class Card extends Component<IProps, IState> {
   public componentDidUpdate(prevProps: IProps, prevState: IState) {
     if (
       !this.state.imageLoaded &&
-      this.props.imgUrl &&
-      this.props.imgUrl !== this.img.src
+      this.props.imgUrls.primary &&
+      this.props.imgUrls.primary !== this.img.src
     ) {
-      this.img.src = this.props.imgUrl;
+      this.img.src = this.props.imgUrls.primary;
     }
 
     // STUNNED
@@ -231,74 +230,21 @@ class Card extends Component<IProps, IState> {
   }
 
   public render() {
-    return this.state.imageLoaded ? this.renderCard() : null;
+    return this.renderCard(this.state.imageLoaded);
   }
 
-  private renderCard() {
+  private renderCard(imageLoaded: boolean) {
     const heightToUse = this.props.height || cardConstants.CARD_HEIGHT;
     const widthToUse = this.props.width || cardConstants.CARD_WIDTH;
 
-    return this.renderAnimated
-      ? this.renderAnimatedCard(heightToUse, widthToUse)
-      : this.renderUnanimatedCard(heightToUse, widthToUse);
+    return this.renderUnanimatedCard(heightToUse, widthToUse, imageLoaded);
   }
 
-  private renderAnimatedCard = (heightToUse: number, widthToUse: number) => {
-    return (
-      <Spring
-        key={`${this.props.id}-card`}
-        native={true}
-        to={{
-          rotation: this.props.exhausted ? 90 : 0,
-        }}
-      >
-        {(animatedProps: any) => (
-          <animated.Rect
-            {...animatedProps}
-            cornerRadius={9}
-            x={this.props.x}
-            y={this.props.y}
-            width={widthToUse}
-            height={heightToUse}
-            offset={{
-              x: widthToUse / 2,
-              y: heightToUse / 2,
-            }}
-            stroke={this.props.dropTarget ? "blue" : ""}
-            strokeWidth={this.props.dropTarget ? 2 : 0}
-            fillPatternImage={this.img}
-            fillPatternScaleX={
-              this.state.imageLoaded
-                ? widthToUse / this.img.naturalWidth
-                : widthToUse
-            }
-            fillPatternScaleY={
-              this.state.imageLoaded
-                ? heightToUse / this.img.naturalHeight
-                : heightToUse
-            }
-            shadowBlur={this.props.dragging ? 10 : this.props.selected ? 5 : 0}
-            opacity={this.props.isGhost ? 0.5 : 1}
-            draggable={true}
-            onDragStart={this.handleDragStart}
-            onDragMove={this.handleDragMove}
-            onDragEnd={this.handleDragEnd}
-            onDblClick={this.handleDoubleClick}
-            onDblTap={this.handleDoubleClick}
-            onClick={this.handleClick}
-            onTap={this.handleClick}
-            onMouseDown={this.handleMouseDown}
-            onTouchStart={this.handleMouseDown}
-            onMouseOver={this.handleMouseOver}
-            onMouseOut={this.handleMouseOut}
-            onContextMenu={this.handleContextMenu}
-          />
-        )}
-      </Spring>
-    );
-  };
-
-  private renderUnanimatedCard = (heightToUse: number, widthToUse: number) => {
+  private renderUnanimatedCard = (
+    heightToUse: number,
+    widthToUse: number,
+    imageLoaded: boolean
+  ) => {
     const scale = this.getScale(widthToUse, heightToUse);
     const offset = {
       x: widthToUse / 2,
@@ -319,6 +265,7 @@ class Card extends Component<IProps, IState> {
         stroke={this.props.dropTarget ? "blue" : ""}
         strokeWidth={this.props.dropTarget ? 2 : 0}
         fillPatternRotation={
+          !imageLoaded ||
           this.shouldRenderImageHorizontal(
             this.props.typeCode || "",
             HORIZONTAL_TYPE_CODES
@@ -326,10 +273,10 @@ class Card extends Component<IProps, IState> {
             ? 270
             : 0
         }
-        fillPatternImage={this.img}
+        fillPatternImage={imageLoaded ? this.img : undefined}
         fillPatternScaleX={scale.width}
         fillPatternScaleY={scale.height}
-        // shadowOpacity={2}
+        fill={imageLoaded ? undefined : "gray"}
         shadowColor={
           !!this.props.controlledBy ? this.props.selectedColor : "black"
         }
@@ -461,8 +408,8 @@ class Card extends Component<IProps, IState> {
 
   private get plainCardBack() {
     return (
-      this.props.imgUrl?.includes("standard") &&
-      this.props.imgUrl?.includes("_back")
+      this.props.imgUrls?.backup.includes("standard") &&
+      this.props.imgUrls?.backup.includes("_back")
     );
   }
 
