@@ -472,6 +472,9 @@ const cardsSlice = createSlice({
           }
         );
       }
+
+      //Finally, if we have a preview card, clear it
+      state.previewCard = null;
     });
 
     builder.addCase(fetchDecklistById.fulfilled, (state, action) => {

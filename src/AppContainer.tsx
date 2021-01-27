@@ -34,15 +34,19 @@ import {
 import { getGame, getPlayerColors } from "./features/game/game.selectors";
 import {
   connectToRemoteGame,
-  moveCounter,
-  removeCounter,
-  updateCounterValue,
   updatePosition,
   updateZoom,
 } from "./features/game/game.slice";
-import { addNewCounter } from "./features/game/game.thunks";
+
+import {
+  moveCounter,
+  removeCounter,
+  updateCounterValue,
+} from "./features/counters/counters.slice";
+import { addNewCounter } from "./features/counters/counters.thunks";
 import { resetApp } from "./store/global.actions";
 import { RootState } from "./store/rootReducer";
+import { getCurrentCounters } from "./features/counters/counters.selectors";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -52,6 +56,7 @@ const mapStateToProps = (state: RootState) => {
     showPreview: shouldShowPreview(state),
     panMode: getPanMode(state),
     gameState: getGame(state),
+    counters: getCurrentCounters(state),
   };
 };
 

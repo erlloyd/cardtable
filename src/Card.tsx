@@ -88,6 +88,7 @@ class Card extends Component<IProps, IState> {
   private confusedImg: HTMLImageElement;
   private toughImg: HTMLImageElement;
   private unmounted: boolean;
+  private usingBackup = false;
 
   constructor(props: IProps) {
     super(props);

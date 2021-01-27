@@ -25,6 +25,7 @@ import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
 import Counter from "./Counter";
 import PeerConnector from "./PeerConnector";
 import { PlayerColor } from "./constants/app-constants";
+import { ICounter } from "./features/counters/initialState";
 
 const SCALE_BY = 1.02;
 
@@ -83,6 +84,7 @@ interface IProps {
   connectToRemoteGame: (peerId: string) => void;
   undo: () => void;
   redo: () => void;
+  counters: ICounter[];
 }
 
 interface IState {
@@ -326,7 +328,7 @@ class App extends Component<IProps, IState> {
             >
               <Provider store={store}>
                 <Layer>
-                  {this.props.gameState.counters.map((counter) => (
+                  {this.props.counters.map((counter) => (
                     <Counter
                       key={`${counter.id}-counter`}
                       id={counter.id}

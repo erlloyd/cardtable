@@ -1,8 +1,7 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/types/types";
 import { PlayerColor } from "../../constants/app-constants";
-import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
-import { addNewCounterWithId } from "./game.actions";
+import { resetApp } from "../../store/global.actions";
 import { IGameState, initialState } from "./initialState";
 
 // Reducers
@@ -20,39 +19,6 @@ const updatePositionReducer: CaseReducer<
 > = (state, action) => {
   state.stagePosition = action.payload;
   return state;
-};
-
-const updateCounterValueReducer: CaseReducer<
-  IGameState,
-  PayloadAction<{ id: string; delta: number }>
-> = (state, action) => {
-  const counter = state.counters.find((c) => c.id === action.payload.id);
-  if (!!counter) {
-    counter.value += action.payload.delta;
-    if (counter.value < 0) {
-      counter.value = 0;
-    }
-  }
-};
-
-const removeCounterReducer: CaseReducer<IGameState, PayloadAction<string>> = (
-  state,
-  action
-) => {
-  state.counters = state.counters.filter((c) => c.id !== action.payload);
-};
-
-const moveCounterReducer: CaseReducer<
-  IGameState,
-  PayloadAction<{ id: string; newPos: Vector2d }>
-> = (state, action) => {
-  const counter = state.counters.find((c) => c.id === action.payload.id);
-  if (!!counter) {
-    counter.position = {
-      x: action.payload.newPos.x,
-      y: action.payload.newPos.y,
-    };
-  }
 };
 
 const connectToRemoteGameReducer: CaseReducer<
@@ -74,30 +40,13 @@ const gameSlice = createSlice({
   reducers: {
     updateZoom: updateZoomReducer,
     updatePosition: updatePositionReducer,
-    updateCounterValue: updateCounterValueReducer,
-    removeCounter: removeCounterReducer,
-    moveCounter: moveCounterReducer,
     connectToRemoteGame: connectToRemoteGameReducer,
     setPlayerColor: setPlayerColorReducer,
   },
   extraReducers: (builder) => {
-    builder.addCase(receiveRemoteGameState, (state, action) => {
-      // TODO: find a way to keep this automatic
-      state.counters = action.payload.game.present.counters;
-    });
-
     builder.addCase(resetApp, (state, action) => {
       state.stagePosition = { x: 0, y: 0 };
       state.stageZoom = { x: 1, y: 1 };
-      state.counters = [];
-    });
-
-    builder.addCase(addNewCounterWithId, (state, action) => {
-      state.counters.push({
-        id: action.payload.id,
-        position: action.payload.pos,
-        value: 0,
-      });
     });
   },
 });
@@ -105,9 +54,6 @@ const gameSlice = createSlice({
 export const {
   updateZoom,
   updatePosition,
-  updateCounterValue,
-  removeCounter,
-  moveCounter,
   connectToRemoteGame,
   setPlayerColor,
 } = gameSlice.actions;

@@ -7,22 +7,15 @@ import cards, {
   hoverCard,
   hoverLeaveCard,
 } from "../features/cards/cards.slice";
-import game, {
-  connectToRemoteGame,
-  moveCounter,
-  updatePosition,
-  updateZoom,
-} from "../features/game/game.slice";
+import game from "../features/game/game.slice";
+
+import counters, { moveCounter } from "../features/counters/counters.slice";
 
 const rootReducer = combineReducers({
-  game: undoable(game, {
+  game,
+  counters: undoable(counters, {
     limit: 20,
     groupBy: groupByActionTypes([moveCounter.type]),
-    filter: excludeAction([
-      updateZoom.type,
-      updatePosition.type,
-      connectToRemoteGame.type,
-    ]),
   }),
   cards: undoable(cards, {
     limit: 20,
