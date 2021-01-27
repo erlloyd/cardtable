@@ -1069,6 +1069,27 @@ class App extends Component<IProps, IState> {
     return MISSING_CARD_IMAGE_MAP[code] ?? null;
   }
 
+  private generateLCGCDNImageUrl(card: CardData, faceup: boolean): string {
+    // get the first two digits
+    const groupCode = card.code.substring(0, 2);
+    let cardCode = card.code.substring(2);
+
+    //trim leading "0" chars
+    while (cardCode[0] === "0") {
+      cardCode = cardCode.substring(1);
+    }
+
+    cardCode = cardCode.toLocaleUpperCase();
+
+    let cardSuffix = "";
+
+    if (!!card.double_sided) {
+      cardSuffix = faceup ? "A" : "B";
+    }
+
+    return `https://lcgcdn.s3.amazonaws.com/mc/MC${groupCode}en_${cardCode}${cardSuffix}.jpg`;
+  }
+
   private getImgUrls = (card: ICardStack): string[] => {
     if (Object.keys(this.props.cardsData).length === 0) return [];
 
@@ -1087,12 +1108,13 @@ class App extends Component<IProps, IState> {
     ) {
       cardData = bottomCardData;
       urls = [
-        `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.png`,
-        `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.jpg`,
-        process.env.PUBLIC_URL +
-          "/images/cards/" +
-          bottomCardData.octgn_id +
-          ".b.jpg",
+        this.generateLCGCDNImageUrl(bottomCardData, card.faceup),
+        // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.png`,
+        // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.jpg`,
+        // process.env.PUBLIC_URL +
+        //   "/images/cards/" +
+        //   bottomCardData.octgn_id +
+        //   ".b.jpg",
       ];
     } else if (!card.faceup) {
       cardData = null;
@@ -1100,12 +1122,13 @@ class App extends Component<IProps, IState> {
     }
     if (urls.length === 0) {
       urls = [
-        `https://marvelcdb.com/bundles/cards/${topCardData.code}.png`,
-        `https://marvelcdb.com/bundles/cards/${topCardData.code}.jpg`,
-        process.env.PUBLIC_URL +
-          "/images/cards/" +
-          topCardData.octgn_id +
-          ".jpg",
+        this.generateLCGCDNImageUrl(topCardData, card.faceup),
+        // `https://marvelcdb.com/bundles/cards/${topCardData.code}.png`,
+        // `https://marvelcdb.com/bundles/cards/${topCardData.code}.jpg`,
+        // process.env.PUBLIC_URL +
+        //   "/images/cards/" +
+        //   topCardData.octgn_id +
+        //   ".jpg",
       ];
     }
 
