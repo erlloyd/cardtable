@@ -26,6 +26,8 @@ import Counter from "./Counter";
 import PeerConnector from "./PeerConnector";
 import { PlayerColor } from "./constants/app-constants";
 import { ICounter } from "./features/counters/initialState";
+import { MISSING_CARD_IMAGE_MAP } from "./constants/card-missing-image-map";
+import { CardData } from "./external-api/marvel-card-data";
 
 const SCALE_BY = 1.02;
 
@@ -153,6 +155,7 @@ class App extends Component<IProps, IState> {
       .map((card) => {
         return (
           <Card
+            code={this.getCardCode(card)}
             name={this.getCardName(card)}
             selectedColor={
               this.props.playerColors[card.controlledBy] ?? "black"
@@ -193,6 +196,7 @@ class App extends Component<IProps, IState> {
       return (
         <Card
           name={this.getCardName(card)}
+          code={this.getCardCode(card)}
           selectedColor={this.props.playerColors[card.controlledBy] ?? "black"}
           controlledBy={card.controlledBy}
           key={`ghost${card.id}`}
@@ -217,6 +221,7 @@ class App extends Component<IProps, IState> {
         return (
           <Card
             name={this.getCardName(card)}
+            code={this.getCardCode(card)}
             selectedColor={
               this.props.playerColors[card.controlledBy] ?? "black"
             }
@@ -258,6 +263,7 @@ class App extends Component<IProps, IState> {
             return (
               <Card
                 name={this.getCardName(card)}
+                code={this.getCardCode(card)}
                 selectedColor={
                   this.props.playerColors[card.controlledBy] ?? "black"
                 }
@@ -1052,21 +1058,35 @@ class App extends Component<IProps, IState> {
     return this.props.cardsData[cardInQuestion.jsonId]?.name ?? "";
   };
 
+  private getCardCode = (card: ICardStack) => {
+    const cardInQuestion = card.faceup
+      ? card.cardStack[0]
+      : card.cardStack[card.cardStack.length - 1];
+    return this.props.cardsData[cardInQuestion.jsonId]?.code ?? "code missing";
+  };
+
+  private checkMissingImageMap(code: string): string | null {
+    return MISSING_CARD_IMAGE_MAP[code] ?? null;
+  }
+
   private getImgUrls = (card: ICardStack): string[] => {
-    if (Object.keys(this.props.cardsData).length === 0) return [""];
+    if (Object.keys(this.props.cardsData).length === 0) return [];
+
+    let urls: string[] = [];
 
     const topCardData = this.props.cardsData[card.cardStack[0].jsonId];
     const bottomCardData = this.props.cardsData[
       card.cardStack[card.cardStack.length - 1].jsonId
     ];
 
+    let cardData: CardData | null = topCardData;
+
     if (
       !card.faceup &&
       (!!bottomCardData.back_link || !!bottomCardData.double_sided)
     ) {
-      // console.log("back side");
-      // console.log(bottomCardData);
-      return [
+      cardData = bottomCardData;
+      urls = [
         `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.png`,
         `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.jpg`,
         process.env.PUBLIC_URL +
@@ -1075,14 +1095,29 @@ class App extends Component<IProps, IState> {
           ".b.jpg",
       ];
     } else if (!card.faceup) {
-      return [process.env.PUBLIC_URL + "/images/standard/card_back.png"];
+      cardData = null;
+      urls = [process.env.PUBLIC_URL + "/images/standard/card_back.png"];
+    }
+    if (urls.length === 0) {
+      urls = [
+        `https://marvelcdb.com/bundles/cards/${topCardData.code}.png`,
+        `https://marvelcdb.com/bundles/cards/${topCardData.code}.jpg`,
+        process.env.PUBLIC_URL +
+          "/images/cards/" +
+          topCardData.octgn_id +
+          ".jpg",
+      ];
     }
 
-    return [
-      `https://marvelcdb.com/bundles/cards/${topCardData.code}.png`,
-      `https://marvelcdb.com/bundles/cards/${topCardData.code}.jpg`,
-      process.env.PUBLIC_URL + "/images/cards/" + topCardData.octgn_id + ".jpg",
-    ];
+    const missingImageOverride = !!cardData
+      ? this.checkMissingImageMap(cardData.code)
+      : null;
+
+    if (!!missingImageOverride) {
+      urls.unshift(missingImageOverride);
+    }
+
+    return urls;
   };
 }
 

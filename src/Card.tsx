@@ -25,6 +25,7 @@ export interface CardUIState {
 
 interface IProps {
   name: string;
+  code: string;
   selectedColor: PlayerColor;
   controlledBy: string;
   dragging: boolean;
@@ -410,34 +411,37 @@ class Card extends Component<IProps, IState> {
     cardHeight: number
   ) {
     const textOffset = { x: offset.x - 10, y: offset.y - 20 };
-    return this.state.imageLoadFailed === this.props.imgUrls.length ? (
-      <Text
-        key={`${this.props.id}-cardnametext`}
-        offset={textOffset}
-        x={this.props.x}
-        y={this.props.y}
-        width={cardWidth - 10}
-        height={cardHeight - 20}
-        fontSize={24}
-        text={this.props.name}
-        draggable={
-          this.props.controlledBy === "" ||
-          this.props.controlledBy === myPeerRef
-        }
-        onDragStart={this.handleDragStart}
-        onDragMove={this.handleDragMove}
-        onDragEnd={this.handleDragEnd}
-        onDblClick={this.handleDoubleClick}
-        onDblTap={this.handleDoubleClick}
-        onClick={this.handleClick}
-        onTap={this.handleClick}
-        onMouseDown={this.handleMouseDown}
-        onTouchStart={this.handleMouseDown}
-        onMouseOver={this.handleMouseOver}
-        onMouseOut={this.handleMouseOut}
-        onContextMenu={this.handleContextMenu}
-      ></Text>
-    ) : null;
+    const textItem =
+      this.state.imageLoadFailed === this.props.imgUrls.length ? (
+        <Text
+          key={`${this.props.id}-cardnametext`}
+          offset={textOffset}
+          x={this.props.x}
+          y={this.props.y}
+          width={cardWidth - 10}
+          height={cardHeight - 20}
+          fontSize={24}
+          text={`${this.props.name} ${this.props.code}`}
+          draggable={
+            this.props.controlledBy === "" ||
+            this.props.controlledBy === myPeerRef
+          }
+          onDragStart={this.handleDragStart}
+          onDragMove={this.handleDragMove}
+          onDragEnd={this.handleDragEnd}
+          onDblClick={this.handleDoubleClick}
+          onDblTap={this.handleDoubleClick}
+          onClick={this.handleClick}
+          onTap={this.handleClick}
+          onMouseDown={this.handleMouseDown}
+          onTouchStart={this.handleMouseDown}
+          onMouseOver={this.handleMouseOver}
+          onMouseOut={this.handleMouseOut}
+          onContextMenu={this.handleContextMenu}
+        ></Text>
+      ) : null;
+
+    return textItem;
   }
 
   private getTokenInSlot(
