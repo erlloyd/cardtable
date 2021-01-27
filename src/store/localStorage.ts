@@ -6,7 +6,9 @@ export const loadState = (key: string) => {
     if (serializedState === null) {
       return {};
     }
-    return JSON.parse(serializedState || "{}").present;
+    const baseState = JSON.parse(serializedState || "{}");
+
+    return baseState.present ?? baseState;
   } catch (err) {
     console.error("problem parsing");
     return {};

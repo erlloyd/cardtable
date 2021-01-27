@@ -1,8 +1,9 @@
 // tslint:disable:no-console
 import { KonvaEventObject } from "konva/types/Node";
+import { Vector2d } from "konva/types/types";
 import * as React from "react";
 import { Component } from "react";
-import { Rect } from "react-konva";
+import { Rect, Text } from "react-konva";
 import CardTokensContainer from "./CardTokensContainer";
 import { myPeerRef, PlayerColor } from "./constants/app-constants";
 import { cardConstants } from "./constants/card-constants";
@@ -44,7 +45,7 @@ interface IProps {
   y: number;
   width?: number;
   height?: number;
-  imgUrls: { primary: string; backup: string };
+  imgUrls: string[];
   isGhost?: boolean;
   numCardsInStack?: number;
   typeCode?: string;
@@ -57,7 +58,8 @@ interface IProps {
 
 interface IState {
   imageLoaded: boolean;
-  prevImgUrl: string;
+  imageLoadFailed: number;
+  prevImgUrls: string[];
   tokenImagesLoaded: {
     stunned: boolean;
     confused: boolean;
@@ -65,13 +67,23 @@ interface IState {
   };
 }
 
+const stringArraysEqual = (array1: string[], array2: string[]) => {
+  return (
+    array1.length === array2.length &&
+    array1.every((value, index) => {
+      return value === array2[index];
+    })
+  );
+};
+
 class Card extends Component<IProps, IState> {
   // tslint:disable-next-line:member-access
   static getDerivedStateFromProps(props: IProps, state: IState): IState | null {
-    if (props.imgUrls.primary !== state.prevImgUrl) {
+    if (!stringArraysEqual(props.imgUrls, state.prevImgUrls ?? [])) {
       return {
         imageLoaded: false,
-        prevImgUrl: props.imgUrls.primary,
+        imageLoadFailed: 0,
+        prevImgUrls: props.imgUrls,
         tokenImagesLoaded: {
           stunned: state.tokenImagesLoaded.stunned,
           confused: state.tokenImagesLoaded.confused,
@@ -83,12 +95,11 @@ class Card extends Component<IProps, IState> {
     return null;
   }
 
-  private img: HTMLImageElement;
+  private imgs: HTMLImageElement[] = [];
   private stunnedImg: HTMLImageElement;
   private confusedImg: HTMLImageElement;
   private toughImg: HTMLImageElement;
   private unmounted: boolean;
-  private usingBackup = false;
 
   constructor(props: IProps) {
     super(props);
@@ -97,7 +108,8 @@ class Card extends Component<IProps, IState> {
 
     this.state = {
       imageLoaded: false,
-      prevImgUrl: this.props.imgUrls.primary,
+      imageLoadFailed: 0,
+      prevImgUrls: this.props.imgUrls,
       tokenImagesLoaded: {
         stunned: false,
         confused: false,
@@ -105,29 +117,11 @@ class Card extends Component<IProps, IState> {
       },
     };
 
-    this.img = new Image();
+    this.initCardImages(props);
+
     this.stunnedImg = new Image();
     this.confusedImg = new Image();
     this.toughImg = new Image();
-
-    // When the image loads, set a flag in the state
-    this.img.onload = () => {
-      if (!this.unmounted) {
-        this.setState({
-          imageLoaded: true,
-        });
-      }
-    };
-
-    this.img.onerror = () => {
-      // console.log("error loading " + this.img.src + " for " + this.props.name);
-      // console.log("now going to load " + this.props.imgUrls.backup);
-      this.img.src = this.props.imgUrls.backup;
-    };
-
-    if (props.imgUrls.primary) {
-      this.img.src = props.imgUrls.primary;
-    }
 
     // STUNNED
     this.stunnedImg.onload = () => {
@@ -186,10 +180,13 @@ class Card extends Component<IProps, IState> {
   public componentDidUpdate(prevProps: IProps, prevState: IState) {
     if (
       !this.state.imageLoaded &&
-      this.props.imgUrls.primary &&
-      this.props.imgUrls.primary !== this.img.src
+      !stringArraysEqual(prevProps.imgUrls, this.props.imgUrls)
     ) {
-      this.img.src = this.props.imgUrls.primary;
+      this.setState({
+        imageLoaded: false,
+        imageLoadFailed: 0,
+      });
+      this.initCardImages(this.props);
     }
 
     // STUNNED
@@ -222,6 +219,35 @@ class Card extends Component<IProps, IState> {
     }
   }
 
+  private initCardImages = (props: IProps) => {
+    this.imgs = props.imgUrls.map(() => new Image());
+
+    // When the image loads, set a flag in the state
+    this.imgs.forEach(
+      (img) =>
+        (img.onload = () => {
+          if (!this.unmounted) {
+            this.setState({
+              imageLoaded: true,
+            });
+          }
+        })
+    );
+
+    this.imgs.forEach(
+      (img) =>
+        (img.onerror = () => {
+          if (!this.unmounted) {
+            this.setState({
+              imageLoadFailed: this.state.imageLoadFailed + 1,
+            });
+          }
+        })
+    );
+
+    props.imgUrls.forEach((imgUrl, index) => (this.imgs[index].src = imgUrl));
+  };
+
   public componentDidMount() {
     this.unmounted = false;
   }
@@ -246,7 +272,11 @@ class Card extends Component<IProps, IState> {
     widthToUse: number,
     imageLoaded: boolean
   ) => {
-    const scale = this.getScale(widthToUse, heightToUse);
+    const imgToUse = imageLoaded
+      ? this.imgs.find((i) => i.complete && i.naturalHeight !== 0)
+      : undefined;
+
+    const scale = this.getScale(imgToUse, widthToUse, heightToUse);
     const offset = {
       x: widthToUse / 2,
       y: heightToUse / 2,
@@ -274,7 +304,7 @@ class Card extends Component<IProps, IState> {
             ? 270
             : 0
         }
-        fillPatternImage={imageLoaded ? this.img : undefined}
+        fillPatternImage={imgToUse}
         fillPatternScaleX={scale.width}
         fillPatternScaleY={scale.height}
         fill={imageLoaded ? undefined : "gray"}
@@ -357,15 +387,58 @@ class Card extends Component<IProps, IState> {
         ></CardTokensContainer>
       );
 
+    const noImageCardNameText = this.renderCardName(
+      offset,
+      widthToUse,
+      heightToUse
+    );
+
     return [
       cardStack,
       card,
+      noImageCardNameText,
       stunnedToken,
       confusedToken,
       toughToken,
       cardTokens,
     ];
   };
+
+  private renderCardName(
+    offset: Vector2d,
+    cardWidth: number,
+    cardHeight: number
+  ) {
+    const textOffset = { x: offset.x - 10, y: offset.y - 20 };
+    return this.state.imageLoadFailed === this.props.imgUrls.length ? (
+      <Text
+        key={`${this.props.id}-cardnametext`}
+        offset={textOffset}
+        x={this.props.x}
+        y={this.props.y}
+        width={cardWidth - 10}
+        height={cardHeight - 20}
+        fontSize={24}
+        text={this.props.name}
+        draggable={
+          this.props.controlledBy === "" ||
+          this.props.controlledBy === myPeerRef
+        }
+        onDragStart={this.handleDragStart}
+        onDragMove={this.handleDragMove}
+        onDragEnd={this.handleDragEnd}
+        onDblClick={this.handleDoubleClick}
+        onDblTap={this.handleDoubleClick}
+        onClick={this.handleClick}
+        onTap={this.handleClick}
+        onMouseDown={this.handleMouseDown}
+        onTouchStart={this.handleMouseDown}
+        onMouseOver={this.handleMouseOver}
+        onMouseOut={this.handleMouseOut}
+        onContextMenu={this.handleContextMenu}
+      ></Text>
+    ) : null;
+  }
 
   private getTokenInSlot(
     shouldRender: boolean,
@@ -409,26 +482,24 @@ class Card extends Component<IProps, IState> {
 
   private get plainCardBack() {
     return (
-      this.props.imgUrls?.backup.includes("standard") &&
-      this.props.imgUrls?.backup.includes("_back")
+      this.props.imgUrls.some((i) => i.includes("standard")) &&
+      this.props.imgUrls.some((i) => i.includes("_back"))
     );
   }
 
-  private getScale(widthToUse: number, heightToUse: number) {
-    const width = this.state.imageLoaded
-      ? widthToUse / this.img.naturalWidth
-      : widthToUse;
+  private getScale(
+    img: HTMLImageElement | undefined,
+    widthToUse: number,
+    heightToUse: number
+  ) {
+    const width = !!img ? widthToUse / img.naturalWidth : widthToUse;
 
-    const widthHorizontal = this.state.imageLoaded
-      ? heightToUse / this.img.naturalWidth
-      : widthToUse;
+    const widthHorizontal = !!img ? heightToUse / img.naturalWidth : widthToUse;
 
-    const height = this.state.imageLoaded
-      ? heightToUse / this.img.naturalHeight
-      : heightToUse;
+    const height = !!img ? heightToUse / img.naturalHeight : heightToUse;
 
-    const heightHorizontal = this.state.imageLoaded
-      ? widthToUse / this.img.naturalHeight
+    const heightHorizontal = !!img
+      ? widthToUse / img.naturalHeight
       : heightToUse;
 
     return this.shouldRenderImageHorizontal(

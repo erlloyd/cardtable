@@ -1052,11 +1052,8 @@ class App extends Component<IProps, IState> {
     return this.props.cardsData[cardInQuestion.jsonId]?.name ?? "";
   };
 
-  private getImgUrls = (
-    card: ICardStack
-  ): { primary: string; backup: string } => {
-    if (Object.keys(this.props.cardsData).length === 0)
-      return { primary: "", backup: "" };
+  private getImgUrls = (card: ICardStack): string[] => {
+    if (Object.keys(this.props.cardsData).length === 0) return [""];
 
     const topCardData = this.props.cardsData[card.cardStack[0].jsonId];
     const bottomCardData = this.props.cardsData[
@@ -1069,29 +1066,23 @@ class App extends Component<IProps, IState> {
     ) {
       // console.log("back side");
       // console.log(bottomCardData);
-      return {
-        primary: `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.png`,
-        backup:
-          process.env.PUBLIC_URL +
+      return [
+        `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.png`,
+        `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.jpg`,
+        process.env.PUBLIC_URL +
           "/images/cards/" +
           bottomCardData.octgn_id +
           ".b.jpg",
-      };
+      ];
     } else if (!card.faceup) {
-      return {
-        primary: process.env.PUBLIC_URL + "/images/standard/card_back.png",
-        backup: process.env.PUBLIC_URL + "/images/standard/card_back.png",
-      };
+      return [process.env.PUBLIC_URL + "/images/standard/card_back.png"];
     }
 
-    return {
-      primary: `https://marvelcdb.com/bundles/cards/${topCardData.code}.png`,
-      backup:
-        process.env.PUBLIC_URL +
-        "/images/cards/" +
-        topCardData.octgn_id +
-        ".jpg",
-    };
+    return [
+      `https://marvelcdb.com/bundles/cards/${topCardData.code}.png`,
+      `https://marvelcdb.com/bundles/cards/${topCardData.code}.jpg`,
+      process.env.PUBLIC_URL + "/images/cards/" + topCardData.octgn_id + ".jpg",
+    ];
   };
 }
 
