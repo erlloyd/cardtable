@@ -101,6 +101,7 @@ class Card extends Component<IProps, IState> {
   private confusedImg: HTMLImageElement;
   private toughImg: HTMLImageElement;
   private unmounted: boolean;
+  private touchTimer: any = null;
 
   constructor(props: IProps) {
     super(props);
@@ -326,7 +327,9 @@ class Card extends Component<IProps, IState> {
         onClick={this.handleClick}
         onTap={this.handleClick}
         onMouseDown={this.handleMouseDown}
-        onTouchStart={this.handleMouseDown}
+        onTouchStart={this.handleTouchStart}
+        onTouchMove={this.handleTouchMove}
+        onTouchEnd={this.handleTouchEnd}
         onMouseOver={this.handleMouseOver}
         onMouseOut={this.handleMouseOut}
         onContextMenu={this.handleContextMenu}
@@ -515,6 +518,7 @@ class Card extends Component<IProps, IState> {
   }
 
   private handleContextMenu = (event: KonvaEventObject<PointerEvent>): void => {
+    console.log("HANDLE CONTEXT MENU CARD");
     if (!!this.props.handleContextMenu) {
       this.props.handleContextMenu(this.props.id, event);
     }
@@ -557,6 +561,34 @@ class Card extends Component<IProps, IState> {
 
   private handleMouseDown = (event: any) => {
     event.cancelBubble = true;
+  };
+
+  private handleTouchStart = (event: KonvaEventObject<TouchEvent>) => {
+    event.cancelBubble = true;
+    if (!!this.touchTimer) {
+      clearTimeout(this.touchTimer);
+      this.touchTimer = null;
+    }
+
+    this.touchTimer = setTimeout(() => {
+      this.handleContextMenu(
+        (event as unknown) as KonvaEventObject<PointerEvent>
+      );
+    }, 750);
+  };
+
+  private handleTouchMove = (event: KonvaEventObject<TouchEvent>) => {
+    if (!!this.touchTimer) {
+      clearTimeout(this.touchTimer);
+      this.touchTimer = null;
+    }
+  };
+
+  private handleTouchEnd = (event: KonvaEventObject<TouchEvent>) => {
+    if (!!this.touchTimer) {
+      clearTimeout(this.touchTimer);
+      this.touchTimer = null;
+    }
   };
 
   private handleMouseOver = () => {

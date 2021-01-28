@@ -994,6 +994,7 @@ class App extends Component<IProps, IState> {
   };
 
   private handleContextMenu = (event: KonvaEventObject<PointerEvent>): void => {
+    console.log("HANDLE CONTEXT MENU APP");
     event.evt.preventDefault();
     event.cancelBubble = true;
 
@@ -1071,8 +1072,15 @@ class App extends Component<IProps, IState> {
 
   private generateLCGCDNImageUrl(card: CardData, faceup: boolean): string {
     // get the first two digits
-    const groupCode = card.code.substring(0, 2);
-    let cardCode = card.code.substring(2);
+
+    let codeToUse = card.code;
+
+    if (!faceup && !!card.back_link) {
+      codeToUse = card.back_link;
+    }
+
+    const groupCode = codeToUse.substring(0, 2);
+    let cardCode = codeToUse.substring(2);
 
     //trim leading "0" chars
     while (cardCode[0] === "0") {
