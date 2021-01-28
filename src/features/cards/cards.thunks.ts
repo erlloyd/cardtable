@@ -15,6 +15,7 @@ import {
 } from "./cards.actions";
 import { ICardDetails } from "./initialState";
 import { getCards } from "./cards.selectors";
+import { EXTRA_CARDS } from "../../constants/card-pack-mapping";
 
 interface AddCardStackPayload {
   cardJsonIds: string[];
@@ -84,7 +85,8 @@ export const fetchDecklistById = createAsyncThunk(
     );
     const state: RootState = thunkApi.getState() as RootState;
     const heroCardsData = getCardsDataHeroEntities(state);
-    const heroSetCode = heroCardsData[response.data.investigator_code].set_code;
+    const heroSet = heroCardsData[response.data.investigator_code];
+    const heroSetCode = heroSet.set_code;
     const encounterCardsData = getCardsDataEncounterEntities(state);
 
     const heroObligationDeck = Object.entries(encounterCardsData)
@@ -95,10 +97,16 @@ export const fetchDecklistById = createAsyncThunk(
       )
       .map(([key, _value]) => key);
 
+    // get the encounter cards for this deck
     const heroEncounterDeck = Object.entries(encounterCardsData)
       .filter(([_key, value]) => value.set_code === `${heroSetCode}_nemesis`)
       .map(([key, _value]) => key);
-    // get the encounter cards for this deck
+
+    // check to see if there are any special extra cards for this hero
+    const extraCards = EXTRA_CARDS[heroSetCode ?? ""] ?? {};
+
+    response.data.slots = { ...response.data.slots, ...extraCards };
+
     return {
       position: payload.position,
       heroId: uuidv4(),
