@@ -498,7 +498,10 @@ const cardsSlice = createSlice({
         faceup: true,
         fill: "red",
         id: action.payload.heroId,
-        cardStack: [{ jsonId: action.payload.data.investigator_code }],
+        cardStack: [
+          { jsonId: action.payload.data.investigator_code },
+          ...action.payload.extraHeroCards,
+        ],
         selected: false,
         statusTokens: {
           stunned: false,

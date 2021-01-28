@@ -105,13 +105,14 @@ export const fetchDecklistById = createAsyncThunk(
     // check to see if there are any special extra cards for this hero
     const extraCards = EXTRA_CARDS[heroSetCode ?? ""] ?? {};
 
-    response.data.slots = { ...response.data.slots, ...extraCards };
+    // response.data.slots = { ...extraCards, ...response.data.slots };
 
     return {
       position: payload.position,
       heroId: uuidv4(),
       data: response.data,
       dataId: uuidv4(),
+      extraHeroCards: extraCards,
       relatedEncounterDeck: heroEncounterDeck,
       encounterDeckId: uuidv4(),
       relatedObligationDeck: heroObligationDeck,
