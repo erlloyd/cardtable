@@ -186,7 +186,11 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
 ) => {
   let dropTargetCards: ICardDetails[] = [];
   state.cards
-    .filter((card) => card.id === action.payload || card.selected)
+    .filter(
+      (card) =>
+        card.id === action.payload ||
+        (card.selected && card.controlledBy === (action as any).ACTOR_REF)
+    )
     .forEach((card) => {
       card.dragging = false;
 
@@ -199,7 +203,11 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
   // Now, if there was a drop target card, remove all those cards from the state
   if (!!state.dropTargetCard) {
     state.cards = state.cards.filter(
-      (card) => !(card.id === action.payload || card.selected)
+      (card) =>
+        !(
+          card.id === action.payload ||
+          (card.selected && card.controlledBy === (action as any).ACTOR_REF)
+        )
     );
 
     const dropTargetCard = state.cards.find(

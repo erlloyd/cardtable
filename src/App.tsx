@@ -24,7 +24,7 @@ import { getDistance } from "./utilities/geo";
 import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
 import Counter from "./Counter";
 import PeerConnector from "./PeerConnector";
-import { PlayerColor } from "./constants/app-constants";
+import { myPeerRef, PlayerColor } from "./constants/app-constants";
 import { ICounter } from "./features/counters/initialState";
 import { MISSING_CARD_IMAGE_MAP } from "./constants/card-missing-image-map";
 import { CardData } from "./external-api/marvel-card-data";
@@ -832,7 +832,9 @@ class App extends Component<IProps, IState> {
     // If multiple things are selected, you can't pull something off the top of a stack,
     // so just do a normal drag
     const multipleSelected =
-      this.props.cards.cards.filter((c) => c.selected).length > 1;
+      this.props.cards.cards.filter(
+        (c) => c.selected && c.controlledBy === myPeerRef
+      ).length > 1;
 
     if (!multipleSelected) {
       const draggingCard = this.props.cards.cards.find((c) => c.id === cardId);
