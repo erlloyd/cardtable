@@ -28,6 +28,7 @@ import { myPeerRef, PlayerColor } from "./constants/app-constants";
 import { ICounter } from "./features/counters/initialState";
 import { MISSING_CARD_IMAGE_MAP } from "./constants/card-missing-image-map";
 import { CardData } from "./external-api/marvel-card-data";
+import { CARD_PACK_REMAPPING } from "./constants/card-pack-mapping";
 
 const SCALE_BY = 1.02;
 
@@ -996,7 +997,6 @@ class App extends Component<IProps, IState> {
   };
 
   private handleContextMenu = (event: KonvaEventObject<PointerEvent>): void => {
-    console.log("HANDLE CONTEXT MENU APP");
     event.evt.preventDefault();
     event.cancelBubble = true;
 
@@ -1081,7 +1081,8 @@ class App extends Component<IProps, IState> {
       codeToUse = card.back_link;
     }
 
-    const groupCode = codeToUse.substring(0, 2);
+    const groupCode =
+      CARD_PACK_REMAPPING[card.pack_code] ?? codeToUse.substring(0, 2);
     let cardCode = codeToUse.substring(2);
 
     //trim leading "0" chars
@@ -1143,7 +1144,9 @@ class App extends Component<IProps, IState> {
     }
 
     const missingImageOverride = !!cardData
-      ? this.checkMissingImageMap(cardData.code)
+      ? this.checkMissingImageMap(
+          card.faceup ? cardData.code : cardData.back_link ?? ""
+        )
       : null;
 
     if (!!missingImageOverride) {
