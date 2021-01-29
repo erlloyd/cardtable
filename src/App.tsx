@@ -20,7 +20,7 @@ import {
 import { ICardsState, ICardStack } from "./features/cards/initialState";
 import { IGameState } from "./features/game/initialState";
 import TopLayer from "./TopLayer";
-import { getDistance } from "./utilities/geo";
+import { getCenter, getDistance } from "./utilities/geo";
 import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
 import Counter from "./Counter";
 import PeerConnector from "./PeerConnector";
@@ -117,8 +117,17 @@ interface IState {
 class App extends Component<IProps, IState> {
   public stage: Konva.Stage | null = null;
 
+  private touchTimer: any = null;
+
+  private lastCenter: Vector2d | null = null;
+  private lastDist: number = 0;
+
   constructor(props: IProps) {
     super(props);
+
+    if (!!Konva) {
+      Konva.hitOnDragEnabled = true;
+    }
 
     this.state = {
       drewASelectionRect: false,
@@ -291,6 +300,7 @@ class App extends Component<IProps, IState> {
 
     return (
       <div
+        className="play-area"
         tabIndex={1}
         onKeyDown={this.handleKeyDown}
         onKeyPress={this.handleKeyPress}
@@ -322,9 +332,9 @@ class App extends Component<IProps, IState> {
               onMouseMove={
                 this.props.panMode ? this.noOp : this.handleMouseMove
               }
-              onTouchMove={
-                this.props.panMode ? this.noOp : this.handleMouseMove
-              }
+              onTouchStart={this.handleTouchStart}
+              onTouchMove={this.handleTouchMove}
+              onTouchEnd={this.handleTouchEnd}
               onContextMenu={this.handleContextMenu}
               scale={this.props.gameState.stageZoom}
               onWheel={this.handleWheel}
@@ -982,6 +992,100 @@ class App extends Component<IProps, IState> {
     return false;
   };
 
+  private handleTouchStart = (event: any) => {
+    if (!!this.touchTimer) {
+      clearTimeout(this.touchTimer);
+      this.touchTimer = null;
+    }
+
+    this.touchTimer = setTimeout(() => {
+      this.handleContextMenu(event);
+    }, 750);
+  };
+
+  private handleTouchMove = (e: any) => {
+    e.evt.preventDefault();
+
+    var touch1 = e.evt.touches[0];
+    var touch2 = e.evt.touches[1];
+
+    if (!!this.touchTimer) {
+      clearTimeout(this.touchTimer);
+      this.touchTimer = null;
+    }
+
+    if (touch1 && touch2) {
+      this.handleMultiTouch(touch1, touch2);
+    } else if (!this.props.panMode) {
+      this.handleMouseMove(e);
+    }
+  };
+
+  private handleMultiTouch = (touch1: any, touch2: any) => {
+    // if the stage was under Konva's drag&drop
+    // we need to stop it, and implement our own pan logic with two pointers
+    if (this.stage?.isDragging()) {
+      this.stage.stopDrag();
+    }
+
+    const p1 = {
+      x: touch1.clientX,
+      y: touch1.clientY,
+    };
+    const p2 = {
+      x: touch2.clientX,
+      y: touch2.clientY,
+    };
+
+    if (!this.lastCenter) {
+      this.lastCenter = getCenter(p1, p2);
+      return;
+    }
+    const newCenter = getCenter(p1, p2);
+
+    const dist = getDistance(p1, p2);
+
+    if (!this.lastDist) {
+      this.lastDist = dist;
+    }
+
+    // local coordinates of center point
+    const pointTo = {
+      x:
+        (newCenter.x - this.props.gameState.stagePosition.x) /
+        this.props.gameState.stageZoom.x,
+      y:
+        (newCenter.y - this.props.gameState.stagePosition.y) /
+        this.props.gameState.stageZoom.y,
+    };
+
+    const scale = this.props.gameState.stageZoom.x * (dist / this.lastDist);
+    this.props.updateZoom({ x: scale, y: scale });
+
+    // calculate new position of the stage
+    const dx = newCenter.x - this.lastCenter.x;
+    const dy = newCenter.y - this.lastCenter.y;
+
+    const newPos = {
+      x: newCenter.x - pointTo.x * scale + dx,
+      y: newCenter.y - pointTo.y * scale + dy,
+    };
+
+    this.props.updatePosition(newPos);
+
+    this.lastDist = dist;
+    this.lastCenter = newCenter;
+  };
+
+  private handleTouchEnd = (event: any) => {
+    this.lastDist = 0;
+    this.lastCenter = null;
+    if (!!this.touchTimer) {
+      clearTimeout(this.touchTimer);
+      this.touchTimer = null;
+    }
+  };
+
   private handleMouseMove = (event: any) => {
     if (this.state.selecting) {
       const pos = this.getRelativePositionFromTarget(event.currentTarget);
@@ -997,6 +1101,10 @@ class App extends Component<IProps, IState> {
   };
 
   private handleContextMenu = (event: KonvaEventObject<PointerEvent>): void => {
+    if (!!this.touchTimer) {
+      clearTimeout(this.touchTimer);
+      this.touchTimer = null;
+    }
     event.evt.preventDefault();
     event.cancelBubble = true;
 

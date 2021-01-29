@@ -103,7 +103,7 @@ export const fetchDecklistById = createAsyncThunk(
       .map(([key, _value]) => key);
 
     // check to see if there are any special extra cards for this hero
-    const extraCards = EXTRA_CARDS[heroSetCode ?? ""] ?? {};
+    const extraCards = EXTRA_CARDS[heroSetCode ?? ""] ?? [];
 
     // response.data.slots = { ...extraCards, ...response.data.slots };
 
