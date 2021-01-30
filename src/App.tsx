@@ -614,9 +614,6 @@ class App extends Component<IProps, IState> {
 
     const pointer = this.stage.getPointerPosition() ?? { x: 0, y: 0 };
 
-    console.log(`pointer pos`);
-    console.log(pointer);
-
     const mousePointTo = {
       x: (pointer.x - this.stage.x()) / oldScale,
       y: (pointer.y - this.stage.y()) / oldScale,
@@ -1037,12 +1034,6 @@ class App extends Component<IProps, IState> {
       this.stage.stopDrag();
     }
 
-    console.log(`handleMultiTouch`);
-    console.log(`stage position`);
-    console.log(this.props.gameState.stagePosition);
-    console.log(`this.lastCenter: `);
-    console.log(this.lastCenter);
-
     const p1 = {
       x: touch1.clientX,
       y: touch1.clientY,
@@ -1053,20 +1044,12 @@ class App extends Component<IProps, IState> {
     };
 
     if (!this.lastCenter) {
-      console.log("setting lastCenter");
-      console.log(getCenter(p1, p2));
       this.lastCenter = getCenter(p1, p2);
       return;
     }
     const newCenter = getCenter(p1, p2);
 
-    console.log("newCenter");
-    console.log(newCenter);
-
     const dist = getDistance(p1, p2);
-
-    console.log(`dist`);
-    console.log(dist);
 
     if (!this.lastDist) {
       this.lastDist = dist;
@@ -1077,9 +1060,6 @@ class App extends Component<IProps, IState> {
       x: (newCenter.x - this.stage.x()) / this.props.gameState.stageZoom.x,
       y: (newCenter.y - this.stage.y()) / this.props.gameState.stageZoom.y,
     };
-
-    console.log(`pointTo`);
-    console.log(pointTo);
 
     const scale = this.props.gameState.stageZoom.x * (dist / this.lastDist);
     this.props.updateZoom({ x: scale, y: scale });
@@ -1092,9 +1072,6 @@ class App extends Component<IProps, IState> {
       x: newCenter.x - pointTo.x * scale + dx,
       y: newCenter.y - pointTo.y * scale + dy,
     };
-
-    console.log(`newPos`);
-    console.log(newPos);
 
     this.props.updatePosition(newPos);
 
