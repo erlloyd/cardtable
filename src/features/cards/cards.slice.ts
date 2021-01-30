@@ -287,7 +287,12 @@ const togglePanModeReducer: CaseReducer<ICardsState> = (state) => {
 
 const flipCardsReducer: CaseReducer<ICardsState> = (state, action) => {
   state.cards
-    .filter((card) => card.selected)
+    .filter(
+      (card) =>
+        card.selected &&
+        (card.controlledBy === "" ||
+          card.controlledBy === (action as any).ACTOR_REF)
+    )
     .forEach((card) => {
       card.faceup = !card.faceup;
       card.cardStack = card.cardStack.reverse();
