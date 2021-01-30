@@ -11,7 +11,7 @@ interface IProps {
 class EncounterLoader extends Component<IProps> {
   render() {
     return (
-      <div onClick={this.cancelBubble}>
+      <div onClick={this.cancelBubble} onKeyPress={this.cancelBubble}>
         <Autocomplete
           id="encounter-loader-combobox"
           options={this.props.encounterData || []}
@@ -28,11 +28,17 @@ class EncounterLoader extends Component<IProps> {
 
   private handleSelected = (_event: any, value: IEncounterEntity | null) => {
     if (!!value) {
-      this.props.loadCards(value.cards.map((c) => c.code));
+      let encounterCards: string[] = [];
+      value.cards.forEach((c) => {
+        encounterCards = encounterCards.concat(
+          Array.from({ length: c.quantity }).map((_i) => c.code)
+        );
+      });
+      this.props.loadCards(encounterCards);
     }
   };
 
-  private cancelBubble = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+  private cancelBubble = (event: React.SyntheticEvent) => {
     event.stopPropagation();
   };
 }

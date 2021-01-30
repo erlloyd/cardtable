@@ -9,7 +9,7 @@ class PeerConnector extends Component<IProps> {
 
   render() {
     return (
-      <div onClick={this.cancelBubble}>
+      <div onClick={this.cancelBubble} onKeyPress={this.cancelBubble}>
         <input
           ref={(ref) => {
             if (!ref) return;
@@ -27,7 +27,7 @@ class PeerConnector extends Component<IProps> {
     this.props.connect(this.inputRef?.value || "");
   };
 
-  private cancelBubble = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+  private cancelBubble = (event: React.SyntheticEvent) => {
     event.stopPropagation();
   };
 }

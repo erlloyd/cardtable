@@ -98,9 +98,16 @@ export const fetchDecklistById = createAsyncThunk(
       .map(([key, _value]) => key);
 
     // get the encounter cards for this deck
-    const heroEncounterDeck = Object.entries(encounterCardsData)
-      .filter(([_key, value]) => value.set_code === `${heroSetCode}_nemesis`)
-      .map(([key, _value]) => key);
+    const heroEncounterDeckData = Object.values(encounterCardsData).filter(
+      (value) => value.set_code === `${heroSetCode}_nemesis`
+    );
+
+    let heroEncounterDeck: string[] = [];
+    heroEncounterDeckData.forEach((cd) => {
+      heroEncounterDeck = heroEncounterDeck.concat(
+        Array.from({ length: cd.quantity }).map((_i) => cd.code)
+      );
+    });
 
     // check to see if there are any special extra cards for this hero
     const extraCards = EXTRA_CARDS[heroSetCode ?? ""] ?? [];
