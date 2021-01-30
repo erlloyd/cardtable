@@ -593,6 +593,9 @@ class App extends Component<IProps, IState> {
   };
 
   private handleStageClickOrTap = (event: KonvaEventObject<MouseEvent>) => {
+    if (this.state.showContextMenu) {
+      return;
+    }
     const mousePos = this.getRelativePositionFromTarget(this.stage);
     if (
       this.props.panMode ||
@@ -1131,6 +1134,14 @@ class App extends Component<IProps, IState> {
     event.cancelBubble = true;
 
     const menuItems = [
+      {
+        label: "Undo",
+        action: this.props.undo,
+      },
+      {
+        label: "Redo",
+        action: this.props.redo,
+      },
       {
         label: "Load Deck ID",
         action: () => {

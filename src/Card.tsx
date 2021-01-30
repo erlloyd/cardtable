@@ -518,7 +518,6 @@ class Card extends Component<IProps, IState> {
   }
 
   private handleContextMenu = (event: KonvaEventObject<PointerEvent>): void => {
-    console.log("HANDLE CONTEXT MENU CARD");
     if (!!this.props.handleContextMenu) {
       this.props.handleContextMenu(this.props.id, event);
     }

@@ -14,6 +14,8 @@ interface IProps {
 }
 
 class Counter extends Component<IProps> {
+  private touchTimer: any = null;
+
   render() {
     return (
       <Group
@@ -22,6 +24,9 @@ class Counter extends Component<IProps> {
         draggable={true}
         onContextMenu={this.props.handleContextMenu}
         onDragEnd={this.props.onDragEnd}
+        onTouchStart={this.handleTouchStart}
+        onTouchMove={this.handleTouchMove}
+        onTouchEnd={this.handleTouchEnd}
       >
         <Rect cornerRadius={30} width={200} height={100} fill={"red"}></Rect>
         <Text
@@ -42,6 +47,7 @@ class Counter extends Component<IProps> {
           align={"center"}
           verticalAlign={"middle"}
           onClick={this.handleDecrement}
+          onTap={this.handleDecrement}
         ></Text>
         <Text
           x={140}
@@ -53,6 +59,7 @@ class Counter extends Component<IProps> {
           align={"center"}
           verticalAlign={"middle"}
           onClick={this.handleIncrement}
+          onTap={this.handleIncrement}
         ></Text>
       </Group>
     );
@@ -64,6 +71,34 @@ class Counter extends Component<IProps> {
 
   private handleIncrement = () => {
     this.props.updateCounterValueBy(1);
+  };
+
+  private handleTouchStart = (event: KonvaEventObject<TouchEvent>) => {
+    event.cancelBubble = true;
+    if (!!this.touchTimer) {
+      clearTimeout(this.touchTimer);
+      this.touchTimer = null;
+    }
+
+    this.touchTimer = setTimeout(() => {
+      this.props.handleContextMenu(
+        (event as unknown) as KonvaEventObject<PointerEvent>
+      );
+    }, 750);
+  };
+
+  private handleTouchMove = (event: KonvaEventObject<TouchEvent>) => {
+    if (!!this.touchTimer) {
+      clearTimeout(this.touchTimer);
+      this.touchTimer = null;
+    }
+  };
+
+  private handleTouchEnd = (event: KonvaEventObject<TouchEvent>) => {
+    if (!!this.touchTimer) {
+      clearTimeout(this.touchTimer);
+      this.touchTimer = null;
+    }
   };
 }
 
