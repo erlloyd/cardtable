@@ -50,7 +50,7 @@ const countersSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
       // TODO: find a way to keep this automatic
-      state.counters = action.payload.counters.present.counters;
+      state.counters = action.payload.liveState.present.counters.counters;
     });
 
     builder.addCase(resetApp, (state, action) => {

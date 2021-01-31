@@ -360,8 +360,8 @@ const cardsSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
       // TODO: find a way to keep this automatic
-      state.cards = action.payload.cards.present.cards;
-      state.ghostCards = action.payload.cards.present.ghostCards;
+      state.cards = action.payload.liveState.present.cards.cards;
+      state.ghostCards = action.payload.liveState.present.cards.ghostCards;
     });
 
     builder.addCase(replaceCardStack, (state, action) => {

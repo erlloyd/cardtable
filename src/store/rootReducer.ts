@@ -11,14 +11,17 @@ import game from "../features/game/game.slice";
 
 import counters, { moveCounter } from "../features/counters/counters.slice";
 
+const undoableState = combineReducers({
+  counters,
+  cards,
+});
+
 const rootReducer = combineReducers({
   game,
-  counters: undoable(counters, {
+  cardsData,
+  liveState: undoable(undoableState, {
     limit: 20,
     groupBy: groupByActionTypes([moveCounter.type]),
-  }),
-  cards: undoable(cards, {
-    limit: 20,
     filter: excludeAction([
       startCardMoveWithSplitStackId.type,
       cardMove.type,
@@ -26,7 +29,6 @@ const rootReducer = combineReducers({
       hoverLeaveCard.type,
     ]),
   }),
-  cardsData,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
