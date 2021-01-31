@@ -31,11 +31,16 @@ import {
   startCardMove,
   shuffleStack,
 } from "./features/cards/cards.thunks";
-import { getGame, getPlayerColors } from "./features/game/game.selectors";
+import {
+  getGame,
+  getPeerId,
+  getPlayerColors,
+} from "./features/game/game.selectors";
 import {
   connectToRemoteGame,
   updatePosition,
   updateZoom,
+  requestResync,
 } from "./features/game/game.slice";
 
 import {
@@ -57,6 +62,7 @@ const mapStateToProps = (state: RootState) => {
     panMode: getPanMode(state),
     gameState: getGame(state),
     counters: getCurrentCounters(state),
+    peerId: getPeerId(state),
   };
 };
 
@@ -89,6 +95,7 @@ const AppContainer = connect(mapStateToProps, {
   removeCounter,
   moveCounter,
   connectToRemoteGame,
+  requestResync,
   undo: ActionCreators.undo,
   redo: ActionCreators.redo,
 })(App);

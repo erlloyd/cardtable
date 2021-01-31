@@ -88,6 +88,8 @@ interface IProps {
   undo: () => void;
   redo: () => void;
   counters: ICounter[];
+  requestResync: () => void;
+  peerId: string;
 }
 
 interface IState {
@@ -1145,7 +1147,7 @@ class App extends Component<IProps, IState> {
           );
         },
       },
-      { label: "Reset", action: this.props.resetApp },
+      { label: "Reset Game", action: this.props.resetApp },
       {
         label: "Connect to Remote Game",
         action: () => {
@@ -1154,6 +1156,14 @@ class App extends Component<IProps, IState> {
             peerConnectorPosition: this.stage?.getPointerPosition() ?? null,
           });
         },
+      },
+      {
+        label: "Request resync from Remote Game",
+        action: this.props.requestResync,
+      },
+      {
+        label: `Peer id is ${this.props.peerId}`,
+        action: () => {},
       },
     ];
 

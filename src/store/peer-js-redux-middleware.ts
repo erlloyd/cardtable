@@ -7,6 +7,8 @@ import {
 } from "../features/cards/cards.slice";
 import {
   connectToRemoteGame,
+  requestResync,
+  setPeerId,
   setPlayerColor,
   updatePosition,
   updateZoom,
@@ -23,6 +25,7 @@ const blacklistRemoteActions = {
   [hoverLeaveCard.type]: true,
   [togglePanMode.type]: true,
   [receiveRemoteGameState.type]: true,
+  [requestResync.type]: true,
 };
 
 const log = (...args: any[]) => {
@@ -34,10 +37,18 @@ const log = (...args: any[]) => {
 const setupConnection = (conn: any, storeAPI: any) => {
   conn.on("data", (data: any) => {
     if (!data.INITIAL_STATE_MSG) {
-      log("recieved remote action", data);
-      data.REMOTE_ACTION = true;
-      log("dispatching remote action", data);
-      storeAPI.dispatch(data);
+      if (!!data.RESYNC) {
+        log("received request for resync");
+        conn.send({
+          INITIAL_STATE_MSG: true,
+          state: storeAPI.getState(),
+        });
+      } else {
+        log("recieved remote action", data);
+        data.REMOTE_ACTION = true;
+        log("dispatching remote action", data);
+        storeAPI.dispatch(data);
+      }
     } else {
       console.log("going to replace (most of) state with", data.state);
       setTimeout(() => {
@@ -61,6 +72,7 @@ export const peerJSMiddleware = (storeAPI: any) => {
 
   cgpPeer.on("open", (id) => {
     console.log("My peer ID is: " + id);
+    storeAPI.dispatch(setPeerId(id));
   });
 
   cgpPeer.on("connection", (conn) => {
@@ -130,6 +142,10 @@ export const peerJSMiddleware = (storeAPI: any) => {
         metadata: { ref: myPeerRef },
       });
       setupConnection(activeCon, storeAPI);
+    } else if (action.type === requestResync.type) {
+      if (!!activeCon) {
+        activeCon.send({ RESYNC: true });
+      }
     }
 
     if (

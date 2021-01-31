@@ -10,3 +10,5 @@ export const getCurrentZoom = createSelector(getGame, (game) => {
 export const getPlayerColors = createSelector(getGame, (game) => {
   return game.playerColors;
 });
+
+export const getPeerId = createSelector(getGame, (game) => game.peerId);

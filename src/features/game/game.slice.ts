@@ -24,7 +24,7 @@ const updatePositionReducer: CaseReducer<
 const connectToRemoteGameReducer: CaseReducer<
   IGameState,
   PayloadAction<string>
-> = (state, action) => {};
+> = () => {};
 
 const setPlayerColorReducer: CaseReducer<
   IGameState,
@@ -32,6 +32,15 @@ const setPlayerColorReducer: CaseReducer<
 > = (state, action) => {
   state.playerColors[action.payload.ref] = action.payload.color;
 };
+
+const setPeerIdReducer: CaseReducer<IGameState, PayloadAction<string>> = (
+  state,
+  action
+) => {
+  state.peerId = action.payload;
+};
+
+const requestResyncReducer: CaseReducer<IGameState> = () => {};
 
 // slice
 const gameSlice = createSlice({
@@ -42,6 +51,8 @@ const gameSlice = createSlice({
     updatePosition: updatePositionReducer,
     connectToRemoteGame: connectToRemoteGameReducer,
     setPlayerColor: setPlayerColorReducer,
+    setPeerId: setPeerIdReducer,
+    requestResync: requestResyncReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(resetApp, (state, action) => {
@@ -56,6 +67,8 @@ export const {
   updatePosition,
   connectToRemoteGame,
   setPlayerColor,
+  setPeerId,
+  requestResync,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;
