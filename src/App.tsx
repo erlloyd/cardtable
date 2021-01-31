@@ -90,6 +90,9 @@ interface IProps {
   counters: ICounter[];
   requestResync: () => void;
   peerId: string;
+  dropTargetCardsById: {
+    [key: string]: { ownerRef: string; card: ICardStack | null };
+  };
 }
 
 interface IState {
@@ -180,7 +183,11 @@ class App extends Component<IProps, IState> {
             exhausted={card.exhausted}
             fill={card.fill}
             selected={card.selected}
-            dropTarget={card.id === this.props.cards.dropTargetCard?.id}
+            dropTargetColor={
+              this.props.playerColors[
+                this.props.dropTargetCardsById[card.id]?.ownerRef
+              ] ?? ""
+            }
             dragging={card.dragging}
             handleDragStart={this.handleCardDragStart}
             handleDragMove={this.props.cardMove}

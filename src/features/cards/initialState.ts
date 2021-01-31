@@ -32,7 +32,7 @@ export interface ICardsState {
   cards: ICardStack[];
   ghostCards: ICardStack[];
   previewCard: IPreviewCard | null;
-  dropTargetCard: ICardStack | null;
+  dropTargetCards: { [key: string]: ICardStack | null };
   panMode: boolean;
 }
 
@@ -50,7 +50,7 @@ const defaultState: ICardsState = {
   cards: [],
   ghostCards: [],
   previewCard: null,
-  dropTargetCard: null,
+  dropTargetCards: {},
   panMode: true,
 };
 

@@ -137,7 +137,7 @@ const cardMoveReducer: CaseReducer<
 > = (state, action) => {
   const movedCards: ICardStack[] = [];
 
-  let primaryCard: ICardStack;
+  let primaryCard: ICardStack | null = null;
 
   state.cards
     .filter(
@@ -157,19 +157,27 @@ const cardMoveReducer: CaseReducer<
     });
 
   // go through and find if any unselected cards are potential drop targets
-  // If so, get the closest one
+  // If so, get the closest one. But only if the card is owned / controlled by us
   const possibleDropTargets: { distance: number; card: ICardStack }[] = [];
-  foreachUnselectedCard(state, (card) => {
-    const distance = getDistance(card, primaryCard);
-    if (distance < CARD_DROP_TARGET_DISTANCE) {
-      possibleDropTargets.push({
-        distance,
-        card,
-      });
-    }
-  });
+  if (
+    !!primaryCard &&
+    (primaryCard as ICardStack).controlledBy === (action as any).ACTOR_REF
+  ) {
+    foreachUnselectedCard(state, (card) => {
+      const distance = getDistance(
+        { x: card.x, y: card.y },
+        !!primaryCard ? { x: primaryCard.x, y: primaryCard.y } : { x: 0, y: 0 }
+      );
+      if (distance < CARD_DROP_TARGET_DISTANCE) {
+        possibleDropTargets.push({
+          distance,
+          card,
+        });
+      }
+    });
+  }
 
-  state.dropTargetCard =
+  state.dropTargetCards[(action as any).ACTOR_REF] =
     possibleDropTargets.sort((c1, c2) => c1.distance - c2.distance)[0]?.card ??
     null;
 
@@ -194,14 +202,14 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
     .forEach((card) => {
       card.dragging = false;
 
-      if (!!state.dropTargetCard) {
+      if (!!state.dropTargetCards[(action as any).ACTOR_REF]) {
         // Add the cards to the drop Target card stack
         dropTargetCards = dropTargetCards.concat(card.cardStack);
       }
     });
 
   // Now, if there was a drop target card, remove all those cards from the state
-  if (!!state.dropTargetCard) {
+  if (!!state.dropTargetCards[(action as any).ACTOR_REF]) {
     state.cards = state.cards.filter(
       (card) =>
         !(
@@ -211,7 +219,7 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
     );
 
     const dropTargetCard = state.cards.find(
-      (card) => card.id === state.dropTargetCard?.id
+      (card) => card.id === state.dropTargetCards[(action as any).ACTOR_REF]?.id
     );
     if (!!dropTargetCard && dropTargetCards.length > 0) {
       // add the cards we've collected to the top of the stack
@@ -222,7 +230,7 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
   }
 
   state.ghostCards = [];
-  state.dropTargetCard = null;
+  state.dropTargetCards[(action as any).ACTOR_REF] = null;
 };
 
 const selectMultipleCardsReducer: CaseReducer<
@@ -368,7 +376,7 @@ const cardsSlice = createSlice({
     builder.addCase(resetApp, (state) => {
       state.cards = [];
       state.previewCard = null;
-      state.dropTargetCard = null;
+      state.dropTargetCards = {};
       state.ghostCards = [];
       state.panMode = true;
     });

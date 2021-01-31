@@ -5,6 +5,7 @@ import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors
 import { loadCardsData } from "./features/cards-data/cards-data.slice";
 import {
   getCards,
+  getDropTargetCardsById,
   getPanMode,
   shouldShowPreview,
 } from "./features/cards/cards.selectors";
@@ -63,6 +64,7 @@ const mapStateToProps = (state: RootState) => {
     gameState: getGame(state),
     counters: getCurrentCounters(state),
     peerId: getPeerId(state),
+    dropTargetCardsById: getDropTargetCardsById(state),
   };
 };
 

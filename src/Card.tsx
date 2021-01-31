@@ -41,7 +41,7 @@ interface IProps {
   handleHoverLeave?: (id: string) => void;
   id: string;
   selected: boolean;
-  dropTarget?: boolean;
+  dropTargetColor?: string;
   x: number;
   y: number;
   width?: number;
@@ -295,8 +295,8 @@ class Card extends Component<IProps, IState> {
         width={widthToUse}
         height={heightToUse}
         offset={offset}
-        stroke={this.props.dropTarget ? "blue" : ""}
-        strokeWidth={this.props.dropTarget ? 2 : 0}
+        stroke={this.props.dropTargetColor ?? ""}
+        strokeWidth={!!this.props.dropTargetColor ? 2 : 0}
         fillPatternRotation={
           !imageLoaded ||
           this.shouldRenderImageHorizontal(
