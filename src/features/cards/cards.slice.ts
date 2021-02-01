@@ -271,9 +271,6 @@ const hoverCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
   state,
   action
 ) => {
-  const cardToPreview = state.cards.find((c) => c.id === action.payload);
-  if (!cardToPreview?.faceup) return;
-
   if (state.previewCard === null) {
     state.previewCard = {
       id: action.payload,

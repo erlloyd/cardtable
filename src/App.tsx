@@ -274,12 +274,19 @@ class App extends Component<IProps, IState> {
               card.id === this.props.cards.previewCard.id
           )
           .map((card) => {
-            const rawPos = this.getRawPreviewCardPosition();
+            const isHorizontal = HORIZONTAL_TYPE_CODES.includes(
+              this.getCardType(card)
+            );
+            const imgUrls = this.getImgUrls(card);
+            const rawPos = this.getRawPreviewCardPosition(isHorizontal);
             const previewPos = this.getRelativePositionFromTarget(
               this.stage,
               rawPos
             );
-            return (
+
+            return imgUrls.some(
+              (url) => url.indexOf("card_back") !== -1
+            ) ? null : (
               <Card
                 name={this.getCardName(card)}
                 code={this.getCardCode(card)}
@@ -291,20 +298,25 @@ class App extends Component<IProps, IState> {
                 id={card.id}
                 x={previewPos.x}
                 y={previewPos.y}
-                exhausted={HORIZONTAL_TYPE_CODES.includes(
-                  this.getCardType(card)
-                )}
+                exhausted={isHorizontal}
                 fill={card.fill}
                 selected={false}
                 dragging={false}
-                imgUrls={this.getImgUrls(card)}
+                imgUrls={imgUrls}
                 typeCode={this.getCardType(card)}
                 faceup={card.faceup}
-                height={cardConstants.CARD_PREVIEW_HEIGHT}
-                width={cardConstants.CARD_PREVIEW_WIDTH}
+                height={
+                  cardConstants.CARD_PREVIEW_HEIGHT /
+                  this.props.gameState.stageZoom.y
+                }
+                width={
+                  cardConstants.CARD_PREVIEW_WIDTH /
+                  this.props.gameState.stageZoom.x
+                }
               />
             );
           })
+          .filter((c): c is JSX.Element => c !== null)
       : [];
 
     return (
@@ -903,17 +915,25 @@ class App extends Component<IProps, IState> {
     }
   };
 
-  private getRawPreviewCardPosition = (): Vector2d => {
+  private getRawPreviewCardPosition = (horizontal: boolean): Vector2d => {
     const pointerPos = this.stage?.getPointerPosition() ?? { x: 0, y: 0 };
     const screenMidPointX = window.innerWidth / 2;
+
+    const widthToUse = horizontal
+      ? cardConstants.CARD_PREVIEW_HEIGHT
+      : cardConstants.CARD_PREVIEW_WIDTH;
+    const heightToUse = horizontal
+      ? cardConstants.CARD_PREVIEW_WIDTH
+      : cardConstants.CARD_PREVIEW_HEIGHT;
+
     return pointerPos.x < screenMidPointX
       ? {
-          x: window.innerWidth - cardConstants.CARD_PREVIEW_WIDTH / 2,
-          y: cardConstants.CARD_PREVIEW_HEIGHT / 2,
+          x: window.innerWidth - widthToUse / 2,
+          y: heightToUse / 2,
         }
       : {
-          x: cardConstants.CARD_PREVIEW_WIDTH / 2,
-          y: cardConstants.CARD_PREVIEW_HEIGHT / 2,
+          x: widthToUse / 2,
+          y: heightToUse / 2,
         };
   };
 
@@ -1242,31 +1262,30 @@ class App extends Component<IProps, IState> {
     let urls: string[] = [];
 
     const topCardData = this.props.cardsData[card.cardStack[0].jsonId];
-    const bottomCardData = this.props.cardsData[
-      card.cardStack[card.cardStack.length - 1].jsonId
-    ];
 
     let cardData: CardData | null = topCardData;
 
-    if (
-      !card.faceup &&
-      (!!bottomCardData.back_link || !!bottomCardData.double_sided)
-    ) {
-      cardData = bottomCardData;
-      urls = [
-        this.generateLCGCDNImageUrl(bottomCardData, card.faceup),
-        // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.png`,
-        // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.jpg`,
-        // process.env.PUBLIC_URL +
-        //   "/images/cards/" +
-        //   bottomCardData.octgn_id +
-        //   ".b.jpg",
-      ];
-    } else if (!card.faceup) {
-      cardData = null;
-      urls = [process.env.PUBLIC_URL + "/images/standard/card_back.png"];
-    }
-    if (urls.length === 0) {
+    if (!card.faceup) {
+      if (!!topCardData.back_link || !!topCardData.double_sided) {
+        urls = [
+          this.generateLCGCDNImageUrl(topCardData, card.faceup),
+          // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.png`,
+          // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.jpg`,
+          // process.env.PUBLIC_URL +
+          //   "/images/cards/" +
+          //   bottomCardData.octgn_id +
+          //   ".b.jpg",
+        ];
+      } else {
+        cardData = null;
+        urls = [
+          topCardData.faction_code === "encounter"
+            ? process.env.PUBLIC_URL +
+              "/images/standard/encounter_card_back.png"
+            : process.env.PUBLIC_URL + "/images/standard/card_back.png",
+        ];
+      }
+    } else {
       urls = [
         this.generateLCGCDNImageUrl(topCardData, card.faceup),
         // `https://marvelcdb.com/bundles/cards/${topCardData.code}.png`,

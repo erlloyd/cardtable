@@ -36,7 +36,7 @@ export interface ICardsState {
   panMode: boolean;
 }
 
-const localStorageState: ICardsState = loadState("cards");
+const localStorageState: ICardsState = loadState("liveState")?.cards ?? {};
 
 // Make sure initially, none of the cards are "owned" / "selected"
 if (!!localStorageState.cards) {

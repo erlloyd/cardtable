@@ -11,7 +11,8 @@ export interface ICounter {
   value: number;
 }
 
-const localStorageState: ICountersState = loadState("counters");
+const localStorageState: ICountersState =
+  loadState("liveState")?.counters ?? {};
 
 const defaultState: ICountersState = {
   counters: [],
