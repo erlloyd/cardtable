@@ -23,7 +23,7 @@ class CardStackCardSelector extends Component<IProps> {
 
   render() {
     return (
-      <div onClick={this.cancelBubble}>
+      <div onClick={this.cancelBubble} onKeyPress={this.cancelBubble}>
         <Autocomplete
           id="cardstack-card-selector-combobox"
           options={this.cardsDataInStack}
@@ -44,7 +44,7 @@ class CardStackCardSelector extends Component<IProps> {
     }
   };
 
-  private cancelBubble = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+  private cancelBubble = (event: React.SyntheticEvent) => {
     event.stopPropagation();
   };
 }
