@@ -9,6 +9,7 @@ import {
 import { v4 as uuidv4 } from "uuid";
 import {
   addCardStackWithId,
+  drawCardsOutOfCardStackWithIds,
   pullCardOutOfCardStackWithId,
   replaceCardStack,
   startCardMoveWithSplitStackId,
@@ -31,6 +32,11 @@ export interface PullCardOutOfCardStackPayload {
 export interface StartCardMovePayload {
   id: string;
   splitTopCard: boolean;
+}
+
+export interface DrawCardsOutOfCardStackPayload {
+  cardStackId: string;
+  numberToDraw: number;
 }
 
 export const shuffleStack = (
@@ -75,6 +81,19 @@ export const startCardMove = (
     splitCardId: uuidv4(),
   };
   dispatch(startCardMoveWithSplitStackId(payloadWithId));
+};
+
+export const drawCardsOutOfCardStack = (
+  payload: DrawCardsOutOfCardStackPayload
+): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch) => {
+  const possibleIds = Array.from({ length: payload.numberToDraw }).map((_i) =>
+    uuidv4()
+  );
+  const payloadWithIds = {
+    ...payload,
+    idsToUse: possibleIds,
+  };
+  dispatch(drawCardsOutOfCardStackWithIds(payloadWithIds));
 };
 
 export const fetchDecklistById = createAsyncThunk(

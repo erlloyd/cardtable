@@ -11,6 +11,7 @@ import { cardConstants } from "../../constants/card-constants";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import {
   addCardStackWithId,
+  drawCardsOutOfCardStackWithIds,
   pullCardOutOfCardStackWithId,
   replaceCardStack,
   startCardMoveWithSplitStackId,
@@ -493,6 +494,58 @@ const cardsSlice = createSlice({
 
       //Finally, if we have a preview card, clear it
       state.previewCard = null;
+    });
+
+    builder.addCase(drawCardsOutOfCardStackWithIds, (state, action) => {
+      if (action.payload.numberToDraw !== action.payload.idsToUse.length) {
+        throw new Error("Did not receive the expected number of ids");
+      }
+
+      // First, unselect everything else of ours
+      unselectAllCardsReducer(state, (action as unknown) as any);
+
+      // Get the cardstack in question
+      let cardStackToUse = state.cards.find(
+        (c) => c.id === action.payload.cardStackId
+      );
+
+      if (!cardStackToUse) {
+        throw new Error(
+          `Couldn't find card stack with id ${action.payload.cardStackId}`
+        );
+      }
+
+      const sourceCardStackId = cardStackToUse.id;
+
+      //Next, for each card we should draw, remove it from the stack and make a new stack, which should be selected
+      for (let index = 0; index < action.payload.numberToDraw; index++) {
+        if (!!cardStackToUse) {
+          const topCardDetails = cardStackToUse.cardStack.shift();
+          if (!topCardDetails) {
+            throw new Error("Expected to find a top card, but didn't");
+          }
+          const newCardStack: ICardDetails[] = [
+            { jsonId: topCardDetails.jsonId },
+          ];
+          const newCard = Object.assign({}, cardStackToUse, {
+            cardStack: newCardStack,
+          });
+          newCard.id = action.payload.idsToUse[index];
+          newCard.selected = true;
+          newCard.controlledBy = (action as any).ACTOR_REF;
+          newCard.faceup = true;
+          newCard.x = newCard.x + (cardConstants.CARD_WIDTH + 5) * (index + 1);
+          newCard.y += cardConstants.CARD_HEIGHT;
+
+          if (cardStackToUse.cardStack.length === 0) {
+            // we went through all the cards, remove the original card
+            state.cards = state.cards.filter((c) => c.id !== sourceCardStackId);
+            cardStackToUse = undefined;
+          }
+
+          state.cards.push(newCard);
+        }
+      }
     });
 
     builder.addCase(fetchDecklistById.fulfilled, (state, action) => {

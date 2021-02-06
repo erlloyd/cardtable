@@ -31,6 +31,7 @@ import {
   pullCardOutOfCardStack,
   startCardMove,
   shuffleStack,
+  drawCardsOutOfCardStack,
 } from "./features/cards/cards.thunks";
 import {
   getGame,
@@ -100,6 +101,7 @@ const AppContainer = connect(mapStateToProps, {
   requestResync,
   undo: ActionCreators.undo,
   redo: ActionCreators.redo,
+  drawCardsOutOfCardStack,
 })(App);
 
 export default AppContainer;

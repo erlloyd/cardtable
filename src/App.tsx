@@ -29,6 +29,7 @@ import { ICounter } from "./features/counters/initialState";
 import { MISSING_CARD_IMAGE_MAP } from "./constants/card-missing-image-map";
 import { CardData } from "./external-api/marvel-card-data";
 import { CARD_PACK_REMAPPING } from "./constants/card-pack-mapping";
+import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 
 const SCALE_BY = 1.02;
 
@@ -93,6 +94,7 @@ interface IProps {
   dropTargetCardsById: {
     [key: string]: { ownerRef: string; card: ICardStack | null };
   };
+  drawCardsOutOfCardStack: (payload: DrawCardsOutOfCardStackPayload) => void;
 }
 
 interface IState {
@@ -894,11 +896,28 @@ class App extends Component<IProps, IState> {
   };
 
   private handleKeyPress = (event: React.KeyboardEvent<HTMLElement>) => {
-    const code = event.which || event.keyCode;
-    if (code === 115) {
+    const code = event.key.toLocaleLowerCase();
+    const intCode = parseInt(code);
+    if (code === "s") {
       this.props.togglePanMode();
-    } else if (code === 102) {
+    } else if (code === "f") {
       this.props.flipCards();
+    } else if (!Number.isNaN(intCode)) {
+      // First, get the selected card stack
+      const mySelectedCards = this.props.cards.cards.filter(
+        (c) => c.selected && c.controlledBy === myPeerRef
+      );
+      if (mySelectedCards.length !== 1) {
+        console.log(
+          "will not be drawing any cards because the number of selected stacks is " +
+            mySelectedCards.length
+        );
+      } else {
+        this.props.drawCardsOutOfCardStack({
+          cardStackId: mySelectedCards[0].id,
+          numberToDraw: intCode,
+        });
+      }
     }
   };
 

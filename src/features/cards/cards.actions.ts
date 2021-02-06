@@ -21,6 +21,12 @@ export interface StartCardMoveWithSplitStackIdPayload {
   splitCardId: string;
 }
 
+export interface DrawCardsOutOfCardStackWithIdsPayload {
+  cardStackId: string;
+  numberToDraw: number;
+  idsToUse: string[];
+}
+
 export interface ReplaceCardStackPayload {
   id: string;
   newStack: ICardDetails[];
@@ -32,6 +38,10 @@ export const addCardStackWithId = createAction<AddCardStackWithIdPayload>(
 
 export const pullCardOutOfCardStackWithId = createAction<PullCardOutOfCardStackWithIdPayload>(
   "pullCardOutOfCardStackWithId"
+);
+
+export const drawCardsOutOfCardStackWithIds = createAction<DrawCardsOutOfCardStackWithIdsPayload>(
+  "drawCardsOutOfCardStackWithIds"
 );
 
 export const startCardMoveWithSplitStackId = createAction<StartCardMoveWithSplitStackIdPayload>(
