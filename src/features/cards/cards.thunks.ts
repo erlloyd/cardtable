@@ -111,14 +111,17 @@ export const fetchDecklistById = createAsyncThunk(
     const heroObligationDeck = Object.entries(encounterCardsData)
       .filter(
         ([_key, value]) =>
-          value.set_code === `${heroSetCode}` &&
+          (value.set_code === `${heroSetCode}` ||
+            value.set_code === `${heroSetCode}_nemesis`) &&
           value.type_code === "obligation"
       )
       .map(([key, _value]) => key);
 
     // get the encounter cards for this deck
     const heroEncounterDeckData = Object.values(encounterCardsData).filter(
-      (value) => value.set_code === `${heroSetCode}_nemesis`
+      (value) =>
+        value.set_code === `${heroSetCode}_nemesis` &&
+        value.type_code !== "obligation"
     );
 
     let heroEncounterDeck: string[] = [];

@@ -58,9 +58,6 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
     "/images/cards/" +
     "0a59161d-7db6-4328-9eeb-1906ce8715a5" +
     ".b.jpg",
-  //   "11001": "https://lcgcdn.s3.amazonaws.com/mc/MC11en_1.jpg",
-  //   "11002": "https://lcgcdn.s3.amazonaws.com/mc/MC11en_2.jpg",
-  //   "11003": "https://lcgcdn.s3.amazonaws.com/mc/MC11en_3.jpg",
-  //   "11028": "https://lcgcdn.s3.amazonaws.com/mc/MC11en_28.jpg",
-  //   "11034": "https://lcgcdn.s3.amazonaws.com/mc/MC11en_34.jpg",
+  "14001a": process.env.PUBLIC_URL + "/images/missing/qsv.a.jpg",
+  "14001b": process.env.PUBLIC_URL + "/images/missing/qsv.b.jpg",
 };
