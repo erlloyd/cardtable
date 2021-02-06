@@ -886,7 +886,7 @@ class App extends Component<IProps, IState> {
           upperRightPoint,
           this.getRelativePositionFromTarget(this.stage)
         );
-        if (distance < 30) {
+        if (distance < 50) {
           splitTopCard = true;
         }
       }
