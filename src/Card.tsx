@@ -269,6 +269,22 @@ class Card extends Component<IProps, IState> {
     return this.renderUnanimatedCard(heightToUse, widthToUse, imageLoaded);
   }
 
+  // Unfortunately, if you try to use shadow / blur to indicate selection
+  // (which I did at first and looks better, imo) the performance in horrible,
+  // even with some reccommended settings (shadowForStrokeEnabled = false and
+  // hitStrokeWidth = 0). So we'll just use stroke / border for everything
+  private getStrokeColor = () => {
+    if (!!this.props.dropTargetColor) {
+      return this.props.dropTargetColor;
+    }
+
+    if (this.props.selected) {
+      return this.props.selectedColor;
+    }
+
+    return "";
+  };
+
   private renderUnanimatedCard = (
     heightToUse: number,
     widthToUse: number,
@@ -295,8 +311,8 @@ class Card extends Component<IProps, IState> {
         width={widthToUse}
         height={heightToUse}
         offset={offset}
-        stroke={this.props.dropTargetColor ?? ""}
-        strokeWidth={!!this.props.dropTargetColor ? 2 : 0}
+        stroke={this.getStrokeColor()}
+        strokeWidth={!!this.getStrokeColor() ? 4 : 0}
         fillPatternRotation={
           !imageLoaded ||
           this.shouldRenderImageHorizontal(
@@ -310,10 +326,8 @@ class Card extends Component<IProps, IState> {
         fillPatternScaleX={scale.width}
         fillPatternScaleY={scale.height}
         fill={imageLoaded ? undefined : "gray"}
-        shadowColor={
-          !!this.props.controlledBy ? this.props.selectedColor : "black"
-        }
-        shadowBlur={this.props.dragging ? 20 : this.props.selected ? 10 : 0}
+        shadowForStrokeEnabled={false}
+        hitStrokeWidth={0}
         opacity={this.props.isGhost ? 0.5 : 1}
         draggable={
           this.props.controlledBy === "" ||
@@ -355,7 +369,8 @@ class Card extends Component<IProps, IState> {
           offset={cardStackOffset}
           opacity={this.props.isGhost ? 0.5 : 1}
           fill={"gray"}
-          shadowBlur={this.props.dragging ? 10 : this.props.selected ? 5 : 0}
+          shadowForStrokeEnabled={false}
+          hitStrokeWidth={0}
         />
       ) : null;
 
