@@ -11,9 +11,9 @@ export const getCardMapById = createSelector(getCards, (cards) => {
   }, {});
 });
 
-export const shouldShowPreview = createSelector(getCards, (cards) => {
-  return !!cards.previewCard && cards.cards.every((card) => !card.dragging);
-});
+// export const shouldShowPreview = createSelector(getCards, (cards) => {
+//   return !!cards.previewCard && cards.cards.every((card) => !card.dragging);
+// });
 
 export const getPanMode = (state: RootState) =>
   state.liveState.present.cards.panMode;

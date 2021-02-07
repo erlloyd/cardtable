@@ -268,24 +268,24 @@ const unselectAllCardsReducer: CaseReducer<ICardsState, PayloadAction<any>> = (
     });
 };
 
-const hoverCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
-  state,
-  action
-) => {
-  if (state.previewCard === null) {
-    state.previewCard = {
-      id: action.payload,
-    };
-  } else if (action.payload !== state.previewCard.id) {
-    state.previewCard.id = action.payload;
-  }
-};
+// const hoverCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
+//   state,
+//   action
+// ) => {
+//   if (state.previewCard === null) {
+//     state.previewCard = {
+//       id: action.payload,
+//     };
+//   } else if (action.payload !== state.previewCard.id) {
+//     state.previewCard.id = action.payload;
+//   }
+// };
 
-const hoverLeaveCardReducer: CaseReducer<ICardsState> = (state) => {
-  if (state.previewCard !== null) {
-    state.previewCard = null;
-  }
-};
+// const hoverLeaveCardReducer: CaseReducer<ICardsState> = (state) => {
+//   if (state.previewCard !== null) {
+//     state.previewCard = null;
+//   }
+// };
 
 const togglePanModeReducer: CaseReducer<ICardsState> = (state) => {
   state.panMode = !state.panMode;
@@ -347,8 +347,8 @@ const cardsSlice = createSlice({
     endCardMove: endCardMoveReducer,
     selectMultipleCards: selectMultipleCardsReducer,
     unselectAllCards: unselectAllCardsReducer,
-    hoverCard: hoverCardReducer,
-    hoverLeaveCard: hoverLeaveCardReducer,
+    // hoverCard: hoverCardReducer,
+    // hoverLeaveCard: hoverLeaveCardReducer,
     togglePanMode: togglePanModeReducer,
     flipCards: flipCardsReducer,
     resetCards: resetCardsReducer,
@@ -373,7 +373,7 @@ const cardsSlice = createSlice({
 
     builder.addCase(resetApp, (state) => {
       state.cards = [];
-      state.previewCard = null;
+      // state.previewCard = null;
       state.dropTargetCards = {};
       state.ghostCards = [];
       state.panMode = true;
@@ -500,7 +500,7 @@ const cardsSlice = createSlice({
       }
 
       //Finally, if we have a preview card, clear it
-      state.previewCard = null;
+      // state.previewCard = null;
     });
 
     builder.addCase(drawCardsOutOfCardStackWithIds, (state, action) => {
@@ -682,8 +682,8 @@ export const {
   endCardMove,
   selectMultipleCards,
   unselectAllCards,
-  hoverCard,
-  hoverLeaveCard,
+  // hoverCard,
+  // hoverLeaveCard,
   togglePanMode,
   flipCards,
   resetCards,

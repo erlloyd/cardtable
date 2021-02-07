@@ -7,7 +7,7 @@ import {
   getCards,
   getDropTargetCardsById,
   getPanMode,
-  shouldShowPreview,
+  // shouldShowPreview,
 } from "./features/cards/cards.selectors";
 import {
   adjustCounterToken,
@@ -15,8 +15,8 @@ import {
   endCardMove,
   exhaustCard,
   flipCards,
-  hoverCard,
-  hoverLeaveCard,
+  // hoverCard,
+  // hoverLeaveCard,
   selectCard,
   selectMultipleCards,
   togglePanMode,
@@ -43,6 +43,8 @@ import {
   updatePosition,
   updateZoom,
   requestResync,
+  setPreviewCardId,
+  clearPreviewCard,
 } from "./features/game/game.slice";
 
 import {
@@ -60,7 +62,7 @@ const mapStateToProps = (state: RootState) => {
     playerColors: getPlayerColors(state),
     cards: getCards(state),
     cardsData: getCardsDataEntities(state),
-    showPreview: shouldShowPreview(state),
+    // showPreview: shouldShowPreview(state),
     panMode: getPanMode(state),
     gameState: getGame(state),
     counters: getCurrentCounters(state),
@@ -80,8 +82,8 @@ const AppContainer = connect(mapStateToProps, {
   selectMultipleCards,
   startCardMove,
   unselectAllCards,
-  hoverCard,
-  hoverLeaveCard,
+  // hoverCard,
+  // hoverLeaveCard,
   togglePanMode,
   flipCards,
   shuffleStack,
@@ -102,6 +104,8 @@ const AppContainer = connect(mapStateToProps, {
   undo: ActionCreators.undo,
   redo: ActionCreators.redo,
   drawCardsOutOfCardStack,
+  setPreviewCardId,
+  clearPreviewCard,
 })(App);
 
 export default AppContainer;

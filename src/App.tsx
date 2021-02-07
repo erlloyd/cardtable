@@ -37,7 +37,7 @@ interface IProps {
   cards: ICardsState;
   cardsData: ICardData;
   gameState: IGameState;
-  showPreview: boolean;
+  // showPreview: boolean;
   panMode: boolean;
   playerColors: { [key: string]: PlayerColor };
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
@@ -49,8 +49,10 @@ interface IProps {
   startCardMove: (payload: { id: string; splitTopCard: boolean }) => void;
   unselectAllCards: (payload?: any) => void;
   selectMultipleCards: (cards: { ids: string[] }) => void;
-  hoverCard: (id: string) => void;
-  hoverLeaveCard: (id: string) => void;
+  // hoverCard: (id: string) => void;
+  // hoverLeaveCard: (id: string) => void;
+  setPreviewCardId: (id: string) => void;
+  clearPreviewCard: () => void;
   togglePanMode: () => void;
   flipCards: () => void;
   loadCardsData: () => void;
@@ -196,8 +198,8 @@ class App extends Component<IProps, IState> {
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.handleSelectAndExhaust}
             handleClick={this.handleCardClick(card)}
-            handleHover={this.props.hoverCard}
-            handleHoverLeave={this.props.hoverLeaveCard}
+            handleHover={this.props.setPreviewCardId}
+            handleHoverLeave={this.props.clearPreviewCard}
             handleContextMenu={this.handleCardContextMenu}
             imgUrls={this.getImgUrls(card)}
             typeCode={this.getCardType(card)}
@@ -266,14 +268,18 @@ class App extends Component<IProps, IState> {
         );
       });
 
+    const iAmDragging = this.props.cards.cards.some(
+      (c) => c.dragging && c.controlledBy === myPeerRef
+    );
+
     const previewCards = this.stage
       ? this.props.cards.cards
           .filter(
             (card) =>
               !this.state.selecting &&
-              this.props.showPreview &&
-              !!this.props.cards.previewCard &&
-              card.id === this.props.cards.previewCard.id
+              !iAmDragging &&
+              !!this.props.gameState.previewCard &&
+              card.id === this.props.gameState.previewCard.id
           )
           .map((card) => {
             const isHorizontal = HORIZONTAL_TYPE_CODES.includes(

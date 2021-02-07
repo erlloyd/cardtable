@@ -40,6 +40,21 @@ const setPeerIdReducer: CaseReducer<IGameState, PayloadAction<string>> = (
   state.peerId = action.payload;
 };
 
+const setPreviewCardIdReducer: CaseReducer<
+  IGameState,
+  PayloadAction<string>
+> = (state, action) => {
+  if (!state.previewCard) {
+    state.previewCard = { id: action.payload };
+  } else if (state.previewCard.id !== action.payload) {
+    state.previewCard.id = action.payload;
+  }
+};
+
+const clearPreviewCardReducer: CaseReducer<IGameState> = (state) => {
+  state.previewCard = null;
+};
+
 const requestResyncReducer: CaseReducer<IGameState> = () => {};
 
 // slice
@@ -53,11 +68,14 @@ const gameSlice = createSlice({
     setPlayerColor: setPlayerColorReducer,
     setPeerId: setPeerIdReducer,
     requestResync: requestResyncReducer,
+    setPreviewCardId: setPreviewCardIdReducer,
+    clearPreviewCard: clearPreviewCardReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(resetApp, (state, action) => {
       state.stagePosition = { x: 0, y: 0 };
       state.stageZoom = { x: 1, y: 1 };
+      state.previewCard = null;
     });
   },
 });
@@ -69,6 +87,8 @@ export const {
   setPlayerColor,
   setPeerId,
   requestResync,
+  setPreviewCardId,
+  clearPreviewCard,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

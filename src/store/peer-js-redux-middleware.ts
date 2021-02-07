@@ -1,15 +1,13 @@
 import Peer from "peerjs";
 import { myPeerRef } from "../constants/app-constants";
+import { togglePanMode } from "../features/cards/cards.slice";
 import {
-  hoverCard,
-  hoverLeaveCard,
-  togglePanMode,
-} from "../features/cards/cards.slice";
-import {
+  clearPreviewCard,
   connectToRemoteGame,
   requestResync,
   setPeerId,
   setPlayerColor,
+  setPreviewCardId,
   updatePosition,
   updateZoom,
 } from "../features/game/game.slice";
@@ -21,8 +19,8 @@ const blacklistRemoteActions = {
   [connectToRemoteGame.type]: true,
   [updatePosition.type]: true,
   [updateZoom.type]: true,
-  [hoverCard.type]: true,
-  [hoverLeaveCard.type]: true,
+  [setPreviewCardId.type]: true,
+  [clearPreviewCard.type]: true,
   [togglePanMode.type]: true,
   [receiveRemoteGameState.type]: true,
   [requestResync.type]: true,

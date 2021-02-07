@@ -24,14 +24,9 @@ export interface ICardDetails {
   jsonId: string;
 }
 
-export interface IPreviewCard {
-  id: string;
-}
-
 export interface ICardsState {
   cards: ICardStack[];
   ghostCards: ICardStack[];
-  previewCard: IPreviewCard | null;
   dropTargetCards: { [key: string]: ICardStack | null };
   panMode: boolean;
 }
@@ -49,7 +44,6 @@ if (!!localStorageState.cards) {
 const defaultState: ICardsState = {
   cards: [],
   ghostCards: [],
-  previewCard: null,
   dropTargetCards: {},
   panMode: true,
 };
