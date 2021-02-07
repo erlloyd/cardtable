@@ -424,9 +424,16 @@ const cardsSlice = createSlice({
         newCard.controlledBy = (action as any).ACTOR_REF;
         newCard.x = newCard.x + cardConstants.CARD_WIDTH + 5;
 
-        cardStackToUse.cardStack = cardStackToUse.cardStack.filter(
-          (c) => c.jsonId !== action.payload.jsonId
+        // Find the first instance of the card with the json id. Note that because there
+        // might be multiple cards with the same json id, we can't just do a filter
+        const cardIndexToRemove = cardStackToUse.cardStack.findIndex(
+          (c) => c.jsonId === action.payload.jsonId
         );
+
+        if (cardIndexToRemove !== -1) {
+          cardStackToUse.cardStack.splice(cardIndexToRemove, 1);
+        }
+
         cardStackToUse.selected = false;
         cardStackToUse.controlledBy = "";
 

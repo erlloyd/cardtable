@@ -684,8 +684,14 @@ class App extends Component<IProps, IState> {
     event.evt.preventDefault();
     event.cancelBubble = true;
 
-    // First, select the card
-    this.props.selectCard({ id: cardId, unselectOtherCards: false });
+    // We want to unselect all the other cards if the card isn't actively selected
+    const cardStack = this.props.cards.cards.find((c) => c.id === cardId);
+
+    // Next, select the card that was right-clicked
+    this.props.selectCard({
+      id: cardId,
+      unselectOtherCards: !!cardStack ? !cardStack.selected : true,
+    });
 
     const card = this.props.cards.cards.find((c) => c.id === cardId);
     const numCardsInStack = card?.cardStack?.length || 0;
