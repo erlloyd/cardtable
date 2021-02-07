@@ -74,7 +74,7 @@ const gameSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(resetApp, (state, action) => {
       state.stagePosition = { x: 0, y: 0 };
-      state.stageZoom = { x: 1, y: 1 };
+      state.stageZoom = { x: 0.5, y: 0.5 };
       state.previewCard = null;
     });
   },

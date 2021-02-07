@@ -22,7 +22,7 @@ localStorageState.previewCard = null;
 
 const defaultState: IGameState = {
   playerColors: {},
-  stageZoom: { x: 1, y: 1 },
+  stageZoom: { x: 0.5, y: 0.5 },
   stagePosition: { x: 0, y: 0 },
   peerId: "",
   previewCard: null,
