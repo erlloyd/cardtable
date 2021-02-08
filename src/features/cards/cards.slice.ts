@@ -268,25 +268,6 @@ const unselectAllCardsReducer: CaseReducer<ICardsState, PayloadAction<any>> = (
     });
 };
 
-// const hoverCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
-//   state,
-//   action
-// ) => {
-//   if (state.previewCard === null) {
-//     state.previewCard = {
-//       id: action.payload,
-//     };
-//   } else if (action.payload !== state.previewCard.id) {
-//     state.previewCard.id = action.payload;
-//   }
-// };
-
-// const hoverLeaveCardReducer: CaseReducer<ICardsState> = (state) => {
-//   if (state.previewCard !== null) {
-//     state.previewCard = null;
-//   }
-// };
-
 const togglePanModeReducer: CaseReducer<ICardsState> = (state) => {
   state.panMode = !state.panMode;
 };
@@ -321,12 +302,22 @@ const toggleTokenReducer: CaseReducer<
 
 const adjustCounterTokenReducer: CaseReducer<
   ICardsState,
-  PayloadAction<{ id: string; tokenType: CounterTokenType; delta: number }>
+  PayloadAction<{
+    id: string;
+    tokenType: CounterTokenType;
+    delta?: number;
+    value?: number;
+  }>
 > = (state, action) => {
   const cardToToggle = state.cards.find((c) => c.id === action.payload.id);
   if (!!cardToToggle) {
-    cardToToggle.counterTokens[action.payload.tokenType] +=
-      action.payload.delta;
+    if (action.payload.value !== undefined) {
+      cardToToggle.counterTokens[action.payload.tokenType] =
+        action.payload.value;
+    } else if (action.payload.delta !== undefined) {
+      cardToToggle.counterTokens[action.payload.tokenType] +=
+        action.payload.delta;
+    }
     if (cardToToggle.counterTokens[action.payload.tokenType] < 0) {
       cardToToggle.counterTokens[action.payload.tokenType] = 0;
     }
@@ -347,8 +338,6 @@ const cardsSlice = createSlice({
     endCardMove: endCardMoveReducer,
     selectMultipleCards: selectMultipleCardsReducer,
     unselectAllCards: unselectAllCardsReducer,
-    // hoverCard: hoverCardReducer,
-    // hoverLeaveCard: hoverLeaveCardReducer,
     togglePanMode: togglePanModeReducer,
     flipCards: flipCardsReducer,
     resetCards: resetCardsReducer,
@@ -682,8 +671,6 @@ export const {
   endCardMove,
   selectMultipleCards,
   unselectAllCards,
-  // hoverCard,
-  // hoverLeaveCard,
   togglePanMode,
   flipCards,
   resetCards,

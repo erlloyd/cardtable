@@ -30,6 +30,7 @@ import { MISSING_CARD_IMAGE_MAP } from "./constants/card-missing-image-map";
 import { CardData } from "./external-api/marvel-card-data";
 import { CARD_PACK_REMAPPING } from "./constants/card-pack-mapping";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
+import TokenValueModifier from "./TokenValueModifier";
 
 const SCALE_BY = 1.02;
 
@@ -37,7 +38,6 @@ interface IProps {
   cards: ICardsState;
   cardsData: ICardData;
   gameState: IGameState;
-  // showPreview: boolean;
   panMode: boolean;
   playerColors: { [key: string]: PlayerColor };
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
@@ -49,8 +49,6 @@ interface IProps {
   startCardMove: (payload: { id: string; splitTopCard: boolean }) => void;
   unselectAllCards: (payload?: any) => void;
   selectMultipleCards: (cards: { ids: string[] }) => void;
-  // hoverCard: (id: string) => void;
-  // hoverLeaveCard: (id: string) => void;
   setPreviewCardId: (id: string) => void;
   clearPreviewCard: () => void;
   togglePanMode: () => void;
@@ -76,7 +74,8 @@ interface IProps {
   adjustCounterToken: (payload: {
     id: string;
     tokenType: CounterTokenType;
-    delta: number;
+    delta?: number;
+    value?: number;
   }) => void;
   pullCardOutOfCardStack: (payload: {
     cardStackId: string;
@@ -122,6 +121,9 @@ interface IState {
   cardStackForSearching: ICardStack | null;
   showPeerConnector: boolean;
   peerConnectorPosition: Vector2d | null;
+  showTokenValueModifier: boolean;
+  tokenValueModifierProps: { id: string; tokenType: CounterTokenType } | null;
+  tokenValueModifierPosition: Vector2d | null;
 }
 class App extends Component<IProps, IState> {
   public stage: Konva.Stage | null = null;
@@ -161,6 +163,9 @@ class App extends Component<IProps, IState> {
       cardStackForSearching: null,
       showPeerConnector: false,
       peerConnectorPosition: null,
+      showTokenValueModifier: false,
+      tokenValueModifierProps: null,
+      tokenValueModifierPosition: null,
     };
   }
 
@@ -340,6 +345,7 @@ class App extends Component<IProps, IState> {
         {this.renderEncounterImporter()}
         {this.renderCardSearch()}
         {this.renderPeerConnector()}
+        {this.renderTokenModifier()}
         <ReactReduxContext.Consumer>
           {({ store }) => (
             <Stage
@@ -561,6 +567,35 @@ class App extends Component<IProps, IState> {
     ) : null;
   };
 
+  private renderTokenModifier = () => {
+    if (!this.state.showTokenValueModifier) return null;
+
+    const containerRect = this.stage?.container().getBoundingClientRect();
+    const pointerPosition = this.state.tokenValueModifierPosition;
+    if (!containerRect || !pointerPosition) {
+      throw new Error("Problem computing token Modifier position");
+    }
+
+    const pos = {
+      x: containerRect.left + pointerPosition.x,
+      y: containerRect.top + pointerPosition.y,
+    };
+
+    return !!this.state.showTokenValueModifier &&
+      !!this.state.tokenValueModifierProps ? (
+      <TopLayer position={pos} completed={this.clearTokenValueModifier}>
+        <TokenValueModifier
+          id={this.state.tokenValueModifierProps.id}
+          tokenType={this.state.tokenValueModifierProps.tokenType}
+          updated={(payload) => {
+            this.props.adjustCounterToken(payload);
+            this.clearTokenValueModifier();
+          }}
+        ></TokenValueModifier>
+      </TopLayer>
+    ) : null;
+  };
+
   private handleLoadEncounter = (position: Vector2d) => (cards: string[]) => {
     this.clearEncounterImporter();
     this.props.addCardStack({ position, cardJsonIds: cards });
@@ -596,6 +631,14 @@ class App extends Component<IProps, IState> {
     this.setState({
       showDeckImporter: false,
       deckImporterPosition: null,
+    });
+  };
+
+  private clearTokenValueModifier = () => {
+    this.setState({
+      showTokenValueModifier: false,
+      tokenValueModifierProps: null,
+      tokenValueModifierPosition: null,
     });
   };
 
@@ -772,67 +815,78 @@ class App extends Component<IProps, IState> {
     });
 
     menuItems.push({
-      label: "Add 1 Damage",
+      label: "Set Damage",
+      action: () => {
+        this.setState({
+          showContextMenu: false,
+          contextMenuItems: [],
+          contextMenuPosition: null,
+
+          showTokenValueModifier: true,
+          tokenValueModifierProps: {
+            id: card?.id || "",
+            tokenType: CounterTokenType.Damage,
+          },
+          tokenValueModifierPosition: this.stage?.getPointerPosition() ?? null,
+        });
+      },
+    });
+
+    menuItems.push({
+      label: "Set Threat",
+      action: () => {
+        this.setState({
+          showContextMenu: false,
+          contextMenuItems: [],
+          contextMenuPosition: null,
+
+          showTokenValueModifier: true,
+          tokenValueModifierProps: {
+            id: card?.id || "",
+            tokenType: CounterTokenType.Threat,
+          },
+          tokenValueModifierPosition: this.stage?.getPointerPosition() ?? null,
+        });
+      },
+    });
+
+    menuItems.push({
+      label: "Set Generic Tokens",
+      action: () => {
+        this.setState({
+          showContextMenu: false,
+          contextMenuItems: [],
+          contextMenuPosition: null,
+
+          showTokenValueModifier: true,
+          tokenValueModifierProps: {
+            id: card?.id || "",
+            tokenType: CounterTokenType.Generic,
+          },
+          tokenValueModifierPosition: this.stage?.getPointerPosition() ?? null,
+        });
+      },
+    });
+
+    menuItems.push({
+      label: "Remove All Tokens",
       action: () => {
         this.props.adjustCounterToken({
           id: card?.id || "",
           tokenType: CounterTokenType.Damage,
-          delta: 1,
+          value: 0,
         });
-      },
-    });
 
-    menuItems.push({
-      label: "Remove 1 Damage",
-      action: () => {
-        this.props.adjustCounterToken({
-          id: card?.id || "",
-          tokenType: CounterTokenType.Damage,
-          delta: -1,
-        });
-      },
-    });
-
-    menuItems.push({
-      label: "Add 1 Threat",
-      action: () => {
         this.props.adjustCounterToken({
           id: card?.id || "",
           tokenType: CounterTokenType.Threat,
-          delta: 1,
+          value: 0,
         });
-      },
-    });
 
-    menuItems.push({
-      label: "Remove 1 Threat",
-      action: () => {
-        this.props.adjustCounterToken({
-          id: card?.id || "",
-          tokenType: CounterTokenType.Threat,
-          delta: -1,
-        });
-      },
-    });
-
-    menuItems.push({
-      label: "Add 1 Generic Token",
-      action: () => {
         this.props.adjustCounterToken({
           id: card?.id || "",
           tokenType: CounterTokenType.Generic,
-          delta: 1,
-        });
-      },
-    });
-
-    menuItems.push({
-      label: "Remove 1 Generic Token",
-      action: () => {
-        this.props.adjustCounterToken({
-          id: card?.id || "",
-          tokenType: CounterTokenType.Generic,
-          delta: -1,
+          value: 0,
         });
       },
     });
