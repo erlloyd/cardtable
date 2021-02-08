@@ -136,6 +136,8 @@ class CardTokens extends Component<IProps, IState> {
   }
 
   render() {
+    if (!this.props.card) return null;
+
     const damageX = this.props.x - this.damageImg.naturalWidth / 2;
     const damageY = this.props.y - cardConstants.CARD_HEIGHT / 2 + 20;
     const showDamage =
