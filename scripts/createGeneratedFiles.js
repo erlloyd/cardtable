@@ -25,24 +25,19 @@ const doWork = async () => {
       if (!!e) console.log(e);
     });
 
-    filesWithCodes
-      .filter((fd) => fd.code !== "wsp")
-      .forEach((fileData) => {
-        fs.appendFileSync(
-          outputFile,
-          `import ${fileData.code} from "../../external/marvelsdb-json-data/pack/${fileData.fname}";\n`,
-          (e) => {
-            if (!!e) console.log(e);
-          }
-        );
-      });
+    filesWithCodes.forEach((fileData) => {
+      fs.appendFileSync(
+        outputFile,
+        `import ${fileData.code} from "../../external/marvelsdb-json-data/pack/${fileData.fname}";\n`,
+        (e) => {
+          if (!!e) console.log(e);
+        }
+      );
+    });
 
     fs.appendFileSync(
       outputFile,
-      `export {${filesWithCodes
-        .filter((fd) => fd.code !== "wsp")
-        .map((f) => f.code)
-        .join(",\n")}};`,
+      `export {${filesWithCodes.map((f) => f.code).join(",\n")}};`,
       (e) => {
         if (!!e) console.log(e);
       }

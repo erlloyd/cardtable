@@ -1291,7 +1291,7 @@ class App extends Component<IProps, IState> {
 
     const cardData = this.props.cardsData[card.cardStack[0].jsonId];
 
-    return cardData.type_code;
+    return cardData?.type_code ?? "";
   };
 
   private getCardName = (card: ICardStack) => {
@@ -1305,7 +1305,10 @@ class App extends Component<IProps, IState> {
     const cardInQuestion = card.faceup
       ? card.cardStack[0]
       : card.cardStack[card.cardStack.length - 1];
-    return this.props.cardsData[cardInQuestion.jsonId]?.code ?? "code missing";
+    return (
+      this.props.cardsData[cardInQuestion.jsonId]?.code ??
+      `code missing for ${cardInQuestion.jsonId}`
+    );
   };
 
   private checkMissingImageMap(code: string): string | null {
@@ -1313,8 +1316,11 @@ class App extends Component<IProps, IState> {
   }
 
   private generateLCGCDNImageUrl(card: CardData, faceup: boolean): string {
-    // get the first two digits
+    if (!card) {
+      return `https://lcgcdn.s3.amazonaws.com/mc/NOPE.jpg`;
+    }
 
+    // get the first two digits
     let codeToUse = card.code;
 
     if (!faceup && !!card.back_link) {
@@ -1347,6 +1353,10 @@ class App extends Component<IProps, IState> {
     let urls: string[] = [];
 
     const topCardData = this.props.cardsData[card.cardStack[0].jsonId];
+
+    if (!topCardData) {
+      return [`https://lcgcdn.s3.amazonaws.com/mc/NOPE.jpg`];
+    }
 
     let cardData: CardData | null = topCardData;
 
