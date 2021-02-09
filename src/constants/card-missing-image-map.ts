@@ -58,6 +58,6 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
     "/images/cards/" +
     "0a59161d-7db6-4328-9eeb-1906ce8715a5" +
     ".b.jpg",
-  "14001a": process.env.PUBLIC_URL + "/images/missing/qsv.a.jpg",
+  "14001a": "https://marvelcdb.com/bundles/cards/14001a.jpg",
   "14001b": process.env.PUBLIC_URL + "/images/missing/qsv.b.jpg",
 };
