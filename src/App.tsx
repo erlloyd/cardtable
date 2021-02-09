@@ -1392,10 +1392,22 @@ class App extends Component<IProps, IState> {
       ];
     }
 
+    let codeForMissingCheck = "";
+
+    if (!!cardData) {
+      if (card.faceup) {
+        codeForMissingCheck = cardData.code;
+      } else {
+        if (!!cardData.back_link) {
+          codeForMissingCheck = cardData.back_link;
+        } else if (cardData.double_sided) {
+          codeForMissingCheck = `${cardData.code}_double_sided_back`;
+        }
+      }
+    }
+
     const missingImageOverride = !!cardData
-      ? this.checkMissingImageMap(
-          card.faceup ? cardData.code : cardData.back_link ?? ""
-        )
+      ? this.checkMissingImageMap(codeForMissingCheck)
       : null;
 
     if (!!missingImageOverride) {

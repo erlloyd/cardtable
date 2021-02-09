@@ -41,11 +41,23 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
     "b35084d9-3a2b-418c-b1a4-e4929de16a2c" +
     ".jpg",
 
+  "02004_double_sided_back":
+    process.env.PUBLIC_URL +
+    "/images/cards/" +
+    "b35084d9-3a2b-418c-b1a4-e4929de16a2c" +
+    ".b.jpg",
+
   "02005":
     process.env.PUBLIC_URL +
     "/images/cards/" +
     "1eae757a-25b2-4b29-a8e7-f43b12c531b0" +
     ".jpg",
+
+  "02005_double_sided_back":
+    process.env.PUBLIC_URL +
+    "/images/cards/" +
+    "1eae757a-25b2-4b29-a8e7-f43b12c531b0" +
+    ".b.jpg",
 
   "02006a":
     process.env.PUBLIC_URL +
