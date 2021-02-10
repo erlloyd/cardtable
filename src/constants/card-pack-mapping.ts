@@ -32,4 +32,5 @@ export const EXTRA_CARDS: { [key: string]: ICardDetails[] } = {
     { jsonId: "09036" },
   ],
   ant: [{ jsonId: "12001c" }],
+  wsp: [{ jsonId: "13001c" }],
 };
