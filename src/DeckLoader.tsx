@@ -1,28 +1,50 @@
 import { Component } from "react";
 import * as React from "react";
+import TextField from "@material-ui/core/TextField";
 
 interface IProps {
   loadDeckId: (id: number) => void;
 }
 
 class DeckLoader extends Component<IProps> {
+  inputValue: string = "";
+
+  private focusInputField = (input: any) => {
+    if (input) {
+      setTimeout(() => {
+        input.querySelector("input").focus();
+      }, 100);
+    }
+  };
+
   render() {
     return (
-      <input
-        onKeyDown={this.handleKeyDown}
+      <div
         onClick={this.cancelBubble}
-        type="number"
-      ></input>
+        onKeyPress={this.cancelBubble}
+        className="token-field-row"
+      >
+        <TextField
+          ref={this.focusInputField}
+          onKeyPress={this.handleKeyPress}
+          onClick={this.cancelBubble}
+          onChange={(event) => {
+            this.inputValue = event.target.value;
+          }}
+          type="number"
+          variant="outlined"
+        ></TextField>{" "}
+      </div>
     );
   }
 
-  private cancelBubble = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+  private cancelBubble = (event: React.SyntheticEvent) => {
     event.stopPropagation();
   };
 
-  private handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter") {
-      this.props.loadDeckId(+event.currentTarget.value);
+  private handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key.toLocaleLowerCase() === "enter") {
+      this.props.loadDeckId(+this.inputValue);
     }
   };
 }

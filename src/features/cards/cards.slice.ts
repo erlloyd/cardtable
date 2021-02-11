@@ -549,7 +549,8 @@ const cardsSlice = createSlice({
       console.log(action);
 
       const heroCard: ICardStack = {
-        controlledBy: "",
+        controlledBy: (action as any).ACTOR_REF,
+        selected: true,
         x: action.payload.position.x,
         y: action.payload.position.y,
         dragging: false,
@@ -561,7 +562,6 @@ const cardsSlice = createSlice({
           { jsonId: action.payload.data.investigator_code },
           ...action.payload.extraHeroCards,
         ],
-        selected: false,
         statusTokens: {
           stunned: false,
           confused: false,
@@ -585,7 +585,8 @@ const cardsSlice = createSlice({
       const cardPadding = cardConstants.CARD_WIDTH + 10;
 
       const newDeck: ICardStack = {
-        controlledBy: "",
+        controlledBy: (action as any).ACTOR_REF,
+        selected: true,
         x: action.payload.position.x + cardPadding,
         y: action.payload.position.y,
         dragging: false,
@@ -594,7 +595,6 @@ const cardsSlice = createSlice({
         fill: "red",
         id: action.payload.dataId,
         cardStack: mainDeckStack,
-        selected: false,
         statusTokens: {
           stunned: false,
           confused: false,
@@ -608,7 +608,8 @@ const cardsSlice = createSlice({
       };
 
       const encounterDeck: ICardStack = {
-        controlledBy: "",
+        controlledBy: (action as any).ACTOR_REF,
+        selected: true,
         x: action.payload.position.x + cardPadding * 2,
         y: action.payload.position.y,
         dragging: false,
@@ -619,7 +620,6 @@ const cardsSlice = createSlice({
         cardStack: action.payload.relatedEncounterDeck.map((jsonId) => ({
           jsonId,
         })),
-        selected: false,
         statusTokens: {
           stunned: false,
           confused: false,
@@ -633,7 +633,8 @@ const cardsSlice = createSlice({
       };
 
       const obligationDeck: ICardStack = {
-        controlledBy: "",
+        controlledBy: (action as any).ACTOR_REF,
+        selected: true,
         x: action.payload.position.x + cardPadding * 3,
         y: action.payload.position.y,
         dragging: false,
@@ -644,7 +645,6 @@ const cardsSlice = createSlice({
         cardStack: action.payload.relatedObligationDeck.map((jsonId) => ({
           jsonId,
         })),
-        selected: false,
         statusTokens: {
           stunned: false,
           confused: false,
