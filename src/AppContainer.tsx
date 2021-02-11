@@ -35,6 +35,7 @@ import {
 } from "./features/cards/cards.thunks";
 import {
   getGame,
+  getMenuPreviewCard,
   getPeerId,
   getPlayerColors,
 } from "./features/game/game.selectors";
@@ -68,6 +69,7 @@ const mapStateToProps = (state: RootState) => {
     counters: getCurrentCounters(state),
     peerId: getPeerId(state),
     dropTargetCardsById: getDropTargetCardsById(state),
+    menuPreviewCard: getMenuPreviewCard(state),
   };
 };
 

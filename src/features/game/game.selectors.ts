@@ -1,5 +1,6 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { RootState } from "../../store/rootReducer";
+import { ICardStack } from "../cards/initialState";
 
 export const getGame = (state: RootState) => state.game;
 
@@ -12,3 +13,32 @@ export const getPlayerColors = createSelector(getGame, (game) => {
 });
 
 export const getPeerId = createSelector(getGame, (game) => game.peerId);
+
+export const getMenuPreviewCard = createSelector(getGame, (game) => {
+  if (!game.menuPreviewCardJsonId) return null;
+
+  const menuPreviewCard: ICardStack = {
+    id: "menu-preview-card",
+    controlledBy: "",
+    exhausted: false,
+    faceup: true,
+    fill: "gray",
+    x: 0,
+    y: 0,
+    statusTokens: {
+      stunned: false,
+      confused: false,
+      tough: false,
+    },
+    counterTokens: {
+      damage: 0,
+      threat: 0,
+      generic: 0,
+    },
+    selected: false,
+    dragging: false,
+    cardStack: [{ jsonId: game.menuPreviewCardJsonId }],
+  };
+
+  return menuPreviewCard;
+});

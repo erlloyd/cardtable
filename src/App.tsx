@@ -40,6 +40,7 @@ interface IProps {
   gameState: IGameState;
   panMode: boolean;
   playerColors: { [key: string]: PlayerColor };
+  menuPreviewCard: ICardStack | null;
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
   endCardMove: (id: string) => void;
   exhaustCard: (id: string) => void;
@@ -277,15 +278,17 @@ class App extends Component<IProps, IState> {
       (c) => c.dragging && c.controlledBy === myPeerRef
     );
 
+    const possiblePreviewCards = !!this.props.menuPreviewCard
+      ? [this.props.menuPreviewCard]
+      : this.props.cards.cards.filter(
+          (card) =>
+            !!this.props.gameState.previewCard &&
+            card.id === this.props.gameState.previewCard.id
+        );
+
     const previewCards = this.stage
-      ? this.props.cards.cards
-          .filter(
-            (card) =>
-              !this.state.selecting &&
-              !iAmDragging &&
-              !!this.props.gameState.previewCard &&
-              card.id === this.props.gameState.previewCard.id
-          )
+      ? possiblePreviewCards
+          .filter((_card) => !this.state.selecting && !iAmDragging)
           .map((card) => {
             const isHorizontal = HORIZONTAL_TYPE_CODES.includes(
               this.getCardType(card)

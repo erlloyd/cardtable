@@ -5,10 +5,13 @@ import TextField from "@material-ui/core/TextField";
 import { CardData } from "./external-api/marvel-card-data";
 import { ICardData } from "./features/cards-data/initialState";
 import { ICardStack } from "./features/cards/initialState";
+import { AutocompleteHighlightChangeReason } from "@material-ui/lab/useAutocomplete";
 interface IProps {
   cardsDataEntities: ICardData;
   card: ICardStack;
   cardSelected: (jsonId: string) => void;
+  preview: (jsonId: string) => void;
+  clearPreview: () => void;
 }
 
 class CardStackCardSelector extends Component<IProps> {
@@ -21,6 +24,10 @@ class CardStackCardSelector extends Component<IProps> {
     });
   }
 
+  componentWillUnmount() {
+    this.props.clearPreview();
+  }
+
   render() {
     return (
       <div onClick={this.cancelBubble} onKeyPress={this.cancelBubble}>
@@ -30,6 +37,7 @@ class CardStackCardSelector extends Component<IProps> {
           getOptionLabel={(option) => option.name}
           style={{ width: 300 }}
           onChange={this.handleSelected}
+          onHighlightChange={this.handleHighlightChange}
           renderInput={(params) => (
             <TextField {...params} label="Find Card..." variant="outlined" />
           )}
@@ -38,7 +46,20 @@ class CardStackCardSelector extends Component<IProps> {
     );
   }
 
+  private handleHighlightChange = (
+    _event: any,
+    option: CardData | null,
+    reason: AutocompleteHighlightChangeReason
+  ) => {
+    if (!option) {
+      this.props.clearPreview();
+    } else {
+      this.props.preview(option.code);
+    }
+  };
+
   private handleSelected = (_event: any, value: CardData | null) => {
+    this.props.clearPreview();
     if (!!value && !!this.props.cardSelected) {
       this.props.cardSelected(value.code);
     }

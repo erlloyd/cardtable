@@ -6,7 +6,7 @@ import { cardConstants } from "./constants/card-constants";
 interface IProps {
   x: number;
   y: number;
-  card: ICardStack;
+  card: ICardStack | undefined;
 }
 
 interface IState {
@@ -53,7 +53,7 @@ class CardTokens extends Component<IProps, IState> {
       }
     };
 
-    if (!!this.props.card.counterTokens.damage) {
+    if (!!this.props.card?.counterTokens.damage) {
       this.damageImg.src =
         process.env.PUBLIC_URL + "/images/standard/damage.png";
     }
@@ -71,7 +71,7 @@ class CardTokens extends Component<IProps, IState> {
       }
     };
 
-    if (!!this.props.card.counterTokens.threat) {
+    if (!!this.props.card?.counterTokens.threat) {
       this.threatImg.src =
         process.env.PUBLIC_URL + "/images/standard/threat.png";
     }
@@ -89,7 +89,7 @@ class CardTokens extends Component<IProps, IState> {
       }
     };
 
-    if (!!this.props.card.counterTokens.generic) {
+    if (!!this.props.card?.counterTokens.generic) {
       this.genericImg.src =
         process.env.PUBLIC_URL + "/images/standard/generic_counter.png";
     }

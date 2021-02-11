@@ -55,6 +55,17 @@ const clearPreviewCardReducer: CaseReducer<IGameState> = (state) => {
   state.previewCard = null;
 };
 
+const setMenuPreviewCardJsonIdReducer: CaseReducer<
+  IGameState,
+  PayloadAction<string>
+> = (state, action) => {
+  state.menuPreviewCardJsonId = action.payload;
+};
+
+const clearMenuPreviewCardJsonIdReducer: CaseReducer<IGameState> = (state) => {
+  state.menuPreviewCardJsonId = null;
+};
+
 const requestResyncReducer: CaseReducer<IGameState> = () => {};
 
 // slice
@@ -70,6 +81,8 @@ const gameSlice = createSlice({
     requestResync: requestResyncReducer,
     setPreviewCardId: setPreviewCardIdReducer,
     clearPreviewCard: clearPreviewCardReducer,
+    setMenuPreviewCardJsonId: setMenuPreviewCardJsonIdReducer,
+    clearMenuPreviewCardJsonId: clearMenuPreviewCardJsonIdReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(resetApp, (state, action) => {
@@ -89,6 +102,8 @@ export const {
   requestResync,
   setPreviewCardId,
   clearPreviewCard,
+  setMenuPreviewCardJsonId,
+  clearMenuPreviewCardJsonId,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;
