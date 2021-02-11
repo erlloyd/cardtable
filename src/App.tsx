@@ -55,7 +55,7 @@ interface IProps {
   togglePanMode: () => void;
   flipCards: () => void;
   loadCardsData: () => void;
-  shuffleStack: (id: string) => void;
+  shuffleStack: (id?: string) => void;
   fetchDecklistById: (payload: {
     decklistId: number;
     position: Vector2d;
@@ -766,7 +766,7 @@ class App extends Component<IProps, IState> {
       menuItems.push({
         label: "Shuffle",
         action: () => {
-          this.props.shuffleStack(cardId);
+          this.props.shuffleStack();
         },
       });
 
@@ -967,10 +967,12 @@ class App extends Component<IProps, IState> {
   private handleKeyPress = (event: React.KeyboardEvent<HTMLElement>) => {
     const code = event.key.toLocaleLowerCase();
     const intCode = parseInt(code);
-    if (code === "s") {
+    if (code === "p") {
       this.props.togglePanMode();
     } else if (code === "f") {
       this.props.flipCards();
+    } else if (code === "s") {
+      this.props.shuffleStack();
     } else if (!Number.isNaN(intCode)) {
       // First, get the selected card stack
       const mySelectedCards = this.props.cards.cards.filter(

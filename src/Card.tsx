@@ -4,6 +4,7 @@ import { Vector2d } from "konva/types/types";
 import * as React from "react";
 import { Component } from "react";
 import { Rect, Text } from "react-konva";
+import { animated, Spring } from "react-spring/renderprops-konva";
 import CardTokensContainer from "./CardTokensContainer";
 import { myPeerRef, PlayerColor } from "./constants/app-constants";
 import { cardConstants } from "./constants/card-constants";
@@ -301,53 +302,61 @@ class Card extends Component<IProps, IState> {
     };
 
     const card = (
-      <Rect
-        key={`${this.props.id}-card`}
-        native={true}
-        rotation={this.props.exhausted ? 90 : 0}
-        cornerRadius={9}
-        x={this.props.x}
-        y={this.props.y}
-        width={widthToUse}
-        height={heightToUse}
-        offset={offset}
-        stroke={this.getStrokeColor()}
-        strokeWidth={!!this.getStrokeColor() ? 4 : 0}
-        fillPatternRotation={
-          !imageLoaded ||
-          this.shouldRenderImageHorizontal(
-            this.props.typeCode || "",
-            HORIZONTAL_TYPE_CODES
-          )
-            ? 270
-            : 0
-        }
-        fillPatternImage={imgToUse}
-        fillPatternScaleX={scale.width}
-        fillPatternScaleY={scale.height}
-        fill={imageLoaded ? undefined : "gray"}
-        shadowForStrokeEnabled={false}
-        hitStrokeWidth={0}
-        opacity={this.props.isGhost ? 0.5 : 1}
-        draggable={
-          this.props.controlledBy === "" ||
-          this.props.controlledBy === myPeerRef
-        }
-        onDragStart={this.handleDragStart}
-        onDragMove={this.handleDragMove}
-        onDragEnd={this.handleDragEnd}
-        onDblClick={this.handleDoubleClick}
-        onDblTap={this.handleDoubleClick}
-        onClick={this.handleClick}
-        onTap={this.handleClick}
-        onMouseDown={this.handleMouseDown}
-        onTouchStart={this.handleTouchStart}
-        onTouchMove={this.handleTouchMove}
-        onTouchEnd={this.handleTouchEnd}
-        onMouseOver={this.handleMouseOver}
-        onMouseOut={this.handleMouseOut}
-        onContextMenu={this.handleContextMenu}
-      />
+      <Spring
+        to={{
+          rotation: this.props.exhausted ? 90 : 0,
+        }}
+      >
+        {(animatedProps: any) => (
+          <animated.Rect
+            {...animatedProps}
+            key={`${this.props.id}-card`}
+            native={true}
+            cornerRadius={9}
+            x={this.props.x}
+            y={this.props.y}
+            width={widthToUse}
+            height={heightToUse}
+            offset={offset}
+            stroke={this.getStrokeColor()}
+            strokeWidth={!!this.getStrokeColor() ? 4 : 0}
+            fillPatternRotation={
+              !imageLoaded ||
+              this.shouldRenderImageHorizontal(
+                this.props.typeCode || "",
+                HORIZONTAL_TYPE_CODES
+              )
+                ? 270
+                : 0
+            }
+            fillPatternImage={imgToUse}
+            fillPatternScaleX={scale.width}
+            fillPatternScaleY={scale.height}
+            fill={imageLoaded ? undefined : "gray"}
+            shadowForStrokeEnabled={false}
+            hitStrokeWidth={0}
+            opacity={this.props.isGhost ? 0.5 : 1}
+            draggable={
+              this.props.controlledBy === "" ||
+              this.props.controlledBy === myPeerRef
+            }
+            onDragStart={this.handleDragStart}
+            onDragMove={this.handleDragMove}
+            onDragEnd={this.handleDragEnd}
+            onDblClick={this.handleDoubleClick}
+            onDblTap={this.handleDoubleClick}
+            onClick={this.handleClick}
+            onTap={this.handleClick}
+            onMouseDown={this.handleMouseDown}
+            onTouchStart={this.handleTouchStart}
+            onTouchMove={this.handleTouchMove}
+            onTouchEnd={this.handleTouchEnd}
+            onMouseOver={this.handleMouseOver}
+            onMouseOut={this.handleMouseOut}
+            onContextMenu={this.handleContextMenu}
+          />
+        )}
+      </Spring>
     );
 
     const cardStackOffset = {
@@ -357,21 +366,29 @@ class Card extends Component<IProps, IState> {
 
     const cardStack =
       (this.props.numCardsInStack || 1) > 1 ? (
-        <Rect
-          key={`${this.props.id}-cardStack`}
-          native={true}
-          rotation={this.props.exhausted ? 90 : 0}
-          cornerRadius={[9, 9, 9, 9]}
-          x={this.props.x}
-          y={this.props.y}
-          width={widthToUse}
-          height={heightToUse}
-          offset={cardStackOffset}
-          opacity={this.props.isGhost ? 0.5 : 1}
-          fill={"gray"}
-          shadowForStrokeEnabled={false}
-          hitStrokeWidth={0}
-        />
+        <Spring
+          to={{
+            rotation: this.props.exhausted ? 90 : 0,
+          }}
+        >
+          {(animatedProps: any) => (
+            <animated.Rect
+              {...animatedProps}
+              key={`${this.props.id}-cardStack`}
+              native={true}
+              cornerRadius={[9, 9, 9, 9]}
+              x={this.props.x}
+              y={this.props.y}
+              width={widthToUse}
+              height={heightToUse}
+              offset={cardStackOffset}
+              opacity={this.props.isGhost ? 0.5 : 1}
+              fill={"gray"}
+              shadowForStrokeEnabled={false}
+              hitStrokeWidth={0}
+            />
+          )}
+        </Spring>
       ) : null;
 
     const shouldRenderStunned =

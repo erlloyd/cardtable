@@ -14,9 +14,10 @@ import {
   replaceCardStack,
   startCardMoveWithSplitStackId,
 } from "./cards.actions";
-import { ICardDetails } from "./initialState";
+import { ICardDetails, ICardStack } from "./initialState";
 import { getCards } from "./cards.selectors";
 import { EXTRA_CARDS } from "../../constants/card-pack-mapping";
+import { myPeerRef } from "../../constants/app-constants";
 
 interface AddCardStackPayload {
   cardJsonIds: string[];
@@ -40,17 +41,26 @@ export interface DrawCardsOutOfCardStackPayload {
 }
 
 export const shuffleStack = (
-  id: string
+  id?: string
 ): ThunkAction<void, RootState, unknown, Action<string>> => (
   dispatch,
   getState
 ) => {
   const cardsState = getCards(getState());
-  const stackToShuffle = cardsState.cards.find((c) => c.id === id);
-  if (!!stackToShuffle) {
-    const shuffledStack = shuffle(stackToShuffle.cardStack);
-    dispatch(replaceCardStack({ id, newStack: shuffledStack }));
-  }
+  const stacksToShuffle = !!id
+    ? [cardsState.cards.find((c) => c.id === id)]
+    : cardsState.cards.filter(
+        (c) => c.selected && c.controlledBy === myPeerRef
+      );
+
+  stacksToShuffle
+    .filter((s): s is ICardStack => !!s && s.cardStack.length > 1)
+    .forEach((stackToShuffle) => {
+      const shuffledStack = shuffle(stackToShuffle.cardStack);
+      dispatch(
+        replaceCardStack({ id: stackToShuffle.id, newStack: shuffledStack })
+      );
+    });
 };
 
 export const addCardStack = (
