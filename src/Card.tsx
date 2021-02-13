@@ -1,5 +1,6 @@
 // tslint:disable:no-console
 import { KonvaEventObject } from "konva/types/Node";
+import { Rect as RectRef } from "konva/types/shapes/Rect";
 import { Vector2d } from "konva/types/types";
 import * as React from "react";
 import { Component } from "react";
@@ -30,6 +31,7 @@ interface IProps {
   selectedColor: PlayerColor;
   controlledBy: string;
   dragging: boolean;
+  shuffling: boolean;
   exhausted: boolean;
   cardState?: CardUIState;
   fill: string;
@@ -103,6 +105,8 @@ class Card extends Component<IProps, IState> {
   private toughImg: HTMLImageElement;
   private unmounted: boolean;
   private touchTimer: any = null;
+  private rect: RectRef | null = null;
+  private shuffleToggle = false;
 
   constructor(props: IProps) {
     super(props);
@@ -181,6 +185,17 @@ class Card extends Component<IProps, IState> {
   }
 
   public componentDidUpdate(prevProps: IProps, prevState: IState) {
+    // if we just went from not shuffling -> shuffling, animate
+    if (!prevProps.shuffling && this.props.shuffling) {
+      if (!!this.rect) {
+        this.shuffleToggle = !this.shuffleToggle;
+        this.rect.to({
+          rotation: this.currentRotation + (this.shuffleToggle ? 360 : -360),
+          duration: 0.2,
+        });
+      }
+    }
+
     if (
       !this.state.imageLoaded &&
       !stringArraysEqual(prevProps.imgUrls, this.props.imgUrls)
@@ -310,6 +325,11 @@ class Card extends Component<IProps, IState> {
         {(animatedProps: any) => (
           <animated.Rect
             {...animatedProps}
+            ref={(node) => {
+              if (!!node) {
+                this.rect = node;
+              }
+            }}
             key={`${this.props.id}-card`}
             native={true}
             cornerRadius={9}
@@ -524,6 +544,10 @@ class Card extends Component<IProps, IState> {
       this.props.imgUrls.some((i) => i.includes("standard")) &&
       this.props.imgUrls.some((i) => i.includes("_back"))
     );
+  }
+
+  private get currentRotation() {
+    return this.props.exhausted ? 90 : 0;
   }
 
   private getScale(

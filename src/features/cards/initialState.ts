@@ -4,6 +4,7 @@ import { CounterTokenType, StatusTokenType } from "./cards.slice";
 export interface ICardStack {
   controlledBy: string;
   dragging: boolean;
+  shuffling: boolean;
   exhausted: boolean;
   faceup: boolean;
   fill: string;
@@ -33,11 +34,12 @@ export interface ICardsState {
 
 const localStorageState: ICardsState = loadState("liveState")?.cards ?? {};
 
-// Make sure initially, none of the cards are "owned" / "selected"
+// Make sure initially, none of the cards are "owned" / "selected" / "shuffling"
 if (!!localStorageState.cards) {
   localStorageState.cards.forEach((c) => {
     c.controlledBy = "";
     c.selected = false;
+    c.shuffling = false;
   });
 }
 

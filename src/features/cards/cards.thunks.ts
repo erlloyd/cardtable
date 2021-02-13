@@ -12,6 +12,7 @@ import {
   drawCardsOutOfCardStackWithIds,
   pullCardOutOfCardStackWithId,
   replaceCardStack,
+  setStackShuffling,
   startCardMoveWithSplitStackId,
 } from "./cards.actions";
 import { ICardDetails, ICardStack } from "./initialState";
@@ -56,10 +57,19 @@ export const shuffleStack = (
   stacksToShuffle
     .filter((s): s is ICardStack => !!s && s.cardStack.length > 1)
     .forEach((stackToShuffle) => {
+      dispatch(setStackShuffling({ id: stackToShuffle.id, shuffling: true }));
       const shuffledStack = shuffle(stackToShuffle.cardStack);
       dispatch(
         replaceCardStack({ id: stackToShuffle.id, newStack: shuffledStack })
       );
+
+      // We have to do a setTimeout here, because if we do it in this event loop,
+      // the overall change for this card is nothing for the shuffling param
+      setTimeout(() => {
+        dispatch(
+          setStackShuffling({ id: stackToShuffle.id, shuffling: false })
+        );
+      });
     });
 };
 

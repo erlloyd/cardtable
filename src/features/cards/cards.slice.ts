@@ -14,6 +14,7 @@ import {
   drawCardsOutOfCardStackWithIds,
   pullCardOutOfCardStackWithId,
   replaceCardStack,
+  setStackShuffling,
   startCardMoveWithSplitStackId,
 } from "./cards.actions";
 
@@ -374,6 +375,7 @@ const cardsSlice = createSlice({
         x: action.payload.position.x,
         y: action.payload.position.y,
         dragging: false,
+        shuffling: false,
         exhausted: false,
         faceup: true,
         fill: "red",
@@ -544,6 +546,15 @@ const cardsSlice = createSlice({
       }
     });
 
+    builder.addCase(setStackShuffling, (state, action) => {
+      // get the stack to update
+      const stackToUpdate = state.cards.find((c) => c.id === action.payload.id);
+
+      if (!!stackToUpdate) {
+        stackToUpdate.shuffling = action.payload.shuffling;
+      }
+    });
+
     builder.addCase(fetchDecklistById.fulfilled, (state, action) => {
       console.log("got decklist");
       console.log(action);
@@ -554,6 +565,7 @@ const cardsSlice = createSlice({
         x: action.payload.position.x,
         y: action.payload.position.y,
         dragging: false,
+        shuffling: false,
         exhausted: false,
         faceup: true,
         fill: "red",
@@ -590,6 +602,7 @@ const cardsSlice = createSlice({
         x: action.payload.position.x + cardPadding,
         y: action.payload.position.y,
         dragging: false,
+        shuffling: false,
         exhausted: false,
         faceup: true,
         fill: "red",
@@ -613,6 +626,7 @@ const cardsSlice = createSlice({
         x: action.payload.position.x + cardPadding * 2,
         y: action.payload.position.y,
         dragging: false,
+        shuffling: false,
         exhausted: false,
         faceup: true,
         fill: "red",
@@ -638,6 +652,7 @@ const cardsSlice = createSlice({
         x: action.payload.position.x + cardPadding * 3,
         y: action.payload.position.y,
         dragging: false,
+        shuffling: false,
         exhausted: false,
         faceup: true,
         fill: "red",

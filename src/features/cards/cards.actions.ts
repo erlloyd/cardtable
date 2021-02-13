@@ -51,3 +51,8 @@ export const startCardMoveWithSplitStackId = createAction<StartCardMoveWithSplit
 export const replaceCardStack = createAction<ReplaceCardStackPayload>(
   "replaceCardStack"
 );
+
+export const setStackShuffling = createAction<{
+  id: string;
+  shuffling: boolean;
+}>("setStackShuffling");

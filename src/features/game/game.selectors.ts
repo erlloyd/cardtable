@@ -37,6 +37,7 @@ export const getMenuPreviewCard = createSelector(getGame, (game) => {
     },
     selected: false,
     dragging: false,
+    shuffling: false,
     cardStack: [{ jsonId: game.menuPreviewCardJsonId }],
   };
 

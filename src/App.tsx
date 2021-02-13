@@ -199,6 +199,7 @@ class App extends Component<IProps, IState> {
               ] ?? ""
             }
             dragging={card.dragging}
+            shuffling={card.shuffling}
             handleDragStart={this.handleCardDragStart}
             handleDragMove={this.props.cardMove}
             handleDragEnd={this.props.endCardMove}
@@ -236,6 +237,7 @@ class App extends Component<IProps, IState> {
           fill={card.fill}
           selected={false}
           dragging={false}
+          shuffling={false}
           imgUrls={this.getImgUrls(card)}
           typeCode={this.getCardType(card)}
           faceup={card.faceup}
@@ -263,6 +265,7 @@ class App extends Component<IProps, IState> {
             fill={card.fill}
             selected={card.selected}
             dragging={card.dragging}
+            shuffling={card.shuffling}
             handleDragStart={this.handleCardDragStart}
             handleDragMove={this.props.cardMove}
             handleDragEnd={this.props.endCardMove}
@@ -318,6 +321,7 @@ class App extends Component<IProps, IState> {
                 fill={card.fill}
                 selected={false}
                 dragging={false}
+                shuffling={false}
                 imgUrls={imgUrls}
                 typeCode={this.getCardType(card)}
                 faceup={card.faceup}
