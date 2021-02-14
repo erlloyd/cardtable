@@ -57,7 +57,19 @@ const setupConnection = (conn: any, storeAPI: any) => {
 };
 
 export const peerJSMiddleware = (storeAPI: any) => {
-  const cgpPeer = new Peer(undefined, { debug: 0 });
+  const cgpPeer = new Peer(undefined, {
+    debug: 0,
+    config: {
+      iceServers: [
+        { urls: "stun:stun.l.google.com:19302" },
+        {
+          urls: "turn:numb.viagenie.ca",
+          username: "webrtc@live.com",
+          credential: "muazkh",
+        },
+      ],
+    },
+  });
   let activeCon: Peer.DataConnection;
   cgpPeer.on("error", (err) => {
     console.error("*****************Server error");
