@@ -31,7 +31,7 @@ import { CardData } from "./external-api/marvel-card-data";
 import { CARD_PACK_REMAPPING } from "./constants/card-pack-mapping";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import TokenValueModifier from "./TokenValueModifier";
-import playmat from "./images/mvs01_gamemat.png";
+import playmat from "./images/background.png";
 
 const SCALE_BY = 1.02;
 
