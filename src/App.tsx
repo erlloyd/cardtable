@@ -31,6 +31,7 @@ import { CardData } from "./external-api/marvel-card-data";
 import { CARD_PACK_REMAPPING } from "./constants/card-pack-mapping";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import TokenValueModifier from "./TokenValueModifier";
+import playmat from "./images/mvs01_gamemat.png";
 
 const SCALE_BY = 1.02;
 
@@ -125,6 +126,7 @@ interface IState {
   showTokenValueModifier: boolean;
   tokenValueModifierProps: { id: string; tokenType: CounterTokenType } | null;
   tokenValueModifierPosition: Vector2d | null;
+  playmatImage: HTMLImageElement | null;
 }
 class App extends Component<IProps, IState> {
   public stage: Konva.Stage | null = null;
@@ -167,10 +169,18 @@ class App extends Component<IProps, IState> {
       showTokenValueModifier: false,
       tokenValueModifierProps: null,
       tokenValueModifierPosition: null,
+      playmatImage: null,
     };
   }
 
   public componentDidMount() {
+    const image = new Image();
+    image.onload = () => {
+      this.setState({
+        playmatImage: image,
+      });
+    };
+    image.src = playmat;
     this.props.loadCardsData();
   }
 
@@ -386,6 +396,14 @@ class App extends Component<IProps, IState> {
               preventDefault={true}
             >
               <Provider store={store}>
+                <Layer>
+                  <Rect
+                    scale={{ x: 2.25, y: 2.25 }}
+                    width={this.state.playmatImage?.naturalWidth ?? 0}
+                    height={this.state.playmatImage?.naturalHeight ?? 0}
+                    fillPatternImage={this.state.playmatImage ?? undefined}
+                  ></Rect>
+                </Layer>
                 <Layer>
                   {this.props.counters.map((counter) => (
                     <Counter
