@@ -38,6 +38,16 @@ const moveCounterReducer: CaseReducer<
   }
 };
 
+const moveFirstPlayerCounterReducer: CaseReducer<
+  ICountersState,
+  PayloadAction<Vector2d>
+> = (state, action) => {
+  state.firstPlayerCounterPosition = {
+    x: action.payload.x,
+    y: action.payload.y,
+  };
+};
+
 // slice
 const countersSlice = createSlice({
   name: "counters",
@@ -46,11 +56,13 @@ const countersSlice = createSlice({
     updateCounterValue: updateCounterValueReducer,
     removeCounter: removeCounterReducer,
     moveCounter: moveCounterReducer,
+    moveFirstPlayerCounter: moveFirstPlayerCounterReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
-      // TODO: find a way to keep this automatic
       state.counters = action.payload.liveState.present.counters.counters;
+      state.firstPlayerCounterPosition =
+        action.payload.liveState.present.counters.firstPlayerCounterPosition;
     });
 
     builder.addCase(resetApp, (state, action) => {
@@ -71,6 +83,7 @@ export const {
   updateCounterValue,
   removeCounter,
   moveCounter,
+  moveFirstPlayerCounter,
 } = countersSlice.actions;
 
 export default countersSlice.reducer;

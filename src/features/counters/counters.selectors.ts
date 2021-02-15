@@ -7,3 +7,8 @@ export const getCounters = (state: RootState) =>
 export const getCurrentCounters = createSelector(getCounters, (counters) => {
   return counters.counters;
 });
+
+export const getFirstPlayerTokenPos = createSelector(
+  getCounters,
+  (counters) => counters.firstPlayerCounterPosition
+);

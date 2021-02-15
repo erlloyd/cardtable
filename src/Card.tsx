@@ -318,6 +318,8 @@ class Card extends Component<IProps, IState> {
 
     const card = (
       <Spring
+        key={`${this.props.id}-card`}
+        native={true}
         to={{
           rotation: this.props.exhausted ? 90 : 0,
         }}
@@ -330,8 +332,6 @@ class Card extends Component<IProps, IState> {
                 this.rect = node;
               }
             }}
-            key={`${this.props.id}-card`}
-            native={true}
             cornerRadius={9}
             x={this.props.x}
             y={this.props.y}
@@ -387,6 +387,8 @@ class Card extends Component<IProps, IState> {
     const cardStack =
       (this.props.numCardsInStack || 1) > 1 ? (
         <Spring
+          key={`${this.props.id}-cardStack`}
+          native={true}
           to={{
             rotation: this.props.exhausted ? 90 : 0,
           }}
@@ -394,8 +396,6 @@ class Card extends Component<IProps, IState> {
           {(animatedProps: any) => (
             <animated.Rect
               {...animatedProps}
-              key={`${this.props.id}-cardStack`}
-              native={true}
               cornerRadius={[9, 9, 9, 9]}
               x={this.props.x}
               y={this.props.y}

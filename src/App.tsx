@@ -32,6 +32,7 @@ import { CARD_PACK_REMAPPING } from "./constants/card-pack-mapping";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import TokenValueModifier from "./TokenValueModifier";
 import playmat from "./images/background.png";
+import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
 
 const SCALE_BY = 1.02;
 
@@ -426,6 +427,9 @@ class App extends Component<IProps, IState> {
                     .concat(ghostCards)
                     .concat(movingCards)
                     .concat(previewCards)}
+                </Layer>
+                <Layer>
+                  <FirstPlayerTokenContainer></FirstPlayerTokenContainer>
                 </Layer>
                 <Layer>
                   <Rect

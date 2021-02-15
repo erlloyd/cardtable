@@ -3,6 +3,7 @@ import { loadState } from "../../store/localStorage";
 
 export interface ICountersState {
   counters: ICounter[];
+  firstPlayerCounterPosition: Vector2d;
 }
 
 export interface ICounter {
@@ -16,6 +17,7 @@ const localStorageState: ICountersState =
 
 const defaultState: ICountersState = {
   counters: [],
+  firstPlayerCounterPosition: { x: 0, y: 0 },
 };
 export const initialState: ICountersState = {
   ...defaultState,
