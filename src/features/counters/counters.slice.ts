@@ -67,6 +67,7 @@ const countersSlice = createSlice({
 
     builder.addCase(resetApp, (state, action) => {
       state.counters = [];
+      state.firstPlayerCounterPosition = { x: 0, y: 0 };
     });
 
     builder.addCase(addNewCounterWithId, (state, action) => {
