@@ -71,6 +71,7 @@ export const peerJSMiddleware = (storeAPI: any) => {
     },
   });
   let activeCon: Peer.DataConnection;
+
   cgpPeer.on("error", (err) => {
     console.error("*****************Server error");
     console.error(err);
@@ -83,6 +84,17 @@ export const peerJSMiddleware = (storeAPI: any) => {
   cgpPeer.on("open", (id) => {
     console.log("My peer ID is: " + id);
     storeAPI.dispatch(setPeerId(id));
+
+    //look for query param
+    const remoteParamArray = window.location.href.split("remote=");
+    if (remoteParamArray.length > 1) {
+      const remoteId = remoteParamArray[1].split("&")[0];
+      console.log("FOUND QUERY PARAM. Going to connect to peer " + remoteId);
+      activeCon = cgpPeer.connect(remoteId, {
+        metadata: { ref: myPeerRef },
+      });
+      setupConnection(activeCon, storeAPI);
+    }
   });
 
   cgpPeer.on("connection", (conn) => {
