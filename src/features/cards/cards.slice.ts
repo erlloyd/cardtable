@@ -118,15 +118,15 @@ const toggleSelectCardReducer: CaseReducer<
   });
 };
 
-const exhaustCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
-  state,
-  action
-) => {
+const exhaustCardReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<string | undefined>
+> = (state, action) => {
   state.cards
     .filter(
       (card) =>
         card.controlledBy === (action as any).ACTOR_REF &&
-        (card.id === action.payload || card.selected)
+        (card.id === (action.payload ?? "") || card.selected)
     )
     .forEach((card) => {
       card.exhausted = !card.exhausted;

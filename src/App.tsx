@@ -45,7 +45,7 @@ interface IProps {
   menuPreviewCard: ICardStack | null;
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
   endCardMove: (id: string) => void;
-  exhaustCard: (id: string) => void;
+  exhaustCard: (id?: string) => void;
   selectCard: (payload: { id: string; unselectOtherCards: boolean }) => void;
   unselectCard: (id: string) => void;
   toggleSelectCard: (id: string) => void;
@@ -974,8 +974,18 @@ class App extends Component<IProps, IState> {
       if (!!draggingCard && hasStack) {
         // Check if we're dragging in the upper right corner of the card
         const upperRightPoint = {
-          x: draggingCard.x + cardConstants.CARD_WIDTH / 2,
-          y: draggingCard.y - cardConstants.CARD_HEIGHT / 2,
+          x:
+            draggingCard.x +
+            (draggingCard.exhausted
+              ? cardConstants.CARD_HEIGHT
+              : cardConstants.CARD_WIDTH) /
+              2,
+          y:
+            draggingCard.y -
+            (draggingCard.exhausted
+              ? cardConstants.CARD_WIDTH
+              : cardConstants.CARD_HEIGHT) /
+              2,
         };
         const distance = getDistance(
           upperRightPoint,
@@ -997,6 +1007,8 @@ class App extends Component<IProps, IState> {
       this.props.togglePanMode();
     } else if (code === "f") {
       this.props.flipCards();
+    } else if (code === "e") {
+      this.props.exhaustCard();
     } else if (code === "s") {
       this.props.shuffleStack();
     } else if (!Number.isNaN(intCode)) {
