@@ -125,23 +125,23 @@ export const fetchDecklistById = createAsyncThunk(
     const state: RootState = thunkApi.getState() as RootState;
     const heroCardsData = getCardsDataHeroEntities(state);
     const heroSet = heroCardsData[response.data.investigator_code];
-    const heroSetCode = heroSet.set_code;
+    const heroSetCode = heroSet.extraInfo.setCode;
     const encounterCardsData = getCardsDataEncounterEntities(state);
 
     const heroObligationDeck = Object.entries(encounterCardsData)
       .filter(
         ([_key, value]) =>
-          (value.set_code === `${heroSetCode}` ||
-            value.set_code === `${heroSetCode}_nemesis`) &&
-          value.type_code === "obligation"
+          (value.extraInfo.setCode === `${heroSetCode}` ||
+            value.extraInfo.setCode === `${heroSetCode}_nemesis`) &&
+          value.typeCode === "obligation"
       )
       .map(([key, _value]) => key);
 
     // get the encounter cards for this deck
     const heroEncounterDeckData = Object.values(encounterCardsData).filter(
       (value) =>
-        value.set_code === `${heroSetCode}_nemesis` &&
-        value.type_code !== "obligation"
+        value.extraInfo.setCode === `${heroSetCode}_nemesis` &&
+        value.typeCode !== "obligation"
     );
 
     let heroEncounterDeck: string[] = [];

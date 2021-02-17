@@ -27,7 +27,7 @@ import PeerConnector from "./PeerConnector";
 import { myPeerRef, PlayerColor } from "./constants/app-constants";
 import { ICounter } from "./features/counters/initialState";
 import { MISSING_CARD_IMAGE_MAP } from "./constants/card-missing-image-map";
-import { CardData } from "./external-api/marvel-card-data";
+import { CardData } from "./external-api/common-card-data";
 import { CARD_PACK_REMAPPING } from "./constants/card-pack-mapping";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import TokenValueModifier from "./TokenValueModifier";
@@ -1334,7 +1334,7 @@ class App extends Component<IProps, IState> {
 
     const cardData = this.props.cardsData[card.cardStack[0].jsonId];
 
-    return cardData?.type_code ?? "";
+    return cardData?.typeCode ?? "";
   };
 
   private getCardName = (card: ICardStack) => {
@@ -1366,12 +1366,13 @@ class App extends Component<IProps, IState> {
     // get the first two digits
     let codeToUse = card.code;
 
-    if (!faceup && !!card.back_link) {
-      codeToUse = card.back_link;
+    if (!faceup && !!card.backLink) {
+      codeToUse = card.backLink;
     }
 
     const groupCode =
-      CARD_PACK_REMAPPING[card.pack_code] ?? codeToUse.substring(0, 2);
+      CARD_PACK_REMAPPING[card.extraInfo.packCode ?? ""] ??
+      codeToUse.substring(0, 2);
     let cardCode = codeToUse.substring(2);
 
     //trim leading "0" chars
@@ -1383,7 +1384,7 @@ class App extends Component<IProps, IState> {
 
     let cardSuffix = "";
 
-    if (!!card.double_sided) {
+    if (!!card.doubleSided) {
       cardSuffix = faceup ? "A" : "B";
     }
 
@@ -1404,7 +1405,7 @@ class App extends Component<IProps, IState> {
     let cardData: CardData | null = topCardData;
 
     if (!card.faceup) {
-      if (!!topCardData.back_link || !!topCardData.double_sided) {
+      if (!!topCardData.backLink || !!topCardData.doubleSided) {
         urls = [
           this.generateLCGCDNImageUrl(topCardData, card.faceup),
           // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.png`,
@@ -1417,7 +1418,7 @@ class App extends Component<IProps, IState> {
       } else {
         cardData = null;
         urls = [
-          topCardData.faction_code === "encounter"
+          topCardData.extraInfo.factionCode === "encounter"
             ? process.env.PUBLIC_URL +
               "/images/standard/encounter_card_back.png"
             : process.env.PUBLIC_URL + "/images/standard/card_back.png",
@@ -1441,9 +1442,9 @@ class App extends Component<IProps, IState> {
       if (card.faceup) {
         codeForMissingCheck = cardData.code;
       } else {
-        if (!!cardData.back_link) {
-          codeForMissingCheck = cardData.back_link;
-        } else if (cardData.double_sided) {
+        if (!!cardData.backLink) {
+          codeForMissingCheck = cardData.backLink;
+        } else if (cardData.doubleSided) {
           codeForMissingCheck = `${cardData.code}_double_sided_back`;
         }
       }

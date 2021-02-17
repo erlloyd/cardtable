@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { CardData } from "../../external-api/marvel-card-data";
+import { CardData } from "../../external-api/common-card-data";
 import { RootState } from "../../store/rootReducer";
 import { Set } from "../cards-data/initialState";
 
@@ -43,7 +43,7 @@ export const getCardsDataEncounterEntitiesBySetCode = createSelector(
     const setTypesEncounters: { [key: string]: CardData[] } = {};
 
     Object.values(encounterEntities).forEach((encounterCard) => {
-      const setCode = encounterCard.set_code || "unknown";
+      const setCode = encounterCard.extraInfo.setCode || "unknown";
       if (!!setTypesEncounters[setCode]) {
         setTypesEncounters[setCode].push(encounterCard);
       } else {

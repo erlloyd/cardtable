@@ -19,4 +19,5 @@ else
 fi
 
 echo "Creating importable files"
-node scripts/createGeneratedFiles.js
+node scripts/createGeneratedFiles_marvel.js
+node scripts/createGeneratedFiles_lotr.js

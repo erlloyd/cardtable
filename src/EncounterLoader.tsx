@@ -31,7 +31,7 @@ class EncounterLoader extends Component<IProps> {
       let encounterCards: string[] = [];
       value.cards
         // We don't want cards that show up as another card's 'back_link' to be loaded as separate cards
-        .filter((c) => !value.cards.some((oc) => oc.back_link === c.code))
+        .filter((c) => !value.cards.some((oc) => oc.backLink === c.code))
         // Add the number of cards indicated by the quantity field
         .forEach((c) => {
           encounterCards = encounterCards.concat(

@@ -1,4 +1,4 @@
-import { CardData } from "../../external-api/marvel-card-data";
+import { CardData } from "../../external-api/common-card-data";
 
 export interface ICardData {
   [key: string]: CardData;

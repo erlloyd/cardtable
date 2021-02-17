@@ -1,3 +1,5 @@
+export type CardPack = CardData[];
+
 export interface CardData {
   attack?: number | string | null;
   back_link?: string;
