@@ -18,7 +18,7 @@
   },
   "include": ["src"],
   "exclude": [
-    "**/external/marvelsdb-json-data/pack/*",
-    "**/external/ringsteki-json-data/packs/*"
+    "**/external/marvelsdb-json-data/pack/*.json",
+    "**/external/ringsteki-json-data/packs/*.json"
   ]
 }

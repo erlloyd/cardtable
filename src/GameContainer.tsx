@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { ActionCreators } from "redux-undo";
-import App from "./App";
+import Game from "./Game";
 import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
 import { loadCardsData } from "./features/cards-data/cards-data.slice";
 import {
@@ -73,7 +73,7 @@ const mapStateToProps = (state: RootState) => {
   };
 };
 
-const AppContainer = connect(mapStateToProps, {
+const GameContainer = connect(mapStateToProps, {
   cardMove,
   endCardMove,
   exhaustCard,
@@ -108,6 +108,6 @@ const AppContainer = connect(mapStateToProps, {
   drawCardsOutOfCardStack,
   setPreviewCardId,
   clearPreviewCard,
-})(App);
+})(Game);
 
-export default AppContainer;
+export default GameContainer;
