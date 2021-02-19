@@ -17,8 +17,5 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
-  "exclude": [
-    "**/external/marvelsdb-json-data/pack/*.json",
-    "**/external/ringsteki-json-data/packs/*.json"
-  ]
+  "exclude": ["node_modules", "external", "**/*.json", "**/*.json"]
 }

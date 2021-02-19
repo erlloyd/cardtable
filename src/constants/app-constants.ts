@@ -4,7 +4,7 @@ export const myPeerRef = uuidv4();
 
 export enum GameType {
   MarvelChampions = "marvelchampions",
-  LOTR = "lotrlcg",
+  LordOfTheRingsLivingCardGame = "lotrlcg",
 }
 
 export type PlayerColor =

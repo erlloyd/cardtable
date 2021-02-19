@@ -1,7 +1,7 @@
 import { createSlice, CaseReducer } from "@reduxjs/toolkit";
 import { initialState, ICardsDataState } from "./initialState";
 
-import * as PackData from "../../external/generated/packs";
+import * as PackData from "../../generated/packs";
 // import { CardData as CardDataLOTR } from "../../external-api/beorn-json-data";
 import {
   CardData as CardDataMarvel,
@@ -39,7 +39,7 @@ const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
   state.entities = {};
   state.encounterEntities = {};
   const heroPacks = Object.entries(PackData)
-    .filter(([key, value]) => !key.includes("_encounter"))
+    .filter(([key, _value]) => !key.includes("_encounter"))
     .map(([key, value]) => (value as unknown) as CardPackMarvel);
 
   const encounterPacks = Object.entries(PackData)

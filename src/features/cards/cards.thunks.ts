@@ -119,6 +119,12 @@ export const drawCardsOutOfCardStack = (
 export const fetchDecklistById = createAsyncThunk(
   "decklist/fetchByIdStatus",
   async (payload: { decklistId: number; position: Vector2d }, thunkApi) => {
+    const response1 = await axios.get(
+      process.env.PUBLIC_URL + "/json_data/ant.json"
+    );
+
+    console.log(response1);
+
     const response = await axios.get(
       `https://marvelcdb.com/api/public/decklist/${payload.decklistId}`
     );
