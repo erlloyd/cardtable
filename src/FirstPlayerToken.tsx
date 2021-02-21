@@ -1,11 +1,12 @@
 import { Component } from "react";
 import * as React from "react";
 import { Rect } from "react-konva";
-import firstPlayerToken from "./images/first_player_token.png";
 import { Vector2d } from "konva/types/types";
 import { KonvaEventObject } from "konva/types/Node";
+import { GameType } from "./constants/app-constants";
 
 interface IProps {
+  currentGameType: GameType;
   pos: Vector2d;
   updatePos: (newPos: Vector2d) => void;
 }
@@ -30,7 +31,11 @@ class FirstPlayerToken extends Component<IProps, IState> {
         img: image,
       });
     };
-    image.src = firstPlayerToken;
+    image.src =
+      process.env.PUBLIC_URL +
+      "/images/table/first_player_token_" +
+      this.props.currentGameType +
+      ".png";
   }
 
   render() {
@@ -40,6 +45,10 @@ class FirstPlayerToken extends Component<IProps, IState> {
         y={this.props.pos.y}
         draggable={true}
         onDragEnd={this.handleDragEnd}
+        scale={{
+          x: 160 / (this.state.img?.naturalWidth ?? 1),
+          y: 160 / (this.state.img?.naturalWidth ?? 1),
+        }}
         width={this.state.img?.naturalWidth ?? 0}
         height={this.state.img?.naturalHeight ?? 0}
         fillPatternImage={this.state.img ?? undefined}

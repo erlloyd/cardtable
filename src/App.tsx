@@ -3,7 +3,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import React from "react";
 import { GameType } from "./constants/app-constants";
 import GameContainer from "./GameContainer";
-
+import "./App.scss";
 interface IProps {
   activeGameType: GameType | null;
   updateActiveGameType: (val: GameType) => void;
@@ -11,7 +11,7 @@ interface IProps {
 
 const App = (props: IProps) => {
   return !!props.activeGameType ? (
-    <GameContainer></GameContainer>
+    <GameContainer currentGameType={props.activeGameType}></GameContainer>
   ) : (
     renderGamePicker(props)
   );
@@ -31,7 +31,7 @@ const camelCaseToSpaces = (str: string) => {
 
 const renderGamePicker = (props: IProps) => {
   return (
-    <div>
+    <div className="game-picker">
       <Autocomplete
         id="game-picker"
         options={Object.entries(GameType).map(([key, value]) => {

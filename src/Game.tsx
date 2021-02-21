@@ -24,19 +24,20 @@ import { getCenter, getDistance } from "./utilities/geo";
 import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
 import Counter from "./Counter";
 import PeerConnector from "./PeerConnector";
-import { myPeerRef, PlayerColor } from "./constants/app-constants";
+import { GameType, myPeerRef, PlayerColor } from "./constants/app-constants";
 import { ICounter } from "./features/counters/initialState";
 import { MISSING_CARD_IMAGE_MAP } from "./constants/card-missing-image-map";
 import { CardData } from "./external-api/common-card-data";
 import { CARD_PACK_REMAPPING } from "./constants/card-pack-mapping";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import TokenValueModifier from "./TokenValueModifier";
-import playmat from "./images/background.png";
 import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
+import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 
 const SCALE_BY = 1.02;
 
 interface IProps {
+  currentGameType: GameType;
   cards: ICardsState;
   cardsData: ICardData;
   gameState: IGameState;
@@ -183,7 +184,11 @@ class Game extends Component<IProps, IState> {
         playmatImage: image,
       });
     };
-    image.src = playmat;
+    image.src =
+      process.env.PUBLIC_URL +
+      "/images/table/background_" +
+      this.props.currentGameType +
+      ".jpg";
     this.props.loadCardsData();
     this.props.allJsonData("");
   }
@@ -402,7 +407,10 @@ class Game extends Component<IProps, IState> {
               <Provider store={store}>
                 <Layer>
                   <Rect
-                    scale={{ x: 2.25, y: 2.25 }}
+                    scale={{
+                      x: 2880 / (this.state.playmatImage?.naturalWidth ?? 1),
+                      y: 2880 / (this.state.playmatImage?.naturalWidth ?? 1),
+                    }}
                     width={this.state.playmatImage?.naturalWidth ?? 0}
                     height={this.state.playmatImage?.naturalHeight ?? 0}
                     fillPatternImage={this.state.playmatImage ?? undefined}
@@ -432,7 +440,9 @@ class Game extends Component<IProps, IState> {
                     .concat(previewCards)}
                 </Layer>
                 <Layer>
-                  <FirstPlayerTokenContainer></FirstPlayerTokenContainer>
+                  <FirstPlayerTokenContainer
+                    currentGameType={this.props.currentGameType}
+                  ></FirstPlayerTokenContainer>
                 </Layer>
                 <Layer>
                   <Rect
@@ -474,7 +484,8 @@ class Game extends Component<IProps, IState> {
 
     return (
       <div>
-        Right click and select 'Load Deck ID' to load a deck from marvelcdb.com
+        Right click and select 'Load Deck ID' to load a deck from{" "}
+        {GamePropertiesMap[this.props.currentGameType].deckSite}
       </div>
     );
   };
