@@ -1,5 +1,9 @@
 import { Vector2d } from "konva/types/types";
-import { myPeerRef, PlayerColor } from "../../constants/app-constants";
+import {
+  GameType,
+  myPeerRef,
+  PlayerColor,
+} from "../../constants/app-constants";
 import { loadState } from "../../store/localStorage";
 
 export interface IPreviewCard {
@@ -13,6 +17,7 @@ export interface IGameState {
   peerId: string;
   previewCard: IPreviewCard | null;
   menuPreviewCardJsonId: string | null;
+  activeGameType: GameType | null;
 }
 
 const localStorageState: IGameState = loadState("game");
@@ -29,6 +34,7 @@ const defaultState: IGameState = {
   peerId: "",
   previewCard: null,
   menuPreviewCardJsonId: null,
+  activeGameType: null,
 };
 export const initialState: IGameState = {
   ...defaultState,

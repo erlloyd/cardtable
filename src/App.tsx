@@ -1,16 +1,20 @@
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import React, { useState } from "react";
+import React from "react";
 import { GameType } from "./constants/app-constants";
 import GameContainer from "./GameContainer";
 
-const App = () => {
-  // Declare a new state variable, which we'll call "count"
-  const [gameType, setGameType] = useState<GameType | null>(
-    GameType.MarvelChampions
-  );
+interface IProps {
+  activeGameType: GameType | null;
+  updateActiveGameType: (val: GameType) => void;
+}
 
-  return !!gameType ? <GameContainer></GameContainer> : renderGamePicker();
+const App = (props: IProps) => {
+  return !!props.activeGameType ? (
+    <GameContainer></GameContainer>
+  ) : (
+    renderGamePicker(props)
+  );
 };
 
 const camelCaseToSpaces = (str: string) => {
@@ -25,7 +29,7 @@ const camelCaseToSpaces = (str: string) => {
   );
 };
 
-const renderGamePicker = () => {
+const renderGamePicker = (props: IProps) => {
   return (
     <div>
       <Autocomplete
@@ -35,7 +39,9 @@ const renderGamePicker = () => {
         })}
         getOptionLabel={(option) => camelCaseToSpaces(option.key)}
         style={{ width: 300 }}
-        onChange={(_e, value) => console.log(value?.value)}
+        onChange={(_e, value) => {
+          if (!!value) props.updateActiveGameType(value.value);
+        }}
         renderInput={(params) => (
           <TextField {...params} label="Choose Game" variant="outlined" />
         )}

@@ -1,7 +1,7 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { CardData } from "../../external-api/common-card-data";
 import { RootState } from "../../store/rootReducer";
-import { Set } from "../cards-data/initialState";
+import { ICardsDataState, Set } from "../cards-data/initialState";
 
 export interface IEncounterEntity {
   setCode: string;
@@ -9,31 +9,45 @@ export interface IEncounterEntity {
   cards: CardData[];
 }
 
+const getCurrentCardData = (cardsData: ICardsDataState) => {
+  return (
+    cardsData.data[cardsData.activeDataType] ?? {
+      entities: {},
+      encounterEntities: {},
+      setData: {},
+    }
+  );
+};
+
 export const getCardsData = (state: RootState) => state.cardsData;
 
 export const getCardsDataEntities = createSelector(
   getCardsData,
   (cardsData) => {
-    return { ...cardsData.entities, ...cardsData.encounterEntities };
+    const data = getCurrentCardData(cardsData);
+    return { ...data.entities, ...data.encounterEntities };
   }
 );
 
 export const getCardsDataHeroEntities = createSelector(
   getCardsData,
   (cardsData) => {
-    return cardsData.entities;
+    const data = getCurrentCardData(cardsData);
+    return data.entities;
   }
 );
 
 export const getCardsDataEncounterEntities = createSelector(
   getCardsData,
   (cardsData) => {
-    return cardsData.encounterEntities;
+    const data = getCurrentCardData(cardsData);
+    return data.encounterEntities;
   }
 );
 
 export const getCardsDataSetData = createSelector(getCardsData, (cardsData) => {
-  return cardsData.setData;
+  const data = getCurrentCardData(cardsData);
+  return data.setData;
 });
 
 export const getCardsDataEncounterEntitiesBySetCode = createSelector(

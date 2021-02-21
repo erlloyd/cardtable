@@ -57,6 +57,7 @@ interface IProps {
   togglePanMode: () => void;
   flipCards: () => void;
   loadCardsData: () => void;
+  allJsonData: (payload: any) => void;
   shuffleStack: (id?: string) => void;
   fetchDecklistById: (payload: {
     decklistId: number;
@@ -99,6 +100,7 @@ interface IProps {
     [key: string]: { ownerRef: string; card: ICardStack | null };
   };
   drawCardsOutOfCardStack: (payload: DrawCardsOutOfCardStackPayload) => void;
+  quitGame: () => void;
 }
 
 interface IState {
@@ -183,6 +185,7 @@ class Game extends Component<IProps, IState> {
     };
     image.src = playmat;
     this.props.loadCardsData();
+    this.props.allJsonData("");
   }
 
   public render() {
@@ -1303,6 +1306,13 @@ class Game extends Component<IProps, IState> {
         },
       },
       { label: "Reset Game", action: this.props.resetApp },
+      {
+        label: "Quit Game",
+        action: () => {
+          this.props.quitGame();
+          this.props.resetApp();
+        },
+      },
       {
         label: "Connect to Remote Game",
         action: () => {

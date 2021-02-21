@@ -54,3 +54,11 @@ export interface CardData {
   RingsDbVotes: number;
   Categories: any | null;
 }
+
+export interface CardPack {
+  Abbreviation: string;
+  Cycle: string;
+  Name: string;
+  SetType: string;
+  cards: CardData[];
+}

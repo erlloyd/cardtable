@@ -1,6 +1,6 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/types/types";
-import { PlayerColor } from "../../constants/app-constants";
+import { GameType, PlayerColor } from "../../constants/app-constants";
 import { resetApp } from "../../store/global.actions";
 import { IGameState, initialState } from "./initialState";
 
@@ -68,6 +68,17 @@ const clearMenuPreviewCardJsonIdReducer: CaseReducer<IGameState> = (state) => {
 
 const requestResyncReducer: CaseReducer<IGameState> = () => {};
 
+const updateActiveGameTypeReducer: CaseReducer<
+  IGameState,
+  PayloadAction<GameType>
+> = (state, action) => {
+  state.activeGameType = action.payload;
+};
+
+const quitGameReducer: CaseReducer<IGameState> = (state) => {
+  state.activeGameType = null;
+};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -83,6 +94,8 @@ const gameSlice = createSlice({
     clearPreviewCard: clearPreviewCardReducer,
     setMenuPreviewCardJsonId: setMenuPreviewCardJsonIdReducer,
     clearMenuPreviewCardJsonId: clearMenuPreviewCardJsonIdReducer,
+    updateActiveGameType: updateActiveGameTypeReducer,
+    quitGame: quitGameReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(resetApp, (state, action) => {
@@ -104,6 +117,8 @@ export const {
   clearPreviewCard,
   setMenuPreviewCardJsonId,
   clearMenuPreviewCardJsonId,
+  updateActiveGameType,
+  quitGame,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

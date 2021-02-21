@@ -33,6 +33,7 @@ import {
   shuffleStack,
   drawCardsOutOfCardStack,
 } from "./features/cards/cards.thunks";
+import { allJsonData } from "./features/cards-data/cards-data.thunks";
 import {
   getGame,
   getMenuPreviewCard,
@@ -46,6 +47,7 @@ import {
   requestResync,
   setPreviewCardId,
   clearPreviewCard,
+  quitGame,
 } from "./features/game/game.slice";
 
 import {
@@ -78,6 +80,7 @@ const GameContainer = connect(mapStateToProps, {
   endCardMove,
   exhaustCard,
   loadCardsData,
+  allJsonData,
   selectCard,
   unselectCard,
   toggleSelectCard,
@@ -108,6 +111,7 @@ const GameContainer = connect(mapStateToProps, {
   drawCardsOutOfCardStack,
   setPreviewCardId,
   clearPreviewCard,
+  quitGame,
 })(Game);
 
 export default GameContainer;

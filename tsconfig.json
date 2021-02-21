@@ -17,5 +17,11 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "external", "**/*.json", "**/*.json"]
+  "exclude": [
+    "node_modules",
+    "external",
+    "**/external/**/*.js",
+    "**/*.json",
+    "**/*.json"
+  ]
 }

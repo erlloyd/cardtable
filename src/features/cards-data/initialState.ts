@@ -1,3 +1,4 @@
+import { GameType } from "../../constants/app-constants";
 import { CardData } from "../../external-api/common-card-data";
 
 export interface ICardData {
@@ -14,13 +15,16 @@ export interface ISetData {
 }
 
 export interface ICardsDataState {
+  activeDataType: GameType;
+  data: { [key in GameType]?: IGameCardsDataState };
+}
+export interface IGameCardsDataState {
   entities: ICardData;
   encounterEntities: ICardData;
   setData: ISetData;
 }
 
 export const initialState: ICardsDataState = {
-  entities: {},
-  encounterEntities: {},
-  setData: {},
+  activeDataType: GameType.MarvelChampions,
+  data: {},
 };
