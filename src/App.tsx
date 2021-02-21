@@ -32,6 +32,7 @@ const camelCaseToSpaces = (str: string) => {
 const renderGamePicker = (props: IProps) => {
   return (
     <div className="game-picker">
+      <h1>Card Game Playground</h1>
       <Autocomplete
         id="game-picker"
         options={Object.entries(GameType).map(([key, value]) => {
