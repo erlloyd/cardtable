@@ -467,7 +467,8 @@ class Card extends Component<IProps, IState> {
   ) {
     const textOffset = { x: offset.x - 10, y: offset.y - 20 };
     const textItem =
-      this.state.imageLoadFailed === this.props.imgUrls.length ? (
+      this.state.imageLoadFailed === this.props.imgUrls.length &&
+      this.state.imageLoadFailed !== 0 ? (
         <Text
           key={`${this.props.id}-cardnametext`}
           offset={textOffset}

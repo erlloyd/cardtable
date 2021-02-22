@@ -61,6 +61,8 @@ const convertLOTRToCommonFormat = (cardLOTRFormat: CardDataLOTR): CardData => {
   //   );
   // }
 
+  let cardBackImage = cardLOTRFormat.Back?.ImagePath;
+
   if (cardLOTRFormat.Back && !cardLOTRFormat.Back.ImagePath) {
     const frontImage = cardLOTRFormat.Front.ImagePath;
     const frontImageWithoutExtension = frontImage
@@ -73,15 +75,17 @@ const convertLOTRToCommonFormat = (cardLOTRFormat: CardDataLOTR): CardData => {
       console.log(
         `No Non-B Back Image Path for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`
       );
+    } else {
+      cardBackImage = frontImage.replaceAll("A.", "B.");
     }
   }
 
   const mappedCardData: CardData = {
-    code: cardLOTRFormat.Slug,
+    code: cardLOTRFormat.RingsDbCardId,
     name: cardLOTRFormat.Title,
     images: {
       front: cardLOTRFormat.Front.ImagePath,
-      back: cardLOTRFormat.Back?.ImagePath ?? null,
+      back: cardBackImage ?? null,
     },
     octgnId: cardLOTRFormat.OctgnGuid ?? null,
     quantity: cardLOTRFormat.Quantity ?? 1,
@@ -169,17 +173,24 @@ const storeCardData = (isPlayerPack: boolean) => (cs: {
   const stateLocation = isPlayerPack
     ? (cs.location as IGameCardsDataState).entities
     : (cs.location as IGameCardsDataState).encounterEntities;
-  if (stateLocation[cs.card.code]) {
-    console.error(
-      "Found multiple cards with code " + cs.card.code + " " + cs.card.name
-    );
-  }
 
   // if (!card.octgn_id) {
   //   console.error(`Card ${card.code} had no octgn_id!`);
   // }
 
-  stateLocation[cs.card.code] = cs.card;
+  if (!(cs.card.code[0] === "0" && cs.card.code[1] === "0")) {
+    if (stateLocation[cs.card.code]) {
+      console.error(
+        "Found multiple cards with code " +
+          cs.card.code +
+          " " +
+          cs.card.name +
+          " " +
+          cs.card.extraInfo.setCode
+      );
+    }
+    stateLocation[cs.card.code] = cs.card;
+  }
 };
 
 const loadCardsDataForPackReducer: CaseReducer<

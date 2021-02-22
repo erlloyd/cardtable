@@ -22,7 +22,6 @@ export const allJsonData = (): ThunkAction<
     lotrPackList.map((pack) => getSpecificLOTRPack(pack))
   );
 
-  console.log(resultsList);
   resultsList.forEach((result) => {
     if (result.res.status === 200) {
       dispatch(

@@ -1,5 +1,7 @@
 import { GameType } from "../../constants/app-constants";
 import { CardData } from "../../external-api/common-card-data";
+import { loadState } from "../../store/localStorage";
+import { IGameState } from "../game/initialState";
 
 export interface ICardData {
   [key: string]: CardData;
@@ -24,7 +26,9 @@ export interface IGameCardsDataState {
   setData: ISetData;
 }
 
+const localGameState: IGameState = loadState("game");
+
 export const initialState: ICardsDataState = {
-  activeDataType: GameType.MarvelChampions,
+  activeDataType: localGameState.activeGameType ?? GameType.MarvelChampions,
   data: {},
 };

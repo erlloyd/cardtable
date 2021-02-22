@@ -15,20 +15,23 @@ const doWork = async () => {
     await mkdirp(outputDir);
     console.log("reading input folder");
     const files = await readdir(inputFolder);
-    const filesWithCodes = files.map((fname) => ({
-      fname,
-      code: fname
-        .split(".")[0]
-        .toLocaleLowerCase()
-        .split(" ")
-        .join("_")
-        .replace(/'/g, "")
-        .replace(/:/g, "")
-        .replace(/-/g, "_")
-        .replace(/,/g, ""),
-    }));
+    const filesWithCodes = files
+      .filter((fname) => fname.indexOf("reorder") === -1)
+      // .filter((fname) => fname.indexOf("reorder" === -1))
+      .map((fname) => ({
+        fname,
+        code: fname
+          .split(".")[0]
+          .toLocaleLowerCase()
+          .split(" ")
+          .join("_")
+          .replace(/'/g, "")
+          .replace(/:/g, "")
+          .replace(/-/g, "_")
+          .replace(/,/g, ""),
+      }));
 
-    console.log(`found ${files.length} number of files`);
+    console.log(`found ${filesWithCodes.length} number of files`);
 
     fs.writeFileSync(outputFile2, "", (e) => {
       if (!!e) console.log(e);

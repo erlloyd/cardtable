@@ -61,6 +61,7 @@ interface IProps {
   allJsonData: (payload: any) => void;
   shuffleStack: (id?: string) => void;
   fetchDecklistById: (payload: {
+    gameType: GameType;
     decklistId: number;
     position: Vector2d;
   }) => void;
@@ -646,7 +647,11 @@ class Game extends Component<IProps, IState> {
 
   private handleImportDeck = (position: Vector2d) => (id: number) => {
     this.clearDeckImporter();
-    this.props.fetchDecklistById({ decklistId: id, position });
+    this.props.fetchDecklistById({
+      gameType: this.props.currentGameType,
+      decklistId: id,
+      position,
+    });
   };
 
   private handlePeerConnect = (peerId: string) => {
@@ -1420,10 +1425,27 @@ class Game extends Component<IProps, IState> {
     const topCardData = this.props.cardsData[card.cardStack[0].jsonId];
 
     if (!topCardData) {
-      return [`https://lcgcdn.s3.amazonaws.com/mc/NOPE.jpg`];
+      return [];
     }
 
     let cardData: CardData | null = topCardData;
+
+    if (!!cardData.images) {
+      if (!card.faceup) {
+        if (!cardData.images.back) {
+          return [
+            process.env.PUBLIC_URL +
+              "/images/standard/card_back_" +
+              this.props.currentGameType +
+              ".png",
+          ];
+        } else {
+          return [cardData.images.back];
+        }
+      } else {
+        return [cardData.images.front];
+      }
+    }
 
     if (!card.faceup) {
       if (!!topCardData.backLink || !!topCardData.doubleSided) {
@@ -1441,8 +1463,13 @@ class Game extends Component<IProps, IState> {
         urls = [
           topCardData.extraInfo.factionCode === "encounter"
             ? process.env.PUBLIC_URL +
-              "/images/standard/encounter_card_back.png"
-            : process.env.PUBLIC_URL + "/images/standard/card_back.png",
+              "/images/standard/encounter_card_back_" +
+              this.props.currentGameType +
+              ".png"
+            : process.env.PUBLIC_URL +
+              "/images/standard/card_back_" +
+              this.props.currentGameType +
+              ".png",
         ];
       }
     } else {
