@@ -17,7 +17,6 @@ const doWork = async () => {
     const files = await readdir(inputFolder);
     const filesWithCodes = files
       .filter((fname) => fname.indexOf("reorder") === -1)
-      // .filter((fname) => fname.indexOf("reorder" === -1))
       .map((fname) => ({
         fname,
         code: fname
