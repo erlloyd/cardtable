@@ -62,3 +62,20 @@ export interface CardPack {
   SetType: string;
   cards: CardData[];
 }
+
+export interface ScenarioCard {
+  EncounterSet: string;
+  Title: string;
+  Slug: string;
+  NormalQuantity: number;
+  EasyQuantity: number;
+  NightmareQuantity: number;
+}
+
+export interface Scenario {
+  Title: string;
+  Slug: string;
+  Product: string;
+  Number: number;
+  AllCards: CardData[];
+}

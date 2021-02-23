@@ -50,6 +50,21 @@ export const getCardsDataSetData = createSelector(getCardsData, (cardsData) => {
   return data.setData;
 });
 
+export const getCardsDataSetDataAsEncounterEntities = createSelector(
+  getCardsDataSetData,
+  (setData) => {
+    return Object.entries(setData).map(([key, value]) => {
+      const encounterEntity: IEncounterEntity = {
+        setCode: key,
+        setData: value,
+        cards: [],
+      };
+
+      return encounterEntity;
+    });
+  }
+);
+
 export const getCardsDataEncounterEntitiesBySetCode = createSelector(
   getCardsDataEncounterEntities,
   getCardsDataSetData,

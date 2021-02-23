@@ -49,7 +49,9 @@ const convertMarvelToCommonFormat = (
   return mappedCardData;
 };
 
-const convertLOTRToCommonFormat = (cardLOTRFormat: CardDataLOTR): CardData => {
+const convertLOTRToCommonFormat = (useSlugForCode: boolean) => (
+  cardLOTRFormat: CardDataLOTR
+): CardData => {
   // if (!cardLOTRFormat.RingsDbCardId) {
   //   console.log(
   //     `No RingsDB Id for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`
@@ -82,7 +84,7 @@ const convertLOTRToCommonFormat = (cardLOTRFormat: CardDataLOTR): CardData => {
   }
 
   const mappedCardData: CardData = {
-    code: cardLOTRFormat.RingsDbCardId,
+    code: useSlugForCode ? cardLOTRFormat.Slug : cardLOTRFormat.RingsDbCardId,
     name: cardLOTRFormat.Title,
     images: {
       front: cardLOTRFormat.Front.ImagePath,
@@ -160,6 +162,7 @@ const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
       activeData.setData[set.code] = {
         name: set.name,
         setTypeCode: set.card_set_type_code,
+        cardsInSet: [],
       };
     }
   });
@@ -182,6 +185,7 @@ const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
       activeData.setData[scenario.Slug] = {
         name: scenario.Title,
         setTypeCode: scenario.Product,
+        cardsInSet: [],
       };
     }
   });
@@ -189,7 +193,7 @@ const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
   return state;
 };
 
-const storeCardData = (isPlayerPack: boolean) => (cs: {
+const storeCardData = (isPlayerPack: boolean, careAboutDups: boolean) => (cs: {
   location: Draft<IGameCardsDataState> | undefined;
   card: CardData;
 }) => {
@@ -203,17 +207,55 @@ const storeCardData = (isPlayerPack: boolean) => (cs: {
 
   if (!(cs.card.code[0] === "0" && cs.card.code[1] === "0")) {
     if (stateLocation[cs.card.code]) {
-      console.error(
-        "Found multiple cards with code " +
-          cs.card.code +
-          " " +
-          cs.card.name +
-          " " +
-          cs.card.extraInfo.setCode
-      );
+      if (careAboutDups) {
+        console.error(
+          "Found multiple cards with code " +
+            cs.card.code +
+            " " +
+            cs.card.name +
+            " " +
+            cs.card.extraInfo.setCode +
+            " Existing card is " +
+            stateLocation[cs.card.code].name +
+            " " +
+            stateLocation[cs.card.code].extraInfo.setCode
+        );
+      }
     }
     stateLocation[cs.card.code] = cs.card;
   }
+};
+
+const loadCardsForEncounterSetReducer: CaseReducer<
+  ICardsDataState,
+  PayloadAction<{
+    setCode: string;
+    cards: CardDataLOTR[];
+  }>
+> = (state, action) => {
+  // const activeData = state.data[state.activeDataType];
+  // const activeSet = activeData?.setData[action.payload.setCode];
+
+  if (!action.payload.cards.map) {
+    console.log("No cards found for scenario " + action.payload.setCode);
+    return;
+  }
+
+  action.payload.cards
+    .map(convertLOTRToCommonFormat(true))
+    .map((c) => {
+      return {
+        location: state.data[GameType.LordOfTheRingsLivingCardGame],
+        card: c,
+      };
+    })
+    .forEach(storeCardData(false, false));
+
+  // if (!!activeSet) {
+  //   activeSet.cardsInSet = activeSet.cardsInSet.concat(action.payload.cards);
+  // }
+
+  return state;
 };
 
 const loadCardsDataForPackReducer: CaseReducer<
@@ -243,7 +285,7 @@ const loadCardsDataForPackReducer: CaseReducer<
       .map((c) => {
         return { location: state.data[action.payload.packType], card: c };
       })
-      .forEach(storeCardData(isHeroPack));
+      .forEach(storeCardData(isHeroPack, true));
   } else if (
     action.payload.packType === GameType.LordOfTheRingsLivingCardGame
   ) {
@@ -252,11 +294,11 @@ const loadCardsDataForPackReducer: CaseReducer<
       console.log(pack);
     }
     pack.cards
-      .map(convertLOTRToCommonFormat)
+      .map(convertLOTRToCommonFormat(false))
       .map((c) => {
         return { location: state.data[action.payload.packType], card: c };
       })
-      .forEach(storeCardData(true));
+      .forEach(storeCardData(true, true));
   }
 
   return state;
@@ -269,6 +311,7 @@ const cardsDataSlice = createSlice({
   reducers: {
     loadCardsData: loadCardsDataReducer,
     loadCardsDataForPack: loadCardsDataForPackReducer,
+    loadCardsForEncounterSet: loadCardsForEncounterSetReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(updateActiveGameType, (state, action) => {
@@ -277,6 +320,10 @@ const cardsDataSlice = createSlice({
   },
 });
 
-export const { loadCardsData, loadCardsDataForPack } = cardsDataSlice.actions;
+export const {
+  loadCardsData,
+  loadCardsDataForPack,
+  loadCardsForEncounterSet,
+} = cardsDataSlice.actions;
 
 export default cardsDataSlice.reducer;

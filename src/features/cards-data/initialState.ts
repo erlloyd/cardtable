@@ -7,9 +7,15 @@ export interface ICardData {
   [key: string]: CardData;
 }
 
+export interface CardInSet {
+  code: string;
+  quantity: number;
+}
+
 export interface Set {
   name: string;
   setTypeCode: string;
+  cardsInSet: CardInSet[];
 }
 
 export interface ISetData {
