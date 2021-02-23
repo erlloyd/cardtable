@@ -3,7 +3,10 @@ import * as React from "react";
 import { IEncounterEntity } from "./features/cards-data/cards-data.selectors";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import TextField from "@material-ui/core/TextField";
+import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
+import { GameType } from "./constants/app-constants";
 interface IProps {
+  currentGameType: GameType;
   encounterData: IEncounterEntity[];
   loadCards: (cards: string[]) => void;
 }
@@ -19,7 +22,13 @@ class EncounterLoader extends Component<IProps> {
           style={{ width: 300 }}
           onChange={this.handleSelected}
           renderInput={(params) => (
-            <TextField {...params} label="Encounter Set" variant="outlined" />
+            <TextField
+              {...params}
+              label={
+                GamePropertiesMap[this.props.currentGameType].encounterUiName
+              }
+              variant="outlined"
+            />
           )}
         />
       </div>

@@ -555,6 +555,7 @@ class Game extends Component<IProps, IState> {
     return (
       <TopLayer position={pos} completed={this.clearEncounterImporter}>
         <EncounterLoaderContainer
+          currentGameType={this.props.currentGameType}
           loadCards={this.handleLoadEncounter(
             this.getRelativePositionFromTarget(this.stage)
           )}
@@ -1305,7 +1306,9 @@ class Game extends Component<IProps, IState> {
         },
       },
       {
-        label: "Load Encounter",
+        label: `Load ${
+          GamePropertiesMap[this.props.currentGameType].encounterUiName
+        }`,
         action: () => {
           this.setState({
             showEncounterImporter: true,

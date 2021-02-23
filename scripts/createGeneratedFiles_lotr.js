@@ -5,6 +5,7 @@ const util = require("util");
 const readdir = util.promisify(fs.readdir);
 
 const inputFolder = "./src/external/ringsteki-json-data/packs/";
+const inputFolderScenarios = "./src/external/ringsteki-json-data/scenarios/";
 const outputDir = "./src/generated";
 const outputFile2 = `${outputDir}/packsList_lotr.ts`;
 const publicFolder = "./public/json_data";
@@ -13,7 +14,7 @@ const doWork = async () => {
   try {
     console.log("create output folder");
     await mkdirp(outputDir);
-    console.log("reading input folder");
+    console.log("reading packs input folder");
     const files = await readdir(inputFolder);
     const filesWithCodes = files
       .filter((fname) => fname.indexOf("reorder") === -1)
@@ -50,6 +51,18 @@ const doWork = async () => {
     });
 
     fs.appendFileSync(outputFile2, "];");
+
+    console.log("Copying scenarios!");
+    const scenarioFiles = await readdir(inputFolderScenarios);
+    scenarioFiles.forEach((fname) => {
+      if (!fs.existsSync(`${publicFolder}/scenarios/`)) {
+        fs.mkdirSync(`${publicFolder}/scenarios/`);
+      }
+      fs.copyFileSync(
+        `${inputFolderScenarios}/${fname}`,
+        `${publicFolder}/scenarios/${fname}`
+      );
+    });
 
     console.log("Done!");
   } catch (e) {

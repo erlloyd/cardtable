@@ -17,6 +17,7 @@ import {
   CardPack as CardPackMarvel,
 } from "../../external-api/marvel-card-data";
 import SetData from "../../external/marvelsdb-json-data/sets.json";
+import Scenarios from "../../external/ringsteki-json-data/scenarios.json";
 import { CardData } from "../../external-api/common-card-data";
 import { GameType } from "../../constants/app-constants";
 import {
@@ -163,6 +164,28 @@ const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
     }
   });
 
+  activeData = state.data[GameType.LordOfTheRingsLivingCardGame];
+
+  if (!!activeData) {
+    activeData.setData = {};
+  } else {
+    state.data[state.activeDataType] = {
+      entities: {},
+      encounterEntities: {},
+      setData: {},
+    };
+    activeData = state.data[state.activeDataType];
+  }
+
+  Scenarios.forEach((scenario) => {
+    if (!!activeData) {
+      activeData.setData[scenario.Slug] = {
+        name: scenario.Title,
+        setTypeCode: scenario.Product,
+      };
+    }
+  });
+
   return state;
 };
 
@@ -225,6 +248,9 @@ const loadCardsDataForPackReducer: CaseReducer<
     action.payload.packType === GameType.LordOfTheRingsLivingCardGame
   ) {
     const pack = action.payload.pack as CardPackLOTR;
+    if (!pack.cards) {
+      console.log(pack);
+    }
     pack.cards
       .map(convertLOTRToCommonFormat)
       .map((c) => {
