@@ -38,15 +38,24 @@ class EncounterLoader extends Component<IProps> {
   private handleSelected = (_event: any, value: IEncounterEntity | null) => {
     if (!!value) {
       let encounterCards: string[] = [];
-      value.cards
+      const filteredCards = value.cards
         // We don't want cards that show up as another card's 'back_link' to be loaded as separate cards
-        .filter((c) => !value.cards.some((oc) => oc.backLink === c.code))
-        // Add the number of cards indicated by the quantity field
-        .forEach((c) => {
-          encounterCards = encounterCards.concat(
-            Array.from({ length: c.quantity }).map((_i) => c.code)
-          );
-        });
+        .filter((c) => !value.cards.some((oc) => oc.backLink === c.code));
+
+      const questCards = filteredCards.filter(
+        (c) => c.typeCode.toLocaleLowerCase() === "quest"
+      );
+      const nonQuestCards = filteredCards.filter(
+        (c) => c.typeCode.toLocaleLowerCase() !== "quest"
+      );
+
+      const totalCards = questCards.concat(nonQuestCards);
+      // Add the number of cards indicated by the quantity field
+      totalCards.forEach((c) => {
+        encounterCards = encounterCards.concat(
+          Array.from({ length: c.quantity }).map((_i) => c.code)
+        );
+      });
       this.props.loadCards(encounterCards);
     }
   };
