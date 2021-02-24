@@ -233,8 +233,8 @@ const loadCardsForEncounterSetReducer: CaseReducer<
     cards: CardDataLOTR[];
   }>
 > = (state, action) => {
-  // const activeData = state.data[state.activeDataType];
-  // const activeSet = activeData?.setData[action.payload.setCode];
+  const activeData = state.data[state.activeDataType];
+  const activeSet = activeData?.setData[action.payload.setCode];
 
   if (!action.payload.cards.map) {
     console.log("No cards found for scenario " + action.payload.setCode);
@@ -251,9 +251,20 @@ const loadCardsForEncounterSetReducer: CaseReducer<
     })
     .forEach(storeCardData(false, false));
 
-  // if (!!activeSet) {
-  //   activeSet.cardsInSet = activeSet.cardsInSet.concat(action.payload.cards);
-  // }
+  if (!!activeSet) {
+    activeSet.cardsInSet = activeSet.cardsInSet.concat(
+      action.payload.cards
+        .filter(
+          (cd) => cd.CardSet.toLocaleLowerCase().indexOf("nightmare") === -1
+        )
+        .map((cd) => {
+          return {
+            code: cd.Slug,
+            quantity: cd.Quantity,
+          };
+        })
+    );
+  }
 
   return state;
 };

@@ -25,14 +25,6 @@ export const allJsonData = (): ThunkAction<
     marvelPackList.map((pack) => getSpecificMarvelPack(pack))
   );
 
-  const resultsListLOTR = await Promise.all(
-    lotrPackList.map((pack) => getSpecificLOTRPack(pack))
-  );
-
-  const resultsListLOTRScenarios = await Promise.all(
-    scenarioListLOTR.map((scenario) => getSpecificLOTRScenario(scenario.Title))
-  );
-
   resultsList.forEach((result) => {
     if (result.res.status === 200) {
       dispatch(
@@ -47,6 +39,10 @@ export const allJsonData = (): ThunkAction<
     }
   });
 
+  const resultsListLOTR = await Promise.all(
+    lotrPackList.map((pack) => getSpecificLOTRPack(pack))
+  );
+
   resultsListLOTR.forEach((result) => {
     if (result.res.status === 200) {
       dispatch(
@@ -60,6 +56,10 @@ export const allJsonData = (): ThunkAction<
       console.error("Failed to load some json data");
     }
   });
+
+  const resultsListLOTRScenarios = await Promise.all(
+    scenarioListLOTR.map((scenario) => getSpecificLOTRScenario(scenario.Title))
+  );
 
   resultsListLOTRScenarios.forEach((result) => {
     if (result.status === 200) {

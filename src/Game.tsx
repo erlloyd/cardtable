@@ -1363,7 +1363,7 @@ class Game extends Component<IProps, IState> {
 
     const cardData = this.props.cardsData[card.cardStack[0].jsonId];
 
-    return cardData?.typeCode ?? "";
+    return (cardData?.typeCode ?? "").toLocaleLowerCase();
   };
 
   private getCardName = (card: ICardStack) => {

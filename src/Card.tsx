@@ -10,7 +10,7 @@ import CardTokensContainer from "./CardTokensContainer";
 import { myPeerRef, PlayerColor } from "./constants/app-constants";
 import { cardConstants } from "./constants/card-constants";
 
-export const HORIZONTAL_TYPE_CODES = ["main_scheme", "side_scheme"];
+export const HORIZONTAL_TYPE_CODES = ["main_scheme", "side_scheme", "quest"];
 
 export interface CardTokens {
   damage: number;
@@ -537,7 +537,7 @@ class Card extends Component<IProps, IState> {
     type: string,
     typeCodes: string[]
   ): boolean {
-    return typeCodes.includes(type) && !this.plainCardBack;
+    return typeCodes.includes(type.toLocaleLowerCase()) && !this.plainCardBack;
   }
 
   private get plainCardBack() {

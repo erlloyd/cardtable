@@ -52,12 +52,13 @@ export const getCardsDataSetData = createSelector(getCardsData, (cardsData) => {
 
 export const getCardsDataSetDataAsEncounterEntities = createSelector(
   getCardsDataSetData,
-  (setData) => {
+  getCardsDataEncounterEntities,
+  (setData, encounterEntities) => {
     return Object.entries(setData).map(([key, value]) => {
       const encounterEntity: IEncounterEntity = {
         setCode: key,
         setData: value,
-        cards: [],
+        cards: value.cardsInSet.map((cis) => encounterEntities[cis.code]),
       };
 
       return encounterEntity;
