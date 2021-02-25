@@ -1,7 +1,7 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/types/types";
 import { GameType, PlayerColor } from "../../constants/app-constants";
-import { resetApp } from "../../store/global.actions";
+import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import { IGameState, initialState } from "./initialState";
 
 // Reducers
@@ -98,6 +98,9 @@ const gameSlice = createSlice({
     quitGame: quitGameReducer,
   },
   extraReducers: (builder) => {
+    builder.addCase(receiveRemoteGameState, (state, action) => {
+      state.activeGameType = action.payload.game.activeGameType;
+    });
     builder.addCase(resetApp, (state, action) => {
       state.stagePosition = { x: 0, y: 0 };
       state.stageZoom = { x: 0.5, y: 0.5 };

@@ -25,6 +25,7 @@ import {
   CardData as CardDataLOTR,
 } from "../../external-api/beorn-json-data";
 import { updateActiveGameType } from "../game/game.slice";
+import { receiveRemoteGameState } from "../../store/global.actions";
 
 // Utilities
 const convertMarvelToCommonFormat = (
@@ -325,6 +326,10 @@ const cardsDataSlice = createSlice({
     loadCardsForEncounterSet: loadCardsForEncounterSetReducer,
   },
   extraReducers: (builder) => {
+    builder.addCase(receiveRemoteGameState, (state, action) => {
+      state.activeDataType =
+        action.payload.game.activeGameType ?? GameType.MarvelChampions;
+    });
     builder.addCase(updateActiveGameType, (state, action) => {
       state.activeDataType = action.payload;
     });
