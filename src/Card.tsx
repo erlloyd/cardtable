@@ -7,8 +7,9 @@ import { Component } from "react";
 import { Rect, Text } from "react-konva";
 import { animated, Spring } from "react-spring/renderprops-konva";
 import CardTokensContainer from "./CardTokensContainer";
-import { myPeerRef, PlayerColor } from "./constants/app-constants";
+import { GameType, myPeerRef, PlayerColor } from "./constants/app-constants";
 import { cardConstants } from "./constants/card-constants";
+import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 
 export const HORIZONTAL_TYPE_CODES = ["main_scheme", "side_scheme", "quest"];
 
@@ -26,6 +27,7 @@ export interface CardUIState {
 }
 
 interface IProps {
+  currentGameType: GameType;
   name: string;
   code: string;
   selectedColor: PlayerColor;
@@ -143,9 +145,10 @@ class Card extends Component<IProps, IState> {
       }
     };
 
-    if (!!props.cardState?.stunned) {
-      this.stunnedImg.src =
-        process.env.PUBLIC_URL + "/images/standard/stunned.png";
+    const tokenInfo = GamePropertiesMap[props.currentGameType].tokens;
+
+    if (!!props.cardState?.stunned && !!tokenInfo.stunned) {
+      this.stunnedImg.src = tokenInfo.stunned.imagePath;
     }
 
     // CONFUSED
@@ -161,9 +164,8 @@ class Card extends Component<IProps, IState> {
       }
     };
 
-    if (!!props.cardState?.confused) {
-      this.confusedImg.src =
-        process.env.PUBLIC_URL + "/images/standard/confused.png";
+    if (!!props.cardState?.confused && !!tokenInfo.confused) {
+      this.confusedImg.src = tokenInfo.confused.imagePath;
     }
 
     // TOUGH
@@ -179,8 +181,8 @@ class Card extends Component<IProps, IState> {
       }
     };
 
-    if (!!props.cardState?.tough) {
-      this.toughImg.src = process.env.PUBLIC_URL + "/images/standard/tough.png";
+    if (!!props.cardState?.tough && !!tokenInfo.tough) {
+      this.toughImg.src = tokenInfo.tough.imagePath;
     }
   }
 
@@ -207,33 +209,36 @@ class Card extends Component<IProps, IState> {
       this.initCardImages(this.props);
     }
 
+    const tokenInfo = GamePropertiesMap[this.props.currentGameType].tokens;
+
     // STUNNED
     if (
       !this.state.tokenImagesLoaded.stunned &&
       !prevProps.cardState?.stunned &&
-      !!this.props.cardState?.stunned
+      !!this.props.cardState?.stunned &&
+      !!tokenInfo.stunned
     ) {
-      this.stunnedImg.src =
-        process.env.PUBLIC_URL + "/images/standard/stunned.png";
+      this.stunnedImg.src = tokenInfo.stunned.imagePath;
     }
 
     // CONFUSED
     if (
       !this.state.tokenImagesLoaded.confused &&
       !prevProps.cardState?.confused &&
-      !!this.props.cardState?.confused
+      !!this.props.cardState?.confused &&
+      !!tokenInfo.confused
     ) {
-      this.confusedImg.src =
-        process.env.PUBLIC_URL + "/images/standard/confused.png";
+      this.confusedImg.src = tokenInfo.confused.imagePath;
     }
 
     // TOUGH
     if (
       !this.state.tokenImagesLoaded.tough &&
       !prevProps.cardState?.tough &&
-      !!this.props.cardState?.tough
+      !!this.props.cardState?.tough &&
+      !!tokenInfo.tough
     ) {
-      this.toughImg.src = process.env.PUBLIC_URL + "/images/standard/tough.png";
+      this.toughImg.src = tokenInfo.tough.imagePath;
     }
   }
 

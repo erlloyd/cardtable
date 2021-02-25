@@ -200,6 +200,7 @@ class Game extends Component<IProps, IState> {
       .map((card) => {
         return (
           <Card
+            currentGameType={this.props.currentGameType}
             code={this.getCardCode(card)}
             name={this.getCardName(card)}
             selectedColor={
@@ -245,6 +246,7 @@ class Game extends Component<IProps, IState> {
     const ghostCards = this.props.cards.ghostCards.map((card) => {
       return (
         <Card
+          currentGameType={this.props.currentGameType}
           name={this.getCardName(card)}
           code={this.getCardCode(card)}
           selectedColor={this.props.playerColors[card.controlledBy] ?? "black"}
@@ -271,6 +273,7 @@ class Game extends Component<IProps, IState> {
       .map((card) => {
         return (
           <Card
+            currentGameType={this.props.currentGameType}
             name={this.getCardName(card)}
             code={this.getCardCode(card)}
             selectedColor={
@@ -327,6 +330,7 @@ class Game extends Component<IProps, IState> {
               (url) => url.indexOf("card_back") !== -1
             ) ? null : (
               <Card
+                currentGameType={this.props.currentGameType}
                 name={this.getCardName(card)}
                 code={this.getCardCode(card)}
                 selectedColor={
@@ -838,38 +842,53 @@ class Game extends Component<IProps, IState> {
       });
     }
 
-    menuItems.push({
-      label: !!currentStatusTokens.stunned ? "Remove Stun" : "Stun",
-      action: () => {
-        this.props.toggleToken({
-          id: card?.id || "",
-          tokenType: StatusTokenType.Stunned,
-          value: !currentStatusTokens.stunned,
-        });
-      },
-    });
+    const tokenInfoForGameType =
+      GamePropertiesMap[this.props.currentGameType].tokens;
 
-    menuItems.push({
-      label: !!currentStatusTokens.confused ? "Remove Confused" : "Confuse",
-      action: () => {
-        this.props.toggleToken({
-          id: card?.id || "",
-          tokenType: StatusTokenType.Confused,
-          value: !currentStatusTokens.confused,
-        });
-      },
-    });
+    if (!!tokenInfoForGameType.stunned) {
+      menuItems.push({
+        label: !!currentStatusTokens.stunned
+          ? tokenInfoForGameType.stunned.menuRemoveText
+          : tokenInfoForGameType.stunned.menuText,
+        action: () => {
+          this.props.toggleToken({
+            id: card?.id || "",
+            tokenType: StatusTokenType.Stunned,
+            value: !currentStatusTokens.stunned,
+          });
+        },
+      });
+    }
 
-    menuItems.push({
-      label: !!currentStatusTokens.tough ? "Remove Tough" : "Tough",
-      action: () => {
-        this.props.toggleToken({
-          id: card?.id || "",
-          tokenType: StatusTokenType.Tough,
-          value: !currentStatusTokens.tough,
-        });
-      },
-    });
+    if (!!tokenInfoForGameType.confused) {
+      menuItems.push({
+        label: !!currentStatusTokens.confused
+          ? tokenInfoForGameType.confused.menuRemoveText
+          : tokenInfoForGameType.confused.menuText,
+        action: () => {
+          this.props.toggleToken({
+            id: card?.id || "",
+            tokenType: StatusTokenType.Confused,
+            value: !currentStatusTokens.confused,
+          });
+        },
+      });
+    }
+
+    if (!!tokenInfoForGameType.tough) {
+      menuItems.push({
+        label: !!currentStatusTokens.tough
+          ? tokenInfoForGameType.tough.menuRemoveText
+          : tokenInfoForGameType.tough.menuText,
+        action: () => {
+          this.props.toggleToken({
+            id: card?.id || "",
+            tokenType: StatusTokenType.Tough,
+            value: !currentStatusTokens.tough,
+          });
+        },
+      });
+    }
 
     menuItems.push({
       label: "Set Damage",
