@@ -2,7 +2,7 @@ import { Component } from "react";
 import * as React from "react";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import TextField from "@material-ui/core/TextField";
-import { CardData } from "./external-api/marvel-card-data";
+import { CardData } from "./external-api/common-card-data";
 import { ICardData } from "./features/cards-data/initialState";
 import { ICardStack } from "./features/cards/initialState";
 import { AutocompleteHighlightChangeReason } from "@material-ui/lab/useAutocomplete";

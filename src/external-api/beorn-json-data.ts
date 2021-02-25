@@ -54,3 +54,28 @@ export interface CardData {
   RingsDbVotes: number;
   Categories: any | null;
 }
+
+export interface CardPack {
+  Abbreviation: string;
+  Cycle: string;
+  Name: string;
+  SetType: string;
+  cards: CardData[];
+}
+
+export interface ScenarioCard {
+  EncounterSet: string;
+  Title: string;
+  Slug: string;
+  NormalQuantity: number;
+  EasyQuantity: number;
+  NightmareQuantity: number;
+}
+
+export interface Scenario {
+  Title: string;
+  Slug: string;
+  Product: string;
+  Number: number;
+  AllCards: CardData[];
+}

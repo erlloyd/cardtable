@@ -1,12 +1,23 @@
 import { connect } from "react-redux";
+import { GameType } from "./constants/app-constants";
 import EncounterLoader from "./EncounterLoader";
-import { getCardsDataEncounterEntitiesBySetCode } from "./features/cards-data/cards-data.selectors";
+import {
+  getCardsDataEncounterEntitiesBySetCode,
+  getCardsDataSetDataAsEncounterEntities,
+} from "./features/cards-data/cards-data.selectors";
 
 import { RootState } from "./store/rootReducer";
 
-const mapStateToProps = (state: RootState) => {
+interface IProps {
+  currentGameType: GameType;
+}
+
+const mapStateToProps = (state: RootState, ownProps: IProps) => {
   return {
-    encounterData: getCardsDataEncounterEntitiesBySetCode(state),
+    encounterData:
+      ownProps.currentGameType === GameType.LordOfTheRingsLivingCardGame
+        ? getCardsDataSetDataAsEncounterEntities(state)
+        : getCardsDataEncounterEntitiesBySetCode(state),
   };
 };
 

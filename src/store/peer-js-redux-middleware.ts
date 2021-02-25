@@ -2,6 +2,11 @@ import Peer from "peerjs";
 import { myPeerRef } from "../constants/app-constants";
 import { togglePanMode } from "../features/cards/cards.slice";
 import {
+  loadCardsData,
+  loadCardsDataForPack,
+  loadCardsForEncounterSet,
+} from "../features/cards-data/cards-data.slice";
+import {
   clearPreviewCard,
   connectToRemoteGame,
   requestResync,
@@ -24,6 +29,9 @@ const blacklistRemoteActions = {
   [togglePanMode.type]: true,
   [receiveRemoteGameState.type]: true,
   [requestResync.type]: true,
+  [loadCardsData.type]: true,
+  [loadCardsDataForPack.type]: true,
+  [loadCardsForEncounterSet.type]: true,
 };
 
 const log = (...args: any[]) => {

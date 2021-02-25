@@ -559,6 +559,16 @@ const cardsSlice = createSlice({
       console.log("got decklist");
       console.log(action);
 
+      const potentialHeroCard: ICardDetails[] = action.payload.data
+        .investigator_code
+        ? [{ jsonId: action.payload.data.investigator_code }]
+        : [];
+
+      const heroCardStack = [
+        ...potentialHeroCard,
+        ...action.payload.extraHeroCards,
+      ];
+
       const heroCard: ICardStack = {
         controlledBy: (action as any).ACTOR_REF,
         selected: true,
@@ -570,10 +580,7 @@ const cardsSlice = createSlice({
         faceup: true,
         fill: "red",
         id: action.payload.heroId,
-        cardStack: [
-          { jsonId: action.payload.data.investigator_code },
-          ...action.payload.extraHeroCards,
-        ],
+        cardStack: heroCardStack,
         statusTokens: {
           stunned: false,
           confused: false,
@@ -672,7 +679,21 @@ const cardsSlice = createSlice({
         },
       };
 
-      state.cards.push(heroCard, newDeck, encounterDeck, obligationDeck);
+      if (heroCard.cardStack.length > 0) {
+        state.cards.push(heroCard);
+      }
+
+      if (newDeck.cardStack.length > 0) {
+        state.cards.push(newDeck);
+      }
+
+      if (encounterDeck.cardStack.length > 0) {
+        state.cards.push(encounterDeck);
+      }
+
+      if (obligationDeck.cardStack.length > 0) {
+        state.cards.push(obligationDeck);
+      }
     });
   },
 });
