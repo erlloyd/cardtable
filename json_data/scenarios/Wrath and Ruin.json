@@ -1,0 +1,1141 @@
+{
+    "Title": "Wrath and Ruin",
+    "Slug": "Wrath-and-Ruin",
+    "Product": "Wrath and Ruin",
+    "Number": 1,
+    "AllCards": [
+        {
+            "Title": "Easterling Raider",
+            "Slug": "Easterling-Raider-ASitE",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Easterling-Raider.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [
+                    "Archery 1."
+                ],
+                "Text": [
+                    "Archery 1.",
+                    "Easterling Raider gets +1 Attack and +1 Defense for each Easterling attachment on it."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if it has an Easterling attachment).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Easterling Raiders",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 20,
+            "Quantity": 3,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "OctgnGuid": "4befb4c8-e350-48ed-a7dd-ee803e2ca8d7",
+            "RingsDbCardId": "21020",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Warrior of Rhûn",
+            "Slug": "Warrior-of-Rhun-ASitE",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Warrior-of-Rhûn.jpg",
+                "Stats": {
+                    "EngagementCost": "34",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Warrior of Rhûn attacks, attach the top Easterling treachery in the discard pile to it."
+                ],
+                "Shadow": "Shadow: Attach the top Easterling treachery in the discard pile to attacking enemy.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Easterling Raiders",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 3,
+            "Artist": "Chris Grun",
+            "HasErrata": false,
+            "OctgnGuid": "aabc830a-4833-42cf-9b26-d8f2c5eb9658",
+            "RingsDbCardId": "21021",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Sword of Rhûn",
+            "Slug": "Sword-of-Rhun-ASitE",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Sword-of-Rhûn.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "While attached to an enemy, counts as a Weapon attachment with the text: `Attached enemy gets +2 Attack.`",
+                    "When Revealed: Attach to the Easterling enemy with the lowest Attack without a Sword of Rhûn."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Easterling Raiders",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 22,
+            "Quantity": 2,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "OctgnGuid": "b897b63d-86ac-417c-88d2-1a594f3674f1",
+            "RingsDbCardId": "21022",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Recurve Bow",
+            "Slug": "Recurve-Bow-ASitE",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Recurve-Bow.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "While attached to an enemy, counts as a Weapon attachment with the text: `Attached enemy gains Archery 2.`",
+                    "When Revealed: Attach to the highest engagement cost Easterling enemy without a Recurve Bow."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Easterling Raiders",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 23,
+            "Quantity": 2,
+            "Artist": "Martin de Diego Sádaba",
+            "HasErrata": false,
+            "OctgnGuid": "576b4f3c-add2-42b6-b78c-8a2e482290ae",
+            "RingsDbCardId": "21023",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Warriors of the East",
+            "Slug": "Warriors-of-the-East-ASitE",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Warriors-of-the-East.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge.",
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: After an Easterling enemy enters play, attach the top Easterling treachery in the discard pile to that enemy.",
+                    "Forced: After Warriors of the East becomes the current quest, the highest Attack Easterling enemy in the staging area attacks the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Easterlings are fearless warriors, but a stern defense may dissuade them."
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": null,
+            "Number": 24,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "OctgnGuid": "bbc72a18-cf4c-469f-bd01-6b1d3492c2ff",
+            "RingsDbCardId": "21024",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Rhûn Backstabber",
+            "Slug": "Rhun-Backstabber-ASitE",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Rhûn-Backstabber.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Rhûn Backstabber engages you, either raise your threat by 2, or discard an ally you control with printed cost 2 or higher."
+                ],
+                "Shadow": "Shadow: Raise your threat by 1 for each enemy engaged with you.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "City of Rhûn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 44,
+            "Quantity": 2,
+            "Artist": "Jon Bosco",
+            "HasErrata": false,
+            "OctgnGuid": "1cd05eb5-2456-467a-8d24-efaadd027145",
+            "RingsDbCardId": "21044",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Treacherous Easterling",
+            "Slug": "Treacherous-Easterling-ASitE",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Treacherous-Easterling.jpg",
+                "Stats": {
+                    "EngagementCost": "32",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Treacherous Easterlings gets +1 Attack and +1 Defense for each resource token on it (Limit +3 Attack and +3 Defense.)",
+                    "Forced: After the engaged player raises his threat, place 1 resource token on Treacherous Easterling."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "City of Rhûn",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 45,
+            "Quantity": 2,
+            "Artist": "Romana Kendelic",
+            "HasErrata": false,
+            "OctgnGuid": "eb2b56e7-d669-405b-b2d3-5d3c30cb3f4e",
+            "RingsDbCardId": "21045",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "City Forum",
+            "Slug": "City-Forum-ASitE",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/City-Forum.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "City Forum gets +1 Threat for each resource here.",
+                    "While City Forum is in the staging area, it gains: `Forced: After a location is explored, place 1 resource here.`",
+                    "Travel: Each player raises his threat by 1 for each resource here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "City of Rhûn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 46,
+            "Quantity": 2,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "OctgnGuid": "0323e852-a05c-4c2d-a038-3f2596af7a85",
+            "RingsDbCardId": "21046",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Seedy Tavern",
+            "Slug": "Seedy-Tavern-ASitE",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Seedy-Tavern.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [
+                    "Victory 2."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Forced: When Seedy Travern is explored, reveal each facedown card under it.",
+                    "Travel: Look at the top 5 cards of the encounter deck. Put one of those cards facedown under Seedy Tavern and shuffle the rest back into the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "City of Rhûn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 47,
+            "Quantity": 2,
+            "Artist": "Nikolas Hagialas",
+            "HasErrata": false,
+            "OctgnGuid": "2f5221a8-8afd-48d8-afd3-352151d87ed6",
+            "RingsDbCardId": "21047",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Darkness in the East",
+            "Slug": "Darkness-in-the-East-ASitE",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Darkness-in-the-East.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Raise each player`s threat by X, where X is the active location`s Threat. If there is no active location, Darkness in the East gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if you raised your threat this round).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "City of Rhûn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 48,
+            "Quantity": 2,
+            "Artist": "Lucas Staniec",
+            "HasErrata": false,
+            "OctgnGuid": "4b7db087-febb-4e88-bd30-e0f7919511c7",
+            "RingsDbCardId": "21048",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Thane Ulchor",
+            "Slug": "Thane-Ulchor-WaR",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Thane-Ulchor.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "1",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [
+                    "Victory 6."
+                ],
+                "Text": [
+                    "Immune to player card effects. Cannot leave the staging area.",
+                    "Forced: After the active location is explored, the first player must choose: either discard cards from the top of the encounter deck until a location is discarded and add it to the staging area, or Thane Ulchor attacks you."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": {
+                "EncounterSet": "Wrath and Ruin",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 11,
+            "Quantity": 1,
+            "Artist": "Antonio José Manzanedo",
+            "HasErrata": false,
+            "OctgnGuid": "02a5e04c-d08f-49f4-a7b5-ba6a1cb86de7",
+            "RingsDbCardId": "22011",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Champion of Rhûn",
+            "Slug": "Champion-of-Rhun-WaR",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Champion-of-Rhûn.jpg",
+                "Stats": {
+                    "EngagementCost": "36",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Champion of Rhûn engages you, either return a location you control to the staging area, or Champion of Rhûn makes an attack."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": {
+                "EncounterSet": "Wrath and Ruin",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 12,
+            "Quantity": 2,
+            "Artist": "Martin de Diego Sádaba",
+            "HasErrata": false,
+            "OctgnGuid": "f2981455-b642-4d9b-851d-0209a12cffae",
+            "RingsDbCardId": "22012",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Easterling Skirmisher",
+            "Slug": "Easterling-Skirmisher-WaR",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Easterling-Skirmisher.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "1",
+                    "Attack": "4",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [
+                    "Surge.",
+                    "Archery 1."
+                ],
+                "Text": [
+                    "Surge. Archery 1.",
+                    "Forced: After Easterling Skirmisher attacks and destroys a character, that character`s controller must return the location he controls with the highest Threat to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": {
+                "EncounterSet": "Wrath and Ruin",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 13,
+            "Quantity": 4,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "OctgnGuid": "215881a3-df0a-4163-a19d-33b444e7aa95",
+            "RingsDbCardId": "22013",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Gate of Dorwinion",
+            "Slug": "Gate-of-Dorwinion-WaR",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Gate-of-Dorwinion.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "X is 1 more than the number of locations controlled by the players.",
+                    "The players cannot travel here unless stage 2B has at least 12 progress on it.",
+                    "Travel: Thane Ulchor attacks each player in turn order."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": {
+                "EncounterSet": "Wrath and Ruin",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 14,
+            "Quantity": 1,
+            "Artist": "Emilio Rodriguez",
+            "HasErrata": false,
+            "OctgnGuid": "31c36264-7e6f-45df-a345-167d4df70885",
+            "RingsDbCardId": "22014",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Contested Square",
+            "Slug": "Contested-Square-WaR",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Contested-Square.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "Forced: After an enemy is defeated, place 1 progress on Contested Square if it is in the staging area.",
+                    "While you control Contested Square, it gains: `Forced: After a character you control is destroyed, if you control Contested Square, returns Contested Square to the staging area.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": {
+                "EncounterSet": "Wrath and Ruin",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 15,
+            "Quantity": 3,
+            "Artist": "Kevin Zamir Goeke",
+            "HasErrata": false,
+            "OctgnGuid": "0198aa68-aced-42d0-8816-719ce166ef15",
+            "RingsDbCardId": "22015",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Ransacked House",
+            "Slug": "Ransacked-House-WaR",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Ransacked-House.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Encounter Action: Put the topmost enemy in the encounter discard pile into play engaged with you to take control of Ransacked House.",
+                    "While you control Ransacked House, it gains: `Forced: After the player who controls Ransacked House loses control of a location, return Ransacked House to the staging area.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": {
+                "EncounterSet": "Wrath and Ruin",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 16,
+            "Quantity": 3,
+            "Artist": "Davis Engel",
+            "HasErrata": false,
+            "OctgnGuid": "f672b4f9-6ce8-4be0-95ab-fb5d2091f4ca",
+            "RingsDbCardId": "22016",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Makeshift Fortification",
+            "Slug": "Makeshift-Fortification-WaR",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Makeshift-Fortification.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Makeshift Fortification is the active location, it gains archery 3.",
+                    "Forced: After a player takes control of Makeshift Fortification, return the topmost enemy in the encounter discard pile to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": {
+                "EncounterSet": "Wrath and Ruin",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 17,
+            "Quantity": 3,
+            "Artist": "Davis Engel",
+            "HasErrata": false,
+            "OctgnGuid": "2a7b5607-d7ed-4580-b27b-39cf12879297",
+            "RingsDbCardId": "22017",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Captured Tower",
+            "Slug": "Captured-Tower-WaR",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Captured-Tower.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Captured Tower is the active location, encounter card effects cannot be canceled.",
+                    "Forced: After a player takes control of Captured Tower, he shuffles the encounter discard pile into the encounter deck and discards cards from the top until he discards an enemy and puts that enemy into play engaged with him."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": {
+                "EncounterSet": "Wrath and Ruin",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 18,
+            "Quantity": 2,
+            "Artist": "Emilio Rodriguez",
+            "HasErrata": false,
+            "OctgnGuid": "51a5e288-cf6e-430d-bc66-715ad2be1a16",
+            "RingsDbCardId": "22018",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Fury",
+            "Slug": "Fury-WaR",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Fury.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "While attached to an enemy, counts as a Condition attachment with the text: `Forced: When attached enemy would be destroyed, heal all damage from it and discard Fury instead.`",
+                    "When Revealed: Attach to the lowest engagement cost Easterling enemy without Fury."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": {
+                "EncounterSet": "Wrath and Ruin",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 19,
+            "Quantity": 2,
+            "Artist": "Martin de Diego Sádaba",
+            "HasErrata": false,
+            "OctgnGuid": "32621d0f-16a3-4ab9-a553-657834cb6691",
+            "RingsDbCardId": "22019",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Caught Off Guard",
+            "Slug": "Caught-Off-Guard-WaR",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Caught-Off-Guard.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must choose: either return a location you control to the staging area, or discard cards from the top of the encounter deck until an enemy is discarded and put it into play engaged with you."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": {
+                "EncounterSet": "Wrath and Ruin",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 20,
+            "Quantity": 2,
+            "Artist": "Monztre",
+            "HasErrata": false,
+            "OctgnGuid": "1a96a88c-3715-4419-89b1-a218e838b5b5",
+            "RingsDbCardId": "22020",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Street Fighting",
+            "Slug": "Street-Fighting-WaR",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Street-Fighting.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player assigns X damage among characters he controls, where X is 1 more than the number of locations he controls."
+                ],
+                "Shadow": "Shadow: Assign X damage among characters you control, where X is 1 more than the number of locations you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": {
+                "EncounterSet": "Wrath and Ruin",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 2,
+            "Artist": "Chris Grun",
+            "HasErrata": false,
+            "OctgnGuid": "f054a6e2-71ae-4acb-ba62-2548ecbfcf9a",
+            "RingsDbCardId": "22021",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Under Siege",
+            "Slug": "Under-Siege-WaR",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Under-Siege.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Until the end of the phase, add X Threat to the staging area, where X is 1 more than the number of locations the players control."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, return the highest Threat location you control to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": {
+                "EncounterSet": "Wrath and Ruin",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 22,
+            "Quantity": 2,
+            "Artist": "Vilius Petrauskas",
+            "HasErrata": false,
+            "OctgnGuid": "9a870606-9e85-4bdc-a70d-3d1831703eb8",
+            "RingsDbCardId": "22022",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Ulchor's Revenge",
+            "Slug": "Ulchor's-Revenge-WaR",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Ulchor's-Revenge.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "Doomed 1.",
+                    "When Revealed: Thane Ulchor makes an immediate attack against each player that controls a location (in turn order)."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each location you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": {
+                "EncounterSet": "Wrath and Ruin",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 23,
+            "Quantity": 2,
+            "Artist": "Imad Awan",
+            "HasErrata": false,
+            "OctgnGuid": "a652a7ef-25ad-4e43-94b4-f18c68e34e83",
+            "RingsDbCardId": "22023",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Inside the Walls",
+            "Slug": "Inside-the-Walls-WaR",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Inside-the-Walls-1A.jpg",
+                "Stats": {
+                    "StageNumber": "1A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Add Thane Ulchor and Gate of Dorwinion to the staging area. Each player adds a different location to the staging area. Make a copy of Makeshift Fortification the active location. Shuffle the enocounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "Thane Ulchor has returned to Dorwinion at night with an army of Easterlings. His agents within the city slew the guards and opened the gate to let them in. You wake to find battle already raging in the streets."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Inside-the-Walls-1B.jpg",
+                "Stats": {
+                    "StageNumber": "1B",
+                    "QuestPoints": "4"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "The stage gets +4 quest points per player. Progess cannot be placed on locations in the staging area by player card effects.",
+                    "Forced: When a location is explored, the first player takes control of it.",
+                    "The stage cannot be defeated unless there are more locations under the players` control than in the staging area at the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": {
+                "EncounterSet": "Wrath and Ruin",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Easterling Raiders",
+                    "City of Rhûn"
+                ],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 25,
+            "Quantity": 1,
+            "Artist": "Imad Awan",
+            "HasErrata": false,
+            "OctgnGuid": "cefd0596-2e3b-4496-95e0-57899ab83b04",
+            "RingsDbCardId": "22025",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Drive them Out",
+            "Slug": "Drive-them-Out-WaR",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Drive-them-Out-2A.jpg",
+                "Stats": {
+                    "StageNumber": "2A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player returns the highest Threat location he controls to the staging area. Shuffle the encounter discard pile into the encounter deck. Starting with the first player, each player discards cards from the top of the encounter deck until he discards an enemy and puts that enemy into play engaged with him."
+                ],
+                "Shadow": null,
+                "FlavorText": "After hours of hard fighting, you have gained the upper hand, but the battle will not be won until Ulchor and his army are driven out of the city."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Drive-them-Out-2B.jpg",
+                "Stats": {
+                    "StageNumber": "2B",
+                    "QuestPoints": "12"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Progress cannot be placed on locations in the staging area by player card effects.",
+                    "The players cannot travel to Gate of Dorwinion unless there are more locations under the players control than in the staging area.",
+                    "Forced: When a location is explored, the first player takes control of it.",
+                    "At the end of the round, if the players control Gate of Dorwinion, they win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": {
+                "EncounterSet": "Wrath and Ruin",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Easterling Raiders",
+                    "City of Rhûn"
+                ],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 26,
+            "Quantity": 1,
+            "Artist": "Martin de Diego Sádaba",
+            "HasErrata": false,
+            "OctgnGuid": "138ee2a3-0982-48ab-945e-60fab6f06586",
+            "RingsDbCardId": "22026",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ]
+}

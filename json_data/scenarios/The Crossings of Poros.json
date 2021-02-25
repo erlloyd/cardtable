@@ -1,0 +1,1771 @@
+{
+    "Title": "The Crossings of Poros",
+    "Slug": "The-Crossings-of-Poros",
+    "Product": "The Crossings of Poros",
+    "Number": 6,
+    "AllCards": [
+        {
+            "Title": "Southron Champion",
+            "Slug": "Southron-Champion-TSoH",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Southron-Champion.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "When Revealed: Discard cards from the encounter deck until a Harad enemy is discarded. Add that enemy to the staging area and place a resource token on it. That enemy is `the Champion.` While this stage is in play, the Champion gets +2 Threat, +2 Attack, +2 Defense and gains: Immune to player card effects. The main quest stage cannot be defeated while the Champion is in play.`",
+                    "The champion cannot take damage unless there are at least 4 progress tokens here. This stage cannot be defeated while the champion is in play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": null,
+            "Number": 40,
+            "Quantity": 1,
+            "Artist": "Alexandr Elichev",
+            "HasErrata": false,
+            "OctgnGuid": "47b1cd0f-5d56-483c-956c-7851eb4b0a9a",
+            "RingsDbCardId": "16040",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Southron Captain",
+            "Slug": "Southron-Captain-TSoH",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Southron-Captain.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Southron Captain is in the staging area, each other Harad enemy gets +1 Threat.",
+                    "While Southron Captain is engaged with you, each other Harad enemy engaged with you gets +1 Attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Harad Soldiers",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 41,
+            "Quantity": 1,
+            "Artist": "Ellyson Ferrari Lifante",
+            "HasErrata": false,
+            "OctgnGuid": "486f9475-98e1-42d9-ac90-e6190545a5b9",
+            "RingsDbCardId": "16041",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Southron Soldier",
+            "Slug": "Southron-Soldier-TSoH",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Southron-Soldier.jpg",
+                "Stats": {
+                    "EngagementCost": "32",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Southron Soldier engages you, either remove 2 progress tokens from the main quest, or Southron Soldier makes an immediate attack."
+                ],
+                "Shadow": "Shadow: Choose an enemy in the staging area. Engage it and deal it a shadow card.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Harad Soldiers",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 42,
+            "Quantity": 3,
+            "Artist": "Alexandr Elichev",
+            "HasErrata": false,
+            "OctgnGuid": "6cfc4fa5-bbcc-4c99-82b7-bb6359d24750",
+            "RingsDbCardId": "16042",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Southron Archer",
+            "Slug": "Southron-Archer-TSoH",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Southron-Archer.jpg",
+                "Stats": {
+                    "EngagementCost": "36",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [
+                    "Archery 2."
+                ],
+                "Text": [
+                    "Archery 2.",
+                    "Forced: After Southron Archer engages you, either remove 2 progress tokens from the main quest, or discard an ally you control."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Harad Soldiers",
+                "EasyModeQuantity": 3,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 43,
+            "Quantity": 4,
+            "Artist": "J. Lonnee",
+            "HasErrata": false,
+            "OctgnGuid": "04a23a2e-a14f-4c54-b54f-eeef36d3a92b",
+            "RingsDbCardId": "16043",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Nowhere to Hide",
+            "Slug": "Nowhere-to-Hide-TSoH",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Nowhere-to-Hide.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player discards cards from the top of the encounter deck until an enemy is discarded, and puts that enemy into play engaged with him."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if it was engaged this round).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Harad Soldiers",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 44,
+            "Quantity": 3,
+            "Artist": "Kim Sokol",
+            "HasErrata": false,
+            "OctgnGuid": "37f205e5-5144-4987-8764-46909460797b",
+            "RingsDbCardId": "16044",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Find Water",
+            "Slug": "Find-Water-TSoH",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Find-Water.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Characters cannot be readied by player card effects.",
+                    "Response: When this stage is defeated, each player readies 1 hero he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "Your companions grow weary from thirst. They need water to drink."
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": null,
+            "Number": 48,
+            "Quantity": 1,
+            "Artist": "Marius Bota",
+            "HasErrata": false,
+            "OctgnGuid": "84877af6-0720-4ef8-802b-69b792c32e15",
+            "RingsDbCardId": "16048",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Towering Dunes",
+            "Slug": "Towering-Dunes-TSoH",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Towering-Dunes.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Desert."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Towering Dunes is in the staging area, progress cannot be placed on locations in the staging area not named Towering Dunes.",
+                    "Forced: After Towering Dunes becomes the active location, reveal the top card of the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Desert Sands",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 49,
+            "Quantity": 3,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "OctgnGuid": "3d9db37c-4b51-4da8-be2b-25cd2d48e28b",
+            "RingsDbCardId": "16049",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Desert Oasis",
+            "Slug": "Desert-Oasis-TSoH",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Desert-Oasis.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Desert."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Desert Oasis is the active location, it gains: `Response: When Desert Oasis is explored, heal 4 damage from among characters in play.`",
+                    "Forced: After Desert Oasis becomes the active location, each player exhausts a character he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Desert Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 50,
+            "Quantity": 2,
+            "Artist": "Katy Grierson",
+            "HasErrata": false,
+            "OctgnGuid": "19bcc176-d952-485b-9d28-12188c5a0bc1",
+            "RingsDbCardId": "16050",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Sandstorm",
+            "Slug": "Sandstorm-TSoH",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Sandstorm.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Weather."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player either discards his hand, or assigns X damage among characters he controls. X is the number of cards in his hand."
+                ],
+                "Shadow": "Shadow: Either discard the highest cost attachment you control, or assign X damage among characters you control where X is the number of attachments you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Desert Sands",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 51,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "OctgnGuid": "6def55a1-ee80-4570-831b-d591e6effc11",
+            "RingsDbCardId": "16051",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Heat Exhaustion",
+            "Slug": "Heat-Exhaustion-TSoH",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Heat-Exhaustion.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player exhausts a character he controls and deals 1 damage to that character."
+                ],
+                "Shadow": "Shadow: Exhaust a character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Desert Sands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 52,
+            "Quantity": 2,
+            "Artist": "Victor Garcia",
+            "HasErrata": false,
+            "OctgnGuid": "6d2cbe18-4504-46df-821c-d3ce588bcb3f",
+            "RingsDbCardId": "16052",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Craft Remedy",
+            "Slug": "Craft-Remedy-TSoH",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Craft-Remedy.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Treat the printed text box of each damaged character as if it were blank (except for Traits).",
+                    "Response: When this is defeated, heal 1 damage from each character in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "Some of your companions have been poisoned! They need a remedy to counteract the venom."
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": null,
+            "Number": 53,
+            "Quantity": 1,
+            "Artist": "Ashley Lange",
+            "HasErrata": false,
+            "OctgnGuid": "55d8f78d-2dd7-4b44-80db-fb539ff05f00",
+            "RingsDbCardId": "16053",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Sand Viper",
+            "Slug": "Sand-Viper-TSoH",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Sand-Viper.jpg",
+                "Stats": {
+                    "EngagementCost": "44",
+                    "Threat": "4",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Players cannot declare defenders against Sand Viper.",
+                    "Forced: After the players travel to a location, Sand Viper engages the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": "To some suddenly it seemed that they saw a snake coiling itself to strike.\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Desert Creatures",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 54,
+            "Quantity": 2,
+            "Artist": "Piya Wannachaiwong",
+            "HasErrata": false,
+            "OctgnGuid": "b2ff9ad8-c9c6-42bb-a5cd-cb2af0b006a0",
+            "RingsDbCardId": "16054",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Giant Scorpion",
+            "Slug": "Giant-Scorpion-TSoH",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Giant-Scorpion.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Giant Scorpion damages a character, that character cannot ready until the end of the round."
+                ],
+                "Shadow": "Shadow: If this attack deals damage, the defending character cannot ready until the end of the round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Desert Creatures",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 55,
+            "Quantity": 3,
+            "Artist": "Dimitri Bielak",
+            "HasErrata": false,
+            "OctgnGuid": "5ddb243e-ee43-45fd-b4c2-2b197fdf70a9",
+            "RingsDbCardId": "16055",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Uruks of the Eye",
+            "Slug": "Uruks-of-the-Eye-TSoH",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Uruks-of-the-Eye.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge.",
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Surge.",
+                    "Each Orc enemy in the staging area gets -5 engagement cost.",
+                    "Each Orc enemy engaged with a player gets +1 Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Uruks of Mordor attack with a savagery that is difficult to match."
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": null,
+            "Number": 60,
+            "Quantity": 1,
+            "Artist": "Victor Garcia",
+            "HasErrata": false,
+            "OctgnGuid": "8a0a834b-d10c-43b1-a43c-75b459c18374",
+            "RingsDbCardId": "16060",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Uruk Chieftain",
+            "Slug": "Uruk-Chieftain-TSoH",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Uruk-Chieftain.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "4",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have player card attachments or be optionally engaged.",
+                    "While the engaged player is engaged with another Orc enemy, Uruk Chieftain cannot take damage.",
+                    "Forced: At the end of the encounter phase, Uruk Chieftain engages the player engaged with the most non-unique Orc enemies."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Mordor Orcs",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 61,
+            "Quantity": 1,
+            "Artist": "Sam Lamont",
+            "HasErrata": false,
+            "OctgnGuid": "27748abf-80e8-4928-b506-53d7c23d76c6",
+            "RingsDbCardId": "16061",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Uruk of Mordor",
+            "Slug": "Uruk-of-Mordor-TSoH",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Uruk-of-Mordor.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Each ally with less Willpower than Uruk of Mordor`s Threat cannot defend against Uruk of Mordor."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if its Threat is greater than the defending character`s Willpower.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Mordor Orcs",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 62,
+            "Quantity": 3,
+            "Artist": "Diego Gisbert Llorens",
+            "HasErrata": false,
+            "OctgnGuid": "ad251ffd-8653-4a45-b88e-def2ffecc2dc",
+            "RingsDbCardId": "16062",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Uruk Warg-rider",
+            "Slug": "Uruk-Warg-rider-TSoH",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Uruk-Warg-rider.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Uruk Warg-Rider gets +X Attack while attacking a character with less Willpower than Uruk Warg-rider`s Threat. X is the difference."
+                ],
+                "Shadow": "Shadow: Return attacking enemy to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Mordor Orcs",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 63,
+            "Quantity": 2,
+            "Artist": "Piya Wannachaiwong",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "16063",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Mordor Warg",
+            "Slug": "Mordor-Warg-TSoH",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Mordor-Warg.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach to an Orc enemy and return that enemy to the staging area. Limit 1 per enemy. (Counts as a Mount attachment with the text: `Attached enemy gets +2 Threat, +2 Attack, +2 Defense and +2 hit points.",
+                    "Forced: When attached enemy leaves play, add Mordor Warg to the staging area.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Mordor Orcs",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 64,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "OctgnGuid": "27d6c3df-c7dc-4ea0-941f-dcad65b3f1eb",
+            "RingsDbCardId": "16064",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Fear of Mordor",
+            "Slug": "Fear-of-Mordor-TSoH",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Fear-of-Mordor.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each ally in play gets -1 Willpower, -1 Attack, and -1 Defense until the end of the round."
+                ],
+                "Shadow": "Shadow: If attacking enemy`s Threat is greater than the defending character`s Willpower, it makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Mordor Orcs",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 65,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "OctgnGuid": "cfcee6c8-9eee-4623-afd1-a49ea77e2322",
+            "RingsDbCardId": "16065",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Poros Garrison",
+            "Slug": "Poros-Garrison-CoP",
+            "IsUnique": true,
+            "CardType": "Objective_Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Poros-Garrison.jpg",
+                "Stats": {
+                    "Willpower": "3",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Gondor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The first player gains control of Poros Garrison.",
+                    "Immune to player card effects.",
+                    "You can optionally engage an additional enemy during the encounter phase.",
+                    "If Poros Garrison leaves play, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "The Crossings of Poros",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 145,
+            "Quantity": 1,
+            "Artist": "S. C. Watson",
+            "HasErrata": false,
+            "OctgnGuid": "112fc5f3-9d26-4711-8a97-e4a83bb23663",
+            "RingsDbCardId": "17145",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Black Serpent",
+            "Slug": "The-Black-Serpent-CoP",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/The-Black-Serpent.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "0",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot leave the staging area or take damage. X is the stage number of the main quest.",
+                    "The Black Serpent gets +X Threat, +X Attack and +X Defense.",
+                    "Forced: At the end of the encounter phase, either remove X progress from the main quest, or The Black Serpent makes an attack against the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "The Crossings of Poros",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 146,
+            "Quantity": 1,
+            "Artist": "Alexandr Elichev",
+            "HasErrata": false,
+            "OctgnGuid": "56da2e72-9580-4537-95e9-c138b4d9480e",
+            "RingsDbCardId": "17146",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Southron Outrider",
+            "Slug": "Southron-Outrider-CoP",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Southron-Outrider.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Southron Outrider engages you, either place a random enemy from the set aside Harad Soldiers set into the encounter discard pile, or Southron Outrider gets +3 Attack this round."
+                ],
+                "Shadow": "Shadow: Exhaust a character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "The Crossings of Poros",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 147,
+            "Quantity": 2,
+            "Artist": "Carlos Palma Cruchaga",
+            "HasErrata": false,
+            "OctgnGuid": "4732976c-a400-498f-9f97-108995fcd99f",
+            "RingsDbCardId": "17147",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Uruk Prowler",
+            "Slug": "Uruk-Prowler-CoP",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Uruk-Prowler.jpg",
+                "Stats": {
+                    "EngagementCost": "45",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either place a random enemy from the set aside Mordor Orcs set into the encounter discard pile, or Uruk Prowler makes an immediate attack against the first player."
+                ],
+                "Shadow": "Shadow: Discard a random card from your hand.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "The Crossings of Poros",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 148,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "89baec7c-4e60-4b12-9d7d-80b11e786d89",
+            "RingsDbCardId": "17148",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Desert Warg",
+            "Slug": "Desert-Warg-CoP",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Desert-Warg.jpg",
+                "Stats": {
+                    "EngagementCost": "34",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either place a random enemy from the set aside Desert Creatures set into the encounter discard pile, or Desert Warg gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "The Crossings of Poros",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 149,
+            "Quantity": 2,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "OctgnGuid": "206a9350-41f1-48ba-adf2-241d07a90885",
+            "RingsDbCardId": "17149",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Desolate Land",
+            "Slug": "Desolate-Land-CoP",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Desolate-Land.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Desert.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the highest number of characters controlled by a single player.",
+                    "Forced: After Desolate Land becomes the active location, choose 1 random card from the set aside encounter set with the most cards remaining. Reveal that card as if it was part of the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "The Crossings of Poros",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 150,
+            "Quantity": 3,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "OctgnGuid": "7c690a1f-83c5-4465-9c64-eaddc1b592e7",
+            "RingsDbCardId": "17150",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Harondor Waste",
+            "Slug": "Harondor-Waste-CoP",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Harondor-Waste.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Desert.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Harondor Waste becomes the active location, choose 1 random card from the set aside encounter set with the most cards remaining and place it in the encounter discard pile. Then, shuffle the encounter discard pile into the encounter deck."
+                ],
+                "Shadow": "Shadow: Return the attacking enemy to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "The Crossings of Poros",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 151,
+            "Quantity": 4,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "OctgnGuid": "2b3939a5-7ee7-4b6a-a889-84487815a1a5",
+            "RingsDbCardId": "17151",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Danger Close Behind",
+            "Slug": "Danger-Close-Behind-CoP",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Danger-Close-Behind.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "Doomed 1.",
+                    "When Revealed: Choose 1 random card from the set aside encounter set with the most cards remaining, Reveal that card as if it was the top card of the encounter deck."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, resolve the `when revealed` effect of this card.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "The Crossings of Poros",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 152,
+            "Quantity": 2,
+            "Artist": "Drazenka Kimpel",
+            "HasErrata": false,
+            "OctgnGuid": "83a8586f-bb6d-4e90-84c7-3909034dad16",
+            "RingsDbCardId": "17152",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Foothills of Mordor",
+            "Slug": "Foothills-of-Mordor-CoP",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Foothills-of-Mordor.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Foothills of Mordor is in the staging area, `when revealed` effects cannot be canceled.",
+                    "Forced: After Foothills of Mordor becomes the active location, raise each player`s threat by 2."
+                ],
+                "Shadow": null,
+                "FlavorText": "...there lay dark thickets, and a tumbled land of rocky ghylls and crags, behind which the long grim slopes of the Ephel Dúath clambered up.\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "Mountains of Shadow",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 153,
+            "Quantity": 3,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "OctgnGuid": "680e0591-23db-402e-829d-bc2c15ec026f",
+            "RingsDbCardId": "17153",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Shadowy Vale",
+            "Slug": "Shadowy-Vale-CoP",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Shadowy-Vale.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While any player has threat of 35 or higher, Shadowy Vale gets +3 Threat.",
+                    "Forced: After Shadowy Vale becomes the active location, reveal the top card of the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "...nothing could waft away the glooms and the sad mists that clung about the Mountains of Shadow...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "Mountains of Shadow",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 154,
+            "Quantity": 2,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "OctgnGuid": "0856a4b4-ec02-4586-8147-93fbadf544cd",
+            "RingsDbCardId": "17154",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Mountains of Shadow",
+            "Slug": "Mountains-of-Shadow-CoP",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Mountains-of-Shadow.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Raise each player`s threat by X, where X is the printed quest points of the active location. If there is no active location, Mountains of Shadow gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, raise your threat by 2.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "Mountains of Shadow",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 155,
+            "Quantity": 2,
+            "Artist": "Kamila Szutenberg",
+            "HasErrata": false,
+            "OctgnGuid": "6da909d1-c3e0-4c13-8986-4b3a066e67b5",
+            "RingsDbCardId": "17155",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Find a Way Down",
+            "Slug": "Find-a-Way-Down-CoP",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Find-a-Way-Down.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge.",
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Surge.",
+                    "Each player`s threat cannot be reduced.",
+                    "Response: When Find a Way Down is defeated, each player reduces his threat by 3."
+                ],
+                "Shadow": null,
+                "FlavorText": "The path through the hills has led too far up, and now you walk along exposed heights where there`s nowhere to hide. You need to find a way down."
+            },
+            "Back": null,
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": null,
+            "Number": 156,
+            "Quantity": 1,
+            "Artist": "Carlos Palma Cruchaga",
+            "HasErrata": false,
+            "OctgnGuid": "5b3b0e1a-ff08-4d4d-8071-d4de3f3bc9aa",
+            "RingsDbCardId": "17156",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Flight to Gondor",
+            "Slug": "Flight-to-Gondor-CoP",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Flight-to-Gondor-1A.jpg",
+                "Stats": {
+                    "StageNumber": "1A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set Poros Garrison and each of the following encounter sets aside, out of play: Mountains of Shadow, Desert Sands, Desert Creatures, Harad Soldiers, and Mordor Orcs. The first player adds The Black Serpent to the staging area and shuffles the encounter deck. Each other player reveals an encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "You have escaped the dungeons of Cirith Gurat with the rescued members of Kahliel`s tribe, but it`s still a long way to Gondor."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Flight-to-Gondor-1B.jpg",
+                "Stats": {
+                    "StageNumber": "1B",
+                    "QuestPoints": "-"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Allies enter play exhausted.",
+                    "Forced: At the end of the planning phase, advance to a random stage 2."
+                ],
+                "Shadow": null,
+                "FlavorText": "By now the Orcs will be searching for their escaped prisoners, and The Black Serpent will be seeking revenge against the outlaws who ambushed his caravan. You cannot hope to outrun your enemies with the exhausted refugees in your care, so you consult with Kahliel to decide the safest way north."
+            },
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "The Crossings of Poros",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Mountains of Shadow",
+                    "Desert Sands",
+                    "Desert Creatures",
+                    "Harad Soldiers",
+                    "Mordor Orcs"
+                ],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 157,
+            "Quantity": 1,
+            "Artist": "Alexander Gustafson",
+            "HasErrata": false,
+            "OctgnGuid": "87379a08-2fe2-4e32-9341-d78fb4e0298b",
+            "RingsDbCardId": "17157",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Desert Path",
+            "Slug": "The-Desert-Path-CoP",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/The-Desert-Path-2A.jpg",
+                "Stats": {
+                    "StageNumber": "2A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Shuffle the Desert Sands encounter set into the encounter deck. Remove the Mountains of Shadow encounter set and the other stage 2A from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "You ask Kahliel which way you should take and he says: `My people are weary. Climbing the rocky hills of the Ephel Dúath will be too difficult for them. We will journey to Gondor across the desert.`"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/The-Desert-Path-2B.jpg",
+                "Stats": {
+                    "StageNumber": "2B",
+                    "QuestPoints": "10"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After a player plays an ally, he must either exhaust that ally or deal 1 damage to it."
+                ],
+                "Shadow": null,
+                "FlavorText": "You set out across the desert of Harondor, but it isn`t long before the heat begins to take its toll."
+            },
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "The Crossings of Poros",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Mountains of Shadow",
+                    "Desert Sands",
+                    "Desert Creatures",
+                    "Harad Soldiers",
+                    "Mordor Orcs"
+                ],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 158,
+            "Quantity": 1,
+            "Artist": "Kamila Szutenberg",
+            "HasErrata": false,
+            "OctgnGuid": "e1c521c0-2889-4f5e-a470-bf70bcf004bf",
+            "RingsDbCardId": "17158",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Ephel Dúath",
+            "Slug": "The-Ephel-Duath-CoP",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/The-Ephel-Dúath-2A.jpg",
+                "Stats": {
+                    "StageNumber": "2A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Shuffle the Mountains of Shadow encounter set into the encounter deck. Remove the Desert Sands encounter set and the other stage 2A from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "You ask Kahliel which way you should take and he says: `The desert offers us no place to hide, and I fear my people cannot endure another desert crossing. We will take the rocky path through the hills to Gondor.`"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/The-Ephel-Dúath-2B.jpg",
+                "Stats": {
+                    "StageNumber": "2B",
+                    "QuestPoints": "10"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After a player plays an ally, he must exhaust that ally or raise his threat by 1.",
+                    "Forced: When this stage is defeated, advance to a random stage 3."
+                ],
+                "Shadow": null,
+                "FlavorText": "As you travel along the edge of Mordor a feeling of unease sets in and you fear that you are being watched."
+            },
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "The Crossings of Poros",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Mountains of Shadow",
+                    "Desert Sands",
+                    "Desert Creatures",
+                    "Harad Soldiers",
+                    "Mordor Orcs"
+                ],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 159,
+            "Quantity": 1,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "OctgnGuid": "577c3577-78e4-4cf3-a638-fe15162eca31",
+            "RingsDbCardId": "17159",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Deadly Creatures",
+            "Slug": "Deadly-Creatures-CoP",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Deadly-Creatures-3A.jpg",
+                "Stats": {
+                    "StageNumber": "3A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Set each other stage 3A aside, out of play. Shuffle the encounter discard pile and the Desert Creatures encounter set into the encounter deck. Then, each player reveals an encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "Orcs and Southrons are not the only things to fear in the wild; the wastes of Harondor are home to many deadly creatures."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Deadly-Creatures-3B.jpg",
+                "Stats": {
+                    "StageNumber": "3B",
+                    "QuestPoints": "15"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Enemies in the staging area cannot take damage.",
+                    "Forced: After an enemy engages a player, deal 1 damage to a hero that player controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "Venomous animals strike at you when you stumble too close. Weary as you are from your long journey, it is difficult to see them before it`s too late."
+            },
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "The Crossings of Poros",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Mountains of Shadow",
+                    "Desert Sands",
+                    "Desert Creatures",
+                    "Harad Soldiers",
+                    "Mordor Orcs"
+                ],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 160,
+            "Quantity": 1,
+            "Artist": "Dimitri Bielak",
+            "HasErrata": false,
+            "OctgnGuid": "389031d2-7a44-4c4d-82f2-cf79c08ce0ae",
+            "RingsDbCardId": "17160",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Southron Pursuit",
+            "Slug": "Southron-Pursuit-CoP",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Southron-Pursuit-3A.jpg",
+                "Stats": {
+                    "StageNumber": "3A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Set each other stage 3A aside, out of play. Shuffle the discard pile and the Harad Soldiers encounter set into the encounter deck. Then, each player reveals an encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "Driven by his desire for revenge, The Black Serpent has ordered his soldiers to scour all Harondor for your company."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Southron-Pursuit-3B.jpg",
+                "Stats": {
+                    "StageNumber": "3B",
+                    "QuestPoints": "15"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Each enemy in the staging area gets -10 engagement cost.",
+                    "Forced: After an enemy engages a player, remove 1 progress from this stage."
+                ],
+                "Shadow": null,
+                "FlavorText": "Slowed by the refugees in your care and hounded by the Serpent`s outriders, you struggle to make progress towards Gondor."
+            },
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "The Crossings of Poros",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Mountains of Shadow",
+                    "Desert Sands",
+                    "Desert Creatures",
+                    "Harad Soldiers",
+                    "Mordor Orcs"
+                ],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 161,
+            "Quantity": 1,
+            "Artist": "S. C. Watson",
+            "HasErrata": false,
+            "OctgnGuid": "29f8a182-2e69-47d7-a742-296836371f41",
+            "RingsDbCardId": "17161",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Patrols",
+            "Slug": "Orc-Patrols-CoP",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Orc-Patrols-3A.jpg",
+                "Stats": {
+                    "StageNumber": "3A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Set each other stage 3A aside, out of play. Shuffle the encounter discard pile and the Mordor Orcs encounter set into the encounter deck. Then, each player reveals an encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Orcs of Cirith Gurat sent their swiftest Warg-riders to track you down after you escaped from their dungeons."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Orc-Patrols-3B.jpg",
+                "Stats": {
+                    "StageNumber": "3B",
+                    "QuestPoints": "15"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Orc Patrols gets +2 quest points for each enemy in the staging area.",
+                    "Forced: After an enemy engages a player, raise that player`s threat by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "The Crossings of Poros",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Mountains of Shadow",
+                    "Desert Sands",
+                    "Desert Creatures",
+                    "Harad Soldiers",
+                    "Mordor Orcs"
+                ],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 162,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "2e441298-dafc-41bc-a46f-a0f483ac18bd",
+            "RingsDbCardId": "17162",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Battle at the Crossings",
+            "Slug": "Battle-at-the-Crossings-CoP",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Battle-at-the-Crossings-4A.jpg",
+                "Stats": {
+                    "StageNumber": "4A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player takes control of Poros Garrison. Search the encounter deck and discard pile for each enemy that belongs to an encounter set denoted by the first icon on each set aside stage 3 and add them to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "You`ve reached the Crossings of Poros, but the enemy is hot on your heels. Desperate, you blow a loud note on your horn. From the northern shore you hear horns answer, and the soldiers of Gondor rush to your aid."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Battle-at-the-Crossings-4B.jpg",
+                "Stats": {
+                    "StageNumber": "4B",
+                    "QuestPoints": "20"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After an enemy attacks and destroys a character, remove X progress from this stage. X is the attcking enemy`s printed Threat.",
+                    "This stage cannot be defeated except at the end of the combat phase. If the players defeat this stage, they win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Back Serpent leads your pursuers in a final, savage attack. You must hold the crossings against them or fail at the last leg of your journey."
+            },
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": {
+                "EncounterSet": "The Crossings of Poros",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Mountains of Shadow",
+                    "Desert Sands",
+                    "Desert Creatures",
+                    "Harad Soldiers",
+                    "Mordor Orcs"
+                ],
+                "StageNumber": 4,
+                "StageLetter": "A"
+            },
+            "Number": 163,
+            "Quantity": 1,
+            "Artist": "Alexander Gustafson",
+            "HasErrata": false,
+            "OctgnGuid": "3ff62e7f-fc09-4569-a45c-1be7e2ba6747",
+            "RingsDbCardId": "17163",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ]
+}

@@ -1,0 +1,1289 @@
+{
+    "Title": "Mount Doom",
+    "Slug": "Mount-Doom",
+    "Product": "The Mountain of Fire",
+    "Number": 18,
+    "AllCards": [
+        {
+            "Title": "The Tower of Barad-dûr",
+            "Slug": "The-Tower-of-Barad-dur-TMoF",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/The-Tower-of-Barad-dûr.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Players do not raise their threat at the end of the refresh phase.",
+                    "Forced: At the end of the round, each player raises his threat by 1 for each non-Fellowship character he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "...blacker and darker than the vast shades amid which it stood, the cruel pinnacles and iron crown of the topmost tower of Barad-dûr.\r\n-Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 42,
+            "Quantity": 1,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "OctgnGuid": "bb6dd4a6-a72c-400a-9cc6-903d7260ea1b",
+            "RingsDbCardId": "146042",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Mount Doom",
+            "Slug": "Mount-Doom-TMoF",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Mount-Doom.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "9"
+                },
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [
+                    "Victory 9."
+                ],
+                "Text": [
+                    "Immune to player card effects. X is the tens digit of the first player`s threat dial.",
+                    "The players cannot travel here unless there is at least 20 progress on stage 3B.",
+                    "Travel: Each player makes a Fortitude test. If a player fails this test, raise his threat by 9."
+                ],
+                "Shadow": null,
+                "FlavorText": "He raised his eyes with difficulty to the dark slopes of Mount Doom towering above him...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 43,
+            "Quantity": 1,
+            "Artist": "Chris Rahn",
+            "HasErrata": false,
+            "OctgnGuid": "271fa771-d678-461e-b5c6-483117059ed1",
+            "RingsDbCardId": "146043",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc-hold",
+            "Slug": "Orc-hold-TMoF",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Orc-hold.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Orc-hold is in the staging area, progress cannot be placed on other locations in the staging area.",
+                    "Forced: After Orc-hold becomes the active location, shuffle the encounter discard pile into the encounter deck. Discard cards from the top until an Orc enemy is discarded. Put that enemy into play engaged with the first player.",
+                    "(|)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 44,
+            "Quantity": 3,
+            "Artist": "Kamila Szutenberg",
+            "HasErrata": false,
+            "OctgnGuid": "1a0189ae-b9ad-49c2-a217-a9c975536384",
+            "RingsDbCardId": "146044",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Mordor Road",
+            "Slug": "Mordor-Road-TMoF",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Mordor-Road.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Mordor Road gets +1 Threat for each controlled by the player who controls the most allies.",
+                    "Forced: After Mordor Road becomes the active location, each player discards the top card of the encounter deck. Add each enemy discarded this way to the staging area.",
+                    "(|)"
+                ],
+                "Shadow": null,
+                "FlavorText": "They climbed on to the causeway and trudged along, down the hard cruel road that led to the Dark Tower itself.\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 45,
+            "Quantity": 2,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "OctgnGuid": "e9bdfb84-2f96-4288-bbed-31f52cc10b86",
+            "RingsDbCardId": "146045",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Plain of Gorgoroth",
+            "Slug": "Plain-of-Gorgoroth-TMoF",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Plain-of-Gorgoroth.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If a player has failed a Fortitude test this round, Plain of Gorgoroth gets +2 Threat.",
+                    "Travel: The first player makes a Fortitude test to travel here. If he fails this test, raise each player`s threat by 4."
+                ],
+                "Shadow": null,
+                "FlavorText": "There smokes trailed on the ground and lurked in hollows, and fumes leaked from fissures in the earth.\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 46,
+            "Quantity": 4,
+            "Artist": "Igor Artyomenko",
+            "HasErrata": false,
+            "OctgnGuid": "c88f14e5-1bd3-4829-ab70-02479df6cdfd",
+            "RingsDbCardId": "146046",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Brake of Thorns",
+            "Slug": "Brake-of-Thorns-TMoF",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Brake-of-Thorns.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Brake of Thorns is in the staging area, add (|) to each Fortitude test.",
+                    "Forced: After Brake of Thorns becomes the active location, each player assigns X damage among characters he controls, where X is the tens digit of his threat dial.",
+                    "(|)"
+                ],
+                "Shadow": null,
+                "FlavorText": "They had a struggle to get out of the thicket. The thorns and briars were as tough as wire and clinging as claws.\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 47,
+            "Quantity": 3,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "OctgnGuid": "cfe25792-3c08-4154-8770-821eee3c9e3f",
+            "RingsDbCardId": "146047",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Old Water-course",
+            "Slug": "Old-Water-course-TMoF",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Old-Water-course.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [
+                    "Victory 2."
+                ],
+                "Text": [
+                    "While Old Water-course is the active location, it gains: `Response: When Old Water-course is explored, reduce each player`s threat by 5.`",
+                    "Travel: Each player must exhaust a hero he controls to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": "Clambering a few steps up he found a tiny stream of dark water that came out from the hill-side and filled a little bare pool...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 48,
+            "Quantity": 1,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "OctgnGuid": "13543061-b855-4e58-9190-e2f56c17cd32",
+            "RingsDbCardId": "146048",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Gollum",
+            "Slug": "Gollum-TMoF",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Gollum.jpg",
+                "Stats": {
+                    "EngagementCost": "99",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Gollum."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Immune to non-Fellowship player card effects.",
+                    "Gollum engages the first player.",
+                    "*Forced: After Gollum is discarded during a Fortitude test, put him into play engaged with the first player. Then, choose an encounter card discarded from this test and ignore its (|) icons."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 49,
+            "Quantity": 1,
+            "Artist": "Martin de Diego Sádaba",
+            "HasErrata": false,
+            "OctgnGuid": "eb232287-e39e-4358-b37f-23b2c45ca6a8",
+            "RingsDbCardId": "146049",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Ringwraith of Sauron",
+            "Slug": "Ringwraith-of-Sauron-TMoF",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Ringwraith-of-Sauron.jpg",
+                "Stats": {
+                    "EngagementCost": "88",
+                    "Threat": "3",
+                    "Attack": "6",
+                    "Defense": "3",
+                    "HitPoints": "10"
+                },
+                "Traits": [
+                    "Nazgûl."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have non-Morgul attachments.",
+                    "While Ringwraith of Sauron is in the staging area it gains: `Forced: After a player fails a Fortitude test, Ringwraith of Sauron engages that player and makes an immediate attack.`",
+                    "(|) (|)"
+                ],
+                "Shadow": null,
+                "FlavorText": "...with a storm of wings they hurtled southwards to Mount Doom.\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 50,
+            "Quantity": 2,
+            "Artist": "Alexander Kozachenko",
+            "HasErrata": false,
+            "OctgnGuid": "c39c83bf-ee9e-4e4d-9689-b8f7559292bd",
+            "RingsDbCardId": "146050",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Captain",
+            "Slug": "Orc-Captain-TMoF",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Orc-Captain.jpg",
+                "Stats": {
+                    "EngagementCost": "55",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "4",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Orc Captain engages you, make a Fortitude test. If you fail this test, reveal the top card of the encounter deck.",
+                    "(|) (|)"
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, return attacking enemy to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 51,
+            "Quantity": 2,
+            "Artist": "Carlos Palma Cruchaga",
+            "HasErrata": false,
+            "OctgnGuid": "ae4a4129-ed5d-4902-92e3-ae89e2795fb1",
+            "RingsDbCardId": "146051",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Big Uruk",
+            "Slug": "Big-Uruk-TMoF",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Big-Uruk.jpg",
+                "Stats": {
+                    "EngagementCost": "44",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Big Uruk engages you, either raise your threat by 4, or Big Uruk makes an immediate attack against you.",
+                    "(|)"
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each ally you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 52,
+            "Quantity": 3,
+            "Artist": "Audrey Hotte",
+            "HasErrata": false,
+            "OctgnGuid": "6036efda-3456-45d2-817a-4ef8b310db5a",
+            "RingsDbCardId": "146052",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Little Snuffler",
+            "Slug": "Little-Snuffler-TMoF",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Little-Snuffler.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "1",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Snaga."
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Either raise your threat by 1 for each ally you control, or discard an ally you control.",
+                    "(|)"
+                ],
+                "Shadow": "Shadow: Exhaust a character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 53,
+            "Quantity": 4,
+            "Artist": "Borja Pindado",
+            "HasErrata": false,
+            "OctgnGuid": "ad3509b5-b4b4-4fe5-bfdc-e655cc2470d3",
+            "RingsDbCardId": "146053",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "'Wicked Master!'",
+            "Slug": "'Wicked-Master'-TMoF",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/'Wicked-Master'.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Gollum."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Gollum makes an immediate attack against the first player. If Gollum is not in play, search the encounter deck and discard pile for Gollum and put him into play engaged with the first player.",
+                    "(|) (|) (|)"
+                ],
+                "Shadow": "Shadow: If attacking enemy is Gollum, he makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 54,
+            "Quantity": 1,
+            "Artist": "Jennifer Hrabota Lesser",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "146054",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Lidless Eye",
+            "Slug": "The-Lidless-Eye-TMoF",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/The-Lidless-Eye.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril."
+                ],
+                "Text": [
+                    "When Revealed: Make a Fortitude test. If The One Ring is exhausted, add (|) (|) to the test. If you fail this test, raise your threat by 10.",
+                    "(|) (|)"
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if you failed a Fortitude test this round).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 3,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 55,
+            "Quantity": 4,
+            "Artist": "Sergey Glushakov",
+            "HasErrata": false,
+            "OctgnGuid": "d71de165-8632-4628-94ea-793a1c20e6f8",
+            "RingsDbCardId": "146055",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Foul Fumes",
+            "Slug": "Foul-Fumes-TMoF",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Foul-Fumes.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player makes a Fortitude test. If you fail this test, deal 1 damage to each character you control. Until the end of the round, treat the printed text box of each damaged character as if it were blank (except for Traits).",
+                    "(|) (|)"
+                ],
+                "Shadow": "Shadow: If you failed a Fortitude test this round, this attack is considered undefended.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 56,
+            "Quantity": 2,
+            "Artist": "Borja Pindado",
+            "HasErrata": false,
+            "OctgnGuid": "01a03d74-06d9-4fc8-afd7-2739fa900c32",
+            "RingsDbCardId": "146056",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Heavy and Tired",
+            "Slug": "Heavy-and-Tired-TMoF",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Heavy-and-Tired.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach Heavy and Tired to the hero with the most attachments and exhaust that hero. (Counts as a Condition attachment with the text: `Limit 1 per hero. Attached hero cannot commit to Fortitude tests. Forced: After you Fail a Fortitude test, exhaust attached hero and discard each non-objective attachment on it.`)",
+                    "(|)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`This extra weight is killing me. It must go.`\r\n-Frodo Baggins, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 57,
+            "Quantity": 2,
+            "Artist": "Borja Pindado",
+            "HasErrata": false,
+            "OctgnGuid": "cdf7a6c5-23f6-4314-a122-3b7df1b97501",
+            "RingsDbCardId": "146057",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Drawn to the Ring",
+            "Slug": "Drawn-to-the-Ring-TMoF",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Drawn-to-the-Ring.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player must choose: either exhaust The One Ring and reveal an encounter card, or discard cards from the top of the encounter deck until an enemy is discarded and put it into play engaged with him."
+                ],
+                "Shadow": "Shadow: Discard a non-objective attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Deep Shadows",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 61,
+            "Quantity": 3,
+            "Artist": "Alexander Kozachenko",
+            "HasErrata": false,
+            "OctgnGuid": "a442dbd4-ec18-44e6-b762-b0ebf94a8897",
+            "RingsDbCardId": "146061",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Deep Shadows",
+            "Slug": "Deep-Shadows-TMoF",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Deep-Shadows.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "When Revealed: Each player must choose: either discard your hand (with at least 3 cards in it), or reveal and encounter card."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Deep Shadows",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 62,
+            "Quantity": 2,
+            "Artist": "Igor Artyomenko",
+            "HasErrata": false,
+            "OctgnGuid": "ef94d441-715f-42e8-bb3a-764592cdf44c",
+            "RingsDbCardId": "146062",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Evil Vigilance",
+            "Slug": "Evil-Vigilance-TMoF",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Evil-Vigilance.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must choose: either discard a questing character you control, or raise your threat by 1 for each questing character you control."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, reveal the top card of the encounter deck.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Deep Shadows",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 63,
+            "Quantity": 3,
+            "Artist": "Martin de Diego Sádaba",
+            "HasErrata": false,
+            "OctgnGuid": "15f9c6b7-2bb0-48ea-9a5d-b8ec3b1a7e2d",
+            "RingsDbCardId": "146063",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "In Darkness Bind Them",
+            "Slug": "In-Darkness-Bind-Them-TMoF",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/In-Darkness-Bind-Them.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player exhausts a character he controls. If The Eye of Sauron is in the staging area, characters cannot be readied by player card effects this round."
+                ],
+                "Shadow": "Shadow: If The Eye of Sauron is in the staging area, attacking enemy gets +2 Attack and returns to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mountain of Fire Epic Multiplayer",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 64,
+            "Quantity": 2,
+            "Artist": "Gabriela Birchal",
+            "HasErrata": false,
+            "OctgnGuid": "23402087-6d53-45c7-86be-3c6b9f5a651c",
+            "RingsDbCardId": "146064",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Land of Mordor",
+            "Slug": "The-Land-of-Mordor-TMoF",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/The-Land-of-Mordor-1A.jpg",
+                "Stats": {
+                    "StageNumber": "1A"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Dire."
+                ],
+                "Text": [
+                    "Setup: Add Mount Doom and The Tower of Barad-dûr to the staging area. Make Brake of Thorns the active location. Each player searches the encounter deck for a different location and adds it to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "Against all odds, the Ring-bearer has found his way into The Black Land of Modor, but a dangerous journey still lies before him and The Eye of Sauron yet searches for the spies who escaped from Cirith Ungol."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/The-Land-of-Mordor-1B.jpg",
+                "Stats": {
+                    "StageNumber": "1B",
+                    "QuestPoints": "4"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Dire. This stage gets +4 quest points for each player.",
+                    "The first treachery revealed each quest phase is immune to player card effects and gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": "Fordo and Sam gazed out in mingled loathing and wonder on this hateful land. Between them and the smoking mountain, and about it north and south, all seemed ruinous and dead, a desert burned and choked.\r\n-The Return of the King"
+            },
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Deep Shadows"
+                ],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 75,
+            "Quantity": 1,
+            "Artist": "Chris Rahn",
+            "HasErrata": false,
+            "OctgnGuid": "39a64a5a-7074-46a5-aacc-a42537fe0ddd",
+            "RingsDbCardId": "146075",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Road to Isenmouthe",
+            "Slug": "The-Road-to-Isenmouthe-TMoF",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/The-Road-to-Isenmouthe-2A.jpg",
+                "Stats": {
+                    "StageNumber": "2A"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Dire."
+                ],
+                "Text": [
+                    "When Revealed: Search the encounter deck and discard pile and victory display for Mordor Road and add it to the staging area. Shuffle the encounter discard pile into the encounter deck and travel to Mordor Road."
+                ],
+                "Shadow": null,
+                "FlavorText": "They had gone some miles, and the road was at last running down a long slope into a plain, when Frodo`s strength began to give out and his will wavered. He lurched and stumbled. Desperately Sam tried to help him and hold him up...\r\n-The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/The-Road-to-Isenmouthe-2B.jpg",
+                "Stats": {
+                    "StageNumber": "2B",
+                    "QuestPoints": "-"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Dire. Forced: After placing progress here from questing successfully, each player makes a Fortitude test. If a player passes this test, he places a resource here. If a player fails this test, he discards cards from the top of the encounter deck until an enemy is discarded and puts that enemy into play engaged with him.",
+                    "At the end of the quest phase, if the number of resources here is equal to or greater than the number of players, advance to stage 3A."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Deep Shadows"
+                ],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 76,
+            "Quantity": 1,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "OctgnGuid": "6a24a5e8-80e9-4bba-af55-64be11742dde",
+            "RingsDbCardId": "146076",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Last Gasp",
+            "Slug": "The-Last-Gasp-TMoF",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/The-Last-Gasp-3A.jpg",
+                "Stats": {
+                    "StageNumber": "3A"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Dire."
+                ],
+                "Text": [
+                    "When Revealed: Shuffle the encounter discard pile into the encounter deck and discard cards from the top until X locations are discarded, where X is the number of players in the game. Add each location discarded this way to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "The last stage of their journey to Orodruin came, and it was a torment greater than Sam had ever thought he could bear. He was in pain, and so parched that he could no longer swallow even a mouthful of food.\r\n-The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/The-Last-Gasp-3B.jpg",
+                "Stats": {
+                    "StageNumber": "3B",
+                    "QuestPoints": "20"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Dire. The first treachery revealed each quest phase is immune to player card effects and gains surge.",
+                    "Forced: At the beginning of the quest phase, the first player makes a Fortitude test. If the first player fails this test, no more than 5 progress can be placed here this round.",
+                    "This stage cannot be defeated unless Mount Doom is the active location."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Deep Shadows"
+                ],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 77,
+            "Quantity": 1,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "OctgnGuid": "ec2049ab-c950-46f7-9f1b-30ada69db857",
+            "RingsDbCardId": "146077",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Crack of Doom",
+            "Slug": "The-Crack-of-Doom-TMoF",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/The-Crack-of-Doom-4A.jpg",
+                "Stats": {
+                    "StageNumber": "4A"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Dire."
+                ],
+                "Text": [
+                    "When Revealed: Shuffle the encounter discard pile into the encounter deck and discard cards from the top until X enemies are discarded, where X is the number of players. Add each enemy discarded this way to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "He was come to the heart of the realm of Sauron and the forges of his ancient might, greatest in Middle-earth; all other powers were here subdued.\r\n-The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/The-Crack-of-Doom-4B.jpg",
+                "Stats": {
+                    "StageNumber": "4B",
+                    "QuestPoints": "-"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Dire. Allies cannot enter play and `when revealed` effects cannot be canceled.",
+                    "Forced: When Mount Doom is explored, the first player makes a Fortitude test. Discard 1 extra encounter card for each player. If the first player fails this test, the Ring-bearer claims The One Ring and the players lose the game. If the test is successful, the Ring-bearer completes the quest and the players win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mount Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Deep Shadows"
+                ],
+                "StageNumber": 4,
+                "StageLetter": "A"
+            },
+            "Number": 78,
+            "Quantity": 1,
+            "Artist": "Dmitry Prosvirnin",
+            "HasErrata": false,
+            "OctgnGuid": "ad73bb42-f0fb-4732-956d-e921140e99bb",
+            "RingsDbCardId": "146078",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Mount Doom",
+            "Slug": "Mount-Doom-Campaign-TMoF",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Mount-Doom-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Each player may change heroes he controls without incurring the +1 threat penalty. Place X resource tokens on this card, where X is the number of resource tokens on The Black Gate, as recorded in the campaign log. Remove each burden with the following burden set icons from the encounter deck: Helm`s Deep, The Road to Isengard, The Passing of the Grey Company",
+                    "Forced: At the end of the round, remove 1 resource token from this card. Then, if there are no resource tokens here, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Resolution: The first player must choose: - Keep The One Ring card and succumb to the power of Sauron. Then, the players lose the campaign.",
+                    "- Destroy The One Ring card and defeat the power of Sauron. Then, the players win the campaign."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I have come,` he said. `But I do not choose to do what I came to do. I will not do this deed. The Ring is mine!` And suddenly, as he set it on his finger, he vanished from Sam`s sight.\r\n-The Return of the King\r\n\r\n`The realm of Sauron is ended!` said Gandalf. `The Ring-bearer has fulfilled his Quest.` And as the Captains gazed south to the Land of Mordor, it seemded to them that, black against the pall of cloud, there rose a huge shape of shadow, impenetrable, lightning-crowned, filling all the sky. Enormous it reared above the world, and stretched out towards them a vast threatening hand, terrible but impotent: for even as it leaned over them, a great wind took it, and it was all blown away, and passed; and then a hush fell.\r\n-The Return of the King"
+            },
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": null,
+            "Number": 79,
+            "Quantity": 1,
+            "Artist": "Chris Rahn",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "146079",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Epic Multiplayer Mode",
+            "Slug": "Epic-Multiplayer-Mode-Campaign-TMoF",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Epic-Multiplayer-Mode-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Create two separate staging areas: one for The Black Gate Opens and one for Mount Doom. Divide the players into 2 teams, one for each scenario. No more than 4 players can be assigned to each scenario and the number of players assigned to Mount Doom cannot be more than the number of assigned to The Black Gate Opens. Shuffle 1 copy of In Darkness Bind Them into each encounter deck. Place The Eye of Sauron in the Mount Doom staging area with its correspdonding side faceup. Flip this card over and set it next to the Mount Doom quest deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Ignore the Forced effect on the Mount Doom campaign card if it is in play.",
+                    "Forced: At the end of the round, the first player chooses a scenario (The Black Gate Opens or Mount Doom). Each player at the chosen scenario draws 1 card. Each player at the other scenario reduces his threat by 3. Then, the player who controls the Gwaihir objective-ally may give control of it to another player (at either scenario).",
+                    "At the end of the round, if the last player at either scenario is defeated, both teams lose the game. If the Mount Doom scenario is defeated, both teams win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "`His eye is now straining towards us, blind almost to all else that is moving. So we must keep it. Therein lies all our hope.`\r\n-Gandalf, The Return of the King"
+            },
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": null,
+            "Number": 80,
+            "Quantity": 1,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "146080",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Eye of Sauron",
+            "Slug": "The-Eye-of-Sauron-Mount-Doom-TMoF",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/The-Eye-of-Sauron-Mount-Doom.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Add Eye to each Fortitude test.",
+                    "Forced: At the end of the round, flip The Eye of Sauron, then move it and each Nazgûl enemy in the staging area to The Black Gate Opens staging area. The first player may raise each player`s threat by 3 to cancel this effect."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mountain of Fire Epic Multiplayer",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 81,
+            "Quantity": 1,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "146081",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Eye of Sauron",
+            "Slug": "The-Eye-of-Sauron-The-Black-Gate-Opens-TMoF",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/The-Eye-of-Sauron-The-Black-Gate-Opens.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Each enemy in the staging area gets +1 Threat and -10 engagement cost.",
+                    "Forced: At the end of the round, flip The Eye of Sauron, the move it and each Nazgûl enemy in the staging area to the Mount Doom staging area. The first player may raise each player`s threat by 3 to cancel this effect."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": {
+                "EncounterSet": "Mountain of Fire Epic Multiplayer",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 82,
+            "Quantity": 1,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "146082",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ]
+}

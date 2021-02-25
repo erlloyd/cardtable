@@ -1,0 +1,393 @@
+{
+    "Name": "The Antlered Crown",
+    "Slug": "The-Antlered-Crown",
+    "Abbreviation": "TAC",
+    "Cycle": "The Ring-maker",
+    "SetType": "Adventure_Pack",
+    "Cards": null,
+    "cards": [
+        {
+            "Title": "Erkenbrand",
+            "Slug": "Erkenbrand-TAC",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Erkenbrand.jpg",
+                "Stats": {
+                    "ThreatCost": "10",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Sentinel.",
+                    "While Erkenbrand is defending, he gains: `Response: Deal 1 damage to Erkenbrand to cancel a shadow effect just triggered.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "Down from the hills leaped Erkenbrand, lord of Westfold. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 137,
+            "Quantity": 1,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "OctgnGuid": "f2a282eb-eab1-472d-b7fb-71429a1a4855",
+            "RingsDbCardId": "08137",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 6948,
+            "Categories": null
+        },
+        {
+            "Title": "Warden of Helm's Deep",
+            "Slug": "Warden-of-Helm's-Deep-TAC",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Warden-of-Helm's-Deep.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "0",
+                    "Attack": "1",
+                    "Defense": "3",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Sentinel."
+                ],
+                "Shadow": null,
+                "FlavorText": "They now learned to their joy that Erkenbrand had left many men to hold Helm`s Gate, and more had since escaped thither. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 138,
+            "Quantity": 3,
+            "Artist": "Jarreau Wimberly",
+            "HasErrata": false,
+            "OctgnGuid": "f64befcc-d4de-47a4-8517-5f2617984270",
+            "RingsDbCardId": "08138",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 133206,
+            "Categories": null
+        },
+        {
+            "Title": "The Day's Rising",
+            "Slug": "The-Day's-Rising-TAC",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/The-Day's-Rising.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero with sentinel.",
+                    "Response: After attached hero defends against an attack and takes no damage while defending that attack, exhaust Day`s Rising to add 1 resource to the attached hero`s resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "Out of doubt, out of dark to the day`s rising\r\nI came singing in the sun, sword unsheathing.\r\n-Éomer, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 139,
+            "Quantity": 3,
+            "Artist": "Jarreau Wimberly",
+            "HasErrata": false,
+            "OctgnGuid": "5d1c8757-7409-41da-9e12-454af06e8946",
+            "RingsDbCardId": "08139",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 129831,
+            "Categories": null
+        },
+        {
+            "Title": "Captain of Gondor",
+            "Slug": "Captain-of-Gondor-TAC",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Captain-of-Gondor.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Warrior hero.",
+                    "Response: After you optionally engage an enemy, exhaust Captain of Gondor to give attached hero +1 Attack and +1 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Boromir it was that drove the enemy at last back from this western shore...` -Beregond, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 140,
+            "Quantity": 3,
+            "Artist": "Jarreau Wimberly",
+            "HasErrata": false,
+            "OctgnGuid": "29b76593-0ef3-410b-aa85-1c282d4b1582",
+            "RingsDbCardId": "08140",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 226008,
+            "Categories": null
+        },
+        {
+            "Title": "Booming Ent",
+            "Slug": "Booming-Ent-TAC",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Booming-Ent.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "0",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have restricted attachments. Enters play exhausted.",
+                    "Booming Ent gets +1 Attack for each damaged Ent character you control."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...a man that hacks once at an Ent never gets a chance of a second blow.` -Merry, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 141,
+            "Quantity": 3,
+            "Artist": "Jarreau Wimberly",
+            "HasErrata": false,
+            "OctgnGuid": "665b16ad-accf-45c9-8725-f3f5d0818310",
+            "RingsDbCardId": "08141",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 246285,
+            "Categories": null
+        },
+        {
+            "Title": "Ride Them Down",
+            "Slug": "Ride-Them-Down-TAC",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Ride-Them-Down.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Quest Action: Choose a non-unique enemy in the staging area. Until the end of the phase, progress that would be placed on the quest from questing successfully is instead assigned as damage to the chosen enemy. (Progress must still be placed on any active location first.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "Like thunder they broke upon the enemy... -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 142,
+            "Quantity": 3,
+            "Artist": "Emile Denis",
+            "HasErrata": false,
+            "OctgnGuid": "6461b502-cb47-4528-b18a-db45988f1692",
+            "RingsDbCardId": "08142",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 45030,
+            "Categories": null
+        },
+        {
+            "Title": "Shadows Give Way",
+            "Slug": "Shadows-Give-Way-TAC",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Shadows-Give-Way.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You must use resources from 3 different heroes` pools to pay for this card.",
+                    "Action: Discard each shadow card from each enemy in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "At that moment he caught a flash of white and silver coming from the North, like a small star down on the dusky fields. -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 143,
+            "Quantity": 3,
+            "Artist": "Jordy Lakiere",
+            "HasErrata": false,
+            "OctgnGuid": "7c7912dc-4d55-4c40-98a0-befbbff24c90",
+            "RingsDbCardId": "08143",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 22787,
+            "Categories": null
+        },
+        {
+            "Title": "Don't Be Hasty!",
+            "Slug": "Don't-Be-Hasty-TAC",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Don't-Be-Hasty.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: When an encounter card is revealed but before resolving any of that card`s keywords or `when revealed` effects, choose a character comited to the quest. Ready that character and remove it from the quest."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Don`t be hasty, that is my motto.` -Treebeard, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 144,
+            "Quantity": 3,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "08144",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 14779,
+            "Categories": null
+        },
+        {
+            "Title": "Waters of Nimrodel",
+            "Slug": "Waters-of-Nimrodel-TAC",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Waters-of-Nimrodel.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 3."
+                ],
+                "Text": [
+                    "Doomed 3.",
+                    "Action: Heal all damage on each character in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "For a moment Frodo stood near the brink and let the water flow over his tired feet. It was cold but its touch was clean, and as he went on and it mounted to his knees, he felt that the strain of travel and all weariness was washed from his limbs. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 145,
+            "Quantity": 3,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "OctgnGuid": "79cb32f4-053c-47e1-983d-59d64b493a76",
+            "RingsDbCardId": "08145",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 41581,
+            "Categories": null
+        },
+        {
+            "Title": "Treebeard",
+            "Slug": "Treebeard-TAC",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Antlered-Crown/Treebeard.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have restricted attachments. Treebeard enters play exhausted and collects 1 resource each resource phase. These resources can be used to pay for Ent cards played from your hand.",
+                    "Action: Pay 2 resources from Treebeard`s pool to ready an Ent character."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Antlered Crown",
+            "EncounterInfo": null,
+            "Number": 146,
+            "Quantity": 3,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "OctgnGuid": "c266126d-cf2d-4a61-aac7-28bac2d1ea0d",
+            "RingsDbCardId": "08146",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 666755,
+            "Categories": null
+        }
+    ]
+}

@@ -1,0 +1,902 @@
+{
+    "Title": "The River Running",
+    "Slug": "The-River-Running",
+    "Product": "A Shadow in the East",
+    "Number": 1,
+    "AllCards": [
+        {
+            "Title": "Easterling Pursuit",
+            "Slug": "Easterling-Pursuit-ASitE",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Easterling-Pursuit.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the round, place 1 resource here. Then if there are at lest 3 resources here, remove 3 of them and shuffle the encounter discard pile into the encounter deck. Discard cards from the top until X enemies are discarded, where X is the number of players. Add each enemy discarded this way to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The River Running",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 12,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "56b24d25-a04a-418b-add0-7b1971dae38e",
+            "RingsDbCardId": "21012",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Easterling Outrider",
+            "Slug": "Easterling-Outrider-ASitE",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Easterling-Outrider.jpg",
+                "Stats": {
+                    "EngagementCost": "24",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "Forced: After Easterling Outrider engages a player, either place 1 resource on Easterling Pursuit, or Easterling Outrider makes an immediate attack."
+                ],
+                "Shadow": "Shadow: Discard an attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The River Running",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 13,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "2af71d2e-0b70-43a2-b94e-89770992ef9c",
+            "RingsDbCardId": "21013",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "River Running",
+            "Slug": "River-Running-ASitE",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/River-Running.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Riverland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While River Running is in the staging area, enemies cannot be optionally engaged.",
+                    "Travel: The first player engages the highest engagement cost enemy in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "...below them were trees that looked like oaks and elms, and wide grass lands, and a river running through it all.\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The River Running",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 14,
+            "Quantity": 2,
+            "Artist": "Carlos Palma Cruchaga",
+            "HasErrata": false,
+            "OctgnGuid": "1fdfdb77-31e0-458d-85d1-9c158f12717f",
+            "RingsDbCardId": "21014",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Exposed Riverbank",
+            "Slug": "Exposed-Riverbank-ASitE",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Exposed-Riverbank.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Riverland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Exposed Riverbank is in the staging area, it gains: `Forced: After a `when revealed` effect is canceled, place 1 resource on Easterling Pursuit.`",
+                    "Travel: Place 1 resource on Easterling Pursuit."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The River Running",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 15,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "f6e8459b-b0d6-4d30-ad8e-6aacfa34ec32",
+            "RingsDbCardId": "21015",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Enemies Close Behind",
+            "Slug": "Enemies-Close-Behind-ASitE",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Enemies-Close-Behind.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Place 1 resource on Easterling Pursuit. Then, raise each player`s threat by 1 for each resource on Easterling Pursuit."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, place 1 resource on Easterling Pursuit.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The River Running",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 16,
+            "Quantity": 2,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "OctgnGuid": "a750ab9c-9b29-4ca4-8221-8fa27cd74fe2",
+            "RingsDbCardId": "21016",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Easterling Captain",
+            "Slug": "Easterling-Captain-ASitE",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Easterling-Captain.jpg",
+                "Stats": {
+                    "EngagementCost": "36",
+                    "Threat": "3",
+                    "Attack": "6",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [
+                    "Victory 6."
+                ],
+                "Text": [
+                    "Forced: When Easterling Captain enters play, discard cards from the encounter deck until an Easterling treachery is discarded. Attach that treachery to Easterling Captain.",
+                    "Forced: When Easterling Captain would take any amount of damage, discard an Easterling attachment from him. Then, cancel the damage."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Riders of Rhûn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 17,
+            "Quantity": 1,
+            "Artist": "Antonio José Manzanedo",
+            "HasErrata": false,
+            "OctgnGuid": "9042242b-054d-413e-83c7-bb9f42551a8a",
+            "RingsDbCardId": "21017",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Rider of Rhûn",
+            "Slug": "Rider-of-Rhun-ASitE",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Rider-of-Rhûn.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [
+                    "Archery 2."
+                ],
+                "Text": [
+                    "Archery 2.",
+                    "Rider of Rhûn gets -10 enagement cost for each Easterling attachment it has.",
+                    "When Revealed: Search the encounter deck and discard pile for an Easterling Horse and attach it to Rider of Rhûn. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Riders of Rhûn",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 18,
+            "Quantity": 2,
+            "Artist": "Marco Caradonna",
+            "HasErrata": false,
+            "OctgnGuid": "5af4be18-af74-46ef-a235-9c1002b85338",
+            "RingsDbCardId": "21018",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Easterling Horse",
+            "Slug": "Easterling-Horse-ASitE",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Easterling-Horse.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While attached to an enemy, counts as a Mount attachment with the text: `Attached enemy gets +2 Threat. Forced: At the end of the round, return attached enemy to the staging area.`",
+                    "When Revealed: Attach to the lowest engagement cost Easterling enemy without an Easterling Horse and return it to the staging area. Otherwise, Easterling Horse gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Riders of Rhûn",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 19,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "53c01bdc-2761-4f8f-90bc-1eedd14ca376",
+            "RingsDbCardId": "21019",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Easterling Raider",
+            "Slug": "Easterling-Raider-ASitE",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Easterling-Raider.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [
+                    "Archery 1."
+                ],
+                "Text": [
+                    "Archery 1.",
+                    "Easterling Raider gets +1 Attack and +1 Defense for each Easterling attachment on it."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if it has an Easterling attachment).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Easterling Raiders",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 20,
+            "Quantity": 3,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "OctgnGuid": "4befb4c8-e350-48ed-a7dd-ee803e2ca8d7",
+            "RingsDbCardId": "21020",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Warrior of Rhûn",
+            "Slug": "Warrior-of-Rhun-ASitE",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Warrior-of-Rhûn.jpg",
+                "Stats": {
+                    "EngagementCost": "34",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Warrior of Rhûn attacks, attach the top Easterling treachery in the discard pile to it."
+                ],
+                "Shadow": "Shadow: Attach the top Easterling treachery in the discard pile to attacking enemy.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Easterling Raiders",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 3,
+            "Artist": "Chris Grun",
+            "HasErrata": false,
+            "OctgnGuid": "aabc830a-4833-42cf-9b26-d8f2c5eb9658",
+            "RingsDbCardId": "21021",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Sword of Rhûn",
+            "Slug": "Sword-of-Rhun-ASitE",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Sword-of-Rhûn.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "While attached to an enemy, counts as a Weapon attachment with the text: `Attached enemy gets +2 Attack.`",
+                    "When Revealed: Attach to the Easterling enemy with the lowest Attack without a Sword of Rhûn."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Easterling Raiders",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 22,
+            "Quantity": 2,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "OctgnGuid": "b897b63d-86ac-417c-88d2-1a594f3674f1",
+            "RingsDbCardId": "21022",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Recurve Bow",
+            "Slug": "Recurve-Bow-ASitE",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Recurve-Bow.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "While attached to an enemy, counts as a Weapon attachment with the text: `Attached enemy gains Archery 2.`",
+                    "When Revealed: Attach to the highest engagement cost Easterling enemy without a Recurve Bow."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Easterling Raiders",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 23,
+            "Quantity": 2,
+            "Artist": "Martin de Diego Sádaba",
+            "HasErrata": false,
+            "OctgnGuid": "576b4f3c-add2-42b6-b78c-8a2e482290ae",
+            "RingsDbCardId": "21023",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Warriors of the East",
+            "Slug": "Warriors-of-the-East-ASitE",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Warriors-of-the-East.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge.",
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: After an Easterling enemy enters play, attach the top Easterling treachery in the discard pile to that enemy.",
+                    "Forced: After Warriors of the East becomes the current quest, the highest Attack Easterling enemy in the staging area attacks the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Easterlings are fearless warriors, but a stern defense may dissuade them."
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": null,
+            "Number": 24,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "OctgnGuid": "bbc72a18-cf4c-469f-bd01-6b1d3492c2ff",
+            "RingsDbCardId": "21024",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Rolling Plains",
+            "Slug": "Rolling-Plains-ASitE",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Rolling-Plains.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Plains."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each copy of Rolling Plains gets +2 Threat until the end of the phase.",
+                    "Travel: Raise each player`s threat by 2."
+                ],
+                "Shadow": null,
+                "FlavorText": "The falling stream vanished into a deep growth of cresses and water-plants, and they could hear it tinkling away in green tunnels, down long gentle slopes...\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Rolling Plains",
+                "EasyModeQuantity": 3,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 25,
+            "Quantity": 4,
+            "Artist": "Alyn Spiller",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "21025",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Rocky Outcrop",
+            "Slug": "Rocky-Outcrop-ASitE",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Rocky-Outcrop.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Plains."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Rocky Outcrop is in the staging area, characters cannot be readied by player card effects.",
+                    "Travel: The first player exhausts a hero he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Rolling Plains",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 26,
+            "Quantity": 2,
+            "Artist": "Alyn Spiller",
+            "HasErrata": false,
+            "OctgnGuid": "926a17c6-ea0b-43ba-925a-71ba5ef1ed77",
+            "RingsDbCardId": "21026",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Weary Lands",
+            "Slug": "Weary-Lands-ASitE",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Weary-Lands.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "Doomed 1.",
+                    "When Revealed: Each exhausted character gets -1 Willpower until the end of the phase."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to the defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Rolling Plains",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 27,
+            "Quantity": 2,
+            "Artist": "Dual Brush Studios",
+            "HasErrata": false,
+            "OctgnGuid": "1f4cdef5-6847-4dd5-96b0-8ce03d21bd8d",
+            "RingsDbCardId": "21027",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Painful Fatigue",
+            "Slug": "Painful-Fatigue-ASitE",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Painful-Fatigue.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player exhausts a character he controls and deals 1 damage to it."
+                ],
+                "Shadow": "Shadow: Either exhaust a character you control, or return attacking enemy to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Rolling Plains",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 28,
+            "Quantity": 2,
+            "Artist": "JB Casacop",
+            "HasErrata": false,
+            "OctgnGuid": "37153373-7a82-484e-9aca-7ed47a6a7703",
+            "RingsDbCardId": "21028",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "An Arduous Journey",
+            "Slug": "An-Arduous-Journey-ASitE",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/An-Arduous-Journey.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Each player cannot ready more than 6 characters he controls during the refresh phase.",
+                    "Response: When this stage is defeated, each player may ready a hero he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "The lonely plains appear to stretch endlessly in each direction, and you tire just from looking at them."
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": null,
+            "Number": 29,
+            "Quantity": 1,
+            "Artist": "Dual Brush Studios",
+            "HasErrata": false,
+            "OctgnGuid": "c1ee0cb7-a209-44d6-8f35-8494a9e6cf1d",
+            "RingsDbCardId": "21029",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Chased by Easterlings",
+            "Slug": "Chased-by-Easterlings-ASitE",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Chased-by-Easterlings-1A.jpg",
+                "Stats": {
+                    "StageNumber": "1A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set Warriors of the East aside, out of play. Add Easterling Pursuit and 1 copy of River Running to the staging area. Each player adds 1 different Easterling enemy to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "You are traveling south along the River Running on your way to Dorwinion when you are attacked by Easterling raiders in the night. The raiders set fire to your boat, trapping you on the east side of the river, and you are forced to flee south on foot."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Chased-by-Easterlings-1B.jpg",
+                "Stats": {
+                    "StageNumber": "1B",
+                    "QuestPoints": "5"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "This stage gets +5 quest points per player.",
+                    "Add +1 Threat to the total threat in the staging area for each resource token on Easterling Pursuit."
+                ],
+                "Shadow": null,
+                "FlavorText": "Your only hope is to reach the safety of Dorwinion by the Crossing of Araw before your Easterling pursuers overtake you."
+            },
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The River Running",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Riders of Rhûn",
+                    "Easterling Raiders",
+                    "Rolling Plains"
+                ],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 75,
+            "Quantity": 1,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "OctgnGuid": "fbc99604-7183-41fe-b37c-d5a8f54bea0e",
+            "RingsDbCardId": "21075",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Crossing of Araw",
+            "Slug": "The-Crossing-of-Araw-ASitE",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/The-Crossing-of-Araw-2A.jpg",
+                "Stats": {
+                    "StageNumber": "2A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add Warriors of the East to the staging area. Shuffle the encounter discard pile into the encounter deck and discard cards from the top until X enemies are discarded, where X is the number of players. Add each enemy discarded this way to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "You have reached the crossing, but some of your enemies anticipated this course of action and raced here ahead of you. They fight to delay your escape while their comrades close in from behind."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/The-Crossing-of-Araw-2B.jpg",
+                "Stats": {
+                    "StageNumber": "2B",
+                    "QuestPoints": "15"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Each enemy in the staging area gets -10 enagement cost.",
+                    "While at least one player is engaged with an enemy, no more than 5 progress can be placed here each round.",
+                    "When this stage is defeated, the players win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "You must fight your way past the Easterlings to cross into Dorwinion."
+            },
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The River Running",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Riders of Rhûn",
+                    "Easterling Raiders",
+                    "Rolling Plains"
+                ],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 76,
+            "Quantity": 1,
+            "Artist": "Chris Grun",
+            "HasErrata": false,
+            "OctgnGuid": "8bd42629-07e8-4d8e-ac82-1f463c1cb7e6",
+            "RingsDbCardId": "21076",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ]
+}

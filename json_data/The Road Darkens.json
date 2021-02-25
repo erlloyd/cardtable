@@ -1,0 +1,737 @@
+{
+    "Name": "The Road Darkens",
+    "Slug": "The-Road-Darkens",
+    "Abbreviation": "RD",
+    "Cycle": "The Lord of the Rings",
+    "SetType": "Saga_Expansion",
+    "Cards": null,
+    "cards": [
+        {
+            "Title": "Frodo Baggins",
+            "Slug": "Frodo-Baggins-RD",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Frodo-Baggins.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit.",
+                    "Ring-bearer."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Frodo Baggins exhausts to defend an attack, exhaust The One Ring and spend 1 Fellowship resource to target the attacking enemy. Then, this attack deals no damage and each player raises his threat by 2."
+                ],
+                "Shadow": null,
+                "FlavorText": "`But there is more about you now than appears on the surface.`\r\n-Bilbo, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "OctgnGuid": "f9196cda-8f50-4cc5-9aad-1c56cb677bca",
+            "RingsDbCardId": "142001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 24,
+            "Categories": null
+        },
+        {
+            "Title": "Gandalf",
+            "Slug": "Gandalf-RD",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Gandalf.jpg",
+                "Stats": {
+                    "ThreatCost": "14",
+                    "Willpower": "3",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Istari."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play with the top card of your deck faceup. Once per phase, you may play the top card of your deck as if it was in your hand. When playing a card this way, Gandalf is considered to have the printed Leadership, Lore, Tactics, and Spirit icons."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I am a servant of the Secret Fire, wielder of the flame of Anor.`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Matt Stewart",
+            "HasErrata": false,
+            "OctgnGuid": "3e055edf-4540-4cf1-94ce-afbf5fc28f82",
+            "RingsDbCardId": "142002",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 22771,
+            "Categories": null
+        },
+        {
+            "Title": "Galadriel",
+            "Slug": "Galadriel-RD",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Galadriel.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "3",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "At the end of the round, discard Galadriel from play.",
+                    "Response: After you play Galadriel from your hand, search the top 5 cards of your deck for an attachment of cost 3 or less and put it into play. Put the remaining cards back in any order."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "OctgnGuid": "3d09a998-9ad0-4b98-9c42-50c4226cc73b",
+            "RingsDbCardId": "142003",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 356181,
+            "Categories": null
+        },
+        {
+            "Title": "Boromir",
+            "Slug": "Boromir-RD",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Boromir.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Boromir gets +2 Defense while defending against an enemy with an engagement cost higher than your threat.",
+                    "Response: After Boromir takes any amount of damage, ready him."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Chris Rahn",
+            "HasErrata": false,
+            "OctgnGuid": "36b26228-1c01-4064-a109-d110e00d8e4b",
+            "RingsDbCardId": "142004",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 247021,
+            "Categories": null
+        },
+        {
+            "Title": "Elrond",
+            "Slug": "Elrond-RD",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Elrond.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "3",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Healer."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "At the end of the round, discard Elrond from play.",
+                    "Response: After Elrond enters play, choose one: heal all damage on a hero, discard a Condition attachment, or each player draws 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Allen Douglas",
+            "HasErrata": false,
+            "OctgnGuid": "638638f0-8177-410a-bce8-9e2bbf5ad81f",
+            "RingsDbCardId": "142005",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 230460,
+            "Categories": null
+        },
+        {
+            "Title": "Bilbo Baggins",
+            "Slug": "Bilbo-Baggins-RD",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Bilbo-Baggins.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Bilbo Baggins enters play, search your deck for a Pipe attachment and add it to your hand. Shuffle your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Elves may thrive on speech alone, and Dwarves endure great weariness, but I am an old Hobbit, and I miss my meal at noon.`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "OctgnGuid": "e02cc17b-80e4-4a8f-ba55-1df74aac816d",
+            "RingsDbCardId": "142006",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 343968,
+            "Categories": null
+        },
+        {
+            "Title": "Flame of Anor",
+            "Slug": "Flame-of-Anor-RD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Flame-of-Anor.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Spell."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Action: Add Flame of Anor to the victory display and discard the top card of your deck to ready an Istari character you control. That character gets +X Attack until the end of the phase where X is the discarded card`s cost."
+                ],
+                "Shadow": null,
+                "FlavorText": "`You cannot pass!`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Diego Gisbert Llorens",
+            "HasErrata": false,
+            "OctgnGuid": "8a5ff815-56cf-4d5f-a649-a111e736a9f1",
+            "RingsDbCardId": "142007",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 207383,
+            "Categories": null
+        },
+        {
+            "Title": "Gandalf's Staff",
+            "Slug": "Gandalf's-Staff-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Gandalf's-Staff.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Staff."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to Gandalf. Restricted.",
+                    "Action: Exhaust Gandalf`s Staff to (choose one): choose a player to draw 1 card, add 1 resource to a hero`s resource pool, or discard a shadow card from a non-unique enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": "...he held his staff aloft, and from its tip there came a feint radiance.\r\n -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Victor Maury",
+            "HasErrata": false,
+            "OctgnGuid": "02e56cef-e78d-4dbd-bd4d-6ec43e4b1d2b",
+            "RingsDbCardId": "142008",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 379997,
+            "Categories": null
+        },
+        {
+            "Title": "Wizard Pipe",
+            "Slug": "Wizard-Pipe-RD",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Wizard-Pipe.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item.",
+                    "Pipe."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to an Istari character. Limit 1 per character.",
+                    "Action: Exhaust Wizard Pipe to exchange a card in your hand with the top card of your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "...there was a long silence, broken only by the soft puffs of Gandalf`s pipe, as he blew white smoke-rings out of the window.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "OctgnGuid": "428256aa-e03e-4f57-9b38-b8f7b5f17578",
+            "RingsDbCardId": "142009",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 362565,
+            "Categories": null
+        },
+        {
+            "Title": "Fellowship of the Ring",
+            "Slug": "Fellowship-of-the-Ring-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Fellowship-of-the-Ring.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Fellowship."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to the Ring-bearer.",
+                    "Each hero gets +1 Willpower.",
+                    "Forced: After a character is destroyed, discard Fellowship of the Ring."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Michael Komarck",
+            "HasErrata": false,
+            "OctgnGuid": "d5f09d24-be50-4958-b0d0-41b1ad09b7af",
+            "RingsDbCardId": "142010",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 57765,
+            "Categories": null
+        },
+        {
+            "Title": "Sting",
+            "Slug": "Sting-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Sting.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Hobbit hero. Restricted.",
+                    "Attached hero gets +1 Willpower, +1 Attack, and +1 Defense.",
+                    "Response: After attached hero exhausts to defend an attack, discard the top card of the encounter deck. Deal damage to the attacking enemy equal to the discarded card`s Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "7791cd04-7ffe-41f3-9633-cf57ad3a34ca",
+            "RingsDbCardId": "142011",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Mithril Shirt",
+            "Slug": "Mithril-Shirt-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Mithril-Shirt.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Armor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to the Ring-bearer.",
+                    "Attached hero gets +1 Defense and +1 hit point."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I should feel happier if I knew you were wearing it. I have a fancy it would turn even the knives of the Black Riders...`\r\n-Bilbo, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 12,
+            "Quantity": 1,
+            "Artist": "Sara Betsy",
+            "HasErrata": false,
+            "OctgnGuid": "23acfc2e-3262-4f22-8496-a753fa9089bd",
+            "RingsDbCardId": "142012",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Glamdring",
+            "Slug": "Glamdring-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Glamdring.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Warrior hero or Gandalf. Restricted.",
+                    "Attached character gets +2 Attack.",
+                    "Response: After attached character destroys an Orc enemy, draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...at his side was the elven-sword Glamdring, the mate of Orcrist that lay now upon the breast of Thorin under the Lonely Mountain.` -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 13,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "c7f5eac0-dbda-419f-994c-c182775682b3",
+            "RingsDbCardId": "142013",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Andúril",
+            "Slug": "Anduril-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Andúril.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Noble hero or Aragorn. Restricted.",
+                    "Attached hero gets +1 Willpower, +1 Attack, and +1 Defense.",
+                    "Response: After an attack in which the attached hero defended resolves, exhaust Andúril to target the enemy that just attacked. Declare attached hero as an attacker against that enemy (and resolve the attack)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 14,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "24eabbac-62b1-4d2c-93a0-f97c04a2aefa",
+            "RingsDbCardId": "142014",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Phial of Galadriel",
+            "Slug": "Phial-of-Galadriel-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Phial-of-Galadriel.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Gift."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Setup: Attach to a hero in play.",
+                    "Add Phial of Galadriel to the victory display and remove it from the campaign pool, to give each enemy engaged with you -4 Attack until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`May it be a light to you in dark places, when all other lights go out.` -Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 15,
+            "Quantity": 1,
+            "Artist": "Cynthia Sheppard",
+            "HasErrata": false,
+            "OctgnGuid": "14cbe0e1-0916-427f-8f19-abef59232dd2",
+            "RingsDbCardId": "142015",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Three Golden Hairs",
+            "Slug": "Three-Golden-Hairs-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Three-Golden-Hairs.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Gift."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Setup: Attach to a hero in play.",
+                    "Action: Add Three Golden Hairs to the victory display and remove it from the campaign pool, to lower each player`s threat by 3. Then, each player draws 3 cards."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...your hands shall flow with gold, and yet over you gold shall have no dominion.` -Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 16,
+            "Quantity": 1,
+            "Artist": "Rovina Cai",
+            "HasErrata": false,
+            "OctgnGuid": "37488d87-8c07-4f13-b354-66bbdc9e5263",
+            "RingsDbCardId": "142016",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Lórien Rope",
+            "Slug": "Lorien-Rope-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Lórien-Rope.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Gift."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Setup: Attach to a hero in play.",
+                    "Action: Add Lórien Rope to the victory display, and remove it from the campaign pool to give each location in the staging area -2 Threat until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`What a piece of luck you had that rope!` -Frodo, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 17,
+            "Quantity": 1,
+            "Artist": "Rick Price",
+            "HasErrata": false,
+            "OctgnGuid": "606ee31e-a9cf-4ccf-8eed-003c006e5168",
+            "RingsDbCardId": "142017",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Leaf-wrapped Lembas",
+            "Slug": "Leaf-wrapped-Lembas-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Leaf-wrapped-Lembas.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Gift."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Setup: Attach to a hero in play.",
+                    "Action: Add Leaf-wrapped Lembas to the victory display, and remove it from the campaign pool, to ready all heroes in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "Often in their hearts they thanked the lady of Lórien for the gift of lembas, for they could eat of it and find new strength even as they ran. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 18,
+            "Quantity": 1,
+            "Artist": "Owen William Weber",
+            "HasErrata": false,
+            "OctgnGuid": "8b15901c-c6b2-421e-8c6d-3200558e3609",
+            "RingsDbCardId": "142018",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ]
+}

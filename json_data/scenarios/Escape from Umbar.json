@@ -1,0 +1,799 @@
+{
+    "Title": "Escape from Umbar",
+    "Slug": "Escape-from-Umbar",
+    "Product": "The Sands of Harad",
+    "Number": 1,
+    "AllCards": [
+        {
+            "Title": "\"Seize Them!\"",
+            "Slug": "Seize-Them-TSoH",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Seize-Them.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After an enemy attacks and destroys a character, remove X progress from the main quest, X is the attacking enemy`s Threat.",
+                    "At the end of the round, if the main quest has been in play the entire round and there are no progress tokens on it, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Umbar",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 14,
+            "Quantity": 1,
+            "Artist": "Victor Manuel Leza Moreno",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "16014",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Umbar Sentry",
+            "Slug": "Umbar-Sentry-TSoH",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Umbar-Sentry.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [
+                    "Surge.",
+                    "Archery 1."
+                ],
+                "Text": [
+                    "Surge. Archery 1.",
+                    "Forced: When Umbar Sentry attacks, either remove 1 progress token from the main quest, or it gets +2 Attack for this attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "Umbar remained at war with Gondor for many lives of men...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Umbar",
+                "EasyModeQuantity": 4,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 15,
+            "Quantity": 5,
+            "Artist": "Victor Manuel Leza Moreno",
+            "HasErrata": false,
+            "OctgnGuid": "a34ffb4e-c821-42aa-8dab-2914d274b3b1",
+            "RingsDbCardId": "16015",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Narrow Alleyway",
+            "Slug": "Narrow-Alleyway-TSoH",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Narrow-Alleyway.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After the player travel here, choose a non-unique enemy engaged with a player and place it faceup under this location. While an enemy is under this location, that enemy is considered to be out of play.",
+                    "Forced: After Narrow Alleyway leaves play, put each enemy under it into play, engaged with the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Umbar",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 16,
+            "Quantity": 2,
+            "Artist": "Pavel Kolomeyets",
+            "HasErrata": false,
+            "OctgnGuid": "321abaed-0b0c-465b-9f2a-bb9796e6b8c5",
+            "RingsDbCardId": "16016",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Umbar Street",
+            "Slug": "Umbar-Street-TSoH",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Umbar-Street.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Street of Umbar is the active location, each enemy gets -1 engagement cost for each progress token on the main quest."
+                ],
+                "Shadow": "Shadow: Discard an attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Umbar",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 17,
+            "Quantity": 2,
+            "Artist": "Pavel Kolomeyets",
+            "HasErrata": false,
+            "OctgnGuid": "b4543d6e-168b-4ac6-ae65-022e13ce4098",
+            "RingsDbCardId": "16017",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Umbar Square",
+            "Slug": "Umbar-Square-TSoH",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Umbar-Square.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Umbar Square is the active location, it gains: `Response: After an enemy is defeated, place 1 progress on the main quest, bypassing the active location.`",
+                    "Travel: Reveal the top card of the encounter deck to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": "The loss of Umbar was grievous to Gondor...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Umbar",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 18,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "OctgnGuid": "1dab3395-7a34-4b66-aa7f-7834045a7eba",
+            "RingsDbCardId": "16018",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Port of Harad",
+            "Slug": "Port-of-Harad-TSoH",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Port-of-Harad.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the number of engaged enemies.",
+                    "Travel: Assign X damage among characters in play to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": "Often those on who suspicion fell had fled to Umbar and there joined the rebels...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Umbar",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 19,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "OctgnGuid": "0e58ae5a-0670-4c00-836a-3bef017bf279",
+            "RingsDbCardId": "16019",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Haradrim Estate",
+            "Slug": "Haradrim-Estate-TSoH",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Haradrim-Estate.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "1"
+                },
+                "Traits": [
+                    "City."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Haradrim Estate is in the staging area, progress cannot be placed here.",
+                    "Travel: Search the encounter deck and discard pile for a Harad enemy and put it into play engaged with the first player. Then, place 1 progress on the main quest, bypassing the active location. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Umbar",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 20,
+            "Quantity": 2,
+            "Artist": "Pavel Kolomeyets",
+            "HasErrata": false,
+            "OctgnGuid": "7a5671ee-27e0-4d04-95e3-77fe26a8a88b",
+            "RingsDbCardId": "16020",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Enemy Pursuit",
+            "Slug": "Enemy-Pursuit-TSoH",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Enemy-Pursuit.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either remove all progress from the main quest, or assign X damage among characters in play. X is the number of progress tokens on the main quest."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Umbar",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 2,
+            "Artist": "Will O'Brien",
+            "HasErrata": false,
+            "OctgnGuid": "35787b76-d4d5-4bff-bc05-a270b6e4d98e",
+            "RingsDbCardId": "16021",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Southron Champion",
+            "Slug": "Southron-Champion-TSoH",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Southron-Champion.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "When Revealed: Discard cards from the encounter deck until a Harad enemy is discarded. Add that enemy to the staging area and place a resource token on it. That enemy is `the Champion.` While this stage is in play, the Champion gets +2 Threat, +2 Attack, +2 Defense and gains: Immune to player card effects. The main quest stage cannot be defeated while the Champion is in play.`",
+                    "The champion cannot take damage unless there are at least 4 progress tokens here. This stage cannot be defeated while the champion is in play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": null,
+            "Number": 40,
+            "Quantity": 1,
+            "Artist": "Alexandr Elichev",
+            "HasErrata": false,
+            "OctgnGuid": "47b1cd0f-5d56-483c-956c-7851eb4b0a9a",
+            "RingsDbCardId": "16040",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Southron Captain",
+            "Slug": "Southron-Captain-TSoH",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Southron-Captain.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "2",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Southron Captain is in the staging area, each other Harad enemy gets +1 Threat.",
+                    "While Southron Captain is engaged with you, each other Harad enemy engaged with you gets +1 Attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Harad Soldiers",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 41,
+            "Quantity": 1,
+            "Artist": "Ellyson Ferrari Lifante",
+            "HasErrata": false,
+            "OctgnGuid": "486f9475-98e1-42d9-ac90-e6190545a5b9",
+            "RingsDbCardId": "16041",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Southron Soldier",
+            "Slug": "Southron-Soldier-TSoH",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Southron-Soldier.jpg",
+                "Stats": {
+                    "EngagementCost": "32",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Southron Soldier engages you, either remove 2 progress tokens from the main quest, or Southron Soldier makes an immediate attack."
+                ],
+                "Shadow": "Shadow: Choose an enemy in the staging area. Engage it and deal it a shadow card.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Harad Soldiers",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 42,
+            "Quantity": 3,
+            "Artist": "Alexandr Elichev",
+            "HasErrata": false,
+            "OctgnGuid": "6cfc4fa5-bbcc-4c99-82b7-bb6359d24750",
+            "RingsDbCardId": "16042",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Southron Archer",
+            "Slug": "Southron-Archer-TSoH",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Southron-Archer.jpg",
+                "Stats": {
+                    "EngagementCost": "36",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [
+                    "Archery 2."
+                ],
+                "Text": [
+                    "Archery 2.",
+                    "Forced: After Southron Archer engages you, either remove 2 progress tokens from the main quest, or discard an ally you control."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Harad Soldiers",
+                "EasyModeQuantity": 3,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 43,
+            "Quantity": 4,
+            "Artist": "J. Lonnee",
+            "HasErrata": false,
+            "OctgnGuid": "04a23a2e-a14f-4c54-b54f-eeef36d3a92b",
+            "RingsDbCardId": "16043",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Nowhere to Hide",
+            "Slug": "Nowhere-to-Hide-TSoH",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Nowhere-to-Hide.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player discards cards from the top of the encounter deck until an enemy is discarded, and puts that enemy into play engaged with him."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if it was engaged this round).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Harad Soldiers",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 44,
+            "Quantity": 3,
+            "Artist": "Kim Sokol",
+            "HasErrata": false,
+            "OctgnGuid": "37f205e5-5144-4987-8764-46909460797b",
+            "RingsDbCardId": "16044",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "In Enemy Territory",
+            "Slug": "In-Enemy-Territory-TSoH",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/In-Enemy-Territory.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge.",
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Surge.",
+                    "Each player cannot have more than 5 cards in his hand. (If you have more than 5, immediately choose and discard cards from hand until you have only 5.)",
+                    "Response: When this stage is defeated, each player draws a card."
+                ],
+                "Shadow": null,
+                "FlavorText": "Alone in a hostile land, cut off from help, you struggle to find your bearings..."
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": null,
+            "Number": 45,
+            "Quantity": 1,
+            "Artist": "Will O'Brien",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "16045",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Injured Companion",
+            "Slug": "Injured-Companion-TSoH",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Injured-Companion.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must choose: either raise your threat by 1 for each character you control, or discard a character you control."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, raise each player`s threat by 1.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Harad Territory",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 46,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "OctgnGuid": "2b81f105-3712-4326-ac9f-ed7aa18aace1",
+            "RingsDbCardId": "16046",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Enfeebled",
+            "Slug": "Enfeebled-TSoH",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Enfeebled.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player exhausts a character he controls. Until the end of the combat phase, exhausted characters cannot ready."
+                ],
+                "Shadow": "Shadow: Until the end of the round, defending character cannot ready.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Harad Territory",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 47,
+            "Quantity": 2,
+            "Artist": "Adam Duff",
+            "HasErrata": false,
+            "OctgnGuid": "cf6094fe-6a58-4784-8e41-1ad546f8b6aa",
+            "RingsDbCardId": "16047",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Stranded in Umbar",
+            "Slug": "Stranded-in-Umbar-TSoH",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Stranded-in-Umbar-1A.jpg",
+                "Stats": {
+                    "StageNumber": "1A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Add “Seize them!” to the staging area. Each player adds 1 different location to the staging area and puts 1 copy of Umbar Sentry into play engaged with him. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "At the end of a long sea-voyage, you have reached the port of Umbar but your ship was dashed upon the rocks. Though you completed the quest that brought you to Harad, it has left you stranded in enemy territory, far from help."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Stranded-in-Umbar-1B.jpg",
+                "Stats": {
+                    "StageNumber": "1B",
+                    "QuestPoints": "15"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "This stage cannot have more than 15 progress tokens on it.",
+                    "While at least 1 player is engaged with an enemy, the players cannot defeat this stage."
+                ],
+                "Shadow": null,
+                "FlavorText": "Alarm bells ring from high watchtowers and the city guard shouts for you to lay down your arms and surrender. You must run or be captured!"
+            },
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Umbar",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Harad Territory",
+                    "Harad Soldiers"
+                ],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 66,
+            "Quantity": 1,
+            "Artist": "Nikolas Hagialas",
+            "HasErrata": false,
+            "OctgnGuid": "63b0498f-9180-4e62-83c1-b9aa29f24712",
+            "RingsDbCardId": "16066",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Flee the City",
+            "Slug": "Flee-the-City-TSoH",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Flee-the-City-2A.jpg",
+                "Stats": {
+                    "StageNumber": "2A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: End the current phase. Shuffle the encounter discard pile into the encounter deck. Starting with the first player, each player discards cards from the top of the encounter deck until he discards an enemy, and puts that enemy into play engaged with him."
+                ],
+                "Shadow": null,
+                "FlavorText": "The whole of Umbar is astir, and the Southrons chase you through the streets. If you cannot escape the city quickly, you are certain to be taken prisoner."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Flee-the-City-2B.jpg",
+                "Stats": {
+                    "StageNumber": "2B",
+                    "QuestPoints": "15"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "This stage cannot have more than 15 progress tokens on it.",
+                    "Forced: At the beginning of the quest phase, if any player is not engaged with an enemy, discard cards from the top of the encounter deck until an enemy is discarded and add it to the staging area.",
+                    "While at least 1 player is engaged with an enemy, the players cannot defeat this stage. If the players defeat this stage, they win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": {
+                "EncounterSet": "Escape from Umbar",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Harad Territory",
+                    "Harad Soldiers"
+                ],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 67,
+            "Quantity": 1,
+            "Artist": "Joshua Cairós",
+            "HasErrata": false,
+            "OctgnGuid": "44d3c25c-e3ef-4ff0-a16a-8a75937bfffe",
+            "RingsDbCardId": "16067",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ]
+}

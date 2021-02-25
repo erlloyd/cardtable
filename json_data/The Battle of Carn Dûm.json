@@ -1,0 +1,392 @@
+{
+    "Name": "The Battle of Carn Dûm",
+    "Slug": "The-Battle-of-Carn-Dum",
+    "Abbreviation": "TBoCD",
+    "Cycle": "Angmar Awakened",
+    "SetType": "Adventure_Pack",
+    "Cards": null,
+    "cards": [
+        {
+            "Title": "Amarthiúl",
+            "Slug": "Amarthiul-TBoCD",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Amarthiúl.jpg",
+                "Stats": {
+                    "ThreatCost": "10",
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While you are engaged with at least 1 enemy, Amarthiúl gains the Tactics resource icon.",
+                    "While you are engaged with at least 2 enemies, add 1 additional resource to Amarthiúl`s resource pool when you collect resources during the resource phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The heirs of Elendil do not forget all things past...` -Aragorn, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 115,
+            "Quantity": 1,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "OctgnGuid": "94726dff-4b95-4c7c-9542-320b45652d7a",
+            "RingsDbCardId": "10115",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 10001,
+            "Categories": null
+        },
+        {
+            "Title": "Guardian of Arnor",
+            "Slug": "Guardian-of-Arnor-TBoCD",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Guardian-of-Arnor.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Sentinel.",
+                    "Guardian of Arnor gets +1 Defense for each enemy engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Travellers scowl at us, and countrymen give us scornful names.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 116,
+            "Quantity": 3,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "OctgnGuid": "0f2501c7-16ad-4fee-bea6-17b767fb0d14",
+            "RingsDbCardId": "10116",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 150516,
+            "Categories": null
+        },
+        {
+            "Title": "Doom Hangs Still",
+            "Slug": "Doom-Hangs-Still-TBoCD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Doom-Hangs-Still.jpg",
+                "Stats": {
+                    "ResourceCost": "5"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Planning Action: Until the end of the round, players do not raise their threat from questing unsuccessfully.",
+                    "Valour Planning Action: Raise each player`s threat by 2 to skip the quest phase this round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Dooms hangs still on a thread. Yet hope there is still, if we can stand but unconquered for a little while.` -Gandalf, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 117,
+            "Quantity": 3,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "OctgnGuid": "c48b1c7f-f3df-4e5c-ad63-a68efc66c02c",
+            "RingsDbCardId": "10117",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 11380,
+            "Categories": null
+        },
+        {
+            "Title": "Beechbone",
+            "Slug": "Beechbone-TBoCD",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Beechbone.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have restricted attachments.",
+                    "Enters play exhausted.",
+                    "Response: After Beechbone is declared as an attacker, deal 1 damage to him to deal X damage to the defending enemy. X is the amount of damage on Beechbone."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 118,
+            "Quantity": 3,
+            "Artist": "Katayanagi",
+            "HasErrata": false,
+            "OctgnGuid": "b1584166-c8b3-4984-bfdc-06c33f31e153",
+            "RingsDbCardId": "10118",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 154928,
+            "Categories": null
+        },
+        {
+            "Title": "Hold Your Ground!",
+            "Slug": "Hold-Your-Ground-TBoCD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Hold-Your-Ground.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose and ready a sentinel character.",
+                    "Valour Action: Ready all sentinel characters."
+                ],
+                "Shadow": null,
+                "FlavorText": "Aragorn and Boromir did not heed the command, but still held their ground, side by side, behind Gandalf at the far end of the bridge. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 119,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "OctgnGuid": "8588e98f-1aaf-4e90-95b9-48b76c0fc4be",
+            "RingsDbCardId": "10119",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 63598,
+            "Categories": null
+        },
+        {
+            "Title": "Lindir",
+            "Slug": "Lindir-TBoCD",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Lindir.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Noldor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Lindir enters play, if you have less than 3 cards in your hand, draw until you have 3 cards in your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "`To sheep other sheep no doubt appear different,` laughed Lindir. `Or to shepherds. But Mortals have not been our study. We have other business.` -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 120,
+            "Quantity": 3,
+            "Artist": "Tawny Fritzinger",
+            "HasErrata": false,
+            "OctgnGuid": "4bff71e7-f66c-4a2d-ba7d-633a6c77f765",
+            "RingsDbCardId": "10120",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 156959,
+            "Categories": null
+        },
+        {
+            "Title": "Lords of the Eldar",
+            "Slug": "Lords-of-the-Eldar-TBoCD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Lords-of-the-Eldar.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Lords of the Eldar can only be played from your discard pile.",
+                    "Action: Place Lords of the Eldar on the bottom of your deck from your discard pile. Then, until the end of the round all Noldor characters get +1 Willpower, +1 Attack, and +1 Defense."
+                ],
+                "Shadow": null,
+                "FlavorText": "`And here in Rivendell there live still some of his chief foes: the Elven-wise, lords of the Eldar...` -Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 121,
+            "Quantity": 3,
+            "Artist": "Rovina Cai",
+            "HasErrata": false,
+            "OctgnGuid": "ff265d76-021b-4f23-9e62-a57e16b3e77d",
+            "RingsDbCardId": "10121",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 98552,
+            "Categories": null
+        },
+        {
+            "Title": "The Long Defeat",
+            "Slug": "The-Long-Defeat-TBoCD",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/The-Long-Defeat.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a quest card in play. Limit 1 per quest.",
+                    "Response: After attached quest card is defeated, each player either draws 2 cards or heals up to 5 damage from among characters he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...for ere the fall of Nargothrond or Gondolin I passed over the mountains, and together through ages of the world we have fought the long defeat.` -Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 122,
+            "Quantity": 3,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "OctgnGuid": "0b483cda-22e0-418d-b906-8a93e94fe95d",
+            "RingsDbCardId": "10122",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 140210,
+            "Categories": null
+        },
+        {
+            "Title": "Quick Ears",
+            "Slug": "Quick-Ears-TBoCD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Quick-Ears.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: Exhaust a Dúnedain or Ranger hero to cancel an enemy card just revealed from the encounter deck. Then, shuffle it back into the encounter deck and reveal an additional encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`... though I cannot disappear, I have hunted many wild and wary things and I can usually avoid being seen, if I wish.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 123,
+            "Quantity": 3,
+            "Artist": "Eva Maria Toker",
+            "HasErrata": false,
+            "OctgnGuid": "fddb01e7-102e-44c8-a469-e920e76a79e0",
+            "RingsDbCardId": "10123",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 18379,
+            "Categories": null
+        },
+        {
+            "Title": "Favor of the Valar",
+            "Slug": "Favor-of-the-Valar-TBoCD",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Carn-Dum/Favor-of-the-Valar.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a player`s threat dial. Limit 1 per player.",
+                    "Forced: When you would be eliminated by reaching your threat elimination level, instead discard Favor of the Valar and reduce your threat to 5 less than your threat elimination level. You are not eliminated."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...their hearts were lifted up in such a hope as they had not known since the darkness came out of the East...` -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Battle of Carn Dûm",
+            "EncounterInfo": null,
+            "Number": 124,
+            "Quantity": 3,
+            "Artist": "Matthew Cowdery",
+            "HasErrata": false,
+            "OctgnGuid": "c9cdf75b-7535-4d17-804f-0f22569812c7",
+            "RingsDbCardId": "10124",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 157456,
+            "Categories": null
+        }
+    ]
+}

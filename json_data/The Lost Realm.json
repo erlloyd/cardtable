@@ -1,0 +1,597 @@
+{
+    "Name": "The Lost Realm",
+    "Slug": "The-Lost-Realm",
+    "Abbreviation": "TLR",
+    "Cycle": null,
+    "SetType": "Deluxe_Expansion",
+    "Cards": null,
+    "cards": [
+        {
+            "Title": "Aragorn",
+            "Slug": "Aragorn-TLR",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lost-Realm/Aragorn.jpg",
+                "Stats": {
+                    "ThreatCost": "12",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Each enemy engaged with you gets -1 Defense.",
+                    "Response: After Aragorn participates in an attack that destroys an enemy, choose an enemy not engaged with you and engage that enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I serve no man,` said Aragorn; `but the servants of Sauron I pursue into whatever land they may go.` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Lost Realm",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "OctgnGuid": "09ebd71c-8286-4838-b661-36a8633c9f0c",
+            "RingsDbCardId": "09001",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 14094,
+            "Categories": null
+        },
+        {
+            "Title": "Halbarad",
+            "Slug": "Halbarad-TLR",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lost-Realm/Halbarad.jpg",
+                "Stats": {
+                    "ThreatCost": "10",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While you are engaged with any enemy, Halbarad does not exhaust to commit to a quest.",
+                    "You may optionally engage 1 additional enemy during the encounter phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Little do they know of our long labour for the safekeeping of their borders, and yet I grudge it not.` -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Lost Realm",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "OctgnGuid": "52b151e9-f13b-4f85-961c-62838d25b97a",
+            "RingsDbCardId": "09002",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 6984,
+            "Categories": null
+        },
+        {
+            "Title": "Weather Hills Watchman",
+            "Slug": "Weather-Hills-Watchman-TLR",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lost-Realm/Weather-Hills-Watchman.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dúnedain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Weather Hills Watchman enters play, search the top 5 cards of your deck for a Signal card and add it to your hand. Shuffle the other cards back into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Rangers use runes, and they come here sometimes.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Lost Realm",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Kim Sokol",
+            "HasErrata": false,
+            "OctgnGuid": "b313de3d-897e-4e74-afc5-d31fceaa6162",
+            "RingsDbCardId": "09003",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 111953,
+            "Categories": null
+        },
+        {
+            "Title": "Dúnedain Hunter",
+            "Slug": "Dunedain-Hunter-TLR",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lost-Realm/Dúnedain-Hunter.jpg",
+                "Stats": {
+                    "ResourceCost": "0",
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Dúnedain Hunter enters play, search the top 5 cards of the encounter deck for a non-unique enemy and put it into play engaged with you. If no enemy enters play by this effect, discard Dúnedain Hunter. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Lost Realm",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Louis Green",
+            "HasErrata": false,
+            "OctgnGuid": "d15c0cc8-19c0-49d8-915f-c423e993c03b",
+            "RingsDbCardId": "09004",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 291370,
+            "Categories": null
+        },
+        {
+            "Title": "Sarn Ford Sentry",
+            "Slug": "Sarn-Ford-Sentry-TLR",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lost-Realm/Sarn-Ford-Sentry.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Sarn Ford Sentry enters play, draw 1 card for each enemy engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Lonely men are we, Rangers of the wild, hunters but hunters ever of the servants of the Enemy...` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Lost Realm",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "OctgnGuid": "2c6e85b4-18e3-4c21-95eb-5d74b9eebb5b",
+            "RingsDbCardId": "09005",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 97798,
+            "Categories": null
+        },
+        {
+            "Title": "Warden of Annúminas",
+            "Slug": "Warden-of-Annuminas-TLR",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lost-Realm/Warden-of-Annúminas.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "0",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Warden of Annúminas gets +1 Willpower for each enemy engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "Rangers passed at times beyond the hills, but they were few and did not stay. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Lost Realm",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "OctgnGuid": "a933917f-4c7e-416e-8b08-ee2e60f6ab5f",
+            "RingsDbCardId": "09006",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 52871,
+            "Categories": null
+        },
+        {
+            "Title": "Ranger Summons",
+            "Slug": "Ranger-Summons-TLR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lost-Realm/Ranger-Summons.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Signal."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control a Dúnedain hero.",
+                    "Planning Action: Shuffle 1 of your set aside Ranger of the North allies with the encounter keyword into the encounter deck. Then, remove Ranger Summons from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We rode as swiftly as we might when your summons came.` -Halbarad, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Lost Realm",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "OctgnGuid": "687c526e-85b5-47e3-b596-37148772c013",
+            "RingsDbCardId": "09007",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 95367,
+            "Categories": null
+        },
+        {
+            "Title": "Tireless Hunters",
+            "Slug": "Tireless-Hunters-TLR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lost-Realm/Tireless-Hunters.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only before the resolving enemy attacks step.",
+                    "Combat Action: Choose an enemy not engaged with you. Engage that enemy. Then, discard a shadow card from that enemy, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Many evil things there are that your strong walls and bright swords do not stay.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Lost Realm",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "OctgnGuid": "cda0276f-d412-47f6-aecf-02ae8dc64c9a",
+            "RingsDbCardId": "09008",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 63673,
+            "Categories": null
+        },
+        {
+            "Title": "Expert Trackers",
+            "Slug": "Expert-Trackers-TLR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lost-Realm/Expert-Trackers.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: After you engage an enemy, exhaust a Scout or Ranger character to place X progress tokens on a location. X is the engaged enemy`s printed Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": "`At last!` said Aragorn. `Here are the tracks that we seek!` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Lost Realm",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Alexandr Shaldin",
+            "HasErrata": false,
+            "OctgnGuid": "86583668-7581-4bca-ba10-a4752878740e",
+            "RingsDbCardId": "09009",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 52417,
+            "Categories": null
+        },
+        {
+            "Title": "Heir of Valandil",
+            "Slug": "Heir-of-Valandil-TLR",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lost-Realm/Heir-of-Valandil.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Dúnedain hero.",
+                    "Planning Action: Exhaust Heir of Valandil to reduce the cost of the next Dúnedain ally you play this phase by 1 for each enemy engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`But my home, such as I have, is in the North. For here the heirs of Valandil have ever dwelt in long line unbroken from father unto son for many generations.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Lost Realm",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "OctgnGuid": "8b9da56f-6713-457f-8f73-6fdc8168348f",
+            "RingsDbCardId": "09010",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 99021,
+            "Categories": null
+        },
+        {
+            "Title": "Athelas",
+            "Slug": "Athelas-TLR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lost-Realm/Athelas.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Dúnedain or Healer character.",
+                    "Action: Discard Athelas and exhaust attached character to heal all damage on a character. You may discard a Condition attachment from that character."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...it is a healing plant that the Men of the West brought to Middle-earth. Athelas they named it...` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Lost Realm",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 3,
+            "Artist": "Cristi Balanescu",
+            "HasErrata": false,
+            "OctgnGuid": "7b1fb1e7-481d-4a14-85b1-d5d2c60087b6",
+            "RingsDbCardId": "09011",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 77981,
+            "Categories": null
+        },
+        {
+            "Title": "Secret Vigil",
+            "Slug": "Secret-Vigil-TLR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lost-Realm/Secret-Vigil.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to an enemy. Limit 1 per enemy.",
+                    "Attached enemy gets -1 Threat.",
+                    "Response: When attached enemy is destroyed, reduce each player`s threat by the attached enemy`s printed Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": "`If simple folk are free from care and fear, simple they will be, and we must be secret to keep them so.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Lost Realm",
+            "EncounterInfo": null,
+            "Number": 12,
+            "Quantity": 3,
+            "Artist": "Piya Wannachaiwong",
+            "HasErrata": false,
+            "OctgnGuid": "7a8a2dbe-5a97-42da-a3c9-283724783145",
+            "RingsDbCardId": "09012",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 343359,
+            "Categories": null
+        },
+        {
+            "Title": "Star Brooch",
+            "Slug": "Star-Brooch-TLR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lost-Realm/Star-Brooch.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Dúnedain or Noldor hero. Limit 1 per hero.",
+                    "While you are engaged with an enemy, attached hero gets +1 Willpower and cannot have its Willpower reduced."
+                ],
+                "Shadow": null,
+                "FlavorText": "...each cloak was pinned upon the left shoulder by a brooch of silver shaped like a rayed star. -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Lost Realm",
+            "EncounterInfo": null,
+            "Number": 13,
+            "Quantity": 3,
+            "Artist": "Alexandr Elichev",
+            "HasErrata": false,
+            "OctgnGuid": "130df5c3-a050-4690-8dac-d1ae937a2e3c",
+            "RingsDbCardId": "09013",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 39473,
+            "Categories": null
+        },
+        {
+            "Title": "Gather Information",
+            "Slug": "Gather-Information-TLR",
+            "IsUnique": false,
+            "CardType": "Player_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lost-Realm/Gather-Information.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Limit 1 per deck.",
+                    "Response: After this stage is defeated, each player may search his deck for 1 card and add it to his hand. Each player shuffles his deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "Aragorn halted and examined the tracks closely. -The Tower Towers"
+            },
+            "Back": null,
+            "CardSet": "The Lost Realm",
+            "EncounterInfo": null,
+            "Number": 14,
+            "Quantity": 3,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "OctgnGuid": "128f940d-8a71-4a80-83c2-bdbc014d95c9",
+            "RingsDbCardId": "09014",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 424590,
+            "Categories": null
+        },
+        {
+            "Title": "Ranger of the North",
+            "Slug": "Ranger-of-the-North-TLR",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Lost-Realm/Ranger-of-the-North.jpg",
+                "Stats": {
+                    "ResourceCost": "-",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger."
+                ],
+                "Keywords": [
+                    "Encounter.",
+                    "Surge.",
+                    "Ranged.",
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Encounter. Surge. Ranged. Sentinel.",
+                    "When Revealed: The first player chooses a player to take control of Ranger of the North. Then, either deal 2 damage to an enemy or place 2 progress tokens on a location."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Lost Realm",
+            "EncounterInfo": null,
+            "Number": 15,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "OctgnGuid": "156ed210-ab6e-4da9-b8c0-48984711edf2",
+            "RingsDbCardId": "09015",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 35497,
+            "Categories": null
+        }
+    ]
+}

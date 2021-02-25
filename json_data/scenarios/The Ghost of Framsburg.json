@@ -1,0 +1,1090 @@
+{
+    "Title": "The Ghost of Framsburg",
+    "Slug": "The-Ghost-of-Framsburg",
+    "Product": "The Ghost of Framsburg",
+    "Number": 7,
+    "AllCards": [
+        {
+            "Title": "Afraid of the Dark",
+            "Slug": "Afraid-of-the-Dark-TWoR",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Afraid-of-the-Dark.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach to a questing hero and remove it from the quest. (Counts as a Condition attachment with the text: `Limit 1 per hero. While the active location has the Dark trait, reduce attached hero`s Willpower to 0 and treat its text box as if it were blank, except for Traits.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Wilds of Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Afraid of the Dark",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 48,
+            "Quantity": 2,
+            "Artist": "Borja Pindado",
+            "HasErrata": false,
+            "OctgnGuid": "3566b6df-a1cd-4417-b202-27e0ecc0a966",
+            "RingsDbCardId": "18048",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Werewolf",
+            "Slug": "Werewolf-TWoR",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Werewolf.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "3",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Werewolf gets +1 Attack for each damage on it.",
+                    "Forced: After Werewolf is dealt a shadow card with no shadow effect, deal 1 damage to it and the defending character."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to the defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Wilds of Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Wild Creatures",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 51,
+            "Quantity": 2,
+            "Artist": "Jon Bosco",
+            "HasErrata": false,
+            "OctgnGuid": "5bcec205-7f6b-44b9-bb4d-9addde372316",
+            "RingsDbCardId": "18051",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Giant Spider",
+            "Slug": "Giant-Spider-TWoR",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Giant-Spider.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Spider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Giant Spider attacks and damages a character, that character cannot ready until the end of the round."
+                ],
+                "Shadow": "Shadow: Defending character cannot ready until the end of the round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Wilds of Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Wild Creatures",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 52,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "OctgnGuid": "9b3c0e2a-c874-41b7-9ccd-2798a4884b34",
+            "RingsDbCardId": "18052",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Black Bats",
+            "Slug": "Black-Bats-TWoR",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Black-Bats.jpg",
+                "Stats": {
+                    "EngagementCost": "18",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "While the active location has the Dark trait, Black Bats cannot take damage.",
+                    "Shadow: If the active location has the Dark trait, attacking enemy cannot take damage this phase."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Wilds of Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Wild Creatures",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 53,
+            "Quantity": 3,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "OctgnGuid": "f5d539b2-0b65-493d-8493-5122a0761eed",
+            "RingsDbCardId": "18053",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Eyes in the Dark",
+            "Slug": "Eyes-in-the-Dark-TWoR",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Eyes-in-the-Dark.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "Doomed 1.",
+                    "When Revealed: Each player must choose: either raise your threat by 1 for each questing character you control, or discard a questing character you control."
+                ],
+                "Shadow": "Shadow: If this attack is undefended, discard an ally you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Wilds of Rhovanion",
+            "EncounterInfo": {
+                "EncounterSet": "Afraid of the Dark",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 57,
+            "Quantity": 3,
+            "Artist": "Sam Lamont",
+            "HasErrata": false,
+            "OctgnGuid": "cfddac0a-3055-46bd-af9a-8bdda8c9abb6",
+            "RingsDbCardId": "18057",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Crypt Key",
+            "Slug": "Crypt-Key-TGoF",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Crypt-Key.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Artifact.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Loot."
+                ],
+                "Text": [
+                    "Loot.",
+                    "If unattached, the first player claims Crypt Key and attaches it to a hero he controls.",
+                    "Response: When the players travel to a Discover location, exhaust Crypt Key to either increase or decrease its Discover value by 1 before resolving it."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 94,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "c3aff9c9-640f-4e90-85f3-6e245c2156fe",
+            "RingsDbCardId": "19094",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Old Lantern",
+            "Slug": "Old-Lantern-TGoF",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Old-Lantern.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Artifact.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Loot."
+                ],
+                "Text": [
+                    "Loot.",
+                    "If unattached, the first player claims Old Lantern and attaches it to a hero he controls.",
+                    "Action: Exhaust Old Lantern to choose a player to look at the top X cards of his deck, where X is the Discover value of the active location. He adds one of those cards to his hand and places the rest on the bottom of his deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 95,
+            "Quantity": 1,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "OctgnGuid": "29662c71-2f27-405c-ae5a-db519ed91f33",
+            "RingsDbCardId": "19095",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Scatha's Teeth",
+            "Slug": "Scatha's-Teeth-TGoF",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Scatha's-Teeth.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Artifact.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Loot."
+                ],
+                "Text": [
+                    "Loot.",
+                    "If unattached, the first player claims Scatha`s Teeth and attached it to a hero he controls.",
+                    "Action: Exhaust Scatha`s Teeth and attached hero to choose a player. That player reduces his threat by 2."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 96,
+            "Quantity": 1,
+            "Artist": "Brendan C. Murphy",
+            "HasErrata": false,
+            "OctgnGuid": "5dbc4cec-84c9-420b-809f-088296eb4a62",
+            "RingsDbCardId": "19096",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Cursed Tomb",
+            "Slug": "The-Cursed-Tomb-TGoF",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/The-Cursed-Tomb.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Ruins.",
+                    "Dark."
+                ],
+                "Keywords": [
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "The players cannot travel to The Cursed Tomb unless they control 3 Loot objectives.",
+                    "Forced: After the player travel to The Cursed Tomb, search the encounter deck and discard pile for Fram`s Shade and add it to the staging area. Shuffle the encounter deck. Fram`s Shade makes an immediate attack against each player in turn order."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 97,
+            "Quantity": 1,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "OctgnGuid": "315c85eb-9c20-46a1-b445-e5197cd15032",
+            "RingsDbCardId": "19097",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Fram's Shade",
+            "Slug": "Fram's-Shade-TGoF",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Fram's-Shade.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Undead.",
+                    "Wight.",
+                    "Hazard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have non-objective attachments.",
+                    "Fram`s Shade gets +1 Threat, +1 Attack, and +1 Defense for each Loot objective the players control.",
+                    "When Fram`s Shade is dealt shadow cards, deal it a number of shadow cards equal to the number of Loot objectives the players control (to a minimum of 1)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 98,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "f829839e-b79d-465a-8ca9-bf6af975ce7b",
+            "RingsDbCardId": "19098",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Crypt Stalker",
+            "Slug": "Crypt-Stalker-TGoF",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Crypt-Stalker.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "X",
+                    "Attack": "X",
+                    "Defense": "X",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Undead.",
+                    "Hazard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the tens digit of the first player`s threat.",
+                    "Forced: When Crypt Stalker attacks, raise the defending player`s threat by 1."
+                ],
+                "Shadow": "Shadow: Either raise your threat by 2, or return attacking enemy to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 99,
+            "Quantity": 2,
+            "Artist": "Brendan C. Murphy",
+            "HasErrata": false,
+            "OctgnGuid": "36ac198d-0248-464a-8919-36f96b8e7caf",
+            "RingsDbCardId": "19099",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Evil Spectre",
+            "Slug": "Evil-Spectre-TGoF",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Evil-Spectre.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Undead.",
+                    "Hazard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Evil Spectre is destroyed, shuffle it back into the encounter deck if the active location has the Dark trait."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if the active location has the Dark trait.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 100,
+            "Quantity": 3,
+            "Artist": "Alex Boca",
+            "HasErrata": false,
+            "OctgnGuid": "62d814e4-e0cf-437b-8ee7-b26478beb721",
+            "RingsDbCardId": "19100",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Forgotten Crypt",
+            "Slug": "Forgotten-Crypt-TGoF",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Forgotten-Crypt.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Ruins.",
+                    "Dark."
+                ],
+                "Keywords": [
+                    "Victory 2."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Forced: After Forgotten Crypt becomes the active location, discard cards from the top of the encounter deck until an Undead enemy is discarded and add it to the staging area. Then, attach a Loot objective in the encounter discard pile to that enemy as a guarded objective."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 101,
+            "Quantity": 2,
+            "Artist": "Matthew Cowdery",
+            "HasErrata": false,
+            "OctgnGuid": "11c67697-29da-4c76-bf89-985c2c036940",
+            "RingsDbCardId": "19101",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Haunted Hall",
+            "Slug": "Haunted-Hall-TGoF",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Haunted-Hall.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Ruins.",
+                    "Dark."
+                ],
+                "Keywords": [
+                    "Discover 4."
+                ],
+                "Text": [
+                    "Discover 4.",
+                    "While Haunted Hall is in the staging area, it gains, `Forced: After a player places any amount of progress on a Dark location in the staging area, he raises his threat by 1.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "Nothing assailed the company nor withstood their passage, and yet steadily fear grew...\r\n–The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 102,
+            "Quantity": 2,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "OctgnGuid": "8c4cc797-13e6-4ee4-a991-7ec76866418a",
+            "RingsDbCardId": "19102",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Hidden Staircase",
+            "Slug": "Hidden-Staircase-TGoF",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Hidden-Staircase.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Ruins.",
+                    "Dark.",
+                    "Hazard."
+                ],
+                "Keywords": [
+                    "Discover X."
+                ],
+                "Text": [
+                    "Discover X.",
+                    "X is the tens digit of the first player`s threat.",
+                    "Forced: After resolving the Discover keyword on Hidden Staircase, reduce each player`s threat by X is no Hazard cards were revealed by it."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 103,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "4bae8841-e3e4-4a93-b10f-8544eaab9cb3",
+            "RingsDbCardId": "19103",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Moonlit Passage",
+            "Slug": "Moonlit-Passage-TGoF",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Moonlit-Passage.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Ruins."
+                ],
+                "Keywords": [
+                    "Discover 2."
+                ],
+                "Text": [
+                    "Discover 2.",
+                    "While Moonlit Passage is in the staging area, each player`s threat cannot be reduced by more than 1 via player card effects each round."
+                ],
+                "Shadow": "Shadow: Raise your threat by 1.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 104,
+            "Quantity": 3,
+            "Artist": "Jose Vega",
+            "HasErrata": false,
+            "OctgnGuid": "ed7b5f3e-432b-4dd7-85f9-6dea5ff62d3d",
+            "RingsDbCardId": "19104",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Cursed Tower",
+            "Slug": "Cursed-Tower-TGoF",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Cursed-Tower.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Ruins.",
+                    "Dark."
+                ],
+                "Keywords": [
+                    "Discover 3."
+                ],
+                "Text": [
+                    "Discover 3.",
+                    "While Cursed Tower is in the staging area, it gains: `Forced: After a player plays an event, raise his threat by 1.`"
+                ],
+                "Shadow": "Shadow: Discard a non-objective attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 105,
+            "Quantity": 3,
+            "Artist": "Matthew Cowdery",
+            "HasErrata": false,
+            "OctgnGuid": "f2c22e9a-c3f6-450c-b891-98e0e5c18b6c",
+            "RingsDbCardId": "19105",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Abandoned Ruins",
+            "Slug": "Abandoned-Ruins-TGoF",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Abandoned-Ruins.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player resolves the Discover keyword of the active location in turn order. If they cannot, Abandoned Ruins gains surge and doomed 2."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 106,
+            "Quantity": 2,
+            "Artist": "Matthew Cowdery",
+            "HasErrata": false,
+            "OctgnGuid": "bececd5f-87dd-4141-8ecf-69e43ecc0ff4",
+            "RingsDbCardId": "19106",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Terrible Shadows",
+            "Slug": "Terrible-Shadows-TGoF",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Terrible-Shadows.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Hazard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each character gets -1 Willpower, -1 Attack, and -1 Defense until the end of the round."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, raise the defending player`s threat by 3.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 107,
+            "Quantity": 2,
+            "Artist": "Greg Opalinski",
+            "HasErrata": false,
+            "OctgnGuid": "b5c08c5b-dd05-4139-b262-e9d5c0f29016",
+            "RingsDbCardId": "19107",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Slammed Shut",
+            "Slug": "Slammed-Shut-TGoF",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Slammed-Shut.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Hazard."
+                ],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "Doomed 1.",
+                    "When Revealed: Each player chooses and exhausts a character he controls. Until the end of the round, character cannot be readied by player card effects."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 108,
+            "Quantity": 3,
+            "Artist": "David Keen",
+            "HasErrata": false,
+            "OctgnGuid": "f5a65abc-e3df-4d26-aeed-2a3b1effb005",
+            "RingsDbCardId": "19108",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Haunted Keep",
+            "Slug": "The-Haunted-Keep-TGoF",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/The-Haunted-Keep-1A.jpg",
+                "Stats": {
+                    "StageNumber": "1A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set The Cursed Tomb aside, out of play. Each player searches the encounter deck for a different location and adds it to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "The search for the legendary sword of Fram has led you to the long-forgotten city of Framsburg. There is an evil air inside the keep, and you wonder what dangers wait for you in the darkness within."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/The-Haunted-Keep-1B.jpg",
+                "Stats": {
+                    "StageNumber": "1B",
+                    "QuestPoints": "6"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "This stage cannot be defeated unless the players control at least 1 Loot objective."
+                ],
+                "Shadow": null,
+                "FlavorText": "A curse lays on the keep and foul creatures prowl through the night, but you will not be deterred from your search."
+            },
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Wild Creatures",
+                    "Afraid of the Dark"
+                ],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 109,
+            "Quantity": 1,
+            "Artist": "Alyn Spiller",
+            "HasErrata": false,
+            "OctgnGuid": "9b75cef3-e5a3-4284-aff6-9a0b473fa37d",
+            "RingsDbCardId": "19109",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Searching the Ruins",
+            "Slug": "Searching-the-Ruins-TGoF",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Searching-the-Ruins-2A.jpg",
+                "Stats": {
+                    "StageNumber": "2A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Shuffle the encounter discard pile into the encounter deck. Then, each player reveals an encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "Night deepends outside and a sense of dread grows with each passing hour you spend inside the haunted keep. You fear that if you don`t find Fram`s sword and escape quickly, you will lose yourself to the darkness."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Searching-the-Ruins-2B.jpg",
+                "Stats": {
+                    "StageNumber": "2B",
+                    "QuestPoints": "12"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the beginning of the quest phase, the first player must choose: either raise each player`s threat by 2, or discard cards from the top of the encounter deck until a location is discarded and add that location to the staging area.",
+                    "This stage cannot be defeated unless the players control at least 2 Loot objectives."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Wild Creatures",
+                    "Afraid of the Dark"
+                ],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 110,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "48d2ea1f-449b-4af9-9f43-c70fffd66991",
+            "RingsDbCardId": "19110",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Cursed Shade",
+            "Slug": "The-Cursed-Shade-TGoF",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/The-Cursed-Shade-3A.jpg",
+                "Stats": {
+                    "StageNumber": "3A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player adds The Cursed Tomb to the staging area. Each other player searches the encounter deck and discard pile for a non-unique Undead enemy and adds it to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "You`ve found Fram`s Tomb in the catacombs below the keep, but it is guarded by the ghastly shade of Fram himself. You must defeat him in order to win his blade, but you`re not sure you can face the terror of his cold gaze."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/The-Cursed-Shade-3B.jpg",
+                "Stats": {
+                    "StageNumber": "3B",
+                    "QuestPoints": "6"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Fram`s Shade is immune to player card effects.",
+                    "While The Cursed Tomb is in the victory display, Fram`s Shade gains victory 6.",
+                    "This stage cannot be defeated unless Fram`s Shadw is in the victory display. When player defeat this stage, they win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": {
+                "EncounterSet": "The Ghost of Framsburg",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Wild Creatures",
+                    "Afraid of the Dark"
+                ],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 111,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "6948a0fa-e13f-4023-865f-3c8b6599c6a0",
+            "RingsDbCardId": "19111",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ]
+}

@@ -1,0 +1,810 @@
+{
+    "Title": "Journey to the Cross-roads",
+    "Slug": "Journey-to-the-Cross-roads",
+    "Product": "The Land of Shadow",
+    "Number": 11,
+    "AllCards": [
+        {
+            "Title": "The Black Gate",
+            "Slug": "The-Black-Gate-TLoS",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/The-Black-Gate.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the planning phase, place each Harad enemy in the staging area facedown underneath The Black Gate.",
+                    "If there are at least X facedown cards underneath The Black Gate, the players lose the game. X is 3 more than the number of players."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 27,
+            "Quantity": 1,
+            "Artist": "Davis Engel",
+            "HasErrata": false,
+            "OctgnGuid": "2522fc59-6617-4c74-9723-4a120431aa3f",
+            "RingsDbCardId": "144027",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Man of Harad",
+            "Slug": "Man-of-Harad-TLoS",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Man-of-Harad.jpg",
+                "Stats": {
+                    "EngagementCost": "36",
+                    "Threat": "1",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [
+                    "Surge.",
+                    "Archery 1."
+                ],
+                "Text": [
+                    "Forced: After Man of Harad engages you, discard 1 random card from your hand."
+                ],
+                "Shadow": "Shadow: Discard 1 random card from your hand.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 28,
+            "Quantity": 4,
+            "Artist": "Beth Sobel",
+            "HasErrata": false,
+            "OctgnGuid": "62dea330-3ec7-4db0-bea7-382cb3454f83",
+            "RingsDbCardId": "144028",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Captain of Harad",
+            "Slug": "Captain-of-Harad-TLoS",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Captain-of-Harad.jpg",
+                "Stats": {
+                    "EngagementCost": "38",
+                    "Threat": "4",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Captain of Harad engages you, each Harad enemy gets +1 [Attack] and -10 engagement cost until the end of the round."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, return attacking enemy to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 29,
+            "Quantity": 3,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "OctgnGuid": "fc7041f2-b7f8-44a2-bf4c-beadd8016470",
+            "RingsDbCardId": "144029",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Cross-roads",
+            "Slug": "The-Cross-roads-TLoS",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/The-Cross-roads.jpg",
+                "Stats": {
+                    "Threat": "9",
+                    "QuestPoints": "9"
+                },
+                "Traits": [
+                    "Road."
+                ],
+                "Keywords": [
+                    "Victory 9."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "The Cross-roads gets -1 Threat for each facedown card under it. The players cannot travel here unless there are 0 facedown cards under The Cross-roads and at least 20 progress tokens on stage 1B."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We must go to the Cross-roads. But make haste! Be silent!` —Gollum, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 30,
+            "Quantity": 1,
+            "Artist": "Cristina Vela",
+            "HasErrata": false,
+            "OctgnGuid": "22f6fc49-6a00-4104-a9fa-4823435175a1",
+            "RingsDbCardId": "144030",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Henneth Annûn",
+            "Slug": "Henneth-Annun-TLoS",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Henneth-Annûn.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "1"
+                },
+                "Traits": [
+                    "Refuge."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "While Henneth Annûn is the active location, skip both the encounter phase and combat phase, and ignore the Forced effects on stage 1B and The Black Gate.",
+                    "Forced: After Henneth Annûn becomes the active location, return each engaged enemy to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "`This is the Window of the Sunset, Henneth Annûn, fairest of all the falls of Ithilien...` —Faramir, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 31,
+            "Quantity": 1,
+            "Artist": "Julepe",
+            "HasErrata": false,
+            "OctgnGuid": "62ceb94f-5838-4c5c-9547-8786c4c64051",
+            "RingsDbCardId": "144031",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Southward Road",
+            "Slug": "Southward-Road-TLoS",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Southward-Road.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Road."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Southward Road is the active location, each player may optionally engage an additional enemy during the encounter phase.",
+                    "Travel: The first player reveals the top facedown card under The Cross-roads and adds it to the staging area to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": "`These cursed Southrons come now marching up the ancient roads to swell the hosts of the Dark Tower.` —Mablung, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 32,
+            "Quantity": 2,
+            "Artist": "Julepe",
+            "HasErrata": false,
+            "OctgnGuid": "2b9c8fa1-a5c3-441e-95c1-c10c85948dc1",
+            "RingsDbCardId": "144032",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Foothills of Ephel Dúath",
+            "Slug": "Foothills-of-Ephel-Duath-TLoS",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Foothills-of-Ephel-Dúath.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Foothills of Ephel Dúath is the active location, each Harad enemy gets -1 Threat.",
+                    "Travel: The first player engages an enemy in the staging area to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": "`And they go ever more heedlessly, we learn, thinking that the power of their new master is great enough, so that the mere shadow of His hills will protect them.` —Mablung, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 33,
+            "Quantity": 3,
+            "Artist": "Dimitri Bielak",
+            "HasErrata": false,
+            "OctgnGuid": "8fa4b202-cb8e-470d-ae2b-aa945ac652c5",
+            "RingsDbCardId": "144033",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Ithilien Woods",
+            "Slug": "Ithilien-Woods-TLoS",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Ithilien-Woods.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Ithilien Woods is the active location, it gains: `Forced: After a player engages a Harad enemy, he readies a character he controls.`",
+                    "Travel: The first player reveals an encounter card to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": "Ithilien, the garden of Gondor now desolate kept still a dishevelled dryad loveliness. —The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 34,
+            "Quantity": 2,
+            "Artist": "Julepe",
+            "HasErrata": false,
+            "OctgnGuid": "808f60ad-a63f-4504-9b67-4fd45d630add",
+            "RingsDbCardId": "144034",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Hills of Ithilien",
+            "Slug": "Hills-of-Ithilien-TLoS",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Hills-of-Ithilien.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Hills of Ithilien is the active location, it gains: `Forced: After a player engages a Harad enemy, deal 1 damage to that enemy.`"
+                ],
+                "Shadow": "Shadow: Discard a non-objective attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 35,
+            "Quantity": 4,
+            "Artist": "Julepe",
+            "HasErrata": false,
+            "OctgnGuid": "de09949d-6bc8-470c-a500-6b1fd4a5f391",
+            "RingsDbCardId": "144035",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Dark Lord's Summons",
+            "Slug": "The-Dark-Lord's-Summons-TLoS",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/The-Dark-Lord's-Summons.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril."
+                ],
+                "Text": [
+                    "When Revealed: Either place the lowest Attack Harad enemy engaged with you facedown under The Black Gate, or reveal the top card from under The Cross-roads and put it into play engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Always more people coming to Mordor. One day all the peoples will be inside.` —Gollum, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 36,
+            "Quantity": 3,
+            "Artist": "Jon Bosco",
+            "HasErrata": false,
+            "OctgnGuid": "2591dde9-00c6-488e-a109-94136e4f9876",
+            "RingsDbCardId": "144036",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Marching Up the Road",
+            "Slug": "Marching-Up-the-Road-TLoS",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Marching-Up-the-Road.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must either return an enemy engaged with him to the staging area, or search the encounter deck for a Harad enemy and put it into play engaged with him."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, place attacking enemy facedown under The Black Gate.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 37,
+            "Quantity": 2,
+            "Artist": "Yoann Boissonnet",
+            "HasErrata": false,
+            "OctgnGuid": "b774e6b4-461c-46eb-9398-dcb2af4cfab5",
+            "RingsDbCardId": "144037",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Fierce Southrons",
+            "Slug": "Fierce-Southrons-TLoS",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Fierce-Southrons.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril."
+                ],
+                "Text": [
+                    "When Revealed: Either place the lowest Threat Harad enemy in the staging area facedown under The Black Gate and reveal an additional encounter card, or each enemy in the staging area makes an immediate attack against you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Not nice; very cruel wicked Men they look. Almost as bad as Orcs...` —Gollum, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 38,
+            "Quantity": 2,
+            "Artist": "Crystal Sully",
+            "HasErrata": false,
+            "OctgnGuid": "d12e280f-44f3-469e-a2e8-e3bfd541f909",
+            "RingsDbCardId": "144038",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Arrows Thick in the Air",
+            "Slug": "Arrows-Thick-in-the-Air-TLoS",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Arrows-Thick-in-the-Air.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Until the end of the round, each Harad enemy gains Archery 2."
+                ],
+                "Shadow": "Shadow: Either place attacking enemy facedown under The Black Gate after this attack, or it makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 39,
+            "Quantity": 3,
+            "Artist": "Julepe",
+            "HasErrata": false,
+            "OctgnGuid": "75c1d9eb-9ade-4c71-a918-74cf5b526ff2",
+            "RingsDbCardId": "144039",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Oliphaunt",
+            "Slug": "Oliphaunt-TLoS",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Oliphaunt.jpg",
+                "Stats": {
+                    "EngagementCost": "44",
+                    "Threat": "3",
+                    "Attack": "6",
+                    "Defense": "2",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Harad.",
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments or take more than 3 damage each round.",
+                    "Forced: After Oliphaunt engages you, exhaust each ally you control."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +3 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Men of Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 56,
+            "Quantity": 3,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "OctgnGuid": "2163f5ef-63a3-4afc-8084-fe730774d216",
+            "RingsDbCardId": "144056",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Haradrim Soldier",
+            "Slug": "Haradrim-Soldier-TLoS",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Haradrim-Soldier.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Haradrim Soldier engages you, it makes an immediate attack."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Men of Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 57,
+            "Quantity": 3,
+            "Artist": "Jon Bosco",
+            "HasErrata": false,
+            "OctgnGuid": "456329e9-c7c4-42ac-9edd-e769aea198ea",
+            "RingsDbCardId": "144057",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Haradrim Archer",
+            "Slug": "Haradrim-Archer-TLoS",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Haradrim-Archer.jpg",
+                "Stats": {
+                    "EngagementCost": "42",
+                    "Threat": "X",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [
+                    "Archery X."
+                ],
+                "Text": [
+                    "X is the number of players in the game.",
+                    "Forced: After Haradrim Archer engages you, assign X damage among characters you control."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to the defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Men of Harad",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 58,
+            "Quantity": 3,
+            "Artist": "Melanie Maier",
+            "HasErrata": false,
+            "OctgnGuid": "c04f4018-e001-4a31-a003-9914e3f585ee",
+            "RingsDbCardId": "144058",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Ambush the Men of Harad",
+            "Slug": "Ambush-the-Men-of-Harad-TLoS",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Ambush-the-Men-of-Harad-1A.jpg",
+                "Stats": {
+                    "StageNumber": "1A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Add The Black Gate and The Cross-roads to the staging area. Shuffle the Harad encounter set and place it facedown under The Cross-roads. Each player, except for the first player, searches the encounter deck for a different non-unique location and adds it to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`These cursed Southrons come now marching up the ancient roads to swell the hosts of the Dark Tower. Yea, up the very roads that craft of Gondor made.` —Mablung, The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Ambush-the-Men-of-Harad-1B.jpg",
+                "Stats": {
+                    "StageNumber": "1B",
+                    "QuestPoints": "20"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the beginning of the quest phase, reveal the top facedown card from under The Cross-roads and add it to the staging area.",
+                    "The players cannot defeat this stage while The Cross-roads is in play. When The Cross-roads is explored, the players win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The road may pass, but they shall not!`\r\n—Mablung, The Two Towers"
+            },
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Men of Harad"
+                ],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 68,
+            "Quantity": 1,
+            "Artist": "Julepe",
+            "HasErrata": false,
+            "OctgnGuid": "b32e4536-aa58-4a09-8025-12028cd28288",
+            "RingsDbCardId": "144068",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Journey to the Cross-roads",
+            "Slug": "Journey-to-the-Cross-roads-Campaign-TLoS",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Journey-to-the-Cross-roads-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing campaign mode.",
+                    "Setup: Each player must choose: either add 1 resource to each of his heroes’ pools, or shuffle 1 copy of Brace of Coneys into his deck. Remove each burden with the following burden set icons from the encounter deck and each player`s deck: Helm`s Deep, The Road to Isengard"
+                ],
+                "Shadow": null,
+                "FlavorText": "So they passed into the northern marches of that land that Men once called Ithilien, a fair country of climbing woods and swift-falling streams. —The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Resolution: Each player who chose to shuffle a copy of Brace of Coneys into his deck during setup has earned that boon. Add each earned copy to the campaign pool. Record the name and quantity of each enemy underneath The Black Gate in the notes section of the campaign log."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Here is the last parting of our ways,` said Faramir.\r\n`If you take my counsel, you will not turn eastward yet. Go straight on, for thus you will have the cover of the woodland for many miles.` -The Two Towers"
+            },
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": null,
+            "Number": 69,
+            "Quantity": 1,
+            "Artist": "Julepe",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "144069",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ]
+}
