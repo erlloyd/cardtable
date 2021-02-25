@@ -18,7 +18,8 @@ import {
 import { ICardDetails, ICardStack } from "./initialState";
 import { getCards } from "./cards.selectors";
 import { EXTRA_CARDS } from "../../constants/card-pack-mapping";
-import { myPeerRef } from "../../constants/app-constants";
+import { GameType, myPeerRef } from "../../constants/app-constants";
+import { GamePropertiesMap } from "../../constants/game-type-properties-mapping";
 
 interface AddCardStackPayload {
   cardJsonIds: string[];
@@ -118,57 +119,119 @@ export const drawCardsOutOfCardStack = (
 
 export const fetchDecklistById = createAsyncThunk(
   "decklist/fetchByIdStatus",
-  async (payload: { decklistId: number; position: Vector2d }, thunkApi) => {
+  async (
+    payload: { gameType: GameType; decklistId: number; position: Vector2d },
+    thunkApi
+  ) => {
     const response = await axios.get(
-      `https://marvelcdb.com/api/public/decklist/${payload.decklistId}`
+      `${GamePropertiesMap[payload.gameType].decklistApi}${payload.decklistId}`
     );
     const state: RootState = thunkApi.getState() as RootState;
-    const heroCardsData = getCardsDataHeroEntities(state);
-    const heroSet = heroCardsData[response.data.investigator_code];
-    const heroSetCode = heroSet.set_code;
-    const encounterCardsData = getCardsDataEncounterEntities(state);
 
-    const heroObligationDeck = Object.entries(encounterCardsData)
-      .filter(
-        ([_key, value]) =>
-          (value.set_code === `${heroSetCode}` ||
-            value.set_code === `${heroSetCode}_nemesis`) &&
-          value.type_code === "obligation"
-      )
-      .map(([key, _value]) => key);
-
-    // get the encounter cards for this deck
-    const heroEncounterDeckData = Object.values(encounterCardsData).filter(
-      (value) =>
-        value.set_code === `${heroSetCode}_nemesis` &&
-        value.type_code !== "obligation"
-    );
-
-    let heroEncounterDeck: string[] = [];
-    heroEncounterDeckData.forEach((cd) => {
-      heroEncounterDeck = heroEncounterDeck.concat(
-        Array.from({ length: cd.quantity }).map((_i) => cd.code)
-      );
-    });
-
-    // check to see if there are any special extra cards for this hero
-    const extraCards = EXTRA_CARDS[heroSetCode ?? ""] ?? [];
-
-    // response.data.slots = { ...extraCards, ...response.data.slots };
-
-    return {
-      position: payload.position,
-      heroId: uuidv4(),
-      data: response.data,
-      dataId: uuidv4(),
-      extraHeroCards: extraCards,
-      relatedEncounterDeck: heroEncounterDeck,
-      encounterDeckId: uuidv4(),
-      relatedObligationDeck: heroObligationDeck,
-      obligationDeckId: uuidv4(),
-    };
+    switch (payload.gameType) {
+      case GameType.MarvelChampions:
+        return getMarvelCards(response, state, payload);
+      case GameType.LordOfTheRingsLivingCardGame:
+        return getLOTRCards(response, state, payload);
+    }
   }
 );
+
+const getMarvelCards = (
+  response: any,
+  state: RootState,
+  payload: { gameType: GameType; decklistId: number; position: Vector2d }
+) => {
+  const heroCardsData = getCardsDataHeroEntities(state);
+  const heroSet = heroCardsData[response.data.investigator_code];
+  const heroSetCode = heroSet.extraInfo.setCode;
+  const encounterCardsData = getCardsDataEncounterEntities(state);
+
+  const heroObligationDeck = Object.entries(encounterCardsData)
+    .filter(
+      ([_key, value]) =>
+        (value.extraInfo.setCode === `${heroSetCode}` ||
+          value.extraInfo.setCode === `${heroSetCode}_nemesis`) &&
+        value.typeCode === "obligation"
+    )
+    .map(([key, _value]) => key);
+
+  // get the encounter cards for this deck
+  const heroEncounterDeckData = Object.values(encounterCardsData).filter(
+    (value) =>
+      value.extraInfo.setCode === `${heroSetCode}_nemesis` &&
+      value.typeCode !== "obligation"
+  );
+
+  let heroEncounterDeck: string[] = [];
+  heroEncounterDeckData.forEach((cd) => {
+    heroEncounterDeck = heroEncounterDeck.concat(
+      Array.from({ length: cd.quantity }).map((_i) => cd.code)
+    );
+  });
+
+  // check to see if there are any special extra cards for this hero
+  const extraCards = EXTRA_CARDS[heroSetCode ?? ""] ?? [];
+
+  // response.data.slots = { ...extraCards, ...response.data.slots };
+
+  return {
+    position: payload.position,
+    heroId: uuidv4(),
+    data: response.data,
+    dataId: uuidv4(),
+    extraHeroCards: extraCards,
+    relatedEncounterDeck: heroEncounterDeck,
+    encounterDeckId: uuidv4(),
+    relatedObligationDeck: heroObligationDeck,
+    obligationDeckId: uuidv4(),
+  };
+};
+
+const getLOTRCards = (
+  response: any,
+  state: RootState,
+  payload: { gameType: GameType; decklistId: number; position: Vector2d }
+) => {
+  const heroCardsData = getCardsDataHeroEntities(state);
+
+  let heroStack: ICardDetails[] = [];
+
+  Object.entries(response.data.heroes).forEach(([key, value]) => {
+    const cardDetails: ICardDetails[] = Array.from(Array(value).keys()).map(
+      (): ICardDetails => ({ jsonId: key })
+    );
+    heroStack = heroStack.concat(cardDetails);
+  });
+
+  const newSlots: { [key: string]: number } = {};
+
+  Object.entries(response.data.slots).forEach(([key, value]) => {
+    //get the card data to make sure it's not a hero
+    const cardData = heroCardsData[key];
+    if (!cardData) {
+      throw new Error(`Couldn't find card data for ${key}`);
+    }
+
+    if (cardData.typeCode !== "Hero") {
+      newSlots[key] = value as number;
+    }
+  });
+
+  response.data.slots = newSlots;
+
+  return {
+    position: payload.position,
+    heroId: uuidv4(),
+    data: response.data,
+    dataId: uuidv4(),
+    extraHeroCards: heroStack,
+    relatedEncounterDeck: [],
+    encounterDeckId: uuidv4(),
+    relatedObligationDeck: [],
+    obligationDeckId: uuidv4(),
+  };
+};
 
 const shuffle = (array: ICardDetails[]): ICardDetails[] => {
   const returnArray = JSON.parse(JSON.stringify(array));

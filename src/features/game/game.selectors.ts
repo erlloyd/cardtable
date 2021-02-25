@@ -14,6 +14,11 @@ export const getPlayerColors = createSelector(getGame, (game) => {
 
 export const getPeerId = createSelector(getGame, (game) => game.peerId);
 
+export const getActiveGameType = createSelector(
+  getGame,
+  (game) => game.activeGameType
+);
+
 export const getMenuPreviewCard = createSelector(getGame, (game) => {
   if (!game.menuPreviewCardJsonId) return null;
 
