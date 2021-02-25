@@ -149,12 +149,12 @@ const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
   if (!!activeData) {
     activeData.setData = {};
   } else {
-    state.data[state.activeDataType] = {
+    state.data[GameType.MarvelChampions] = {
       entities: {},
       encounterEntities: {},
       setData: {},
     };
-    activeData = state.data[state.activeDataType];
+    activeData = state.data[GameType.MarvelChampions];
   }
 
   SetData.forEach((set) => {
@@ -172,12 +172,12 @@ const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
   if (!!activeData) {
     activeData.setData = {};
   } else {
-    state.data[state.activeDataType] = {
+    state.data[GameType.LordOfTheRingsLivingCardGame] = {
       entities: {},
       encounterEntities: {},
       setData: {},
     };
-    activeData = state.data[state.activeDataType];
+    activeData = state.data[GameType.LordOfTheRingsLivingCardGame];
   }
 
   Scenarios.forEach((scenario) => {
@@ -233,7 +233,7 @@ const loadCardsForEncounterSetReducer: CaseReducer<
     cards: CardDataLOTR[];
   }>
 > = (state, action) => {
-  const activeData = state.data[state.activeDataType];
+  const activeData = state.data[GameType.LordOfTheRingsLivingCardGame];
   const activeSet = activeData?.setData[action.payload.setCode];
 
   if (!action.payload.cards.map) {
