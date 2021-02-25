@@ -641,9 +641,17 @@ class Game extends Component<IProps, IState> {
     ) : null;
   };
 
-  private handleLoadEncounter = (position: Vector2d) => (cards: string[]) => {
+  private handleLoadEncounter = (position: Vector2d) => (cards: string[][]) => {
     this.clearEncounterImporter();
-    this.props.addCardStack({ position, cardJsonIds: cards });
+    cards.forEach((c, index) => {
+      this.props.addCardStack({
+        position: {
+          x: position.x + (cardConstants.CARD_WIDTH + 10) * index,
+          y: position.y,
+        },
+        cardJsonIds: c,
+      });
+    });
   };
 
   private handleImportDeck = (position: Vector2d) => (id: number) => {
@@ -1437,10 +1445,15 @@ class Game extends Component<IProps, IState> {
       if (!card.faceup) {
         if (!cardData.images.back) {
           return [
-            process.env.PUBLIC_URL +
-              "/images/standard/card_back_" +
-              this.props.currentGameType +
-              ".png",
+            topCardData.extraInfo.factionCode === "encounter"
+              ? process.env.PUBLIC_URL +
+                "/images/standard/encounter_card_back_" +
+                this.props.currentGameType +
+                ".png"
+              : process.env.PUBLIC_URL +
+                "/images/standard/card_back_" +
+                this.props.currentGameType +
+                ".png",
           ];
         } else {
           return [cardData.images.back];

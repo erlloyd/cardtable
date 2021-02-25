@@ -8,7 +8,7 @@ import { GameType } from "./constants/app-constants";
 interface IProps {
   currentGameType: GameType;
   encounterData: IEncounterEntity[];
-  loadCards: (cards: string[]) => void;
+  loadCards: (cards: string[][]) => void;
 }
 
 class EncounterLoader extends Component<IProps> {
@@ -37,26 +37,33 @@ class EncounterLoader extends Component<IProps> {
 
   private handleSelected = (_event: any, value: IEncounterEntity | null) => {
     if (!!value) {
+      let questCards: string[] = [];
       let encounterCards: string[] = [];
       const filteredCards = value.cards
         // We don't want cards that show up as another card's 'back_link' to be loaded as separate cards
         .filter((c) => !value.cards.some((oc) => oc.backLink === c.code));
 
-      const questCards = filteredCards.filter(
-        (c) => c.typeCode.toLocaleLowerCase() === "quest"
-      );
-      const nonQuestCards = filteredCards.filter(
-        (c) => c.typeCode.toLocaleLowerCase() !== "quest"
-      );
+      filteredCards
+        .filter((c) => c.typeCode.toLocaleLowerCase() === "quest")
+        .forEach((c) => {
+          questCards = questCards.concat(
+            Array.from({ length: c.quantity }).map((_i) => c.code)
+          );
+        });
 
-      const totalCards = questCards.concat(nonQuestCards);
-      // Add the number of cards indicated by the quantity field
-      totalCards.forEach((c) => {
-        encounterCards = encounterCards.concat(
-          Array.from({ length: c.quantity }).map((_i) => c.code)
-        );
-      });
-      this.props.loadCards(encounterCards);
+      filteredCards
+        .filter((c) => c.typeCode.toLocaleLowerCase() !== "quest")
+        .forEach((c) => {
+          encounterCards = encounterCards.concat(
+            Array.from({ length: c.quantity }).map((_i) => c.code)
+          );
+        });
+      let totalCards = [encounterCards];
+      if (questCards.length > 0) {
+        totalCards = [questCards].concat(totalCards);
+      }
+
+      this.props.loadCards(totalCards);
     }
   };
 

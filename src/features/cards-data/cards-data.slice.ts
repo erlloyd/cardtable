@@ -49,7 +49,7 @@ const convertMarvelToCommonFormat = (
   return mappedCardData;
 };
 
-const convertLOTRToCommonFormat = (useSlugForCode: boolean) => (
+const convertLOTRToCommonFormat = (encounterCard: boolean) => (
   cardLOTRFormat: CardDataLOTR
 ): CardData => {
   // if (!cardLOTRFormat.RingsDbCardId) {
@@ -84,7 +84,7 @@ const convertLOTRToCommonFormat = (useSlugForCode: boolean) => (
   }
 
   const mappedCardData: CardData = {
-    code: useSlugForCode ? cardLOTRFormat.Slug : cardLOTRFormat.RingsDbCardId,
+    code: encounterCard ? cardLOTRFormat.Slug : cardLOTRFormat.RingsDbCardId,
     name: cardLOTRFormat.Title,
     images: {
       front: cardLOTRFormat.Front.ImagePath,
@@ -99,7 +99,7 @@ const convertLOTRToCommonFormat = (useSlugForCode: boolean) => (
     extraInfo: {
       setCode: cardLOTRFormat.CardSet ?? null,
       packCode: "TODO - lotr",
-      factionCode: "TODO - lotr",
+      factionCode: encounterCard ? "encounter" : "player",
     },
   };
   return mappedCardData;
