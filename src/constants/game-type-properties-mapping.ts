@@ -8,7 +8,15 @@ export interface GameProperties {
     stunned: TokenInfo | null;
     confused: TokenInfo | null;
     tough: TokenInfo | null;
+    damage: NumericTokenInfo | null;
+    threat: NumericTokenInfo | null;
+    generic: NumericTokenInfo | null;
   };
+}
+
+export interface NumericTokenInfo {
+  menuText: string;
+  imagePath: string;
 }
 
 export interface TokenInfo {
@@ -38,6 +46,19 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
         menuRemoveText: "Remove Tough",
         imagePath: process.env.PUBLIC_URL + "/images/standard/tough.png",
       },
+      damage: {
+        menuText: "Set Damage",
+        imagePath: process.env.PUBLIC_URL + "/images/standard/damage.png",
+      },
+      threat: {
+        menuText: "Set Threat",
+        imagePath: process.env.PUBLIC_URL + "/images/standard/threat.png",
+      },
+      generic: {
+        menuText: "Set Generic Tokens",
+        imagePath:
+          process.env.PUBLIC_URL + "/images/standard/generic_counter.png",
+      },
     },
   },
   lotrlcg: {
@@ -52,6 +73,18 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
       },
       confused: null,
       tough: null,
+      damage: {
+        menuText: "Set Damage",
+        imagePath: process.env.PUBLIC_URL + "/images/standard/damage_lotr.png",
+      },
+      threat: {
+        menuText: "Set Progress",
+        imagePath: process.env.PUBLIC_URL + "/images/standard/progress.png",
+      },
+      generic: {
+        menuText: "Set Resource Tokens",
+        imagePath: process.env.PUBLIC_URL + "/images/standard/resource.png",
+      },
     },
   },
 };

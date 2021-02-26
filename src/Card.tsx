@@ -441,6 +441,7 @@ class Card extends Component<IProps, IState> {
     const cardTokens =
       this.props.dragging || this.props.isGhost ? null : (
         <CardTokensContainer
+          currentGameType={this.props.currentGameType}
           key={`${this.props.id}-cardTokens`}
           id={this.props.id}
           x={this.props.x}

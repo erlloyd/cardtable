@@ -439,16 +439,14 @@ class Game extends Component<IProps, IState> {
                   ))}
                 </Layer>
                 <Layer preventDefault={true}>
-                  {staticCards
-                    .concat(ghostCards)
-                    .concat(movingCards)
-                    .concat(previewCards)}
+                  {staticCards.concat(ghostCards).concat(movingCards)}
                 </Layer>
                 <Layer>
                   <FirstPlayerTokenContainer
                     currentGameType={this.props.currentGameType}
                   ></FirstPlayerTokenContainer>
                 </Layer>
+                <Layer preventDefault={true}>{previewCards}</Layer>
                 <Layer>
                   <Rect
                     x={this.state.selectStartPos.x}
@@ -890,59 +888,68 @@ class Game extends Component<IProps, IState> {
       });
     }
 
-    menuItems.push({
-      label: "Set Damage",
-      action: () => {
-        this.setState({
-          showContextMenu: false,
-          contextMenuItems: [],
-          contextMenuPosition: null,
+    if (!!tokenInfoForGameType.damage) {
+      menuItems.push({
+        label: tokenInfoForGameType.damage.menuText,
+        action: () => {
+          this.setState({
+            showContextMenu: false,
+            contextMenuItems: [],
+            contextMenuPosition: null,
 
-          showTokenValueModifier: true,
-          tokenValueModifierProps: {
-            id: card?.id || "",
-            tokenType: CounterTokenType.Damage,
-          },
-          tokenValueModifierPosition: this.stage?.getPointerPosition() ?? null,
-        });
-      },
-    });
+            showTokenValueModifier: true,
+            tokenValueModifierProps: {
+              id: card?.id || "",
+              tokenType: CounterTokenType.Damage,
+            },
+            tokenValueModifierPosition:
+              this.stage?.getPointerPosition() ?? null,
+          });
+        },
+      });
+    }
 
-    menuItems.push({
-      label: "Set Threat",
-      action: () => {
-        this.setState({
-          showContextMenu: false,
-          contextMenuItems: [],
-          contextMenuPosition: null,
+    if (!!tokenInfoForGameType.threat) {
+      menuItems.push({
+        label: tokenInfoForGameType.threat.menuText,
+        action: () => {
+          this.setState({
+            showContextMenu: false,
+            contextMenuItems: [],
+            contextMenuPosition: null,
 
-          showTokenValueModifier: true,
-          tokenValueModifierProps: {
-            id: card?.id || "",
-            tokenType: CounterTokenType.Threat,
-          },
-          tokenValueModifierPosition: this.stage?.getPointerPosition() ?? null,
-        });
-      },
-    });
+            showTokenValueModifier: true,
+            tokenValueModifierProps: {
+              id: card?.id || "",
+              tokenType: CounterTokenType.Threat,
+            },
+            tokenValueModifierPosition:
+              this.stage?.getPointerPosition() ?? null,
+          });
+        },
+      });
+    }
 
-    menuItems.push({
-      label: "Set Generic Tokens",
-      action: () => {
-        this.setState({
-          showContextMenu: false,
-          contextMenuItems: [],
-          contextMenuPosition: null,
+    if (!!tokenInfoForGameType.generic) {
+      menuItems.push({
+        label: tokenInfoForGameType.generic.menuText,
+        action: () => {
+          this.setState({
+            showContextMenu: false,
+            contextMenuItems: [],
+            contextMenuPosition: null,
 
-          showTokenValueModifier: true,
-          tokenValueModifierProps: {
-            id: card?.id || "",
-            tokenType: CounterTokenType.Generic,
-          },
-          tokenValueModifierPosition: this.stage?.getPointerPosition() ?? null,
-        });
-      },
-    });
+            showTokenValueModifier: true,
+            tokenValueModifierProps: {
+              id: card?.id || "",
+              tokenType: CounterTokenType.Generic,
+            },
+            tokenValueModifierPosition:
+              this.stage?.getPointerPosition() ?? null,
+          });
+        },
+      });
+    }
 
     menuItems.push({
       label: "Remove All Tokens",

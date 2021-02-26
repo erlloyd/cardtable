@@ -3,7 +3,10 @@ import * as React from "react";
 import { ICardStack } from "./features/cards/initialState";
 import { Rect, Text } from "react-konva";
 import { cardConstants } from "./constants/card-constants";
+import { GameType } from "./constants/app-constants";
+import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 interface IProps {
+  currentGameType: GameType;
   x: number;
   y: number;
   card: ICardStack | undefined;
@@ -16,6 +19,9 @@ interface IState {
     generic: boolean;
   };
 }
+
+const desiredWidth = 47;
+const desiredHeight = 47;
 
 class CardTokens extends Component<IProps, IState> {
   private damageImg: HTMLImageElement;
@@ -40,6 +46,8 @@ class CardTokens extends Component<IProps, IState> {
     this.threatImg = new Image();
     this.genericImg = new Image();
 
+    const tokenInfo = GamePropertiesMap[this.props.currentGameType].tokens;
+
     // DAMAGE
     this.damageImg.onload = () => {
       if (!this.unmounted) {
@@ -53,9 +61,8 @@ class CardTokens extends Component<IProps, IState> {
       }
     };
 
-    if (!!this.props.card?.counterTokens.damage) {
-      this.damageImg.src =
-        process.env.PUBLIC_URL + "/images/standard/damage.png";
+    if (!!this.props.card?.counterTokens.damage && !!tokenInfo.damage) {
+      this.damageImg.src = tokenInfo.damage.imagePath;
     }
 
     // THREAT
@@ -71,9 +78,8 @@ class CardTokens extends Component<IProps, IState> {
       }
     };
 
-    if (!!this.props.card?.counterTokens.threat) {
-      this.threatImg.src =
-        process.env.PUBLIC_URL + "/images/standard/threat.png";
+    if (!!this.props.card?.counterTokens.threat && !!tokenInfo.threat) {
+      this.threatImg.src = tokenInfo.threat.imagePath;
     }
 
     // GENERIC
@@ -89,41 +95,42 @@ class CardTokens extends Component<IProps, IState> {
       }
     };
 
-    if (!!this.props.card?.counterTokens.generic) {
-      this.genericImg.src =
-        process.env.PUBLIC_URL + "/images/standard/generic_counter.png";
+    if (!!this.props.card?.counterTokens.generic && !!tokenInfo.generic) {
+      this.genericImg.src = tokenInfo.generic.imagePath;
     }
   }
 
   public componentDidUpdate(prevProps: IProps, prevState: IState) {
+    const tokenInfo = GamePropertiesMap[this.props.currentGameType].tokens;
+
     // DAMAGE
     if (
       !this.state.imagesLoaded.damage &&
       !prevProps.card?.counterTokens.damage &&
-      !!this.props.card?.counterTokens.damage
+      !!this.props.card?.counterTokens.damage &&
+      !!tokenInfo.damage
     ) {
-      this.damageImg.src =
-        process.env.PUBLIC_URL + "/images/standard/damage.png";
+      this.damageImg.src = tokenInfo.damage.imagePath;
     }
 
     // THREAT
     if (
       !this.state.imagesLoaded.threat &&
       !prevProps.card?.counterTokens.threat &&
-      !!this.props.card?.counterTokens.threat
+      !!this.props.card?.counterTokens.threat &&
+      !!tokenInfo.threat
     ) {
-      this.threatImg.src =
-        process.env.PUBLIC_URL + "/images/standard/threat.png";
+      this.threatImg.src = tokenInfo.threat.imagePath;
     }
 
-    // DAMAGE
+    // GENERIC
     if (
       !this.state.imagesLoaded.generic &&
       !prevProps.card?.counterTokens.generic &&
-      !!this.props.card?.counterTokens.generic
+      !!this.props.card?.counterTokens.generic &&
+      !!tokenInfo.generic
     ) {
-      this.genericImg.src =
-        process.env.PUBLIC_URL + "/images/standard/generic_counter.png";
+      this.genericImg.src = tokenInfo.generic.imagePath;
     }
   }
 
@@ -138,7 +145,7 @@ class CardTokens extends Component<IProps, IState> {
   render() {
     if (!this.props.card) return null;
 
-    const damageX = this.props.x - this.damageImg.naturalWidth / 2;
+    const damageX = this.props.x - desiredWidth / 2;
     const damageY = this.props.y - cardConstants.CARD_HEIGHT / 2 + 20;
     const showDamage =
       this.state.imagesLoaded.damage && !!this.props.card.counterTokens.damage;
@@ -148,6 +155,10 @@ class CardTokens extends Component<IProps, IState> {
         key={`${this.props.card.id}-damageToken`}
         x={damageX}
         y={damageY}
+        scale={{
+          x: desiredWidth / this.damageImg.naturalWidth,
+          y: desiredHeight / this.damageImg.naturalHeight,
+        }}
         width={this.damageImg.naturalWidth}
         height={this.damageImg.naturalHeight}
         fillPatternImage={this.damageImg}
@@ -159,8 +170,14 @@ class CardTokens extends Component<IProps, IState> {
         key={`${this.props.card.id}-damageText`}
         x={damageX}
         y={damageY}
-        width={this.damageImg.naturalWidth}
-        height={this.damageImg.naturalHeight}
+        width={
+          this.damageImg.naturalWidth *
+          (desiredWidth / this.damageImg.naturalWidth)
+        }
+        height={
+          this.damageImg.naturalHeight *
+          (desiredHeight / this.damageImg.naturalHeight)
+        }
         text={`${this.props.card.counterTokens.damage}`}
         fill="white"
         align="center"
@@ -169,8 +186,8 @@ class CardTokens extends Component<IProps, IState> {
       ></Text>
     ) : null;
 
-    const threatX = this.props.x - this.threatImg.naturalWidth / 2;
-    const threatY = damageY + this.damageImg.naturalHeight + 5;
+    const threatX = this.props.x - desiredWidth / 2;
+    const threatY = damageY + desiredHeight + 5;
     const showThreat =
       this.state.imagesLoaded.threat && !!this.props.card.counterTokens.threat;
 
@@ -179,6 +196,10 @@ class CardTokens extends Component<IProps, IState> {
         key={`${this.props.card.id}-threatToken`}
         x={threatX}
         y={threatY}
+        scale={{
+          x: desiredWidth / this.threatImg.naturalWidth,
+          y: desiredHeight / this.threatImg.naturalHeight,
+        }}
         width={this.threatImg.naturalWidth}
         height={this.threatImg.naturalHeight}
         fillPatternImage={this.threatImg}
@@ -190,8 +211,14 @@ class CardTokens extends Component<IProps, IState> {
         key={`${this.props.card.id}-threatText`}
         x={threatX}
         y={threatY}
-        width={this.threatImg.naturalWidth}
-        height={this.threatImg.naturalHeight}
+        width={
+          this.threatImg.naturalWidth *
+          (desiredWidth / this.threatImg.naturalWidth)
+        }
+        height={
+          this.threatImg.naturalHeight *
+          (desiredHeight / this.threatImg.naturalHeight)
+        }
         text={`${this.props.card.counterTokens.threat}`}
         fill="white"
         align="center"
@@ -200,8 +227,8 @@ class CardTokens extends Component<IProps, IState> {
       ></Text>
     ) : null;
 
-    const genericX = this.props.x - this.threatImg.naturalWidth / 2;
-    const genericY = threatY + this.threatImg.naturalHeight + 5;
+    const genericX = this.props.x - desiredWidth / 2;
+    const genericY = threatY + desiredHeight + 5;
     const showGeneric =
       this.state.imagesLoaded.generic &&
       !!this.props.card.counterTokens.generic;
@@ -211,6 +238,10 @@ class CardTokens extends Component<IProps, IState> {
         key={`${this.props.card.id}-genericToken`}
         x={genericX}
         y={genericY}
+        scale={{
+          x: desiredWidth / this.genericImg.naturalWidth,
+          y: desiredHeight / this.genericImg.naturalHeight,
+        }}
         width={this.genericImg.naturalWidth}
         height={this.genericImg.naturalHeight}
         fillPatternImage={this.genericImg}
@@ -222,8 +253,14 @@ class CardTokens extends Component<IProps, IState> {
         key={`${this.props.card.id}-genericText`}
         x={genericX}
         y={genericY}
-        width={this.genericImg.naturalWidth}
-        height={this.genericImg.naturalHeight}
+        width={
+          this.genericImg.naturalWidth *
+          (desiredWidth / this.genericImg.naturalWidth)
+        }
+        height={
+          this.genericImg.naturalHeight *
+          (desiredHeight / this.genericImg.naturalHeight)
+        }
         text={`${this.props.card.counterTokens.generic}`}
         fill="white"
         align="center"
