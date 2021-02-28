@@ -1,5 +1,6 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/types/types";
+import { PlayerColor } from "../../constants/app-constants";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import { addNewCounterWithId } from "./counters.actions";
 import { ICountersState, initialState } from "./initialState";
@@ -15,6 +16,16 @@ const updateCounterValueReducer: CaseReducer<
     if (counter.value < 0) {
       counter.value = 0;
     }
+  }
+};
+
+const updateCounterColorReducer: CaseReducer<
+  ICountersState,
+  PayloadAction<{ id: string; newColor: PlayerColor }>
+> = (state, action) => {
+  const counter = state.counters.find((c) => c.id === action.payload.id);
+  if (!!counter) {
+    counter.color = action.payload.newColor;
   }
 };
 
@@ -57,6 +68,7 @@ const countersSlice = createSlice({
     removeCounter: removeCounterReducer,
     moveCounter: moveCounterReducer,
     moveFirstPlayerCounter: moveFirstPlayerCounterReducer,
+    updateCounterColor: updateCounterColorReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -75,6 +87,7 @@ const countersSlice = createSlice({
         id: action.payload.id,
         position: action.payload.pos,
         value: 0,
+        color: "red",
       });
     });
   },
@@ -85,6 +98,7 @@ export const {
   removeCounter,
   moveCounter,
   moveFirstPlayerCounter,
+  updateCounterColor,
 } = countersSlice.actions;
 
 export default countersSlice.reducer;

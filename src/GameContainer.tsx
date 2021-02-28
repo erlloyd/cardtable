@@ -7,7 +7,6 @@ import {
   getCards,
   getDropTargetCardsById,
   getPanMode,
-  // shouldShowPreview,
 } from "./features/cards/cards.selectors";
 import {
   adjustCounterToken,
@@ -15,8 +14,6 @@ import {
   endCardMove,
   exhaustCard,
   flipCards,
-  // hoverCard,
-  // hoverLeaveCard,
   selectCard,
   selectMultipleCards,
   togglePanMode,
@@ -54,6 +51,7 @@ import {
   moveCounter,
   removeCounter,
   updateCounterValue,
+  updateCounterColor,
 } from "./features/counters/counters.slice";
 import { addNewCounter } from "./features/counters/counters.thunks";
 import { resetApp } from "./store/global.actions";
@@ -65,7 +63,6 @@ const mapStateToProps = (state: RootState) => {
     playerColors: getPlayerColors(state),
     cards: getCards(state),
     cardsData: getCardsDataEntities(state),
-    // showPreview: shouldShowPreview(state),
     panMode: getPanMode(state),
     gameState: getGame(state),
     counters: getCurrentCounters(state),
@@ -87,8 +84,6 @@ const GameContainer = connect(mapStateToProps, {
   selectMultipleCards,
   startCardMove,
   unselectAllCards,
-  // hoverCard,
-  // hoverLeaveCard,
   togglePanMode,
   flipCards,
   shuffleStack,
@@ -112,6 +107,7 @@ const GameContainer = connect(mapStateToProps, {
   setPreviewCardId,
   clearPreviewCard,
   quitGame,
+  updateCounterColor,
 })(Game);
 
 export default GameContainer;

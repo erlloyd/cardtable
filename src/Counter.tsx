@@ -3,11 +3,13 @@ import * as React from "react";
 import { Vector2d } from "konva/types/types";
 import { Group, Rect, Text } from "react-konva";
 import { KonvaEventObject } from "konva/types/Node";
+import { PlayerColor } from "./constants/app-constants";
 
 interface IProps {
   id: string;
   pos: Vector2d;
   value: number;
+  color: PlayerColor;
   updateCounterValueBy: (amount: number) => void;
   handleContextMenu: (event: KonvaEventObject<PointerEvent>) => void;
   onDragEnd: (event: KonvaEventObject<DragEvent>) => void;
@@ -28,7 +30,12 @@ class Counter extends Component<IProps> {
         onTouchMove={this.handleTouchMove}
         onTouchEnd={this.handleTouchEnd}
       >
-        <Rect cornerRadius={30} width={200} height={100} fill={"red"}></Rect>
+        <Rect
+          cornerRadius={30}
+          width={200}
+          height={100}
+          fill={this.props.color}
+        ></Rect>
         <Text
           width={200}
           height={100}

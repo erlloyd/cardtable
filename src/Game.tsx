@@ -24,7 +24,12 @@ import { getCenter, getDistance } from "./utilities/geo";
 import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
 import Counter from "./Counter";
 import PeerConnector from "./PeerConnector";
-import { GameType, myPeerRef, PlayerColor } from "./constants/app-constants";
+import {
+  GameType,
+  myPeerRef,
+  PlayerColor,
+  possibleColors,
+} from "./constants/app-constants";
 import { ICounter } from "./features/counters/initialState";
 import { MISSING_CARD_IMAGE_MAP } from "./constants/card-missing-image-map";
 import { CardData } from "./external-api/common-card-data";
@@ -103,6 +108,7 @@ interface IProps {
   };
   drawCardsOutOfCardStack: (payload: DrawCardsOutOfCardStackPayload) => void;
   quitGame: () => void;
+  updateCounterColor: (payload: { id: string; newColor: PlayerColor }) => void;
 }
 
 interface IState {
@@ -428,6 +434,7 @@ class Game extends Component<IProps, IState> {
                       id={counter.id}
                       pos={counter.position}
                       value={counter.value}
+                      color={counter.color}
                       updateCounterValueBy={this.handleCounterValueUpdate(
                         counter.id
                       )}
@@ -769,12 +776,34 @@ class Game extends Component<IProps, IState> {
     event.evt.preventDefault();
     event.cancelBubble = true;
 
-    const menuItems = [
+    const counter = this.props.counters.find((c) => c.id === counterId);
+
+    const menuItems: ContextMenuItem[] = [
       {
         label: "Remove",
         action: () => {
           this.props.removeCounter(counterId);
         },
+      },
+      {
+        label: "Reset",
+        action: () => {
+          this.props.updateCounterValue({
+            id: counterId,
+            delta: (counter?.value ?? 0) * -1,
+          });
+        },
+      },
+      {
+        label: "Set Color",
+        children: possibleColors.map((color) => {
+          return {
+            label: color,
+            action: () => {
+              this.props.updateCounterColor({ id: counterId, newColor: color });
+            },
+          };
+        }),
       },
     ];
 

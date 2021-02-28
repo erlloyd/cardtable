@@ -1,4 +1,5 @@
 import { Vector2d } from "konva/types/types";
+import { PlayerColor } from "../../constants/app-constants";
 import { loadState } from "../../store/localStorage";
 
 export interface ICountersState {
@@ -10,6 +11,7 @@ export interface ICounter {
   id: string;
   position: Vector2d;
   value: number;
+  color: PlayerColor;
 }
 
 const localStorageState: ICountersState =
