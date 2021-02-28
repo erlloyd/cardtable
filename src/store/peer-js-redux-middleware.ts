@@ -7,9 +7,11 @@ import {
   loadCardsForEncounterSet,
 } from "../features/cards-data/cards-data.slice";
 import {
+  clearMenuPreviewCardJsonId,
   clearPreviewCard,
   connectToRemoteGame,
   requestResync,
+  setMenuPreviewCardJsonId,
   setPeerId,
   setPlayerColor,
   setPreviewCardId,
@@ -26,6 +28,8 @@ const blacklistRemoteActions = {
   [updateZoom.type]: true,
   [setPreviewCardId.type]: true,
   [clearPreviewCard.type]: true,
+  [setMenuPreviewCardJsonId.type]: true,
+  [clearMenuPreviewCardJsonId.type]: true,
   [togglePanMode.type]: true,
   [receiveRemoteGameState.type]: true,
   [requestResync.type]: true,
