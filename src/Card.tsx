@@ -11,7 +11,12 @@ import { GameType, myPeerRef, PlayerColor } from "./constants/app-constants";
 import { cardConstants } from "./constants/card-constants";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 
-export const HORIZONTAL_TYPE_CODES = ["main_scheme", "side_scheme", "quest"];
+export const HORIZONTAL_TYPE_CODES = [
+  "main_scheme",
+  "side_scheme",
+  "quest",
+  "player_side_quest",
+];
 
 export interface CardTokens {
   damage: number;
