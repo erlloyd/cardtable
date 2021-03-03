@@ -304,25 +304,28 @@ const toggleTokenReducer: CaseReducer<
 const adjustCounterTokenReducer: CaseReducer<
   ICardsState,
   PayloadAction<{
-    id: string;
+    id?: string;
     tokenType: CounterTokenType;
     delta?: number;
     value?: number;
   }>
 > = (state, action) => {
-  const cardToToggle = state.cards.find((c) => c.id === action.payload.id);
-  if (!!cardToToggle) {
+  let cardsToToggle = state.cards.filter(
+    (c) =>
+      (!!action.payload.id && action.payload.id === c.id) ||
+      (c.selected && c.controlledBy === (action as any).ACTOR_REF)
+  );
+
+  cardsToToggle.forEach((c) => {
     if (action.payload.value !== undefined) {
-      cardToToggle.counterTokens[action.payload.tokenType] =
-        action.payload.value;
+      c.counterTokens[action.payload.tokenType] = action.payload.value;
     } else if (action.payload.delta !== undefined) {
-      cardToToggle.counterTokens[action.payload.tokenType] +=
-        action.payload.delta;
+      c.counterTokens[action.payload.tokenType] += action.payload.delta;
     }
-    if (cardToToggle.counterTokens[action.payload.tokenType] < 0) {
-      cardToToggle.counterTokens[action.payload.tokenType] = 0;
+    if (c.counterTokens[action.payload.tokenType] < 0) {
+      c.counterTokens[action.payload.tokenType] = 0;
     }
-  }
+  });
 };
 // Selectors
 

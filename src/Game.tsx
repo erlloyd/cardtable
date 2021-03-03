@@ -83,7 +83,7 @@ interface IProps {
     value: boolean;
   }) => void;
   adjustCounterToken: (payload: {
-    id: string;
+    id?: string;
     tokenType: CounterTokenType;
     delta?: number;
     value?: number;
@@ -201,6 +201,20 @@ class Game extends Component<IProps, IState> {
   }
 
   public render() {
+    // TODO: This feels like a bad hack. I bet all the
+    //       swallowing of click events is keeping
+    //       focus from behaving 'normally' and doing
+    //       the expected thing with focus. But there are
+    //       a lot of things that don't work quite right
+    //       if the body has focus, so we're going to
+    //       force the game area to have focus if it
+    //       lost it
+    if (document.activeElement === document.body) {
+      const el = document.querySelector(".play-area") as HTMLElement;
+      el?.focus();
+    }
+    // END HACK
+
     const staticCards = this.props.cards.cards
       .filter((card) => !card.dragging)
       .map((card) => {
@@ -1084,6 +1098,7 @@ class Game extends Component<IProps, IState> {
   };
 
   private handleKeyPress = (event: React.KeyboardEvent<HTMLElement>) => {
+    const modifier: boolean = event.ctrlKey || event.metaKey;
     const code = event.key.toLocaleLowerCase();
     const intCode = parseInt(code);
     if (code === "p") {
@@ -1095,25 +1110,91 @@ class Game extends Component<IProps, IState> {
     } else if (code === "s") {
       this.props.shuffleStack();
     } else if (!Number.isNaN(intCode)) {
-      // First, get the selected card stack
-      const mySelectedCards = this.props.cards.cards.filter(
-        (c) => c.selected && c.controlledBy === myPeerRef
-      );
-      if (mySelectedCards.length !== 1) {
-        console.log(
-          "will not be drawing any cards because the number of selected stacks is " +
-            mySelectedCards.length
-        );
+      // if a ctrl / cmd key was held, we're
+      // adding tokens
+      if (modifier) {
       } else {
-        this.props.drawCardsOutOfCardStack({
-          cardStackId: mySelectedCards[0].id,
-          numberToDraw: intCode,
-        });
+        // First, get the selected card stack
+        const mySelectedCards = this.props.cards.cards.filter(
+          (c) => c.selected && c.controlledBy === myPeerRef
+        );
+        if (mySelectedCards.length !== 1) {
+          console.log(
+            "will not be drawing any cards because the number of selected stacks is " +
+              mySelectedCards.length
+          );
+        } else {
+          this.props.drawCardsOutOfCardStack({
+            cardStackId: mySelectedCards[0].id,
+            numberToDraw: intCode,
+          });
+        }
       }
     }
   };
 
   private handleKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    const code = event.key.toLocaleLowerCase();
+    const intCode = parseInt(code);
+
+    if ((event.ctrlKey || event.metaKey) && !Number.isNaN(intCode)) {
+      const tokenInfoForGameType =
+        GamePropertiesMap[this.props.currentGameType].tokens;
+      switch (intCode) {
+        case 1:
+          if (!!tokenInfoForGameType.damage) {
+            this.props.adjustCounterToken({
+              tokenType: CounterTokenType.Damage,
+              delta: 1,
+            });
+          }
+          break;
+        case 2:
+          if (!!tokenInfoForGameType.threat) {
+            this.props.adjustCounterToken({
+              tokenType: CounterTokenType.Threat,
+              delta: 1,
+            });
+          }
+          break;
+
+        case 3:
+          if (!!tokenInfoForGameType.generic) {
+            this.props.adjustCounterToken({
+              tokenType: CounterTokenType.Generic,
+              delta: 1,
+            });
+          }
+          break;
+        case 4:
+          if (!!tokenInfoForGameType.damage) {
+            this.props.adjustCounterToken({
+              tokenType: CounterTokenType.Damage,
+              delta: -1,
+            });
+          }
+          break;
+        case 5:
+          if (!!tokenInfoForGameType.threat) {
+            this.props.adjustCounterToken({
+              tokenType: CounterTokenType.Threat,
+              delta: -1,
+            });
+          }
+          break;
+
+        case 6:
+          if (!!tokenInfoForGameType.generic) {
+            this.props.adjustCounterToken({
+              tokenType: CounterTokenType.Generic,
+              delta: -1,
+            });
+          }
+          break;
+      }
+      event.preventDefault();
+    }
+
     if (
       event.shiftKey &&
       (event.ctrlKey || event.metaKey) &&
