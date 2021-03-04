@@ -24,6 +24,7 @@ class Counter extends Component<IProps> {
         x={this.props.pos.x}
         y={this.props.pos.y}
         draggable={true}
+        onClick={this.cancelBubble}
         onContextMenu={this.props.handleContextMenu}
         onDragEnd={this.props.onDragEnd}
         onTouchStart={this.handleTouchStart}
@@ -71,6 +72,10 @@ class Counter extends Component<IProps> {
       </Group>
     );
   }
+
+  private cancelBubble = (event: KonvaEventObject<MouseEvent>) => {
+    event.cancelBubble = true;
+  };
 
   private handleDecrement = () => {
     this.props.updateCounterValueBy(-1);

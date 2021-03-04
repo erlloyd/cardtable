@@ -474,7 +474,8 @@ class Game extends Component<IProps, IState> {
                     y={this.state.selectStartPos.y}
                     width={this.state.selectRect.width}
                     height={this.state.selectRect.height}
-                    stroke="black"
+                    stroke="yellow"
+                    strokeWidth={4}
                   />
                 </Layer>
               </Provider>
