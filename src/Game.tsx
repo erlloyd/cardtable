@@ -42,7 +42,8 @@ import IconButton from "@material-ui/core/IconButton";
 
 //Icons
 import FlipIcon from "@material-ui/icons/Flip";
-import PanToolIcon from "@material-ui/icons/PanTool";
+import OpenWithIcon from "@material-ui/icons/OpenWith";
+import AutorenewIcon from "@material-ui/icons/Autorenew";
 
 const SCALE_BY = 1.02;
 
@@ -143,6 +144,7 @@ interface IState {
   tokenValueModifierProps: { id: string; tokenType: CounterTokenType } | null;
   tokenValueModifierPosition: Vector2d | null;
   playmatImage: HTMLImageElement | null;
+  previewCardModal: boolean;
 }
 class Game extends Component<IProps, IState> {
   public stage: Konva.Stage | null = null;
@@ -186,6 +188,7 @@ class Game extends Component<IProps, IState> {
       tokenValueModifierProps: null,
       tokenValueModifierPosition: null,
       playmatImage: null,
+      previewCardModal: false,
     };
   }
 
@@ -250,6 +253,7 @@ class Game extends Component<IProps, IState> {
             handleDragMove={this.props.cardMove}
             handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.handleSelectAndExhaust}
+            handleDoubleTap={this.showOrToggleModalPreviewCard}
             handleClick={this.handleCardClick(card)}
             handleHover={this.props.setPreviewCardId}
             handleHoverLeave={this.props.clearPreviewCard}
@@ -397,6 +401,7 @@ class Game extends Component<IProps, IState> {
       >
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
+        {this.renderPreviewCardModal()}
         {this.renderTouchMenu()}
         {this.renderDeckImporter()}
         {this.renderEncounterImporter()}
@@ -542,6 +547,21 @@ class Game extends Component<IProps, IState> {
     );
   };
 
+  private renderPreviewCardModal = () => {
+    if (!this.state.previewCardModal) return null;
+    return (
+      <TopLayer
+        position={{ x: 0, y: 0 }}
+        completed={() => {
+          this.props.clearPreviewCard();
+          this.setState({
+            previewCardModal: false,
+          });
+        }}
+      ></TopLayer>
+    );
+  };
+
   private renderTouchMenu = () => {
     if (this.props.cards.cards.length === 0) return null;
     return (
@@ -552,7 +572,7 @@ class Game extends Component<IProps, IState> {
             this.props.togglePanMode();
           }}
         >
-          <PanToolIcon fontSize="large" />
+          <OpenWithIcon fontSize="large" />
         </IconButton>
         <IconButton
           onClick={() => {
@@ -560,6 +580,13 @@ class Game extends Component<IProps, IState> {
           }}
         >
           <FlipIcon fontSize="large" />
+        </IconButton>
+        <IconButton
+          onClick={() => {
+            this.props.exhaustCard();
+          }}
+        >
+          <AutorenewIcon fontSize="large" />
         </IconButton>
       </div>
     );
@@ -1083,6 +1110,23 @@ class Game extends Component<IProps, IState> {
     this.props.exhaustCard(cardId);
   };
 
+  private showOrToggleModalPreviewCard = (
+    cardId: string,
+    _event: KonvaEventObject<TouchEvent>
+  ) => {
+    if (
+      !!this.props.gameState.previewCard &&
+      this.props.gameState.previewCard.id === cardId
+    ) {
+      this.props.clearPreviewCard();
+    } else {
+      this.setState({
+        previewCardModal: true,
+      });
+      this.props.setPreviewCardId(cardId);
+    }
+  };
+
   private handleCardDragStart = (
     cardId: string,
     event: KonvaEventObject<DragEvent>
@@ -1240,6 +1284,7 @@ class Game extends Component<IProps, IState> {
   private getRawPreviewCardPosition = (horizontal: boolean): Vector2d => {
     const pointerPos = this.stage?.getPointerPosition() ?? { x: 0, y: 0 };
     const screenMidPointX = window.innerWidth / 2;
+    const screenMidPointY = window.innerHeight / 2;
 
     const widthToUse = horizontal
       ? cardConstants.CARD_PREVIEW_HEIGHT
@@ -1247,6 +1292,13 @@ class Game extends Component<IProps, IState> {
     const heightToUse = horizontal
       ? cardConstants.CARD_PREVIEW_WIDTH
       : cardConstants.CARD_PREVIEW_HEIGHT;
+
+    if (this.state.previewCardModal) {
+      return {
+        x: screenMidPointX,
+        y: screenMidPointY,
+      };
+    }
 
     return pointerPos.x < screenMidPointX
       ? {

@@ -44,6 +44,7 @@ interface IProps {
   fill: string;
   handleClick?: (id: string, event: KonvaEventObject<MouseEvent>) => void;
   handleDoubleClick?: (id: string, event: KonvaEventObject<MouseEvent>) => void;
+  handleDoubleTap?: (id: string, event: KonvaEventObject<TouchEvent>) => void;
   handleDragStart?: (id: string, event: KonvaEventObject<DragEvent>) => void;
   handleDragMove?: (info: { id: string; dx: number; dy: number }) => void;
   handleDragEnd?: (id: string) => void;
@@ -374,7 +375,7 @@ class Card extends Component<IProps, IState> {
             onDragMove={this.handleDragMove}
             onDragEnd={this.handleDragEnd}
             onDblClick={this.handleDoubleClick}
-            onDblTap={this.handleDoubleClick}
+            onDblTap={this.handleDoubleTap}
             onClick={this.handleClick}
             onTap={this.handleClick}
             onMouseDown={this.handleMouseDown}
@@ -594,6 +595,12 @@ class Card extends Component<IProps, IState> {
   private handleDoubleClick = (event: KonvaEventObject<MouseEvent>) => {
     if (this.props.handleDoubleClick) {
       this.props.handleDoubleClick(this.props.id, event);
+    }
+  };
+
+  private handleDoubleTap = (event: KonvaEventObject<TouchEvent>) => {
+    if (this.props.handleDoubleTap) {
+      this.props.handleDoubleTap(this.props.id, event);
     }
   };
 
