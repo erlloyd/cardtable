@@ -38,6 +38,11 @@ import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import TokenValueModifier from "./TokenValueModifier";
 import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
+import IconButton from "@material-ui/core/IconButton";
+
+//Icons
+import FlipIcon from "@material-ui/icons/Flip";
+import PanToolIcon from "@material-ui/icons/PanTool";
 
 const SCALE_BY = 1.02;
 
@@ -392,6 +397,7 @@ class Game extends Component<IProps, IState> {
       >
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
+        {this.renderTouchMenu()}
         {this.renderDeckImporter()}
         {this.renderEncounterImporter()}
         {this.renderCardSearch()}
@@ -533,6 +539,29 @@ class Game extends Component<IProps, IState> {
         items={this.state.contextMenuItems}
         hideContextMenu={() => this.clearContextMenu()}
       ></ContextMenu>
+    );
+  };
+
+  private renderTouchMenu = () => {
+    if (this.props.cards.cards.length === 0) return null;
+    return (
+      <div className="touch-menu">
+        <IconButton
+          className={this.props.panMode ? "toggle-on" : ""}
+          onClick={() => {
+            this.props.togglePanMode();
+          }}
+        >
+          <PanToolIcon fontSize="large" />
+        </IconButton>
+        <IconButton
+          onClick={() => {
+            this.props.flipCards();
+          }}
+        >
+          <FlipIcon fontSize="large" />
+        </IconButton>
+      </div>
     );
   };
 
@@ -1240,8 +1269,13 @@ class Game extends Component<IProps, IState> {
     return transform.point(pos) as Vector2d;
   };
 
-  private handleMouseDown = (event: KonvaEventObject<MouseEvent>) => {
-    if (event.evt.button === 0) {
+  private handleMouseDown = (
+    event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>
+  ) => {
+    if (
+      (event.evt instanceof MouseEvent && event.evt.button === 0) ||
+      event.evt instanceof TouchEvent
+    ) {
       // Only do something if it's the primary button (not a right-click)
       const pos = this.getRelativePositionFromTarget(this.stage);
 
@@ -1317,7 +1351,7 @@ class Game extends Component<IProps, IState> {
     return false;
   };
 
-  private handleTouchStart = (event: any) => {
+  private handleTouchStart = (event: KonvaEventObject<TouchEvent>) => {
     if (!!this.touchTimer) {
       clearTimeout(this.touchTimer);
       this.touchTimer = null;
@@ -1326,6 +1360,10 @@ class Game extends Component<IProps, IState> {
     this.touchTimer = setTimeout(() => {
       this.handleContextMenu(event);
     }, 750);
+
+    if (!this.props.panMode) {
+      this.handleMouseDown(event);
+    }
   };
 
   private handleTouchMove = (e: any) => {
@@ -1341,7 +1379,7 @@ class Game extends Component<IProps, IState> {
 
     if (touch1 && touch2) {
       this.handleMultiTouch(touch1, touch2);
-    } else if (!this.props.panMode) {
+    } else {
       this.handleMouseMove(e);
     }
   };
@@ -1401,12 +1439,16 @@ class Game extends Component<IProps, IState> {
     this.lastCenter = newCenter;
   };
 
-  private handleTouchEnd = (event: any) => {
+  private handleTouchEnd = (event: KonvaEventObject<TouchEvent>) => {
     this.lastDist = 0;
     this.lastCenter = null;
     if (!!this.touchTimer) {
       clearTimeout(this.touchTimer);
       this.touchTimer = null;
+    }
+
+    if (!this.props.panMode) {
+      this.handleMouseUp();
     }
   };
 
@@ -1424,7 +1466,9 @@ class Game extends Component<IProps, IState> {
     event.cancelBubble = true;
   };
 
-  private handleContextMenu = (event: KonvaEventObject<PointerEvent>): void => {
+  private handleContextMenu = (
+    event: KonvaEventObject<PointerEvent> | KonvaEventObject<TouchEvent>
+  ): void => {
     if (!!this.touchTimer) {
       clearTimeout(this.touchTimer);
       this.touchTimer = null;
