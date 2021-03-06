@@ -1,9 +1,11 @@
-import TextField from "@material-ui/core/TextField";
-import Autocomplete from "@material-ui/lab/Autocomplete";
 import React from "react";
 import { GameType } from "./constants/app-constants";
 import GameContainer from "./GameContainer";
 import "./App.scss";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
 interface IProps {
   activeGameType: GameType | null;
   updateActiveGameType: (val: GameType) => void;
@@ -33,20 +35,21 @@ const renderGamePicker = (props: IProps) => {
   return (
     <div className="game-picker">
       <h1>Card Game Playground</h1>
-      <Autocomplete
-        id="game-picker"
-        options={Object.entries(GameType).map(([key, value]) => {
-          return { key, value };
-        })}
-        getOptionLabel={(option) => camelCaseToSpaces(option.key)}
-        style={{ width: 300 }}
-        onChange={(_e, value) => {
-          if (!!value) props.updateActiveGameType(value.value);
-        }}
-        renderInput={(params) => (
-          <TextField {...params} label="Choose Game" variant="outlined" />
-        )}
-      />
+      <FormControl className="select">
+        <InputLabel id="game-picker-label">Select Game</InputLabel>
+        <Select
+          id="game-picker"
+          labelId="game-picker-label"
+          onChange={(e) => {
+            props.updateActiveGameType(e.target.value as GameType);
+          }}
+        >
+          {Object.entries(GameType).map(([key, value]) => {
+            const label = camelCaseToSpaces(key);
+            return <MenuItem value={value}>{label}</MenuItem>;
+          })}
+        </Select>
+      </FormControl>
     </div>
   );
 };

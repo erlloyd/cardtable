@@ -1,4 +1,3 @@
-import { ReactReduxContext, Provider } from "react-redux";
 import * as Intersects from "intersects";
 import Konva from "konva";
 import { KonvaEventObject } from "konva/types/Node";
@@ -6,44 +5,40 @@ import { Vector2d } from "konva/types/types";
 import * as React from "react";
 import { Component } from "react";
 import { Layer, Rect, Stage } from "react-konva";
-import "./Game.scss";
+import { Provider, ReactReduxContext } from "react-redux";
 import Card, { HORIZONTAL_TYPE_CODES } from "./Card";
-import { cardConstants } from "./constants/card-constants";
-import ContextMenu, { ContextMenuItem } from "./ContextMenu";
-import DeckLoader from "./DeckLoader";
-import EncounterLoaderContainer from "./EncounterLoaderContainer";
-import { ICardData } from "./features/cards-data/initialState";
-import {
-  CounterTokenType,
-  StatusTokenType,
-} from "./features/cards/cards.slice";
-import { ICardsState, ICardStack } from "./features/cards/initialState";
-import { IGameState } from "./features/game/initialState";
-import TopLayer from "./TopLayer";
-import { getCenter, getDistance } from "./utilities/geo";
 import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
-import Counter from "./Counter";
-import PeerConnector from "./PeerConnector";
 import {
   GameType,
   myPeerRef,
   PlayerColor,
   possibleColors,
 } from "./constants/app-constants";
-import { ICounter } from "./features/counters/initialState";
+import { cardConstants } from "./constants/card-constants";
 import { MISSING_CARD_IMAGE_MAP } from "./constants/card-missing-image-map";
-import { CardData } from "./external-api/common-card-data";
 import { CARD_PACK_REMAPPING } from "./constants/card-pack-mapping";
-import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
-import TokenValueModifier from "./TokenValueModifier";
-import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
-import IconButton from "@material-ui/core/IconButton";
-
-//Icons
-import FlipIcon from "@material-ui/icons/Flip";
-import OpenWithIcon from "@material-ui/icons/OpenWith";
-import AutorenewIcon from "@material-ui/icons/Autorenew";
+import ContextMenu, { ContextMenuItem } from "./ContextMenu";
+import Counter from "./Counter";
+import DeckLoader from "./DeckLoader";
+import EncounterLoaderContainer from "./EncounterLoaderContainer";
+import { CardData } from "./external-api/common-card-data";
+import { ICardData } from "./features/cards-data/initialState";
+import {
+  CounterTokenType,
+  StatusTokenType,
+} from "./features/cards/cards.slice";
+import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
+import { ICardsState, ICardStack } from "./features/cards/initialState";
+import { ICounter } from "./features/counters/initialState";
+import { IGameState } from "./features/game/initialState";
+import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
+import "./Game.scss";
+import PeerConnector from "./PeerConnector";
+import TokenValueModifier from "./TokenValueModifier";
+import TopLayer from "./TopLayer";
+import TouchMenuContainer from "./TouchMenuContainer";
+import { getCenter, getDistance } from "./utilities/geo";
 
 const SCALE_BY = 1.02;
 
@@ -564,32 +559,7 @@ class Game extends Component<IProps, IState> {
 
   private renderTouchMenu = () => {
     if (this.props.cards.cards.length === 0) return null;
-    return (
-      <div className="touch-menu">
-        <IconButton
-          className={this.props.panMode ? "toggle-on" : ""}
-          onClick={() => {
-            this.props.togglePanMode();
-          }}
-        >
-          <OpenWithIcon fontSize="large" />
-        </IconButton>
-        <IconButton
-          onClick={() => {
-            this.props.flipCards();
-          }}
-        >
-          <FlipIcon fontSize="large" />
-        </IconButton>
-        <IconButton
-          onClick={() => {
-            this.props.exhaustCard();
-          }}
-        >
-          <AutorenewIcon fontSize="large" />
-        </IconButton>
-      </div>
-    );
+    return <TouchMenuContainer></TouchMenuContainer>;
   };
 
   private renderDeckImporter = () => {
