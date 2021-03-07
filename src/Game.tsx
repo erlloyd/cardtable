@@ -110,6 +110,11 @@ interface IProps {
   drawCardsOutOfCardStack: (payload: DrawCardsOutOfCardStackPayload) => void;
   quitGame: () => void;
   updateCounterColor: (payload: { id: string; newColor: PlayerColor }) => void;
+  createDeckFromTxt: (payload: {
+    gameType: GameType;
+    position: Vector2d;
+    txtContents: string;
+  }) => void;
 }
 
 interface IState {
@@ -1508,13 +1513,24 @@ class Game extends Component<IProps, IState> {
         action: this.props.redo,
       },
       {
-        label: "Load Deck ID",
+        label: "Load Deck by ID",
         action: () => {
           this.setState({
             showDeckImporter: true,
             deckImporterPosition: this.stage?.getPointerPosition() ?? null,
           });
         },
+      },
+      {
+        label: "Load Deck from txt file",
+        fileLoadedAction: (txtContents: string) => {
+          this.props.createDeckFromTxt({
+            gameType: this.props.currentGameType,
+            position: this.stage?.getPointerPosition() ?? { x: 0, y: 0 },
+            txtContents,
+          });
+        },
+        fileUploader: true,
       },
       {
         label: `Load ${

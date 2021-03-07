@@ -37,6 +37,34 @@ export const getCardsDataHeroEntities = createSelector(
   }
 );
 
+export const getCardsDataHerosByName = createSelector(
+  getCardsData,
+  (cardsData) => {
+    const data = getCurrentCardData(cardsData);
+    let cardsDataByName: { [key: string]: CardData } = {};
+    Object.values(data.entities).forEach((cd) => {
+      if (cd.typeCode === "hero") {
+        cardsDataByName[cd.name] = cd;
+      }
+    });
+    return cardsDataByName;
+  }
+);
+
+export const getCardsDataPlayerCardsByName = createSelector(
+  getCardsData,
+  (cardsData) => {
+    const data = getCurrentCardData(cardsData);
+    let cardsDataByName: { [key: string]: CardData } = {};
+    Object.values(data.entities).forEach((cd) => {
+      if (cd.typeCode !== "hero") {
+        cardsDataByName[cd.name] = cd;
+      }
+    });
+    return cardsDataByName;
+  }
+);
+
 export const getCardsDataEncounterEntities = createSelector(
   getCardsData,
   (cardsData) => {

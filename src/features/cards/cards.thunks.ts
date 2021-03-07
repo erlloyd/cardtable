@@ -5,10 +5,13 @@ import { RootState } from "../../store/rootReducer";
 import {
   getCardsDataEncounterEntities,
   getCardsDataHeroEntities,
+  getCardsDataHerosByName,
+  getCardsDataPlayerCardsByName,
 } from "../cards-data/cards-data.selectors";
 import { v4 as uuidv4 } from "uuid";
 import {
   addCardStackWithId,
+  createDeckFromTextFileWithIds,
   drawCardsOutOfCardStackWithIds,
   pullCardOutOfCardStackWithId,
   replaceCardStack,
@@ -20,6 +23,7 @@ import { getCards } from "./cards.selectors";
 import { EXTRA_CARDS } from "../../constants/card-pack-mapping";
 import { GameType, myPeerRef } from "../../constants/app-constants";
 import { GamePropertiesMap } from "../../constants/game-type-properties-mapping";
+import { convertMarvelTxtToDeckInfo } from "../../utilities/marvel-txt-converter";
 
 interface AddCardStackPayload {
   cardJsonIds: string[];
@@ -117,6 +121,38 @@ export const drawCardsOutOfCardStack = (
   dispatch(drawCardsOutOfCardStackWithIds(payloadWithIds));
 };
 
+export const createDeckFromTxt = (payload: {
+  gameType: GameType;
+  position: Vector2d;
+  txtContents: string;
+}): ThunkAction<void, RootState, unknown, Action<string>> => (
+  dispatch,
+  getState
+) => {
+  if (payload.gameType === GameType.MarvelChampions) {
+    const heroCardsDataByName = getCardsDataHerosByName(getState());
+    const playerCardsDataByName = getCardsDataPlayerCardsByName(getState());
+    dispatch(
+      createDeckFromTextFileWithIds(
+        getMarvelCards(
+          convertMarvelTxtToDeckInfo(
+            heroCardsDataByName,
+            playerCardsDataByName,
+            payload.position,
+            payload.txtContents
+          ),
+          getState(),
+          {
+            gameType: payload.gameType,
+            decklistId: -1,
+            position: payload.position,
+          }
+        )
+      )
+    );
+  }
+};
+
 export const fetchDecklistById = createAsyncThunk(
   "decklist/fetchByIdStatus",
   async (
@@ -147,14 +183,19 @@ const getMarvelCards = (
   const heroSetCode = heroSet.extraInfo.setCode;
   const encounterCardsData = getCardsDataEncounterEntities(state);
 
-  const heroObligationDeck = Object.entries(encounterCardsData)
+  let heroObligationDeck: string[] = [];
+  Object.entries(encounterCardsData)
     .filter(
       ([_key, value]) =>
         (value.extraInfo.setCode === `${heroSetCode}` ||
           value.extraInfo.setCode === `${heroSetCode}_nemesis`) &&
         value.typeCode === "obligation"
     )
-    .map(([key, _value]) => key);
+    .forEach(([key, value]) => {
+      heroObligationDeck = heroObligationDeck.concat(
+        Array.from({ length: value.quantity }).map((_i) => key)
+      );
+    });
 
   // get the encounter cards for this deck
   const heroEncounterDeckData = Object.values(encounterCardsData).filter(

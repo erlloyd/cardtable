@@ -32,6 +32,18 @@ export interface ReplaceCardStackPayload {
   newStack: ICardDetails[];
 }
 
+export interface CreateDeckPayload {
+  position: Vector2d;
+  heroId: string;
+  data: any;
+  dataId: string;
+  extraHeroCards: ICardDetails[];
+  relatedEncounterDeck: string[];
+  encounterDeckId: string;
+  relatedObligationDeck: string[];
+  obligationDeckId: string;
+}
+
 export const addCardStackWithId = createAction<AddCardStackWithIdPayload>(
   "addCardStackWithId"
 );
@@ -56,3 +68,7 @@ export const setStackShuffling = createAction<{
   id: string;
   shuffling: boolean;
 }>("setStackShuffling");
+
+export const createDeckFromTextFileWithIds = createAction<CreateDeckPayload>(
+  "createDeckFromTextFileWithIds"
+);

@@ -29,6 +29,7 @@ import {
   startCardMove,
   shuffleStack,
   drawCardsOutOfCardStack,
+  createDeckFromTxt,
 } from "./features/cards/cards.thunks";
 import { allJsonData } from "./features/cards-data/cards-data.thunks";
 import {
@@ -108,6 +109,7 @@ const GameContainer = connect(mapStateToProps, {
   clearPreviewCard,
   quitGame,
   updateCounterColor,
+  createDeckFromTxt,
 })(Game);
 
 export default GameContainer;

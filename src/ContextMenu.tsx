@@ -4,11 +4,14 @@ import { Component } from "react";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import NestedMenuItem from "material-ui-nested-menu-item";
+import FileUploader from "./FileUploader";
 
 export interface ContextMenuItem {
   label: string;
   action?: () => void;
+  fileLoadedAction?: (fileContents: string) => void;
   children?: ContextMenuItem[];
+  fileUploader?: boolean;
 }
 
 interface IProps {
@@ -21,6 +24,11 @@ interface IProps {
 interface IState {
   menuOpen: boolean;
 }
+
+const isTargetFileInput = (target: EventTarget) => {
+  const targetAsInput = target as HTMLInputElement;
+  return !!targetAsInput?.files;
+};
 
 class ContextMenu extends Component<IProps, IState> {
   constructor(props: IProps) {
@@ -36,7 +44,11 @@ class ContextMenu extends Component<IProps, IState> {
       <div
         id="context-menu-layer"
         onContextMenu={this.preventDefault}
-        onClick={this.props.hideContextMenu}
+        onClick={(event) => {
+          if (!isTargetFileInput(event.target)) {
+            this.props.hideContextMenu();
+          }
+        }}
       >
         <Menu
           keepMounted
@@ -55,24 +67,49 @@ class ContextMenu extends Component<IProps, IState> {
   }
 
   private renderMenuItem = (i: ContextMenuItem, index: number) => {
-    return !!i.children ? (
-      <NestedMenuItem
-        key={`contextMenu-item-${index}`}
-        parentMenuOpen={this.state.menuOpen}
-        label={i.label}
-      >
-        {i.children.map((nestedI, nestedIndex) => {
-          return this.renderMenuItem(nestedI, index * 1000 + nestedIndex);
-        })}
-      </NestedMenuItem>
-    ) : (
-      <MenuItem
-        key={`contextMenu-item-${index}`}
-        onClick={this.handleContextItemClicked(i)}
-      >
-        {i.label}
-      </MenuItem>
-    );
+    if (!!i.children) {
+      return (
+        <NestedMenuItem
+          key={`contextMenu-item-${index}`}
+          parentMenuOpen={this.state.menuOpen}
+          label={i.label}
+        >
+          {i.children.map((nestedI, nestedIndex) => {
+            return this.renderMenuItem(nestedI, index * 1000 + nestedIndex);
+          })}
+        </NestedMenuItem>
+      );
+    } else if (!!i.fileUploader) {
+      return (
+        <FileUploader
+          label={i.label}
+          key={`contextMenu-item-${index}`}
+          handleFile={(file) => {
+            // setting up the reader
+            const reader = new FileReader();
+            reader.readAsText(file, "UTF-8");
+
+            // here we tell the reader what to do when it's done reading...
+            reader.onload = (readerEvent) => {
+              const content: string = readerEvent.target?.result as string; // this is the content!
+              if (!!i.fileLoadedAction) {
+                i.fileLoadedAction(content);
+              }
+              this.props.hideContextMenu();
+            };
+          }}
+        ></FileUploader>
+      );
+    } else {
+      return (
+        <MenuItem
+          key={`contextMenu-item-${index}`}
+          onClick={this.handleContextItemClicked(i)}
+        >
+          {i.label}
+        </MenuItem>
+      );
+    }
   };
 
   private handleMenuClosed = () => {

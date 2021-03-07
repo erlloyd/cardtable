@@ -1,4 +1,9 @@
-import { createSlice, PayloadAction, CaseReducer } from "@reduxjs/toolkit";
+import {
+  createSlice,
+  PayloadAction,
+  CaseReducer,
+  Draft,
+} from "@reduxjs/toolkit";
 import { getDistance } from "../../utilities/geo";
 import {
   initialState,
@@ -11,6 +16,8 @@ import { cardConstants } from "../../constants/card-constants";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import {
   addCardStackWithId,
+  createDeckFromTextFileWithIds,
+  CreateDeckPayload,
   drawCardsOutOfCardStackWithIds,
   pullCardOutOfCardStackWithId,
   replaceCardStack,
@@ -558,148 +565,159 @@ const cardsSlice = createSlice({
       }
     });
 
-    builder.addCase(fetchDecklistById.fulfilled, (state, action) => {
-      console.log("got decklist");
-      console.log(action);
+    builder.addCase(createDeckFromTextFileWithIds, (state, action) =>
+      handleLoadDeck(state, action)
+    );
 
-      const potentialHeroCard: ICardDetails[] = action.payload.data
-        .investigator_code
-        ? [{ jsonId: action.payload.data.investigator_code }]
-        : [];
-
-      const heroCardStack = [
-        ...potentialHeroCard,
-        ...action.payload.extraHeroCards,
-      ];
-
-      const heroCard: ICardStack = {
-        controlledBy: (action as any).ACTOR_REF,
-        selected: true,
-        x: action.payload.position.x,
-        y: action.payload.position.y,
-        dragging: false,
-        shuffling: false,
-        exhausted: false,
-        faceup: true,
-        fill: "red",
-        id: action.payload.heroId,
-        cardStack: heroCardStack,
-        statusTokens: {
-          stunned: false,
-          confused: false,
-          tough: false,
-        },
-        counterTokens: {
-          damage: 0,
-          threat: 0,
-          generic: 0,
-        },
-      };
-
-      let mainDeckStack: ICardDetails[] = [];
-      Object.entries(action.payload.data.slots).forEach(([key, value]) => {
-        const cardDetails: ICardDetails[] = Array.from(Array(value).keys()).map(
-          (): ICardDetails => ({ jsonId: key })
-        );
-        mainDeckStack = mainDeckStack.concat(cardDetails);
-      });
-
-      const cardPadding = cardConstants.CARD_WIDTH + 10;
-
-      const newDeck: ICardStack = {
-        controlledBy: (action as any).ACTOR_REF,
-        selected: true,
-        x: action.payload.position.x + cardPadding,
-        y: action.payload.position.y,
-        dragging: false,
-        shuffling: false,
-        exhausted: false,
-        faceup: true,
-        fill: "red",
-        id: action.payload.dataId,
-        cardStack: mainDeckStack,
-        statusTokens: {
-          stunned: false,
-          confused: false,
-          tough: false,
-        },
-        counterTokens: {
-          damage: 0,
-          threat: 0,
-          generic: 0,
-        },
-      };
-
-      const encounterDeck: ICardStack = {
-        controlledBy: (action as any).ACTOR_REF,
-        selected: true,
-        x: action.payload.position.x + cardPadding * 2,
-        y: action.payload.position.y,
-        dragging: false,
-        shuffling: false,
-        exhausted: false,
-        faceup: true,
-        fill: "red",
-        id: action.payload.encounterDeckId,
-        cardStack: action.payload.relatedEncounterDeck.map((jsonId) => ({
-          jsonId,
-        })),
-        statusTokens: {
-          stunned: false,
-          confused: false,
-          tough: false,
-        },
-        counterTokens: {
-          damage: 0,
-          threat: 0,
-          generic: 0,
-        },
-      };
-
-      const obligationDeck: ICardStack = {
-        controlledBy: (action as any).ACTOR_REF,
-        selected: true,
-        x: action.payload.position.x + cardPadding * 3,
-        y: action.payload.position.y,
-        dragging: false,
-        shuffling: false,
-        exhausted: false,
-        faceup: true,
-        fill: "red",
-        id: action.payload.obligationDeckId,
-        cardStack: action.payload.relatedObligationDeck.map((jsonId) => ({
-          jsonId,
-        })),
-        statusTokens: {
-          stunned: false,
-          confused: false,
-          tough: false,
-        },
-        counterTokens: {
-          damage: 0,
-          threat: 0,
-          generic: 0,
-        },
-      };
-
-      if (heroCard.cardStack.length > 0) {
-        state.cards.push(heroCard);
-      }
-
-      if (newDeck.cardStack.length > 0) {
-        state.cards.push(newDeck);
-      }
-
-      if (encounterDeck.cardStack.length > 0) {
-        state.cards.push(encounterDeck);
-      }
-
-      if (obligationDeck.cardStack.length > 0) {
-        state.cards.push(obligationDeck);
-      }
-    });
+    builder.addCase(fetchDecklistById.fulfilled, (state, action) =>
+      handleLoadDeck(state, action)
+    );
   },
 });
+
+const handleLoadDeck = (
+  state: Draft<ICardsState>,
+  action: PayloadAction<CreateDeckPayload>
+) => {
+  console.log("got decklist");
+  console.log(action);
+
+  const potentialHeroCard: ICardDetails[] = action.payload.data
+    .investigator_code
+    ? [{ jsonId: action.payload.data.investigator_code }]
+    : [];
+
+  const heroCardStack = [
+    ...potentialHeroCard,
+    ...action.payload.extraHeroCards,
+  ];
+
+  const heroCard: ICardStack = {
+    controlledBy: (action as any).ACTOR_REF,
+    selected: true,
+    x: action.payload.position.x,
+    y: action.payload.position.y,
+    dragging: false,
+    shuffling: false,
+    exhausted: false,
+    faceup: true,
+    fill: "red",
+    id: action.payload.heroId,
+    cardStack: heroCardStack,
+    statusTokens: {
+      stunned: false,
+      confused: false,
+      tough: false,
+    },
+    counterTokens: {
+      damage: 0,
+      threat: 0,
+      generic: 0,
+    },
+  };
+
+  let mainDeckStack: ICardDetails[] = [];
+  Object.entries(action.payload.data.slots).forEach(([key, value]) => {
+    const cardDetails: ICardDetails[] = Array.from(Array(value).keys()).map(
+      (): ICardDetails => ({ jsonId: key })
+    );
+    mainDeckStack = mainDeckStack.concat(cardDetails);
+  });
+
+  const cardPadding = cardConstants.CARD_WIDTH + 10;
+
+  const newDeck: ICardStack = {
+    controlledBy: (action as any).ACTOR_REF,
+    selected: true,
+    x: action.payload.position.x + cardPadding,
+    y: action.payload.position.y,
+    dragging: false,
+    shuffling: false,
+    exhausted: false,
+    faceup: true,
+    fill: "red",
+    id: action.payload.dataId,
+    cardStack: mainDeckStack,
+    statusTokens: {
+      stunned: false,
+      confused: false,
+      tough: false,
+    },
+    counterTokens: {
+      damage: 0,
+      threat: 0,
+      generic: 0,
+    },
+  };
+
+  const encounterDeck: ICardStack = {
+    controlledBy: (action as any).ACTOR_REF,
+    selected: true,
+    x: action.payload.position.x + cardPadding * 2,
+    y: action.payload.position.y,
+    dragging: false,
+    shuffling: false,
+    exhausted: false,
+    faceup: true,
+    fill: "red",
+    id: action.payload.encounterDeckId,
+    cardStack: action.payload.relatedEncounterDeck.map((jsonId) => ({
+      jsonId,
+    })),
+    statusTokens: {
+      stunned: false,
+      confused: false,
+      tough: false,
+    },
+    counterTokens: {
+      damage: 0,
+      threat: 0,
+      generic: 0,
+    },
+  };
+
+  const obligationDeck: ICardStack = {
+    controlledBy: (action as any).ACTOR_REF,
+    selected: true,
+    x: action.payload.position.x + cardPadding * 3,
+    y: action.payload.position.y,
+    dragging: false,
+    shuffling: false,
+    exhausted: false,
+    faceup: true,
+    fill: "red",
+    id: action.payload.obligationDeckId,
+    cardStack: action.payload.relatedObligationDeck.map((jsonId) => ({
+      jsonId,
+    })),
+    statusTokens: {
+      stunned: false,
+      confused: false,
+      tough: false,
+    },
+    counterTokens: {
+      damage: 0,
+      threat: 0,
+      generic: 0,
+    },
+  };
+
+  if (heroCard.cardStack.length > 0) {
+    state.cards.push(heroCard);
+  }
+
+  if (newDeck.cardStack.length > 0) {
+    state.cards.push(newDeck);
+  }
+
+  if (encounterDeck.cardStack.length > 0) {
+    state.cards.push(encounterDeck);
+  }
+
+  if (obligationDeck.cardStack.length > 0) {
+    state.cards.push(obligationDeck);
+  }
+};
 
 export const {
   selectCard,
