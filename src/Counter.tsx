@@ -28,6 +28,7 @@ class Counter extends Component<IProps> {
         onContextMenu={this.props.handleContextMenu}
         onDragEnd={this.props.onDragEnd}
         onTouchStart={this.handleTouchStart}
+        onMouseDown={this.cancelBubble}
         onTouchMove={this.handleTouchMove}
         onTouchEnd={this.handleTouchEnd}
       >

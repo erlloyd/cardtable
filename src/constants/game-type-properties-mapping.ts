@@ -4,6 +4,7 @@ export interface GameProperties {
   deckSite: string;
   decklistApi: string;
   encounterUiName: string;
+  backgroundImageLocation: string;
   tokens: {
     stunned: TokenInfo | null;
     confused: TokenInfo | null;
@@ -30,6 +31,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
     deckSite: "marvelcdb.com",
     decklistApi: "https://marvelcdb.com/api/public/decklist/",
     encounterUiName: "Encounter Set",
+    backgroundImageLocation: "/images/table/background_marvelchampions.png",
     tokens: {
       stunned: {
         menuText: "Stun",
@@ -65,6 +67,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
     deckSite: "ringsdb.com",
     decklistApi: "https://ringsdb.com/api/public/decklist/",
     encounterUiName: "Scenario",
+    backgroundImageLocation: "/images/table/background_lotrlcg.jpg",
     tokens: {
       stunned: {
         menuText: "Quest",

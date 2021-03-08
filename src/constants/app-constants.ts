@@ -12,7 +12,7 @@ export type PlayerColor =
   | "cyan"
   | "green"
   | "blue"
-  | "magnenta"
+  | "magenta"
   | "yellow";
 
 export const possibleColors: PlayerColor[] = [
@@ -20,6 +20,6 @@ export const possibleColors: PlayerColor[] = [
   "cyan",
   "green",
   "blue",
-  "magnenta",
+  "magenta",
   "yellow",
 ];

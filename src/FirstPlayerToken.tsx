@@ -44,6 +44,8 @@ class FirstPlayerToken extends Component<IProps, IState> {
         x={this.props.pos.x}
         y={this.props.pos.y}
         draggable={true}
+        onTouchStart={this.cancelBubble}
+        onMouseDown={this.cancelBubble}
         onDragEnd={this.handleDragEnd}
         scale={{
           x: 160 / (this.state.img?.naturalWidth ?? 1),
@@ -55,6 +57,12 @@ class FirstPlayerToken extends Component<IProps, IState> {
       ></Rect>
     );
   }
+
+  private cancelBubble = (
+    e: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>
+  ) => {
+    e.cancelBubble = true;
+  };
 
   private handleDragEnd = (event: KonvaEventObject<DragEvent>) => {
     this.props.updatePos({

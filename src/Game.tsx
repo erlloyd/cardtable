@@ -201,9 +201,7 @@ class Game extends Component<IProps, IState> {
     };
     image.src =
       process.env.PUBLIC_URL +
-      "/images/table/background_" +
-      this.props.currentGameType +
-      ".jpg";
+      GamePropertiesMap[this.props.currentGameType].backgroundImageLocation;
     this.props.loadCardsData();
     this.props.allJsonData("");
   }
@@ -472,13 +470,13 @@ class Game extends Component<IProps, IState> {
                 </Layer>
                 <Layer preventDefault={true}>
                   {staticCards.concat(ghostCards).concat(movingCards)}
-                </Layer>
-                <Layer>
+
                   <FirstPlayerTokenContainer
                     currentGameType={this.props.currentGameType}
                   ></FirstPlayerTokenContainer>
+
+                  {previewCards}
                 </Layer>
-                <Layer preventDefault={true}>{previewCards}</Layer>
                 <Layer>
                   <Rect
                     x={this.state.selectStartPos.x}

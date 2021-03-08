@@ -31,6 +31,8 @@ const isTargetFileInput = (target: EventTarget) => {
 };
 
 class ContextMenu extends Component<IProps, IState> {
+  private nestedRef: any;
+
   constructor(props: IProps) {
     super(props);
 
@@ -70,9 +72,20 @@ class ContextMenu extends Component<IProps, IState> {
     if (!!i.children) {
       return (
         <NestedMenuItem
+          ref={(val) => {
+            this.nestedRef = val;
+          }}
           key={`contextMenu-item-${index}`}
           parentMenuOpen={this.state.menuOpen}
           label={i.label}
+          onClick={(event) => {
+            if (!!this.nestedRef) {
+              event.stopPropagation();
+              // This is a hack to force the nested menu to open on touch devices.
+              // the `NestedMenuItem` library doesn't correctly support touch events, only hover
+              this.nestedRef.parentElement.focus();
+            }
+          }}
         >
           {i.children.map((nestedI, nestedIndex) => {
             return this.renderMenuItem(nestedI, index * 1000 + nestedIndex);
@@ -132,6 +145,9 @@ class ContextMenu extends Component<IProps, IState> {
       this.props.contextItemClicked(this.props.items[0]);
     }
     if (!!item.action) {
+      if (!!this.nestedRef) {
+        this.nestedRef.blur();
+      }
       this.props.hideContextMenu();
     }
   };
