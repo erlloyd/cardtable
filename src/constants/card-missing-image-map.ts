@@ -74,8 +74,8 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "12020": "https://lcgcdn.s3.amazonaws.com/mc/MC13en_20.jpg",
 
   // Scarlet Witch Cards
-  "15001a": "https://hallofheroeshome.files.wordpress.com/2021/03/s0b.jpg",
-  "15001b": "https://hallofheroeshome.files.wordpress.com/2021/03/s0a.jpg",
+  "15001a": "https://marvelcdb.com/bundles/cards/15001a.png",
+  "15001b": "https://marvelcdb.com/bundles/cards/15001b.png",
   "15002": "https://hallofheroeshome.files.wordpress.com/2021/03/s1.jpg",
   "15003": "https://hallofheroeshome.files.wordpress.com/2021/03/s2.jpg",
   "15004": "https://hallofheroeshome.files.wordpress.com/2021/03/s6.jpg",
