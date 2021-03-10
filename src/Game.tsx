@@ -469,7 +469,7 @@ class Game extends Component<IProps, IState> {
                   ))}
                 </Layer>
                 <Layer preventDefault={true}>
-                  {staticCards.concat(ghostCards).concat(movingCards)}
+                  {ghostCards.concat(staticCards).concat(movingCards)}
 
                   <FirstPlayerTokenContainer
                     currentGameType={this.props.currentGameType}

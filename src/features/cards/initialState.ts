@@ -29,6 +29,7 @@ export interface ICardsState {
   cards: ICardStack[];
   ghostCards: ICardStack[];
   dropTargetCards: { [key: string]: ICardStack | null };
+  attachTargetCards: { [key: string]: ICardStack | null };
   panMode: boolean;
 }
 
@@ -47,6 +48,7 @@ const defaultState: ICardsState = {
   cards: [],
   ghostCards: [],
   dropTargetCards: {},
+  attachTargetCards: {},
   panMode: true,
 };
 

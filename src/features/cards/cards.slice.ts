@@ -1,19 +1,13 @@
 import {
-  createSlice,
-  PayloadAction,
   CaseReducer,
+  createSlice,
   Draft,
+  PayloadAction,
 } from "@reduxjs/toolkit";
-import { getDistance } from "../../utilities/geo";
-import {
-  initialState,
-  ICardsState,
-  ICardStack,
-  ICardDetails,
-} from "./initialState";
-import { fetchDecklistById } from "./cards.thunks";
+import { v4 as uuidv4 } from "uuid";
 import { cardConstants } from "../../constants/card-constants";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
+import { getDistance } from "../../utilities/geo";
 import {
   addCardStackWithId,
   createDeckFromTextFileWithIds,
@@ -24,8 +18,17 @@ import {
   setStackShuffling,
   startCardMoveWithSplitStackId,
 } from "./cards.actions";
+import { fetchDecklistById } from "./cards.thunks";
+import {
+  ICardDetails,
+  ICardsState,
+  ICardStack,
+  initialState,
+} from "./initialState";
 
 const CARD_DROP_TARGET_DISTANCE = 30;
+const CARD_ATTACH_TARGET_MIN_DISTANCE = 50;
+const CARD_ATTACH_TARGET_MAX_DISTANCE = 150;
 
 export enum StatusTokenType {
   Stunned = "stunned",
@@ -190,6 +193,63 @@ const cardMoveReducer: CaseReducer<
     possibleDropTargets.sort((c1, c2) => c1.distance - c2.distance)[0]?.card ??
     null;
 
+  // go through and find if any unselected cards are potential attach targets
+  // If so, get the closest one. But only if the card is owned / controlled by us
+  const possibleAttachTargets: { distance: number; card: ICardStack }[] = [];
+  if (
+    !!primaryCard &&
+    (primaryCard as ICardStack).controlledBy === (action as any).ACTOR_REF
+  ) {
+    foreachUnselectedCard(state, (card) => {
+      const distance = getDistance(
+        !!primaryCard ? { x: primaryCard.x, y: primaryCard.y } : { x: 0, y: 0 },
+        { x: card.x, y: card.y }
+      );
+      if (
+        distance < CARD_ATTACH_TARGET_MAX_DISTANCE &&
+        distance > CARD_ATTACH_TARGET_MIN_DISTANCE &&
+        card.x < (primaryCard?.x ?? 0) &&
+        card.y > (primaryCard?.y ?? 0)
+      ) {
+        possibleAttachTargets.push({
+          distance,
+          card,
+        });
+      }
+    });
+  }
+
+  state.attachTargetCards[(action as any).ACTOR_REF] =
+    possibleAttachTargets.sort((c1, c2) => c1.distance - c2.distance)[0]
+      ?.card ?? null;
+
+  const attachTarget = state.attachTargetCards[(action as any).ACTOR_REF];
+  if (!!attachTarget) {
+    //First, check if there's already a ghost card where we were going to draw
+    const existingGhostCard = state.ghostCards.find(
+      (gc) =>
+        gc.x === attachTarget.x + 50 &&
+        gc.y === attachTarget.y - 50 &&
+        gc.cardStack.length > 0 &&
+        gc.cardStack[0].jsonId === "-1"
+    );
+    if (!existingGhostCard) {
+      const attachGhostCard: ICardStack = JSON.parse(
+        JSON.stringify(attachTarget)
+      );
+      attachGhostCard.id = uuidv4();
+      attachGhostCard.x += 50;
+      attachGhostCard.y -= 50;
+      attachGhostCard.cardStack = [{ jsonId: "-1" }];
+      state.ghostCards.push(attachGhostCard);
+    }
+  } else {
+    // remove all 'attachment' ghost cards
+    state.ghostCards = state.ghostCards.filter(
+      (gc) => gc.cardStack.length > 0 && gc.cardStack[0].jsonId !== "-1"
+    );
+  }
+
   // put the moved cards at the end. TODO: we could just store the move order or move time
   // or something, and the array could be a selector
   movedCards.forEach((movedCard) => {
@@ -202,6 +262,7 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
   action
 ) => {
   let dropTargetCards: ICardDetails[] = [];
+  let attachTargetCardStacks: ICardStack[] = [];
   state.cards
     .filter(
       (card) =>
@@ -211,14 +272,23 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
     .forEach((card) => {
       card.dragging = false;
 
-      if (!!state.dropTargetCards[(action as any).ACTOR_REF]) {
+      if (!!state.attachTargetCards[(action as any).ACTOR_REF]) {
+        attachTargetCardStacks.push(card);
+      } else if (!!state.dropTargetCards[(action as any).ACTOR_REF]) {
         // Add the cards to the drop Target card stack
         dropTargetCards = dropTargetCards.concat(card.cardStack);
       }
     });
 
-  // Now, if there was a drop target card, remove all those cards from the state
-  if (!!state.dropTargetCards[(action as any).ACTOR_REF]) {
+  const attachTarget = state.attachTargetCards[(action as any).ACTOR_REF];
+  if (!!attachTarget) {
+    attachTargetCardStacks.forEach((cs, index) => {
+      cs.x = attachTarget.x + (index + 1) * 50;
+      cs.y = attachTarget.y - (index + 1) * 50;
+      state.cards.unshift(state.cards.splice(state.cards.indexOf(cs), 1)[0]);
+    });
+    // Now, if there was a drop target card, remove all those cards from the state
+  } else if (!!state.dropTargetCards[(action as any).ACTOR_REF]) {
     state.cards = state.cards.filter(
       (card) =>
         !(
@@ -240,6 +310,7 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
 
   state.ghostCards = [];
   state.dropTargetCards[(action as any).ACTOR_REF] = null;
+  state.attachTargetCards[(action as any).ACTOR_REF] = null;
 };
 
 const selectMultipleCardsReducer: CaseReducer<
