@@ -4,6 +4,7 @@ import {
   Draft,
   PayloadAction,
 } from "@reduxjs/toolkit";
+import { Vector2d } from "konva/types/types";
 import { v4 as uuidv4 } from "uuid";
 import { cardConstants } from "../../constants/card-constants";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
@@ -143,6 +144,24 @@ const exhaustCardReducer: CaseReducer<
     });
 };
 
+const getAttachDrawPos = (
+  state: Draft<ICardsState>,
+  baseCard: ICardStack
+): Vector2d => {
+  let drawPos = { x: 0, y: 0 };
+  let takenSpace = true;
+  for (let i = 0; takenSpace; i++) {
+    const xToDraw = baseCard.x + (i + 1) * 50;
+    const yToDraw = baseCard.y - (i + 1) * 50;
+
+    drawPos = { x: xToDraw, y: yToDraw };
+
+    //Check for existing card
+    takenSpace = !!state.cards.find((c) => c.x === xToDraw && c.y === yToDraw);
+  }
+  return drawPos;
+};
+
 const cardMoveReducer: CaseReducer<
   ICardsState,
   PayloadAction<{ id: string; dx: number; dy: number }>
@@ -225,11 +244,16 @@ const cardMoveReducer: CaseReducer<
 
   const attachTarget = state.attachTargetCards[(action as any).ACTOR_REF];
   if (!!attachTarget) {
-    //First, check if there's already a ghost card where we were going to draw
+    // First, figure out where we should draw the ghost card. Keep moving up
+    // and to the right until there's not a card there
+
+    const drawPos = getAttachDrawPos(state, attachTarget);
+
+    // Next, check if there's already a ghost card where we were going to draw
     const existingGhostCard = state.ghostCards.find(
       (gc) =>
-        gc.x === attachTarget.x + 50 &&
-        gc.y === attachTarget.y - 50 &&
+        gc.x === drawPos.x &&
+        gc.y === drawPos.y &&
         gc.cardStack.length > 0 &&
         gc.cardStack[0].jsonId === "-1"
     );
@@ -237,9 +261,11 @@ const cardMoveReducer: CaseReducer<
       const attachGhostCard: ICardStack = JSON.parse(
         JSON.stringify(attachTarget)
       );
+      // In general we don't want to do this (generate ids in here) but since this is just a temporary ghost card that we won't
+      // ever refer to by id, it should be safe.
       attachGhostCard.id = uuidv4();
-      attachGhostCard.x += 50;
-      attachGhostCard.y -= 50;
+      attachGhostCard.x = drawPos.x;
+      attachGhostCard.y = drawPos.y;
       attachGhostCard.cardStack = [{ jsonId: "-1" }];
       state.ghostCards.push(attachGhostCard);
     }
@@ -282,9 +308,11 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
 
   const attachTarget = state.attachTargetCards[(action as any).ACTOR_REF];
   if (!!attachTarget) {
+    const drawPos = getAttachDrawPos(state, attachTarget);
+
     attachTargetCardStacks.forEach((cs, index) => {
-      cs.x = attachTarget.x + (index + 1) * 50;
-      cs.y = attachTarget.y - (index + 1) * 50;
+      cs.x = drawPos.x + index * 50;
+      cs.y = drawPos.y - index * 50;
       state.cards.unshift(state.cards.splice(state.cards.indexOf(cs), 1)[0]);
     });
     // Now, if there was a drop target card, remove all those cards from the state
