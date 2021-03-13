@@ -207,10 +207,7 @@ class Game extends Component<IProps, IState> {
       console.error(e);
     };
     image.src =
-      this.props.currentGameType === GameType.MarvelChampions
-        ? process.env.PUBLIC_URL + "/images/standard/stunned.png"
-        : process.env.PUBLIC_URL +
-          GamePropertiesMap[this.props.currentGameType].backgroundImageLocation;
+      GamePropertiesMap[this.props.currentGameType].backgroundImageLocation;
     this.props.loadCardsData();
     this.props.allJsonData("");
   }
@@ -225,8 +222,10 @@ class Game extends Component<IProps, IState> {
     //       force the game area to have focus if it
     //       lost it
     if (document.activeElement === document.body) {
-      const el = document.querySelector(".play-area") as HTMLElement;
-      el?.focus();
+      setTimeout(() => {
+        const el = document.querySelector(".play-area") as HTMLElement;
+        el?.focus();
+      }, 0);
     }
     // END HACK
 

@@ -78,13 +78,19 @@ class TouchMenu extends Component<IProps> {
           };
         }
 
+        const key = `touch-menu-button-${tokenInfo.menuText
+          .replace(/\s/g, "")
+          .toLocaleLowerCase()}`;
+
         if (!!tokenInfo.touchMenuIcon) {
           return (
-            <IconButton onClick={action}>{tokenInfo.touchMenuIcon}</IconButton>
+            <IconButton key={key} onClick={action}>
+              {tokenInfo.touchMenuIcon}
+            </IconButton>
           );
         } else if (!!tokenInfo.touchMenuLetter) {
           return (
-            <Button onClick={action} className="text-button">
+            <Button key={key} onClick={action} className="text-button">
               {tokenInfo.touchMenuLetter}
             </Button>
           );

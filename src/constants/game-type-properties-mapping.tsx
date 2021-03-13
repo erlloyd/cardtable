@@ -40,7 +40,8 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
     deckSite: "marvelcdb.com",
     decklistApi: "https://marvelcdb.com/api/public/decklist/",
     encounterUiName: "Encounter Set",
-    backgroundImageLocation: "/images/table/background_marvelchampions.png",
+    backgroundImageLocation:
+      process.env.PUBLIC_URL + "/images/table/background_marvelchampions.jpg",
     tokens: {
       stunned: {
         tokenType: StatusTokenType.Stunned,
@@ -94,7 +95,8 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
     deckSite: "ringsdb.com",
     decklistApi: "https://ringsdb.com/api/public/decklist/",
     encounterUiName: "Scenario",
-    backgroundImageLocation: "/images/table/background_lotrlcg.jpg",
+    backgroundImageLocation:
+      process.env.PUBLIC_URL + "/images/table/background_lotrlcg.jpg",
     tokens: {
       stunned: {
         tokenType: StatusTokenType.Stunned,
