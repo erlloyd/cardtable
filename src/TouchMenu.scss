@@ -1,14 +1,18 @@
 @import "./mixins/devices";
 
 .touch-menu {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // display: none;
   position: absolute;
   top: 0;
   left: 0;
   padding: 5px 5px;
   background-color: gray;
   color: white;
-  opacity: 50%;
+  // opacity: 50%;
   z-index: 99;
   button {
     &.toggle-on {
@@ -22,10 +26,10 @@
       font-size: 24px;
     }
   }
-  @include for-touch-device {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  // @include for-touch-device {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
 }

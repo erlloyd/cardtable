@@ -1,3 +1,5 @@
+@import "./mixins/devices";
+
 #context-menu-layer {
   position: absolute;
   top: 0;
@@ -14,4 +16,14 @@
   background-image: url(./images/table-bg-tile.jpg);
   width: 100vw;
   height: 100vh;
+}
+
+.mobile-only {
+  display: none;
+  @include for-touch-device {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
