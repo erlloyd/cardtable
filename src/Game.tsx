@@ -144,6 +144,7 @@ interface IState {
   tokenValueModifierProps: { id: string; tokenType: CounterTokenType } | null;
   tokenValueModifierPosition: Vector2d | null;
   playmatImage: HTMLImageElement | null;
+  playmatImageLoaded: boolean;
   previewCardModal: boolean;
 }
 class Game extends Component<IProps, IState> {
@@ -188,6 +189,7 @@ class Game extends Component<IProps, IState> {
       tokenValueModifierProps: null,
       tokenValueModifierPosition: null,
       playmatImage: null,
+      playmatImageLoaded: false,
       previewCardModal: false,
     };
   }
@@ -197,11 +199,18 @@ class Game extends Component<IProps, IState> {
     image.onload = () => {
       this.setState({
         playmatImage: image,
+        playmatImageLoaded: true,
       });
     };
+
+    image.onerror = (e) => {
+      console.error(e);
+    };
     image.src =
-      process.env.PUBLIC_URL +
-      GamePropertiesMap[this.props.currentGameType].backgroundImageLocation;
+      this.props.currentGameType === GameType.MarvelChampions
+        ? process.env.PUBLIC_URL + "/images/standard/stunned.png"
+        : process.env.PUBLIC_URL +
+          GamePropertiesMap[this.props.currentGameType].backgroundImageLocation;
     this.props.loadCardsData();
     this.props.allJsonData("");
   }
@@ -390,6 +399,11 @@ class Game extends Component<IProps, IState> {
           .filter((c): c is JSX.Element => c !== null)
       : [];
 
+    const playmatScale =
+      this.state.playmatImageLoaded && !!this.state.playmatImage?.naturalWidth
+        ? 2880 / this.state.playmatImage?.naturalWidth
+        : 1;
+
     return (
       <div
         className="play-area"
@@ -406,6 +420,7 @@ class Game extends Component<IProps, IState> {
         {this.renderCardSearch()}
         {this.renderPeerConnector()}
         {this.renderTokenModifier()}
+
         <ReactReduxContext.Consumer>
           {({ store }) => (
             <Stage
@@ -441,13 +456,26 @@ class Game extends Component<IProps, IState> {
               <Provider store={store}>
                 <Layer>
                   <Rect
+                    fill={this.state.playmatImageLoaded ? undefined : "gray"}
                     scale={{
-                      x: 2880 / (this.state.playmatImage?.naturalWidth ?? 1),
-                      y: 2880 / (this.state.playmatImage?.naturalWidth ?? 1),
+                      x: playmatScale,
+                      y: playmatScale,
                     }}
-                    width={this.state.playmatImage?.naturalWidth ?? 0}
-                    height={this.state.playmatImage?.naturalHeight ?? 0}
-                    fillPatternImage={this.state.playmatImage ?? undefined}
+                    width={
+                      this.state.playmatImageLoaded
+                        ? this.state.playmatImage?.naturalWidth
+                        : 100
+                    }
+                    height={
+                      this.state.playmatImageLoaded
+                        ? this.state.playmatImage?.naturalHeight
+                        : 200
+                    }
+                    fillPatternImage={
+                      this.state.playmatImageLoaded && !!this.state.playmatImage
+                        ? this.state.playmatImage
+                        : undefined
+                    }
                   ></Rect>
                 </Layer>
                 <Layer>
