@@ -6,7 +6,11 @@ import {
 } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/types/types";
 import { v4 as uuidv4 } from "uuid";
-import { cardConstants } from "../../constants/card-constants";
+import {
+  cardConstants,
+  CounterTokenType,
+  StatusTokenType,
+} from "../../constants/card-constants";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import { getDistance } from "../../utilities/geo";
 import {
@@ -30,18 +34,6 @@ import {
 const CARD_DROP_TARGET_DISTANCE = 30;
 const CARD_ATTACH_TARGET_MIN_DISTANCE = 50;
 const CARD_ATTACH_TARGET_MAX_DISTANCE = 150;
-
-export enum StatusTokenType {
-  Stunned = "stunned",
-  Confused = "confused",
-  Tough = "tough",
-}
-
-export enum CounterTokenType {
-  Damage = "damage",
-  Threat = "threat",
-  Generic = "generic",
-}
 
 // Helper methods
 const getCardStackWithId = (
@@ -399,11 +391,31 @@ const resetCardsReducer: CaseReducer<ICardsState> = (state) => {
 
 const toggleTokenReducer: CaseReducer<
   ICardsState,
-  PayloadAction<{ id: string; tokenType: StatusTokenType; value: boolean }>
+  PayloadAction<{ id?: string; tokenType: StatusTokenType; value?: boolean }>
 > = (state, action) => {
   const cardToToggle = state.cards.find((c) => c.id === action.payload.id);
   if (!!cardToToggle) {
-    cardToToggle.statusTokens[action.payload.tokenType] = action.payload.value;
+    if (action.payload.value !== undefined) {
+      cardToToggle.statusTokens[action.payload.tokenType] =
+        action.payload.value;
+    } else {
+      cardToToggle.statusTokens[action.payload.tokenType] = !cardToToggle
+        .statusTokens[action.payload.tokenType];
+    }
+  } else {
+    foreachSelectedAndControlledCard(
+      state,
+      (action as any).ACTOR_REF,
+      (card) => {
+        if (action.payload.value !== undefined) {
+          card.statusTokens[action.payload.tokenType] = action.payload.value;
+        } else {
+          card.statusTokens[action.payload.tokenType] = !card.statusTokens[
+            action.payload.tokenType
+          ];
+        }
+      }
+    );
   }
 };
 

@@ -1,5 +1,8 @@
 import { loadState } from "../../store/localStorage";
-import { CounterTokenType, StatusTokenType } from "./cards.slice";
+import {
+  CounterTokenType,
+  StatusTokenType,
+} from "../../constants/card-constants";
 
 export interface ICardStack {
   controlledBy: string;

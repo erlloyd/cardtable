@@ -17,6 +17,10 @@
     &:not(.toggle-on) {
       color: white;
     }
+    &.text-button {
+      height: 59px;
+      font-size: 24px;
+    }
   }
   @include for-touch-device {
     display: flex;

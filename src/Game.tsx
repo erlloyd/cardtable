@@ -14,7 +14,11 @@ import {
   PlayerColor,
   possibleColors,
 } from "./constants/app-constants";
-import { cardConstants } from "./constants/card-constants";
+import {
+  CounterTokenType,
+  StatusTokenType,
+  cardConstants,
+} from "./constants/card-constants";
 import { MISSING_CARD_IMAGE_MAP } from "./constants/card-missing-image-map";
 import { CARD_PACK_REMAPPING } from "./constants/card-pack-mapping";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
@@ -24,10 +28,6 @@ import DeckLoader from "./DeckLoader";
 import EncounterLoaderContainer from "./EncounterLoaderContainer";
 import { CardData } from "./external-api/common-card-data";
 import { ICardData } from "./features/cards-data/initialState";
-import {
-  CounterTokenType,
-  StatusTokenType,
-} from "./features/cards/cards.slice";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import { ICardsState, ICardStack } from "./features/cards/initialState";
 import { ICounter } from "./features/counters/initialState";
@@ -79,9 +79,9 @@ interface IProps {
     position: Vector2d;
   }) => void;
   toggleToken: (payload: {
-    id: string;
+    id?: string;
     tokenType: StatusTokenType;
-    value: boolean;
+    value?: boolean;
   }) => void;
   adjustCounterToken: (payload: {
     id?: string;
