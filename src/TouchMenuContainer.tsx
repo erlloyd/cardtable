@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import TouchMenu from "./TouchMenu";
 import { getPanMode } from "./features/cards/cards.selectors";
 import {
   exhaustCard,
@@ -7,8 +6,10 @@ import {
   togglePanMode,
   toggleToken,
 } from "./features/cards/cards.slice";
-import { RootState } from "./store/rootReducer";
+import { shuffleStack } from "./features/cards/cards.thunks";
 import { getGame } from "./features/game/game.selectors";
+import { RootState } from "./store/rootReducer";
+import TouchMenu from "./TouchMenu";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -22,6 +23,7 @@ const TouchMenuContainer = connect(mapStateToProps, {
   flipCards,
   exhaustCard,
   toggleToken,
+  shuffleStack,
 })(TouchMenu);
 
 export default TouchMenuContainer;

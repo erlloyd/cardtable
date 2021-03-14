@@ -6,6 +6,7 @@ import "./TouchMenu.scss";
 import FlipIcon from "@material-ui/icons/Flip";
 import OpenWithIcon from "@material-ui/icons/OpenWith";
 import AutorenewIcon from "@material-ui/icons/Autorenew";
+import ShuffleIcon from "@material-ui/icons/Shuffle";
 import { GameType } from "./constants/app-constants";
 import {
   GamePropertiesMap,
@@ -26,6 +27,7 @@ interface IProps {
     tokenType: StatusTokenType;
     value?: boolean;
   }) => void;
+  shuffleStack: (id?: string) => void;
 }
 class TouchMenu extends Component<IProps> {
   render() {
@@ -52,6 +54,13 @@ class TouchMenu extends Component<IProps> {
           }}
         >
           <AutorenewIcon fontSize="large" />
+        </IconButton>
+        <IconButton
+          onClick={() => {
+            this.props.shuffleStack();
+          }}
+        >
+          <ShuffleIcon fontSize="large" />
         </IconButton>
         {this.renderStatusCardButtons()}
       </div>
