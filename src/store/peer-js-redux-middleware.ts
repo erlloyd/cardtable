@@ -70,6 +70,9 @@ const setupConnection = (conn: any, storeAPI: any) => {
 
 export const peerJSMiddleware = (storeAPI: any) => {
   const cgpPeer = new Peer(undefined, {
+    host: "peerjs.middle-earth.house",
+    path: "/cgp",
+    secure: true,
     debug: 0,
     config: {
       iceServers: [
