@@ -96,18 +96,25 @@ export const getCardsDataSetDataAsEncounterEntities = createSelector(
 
 export const getCardsDataEncounterEntitiesBySetCode = createSelector(
   getCardsDataEncounterEntities,
+  getCardsDataHeroEntities,
   getCardsDataSetData,
-  (encounterEntities, setData): IEncounterEntity[] => {
+  (encounterEntities, herosData, setData): IEncounterEntity[] => {
     const setTypesEncounters: { [key: string]: CardData[] } = {};
 
-    Object.values(encounterEntities).forEach((encounterCard) => {
-      const setCode = encounterCard.extraInfo.setCode || "unknown";
-      if (!!setTypesEncounters[setCode]) {
-        setTypesEncounters[setCode].push(encounterCard);
-      } else {
-        setTypesEncounters[setCode] = [encounterCard];
-      }
-    });
+    const campaignCards = Object.values(herosData).filter(
+      (pc) => pc.extraInfo.factionCode === "campaign"
+    );
+
+    Object.values(encounterEntities)
+      .concat(campaignCards)
+      .forEach((encounterCard) => {
+        const setCode = encounterCard.extraInfo.setCode || "unknown";
+        if (!!setTypesEncounters[setCode]) {
+          setTypesEncounters[setCode].push(encounterCard);
+        } else {
+          setTypesEncounters[setCode] = [encounterCard];
+        }
+      });
 
     return Object.entries(setTypesEncounters)
       .map(([key, value]) => ({

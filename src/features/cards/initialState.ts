@@ -1,5 +1,8 @@
 import { loadState } from "../../store/localStorage";
-import { CounterTokenType, StatusTokenType } from "./cards.slice";
+import {
+  CounterTokenType,
+  StatusTokenType,
+} from "../../constants/card-constants";
 
 export interface ICardStack {
   controlledBy: string;
@@ -29,6 +32,7 @@ export interface ICardsState {
   cards: ICardStack[];
   ghostCards: ICardStack[];
   dropTargetCards: { [key: string]: ICardStack | null };
+  attachTargetCards: { [key: string]: ICardStack | null };
   panMode: boolean;
 }
 
@@ -47,6 +51,7 @@ const defaultState: ICardsState = {
   cards: [],
   ghostCards: [],
   dropTargetCards: {},
+  attachTargetCards: {},
   panMode: true,
 };
 

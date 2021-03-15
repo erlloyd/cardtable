@@ -14,7 +14,11 @@ import {
   PlayerColor,
   possibleColors,
 } from "./constants/app-constants";
-import { cardConstants } from "./constants/card-constants";
+import {
+  CounterTokenType,
+  StatusTokenType,
+  cardConstants,
+} from "./constants/card-constants";
 import { MISSING_CARD_IMAGE_MAP } from "./constants/card-missing-image-map";
 import { CARD_PACK_REMAPPING } from "./constants/card-pack-mapping";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
@@ -24,10 +28,6 @@ import DeckLoader from "./DeckLoader";
 import EncounterLoaderContainer from "./EncounterLoaderContainer";
 import { CardData } from "./external-api/common-card-data";
 import { ICardData } from "./features/cards-data/initialState";
-import {
-  CounterTokenType,
-  StatusTokenType,
-} from "./features/cards/cards.slice";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import { ICardsState, ICardStack } from "./features/cards/initialState";
 import { ICounter } from "./features/counters/initialState";
@@ -79,9 +79,9 @@ interface IProps {
     position: Vector2d;
   }) => void;
   toggleToken: (payload: {
-    id: string;
+    id?: string;
     tokenType: StatusTokenType;
-    value: boolean;
+    value?: boolean;
   }) => void;
   adjustCounterToken: (payload: {
     id?: string;
@@ -144,6 +144,7 @@ interface IState {
   tokenValueModifierProps: { id: string; tokenType: CounterTokenType } | null;
   tokenValueModifierPosition: Vector2d | null;
   playmatImage: HTMLImageElement | null;
+  playmatImageLoaded: boolean;
   previewCardModal: boolean;
 }
 class Game extends Component<IProps, IState> {
@@ -188,6 +189,7 @@ class Game extends Component<IProps, IState> {
       tokenValueModifierProps: null,
       tokenValueModifierPosition: null,
       playmatImage: null,
+      playmatImageLoaded: false,
       previewCardModal: false,
     };
   }
@@ -197,10 +199,14 @@ class Game extends Component<IProps, IState> {
     image.onload = () => {
       this.setState({
         playmatImage: image,
+        playmatImageLoaded: true,
       });
     };
+
+    image.onerror = (e) => {
+      console.error(e);
+    };
     image.src =
-      process.env.PUBLIC_URL +
       GamePropertiesMap[this.props.currentGameType].backgroundImageLocation;
     this.props.loadCardsData();
     this.props.allJsonData("");
@@ -216,8 +222,10 @@ class Game extends Component<IProps, IState> {
     //       force the game area to have focus if it
     //       lost it
     if (document.activeElement === document.body) {
-      const el = document.querySelector(".play-area") as HTMLElement;
-      el?.focus();
+      setTimeout(() => {
+        const el = document.querySelector(".play-area") as HTMLElement;
+        el?.focus();
+      }, 0);
     }
     // END HACK
 
@@ -390,6 +398,11 @@ class Game extends Component<IProps, IState> {
           .filter((c): c is JSX.Element => c !== null)
       : [];
 
+    const playmatScale =
+      this.state.playmatImageLoaded && !!this.state.playmatImage?.naturalWidth
+        ? 2880 / this.state.playmatImage?.naturalWidth
+        : 1;
+
     return (
       <div
         className="play-area"
@@ -406,6 +419,7 @@ class Game extends Component<IProps, IState> {
         {this.renderCardSearch()}
         {this.renderPeerConnector()}
         {this.renderTokenModifier()}
+
         <ReactReduxContext.Consumer>
           {({ store }) => (
             <Stage
@@ -441,13 +455,26 @@ class Game extends Component<IProps, IState> {
               <Provider store={store}>
                 <Layer>
                   <Rect
+                    fill={this.state.playmatImageLoaded ? undefined : "gray"}
                     scale={{
-                      x: 2880 / (this.state.playmatImage?.naturalWidth ?? 1),
-                      y: 2880 / (this.state.playmatImage?.naturalWidth ?? 1),
+                      x: playmatScale,
+                      y: playmatScale,
                     }}
-                    width={this.state.playmatImage?.naturalWidth ?? 0}
-                    height={this.state.playmatImage?.naturalHeight ?? 0}
-                    fillPatternImage={this.state.playmatImage ?? undefined}
+                    width={
+                      this.state.playmatImageLoaded
+                        ? this.state.playmatImage?.naturalWidth
+                        : 100
+                    }
+                    height={
+                      this.state.playmatImageLoaded
+                        ? this.state.playmatImage?.naturalHeight
+                        : 200
+                    }
+                    fillPatternImage={
+                      this.state.playmatImageLoaded && !!this.state.playmatImage
+                        ? this.state.playmatImage
+                        : undefined
+                    }
                   ></Rect>
                 </Layer>
                 <Layer>
@@ -469,7 +496,7 @@ class Game extends Component<IProps, IState> {
                   ))}
                 </Layer>
                 <Layer preventDefault={true}>
-                  {staticCards.concat(ghostCards).concat(movingCards)}
+                  {ghostCards.concat(staticCards).concat(movingCards)}
 
                   <FirstPlayerTokenContainer
                     currentGameType={this.props.currentGameType}
@@ -518,8 +545,11 @@ class Game extends Component<IProps, IState> {
 
     return (
       <div>
-        Right click and select 'Load Deck ID' to load a deck from{" "}
-        {GamePropertiesMap[this.props.currentGameType].deckSite}
+        <span>
+          Right click and select 'Load Deck ID' to load a deck from{" "}
+          {GamePropertiesMap[this.props.currentGameType].deckSite}
+        </span>
+        <span className="mobile-only"> MOBILE</span>
       </div>
     );
   };
