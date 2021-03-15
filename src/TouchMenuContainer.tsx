@@ -5,6 +5,7 @@ import {
   flipCards,
   togglePanMode,
   toggleToken,
+  adjustCounterToken,
 } from "./features/cards/cards.slice";
 import { shuffleStack } from "./features/cards/cards.thunks";
 import { getGame } from "./features/game/game.selectors";
@@ -24,6 +25,7 @@ const TouchMenuContainer = connect(mapStateToProps, {
   exhaustCard,
   toggleToken,
   shuffleStack,
+  adjustCounterToken,
 })(TouchMenu);
 
 export default TouchMenuContainer;

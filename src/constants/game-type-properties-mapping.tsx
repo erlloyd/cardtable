@@ -3,7 +3,7 @@ import * as React from "react";
 import NewReleasesIcon from "@material-ui/icons/NewReleases";
 import HelpIcon from "@material-ui/icons/Help";
 import SecurityIcon from "@material-ui/icons/Security";
-import { StatusTokenType } from "../constants/card-constants";
+import { CounterTokenType, StatusTokenType } from "../constants/card-constants";
 
 export interface GameProperties {
   deckSite: string;
@@ -28,6 +28,7 @@ export interface TokenInfoBase {
 }
 export interface NumericTokenInfo extends TokenInfoBase {
   isNumeric: boolean;
+  counterTokenType: CounterTokenType;
 }
 
 export interface TokenInfo extends TokenInfoBase {
@@ -41,7 +42,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
     decklistApi: "https://marvelcdb.com/api/public/decklist/",
     encounterUiName: "Encounter Set",
     backgroundImageLocation:
-      process.env.PUBLIC_URL + "/images/table/background_marvelchampions.jpg",
+      process.env.PUBLIC_URL + "/images/table/background_marvelchampions.png",
     tokens: {
       stunned: {
         tokenType: StatusTokenType.Stunned,
@@ -68,6 +69,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
         imagePath: process.env.PUBLIC_URL + "/images/standard/tough.png",
       },
       damage: {
+        counterTokenType: CounterTokenType.Damage,
         isNumeric: true,
         touchMenuLetter: "D",
         touchMenuIcon: null,
@@ -75,6 +77,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
         imagePath: process.env.PUBLIC_URL + "/images/standard/damage.png",
       },
       threat: {
+        counterTokenType: CounterTokenType.Threat,
         isNumeric: true,
         touchMenuLetter: "T",
         touchMenuIcon: null,
@@ -82,6 +85,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
         imagePath: process.env.PUBLIC_URL + "/images/standard/threat.png",
       },
       generic: {
+        counterTokenType: CounterTokenType.Generic,
         isNumeric: true,
         touchMenuLetter: "G",
         touchMenuIcon: null,
@@ -109,6 +113,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
       confused: null,
       tough: null,
       damage: {
+        counterTokenType: CounterTokenType.Damage,
         isNumeric: true,
         touchMenuLetter: "D",
         touchMenuIcon: null,
@@ -116,6 +121,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
         imagePath: process.env.PUBLIC_URL + "/images/standard/damage_lotr.png",
       },
       threat: {
+        counterTokenType: CounterTokenType.Threat,
         isNumeric: true,
         touchMenuLetter: "P",
         touchMenuIcon: null,
@@ -123,6 +129,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
         imagePath: process.env.PUBLIC_URL + "/images/standard/progress.png",
       },
       generic: {
+        counterTokenType: CounterTokenType.Generic,
         isNumeric: true,
         touchMenuLetter: "R",
         touchMenuIcon: null,

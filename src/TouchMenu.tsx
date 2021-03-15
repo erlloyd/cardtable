@@ -14,7 +14,7 @@ import {
   TokenInfo,
 } from "./constants/game-type-properties-mapping";
 import Button from "@material-ui/core/Button";
-import { StatusTokenType } from "./constants/card-constants";
+import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
 
 interface IProps {
   currentGameType: GameType | null;
@@ -28,6 +28,12 @@ interface IProps {
     value?: boolean;
   }) => void;
   shuffleStack: (id?: string) => void;
+  adjustCounterToken: (payload: {
+    id?: string;
+    tokenType: CounterTokenType;
+    delta?: number;
+    value?: number;
+  }) => void;
 }
 class TouchMenu extends Component<IProps> {
   render() {
@@ -75,10 +81,32 @@ class TouchMenu extends Component<IProps> {
       .filter(
         (tokenInfo): tokenInfo is TokenInfo | NumericTokenInfo => !!tokenInfo
       )
+      .flatMap((tokenInfo) => {
+        let returnVal = [];
+        if ((tokenInfo as NumericTokenInfo).isNumeric) {
+          const addTokenInfo = {
+            ...tokenInfo,
+            touchMenuLetter: `${tokenInfo.touchMenuLetter} +`,
+          };
+          const removeTokenInfo = {
+            ...tokenInfo,
+            touchMenuLetter: `${tokenInfo.touchMenuLetter} -`,
+          };
+          returnVal = [addTokenInfo, removeTokenInfo];
+        } else {
+          returnVal = [tokenInfo];
+        }
+        return returnVal;
+      })
       .map((tokenInfo) => {
         let action: () => void;
         if ((tokenInfo as NumericTokenInfo).isNumeric) {
-          action = () => {};
+          action = () => {
+            this.props.adjustCounterToken({
+              tokenType: (tokenInfo as NumericTokenInfo).counterTokenType,
+              delta: tokenInfo.touchMenuLetter?.indexOf("+") !== -1 ? 1 : -1,
+            });
+          };
         } else {
           action = () => {
             this.props.toggleToken({
