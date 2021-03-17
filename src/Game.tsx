@@ -146,6 +146,8 @@ interface IState {
   playmatImage: HTMLImageElement | null;
   playmatImageLoaded: boolean;
   previewCardModal: boolean;
+  stageWidth: number;
+  stageHeight: number;
 }
 class Game extends Component<IProps, IState> {
   public stage: Konva.Stage | null = null;
@@ -191,6 +193,8 @@ class Game extends Component<IProps, IState> {
       playmatImage: null,
       playmatImageLoaded: false,
       previewCardModal: false,
+      stageWidth: window.innerWidth,
+      stageHeight: window.innerHeight,
     };
   }
 
@@ -210,7 +214,13 @@ class Game extends Component<IProps, IState> {
       GamePropertiesMap[this.props.currentGameType].backgroundImageLocation;
     this.props.loadCardsData();
     this.props.allJsonData("");
+
+    window.addEventListener("resize", this.handleResize);
   }
+
+  public componentWillUnmount = () => {
+    window.removeEventListener("resize", this.handleResize);
+  };
 
   public render() {
     // TODO: This feels like a bad hack. I bet all the
@@ -222,6 +232,7 @@ class Game extends Component<IProps, IState> {
     //       force the game area to have focus if it
     //       lost it
     if (document.activeElement === document.body) {
+      // setTimeout so we don't manually change the dom while rendering
       setTimeout(() => {
         const el = document.querySelector(".play-area") as HTMLElement;
         el?.focus();
@@ -430,8 +441,8 @@ class Game extends Component<IProps, IState> {
               }}
               x={this.props.gameState.stagePosition.x}
               y={this.props.gameState.stagePosition.y}
-              width={window.innerWidth}
-              height={window.innerHeight}
+              width={this.state.stageWidth}
+              height={this.state.stageHeight}
               onClick={this.handleStageClickOrTap}
               onTap={this.handleStageClickOrTap}
               onMouseDown={
@@ -455,7 +466,9 @@ class Game extends Component<IProps, IState> {
               <Provider store={store}>
                 <Layer>
                   <Rect
-                    fill={this.state.playmatImageLoaded ? undefined : "gray"}
+                    fill={
+                      this.state.playmatImageLoaded ? undefined : "lightgray"
+                    }
                     scale={{
                       x: playmatScale,
                       y: playmatScale,
@@ -463,12 +476,12 @@ class Game extends Component<IProps, IState> {
                     width={
                       this.state.playmatImageLoaded
                         ? this.state.playmatImage?.naturalWidth
-                        : 100
+                        : 2880
                     }
                     height={
                       this.state.playmatImageLoaded
                         ? this.state.playmatImage?.naturalHeight
-                        : 200
+                        : 1440
                     }
                     fillPatternImage={
                       this.state.playmatImageLoaded && !!this.state.playmatImage
@@ -549,7 +562,6 @@ class Game extends Component<IProps, IState> {
           Right click and select 'Load Deck ID' to load a deck from{" "}
           {GamePropertiesMap[this.props.currentGameType].deckSite}
         </span>
-        <span className="mobile-only"> MOBILE</span>
       </div>
     );
   };
@@ -1770,6 +1782,13 @@ class Game extends Component<IProps, IState> {
     }
 
     return urls;
+  };
+
+  private handleResize = () => {
+    this.setState({
+      stageHeight: window.innerHeight,
+      stageWidth: window.innerWidth,
+    });
   };
 }
 
