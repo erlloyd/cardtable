@@ -9,6 +9,7 @@ import { animated, Spring } from "react-spring/renderprops-konva";
 import CardTokensContainer from "./CardTokensContainer";
 import { GameType, myPeerRef, PlayerColor } from "./constants/app-constants";
 import { cardConstants } from "./constants/card-constants";
+import { CARD_ALREADY_ROTATED_MAP } from "./constants/card-missing-image-map";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 
 export const HORIZONTAL_TYPE_CODES = [
@@ -354,6 +355,7 @@ class Card extends Component<IProps, IState> {
             fillPatternRotation={
               !imageLoaded ||
               this.shouldRenderImageHorizontal(
+                this.props.code,
                 this.props.typeCode || "",
                 HORIZONTAL_TYPE_CODES
               )
@@ -546,10 +548,13 @@ class Card extends Component<IProps, IState> {
   }
 
   private shouldRenderImageHorizontal(
+    code: string,
     type: string,
     typeCodes: string[]
   ): boolean {
-    return typeCodes.includes(type.toLocaleLowerCase()) && !this.plainCardBack;
+    const shouldRotateByType =
+      typeCodes.includes(type.toLocaleLowerCase()) && !this.plainCardBack;
+    return shouldRotateByType && !CARD_ALREADY_ROTATED_MAP[code];
   }
 
   private get plainCardBack() {
@@ -579,6 +584,7 @@ class Card extends Component<IProps, IState> {
       : heightToUse;
 
     return this.shouldRenderImageHorizontal(
+      this.props.code,
       this.props.typeCode || "",
       HORIZONTAL_TYPE_CODES
     )

@@ -1,3 +1,7 @@
+export const CARD_ALREADY_ROTATED_MAP: { [key: string]: boolean } = {
+  "05026": true,
+};
+
 export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "02001a":
     process.env.PUBLIC_URL +
