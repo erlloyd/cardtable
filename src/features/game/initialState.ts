@@ -20,7 +20,13 @@ export interface IGameState {
   activeGameType: GameType | null;
 }
 
-const localStorageState: IGameState = loadState("game");
+const queryParams = new URLSearchParams(window.location.search);
+const queryParamsGameType = queryParams.get("gameType");
+
+const localStorageState: IGameState = !!queryParamsGameType
+  ? { activeGameType: queryParamsGameType }
+  : loadState("game");
+
 localStorageState.playerColors = {};
 localStorageState.playerColors[myPeerRef] = "red";
 localStorageState.peerId = "";

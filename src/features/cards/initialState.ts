@@ -3,6 +3,7 @@ import {
   CounterTokenType,
   StatusTokenType,
 } from "../../constants/card-constants";
+import * as jc from "jsoncrush";
 
 export interface ICardStack {
   controlledBy: string;
@@ -36,7 +37,14 @@ export interface ICardsState {
   panMode: boolean;
 }
 
-const localStorageState: ICardsState = loadState("liveState")?.cards ?? {};
+const queryParams = new URLSearchParams(window.location.search);
+const queryParamsCardsString = queryParams.get("cards");
+const queryParamsCards = !!queryParamsCardsString
+  ? { cards: JSON.parse(jc.JSONUncrush(queryParamsCardsString)) }
+  : null;
+
+const localStorageState: ICardsState =
+  queryParamsCards || (loadState("liveState")?.cards ?? {});
 
 // Make sure initially, none of the cards are "owned" / "selected" / "shuffling"
 if (!!localStorageState.cards) {
@@ -46,6 +54,10 @@ if (!!localStorageState.cards) {
     c.shuffling = false;
   });
 }
+
+localStorageState.attachTargetCards = {};
+localStorageState.dropTargetCards = {};
+localStorageState.ghostCards = [];
 
 const defaultState: ICardsState = {
   cards: [],

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { GameType } from "./constants/app-constants";
 import GameContainer from "./GameContainer";
 import "./App.scss";
@@ -9,9 +9,15 @@ import InputLabel from "@material-ui/core/InputLabel";
 interface IProps {
   activeGameType: GameType | null;
   updateActiveGameType: (val: GameType) => void;
+  clearQueryParams: () => void;
 }
 
 const App = (props: IProps) => {
+  const clearQueryParams = props.clearQueryParams;
+  useEffect(() => {
+    clearQueryParams();
+  }, [clearQueryParams]);
+
   return !!props.activeGameType ? (
     <GameContainer currentGameType={props.activeGameType}></GameContainer>
   ) : (

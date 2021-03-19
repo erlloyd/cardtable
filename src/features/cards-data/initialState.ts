@@ -32,9 +32,14 @@ export interface IGameCardsDataState {
   setData: ISetData;
 }
 
+const queryParams = new URLSearchParams(window.location.search);
+const queryParamsGameType = queryParams.get("gameType");
+
 const localGameState: IGameState = loadState("game");
 
+const gameType = queryParamsGameType ?? localGameState.activeGameType;
+
 export const initialState: ICardsDataState = {
-  activeDataType: localGameState.activeGameType ?? GameType.MarvelChampions,
+  activeDataType: (gameType as GameType) ?? GameType.MarvelChampions,
   data: {},
 };

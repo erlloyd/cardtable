@@ -1,6 +1,7 @@
 import { Vector2d } from "konva/types/types";
 import { PlayerColor } from "../../constants/app-constants";
 import { loadState } from "../../store/localStorage";
+import * as jc from "jsoncrush";
 
 export interface ICountersState {
   counters: ICounter[];
@@ -14,8 +15,14 @@ export interface ICounter {
   color: PlayerColor;
 }
 
+const queryParams = new URLSearchParams(window.location.search);
+const queryParamsCountersString = queryParams.get("counters");
+const queryParamsCounters = !!queryParamsCountersString
+  ? JSON.parse(jc.JSONUncrush(queryParamsCountersString))
+  : null;
+
 const localStorageState: ICountersState =
-  loadState("liveState")?.counters ?? {};
+  queryParamsCounters || (loadState("liveState")?.counters ?? {});
 
 const defaultState: ICountersState = {
   counters: [],

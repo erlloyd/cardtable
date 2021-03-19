@@ -39,6 +39,7 @@ import TokenValueModifier from "./TokenValueModifier";
 import TopLayer from "./TopLayer";
 import TouchMenuContainer from "./TouchMenuContainer";
 import { getCenter, getDistance } from "./utilities/geo";
+import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
 
 const SCALE_BY = 1.02;
 
@@ -115,6 +116,7 @@ interface IProps {
     position: Vector2d;
     txtContents: string;
   }) => void;
+  generateGameStateUrl: () => void;
 }
 
 interface IState {
@@ -1614,7 +1616,17 @@ class Game extends Component<IProps, IState> {
       },
       {
         label: `Peer id is ${this.props.peerId}`,
-        action: () => {},
+        action: () => {
+          if (!!this.props.peerId) {
+            copyToClipboard(generateRemoteGameUrl(this.props.peerId));
+          }
+        },
+      },
+      {
+        label: `Copy game state as url`,
+        action: () => {
+          this.props.generateGameStateUrl();
+        },
       },
     ];
 
