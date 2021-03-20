@@ -35,6 +35,7 @@ export interface ICardsState {
   dropTargetCards: { [key: string]: ICardStack | null };
   attachTargetCards: { [key: string]: ICardStack | null };
   panMode: boolean;
+  multiselectMode: boolean;
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -65,6 +66,7 @@ const defaultState: ICardsState = {
   dropTargetCards: {},
   attachTargetCards: {},
   panMode: true,
+  multiselectMode: false,
 };
 
 export const initialState: ICardsState = {

@@ -7,6 +7,7 @@ import FlipIcon from "@material-ui/icons/Flip";
 import OpenWithIcon from "@material-ui/icons/OpenWith";
 import AutorenewIcon from "@material-ui/icons/Autorenew";
 import ShuffleIcon from "@material-ui/icons/Shuffle";
+import SelectAllIcon from "@material-ui/icons/SelectAll";
 import { GameType } from "./constants/app-constants";
 import {
   GamePropertiesMap,
@@ -19,7 +20,9 @@ import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
 interface IProps {
   currentGameType: GameType | null;
   panMode: boolean;
+  multiselectMode: boolean;
   togglePanMode: () => void;
+  toggleMultiselectMode: () => void;
   flipCards: () => void;
   exhaustCard: (id?: string) => void;
   toggleToken: (payload: {
@@ -46,6 +49,14 @@ class TouchMenu extends Component<IProps> {
           }}
         >
           <OpenWithIcon fontSize="large" />
+        </IconButton>
+        <IconButton
+          className={this.props.multiselectMode ? "toggle-on" : ""}
+          onClick={() => {
+            this.props.toggleMultiselectMode();
+          }}
+        >
+          <SelectAllIcon fontSize="large" />
         </IconButton>
         <IconButton
           onClick={() => {
@@ -115,9 +126,12 @@ class TouchMenu extends Component<IProps> {
           };
         }
 
-        const key = `touch-menu-button-${tokenInfo.menuText
+        let key = `touch-menu-button-${tokenInfo.menuText
           .replace(/\s/g, "")
           .toLocaleLowerCase()}`;
+
+        key =
+          key + (tokenInfo.touchMenuLetter?.indexOf("+") !== -1 ? "-plus" : "");
 
         if (!!tokenInfo.touchMenuIcon) {
           return (

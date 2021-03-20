@@ -6,6 +6,7 @@ import { loadCardsData } from "./features/cards-data/cards-data.slice";
 import {
   getCards,
   getDropTargetCardsById,
+  getMultiselectMode,
   getPanMode,
 } from "./features/cards/cards.selectors";
 import {
@@ -66,6 +67,7 @@ const mapStateToProps = (state: RootState) => {
     cards: getCards(state),
     cardsData: getCardsDataEntities(state),
     panMode: getPanMode(state),
+    multiselectMode: getMultiselectMode(state),
     gameState: getGame(state),
     counters: getCurrentCounters(state),
     peerId: getPeerId(state),

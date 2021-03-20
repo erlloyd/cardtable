@@ -371,6 +371,10 @@ const togglePanModeReducer: CaseReducer<ICardsState> = (state) => {
   state.panMode = !state.panMode;
 };
 
+const toggleMultiselectModeReducer: CaseReducer<ICardsState> = (state) => {
+  state.multiselectMode = !state.multiselectMode;
+};
+
 const flipCardsReducer: CaseReducer<ICardsState> = (state, action) => {
   state.cards
     .filter(
@@ -461,6 +465,7 @@ const cardsSlice = createSlice({
     selectMultipleCards: selectMultipleCardsReducer,
     unselectAllCards: unselectAllCardsReducer,
     togglePanMode: togglePanModeReducer,
+    toggleMultiselectMode: toggleMultiselectModeReducer,
     flipCards: flipCardsReducer,
     resetCards: resetCardsReducer,
     toggleToken: toggleTokenReducer,
@@ -840,6 +845,7 @@ export const {
   selectMultipleCards,
   unselectAllCards,
   togglePanMode,
+  toggleMultiselectMode,
   flipCards,
   resetCards,
   toggleToken,

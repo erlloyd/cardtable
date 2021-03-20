@@ -14,6 +14,9 @@ export const getCardMapById = createSelector(getCards, (cards) => {
 export const getPanMode = (state: RootState) =>
   state.liveState.present.cards.panMode;
 
+export const getMultiselectMode = (state: RootState) =>
+  state.liveState.present.cards.multiselectMode;
+
 export const getDropTargetCardsById = createSelector(getCards, (cards) => {
   const returnVal: {
     [key: string]: { ownerRef: string; card: ICardStack | null };

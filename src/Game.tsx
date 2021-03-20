@@ -49,6 +49,7 @@ interface IProps {
   cardsData: ICardData;
   gameState: IGameState;
   panMode: boolean;
+  multiselectMode: boolean;
   playerColors: { [key: string]: PlayerColor };
   menuPreviewCard: ICardStack | null;
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
@@ -1106,12 +1107,12 @@ class Game extends Component<IProps, IState> {
     const modifierKeyHeld =
       event.evt.shiftKey || event.evt.metaKey || event.evt.ctrlKey;
 
-    if (card.selected && modifierKeyHeld) {
+    if (card.selected && (modifierKeyHeld || this.props.multiselectMode)) {
       this.props.toggleSelectCard(cardId);
     } else {
       this.props.selectCard({
         id: cardId,
-        unselectOtherCards: !modifierKeyHeld,
+        unselectOtherCards: !modifierKeyHeld && !this.props.multiselectMode,
       });
     }
   };
