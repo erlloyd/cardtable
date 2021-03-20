@@ -29,6 +29,10 @@ export const clearQueryParams = (): ThunkAction<
   const queryParams = new URLSearchParams(window.location.search);
   const queryParamsGameType = queryParams.get("gameType");
   if (!!queryParamsGameType) {
-    window.history.replaceState({}, document.title, "/");
+    window.history.replaceState(
+      {},
+      document.title,
+      window.location.pathname || "/"
+    );
   }
 };
