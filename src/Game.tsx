@@ -375,6 +375,27 @@ class Game extends Component<IProps, IState> {
               rawPos
             );
 
+            let previewCardHeight = cardConstants.CARD_PREVIEW_HEIGHT;
+            let previewCardWidth = cardConstants.CARD_PREVIEW_WIDTH;
+
+            if (isHorizontal) {
+              previewCardWidth = Math.min(
+                cardConstants.CARD_PREVIEW_WIDTH,
+                window.innerWidth
+              );
+              const previewCardRatio =
+                previewCardWidth / cardConstants.CARD_PREVIEW_WIDTH;
+              previewCardHeight *= previewCardRatio;
+            } else {
+              previewCardHeight = Math.min(
+                cardConstants.CARD_PREVIEW_HEIGHT,
+                window.innerHeight
+              );
+              const previewCardRatio =
+                previewCardHeight / cardConstants.CARD_PREVIEW_HEIGHT;
+              previewCardWidth *= previewCardRatio;
+            }
+
             return imgUrls.some(
               (url) => url.indexOf("card_back") !== -1
             ) ? null : (
@@ -398,14 +419,8 @@ class Game extends Component<IProps, IState> {
                 imgUrls={imgUrls}
                 typeCode={this.getCardType(card)}
                 faceup={card.faceup}
-                height={
-                  cardConstants.CARD_PREVIEW_HEIGHT /
-                  this.props.gameState.stageZoom.y
-                }
-                width={
-                  cardConstants.CARD_PREVIEW_WIDTH /
-                  this.props.gameState.stageZoom.x
-                }
+                height={previewCardHeight / this.props.gameState.stageZoom.y}
+                width={previewCardWidth / this.props.gameState.stageZoom.x}
               />
             );
           })
