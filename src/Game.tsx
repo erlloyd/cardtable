@@ -378,23 +378,15 @@ class Game extends Component<IProps, IState> {
             let previewCardHeight = cardConstants.CARD_PREVIEW_HEIGHT;
             let previewCardWidth = cardConstants.CARD_PREVIEW_WIDTH;
 
-            if (isHorizontal) {
-              previewCardWidth = Math.min(
-                cardConstants.CARD_PREVIEW_WIDTH,
-                window.innerWidth
-              );
-              const previewCardRatio =
-                previewCardWidth / cardConstants.CARD_PREVIEW_WIDTH;
-              previewCardHeight *= previewCardRatio;
-            } else {
-              previewCardHeight = Math.min(
-                cardConstants.CARD_PREVIEW_HEIGHT,
-                window.innerHeight
-              );
-              const previewCardRatio =
-                previewCardHeight / cardConstants.CARD_PREVIEW_HEIGHT;
-              previewCardWidth *= previewCardRatio;
-            }
+            // Note that we only adjust the height, because the card will
+            // be rotated if it supposed to be displayed horizontally
+            previewCardHeight = Math.min(
+              cardConstants.CARD_PREVIEW_HEIGHT,
+              isHorizontal ? window.innerWidth : window.innerHeight
+            );
+            const previewCardRatio =
+              previewCardHeight / cardConstants.CARD_PREVIEW_HEIGHT;
+            previewCardWidth *= previewCardRatio;
 
             return imgUrls.some(
               (url) => url.indexOf("card_back") !== -1
