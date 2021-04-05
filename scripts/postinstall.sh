@@ -12,7 +12,7 @@ fi
 if [ ! -d "src/external/marvelsdb-json-data" ]
 then
   echo "Importing JSON card Data"
-  git clone https://github.com/zzorba/marvelsdb-json-data.git src/external/marvelsdb-json-data
+  git clone https://github.com/erlloyd/marvelsdb-json-data.git src/external/marvelsdb-json-data
 else
   echo "Updating JSON card Data"
   git -C src/external/marvelsdb-json-data pull
