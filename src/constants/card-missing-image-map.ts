@@ -173,6 +173,15 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "16067": "https://hallofheroeshome.files.wordpress.com/2021/04/d11.jpg",
   "16068": "https://hallofheroeshome.files.wordpress.com/2021/04/d12.jpg",
   "16069": "https://hallofheroeshome.files.wordpress.com/2021/04/d13.jpg",
+
+  // Band of Badoon
+  "16117": "https://hallofheroeshome.files.wordpress.com/2021/04/bb1.jpg",
+  "16118": "https://hallofheroeshome.files.wordpress.com/2021/04/bb3.jpg",
+  "16119": "https://hallofheroeshome.files.wordpress.com/2021/04/bb6.jpg",
+  "16120": "https://hallofheroeshome.files.wordpress.com/2021/04/bb7.jpg",
+  "16121": "https://hallofheroeshome.files.wordpress.com/2021/04/bb9.jpg",
+
+  // Ship Command
   "16142": "https://hallofheroeshome.files.wordpress.com/2021/04/sc1.jpg",
   "16143": "https://hallofheroeshome.files.wordpress.com/2021/04/sc2.jpg",
   "16144": "https://hallofheroeshome.files.wordpress.com/2021/04/sc3.jpg",
