@@ -155,4 +155,29 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "16055": "https://hallofheroeshome.files.wordpress.com/2021/04/n2-1.jpg",
   "16056": "https://hallofheroeshome.files.wordpress.com/2021/04/n3-1.jpg",
   "16057": "https://hallofheroeshome.files.wordpress.com/2021/04/n4-1.jpg",
+
+  // Brotherhood of Badoon
+  "16058": "https://hallofheroeshome.files.wordpress.com/2021/04/d1.jpg",
+  "16059": "https://hallofheroeshome.files.wordpress.com/2021/04/d2.jpg",
+  "16060": "https://hallofheroeshome.files.wordpress.com/2021/04/d3.jpg",
+  "16061": "https://hallofheroeshome.files.wordpress.com/2021/04/d4a.jpg",
+  "16061_double_sided_back":
+    "https://hallofheroeshome.files.wordpress.com/2021/04/d4b.jpg",
+  "16062": "https://hallofheroeshome.files.wordpress.com/2021/04/d5a.jpg",
+  "16062_double_sided_back":
+    "https://hallofheroeshome.files.wordpress.com/2021/04/d5b.jpg",
+  "16063": "https://hallofheroeshome.files.wordpress.com/2021/04/d6.jpg",
+  "16064": "https://hallofheroeshome.files.wordpress.com/2021/04/d7.jpg",
+  "16065": "https://hallofheroeshome.files.wordpress.com/2021/04/d8.jpg",
+  "16066": "https://hallofheroeshome.files.wordpress.com/2021/04/d10.jpg",
+  "16067": "https://hallofheroeshome.files.wordpress.com/2021/04/d11.jpg",
+  "16068": "https://hallofheroeshome.files.wordpress.com/2021/04/d12.jpg",
+  "16069": "https://hallofheroeshome.files.wordpress.com/2021/04/d13.jpg",
+  "16142": "https://hallofheroeshome.files.wordpress.com/2021/04/sc1.jpg",
+  "16143": "https://hallofheroeshome.files.wordpress.com/2021/04/sc2.jpg",
+  "16144": "https://hallofheroeshome.files.wordpress.com/2021/04/sc3.jpg",
+  "16145": "https://hallofheroeshome.files.wordpress.com/2021/04/sc4.jpg",
+  "16146": "https://hallofheroeshome.files.wordpress.com/2021/04/sc5.jpg",
+  "16147": "https://hallofheroeshome.files.wordpress.com/2021/04/sc6.jpg",
+  "16148": "https://hallofheroeshome.files.wordpress.com/2021/04/sc7.jpg",
 };
