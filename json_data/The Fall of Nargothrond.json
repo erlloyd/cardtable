@@ -5,5 +5,553 @@
     "Cycle": "Doom Mastered",
     "SetType": "First_Age",
     "Cards": null,
-    "cards": []
+    "cards": [
+        {
+            "Title": "Finarfin",
+            "Slug": "Finarfin-TFoN",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fall-of-Nargothrond/Finarfin.jpg",
+                "Stats": {
+                    "ThreatCost": "11",
+                    "Willpower": "3",
+                    "Attack": "1",
+                    "Defense": "4",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "House of Finarfin.",
+                    "Noble."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Sentinel.",
+                    "While Finarfin is defending, he gains: `Response: Cancel a shadow effect just triggered. Then, cancel all damage dealt to the attacking enemy until the end of the round. (Limit once per round.)`"
+                ],
+                "Shadow": null,
+                "FlavorText": "But Finarfin spoke softly, as was his wont, and sought to calm the Noldor, persuading them to pause and ponder ere deeds were done that could not be undone...\r\n-The Silmarillion"
+            },
+            "Back": null,
+            "CardSet": "The Fall of Nargothrond",
+            "EncounterInfo": null,
+            "Number": 343,
+            "Quantity": 1,
+            "Artist": "Elena Kukanova",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00343",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Guard of the Drúedain",
+            "Slug": "Guard-of-the-Druedain-TFoN",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fall-of-Nargothrond/Guard-of-the-Drúedain.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Drúedain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After an enemy engages you, exhaust Guard of the Drúedain to lower that enemy`s Attack by 1 until the end of the phase (lower its Attack by 2 instead if the attacking enemy is an Orc.) The targeted enemy cannot be targeted again by the ability of a Guard of the Drúedain this round."
+                ],
+                "Shadow": null,
+                "FlavorText": "...nothing passed or came near that was not marked and remembered.\r\n-Unfinished Tales"
+            },
+            "Back": null,
+            "CardSet": "The Fall of Nargothrond",
+            "EncounterInfo": null,
+            "Number": 344,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00344",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Shieldmaiden of Haleth",
+            "Slug": "Shieldmaiden-of-Haleth-TFoN",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fall-of-Nargothrond/Shieldmaiden-of-Haleth.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Edain.",
+                    "House of Haleth."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Shieldmaiden of Haleth quests successfully, place 1 resource token on it.",
+                    "Response: After a hero is damaged by an enemy attack, exhaust Shieldmaiden of Haleth and remove 3 progress tokens from it to cancel all damage from that attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fall of Nargothrond",
+            "EncounterInfo": null,
+            "Number": 345,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00345",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Noldor Oathkeeper",
+            "Slug": "Noldor-Oathkeeper-TFoN",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Mastery",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fall-of-Nargothrond/Noldor-Oathkeeper.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "If each hero you control has at least 1 Corruption, Noldor Oathkeeper does not exhaust to defend.",
+                    "Response: When you play Noldor Oathkeeper from your hand, place 1 Corruption on a hero you control to reduce its cost by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fall of Nargothrond",
+            "EncounterInfo": null,
+            "Number": 346,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00346",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Amon Ethir Sentry",
+            "Slug": "Amon-Ethir-Sentry-TFoN",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fall-of-Nargothrond/Amon-Ethir-Sentry.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "0",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Amon Ethir Sentry enters play, choose an enemy in the staging area. Then, you may either engage that enemy or that enemy does not make engagement checks until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fall of Nargothrond",
+            "EncounterInfo": null,
+            "Number": 347,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00347",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Andvír",
+            "Slug": "Andvir-TFoN",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Mastery",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fall-of-Nargothrond/Andvír.jpg",
+                "Stats": {
+                    "ResourceCost": "0",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Gaurwaith."
+                ],
+                "Keywords": [
+                    "Ransom 3."
+                ],
+                "Text": [
+                    "Ransom 3.",
+                    "Response: After a treachery is revealed, exhaust Andvír to choose an ally. That ally readies and gets +1 Willpower until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fall of Nargothrond",
+            "EncounterInfo": null,
+            "Number": 348,
+            "Quantity": 3,
+            "Artist": "Andreia Ugrai",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00348",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Gilded Mask",
+            "Slug": "Gilded-Mask-TFoN",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Mastery",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fall-of-Nargothrond/Gilded-Mask.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Item.",
+                    "Armor."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a hero. Restricted.",
+                    "While the attached hero is committed to the quest, Gilded Mask gains, `Response: When an enemy with lower Threat than the number of Corruption tokens on the attached hero is revealed from the encounter deck, exhaust Gilded Mask to discard that enemy (canceling all of its effects). Reveal the next card of the encounter deck instead.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fall of Nargothrond",
+            "EncounterInfo": null,
+            "Number": 349,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00349",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Hidden Way",
+            "Slug": "Hidden-Way-TFoN",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fall-of-Nargothrond/Hidden-Way.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Path."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a location.",
+                    "Response: After attached location is explored, reduce the first player`s threat by X, where X is the attached location`s printed quest points (up to a limit of 5.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fall of Nargothrond",
+            "EncounterInfo": null,
+            "Number": 350,
+            "Quantity": 3,
+            "Artist": "John Howe",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00350",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Seal of the Queen",
+            "Slug": "Seal-of-the-Queen-TFoN",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fall-of-Nargothrond/Seal-of-the-Queen.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Item.",
+                    "Boom."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero.",
+                    "Attached hero gets +1 Willpower.",
+                    "Action: Exhaust Seal of the Queen and name a number to search the top 3 cards of your deck. You may choose one of those cards with cost equal to the named number and add it to your hand. Shuffle the rest back into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fall of Nargothrond",
+            "EncounterInfo": null,
+            "Number": 351,
+            "Quantity": 3,
+            "Artist": "Elena Kukanova",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00351",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Unnumbered Tears",
+            "Slug": "Unnumbered-Tears-TFoN",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fall-of-Nargothrond/Unnumbered-Tears.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: After a character is destroyed, ready each character you control that shares a trait with that character."
+                ],
+                "Shadow": null,
+                "FlavorText": "Then in the plain of...\r\n-The Simlarillion"
+            },
+            "Back": null,
+            "CardSet": "The Fall of Nargothrond",
+            "EncounterInfo": null,
+            "Number": 352,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00352",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Friend of Birds and Beasts",
+            "Slug": "Friend-of-Birds-and-Beasts-TFoN",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fall-of-Nargothrond/Friend-of-Birds-and-Beasts.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Place the top 3 cards of the encounter deck facedown under this card. Each facedown card acts as an ally with 1 Willpower, 1 Attack, 1 Defense, 1 hit point, and the Creature trait. Discard this card and call facedown cards underneath it at the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fall of Nargothrond",
+            "EncounterInfo": null,
+            "Number": 353,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00353",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Kingly Judgement",
+            "Slug": "Kingly-Judgement-TFoN",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Mastery",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fall-of-Nargothrond/Kingly-Judgement.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Doom."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose a character with at least 1 Corruption and choose one: deal 1 damage to that character to remove 1 Corruption from that character to play an attachment of X cost or lower on that character for free, where X is the number of Corruption tokens on that character."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fall of Nargothrond",
+            "EncounterInfo": null,
+            "Number": 354,
+            "Quantity": 3,
+            "Artist": "steamey",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00354",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Silmaril of the Sky",
+            "Slug": "Silmaril-of-the-Sky-TFoN",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fall-of-Nargothrond/Silmaril-of-the-Sky.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Item.",
+                    "Artifact."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero with at least 1 Corruption. Limit 1 per deck.",
+                    "Action: Exhaust Silmaril of the Sky and deal 1 Corruption to a character you control to (choose 1): discard a shadow card from a non-unique enemy, choose an enemy to get -2 Attack until the end of the phase, or ready attached hero."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fall of Nargothrond",
+            "EncounterInfo": null,
+            "Number": 355,
+            "Quantity": 3,
+            "Artist": "steamey",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00355",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Favor of Indis",
+            "Slug": "Favor-of-Indis-TFoN",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fall-of-Nargothrond/Favor-of-Indis.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a House of Fingolfin or House of Finarfin hero. Limit 1 per hero.",
+                    "Attached hero gains +1 Defense for each resource on Favor of Indis.",
+                    "Response: At the end of the combat phase, add 1 resource to Favor of Indis if you are engaged with an enemy and did not destroy an enemy this phase. (Limit 3 resources on Favor of Indis.)",
+                    "Forced: After you destroy an enemy, remove 1 resource from Favor of Indis."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fall of Nargothrond",
+            "EncounterInfo": null,
+            "Number": 359,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00359",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ]
 }

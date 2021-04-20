@@ -7,43 +7,118 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Mirlonde",
-            "Slug": "Mirlonde-TDF",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Silvan Refugee",
+            "Slug": "Silvan-Refugee-TDF",
+            "IsUnique": false,
+            "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Lore",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Mirlonde.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Silvan-Refugee.jpg",
                 "Stats": {
-                    "ThreatCost": "8",
+                    "ResourceCost": "1",
                     "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "1",
-                    "HitPoints": "3"
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "1"
                 },
                 "Traits": [
                     "Silvan."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Each hero you control with a printed Lore resource icon gets -1 threat cost."
+                    "Forced: After a character leaves play, discard Silvan Refugee from play."
                 ],
                 "Shadow": null,
-                "FlavorText": "`...the Elves feared and distrusted the world outside...`\r\n-The Fellowship of the Ring"
+                "FlavorText": "`The Elves have their own labours and their own sorrows...` -Gildor, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Drúadan Forest",
             "EncounterInfo": null,
-            "Number": 32,
-            "Quantity": 1,
-            "Artist": "Magali Villeneuve",
+            "Number": 37,
+            "Quantity": 3,
+            "Artist": "Lorraine Schleter",
             "HasErrata": false,
-            "OctgnGuid": "536c80ba-ad8b-447e-b378-1684508eb0f9",
-            "RingsDbCardId": "06032",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 7578,
+            "OctgnGuid": "e4fd6e25-982a-464f-82d8-812269864d46",
+            "RingsDbCardId": "06037",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 207782,
+            "Categories": null
+        },
+        {
+            "Title": "White Tower Watchman",
+            "Slug": "White-Tower-Watchman-TDF",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/White-Tower-Watchman.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Gondor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If each hero you control belongs to the same sphere of influence, you may assign damage from undefended enemy attacks to White Tower Watchman instead of a hero you control."
+                ],
+                "Shadow": null,
+                "FlavorText": "The watchmen cried aloud, and all men in the City stood to arms. -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": null,
+            "Number": 41,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "OctgnGuid": "31cd848b-a1bc-4ccd-af0c-eb3cc3ba593b",
+            "RingsDbCardId": "06041",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 141910,
+            "Categories": null
+        },
+        {
+            "Title": "Strength of Arms",
+            "Slug": "Strength-of-Arms-TDF",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Strength-of-Arms.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if each hero you control has a printed Leadership resource icon.",
+                    "Action: Ready each ally in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "And so the companies came and were hailed and cheered and passed through the Gate, men of the Outlands marching to defend the City of Gondor in a dark hour... -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": null,
+            "Number": 34,
+            "Quantity": 3,
+            "Artist": "Jon Bosco",
+            "HasErrata": false,
+            "OctgnGuid": "91f28bdf-4b78-4750-9853-65e783e4cb15",
+            "RingsDbCardId": "06034",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 129940,
             "Categories": null
         },
         {
@@ -87,41 +162,6 @@
             "Categories": null
         },
         {
-            "Title": "Strength of Arms",
-            "Slug": "Strength-of-Arms-TDF",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Strength-of-Arms.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Play only if each hero you control has a printed Leadership resource icon.",
-                    "Action: Ready each ally in play."
-                ],
-                "Shadow": null,
-                "FlavorText": "And so the companies came and were hailed and cheered and passed through the Gate, men of the Outlands marching to defend the City of Gondor in a dark hour... -The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Drúadan Forest",
-            "EncounterInfo": null,
-            "Number": 34,
-            "Quantity": 3,
-            "Artist": "Jon Bosco",
-            "HasErrata": false,
-            "OctgnGuid": "91f28bdf-4b78-4750-9853-65e783e4cb15",
-            "RingsDbCardId": "06034",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 129940,
-            "Categories": null
-        },
-        {
             "Title": "Mighty Prowess",
             "Slug": "Mighty-Prowess-TDF",
             "IsUnique": false,
@@ -159,6 +199,81 @@
             "Categories": null
         },
         {
+            "Title": "Advance Warning",
+            "Slug": "Advance-Warning-TDF",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Advance-Warning.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if each hero you control has a printed Lore resource icon.",
+                    "Action: Until the end of the phase, enemies do not make engagement checks"
+                ],
+                "Shadow": null,
+                "FlavorText": "Suddenly he halted and listened. Had he heard a whistle or not? Or was it the call of some strange bird? -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": null,
+            "Number": 40,
+            "Quantity": 3,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "OctgnGuid": "e678be7e-8048-458d-b4f9-25c2a718fabb",
+            "RingsDbCardId": "06040",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 63148,
+            "Categories": null
+        },
+        {
+            "Title": "Mirlonde",
+            "Slug": "Mirlonde-TDF",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Mirlonde.jpg",
+                "Stats": {
+                    "ThreatCost": "8",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Silvan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Each hero you control with a printed Lore resource icon gets -1 threat cost."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...the Elves feared and distrusted the world outside...`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Drúadan Forest",
+            "EncounterInfo": null,
+            "Number": 32,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "536c80ba-ad8b-447e-b378-1684508eb0f9",
+            "RingsDbCardId": "06032",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 7578,
+            "Categories": null
+        },
+        {
             "Title": "Trained for War",
             "Slug": "Trained-for-War-TDF",
             "IsUnique": false,
@@ -191,81 +306,6 @@
             "RingsDbCardId": "06036",
             "RingsDbPopularity": 2,
             "RingsDbVotes": 29113,
-            "Categories": null
-        },
-        {
-            "Title": "Silvan Refugee",
-            "Slug": "Silvan-Refugee-TDF",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Silvan-Refugee.jpg",
-                "Stats": {
-                    "ResourceCost": "1",
-                    "Willpower": "2",
-                    "Attack": "0",
-                    "Defense": "0",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Silvan."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Forced: After a character leaves play, discard Silvan Refugee from play."
-                ],
-                "Shadow": null,
-                "FlavorText": "`The Elves have their own labours and their own sorrows...` -Gildor, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Drúadan Forest",
-            "EncounterInfo": null,
-            "Number": 37,
-            "Quantity": 3,
-            "Artist": "Lorraine Schleter",
-            "HasErrata": false,
-            "OctgnGuid": "e4fd6e25-982a-464f-82d8-812269864d46",
-            "RingsDbCardId": "06037",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 207782,
-            "Categories": null
-        },
-        {
-            "Title": "Against the Shadow",
-            "Slug": "Against-the-Shadow-TDF",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Against-the-Shadow.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Play only if each hero you control has the printed Spirit resource icon.",
-                    "Action: Until the end of the phase, Spirit characters use their Willpower instead of Defense."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Courage will now be your best defense against the storm that is at hand...` -Gandalf, The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Drúadan Forest",
-            "EncounterInfo": null,
-            "Number": 38,
-            "Quantity": 3,
-            "Artist": "Andrew Ryan",
-            "HasErrata": false,
-            "OctgnGuid": "0801c2c0-2bf7-4a0a-838a-13740f6cdbaf",
-            "RingsDbCardId": "06038",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 12115,
             "Categories": null
         },
         {
@@ -309,78 +349,38 @@
             "Categories": null
         },
         {
-            "Title": "Advance Warning",
-            "Slug": "Advance-Warning-TDF",
+            "Title": "Against the Shadow",
+            "Slug": "Against-the-Shadow-TDF",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Lore",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Advance-Warning.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/Against-the-Shadow.jpg",
                 "Stats": {
                     "ResourceCost": "2"
                 },
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Play only if each hero you control has a printed Lore resource icon.",
-                    "Action: Until the end of the phase, enemies do not make engagement checks"
+                    "Play only if each hero you control has the printed Spirit resource icon.",
+                    "Action: Until the end of the phase, Spirit characters use their Willpower instead of Defense."
                 ],
                 "Shadow": null,
-                "FlavorText": "Suddenly he halted and listened. Had he heard a whistle or not? Or was it the call of some strange bird? -The Two Towers"
+                "FlavorText": "`Courage will now be your best defense against the storm that is at hand...` -Gandalf, The Return of the King"
             },
             "Back": null,
             "CardSet": "The Drúadan Forest",
             "EncounterInfo": null,
-            "Number": 40,
+            "Number": 38,
             "Quantity": 3,
-            "Artist": "Adam Lane",
+            "Artist": "Andrew Ryan",
             "HasErrata": false,
-            "OctgnGuid": "e678be7e-8048-458d-b4f9-25c2a718fabb",
-            "RingsDbCardId": "06040",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 63148,
-            "Categories": null
-        },
-        {
-            "Title": "White Tower Watchman",
-            "Slug": "White-Tower-Watchman-TDF",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Druadan-Forest/White-Tower-Watchman.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "1",
-                    "Attack": "0",
-                    "Defense": "2",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Gondor."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "If each hero you control belongs to the same sphere of influence, you may assign damage from undefended enemy attacks to White Tower Watchman instead of a hero you control."
-                ],
-                "Shadow": null,
-                "FlavorText": "The watchmen cried aloud, and all men in the City stood to arms. -The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Drúadan Forest",
-            "EncounterInfo": null,
-            "Number": 41,
-            "Quantity": 3,
-            "Artist": "Ilich Henriquez",
-            "HasErrata": false,
-            "OctgnGuid": "31cd848b-a1bc-4ccd-af0c-eb3cc3ba593b",
-            "RingsDbCardId": "06041",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 141910,
+            "OctgnGuid": "0801c2c0-2bf7-4a0a-838a-13740f6cdbaf",
+            "RingsDbCardId": "06038",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 12115,
             "Categories": null
         }
     ]

@@ -7,28 +7,28 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Dwalin",
-            "Slug": "Dwalin-KD",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Zigil Miner",
+            "Slug": "Zigil-Miner-KD",
+            "IsUnique": false,
+            "CardType": "Ally",
             "CardSubType": "None",
             "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Dwalin.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Zigil-Miner.jpg",
                 "Stats": {
-                    "ThreatCost": "9",
+                    "ResourceCost": "2",
                     "Willpower": "1",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "4"
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "1"
                 },
                 "Traits": [
                     "Dwarf."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Response: After Dwalin attacks and destroys an Orc enemy, lower your threat by 2."
+                    "Action: Exhaust Zigil Miner and name a number to discard the top 2 cards of your deck. If at least one of those cards has cost equal to the named number, choose a hero you control. For each card that matches the named number, add 1 resource to that hero`s resource pool."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -36,14 +36,55 @@
             "Back": null,
             "CardSet": "Khazad-dûm",
             "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Tony Foti",
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": true,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9088",
+            "RingsDbCardId": "03009",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 409744,
+            "Categories": null
+        },
+        {
+            "Title": "Erebor Record Keeper",
+            "Slug": "Erebor-Record-Keeper-KD",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Erebor-Record-Keeper.jpg",
+                "Stats": {
+                    "ResourceCost": "1",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Erebor Record Keeper cannot attack or defend.",
+                    "Action: Exhaust Erebor Record Keeper and pay 1 Lore resource to choose and ready a Dwarf character."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Khazad-dûm",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 3,
+            "Artist": "Andrew Johanson",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9025",
-            "RingsDbCardId": "03001",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 3556,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9030",
+            "RingsDbCardId": "03011",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 338573,
             "Categories": null
         },
         {
@@ -84,6 +125,47 @@
             "RingsDbCardId": "03002",
             "RingsDbPopularity": 9,
             "RingsDbVotes": 16146,
+            "Categories": null
+        },
+        {
+            "Title": "Dwarrowdelf Axe",
+            "Slug": "Dwarrowdelf-Axe-KD",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Dwarrowdelf-Axe.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Dwarf character. Restricted.",
+                    "Attached character gets +1 Attack.",
+                    "Response: After attached character attacks, deal 1 damage to the defending enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We make good armour and keen swords, but we cannot again make mail or blade to match those that were made before the dragon came.` -Glóin, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Khazad-dûm",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Carolina Eade",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9026",
+            "RingsDbCardId": "03007",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 254839,
             "Categories": null
         },
         {
@@ -160,22 +242,25 @@
             "Categories": null
         },
         {
-            "Title": "Ever Onward",
-            "Slug": "Ever-Onward-KD",
+            "Title": "Boots from Erebor",
+            "Slug": "Boots-from-Erebor-KD",
             "IsUnique": false,
-            "CardType": "Event",
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Ever-Onward.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Boots-from-Erebor.jpg",
                 "Stats": {
-                    "ResourceCost": "3"
+                    "ResourceCost": "0"
                 },
-                "Traits": [],
+                "Traits": [
+                    "Item."
+                ],
                 "Keywords": [],
                 "Text": [
-                    "Response: After players quest unsuccessfully, choose a player. That player does not raise his threat."
+                    "Attach to a Dwarf or Hobbit character. Limit 1 Boots from Erebor per character.",
+                    "Attached character gets +1 hit point."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -183,14 +268,48 @@
             "Back": null,
             "CardSet": "Khazad-dûm",
             "EncounterInfo": null,
-            "Number": 5,
+            "Number": 13,
             "Quantity": 3,
-            "Artist": "Dleoblack",
+            "Artist": "Carolina Eade",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9031",
-            "RingsDbCardId": "03005",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 17380,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9012",
+            "RingsDbCardId": "03013",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 217766,
+            "Categories": null
+        },
+        {
+            "Title": "Khazâd! Khazâd!",
+            "Slug": "Khazad-Khazad-KD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Khazâd-Khazâd.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose a Dwarf character. Until the end of the phase, that character gets +3 Attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "Down from the wall leapt Gimli with a fierce cry the echoed in the cliffs. `Khazâd! Khazâd!` He soon had work enough.\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Khazad-dûm",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Igor Kieryluk",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9044",
+            "RingsDbCardId": "03008",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 210606,
             "Categories": null
         },
         {
@@ -235,121 +354,6 @@
             "Categories": null
         },
         {
-            "Title": "Dwarrowdelf Axe",
-            "Slug": "Dwarrowdelf-Axe-KD",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Dwarrowdelf-Axe.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item.",
-                    "Weapon."
-                ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a Dwarf character. Restricted.",
-                    "Attached character gets +1 Attack.",
-                    "Response: After attached character attacks, deal 1 damage to the defending enemy."
-                ],
-                "Shadow": null,
-                "FlavorText": "`We make good armour and keen swords, but we cannot again make mail or blade to match those that were made before the dragon came.` -Glóin, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Khazad-dûm",
-            "EncounterInfo": null,
-            "Number": 7,
-            "Quantity": 3,
-            "Artist": "Carolina Eade",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9026",
-            "RingsDbCardId": "03007",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 254839,
-            "Categories": null
-        },
-        {
-            "Title": "Khazâd! Khazâd!",
-            "Slug": "Khazad-Khazad-KD",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Khazâd-Khazâd.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Choose a Dwarf character. Until the end of the phase, that character gets +3 Attack."
-                ],
-                "Shadow": null,
-                "FlavorText": "Down from the wall leapt Gimli with a fierce cry the echoed in the cliffs. `Khazâd! Khazâd!` He soon had work enough.\r\n-The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "Khazad-dûm",
-            "EncounterInfo": null,
-            "Number": 8,
-            "Quantity": 3,
-            "Artist": "Igor Kieryluk",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9044",
-            "RingsDbCardId": "03008",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 210606,
-            "Categories": null
-        },
-        {
-            "Title": "Zigil Miner",
-            "Slug": "Zigil-Miner-KD",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Zigil-Miner.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Dwarf."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Exhaust Zigil Miner and name a number to discard the top 2 cards of your deck. If at least one of those cards has cost equal to the named number, choose a hero you control. For each card that matches the named number, add 1 resource to that hero`s resource pool."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Khazad-dûm",
-            "EncounterInfo": null,
-            "Number": 9,
-            "Quantity": 3,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": true,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9088",
-            "RingsDbCardId": "03009",
-            "RingsDbPopularity": 9,
-            "RingsDbVotes": 409744,
-            "Categories": null
-        },
-        {
             "Title": "Untroubled by Darkness",
             "Slug": "Untroubled-by-Darkness-KD",
             "IsUnique": false,
@@ -381,47 +385,6 @@
             "RingsDbCardId": "03010",
             "RingsDbPopularity": 5,
             "RingsDbVotes": 88713,
-            "Categories": null
-        },
-        {
-            "Title": "Erebor Record Keeper",
-            "Slug": "Erebor-Record-Keeper-KD",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Erebor-Record-Keeper.jpg",
-                "Stats": {
-                    "ResourceCost": "1",
-                    "Willpower": "1",
-                    "Attack": "0",
-                    "Defense": "0",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Dwarf."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Erebor Record Keeper cannot attack or defend.",
-                    "Action: Exhaust Erebor Record Keeper and pay 1 Lore resource to choose and ready a Dwarf character."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Khazad-dûm",
-            "EncounterInfo": null,
-            "Number": 11,
-            "Quantity": 3,
-            "Artist": "Andrew Johanson",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9030",
-            "RingsDbCardId": "03011",
-            "RingsDbPopularity": 9,
-            "RingsDbVotes": 338573,
             "Categories": null
         },
         {
@@ -459,25 +422,28 @@
             "Categories": null
         },
         {
-            "Title": "Boots from Erebor",
-            "Slug": "Boots-from-Erebor-KD",
-            "IsUnique": false,
-            "CardType": "Attachment",
+            "Title": "Dwalin",
+            "Slug": "Dwalin-KD",
+            "IsUnique": true,
+            "CardType": "Hero",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Boots-from-Erebor.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Dwalin.jpg",
                 "Stats": {
-                    "ResourceCost": "0"
+                    "ThreatCost": "9",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "4"
                 },
                 "Traits": [
-                    "Item."
+                    "Dwarf."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a Dwarf or Hobbit character. Limit 1 Boots from Erebor per character.",
-                    "Attached character gets +1 hit point."
+                    "Response: After Dwalin attacks and destroys an Orc enemy, lower your threat by 2."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -485,14 +451,48 @@
             "Back": null,
             "CardSet": "Khazad-dûm",
             "EncounterInfo": null,
-            "Number": 13,
-            "Quantity": 3,
-            "Artist": "Carolina Eade",
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Tony Foti",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9012",
-            "RingsDbCardId": "03013",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 217766,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9025",
+            "RingsDbCardId": "03001",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 3556,
+            "Categories": null
+        },
+        {
+            "Title": "Ever Onward",
+            "Slug": "Ever-Onward-KD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Ever-Onward.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: After players quest unsuccessfully, choose a player. That player does not raise his threat."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Khazad-dûm",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Dleoblack",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9031",
+            "RingsDbCardId": "03005",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 17380,
             "Categories": null
         }
     ]

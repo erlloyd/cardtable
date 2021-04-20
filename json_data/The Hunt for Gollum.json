@@ -7,46 +7,6 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Bilbo Baggins",
-            "Slug": "Bilbo-Baggins-THfG",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum/Bilbo-Baggins.jpg",
-                "Stats": {
-                    "ThreatCost": "9",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Hobbit."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "The first player draws 1 additional card in the resource phase."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Well, my dear fellow,` said bilbo, `now you`ve heard the news, can`t you spare me a moment? I want your help in something urgent.` -The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Hunt for Gollum",
-            "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Tony Foti",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801201c9001",
-            "RingsDbCardId": "02001",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 7169,
-            "Categories": null
-        },
-        {
             "Title": "Dúnedain Mark",
             "Slug": "Dunedain-Mark-THfG",
             "IsUnique": false,
@@ -82,40 +42,6 @@
             "RingsDbCardId": "02002",
             "RingsDbPopularity": 9,
             "RingsDbVotes": 415739,
-            "Categories": null
-        },
-        {
-            "Title": "Campfire Tales",
-            "Slug": "Campfire-Tales-THfG",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum/Campfire-Tales.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Each player draws 1 card."
-                ],
-                "Shadow": null,
-                "FlavorText": "`It is a fair tale, though it is sad, as are all the tales of Middle-earth, and yet it may lift up your hearts.` -Strider, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Hunt for Gollum",
-            "EncounterInfo": null,
-            "Number": 3,
-            "Quantity": 3,
-            "Artist": "Felicia Cano",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801201c9003",
-            "RingsDbCardId": "02003",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 276394,
             "Categories": null
         },
         {
@@ -160,6 +86,40 @@
             "RingsDbCardId": "02004",
             "RingsDbPopularity": 9,
             "RingsDbVotes": 412519,
+            "Categories": null
+        },
+        {
+            "Title": "Campfire Tales",
+            "Slug": "Campfire-Tales-THfG",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum/Campfire-Tales.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Each player draws 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`It is a fair tale, though it is sad, as are all the tales of Middle-earth, and yet it may lift up your hearts.` -Strider, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Hunt for Gollum",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Felicia Cano",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801201c9003",
+            "RingsDbCardId": "02003",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 276394,
             "Categories": null
         },
         {
@@ -239,37 +199,40 @@
             "Categories": null
         },
         {
-            "Title": "Mustering the Rohirrim",
-            "Slug": "Mustering-the-Rohirrim-THfG",
+            "Title": "Song of Kings",
+            "Slug": "Song-of-Kings-THfG",
             "IsUnique": false,
-            "CardType": "Event",
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum/Mustering-the-Rohirrim.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum/Song-of-Kings.jpg",
                 "Stats": {
                     "ResourceCost": "1"
                 },
-                "Traits": [],
+                "Traits": [
+                    "Song."
+                ],
                 "Keywords": [],
                 "Text": [
-                    "Action: Search the top 10 cards of your deck for any 1 Rohan ally card and add it to your hand. Then, shuffle the other cards back into your deck."
+                    "Attach to a hero.",
+                    "Attached hero gains a Leadership resource icon."
                 ],
                 "Shadow": null,
-                "FlavorText": "`More speed we cannot make, if the strength of Rohan is to be gathered.` -Éomer, The Return of the King"
+                "FlavorText": "From the ashes a fire shall be woken,\r\nA light from the shadows shall spring:\r\nRenewed shall be blade that was broken,\r\nThe crownless again shall be king.\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Hunt for Gollum",
             "EncounterInfo": null,
-            "Number": 7,
+            "Number": 10,
             "Quantity": 3,
-            "Artist": "Stu Barnes",
+            "Artist": "John Gravato",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801201c9004",
-            "RingsDbCardId": "02007",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 109149,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801201c9006",
+            "RingsDbCardId": "02010",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 200093,
             "Categories": null
         },
         {
@@ -313,6 +276,40 @@
             "Categories": null
         },
         {
+            "Title": "Mustering the Rohirrim",
+            "Slug": "Mustering-the-Rohirrim-THfG",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum/Mustering-the-Rohirrim.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Search the top 10 cards of your deck for any 1 Rohan ally card and add it to your hand. Then, shuffle the other cards back into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`More speed we cannot make, if the strength of Rohan is to be gathered.` -Éomer, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Hunt for Gollum",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Stu Barnes",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801201c9004",
+            "RingsDbCardId": "02007",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 109149,
+            "Categories": null
+        },
+        {
             "Title": "Strider's Path",
             "Slug": "Strider's-Path-THfG",
             "IsUnique": false,
@@ -347,40 +344,43 @@
             "Categories": null
         },
         {
-            "Title": "Song of Kings",
-            "Slug": "Song-of-Kings-THfG",
-            "IsUnique": false,
-            "CardType": "Attachment",
+            "Title": "Bilbo Baggins",
+            "Slug": "Bilbo-Baggins-THfG",
+            "IsUnique": true,
+            "CardType": "Hero",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum/Song-of-Kings.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hunt-for-Gollum/Bilbo-Baggins.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ThreatCost": "9",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
                 },
                 "Traits": [
-                    "Song."
+                    "Hobbit."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a hero.",
-                    "Attached hero gains a Leadership resource icon."
+                    "The first player draws 1 additional card in the resource phase."
                 ],
                 "Shadow": null,
-                "FlavorText": "From the ashes a fire shall be woken,\r\nA light from the shadows shall spring:\r\nRenewed shall be blade that was broken,\r\nThe crownless again shall be king.\r\n-The Fellowship of the Ring"
+                "FlavorText": "`Well, my dear fellow,` said bilbo, `now you`ve heard the news, can`t you spare me a moment? I want your help in something urgent.` -The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Hunt for Gollum",
             "EncounterInfo": null,
-            "Number": 10,
-            "Quantity": 3,
-            "Artist": "John Gravato",
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Tony Foti",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801201c9006",
-            "RingsDbCardId": "02010",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 200093,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801201c9001",
+            "RingsDbCardId": "02001",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 7169,
             "Categories": null
         }
     ]

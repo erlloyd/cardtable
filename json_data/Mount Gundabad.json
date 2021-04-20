@@ -7,119 +7,74 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Bilbo Baggins",
-            "Slug": "Bilbo-Baggins-MG",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Bilbo-Baggins.jpg",
-                "Stats": {
-                    "ThreatCost": "9",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Hobbit.",
-                    "Burglar."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Bilbo Baggins commits to the quest, choose an enemy in the staging area. Until the end of the phase, Bilbo Baggins gets +X Willpower where X is that enemy`s Threat. If the players quest successfully, deal 1 damage to that enemy (2 damage instead if it is guarding a card)."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Mount Gundabad",
-            "EncounterInfo": null,
-            "Number": 112,
-            "Quantity": 1,
-            "Artist": "Tropa Entertainment",
-            "HasErrata": false,
-            "OctgnGuid": "3844dc9e-8235-4eda-8799-e18fe2af44d4",
-            "RingsDbCardId": "19112",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 2117,
-            "Categories": null
-        },
-        {
-            "Title": "Greenwood Defender",
-            "Slug": "Greenwood-Defender-MG",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Greenwood-Defender.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "0",
-                    "Attack": "0",
-                    "Defense": "2",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Silvan.",
-                    "Warrior."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Greenwood Defender enters play, it does not exhaust to defend until the end of the round."
-                ],
-                "Shadow": null,
-                "FlavorText": "...after the coming of Men they took ever more and more to the gloaming and the dusk.\r\n-The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Mount Gundabad",
-            "EncounterInfo": null,
-            "Number": 113,
-            "Quantity": 3,
-            "Artist": "Unknown",
-            "HasErrata": false,
-            "OctgnGuid": "be817106-0e2f-4fa2-a3ca-35c0dc21671f",
-            "RingsDbCardId": "19113",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 37731,
-            "Categories": null
-        },
-        {
-            "Title": "Elf Guide",
-            "Slug": "Elf-Guide-MG",
+            "Title": "Drinking Song",
+            "Slug": "Drinking-Song-MG",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Elf-Guide.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Drinking-Song.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Count the number of cards in your hand and shuffle your hand into your deck. Then, draw an equal number of cards. Draw 1 additional card if you control a unique Hobbit character."
+                ],
+                "Shadow": null,
+                "FlavorText": "Ho! Ho! Ho! to the bottle I go\r\nTo heal my heart and drown my woe.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": null,
+            "Number": 116,
+            "Quantity": 3,
+            "Artist": "Romana Kendelic",
+            "HasErrata": false,
+            "OctgnGuid": "3502e51b-bc7a-4e8c-81c7-dfc7b3c09cbc",
+            "RingsDbCardId": "19116",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 202815,
+            "Categories": null
+        },
+        {
+            "Title": "The Shirefolk",
+            "Slug": "The-Shirefolk-MG",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/The-Shirefolk.jpg",
                 "Stats": {
                     "ResourceCost": "0"
                 },
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Action: Return a Silvan ally you control to your hand to choose a hero. Add 1 resource to that hero`s pool."
+                    "Play only if each of your heroes is a Hobbit.",
+                    "Action: Reduce your threat by 4."
                 ],
                 "Shadow": null,
-                "FlavorText": "...soon Haldir turned aside into the trees and halted on the bank of the river under their shadows.\r\n-The Fellowship of the Ring"
+                "FlavorText": "`If more of us valued food and cheer and song above hoarded gold, it would be a merrier world.`\r\n-Thorin Oakenshield, The Hobbit"
             },
             "Back": null,
             "CardSet": "Mount Gundabad",
             "EncounterInfo": null,
-            "Number": 114,
+            "Number": 121,
             "Quantity": 3,
-            "Artist": "John Howe",
+            "Artist": "Carmen Cianelti",
             "HasErrata": false,
-            "OctgnGuid": "f1c81942-39e6-4107-ba02-e6d0b68e15be",
-            "RingsDbCardId": "19114",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 25454,
+            "OctgnGuid": "35acc13d-fc10-458f-bacb-99f4979956ce",
+            "RingsDbCardId": "19121",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 131355,
             "Categories": null
         },
         {
@@ -160,86 +115,6 @@
             "RingsDbCardId": "19115",
             "RingsDbPopularity": 5,
             "RingsDbVotes": 97841,
-            "Categories": null
-        },
-        {
-            "Title": "Drinking Song",
-            "Slug": "Drinking-Song-MG",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Drinking-Song.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [
-                    "Song."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Count the number of cards in your hand and shuffle your hand into your deck. Then, draw an equal number of cards. Draw 1 additional card if you control a unique Hobbit character."
-                ],
-                "Shadow": null,
-                "FlavorText": "Ho! Ho! Ho! to the bottle I go\r\nTo heal my heart and drown my woe.\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Mount Gundabad",
-            "EncounterInfo": null,
-            "Number": 116,
-            "Quantity": 3,
-            "Artist": "Romana Kendelic",
-            "HasErrata": false,
-            "OctgnGuid": "3502e51b-bc7a-4e8c-81c7-dfc7b3c09cbc",
-            "RingsDbCardId": "19116",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 202815,
-            "Categories": null
-        },
-        {
-            "Title": "Sting",
-            "Slug": "Sting-MG",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Sting.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [
-                    "Artifact.",
-                    "Item.",
-                    "Weapon."
-                ],
-                "Keywords": [
-                    "Guarded (enemy).",
-                    "Restricted."
-                ],
-                "Text": [
-                    "Guarded (enemy).",
-                    "Attach to a Hobbit hero. Restricted.",
-                    "Attached hero gets +1 Willpower, +1 Attack, and +1 Defense.",
-                    "Response: After attached hero is declared as an attacker or defender against an enemy, deal 1 damage to that enemy."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Mount Gundabad",
-            "EncounterInfo": null,
-            "Number": 117,
-            "Quantity": 3,
-            "Artist": "Tropa Entertainment",
-            "HasErrata": false,
-            "OctgnGuid": "4c23f4d0-fbf4-4c07-bb1d-0f5507647e0f",
-            "RingsDbCardId": "19117",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 52996,
             "Categories": null
         },
         {
@@ -324,6 +199,50 @@
             "Categories": null
         },
         {
+            "Title": "Sting",
+            "Slug": "Sting-MG",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Sting.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Guarded (enemy).",
+                    "Restricted."
+                ],
+                "Text": [
+                    "Guarded (enemy).",
+                    "Attach to a Hobbit hero. Restricted.",
+                    "Attached hero gets +1 Willpower, +1 Attack, and +1 Defense.",
+                    "Response: After attached hero is declared as an attacker or defender against an enemy, deal 1 damage to that enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": null,
+            "Number": 117,
+            "Quantity": 3,
+            "Artist": "Tropa Entertainment",
+            "HasErrata": false,
+            "OctgnGuid": "4c23f4d0-fbf4-4c07-bb1d-0f5507647e0f",
+            "RingsDbCardId": "19117",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 52996,
+            "Categories": null
+        },
+        {
             "Title": "Armor of Erebor",
             "Slug": "Armor-of-Erebor-MG",
             "IsUnique": false,
@@ -364,38 +283,119 @@
             "Categories": null
         },
         {
-            "Title": "The Shirefolk",
-            "Slug": "The-Shirefolk-MG",
+            "Title": "Greenwood Defender",
+            "Slug": "Greenwood-Defender-MG",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Greenwood-Defender.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "0",
+                    "Attack": "0",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Greenwood Defender enters play, it does not exhaust to defend until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "...after the coming of Men they took ever more and more to the gloaming and the dusk.\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": null,
+            "Number": 113,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "be817106-0e2f-4fa2-a3ca-35c0dc21671f",
+            "RingsDbCardId": "19113",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 37731,
+            "Categories": null
+        },
+        {
+            "Title": "Elf Guide",
+            "Slug": "Elf-Guide-MG",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/The-Shirefolk.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Elf-Guide.jpg",
                 "Stats": {
                     "ResourceCost": "0"
                 },
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Play only if each of your heroes is a Hobbit.",
-                    "Action: Reduce your threat by 4."
+                    "Action: Return a Silvan ally you control to your hand to choose a hero. Add 1 resource to that hero`s pool."
                 ],
                 "Shadow": null,
-                "FlavorText": "`If more of us valued food and cheer and song above hoarded gold, it would be a merrier world.`\r\n-Thorin Oakenshield, The Hobbit"
+                "FlavorText": "...soon Haldir turned aside into the trees and halted on the bank of the river under their shadows.\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Mount Gundabad",
             "EncounterInfo": null,
-            "Number": 121,
+            "Number": 114,
             "Quantity": 3,
-            "Artist": "Carmen Cianelti",
+            "Artist": "John Howe",
             "HasErrata": false,
-            "OctgnGuid": "35acc13d-fc10-458f-bacb-99f4979956ce",
-            "RingsDbCardId": "19121",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 131355,
+            "OctgnGuid": "f1c81942-39e6-4107-ba02-e6d0b68e15be",
+            "RingsDbCardId": "19114",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 25454,
+            "Categories": null
+        },
+        {
+            "Title": "Bilbo Baggins",
+            "Slug": "Bilbo-Baggins-MG",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mount-Gundabad/Bilbo-Baggins.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit.",
+                    "Burglar."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Bilbo Baggins commits to the quest, choose an enemy in the staging area. Until the end of the phase, Bilbo Baggins gets +X Willpower where X is that enemy`s Threat. If the players quest successfully, deal 1 damage to that enemy (2 damage instead if it is guarding a card)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Mount Gundabad",
+            "EncounterInfo": null,
+            "Number": 112,
+            "Quantity": 1,
+            "Artist": "Tropa Entertainment",
+            "HasErrata": false,
+            "OctgnGuid": "3844dc9e-8235-4eda-8799-e18fe2af44d4",
+            "RingsDbCardId": "19112",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 2117,
             "Categories": null
         }
     ]

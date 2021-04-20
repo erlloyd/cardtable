@@ -3,5 +3,1205 @@
     "Slug": "Hunting-of-the-Wolf",
     "Product": "First Age",
     "Number": 1,
-    "AllCards": "Search returned no results"
+    "AllCards": [
+        {
+            "Title": "Hunting of the Wolf",
+            "Slug": "Hunting-of-the-Wolf-FA",
+            "IsUnique": false,
+            "CardType": "Scenario",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Hunting-of-the-Wolf-ScenarioA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Corruption",
+                    "When a character takes Corruption, place a progress token on it. If a character ever has Corruption greater than its willpower, it has become Corrupted. A Corrupted character loses the `ally` or `hero` card type and gains the `enemy` trait, immediately engaging the player that used to control it. The Willpower of the Corrupted character becomes its Threat and its engagement cost is 0.",
+                    "Relentless",
+                    "An enemy with Relentless cannot have its attack canceled or be prevented from attacking by any player card effect."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Carcharoth Deck",
+                    "During the quest phase, reveal the top card of the Carcharoth deck after characters have commited to the quest and before staging. Place this card in the staging area and discard any previous copies of Carcharoth into a separate discard pile for the Carcharoth deck. Transfer any damage and attachments to the new version of Carcharoth. If the Carcharoth deck is empty when you need to reveal a card from this deck, shuffle the discard pile for the Carcharoth deck to form a new Carcharoth deck.",
+                    "Hunt",
+                    "When a location with the Hunt keyword is explored as the active location, add it to the victory display. During the encounter phase, players may discard 5 Hunt points worth of locations from the victory display to engage Carcharoth. The players may decide which player will engage with Carcharoth.",
+                    "Carcharoth Combat",
+                    "When Carcharoth attacks a location, subtract the threat of the location from Carcharoth`s attack. The difference is the number of damage tokens placed on the location. If a location receives damage equal to its quest points, it is considered to be destroyed and is discarded. If Carcharoth attacks the active location, the first player may declare a defender. Note that Carcharoth the Red Maw attacks twice during the combat phase. Choose a random location for each attack. He may attack the same location twice if it is chosen twice."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "First Age",
+            "EncounterInfo": null,
+            "Number": 0,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00000",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Ride Forth in the Morning",
+            "Slug": "Ride-Forth-in-the-Morning-FA",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Ride-Forth-in-the-Morning-1A.jpg",
+                "Stats": {
+                    "StageNumber": "1A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Place Carcharoth the Tormented and Gates of Menegroth aside, out of play. Shuffle all other copies of Carcharoth into a Carcharoth deck. Each player must search the encounter deck for 1 different location and add it to the staging area. Put the Beleg Strongbow objective ally into play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Ride-Forth-in-the-Morning-1B.jpg",
+                "Stats": {
+                    "StageNumber": "1B",
+                    "QuestPoints": "20"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After a location is destroyed, place 1 damage on this quest stage. After the 10th damage is placed on this stage, advance to stage 3.",
+                    "Forced: If there is no location in play at the end of the round, the first player must search the encounter deck and discard pile for 1 location and add it to the staging area.",
+                    "Players cannot advance to stage 2 unless Carcharoth has at least 10 damage on him."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 162,
+            "Quantity": 1,
+            "Artist": "Anke Eissmann",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00162",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "At Last Upon the Wolf",
+            "Slug": "At-Last-Upon-the-Wolf-FA",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/At-Last-Upon-the-Wolf-2A.jpg",
+                "Stats": {
+                    "StageNumber": "2A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove Carcharoth from play and put the Carcharoth deck aside. Add Carcharoth the Tormented to the staging area. Remove half of the damage on Carcharoth (rounding up)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/At-Last-Upon-the-Wolf-2B.jpg",
+                "Stats": {
+                    "StageNumber": "2B",
+                    "QuestPoints": "-"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Discard all Hunt locations from the victory display.",
+                    "Forced: If an ally is destroyed by Carcharoth, place 1 damage on this stage. After the 4th damage is placed on this stage, reset the quest deck to stage 1A and follow the setup instructions again.",
+                    "If Carcharoth the Tormented is destroyed, you have recovered the Silmaril and won the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 163,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00163",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Ruin Upon the World",
+            "Slug": "Ruin-Upon-the-World-FA",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Ruin-Upon-the-World-3A.jpg",
+                "Stats": {
+                    "StageNumber": "3A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Gates of Menegroth becomes the active location, moving any previous active location to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Ruin-Upon-the-World-3B.jpg",
+                "Stats": {
+                    "StageNumber": "3B",
+                    "QuestPoints": "-"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Siege.",
+                    "Forced: Reveal 1 additional encounter card from the encounter deck each quest phase.",
+                    "Forced: After Gates of Menegroth is explored as the active location, reset the quest deck to stage 1B.",
+                    "If Gates of Menegroth is destroyed, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 164,
+            "Quantity": 1,
+            "Artist": "steamey",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00164",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Beleg Strongbow",
+            "Slug": "Beleg-Strongbow-FA",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Beleg-Strongbow.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Teleri."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The first player gains control of Beleg Strongbow.Action: Exhaust Beleg Strongbow to remove 2 damage from a location in play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 165,
+            "Quantity": 1,
+            "Artist": "brokenmachine86",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00165",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Carcharoth the Red Maw",
+            "Slug": "Carcharoth-the-Red-Maw-FA",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Carcharoth-the-Red-Maw.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "5",
+                    "Attack": "6",
+                    "Defense": "7",
+                    "HitPoints": "20"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Werewolf."
+                ],
+                "Keywords": [
+                    "Indestructible."
+                ],
+                "Text": [
+                    "Indestructible. Immune to player card effects.",
+                    "Forced: While Carcharoth the Red Maw is in the staging area, he attacks a random location in play during the combat phase (the first player may declare a defender if it is the active location).",
+                    "Forced: Caracharoth the Red Maw makes two attacks during the combat phase. (Deal a separate shadow card for each attack.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 166,
+            "Quantity": 3,
+            "Artist": "Waving Monster Studios",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00166",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Carcharoth the Wolf of Angband",
+            "Slug": "Carcharoth-the-Wolf-of-Angband-FA",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Carcharoth-the-Wolf-of-Angband.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "6",
+                    "Attack": "5",
+                    "Defense": "8",
+                    "HitPoints": "20"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Werewolf."
+                ],
+                "Keywords": [
+                    "Indestructible."
+                ],
+                "Text": [
+                    "Indestructible. Immune to player card effects.",
+                    "Forced: While Carcharoth the Wolf of Angband is in the staging area, he attacks a random location in play during the combat phase (the first player may declare a defender if it is the active location).",
+                    "When Revealed: Add 1 damage to the current quest stage."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 167,
+            "Quantity": 3,
+            "Artist": "Razielmn",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00167",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Carcharoth the Devouring Spirit",
+            "Slug": "Carcharoth-the-Devouring-Spirit-FA",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Carcharoth-the-Devouring-Spirit.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "4",
+                    "Attack": "8",
+                    "Defense": "6",
+                    "HitPoints": "20"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Werewolf."
+                ],
+                "Keywords": [
+                    "Indestructible."
+                ],
+                "Text": [
+                    "Indestructible. Immune to player card effects.",
+                    "Forced: While Carcharoth the Devouring Spirit is in the staging area, he attacks a random location in play during the combat phase (the first player may declare a defender if it is the active location).",
+                    "When Revealed: Carcharoth the Devouring Spirit makes an immediate attack on the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 168,
+            "Quantity": 3,
+            "Artist": "Nasko Moskov",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00168",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Carcharoth the Tormented",
+            "Slug": "Carcharoth-the-Tormented-FA",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Carcharoth-the-Tormented.jpg",
+                "Stats": {
+                    "EngagementCost": "1",
+                    "Threat": "6",
+                    "Attack": "9",
+                    "Defense": "9",
+                    "HitPoints": "25"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Werewolf."
+                ],
+                "Keywords": [
+                    "Relentless."
+                ],
+                "Text": [
+                    "Relenthless. Cannot leave play.",
+                    "Forced: Carcharoth the Tormented engages the first player during the encounter phase.",
+                    "Forced: After an attack by Carcharoth the Tormented resolves, discard one character the defending player controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 169,
+            "Quantity": 1,
+            "Artist": "Dechambo",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00169",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Taur-nu-Fuin",
+            "Slug": "Taur-nu-Fuin-FA",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Taur-nu-Fuin.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Forest.",
+                    "Dark."
+                ],
+                "Keywords": [
+                    "Hunt 2."
+                ],
+                "Text": [
+                    "Hunt 2.",
+                    "Travel: Each player places the top card of his deck face down in front of him as if it just engaged him from the staging area. These cards are called `Phantom` and act as enemies with: 3 hit points, 4 Attack, and 1 Defense."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 170,
+            "Quantity": 2,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00170",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Pass of Anach",
+            "Slug": "Pass-of-Anach-FA",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Pass-of-Anach.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [
+                    "Hunt 2."
+                ],
+                "Text": [
+                    "Hunt 2.",
+                    "Travel: Each player must discard 1 character he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 171,
+            "Quantity": 1,
+            "Artist": "Ferdinand Dumago Ladera",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00171",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Dimbar Field",
+            "Slug": "Dimbar-Field-FA",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Dimbar-Field.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Plain."
+                ],
+                "Keywords": [
+                    "Hunt 1."
+                ],
+                "Text": [
+                    "Hunt 1.",
+                    "While Dimbar Field is the active location, all heroes gain ranged.",
+                    "Travel: Discard all allies in each player`s hand."
+                ],
+                "Shadow": "Shadow: The attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 172,
+            "Quantity": 2,
+            "Artist": "Bobby Fieldhouse",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00172",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Brethil Dwelling",
+            "Slug": "Brethil-Dwelling-FA",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Brethil-Dwelling.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Outpost."
+                ],
+                "Keywords": [
+                    "Hunt 2."
+                ],
+                "Text": [
+                    "Hunt 2.",
+                    "Forced: After Brethil Dwelling is destroyed, each player must deal 3 Corruption among heroes he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 173,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00173",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Eaves of Region",
+            "Slug": "Eaves-of-Region-FA",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Eaves-of-Region.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [
+                    "Hunt 1."
+                ],
+                "Text": [
+                    "Hunt 1.",
+                    "While Eaves of Region is the active location, Carcharoth takes 1 damage at the end of the round.",
+                    "Travel: Each player must discard 1 random card from his hand."
+                ],
+                "Shadow": "Shadow: Either destroy a location in play or choose a new defender. (You may choose a location that is the target of this attack.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 174,
+            "Quantity": 3,
+            "Artist": "frozenstocks",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00174",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Banks of the Esgalduin",
+            "Slug": "Banks-of-the-Esgalduin-FA",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Banks-of-the-Esgalduin.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "River.",
+                    "Water."
+                ],
+                "Keywords": [
+                    "Hunt 1."
+                ],
+                "Text": [
+                    "Hunt 1.",
+                    "Forced: If Banks of the Esgalduin is destroyed, remove 5 damage from Carcharoth.Travel: Each player must discard an attachment he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 175,
+            "Quantity": 2,
+            "Artist": "Ao Yi Chuan",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00175",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Neldoreth Settlement",
+            "Slug": "Neldoreth-Settlement-FA",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Neldoreth-Settlement.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Outpost."
+                ],
+                "Keywords": [
+                    "Hunt 2."
+                ],
+                "Text": [
+                    "Hunt 2.",
+                    "Forced: If Neldoreth Settlement is destroyed, deal 1 Corruption to each character in play."
+                ],
+                "Shadow": "Shadow: If the defending character or location is destroyed, exhausted characters do not ready at the end of the round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 176,
+            "Quantity": 3,
+            "Artist": "Ron Crabb",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00176",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Iant Iaur",
+            "Slug": "Iant-Iaur-FA",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Iant-Iaur.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Bridge.",
+                    "Water."
+                ],
+                "Keywords": [
+                    "Hunt 1."
+                ],
+                "Text": [
+                    "Hunt 1.",
+                    "Forced: After Iant Iaur is destroyed, add 1 damage to the current quest stage.Response: After Iant Iaur is added to the victory display, remove 1 damage from the current quest stage."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 177,
+            "Quantity": 1,
+            "Artist": "nimarra",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00177",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Gates of Menegroth",
+            "Slug": "Gates-of-Menegroth-FA",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Gates-of-Menegroth.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "10"
+                },
+                "Traits": [
+                    "Fortification."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: If Gates of Menegroth is destroyed, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 178,
+            "Quantity": 1,
+            "Artist": "Ilya Nazarov",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00178",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Dark Valley",
+            "Slug": "Dark-Valley-FA",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Dark-Valley.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Valley.",
+                    "Water."
+                ],
+                "Keywords": [
+                    "Hunt 3."
+                ],
+                "Text": [
+                    "Hunt 3.",
+                    "While Dark Valley is the active location, you may choose which Carcharoth is revealed at the beginning of the quest phase. Shuffle the Carcharoth deck.",
+                    "Travel: Carcharoth makes an immediate attack against the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 179,
+            "Quantity": 2,
+            "Artist": "Albert Bierstadt",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00179",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Evil Days",
+            "Slug": "Evil-Days-FA",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Evil-Days.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must either deal 1 damage to each location in play or deal 1 Corruption to each character he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 180,
+            "Quantity": 3,
+            "Artist": "Justin Gerard",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00180",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Stood Now in Wrath",
+            "Slug": "Stood-Now-in-Wrath-FA",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Stood-Now-in-Wrath.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: Discard Carcharoth and reveal and add the next card from the Carcharoth deck."
+                ],
+                "Shadow": "Shadow: The attacking enemy gets +1 Attack. (+3 Attack instead if the attacking enemy has more than 5 damage on him.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 181,
+            "Quantity": 2,
+            "Artist": "Hazel Fibonacci",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00181",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Fled in Fear",
+            "Slug": "Fled-in-Fear-FA",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Fled-in-Fear.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove all allies from the quest. Allies cannot be declared as attackers or defenders until the end of the round."
+                ],
+                "Shadow": "Shadow: Allies cannot participate in an attack against the attacking enemy this round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 182,
+            "Quantity": 3,
+            "Artist": "Ted Nasmith",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00182",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "A Doom Fulfilled",
+            "Slug": "A-Doom-Fulfilled-FA",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/A-Doom-Fulfilled.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Doom."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach to Carcharoth as a Condition attachment with the text, `After an attack against Carcharoth resolves, discard one character that participated in the attack and discard A Doom Fulfilled.`"
+                ],
+                "Shadow": "Shadow: The attacking enemy cannot be damaged this turn unless the defending player discards one character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 183,
+            "Quantity": 3,
+            "Artist": "Ted Nasmith",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00183",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Flame of Anguish",
+            "Slug": "Flame-of-Anguish-FA",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Flame-of-Anguish.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove 5 damage from Carcharoth and assign it to characters the first player controls. If Carcharoth has no damage, Flame of Anguish gains surge."
+                ],
+                "Shadow": "Shadow: Remove 5 damage from the attacking enemy.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 184,
+            "Quantity": 3,
+            "Artist": "Ted Nasmith",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00184",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Espied from Afar",
+            "Slug": "Espied-from-Afar-FA",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Espied-from-Afar.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The players must either discard the location in the victory display with the highest Hunt value or prevent all exhausted characters from readying during the refresh phase this round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 185,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00185",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Devil's Cunning",
+            "Slug": "Devil's-Cunning-FA",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Devil's-Cunning.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Carcharoth makes an immediate attack on the player with the most Willpower committed to the quest."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "Hunting of the Wolf",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 186,
+            "Quantity": 3,
+            "Artist": "Igor Kordey",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00186",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ]
 }

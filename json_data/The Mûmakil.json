@@ -7,123 +7,88 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Kahliel",
-            "Slug": "Kahliel-TMk",
+            "Title": "Firyal",
+            "Slug": "Firyal-TMk",
             "IsUnique": true,
-            "CardType": "Hero",
+            "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Kahliel.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Firyal.jpg",
                 "Stats": {
-                    "ThreatCost": "10",
-                    "Willpower": "2",
-                    "Attack": "2",
+                    "ResourceCost": "5",
+                    "Willpower": "3",
+                    "Attack": "1",
                     "Defense": "2",
-                    "HitPoints": "4"
+                    "HitPoints": "3"
                 },
                 "Traits": [
                     "Harad.",
-                    "Noble."
+                    "Scout."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "You may use resources from Kahliel`s resource pool to pay for Harad ally cards of any sphere.",
-                    "Action: Discard a Harad ally from your hand to ready a Harad character in play. (Limit once per phase.)"
+                    "Response: After Firyal commits to the quest, look at the top card of the encounter deck. Then, you may discard the looked at card."
                 ],
                 "Shadow": null,
-                "FlavorText": "...the Southrons were bold men and grim...\r\n-The Return of the King"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "The Mûmakil",
             "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Ryan Valle",
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Tawny Fritzinger",
             "HasErrata": false,
-            "OctgnGuid": "ae49dd35-f2c7-4ab5-b34d-0cc8e5fb1f6e",
-            "RingsDbCardId": "17001",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 3201,
+            "OctgnGuid": "43622914-dd7f-4990-89d3-7f1ce7a6525f",
+            "RingsDbCardId": "17008",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 274513,
             "Categories": null
         },
         {
-            "Title": "Andrath Guardsman",
-            "Slug": "Andrath-Guardsman-TMk",
-            "IsUnique": false,
+            "Title": "Jubayr",
+            "Slug": "Jubayr-TMk",
+            "IsUnique": true,
             "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Andrath-Guardsman.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Jubayr.jpg",
                 "Stats": {
-                    "ResourceCost": "2",
+                    "ResourceCost": "5",
                     "Willpower": "1",
-                    "Attack": "0",
-                    "Defense": "1",
-                    "HitPoints": "2"
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "3"
                 },
                 "Traits": [
-                    "Dúnedain.",
-                    "Ranger."
+                    "Harad.",
+                    "Warrior."
                 ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After you play Andrath Guardsman from your hand, choose a non-unique enemy engaged with you. That enemy cannot attack you this round."
-                ],
-                "Shadow": null,
-                "FlavorText": "They forgot or ignored what little they had known of the Guardians, and of the labours of those that made possible the long peace of the Shire.\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Mûmakil",
-            "EncounterInfo": null,
-            "Number": 2,
-            "Quantity": 3,
-            "Artist": "Adam Lane",
-            "HasErrata": false,
-            "OctgnGuid": "f5bf16fb-3244-40a4-8800-3e38c979c18c",
-            "RingsDbCardId": "17002",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 84400,
-            "Categories": null
-        },
-        {
-            "Title": "Prepare for Battle",
-            "Slug": "Prepare-for-Battle-TMk",
-            "IsUnique": false,
-            "CardType": "Player_Side_Quest",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Prepare-for-Battle.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
                 "Keywords": [
-                    "Victory 1."
+                    "Sentinel."
                 ],
                 "Text": [
-                    "Limit 1 copy of Prepare for Battle in the victory display.",
-                    "While this quest is in the victory display, the first player draws an additional card during the resource phase."
+                    "Sentinel.",
+                    "Response: After Jubayr exhausts to defend an attack, discard 1 facedown shadow card from a non-unique enemy. (Limit once per phase.)"
                 ],
                 "Shadow": null,
-                "FlavorText": "`Soon there will be battle on the fields. A sortie must be made ready.`\r\n-Gandalf, The Return of the King"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "The Mûmakil",
             "EncounterInfo": null,
-            "Number": 3,
+            "Number": 6,
             "Quantity": 3,
-            "Artist": "Sebastian Zakrzewski",
+            "Artist": "Colin Boyer",
             "HasErrata": false,
-            "OctgnGuid": "8ad1cefa-21c5-435c-8865-6417de0e5ba6",
-            "RingsDbCardId": "17003",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 81616,
+            "OctgnGuid": "ba6d53fd-277c-4796-814b-ada9ff23cafd",
+            "RingsDbCardId": "17006",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 222021,
             "Categories": null
         },
         {
@@ -205,47 +170,81 @@
             "Categories": null
         },
         {
-            "Title": "Jubayr",
-            "Slug": "Jubayr-TMk",
-            "IsUnique": true,
+            "Title": "Andrath Guardsman",
+            "Slug": "Andrath-Guardsman-TMk",
+            "IsUnique": false,
             "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Jubayr.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Andrath-Guardsman.jpg",
                 "Stats": {
-                    "ResourceCost": "5",
+                    "ResourceCost": "2",
                     "Willpower": "1",
-                    "Attack": "2",
-                    "Defense": "3",
-                    "HitPoints": "3"
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "2"
                 },
                 "Traits": [
-                    "Harad.",
-                    "Warrior."
+                    "Dúnedain.",
+                    "Ranger."
                 ],
-                "Keywords": [
-                    "Sentinel."
-                ],
+                "Keywords": [],
                 "Text": [
-                    "Sentinel.",
-                    "Response: After Jubayr exhausts to defend an attack, discard 1 facedown shadow card from a non-unique enemy. (Limit once per phase.)"
+                    "Response: After you play Andrath Guardsman from your hand, choose a non-unique enemy engaged with you. That enemy cannot attack you this round."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "They forgot or ignored what little they had known of the Guardians, and of the labours of those that made possible the long peace of the Shire.\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Mûmakil",
             "EncounterInfo": null,
-            "Number": 6,
+            "Number": 2,
             "Quantity": 3,
-            "Artist": "Colin Boyer",
+            "Artist": "Adam Lane",
             "HasErrata": false,
-            "OctgnGuid": "ba6d53fd-277c-4796-814b-ada9ff23cafd",
-            "RingsDbCardId": "17006",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 222021,
+            "OctgnGuid": "f5bf16fb-3244-40a4-8800-3e38c979c18c",
+            "RingsDbCardId": "17002",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 84400,
+            "Categories": null
+        },
+        {
+            "Title": "Prepare for Battle",
+            "Slug": "Prepare-for-Battle-TMk",
+            "IsUnique": false,
+            "CardType": "Player_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Prepare-for-Battle.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Limit 1 copy of Prepare for Battle in the victory display.",
+                    "While this quest is in the victory display, the first player draws an additional card during the resource phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Soon there will be battle on the fields. A sortie must be made ready.`\r\n-Gandalf, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "OctgnGuid": "8ad1cefa-21c5-435c-8865-6417de0e5ba6",
+            "RingsDbCardId": "17003",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 81616,
             "Categories": null
         },
         {
@@ -284,47 +283,6 @@
             "RingsDbCardId": "17007",
             "RingsDbPopularity": 4,
             "RingsDbVotes": 71789,
-            "Categories": null
-        },
-        {
-            "Title": "Firyal",
-            "Slug": "Firyal-TMk",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Firyal.jpg",
-                "Stats": {
-                    "ResourceCost": "5",
-                    "Willpower": "3",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Harad.",
-                    "Scout."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Firyal commits to the quest, look at the top card of the encounter deck. Then, you may discard the looked at card."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Mûmakil",
-            "EncounterInfo": null,
-            "Number": 8,
-            "Quantity": 3,
-            "Artist": "Tawny Fritzinger",
-            "HasErrata": false,
-            "OctgnGuid": "43622914-dd7f-4990-89d3-7f1ce7a6525f",
-            "RingsDbCardId": "17008",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 274513,
             "Categories": null
         },
         {
@@ -401,6 +359,48 @@
             "RingsDbCardId": "17010",
             "RingsDbPopularity": 3,
             "RingsDbVotes": 49232,
+            "Categories": null
+        },
+        {
+            "Title": "Kahliel",
+            "Slug": "Kahliel-TMk",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mumakil/Kahliel.jpg",
+                "Stats": {
+                    "ThreatCost": "10",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Harad.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "You may use resources from Kahliel`s resource pool to pay for Harad ally cards of any sphere.",
+                    "Action: Discard a Harad ally from your hand to ready a Harad character in play. (Limit once per phase.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "...the Southrons were bold men and grim...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Mûmakil",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Ryan Valle",
+            "HasErrata": false,
+            "OctgnGuid": "ae49dd35-f2c7-4ab5-b34d-0cc8e5fb1f6e",
+            "RingsDbCardId": "17001",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 3201,
             "Categories": null
         }
     ]

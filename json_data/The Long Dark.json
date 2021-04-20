@@ -7,159 +7,44 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Háma",
-            "Slug": "Hama-TLD",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark/Háma.jpg",
-                "Stats": {
-                    "ThreatCost": "9",
-                    "Willpower": "1",
-                    "Attack": "3",
-                    "Defense": "1",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Rohan.",
-                    "Warrior."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Háma is declared as an attacker, return a Tactics event from your discard pile to your hand. Then, choose and discard 1 card from your hand. (Limit 3 times per game for the group.)"
-                ],
-                "Shadow": null,
-                "FlavorText": "`Yet in doubt a man of worth will trust to his own wisdom.`\r\n-The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Long Dark",
-            "EncounterInfo": null,
-            "Number": 76,
-            "Quantity": 1,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": true,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801211c9016",
-            "RingsDbCardId": "04076",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 7154,
-            "Categories": null
-        },
-        {
-            "Title": "Erestor",
-            "Slug": "Erestor-TLD",
-            "IsUnique": true,
+            "Title": "Warden of Healing",
+            "Slug": "Warden-of-Healing-TLD",
+            "IsUnique": false,
             "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark/Erestor.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark/Warden-of-Healing.jpg",
                 "Stats": {
-                    "ResourceCost": "4",
-                    "Willpower": "2",
+                    "ResourceCost": "2",
+                    "Willpower": "1",
                     "Attack": "0",
                     "Defense": "1",
-                    "HitPoints": "3"
+                    "HitPoints": "1"
                 },
                 "Traits": [
-                    "Noldor."
+                    "Gondor.",
+                    "Healer."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Action: Choose and discard 1 card from your hand to draw 1 card. (Limit once per round.)"
+                    "Action: Exhaust Warden of Healing to heal 1 damage on up to 2 different characters. Then, you may pay 2 Lore resources to ready Warden of Healing."
                 ],
                 "Shadow": null,
-                "FlavorText": "Beside Glorfindel there were several other counsellors of Elrond`s household, of whom Erestor was the chief...\r\n-The Fellowship of the Ring"
+                "FlavorText": "`But for long years we healers have only sought to patch the rents made by the men of swords.` -Return of the King"
             },
             "Back": null,
             "CardSet": "The Long Dark",
             "EncounterInfo": null,
-            "Number": 77,
+            "Number": 83,
             "Quantity": 3,
-            "Artist": "Magali Villeneuve",
+            "Artist": "Paulo Puggioni",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801211c9008",
-            "RingsDbCardId": "04077",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 235325,
-            "Categories": null
-        },
-        {
-            "Title": "Fresh Tracks",
-            "Slug": "Fresh-Tracks-TLD",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark/Fresh-Tracks.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Response: After an enemy is added to the staging area, deal 1 damage to that enemy. Players ignore that enemy while making engagement checks this round."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Long Dark",
-            "EncounterInfo": null,
-            "Number": 78,
-            "Quantity": 3,
-            "Artist": "Garret DeChellis",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801211c9012",
-            "RingsDbCardId": "04078",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 65411,
-            "Categories": null
-        },
-        {
-            "Title": "Erebor Battle Master",
-            "Slug": "Erebor-Battle-Master-TLD",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark/Erebor-Battle-Master.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "0",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Dwarf.",
-                    "Warrior."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Erebor Battle Master gets +1 Attack for each other Dwarf ally you control. (Limit +4 Attack.)"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Long Dark",
-            "EncounterInfo": null,
-            "Number": 79,
-            "Quantity": 3,
-            "Artist": "Rafał Hrynkiewicz",
-            "HasErrata": true,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801211c9007",
-            "RingsDbCardId": "04079",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 231336,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801211c9026",
+            "RingsDbCardId": "04083",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 1399585,
             "Categories": null
         },
         {
@@ -203,25 +88,69 @@
             "Categories": null
         },
         {
-            "Title": "Out of Sight",
-            "Slug": "Out-of-Sight-TLD",
-            "IsUnique": false,
-            "CardType": "Event",
+            "Title": "Erestor",
+            "Slug": "Erestor-TLD",
+            "IsUnique": true,
+            "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark/Out-of-Sight.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark/Erestor.jpg",
                 "Stats": {
-                    "ResourceCost": "5"
+                    "ResourceCost": "4",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "3"
                 },
-                "Traits": [],
-                "Keywords": [
-                    "Secrecy 3."
+                "Traits": [
+                    "Noldor."
                 ],
+                "Keywords": [],
                 "Text": [
-                    "Secrecy 3.",
-                    "Action: Enemies engaged with you cannot attack you this phase."
+                    "Action: Choose and discard 1 card from your hand to draw 1 card. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "Beside Glorfindel there were several other counsellors of Elrond`s household, of whom Erestor was the chief...\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Long Dark",
+            "EncounterInfo": null,
+            "Number": 77,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801211c9008",
+            "RingsDbCardId": "04077",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 235325,
+            "Categories": null
+        },
+        {
+            "Title": "Erebor Battle Master",
+            "Slug": "Erebor-Battle-Master-TLD",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark/Erebor-Battle-Master.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "0",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dwarf.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Erebor Battle Master gets +1 Attack for each other Dwarf ally you control. (Limit +4 Attack.)"
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -229,92 +158,14 @@
             "Back": null,
             "CardSet": "The Long Dark",
             "EncounterInfo": null,
-            "Number": 81,
+            "Number": 79,
             "Quantity": 3,
-            "Artist": "Ilich Henriquez",
+            "Artist": "Rafał Hrynkiewicz",
             "HasErrata": true,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801211c9020",
-            "RingsDbCardId": "04081",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 33722,
-            "Categories": null
-        },
-        {
-            "Title": "Ever My Heart Rises",
-            "Slug": "Ever-My-Heart-Rises-TLD",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark/Ever-My-Heart-Rises.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [
-                    "Condition."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Dwarf character.",
-                    "Response: After you travel to a Mountain or Underground location, ready attached character and reduce your threat by 1."
-                ],
-                "Shadow": null,
-                "FlavorText": "`This is more to my liking,` said the dwarf, stomping on the stones. `Ever my heart rises as we draw near the mountains.` -The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Long Dark",
-            "EncounterInfo": null,
-            "Number": 82,
-            "Quantity": 3,
-            "Artist": "Carolina Eade",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801211c9009",
-            "RingsDbCardId": "04082",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 62662,
-            "Categories": null
-        },
-        {
-            "Title": "Warden of Healing",
-            "Slug": "Warden-of-Healing-TLD",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark/Warden-of-Healing.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "0",
-                    "Defense": "1",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Gondor.",
-                    "Healer."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Exhaust Warden of Healing to heal 1 damage on up to 2 different characters. Then, you may pay 2 Lore resources to ready Warden of Healing."
-                ],
-                "Shadow": null,
-                "FlavorText": "`But for long years we healers have only sought to patch the rents made by the men of swords.` -Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Long Dark",
-            "EncounterInfo": null,
-            "Number": 83,
-            "Quantity": 3,
-            "Artist": "Paulo Puggioni",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801211c9026",
-            "RingsDbCardId": "04083",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 1399585,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801211c9007",
+            "RingsDbCardId": "04079",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 231336,
             "Categories": null
         },
         {
@@ -386,6 +237,155 @@
             "RingsDbCardId": "04085",
             "RingsDbPopularity": 4,
             "RingsDbVotes": 79499,
+            "Categories": null
+        },
+        {
+            "Title": "Fresh Tracks",
+            "Slug": "Fresh-Tracks-TLD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark/Fresh-Tracks.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: After an enemy is added to the staging area, deal 1 damage to that enemy. Players ignore that enemy while making engagement checks this round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Long Dark",
+            "EncounterInfo": null,
+            "Number": 78,
+            "Quantity": 3,
+            "Artist": "Garret DeChellis",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801211c9012",
+            "RingsDbCardId": "04078",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 65411,
+            "Categories": null
+        },
+        {
+            "Title": "Ever My Heart Rises",
+            "Slug": "Ever-My-Heart-Rises-TLD",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark/Ever-My-Heart-Rises.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Dwarf character.",
+                    "Response: After you travel to a Mountain or Underground location, ready attached character and reduce your threat by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "`This is more to my liking,` said the dwarf, stomping on the stones. `Ever my heart rises as we draw near the mountains.` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Long Dark",
+            "EncounterInfo": null,
+            "Number": 82,
+            "Quantity": 3,
+            "Artist": "Carolina Eade",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801211c9009",
+            "RingsDbCardId": "04082",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 62662,
+            "Categories": null
+        },
+        {
+            "Title": "Háma",
+            "Slug": "Hama-TLD",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark/Háma.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Háma is declared as an attacker, return a Tactics event from your discard pile to your hand. Then, choose and discard 1 card from your hand. (Limit 3 times per game for the group.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`Yet in doubt a man of worth will trust to his own wisdom.`\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Long Dark",
+            "EncounterInfo": null,
+            "Number": 76,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": true,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801211c9016",
+            "RingsDbCardId": "04076",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 7154,
+            "Categories": null
+        },
+        {
+            "Title": "Out of Sight",
+            "Slug": "Out-of-Sight-TLD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Long-Dark/Out-of-Sight.jpg",
+                "Stats": {
+                    "ResourceCost": "5"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Secrecy 3."
+                ],
+                "Text": [
+                    "Secrecy 3.",
+                    "Action: Enemies engaged with you cannot attack you this phase."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Long Dark",
+            "EncounterInfo": null,
+            "Number": 81,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": true,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801211c9020",
+            "RingsDbCardId": "04081",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 33722,
             "Categories": null
         }
     ]

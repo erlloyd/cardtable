@@ -7,33 +7,58 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Aragorn",
-            "Slug": "Aragorn-TFoN",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Bond of Friendship",
+            "Slug": "Bond-of-Friendship-TFoN",
+            "IsUnique": false,
+            "CardType": "Contract",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Aragorn.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Bond-of-Friendship.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Your deck must be exactly 50 players cards and include exactly 10 cards from each of these four spheres: Leadership, Lore, Spirit, and Tactics. You cannot include more than 2 copies of any card by title in your deck.",
+                    "When choosing your starting heroes, you may choose 4 heroes instead of 3. Each of your heroes must belong to a different sphere."
+                ],
+                "Shadow": null,
+                "FlavorText": "`You can trust us to stick to you through think and thin - to the bitter end.`\r\n-Merry, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Fortress of Nurn",
+            "EncounterInfo": null,
+            "Number": 147,
+            "Quantity": 1,
+            "Artist": "Borja Pindado",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22147",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 4374,
+            "Categories": null
+        },
+        {
+            "Title": "Thorongil",
+            "Slug": "Thorongil-TFoN",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Thorongil.jpg",
                 "Stats": {
-                    "ThreatCost": "12",
-                    "Willpower": "2",
-                    "Attack": "3",
-                    "Defense": "2",
-                    "HitPoints": "5"
+                    "ResourceCost": "3"
                 },
                 "Traits": [
-                    "Dúnedain.",
-                    "Ranger.",
-                    "Scout."
+                    "Title."
                 ],
-                "Keywords": [
-                    "Sentinel."
-                ],
+                "Keywords": [],
                 "Text": [
-                    "Sentinel.",
-                    "Action: Exhaust Aragorn to choose a location in the staging area. Until the end of the phase, that location gets -X Threat, where X is Aragorn`s Willpower. If this effect reduces the location`s Threat to 0, place 1 progress on it. (Limit once per round.)"
+                    "Attach to a non-Fellowship, non-Baggins hero you control.",
+                    "Response: After you attach Thorongil to a hero, search your collection for a different non-Fellowship, non-Baggins version of that hero and attach it to Thorongil. While Thorongil is in play, attached hero gains the game text and resource icon of the attached hero card. If Thorongil leaves play, remove the hero card attached to it from the game."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -41,14 +66,14 @@
             "Back": null,
             "CardSet": "The Fortress of Nurn",
             "EncounterInfo": null,
-            "Number": 137,
-            "Quantity": 1,
-            "Artist": "Aleksander Karcz",
+            "Number": 146,
+            "Quantity": 3,
+            "Artist": "Chris Grun",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "22137",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 714,
+            "RingsDbCardId": "22146",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 34541,
             "Categories": null
         },
         {
@@ -93,40 +118,6 @@
             "Categories": null
         },
         {
-            "Title": "Knowledge of the Enemy",
-            "Slug": "Knowledge-of-the-Enemy-TFoN",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Knowledge-of-the-Enemy.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Planning Action: Choose a hero you control. Add 1 resource to its resource pool for each enemy engaged with you. You can only play 1 Knowledge of the Enemy each round."
-                ],
-                "Shadow": null,
-                "FlavorText": "`If a man must needs walk in sight of the Black Gate, or tread the deadly flowers of Morgul Vale, then perils he will have.`\r\n-Aragorm, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Fortress of Nurn",
-            "EncounterInfo": null,
-            "Number": 139,
-            "Quantity": 3,
-            "Artist": "Kevin Zamir Goeke",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "22139",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 5697,
-            "Categories": null
-        },
-        {
             "Title": "Haleth",
             "Slug": "Haleth-TFoN",
             "IsUnique": true,
@@ -165,40 +156,6 @@
             "RingsDbCardId": "22140",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 14855,
-            "Categories": null
-        },
-        {
-            "Title": "Woodman Lore",
-            "Slug": "Woodman-Lore-TFoN",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Woodman-Lore.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Ready up to X Woodman characters you control, where X is the number of locations with player card attachments."
-                ],
-                "Shadow": null,
-                "FlavorText": "The Woodman said that there was some new terror abroad...\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Fortress of Nurn",
-            "EncounterInfo": null,
-            "Number": 141,
-            "Quantity": 3,
-            "Artist": "Alyn Spiller",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "22141",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 1965,
             "Categories": null
         },
         {
@@ -243,46 +200,6 @@
             "Categories": null
         },
         {
-            "Title": "Tireless Thoroughbred",
-            "Slug": "Tireless-Thoroughbred-TFoN",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Tireless-Thoroughbred.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Mount."
-                ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a Warrior character.",
-                    "Restricted.",
-                    "Attached character gains ranged and sentinel."
-                ],
-                "Shadow": null,
-                "FlavorText": "Then he leapt forward, spurring the earth, and was gone like the north wine from the mountains.\r\n-The Two Towers."
-            },
-            "Back": null,
-            "CardSet": "The Fortress of Nurn",
-            "EncounterInfo": null,
-            "Number": 143,
-            "Quantity": 3,
-            "Artist": "Carlos Palma Cruchaga",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "22143",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 5300,
-            "Categories": null
-        },
-        {
             "Title": "Misty Mountain Journeyman",
             "Slug": "Misty-Mountain-Journeyman-TFoN",
             "IsUnique": false,
@@ -324,6 +241,80 @@
             "Categories": null
         },
         {
+            "Title": "Knowledge of the Enemy",
+            "Slug": "Knowledge-of-the-Enemy-TFoN",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Knowledge-of-the-Enemy.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Planning Action: Choose a hero you control. Add 1 resource to its resource pool for each enemy engaged with you. You can only play 1 Knowledge of the Enemy each round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`If a man must needs walk in sight of the Black Gate, or tread the deadly flowers of Morgul Vale, then perils he will have.`\r\n-Aragorm, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Fortress of Nurn",
+            "EncounterInfo": null,
+            "Number": 139,
+            "Quantity": 3,
+            "Artist": "Kevin Zamir Goeke",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22139",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 5697,
+            "Categories": null
+        },
+        {
+            "Title": "Tireless Thoroughbred",
+            "Slug": "Tireless-Thoroughbred-TFoN",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Tireless-Thoroughbred.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Mount."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Warrior character.",
+                    "Restricted.",
+                    "Attached character gains ranged and sentinel."
+                ],
+                "Shadow": null,
+                "FlavorText": "Then he leapt forward, spurring the earth, and was gone like the north wine from the mountains.\r\n-The Two Towers."
+            },
+            "Back": null,
+            "CardSet": "The Fortress of Nurn",
+            "EncounterInfo": null,
+            "Number": 143,
+            "Quantity": 3,
+            "Artist": "Carlos Palma Cruchaga",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22143",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 5300,
+            "Categories": null
+        },
+        {
             "Title": "A Desperate Path",
             "Slug": "A-Desperate-Path-TFoN",
             "IsUnique": false,
@@ -358,25 +349,67 @@
             "Categories": null
         },
         {
-            "Title": "Thorongil",
-            "Slug": "Thorongil-TFoN",
-            "IsUnique": true,
-            "CardType": "Attachment",
+            "Title": "Woodman Lore",
+            "Slug": "Woodman-Lore-TFoN",
+            "IsUnique": false,
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Thorongil.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Woodman-Lore.jpg",
                 "Stats": {
-                    "ResourceCost": "3"
+                    "ResourceCost": "1"
                 },
-                "Traits": [
-                    "Title."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a non-Fellowship, non-Baggins hero you control.",
-                    "Response: After you attach Thorongil to a hero, search your collection for a different non-Fellowship, non-Baggins version of that hero and attach it to Thorongil. While Thorongil is in play, attached hero gains the game text and resource icon of the attached hero card. If Thorongil leaves play, remove the hero card attached to it from the game."
+                    "Action: Ready up to X Woodman characters you control, where X is the number of locations with player card attachments."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Woodman said that there was some new terror abroad...\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Fortress of Nurn",
+            "EncounterInfo": null,
+            "Number": 141,
+            "Quantity": 3,
+            "Artist": "Alyn Spiller",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22141",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1965,
+            "Categories": null
+        },
+        {
+            "Title": "Aragorn",
+            "Slug": "Aragorn-TFoN",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Aragorn.jpg",
+                "Stats": {
+                    "ThreatCost": "12",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger.",
+                    "Scout."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Sentinel.",
+                    "Action: Exhaust Aragorn to choose a location in the staging area. Until the end of the phase, that location gets -X Threat, where X is Aragorn`s Willpower. If this effect reduces the location`s Threat to 0, place 1 progress on it. (Limit once per round.)"
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -384,47 +417,14 @@
             "Back": null,
             "CardSet": "The Fortress of Nurn",
             "EncounterInfo": null,
-            "Number": 146,
-            "Quantity": 3,
-            "Artist": "Chris Grun",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "22146",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 34541,
-            "Categories": null
-        },
-        {
-            "Title": "Bond of Friendship",
-            "Slug": "Bond-of-Friendship-TFoN",
-            "IsUnique": false,
-            "CardType": "Contract",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Bond-of-Friendship.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Your deck must be exactly 50 players cards and include exactly 10 cards from each of these four spheres: Leadership, Lore, Spirit, and Tactics. You cannot include more than 2 copies of any card by title in your deck.",
-                    "When choosing your starting heroes, you may choose 4 heroes instead of 3. Each of your heroes must belong to a different sphere."
-                ],
-                "Shadow": null,
-                "FlavorText": "`You can trust us to stick to you through think and thin - to the bitter end.`\r\n-Merry, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Fortress of Nurn",
-            "EncounterInfo": null,
-            "Number": 147,
+            "Number": 137,
             "Quantity": 1,
-            "Artist": "Borja Pindado",
+            "Artist": "Aleksander Karcz",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "22147",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 4374,
+            "RingsDbCardId": "22137",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 714,
             "Categories": null
         }
     ]

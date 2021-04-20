@@ -7,84 +7,82 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Gildor Inglorion",
-            "Slug": "Gildor-Inglorion-UtAM",
+            "Title": "Stone of Elostirion",
+            "Slug": "Stone-of-Elostirion-UtAM",
             "IsUnique": true,
-            "CardType": "Hero",
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Gildor-Inglorion.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Stone-of-Elostirion.jpg",
                 "Stats": {
-                    "ThreatCost": "9",
-                    "Willpower": "3",
-                    "Attack": "2",
-                    "Defense": "1",
-                    "HitPoints": "3"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Noldor.",
-                    "Noble."
+                    "Artifact.",
+                    "Item."
                 ],
-                "Keywords": [],
+                "Keywords": [
+                    "Guarded (location).",
+                    "Restricted."
+                ],
                 "Text": [
-                    "Action: Pay 1 resource from Gildor Inglorion`s resource pool to choose a player to draw 1 card (Limit once per round.)"
+                    "Guarded (location). Restricted.",
+                    "Attach to a hero. Attached hero gets +2 Willpower.",
+                    "You draw 1 additional card during the resource phase."
                 ],
                 "Shadow": null,
-                "FlavorText": "`Gildor Inglorion of the House of Finrod. We are Exiles, and most of our kindred have long ago departed...`\r\n-The Fellowship of the Ring"
+                "FlavorText": "Looking up he saw before him a tall white tower, standing alone on a high ridge. A great desire came over him to climb the tower and see the Sea.\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Under the Ash Mountains",
             "EncounterInfo": null,
-            "Number": 81,
-            "Quantity": 1,
-            "Artist": "Jason Jenicke",
+            "Number": 84,
+            "Quantity": 3,
+            "Artist": "Federico Musetti",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "22081",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 705,
+            "RingsDbCardId": "22084",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 28040,
             "Categories": null
         },
         {
-            "Title": "Wandering Exile",
-            "Slug": "Wandering-Exile-UtAM",
+            "Title": "Defiant Challenge",
+            "Slug": "Defiant-Challenge-UtAM",
             "IsUnique": false,
-            "CardType": "Ally",
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Wandering-Exile.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Defiant-Challenge.jpg",
                 "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "0",
-                    "HitPoints": "2"
+                    "ResourceCost": "0"
                 },
-                "Traits": [
-                    "Noldor."
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 2."
                 ],
-                "Keywords": [],
                 "Text": [
-                    "Response: After Wandering Exile commits to a quest, discard a card from your hand to ready Wandering Exile."
+                    "Doomed 2.",
+                    "Action: Each player may ready a characer he controls."
                 ],
                 "Shadow": null,
-                "FlavorText": "`The Elves have their own labours and their own sorrows...\r\n-Gildor, The Fellowship of the Ring"
+                "FlavorText": "`Go back to the Shadow!`\r\n-Gandalf, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Under the Ash Mountains",
             "EncounterInfo": null,
-            "Number": 82,
+            "Number": 89,
             "Quantity": 3,
-            "Artist": "Drazenka Kimpel",
+            "Artist": "Greg Opalinski",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "22082",
+            "RingsDbCardId": "22089",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 7425,
+            "RingsDbVotes": 20878,
             "Categories": null
         },
         {
@@ -129,48 +127,6 @@
             "Categories": null
         },
         {
-            "Title": "Stone of Elostirion",
-            "Slug": "Stone-of-Elostirion-UtAM",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Stone-of-Elostirion.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Artifact.",
-                    "Item."
-                ],
-                "Keywords": [
-                    "Guarded (location).",
-                    "Restricted."
-                ],
-                "Text": [
-                    "Guarded (location). Restricted.",
-                    "Attach to a hero. Attached hero gets +2 Willpower.",
-                    "You draw 1 additional card during the resource phase."
-                ],
-                "Shadow": null,
-                "FlavorText": "Looking up he saw before him a tall white tower, standing alone on a high ridge. A great desire came over him to climb the tower and see the Sea.\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Under the Ash Mountains",
-            "EncounterInfo": null,
-            "Number": 84,
-            "Quantity": 3,
-            "Artist": "Federico Musetti",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "22084",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 28040,
-            "Categories": null
-        },
-        {
             "Title": "Well Preserved",
             "Slug": "Well-Preserved-UtAM",
             "IsUnique": false,
@@ -206,6 +162,46 @@
             "RingsDbCardId": "22085",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 19539,
+            "Categories": null
+        },
+        {
+            "Title": "Odo Proudfoot",
+            "Slug": "Odo-Proudfoot-UtAM",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Odo-Proudfoot.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Odo Proudfoot enters play, search the top 5 cards of your deck for a Hobbit ally and add it to your hand. Shuffle the other cards back into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`ProudFEET! shouted an elderly hobbit from the back of the pavilion.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Under the Ash Mountains",
+            "EncounterInfo": null,
+            "Number": 88,
+            "Quantity": 3,
+            "Artist": "Torbjörn Källström",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22088",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 18507,
             "Categories": null
         },
         {
@@ -290,83 +286,6 @@
             "Categories": null
         },
         {
-            "Title": "Odo Proudfoot",
-            "Slug": "Odo-Proudfoot-UtAM",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Odo-Proudfoot.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Hobbit."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Odo Proudfoot enters play, search the top 5 cards of your deck for a Hobbit ally and add it to your hand. Shuffle the other cards back into your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "`ProudFEET! shouted an elderly hobbit from the back of the pavilion.\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Under the Ash Mountains",
-            "EncounterInfo": null,
-            "Number": 88,
-            "Quantity": 3,
-            "Artist": "Torbjörn Källström",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "22088",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 18507,
-            "Categories": null
-        },
-        {
-            "Title": "Defiant Challenge",
-            "Slug": "Defiant-Challenge-UtAM",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Defiant-Challenge.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [
-                    "Doomed 2."
-                ],
-                "Text": [
-                    "Doomed 2.",
-                    "Action: Each player may ready a characer he controls."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Go back to the Shadow!`\r\n-Gandalf, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Under the Ash Mountains",
-            "EncounterInfo": null,
-            "Number": 89,
-            "Quantity": 3,
-            "Artist": "Greg Opalinski",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "22089",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 20878,
-            "Categories": null
-        },
-        {
             "Title": "Helm of Secrecy",
             "Slug": "Helm-of-Secrecy-UtAM",
             "IsUnique": false,
@@ -402,6 +321,46 @@
             "Categories": null
         },
         {
+            "Title": "Wandering Exile",
+            "Slug": "Wandering-Exile-UtAM",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Wandering-Exile.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Noldor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Wandering Exile commits to a quest, discard a card from your hand to ready Wandering Exile."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The Elves have their own labours and their own sorrows...\r\n-Gildor, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Under the Ash Mountains",
+            "EncounterInfo": null,
+            "Number": 82,
+            "Quantity": 3,
+            "Artist": "Drazenka Kimpel",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22082",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 7425,
+            "Categories": null
+        },
+        {
             "Title": "Council of the Wise",
             "Slug": "Council-of-the-Wise-UtAM",
             "IsUnique": false,
@@ -432,6 +391,47 @@
             "RingsDbCardId": "22091",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 1630,
+            "Categories": null
+        },
+        {
+            "Title": "Gildor Inglorion",
+            "Slug": "Gildor-Inglorion-UtAM",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Gildor-Inglorion.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "3",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Pay 1 resource from Gildor Inglorion`s resource pool to choose a player to draw 1 card (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`Gildor Inglorion of the House of Finrod. We are Exiles, and most of our kindred have long ago departed...`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Under the Ash Mountains",
+            "EncounterInfo": null,
+            "Number": 81,
+            "Quantity": 1,
+            "Artist": "Jason Jenicke",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22081",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 705,
             "Categories": null
         }
     ]

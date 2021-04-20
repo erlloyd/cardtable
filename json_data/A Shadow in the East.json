@@ -7,6 +7,52 @@
     "Cards": null,
     "cards": [
         {
+            "Title": "Fellowship",
+            "Slug": "Fellowship-ASitE",
+            "IsUnique": false,
+            "CardType": "Contract",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Fellowship-SideA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You cannot play non-unique allies or put non-unique allies into play.",
+                    "Forced: When you control exactly 9 unique characters, flip this card over."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You cannot play allies or put allies into play.",
+                    "Each character you control gets +1 Willpower, +1 Attack, and +1 Defense.",
+                    "Forced: After a character you control leaves play, flip this card over."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": null,
+            "Number": 74,
+            "Quantity": 1,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "OctgnGuid": "cf207eaa-2897-430e-9988-c557173055b5",
+            "RingsDbCardId": "21074",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 5062,
+            "Categories": null
+        },
+        {
             "Title": "The One Ring",
             "Slug": "The-One-Ring-ASitE",
             "IsUnique": true,
@@ -46,86 +92,6 @@
             "RingsDbCardId": "21001",
             "RingsDbPopularity": 5,
             "RingsDbVotes": 96810,
-            "Categories": null
-        },
-        {
-            "Title": "Frodo Baggins",
-            "Slug": "Frodo-Baggins-ASitE",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Frodo-Baggins.jpg",
-                "Stats": {
-                    "ThreatCost": "7",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Hobbit."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Frodo commits to a quest, spend 1 resource from his resource pool to ready another questing unique character. If you quest successfully, reduce your threat by 1."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Keep your tempers and hold your hands to the last possible moment!`\r\n-The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "A Shadow in the East",
-            "EncounterInfo": null,
-            "Number": 2,
-            "Quantity": 1,
-            "Artist": "Sara Biddle",
-            "HasErrata": false,
-            "OctgnGuid": "f733522a-bcdd-466c-9565-0b4cba58701b",
-            "RingsDbCardId": "21002",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 4668,
-            "Categories": null
-        },
-        {
-            "Title": "Merry",
-            "Slug": "Merry-ASitE",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Merry.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "2",
-                    "Attack": "0",
-                    "Defense": "0",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Hobbit."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Merry enters play, each unique ally you control gets +1 Willpower until the end of the round."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Shire-folk have been so comfortable so long they don`t know what to do. They just want a match, though, and they`ll go up in fire.`\r\n-The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "A Shadow in the East",
-            "EncounterInfo": null,
-            "Number": 3,
-            "Quantity": 3,
-            "Artist": "Torbjörn Källström",
-            "HasErrata": false,
-            "OctgnGuid": "e730d8cc-b97c-40b3-b16b-2efcba1f2e07",
-            "RingsDbCardId": "21003",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 57863,
             "Categories": null
         },
         {
@@ -170,161 +136,43 @@
             "Categories": null
         },
         {
-            "Title": "Faramir",
-            "Slug": "Faramir-ASitE",
+            "Title": "Merry",
+            "Slug": "Merry-ASitE",
             "IsUnique": true,
             "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Faramir.jpg",
-                "Stats": {
-                    "ResourceCost": "4",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Gondor.",
-                    "Noble.",
-                    "Ranger."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Faramir enters play, choose a non-unique enemy in the staging area. Engage that enemy and deal 2 damage to it (4 damage instead if it has an attachment on it)."
-                ],
-                "Shadow": null,
-                "FlavorText": "`There will be hard handstrokes nigh at hand ere the day is full.`\r\n-The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "A Shadow in the East",
-            "EncounterInfo": null,
-            "Number": 5,
-            "Quantity": 3,
-            "Artist": "Greg Bobrowski",
-            "HasErrata": false,
-            "OctgnGuid": "f43d5b83-4136-4be8-af89-71f883f32563",
-            "RingsDbCardId": "21005",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 26404,
-            "Categories": null
-        },
-        {
-            "Title": "Derufin",
-            "Slug": "Derufin-ASitE",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Derufin.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "1",
-                    "Attack": "2",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Gondor.",
-                    "Warrior."
-                ],
-                "Keywords": [
-                    "Ranged."
-                ],
-                "Text": [
-                    "Ranged.",
-                    "Response: After Derufin participates in an attack that destroys an enemy engaged with a player, discard Derufin to reduce the engaged player`s threat by X, where X is the destroyed enemy`s printed Threat."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "A Shadow in the East",
-            "EncounterInfo": null,
-            "Number": 6,
-            "Quantity": 3,
-            "Artist": "Greg Bobrowski",
-            "HasErrata": false,
-            "OctgnGuid": "dcdbd457-86bb-4481-8ce0-e30f04aa35f5",
-            "RingsDbCardId": "21006",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 27797,
-            "Categories": null
-        },
-        {
-            "Title": "The Gathering Storm",
-            "Slug": "The-Gathering-Storm-ASitE",
-            "IsUnique": false,
-            "CardType": "Event",
             "CardSubType": "None",
             "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/The-Gathering-Storm.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Merry.jpg",
                 "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Planning Action: Search the top 5 cards of the encounter deck for an enemy. Add that enemy to the staging area to reduce the cost of the first ally you play this phase by X, where X is that enemy`s Threat. Shuffle the encounter deck."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "A Shadow in the East",
-            "EncounterInfo": null,
-            "Number": 7,
-            "Quantity": 3,
-            "Artist": "Leanna Crossan",
-            "HasErrata": false,
-            "OctgnGuid": "91f9cf7d-d590-4812-af95-33d520757a1b",
-            "RingsDbCardId": "21007",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 8134,
-            "Categories": null
-        },
-        {
-            "Title": "Put Off Pursuit",
-            "Slug": "Put-Off-Pursuit-ASitE",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Put-Off-Pursuit.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
+                    "ResourceCost": "2",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "2"
                 },
                 "Traits": [
-                    "Condition."
+                    "Hobbit."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to the active location. Limit 1 per location.",
-                    "Attached location gets +2 quest points.",
-                    "Response: After attached location is explored, discard cards from the encounter deck until a location is discarded. Add that location to the staging area to choose an non-unique enemy in the staging area and shuffle it into the encounter deck."
+                    "Response: After Merry enters play, each unique ally you control gets +1 Willpower until the end of the round."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "`Shire-folk have been so comfortable so long they don`t know what to do. They just want a match, though, and they`ll go up in fire.`\r\n-The Return of the King"
             },
             "Back": null,
             "CardSet": "A Shadow in the East",
             "EncounterInfo": null,
-            "Number": 8,
+            "Number": 3,
             "Quantity": 3,
-            "Artist": "Marius Bota",
+            "Artist": "Torbjörn Källström",
             "HasErrata": false,
-            "OctgnGuid": "639a4814-6a8e-4d7d-b589-fbbf22c78df2",
-            "RingsDbCardId": "21008",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 9709,
+            "OctgnGuid": "e730d8cc-b97c-40b3-b16b-2efcba1f2e07",
+            "RingsDbCardId": "21003",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 57863,
             "Categories": null
         },
         {
@@ -361,6 +209,46 @@
             "RingsDbCardId": "21009",
             "RingsDbPopularity": 3,
             "RingsDbVotes": 49868,
+            "Categories": null
+        },
+        {
+            "Title": "Frodo Baggins",
+            "Slug": "Frodo-Baggins-ASitE",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Frodo-Baggins.jpg",
+                "Stats": {
+                    "ThreatCost": "7",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Frodo commits to a quest, spend 1 resource from his resource pool to ready another questing unique character. If you quest successfully, reduce your threat by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Keep your tempers and hold your hands to the last possible moment!`\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "OctgnGuid": "f733522a-bcdd-466c-9565-0b4cba58701b",
+            "RingsDbCardId": "21002",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 4668,
             "Categories": null
         },
         {
@@ -436,6 +324,164 @@
             "Categories": null
         },
         {
+            "Title": "Derufin",
+            "Slug": "Derufin-ASitE",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Derufin.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Ranged."
+                ],
+                "Text": [
+                    "Ranged.",
+                    "Response: After Derufin participates in an attack that destroys an enemy engaged with a player, discard Derufin to reduce the engaged player`s threat by X, where X is the destroyed enemy`s printed Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Greg Bobrowski",
+            "HasErrata": false,
+            "OctgnGuid": "dcdbd457-86bb-4481-8ce0-e30f04aa35f5",
+            "RingsDbCardId": "21006",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 27797,
+            "Categories": null
+        },
+        {
+            "Title": "Faramir",
+            "Slug": "Faramir-ASitE",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Faramir.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Noble.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Faramir enters play, choose a non-unique enemy in the staging area. Engage that enemy and deal 2 damage to it (4 damage instead if it has an attachment on it)."
+                ],
+                "Shadow": null,
+                "FlavorText": "`There will be hard handstrokes nigh at hand ere the day is full.`\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Greg Bobrowski",
+            "HasErrata": false,
+            "OctgnGuid": "f43d5b83-4136-4be8-af89-71f883f32563",
+            "RingsDbCardId": "21005",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 26404,
+            "Categories": null
+        },
+        {
+            "Title": "Put Off Pursuit",
+            "Slug": "Put-Off-Pursuit-ASitE",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Put-Off-Pursuit.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to the active location. Limit 1 per location.",
+                    "Attached location gets +2 quest points.",
+                    "Response: After attached location is explored, discard cards from the encounter deck until a location is discarded. Add that location to the staging area to choose an non-unique enemy in the staging area and shuffle it into the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Marius Bota",
+            "HasErrata": false,
+            "OctgnGuid": "639a4814-6a8e-4d7d-b589-fbbf22c78df2",
+            "RingsDbCardId": "21008",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 9709,
+            "Categories": null
+        },
+        {
+            "Title": "The Gathering Storm",
+            "Slug": "The-Gathering-Storm-ASitE",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/The-Gathering-Storm.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Planning Action: Search the top 5 cards of the encounter deck for an enemy. Add that enemy to the staging area to reduce the cost of the first ally you play this phase by X, where X is that enemy`s Threat. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "OctgnGuid": "91f9cf7d-d590-4812-af95-33d520757a1b",
+            "RingsDbCardId": "21007",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 8134,
+            "Categories": null
+        },
+        {
             "Title": "Sméagol",
             "Slug": "Smeagol-ASitE",
             "IsUnique": true,
@@ -475,52 +521,6 @@
             "RingsDbCardId": "21072",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 1821,
-            "Categories": null
-        },
-        {
-            "Title": "Fellowship",
-            "Slug": "Fellowship-ASitE",
-            "IsUnique": false,
-            "CardType": "Contract",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Fellowship-SideA.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "You cannot play non-unique allies or put non-unique allies into play.",
-                    "Forced: When you control exactly 9 unique characters, flip this card over."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": {
-                "Subtitle": null,
-                "ImagePath": null,
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "You cannot play allies or put allies into play.",
-                    "Each character you control gets +1 Willpower, +1 Attack, and +1 Defense.",
-                    "Forced: After a character you control leaves play, flip this card over."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "CardSet": "A Shadow in the East",
-            "EncounterInfo": null,
-            "Number": 74,
-            "Quantity": 1,
-            "Artist": "Leanna Crossan",
-            "HasErrata": false,
-            "OctgnGuid": "cf207eaa-2897-430e-9988-c557173055b5",
-            "RingsDbCardId": "21074",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 5062,
             "Categories": null
         }
     ]

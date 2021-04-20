@@ -3,5 +3,1485 @@
     "Slug": "Among-the-Outlaws",
     "Product": "Among the Outlaws",
     "Number": 2,
-    "AllCards": "Search returned no results"
+    "AllCards": [
+        {
+            "Title": "Among the Outlaws",
+            "Slug": "Among-the-Outlaws-AtO",
+            "IsUnique": false,
+            "CardType": "Scenario",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Among-the-Outlaws-ScenarioA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Dilemma Deck",
+                    "The 9 objective cards with the Dilemma trait are set aside into a separate deck at the start of the game and shuffled. When players quest unsuccessfully, the top card of the dilemma deck is revealed. Each dilemma card gives the player two options. Carrying out the first option helps the Gaurwaith while carrying out the second option, which adds the card to the victory display, helps the woodmen.",
+                    "Corruption and Objective Allies",
+                    "Objective allies are immune to corruption and corruption cannot be placed on objective allies for any reason."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Ransom",
+                    "When a character with the Ransom keyword enters play, the player who controls it may discard a number of resources from the resource pools of heroes they control equal to the Ransom value. If they choose not to satisfy this requirement, then that player card loses the `ally` card type and gains the `enemy` card type, immediately engaging the player who played it. Its threat is equal to its willpower and its engagement cost is 0. If this enemy is defeated, remove all damage from it and return it its owner`s control as an ally.",
+                    "Relentless",
+                    "An enemy with the Relentless keyword cannot have its attack canceled or be prevented from attacking by player card effects. It can still be targeted by other effects which do no specifically prevent attacks."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": null,
+            "Number": 29,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00029",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Fellowship with the Outlaws",
+            "Slug": "Fellowship-with-the-Outlaws-AtO",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Fellowship-with-the-Outlaws.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Affiliation."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After the 3rd Dilemma objective is added to the victory display, advance to stage 2A and remove Fellowship With The Outlaws from the game.",
+                    "Forced: After the players quest unsuccessfully, reveal the top card of the dilemma deck.",
+                    "If there are 7 cards in the dilemma deck discard pile, the player lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 30,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00030",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Forweg",
+            "Slug": "Forweg-Enemy-AtO",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Forweg-Enemy.jpg",
+                "Stats": {
+                    "EngagementCost": "0",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Gaurwaith.",
+                    "Captain."
+                ],
+                "Keywords": [
+                    "Relentless."
+                ],
+                "Text": [
+                    "Relentless.",
+                    "Allies cannot attack or defend against Forweg.",
+                    "Forced: After Forweg makes his first attack each round, he engages the next player and makes an immediate attack (discard and deal a new shadow card for this attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 31,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00031",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Forweg",
+            "Slug": "Forweg-Objective-Ally-AtO",
+            "IsUnique": true,
+            "CardType": "Objective_Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Forweg-Objective-Ally.jpg",
+                "Stats": {
+                    "Willpower": "2",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Gaurwaith.",
+                    "Captian."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The first player gains control of Forweg.",
+                    "Forced: Forweg declares and resolves an attack against a random Woodmen enemy engaged with the first player at the end of the combat phase.",
+                    "If Forweb leaves play, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 31,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00031",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Androg",
+            "Slug": "Androg-Enemy-AtO",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Androg-Enemy.jpg",
+                "Stats": {
+                    "EngagementCost": "0",
+                    "Threat": "1",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Gaurwaith."
+                ],
+                "Keywords": [
+                    "Relentless.",
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Androg gets +1 Attack for each hero you control with at least 1 Corruption."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The hardest of heart was one named Androg...`\r\n-The Children of Húrin"
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 32,
+            "Quantity": 1,
+            "Artist": "Denman Rooke",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00032",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Androg",
+            "Slug": "Androg-Objective-Ally-AtO",
+            "IsUnique": true,
+            "CardType": "Objective_Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Androg-Objective-Ally.jpg",
+                "Stats": {
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Gaurwaith."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The first player gains control of Androg.",
+                    "Each Woodmean enemy gets -5 engagemet cost for each Corruption on heroes the first player controls.",
+                    "If Androg leaves play, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Outlaws know no law but their needs. Look to your own, Neithan, and leave us to mind ours.`\r\n-Androg, The Children of Húrin"
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 32,
+            "Quantity": 1,
+            "Artist": "Denman Rooke",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00032",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Larnach's Daughter",
+            "Slug": "Larnach's-Daughter-AtO",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Larnach's-Daughter.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Dilemma."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Forweg declares an attack on Larnach`s Daughter. The first player may declare an eligible defender against this attack. If not character is destroyed by this attack, add Larnach`s Daughter the the victory display. If no defender is declared, each player deal 3 Corruption among characters he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "A young woman is running for her life. Will you interfere with the man pursuing her or leave her to her fate?"
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 33,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00033",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Teiglin Hunter",
+            "Slug": "Teiglin-Hunter-AtO",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Teiglin-Hunter.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Woodmen."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Teiglin Hunter is engaged with a player, all enemies engaged with that player get +1 Attack."
+                ],
+                "Shadow": "Shadow: All enemies engaged with the defending player get +1 Attack until the end of the phase.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 34,
+            "Quantity": 4,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00034",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Hound of the Woodmen",
+            "Slug": "Hound-of-the-Woodmen-AtO",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Hound-of-the-Woodmen.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "1",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Woodmen.",
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the start of the encounter phase, discard cards from the top of the encounter deck until an enemy is discarded. Add that enemy to the staging area. This ability does not stack with other copies of Hound of the Woodmen."
+                ],
+                "Shadow": null,
+                "FlavorText": "But they earned less gratitude so from the outlaws than from beasts and birds, and they were saved rather by their dogs and their fences...\r\n-The Children of Húrin"
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 35,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00035",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Homestead Defender",
+            "Slug": "Homestead-Defender-AtO",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Homestead-Defender.jpg",
+                "Stats": {
+                    "EngagementCost": "32",
+                    "Threat": "2",
+                    "Attack": "1",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Woodmen."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Homestead Defender is engaged with a player, Woodmen enemies engaged with that player not named Homestead Defender cannot be attacked by non-objective characters."
+                ],
+                "Shadow": "Shadow: All enemies engaged with the defending player get +2 Defense until the end of the phase.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 36,
+            "Quantity": 4,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00036",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Desperate Outlaw",
+            "Slug": "Desperate-Outlaw-AtO",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Desperate-Outlaw.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Gaurwaith."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After an attack against Desperate Outlaw resolves, Desperate Outlaw makes an immediate attack against the defending player."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 37,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00037",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Cruel Robber",
+            "Slug": "Cruel-Robber-AtO",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Cruel-Robber.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Gaurwaith."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Cruel Robber attack, discard 1 attachment the defending player controls."
+                ],
+                "Shadow": "Shadow: Discard 1 attachment from the defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 38,
+            "Quantity": 4,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00038",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Driven Outcast",
+            "Slug": "Driven-Outcast-AtO",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Driven-Outcast.jpg",
+                "Stats": {
+                    "EngagementCost": "22",
+                    "Threat": "4",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Gaurwaith."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Driven Outcast attacks, deal 1 damage to a defending character."
+                ],
+                "Shadow": "Shadow: After this attack resolves, deal 1 damage to the defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 39,
+            "Quantity": 4,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00039",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Forest Clearing",
+            "Slug": "Forest-Clearing-AtO",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Forest-Clearing.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "(Stage 1B) Response: After Forst Clearing is explored, reduce each player`s threat by 2.",
+                    "(Stage 2B): While Forest Clearing is the active location, the first Gaurwaith enemy revealed each round gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 40,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00040",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Scattered Homestead",
+            "Slug": "Scattered-Homestead-AtO",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Scattered-Homestead.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Homestead."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Scattered Homestead is in the staging area, discard cards from the encounter deck at the end of the round until an enemy is discarded. Add that enemy to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "...they were of Haleth`s folk for the most part, but owned no lord, and they lived both by hunting and husbandry...\r\n-The Children of Húrin"
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 41,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00041",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Tilled Field",
+            "Slug": "Tilled-Field-AtO",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Tilled-Field.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Homestead."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "(Stage 1B) Response: After Tilled Field is explored, add 1 resource to each hero`s resource pool.",
+                    "(Stage 2B) Whne Revealed: Each player must exhaust a hero he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 42,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00042",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Hedge and Stockade",
+            "Slug": "Hedge-and-Stockade-AtO",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Hedge-and-Stockade.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Homestead.",
+                    "Fortification."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "(Stage 1B): While Hedge and Stockade is the active location, all Woodmen enemies get +2 Defense and 0 engagement cost.",
+                    "(Stage 2B): While Hedge and Stockage is the active location, all Gaurwaith enemies -1 Attack and 0 engagement cost."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 43,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00043",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Woods of Teiglin",
+            "Slug": "Woods-of-Teiglin-AtO",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Woods-of-Teiglin.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "3"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "(Stage 1B) Response: After Wood of Teiglin is explored, each player draws 1 card.",
+                    "(Stage 2B): While Woods of Teiglin is in the staging area, all Gaurwaith enemies get +1 Threat, +1 Attack, and +1 Defense."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 44,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00044",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Dogs and Fences",
+            "Slug": "Dogs-and-Fences-AtO",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Dogs-and-Fences.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Woodmen."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must choose: Either deal X damage among heroes he controls, where X is equal to the number of engaged Woodmen enemies plus 2, or treat the printed text bost of each non-objective character he controls as if it were blank, except for keywords and Traits, until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "But when spring was come it was perilous for the Gaurwaith to linger so near the houses of the woodmen...\r\n-The Children of Húrin"
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 45,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00045",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Horn-calls",
+            "Slug": "Horn-calls-AtO",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Horn-calls.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Woodmen."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must search the encounter deck and discard pile for a Woodmen enemy and put it into play engaged with hum. Then, each engaged Woodmen enemy makes an immediate attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "...and there were paths from stead to stead, and men could summon help at need by horn-calls.\r\n-The Children of Húrin"
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 46,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00046",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "No Law But Their Needs",
+            "Slug": "No-Law-But-Their-Needs-AtO",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/No-Law-But-Their-Needs.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Woodmen."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either each player must immediately exhaust and commit 1 hero to the quest, or raise each player`s threat by 4."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to the attacking enemy. If that enemy is destroyed, deal 1 Corruption to the defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 47,
+            "Quantity": 2,
+            "Artist": "Winona Nelson",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00047",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Wolf-men of the Winter",
+            "Slug": "Wolf-men-of-the-Winter-AtO",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Wolf-men-of-the-Winter.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Gaurwaith."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player engaged with a Gaurwaith enemy must discard all resources he controls. If a player did not discard at least 3 resources, deal 1 damage to each character he controls."
+                ],
+                "Shadow": "Shadow: The defending player must pay 1 resource of the attacking enemy gets +3 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 48,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00048",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Banded Attack",
+            "Slug": "Banded-Attack-AtO",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Banded-Attack.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Gaurwaith."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: Each player deals X damage among characters he controls, where X is the number of Gaurwaith enemies engaged with that player."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each enemy engaged with the defending player.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 49,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00049",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Blood Upon the Grass",
+            "Slug": "Blood-Upon-the-Grass-AtO",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Blood-Upon-the-Grass.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Gaurwaith."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must choose: Either raise his threat by 1 for each Corruption on characters he controls, or choose character he controls with at least 1 Corruption. That character is immediately corrupted."
+                ],
+                "Shadow": "Shadow: Exhaust all characters the defending player controls with at least 1 Corruption.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 50,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00050",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "An Evil and Dangerous Way",
+            "Slug": "An-Evil-and-Dangerous-Way-AtO",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/An-Evil-and-Dangerous-Way-1A.jpg",
+                "Stats": {
+                    "StageNumber": "1A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set all enemy and treachery cards with the Gaurwaith trait aside, out of play. Shuffle all Dilemma cards together into a dilemma deck. Add Fellowship with the Outlaws to the staging area. Put Forweg and Androg into play, ally side faceup. Each player searches the encounter deck for a different location and adds it to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "After several years of service on the marches you have been forced to leave Doriath after a quarrel with Saeros, one of Thingol`s counselors, ended in his death. Staying would have meant facing the king`s doom. Wandering aimlessly at first, you have joined a band of outlaws led by Forweg. These desperate men are called Gaurwaith by the woodmen."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/An-Evil-and-Dangerous-Way-1B.jpg",
+                "Stats": {
+                    "StageNumber": "1B",
+                    "QuestPoints": "-"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: The players must travel to a location during the travel phase, if able.",
+                    "Forced: After a location is explored, deal X Corruption among characters the first player controls. X is the Threat of that location.",
+                    "Forced: After a Woodmen enemy is destroyed, deal 1 Corruption to each character that participated in the attack. (If Forweg or Androg participated in the attack, deal 1 Corruption to each hero controlled by the engaged player.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "The Gaurwaith raid the woodmen relentless in the winter. You must choose: restrain their evil deeds or take part in them."
+            },
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 51,
+            "Quantity": 1,
+            "Artist": "Anke Eissmann",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00051",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "To Govern the Fellowship",
+            "Slug": "To-Govern-the-Fellowship-AtO",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/To-Govern-the-Fellowship-2A.jpg",
+                "Stats": {
+                    "StageNumber": "2A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Flip Forweg and Androg to their enemy sides, remove all tokens from them, and place them in the staging area. Discard all Woodmen enemies. Remove all enemy and treachery cards with the Woodmen trait from the encounter deck and discard pile and set them aside, out of play. Shuffle the set aside enemy and treachery cards with the Gaurwaith trait into the encounter deck. Reveal 1 encounter card per player."
+                ],
+                "Shadow": null,
+                "FlavorText": "You have defended the woodmen and shed the blood of some of the outlaws. Now, you must win their respect through force of arms or persuasion and seize control of the fellowship if you hope to survive."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/To-Govern-the-Fellowship-2B.jpg",
+                "Stats": {
+                    "StageNumber": "2B",
+                    "QuestPoints": "30"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Gaurwaith enemies may be attacked with Willpower instead of Attack. If an enemy would be damaged this way, place progress tokens on it instead of damage token. When an enemy has progress equal to its hit points, add it to the victory display and place those progress tokens on the quest.",
+                    "When Revealed: Place 5 progress tokens on this quest stage for each card in the discard pile of the dilemma deck.",
+                    "The players cannot defeat this stage while Forweg is in play. If the players defeat this stage, they have won the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 52,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00052",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Cull the Weak",
+            "Slug": "Cull-the-Weak-AtO",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Cull-the-Weak.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Dilemma."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Either each player must discard the character he controls with the fewest hit points to remove all damage from one character he controls, or add Cull the Weak to the victory display and each player must deal 3 damage to a hero he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "The weak are viewed as a hindrance by the outlaws. Will you defend the weakest among you or give in to the idea that only the strong should survive?"
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 53,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00053",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Punish the Trespassers",
+            "Slug": "Punish-the-Trespassers-AtO",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Punish-the-Trespassers.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Dilemma."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Either each player must exhaust a character he controls to discard a Woodmen enemy from play, or add Punish the Trespassers to the victory display and each player must search the encounter deck and discard pile for a Woodmen enemy and put it into play engaged with him. One of these must be Hound of the Woodmen, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Gaurwaith do not allow outsiders to tread on their land. Will you join them in waylaying the trespasser or will you speak for mercy?"
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 54,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00054",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Raid the Homestead",
+            "Slug": "Raid-the-Homestead-AtO",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Raid-the-Homestead.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Dilemma."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Either each player deals X Corruption to a hero he controls to add X resources to that heroe`s resource pool, or add Raid the Homestead to the victory display and discard all resources from play (any hero that does not discard a resource takes 2 damage)."
+                ],
+                "Shadow": null,
+                "FlavorText": "In the bitter winter, the Gaurwaith steal food and supplies from the woodmen. Will you help them take from those who are also struggling to survive?"
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 55,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00055",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Turn a Blind Eye",
+            "Slug": "Turn-a-Blind-Eye-AtO",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Turn-a-Blind-Eye.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Dilemma."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Either each player must deal 1 Corruption to a hero he controls to reduce his threat by 3, or add Turn a Blind Eye to the victory display and exhaust all heroes in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Gaurwaith are hardened men and have committed deplorable acts in their latest ranging. Will you ignore their misdeeds or challenge them?"
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 56,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00056",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Cruel of Heart",
+            "Slug": "Cruel-of-Heart-AtO",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Cruel-of-Heart.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Doom."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: Attach to the hero with Curse of Morgoth attached. (Counts as a Condition attachment with the text: `Forced: After an ally enters play, exhaust attached hero to deal 1 damage to that ally.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": "...but many took to robbert and became cruel.\r\n-The Children of Húrin"
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 57,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00057",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Bitterness of Exile",
+            "Slug": "Bitterness-of-Exile-AtO",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Bitterness-of-Exile.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Doom."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: Remove each character with at least 1 Corruption from the quest."
+                ],
+                "Shadow": "Shadow: Reveal the top card of the encounter deck. It it is an eney or location, add it to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": {
+                "EncounterSet": "Among the Outlaws",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 58,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00058",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Among the Outlaws",
+            "Slug": "Among-the-Outlaws-Campaign-AtO",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Among-the-Outlaws/Among-the-Outlaws-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Campaign Mode.",
+                    "Response: Discard the top card of the dilemma deck to cancel the `when revealed` effects of a card that was just revealed from the encounter deck. (Limit once per game.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "There before the Nirnaeth many men had dwelt in scattered homesteads; they were of Haleth`s folk for the most part, but owned no lord, and they lived both by hunting and husbandry, keeping swine in the mast-lands, and tilling clearings in the forest which were fenced from the wild. But most were now destroyed, or had fled into Brethil, and all that region lay under the feat of Ores, and of outlaws.\r\n-The Children of Húrin"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Resolution: Add Bitterness of Exile to the campaign pool. If there is at least 1 card in the dilemma deck discard pule, add Cruel of Heart to the campaign pool. These burdens have been earned by the players. Each player may attach a copy of Hardship of the Wild to a hero he controls. If there are no cards in the dilemma deck discard pule, add Craft In Wood And Field to the campaign pool. These boons have been earned by the players."
+                ],
+                "Shadow": null,
+                "FlavorText": "All were silent. Then Turin spike again. `Do you take me to be your captain? Then I will lead you first away into the wild, far from the homes of Men. There we may find better fortune, or not; but at least we shall earn less hatred of our own kind.`\r\nThen all those that were of the Poeple of Hador gathered to him, and took him as their captain; and the others with less good will agreed.\r\nAnd at once he led them away out of that country.\r\n-The Children of Húrin"
+            },
+            "CardSet": "Among the Outlaws",
+            "EncounterInfo": null,
+            "Number": 61,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00061",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ]
 }

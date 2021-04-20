@@ -7,88 +7,38 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Théoden",
-            "Slug": "Theoden-TMV",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Théoden.jpg",
-                "Stats": {
-                    "ThreatCost": "12",
-                    "Willpower": "2",
-                    "Attack": "3",
-                    "Defense": "2",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Rohan.",
-                    "Noble.",
-                    "Warrior."
-                ],
-                "Keywords": [
-                    "Sentinel."
-                ],
-                "Text": [
-                    "Sentinel.",
-                    "Each hero with a printed Tactics resource icon gets +1 Willpower."
-                ],
-                "Shadow": null,
-                "FlavorText": "`To me! To me!` cried Théoden. `Up Eorlingas! Fear no darkness!` -The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Morgul Vale",
-            "EncounterInfo": null,
-            "Number": 134,
-            "Quantity": 1,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "29d5feef-6165-4077-bb80-692526a8a924",
-            "RingsDbCardId": "06134",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 7364,
-            "Categories": null
-        },
-        {
-            "Title": "Pelargir Ship Captain",
-            "Slug": "Pelargir-Ship-Captain-TMV",
+            "Title": "Hidden Cache",
+            "Slug": "Hidden-Cache-TMV",
             "IsUnique": false,
-            "CardType": "Ally",
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Pelargir-Ship-Captain.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Hidden-Cache.jpg",
                 "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "0",
-                    "HitPoints": "2"
+                    "ResourceCost": "0"
                 },
-                "Traits": [
-                    "Gondor."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Response: After Pelargir Ship Captain enters play, move 1 resource from the resource pool of a hero you control to another hero`s resource pool."
+                    "Response: After Hidden Cache is discarded from your deck, add 2 resources to the resource pool of a hero you control.",
+                    "Action: Spend 1 resource to draw 1 card."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "...there was a good deal of food jumbled carlessly on shelves and on the ground, among an untidy litter of plunder...\r\n-The Hobbit"
             },
             "Back": null,
             "CardSet": "The Morgul Vale",
             "EncounterInfo": null,
-            "Number": 135,
+            "Number": 143,
             "Quantity": 3,
-            "Artist": "Jake Murray",
+            "Artist": "Aurelien Hubert",
             "HasErrata": false,
-            "OctgnGuid": "1f28f098-09d4-43fa-8fba-eae551a5d4fe",
-            "RingsDbCardId": "06135",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 126178,
+            "OctgnGuid": "6a871e9e-fa3e-4556-8730-09aed1a3ec40",
+            "RingsDbCardId": "06143",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 272393,
             "Categories": null
         },
         {
@@ -169,110 +119,81 @@
             "Categories": null
         },
         {
-            "Title": "Forth Eorlingas!",
-            "Slug": "Forth-Eorlingas-TMV",
+            "Title": "Pelargir Ship Captain",
+            "Slug": "Pelargir-Ship-Captain-TMV",
             "IsUnique": false,
-            "CardType": "Event",
+            "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Forth-Eorlingas.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Pelargir-Ship-Captain.jpg",
                 "Stats": {
-                    "ResourceCost": "2"
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
                 },
-                "Traits": [],
+                "Traits": [
+                    "Gondor."
+                ],
                 "Keywords": [],
                 "Text": [
-                    "Combat Action: Each Rohan hero can be declared as an attacker against enemies in the staging area this phase."
+                    "Response: After Pelargir Ship Captain enters play, move 1 resource from the resource pool of a hero you control to another hero`s resource pool."
                 ],
                 "Shadow": null,
-                "FlavorText": "`Oaths ye have taken: now fulfill them all, to lord and land and league of friendship!` -Théoden, The Return of the King"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "The Morgul Vale",
             "EncounterInfo": null,
-            "Number": 138,
+            "Number": 135,
             "Quantity": 3,
-            "Artist": "Darek Zabrocki",
+            "Artist": "Jake Murray",
             "HasErrata": false,
-            "OctgnGuid": "80cdd2b5-60cf-4d47-afe7-505b79abcb1b",
-            "RingsDbCardId": "06138",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 51504,
+            "OctgnGuid": "1f28f098-09d4-43fa-8fba-eae551a5d4fe",
+            "RingsDbCardId": "06135",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 126178,
             "Categories": null
         },
         {
-            "Title": "Steed of the Mark",
-            "Slug": "Steed-of-the-Mark-TMV",
-            "IsUnique": false,
+            "Title": "Scroll of Isildur",
+            "Slug": "Scroll-of-Isildur-TMV",
+            "IsUnique": true,
             "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Steed-of-the-Mark.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Scroll-of-Isildur.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ResourceCost": "4"
                 },
                 "Traits": [
-                    "Mount."
+                    "Record."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a Gondor or Rohan hero.",
-                    "Response: after attached hero commits to a quest, spend 1 resource from attached hero`s resource pool to ready attached hero."
+                    "Attach to a Lore hero.",
+                    "Reduce the cost to play Scroll of Isildur by 1 for each hero you control with a printed Lore resource icon.",
+                    "Action: Discard Scroll of Isildur to play any Lore event card in your discard pile as if it were in your hand. Then, place that event on the bottom of your deck."
                 ],
                 "Shadow": null,
-                "FlavorText": "...fresh horses were always in readiness to bear his errand-riders to Rohan in the Noth... -The Return of the King"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "The Morgul Vale",
             "EncounterInfo": null,
-            "Number": 139,
+            "Number": 142,
             "Quantity": 3,
-            "Artist": "Sandara Tang",
+            "Artist": "Sara Biddle",
             "HasErrata": false,
-            "OctgnGuid": "90d300da-a557-44b1-a634-d54782ff5e48",
-            "RingsDbCardId": "06139",
+            "OctgnGuid": "63c6bd3a-5566-412d-9199-3929d2fc3cf2",
+            "RingsDbCardId": "06142",
             "RingsDbPopularity": 5,
-            "RingsDbVotes": 109096,
-            "Categories": null
-        },
-        {
-            "Title": "Lay of Nimrodel",
-            "Slug": "Lay-of-Nimrodel-TMV",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Lay-of-Nimrodel.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Song."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Choose a Spirit hero. Until the end of the phase, that hero gets +1 Willpower for each resource in its resource pool."
-                ],
-                "Shadow": null,
-                "FlavorText": "An Elven-maid there was of old.\r\nA shining star by day:\r\nHer mantle white was hemmed with hold,\r\nHer shoes of silver-grey.\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Morgul Vale",
-            "EncounterInfo": null,
-            "Number": 140,
-            "Quantity": 3,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "b442354c-887d-403e-815b-a11f10a8760d",
-            "RingsDbCardId": "06140",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 44496,
+            "RingsDbVotes": 118453,
             "Categories": null
         },
         {
@@ -316,76 +237,155 @@
             "Categories": null
         },
         {
-            "Title": "Scroll of Isildur",
-            "Slug": "Scroll-of-Isildur-TMV",
-            "IsUnique": true,
+            "Title": "Steed of the Mark",
+            "Slug": "Steed-of-the-Mark-TMV",
+            "IsUnique": false,
             "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Lore",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Scroll-of-Isildur.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Steed-of-the-Mark.jpg",
                 "Stats": {
-                    "ResourceCost": "4"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Record."
+                    "Mount."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a Lore hero.",
-                    "Reduce the cost to play Scroll of Isildur by 1 for each hero you control with a printed Lore resource icon.",
-                    "Action: Discard Scroll of Isildur to play any Lore event card in your discard pile as if it were in your hand. Then, place that event on the bottom of your deck."
+                    "Attach to a Gondor or Rohan hero.",
+                    "Response: after attached hero commits to a quest, spend 1 resource from attached hero`s resource pool to ready attached hero."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "...fresh horses were always in readiness to bear his errand-riders to Rohan in the Noth... -The Return of the King"
             },
             "Back": null,
             "CardSet": "The Morgul Vale",
             "EncounterInfo": null,
-            "Number": 142,
+            "Number": 139,
             "Quantity": 3,
-            "Artist": "Sara Biddle",
+            "Artist": "Sandara Tang",
             "HasErrata": false,
-            "OctgnGuid": "63c6bd3a-5566-412d-9199-3929d2fc3cf2",
-            "RingsDbCardId": "06142",
+            "OctgnGuid": "90d300da-a557-44b1-a634-d54782ff5e48",
+            "RingsDbCardId": "06139",
             "RingsDbPopularity": 5,
-            "RingsDbVotes": 118453,
+            "RingsDbVotes": 109096,
             "Categories": null
         },
         {
-            "Title": "Hidden Cache",
-            "Slug": "Hidden-Cache-TMV",
+            "Title": "Théoden",
+            "Slug": "Theoden-TMV",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Théoden.jpg",
+                "Stats": {
+                    "ThreatCost": "12",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Noble.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Sentinel.",
+                    "Each hero with a printed Tactics resource icon gets +1 Willpower."
+                ],
+                "Shadow": null,
+                "FlavorText": "`To me! To me!` cried Théoden. `Up Eorlingas! Fear no darkness!` -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": null,
+            "Number": 134,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "29d5feef-6165-4077-bb80-692526a8a924",
+            "RingsDbCardId": "06134",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 7364,
+            "Categories": null
+        },
+        {
+            "Title": "Forth Eorlingas!",
+            "Slug": "Forth-Eorlingas-TMV",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Hidden-Cache.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Forth-Eorlingas.jpg",
                 "Stats": {
-                    "ResourceCost": "0"
+                    "ResourceCost": "2"
                 },
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Response: After Hidden Cache is discarded from your deck, add 2 resources to the resource pool of a hero you control.",
-                    "Action: Spend 1 resource to draw 1 card."
+                    "Combat Action: Each Rohan hero can be declared as an attacker against enemies in the staging area this phase."
                 ],
                 "Shadow": null,
-                "FlavorText": "...there was a good deal of food jumbled carlessly on shelves and on the ground, among an untidy litter of plunder...\r\n-The Hobbit"
+                "FlavorText": "`Oaths ye have taken: now fulfill them all, to lord and land and league of friendship!` -Théoden, The Return of the King"
             },
             "Back": null,
             "CardSet": "The Morgul Vale",
             "EncounterInfo": null,
-            "Number": 143,
+            "Number": 138,
             "Quantity": 3,
-            "Artist": "Aurelien Hubert",
+            "Artist": "Darek Zabrocki",
             "HasErrata": false,
-            "OctgnGuid": "6a871e9e-fa3e-4556-8730-09aed1a3ec40",
-            "RingsDbCardId": "06143",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 272393,
+            "OctgnGuid": "80cdd2b5-60cf-4d47-afe7-505b79abcb1b",
+            "RingsDbCardId": "06138",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 51504,
+            "Categories": null
+        },
+        {
+            "Title": "Lay of Nimrodel",
+            "Slug": "Lay-of-Nimrodel-TMV",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Morgul-Vale/Lay-of-Nimrodel.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose a Spirit hero. Until the end of the phase, that hero gets +1 Willpower for each resource in its resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "An Elven-maid there was of old.\r\nA shining star by day:\r\nHer mantle white was hemmed with hold,\r\nHer shoes of silver-grey.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Morgul Vale",
+            "EncounterInfo": null,
+            "Number": 140,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "b442354c-887d-403e-815b-a11f10a8760d",
+            "RingsDbCardId": "06140",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 44496,
             "Categories": null
         }
     ]

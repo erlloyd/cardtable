@@ -7,6 +7,45 @@
     "Cards": null,
     "cards": [
         {
+            "Title": "Narya",
+            "Slug": "Narya-TGH",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Narya.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Ring.",
+                    "Artifact."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to Círdan the Shipwright or Gandalf.",
+                    "Attached character gains a Leadership resource icon.",
+                    "Action: Exhaust Narya and attached character to choose and ready up to 2 allies. Each of those allies gets +1 Attack and +1 Defense until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`For this is the Ring of Fire, and with it you may rekindle hearts in a world that grows chill.`\r\n-Círdan, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Grey Havens",
+            "EncounterInfo": null,
+            "Number": 15,
+            "Quantity": 3,
+            "Artist": "Lucas Durham",
+            "HasErrata": false,
+            "OctgnGuid": "8ae15724-e823-4f55-a9e8-c75b3e795e9a",
+            "RingsDbCardId": "11015",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 362340,
+            "Categories": null
+        },
+        {
             "Title": "Círdan the Shipwright",
             "Slug": "Cirdan-the-Shipwright-TGH",
             "IsUnique": true,
@@ -49,56 +88,15 @@
             "Categories": null
         },
         {
-            "Title": "Galdor of the Havens",
-            "Slug": "Galdor-of-the-Havens-TGH",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Galdor-of-the-Havens.jpg",
-                "Stats": {
-                    "ThreatCost": "9",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "1",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Noldor."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After drawing your setup hand, instead of taking a mulligan, you may discard any number of cards from your hand. Then, draw that many cards.",
-                    "Action: If you have no cards in your hand, draw 6 cards. (Limit once per game.)"
-                ],
-                "Shadow": null,
-                "FlavorText": "`What power still remains lies with us...`\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Grey Havens",
-            "EncounterInfo": null,
-            "Number": 2,
-            "Quantity": 1,
-            "Artist": "Lukasz Jaskolski",
-            "HasErrata": false,
-            "OctgnGuid": "52e217a6-ddc0-4082-9ec2-09d92e8c25c7",
-            "RingsDbCardId": "11002",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 5661,
-            "Categories": null
-        },
-        {
-            "Title": "Mithlond Sea-watcher",
-            "Slug": "Mithlond-Sea-watcher-TGH",
+            "Title": "Sailor of Lune",
+            "Slug": "Sailor-of-Lune-TGH",
             "IsUnique": false,
             "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Mithlond-Sea-watcher.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Sailor-of-Lune.jpg",
                 "Stats": {
                     "ResourceCost": "2",
                     "Willpower": "1",
@@ -108,210 +106,97 @@
                 },
                 "Traits": [
                     "Noldor.",
-                    "Warrior."
+                    "Scout."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "While the top card of your discard pile is an ally, Mithlond Sea-watcher gets +2 Attack and gains ranged."
+                    "While the top card of your discard pile is an event, Sailor of Lune gets +1 Willpower and gains: `Cannot be damaged while committed to the quest.`"
                 ],
                 "Shadow": null,
-                "FlavorText": "But it was an old tradition that away over there stood the Grey Havens, from which at times elven-ships set sail, never to return.\r\n-The Fellowship of the Ring"
+                "FlavorText": "`They are sailing, sailing, sailing over the Sea, they are going into the West and leaving us,` said Sam, half chanting the words, shaking his head sadly and solemnly.\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Grey Havens",
             "EncounterInfo": null,
-            "Number": 3,
+            "Number": 12,
             "Quantity": 3,
             "Artist": "Owen William Weber",
             "HasErrata": false,
-            "OctgnGuid": "3b58bae1-8484-4be6-a75c-1d55c5199f72",
-            "RingsDbCardId": "11003",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 72467,
+            "OctgnGuid": "85a269eb-63f1-4f63-83c9-30b718d364f6",
+            "RingsDbCardId": "11012",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 150781,
             "Categories": null
         },
         {
-            "Title": "Skyward Volley",
-            "Slug": "Skyward-Volley-TGH",
+            "Title": "The Evening Star",
+            "Slug": "The-Evening-Star-TGH",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Skyward-Volley.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/The-Evening-Star.jpg",
                 "Stats": {
                     "ResourceCost": "2"
                 },
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "As an additional cost to play Skyward Volley, exhaust a ranged character you control.",
-                    "Combat Action: Deal 2 damage to an enemy engaged with a player. Resolve that effect again for each copy of Skyward Volley currently in your discard pile (you may choose different targets)."
+                    "Action: Place 2 progress on any location. Resolve that effect again for each copy of The Evening Star currently in your discard pile (you may choose new targets)."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "...for ever still a herald on\r\nar errand that should never rest\r\nto bear his shining lamp afar,\r\nthe Flammifer of Westernesse.\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Grey Havens",
             "EncounterInfo": null,
-            "Number": 4,
+            "Number": 10,
             "Quantity": 3,
-            "Artist": "Christina Davis",
+            "Artist": "Katy Grierson",
             "HasErrata": false,
-            "OctgnGuid": "bd3686ef-e3d2-4dea-9fc3-aa039918f0b1",
-            "RingsDbCardId": "11004",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 30941,
+            "OctgnGuid": "b6729381-3bfc-41fa-abd1-99f410eb19b8",
+            "RingsDbCardId": "11010",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 147141,
             "Categories": null
         },
         {
-            "Title": "Grappling Hook",
-            "Slug": "Grappling-Hook-TGH",
-            "IsUnique": false,
+            "Title": "To the Sea, to the Sea!",
+            "Slug": "To-the-Sea-to-the-Sea-TGH",
+            "IsUnique": true,
             "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Grappling-Hook.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/To-the-Sea-to-the-Sea.jpg",
                 "Stats": {
                     "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Item."
+                    "Song."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a character.",
-                    "Quest Action: Discard Grappling Hook and exhaust attached character to commit attached character to the quest, using its Attack instead of its Willpower (or instead of its Defense if the current quest has the siege keyword)."
+                    "Attach to a Noldor character.",
+                    "Action: Exhaust To the Sea, to the Sea! and discard X cards from your hand to reduce the cost of the next Noldor ally played this phase by X (to a minimum of 1)."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "To the Sea, to the Sea! The white gulls are crying,\r\nThe wind is blowing, and the white foam is flying.\r\n-The Return of the King"
             },
             "Back": null,
             "CardSet": "The Grey Havens",
             "EncounterInfo": null,
-            "Number": 5,
+            "Number": 14,
             "Quantity": 3,
-            "Artist": "Kara Williams",
+            "Artist": "Tawny Fritzinger",
             "HasErrata": false,
-            "OctgnGuid": "1ccd4cc5-9e8a-41ea-b897-61e47bba5ae6",
-            "RingsDbCardId": "11005",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 55542,
-            "Categories": null
-        },
-        {
-            "Title": "Warden of the Havens",
-            "Slug": "Warden-of-the-Havens-TGH",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Warden-of-the-Havens.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "0",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Noldor.",
-                    "Warrior."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "While the top card of your discard pile is an attachment, Warden of the Havens gets +2 Defense and gains sentinel."
-                ],
-                "Shadow": null,
-                "FlavorText": "`...and if he comes, assailing the White Towers and the Havens, hereafter the Elves may have no escape from the lengthening shadows of Middle-earth.`\r\n-Galdor, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Grey Havens",
-            "EncounterInfo": null,
-            "Number": 6,
-            "Quantity": 3,
-            "Artist": "Dleoblack",
-            "HasErrata": false,
-            "OctgnGuid": "94df6677-1e7c-4ccc-932c-f750b51a769c",
-            "RingsDbCardId": "11006",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 38432,
-            "Categories": null
-        },
-        {
-            "Title": "Anchor Watch",
-            "Slug": "Anchor-Watch-TGH",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Anchor-Watch.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Response: After an enemy is declared as an attacker against you, declare an exhausted character you control as the defender. Resolve that effect again for each copy of Anchor Watch currently in your discard pile (all chosen characters are defending against this attack)."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Grey Havens",
-            "EncounterInfo": null,
-            "Number": 7,
-            "Quantity": 3,
-            "Artist": "Adam Schumpert",
-            "HasErrata": false,
-            "OctgnGuid": "dd64881e-99d9-4505-9f9f-67dfc8c8ffc1",
-            "RingsDbCardId": "11007",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 22819,
-            "Categories": null
-        },
-        {
-            "Title": "Mariner's Compass",
-            "Slug": "Mariner's-Compass-TGH",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Mariner's-Compass.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Leadership or a Scout character.",
-                    "Response: At the beginning of the travel phase, exhaust Mariner`s Compass and attached character to search the top 5 cards of the encounter deck for a location. Switch that location with a location in the staging area. Shuffle the encounter deck."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Grey Havens",
-            "EncounterInfo": null,
-            "Number": 8,
-            "Quantity": 3,
-            "Artist": "Lucas Durham",
-            "HasErrata": false,
-            "OctgnGuid": "fe1a0aef-10bd-441b-a27b-0527810fef57",
-            "RingsDbCardId": "11008",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 27959,
+            "OctgnGuid": "d0180ea8-15e3-4a9a-80c6-dfd6549753c9",
+            "RingsDbCardId": "11014",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 140934,
             "Categories": null
         },
         {
@@ -357,37 +242,37 @@
             "Categories": null
         },
         {
-            "Title": "The Evening Star",
-            "Slug": "The-Evening-Star-TGH",
+            "Title": "Elwing's Flight",
+            "Slug": "Elwing's-Flight-TGH",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Lore",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/The-Evening-Star.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Elwing's-Flight.jpg",
                 "Stats": {
                     "ResourceCost": "2"
                 },
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Action: Place 2 progress on any location. Resolve that effect again for each copy of The Evening Star currently in your discard pile (you may choose new targets)."
+                    "Quest Action: Ready a questing character and give that character +1 Willpower until the end of the phase. Resolve that effect again for each copy of Elwing`s Flight currently in your discard pile (you may choose different targets)."
                 ],
                 "Shadow": null,
-                "FlavorText": "...for ever still a herald on\r\nar errand that should never rest\r\nto bear his shining lamp afar,\r\nthe Flammifer of Westernesse.\r\n-The Fellowship of the Ring"
+                "FlavorText": "There flying Elwing came to him\r\nand flame was in the darkness lit;\r\nmore bright than light of diamond\r\nthe fire upon her carcanet.\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Grey Havens",
             "EncounterInfo": null,
-            "Number": 10,
+            "Number": 13,
             "Quantity": 3,
-            "Artist": "Katy Grierson",
+            "Artist": "A. M. Sartor",
             "HasErrata": false,
-            "OctgnGuid": "b6729381-3bfc-41fa-abd1-99f410eb19b8",
-            "RingsDbCardId": "11010",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 147141,
+            "OctgnGuid": "d25dfbee-85c4-42f8-9653-c0536d3e5095",
+            "RingsDbCardId": "11013",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 84079,
             "Categories": null
         },
         {
@@ -428,15 +313,15 @@
             "Categories": null
         },
         {
-            "Title": "Sailor of Lune",
-            "Slug": "Sailor-of-Lune-TGH",
+            "Title": "Mithlond Sea-watcher",
+            "Slug": "Mithlond-Sea-watcher-TGH",
             "IsUnique": false,
             "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Sailor-of-Lune.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Mithlond-Sea-watcher.jpg",
                 "Stats": {
                     "ResourceCost": "2",
                     "Willpower": "1",
@@ -446,136 +331,251 @@
                 },
                 "Traits": [
                     "Noldor.",
-                    "Scout."
+                    "Warrior."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "While the top card of your discard pile is an event, Sailor of Lune gets +1 Willpower and gains: `Cannot be damaged while committed to the quest.`"
+                    "While the top card of your discard pile is an ally, Mithlond Sea-watcher gets +2 Attack and gains ranged."
                 ],
                 "Shadow": null,
-                "FlavorText": "`They are sailing, sailing, sailing over the Sea, they are going into the West and leaving us,` said Sam, half chanting the words, shaking his head sadly and solemnly.\r\n-The Fellowship of the Ring"
+                "FlavorText": "But it was an old tradition that away over there stood the Grey Havens, from which at times elven-ships set sail, never to return.\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Grey Havens",
             "EncounterInfo": null,
-            "Number": 12,
+            "Number": 3,
             "Quantity": 3,
             "Artist": "Owen William Weber",
             "HasErrata": false,
-            "OctgnGuid": "85a269eb-63f1-4f63-83c9-30b718d364f6",
-            "RingsDbCardId": "11012",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 150781,
+            "OctgnGuid": "3b58bae1-8484-4be6-a75c-1d55c5199f72",
+            "RingsDbCardId": "11003",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 72467,
             "Categories": null
         },
         {
-            "Title": "Elwing's Flight",
-            "Slug": "Elwing's-Flight-TGH",
+            "Title": "Grappling Hook",
+            "Slug": "Grappling-Hook-TGH",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Grappling-Hook.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a character.",
+                    "Quest Action: Discard Grappling Hook and exhaust attached character to commit attached character to the quest, using its Attack instead of its Willpower (or instead of its Defense if the current quest has the siege keyword)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Grey Havens",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Kara Williams",
+            "HasErrata": false,
+            "OctgnGuid": "1ccd4cc5-9e8a-41ea-b897-61e47bba5ae6",
+            "RingsDbCardId": "11005",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 55542,
+            "Categories": null
+        },
+        {
+            "Title": "Galdor of the Havens",
+            "Slug": "Galdor-of-the-Havens-TGH",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Galdor-of-the-Havens.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Noldor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After drawing your setup hand, instead of taking a mulligan, you may discard any number of cards from your hand. Then, draw that many cards.",
+                    "Action: If you have no cards in your hand, draw 6 cards. (Limit once per game.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`What power still remains lies with us...`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Grey Havens",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "OctgnGuid": "52e217a6-ddc0-4082-9ec2-09d92e8c25c7",
+            "RingsDbCardId": "11002",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 5661,
+            "Categories": null
+        },
+        {
+            "Title": "Warden of the Havens",
+            "Slug": "Warden-of-the-Havens-TGH",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Warden-of-the-Havens.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "0",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While the top card of your discard pile is an attachment, Warden of the Havens gets +2 Defense and gains sentinel."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...and if he comes, assailing the White Towers and the Havens, hereafter the Elves may have no escape from the lengthening shadows of Middle-earth.`\r\n-Galdor, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Grey Havens",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Dleoblack",
+            "HasErrata": false,
+            "OctgnGuid": "94df6677-1e7c-4ccc-932c-f750b51a769c",
+            "RingsDbCardId": "11006",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 38432,
+            "Categories": null
+        },
+        {
+            "Title": "Skyward Volley",
+            "Slug": "Skyward-Volley-TGH",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Elwing's-Flight.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Skyward-Volley.jpg",
                 "Stats": {
                     "ResourceCost": "2"
                 },
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Quest Action: Ready a questing character and give that character +1 Willpower until the end of the phase. Resolve that effect again for each copy of Elwing`s Flight currently in your discard pile (you may choose different targets)."
+                    "As an additional cost to play Skyward Volley, exhaust a ranged character you control.",
+                    "Combat Action: Deal 2 damage to an enemy engaged with a player. Resolve that effect again for each copy of Skyward Volley currently in your discard pile (you may choose different targets)."
                 ],
                 "Shadow": null,
-                "FlavorText": "There flying Elwing came to him\r\nand flame was in the darkness lit;\r\nmore bright than light of diamond\r\nthe fire upon her carcanet.\r\n-The Fellowship of the Ring"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "The Grey Havens",
             "EncounterInfo": null,
-            "Number": 13,
+            "Number": 4,
             "Quantity": 3,
-            "Artist": "A. M. Sartor",
+            "Artist": "Christina Davis",
             "HasErrata": false,
-            "OctgnGuid": "d25dfbee-85c4-42f8-9653-c0536d3e5095",
-            "RingsDbCardId": "11013",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 84079,
+            "OctgnGuid": "bd3686ef-e3d2-4dea-9fc3-aa039918f0b1",
+            "RingsDbCardId": "11004",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 30941,
             "Categories": null
         },
         {
-            "Title": "To the Sea, to the Sea!",
-            "Slug": "To-the-Sea-to-the-Sea-TGH",
-            "IsUnique": true,
+            "Title": "Mariner's Compass",
+            "Slug": "Mariner's-Compass-TGH",
+            "IsUnique": false,
             "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/To-the-Sea-to-the-Sea.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Mariner's-Compass.jpg",
                 "Stats": {
                     "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Song."
+                    "Item."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a Noldor character.",
-                    "Action: Exhaust To the Sea, to the Sea! and discard X cards from your hand to reduce the cost of the next Noldor ally played this phase by X (to a minimum of 1)."
+                    "Attach to a Leadership or a Scout character.",
+                    "Response: At the beginning of the travel phase, exhaust Mariner`s Compass and attached character to search the top 5 cards of the encounter deck for a location. Switch that location with a location in the staging area. Shuffle the encounter deck."
                 ],
                 "Shadow": null,
-                "FlavorText": "To the Sea, to the Sea! The white gulls are crying,\r\nThe wind is blowing, and the white foam is flying.\r\n-The Return of the King"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "The Grey Havens",
             "EncounterInfo": null,
-            "Number": 14,
-            "Quantity": 3,
-            "Artist": "Tawny Fritzinger",
-            "HasErrata": false,
-            "OctgnGuid": "d0180ea8-15e3-4a9a-80c6-dfd6549753c9",
-            "RingsDbCardId": "11014",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 140934,
-            "Categories": null
-        },
-        {
-            "Title": "Narya",
-            "Slug": "Narya-TGH",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Narya.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Ring.",
-                    "Artifact."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to Círdan the Shipwright or Gandalf.",
-                    "Attached character gains a Leadership resource icon.",
-                    "Action: Exhaust Narya and attached character to choose and ready up to 2 allies. Each of those allies gets +1 Attack and +1 Defense until the end of the phase."
-                ],
-                "Shadow": null,
-                "FlavorText": "`For this is the Ring of Fire, and with it you may rekindle hearts in a world that grows chill.`\r\n-Círdan, The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Grey Havens",
-            "EncounterInfo": null,
-            "Number": 15,
+            "Number": 8,
             "Quantity": 3,
             "Artist": "Lucas Durham",
             "HasErrata": false,
-            "OctgnGuid": "8ae15724-e823-4f55-a9e8-c75b3e795e9a",
-            "RingsDbCardId": "11015",
-            "RingsDbPopularity": 9,
-            "RingsDbVotes": 362340,
+            "OctgnGuid": "fe1a0aef-10bd-441b-a27b-0527810fef57",
+            "RingsDbCardId": "11008",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 27959,
+            "Categories": null
+        },
+        {
+            "Title": "Anchor Watch",
+            "Slug": "Anchor-Watch-TGH",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Anchor-Watch.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: After an enemy is declared as an attacker against you, declare an exhausted character you control as the defender. Resolve that effect again for each copy of Anchor Watch currently in your discard pile (all chosen characters are defending against this attack)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Grey Havens",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Adam Schumpert",
+            "HasErrata": false,
+            "OctgnGuid": "dd64881e-99d9-4505-9f9f-67dfc8c8ffc1",
+            "RingsDbCardId": "11007",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 22819,
             "Categories": null
         }
     ]

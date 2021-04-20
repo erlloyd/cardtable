@@ -7,6 +7,155 @@
     "Cards": null,
     "cards": [
         {
+            "Title": "Reforged",
+            "Slug": "Reforged-TFoW",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Wilderland/Reforged.jpg",
+                "Stats": {
+                    "ResourceCost": "X"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose an attachment with a printed cost of X in any player`s discard pile and play that attachment for no cost. (The chosen attachment can belong to any sphere of influence.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "The Sword of Elendil was forged anew by Elvish smiths... -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Fate of Wilderland",
+            "EncounterInfo": null,
+            "Number": 153,
+            "Quantity": 3,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "OctgnGuid": "18f0d0d0-b60b-4f9b-9153-75f3f6e82081",
+            "RingsDbCardId": "19153",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 88001,
+            "Categories": null
+        },
+        {
+            "Title": "Radagast's Staff",
+            "Slug": "Radagast's-Staff-TFoW",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Wilderland/Radagast's-Staff.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Staff."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to Radagast.",
+                    "Action: Exhaust Radagast`s Staff to choose one: Reduce the cost of the next Creature ally you play this phase by 2, ready a Creature ally, or return a non-unique Creature enemy engaged with you to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fate of Wilderland",
+            "EncounterInfo": null,
+            "Number": 154,
+            "Quantity": 3,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "OctgnGuid": "9d072a19-45ee-444f-baad-e5d47097aee7",
+            "RingsDbCardId": "19154",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 74407,
+            "Categories": null
+        },
+        {
+            "Title": "Loyal Hound",
+            "Slug": "Loyal-Hound-TFoW",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Wilderland/Loyal-Hound.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Response: Discard Loyal Hound to cancel up to 2 damage just dealt to a hero you control."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fate of Wilderland",
+            "EncounterInfo": null,
+            "Number": 148,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "OctgnGuid": "4c3a2153-b5f4-40de-b74b-5594bf3bffa7",
+            "RingsDbCardId": "19148",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 59677,
+            "Categories": null
+        },
+        {
+            "Title": "Gwaihir's Debt",
+            "Slug": "Gwaihir's-Debt-TFoW",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Wilderland/Gwaihir's-Debt.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control a unique character with the Istari trait and another unique character with the Eagle trait.",
+                    "Action: Search the top 5 cards of your deck for an Eagle or Istari ally and put it into play. Shuffle your deck. At the end of the round, if that ally is still in play, return it to your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Fate of Wilderland",
+            "EncounterInfo": null,
+            "Number": 151,
+            "Quantity": 3,
+            "Artist": "Justin Gerard",
+            "HasErrata": false,
+            "OctgnGuid": "8f1cedc5-bca5-4594-bc01-73caae4a5083",
+            "RingsDbCardId": "19151",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 43959,
+            "Categories": null
+        },
+        {
             "Title": "Radagast",
             "Slug": "Radagast-TFoW",
             "IsUnique": true,
@@ -89,118 +238,6 @@
             "Categories": null
         },
         {
-            "Title": "The King's Return",
-            "Slug": "The-King's-Return-TFoW",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Wilderland/The-King's-Return.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Song."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Search your deck for a Guarded attachment and put it into play. Shuffle your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "His crown shall be upholden,\r\nHis harp shall be restrung,\r\nHis halls shall echo golden\r\nTo songs of yore re-sung\r\n-The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "The Fate of Wilderland",
-            "EncounterInfo": null,
-            "Number": 147,
-            "Quantity": 3,
-            "Artist": "Tyler Edlin",
-            "HasErrata": false,
-            "OctgnGuid": "477fcead-808a-4a2a-971b-cbd600e166bb",
-            "RingsDbCardId": "19147",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 24670,
-            "Categories": null
-        },
-        {
-            "Title": "Loyal Hound",
-            "Slug": "Loyal-Hound-TFoW",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Wilderland/Loyal-Hound.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "2",
-                    "Defense": "0",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Creature."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Cannot have attachments.",
-                    "Response: Discard Loyal Hound to cancel up to 2 damage just dealt to a hero you control."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Fate of Wilderland",
-            "EncounterInfo": null,
-            "Number": 148,
-            "Quantity": 3,
-            "Artist": "Álvaro Calvo Escudero",
-            "HasErrata": false,
-            "OctgnGuid": "4c3a2153-b5f4-40de-b74b-5594bf3bffa7",
-            "RingsDbCardId": "19148",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 59677,
-            "Categories": null
-        },
-        {
-            "Title": "The Great Hunt",
-            "Slug": "The-Great-Hunt-TFoW",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Wilderland/The-Great-Hunt.jpg",
-                "Stats": {
-                    "ResourceCost": "3"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "You must use resources from 3 different heroes` pools to pay for this card.",
-                    "Combat Action: Choose and discard a non-unique enemy in the staging area."
-                ],
-                "Shadow": null,
-                "FlavorText": "...it seemed they could hear the noise of a great hunt going by to the north of the path...\r\n-The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "The Fate of Wilderland",
-            "EncounterInfo": null,
-            "Number": 149,
-            "Quantity": 3,
-            "Artist": "Carlos Palma Cruchaga",
-            "HasErrata": false,
-            "OctgnGuid": "3c70ec5c-8f05-4ed3-a162-98649fead7bc",
-            "RingsDbCardId": "19149",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 23065,
-            "Categories": null
-        },
-        {
             "Title": "Bywater Shirriff",
             "Slug": "Bywater-Shirriff-TFoW",
             "IsUnique": false,
@@ -239,41 +276,6 @@
             "RingsDbCardId": "19150",
             "RingsDbPopularity": 2,
             "RingsDbVotes": 37152,
-            "Categories": null
-        },
-        {
-            "Title": "Gwaihir's Debt",
-            "Slug": "Gwaihir's-Debt-TFoW",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Wilderland/Gwaihir's-Debt.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Play only if you control a unique character with the Istari trait and another unique character with the Eagle trait.",
-                    "Action: Search the top 5 cards of your deck for an Eagle or Istari ally and put it into play. Shuffle your deck. At the end of the round, if that ally is still in play, return it to your hand."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Fate of Wilderland",
-            "EncounterInfo": null,
-            "Number": 151,
-            "Quantity": 3,
-            "Artist": "Justin Gerard",
-            "HasErrata": false,
-            "OctgnGuid": "8f1cedc5-bca5-4594-bc01-73caae4a5083",
-            "RingsDbCardId": "19151",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 43959,
             "Categories": null
         },
         {
@@ -319,76 +321,74 @@
             "Categories": null
         },
         {
-            "Title": "Reforged",
-            "Slug": "Reforged-TFoW",
+            "Title": "The King's Return",
+            "Slug": "The-King's-Return-TFoW",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Wilderland/Reforged.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Wilderland/The-King's-Return.jpg",
                 "Stats": {
-                    "ResourceCost": "X"
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Search your deck for a Guarded attachment and put it into play. Shuffle your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "His crown shall be upholden,\r\nHis harp shall be restrung,\r\nHis halls shall echo golden\r\nTo songs of yore re-sung\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Fate of Wilderland",
+            "EncounterInfo": null,
+            "Number": 147,
+            "Quantity": 3,
+            "Artist": "Tyler Edlin",
+            "HasErrata": false,
+            "OctgnGuid": "477fcead-808a-4a2a-971b-cbd600e166bb",
+            "RingsDbCardId": "19147",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 24670,
+            "Categories": null
+        },
+        {
+            "Title": "The Great Hunt",
+            "Slug": "The-Great-Hunt-TFoW",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Wilderland/The-Great-Hunt.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
                 },
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Action: Choose an attachment with a printed cost of X in any player`s discard pile and play that attachment for no cost. (The chosen attachment can belong to any sphere of influence.)"
+                    "You must use resources from 3 different heroes` pools to pay for this card.",
+                    "Combat Action: Choose and discard a non-unique enemy in the staging area."
                 ],
                 "Shadow": null,
-                "FlavorText": "The Sword of Elendil was forged anew by Elvish smiths... -The Fellowship of the Ring"
+                "FlavorText": "...it seemed they could hear the noise of a great hunt going by to the north of the path...\r\n-The Hobbit"
             },
             "Back": null,
             "CardSet": "The Fate of Wilderland",
             "EncounterInfo": null,
-            "Number": 153,
+            "Number": 149,
             "Quantity": 3,
-            "Artist": "Sebastian Zakrzewski",
+            "Artist": "Carlos Palma Cruchaga",
             "HasErrata": false,
-            "OctgnGuid": "18f0d0d0-b60b-4f9b-9153-75f3f6e82081",
-            "RingsDbCardId": "19153",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 88001,
-            "Categories": null
-        },
-        {
-            "Title": "Radagast's Staff",
-            "Slug": "Radagast's-Staff-TFoW",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Wilderland/Radagast's-Staff.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Artifact.",
-                    "Item.",
-                    "Staff."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to Radagast.",
-                    "Action: Exhaust Radagast`s Staff to choose one: Reduce the cost of the next Creature ally you play this phase by 2, ready a Creature ally, or return a non-unique Creature enemy engaged with you to the staging area."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Fate of Wilderland",
-            "EncounterInfo": null,
-            "Number": 154,
-            "Quantity": 3,
-            "Artist": "Sebastian Zakrzewski",
-            "HasErrata": false,
-            "OctgnGuid": "9d072a19-45ee-444f-baad-e5d47097aee7",
-            "RingsDbCardId": "19154",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 74407,
+            "OctgnGuid": "3c70ec5c-8f05-4ed3-a162-98649fead7bc",
+            "RingsDbCardId": "19149",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 23065,
             "Categories": null
         }
     ]

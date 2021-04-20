@@ -7,45 +7,122 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Dáin Ironfoot",
-            "Slug": "Dain-Ironfoot-TGoF",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Warrior Sword",
+            "Slug": "Warrior-Sword-TGoF",
+            "IsUnique": false,
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Dáin-Ironfoot.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Warrior-Sword.jpg",
                 "Stats": {
-                    "ThreatCost": "11",
-                    "Willpower": "1",
-                    "Attack": "2",
-                    "Defense": "3",
-                    "HitPoints": "5"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Dwarf.",
-                    "Noble.",
-                    "Warrior."
+                    "Item.",
+                    "Weapon."
                 ],
-                "Keywords": [],
+                "Keywords": [
+                    "Restricted."
+                ],
                 "Text": [
-                    "While Dáin Ironfoot is defending, he gains, `Action: Discard the top card of your deck to give Dáin Ironfoot +1 Defense for this attack. (Limit 3 times per phase.)`"
+                    "Attach to a Tactics or Warrior character. Restricted.",
+                    "Limit 1 per character.",
+                    "Attached character gets +1 Attack for each enemy engaged with you. (Limit +3 Attack.)"
                 ],
                 "Shadow": null,
-                "FlavorText": "`The time of my thought is my own to spend.`\r\n-The Fellowship of the Ring"
+                "FlavorText": "He gripped tighter on the hilt of his sword and went on doggedly.-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Ghost of Framsburg",
             "EncounterInfo": null,
-            "Number": 84,
-            "Quantity": 1,
-            "Artist": "Alexander Kozachenko",
+            "Number": 89,
+            "Quantity": 3,
+            "Artist": "Aleksander Karcz",
             "HasErrata": false,
-            "OctgnGuid": "14638d50-b682-45f9-9ebf-da64467a16e0",
-            "RingsDbCardId": "19084",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 3130,
+            "OctgnGuid": "58189608-6de5-4022-a999-e3810044aa18",
+            "RingsDbCardId": "19089",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 82933,
+            "Categories": null
+        },
+        {
+            "Title": "Valiant Determination",
+            "Slug": "Valiant-Determination-TGoF",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Valiant-Determination.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to an ally.",
+                    "Attached ally does not exhaust to quest."
+                ],
+                "Shadow": null,
+                "FlavorText": "-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": null,
+            "Number": 92,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "fcf1b49f-12b2-4b30-b11d-4b1273440587",
+            "RingsDbCardId": "19092",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 46157,
+            "Categories": null
+        },
+        {
+            "Title": "Ring of Thrór",
+            "Slug": "Ring-of-Thror-TGoF",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Ring-of-Thrór.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Ring."
+                ],
+                "Keywords": [
+                    "Guarded (enemy or location)."
+                ],
+                "Text": [
+                    "Guarded (enemy or location).",
+                    "Attach to a Dwarf hero.",
+                    "Action: Exhaust Ring of Thrór and discard the top card of your deck to ready attached hero. If the discarded card is an attachment, put it into play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": null,
+            "Number": 93,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "b009dbd9-56a5-40eb-90f2-b5d71ed4a626",
+            "RingsDbCardId": "19093",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 44681,
             "Categories": null
         },
         {
@@ -169,81 +246,6 @@
             "Categories": null
         },
         {
-            "Title": "Familiar Lands",
-            "Slug": "Familiar-Lands-TGoF",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Familiar-Lands.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Each location with an attachment gets -2 Threat until the end of the phase."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Ghost of Framsburg",
-            "EncounterInfo": null,
-            "Number": 88,
-            "Quantity": 3,
-            "Artist": "Leanna Crossan",
-            "HasErrata": false,
-            "OctgnGuid": "52c36397-34c6-41a2-87a9-6e82a9cb26f1",
-            "RingsDbCardId": "19088",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 4585,
-            "Categories": null
-        },
-        {
-            "Title": "Warrior Sword",
-            "Slug": "Warrior-Sword-TGoF",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Warrior-Sword.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item.",
-                    "Weapon."
-                ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a Tactics or Warrior character. Restricted.",
-                    "Limit 1 per character.",
-                    "Attached character gets +1 Attack for each enemy engaged with you. (Limit +3 Attack.)"
-                ],
-                "Shadow": null,
-                "FlavorText": "He gripped tighter on the hilt of his sword and went on doggedly.-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Ghost of Framsburg",
-            "EncounterInfo": null,
-            "Number": 89,
-            "Quantity": 3,
-            "Artist": "Aleksander Karcz",
-            "HasErrata": false,
-            "OctgnGuid": "58189608-6de5-4022-a999-e3810044aa18",
-            "RingsDbCardId": "19089",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 82933,
-            "Categories": null
-        },
-        {
             "Title": "Swift and Strong",
             "Slug": "Swift-and-Strong-TGoF",
             "IsUnique": false,
@@ -277,6 +279,48 @@
             "RingsDbCardId": "19090",
             "RingsDbPopularity": 2,
             "RingsDbVotes": 24281,
+            "Categories": null
+        },
+        {
+            "Title": "Dáin Ironfoot",
+            "Slug": "Dain-Ironfoot-TGoF",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Dáin-Ironfoot.jpg",
+                "Stats": {
+                    "ThreatCost": "11",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dwarf.",
+                    "Noble.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Dáin Ironfoot is defending, he gains, `Action: Discard the top card of your deck to give Dáin Ironfoot +1 Defense for this attack. (Limit 3 times per phase.)`"
+                ],
+                "Shadow": null,
+                "FlavorText": "`The time of my thought is my own to spend.`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Ghost of Framsburg",
+            "EncounterInfo": null,
+            "Number": 84,
+            "Quantity": 1,
+            "Artist": "Alexander Kozachenko",
+            "HasErrata": false,
+            "OctgnGuid": "14638d50-b682-45f9-9ebf-da64467a16e0",
+            "RingsDbCardId": "19084",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 3130,
             "Categories": null
         },
         {
@@ -320,66 +364,22 @@
             "Categories": null
         },
         {
-            "Title": "Valiant Determination",
-            "Slug": "Valiant-Determination-TGoF",
+            "Title": "Familiar Lands",
+            "Slug": "Familiar-Lands-TGoF",
             "IsUnique": false,
-            "CardType": "Attachment",
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Valiant-Determination.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Condition."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to an ally.",
-                    "Attached ally does not exhaust to quest."
-                ],
-                "Shadow": null,
-                "FlavorText": "-The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "The Ghost of Framsburg",
-            "EncounterInfo": null,
-            "Number": 92,
-            "Quantity": 3,
-            "Artist": "Unknown",
-            "HasErrata": false,
-            "OctgnGuid": "fcf1b49f-12b2-4b30-b11d-4b1273440587",
-            "RingsDbCardId": "19092",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 46157,
-            "Categories": null
-        },
-        {
-            "Title": "Ring of Thrór",
-            "Slug": "Ring-of-Thror-TGoF",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Ring-of-Thrór.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Ghost-of-Framsburg/Familiar-Lands.jpg",
                 "Stats": {
                     "ResourceCost": "1"
                 },
-                "Traits": [
-                    "Artifact.",
-                    "Ring."
-                ],
-                "Keywords": [
-                    "Guarded (enemy or location)."
-                ],
+                "Traits": [],
+                "Keywords": [],
                 "Text": [
-                    "Guarded (enemy or location).",
-                    "Attach to a Dwarf hero.",
-                    "Action: Exhaust Ring of Thrór and discard the top card of your deck to ready attached hero. If the discarded card is an attachment, put it into play."
+                    "Action: Each location with an attachment gets -2 Threat until the end of the phase."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -387,14 +387,14 @@
             "Back": null,
             "CardSet": "The Ghost of Framsburg",
             "EncounterInfo": null,
-            "Number": 93,
+            "Number": 88,
             "Quantity": 3,
-            "Artist": "Unknown",
+            "Artist": "Leanna Crossan",
             "HasErrata": false,
-            "OctgnGuid": "b009dbd9-56a5-40eb-90f2-b5d71ed4a626",
-            "RingsDbCardId": "19093",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 44681,
+            "OctgnGuid": "52c36397-34c6-41a2-87a9-6e82a9cb26f1",
+            "RingsDbCardId": "19088",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4585,
             "Categories": null
         }
     ]

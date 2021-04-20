@@ -49,43 +49,38 @@
             "Categories": null
         },
         {
-            "Title": "Kahliel's Tribesman",
-            "Slug": "Kahliel's-Tribesman-RaH",
+            "Title": "Proud Hunters",
+            "Slug": "Proud-Hunters-RaH",
             "IsUnique": false,
-            "CardType": "Ally",
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Kahliel's-Tribesman.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Proud-Hunters.jpg",
                 "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
+                    "ResourceCost": "0"
                 },
-                "Traits": [
-                    "Harad."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Action: Exhaust Kahliel’s Tribesman to choose another Harad character. That character gets +1 Willpower, +1 Attack, and +1 Defense until the end of the phase."
+                    "Play only if you control a unique character with the Noble trait and another unique character with the Ranger trait.",
+                    "Response: After a hero you control participates in an attack that destroys an enemy, add X resources to that hero’s pool. X is the just destroyed enemy’s printed Threat."
                 ],
                 "Shadow": null,
-                "FlavorText": "But the Haradrim, being now driven to the brink, turned at bay, and they were fierce in despair...\r\n-The Return of the King"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "Race Across Harad",
             "EncounterInfo": null,
-            "Number": 29,
+            "Number": 32,
             "Quantity": 3,
-            "Artist": "Ryan Valle",
+            "Artist": "Rafał Hrynkiewicz",
             "HasErrata": false,
-            "OctgnGuid": "129f6237-c00c-41a2-af6e-98a6f966aad1",
-            "RingsDbCardId": "17029",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 46343,
+            "OctgnGuid": "953f3b7f-f4ca-4f6f-92d5-8d4b465231df",
+            "RingsDbCardId": "17032",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 115832,
             "Categories": null
         },
         {
@@ -125,79 +120,6 @@
             "RingsDbCardId": "17030",
             "RingsDbPopularity": 5,
             "RingsDbVotes": 113286,
-            "Categories": null
-        },
-        {
-            "Title": "Mighty Warrior",
-            "Slug": "Mighty-Warrior-RaH",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Mighty-Warrior.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Skill."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a hero. Limit 1 per hero.",
-                    "Attached hero gains the Warrior trait.",
-                    "Response: After you play Mighty Warrior from your hand, draw a card."
-                ],
-                "Shadow": null,
-                "FlavorText": "Gimli hewed the legs from another that had sprung up on Balin’s tomb.\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Race Across Harad",
-            "EncounterInfo": null,
-            "Number": 31,
-            "Quantity": 3,
-            "Artist": "Marius Bota",
-            "HasErrata": false,
-            "OctgnGuid": "775422b6-68bd-4ae3-8229-ce65e38465a9",
-            "RingsDbCardId": "17031",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 17531,
-            "Categories": null
-        },
-        {
-            "Title": "Proud Hunters",
-            "Slug": "Proud-Hunters-RaH",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Proud-Hunters.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Play only if you control a unique character with the Noble trait and another unique character with the Ranger trait.",
-                    "Response: After a hero you control participates in an attack that destroys an enemy, add X resources to that hero’s pool. X is the just destroyed enemy’s printed Threat."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Race Across Harad",
-            "EncounterInfo": null,
-            "Number": 32,
-            "Quantity": 3,
-            "Artist": "Rafał Hrynkiewicz",
-            "HasErrata": false,
-            "OctgnGuid": "953f3b7f-f4ca-4f6f-92d5-8d4b465231df",
-            "RingsDbCardId": "17032",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 115832,
             "Categories": null
         },
         {
@@ -242,38 +164,83 @@
             "Categories": null
         },
         {
-            "Title": "Backtrack",
-            "Slug": "Backtrack-RaH",
+            "Title": "Steward of Orthanc",
+            "Slug": "Steward-of-Orthanc-RaH",
             "IsUnique": false,
-            "CardType": "Event",
+            "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Backtrack.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Steward-of-Orthanc.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "2"
                 },
-                "Traits": [],
+                "Traits": [
+                    "Isengard."
+                ],
                 "Keywords": [],
                 "Text": [
-                    "Play only if the main quest has no keywords.",
-                    "Action: Remove X progress from the main quest to place X progress on a location in the staging area."
+                    "Response: When you play an event, give it Doomed 1 to draw a card. You cannot trigger this ability if you have already triggered the ability of a Steward of Orthanc this round."
                 ],
                 "Shadow": null,
-                "FlavorText": "`Well,` said Boromir, `when heads are at a loss bodies must serve...`\r\n-The Fellowship of the Ring"
+                "FlavorText": "`...the power of Orthanc cannot be lightly thrown aside...`\r\n-Saruman, The Two Towers"
             },
             "Back": null,
             "CardSet": "Race Across Harad",
             "EncounterInfo": null,
-            "Number": 34,
+            "Number": 37,
             "Quantity": 3,
-            "Artist": "John Pacer",
+            "Artist": "Aleksander Karcz",
             "HasErrata": false,
-            "OctgnGuid": "7b60b869-4232-40cf-bbc5-6856edeef419",
-            "RingsDbCardId": "17034",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 17159,
+            "OctgnGuid": "32ab123f-b12f-4f9d-a6e5-556f54eb6c06",
+            "RingsDbCardId": "17037",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 81213,
+            "Categories": null
+        },
+        {
+            "Title": "Kahliel's Tribesman",
+            "Slug": "Kahliel's-Tribesman-RaH",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Kahliel's-Tribesman.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust Kahliel’s Tribesman to choose another Harad character. That character gets +1 Willpower, +1 Attack, and +1 Defense until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "But the Haradrim, being now driven to the brink, turned at bay, and they were fierce in despair...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": null,
+            "Number": 29,
+            "Quantity": 3,
+            "Artist": "Ryan Valle",
+            "HasErrata": false,
+            "OctgnGuid": "129f6237-c00c-41a2-af6e-98a6f966aad1",
+            "RingsDbCardId": "17029",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 46343,
             "Categories": null
         },
         {
@@ -354,43 +321,76 @@
             "Categories": null
         },
         {
-            "Title": "Steward of Orthanc",
-            "Slug": "Steward-of-Orthanc-RaH",
+            "Title": "Mighty Warrior",
+            "Slug": "Mighty-Warrior-RaH",
             "IsUnique": false,
-            "CardType": "Ally",
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Steward-of-Orthanc.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Mighty-Warrior.jpg",
                 "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "2",
-                    "Attack": "0",
-                    "Defense": "0",
-                    "HitPoints": "2"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Isengard."
+                    "Skill."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Response: When you play an event, give it Doomed 1 to draw a card. You cannot trigger this ability if you have already triggered the ability of a Steward of Orthanc this round."
+                    "Attach to a hero. Limit 1 per hero.",
+                    "Attached hero gains the Warrior trait.",
+                    "Response: After you play Mighty Warrior from your hand, draw a card."
                 ],
                 "Shadow": null,
-                "FlavorText": "`...the power of Orthanc cannot be lightly thrown aside...`\r\n-Saruman, The Two Towers"
+                "FlavorText": "Gimli hewed the legs from another that had sprung up on Balin’s tomb.\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Race Across Harad",
             "EncounterInfo": null,
-            "Number": 37,
+            "Number": 31,
             "Quantity": 3,
-            "Artist": "Aleksander Karcz",
+            "Artist": "Marius Bota",
             "HasErrata": false,
-            "OctgnGuid": "32ab123f-b12f-4f9d-a6e5-556f54eb6c06",
-            "RingsDbCardId": "17037",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 81213,
+            "OctgnGuid": "775422b6-68bd-4ae3-8229-ce65e38465a9",
+            "RingsDbCardId": "17031",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 17531,
+            "Categories": null
+        },
+        {
+            "Title": "Backtrack",
+            "Slug": "Backtrack-RaH",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Backtrack.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if the main quest has no keywords.",
+                    "Action: Remove X progress from the main quest to place X progress on a location in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Well,` said Boromir, `when heads are at a loss bodies must serve...`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": null,
+            "Number": 34,
+            "Quantity": 3,
+            "Artist": "John Pacer",
+            "HasErrata": false,
+            "OctgnGuid": "7b60b869-4232-40cf-bbc5-6856edeef419",
+            "RingsDbCardId": "17034",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 17159,
             "Categories": null
         }
     ]

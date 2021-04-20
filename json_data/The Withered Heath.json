@@ -7,32 +7,65 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Grimbeorn the Old",
-            "Slug": "Grimbeorn-the-Old-TWH",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Beorning Skin-changer",
+            "Slug": "Beorning-Skin-changer-TWH",
+            "IsUnique": false,
+            "CardType": "Ally",
             "CardSubType": "None",
             "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Withered-Heath/Grimbeorn-the-Old.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Withered-Heath/Beorning-Skin-changer.jpg",
                 "Stats": {
-                    "ThreatCost": "11",
-                    "Willpower": "0",
-                    "Attack": "3",
-                    "Defense": "3",
-                    "HitPoints": "5"
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
                 },
                 "Traits": [
-                    "Beorning.",
-                    "Warrior."
+                    "Beorning."
                 ],
-                "Keywords": [
-                    "Sentinel."
-                ],
+                "Keywords": [],
                 "Text": [
-                    "Sentinel.",
-                    "Response: After Grimbeorn the Old defends an attack, spend 1 resource from his pool to declare him as an attacker against that enemy (and resolve his attack). The defending enemy gets -2 Defense for this attack."
+                    "Combat Action: Choose a Beorning ally with printed cost 3 or more in your hand or discard pile. Discard Beorning Skin-changer to put that ally into play."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...sometimes he is a huge black bear, sometimes he is a great strong black-haired man with huge arms and a great beard.`\r\n-Gandalf, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Withered Heath",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Jason Jenicke",
+            "HasErrata": false,
+            "OctgnGuid": "c4061868-f717-4735-9884-253385437f3b",
+            "RingsDbCardId": "19006",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 139545,
+            "Categories": null
+        },
+        {
+            "Title": "Woodmen's Clearing",
+            "Slug": "Woodmen's-Clearing-TWH",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Withered-Heath/Woodmen's-Clearing.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a location. Limit 1 per location.",
+                    "Response: When attached location leaves play as an explored location, the first player reduces his threat by 3."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -40,14 +73,14 @@
             "Back": null,
             "CardSet": "The Withered Heath",
             "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Jason Jenicke",
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
             "HasErrata": false,
-            "OctgnGuid": "a8709b3e-8ea0-45bd-9ccd-b48797c7012b",
-            "RingsDbCardId": "19001",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 5816,
+            "OctgnGuid": "",
+            "RingsDbCardId": "19004",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 79418,
             "Categories": null
         },
         {
@@ -88,6 +121,122 @@
             "RingsDbCardId": "19002",
             "RingsDbPopularity": 4,
             "RingsDbVotes": 65393,
+            "Categories": null
+        },
+        {
+            "Title": "Long Lake Fisherman",
+            "Slug": "Long-Lake-Fisherman-TWH",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Withered-Heath/Long-Lake-Fisherman.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dale."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Long Lake Fisherman enters play, name a number. Then, search the top 5 cards of your deck for a card whose printed cost is equal to that number and add it to your hand. Shuffle your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Withered Heath",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Tropa Entertainment",
+            "HasErrata": false,
+            "OctgnGuid": "27c06f1e-7be0-417e-9029-f5a71c93e3c5",
+            "RingsDbCardId": "19008",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 60537,
+            "Categories": null
+        },
+        {
+            "Title": "The Arkenstone",
+            "Slug": "The-Arkenstone-TWH",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Withered-Heath/The-Arkenstone.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Guarded (enemy or location)."
+                ],
+                "Text": [
+                    "Guarded (enemy or location).",
+                    "Attach to a hero.",
+                    "Each unique character you control gains +1 Willpower.",
+                    "Action: Reduce your threat by 2 to attach The Arkenstone to a hero controlled by another player and raise that player`s threat by 2. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Withered Heath",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Emilio Rodriguez",
+            "HasErrata": false,
+            "OctgnGuid": "7ab0122f-ede8-45fa-b803-619c28dfe0ce",
+            "RingsDbCardId": "19010",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 57042,
+            "Categories": null
+        },
+        {
+            "Title": "The Hidden Way",
+            "Slug": "The-Hidden-Way-TWH",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Withered-Heath/The-Hidden-Way.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: At the beginning of the quest phase, search the top 5 cards of the encounter deck for a location and make it the active location, returning any previous active location to the staging area. Then, reveal 1 less encounter card this phase (to a minimum of 0). Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Withered Heath",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Preston Stone",
+            "HasErrata": false,
+            "OctgnGuid": "24e988d6-f8af-4bd0-80ab-5e959463a22a",
+            "RingsDbCardId": "19005",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 56173,
             "Categories": null
         },
         {
@@ -132,117 +281,6 @@
             "Categories": null
         },
         {
-            "Title": "Woodmen's Clearing",
-            "Slug": "Woodmen's-Clearing-TWH",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Withered-Heath/Woodmen's-Clearing.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [
-                    "Condition."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a location. Limit 1 per location.",
-                    "Response: When attached location leaves play as an explored location, the first player reduces his threat by 3."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Withered Heath",
-            "EncounterInfo": null,
-            "Number": 4,
-            "Quantity": 3,
-            "Artist": "Mariusz Gandzel",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "19004",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 79418,
-            "Categories": null
-        },
-        {
-            "Title": "The Hidden Way",
-            "Slug": "The-Hidden-Way-TWH",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Withered-Heath/The-Hidden-Way.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Response: At the beginning of the quest phase, search the top 5 cards of the encounter deck for a location and make it the active location, returning any previous active location to the staging area. Then, reveal 1 less encounter card this phase (to a minimum of 0). Shuffle the encounter deck."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Withered Heath",
-            "EncounterInfo": null,
-            "Number": 5,
-            "Quantity": 3,
-            "Artist": "Preston Stone",
-            "HasErrata": false,
-            "OctgnGuid": "24e988d6-f8af-4bd0-80ab-5e959463a22a",
-            "RingsDbCardId": "19005",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 56173,
-            "Categories": null
-        },
-        {
-            "Title": "Beorning Skin-changer",
-            "Slug": "Beorning-Skin-changer-TWH",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Withered-Heath/Beorning-Skin-changer.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Beorning."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Combat Action: Choose a Beorning ally with printed cost 3 or more in your hand or discard pile. Discard Beorning Skin-changer to put that ally into play."
-                ],
-                "Shadow": null,
-                "FlavorText": "`...sometimes he is a huge black bear, sometimes he is a great strong black-haired man with huge arms and a great beard.`\r\n-Gandalf, The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "The Withered Heath",
-            "EncounterInfo": null,
-            "Number": 6,
-            "Quantity": 3,
-            "Artist": "Jason Jenicke",
-            "HasErrata": false,
-            "OctgnGuid": "c4061868-f717-4735-9884-253385437f3b",
-            "RingsDbCardId": "19006",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 139545,
-            "Categories": null
-        },
-        {
             "Title": "Beorn's Rage",
             "Slug": "Beorn's-Rage-TWH",
             "IsUnique": false,
@@ -277,28 +315,32 @@
             "Categories": null
         },
         {
-            "Title": "Long Lake Fisherman",
-            "Slug": "Long-Lake-Fisherman-TWH",
-            "IsUnique": false,
-            "CardType": "Ally",
+            "Title": "Grimbeorn the Old",
+            "Slug": "Grimbeorn-the-Old-TWH",
+            "IsUnique": true,
+            "CardType": "Hero",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Withered-Heath/Long-Lake-Fisherman.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Withered-Heath/Grimbeorn-the-Old.jpg",
                 "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "0",
-                    "HitPoints": "2"
+                    "ThreatCost": "11",
+                    "Willpower": "0",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "5"
                 },
                 "Traits": [
-                    "Dale."
+                    "Beorning.",
+                    "Warrior."
                 ],
-                "Keywords": [],
+                "Keywords": [
+                    "Sentinel."
+                ],
                 "Text": [
-                    "Response: After Long Lake Fisherman enters play, name a number. Then, search the top 5 cards of your deck for a card whose printed cost is equal to that number and add it to your hand. Shuffle your deck."
+                    "Sentinel.",
+                    "Response: After Grimbeorn the Old defends an attack, spend 1 resource from his pool to declare him as an attacker against that enemy (and resolve his attack). The defending enemy gets -2 Defense for this attack."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -306,14 +348,14 @@
             "Back": null,
             "CardSet": "The Withered Heath",
             "EncounterInfo": null,
-            "Number": 8,
-            "Quantity": 3,
-            "Artist": "Tropa Entertainment",
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Jason Jenicke",
             "HasErrata": false,
-            "OctgnGuid": "27c06f1e-7be0-417e-9029-f5a71c93e3c5",
-            "RingsDbCardId": "19008",
+            "OctgnGuid": "a8709b3e-8ea0-45bd-9ccd-b48797c7012b",
+            "RingsDbCardId": "19001",
             "RingsDbPopularity": 3,
-            "RingsDbVotes": 60537,
+            "RingsDbVotes": 5816,
             "Categories": null
         },
         {
@@ -351,48 +393,6 @@
             "RingsDbCardId": "19009",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 19832,
-            "Categories": null
-        },
-        {
-            "Title": "The Arkenstone",
-            "Slug": "The-Arkenstone-TWH",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Withered-Heath/The-Arkenstone.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Artifact.",
-                    "Item."
-                ],
-                "Keywords": [
-                    "Guarded (enemy or location)."
-                ],
-                "Text": [
-                    "Guarded (enemy or location).",
-                    "Attach to a hero.",
-                    "Each unique character you control gains +1 Willpower.",
-                    "Action: Reduce your threat by 2 to attach The Arkenstone to a hero controlled by another player and raise that player`s threat by 2. (Limit once per round.)"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Withered Heath",
-            "EncounterInfo": null,
-            "Number": 10,
-            "Quantity": 3,
-            "Artist": "Emilio Rodriguez",
-            "HasErrata": false,
-            "OctgnGuid": "7ab0122f-ede8-45fa-b803-619c28dfe0ce",
-            "RingsDbCardId": "19010",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 57042,
             "Categories": null
         }
     ]

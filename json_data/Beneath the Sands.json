@@ -7,6 +7,125 @@
     "Cards": null,
     "cards": [
         {
+            "Title": "Rider of Rohan",
+            "Slug": "Rider-of-Rohan-BtS",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Rider-of-Rohan.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While a side quest is in the victory display, Rider of Rohan does not exaust to quest."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Who are you, and what are you doing in this land?` said the Rider, using the Common Speech of the West...\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 60,
+            "Quantity": 3,
+            "Artist": "Javier Charro Martinez",
+            "HasErrata": false,
+            "OctgnGuid": "f309210e-c505-411f-b748-c6828a028ad4",
+            "RingsDbCardId": "17060",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 123237,
+            "Categories": null
+        },
+        {
+            "Title": "Keep Watch",
+            "Slug": "Keep-Watch-BtS",
+            "IsUnique": false,
+            "CardType": "Player_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Keep-Watch.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Limit 1 copy of Keep Watch in the victory display.",
+                    "While this quest is in the victory display, each non-unique enemy engaged with a player gets -1 Attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I called for the help of the Dúnedain, and their watch was doubled...`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 59,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "OctgnGuid": "b8f5c0b1-a11e-41f5-b0bd-8dab7d537feb",
+            "RingsDbCardId": "17059",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 83083,
+            "Categories": null
+        },
+        {
+            "Title": "The Red Arrow",
+            "Slug": "The-Red-Arrow-BtS",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/The-Red-Arrow.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Limit 1 per deck. Attach to a Gondor hero.",
+                    "Attached hero gets +1 Willpower.",
+                    "Valour Response: After attached hero quests successfully, add The Red Arrow to the victory display to search the top 5 cards of your deck for an ally and put it into play."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The Red Arrow has not been seen in the Mark in all my years!`\r\n-Théoden, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 58,
+            "Quantity": 3,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "OctgnGuid": "0b179f39-f202-4fe7-b930-0f3db582bc3e",
+            "RingsDbCardId": "17058",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 82550,
+            "Categories": null
+        },
+        {
             "Title": "Hirgon",
             "Slug": "Hirgon-BtS",
             "IsUnique": true,
@@ -45,6 +164,118 @@
             "RingsDbCardId": "17055",
             "RingsDbPopularity": 4,
             "RingsDbVotes": 6875,
+            "Categories": null
+        },
+        {
+            "Title": "Dúnedain Lookout",
+            "Slug": "Dunedain-Lookout-BtS",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Dúnedain-Lookout.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dúnedain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: Discard Dúnedain Lookout to cancel the `When Revealed` effects of an enemy just revealed from the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Travellers scowl at us, and countrymen gives us scornful names.`\r\n-Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 62,
+            "Quantity": 3,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "OctgnGuid": "84202632-1548-4926-b307-c2d771abb97d",
+            "RingsDbCardId": "17062",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 55539,
+            "Categories": null
+        },
+        {
+            "Title": "Fireside Song",
+            "Slug": "Fireside-Song-BtS",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Fireside-Song.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Hobbit hero. Limit 1 per hero.",
+                    "Attached hero gets +1 Willpower for each Song attached to it."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I sit beside the fire and think\r\nof how the world will be\r\nwhen winter comes without a spring\r\nthat I shall ever see.`\r\n-Bilbo Baggins, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 61,
+            "Quantity": 3,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "OctgnGuid": "955a36c0-f348-400e-8ba4-16adcab07444",
+            "RingsDbCardId": "17061",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 54281,
+            "Categories": null
+        },
+        {
+            "Title": "The Free Peoples",
+            "Slug": "The-Free-Peoples-BtS",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/The-Free-Peoples.jpg",
+                "Stats": {
+                    "ResourceCost": "5"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if the characters you control have a total of at least 9 different Traits between them.",
+                    "Action: Ready each character in play. Until the end of the phase, each character you control gets +1 Willpower."
+                ],
+                "Shadow": null,
+                "FlavorText": "`For the rest, they shall represent the other Free Peoples of the World: Elves, Dwarves and Men.`\r\n-Elrond, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Beneath the Sands",
+            "EncounterInfo": null,
+            "Number": 64,
+            "Quantity": 3,
+            "Artist": "Uriah Voth",
+            "HasErrata": false,
+            "OctgnGuid": "8a236d16-1b31-474c-992b-3a2cd91a3b71",
+            "RingsDbCardId": "17064",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 30514,
             "Categories": null
         },
         {
@@ -124,202 +355,6 @@
             "Categories": null
         },
         {
-            "Title": "The Red Arrow",
-            "Slug": "The-Red-Arrow-BtS",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/The-Red-Arrow.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Artifact.",
-                    "Item."
-                ],
-                "Keywords": [
-                    "Victory 1."
-                ],
-                "Text": [
-                    "Limit 1 per deck. Attach to a Gondor hero.",
-                    "Attached hero gets +1 Willpower.",
-                    "Valour Response: After attached hero quests successfully, add The Red Arrow to the victory display to search the top 5 cards of your deck for an ally and put it into play."
-                ],
-                "Shadow": null,
-                "FlavorText": "`The Red Arrow has not been seen in the Mark in all my years!`\r\n-Théoden, The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "Beneath the Sands",
-            "EncounterInfo": null,
-            "Number": 58,
-            "Quantity": 3,
-            "Artist": "Stanislav Dikolenko",
-            "HasErrata": false,
-            "OctgnGuid": "0b179f39-f202-4fe7-b930-0f3db582bc3e",
-            "RingsDbCardId": "17058",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 82550,
-            "Categories": null
-        },
-        {
-            "Title": "Keep Watch",
-            "Slug": "Keep-Watch-BtS",
-            "IsUnique": false,
-            "CardType": "Player_Side_Quest",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Keep-Watch.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [
-                    "Victory 1."
-                ],
-                "Text": [
-                    "Limit 1 copy of Keep Watch in the victory display.",
-                    "While this quest is in the victory display, each non-unique enemy engaged with a player gets -1 Attack."
-                ],
-                "Shadow": null,
-                "FlavorText": "`I called for the help of the Dúnedain, and their watch was doubled...`\r\n-Gandalf, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Beneath the Sands",
-            "EncounterInfo": null,
-            "Number": 59,
-            "Quantity": 3,
-            "Artist": "Álvaro Calvo Escudero",
-            "HasErrata": false,
-            "OctgnGuid": "b8f5c0b1-a11e-41f5-b0bd-8dab7d537feb",
-            "RingsDbCardId": "17059",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 83083,
-            "Categories": null
-        },
-        {
-            "Title": "Rider of Rohan",
-            "Slug": "Rider-of-Rohan-BtS",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Rider-of-Rohan.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "0",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Rohan.",
-                    "Scout."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "While a side quest is in the victory display, Rider of Rohan does not exaust to quest."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Who are you, and what are you doing in this land?` said the Rider, using the Common Speech of the West...\r\n-The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "Beneath the Sands",
-            "EncounterInfo": null,
-            "Number": 60,
-            "Quantity": 3,
-            "Artist": "Javier Charro Martinez",
-            "HasErrata": false,
-            "OctgnGuid": "f309210e-c505-411f-b748-c6828a028ad4",
-            "RingsDbCardId": "17060",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 123237,
-            "Categories": null
-        },
-        {
-            "Title": "Fireside Song",
-            "Slug": "Fireside-Song-BtS",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Fireside-Song.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Song."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Hobbit hero. Limit 1 per hero.",
-                    "Attached hero gets +1 Willpower for each Song attached to it."
-                ],
-                "Shadow": null,
-                "FlavorText": "`I sit beside the fire and think\r\nof how the world will be\r\nwhen winter comes without a spring\r\nthat I shall ever see.`\r\n-Bilbo Baggins, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Beneath the Sands",
-            "EncounterInfo": null,
-            "Number": 61,
-            "Quantity": 3,
-            "Artist": "Jake Murray",
-            "HasErrata": false,
-            "OctgnGuid": "955a36c0-f348-400e-8ba4-16adcab07444",
-            "RingsDbCardId": "17061",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 54281,
-            "Categories": null
-        },
-        {
-            "Title": "Dúnedain Lookout",
-            "Slug": "Dunedain-Lookout-BtS",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/Dúnedain-Lookout.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Dúnedain."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: Discard Dúnedain Lookout to cancel the `When Revealed` effects of an enemy just revealed from the encounter deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Travellers scowl at us, and countrymen gives us scornful names.`\r\n-Aragorn, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Beneath the Sands",
-            "EncounterInfo": null,
-            "Number": 62,
-            "Quantity": 3,
-            "Artist": "Aleksander Karcz",
-            "HasErrata": false,
-            "OctgnGuid": "84202632-1548-4926-b307-c2d771abb97d",
-            "RingsDbCardId": "17062",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 55539,
-            "Categories": null
-        },
-        {
             "Title": "Doughty Ranger",
             "Slug": "Doughty-Ranger-BtS",
             "IsUnique": false,
@@ -355,41 +390,6 @@
             "RingsDbCardId": "17063",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 7927,
-            "Categories": null
-        },
-        {
-            "Title": "The Free Peoples",
-            "Slug": "The-Free-Peoples-BtS",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Beneath-the-Sands/The-Free-Peoples.jpg",
-                "Stats": {
-                    "ResourceCost": "5"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Play only if the characters you control have a total of at least 9 different Traits between them.",
-                    "Action: Ready each character in play. Until the end of the phase, each character you control gets +1 Willpower."
-                ],
-                "Shadow": null,
-                "FlavorText": "`For the rest, they shall represent the other Free Peoples of the World: Elves, Dwarves and Men.`\r\n-Elrond, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Beneath the Sands",
-            "EncounterInfo": null,
-            "Number": 64,
-            "Quantity": 3,
-            "Artist": "Uriah Voth",
-            "HasErrata": false,
-            "OctgnGuid": "8a236d16-1b31-474c-992b-3a2cd91a3b71",
-            "RingsDbCardId": "17064",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 30514,
             "Categories": null
         }
     ]

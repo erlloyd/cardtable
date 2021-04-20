@@ -7,241 +7,48 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Saruman",
-            "Slug": "Saruman-CotW",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "The Grey Wanderer",
+            "Slug": "The-Grey-Wanderer-CotW",
+            "IsUnique": false,
+            "CardType": "Contract",
             "CardSubType": "None",
-            "Sphere": "Lore",
+            "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/Saruman.jpg",
-                "Stats": {
-                    "ThreatCost": "13",
-                    "Willpower": "3",
-                    "Attack": "4",
-                    "Defense": "2",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Istari.",
-                    "Isengard."
-                ],
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/The-Grey-Wanderer-SideA.jpg",
+                "Stats": {},
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "When a player card effect would reduce your threat by any amount, reduce that amount to 1.",
-                    "While playing an event with the printed doomed keyword, Saruman gains the printed Leadership, Spirit, and Tactics icons.",
-                    "Response: After you play a card with the doomed keyword, ready Saruman."
+                    "You cannot choose more than 1 starting hero.",
+                    "Setup: Search your deck for an attachment with a printed cost of 1 and put it into play. Then, flip this card over."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "`...the rule of no realm is mine, neither of Gondor nor any other, great or small. But all worthy things that are in peril as the world now stands, those are my card.`\r\n-Gandalf, The Return of the King"
             },
-            "Back": null,
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "The first non-unique card you play each planning phase does not require a resource match.",
+                    "Action: Exhaust this card and raise your threat by 1 to (choose two): Ready your starting hero, add 2 resources to your starting hero`s resource pool, or heal 3 damage from your starting hero."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...this shall be his great task, and maybe the end of his labours.`\r\n-Elrond, The Fellowship of the Ring"
+            },
             "CardSet": "Challenge of the Wainriders",
             "EncounterInfo": null,
-            "Number": 54,
+            "Number": 74,
             "Quantity": 1,
-            "Artist": "Martin de Diego Sádaba",
+            "Artist": "Justin Gerard",
             "HasErrata": false,
-            "OctgnGuid": "28296152-f2b0-4ccc-9be9-423d08aa174f",
-            "RingsDbCardId": "22054",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 2315,
-            "Categories": null
-        },
-        {
-            "Title": "Power of Command",
-            "Slug": "Power-of-Command-CotW",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/Power-of-Command.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Master."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to the hero with The One Ring.",
-                    "Limit 1 per hero. Attached hero gets +1 Willpower.",
-                    "Response: After attached hero commits to the quest, exhaust The One Ring and raise your threat by 1 to give each other unique character you control +1 Willpower until the end of the phase."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Challenge of the Wainriders",
-            "EncounterInfo": null,
-            "Number": 55,
-            "Quantity": 3,
-            "Artist": "Borja Pindado",
-            "HasErrata": false,
-            "OctgnGuid": "de829d6a-4b69-4423-88ce-d9e803e0e418",
-            "RingsDbCardId": "22055",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 23449,
-            "Categories": null
-        },
-        {
-            "Title": "Horns! Horns! Horns!",
-            "Slug": "Horns-Horns-Horns-CotW",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/Horns-Horns-Horns.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [
-                    "Doomed 2."
-                ],
-                "Text": [
-                    "Doomed 2.",
-                    "Action: Each player may put one ally card into play from his hand. At the end of the phase, shuffle each of those allies that are still in play into their owners` decks."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Challenge of the Wainriders",
-            "EncounterInfo": null,
-            "Number": 56,
-            "Quantity": 3,
-            "Artist": "Federico Musetti",
-            "HasErrata": false,
-            "OctgnGuid": "303355a0-0429-438f-8e45-db7a09dd57c6",
-            "RingsDbCardId": "22056",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 23911,
-            "Categories": null
-        },
-        {
-            "Title": "Soldier of Isengard",
-            "Slug": "Soldier-of-Isengard-CotW",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/Soldier-of-Isengard.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Isengard."
-                ],
-                "Keywords": [
-                    "Doomed 2."
-                ],
-                "Text": [
-                    "Doomed 2.",
-                    "Response: After a player raises his threat from the doomed keyword, give control of Soldier of Isengard to that player."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Challenge of the Wainriders",
-            "EncounterInfo": null,
-            "Number": 57,
-            "Quantity": 3,
-            "Artist": "Stanislav Dikolenko",
-            "HasErrata": false,
-            "OctgnGuid": "765a3037-f02c-4dfa-b82a-ac377f9ecf3f",
-            "RingsDbCardId": "22057",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 14607,
-            "Categories": null
-        },
-        {
-            "Title": "Far-sighted",
-            "Slug": "Far-sighted-CotW",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/Far-sighted.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [
-                    "Doomed 1."
-                ],
-                "Text": [
-                    "Doomed 1.",
-                    "Action: Look at the top 5 cards of the encounter deck. Put them back in the same order."
-                ],
-                "Shadow": null,
-                "FlavorText": "...Legolas was standing, gazing northwards into the darkness, thoughtful and silent as a young tree in a windless night.\r\n-The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "Challenge of the Wainriders",
-            "EncounterInfo": null,
-            "Number": 58,
-            "Quantity": 3,
-            "Artist": "Vilius Petrauskas",
-            "HasErrata": false,
-            "OctgnGuid": "347cfbbb-69a7-4f43-84b2-2a8751be552f",
-            "RingsDbCardId": "22058",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 34522,
-            "Categories": null
-        },
-        {
-            "Title": "Nori",
-            "Slug": "Nori-CotW",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/Nori.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "1",
-                    "Attack": "2",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Dwarf."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Nori participates in an attack that destroys an enemy, put the top card of your discard pile on the bottom of your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "`You`ve left the burglar behind again!`\r\n-Nori, The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Challenge of the Wainriders",
-            "EncounterInfo": null,
-            "Number": 59,
-            "Quantity": 3,
-            "Artist": "David Keen",
-            "HasErrata": false,
-            "OctgnGuid": "6854e071-f438-42b2-a43a-580aec184eeb",
-            "RingsDbCardId": "22059",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 16771,
+            "OctgnGuid": "ab909b87-a7c0-4841-83e4-84776262e552",
+            "RingsDbCardId": "22074",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 5549,
             "Categories": null
         },
         {
@@ -282,79 +89,40 @@
             "Categories": null
         },
         {
-            "Title": "Rohirrim Scout",
-            "Slug": "Rohirrim-Scout-CotW",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/Rohirrim-Scout.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "0",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Rohan.",
-                    "Scout."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Discard Rohirrim Scout to choose a non-unique enemy in the staging area. That enemy does not make engagement checks against you this round."
-                ],
-                "Shadow": null,
-                "FlavorText": "Swiftly a scout rode back and reported that wolf-riders were abroad in the valley...\r\n-The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "Challenge of the Wainriders",
-            "EncounterInfo": null,
-            "Number": 61,
-            "Quantity": 3,
-            "Artist": "Federico Musetti",
-            "HasErrata": false,
-            "OctgnGuid": "af0802d7-5e9c-424e-86d3-2f81f56b5ea8",
-            "RingsDbCardId": "22061",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 19022,
-            "Categories": null
-        },
-        {
-            "Title": "The Muster of Rohan",
-            "Slug": "The-Muster-of-Rohan-CotW",
+            "Title": "Far-sighted",
+            "Slug": "Far-sighted-CotW",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/The-Muster-of-Rohan.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/Far-sighted.jpg",
                 "Stats": {
-                    "ResourceCost": "4"
+                    "ResourceCost": "0"
                 },
                 "Traits": [],
-                "Keywords": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
                 "Text": [
-                    "While paying for The Muster of Rohan, each Rohan hero you control is considered to have a Spirit icon.",
-                    "Planning Action: Search the top 10 cards of your deck for up to 4 Rohan allies and put them into play. Shuffle your deck. If any of those allies are still in play at the end of the round, discard them."
+                    "Doomed 1.",
+                    "Action: Look at the top 5 cards of the encounter deck. Put them back in the same order."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "...Legolas was standing, gazing northwards into the darkness, thoughtful and silent as a young tree in a windless night.\r\n-The Two Towers"
             },
             "Back": null,
             "CardSet": "Challenge of the Wainriders",
             "EncounterInfo": null,
-            "Number": 62,
+            "Number": 58,
             "Quantity": 3,
             "Artist": "Vilius Petrauskas",
             "HasErrata": false,
-            "OctgnGuid": "8047c8c2-1569-428c-865e-0459c2733db3",
-            "RingsDbCardId": "22062",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 21908,
+            "OctgnGuid": "347cfbbb-69a7-4f43-84b2-2a8751be552f",
+            "RingsDbCardId": "22058",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 34522,
             "Categories": null
         },
         {
@@ -399,48 +167,280 @@
             "Categories": null
         },
         {
-            "Title": "The Grey Wanderer",
-            "Slug": "The-Grey-Wanderer-CotW",
+            "Title": "Horns! Horns! Horns!",
+            "Slug": "Horns-Horns-Horns-CotW",
             "IsUnique": false,
-            "CardType": "Contract",
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/The-Grey-Wanderer-SideA.jpg",
-                "Stats": {},
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/Horns-Horns-Horns.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
                 "Traits": [],
-                "Keywords": [],
+                "Keywords": [
+                    "Doomed 2."
+                ],
                 "Text": [
-                    "You cannot choose more than 1 starting hero.",
-                    "Setup: Search your deck for an attachment with a printed cost of 1 and put it into play. Then, flip this card over."
+                    "Doomed 2.",
+                    "Action: Each player may put one ally card into play from his hand. At the end of the phase, shuffle each of those allies that are still in play into their owners` decks."
                 ],
                 "Shadow": null,
-                "FlavorText": "`...the rule of no realm is mine, neither of Gondor nor any other, great or small. But all worthy things that are in peril as the world now stands, those are my card.`\r\n-Gandalf, The Return of the King"
+                "FlavorText": null
             },
-            "Back": {
-                "Subtitle": null,
-                "ImagePath": null,
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "The first non-unique card you play each planning phase does not require a resource match.",
-                    "Action: Exhaust this card and raise your threat by 1 to (choose two): Ready your starting hero, add 2 resources to your starting hero`s resource pool, or heal 3 damage from your starting hero."
-                ],
-                "Shadow": null,
-                "FlavorText": "`...this shall be his great task, and maybe the end of his labours.`\r\n-Elrond, The Fellowship of the Ring"
-            },
+            "Back": null,
             "CardSet": "Challenge of the Wainriders",
             "EncounterInfo": null,
-            "Number": 74,
-            "Quantity": 1,
-            "Artist": "Justin Gerard",
+            "Number": 56,
+            "Quantity": 3,
+            "Artist": "Federico Musetti",
             "HasErrata": false,
-            "OctgnGuid": "ab909b87-a7c0-4841-83e4-84776262e552",
-            "RingsDbCardId": "22074",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 5549,
+            "OctgnGuid": "303355a0-0429-438f-8e45-db7a09dd57c6",
+            "RingsDbCardId": "22056",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 23911,
+            "Categories": null
+        },
+        {
+            "Title": "Power of Command",
+            "Slug": "Power-of-Command-CotW",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/Power-of-Command.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Master."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to the hero with The One Ring.",
+                    "Limit 1 per hero. Attached hero gets +1 Willpower.",
+                    "Response: After attached hero commits to the quest, exhaust The One Ring and raise your threat by 1 to give each other unique character you control +1 Willpower until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Challenge of the Wainriders",
+            "EncounterInfo": null,
+            "Number": 55,
+            "Quantity": 3,
+            "Artist": "Borja Pindado",
+            "HasErrata": false,
+            "OctgnGuid": "de829d6a-4b69-4423-88ce-d9e803e0e418",
+            "RingsDbCardId": "22055",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 23449,
+            "Categories": null
+        },
+        {
+            "Title": "Saruman",
+            "Slug": "Saruman-CotW",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/Saruman.jpg",
+                "Stats": {
+                    "ThreatCost": "13",
+                    "Willpower": "3",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Istari.",
+                    "Isengard."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When a player card effect would reduce your threat by any amount, reduce that amount to 1.",
+                    "While playing an event with the printed doomed keyword, Saruman gains the printed Leadership, Spirit, and Tactics icons.",
+                    "Response: After you play a card with the doomed keyword, ready Saruman."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Challenge of the Wainriders",
+            "EncounterInfo": null,
+            "Number": 54,
+            "Quantity": 1,
+            "Artist": "Martin de Diego Sádaba",
+            "HasErrata": false,
+            "OctgnGuid": "28296152-f2b0-4ccc-9be9-423d08aa174f",
+            "RingsDbCardId": "22054",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 2315,
+            "Categories": null
+        },
+        {
+            "Title": "The Muster of Rohan",
+            "Slug": "The-Muster-of-Rohan-CotW",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/The-Muster-of-Rohan.jpg",
+                "Stats": {
+                    "ResourceCost": "4"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "While paying for The Muster of Rohan, each Rohan hero you control is considered to have a Spirit icon.",
+                    "Planning Action: Search the top 10 cards of your deck for up to 4 Rohan allies and put them into play. Shuffle your deck. If any of those allies are still in play at the end of the round, discard them."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Challenge of the Wainriders",
+            "EncounterInfo": null,
+            "Number": 62,
+            "Quantity": 3,
+            "Artist": "Vilius Petrauskas",
+            "HasErrata": false,
+            "OctgnGuid": "8047c8c2-1569-428c-865e-0459c2733db3",
+            "RingsDbCardId": "22062",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 21908,
+            "Categories": null
+        },
+        {
+            "Title": "Rohirrim Scout",
+            "Slug": "Rohirrim-Scout-CotW",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/Rohirrim-Scout.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Discard Rohirrim Scout to choose a non-unique enemy in the staging area. That enemy does not make engagement checks against you this round."
+                ],
+                "Shadow": null,
+                "FlavorText": "Swiftly a scout rode back and reported that wolf-riders were abroad in the valley...\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Challenge of the Wainriders",
+            "EncounterInfo": null,
+            "Number": 61,
+            "Quantity": 3,
+            "Artist": "Federico Musetti",
+            "HasErrata": false,
+            "OctgnGuid": "af0802d7-5e9c-424e-86d3-2f81f56b5ea8",
+            "RingsDbCardId": "22061",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 19022,
+            "Categories": null
+        },
+        {
+            "Title": "Nori",
+            "Slug": "Nori-CotW",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/Nori.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Nori participates in an attack that destroys an enemy, put the top card of your discard pile on the bottom of your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`You`ve left the burglar behind again!`\r\n-Nori, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Challenge of the Wainriders",
+            "EncounterInfo": null,
+            "Number": 59,
+            "Quantity": 3,
+            "Artist": "David Keen",
+            "HasErrata": false,
+            "OctgnGuid": "6854e071-f438-42b2-a43a-580aec184eeb",
+            "RingsDbCardId": "22059",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 16771,
+            "Categories": null
+        },
+        {
+            "Title": "Soldier of Isengard",
+            "Slug": "Soldier-of-Isengard-CotW",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Challenge-of-the-Wainriders/Soldier-of-Isengard.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Isengard."
+                ],
+                "Keywords": [
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "Doomed 2.",
+                    "Response: After a player raises his threat from the doomed keyword, give control of Soldier of Isengard to that player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Challenge of the Wainriders",
+            "EncounterInfo": null,
+            "Number": 57,
+            "Quantity": 3,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "OctgnGuid": "765a3037-f02c-4dfa-b82a-ac377f9ecf3f",
+            "RingsDbCardId": "22057",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 14607,
             "Categories": null
         }
     ]

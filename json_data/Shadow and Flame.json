@@ -7,6 +7,47 @@
     "Cards": null,
     "cards": [
         {
+            "Title": "Master of the Forge",
+            "Slug": "Master-of-the-Forge-SaF",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Master-of-the-Forge.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "0",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Craftsman."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust Master of the Forge to search the top 5 cards of your deck for any 1 attachment and add it to your hand. Shuffle the other cards back into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": null,
+            "Number": 134,
+            "Quantity": 3,
+            "Artist": "Paul Guzenko",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801213c9015",
+            "RingsDbCardId": "04134",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 656146,
+            "Categories": null
+        },
+        {
             "Title": "Elrond",
             "Slug": "Elrond-SaF",
             "IsUnique": true,
@@ -83,38 +124,41 @@
             "Categories": null
         },
         {
-            "Title": "Hardy Leadership",
-            "Slug": "Hardy-Leadership-SaF",
+            "Title": "Vilya",
+            "Slug": "Vilya-SaF",
             "IsUnique": true,
             "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Hardy-Leadership.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Vilya.jpg",
                 "Stats": {
                     "ResourceCost": "2"
                 },
-                "Traits": [],
+                "Traits": [
+                    "Ring.",
+                    "Artifact."
+                ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a Leadership hero.",
-                    "Each Dwarf character gets +1 hit point."
+                    "Attach to Elrond. He gains a Spirit resource icon.",
+                    "Action: Exhaust Elrond and Vilya to reveal the top card of your deck. You can immediately play or put into play the revealed card for no cost, if able. Otherwise, move the revealed card to the bottom of your deck."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "...mightiest of the Three. -Return of the King"
             },
             "Back": null,
             "CardSet": "Shadow and Flame",
             "EncounterInfo": null,
-            "Number": 130,
+            "Number": 137,
             "Quantity": 3,
-            "Artist": "Jake Murray",
+            "Artist": "Sara Biddle",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801213c9008",
-            "RingsDbCardId": "04130",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 175046,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801213c9027",
+            "RingsDbCardId": "04137",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 351564,
             "Categories": null
         },
         {
@@ -149,43 +193,6 @@
             "RingsDbCardId": "04131",
             "RingsDbPopularity": 8,
             "RingsDbVotes": 291495,
-            "Categories": null
-        },
-        {
-            "Title": "A Elbereth! Gilthoniel!",
-            "Slug": "A-Elbereth-Gilthoniel-SaF",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/A-Elbereth-Gilthoniel.jpg",
-                "Stats": {
-                    "ResourceCost": "4"
-                },
-                "Traits": [],
-                "Keywords": [
-                    "Secrecy 4."
-                ],
-                "Text": [
-                    "Secrecy 4.",
-                    "Response: After a non-unique enemy attacks you, put that enemy on the bottom of the encounter deck. If your threat is lower than that enemy`s engagement cost, set your threat equal to the engagement cost of that enemy."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Shadow and Flame",
-            "EncounterInfo": null,
-            "Number": 132,
-            "Quantity": 3,
-            "Artist": "Aaron B. Miller",
-            "HasErrata": true,
-            "OctgnGuid": "",
-            "RingsDbCardId": "04132",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 21839,
             "Categories": null
         },
         {
@@ -226,47 +233,6 @@
             "Categories": null
         },
         {
-            "Title": "Master of the Forge",
-            "Slug": "Master-of-the-Forge-SaF",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Master-of-the-Forge.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "0",
-                    "Attack": "0",
-                    "Defense": "1",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Noldor.",
-                    "Craftsman."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Exhaust Master of the Forge to search the top 5 cards of your deck for any 1 attachment and add it to your hand. Shuffle the other cards back into your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Shadow and Flame",
-            "EncounterInfo": null,
-            "Number": 134,
-            "Quantity": 3,
-            "Artist": "Paul Guzenko",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801213c9015",
-            "RingsDbCardId": "04134",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 656146,
-            "Categories": null
-        },
-        {
             "Title": "Peace, and Thought",
             "Slug": "Peace-and-Thought-SaF",
             "IsUnique": false,
@@ -298,6 +264,41 @@
             "RingsDbCardId": "04135",
             "RingsDbPopularity": 7,
             "RingsDbVotes": 208720,
+            "Categories": null
+        },
+        {
+            "Title": "Hardy Leadership",
+            "Slug": "Hardy-Leadership-SaF",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Hardy-Leadership.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Leadership hero.",
+                    "Each Dwarf character gets +1 hit point."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Shadow and Flame",
+            "EncounterInfo": null,
+            "Number": 130,
+            "Quantity": 3,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801213c9008",
+            "RingsDbCardId": "04130",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 175046,
             "Categories": null
         },
         {
@@ -338,41 +339,40 @@
             "Categories": null
         },
         {
-            "Title": "Vilya",
-            "Slug": "Vilya-SaF",
-            "IsUnique": true,
-            "CardType": "Attachment",
+            "Title": "A Elbereth! Gilthoniel!",
+            "Slug": "A-Elbereth-Gilthoniel-SaF",
+            "IsUnique": false,
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/Vilya.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Shadow-and-Flame/A-Elbereth-Gilthoniel.jpg",
                 "Stats": {
-                    "ResourceCost": "2"
+                    "ResourceCost": "4"
                 },
-                "Traits": [
-                    "Ring.",
-                    "Artifact."
+                "Traits": [],
+                "Keywords": [
+                    "Secrecy 4."
                 ],
-                "Keywords": [],
                 "Text": [
-                    "Attach to Elrond. He gains a Spirit resource icon.",
-                    "Action: Exhaust Elrond and Vilya to reveal the top card of your deck. You can immediately play or put into play the revealed card for no cost, if able. Otherwise, move the revealed card to the bottom of your deck."
+                    "Secrecy 4.",
+                    "Response: After a non-unique enemy attacks you, put that enemy on the bottom of the encounter deck. If your threat is lower than that enemy`s engagement cost, set your threat equal to the engagement cost of that enemy."
                 ],
                 "Shadow": null,
-                "FlavorText": "...mightiest of the Three. -Return of the King"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "Shadow and Flame",
             "EncounterInfo": null,
-            "Number": 137,
+            "Number": 132,
             "Quantity": 3,
-            "Artist": "Sara Biddle",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801213c9027",
-            "RingsDbCardId": "04137",
-            "RingsDbPopularity": 9,
-            "RingsDbVotes": 351564,
+            "Artist": "Aaron B. Miller",
+            "HasErrata": true,
+            "OctgnGuid": "",
+            "RingsDbCardId": "04132",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 21839,
             "Categories": null
         }
     ]

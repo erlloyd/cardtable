@@ -7,43 +7,42 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Frodo Baggins",
-            "Slug": "Frodo-Baggins-CatC",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "A Burning Brand",
+            "Slug": "A-Burning-Brand-CatC",
+            "IsUnique": false,
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Conflict-at-the-Carrock/Frodo-Baggins.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Conflict-at-the-Carrock/A-Burning-Brand.jpg",
                 "Stats": {
-                    "ThreatCost": "7",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "2"
+                    "ResourceCost": "2"
                 },
                 "Traits": [
-                    "Hobbit."
+                    "Item."
                 ],
-                "Keywords": [],
+                "Keywords": [
+                    "Restricted."
+                ],
                 "Text": [
-                    "Response: After Frodo Baggins is damaged, cancel the damage and instead raise your threat by the amount of damage he would have been dealt. (Limit once per phase.)"
+                    "Attach to a Lore character. Restricted.",
+                    "Response: Exhaust A Burning Brand to cancel a shadow effect just triggered during an attack that attached character is defending."
                 ],
                 "Shadow": null,
-                "FlavorText": "Frodo began to feel restless, and the old paths seemed too well-trodden. he looked at maps and wondered what lay beyond their edges...\r\n-The Fellowship of the Ring"
+                "FlavorText": "`Keep close to the fire, with your faces outward!` cried Strider. `Keep some of the longer sticks ready in your hands.` -The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Conflict at the Carrock",
             "EncounterInfo": null,
-            "Number": 25,
-            "Quantity": 1,
-            "Artist": "John Stanko",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801202c9001",
-            "RingsDbCardId": "02025",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 12783,
+            "Number": 33,
+            "Quantity": 3,
+            "Artist": "Toni Justamante Jacobs",
+            "HasErrata": true,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801202c9010",
+            "RingsDbCardId": "02033",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 721758,
             "Categories": null
         },
         {
@@ -85,114 +84,40 @@
             "Categories": null
         },
         {
-            "Title": "Second Breakfast",
-            "Slug": "Second-Breakfast-CatC",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Conflict-at-the-Carrock/Second-Breakfast.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Each player returns the topmost attachment card from his discard pile to his hand."
-                ],
-                "Shadow": null,
-                "FlavorText": "...he was just sitting down to a nice little second-breakfast in the dinning-room...\r\n-The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Conflict at the Carrock",
-            "EncounterInfo": null,
-            "Number": 27,
-            "Quantity": 3,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801202c9024",
-            "RingsDbCardId": "02027",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 64268,
-            "Categories": null
-        },
-        {
-            "Title": "Beorning Beekeeper",
-            "Slug": "Beorning-Beekeeper-CatC",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Conflict-at-the-Carrock/Beorning-Beekeeper.jpg",
-                "Stats": {
-                    "ResourceCost": "4",
-                    "Willpower": "1",
-                    "Attack": "2",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Beorning."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Discard Beorning Beekeeper from play to deal 1 damage to each enemy in the staging area."
-                ],
-                "Shadow": null,
-                "FlavorText": "`We are getting near,` said Gandalf. `We are on th eedge of his bee pastures.` - The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Conflict at the Carrock",
-            "EncounterInfo": null,
-            "Number": 28,
-            "Quantity": 3,
-            "Artist": "John Matson",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801202c9006",
-            "RingsDbCardId": "02028",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 29376,
-            "Categories": null
-        },
-        {
-            "Title": "Born Aloft",
-            "Slug": "Born-Aloft-CatC",
+            "Title": "Song of Wisdom",
+            "Slug": "Song-of-Wisdom-CatC",
             "IsUnique": false,
             "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Conflict-at-the-Carrock/Born-Aloft.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Conflict-at-the-Carrock/Song-of-Wisdom.jpg",
                 "Stats": {
-                    "ResourceCost": "0"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Condition."
+                    "Song."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to an ally.",
-                    "Action: Discard Born Aloft from play to return attached ally to its owner`s hand."
+                    "Attach to a hero.",
+                    "Attached hero gains a Lore resource icon."
                 ],
                 "Shadow": null,
-                "FlavorText": "`Very well,` said Gandalf. `Take us where and as far as you will!` -The Hobbit"
+                "FlavorText": "It sit beside the fire and think\r\nof all that I have seen,\r\nof meadow-flowers and butterflies\r\nin summers that have been\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Conflict at the Carrock",
             "EncounterInfo": null,
-            "Number": 29,
+            "Number": 34,
             "Quantity": 3,
-            "Artist": "Salvador Trakal",
+            "Artist": "Magali Villeneuve",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801202c9007",
-            "RingsDbCardId": "02029",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 73341,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801202c9025",
+            "RingsDbCardId": "02034",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 349108,
             "Categories": null
         },
         {
@@ -236,40 +161,43 @@
             "Categories": null
         },
         {
-            "Title": "Nor am I a Stranger",
-            "Slug": "Nor-am-I-a-Stranger-CatC",
-            "IsUnique": false,
-            "CardType": "Attachment",
+            "Title": "Frodo Baggins",
+            "Slug": "Frodo-Baggins-CatC",
+            "IsUnique": true,
+            "CardType": "Hero",
             "CardSubType": "None",
             "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Conflict-at-the-Carrock/Nor-am-I-a-Stranger.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Conflict-at-the-Carrock/Frodo-Baggins.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ThreatCost": "7",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
                 },
                 "Traits": [
-                    "Title."
+                    "Hobbit."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a character.",
-                    "Attached character gains the Rohan trait."
+                    "Response: After Frodo Baggins is damaged, cancel the damage and instead raise your threat by the amount of damage he would have been dealt. (Limit once per phase.)"
                 ],
                 "Shadow": null,
-                "FlavorText": "`Nor indeed am I a stranger: for I have been in this land before, more than once, and ridden with the host of the Rohirrim, though under other name and in other guise.` -Aragorn, The Two Towers"
+                "FlavorText": "Frodo began to feel restless, and the old paths seemed too well-trodden. he looked at maps and wondered what lay beyond their edges...\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Conflict at the Carrock",
             "EncounterInfo": null,
-            "Number": 31,
-            "Quantity": 3,
-            "Artist": "Magali Villeneuve",
+            "Number": 25,
+            "Quantity": 1,
+            "Artist": "John Stanko",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801202c9018",
-            "RingsDbCardId": "02031",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 41846,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801202c9001",
+            "RingsDbCardId": "02025",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 12783,
             "Categories": null
         },
         {
@@ -313,79 +241,151 @@
             "Categories": null
         },
         {
-            "Title": "A Burning Brand",
-            "Slug": "A-Burning-Brand-CatC",
+            "Title": "Born Aloft",
+            "Slug": "Born-Aloft-CatC",
             "IsUnique": false,
             "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Lore",
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Conflict-at-the-Carrock/A-Burning-Brand.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Conflict-at-the-Carrock/Born-Aloft.jpg",
                 "Stats": {
-                    "ResourceCost": "2"
+                    "ResourceCost": "0"
                 },
                 "Traits": [
-                    "Item."
+                    "Condition."
                 ],
-                "Keywords": [
-                    "Restricted."
-                ],
+                "Keywords": [],
                 "Text": [
-                    "Attach to a Lore character. Restricted.",
-                    "Response: Exhaust A Burning Brand to cancel a shadow effect just triggered during an attack that attached character is defending."
+                    "Attach to an ally.",
+                    "Action: Discard Born Aloft from play to return attached ally to its owner`s hand."
                 ],
                 "Shadow": null,
-                "FlavorText": "`Keep close to the fire, with your faces outward!` cried Strider. `Keep some of the longer sticks ready in your hands.` -The Fellowship of the Ring"
+                "FlavorText": "`Very well,` said Gandalf. `Take us where and as far as you will!` -The Hobbit"
             },
             "Back": null,
             "CardSet": "Conflict at the Carrock",
             "EncounterInfo": null,
-            "Number": 33,
+            "Number": 29,
             "Quantity": 3,
-            "Artist": "Toni Justamante Jacobs",
-            "HasErrata": true,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801202c9010",
-            "RingsDbCardId": "02033",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 721758,
+            "Artist": "Salvador Trakal",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801202c9007",
+            "RingsDbCardId": "02029",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 73341,
             "Categories": null
         },
         {
-            "Title": "Song of Wisdom",
-            "Slug": "Song-of-Wisdom-CatC",
+            "Title": "Second Breakfast",
+            "Slug": "Second-Breakfast-CatC",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Conflict-at-the-Carrock/Second-Breakfast.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Each player returns the topmost attachment card from his discard pile to his hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "...he was just sitting down to a nice little second-breakfast in the dinning-room...\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Conflict at the Carrock",
+            "EncounterInfo": null,
+            "Number": 27,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801202c9024",
+            "RingsDbCardId": "02027",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 64268,
+            "Categories": null
+        },
+        {
+            "Title": "Nor am I a Stranger",
+            "Slug": "Nor-am-I-a-Stranger-CatC",
             "IsUnique": false,
             "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Conflict-at-the-Carrock/Song-of-Wisdom.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Conflict-at-the-Carrock/Nor-am-I-a-Stranger.jpg",
                 "Stats": {
                     "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Song."
+                    "Title."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a hero.",
-                    "Attached hero gains a Lore resource icon."
+                    "Attach to a character.",
+                    "Attached character gains the Rohan trait."
                 ],
                 "Shadow": null,
-                "FlavorText": "It sit beside the fire and think\r\nof all that I have seen,\r\nof meadow-flowers and butterflies\r\nin summers that have been\r\n-The Fellowship of the Ring"
+                "FlavorText": "`Nor indeed am I a stranger: for I have been in this land before, more than once, and ridden with the host of the Rohirrim, though under other name and in other guise.` -Aragorn, The Two Towers"
             },
             "Back": null,
             "CardSet": "Conflict at the Carrock",
             "EncounterInfo": null,
-            "Number": 34,
+            "Number": 31,
             "Quantity": 3,
             "Artist": "Magali Villeneuve",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801202c9025",
-            "RingsDbCardId": "02034",
-            "RingsDbPopularity": 9,
-            "RingsDbVotes": 349108,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801202c9018",
+            "RingsDbCardId": "02031",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 41846,
+            "Categories": null
+        },
+        {
+            "Title": "Beorning Beekeeper",
+            "Slug": "Beorning-Beekeeper-CatC",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Conflict-at-the-Carrock/Beorning-Beekeeper.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Beorning."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Discard Beorning Beekeeper from play to deal 1 damage to each enemy in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We are getting near,` said Gandalf. `We are on th eedge of his bee pastures.` - The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Conflict at the Carrock",
+            "EncounterInfo": null,
+            "Number": 28,
+            "Quantity": 3,
+            "Artist": "John Matson",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801202c9006",
+            "RingsDbCardId": "02028",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 29376,
             "Categories": null
         }
     ]

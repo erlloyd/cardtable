@@ -7,25 +7,182 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Gimli",
-            "Slug": "Gimli-TSoH",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Greenwood Archer",
+            "Slug": "Greenwood-Archer-TSoH",
+            "IsUnique": false,
+            "CardType": "Ally",
             "CardSubType": "None",
             "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Gimli.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Greenwood-Archer.jpg",
                 "Stats": {
-                    "ThreatCost": "11",
-                    "Willpower": "2",
+                    "ResourceCost": "2",
+                    "Willpower": "0",
                     "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Silvan."
+                ],
+                "Keywords": [
+                    "Ranged."
+                ],
+                "Text": [
+                    "Ranged.",
+                    "Response: After Greenwood Archer enters play, ready a hero."
+                ],
+                "Shadow": null,
+                "FlavorText": "They dwelt most often by the edges of the woods, from which they could escape at times to hunt...\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Tawny Fritzinger",
+            "HasErrata": false,
+            "OctgnGuid": "d30fd38a-65fe-464d-acac-47d0f02deb05",
+            "RingsDbCardId": "16003",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 182520,
+            "Categories": null
+        },
+        {
+            "Title": "Mirkwood Long-knife",
+            "Slug": "Mirkwood-Long-knife-TSoH",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Mirkwood-Long-knife.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Silvan hero. Restricted.",
+                    "Attached hero gets +1 Willpower and +1 Attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "Legolas had a bow and a quiver, and at his belt a long white knife.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 3,
+            "Artist": "Alexandr Elichev",
+            "HasErrata": false,
+            "OctgnGuid": "565ab52d-0390-4f39-8e6d-7809444b53af",
+            "RingsDbCardId": "16011",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 149889,
+            "Categories": null
+        },
+        {
+            "Title": "Unlikely Friendship",
+            "Slug": "Unlikely-Friendship-TSoH",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Unlikely-Friendship.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control a unique character with the Silvan trait and another unique character with the Dwarf trait.",
+                    "Action: Draw 1 card and add 1 resource to the resource pool of a hero you control."
+                ],
+                "Shadow": null,
+                "FlavorText": "...folk that saw them pass marvelled to see such companions...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "OctgnGuid": "8b5a0dda-9a9c-431b-9363-be586969d493",
+            "RingsDbCardId": "16007",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 140991,
+            "Categories": null
+        },
+        {
+            "Title": "Halfling Bounder",
+            "Slug": "Halfling-Bounder-TSoH",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Halfling-Bounder.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While there is a side quest in the victory display, Halfling Bounder gains: `Response: Discard Halfling Bounder to cancel the `when revealed` effects of an encounter card that was just revealed from the encounter deck.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "`The Bounders have never been so busy before.`\r\n-Sam Gamgee, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "OctgnGuid": "aa7cd6b1-910c-49cb-9606-771889d1dc77",
+            "RingsDbCardId": "16005",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 136193,
+            "Categories": null
+        },
+        {
+            "Title": "Erebor Guard",
+            "Slug": "Erebor-Guard-TSoH",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Erebor-Guard.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "0",
+                    "Attack": "1",
                     "Defense": "2",
-                    "HitPoints": "5"
+                    "HitPoints": "3"
                 },
                 "Traits": [
                     "Dwarf.",
-                    "Noble.",
                     "Warrior."
                 ],
                 "Keywords": [
@@ -33,22 +190,135 @@
                 ],
                 "Text": [
                     "Sentinel.",
-                    "Response: After Gimli is declared as a defender, spend 1 resource from his pool to ready another hero. If that hero is Legolas, he gets +1 Attack until the end of the phase. (Limit once per phase.)"
+                    "Response: When you play Erebor Guard from your hand, discard the top 2 cards of your deck to reduce its cost by 2."
                 ],
                 "Shadow": null,
-                "FlavorText": "`Faithless is he that says farewell when the road darkens...`\r\n-The Fellowship of the Ring"
+                "FlavorText": "...the fortress of the dwarves could not be taken by surprise.\r\n-The Hobbit"
             },
             "Back": null,
             "CardSet": "The Sands of Harad",
             "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Owen William Weber",
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Marius Bota",
             "HasErrata": false,
-            "OctgnGuid": "053357f5-4192-4a35-bf2c-7f48d584f292",
-            "RingsDbCardId": "16001",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 7121,
+            "OctgnGuid": "18d5f7fd-9d6e-44aa-9463-3530278f8c51",
+            "RingsDbCardId": "16004",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 130077,
+            "Categories": null
+        },
+        {
+            "Title": "Dwarven Shield",
+            "Slug": "Dwarven-Shield-TSoH",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Dwarven-Shield.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Item.",
+                    "Armor."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Dwarf hero. Restricted.",
+                    "Attached hero gets +1 Defense.",
+                    "Response: After attached hero takes damage from an enemy attack, exhaust Dwarven Shield to add 1 resource to attached hero`s pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "...each of them had also a short broad sword at his side and a round shield slung at his back.\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "OctgnGuid": "9ccbe47b-b30f-468a-a867-60314e3b5d61",
+            "RingsDbCardId": "16010",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 128222,
+            "Categories": null
+        },
+        {
+            "Title": "The Storm Comes",
+            "Slug": "The-Storm-Comes-TSoH",
+            "IsUnique": false,
+            "CardType": "Player_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/The-Storm-Comes.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Limit 1 copy of The Storm Comes in the victory display.",
+                    "While this quest is in the victory display, the first ally played by each player each round does not require a resource match."
+                ],
+                "Shadow": null,
+                "FlavorText": "`For behold! The storm comes, and now all friends should gather together, lest each singly be destroyed.`\r\n-Gandalf, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": null,
+            "Number": 13,
+            "Quantity": 3,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "OctgnGuid": "458b755e-1d93-4586-bbca-bab905f895c0",
+            "RingsDbCardId": "16013",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 109159,
+            "Categories": null
+        },
+        {
+            "Title": "Well Warned",
+            "Slug": "Well-Warned-TSoH",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Well-Warned.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control a unique character with the Noble trait and another unique character with the Scout trait.",
+                    "Response: After a player engages an enemy, reduce his threat by X, where X is that enemy`s printed Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": "...the Captains of the West were well warned by their scouts...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Sands of Harad",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Ashley Lange",
+            "HasErrata": false,
+            "OctgnGuid": "2c5991ac-1f8d-4b5d-a7dc-91ea664102d1",
+            "RingsDbCardId": "16008",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 95937,
             "Categories": null
         },
         {
@@ -97,133 +367,6 @@
             "Categories": null
         },
         {
-            "Title": "Greenwood Archer",
-            "Slug": "Greenwood-Archer-TSoH",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Greenwood-Archer.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "0",
-                    "Attack": "2",
-                    "Defense": "0",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Silvan."
-                ],
-                "Keywords": [
-                    "Ranged."
-                ],
-                "Text": [
-                    "Ranged.",
-                    "Response: After Greenwood Archer enters play, ready a hero."
-                ],
-                "Shadow": null,
-                "FlavorText": "They dwelt most often by the edges of the woods, from which they could escape at times to hunt...\r\n-The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "The Sands of Harad",
-            "EncounterInfo": null,
-            "Number": 3,
-            "Quantity": 3,
-            "Artist": "Tawny Fritzinger",
-            "HasErrata": false,
-            "OctgnGuid": "d30fd38a-65fe-464d-acac-47d0f02deb05",
-            "RingsDbCardId": "16003",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 182520,
-            "Categories": null
-        },
-        {
-            "Title": "Erebor Guard",
-            "Slug": "Erebor-Guard-TSoH",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Erebor-Guard.jpg",
-                "Stats": {
-                    "ResourceCost": "4",
-                    "Willpower": "0",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Dwarf.",
-                    "Warrior."
-                ],
-                "Keywords": [
-                    "Sentinel."
-                ],
-                "Text": [
-                    "Sentinel.",
-                    "Response: When you play Erebor Guard from your hand, discard the top 2 cards of your deck to reduce its cost by 2."
-                ],
-                "Shadow": null,
-                "FlavorText": "...the fortress of the dwarves could not be taken by surprise.\r\n-The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "The Sands of Harad",
-            "EncounterInfo": null,
-            "Number": 4,
-            "Quantity": 3,
-            "Artist": "Marius Bota",
-            "HasErrata": false,
-            "OctgnGuid": "18d5f7fd-9d6e-44aa-9463-3530278f8c51",
-            "RingsDbCardId": "16004",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 130077,
-            "Categories": null
-        },
-        {
-            "Title": "Halfling Bounder",
-            "Slug": "Halfling-Bounder-TSoH",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Halfling-Bounder.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "0",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Hobbit."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "While there is a side quest in the victory display, Halfling Bounder gains: `Response: Discard Halfling Bounder to cancel the `when revealed` effects of an encounter card that was just revealed from the encounter deck.`"
-                ],
-                "Shadow": null,
-                "FlavorText": "`The Bounders have never been so busy before.`\r\n-Sam Gamgee, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Sands of Harad",
-            "EncounterInfo": null,
-            "Number": 5,
-            "Quantity": 3,
-            "Artist": "Aleksander Karcz",
-            "HasErrata": false,
-            "OctgnGuid": "aa7cd6b1-910c-49cb-9606-771889d1dc77",
-            "RingsDbCardId": "16005",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 136193,
-            "Categories": null
-        },
-        {
             "Title": "Vigilant Dúnadan",
             "Slug": "Vigilant-Dunadan-TSoH",
             "IsUnique": false,
@@ -265,188 +408,48 @@
             "Categories": null
         },
         {
-            "Title": "Unlikely Friendship",
-            "Slug": "Unlikely-Friendship-TSoH",
-            "IsUnique": false,
-            "CardType": "Event",
+            "Title": "Gimli",
+            "Slug": "Gimli-TSoH",
+            "IsUnique": true,
+            "CardType": "Hero",
             "CardSubType": "None",
             "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Unlikely-Friendship.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Gimli.jpg",
                 "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Play only if you control a unique character with the Silvan trait and another unique character with the Dwarf trait.",
-                    "Action: Draw 1 card and add 1 resource to the resource pool of a hero you control."
-                ],
-                "Shadow": null,
-                "FlavorText": "...folk that saw them pass marvelled to see such companions...\r\n-The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Sands of Harad",
-            "EncounterInfo": null,
-            "Number": 7,
-            "Quantity": 3,
-            "Artist": "Aleksander Karcz",
-            "HasErrata": false,
-            "OctgnGuid": "8b5a0dda-9a9c-431b-9363-be586969d493",
-            "RingsDbCardId": "16007",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 140991,
-            "Categories": null
-        },
-        {
-            "Title": "Well Warned",
-            "Slug": "Well-Warned-TSoH",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Well-Warned.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Play only if you control a unique character with the Noble trait and another unique character with the Scout trait.",
-                    "Response: After a player engages an enemy, reduce his threat by X, where X is that enemy`s printed Threat."
-                ],
-                "Shadow": null,
-                "FlavorText": "...the Captains of the West were well warned by their scouts...\r\n-The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Sands of Harad",
-            "EncounterInfo": null,
-            "Number": 8,
-            "Quantity": 3,
-            "Artist": "Ashley Lange",
-            "HasErrata": false,
-            "OctgnGuid": "2c5991ac-1f8d-4b5d-a7dc-91ea664102d1",
-            "RingsDbCardId": "16008",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 95937,
-            "Categories": null
-        },
-        {
-            "Title": "Dour-handed",
-            "Slug": "Dour-handed-TSoH",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Dour-handed.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Deal X damage to an enemy engaged with you. X is the number of side quests in the victory display."
-                ],
-                "Shadow": null,
-                "FlavorText": "...the tides of fate had turned against them and their doom was at hand. -The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Sands of Harad",
-            "EncounterInfo": null,
-            "Number": 9,
-            "Quantity": 3,
-            "Artist": "JB Casacop",
-            "HasErrata": false,
-            "OctgnGuid": "0da6ffc3-cbf5-427f-af9a-60f4f6bd1fb9",
-            "RingsDbCardId": "16009",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 10635,
-            "Categories": null
-        },
-        {
-            "Title": "Dwarven Shield",
-            "Slug": "Dwarven-Shield-TSoH",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Dwarven-Shield.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
+                    "ThreatCost": "11",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "5"
                 },
                 "Traits": [
-                    "Item.",
-                    "Armor."
+                    "Dwarf.",
+                    "Noble.",
+                    "Warrior."
                 ],
                 "Keywords": [
-                    "Restricted."
+                    "Sentinel."
                 ],
                 "Text": [
-                    "Attach to a Dwarf hero. Restricted.",
-                    "Attached hero gets +1 Defense.",
-                    "Response: After attached hero takes damage from an enemy attack, exhaust Dwarven Shield to add 1 resource to attached hero`s pool."
+                    "Sentinel.",
+                    "Response: After Gimli is declared as a defender, spend 1 resource from his pool to ready another hero. If that hero is Legolas, he gets +1 Attack until the end of the phase. (Limit once per phase.)"
                 ],
                 "Shadow": null,
-                "FlavorText": "...each of them had also a short broad sword at his side and a round shield slung at his back.\r\n-The Hobbit"
+                "FlavorText": "`Faithless is he that says farewell when the road darkens...`\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Sands of Harad",
             "EncounterInfo": null,
-            "Number": 10,
-            "Quantity": 3,
-            "Artist": "Mariusz Gandzel",
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Owen William Weber",
             "HasErrata": false,
-            "OctgnGuid": "9ccbe47b-b30f-468a-a867-60314e3b5d61",
-            "RingsDbCardId": "16010",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 128222,
-            "Categories": null
-        },
-        {
-            "Title": "Mirkwood Long-knife",
-            "Slug": "Mirkwood-Long-knife-TSoH",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Mirkwood-Long-knife.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Item.",
-                    "Weapon."
-                ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a Silvan hero. Restricted.",
-                    "Attached hero gets +1 Willpower and +1 Attack."
-                ],
-                "Shadow": null,
-                "FlavorText": "Legolas had a bow and a quiver, and at his belt a long white knife.\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Sands of Harad",
-            "EncounterInfo": null,
-            "Number": 11,
-            "Quantity": 3,
-            "Artist": "Alexandr Elichev",
-            "HasErrata": false,
-            "OctgnGuid": "565ab52d-0390-4f39-8e6d-7809444b53af",
-            "RingsDbCardId": "16011",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 149889,
+            "OctgnGuid": "053357f5-4192-4a35-bf2c-7f48d584f292",
+            "RingsDbCardId": "16001",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 7121,
             "Categories": null
         },
         {
@@ -487,40 +490,37 @@
             "Categories": null
         },
         {
-            "Title": "The Storm Comes",
-            "Slug": "The-Storm-Comes-TSoH",
+            "Title": "Dour-handed",
+            "Slug": "Dour-handed-TSoH",
             "IsUnique": false,
-            "CardType": "Player_Side_Quest",
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/The-Storm-Comes.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Sands-of-Harad/Dour-handed.jpg",
                 "Stats": {
-                    "ResourceCost": "0"
+                    "ResourceCost": "1"
                 },
                 "Traits": [],
-                "Keywords": [
-                    "Victory 1."
-                ],
+                "Keywords": [],
                 "Text": [
-                    "Limit 1 copy of The Storm Comes in the victory display.",
-                    "While this quest is in the victory display, the first ally played by each player each round does not require a resource match."
+                    "Action: Deal X damage to an enemy engaged with you. X is the number of side quests in the victory display."
                 ],
                 "Shadow": null,
-                "FlavorText": "`For behold! The storm comes, and now all friends should gather together, lest each singly be destroyed.`\r\n-Gandalf, The Two Towers"
+                "FlavorText": "...the tides of fate had turned against them and their doom was at hand. -The Return of the King"
             },
             "Back": null,
             "CardSet": "The Sands of Harad",
             "EncounterInfo": null,
-            "Number": 13,
+            "Number": 9,
             "Quantity": 3,
-            "Artist": "Tomasz Jedruszek",
+            "Artist": "JB Casacop",
             "HasErrata": false,
-            "OctgnGuid": "458b755e-1d93-4586-bbca-bab905f895c0",
-            "RingsDbCardId": "16013",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 109159,
+            "OctgnGuid": "0da6ffc3-cbf5-427f-af9a-60f4f6bd1fb9",
+            "RingsDbCardId": "16009",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 10635,
             "Categories": null
         }
     ]

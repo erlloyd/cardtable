@@ -7,47 +7,159 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Lanwyn",
-            "Slug": "Lanwyn-TTiTD",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Raiment of War",
+            "Slug": "Raiment-of-War-TTiTD",
+            "IsUnique": false,
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Thing-in-the-Depths/Lanwyn.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Thing-in-the-Depths/Raiment-of-War.jpg",
                 "Stats": {
-                    "ThreatCost": "9",
-                    "Willpower": "2",
-                    "Attack": "3",
-                    "Defense": "1",
-                    "HitPoints": "3"
+                    "ResourceCost": "2"
                 },
                 "Traits": [
-                    "Dale.",
-                    "Scout."
+                    "Item.",
+                    "Armor.",
+                    "Weapon."
                 ],
-                "Keywords": [
-                    "Ranged."
-                ],
+                "Keywords": [],
                 "Text": [
-                    "Ranged.",
-                    "Response: After an encounter card with surge is revealed, either ready Lanwyn or give her +2 Willpower until the end of the phase. (Limit twice per phase.)"
+                    "Attach to a Warrior character. Raiment of War counts as 2 Restricted attachments.",
+                    "Attached character gets +1 Attack, +1 Defense and +2 hit points."
                 ],
                 "Shadow": null,
-                "FlavorText": "`The Men of Dale used to have the trick of understanding their language, and used them for messengers to fly to the Men of the Lake...`\r\n-Thorin, The Hobbit"
+                "FlavorText": "Now men came bearing raiment of war from the king`s hoard...\r\n-The Two Towers"
             },
             "Back": null,
             "CardSet": "The Thing in the Depths",
             "EncounterInfo": null,
-            "Number": 30,
-            "Quantity": 1,
-            "Artist": "Aleksander Karcz",
+            "Number": 34,
+            "Quantity": 3,
+            "Artist": "Beth Sobel",
             "HasErrata": false,
-            "OctgnGuid": "47750277-6869-470c-9376-7eb7f0a706f5",
-            "RingsDbCardId": "12030",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 4680,
+            "OctgnGuid": "2f9c24db-2ee4-4368-99fa-db49a0add8f5",
+            "RingsDbCardId": "12034",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 296620,
+            "Categories": null
+        },
+        {
+            "Title": "Captain's Wisdom",
+            "Slug": "Captain's-Wisdom-TTiTD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Thing-in-the-Depths/Captain's-Wisdom.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Resource Action: Exhaust a Noble hero you control to add 2 resources to that hero`s resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "...in these days men are slow to believe that a captain can be wise and learned in the scrolls of lore and song, as he is, and yet man of hardihood and swift judgement in the field.\r\n-Beregond, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Thing in the Depths",
+            "EncounterInfo": null,
+            "Number": 32,
+            "Quantity": 3,
+            "Artist": "Titus Lunter",
+            "HasErrata": false,
+            "OctgnGuid": "f774ffb1-1c80-40a1-a474-eb021e225b19",
+            "RingsDbCardId": "12032",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 241326,
+            "Categories": null
+        },
+        {
+            "Title": "Mirkwood Explorer",
+            "Slug": "Mirkwood-Explorer-TTiTD",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Thing-in-the-Depths/Mirkwood-Explorer.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Woodman.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Mirkwood Explorer quests successfully, place 1 progress on it.",
+                    "Action: Exhaust Mirkwood Explorer to move all progress from it to a location in play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Thing in the Depths",
+            "EncounterInfo": null,
+            "Number": 37,
+            "Quantity": 3,
+            "Artist": "Kim Sokol",
+            "HasErrata": false,
+            "OctgnGuid": "364e43b7-1ae3-4d3e-a73b-55d8f1f94f7c",
+            "RingsDbCardId": "12037",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 131482,
+            "Categories": null
+        },
+        {
+            "Title": "Sam Gamgee",
+            "Slug": "Sam-Gamgee-TTiTD",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Thing-in-the-Depths/Sam-Gamgee.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Reduce the cost to play Sam Gamgee by 2 if you control Frodo Baggins.",
+                    "Response: After a player raises his threat, that player may spend 1 Spirit resource to ready Sam Gamgee. He gets +1 Willpower, +1 Attack and +1 Defense until the end of the round. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Thing in the Depths",
+            "EncounterInfo": null,
+            "Number": 35,
+            "Quantity": 3,
+            "Artist": "Andrew Johanson",
+            "HasErrata": false,
+            "OctgnGuid": "785367f7-6475-4935-979f-abec23c596f2",
+            "RingsDbCardId": "12035",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 115134,
             "Categories": null
         },
         {
@@ -95,37 +207,82 @@
             "Categories": null
         },
         {
-            "Title": "Captain's Wisdom",
-            "Slug": "Captain's-Wisdom-TTiTD",
+            "Title": "Elevenses",
+            "Slug": "Elevenses-TTiTD",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Thing-in-the-Depths/Captain's-Wisdom.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Thing-in-the-Depths/Elevenses.jpg",
                 "Stats": {
-                    "ResourceCost": "0"
+                    "ResourceCost": "1"
                 },
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Resource Action: Exhaust a Noble hero you control to add 2 resources to that hero`s resource pool."
+                    "Play only after the staging step.",
+                    "Quest Action: Choose X questing Hobbit characters you control. Ready each chosen character and remove them from the quest. Then, reduce your threat by X."
                 ],
                 "Shadow": null,
-                "FlavorText": "...in these days men are slow to believe that a captain can be wise and learned in the scrolls of lore and song, as he is, and yet man of hardihood and swift judgement in the field.\r\n-Beregond, The Return of the King"
+                "FlavorText": "`The road goes on for ever,` said Pippin; `but I can`t without a rest. It is high time for lunch.`\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Thing in the Depths",
             "EncounterInfo": null,
-            "Number": 32,
+            "Number": 36,
             "Quantity": 3,
-            "Artist": "Titus Lunter",
+            "Artist": "Craig Maher",
             "HasErrata": false,
-            "OctgnGuid": "f774ffb1-1c80-40a1-a474-eb021e225b19",
-            "RingsDbCardId": "12032",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 241326,
+            "OctgnGuid": "27cc1cc1-17a9-4dcf-990a-fd3c44c7b163",
+            "RingsDbCardId": "12036",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 53243,
+            "Categories": null
+        },
+        {
+            "Title": "Lanwyn",
+            "Slug": "Lanwyn-TTiTD",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Thing-in-the-Depths/Lanwyn.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dale.",
+                    "Scout."
+                ],
+                "Keywords": [
+                    "Ranged."
+                ],
+                "Text": [
+                    "Ranged.",
+                    "Response: After an encounter card with surge is revealed, either ready Lanwyn or give her +2 Willpower until the end of the phase. (Limit twice per phase.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`The Men of Dale used to have the trick of understanding their language, and used them for messengers to fly to the Men of the Lake...`\r\n-Thorin, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Thing in the Depths",
+            "EncounterInfo": null,
+            "Number": 30,
+            "Quantity": 1,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "OctgnGuid": "47750277-6869-470c-9376-7eb7f0a706f5",
+            "RingsDbCardId": "12030",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 4680,
             "Categories": null
         },
         {
@@ -167,163 +324,6 @@
             "RingsDbCardId": "12033",
             "RingsDbPopularity": 2,
             "RingsDbVotes": 36561,
-            "Categories": null
-        },
-        {
-            "Title": "Raiment of War",
-            "Slug": "Raiment-of-War-TTiTD",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Thing-in-the-Depths/Raiment-of-War.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Item.",
-                    "Armor.",
-                    "Weapon."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Warrior character. Raiment of War counts as 2 Restricted attachments.",
-                    "Attached character gets +1 Attack, +1 Defense and +2 hit points."
-                ],
-                "Shadow": null,
-                "FlavorText": "Now men came bearing raiment of war from the king`s hoard...\r\n-The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Thing in the Depths",
-            "EncounterInfo": null,
-            "Number": 34,
-            "Quantity": 3,
-            "Artist": "Beth Sobel",
-            "HasErrata": false,
-            "OctgnGuid": "2f9c24db-2ee4-4368-99fa-db49a0add8f5",
-            "RingsDbCardId": "12034",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 296620,
-            "Categories": null
-        },
-        {
-            "Title": "Sam Gamgee",
-            "Slug": "Sam-Gamgee-TTiTD",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Thing-in-the-Depths/Sam-Gamgee.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Hobbit."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Reduce the cost to play Sam Gamgee by 2 if you control Frodo Baggins.",
-                    "Response: After a player raises his threat, that player may spend 1 Spirit resource to ready Sam Gamgee. He gets +1 Willpower, +1 Attack and +1 Defense until the end of the round. (Limit once per round.)"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Thing in the Depths",
-            "EncounterInfo": null,
-            "Number": 35,
-            "Quantity": 3,
-            "Artist": "Andrew Johanson",
-            "HasErrata": false,
-            "OctgnGuid": "785367f7-6475-4935-979f-abec23c596f2",
-            "RingsDbCardId": "12035",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 115134,
-            "Categories": null
-        },
-        {
-            "Title": "Elevenses",
-            "Slug": "Elevenses-TTiTD",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Thing-in-the-Depths/Elevenses.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Play only after the staging step.",
-                    "Quest Action: Choose X questing Hobbit characters you control. Ready each chosen character and remove them from the quest. Then, reduce your threat by X."
-                ],
-                "Shadow": null,
-                "FlavorText": "`The road goes on for ever,` said Pippin; `but I can`t without a rest. It is high time for lunch.`\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Thing in the Depths",
-            "EncounterInfo": null,
-            "Number": 36,
-            "Quantity": 3,
-            "Artist": "Craig Maher",
-            "HasErrata": false,
-            "OctgnGuid": "27cc1cc1-17a9-4dcf-990a-fd3c44c7b163",
-            "RingsDbCardId": "12036",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 53243,
-            "Categories": null
-        },
-        {
-            "Title": "Mirkwood Explorer",
-            "Slug": "Mirkwood-Explorer-TTiTD",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Thing-in-the-Depths/Mirkwood-Explorer.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "0",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Woodman.",
-                    "Scout."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Mirkwood Explorer quests successfully, place 1 progress on it.",
-                    "Action: Exhaust Mirkwood Explorer to move all progress from it to a location in play."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Thing in the Depths",
-            "EncounterInfo": null,
-            "Number": 37,
-            "Quantity": 3,
-            "Artist": "Kim Sokol",
-            "HasErrata": false,
-            "OctgnGuid": "364e43b7-1ae3-4d3e-a73b-55d8f1f94f7c",
-            "RingsDbCardId": "12037",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 131482,
             "Categories": null
         },
         {

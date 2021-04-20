@@ -7,31 +7,115 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Aragorn",
-            "Slug": "Aragorn-ToS",
+            "Title": "Quickbeam",
+            "Slug": "Quickbeam-ToS",
             "IsUnique": true,
-            "CardType": "Hero",
+            "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Fellowship",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Aragorn.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Quickbeam.jpg",
                 "Stats": {
-                    "ThreatCost": "0",
+                    "ResourceCost": "2",
                     "Willpower": "2",
                     "Attack": "3",
-                    "Defense": "2",
-                    "HitPoints": "5"
+                    "Defense": "1",
+                    "HitPoints": "3"
                 },
                 "Traits": [
-                    "Dúnedain.",
-                    "Noble.",
-                    "Ranger."
+                    "Ent."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "The first player gains control of Aragorn. If Aragorn leaves play, the players lose the game.",
-                    "Action: Spend 2 resources from Aragorn`s resource pool to ready a hero."
+                    "Cannot have restricted attachments. Enters play exhausted.",
+                    "Response: After Quickbeam enters play, deal 1 damage to him to ready him."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I am Bregalad, that is Quickbeam in your language. But it is only a nickname, of course.` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "OctgnGuid": "f37fc371-5a6e-4a24-85a1-2afef11c6841",
+            "RingsDbCardId": "143006",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 639538,
+            "Categories": null
+        },
+        {
+            "Title": "Legolas",
+            "Slug": "Legolas-ToS",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Legolas.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Ranged."
+                ],
+                "Text": [
+                    "Response: After Legolas participates in an attack that destroys an enemy, draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`He stands not alone,` said Legolas, bending his bow and fitting an arrow with hands that moved quicker than sight. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "OctgnGuid": "9825aa22-f197-4320-972d-e2487197d989",
+            "RingsDbCardId": "143005",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 482146,
+            "Categories": null
+        },
+        {
+            "Title": "Gimli",
+            "Slug": "Gimli-ToS",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Gimli.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dwarf.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Response: After an enemy is revealed from the encounter deck, ready Gimli."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -39,14 +123,248 @@
             "Back": null,
             "CardSet": "The Treason of Saruman",
             "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Mark Behm",
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Lukasz Jaskolski",
             "HasErrata": false,
-            "OctgnGuid": "f5178135-1485-43c5-9660-99232a4cdca8",
-            "RingsDbCardId": "143001",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 469,
+            "OctgnGuid": "6a9ff9c1-64d2-4ed5-a793-9e93e8d605b7",
+            "RingsDbCardId": "143004",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 365545,
+            "Categories": null
+        },
+        {
+            "Title": "Shadowfax",
+            "Slug": "Shadowfax-ToS",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Shadowfax.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [
+                    "Mount.",
+                    "Mearas."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to Gandalf.",
+                    "Gandalf gains ranged and sentinel.",
+                    "Action: Exhaust Shadowfax to ready Gandalf."
+                ],
+                "Shadow": null,
+                "FlavorText": "`He is the chief of the Mearas, lords of horses, and not even Théoden, King of Rohan, has ever looked on a better.`\r\n-Gandalf, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 14,
+            "Quantity": 3,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "OctgnGuid": "9f61eee8-cff2-43ad-8f82-7c4efb5ed9b8",
+            "RingsDbCardId": "143014",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 299694,
+            "Categories": null
+        },
+        {
+            "Title": "Ent Draught",
+            "Slug": "Ent-Draught-ToS",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Ent-Draught.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item.",
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control at least 1 Ent character.",
+                    "Attach to a character. Limit 1 per character.",
+                    "Attached character gets +2 hit points."
+                ],
+                "Shadow": null,
+                "FlavorText": "The effect of the draught began at the toes, and rose steadily through every limb, bringing refreshment and vigour as it coursed upwards, right to the tips of the hair. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "OctgnGuid": "b86ba0f8-11f9-4694-b421-17b683bd4325",
+            "RingsDbCardId": "143009",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 274994,
+            "Categories": null
+        },
+        {
+            "Title": "Herugrim",
+            "Slug": "Herugrim-ToS",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Herugrim.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Rohan hero. Restricted.",
+                    "Reduce the cost to play Herugrim on Théoden by 1.",
+                    "Response: After attached hero is declared as an attacker, exhaust Herugrim to add attached hero`s Willpower to its Attack for this attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Here, lord, is Herugrim, your ancient blade.` -Háma, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "OctgnGuid": "9fce5e18-37dc-45c2-8398-df8b5018cb54",
+            "RingsDbCardId": "143010",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 263775,
+            "Categories": null
+        },
+        {
+            "Title": "Háma",
+            "Slug": "Hama-ToS",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Háma.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Combat Action: Ready Háma. He gets +3 Defense until the end of the phase. At the end of the phase, discard Háma. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`I am the Doorward of Théoden,` he said. `Háma is my name.` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Sara Betsy",
+            "HasErrata": false,
+            "OctgnGuid": "adc3e6f6-da67-4cc1-9767-8e87dfc91b99",
+            "RingsDbCardId": "143007",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 228380,
+            "Categories": null
+        },
+        {
+            "Title": "Entmoot",
+            "Slug": "Entmoot-ToS",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Entmoot.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control at least 1 Ent character.",
+                    "Action: Search the top 5 cards of your deck for any number of Ent cards and add them to your hand. Shuffle the other cards back into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...it is a gathering of Ents - which does not often happen nowadays.` -Treebeard, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 3,
+            "Artist": "Anthony Devine",
+            "HasErrata": false,
+            "OctgnGuid": "a17465f5-e6f5-4699-b0d7-79355286a065",
+            "RingsDbCardId": "143011",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 208416,
+            "Categories": null
+        },
+        {
+            "Title": "Arod",
+            "Slug": "Arod-ToS",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Arod.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Mount."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero or Legolas.",
+                    "Response: After attached character participates in an attack that destroys an enemy, exhaust Arod to place 1 progress token on any location."
+                ],
+                "Shadow": null,
+                "FlavorText": "`A smaller and lighter horse, but restive and fiery, was brought to Legolas. Arod was his name.` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "OctgnGuid": "6646bb07-0b44-4051-94a7-39c600b38481",
+            "RingsDbCardId": "143008",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 182427,
             "Categories": null
         },
         {
@@ -136,328 +454,6 @@
             "Categories": null
         },
         {
-            "Title": "Gimli",
-            "Slug": "Gimli-ToS",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Gimli.jpg",
-                "Stats": {
-                    "ResourceCost": "4",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Dwarf.",
-                    "Warrior."
-                ],
-                "Keywords": [
-                    "Sentinel."
-                ],
-                "Text": [
-                    "Response: After an enemy is revealed from the encounter deck, ready Gimli."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Treason of Saruman",
-            "EncounterInfo": null,
-            "Number": 4,
-            "Quantity": 3,
-            "Artist": "Lukasz Jaskolski",
-            "HasErrata": false,
-            "OctgnGuid": "6a9ff9c1-64d2-4ed5-a793-9e93e8d605b7",
-            "RingsDbCardId": "143004",
-            "RingsDbPopularity": 9,
-            "RingsDbVotes": 365545,
-            "Categories": null
-        },
-        {
-            "Title": "Legolas",
-            "Slug": "Legolas-ToS",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Legolas.jpg",
-                "Stats": {
-                    "ResourceCost": "4",
-                    "Willpower": "1",
-                    "Attack": "3",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Silvan.",
-                    "Warrior."
-                ],
-                "Keywords": [
-                    "Ranged."
-                ],
-                "Text": [
-                    "Response: After Legolas participates in an attack that destroys an enemy, draw 1 card."
-                ],
-                "Shadow": null,
-                "FlavorText": "`He stands not alone,` said Legolas, bending his bow and fitting an arrow with hands that moved quicker than sight. -The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Treason of Saruman",
-            "EncounterInfo": null,
-            "Number": 5,
-            "Quantity": 3,
-            "Artist": "Sebastian Giacobino",
-            "HasErrata": false,
-            "OctgnGuid": "9825aa22-f197-4320-972d-e2487197d989",
-            "RingsDbCardId": "143005",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 482146,
-            "Categories": null
-        },
-        {
-            "Title": "Quickbeam",
-            "Slug": "Quickbeam-ToS",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Quickbeam.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "2",
-                    "Attack": "3",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Ent."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Cannot have restricted attachments. Enters play exhausted.",
-                    "Response: After Quickbeam enters play, deal 1 damage to him to ready him."
-                ],
-                "Shadow": null,
-                "FlavorText": "`I am Bregalad, that is Quickbeam in your language. But it is only a nickname, of course.` -The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Treason of Saruman",
-            "EncounterInfo": null,
-            "Number": 6,
-            "Quantity": 3,
-            "Artist": "Mike Nash",
-            "HasErrata": false,
-            "OctgnGuid": "f37fc371-5a6e-4a24-85a1-2afef11c6841",
-            "RingsDbCardId": "143006",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 639538,
-            "Categories": null
-        },
-        {
-            "Title": "Háma",
-            "Slug": "Hama-ToS",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Háma.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "1",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Rohan.",
-                    "Warrior."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Combat Action: Ready Háma. He gets +3 Defense until the end of the phase. At the end of the phase, discard Háma. (Limit once per round.)"
-                ],
-                "Shadow": null,
-                "FlavorText": "`I am the Doorward of Théoden,` he said. `Háma is my name.` -The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Treason of Saruman",
-            "EncounterInfo": null,
-            "Number": 7,
-            "Quantity": 3,
-            "Artist": "Sara Betsy",
-            "HasErrata": false,
-            "OctgnGuid": "adc3e6f6-da67-4cc1-9767-8e87dfc91b99",
-            "RingsDbCardId": "143007",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 228380,
-            "Categories": null
-        },
-        {
-            "Title": "Arod",
-            "Slug": "Arod-ToS",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Arod.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Mount."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a hero or Legolas.",
-                    "Response: After attached character participates in an attack that destroys an enemy, exhaust Arod to place 1 progress token on any location."
-                ],
-                "Shadow": null,
-                "FlavorText": "`A smaller and lighter horse, but restive and fiery, was brought to Legolas. Arod was his name.` -The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Treason of Saruman",
-            "EncounterInfo": null,
-            "Number": 8,
-            "Quantity": 3,
-            "Artist": "Smirtouille",
-            "HasErrata": false,
-            "OctgnGuid": "6646bb07-0b44-4051-94a7-39c600b38481",
-            "RingsDbCardId": "143008",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 182427,
-            "Categories": null
-        },
-        {
-            "Title": "Ent Draught",
-            "Slug": "Ent-Draught-ToS",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Ent-Draught.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item.",
-                    "Ent."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Play only if you control at least 1 Ent character.",
-                    "Attach to a character. Limit 1 per character.",
-                    "Attached character gets +2 hit points."
-                ],
-                "Shadow": null,
-                "FlavorText": "The effect of the draught began at the toes, and rose steadily through every limb, bringing refreshment and vigour as it coursed upwards, right to the tips of the hair. -The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Treason of Saruman",
-            "EncounterInfo": null,
-            "Number": 9,
-            "Quantity": 3,
-            "Artist": "Aurelien Hubert",
-            "HasErrata": false,
-            "OctgnGuid": "b86ba0f8-11f9-4694-b421-17b683bd4325",
-            "RingsDbCardId": "143009",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 274994,
-            "Categories": null
-        },
-        {
-            "Title": "Herugrim",
-            "Slug": "Herugrim-ToS",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Herugrim.jpg",
-                "Stats": {
-                    "ResourceCost": "3"
-                },
-                "Traits": [
-                    "Item.",
-                    "Weapon."
-                ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a Rohan hero. Restricted.",
-                    "Reduce the cost to play Herugrim on Théoden by 1.",
-                    "Response: After attached hero is declared as an attacker, exhaust Herugrim to add attached hero`s Willpower to its Attack for this attack."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Here, lord, is Herugrim, your ancient blade.` -Háma, The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Treason of Saruman",
-            "EncounterInfo": null,
-            "Number": 10,
-            "Quantity": 3,
-            "Artist": "Jason Ward",
-            "HasErrata": false,
-            "OctgnGuid": "9fce5e18-37dc-45c2-8398-df8b5018cb54",
-            "RingsDbCardId": "143010",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 263775,
-            "Categories": null
-        },
-        {
-            "Title": "Entmoot",
-            "Slug": "Entmoot-ToS",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Entmoot.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [
-                    "Ent."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Play only if you control at least 1 Ent character.",
-                    "Action: Search the top 5 cards of your deck for any number of Ent cards and add them to your hand. Shuffle the other cards back into your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "`...it is a gathering of Ents - which does not often happen nowadays.` -Treebeard, The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Treason of Saruman",
-            "EncounterInfo": null,
-            "Number": 11,
-            "Quantity": 3,
-            "Artist": "Anthony Devine",
-            "HasErrata": false,
-            "OctgnGuid": "a17465f5-e6f5-4699-b0d7-79355286a065",
-            "RingsDbCardId": "143011",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 208416,
-            "Categories": null
-        },
-        {
             "Title": "Helm! Helm!",
             "Slug": "Helm-Helm-ToS",
             "IsUnique": false,
@@ -528,42 +524,126 @@
             "Categories": null
         },
         {
-            "Title": "Shadowfax",
-            "Slug": "Shadowfax-ToS",
-            "IsUnique": true,
+            "Title": "Hands of a Healer",
+            "Slug": "Hands-of-a-Healer-ToS",
+            "IsUnique": false,
             "CardType": "Attachment",
-            "CardSubType": "None",
+            "CardSubType": "Boon",
             "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Shadowfax.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Hands-of-a-Healer.jpg",
                 "Stats": {
-                    "ResourceCost": "3"
+                    "ResourceCost": "0"
                 },
                 "Traits": [
-                    "Mount.",
-                    "Mearas."
+                    "Skill."
                 ],
-                "Keywords": [],
+                "Keywords": [
+                    "Permanent."
+                ],
                 "Text": [
-                    "Attach to Gandalf.",
-                    "Gandalf gains ranged and sentinel.",
-                    "Action: Exhaust Shadowfax to ready Gandalf."
+                    "Permanent.",
+                    "Setup: Attach to a Healer hero.",
+                    "Action: Exhaust attached hero and Hands of a Healer to heal up to 3 damage from a hero."
                 ],
                 "Shadow": null,
-                "FlavorText": "`He is the chief of the Mearas, lords of horses, and not even Théoden, King of Rohan, has ever looked on a better.`\r\n-Gandalf, The Two Towers"
+                "FlavorText": "`Life to the dying\r\nIn the king`s hand lying!`\r\n-Herb-master, The Return of the King"
             },
             "Back": null,
             "CardSet": "The Treason of Saruman",
             "EncounterInfo": null,
-            "Number": 14,
-            "Quantity": 3,
-            "Artist": "Smirtouille",
+            "Number": 16,
+            "Quantity": 1,
+            "Artist": "Kristina Gehrmann",
             "HasErrata": false,
-            "OctgnGuid": "9f61eee8-cff2-43ad-8f82-7c4efb5ed9b8",
-            "RingsDbCardId": "143014",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 299694,
+            "OctgnGuid": "36ed632c-33be-452c-97a5-17201a5cc381",
+            "RingsDbCardId": "143016",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 5920,
+            "Categories": null
+        },
+        {
+            "Title": "Palantír of Orthanc",
+            "Slug": "Palantir-of-Orthanc-ToS",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Palantír-of-Orthanc.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Attach to Fellowship Aragorn.",
+                    "Quest Action: Exhaust Aragorn and Palantír of Orthanc to discard the top card of the encounter deck. If Aragorn`s Willpower is greater than the discarded card`s Threat, you may add Palantír of Orthanc to the victory display and remove it from the campaign pool to choose a player. That player reveals 1 fewer encounter card this phase (to a minimum of 0)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 20,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "58001a33-adef-4766-872d-334b2570e167",
+            "RingsDbCardId": "143020",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2960,
+            "Categories": null
+        },
+        {
+            "Title": "Aragorn",
+            "Slug": "Aragorn-ToS",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Aragorn.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Noble.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The first player gains control of Aragorn. If Aragorn leaves play, the players lose the game.",
+                    "Action: Spend 2 resources from Aragorn`s resource pool to ready a hero."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "OctgnGuid": "f5178135-1485-43c5-9660-99232a4cdca8",
+            "RingsDbCardId": "143001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 469,
             "Categories": null
         },
         {
@@ -604,46 +684,6 @@
             "RingsDbCardId": "143015",
             "RingsDbPopularity": 0,
             "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Hands of a Healer",
-            "Slug": "Hands-of-a-Healer-ToS",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "Boon",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Hands-of-a-Healer.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [
-                    "Skill."
-                ],
-                "Keywords": [
-                    "Permanent."
-                ],
-                "Text": [
-                    "Permanent.",
-                    "Setup: Attach to a Healer hero.",
-                    "Action: Exhaust attached hero and Hands of a Healer to heal up to 3 damage from a hero."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Life to the dying\r\nIn the king`s hand lying!`\r\n-Herb-master, The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Treason of Saruman",
-            "EncounterInfo": null,
-            "Number": 16,
-            "Quantity": 1,
-            "Artist": "Kristina Gehrmann",
-            "HasErrata": false,
-            "OctgnGuid": "36ed632c-33be-452c-97a5-17201a5cc381",
-            "RingsDbCardId": "143016",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 5920,
             "Categories": null
         },
         {
@@ -764,46 +804,6 @@
             "RingsDbCardId": "143019",
             "RingsDbPopularity": 0,
             "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Palantír of Orthanc",
-            "Slug": "Palantir-of-Orthanc-ToS",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "Boon",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Palantír-of-Orthanc.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [
-                    "Artifact.",
-                    "Item."
-                ],
-                "Keywords": [
-                    "Victory 5."
-                ],
-                "Text": [
-                    "Attach to Fellowship Aragorn.",
-                    "Quest Action: Exhaust Aragorn and Palantír of Orthanc to discard the top card of the encounter deck. If Aragorn`s Willpower is greater than the discarded card`s Threat, you may add Palantír of Orthanc to the victory display and remove it from the campaign pool to choose a player. That player reveals 1 fewer encounter card this phase (to a minimum of 0)."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Treason of Saruman",
-            "EncounterInfo": null,
-            "Number": 20,
-            "Quantity": 1,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "58001a33-adef-4766-872d-334b2570e167",
-            "RingsDbCardId": "143020",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 2960,
             "Categories": null
         }
     ]

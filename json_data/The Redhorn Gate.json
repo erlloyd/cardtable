@@ -7,6 +7,152 @@
     "Cards": null,
     "cards": [
         {
+            "Title": "Bofur",
+            "Slug": "Bofur-TRG",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Bofur.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Quest Action: Spend 1 Spirit resource to put Bofur into play from your hand, exhausted and committed to a quest. If you quest successfully this phase and Bofur is still in play, return him to your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Get up lazy-bones...` -The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "OctgnGuid": "c00bdeff-c186-4d83-bf24-2142fdd39b19",
+            "RingsDbCardId": "04006",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 307447,
+            "Categories": null
+        },
+        {
+            "Title": "Timely Aid",
+            "Slug": "Timely-Aid-TRG",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Timely-Aid.jpg",
+                "Stats": {
+                    "ResourceCost": "4"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Secrecy 3."
+                ],
+                "Text": [
+                    "Secrecy 3.",
+                    "Action: Reveal the top 5 cards of your deck and put 1 revealed ally into play, if able. Shuffle all other revealed cards back into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Sandara Tang",
+            "HasErrata": false,
+            "OctgnGuid": "bd20ff6a-d77f-47d8-81dd-202e5f21cfaf",
+            "RingsDbCardId": "04003",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 258521,
+            "Categories": null
+        },
+        {
+            "Title": "Good Meal",
+            "Slug": "Good-Meal-TRG",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Good-Meal.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Hobbit hero.",
+                    "Action: Discard Good Meal to lower the cost of the next event you play this round that matches attached hero`s sphere by 2."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "David A. Nash",
+            "HasErrata": false,
+            "OctgnGuid": "97016882-11f8-428c-9f3f-43bb51aacb38",
+            "RingsDbCardId": "04010",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 156159,
+            "Categories": null
+        },
+        {
+            "Title": "Unseen Strike",
+            "Slug": "Unseen-Strike-TRG",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Unseen-Strike.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose a character you control. Until the end of the phase, that character gets +3 Attack while attacking an enemy with a higher engagement cost than your threat."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Redhorn Gate",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Even Mehl Amundsen",
+            "HasErrata": false,
+            "OctgnGuid": "c1c21875-2650-4e7d-b8c7-c0c0970ce8b0",
+            "RingsDbCardId": "04004",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 149774,
+            "Categories": null
+        },
+        {
             "Title": "Elrohir",
             "Slug": "Elrohir-TRG",
             "IsUnique": true,
@@ -50,59 +196,25 @@
             "Categories": null
         },
         {
-            "Title": "Taking Initiative",
-            "Slug": "Taking-Initiative-TRG",
+            "Title": "Needful to Know",
+            "Slug": "Needful-to-Know-TRG",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Taking-Initiative.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Needful-to-Know.jpg",
                 "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Discard the top card of your deck. If the discarded card`s printed cost is equal to or higher than the number of characters you control, draw 2 cards and deal 2 damage to any enemy."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Redhorn Gate",
-            "EncounterInfo": null,
-            "Number": 2,
-            "Quantity": 3,
-            "Artist": "Melissa Findley",
-            "HasErrata": false,
-            "OctgnGuid": "ac2d3796-1d68-4d27-9e5e-4a09a535c0b7",
-            "RingsDbCardId": "04002",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 32086,
-            "Categories": null
-        },
-        {
-            "Title": "Timely Aid",
-            "Slug": "Timely-Aid-TRG",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Timely-Aid.jpg",
-                "Stats": {
-                    "ResourceCost": "4"
+                    "ResourceCost": "2"
                 },
                 "Traits": [],
                 "Keywords": [
-                    "Secrecy 3."
+                    "Secrecy 2."
                 ],
                 "Text": [
-                    "Secrecy 3.",
-                    "Action: Reveal the top 5 cards of your deck and put 1 revealed ally into play, if able. Shuffle all other revealed cards back into your deck."
+                    "Secrecy 2.",
+                    "Action: Raise your threat by 1 to look at the top card of the encounter deck. Then, reduce your threat by X, where X is the threat of that card."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -110,48 +222,14 @@
             "Back": null,
             "CardSet": "The Redhorn Gate",
             "EncounterInfo": null,
-            "Number": 3,
+            "Number": 9,
             "Quantity": 3,
-            "Artist": "Sandara Tang",
+            "Artist": "Magali Villeneuve",
             "HasErrata": false,
-            "OctgnGuid": "bd20ff6a-d77f-47d8-81dd-202e5f21cfaf",
-            "RingsDbCardId": "04003",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 258521,
-            "Categories": null
-        },
-        {
-            "Title": "Unseen Strike",
-            "Slug": "Unseen-Strike-TRG",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Unseen-Strike.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Choose a character you control. Until the end of the phase, that character gets +3 Attack while attacking an enemy with a higher engagement cost than your threat."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Redhorn Gate",
-            "EncounterInfo": null,
-            "Number": 4,
-            "Quantity": 3,
-            "Artist": "Even Mehl Amundsen",
-            "HasErrata": false,
-            "OctgnGuid": "c1c21875-2650-4e7d-b8c7-c0c0970ce8b0",
-            "RingsDbCardId": "04004",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 149774,
+            "OctgnGuid": "28a27a2b-d9c9-40ab-95ec-b44eca301102",
+            "RingsDbCardId": "04009",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 52211,
             "Categories": null
         },
         {
@@ -191,43 +269,37 @@
             "Categories": null
         },
         {
-            "Title": "Bofur",
-            "Slug": "Bofur-TRG",
-            "IsUnique": true,
-            "CardType": "Ally",
+            "Title": "Taking Initiative",
+            "Slug": "Taking-Initiative-TRG",
+            "IsUnique": false,
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Bofur.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Taking-Initiative.jpg",
                 "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "3"
+                    "ResourceCost": "0"
                 },
-                "Traits": [
-                    "Dwarf."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Quest Action: Spend 1 Spirit resource to put Bofur into play from your hand, exhausted and committed to a quest. If you quest successfully this phase and Bofur is still in play, return him to your hand."
+                    "Action: Discard the top card of your deck. If the discarded card`s printed cost is equal to or higher than the number of characters you control, draw 2 cards and deal 2 damage to any enemy."
                 ],
                 "Shadow": null,
-                "FlavorText": "`Get up lazy-bones...` -The Hobbit"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "The Redhorn Gate",
             "EncounterInfo": null,
-            "Number": 6,
+            "Number": 2,
             "Quantity": 3,
-            "Artist": "Ilich Henriquez",
+            "Artist": "Melissa Findley",
             "HasErrata": false,
-            "OctgnGuid": "c00bdeff-c186-4d83-bf24-2142fdd39b19",
-            "RingsDbCardId": "04006",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 307447,
+            "OctgnGuid": "ac2d3796-1d68-4d27-9e5e-4a09a535c0b7",
+            "RingsDbCardId": "04002",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 32086,
             "Categories": null
         },
         {
@@ -303,78 +375,6 @@
             "RingsDbCardId": "04008",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 20423,
-            "Categories": null
-        },
-        {
-            "Title": "Needful to Know",
-            "Slug": "Needful-to-Know-TRG",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Needful-to-Know.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [],
-                "Keywords": [
-                    "Secrecy 2."
-                ],
-                "Text": [
-                    "Secrecy 2.",
-                    "Action: Raise your threat by 1 to look at the top card of the encounter deck. Then, reduce your threat by X, where X is the threat of that card."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Redhorn Gate",
-            "EncounterInfo": null,
-            "Number": 9,
-            "Quantity": 3,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "28a27a2b-d9c9-40ab-95ec-b44eca301102",
-            "RingsDbCardId": "04009",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 52211,
-            "Categories": null
-        },
-        {
-            "Title": "Good Meal",
-            "Slug": "Good-Meal-TRG",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Redhorn-Gate/Good-Meal.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Hobbit hero.",
-                    "Action: Discard Good Meal to lower the cost of the next event you play this round that matches attached hero`s sphere by 2."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Redhorn Gate",
-            "EncounterInfo": null,
-            "Number": 10,
-            "Quantity": 3,
-            "Artist": "David A. Nash",
-            "HasErrata": false,
-            "OctgnGuid": "97016882-11f8-428c-9f3f-43bb51aacb38",
-            "RingsDbCardId": "04010",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 156159,
             "Categories": null
         }
     ]

@@ -7,31 +7,28 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Elladan",
-            "Slug": "Elladan-RtR",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Rivendell Blade",
+            "Slug": "Rivendell-Blade-RtR",
+            "IsUnique": false,
+            "CardType": "Attachment",
             "CardSubType": "None",
             "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Elladan.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Rivendell-Blade.jpg",
                 "Stats": {
-                    "ThreatCost": "10",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "4"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Noldor.",
-                    "Noble.",
-                    "Ranger."
+                    "Item.",
+                    "Weapon."
                 ],
-                "Keywords": [],
+                "Keywords": [
+                    "Restricted."
+                ],
                 "Text": [
-                    "While Elrohir is in play, Elladan gets +2 Attack.",
-                    "Response: After Elladan is declared as an attacker, pay 1 resource from his resource pool to ready him."
+                    "Attach to a Noldor or Silvan character. Restricted.",
+                    "When attached character attacks an enemy, that enemy gets -2 Defense until the end of the phase."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -39,14 +36,197 @@
             "Back": null,
             "CardSet": "Road to Rivendell",
             "EncounterInfo": null,
-            "Number": 28,
-            "Quantity": 1,
-            "Artist": "Magali Villeneuve",
+            "Number": 31,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9010",
-            "RingsDbCardId": "04028",
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9023",
+            "RingsDbCardId": "04031",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 502824,
+            "Categories": null
+        },
+        {
+            "Title": "Lure of Moria",
+            "Slug": "Lure-of-Moria-RtR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Lure-of-Moria.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Ready all Dwarf characters."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Road to Rivendell",
+            "EncounterInfo": null,
+            "Number": 30,
+            "Quantity": 3,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9015",
+            "RingsDbCardId": "04030",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 201148,
+            "Categories": null
+        },
+        {
+            "Title": "Out of the Wild",
+            "Slug": "Out-of-the-Wild-RtR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Out-of-the-Wild.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Secrecy 2."
+                ],
+                "Text": [
+                    "Secrecy 2.",
+                    "Action: Search the top 5 cards of the encounter deck for any 1 non-objective card worth no victory points and add it to your victory display. Shuffle the encounter deck. Add Out of the Wild to the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Road to Rivendell",
+            "EncounterInfo": null,
+            "Number": 36,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": true,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9020",
+            "RingsDbCardId": "04036",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 180145,
+            "Categories": null
+        },
+        {
+            "Title": "Song of Eärendil",
+            "Slug": "Song-of-Earendil-RtR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Song-of-Eärendil.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Spirit hero.",
+                    "Response: After Song of Eärendil enters play, draw 1 card.",
+                    "Response: After another player raises his threat, raise your threat by 1 to reduce that player`s threat by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Road to Rivendell",
+            "EncounterInfo": null,
+            "Number": 34,
+            "Quantity": 3,
+            "Artist": "K. R. Harris",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9026",
+            "RingsDbCardId": "04034",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 96795,
+            "Categories": null
+        },
+        {
+            "Title": "Rider of the Mark",
+            "Slug": "Rider-of-the-Mark-RtR",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Rider-of-the-Mark.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Rohan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Spend 1 Spirit resource to give control of Rider of the Mark to another player. (Limit once per round.)Response: After Rider of the Mark changes control, discard a shadow card dealt to an enemy you are engaged with."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Road to Rivendell",
+            "EncounterInfo": null,
+            "Number": 33,
+            "Quantity": 3,
+            "Artist": "David Horne",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9022",
+            "RingsDbCardId": "04033",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 90567,
+            "Categories": null
+        },
+        {
+            "Title": "Hail of Stones",
+            "Slug": "Hail-of-Stones-RtR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Hail-of-Stones.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust X characters to deal X damage to an enemy in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Road to Rivendell",
+            "EncounterInfo": null,
+            "Number": 32,
+            "Quantity": 3,
+            "Artist": "Stu Barnes",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9014",
+            "RingsDbCardId": "04032",
             "RingsDbPopularity": 4,
-            "RingsDbVotes": 7636,
+            "RingsDbVotes": 77536,
             "Categories": null
         },
         {
@@ -95,136 +275,31 @@
             "Categories": null
         },
         {
-            "Title": "Lure of Moria",
-            "Slug": "Lure-of-Moria-RtR",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Lure-of-Moria.jpg",
-                "Stats": {
-                    "ResourceCost": "3"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Ready all Dwarf characters."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Road to Rivendell",
-            "EncounterInfo": null,
-            "Number": 30,
-            "Quantity": 3,
-            "Artist": "Mike Nash",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9015",
-            "RingsDbCardId": "04030",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 201148,
-            "Categories": null
-        },
-        {
-            "Title": "Rivendell Blade",
-            "Slug": "Rivendell-Blade-RtR",
-            "IsUnique": false,
-            "CardType": "Attachment",
+            "Title": "Elladan",
+            "Slug": "Elladan-RtR",
+            "IsUnique": true,
+            "CardType": "Hero",
             "CardSubType": "None",
             "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Rivendell-Blade.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Elladan.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item.",
-                    "Weapon."
-                ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a Noldor or Silvan character. Restricted.",
-                    "When attached character attacks an enemy, that enemy gets -2 Defense until the end of the phase."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Road to Rivendell",
-            "EncounterInfo": null,
-            "Number": 31,
-            "Quantity": 3,
-            "Artist": "Sara Biddle",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9023",
-            "RingsDbCardId": "04031",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 502824,
-            "Categories": null
-        },
-        {
-            "Title": "Hail of Stones",
-            "Slug": "Hail-of-Stones-RtR",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Hail-of-Stones.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Exhaust X characters to deal X damage to an enemy in the staging area."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Road to Rivendell",
-            "EncounterInfo": null,
-            "Number": 32,
-            "Quantity": 3,
-            "Artist": "Stu Barnes",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9014",
-            "RingsDbCardId": "04032",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 77536,
-            "Categories": null
-        },
-        {
-            "Title": "Rider of the Mark",
-            "Slug": "Rider-of-the-Mark-RtR",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Rider-of-the-Mark.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
+                    "ThreatCost": "10",
                     "Willpower": "2",
                     "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
+                    "Defense": "2",
+                    "HitPoints": "4"
                 },
                 "Traits": [
-                    "Rohan."
+                    "Noldor.",
+                    "Noble.",
+                    "Ranger."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Action: Spend 1 Spirit resource to give control of Rider of the Mark to another player. (Limit once per round.)Response: After Rider of the Mark changes control, discard a shadow card dealt to an enemy you are engaged with."
+                    "While Elrohir is in play, Elladan gets +2 Attack.",
+                    "Response: After Elladan is declared as an attacker, pay 1 resource from his resource pool to ready him."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -232,52 +307,14 @@
             "Back": null,
             "CardSet": "Road to Rivendell",
             "EncounterInfo": null,
-            "Number": 33,
-            "Quantity": 3,
-            "Artist": "David Horne",
+            "Number": 28,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9022",
-            "RingsDbCardId": "04033",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 90567,
-            "Categories": null
-        },
-        {
-            "Title": "Song of Eärendil",
-            "Slug": "Song-of-Earendil-RtR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Song-of-Eärendil.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Song."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Spirit hero.",
-                    "Response: After Song of Eärendil enters play, draw 1 card.",
-                    "Response: After another player raises his threat, raise your threat by 1 to reduce that player`s threat by 1."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Road to Rivendell",
-            "EncounterInfo": null,
-            "Number": 34,
-            "Quantity": 3,
-            "Artist": "K. R. Harris",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9026",
-            "RingsDbCardId": "04034",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 96795,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9010",
+            "RingsDbCardId": "04028",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 7636,
             "Categories": null
         },
         {
@@ -318,43 +355,6 @@
             "RingsDbCardId": "04035",
             "RingsDbPopularity": 3,
             "RingsDbVotes": 52644,
-            "Categories": null
-        },
-        {
-            "Title": "Out of the Wild",
-            "Slug": "Out-of-the-Wild-RtR",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Out-of-the-Wild.jpg",
-                "Stats": {
-                    "ResourceCost": "3"
-                },
-                "Traits": [],
-                "Keywords": [
-                    "Secrecy 2."
-                ],
-                "Text": [
-                    "Secrecy 2.",
-                    "Action: Search the top 5 cards of the encounter deck for any 1 non-objective card worth no victory points and add it to your victory display. Shuffle the encounter deck. Add Out of the Wild to the victory display."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Road to Rivendell",
-            "EncounterInfo": null,
-            "Number": 36,
-            "Quantity": 3,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": true,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9020",
-            "RingsDbCardId": "04036",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 180145,
             "Categories": null
         },
         {

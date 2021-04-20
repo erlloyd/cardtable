@@ -7,121 +7,6 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Merry",
-            "Slug": "Merry-TWoE",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador/Merry.jpg",
-                "Stats": {
-                    "ThreatCost": "6",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Hobbit."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After an enemy is revealed from the top of the encounter deck, exhaust Merry to reduce your threat by that enemy`s Threat."
-                ],
-                "Shadow": null,
-                "FlavorText": "`We have come a long way with you and been through some stiff times. We want to go on.` —The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Wastes of Eriador",
-            "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Romana Kendelic",
-            "HasErrata": false,
-            "OctgnGuid": "03a7152b-e6af-4aaf-a064-7e814fc181d5",
-            "RingsDbCardId": "10001",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 14199,
-            "Categories": null
-        },
-        {
-            "Title": "Ingold",
-            "Slug": "Ingold-TWoE",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador/Ingold.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "0",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Gondor."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Ingold gets +1 Willpower for each hero you control with at least 1 resource in its resource pool."
-                ],
-                "Shadow": null,
-                "FlavorText": "`We wish for no strangers in the land at this time, unless they be mighty men of arms in whose faith and help we can trust.` —The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Wastes of Eriador",
-            "EncounterInfo": null,
-            "Number": 2,
-            "Quantity": 3,
-            "Artist": "Tiziano Baracchi",
-            "HasErrata": false,
-            "OctgnGuid": "1e28318c-e82a-4d50-b6db-d08e6e9a6b53",
-            "RingsDbCardId": "10002",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 83557,
-            "Categories": null
-        },
-        {
-            "Title": "Rallying Cry",
-            "Slug": "Rallying-Cry-TWoE",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador/Rallying-Cry.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Response: After an ally leaves play, add it to its owner’s hand instead of placing it in the discard pile.",
-                    "Valour Action: Until the end of the phase, add each ally that leaves play to its owner`s hand instead of placing it in the discard pile."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Wastes of Eriador",
-            "EncounterInfo": null,
-            "Number": 3,
-            "Quantity": 3,
-            "Artist": "Lukasz Jaskolski",
-            "HasErrata": false,
-            "OctgnGuid": "1c6d209d-8ff3-4b81-a03f-e81e132e3b5e",
-            "RingsDbCardId": "10003",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 21805,
-            "Categories": null
-        },
-        {
             "Title": "Honour Guard",
             "Slug": "Honour-Guard-TWoE",
             "IsUnique": false,
@@ -164,6 +49,87 @@
             "Categories": null
         },
         {
+            "Title": "Ranger of Cardolan",
+            "Slug": "Ranger-of-Cardolan-TWoE",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador/Ranger-of-Cardolan.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After you engage an enemy, if you control at least 1 Dúnedain hero, spend 1 resource to put Ranger of Cardolan into play from your hand, under your control. At the end of the round, if Ranger of Cardolan is still in play, shuffle it into its owner`s deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Wastes of Eriador",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "OctgnGuid": "cc73532b-e891-49b6-9544-468b5977149a",
+            "RingsDbCardId": "10010",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 239834,
+            "Categories": null
+        },
+        {
+            "Title": "Merry",
+            "Slug": "Merry-TWoE",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador/Merry.jpg",
+                "Stats": {
+                    "ThreatCost": "6",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After an enemy is revealed from the top of the encounter deck, exhaust Merry to reduce your threat by that enemy`s Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We have come a long way with you and been through some stiff times. We want to go on.` —The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Wastes of Eriador",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Romana Kendelic",
+            "HasErrata": false,
+            "OctgnGuid": "03a7152b-e6af-4aaf-a064-7e814fc181d5",
+            "RingsDbCardId": "10001",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 14199,
+            "Categories": null
+        },
+        {
             "Title": "Raven-winged Helm",
             "Slug": "Raven-winged-Helm-TWoE",
             "IsUnique": false,
@@ -199,6 +165,43 @@
             "RingsDbCardId": "10005",
             "RingsDbPopularity": 6,
             "RingsDbVotes": 152914,
+            "Categories": null
+        },
+        {
+            "Title": "Scout Ahead",
+            "Slug": "Scout-Ahead-TWoE",
+            "IsUnique": false,
+            "CardType": "Player_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador/Scout-Ahead.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Limit 1 per deck.",
+                    "Response: When this stage is defeated, the first player searches the top X cards of the encounter deck for 1 non-objective card worth no victory points and adds it to the victory display. Put the remaining cards back in any order. X is the number of players in the game plus 4."
+                ],
+                "Shadow": null,
+                "FlavorText": "Strider made them take cover in a thicket at the side of the Road, while he went forward to explore. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Wastes of Eriador",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "OctgnGuid": "f8a3acfb-3b0d-414b-b5d0-2612d33c193d",
+            "RingsDbCardId": "10009",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 145830,
             "Categories": null
         },
         {
@@ -282,6 +285,46 @@
             "Categories": null
         },
         {
+            "Title": "Ingold",
+            "Slug": "Ingold-TWoE",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador/Ingold.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "0",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Gondor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Ingold gets +1 Willpower for each hero you control with at least 1 resource in its resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We wish for no strangers in the land at this time, unless they be mighty men of arms in whose faith and help we can trust.` —The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Wastes of Eriador",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "OctgnGuid": "1e28318c-e82a-4d50-b6db-d08e6e9a6b53",
+            "RingsDbCardId": "10002",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 83557,
+            "Categories": null
+        },
+        {
             "Title": "East Road Ranger",
             "Slug": "East-Road-Ranger-TWoE",
             "IsUnique": false,
@@ -323,66 +366,23 @@
             "Categories": null
         },
         {
-            "Title": "Scout Ahead",
-            "Slug": "Scout-Ahead-TWoE",
+            "Title": "Rallying Cry",
+            "Slug": "Rallying-Cry-TWoE",
             "IsUnique": false,
-            "CardType": "Player_Side_Quest",
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Lore",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador/Scout-Ahead.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador/Rallying-Cry.jpg",
                 "Stats": {
-                    "ResourceCost": "0"
+                    "ResourceCost": "2"
                 },
                 "Traits": [],
-                "Keywords": [
-                    "Victory 1."
-                ],
-                "Text": [
-                    "Limit 1 per deck.",
-                    "Response: When this stage is defeated, the first player searches the top X cards of the encounter deck for 1 non-objective card worth no victory points and adds it to the victory display. Put the remaining cards back in any order. X is the number of players in the game plus 4."
-                ],
-                "Shadow": null,
-                "FlavorText": "Strider made them take cover in a thicket at the side of the Road, while he went forward to explore. -The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Wastes of Eriador",
-            "EncounterInfo": null,
-            "Number": 9,
-            "Quantity": 3,
-            "Artist": "Tomasz Jedruszek",
-            "HasErrata": false,
-            "OctgnGuid": "f8a3acfb-3b0d-414b-b5d0-2612d33c193d",
-            "RingsDbCardId": "10009",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 145830,
-            "Categories": null
-        },
-        {
-            "Title": "Ranger of Cardolan",
-            "Slug": "Ranger-of-Cardolan-TWoE",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wastes-of-Eriador/Ranger-of-Cardolan.jpg",
-                "Stats": {
-                    "ResourceCost": "4",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Dúnedain.",
-                    "Ranger."
-                ],
                 "Keywords": [],
                 "Text": [
-                    "Response: After you engage an enemy, if you control at least 1 Dúnedain hero, spend 1 resource to put Ranger of Cardolan into play from your hand, under your control. At the end of the round, if Ranger of Cardolan is still in play, shuffle it into its owner`s deck."
+                    "Response: After an ally leaves play, add it to its owner’s hand instead of placing it in the discard pile.",
+                    "Valour Action: Until the end of the phase, add each ally that leaves play to its owner`s hand instead of placing it in the discard pile."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -390,14 +390,14 @@
             "Back": null,
             "CardSet": "The Wastes of Eriador",
             "EncounterInfo": null,
-            "Number": 10,
+            "Number": 3,
             "Quantity": 3,
             "Artist": "Lukasz Jaskolski",
             "HasErrata": false,
-            "OctgnGuid": "cc73532b-e891-49b6-9544-468b5977149a",
-            "RingsDbCardId": "10010",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 239834,
+            "OctgnGuid": "1c6d209d-8ff3-4b81-a03f-e81e132e3b5e",
+            "RingsDbCardId": "10003",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 21805,
             "Categories": null
         }
     ]

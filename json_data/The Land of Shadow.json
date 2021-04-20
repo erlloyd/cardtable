@@ -7,88 +7,84 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Frodo Baggins",
-            "Slug": "Frodo-Baggins-TLoS",
+            "Title": "Snowmane",
+            "Slug": "Snowmane-TLoS",
             "IsUnique": true,
-            "CardType": "Hero",
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Fellowship",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Frodo-Baggins.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Snowmane.jpg",
                 "Stats": {
-                    "ThreatCost": "0",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "2"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Hobbit.",
-                    "Ring-bearer."
+                    "Mount."
                 ],
-                "Keywords": [],
+                "Keywords": [
+                    "Restricted."
+                ],
                 "Text": [
-                    "Action: Spend 1 Fellowship resource and exhaust The One Ring to give Frodo Baggins +2 Willpower and +2 Attack until the end of the round."
+                    "Attach to a Rohan hero. Restricted.",
+                    "If attached hero is Theoden, Snowmane loses the restricted keyword.",
+                    "Response: After attached hero quests successfully, ready attached hero."
                 ],
                 "Shadow": null,
-                "FlavorText": "`It`s my doom, I think, to go to that Shadow yonder, so that a way will be found.` -The Two Towers"
+                "FlavorText": "Suddenly the king cried to Snowmane and the horse sprang away. -The Return of the King"
             },
             "Back": null,
             "CardSet": "The Land of Shadow",
             "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Melanie Maier",
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Julepe",
             "HasErrata": false,
-            "OctgnGuid": "fe58a6d3-7028-41c1-ab00-5e33e7d77b5f",
-            "RingsDbCardId": "144001",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 298,
+            "OctgnGuid": "b89d39c4-1017-4707-95c3-d60f352d4e95",
+            "RingsDbCardId": "144010",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 308525,
             "Categories": null
         },
         {
-            "Title": "Faramir",
-            "Slug": "Faramir-TLoS",
+            "Title": "Mablung",
+            "Slug": "Mablung-TLoS",
             "IsUnique": true,
-            "CardType": "Hero",
+            "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Faramir.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Mablung.jpg",
                 "Stats": {
-                    "ThreatCost": "11",
+                    "ResourceCost": "2",
                     "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "5"
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
                 },
                 "Traits": [
                     "Gondor.",
-                    "Noble.",
                     "Ranger."
                 ],
-                "Keywords": [
-                    "Ranged."
-                ],
+                "Keywords": [],
                 "Text": [
-                    "Response: After you engage an enemy, ready an ally you control. (Limit once per phase.)"
+                    "Response: After Mablung enters play, choose an enemy to get +5 engagement cost until the end of the round. Then, you may engage that enemy, or return it to the staging area."
                 ],
                 "Shadow": null,
-                "FlavorText": "`That will be the Captain: he can master both beasts and men`\r\n-Beregond, The Return of the King"
+                "FlavorText": "`But still we will not sit idle and let Him do all as He would.` -The Two Towers"
             },
             "Back": null,
             "CardSet": "The Land of Shadow",
             "EncounterInfo": null,
-            "Number": 2,
-            "Quantity": 1,
-            "Artist": "Jason Cheeseman Meyer",
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Beth Sobel",
             "HasErrata": false,
-            "OctgnGuid": "8f937f89-b248-4261-9b00-4e3cd9763299",
-            "RingsDbCardId": "144002",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 8150,
+            "OctgnGuid": "a870e2b3-4b9d-46ea-bc37-425fd682f114",
+            "RingsDbCardId": "144005",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 283975,
             "Categories": null
         },
         {
@@ -134,85 +130,44 @@
             "Categories": null
         },
         {
-            "Title": "Anborn",
-            "Slug": "Anborn-TLoS",
+            "Title": "Gamling",
+            "Slug": "Gamling-TLoS",
             "IsUnique": true,
             "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Anborn.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Gamling.jpg",
                 "Stats": {
-                    "ResourceCost": "4",
+                    "ResourceCost": "3",
                     "Willpower": "1",
-                    "Attack": "3",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Gondor.",
-                    "Ranger."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After an enemy is added to the staging area, exhaust Anborn to give that enemy +5 engagement cost until the end of the round. Then, deal 1 damage to that enemy."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Now I have him at arrow-point.` -The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Land of Shadow",
-            "EncounterInfo": null,
-            "Number": 4,
-            "Quantity": 3,
-            "Artist": "Owen William Weber",
-            "HasErrata": false,
-            "OctgnGuid": "c8b5dd1c-82bc-4733-be1a-484a6e87c3c0",
-            "RingsDbCardId": "144004",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 143350,
-            "Categories": null
-        },
-        {
-            "Title": "Mablung",
-            "Slug": "Mablung-TLoS",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Mablung.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "2",
                     "Attack": "1",
-                    "Defense": "0",
+                    "Defense": "2",
                     "HitPoints": "2"
                 },
                 "Traits": [
-                    "Gondor.",
-                    "Ranger."
+                    "Rohan.",
+                    "Warrior."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Response: After Mablung enters play, choose an enemy to get +5 engagement cost until the end of the round. Then, you may engage that enemy, or return it to the staging area."
+                    "Response: After a Rohan ally you control is discarded from play, exhaust Gamling to return that ally to your hand."
                 ],
                 "Shadow": null,
-                "FlavorText": "`But still we will not sit idle and let Him do all as He would.` -The Two Towers"
+                "FlavorText": "`...we have a thousand fit to fight on foot,` said Gamling, an old man, the leader of those that watched the Dike. -The Two Towers"
             },
             "Back": null,
             "CardSet": "The Land of Shadow",
             "EncounterInfo": null,
-            "Number": 5,
+            "Number": 7,
             "Quantity": 3,
-            "Artist": "Beth Sobel",
+            "Artist": "Melanie Maier",
             "HasErrata": false,
-            "OctgnGuid": "a870e2b3-4b9d-46ea-bc37-425fd682f114",
-            "RingsDbCardId": "144005",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 283975,
+            "OctgnGuid": "9e944f47-14b0-4890-98d2-584e0abe0eda",
+            "RingsDbCardId": "144007",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 194075,
             "Categories": null
         },
         {
@@ -257,47 +212,6 @@
             "Categories": null
         },
         {
-            "Title": "Gamling",
-            "Slug": "Gamling-TLoS",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Gamling.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Rohan.",
-                    "Warrior."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After a Rohan ally you control is discarded from play, exhaust Gamling to return that ally to your hand."
-                ],
-                "Shadow": null,
-                "FlavorText": "`...we have a thousand fit to fight on foot,` said Gamling, an old man, the leader of those that watched the Dike. -The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Land of Shadow",
-            "EncounterInfo": null,
-            "Number": 7,
-            "Quantity": 3,
-            "Artist": "Melanie Maier",
-            "HasErrata": false,
-            "OctgnGuid": "9e944f47-14b0-4890-98d2-584e0abe0eda",
-            "RingsDbCardId": "144007",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 194075,
-            "Categories": null
-        },
-        {
             "Title": "Staff of Lebethron",
             "Slug": "Staff-of-Lebethron-TLoS",
             "IsUnique": false,
@@ -334,6 +248,47 @@
             "RingsDbCardId": "144008",
             "RingsDbPopularity": 6,
             "RingsDbVotes": 148475,
+            "Categories": null
+        },
+        {
+            "Title": "Anborn",
+            "Slug": "Anborn-TLoS",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Anborn.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After an enemy is added to the staging area, exhaust Anborn to give that enemy +5 engagement cost until the end of the round. Then, deal 1 damage to that enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Now I have him at arrow-point.` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Owen William Weber",
+            "HasErrata": false,
+            "OctgnGuid": "c8b5dd1c-82bc-4733-be1a-484a6e87c3c0",
+            "RingsDbCardId": "144004",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 143350,
             "Categories": null
         },
         {
@@ -375,43 +330,47 @@
             "Categories": null
         },
         {
-            "Title": "Snowmane",
-            "Slug": "Snowmane-TLoS",
+            "Title": "Faramir",
+            "Slug": "Faramir-TLoS",
             "IsUnique": true,
-            "CardType": "Attachment",
+            "CardType": "Hero",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Snowmane.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Faramir.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ThreatCost": "11",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "5"
                 },
                 "Traits": [
-                    "Mount."
+                    "Gondor.",
+                    "Noble.",
+                    "Ranger."
                 ],
                 "Keywords": [
-                    "Restricted."
+                    "Ranged."
                 ],
                 "Text": [
-                    "Attach to a Rohan hero. Restricted.",
-                    "If attached hero is Theoden, Snowmane loses the restricted keyword.",
-                    "Response: After attached hero quests successfully, ready attached hero."
+                    "Response: After you engage an enemy, ready an ally you control. (Limit once per phase.)"
                 ],
                 "Shadow": null,
-                "FlavorText": "Suddenly the king cried to Snowmane and the horse sprang away. -The Return of the King"
+                "FlavorText": "`That will be the Captain: he can master both beasts and men`\r\n-Beregond, The Return of the King"
             },
             "Back": null,
             "CardSet": "The Land of Shadow",
             "EncounterInfo": null,
-            "Number": 10,
-            "Quantity": 3,
-            "Artist": "Julepe",
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Jason Cheeseman Meyer",
             "HasErrata": false,
-            "OctgnGuid": "b89d39c4-1017-4707-95c3-d60f352d4e95",
-            "RingsDbCardId": "144010",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 308525,
+            "OctgnGuid": "8f937f89-b248-4261-9b00-4e3cd9763299",
+            "RingsDbCardId": "144002",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 8150,
             "Categories": null
         },
         {
@@ -552,6 +511,47 @@
             "RingsDbCardId": "144014",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 2960,
+            "Categories": null
+        },
+        {
+            "Title": "Frodo Baggins",
+            "Slug": "Frodo-Baggins-TLoS",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Frodo-Baggins.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit.",
+                    "Ring-bearer."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Spend 1 Fellowship resource and exhaust The One Ring to give Frodo Baggins +2 Willpower and +2 Attack until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`It`s my doom, I think, to go to that Shadow yonder, so that a way will be found.` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Melanie Maier",
+            "HasErrata": false,
+            "OctgnGuid": "fe58a6d3-7028-41c1-ab00-5e33e7d77b5f",
+            "RingsDbCardId": "144001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 298,
             "Categories": null
         }
     ]

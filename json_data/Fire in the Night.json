@@ -7,44 +7,124 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Thranduil",
-            "Slug": "Thranduil-FitN",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Giant Bear",
+            "Slug": "Giant-Bear-FitN",
+            "IsUnique": false,
+            "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Thranduil.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Giant-Bear.jpg",
                 "Stats": {
-                    "ThreatCost": "9",
-                    "Willpower": "1",
-                    "Attack": "1",
+                    "ResourceCost": "5",
+                    "Willpower": "0",
+                    "Attack": "4",
                     "Defense": "3",
                     "HitPoints": "4"
                 },
                 "Traits": [
-                    "Silvan.",
-                    "Noble."
+                    "Creature.",
+                    "Beorning."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Combat Action: Play a Silvan ally from your hand. You do not need a resource match for this ally. (Limit once per round.)"
+                    "Cannot have attachments.",
+                    "Action: Ready Giant Bear. At the end of the phase in which you trigger this effect, shuffle Giant Bear into your deck. (Limit once per phase.)"
                 ],
                 "Shadow": null,
-                "FlavorText": "`It is a crime to wander in my realm without leave.`\r\n-The Hobbit"
+                "FlavorText": "`As a bear he ranged far and wide`\r\n-Gandalf, The Hobbit"
             },
             "Back": null,
             "CardSet": "Fire in the Night",
             "EncounterInfo": null,
-            "Number": 56,
-            "Quantity": 1,
-            "Artist": "Magali Villeneuve",
+            "Number": 61,
+            "Quantity": 3,
+            "Artist": "Brendan C. Murphy",
             "HasErrata": false,
-            "OctgnGuid": "3dd1cdc1-8c87-4c8b-89fe-22e7e310bca9",
-            "RingsDbCardId": "19056",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 4660,
+            "OctgnGuid": "f0a54401-de56-47b0-8741-5fb264a385c0",
+            "RingsDbCardId": "19061",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 99689,
+            "Categories": null
+        },
+        {
+            "Title": "Leather Boots",
+            "Slug": "Leather-Boots-FitN",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Leather-Boots.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Lore or Ranger character. Limit 1 per character.",
+                    "Response: After a Location is revealed from the encounter deck, exhaust Leather Boots to ready attached character."
+                ],
+                "Shadow": null,
+                "FlavorText": "His legs were stretched out before him, showing high boots of supple leather the fitted him well...\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 60,
+            "Quantity": 3,
+            "Artist": "Yoann Boissonnet",
+            "HasErrata": false,
+            "OctgnGuid": "f347a30b-44d9-4ddd-af69-798e96b68b65",
+            "RingsDbCardId": "19060",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 73008,
+            "Categories": null
+        },
+        {
+            "Title": "Thalion",
+            "Slug": "Thalion-FitN",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Thalion.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While there is at least 1 side quest in the victory display, ready Thalion at the beginning of the combat phase.",
+                    "While there are at least 3 side quests in the victory display, Thalion loses the ally card type, gains the hero card type and the resource icons of each sphere on a side quest in the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Fire in the Night",
+            "EncounterInfo": null,
+            "Number": 65,
+            "Quantity": 3,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "OctgnGuid": "68168e29-feaf-43da-9ea0-2fc33061710d",
+            "RingsDbCardId": "19065",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 66692,
             "Categories": null
         },
         {
@@ -129,123 +209,44 @@
             "Categories": null
         },
         {
-            "Title": "Forest Road Traveler",
-            "Slug": "Forest-Road-Traveler-FitN",
-            "IsUnique": false,
+            "Title": "Galion",
+            "Slug": "Galion-FitN",
+            "IsUnique": true,
             "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Lore",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Forest-Road-Traveler.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Galion.jpg",
                 "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Woodman.",
-                    "Scout."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Forest Road Traveler gets +1 Willpower, +1 Attack, and +1 Defense for each attachment on the active location."
-                ],
-                "Shadow": null,
-                "FlavorText": "Only on the Road would travellers be found...\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Fire in the Night",
-            "EncounterInfo": null,
-            "Number": 59,
-            "Quantity": 3,
-            "Artist": "Derek D. Edgell",
-            "HasErrata": false,
-            "OctgnGuid": "643d849f-53e9-4701-85c9-9ee27b3b47d8",
-            "RingsDbCardId": "19059",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 31143,
-            "Categories": null
-        },
-        {
-            "Title": "Leather Boots",
-            "Slug": "Leather-Boots-FitN",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Leather-Boots.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Lore or Ranger character. Limit 1 per character.",
-                    "Response: After a Location is revealed from the encounter deck, exhaust Leather Boots to ready attached character."
-                ],
-                "Shadow": null,
-                "FlavorText": "His legs were stretched out before him, showing high boots of supple leather the fitted him well...\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Fire in the Night",
-            "EncounterInfo": null,
-            "Number": 60,
-            "Quantity": 3,
-            "Artist": "Yoann Boissonnet",
-            "HasErrata": false,
-            "OctgnGuid": "f347a30b-44d9-4ddd-af69-798e96b68b65",
-            "RingsDbCardId": "19060",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 73008,
-            "Categories": null
-        },
-        {
-            "Title": "Giant Bear",
-            "Slug": "Giant-Bear-FitN",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Giant-Bear.jpg",
-                "Stats": {
-                    "ResourceCost": "5",
+                    "ResourceCost": "0",
                     "Willpower": "0",
-                    "Attack": "4",
-                    "Defense": "3",
-                    "HitPoints": "4"
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "1"
                 },
                 "Traits": [
-                    "Creature.",
-                    "Beorning."
+                    "Silvan."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Cannot have attachments.",
-                    "Action: Ready Giant Bear. At the end of the phase in which you trigger this effect, shuffle Giant Bear into your deck. (Limit once per phase.)"
+                    "Cannot attack or defend.",
+                    "Response: After Galion enters play, he gets +1 Willpower until the end of the round."
                 ],
                 "Shadow": null,
-                "FlavorText": "`As a bear he ranged far and wide`\r\n-Gandalf, The Hobbit"
+                "FlavorText": "`Here am I waiting and waiting down hero, while you fellows drink and make merry and forget your tasks. Small wonder if I fall asleep from weariness!`\r\n-The Hobbit"
             },
             "Back": null,
             "CardSet": "Fire in the Night",
             "EncounterInfo": null,
-            "Number": 61,
+            "Number": 63,
             "Quantity": 3,
-            "Artist": "Brendan C. Murphy",
+            "Artist": "Torbjörn Källström",
             "HasErrata": false,
-            "OctgnGuid": "f0a54401-de56-47b0-8741-5fb264a385c0",
-            "RingsDbCardId": "19061",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 99689,
+            "OctgnGuid": "1027fea5-a03b-4fce-beab-453ef75a2f74",
+            "RingsDbCardId": "19063",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 52715,
             "Categories": null
         },
         {
@@ -288,44 +289,44 @@
             "Categories": null
         },
         {
-            "Title": "Galion",
-            "Slug": "Galion-FitN",
+            "Title": "Thranduil",
+            "Slug": "Thranduil-FitN",
             "IsUnique": true,
-            "CardType": "Ally",
+            "CardType": "Hero",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Galion.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Thranduil.jpg",
                 "Stats": {
-                    "ResourceCost": "0",
-                    "Willpower": "0",
-                    "Attack": "0",
-                    "Defense": "0",
-                    "HitPoints": "1"
+                    "ThreatCost": "9",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "3",
+                    "HitPoints": "4"
                 },
                 "Traits": [
-                    "Silvan."
+                    "Silvan.",
+                    "Noble."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Cannot attack or defend.",
-                    "Response: After Galion enters play, he gets +1 Willpower until the end of the round."
+                    "Combat Action: Play a Silvan ally from your hand. You do not need a resource match for this ally. (Limit once per round.)"
                 ],
                 "Shadow": null,
-                "FlavorText": "`Here am I waiting and waiting down hero, while you fellows drink and make merry and forget your tasks. Small wonder if I fall asleep from weariness!`\r\n-The Hobbit"
+                "FlavorText": "`It is a crime to wander in my realm without leave.`\r\n-The Hobbit"
             },
             "Back": null,
             "CardSet": "Fire in the Night",
             "EncounterInfo": null,
-            "Number": 63,
-            "Quantity": 3,
-            "Artist": "Torbjörn Källström",
+            "Number": 56,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
             "HasErrata": false,
-            "OctgnGuid": "1027fea5-a03b-4fce-beab-453ef75a2f74",
-            "RingsDbCardId": "19063",
+            "OctgnGuid": "3dd1cdc1-8c87-4c8b-89fe-22e7e310bca9",
+            "RingsDbCardId": "19056",
             "RingsDbPopularity": 3,
-            "RingsDbVotes": 52715,
+            "RingsDbVotes": 4660,
             "Categories": null
         },
         {
@@ -363,45 +364,44 @@
             "Categories": null
         },
         {
-            "Title": "Thalion",
-            "Slug": "Thalion-FitN",
-            "IsUnique": true,
+            "Title": "Forest Road Traveler",
+            "Slug": "Forest-Road-Traveler-FitN",
+            "IsUnique": false,
             "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Thalion.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-in-the-Night/Forest-Road-Traveler.jpg",
                 "Stats": {
-                    "ResourceCost": "4",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "3"
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
                 },
                 "Traits": [
-                    "Dúnedain.",
-                    "Ranger."
+                    "Woodman.",
+                    "Scout."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "While there is at least 1 side quest in the victory display, ready Thalion at the beginning of the combat phase.",
-                    "While there are at least 3 side quests in the victory display, Thalion loses the ally card type, gains the hero card type and the resource icons of each sphere on a side quest in the victory display."
+                    "Forest Road Traveler gets +1 Willpower, +1 Attack, and +1 Defense for each attachment on the active location."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "Only on the Road would travellers be found...\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Fire in the Night",
             "EncounterInfo": null,
-            "Number": 65,
+            "Number": 59,
             "Quantity": 3,
-            "Artist": "Aleksander Karcz",
+            "Artist": "Derek D. Edgell",
             "HasErrata": false,
-            "OctgnGuid": "68168e29-feaf-43da-9ea0-2fc33061710d",
-            "RingsDbCardId": "19065",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 66692,
+            "OctgnGuid": "643d849f-53e9-4701-85c9-9ee27b3b47d8",
+            "RingsDbCardId": "19059",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 31143,
             "Categories": null
         }
     ]

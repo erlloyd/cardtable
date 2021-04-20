@@ -7,91 +7,6 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Haldan",
-            "Slug": "Haldan-RAR",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Haldan.jpg",
-                "Stats": {
-                    "ThreatCost": "10",
-                    "Willpower": "2",
-                    "Attack": "3",
-                    "Defense": "1",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Woodman.",
-                    "Scout."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "While the active location has an attachment on it, Haldan does not exhaust to quest.",
-                    "Response: When the active location is explored, draw 1 card for each attachment on it."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Roam Across Rhovanion",
-            "EncounterInfo": null,
-            "Number": 26,
-            "Quantity": 1,
-            "Artist": "Alexander Kozachenko",
-            "HasErrata": false,
-            "OctgnGuid": "de2200a3-6b1e-4fea-b9f2-5f03aa3890f9",
-            "RingsDbCardId": "19026",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 3388,
-            "Categories": null
-        },
-        {
-            "Title": "Wiglaf",
-            "Slug": "Wiglaf-RAR",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Wiglaf.jpg",
-                "Stats": {
-                    "ResourceCost": "5",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Dale.",
-                    "Scout.",
-                    "Warrior."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After you play Wiglaf, play an Item attachment on him from your hand for no cost.",
-                    "Action: Exhaust an attachment on Wiglaf to ready him. (Limit once per phase.)"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Roam Across Rhovanion",
-            "EncounterInfo": null,
-            "Number": 27,
-            "Quantity": 3,
-            "Artist": "Aleksander Karcz",
-            "HasErrata": false,
-            "OctgnGuid": "fb097472-857b-4b73-9379-d962d7c606fe",
-            "RingsDbCardId": "19027",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 38900,
-            "Categories": null
-        },
-        {
             "Title": "Ancestral Armor",
             "Slug": "Ancestral-Armor-RAR",
             "IsUnique": false,
@@ -129,6 +44,89 @@
             "RingsDbCardId": "19028",
             "RingsDbPopularity": 7,
             "RingsDbVotes": 173981,
+            "Categories": null
+        },
+        {
+            "Title": "Meneldor",
+            "Slug": "Meneldor-RAR",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Meneldor.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Eagle."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have restricted attachments.",
+                    "Response: After Meneldor enters or leaves play, place 2 progress on a location."
+                ],
+                "Shadow": null,
+                "FlavorText": "...Meneldor young and swift. -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": null,
+            "Number": 31,
+            "Quantity": 3,
+            "Artist": "Dmitry Prosvirnin",
+            "HasErrata": false,
+            "OctgnGuid": "b9926de4-af49-4852-a006-bcc235bf9266",
+            "RingsDbCardId": "19031",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 145032,
+            "Categories": null
+        },
+        {
+            "Title": "Wild Stallion",
+            "Slug": "Wild-Stallion-RAR",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Wild-Stallion.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Planning Action: Attach Wild Stallion to an ally you control. (Counts as a Mount attachment with the text: `Restricted. Limit 1 per ally. Attached ally gets +1 Willpower, +1 Attack, +1 Defense, and +1 hit point.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": null,
+            "Number": 33,
+            "Quantity": 3,
+            "Artist": "Carlos Palma Cruchaga",
+            "HasErrata": false,
+            "OctgnGuid": "48eb743b-454a-43b7-96bf-27d468ad858a",
+            "RingsDbCardId": "19033",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 104797,
             "Categories": null
         },
         {
@@ -175,6 +173,40 @@
             "Categories": null
         },
         {
+            "Title": "Flight of the Eagles",
+            "Slug": "Flight-of-the-Eagles-RAR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Flight-of-the-Eagles.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Return an Eagle ally to your hand to shuffle a set-aside Eagle of the North into the encounter deck. Then, remove Flight of the Eagles from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "Behind them in long swift lines came all their vassals from the northern mountains, speeding on a gathering wind.\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": null,
+            "Number": 32,
+            "Quantity": 3,
+            "Artist": "Carlos Palma Cruchaga",
+            "HasErrata": false,
+            "OctgnGuid": "be633a15-894f-4dc0-8c57-55125a99f4e6",
+            "RingsDbCardId": "19032",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 78091,
+            "Categories": null
+        },
+        {
             "Title": "Woodmen's Path",
             "Slug": "Woodmen's-Path-RAR",
             "IsUnique": false,
@@ -212,105 +244,31 @@
             "Categories": null
         },
         {
-            "Title": "Meneldor",
-            "Slug": "Meneldor-RAR",
+            "Title": "Wiglaf",
+            "Slug": "Wiglaf-RAR",
             "IsUnique": true,
             "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Meneldor.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Wiglaf.jpg",
                 "Stats": {
-                    "ResourceCost": "3",
+                    "ResourceCost": "5",
                     "Willpower": "2",
                     "Attack": "2",
                     "Defense": "1",
-                    "HitPoints": "2"
+                    "HitPoints": "3"
                 },
                 "Traits": [
-                    "Creature.",
-                    "Eagle."
+                    "Dale.",
+                    "Scout.",
+                    "Warrior."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Cannot have restricted attachments.",
-                    "Response: After Meneldor enters or leaves play, place 2 progress on a location."
-                ],
-                "Shadow": null,
-                "FlavorText": "...Meneldor young and swift. -The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "Roam Across Rhovanion",
-            "EncounterInfo": null,
-            "Number": 31,
-            "Quantity": 3,
-            "Artist": "Dmitry Prosvirnin",
-            "HasErrata": false,
-            "OctgnGuid": "b9926de4-af49-4852-a006-bcc235bf9266",
-            "RingsDbCardId": "19031",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 145032,
-            "Categories": null
-        },
-        {
-            "Title": "Flight of the Eagles",
-            "Slug": "Flight-of-the-Eagles-RAR",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Flight-of-the-Eagles.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Return an Eagle ally to your hand to shuffle a set-aside Eagle of the North into the encounter deck. Then, remove Flight of the Eagles from the game."
-                ],
-                "Shadow": null,
-                "FlavorText": "Behind them in long swift lines came all their vassals from the northern mountains, speeding on a gathering wind.\r\n-The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "Roam Across Rhovanion",
-            "EncounterInfo": null,
-            "Number": 32,
-            "Quantity": 3,
-            "Artist": "Carlos Palma Cruchaga",
-            "HasErrata": false,
-            "OctgnGuid": "be633a15-894f-4dc0-8c57-55125a99f4e6",
-            "RingsDbCardId": "19032",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 78091,
-            "Categories": null
-        },
-        {
-            "Title": "Wild Stallion",
-            "Slug": "Wild-Stallion-RAR",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Wild-Stallion.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Creature."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Cannot have attachments.",
-                    "Planning Action: Attach Wild Stallion to an ally you control. (Counts as a Mount attachment with the text: `Restricted. Limit 1 per ally. Attached ally gets +1 Willpower, +1 Attack, +1 Defense, and +1 hit point.`)"
+                    "Response: After you play Wiglaf, play an Item attachment on him from your hand for no cost.",
+                    "Action: Exhaust an attachment on Wiglaf to ready him. (Limit once per phase.)"
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -318,14 +276,56 @@
             "Back": null,
             "CardSet": "Roam Across Rhovanion",
             "EncounterInfo": null,
-            "Number": 33,
+            "Number": 27,
             "Quantity": 3,
-            "Artist": "Carlos Palma Cruchaga",
+            "Artist": "Aleksander Karcz",
             "HasErrata": false,
-            "OctgnGuid": "48eb743b-454a-43b7-96bf-27d468ad858a",
-            "RingsDbCardId": "19033",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 104797,
+            "OctgnGuid": "fb097472-857b-4b73-9379-d962d7c606fe",
+            "RingsDbCardId": "19027",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 38900,
+            "Categories": null
+        },
+        {
+            "Title": "Haldan",
+            "Slug": "Haldan-RAR",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Roam-Across-Rhovanion/Haldan.jpg",
+                "Stats": {
+                    "ThreatCost": "10",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Woodman.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While the active location has an attachment on it, Haldan does not exhaust to quest.",
+                    "Response: When the active location is explored, draw 1 card for each attachment on it."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Roam Across Rhovanion",
+            "EncounterInfo": null,
+            "Number": 26,
+            "Quantity": 1,
+            "Artist": "Alexander Kozachenko",
+            "HasErrata": false,
+            "OctgnGuid": "de2200a3-6b1e-4fea-b9f2-5f03aa3890f9",
+            "RingsDbCardId": "19026",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 3388,
             "Categories": null
         },
         {

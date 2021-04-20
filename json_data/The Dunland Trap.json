@@ -7,47 +7,6 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Celeborn",
-            "Slug": "Celeborn-TDT",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Celeborn.jpg",
-                "Stats": {
-                    "ThreatCost": "11",
-                    "Willpower": "3",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Silvan.",
-                    "Noble."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After a Silvan ally enters play, that ally gets +1 Willpower, +1 Attack and +1 Defense until the end of the round."
-                ],
-                "Shadow": null,
-                "FlavorText": "`...the lord of the Galadhrim is accounted wisest of the Elves of Middle-earth, and a giver of gifts beyond the power of kings.` -Galadriel, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Dunland Trap",
-            "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "4c4cccd3-576a-41f1-8b6c-ba11b4cc3d4b",
-            "RingsDbCardId": "08001",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 11205,
-            "Categories": null
-        },
-        {
             "Title": "Naith Guide",
             "Slug": "Naith-Guide-TDT",
             "IsUnique": false,
@@ -89,40 +48,6 @@
             "Categories": null
         },
         {
-            "Title": "Swift and Silent",
-            "Slug": "Swift-and-Silent-TDT",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Swift-and-Silent.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Ready a hero you control. Then, if your threat is 20 or less and this is the first time you played a copy of Swift and Silent this round, return this card to your hand instead of discarding it."
-                ],
-                "Shadow": null,
-                "FlavorText": "A marching host of Elves had come up silently...–The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Dunland Trap",
-            "EncounterInfo": null,
-            "Number": 3,
-            "Quantity": 3,
-            "Artist": "Raymond Bonilla",
-            "HasErrata": false,
-            "OctgnGuid": "921ba9dd-32c3-4dae-892c-4452c298459e",
-            "RingsDbCardId": "08003",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 34808,
-            "Categories": null
-        },
-        {
             "Title": "Firefoot",
             "Slug": "Firefoot-TDT",
             "IsUnique": true,
@@ -160,122 +85,6 @@
             "RingsDbCardId": "08004",
             "RingsDbPopularity": 7,
             "RingsDbVotes": 205073,
-            "Categories": null
-        },
-        {
-            "Title": "Close Call",
-            "Slug": "Close-Call-TDT",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Close-Call.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [
-                    "Doomed X."
-                ],
-                "Text": [
-                    "Doomed X.",
-                    "Response: Cancel X damage just dealt to a hero."
-                ],
-                "Shadow": null,
-                "FlavorText": "`That spear-thrust would have skewered a wild boar!`–Aragorn, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Dunland Trap",
-            "EncounterInfo": null,
-            "Number": 5,
-            "Quantity": 3,
-            "Artist": "Ilich Henriquez",
-            "HasErrata": false,
-            "OctgnGuid": "77bb0328-fe88-42a2-af25-2452c51d5e18",
-            "RingsDbCardId": "08005",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 75101,
-            "Categories": null
-        },
-        {
-            "Title": "Blue Mountain Trader",
-            "Slug": "Blue-Mountain-Trader-TDT",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Blue-Mountain-Trader.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "0",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Dwarf."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Choose another player. That player gains control of Blue Mountain Trader. Then, that player moves 1 resource from the resource pool of a hero he controls to the resource pool of a hero you control, or Blue Mountain Trader is discarded. (Limit once per round.)"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Dunland Trap",
-            "EncounterInfo": null,
-            "Number": 6,
-            "Quantity": 3,
-            "Artist": "Sara Betsy",
-            "HasErrata": true,
-            "OctgnGuid": "6840ef99-d0e6-4450-b46f-ad04fee2e78c",
-            "RingsDbCardId": "08006",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 71532,
-            "Categories": null
-        },
-        {
-            "Title": "The Fall of Gil-Galad",
-            "Slug": "The-Fall-of-Gil-Galad-TDT",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/The-Fall-of-Gil-Galad.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Song."
-                ],
-                "Keywords": [
-                    "Victory 1."
-                ],
-                "Text": [
-                    "Limit 1 per deck. Attach to a hero.",
-                    "Response: When attached hero is destroyed, add The Fall of Gil-galad to the victory display to reduce your threat by X, where X is the attached hero`s threat cost."
-                ],
-                "Shadow": null,
-                "FlavorText": "...for into darkness fell his star\r\nin Mordor where the shadows are.\r\n–The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Dunland Trap",
-            "EncounterInfo": null,
-            "Number": 7,
-            "Quantity": 3,
-            "Artist": "Arden Beckwith",
-            "HasErrata": false,
-            "OctgnGuid": "657e60d4-788e-4064-a8c3-e62584320872",
-            "RingsDbCardId": "08007",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 23450,
             "Categories": null
         },
         {
@@ -357,6 +166,47 @@
             "Categories": null
         },
         {
+            "Title": "Celeborn",
+            "Slug": "Celeborn-TDT",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Celeborn.jpg",
+                "Stats": {
+                    "ThreatCost": "11",
+                    "Willpower": "3",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After a Silvan ally enters play, that ally gets +1 Willpower, +1 Attack and +1 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...the lord of the Galadhrim is accounted wisest of the Elves of Middle-earth, and a giver of gifts beyond the power of kings.` -Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "4c4cccd3-576a-41f1-8b6c-ba11b4cc3d4b",
+            "RingsDbCardId": "08001",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 11205,
+            "Categories": null
+        },
+        {
             "Title": "The White Council",
             "Slug": "The-White-Council-TDT",
             "IsUnique": false,
@@ -389,6 +239,156 @@
             "RingsDbCardId": "08010",
             "RingsDbPopularity": 5,
             "RingsDbVotes": 97781,
+            "Categories": null
+        },
+        {
+            "Title": "Close Call",
+            "Slug": "Close-Call-TDT",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Close-Call.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Doomed X."
+                ],
+                "Text": [
+                    "Doomed X.",
+                    "Response: Cancel X damage just dealt to a hero."
+                ],
+                "Shadow": null,
+                "FlavorText": "`That spear-thrust would have skewered a wild boar!`–Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "OctgnGuid": "77bb0328-fe88-42a2-af25-2452c51d5e18",
+            "RingsDbCardId": "08005",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 75101,
+            "Categories": null
+        },
+        {
+            "Title": "Blue Mountain Trader",
+            "Slug": "Blue-Mountain-Trader-TDT",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Blue-Mountain-Trader.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose another player. That player gains control of Blue Mountain Trader. Then, that player moves 1 resource from the resource pool of a hero he controls to the resource pool of a hero you control, or Blue Mountain Trader is discarded. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Sara Betsy",
+            "HasErrata": true,
+            "OctgnGuid": "6840ef99-d0e6-4450-b46f-ad04fee2e78c",
+            "RingsDbCardId": "08006",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 71532,
+            "Categories": null
+        },
+        {
+            "Title": "Swift and Silent",
+            "Slug": "Swift-and-Silent-TDT",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/Swift-and-Silent.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Ready a hero you control. Then, if your threat is 20 or less and this is the first time you played a copy of Swift and Silent this round, return this card to your hand instead of discarding it."
+                ],
+                "Shadow": null,
+                "FlavorText": "A marching host of Elves had come up silently...–The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Raymond Bonilla",
+            "HasErrata": false,
+            "OctgnGuid": "921ba9dd-32c3-4dae-892c-4452c298459e",
+            "RingsDbCardId": "08003",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 34808,
+            "Categories": null
+        },
+        {
+            "Title": "The Fall of Gil-Galad",
+            "Slug": "The-Fall-of-Gil-Galad-TDT",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dunland-Trap/The-Fall-of-Gil-Galad.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Limit 1 per deck. Attach to a hero.",
+                    "Response: When attached hero is destroyed, add The Fall of Gil-galad to the victory display to reduce your threat by X, where X is the attached hero`s threat cost."
+                ],
+                "Shadow": null,
+                "FlavorText": "...for into darkness fell his star\r\nin Mordor where the shadows are.\r\n–The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dunland Trap",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Arden Beckwith",
+            "HasErrata": false,
+            "OctgnGuid": "657e60d4-788e-4064-a8c3-e62584320872",
+            "RingsDbCardId": "08007",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 23450,
             "Categories": null
         }
     ]

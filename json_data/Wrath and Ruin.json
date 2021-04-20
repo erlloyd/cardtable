@@ -7,45 +7,43 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Thorin Stonehelm",
-            "Slug": "Thorin-Stonehelm-WaR",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Silver Circlet",
+            "Slug": "Silver-Circlet-WaR",
+            "IsUnique": false,
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Thorin-Stonehelm.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Silver-Circlet.jpg",
                 "Stats": {
-                    "ThreatCost": "9",
-                    "Willpower": "1",
-                    "Attack": "3",
-                    "Defense": "1",
-                    "HitPoints": "4"
+                    "ResourceCost": "2"
                 },
                 "Traits": [
-                    "Dwarf.",
-                    "Noble.",
-                    "Warrior."
+                    "Item."
                 ],
-                "Keywords": [],
+                "Keywords": [
+                    "Restricted."
+                ],
                 "Text": [
-                    "Response: After Thorin Stonehelm is declared as an attacker, discard the top card of your deck to deal 1 damage to an enemy engaged with you."
+                    "Attach to a Spirit hero. Limit 1 per hero.",
+                    "Restricted.",
+                    "Attached hero gets +2 Willpower."
                 ],
                 "Shadow": null,
-                "FlavorText": "Thorin III Stonehelm, Dain`s son, became King under the mountain.\r\n-The Return of the King"
+                "FlavorText": "His hair was dark as the shadows of twilight, and upon it was set a circlet of silver...\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Wrath and Ruin",
             "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Rafał Hrynkiewicz",
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "David Keen",
             "HasErrata": false,
-            "OctgnGuid": "e6e32f1f-fca8-44cc-8e04-0eaf6361b929",
-            "RingsDbCardId": "22001",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 783,
+            "OctgnGuid": "28bc6296-217d-460a-96b1-47714daf3817",
+            "RingsDbCardId": "22008",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 113960,
             "Categories": null
         },
         {
@@ -89,38 +87,41 @@
             "Categories": null
         },
         {
-            "Title": "Pillars of the Kings",
-            "Slug": "Pillars-of-the-Kings-WaR",
+            "Title": "Inner Strength",
+            "Slug": "Inner-Strength-WaR",
             "IsUnique": false,
-            "CardType": "Event",
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Pillars-of-the-Kings.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Inner-Strength.jpg",
                 "Stats": {
-                    "ResourceCost": "4"
+                    "ResourceCost": "1"
                 },
-                "Traits": [],
+                "Traits": [
+                    "Master."
+                ],
                 "Keywords": [],
                 "Text": [
-                    "While your threat is less than 40, reduce the cost to play Pillars of the Kings by 4.",
-                    "Action: Set your threat to 40. If this effect raised your threat, draw a card (draw 4 cards instead if it raised your threat by 10 or more)."
+                    "Attach to the hero with The One Ring.",
+                    "Limit 1 per hero. Attached hero gets +1 Defense.",
+                    "Response: Exhaust The One Ring and raise your threat by 1 to cancel a shadow effect just triggered during an attack that attached hero is defending."
                 ],
                 "Shadow": null,
-                "FlavorText": "`Behold the Argonath, the Pillars of the Kings!`\r\n-Aragorn, The Fellowship of the Ring"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "Wrath and Ruin",
             "EncounterInfo": null,
-            "Number": 3,
+            "Number": 9,
             "Quantity": 3,
-            "Artist": "Sam White",
+            "Artist": "Justin Gerard",
             "HasErrata": false,
-            "OctgnGuid": "28877bba-27de-4b19-a8ab-5d557b634172",
-            "RingsDbCardId": "22003",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 23647,
+            "OctgnGuid": "b41ed6a0-17bc-4cbc-a654-d4d9538eed62",
+            "RingsDbCardId": "22009",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 51349,
             "Categories": null
         },
         {
@@ -161,43 +162,6 @@
             "RingsDbCardId": "22004",
             "RingsDbPopularity": 2,
             "RingsDbVotes": 27197,
-            "Categories": null
-        },
-        {
-            "Title": "Tom Bombadillo!",
-            "Slug": "Tom-Bombadillo-WaR",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Tom-Bombadillo.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Song."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Play only if you control a Hobbit hero. You cannot play this card if there is a copy of Tom Bombadillo! in the victory display.",
-                    "Planning Action: Add Tom Bombadillo the the victory display to shuffle a set-aside copy of Tom Bombadil into the encounter deck."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Wrath and Ruin",
-            "EncounterInfo": null,
-            "Number": 5,
-            "Quantity": 3,
-            "Artist": "David Keen",
-            "HasErrata": false,
-            "OctgnGuid": "63b32a1d-495a-416e-bc19-a200a581393b",
-            "RingsDbCardId": "22005",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 14893,
             "Categories": null
         },
         {
@@ -244,6 +208,78 @@
             "Categories": null
         },
         {
+            "Title": "Pillars of the Kings",
+            "Slug": "Pillars-of-the-Kings-WaR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Pillars-of-the-Kings.jpg",
+                "Stats": {
+                    "ResourceCost": "4"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "While your threat is less than 40, reduce the cost to play Pillars of the Kings by 4.",
+                    "Action: Set your threat to 40. If this effect raised your threat, draw a card (draw 4 cards instead if it raised your threat by 10 or more)."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Behold the Argonath, the Pillars of the Kings!`\r\n-Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Sam White",
+            "HasErrata": false,
+            "OctgnGuid": "28877bba-27de-4b19-a8ab-5d557b634172",
+            "RingsDbCardId": "22003",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 23647,
+            "Categories": null
+        },
+        {
+            "Title": "Tom Bombadillo!",
+            "Slug": "Tom-Bombadillo-WaR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Tom-Bombadillo.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control a Hobbit hero. You cannot play this card if there is a copy of Tom Bombadillo! in the victory display.",
+                    "Planning Action: Add Tom Bombadillo the the victory display to shuffle a set-aside copy of Tom Bombadil into the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "David Keen",
+            "HasErrata": false,
+            "OctgnGuid": "63b32a1d-495a-416e-bc19-a200a581393b",
+            "RingsDbCardId": "22005",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 14893,
+            "Categories": null
+        },
+        {
             "Title": "Charge into Battle",
             "Slug": "Charge-into-Battle-WaR",
             "IsUnique": false,
@@ -276,84 +312,6 @@
             "RingsDbCardId": "22007",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 5000,
-            "Categories": null
-        },
-        {
-            "Title": "Silver Circlet",
-            "Slug": "Silver-Circlet-WaR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Silver-Circlet.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Item."
-                ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a Spirit hero. Limit 1 per hero.",
-                    "Restricted.",
-                    "Attached hero gets +2 Willpower."
-                ],
-                "Shadow": null,
-                "FlavorText": "His hair was dark as the shadows of twilight, and upon it was set a circlet of silver...\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Wrath and Ruin",
-            "EncounterInfo": null,
-            "Number": 8,
-            "Quantity": 3,
-            "Artist": "David Keen",
-            "HasErrata": false,
-            "OctgnGuid": "28bc6296-217d-460a-96b1-47714daf3817",
-            "RingsDbCardId": "22008",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 113960,
-            "Categories": null
-        },
-        {
-            "Title": "Inner Strength",
-            "Slug": "Inner-Strength-WaR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Inner-Strength.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Master."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to the hero with The One Ring.",
-                    "Limit 1 per hero. Attached hero gets +1 Defense.",
-                    "Response: Exhaust The One Ring and raise your threat by 1 to cancel a shadow effect just triggered during an attack that attached hero is defending."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Wrath and Ruin",
-            "EncounterInfo": null,
-            "Number": 9,
-            "Quantity": 3,
-            "Artist": "Justin Gerard",
-            "HasErrata": false,
-            "OctgnGuid": "b41ed6a0-17bc-4cbc-a654-d4d9538eed62",
-            "RingsDbCardId": "22009",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 51349,
             "Categories": null
         },
         {
@@ -443,6 +401,48 @@
             "RingsDbCardId": "22024",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 1567,
+            "Categories": null
+        },
+        {
+            "Title": "Thorin Stonehelm",
+            "Slug": "Thorin-Stonehelm-WaR",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Wrath-and-Ruin/Thorin-Stonehelm.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Dwarf.",
+                    "Noble.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Thorin Stonehelm is declared as an attacker, discard the top card of your deck to deal 1 damage to an enemy engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "Thorin III Stonehelm, Dain`s son, became King under the mountain.\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Wrath and Ruin",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "OctgnGuid": "e6e32f1f-fca8-44cc-8e04-0eaf6361b929",
+            "RingsDbCardId": "22001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 783,
             "Categories": null
         }
     ]

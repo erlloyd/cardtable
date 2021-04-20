@@ -7,6 +7,154 @@
     "Cards": null,
     "cards": [
         {
+            "Title": "Daeron's Runes",
+            "Slug": "Daeron's-Runes-FoS",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone/Daeron's-Runes.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Draw 2 cards. Then, discard 1 card from your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "`These are Daeron`s Runes, such as were used of old in Moria...`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Foundations of Stone",
+            "EncounterInfo": null,
+            "Number": 108,
+            "Quantity": 3,
+            "Artist": "Carolina Eade",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801212c9010",
+            "RingsDbCardId": "04108",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 1673822,
+            "Categories": null
+        },
+        {
+            "Title": "Light of Valinor",
+            "Slug": "Light-of-Valinor-FoS",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone/Light-of-Valinor.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Noldor or Silvan hero.",
+                    "Attached hero does not exhaust to commit to a quest."
+                ],
+                "Shadow": null,
+                "FlavorText": "`... those who have dwelt in the Blessed Realm live at once in both worlds, and against both the Seen and Unseen they have great power.`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Foundations of Stone",
+            "EncounterInfo": null,
+            "Number": 107,
+            "Quantity": 3,
+            "Artist": "Lin Bo",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801212c9020",
+            "RingsDbCardId": "04107",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 1162686,
+            "Categories": null
+        },
+        {
+            "Title": "Asfaloth",
+            "Slug": "Asfaloth-FoS",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone/Asfaloth.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Mount."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Noldor or Silvan hero.",
+                    "Action: Exhaust Asfaloth to place 1 progress token on any location. (2 tokens instead if attached hero is Glorfindel.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "Suddenly into view below came a white horse, gleaming in the shadows, running swiftly. In the dusk its headstall flickered and flashed as if it were studded with gems like living stars. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Foundations of Stone",
+            "EncounterInfo": null,
+            "Number": 110,
+            "Quantity": 3,
+            "Artist": "Sandara Tang",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801212c9001",
+            "RingsDbCardId": "04110",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 481847,
+            "Categories": null
+        },
+        {
+            "Title": "Imladris Stargazer",
+            "Slug": "Imladris-Stargazer-FoS",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone/Imladris-Stargazer.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "0",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Noldor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust Imladris Stargazer to choose a player. That player looks at the top 5 cards of his deck and then returns them to the top of his deck in any order."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Foundations of Stone",
+            "EncounterInfo": null,
+            "Number": 106,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801212c9019",
+            "RingsDbCardId": "04106",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 446251,
+            "Categories": null
+        },
+        {
             "Title": "Glorfindel",
             "Slug": "Glorfindel-FoS",
             "IsUnique": true,
@@ -89,40 +237,38 @@
             "Categories": null
         },
         {
-            "Title": "Path of Need",
-            "Slug": "Path-of-Need-FoS",
+            "Title": "Healing Herbs",
+            "Slug": "Healing-Herbs-FoS",
             "IsUnique": false,
             "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone/Path-of-Need.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone/Healing-Herbs.jpg",
                 "Stats": {
-                    "ResourceCost": "4"
+                    "ResourceCost": "0"
                 },
-                "Traits": [
-                    "Condition."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Limit 1 per deck. Attach to a location.",
-                    "Heroes do not exhaust to attack, defend, or commit to a quest while attached location is the active location."
+                    "Attach to a Lore hero.",
+                    "Action: Discard Healing Herbs and exhaust attached hero to heal all damage on 1 character."
                 ],
                 "Shadow": null,
-                "FlavorText": "`However it may prove, one must tread the path that need chooses!`\r\n-Gandalf, The Fellowship of the Ring"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "Foundations of Stone",
             "EncounterInfo": null,
-            "Number": 103,
+            "Number": 109,
             "Quantity": 3,
-            "Artist": "Magali Villeneuve",
+            "Artist": "Sara Biddle",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801212c9028",
-            "RingsDbCardId": "04103",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 60530,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801212c9017",
+            "RingsDbCardId": "04109",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 107686,
             "Categories": null
         },
         {
@@ -204,186 +350,40 @@
             "Categories": null
         },
         {
-            "Title": "Imladris Stargazer",
-            "Slug": "Imladris-Stargazer-FoS",
+            "Title": "Path of Need",
+            "Slug": "Path-of-Need-FoS",
             "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone/Imladris-Stargazer.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "0",
-                    "Attack": "0",
-                    "Defense": "1",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Noldor."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Exhaust Imladris Stargazer to choose a player. That player looks at the top 5 cards of his deck and then returns them to the top of his deck in any order."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Foundations of Stone",
-            "EncounterInfo": null,
-            "Number": 106,
-            "Quantity": 3,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801212c9019",
-            "RingsDbCardId": "04106",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 446251,
-            "Categories": null
-        },
-        {
-            "Title": "Light of Valinor",
-            "Slug": "Light-of-Valinor-FoS",
-            "IsUnique": true,
             "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone/Light-of-Valinor.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone/Path-of-Need.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ResourceCost": "4"
                 },
                 "Traits": [
                     "Condition."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a Noldor or Silvan hero.",
-                    "Attached hero does not exhaust to commit to a quest."
+                    "Limit 1 per deck. Attach to a location.",
+                    "Heroes do not exhaust to attack, defend, or commit to a quest while attached location is the active location."
                 ],
                 "Shadow": null,
-                "FlavorText": "`... those who have dwelt in the Blessed Realm live at once in both worlds, and against both the Seen and Unseen they have great power.`\r\n-Gandalf, The Fellowship of the Ring"
+                "FlavorText": "`However it may prove, one must tread the path that need chooses!`\r\n-Gandalf, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Foundations of Stone",
             "EncounterInfo": null,
-            "Number": 107,
+            "Number": 103,
             "Quantity": 3,
-            "Artist": "Lin Bo",
+            "Artist": "Magali Villeneuve",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801212c9020",
-            "RingsDbCardId": "04107",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 1162686,
-            "Categories": null
-        },
-        {
-            "Title": "Daeron's Runes",
-            "Slug": "Daeron's-Runes-FoS",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone/Daeron's-Runes.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Draw 2 cards. Then, discard 1 card from your hand."
-                ],
-                "Shadow": null,
-                "FlavorText": "`These are Daeron`s Runes, such as were used of old in Moria...`\r\n-Gandalf, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Foundations of Stone",
-            "EncounterInfo": null,
-            "Number": 108,
-            "Quantity": 3,
-            "Artist": "Carolina Eade",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801212c9010",
-            "RingsDbCardId": "04108",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 1673822,
-            "Categories": null
-        },
-        {
-            "Title": "Healing Herbs",
-            "Slug": "Healing-Herbs-FoS",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone/Healing-Herbs.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Lore hero.",
-                    "Action: Discard Healing Herbs and exhaust attached hero to heal all damage on 1 character."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Foundations of Stone",
-            "EncounterInfo": null,
-            "Number": 109,
-            "Quantity": 3,
-            "Artist": "Sara Biddle",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801212c9017",
-            "RingsDbCardId": "04109",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 107686,
-            "Categories": null
-        },
-        {
-            "Title": "Asfaloth",
-            "Slug": "Asfaloth-FoS",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Foundations-of-Stone/Asfaloth.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Mount."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Noldor or Silvan hero.",
-                    "Action: Exhaust Asfaloth to place 1 progress token on any location. (2 tokens instead if attached hero is Glorfindel.)"
-                ],
-                "Shadow": null,
-                "FlavorText": "Suddenly into view below came a white horse, gleaming in the shadows, running swiftly. In the dusk its headstall flickered and flashed as if it were studded with gems like living stars. -The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Foundations of Stone",
-            "EncounterInfo": null,
-            "Number": 110,
-            "Quantity": 3,
-            "Artist": "Sandara Tang",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801212c9001",
-            "RingsDbCardId": "04110",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 481847,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801212c9028",
+            "RingsDbCardId": "04103",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 60530,
             "Categories": null
         }
     ]

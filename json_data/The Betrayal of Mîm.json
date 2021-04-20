@@ -5,5 +5,514 @@
     "Cycle": "Doom Mastered",
     "SetType": "First_Age",
     "Cards": null,
-    "cards": []
+    "cards": [
+        {
+            "Title": "Chest of Stone and Wood",
+            "Slug": "Chest-of-Stone-and-Wood-TBoM",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Betrayal-of-Mim/Chest-of-Stone-and-Wood.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Cache."
+                ],
+                "Keywords": [
+                    "Guarded."
+                ],
+                "Text": [
+                    "Guarded.",
+                    "Setup: Shuffle Chest of Stone and Wood into the encounter deck.",
+                    "Action: Exhaust a hero to claim this attachment when its free of encounters.",
+                    "Action: Discard Chest of Stone and Wood to either draw 2 cards or add 2 resources to attached hero`s resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Betrayal of Mîm",
+            "EncounterInfo": null,
+            "Number": 196,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00196",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Galadriel",
+            "Slug": "Galadriel-TBoM",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Mastery",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Betrayal-of-Mim/Galadriel.jpg",
+                "Stats": {
+                    "ThreatCost": "8",
+                    "Willpower": "3",
+                    "Attack": "1",
+                    "Defense": "X",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "House of Finarfin.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the Threat of the active location.",
+                    "Response: After an encounter card is revealed from the encounter deck, deal 3 Corruption to Galadriel to cancel its effects and add it the the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": "...for she yearned to see the wide unguarded landed and to rule there a realm at her own will.\r\n-The Silmarillion"
+            },
+            "Back": null,
+            "CardSet": "The Betrayal of Mîm",
+            "EncounterInfo": null,
+            "Number": 202,
+            "Quantity": 1,
+            "Artist": "Weta Workshop",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00202",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Gaurwaith Watchman",
+            "Slug": "Gaurwaith-Watchman-TBoM",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Mastery",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Betrayal-of-Mim/Gaurwaith-Watchman.jpg",
+                "Stats": {
+                    "ResourceCost": "0",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Gaurwaith."
+                ],
+                "Keywords": [
+                    "Ransom 3."
+                ],
+                "Text": [
+                    "Ransom 3.",
+                    "Quest Action: Deal 1 Corruption to Gaurwaith Watchman to name an encounter card type. Until the end of the phase, when the first card of that type is revealed, shuffle it back into the encounter deck and reveal the next encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Betrayal of Mîm",
+            "EncounterInfo": null,
+            "Number": 203,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00203",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Soldier of the Fountain",
+            "Slug": "Soldier-of-the-Fountain-TBoM",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Betrayal-of-Mim/Soldier-of-the-Fountain.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "0",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "House of the Fountain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Reduce the cost to play Soldier of the Fountain if you are engaged with an enemy with printed hit points of 5 or more."
+                ],
+                "Shadow": null,
+                "FlavorText": "There shinning fountains played, and in the courts of Turgon stood images of the Trees of old...\r\n-The Silmarillion"
+            },
+            "Back": null,
+            "CardSet": "The Betrayal of Mîm",
+            "EncounterInfo": null,
+            "Number": 204,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00204",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Elf-maiden of Nargothrond",
+            "Slug": "Elf-maiden-of-Nargothrond-TBoM",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Betrayal-of-Mim/Elf-maiden-of-Nargothrond.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Noldor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Discard the top 2 cards of your deck. Then, if any of the discarded cards do not have a Spirit resource icon, Elf-maiden of Nargothrond gets -1 Willpower until the end of the phase. Otherwise, place 1 progress token on a location and Elf-maiden of Nargothrond gets +1 Willpower until the end of the phase. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Betrayal of Mîm",
+            "EncounterInfo": null,
+            "Number": 205,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00205",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Gwindor",
+            "Slug": "Gwindor-TBoM",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Betrayal-of-Mim/Gwindor.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Noldor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After an ally you control is destroyed, exhaust Gwindor to add +1 Attack to each character you control until the end of the phase. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "Now his wrath was kindled to madness, and he leapt forth on horseback, and many riders with him...\r\n-The Silmarillion"
+            },
+            "Back": null,
+            "CardSet": "The Betrayal of Mîm",
+            "EncounterInfo": null,
+            "Number": 206,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00206",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Ulfang the Black",
+            "Slug": "Ulfang-the-Black-TBoM",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Mastery",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Betrayal-of-Mim/Ulfang-the-Black.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the round, discard the top card of your deck. Then, if the top card of your discard pile is an ally, deal 1 Corruption to Ulfang the Black."
+                ],
+                "Shadow": null,
+                "FlavorText": "In this hour the plots of Ulfang were revealed.\r\n-The Silmarillion"
+            },
+            "Back": null,
+            "CardSet": "The Betrayal of Mîm",
+            "EncounterInfo": null,
+            "Number": 207,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00207",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Fëanorian Lamp",
+            "Slug": "Feanorian-Lamp-TBoM",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Betrayal-of-Mim/Fëanorian-Lamp.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Noldor hero.",
+                    "Action: Exhaust Fëanorian Lamp to choose a non-unique location. That location gets -2 Threat until the end of the round. (Discard Fëanorian Lamp to also treat the location`s text box as blank until the end of the round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "...for they were made of old in Valinor, and neither wind nor water could quench them...\r\n-Unfinished Tales"
+            },
+            "Back": null,
+            "CardSet": "The Betrayal of Mîm",
+            "EncounterInfo": null,
+            "Number": 208,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00208",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Gorthol",
+            "Slug": "Gorthol-TBoM",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Mastery",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Betrayal-of-Mim/Gorthol.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Name."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to Túrin Turambar. Limit 1 Name in play.",
+                    "Túrin Turambar gains a Leadership resource icon.",
+                    "Action: Raise your threat by 2 to ready an ally. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Betrayal of Mîm",
+            "EncounterInfo": null,
+            "Number": 209,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00209",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Smoking Axe",
+            "Slug": "Smoking-Axe-TBoM",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Betrayal-of-Mim/Smoking-Axe.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Restricted. May be played without a resource match for 1 additional resource.",
+                    "Attach to an enemy in play.",
+                    "Attached hero gets +1 Attack.",
+                    "Response: After the attached enemy is destroyed, attach it to a hero that participated in the attack and ready that hero."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Betrayal of Mîm",
+            "EncounterInfo": null,
+            "Number": 210,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00210",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Trained to Wariness",
+            "Slug": "Trained-to-Wariness-TBoM",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Betrayal-of-Mim/Trained-to-Wariness.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Quest Action: Exhaust a character with the Ranger trait. Then, until the end of the phase, after the first enemy is revealed from the encounter deck, lower your threat by X, where X is the Threat of the revealed enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": "But Túrin, trained in the wild to wariness, saw him from the corner of his eye...\r\n-The Children of Húrin"
+            },
+            "Back": null,
+            "CardSet": "The Betrayal of Mîm",
+            "EncounterInfo": null,
+            "Number": 211,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00211",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Hounding to his Death",
+            "Slug": "Hounding-to-his-Death-TBoM",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Mastery",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Betrayal-of-Mim/Hounding-to-his-Death.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Combat Action: Choose a character you control. That character deals X damage to an enemy engaged with you. X is the character`s printed Attack. Then, that chracter becomes corrupted."
+                ],
+                "Shadow": null,
+                "FlavorText": "..but Túrin came after him like a hound, and however he ran, or swerved, still the sword was behind him to egg him on.\r\n-The Children of Húrin"
+            },
+            "Back": null,
+            "CardSet": "The Betrayal of Mîm",
+            "EncounterInfo": null,
+            "Number": 212,
+            "Quantity": 3,
+            "Artist": "Ted Nasmith",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00212",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Arts of the Enemy",
+            "Slug": "Arts-of-the-Enemy-TBoM",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Mastery",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Betrayal-of-Mim/Arts-of-the-Enemy.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: Deal 1 Corruption to a hero to cancel a shadow effect just triggered during combat. Move that shadow card to a character. When that character attacks, apply the shadow effect, applying any text that refers to `attacking enemy` to the attacking character and any text that refers to the `defending character` to the defending enemy, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Betrayal of Mîm",
+            "EncounterInfo": null,
+            "Number": 213,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00213",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ]
 }

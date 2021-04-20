@@ -3,5 +3,1579 @@
     "Slug": "The-Seat-of-Morgoth",
     "Product": "First Age",
     "Number": 3,
-    "AllCards": "Search returned no results"
+    "AllCards": [
+        {
+            "Title": "The Seat of Morgoth",
+            "Slug": "The-Seat-of-Morgoth-FA",
+            "IsUnique": false,
+            "CardType": "Scenario",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/The-Seat-of-Morgoth-ScenarioA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Corruption",
+                    "When a character takes Corruption, place a progress token on it. If a character ever has Corruption greater than its willpower, it has become Corrupted. A Corrupted character loses the `ally` or `hero` card type and gains the `enemy` trait, immediately engaging the player that used to control it. The Willpower of the Corrupted character becomes its Threat and its engagement cost is 0.",
+                    "Relentless",
+                    "An enemy with Relentless cannot have its attack canceled or be prevented from attacking by any player card effect.",
+                    "Whenever an amount of progress is placed on the active enemy, the first player must pass a Sneak test. The first player may discard any number of cards from their hand, adding up the costs of those cards. Then, the top card of the encounter deck is discarded. Compare the cost of the discarded player cards against the threat value of the discarded encounter card. If the cost is greater than or equal to the threat value, then the Sneak attempt passes. If the cost is less than the threat value, the the Sneak attempt fails. If a Sneak attempt fails, the active enemy immediately engages the first player. Progress that was placed on the active location or quest is not affected. When engaged with an enemy with the Sneak keyword, players may cancel all progress and instead place an equivalent number of damage tokens on enemies with the Sneak keyword instead."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Sneak",
+                    "During the travel phase, the players may choose an enemy in the staging area with the Sneak keyword to be the `active enemy`. This follows the decision to travel. The active enemy no longer contributes its threat to the staging area. Players must still make engagement checks against it, however.",
+                    "During quest resolution, progress tokens are placed first on the active enemy, then the active location, and finally on the quest stage. If a number of progress tokens equal to the active enemy`s threat is placed on it, that enemy is discarded."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "First Age",
+            "EncounterInfo": null,
+            "Number": 0,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00000",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Doors of Angband",
+            "Slug": "Doors-of-Angband-FA",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Doors-of-Angband-1A.jpg",
+                "Stats": {
+                    "StageNumber": "1A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Add Carcharoth to the staging area. Set Morgoth and all objectives and unique locations aside out of play. Set your threat equal to the number of heroes you control."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Doors-of-Angband-1B.jpg",
+                "Stats": {
+                    "StageNumber": "1B",
+                    "QuestPoints": "15"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: Skip the staging step during the quest phase. Instead, each player must discard the top card of his deck after committing characters to the quest. Add the cost of each discarded card to the total Threat in the staging area until the end of the phase.",
+                    "If Carcharoth has 0 hit points, advance to stage 2 immediately."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 126,
+            "Quantity": 1,
+            "Artist": "Danny Staten",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00126",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Descent into Darkness",
+            "Slug": "Descent-into-Darkness-FA",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Descent-into-Darkness-2A.jpg",
+                "Stats": {
+                    "StageNumber": "2A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove Carcharoth from play. Add Pits of Angband, Thrall Quarters, and Tunnels of Shadow to the staging area. Each player must search the encounter deck and discard pile for 1 enemy and add it to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Descent-into-Darkness-2B.jpg",
+                "Stats": {
+                    "StageNumber": "2B",
+                    "QuestPoints": "-"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After the first Path location is explored, add Nethermost Hall to the staging area.",
+                    "Forced: After traveling to a unique location, players raise their threat by its Threat.",
+                    "The players cannot advance unless Nethermost Hall is in the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 127,
+            "Quantity": 1,
+            "Artist": "David J. Findlay",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00127",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Greatest Deed",
+            "Slug": "The-Greatest-Deed-FA",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/The-Greatest-Deed-3A.jpg",
+                "Stats": {
+                    "StageNumber": "3A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/The-Greatest-Deed-3B.jpg",
+                "Stats": {
+                    "StageNumber": "3B",
+                    "QuestPoints": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add Morgoth to the staging area and attach Silmaril to him.",
+                    "Response: After questing successfully, you may place progress tokens on Morgoth as damage instead of placing them on the quest.",
+                    "The players cannot advance to the next stage unless they control the Silmaril objective."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 128,
+            "Quantity": 1,
+            "Artist": "Stranger to the Rain",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00128",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "To See the Light",
+            "Slug": "To-See-the-Light-FA",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/To-See-the-Light-4A.jpg",
+                "Stats": {
+                    "StageNumber": "4A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove Morgoth from play. Add Carcharoth to the staging area, removing any damage that was previously placed."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/To-See-the-Light-4B.jpg",
+                "Stats": {
+                    "StageNumber": "4B",
+                    "QuestPoints": "15"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "All enemies lose the Sneak keyword.",
+                    "If the players defeat this stage or Carcharoth has 0 hit points, the players have won the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": 4,
+                "StageLetter": "A"
+            },
+            "Number": 129,
+            "Quantity": 1,
+            "Artist": "Pete Amachree",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00129",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Silmaril",
+            "Slug": "Silmaril-FA",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Silmaril.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Item.",
+                    "Artifact.",
+                    "Silmaril."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: If Morgoth has 0 hit points, exhaust a hero to claim Silmaril.Action: Exhaust Silmaril and attached hero to either return an enemy to the staging area or reduce its Defense to 0 until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 130,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00130",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Angband Sword",
+            "Slug": "Angband-Sword-FA",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Angband-Sword.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attached hero gains +5 Attack. Restricted.",
+                    "Attached hero gains an additional +1 Attack for each resource on Angband Sword.",
+                    "Action: Attach Angband Sword to a hero. Place 1 Corruption on that hero.Response: After attached hero deals damage, add 1 resource to Angband Sword."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 131,
+            "Quantity": 1,
+            "Artist": "Daniel Ljunggren",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00131",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Dreadful Garments",
+            "Slug": "Dreadful-Garments-FA",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Dreadful-Garments.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Disguise."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Attach Dreadful Garments to a hero.Action: Exhaust Dreadful Garments to place 5 progress tokens on the active enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 132,
+            "Quantity": 1,
+            "Artist": "Ted Nasmith",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00132",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Element of Surprise",
+            "Slug": "Element-of-Surprise-FA",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Element-of-Surprise.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Initiative."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Attach Element of Surprise to a hero.Combat Action: Exhaust Element of Surprise. Player attacks are made before enemy attacks during this phase."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 133,
+            "Quantity": 1,
+            "Artist": "Kieran Tatsue",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00133",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Morgoth",
+            "Slug": "Morgoth-FA",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Morgoth.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "8",
+                    "Attack": "15",
+                    "Defense": "9",
+                    "HitPoints": "40"
+                },
+                "Traits": [
+                    "Vala."
+                ],
+                "Keywords": [
+                    "Indestructible."
+                ],
+                "Text": [
+                    "Indestructible.",
+                    "Morgoth cannot leave the staging area and is considered to be engaged with each player.No Trap attachments can be attached to Morgoth.Forced: At the end of the round, each player must place 2 Corruption among characters he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 134,
+            "Quantity": 1,
+            "Artist": "Gerwell",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00134",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Carcharoth",
+            "Slug": "Carcharoth-FA",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Carcharoth.jpg",
+                "Stats": {
+                    "EngagementCost": "4",
+                    "Threat": "X",
+                    "Attack": "7",
+                    "Defense": "4",
+                    "HitPoints": "15"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Werewolf."
+                ],
+                "Keywords": [
+                    "Relentless.",
+                    "Indestructible."
+                ],
+                "Text": [
+                    "Relentless. Indestructible. Cannot leave play.",
+                    "X is 5 times the number of players.",
+                    "Forced: Players cannot reduce their threat while Carcharoth is in play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 135,
+            "Quantity": 1,
+            "Artist": "Aogachou",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00135",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Balrog of Angband",
+            "Slug": "Balrog-of-Angband-FA",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Balrog-of-Angband.jpg",
+                "Stats": {
+                    "EngagementCost": "37",
+                    "Threat": "4",
+                    "Attack": "7",
+                    "Defense": "3",
+                    "HitPoints": "22"
+                },
+                "Traits": [
+                    "Balrog."
+                ],
+                "Keywords": [
+                    "Sneak.",
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Sneak.",
+                    "Forced: After an event is played, lower the engagement cost of Balrog of Angband by 20 and increase its Threat by 1 until the end of the round."
+                ],
+                "Shadow": "Shadow: Discard all event cards from your hand.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 136,
+            "Quantity": 2,
+            "Artist": "echo539",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00136",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Long-worm",
+            "Slug": "Long-worm-FA",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Long-worm.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "5",
+                    "Attack": "8",
+                    "Defense": "5",
+                    "HitPoints": "20"
+                },
+                "Traits": [
+                    "Dragon."
+                ],
+                "Keywords": [
+                    "Sneak.",
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Sneak.",
+                    "Forced: When Long-worm engages a player, place 1 Corruption on the character with the lowest Willpower that he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 137,
+            "Quantity": 2,
+            "Artist": "Joas Kleine",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00137",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Fire-drake",
+            "Slug": "Fire-drake-FA",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Fire-drake.jpg",
+                "Stats": {
+                    "EngagementCost": "42",
+                    "Threat": "5",
+                    "Attack": "9",
+                    "Defense": "5",
+                    "HitPoints": "21"
+                },
+                "Traits": [
+                    "Dragon."
+                ],
+                "Keywords": [
+                    "Sneak.",
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Sneak.",
+                    "Forced: At the beginning of the combat phase, deal 1 damage to each character controlled by the engaged player."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to each character controlled by the engaged player.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 138,
+            "Quantity": 2,
+            "Artist": "sansyu",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00138",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Gothmog",
+            "Slug": "Gothmog-FA",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Gothmog.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "5",
+                    "Attack": "10",
+                    "Defense": "4",
+                    "HitPoints": "25"
+                },
+                "Traits": [
+                    "Balrog."
+                ],
+                "Keywords": [
+                    "Sneak.",
+                    "Victory 6."
+                ],
+                "Text": [
+                    "Sneak.",
+                    "Forced: After Gothmog attacks, discard 1 attachment controlled by the defending player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 139,
+            "Quantity": 1,
+            "Artist": "Anja",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00139",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Troll of Angband",
+            "Slug": "Troll-of-Angband-FA",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Troll-of-Angband.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "2",
+                    "Attack": "6",
+                    "Defense": "3",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Troll."
+                ],
+                "Keywords": [
+                    "Sneak."
+                ],
+                "Text": [
+                    "Sneak.",
+                    "Forced: After Troll of Angband attacks, raise the defending player`s threat by 3."
+                ],
+                "Shadow": "Shadow: Raise the defending player`s threat by 3.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 140,
+            "Quantity": 3,
+            "Artist": "Ben Daugherty",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00140",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Captain",
+            "Slug": "Orc-Captain-FA",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Orc-Captain.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "2",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Sneak."
+                ],
+                "Text": [
+                    "Sneak.",
+                    "Forced: When Orc Captain attacks, add the shadow card to the staging area if it is an enemy (ignoring any shadow effect)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 141,
+            "Quantity": 2,
+            "Artist": "Christian Quinot",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00141",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Angband Orc",
+            "Slug": "Angband-Orc-FA",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Angband-Orc.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "1",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [
+                    "Sneak.",
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "Sneak. Doomed 1.",
+                    "Forced: While Angband Orc is engaged with a player, raise that player`s threat by an additional 1 at the end of the round."
+                ],
+                "Shadow": "Shadow: Add Angband Orc to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 142,
+            "Quantity": 3,
+            "Artist": "Christian Quinot",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00142",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Pits of Angband",
+            "Slug": "Pits-of-Angband-FA",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Pits-of-Angband.jpg",
+                "Stats": {
+                    "Threat": "10",
+                    "QuestPoints": "10"
+                },
+                "Traits": [
+                    "Path."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "This location does not contribute its threat while it is in the staging area.",
+                    "Forced: The first enemy revealed each round gains surge.",
+                    "Response: After Pits of Angband leaves play, add Angband Sword to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 143,
+            "Quantity": 1,
+            "Artist": "Dan Mitchell",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00143",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Thrall Quarters",
+            "Slug": "Thrall-Quarters-FA",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Thrall-Quarters.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "15"
+                },
+                "Traits": [
+                    "Path."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Immune to player card effects. This location does not contribute its threat while it is in the staging area.",
+                    "Forced: While Thrall Quarters is the active location, add 1 to the Threat of discarded encounter cards when resolving a Sneak test.Response: After Thrall Quarters leaves play, add Dreadful Garments to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 144,
+            "Quantity": 1,
+            "Artist": "Clive Lauzon",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00144",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Tunnels of Shadow",
+            "Slug": "Tunnels-of-Shadow-FA",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Tunnels-of-Shadow.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "20"
+                },
+                "Traits": [
+                    "Path."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Immune to player card effects. This location does not contribute its threat while it is in the staging area.",
+                    "Forced: While Tunnels of Shadow is the active location, the encounter deck is shuffled before discarding cards for a Sneak test.Response: After Tunnels of Shadow leaves play, add Element of Surprise to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 145,
+            "Quantity": 1,
+            "Artist": "Burlew",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00145",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Labyrinthine Stairs",
+            "Slug": "Labyrinthine-Stairs-FA",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Labyrinthine-Stairs.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After putting any amount of progress on Labyrinthine Stairs, discard the top card of the encounter deck. If it is a location, add it to the staging area."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, return the active location to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 146,
+            "Quantity": 3,
+            "Artist": "Neal Hanson",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00146",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Torturer's Dungeon",
+            "Slug": "Torturer's-Dungeon-FA",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Torturer's-Dungeon.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Chamber."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: If there is no active location and you have the option to travel, you must either travel to Torturer`s Dungeon or place 1 Corruption on each hero.Travel: Each player must search the encounter deck and discard pile for an enemy and put it into play engaged with him."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 147,
+            "Quantity": 1,
+            "Artist": "Dardagan",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00147",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Echoing Corridor",
+            "Slug": "Echoing-Corridor-FA",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Echoing-Corridor.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the beginning of the staging step, players must raise their threat by the number of characters they committed to the quest while Echoing Corridor is the active location."
+                ],
+                "Shadow": "Shadow: Raise the threat of the defending player by the Threat of the attacking enemy.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 148,
+            "Quantity": 2,
+            "Artist": "Robert Ryminiecki",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00148",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Subterranean Furnace",
+            "Slug": "Subterranean-Furnace-FA",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Subterranean-Furnace.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: While Subterranean Furnace is the active location, each player must discard a random card from his hand at the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 149,
+            "Quantity": 2,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00149",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Trackless Cavern",
+            "Slug": "Trackless-Cavern-FA",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Trackless-Cavern.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "8"
+                },
+                "Traits": [
+                    "Underground.",
+                    "Dark."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Trackless Cavern leaves play, each player reduces his threat by 5."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 150,
+            "Quantity": 2,
+            "Artist": "Steven Schreiner",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00150",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Armory",
+            "Slug": "Orc-Armory-FA",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Orc-Armory.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Armory."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Orc Armory is the active location, all enemies lose the Sneak keyword.Response: After Orc Armory is explored as the active location, the first player attaches it to a hero. The attached hero gains +1 Attack and +1 Defense."
+                ],
+                "Shadow": "Shadow: The attacking enemy gets +1 Attack and +1 Defense until the end of the phase.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 151,
+            "Quantity": 2,
+            "Artist": "Atomhawk",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00151",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Nethermost Hall",
+            "Slug": "Nethermost-Hall-FA",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Nethermost-Hall.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "7"
+                },
+                "Traits": [
+                    "Throne Room."
+                ],
+                "Keywords": [
+                    "Victory 2."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Forced: After Nethermost Hall is explored as the active location, advance to stage 3.",
+                    "Travel: Search the encounter deck and discard pile for Gothmog and add him to the staging area, if able."
+                ],
+                "Shadow": "Shadow: The attacking enemy gets +1 Attack and +1 Defense until the end of the phase.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 152,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00152",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Devouring Spirit",
+            "Slug": "Devouring-Spirit-FA",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Devouring-Spirit.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach to the enemy in play with the lowest Threat. Attached enemy gets +1 Threat, +1 Attack, +1 Defense, and +3 hit points. If there are no enemies in play, Devouring Spirit gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 153,
+            "Quantity": 2,
+            "Artist": "Sarah Finnigan",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00153",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Clumsy Step",
+            "Slug": "Clumsy-Step-FA",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Clumsy-Step.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Noise."
+                ],
+                "Keywords": [
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "Doomed 2.",
+                    "When Revealed: Discard an additional encounter card when resolving Sneak tests this round. If there is no active enemy, Clumsy Step gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 154,
+            "Quantity": 3,
+            "Artist": "Sam R Kennedy",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00154",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Foolish Ruckus",
+            "Slug": "Foolish-Ruckus-FA",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Foolish-Ruckus.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Noise."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Raise the Threat of the active enemy by 3 until the end of the phase. If there is no active enemy, raise the Threat of all enemies in the staging area by 1 until the end of the phase."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, raise the defending player`s threat by 2.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 155,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00155",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Filth and Desolation",
+            "Slug": "Filth-and-Desolation-FA",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Filth-and-Desolation.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must either deal 1 damage to each character he committed to the quest or reduce the Willpower of each character he controls by 1 until the end of the round."
+                ],
+                "Shadow": "Shadow: Exhaust a character that the defending player controls.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 156,
+            "Quantity": 2,
+            "Artist": "Aledin",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00156",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Heroic Diversion",
+            "Slug": "Heroic-Diversion-FA",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Heroic-Diversion.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "Doomed 1.",
+                    "When Revealed: Each player must either discard 1 character or raise his threat by 5."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 157,
+            "Quantity": 3,
+            "Artist": "Jenny Dolfen",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00157",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Evil Lust",
+            "Slug": "Evil-Lust-FA",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/First-Age/Evil-Lust.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Attach to a hero. (Counts as a Condition attachment with the text: `This hero must be declared as the defender against Morgoth (even if exhausted). Morgoth uses his Threat to attack and the attached hero uses his Willpower to defend. Limit 1 per hero.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "First Age",
+            "EncounterInfo": {
+                "EncounterSet": "The Seat of Morgoth",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 158,
+            "Quantity": 2,
+            "Artist": "Andreas Marschall",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00158",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ]
 }

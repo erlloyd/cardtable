@@ -7,44 +7,78 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Fastred",
-            "Slug": "Fastred-TBS",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Dúnedain Pipe",
+            "Slug": "Dunedain-Pipe-TBS",
+            "IsUnique": false,
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Serpent/Fastred.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Serpent/Dúnedain-Pipe.jpg",
                 "Stats": {
-                    "ThreatCost": "9",
-                    "Willpower": "1",
-                    "Attack": "2",
-                    "Defense": "3",
-                    "HitPoints": "3"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Rohan.",
-                    "Warrior."
+                    "Item.",
+                    "Pipe."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Response: After Fastred defends an enemy attack, return that enemy to the staging area to reduce your threat by 2. (Limit once per phase.)"
+                    "Attach to a Dúnedain character. Limit 1 per character.",
+                    "Action: Exhaust Dúnedain Pipe and place a card from your hand on the bottom of your deck to draw a card."
                 ],
                 "Shadow": null,
-                "FlavorText": "`King`s man! King`s man!` his heart cried within him.\r\n-The Return of the King"
+                "FlavorText": "He had a tall tankard in front of him, and was smoking a long-stemmed pipe curiously carved.\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Black Serpent",
             "EncounterInfo": null,
-            "Number": 81,
-            "Quantity": 1,
-            "Artist": "Lukasz Jaskolski",
+            "Number": 88,
+            "Quantity": 3,
+            "Artist": "Dani Hartel",
             "HasErrata": false,
-            "OctgnGuid": "d87344c3-d234-44c8-89b1-249f5c88bfab",
-            "RingsDbCardId": "17081",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 3697,
+            "OctgnGuid": "",
+            "RingsDbCardId": "17088",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 103442,
+            "Categories": null
+        },
+        {
+            "Title": "Rally the West",
+            "Slug": "Rally-the-West-TBS",
+            "IsUnique": false,
+            "CardType": "Player_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Serpent/Rally-the-West.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Limit 1 copy of Rally the West in the victory display.",
+                    "While this quest is in the victory display, each hero gets +1 Willpower."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Foes and fire are before you, and your homes far behind. Yet, though you fight upon an alien field, the glory that you reap there shall be your own for ever.`\r\n-Théoden, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Black Serpent",
+            "EncounterInfo": null,
+            "Number": 87,
+            "Quantity": 3,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "OctgnGuid": "97d09901-724d-4932-ac51-59df1ef1dbec",
+            "RingsDbCardId": "17087",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 73056,
             "Categories": null
         },
         {
@@ -82,40 +116,6 @@
             "RingsDbCardId": "17082",
             "RingsDbPopularity": 4,
             "RingsDbVotes": 67490,
-            "Categories": null
-        },
-        {
-            "Title": "Burst into Song",
-            "Slug": "Burst-into-Song-TBS",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Serpent/Burst-into-Song.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Ready each hero with a Song attachment."
-                ],
-                "Shadow": null,
-                "FlavorText": "And then all the host of Rohan burst into song, and they sang as they slew, for the joy of battle was on them, and the sound of their singing that was fair and terrible came even to the City.\r\n-The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Black Serpent",
-            "EncounterInfo": null,
-            "Number": 83,
-            "Quantity": 3,
-            "Artist": "Javier Charro Martinez",
-            "HasErrata": false,
-            "OctgnGuid": "a73ea798-1d91-4bda-86d9-1085739d9cb4",
-            "RingsDbCardId": "17083",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 13456,
             "Categories": null
         },
         {
@@ -161,151 +161,43 @@
             "Categories": null
         },
         {
-            "Title": "Oath of Eorl",
-            "Slug": "Oath-of-Eorl-TBS",
+            "Title": "Southron Refugee",
+            "Slug": "Southron-Refugee-TBS",
             "IsUnique": false,
-            "CardType": "Event",
+            "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Serpent/Oath-of-Eorl.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Serpent/Southron-Refugee.jpg",
                 "Stats": {
-                    "ResourceCost": "3"
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
                 },
-                "Traits": [],
+                "Traits": [
+                    "Harad."
+                ],
                 "Keywords": [],
                 "Text": [
-                    "Play only if you control a unique character with the Rohan trait and another unique character with the Gondor trait.",
-                    "Response: At the beginning of the combat phase, you resolve the step in which you attack enemies before resolving enemy attacks this phase. (Each other player resolves the combat phase as normal after you resolve your attacks.)"
+                    "Action: Exhaust Southron Refugee to reduce the cost of the next Harad ally you play this phase by 1."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "...to the land of the Haradrim came only a tale from far off...\r\n-The Return of the King"
             },
             "Back": null,
             "CardSet": "The Black Serpent",
             "EncounterInfo": null,
-            "Number": 85,
+            "Number": 90,
             "Quantity": 3,
-            "Artist": "Rafał Hrynkiewicz",
+            "Artist": "Nikolas Hagialas",
             "HasErrata": false,
-            "OctgnGuid": "ae807a4c-d656-42a1-bf2c-024eaffc9fc6",
-            "RingsDbCardId": "17085",
+            "OctgnGuid": "2872a8fb-53e6-4e0d-855d-4e1f32cdcfa0",
+            "RingsDbCardId": "17090",
             "RingsDbPopularity": 2,
-            "RingsDbVotes": 28664,
-            "Categories": null
-        },
-        {
-            "Title": "Fearless Scout",
-            "Slug": "Fearless-Scout-TBS",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Serpent/Fearless-Scout.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Skill."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a hero. Limit 1 per hero.",
-                    "Attached hero gains the Scout trait.",
-                    "Response: After you play Fearless Scout from your hand, draw a card."
-                ],
-                "Shadow": null,
-                "FlavorText": "...he got right up to the fire-for fire it was-without disturbing anyone. -The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "The Black Serpent",
-            "EncounterInfo": null,
-            "Number": 86,
-            "Quantity": 3,
-            "Artist": "Andreia Ugrai",
-            "HasErrata": false,
-            "OctgnGuid": "168c62d8-bb38-4258-9d2b-6b46aef6c700",
-            "RingsDbCardId": "17086",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 5000,
-            "Categories": null
-        },
-        {
-            "Title": "Rally the West",
-            "Slug": "Rally-the-West-TBS",
-            "IsUnique": false,
-            "CardType": "Player_Side_Quest",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Serpent/Rally-the-West.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [
-                    "Victory 1."
-                ],
-                "Text": [
-                    "Limit 1 copy of Rally the West in the victory display.",
-                    "While this quest is in the victory display, each hero gets +1 Willpower."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Foes and fire are before you, and your homes far behind. Yet, though you fight upon an alien field, the glory that you reap there shall be your own for ever.`\r\n-Théoden, The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Black Serpent",
-            "EncounterInfo": null,
-            "Number": 87,
-            "Quantity": 3,
-            "Artist": "Stanislav Dikolenko",
-            "HasErrata": false,
-            "OctgnGuid": "97d09901-724d-4932-ac51-59df1ef1dbec",
-            "RingsDbCardId": "17087",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 73056,
-            "Categories": null
-        },
-        {
-            "Title": "Dúnedain Pipe",
-            "Slug": "Dunedain-Pipe-TBS",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Serpent/Dúnedain-Pipe.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item.",
-                    "Pipe."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Dúnedain character. Limit 1 per character.",
-                    "Action: Exhaust Dúnedain Pipe and place a card from your hand on the bottom of your deck to draw a card."
-                ],
-                "Shadow": null,
-                "FlavorText": "He had a tall tankard in front of him, and was smoking a long-stemmed pipe curiously carved.\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Black Serpent",
-            "EncounterInfo": null,
-            "Number": 88,
-            "Quantity": 3,
-            "Artist": "Dani Hartel",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "17088",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 103442,
+            "RingsDbVotes": 39107,
             "Categories": null
         },
         {
@@ -345,43 +237,151 @@
             "Categories": null
         },
         {
-            "Title": "Southron Refugee",
-            "Slug": "Southron-Refugee-TBS",
+            "Title": "Oath of Eorl",
+            "Slug": "Oath-of-Eorl-TBS",
             "IsUnique": false,
-            "CardType": "Ally",
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Serpent/Southron-Refugee.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Serpent/Oath-of-Eorl.jpg",
                 "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "0",
-                    "HitPoints": "2"
+                    "ResourceCost": "3"
                 },
-                "Traits": [
-                    "Harad."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Action: Exhaust Southron Refugee to reduce the cost of the next Harad ally you play this phase by 1."
+                    "Play only if you control a unique character with the Rohan trait and another unique character with the Gondor trait.",
+                    "Response: At the beginning of the combat phase, you resolve the step in which you attack enemies before resolving enemy attacks this phase. (Each other player resolves the combat phase as normal after you resolve your attacks.)"
                 ],
                 "Shadow": null,
-                "FlavorText": "...to the land of the Haradrim came only a tale from far off...\r\n-The Return of the King"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "The Black Serpent",
             "EncounterInfo": null,
-            "Number": 90,
+            "Number": 85,
             "Quantity": 3,
-            "Artist": "Nikolas Hagialas",
+            "Artist": "Rafał Hrynkiewicz",
             "HasErrata": false,
-            "OctgnGuid": "2872a8fb-53e6-4e0d-855d-4e1f32cdcfa0",
-            "RingsDbCardId": "17090",
+            "OctgnGuid": "ae807a4c-d656-42a1-bf2c-024eaffc9fc6",
+            "RingsDbCardId": "17085",
             "RingsDbPopularity": 2,
-            "RingsDbVotes": 39107,
+            "RingsDbVotes": 28664,
+            "Categories": null
+        },
+        {
+            "Title": "Fastred",
+            "Slug": "Fastred-TBS",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Serpent/Fastred.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Fastred defends an enemy attack, return that enemy to the staging area to reduce your threat by 2. (Limit once per phase.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`King`s man! King`s man!` his heart cried within him.\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Black Serpent",
+            "EncounterInfo": null,
+            "Number": 81,
+            "Quantity": 1,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "OctgnGuid": "d87344c3-d234-44c8-89b1-249f5c88bfab",
+            "RingsDbCardId": "17081",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 3697,
+            "Categories": null
+        },
+        {
+            "Title": "Burst into Song",
+            "Slug": "Burst-into-Song-TBS",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Serpent/Burst-into-Song.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Ready each hero with a Song attachment."
+                ],
+                "Shadow": null,
+                "FlavorText": "And then all the host of Rohan burst into song, and they sang as they slew, for the joy of battle was on them, and the sound of their singing that was fair and terrible came even to the City.\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Black Serpent",
+            "EncounterInfo": null,
+            "Number": 83,
+            "Quantity": 3,
+            "Artist": "Javier Charro Martinez",
+            "HasErrata": false,
+            "OctgnGuid": "a73ea798-1d91-4bda-86d9-1085739d9cb4",
+            "RingsDbCardId": "17083",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 13456,
+            "Categories": null
+        },
+        {
+            "Title": "Fearless Scout",
+            "Slug": "Fearless-Scout-TBS",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Serpent/Fearless-Scout.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero. Limit 1 per hero.",
+                    "Attached hero gains the Scout trait.",
+                    "Response: After you play Fearless Scout from your hand, draw a card."
+                ],
+                "Shadow": null,
+                "FlavorText": "...he got right up to the fire-for fire it was-without disturbing anyone. -The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Black Serpent",
+            "EncounterInfo": null,
+            "Number": 86,
+            "Quantity": 3,
+            "Artist": "Andreia Ugrai",
+            "HasErrata": false,
+            "OctgnGuid": "168c62d8-bb38-4258-9d2b-6b46aef6c700",
+            "RingsDbCardId": "17086",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 5000,
             "Categories": null
         }
     ]

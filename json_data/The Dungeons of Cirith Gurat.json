@@ -7,124 +7,78 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Folco Boffin",
-            "Slug": "Folco-Boffin-DoCG",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Open the Armory",
+            "Slug": "Open-the-Armory-DoCG",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dungeons-of-Cirith-Gurat/Open-the-Armory.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Search the top 10 cards of your deck for a Weapon or Armor attachment and add it to your hand. Shuffle your deck.",
+                    "Valour Action: Search the top 5 cards of your deck for a Weapon or Armor attachment and put it into play. Shuffle your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dungeons of Cirith Gurat",
+            "EncounterInfo": null,
+            "Number": 118,
+            "Quantity": 3,
+            "Artist": "Sabin Boykinov",
+            "HasErrata": false,
+            "OctgnGuid": "b82b6804-22c6-4e54-b029-50e99962cbe4",
+            "RingsDbCardId": "17118",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 171936,
+            "Categories": null
+        },
+        {
+            "Title": "Legacy Blade",
+            "Slug": "Legacy-Blade-DoCG",
+            "IsUnique": false,
+            "CardType": "Attachment",
             "CardSubType": "None",
             "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dungeons-of-Cirith-Gurat/Folco-Boffin.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dungeons-of-Cirith-Gurat/Legacy-Blade.jpg",
                 "Stats": {
-                    "ThreatCost": "7",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "0",
-                    "HitPoints": "2"
+                    "ResourceCost": "0"
                 },
                 "Traits": [
-                    "Hobbit."
+                    "Item.",
+                    "Weapon."
                 ],
-                "Keywords": [],
+                "Keywords": [
+                    "Restricted."
+                ],
                 "Text": [
-                    "Folco Boffin gets -1 threat cost for each Hobbit hero you control.",
-                    "Action: Discard Folco Boffin to reduce your threat by 7. (Limit once per game for the group.)"
+                    "Attach to a hero. Restricted.",
+                    "Attached hero gets +1 Attack for each side quest in the victory display. (Limit +3 Attack.)"
                 ],
                 "Shadow": null,
-                "FlavorText": "...he had many friends, especially among the younger generation of Hobbits (descendants mostly from Old Took)\r\n-The Fellowship of the Ring"
+                "FlavorText": "...glad would he have been to know its fate who wrought it slowly long ago in the North-kingdom when the Dúnedain were young...\r\n-The Return of the King"
             },
             "Back": null,
             "CardSet": "The Dungeons of Cirith Gurat",
             "EncounterInfo": null,
-            "Number": 109,
-            "Quantity": 1,
-            "Artist": "Owen William Weber",
+            "Number": 117,
+            "Quantity": 3,
+            "Artist": "Lucas Durham",
             "HasErrata": false,
-            "OctgnGuid": "375d1e9d-7de9-4853-a99f-c15885256a6f",
-            "RingsDbCardId": "17109",
+            "OctgnGuid": "a3f93416-08e8-4d0c-b983-58ae2505e75c",
+            "RingsDbCardId": "17117",
             "RingsDbPopularity": 5,
-            "RingsDbVotes": 8035,
-            "Categories": null
-        },
-        {
-            "Title": "Knight of Dale",
-            "Slug": "Knight-of-Dale-DoCG",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dungeons-of-Cirith-Gurat/Knight-of-Dale.jpg",
-                "Stats": {
-                    "ResourceCost": "4",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Dale.",
-                    "Warrior."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Spend 1 Leadership resource to ready Knight of Dale. (limit once per round).",
-                    "Valour Action: Ready Knight of Dale (limit once per round.)"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Dungeons of Cirith Gurat",
-            "EncounterInfo": null,
-            "Number": 110,
-            "Quantity": 3,
-            "Artist": "Aleksander Karcz",
-            "HasErrata": false,
-            "OctgnGuid": "0525e10a-8260-4f75-add1-1706e39a9665",
-            "RingsDbCardId": "17110",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 55565,
-            "Categories": null
-        },
-        {
-            "Title": "Diligent Noble",
-            "Slug": "Diligent-Noble-DoCG",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dungeons-of-Cirith-Gurat/Diligent-Noble.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Skill."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a hero. Limit 1 per hero.",
-                    "Attached hero gains the Noble trait.",
-                    "Response: After you play Diligent Noble from your hand, draw a card."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Dungeons of Cirith Gurat",
-            "EncounterInfo": null,
-            "Number": 111,
-            "Quantity": 3,
-            "Artist": "Nikolas Hagialas",
-            "HasErrata": false,
-            "OctgnGuid": "06581875-bb7a-4214-b2c4-3774d68e8b8f",
-            "RingsDbCardId": "17111",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 9992,
+            "RingsDbVotes": 98443,
             "Categories": null
         },
         {
@@ -169,23 +123,70 @@
             "Categories": null
         },
         {
-            "Title": "Fierce Defense",
-            "Slug": "Fierce-Defense-DoCG",
-            "IsUnique": false,
-            "CardType": "Event",
+            "Title": "Folco Boffin",
+            "Slug": "Folco-Boffin-DoCG",
+            "IsUnique": true,
+            "CardType": "Hero",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dungeons-of-Cirith-Gurat/Fierce-Defense.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dungeons-of-Cirith-Gurat/Folco-Boffin.jpg",
                 "Stats": {
-                    "ResourceCost": "3"
+                    "ThreatCost": "7",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "2"
                 },
-                "Traits": [],
+                "Traits": [
+                    "Hobbit."
+                ],
                 "Keywords": [],
                 "Text": [
-                    "Combat Action: Deal 3 damage to a non-unique enemy engaged with you.",
-                    "Valour Combat Action: Discard a non-unique enemy engaged with you."
+                    "Folco Boffin gets -1 threat cost for each Hobbit hero you control.",
+                    "Action: Discard Folco Boffin to reduce your threat by 7. (Limit once per game for the group.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "...he had many friends, especially among the younger generation of Hobbits (descendants mostly from Old Took)\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Dungeons of Cirith Gurat",
+            "EncounterInfo": null,
+            "Number": 109,
+            "Quantity": 1,
+            "Artist": "Owen William Weber",
+            "HasErrata": false,
+            "OctgnGuid": "375d1e9d-7de9-4853-a99f-c15885256a6f",
+            "RingsDbCardId": "17109",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 8035,
+            "Categories": null
+        },
+        {
+            "Title": "Leaflock",
+            "Slug": "Leaflock-DoCG",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dungeons-of-Cirith-Gurat/Leaflock.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "0",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have restricted attachments. Enters play exhausted.",
+                    "Leaflock gets +1 Willpower for each damaged Ent you control (limit +4 Willpower.)"
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -193,14 +194,56 @@
             "Back": null,
             "CardSet": "The Dungeons of Cirith Gurat",
             "EncounterInfo": null,
-            "Number": 113,
+            "Number": 116,
             "Quantity": 3,
-            "Artist": "Stanislav Dikolenko",
+            "Artist": "Piya Wannachaiwong",
             "HasErrata": false,
-            "OctgnGuid": "e1401810-ad6f-41e9-a637-c2e1928f89f9",
-            "RingsDbCardId": "17113",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 21202,
+            "OctgnGuid": "b6065fa3-ce09-4b16-a968-7dc86d72482c",
+            "RingsDbCardId": "17116",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 57683,
+            "Categories": null
+        },
+        {
+            "Title": "Knight of Dale",
+            "Slug": "Knight-of-Dale-DoCG",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dungeons-of-Cirith-Gurat/Knight-of-Dale.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dale.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Spend 1 Leadership resource to ready Knight of Dale. (limit once per round).",
+                    "Valour Action: Ready Knight of Dale (limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dungeons of Cirith Gurat",
+            "EncounterInfo": null,
+            "Number": 110,
+            "Quantity": 3,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "OctgnGuid": "0525e10a-8260-4f75-add1-1706e39a9665",
+            "RingsDbCardId": "17110",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 55565,
             "Categories": null
         },
         {
@@ -279,104 +322,23 @@
             "Categories": null
         },
         {
-            "Title": "Leaflock",
-            "Slug": "Leaflock-DoCG",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dungeons-of-Cirith-Gurat/Leaflock.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "0",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Ent."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Cannot have restricted attachments. Enters play exhausted.",
-                    "Leaflock gets +1 Willpower for each damaged Ent you control (limit +4 Willpower.)"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Dungeons of Cirith Gurat",
-            "EncounterInfo": null,
-            "Number": 116,
-            "Quantity": 3,
-            "Artist": "Piya Wannachaiwong",
-            "HasErrata": false,
-            "OctgnGuid": "b6065fa3-ce09-4b16-a968-7dc86d72482c",
-            "RingsDbCardId": "17116",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 57683,
-            "Categories": null
-        },
-        {
-            "Title": "Legacy Blade",
-            "Slug": "Legacy-Blade-DoCG",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dungeons-of-Cirith-Gurat/Legacy-Blade.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [
-                    "Item.",
-                    "Weapon."
-                ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a hero. Restricted.",
-                    "Attached hero gets +1 Attack for each side quest in the victory display. (Limit +3 Attack.)"
-                ],
-                "Shadow": null,
-                "FlavorText": "...glad would he have been to know its fate who wrought it slowly long ago in the North-kingdom when the Dúnedain were young...\r\n-The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Dungeons of Cirith Gurat",
-            "EncounterInfo": null,
-            "Number": 117,
-            "Quantity": 3,
-            "Artist": "Lucas Durham",
-            "HasErrata": false,
-            "OctgnGuid": "a3f93416-08e8-4d0c-b983-58ae2505e75c",
-            "RingsDbCardId": "17117",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 98443,
-            "Categories": null
-        },
-        {
-            "Title": "Open the Armory",
-            "Slug": "Open-the-Armory-DoCG",
+            "Title": "Fierce Defense",
+            "Slug": "Fierce-Defense-DoCG",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dungeons-of-Cirith-Gurat/Open-the-Armory.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dungeons-of-Cirith-Gurat/Fierce-Defense.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ResourceCost": "3"
                 },
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Action: Search the top 10 cards of your deck for a Weapon or Armor attachment and add it to your hand. Shuffle your deck.",
-                    "Valour Action: Search the top 5 cards of your deck for a Weapon or Armor attachment and put it into play. Shuffle your deck."
+                    "Combat Action: Deal 3 damage to a non-unique enemy engaged with you.",
+                    "Valour Combat Action: Discard a non-unique enemy engaged with you."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -384,14 +346,52 @@
             "Back": null,
             "CardSet": "The Dungeons of Cirith Gurat",
             "EncounterInfo": null,
-            "Number": 118,
+            "Number": 113,
             "Quantity": 3,
-            "Artist": "Sabin Boykinov",
+            "Artist": "Stanislav Dikolenko",
             "HasErrata": false,
-            "OctgnGuid": "b82b6804-22c6-4e54-b029-50e99962cbe4",
-            "RingsDbCardId": "17118",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 171936,
+            "OctgnGuid": "e1401810-ad6f-41e9-a637-c2e1928f89f9",
+            "RingsDbCardId": "17113",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 21202,
+            "Categories": null
+        },
+        {
+            "Title": "Diligent Noble",
+            "Slug": "Diligent-Noble-DoCG",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Dungeons-of-Cirith-Gurat/Diligent-Noble.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero. Limit 1 per hero.",
+                    "Attached hero gains the Noble trait.",
+                    "Response: After you play Diligent Noble from your hand, draw a card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Dungeons of Cirith Gurat",
+            "EncounterInfo": null,
+            "Number": 111,
+            "Quantity": 3,
+            "Artist": "Nikolas Hagialas",
+            "HasErrata": false,
+            "OctgnGuid": "06581875-bb7a-4214-b2c4-3774d68e8b8f",
+            "RingsDbCardId": "17111",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 9992,
             "Categories": null
         }
     ]

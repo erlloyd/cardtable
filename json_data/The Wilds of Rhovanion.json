@@ -7,87 +7,163 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Brand son of Bain",
-            "Slug": "Brand-son-of-Bain-TWoR",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Hauberk of Mail",
+            "Slug": "Hauberk-of-Mail-TWoR",
+            "IsUnique": false,
+            "CardType": "Attachment",
             "CardSubType": "None",
             "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Brand-son-of-Bain.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Hauberk-of-Mail.jpg",
                 "Stats": {
-                    "ThreatCost": "10",
-                    "Willpower": "2",
-                    "Attack": "3",
-                    "Defense": "2",
-                    "HitPoints": "3"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Dale.",
-                    "Noble."
+                    "Item.",
+                    "Armor."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Each Dale character you control with a player attachment gets +1 Willpower.",
-                    "Response: After you play an attachment on a Dale character without an attachment, draw a card."
+                    "Attach to a Dale or Warrior character. Limit 1 per character.",
+                    "Attached character gets +1 Defense (and +1 hit point if attached character has the sentinel keyword)."
                 ],
                 "Shadow": null,
-                "FlavorText": "`He is a strong king, and his realm now reaches south and east of Esgaroth.`\r\n-Glóin, The Fellowship of the Ring"
+                "FlavorText": "Each one of his folk was clad in hauberk of steel mail that hung to his knees...\r\n-The Hobbit"
             },
             "Back": null,
             "CardSet": "The Wilds of Rhovanion",
             "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Antonio José Manzanedo",
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
             "HasErrata": false,
-            "OctgnGuid": "2b75792d-5873-4fc6-9272-d20dd517d36b",
-            "RingsDbCardId": "18001",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 5197,
+            "OctgnGuid": "477ca0c8-7922-4c17-bba2-6d7c4718c49d",
+            "RingsDbCardId": "18007",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 227562,
             "Categories": null
         },
         {
-            "Title": "Bard son of Brand",
-            "Slug": "Bard-son-of-Brand-TWoR",
+            "Title": "Necklace of Girion",
+            "Slug": "Necklace-of-Girion-TWoR",
             "IsUnique": true,
-            "CardType": "Hero",
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Necklace-of-Girion.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Guarded (enemy or location)."
+                ],
+                "Text": [
+                    "Guarded (enemy or location).",
+                    "Attach to a hero.",
+                    "Attached hero gets +2 Willpower and collects an additional resource during the resource phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "...the necklace of Girion, Lord of Dale, made of five hundred emeralds green as grass, which he gave for the arming of his eldest son...\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Wilds of Rhovanion",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 3,
+            "Artist": "Drazenka Kimpel",
+            "HasErrata": false,
+            "OctgnGuid": "b1cc99c3-09a7-4418-85c4-e368f44adf1d",
+            "RingsDbCardId": "18011",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 162588,
+            "Categories": null
+        },
+        {
+            "Title": "Bow of Yew",
+            "Slug": "Bow-of-Yew-TWoR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Bow-of-Yew.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Dale or Warrior character. Restricted.",
+                    "Response: After attached character is declared as an attacker, exhaust Bow of Yew to deal 1 damage to the defending enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": "`They would shoot at us with their great bows of yew...`\r\n-The Lord of the Eagles, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Wilds of Rhovanion",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "OctgnGuid": "e039d605-d630-450d-982b-d9cdaf91fe76",
+            "RingsDbCardId": "18009",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 140125,
+            "Categories": null
+        },
+        {
+            "Title": "North Realm Lookout",
+            "Slug": "North-Realm-Lookout-TWoR",
+            "IsUnique": false,
+            "CardType": "Ally",
             "CardSubType": "None",
             "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Bard-son-of-Brand.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/North-Realm-Lookout.jpg",
                 "Stats": {
-                    "ThreatCost": "9",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "3"
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
                 },
                 "Traits": [
                     "Dale.",
-                    "Noble."
+                    "Scout."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "While playing an Item attachment, Bard son of Brand is considered to have the printed Leadership, Lore, and Tactics icons.",
-                    "Response: When a character leaves play, return each attachment attached to that character to its owners hand. (Limit once per phase.)"
+                    "North Realm Lookout gets +1 Willpower and does not exhaust to quest while it has an Item attachment."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "There were people on the look-out on the banks.\r\n-The Hobbit"
             },
             "Back": null,
             "CardSet": "The Wilds of Rhovanion",
             "EncounterInfo": null,
-            "Number": 2,
-            "Quantity": 1,
-            "Artist": "Antonio José Manzanedo",
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "JB Casacop",
             "HasErrata": false,
-            "OctgnGuid": "7d5f1011-3c36-4454-9efb-bf09553011d9",
-            "RingsDbCardId": "18002",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 6301,
+            "OctgnGuid": "d15bd4d7-ae0c-4808-af94-8c67b9f60ed0",
+            "RingsDbCardId": "18004",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 99823,
             "Categories": null
         },
         {
@@ -133,44 +209,77 @@
             "Categories": null
         },
         {
-            "Title": "North Realm Lookout",
-            "Slug": "North-Realm-Lookout-TWoR",
+            "Title": "Map of Rhovanion",
+            "Slug": "Map-of-Rhovanion-TWoR",
             "IsUnique": false,
-            "CardType": "Ally",
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/North-Realm-Lookout.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Map-of-Rhovanion.jpg",
                 "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Dale.",
-                    "Scout."
+                    "Item."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "North Realm Lookout gets +1 Willpower and does not exhaust to quest while it has an Item attachment."
+                    "Attach to a Dale or Scout character. Limit 1 per character.",
+                    "Response: After attached character commits to the quest, place 1 progress on the active location."
                 ],
                 "Shadow": null,
-                "FlavorText": "There were people on the look-out on the banks.\r\n-The Hobbit"
+                "FlavorText": "`You are come to the very edge of the Wild...`\r\n-Gandalf, The Hobbit"
             },
             "Back": null,
             "CardSet": "The Wilds of Rhovanion",
             "EncounterInfo": null,
-            "Number": 4,
+            "Number": 10,
             "Quantity": 3,
-            "Artist": "JB Casacop",
+            "Artist": "Yoann Boissonnet",
             "HasErrata": false,
-            "OctgnGuid": "d15bd4d7-ae0c-4808-af94-8c67b9f60ed0",
-            "RingsDbCardId": "18004",
+            "OctgnGuid": "4d9f6830-2a97-440d-b4dd-0dc2fee295e7",
+            "RingsDbCardId": "18010",
             "RingsDbPopularity": 5,
-            "RingsDbVotes": 99823,
+            "RingsDbVotes": 91310,
+            "Categories": null
+        },
+        {
+            "Title": "King of Dale",
+            "Slug": "King-of-Dale-TWoR",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/King-of-Dale.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Dale or Esgaroth hero.",
+                    "Planning Action: Exhaust King of Dale to reduce the cost of the next Dale ally you play this phase by 1 for each different player attachment on attached hero. That ally does not require a resource match."
+                ],
+                "Shadow": null,
+                "FlavorText": "Then Bard II, Brand`s son, became King of Dale..\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Wilds of Rhovanion",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Antonio José Manzanedo",
+            "HasErrata": false,
+            "OctgnGuid": "ae53ef78-e3e4-4e57-bb3e-4ec9b76187df",
+            "RingsDbCardId": "18008",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 85458,
             "Categories": null
         },
         {
@@ -216,6 +325,40 @@
             "Categories": null
         },
         {
+            "Title": "Traffic from Dale",
+            "Slug": "Traffic-from-Dale-TWoR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Traffic-from-Dale.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Planning Action: Choose a Dale hero you control. Add 1 resource to its pool for each character you control with a player attachment. You can only play 1 copy of Traffic from Dale each round."
+                ],
+                "Shadow": null,
+                "FlavorText": "The talk was all of the trade that came and went on the waterways and the growth of the traffic on the river...\r\nThe Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Wilds of Rhovanion",
+            "EncounterInfo": null,
+            "Number": 12,
+            "Quantity": 3,
+            "Artist": "Torbjörn Källström",
+            "HasErrata": false,
+            "OctgnGuid": "b8380846-4921-4029-ac04-ffde41027268",
+            "RingsDbCardId": "18012",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 69195,
+            "Categories": null
+        },
+        {
             "Title": "Long Lake Trader",
             "Slug": "Long-Lake-Trader-TWoR",
             "IsUnique": false,
@@ -256,230 +399,121 @@
             "Categories": null
         },
         {
-            "Title": "Hauberk of Mail",
-            "Slug": "Hauberk-of-Mail-TWoR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Hauberk-of-Mail.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item.",
-                    "Armor."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Dale or Warrior character. Limit 1 per character.",
-                    "Attached character gets +1 Defense (and +1 hit point if attached character has the sentinel keyword)."
-                ],
-                "Shadow": null,
-                "FlavorText": "Each one of his folk was clad in hauberk of steel mail that hung to his knees...\r\n-The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "The Wilds of Rhovanion",
-            "EncounterInfo": null,
-            "Number": 7,
-            "Quantity": 3,
-            "Artist": "Sara Biddle",
-            "HasErrata": false,
-            "OctgnGuid": "477ca0c8-7922-4c17-bba2-6d7c4718c49d",
-            "RingsDbCardId": "18007",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 227562,
-            "Categories": null
-        },
-        {
-            "Title": "King of Dale",
-            "Slug": "King-of-Dale-TWoR",
+            "Title": "Bard son of Brand",
+            "Slug": "Bard-son-of-Brand-TWoR",
             "IsUnique": true,
-            "CardType": "Attachment",
+            "CardType": "Hero",
             "CardSubType": "None",
             "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/King-of-Dale.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Bard-son-of-Brand.jpg",
                 "Stats": {
-                    "ResourceCost": "2"
+                    "ThreatCost": "9",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
                 },
                 "Traits": [
-                    "Title."
+                    "Dale.",
+                    "Noble."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a Dale or Esgaroth hero.",
-                    "Planning Action: Exhaust King of Dale to reduce the cost of the next Dale ally you play this phase by 1 for each different player attachment on attached hero. That ally does not require a resource match."
+                    "While playing an Item attachment, Bard son of Brand is considered to have the printed Leadership, Lore, and Tactics icons.",
+                    "Response: When a character leaves play, return each attachment attached to that character to its owners hand. (Limit once per phase.)"
                 ],
                 "Shadow": null,
-                "FlavorText": "Then Bard II, Brand`s son, became King of Dale..\r\n-The Return of the King"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "The Wilds of Rhovanion",
             "EncounterInfo": null,
-            "Number": 8,
-            "Quantity": 3,
+            "Number": 2,
+            "Quantity": 1,
             "Artist": "Antonio José Manzanedo",
             "HasErrata": false,
-            "OctgnGuid": "ae53ef78-e3e4-4e57-bb3e-4ec9b76187df",
-            "RingsDbCardId": "18008",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 85458,
+            "OctgnGuid": "7d5f1011-3c36-4454-9efb-bf09553011d9",
+            "RingsDbCardId": "18002",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 6301,
             "Categories": null
         },
         {
-            "Title": "Bow of Yew",
-            "Slug": "Bow-of-Yew-TWoR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Bow-of-Yew.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [
-                    "Item.",
-                    "Weapon."
-                ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a Dale or Warrior character. Restricted.",
-                    "Response: After attached character is declared as an attacker, exhaust Bow of Yew to deal 1 damage to the defending enemy."
-                ],
-                "Shadow": null,
-                "FlavorText": "`They would shoot at us with their great bows of yew...`\r\n-The Lord of the Eagles, The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "The Wilds of Rhovanion",
-            "EncounterInfo": null,
-            "Number": 9,
-            "Quantity": 3,
-            "Artist": "Sara Biddle",
-            "HasErrata": false,
-            "OctgnGuid": "e039d605-d630-450d-982b-d9cdaf91fe76",
-            "RingsDbCardId": "18009",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 140125,
-            "Categories": null
-        },
-        {
-            "Title": "Map of Rhovanion",
-            "Slug": "Map-of-Rhovanion-TWoR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Map-of-Rhovanion.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Dale or Scout character. Limit 1 per character.",
-                    "Response: After attached character commits to the quest, place 1 progress on the active location."
-                ],
-                "Shadow": null,
-                "FlavorText": "`You are come to the very edge of the Wild...`\r\n-Gandalf, The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "The Wilds of Rhovanion",
-            "EncounterInfo": null,
-            "Number": 10,
-            "Quantity": 3,
-            "Artist": "Yoann Boissonnet",
-            "HasErrata": false,
-            "OctgnGuid": "4d9f6830-2a97-440d-b4dd-0dc2fee295e7",
-            "RingsDbCardId": "18010",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 91310,
-            "Categories": null
-        },
-        {
-            "Title": "Necklace of Girion",
-            "Slug": "Necklace-of-Girion-TWoR",
+            "Title": "Brand son of Bain",
+            "Slug": "Brand-son-of-Bain-TWoR",
             "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Necklace-of-Girion.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Artifact.",
-                    "Item."
-                ],
-                "Keywords": [
-                    "Guarded (enemy or location)."
-                ],
-                "Text": [
-                    "Guarded (enemy or location).",
-                    "Attach to a hero.",
-                    "Attached hero gets +2 Willpower and collects an additional resource during the resource phase."
-                ],
-                "Shadow": null,
-                "FlavorText": "...the necklace of Girion, Lord of Dale, made of five hundred emeralds green as grass, which he gave for the arming of his eldest son...\r\n-The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "The Wilds of Rhovanion",
-            "EncounterInfo": null,
-            "Number": 11,
-            "Quantity": 3,
-            "Artist": "Drazenka Kimpel",
-            "HasErrata": false,
-            "OctgnGuid": "b1cc99c3-09a7-4418-85c4-e368f44adf1d",
-            "RingsDbCardId": "18011",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 162588,
-            "Categories": null
-        },
-        {
-            "Title": "Traffic from Dale",
-            "Slug": "Traffic-from-Dale-TWoR",
-            "IsUnique": false,
-            "CardType": "Event",
+            "CardType": "Hero",
             "CardSubType": "None",
             "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Traffic-from-Dale.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Brand-son-of-Bain.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ThreatCost": "10",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
                 },
-                "Traits": [],
+                "Traits": [
+                    "Dale.",
+                    "Noble."
+                ],
                 "Keywords": [],
                 "Text": [
-                    "Planning Action: Choose a Dale hero you control. Add 1 resource to its pool for each character you control with a player attachment. You can only play 1 copy of Traffic from Dale each round."
+                    "Each Dale character you control with a player attachment gets +1 Willpower.",
+                    "Response: After you play an attachment on a Dale character without an attachment, draw a card."
                 ],
                 "Shadow": null,
-                "FlavorText": "The talk was all of the trade that came and went on the waterways and the growth of the traffic on the river...\r\nThe Hobbit"
+                "FlavorText": "`He is a strong king, and his realm now reaches south and east of Esgaroth.`\r\n-Glóin, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Wilds of Rhovanion",
             "EncounterInfo": null,
-            "Number": 12,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Antonio José Manzanedo",
+            "HasErrata": false,
+            "OctgnGuid": "2b75792d-5873-4fc6-9272-d20dd517d36b",
+            "RingsDbCardId": "18001",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 5197,
+            "Categories": null
+        },
+        {
+            "Title": "Bartering",
+            "Slug": "Bartering-TWoR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Bartering.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Planning Action: Choose a ready player attachment on a character you control. Return that attachment to its owner`s hand to reduce the cost of the next attachment played this phase by X, where X is the chosen attachment`s cost."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Wilds of Rhovanion",
+            "EncounterInfo": null,
+            "Number": 15,
             "Quantity": 3,
             "Artist": "Torbjörn Källström",
             "HasErrata": false,
-            "OctgnGuid": "b8380846-4921-4029-ac04-ffde41027268",
-            "RingsDbCardId": "18012",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 69195,
+            "OctgnGuid": "4d5f04c6-f5bf-4f36-b594-92d053fe67f6",
+            "RingsDbCardId": "18015",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 37274,
             "Categories": null
         },
         {
@@ -548,40 +582,6 @@
             "RingsDbCardId": "18014",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 11531,
-            "Categories": null
-        },
-        {
-            "Title": "Bartering",
-            "Slug": "Bartering-TWoR",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Wilds-of-Rhovanion/Bartering.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Planning Action: Choose a ready player attachment on a character you control. Return that attachment to its owner`s hand to reduce the cost of the next attachment played this phase by X, where X is the chosen attachment`s cost."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Wilds of Rhovanion",
-            "EncounterInfo": null,
-            "Number": 15,
-            "Quantity": 3,
-            "Artist": "Torbjörn Källström",
-            "HasErrata": false,
-            "OctgnGuid": "4d5f04c6-f5bf-4f36-b594-92d053fe67f6",
-            "RingsDbCardId": "18015",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 37274,
             "Categories": null
         }
     ]

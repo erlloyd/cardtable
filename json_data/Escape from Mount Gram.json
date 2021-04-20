@@ -7,122 +7,6 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Rossiel",
-            "Slug": "Rossiel-EfMG",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Rossiel.jpg",
-                "Stats": {
-                    "ThreatCost": "8",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Silvan."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "If the active location shares a Trait with a location in the victory display, Rossiel gets +2 Willpower.",
-                    "If the attacking enemy shares a Trait with an enemy in the victory display, Rossiel gets +2 Defense."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Did you not say that you wished to see Elf-magic?` —Galadriel, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Escape from Mount Gram",
-            "EncounterInfo": null,
-            "Number": 28,
-            "Quantity": 1,
-            "Artist": "Alexandre Dainche",
-            "HasErrata": false,
-            "OctgnGuid": "18fea279-cd38-4a5e-b271-b94d4f64eda1",
-            "RingsDbCardId": "10028",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 5995,
-            "Categories": null
-        },
-        {
-            "Title": "Veteran of Osgiliath",
-            "Slug": "Veteran-of-Osgiliath-EfMG",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Veteran-of-Osgiliath.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "1",
-                    "Attack": "2",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Gondor.",
-                    "Warrior."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Veteran of Osgiliath gets +1 Willpower, +1 Attack, and +1 Defense while your threat is 40 or higher."
-                ],
-                "Shadow": null,
-                "FlavorText": "`So do we ever watch the shores nigh Osgiliath, which our enemies now partly hold, and issue from it to harry our lands.` —Faramir, The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "Escape from Mount Gram",
-            "EncounterInfo": null,
-            "Number": 29,
-            "Quantity": 3,
-            "Artist": "John Stanko",
-            "HasErrata": false,
-            "OctgnGuid": "0484e428-6a72-4841-b2d5-d8df7cfb51bf",
-            "RingsDbCardId": "10029",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 157821,
-            "Categories": null
-        },
-        {
-            "Title": "Descendants of Kings",
-            "Slug": "Descendants-of-Kings-EfMG",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Descendants-of-Kings.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Ready up to X Dúnedain characters you control. X is the number of enemies engaged with you."
-                ],
-                "Shadow": null,
-                "FlavorText": "`But when dark things come from the houseless hills, or creep from sunless woods, they fly from us.` —Aragorn, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Escape from Mount Gram",
-            "EncounterInfo": null,
-            "Number": 30,
-            "Quantity": 3,
-            "Artist": "Smirtouille",
-            "HasErrata": false,
-            "OctgnGuid": "25641d97-e196-40d5-8481-727602aa2da2",
-            "RingsDbCardId": "10030",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 79490,
-            "Categories": null
-        },
-        {
             "Title": "Derndingle Warrior",
             "Slug": "Derndingle-Warrior-EfMG",
             "IsUnique": false,
@@ -168,39 +52,75 @@
             "Categories": null
         },
         {
-            "Title": "Boomed and Trumpeted",
-            "Slug": "Boomed-and-Trumpeted-EfMG",
+            "Title": "Double Back",
+            "Slug": "Double-Back-EfMG",
             "IsUnique": false,
-            "CardType": "Event",
+            "CardType": "Player_Side_Quest",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Boomed-and-Trumpeted.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Double-Back.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ResourceCost": "0"
                 },
-                "Traits": [
-                    "Ent."
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
                 ],
-                "Keywords": [],
                 "Text": [
-                    "Response: After an Ent character takes any amount of damage, ready it. That character gets +3 Attack until the end of the phase."
+                    "Limit 1 per deck.",
+                    "Response: When this stage is defeated, reduce each player`s threat by 5."
                 ],
                 "Shadow": null,
-                "FlavorText": "`They roared and boomed and trumpeted, until stones began to crack and fall at the mere noise of them.` —Merry, The Two Towers"
+                "FlavorText": "He was taking a wandering course with many turns and doublings, to put off any pursuit. -The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Escape from Mount Gram",
             "EncounterInfo": null,
-            "Number": 32,
+            "Number": 34,
             "Quantity": 3,
-            "Artist": "Jordan Saia",
+            "Artist": "Jorge Barrero",
             "HasErrata": false,
-            "OctgnGuid": "f4b2af17-b589-49c1-a884-ecd4570d8545",
-            "RingsDbCardId": "10032",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 133733,
+            "OctgnGuid": "f4d94f3d-d3af-44d6-9896-764484302bb1",
+            "RingsDbCardId": "10034",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 265870,
+            "Categories": null
+        },
+        {
+            "Title": "Keen as Lances",
+            "Slug": "Keen-as-Lances-EfMG",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Keen-as-Lances.jpg",
+                "Stats": {
+                    "ResourceCost": "5"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Reduce the cost to play Keen as Lances by 1 for each card worth no victory points in the victory display.",
+                    "Action: Add Keen as Lances to the victory display. Then, choose one: add 2 resources to a hero`s resource pool, draw 3 cards, or reduce your threat by 4."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": null,
+            "Number": 37,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "ede00b4b-15e0-4469-aaf6-ea60c9376898",
+            "RingsDbCardId": "10037",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 182660,
             "Categories": null
         },
         {
@@ -245,40 +165,80 @@
             "Categories": null
         },
         {
-            "Title": "Double Back",
-            "Slug": "Double-Back-EfMG",
+            "Title": "Veteran of Osgiliath",
+            "Slug": "Veteran-of-Osgiliath-EfMG",
             "IsUnique": false,
-            "CardType": "Player_Side_Quest",
+            "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Double-Back.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Veteran-of-Osgiliath.jpg",
                 "Stats": {
-                    "ResourceCost": "0"
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
                 },
-                "Traits": [],
-                "Keywords": [
-                    "Victory 1."
+                "Traits": [
+                    "Gondor.",
+                    "Warrior."
                 ],
+                "Keywords": [],
                 "Text": [
-                    "Limit 1 per deck.",
-                    "Response: When this stage is defeated, reduce each player`s threat by 5."
+                    "Veteran of Osgiliath gets +1 Willpower, +1 Attack, and +1 Defense while your threat is 40 or higher."
                 ],
                 "Shadow": null,
-                "FlavorText": "He was taking a wandering course with many turns and doublings, to put off any pursuit. -The Fellowship of the Ring"
+                "FlavorText": "`So do we ever watch the shores nigh Osgiliath, which our enemies now partly hold, and issue from it to harry our lands.` —Faramir, The Two Towers"
             },
             "Back": null,
             "CardSet": "Escape from Mount Gram",
             "EncounterInfo": null,
-            "Number": 34,
+            "Number": 29,
             "Quantity": 3,
-            "Artist": "Jorge Barrero",
+            "Artist": "John Stanko",
             "HasErrata": false,
-            "OctgnGuid": "f4d94f3d-d3af-44d6-9896-764484302bb1",
-            "RingsDbCardId": "10034",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 265870,
+            "OctgnGuid": "0484e428-6a72-4841-b2d5-d8df7cfb51bf",
+            "RingsDbCardId": "10029",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 157821,
+            "Categories": null
+        },
+        {
+            "Title": "Boomed and Trumpeted",
+            "Slug": "Boomed-and-Trumpeted-EfMG",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Boomed-and-Trumpeted.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After an Ent character takes any amount of damage, ready it. That character gets +3 Attack until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`They roared and boomed and trumpeted, until stones began to crack and fall at the mere noise of them.` —Merry, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": null,
+            "Number": 32,
+            "Quantity": 3,
+            "Artist": "Jordan Saia",
+            "HasErrata": false,
+            "OctgnGuid": "f4b2af17-b589-49c1-a884-ecd4570d8545",
+            "RingsDbCardId": "10032",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 133733,
             "Categories": null
         },
         {
@@ -317,6 +277,81 @@
             "Categories": null
         },
         {
+            "Title": "Descendants of Kings",
+            "Slug": "Descendants-of-Kings-EfMG",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Descendants-of-Kings.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Ready up to X Dúnedain characters you control. X is the number of enemies engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`But when dark things come from the houseless hills, or creep from sunless woods, they fly from us.` —Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": null,
+            "Number": 30,
+            "Quantity": 3,
+            "Artist": "Smirtouille",
+            "HasErrata": false,
+            "OctgnGuid": "25641d97-e196-40d5-8481-727602aa2da2",
+            "RingsDbCardId": "10030",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 79490,
+            "Categories": null
+        },
+        {
+            "Title": "Rossiel",
+            "Slug": "Rossiel-EfMG",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Rossiel.jpg",
+                "Stats": {
+                    "ThreatCost": "8",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Silvan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If the active location shares a Trait with a location in the victory display, Rossiel gets +2 Willpower.",
+                    "If the attacking enemy shares a Trait with an enemy in the victory display, Rossiel gets +2 Defense."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Did you not say that you wished to see Elf-magic?` —Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Escape from Mount Gram",
+            "EncounterInfo": null,
+            "Number": 28,
+            "Quantity": 1,
+            "Artist": "Alexandre Dainche",
+            "HasErrata": false,
+            "OctgnGuid": "18fea279-cd38-4a5e-b271-b94d4f64eda1",
+            "RingsDbCardId": "10028",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 5995,
+            "Categories": null
+        },
+        {
             "Title": "Distant Stars",
             "Slug": "Distant-Stars-EfMG",
             "IsUnique": false,
@@ -348,41 +383,6 @@
             "RingsDbCardId": "10036",
             "RingsDbPopularity": 2,
             "RingsDbVotes": 30879,
-            "Categories": null
-        },
-        {
-            "Title": "Keen as Lances",
-            "Slug": "Keen-as-Lances-EfMG",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Mount-Gram/Keen-as-Lances.jpg",
-                "Stats": {
-                    "ResourceCost": "5"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Reduce the cost to play Keen as Lances by 1 for each card worth no victory points in the victory display.",
-                    "Action: Add Keen as Lances to the victory display. Then, choose one: add 2 resources to a hero`s resource pool, draw 3 cards, or reduce your threat by 4."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Escape from Mount Gram",
-            "EncounterInfo": null,
-            "Number": 37,
-            "Quantity": 3,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "ede00b4b-15e0-4469-aaf6-ea60c9376898",
-            "RingsDbCardId": "10037",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 182660,
             "Categories": null
         }
     ]

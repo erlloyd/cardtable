@@ -5,5 +5,841 @@
     "Cycle": null,
     "SetType": "A_Long_extended_Party",
     "Cards": null,
-    "cards": []
+    "cards": [
+        {
+            "Title": "Worthy of Remembrance",
+            "Slug": "Worthy-of-Remembrance-CoE",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Worthy-of-Remembrance.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Combat Action: Discard a Rohan ally you control to choose an enemy. Deal 2 damage to that enemy (4 damage instead if the ally was unique)."
+                ],
+                "Shadow": null,
+                "FlavorText": "Then the heart of Éowyn changed… suddenly her winter passed, and the sun shone on her.\r\n—The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 19,
+            "Quantity": 3,
+            "Artist": "Anato Finnstark",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300019",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 5100,
+            "Categories": null
+        },
+        {
+            "Title": "Need Brooks No Delay",
+            "Slug": "Need-Brooks-No-Delay-CoE",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Need-Brooks-No-Delay.jpg",
+                "Stats": {
+                    "ResourceCost": "4"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Reduce the cost to play Need Brooks No Delay by 1 for each Rohan hero you control.",
+                    "Planning Action: Search the top 10 cards of your deck for a card with printed cost 2 or less (3 or less if it is unique) and set it aside. Shuffle your deck. Then, play the set aside card for no cost as if it were in your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 20,
+            "Quantity": 3,
+            "Artist": "Ted Nasmith",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300020",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 5050,
+            "Categories": null
+        },
+        {
+            "Title": "Deeping Defender",
+            "Slug": "Deeping-Defender-CoE",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Deeping-Defender.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "0",
+                    "Attack": "0",
+                    "Defense": "3",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Rohan."
+                ],
+                "Keywords": [
+                    "Devoted."
+                ],
+                "Text": [
+                    "Devoted.",
+                    "Response: After Deeping Defender defends an attack, return the attacking enemy to the staging area and deal 1 damage to it."
+                ],
+                "Shadow": null,
+                "FlavorText": "The sunset gilded their spears and helmets, and glinted in their pale flowing hair. —The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Tom Romain",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300009",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4775,
+            "Categories": null
+        },
+        {
+            "Title": "Squire of the Mark",
+            "Slug": "Squire-of-the-Mark-CoE",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Squire-of-the-Mark.jpg",
+                "Stats": {
+                    "ResourceCost": "1",
+                    "Willpower": "0",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Servant."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After a Rohan ally you control is discarded from play, add Squire of the Mark to the victory display to put that ally into play exhausted."
+                ],
+                "Shadow": null,
+                "FlavorText": "“Little service can I offer to your lord, but what I can do, I would do.” —Pippin, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 13,
+            "Quantity": 3,
+            "Artist": "Ekaterina Burmak",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300013",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4400,
+            "Categories": null
+        },
+        {
+            "Title": "Théodwyn",
+            "Slug": "Theodwyn-CoE",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Théodwyn.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Théodwyn enters play, either draw 1 card or add 1 resource to a Noble hero’s resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "“She is fearless and high-hearted. All love her. Let her be as lord to Eorlingas while we are gone.”\r\n—Háma, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 15,
+            "Quantity": 3,
+            "Artist": "Mila Pesic",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300015",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 3835,
+            "Categories": null
+        },
+        {
+            "Title": "Morwen Steelsheen",
+            "Slug": "Morwen-Steelsheen-CoE",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Morwen-Steelsheen.jpg",
+                "Stats": {
+                    "ResourceCost": "4",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Gondor.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Put Morwen Steelsheen into play from your hand. Then, discard a Rohan or Gondor ally you control.",
+                    "Response: After a Rohan or Gondor ally leaves play, exhaust Morwen Steelsheen to either heal 2 damage from a character or reduce your threat by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Howard Lyon",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300010",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 3470,
+            "Categories": null
+        },
+        {
+            "Title": "Deeping Bowman",
+            "Slug": "Deeping-Bowman-CoE",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Deeping-Bowman.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Devoted.",
+                    "Ranged."
+                ],
+                "Text": [
+                    "Devoted. Ranged.",
+                    "Action: Discard Deeping Bowman to choose an enemy. Until the end of the phase, that enemy does not count its Defense while determining combat damage."
+                ],
+                "Shadow": null,
+                "FlavorText": "“We loosed every arrow that we had, and filled the Dike with Orcs.” —The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Epic Games",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300005",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 3075,
+            "Categories": null
+        },
+        {
+            "Title": "Light-footed Steed",
+            "Slug": "Light-footed-Steed-CoE",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Light-footed-Steed.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Mount."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Rohan hero. Restricted.",
+                    "Response: After a character you control leaves play, exhaust Light-footed Steed to ready attached hero. Then, if the character that left play was unique, attached hero gets +1 Attack until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "“…and don’t forget their horses! They can see the night-breeze, or so it’s said.” —Ugluk, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 16,
+            "Quantity": 3,
+            "Artist": "Daniel Eskridge",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300016",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2175,
+            "Categories": null
+        },
+        {
+            "Title": "Live Bait",
+            "Slug": "Live-Bait-CoE",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Live-Bait.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Trap."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control an unattached Trap attachment.",
+                    "Action: Choose a non-unique enemy in play. Until the end of the round, treat the chosen enemy’s printed text box as if it were blank (except for Traits). Then, attach an unattached Trap attachment you control to that enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 18,
+            "Quantity": 3,
+            "Artist": "Imad Awan",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300018",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1700,
+            "Categories": null
+        },
+        {
+            "Title": "Rammas Lookout",
+            "Slug": "Rammas-Lookout-CoE",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Rammas-Lookout.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Scout."
+                ],
+                "Keywords": [
+                    "Devoted."
+                ],
+                "Text": [
+                    "Devoted.",
+                    "While each hero you control has at least 1 resource in its resource pool, Rammas Lookout gets +1 Willpower and does not exhaust to quest."
+                ],
+                "Shadow": null,
+                "FlavorText": "“Whatever betide, you have come to the end of the Gondor that you have known. Let me pass!”\r\n—Gandalf, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 14,
+            "Quantity": 3,
+            "Artist": "Bethesda_Softworks",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300014",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1649,
+            "Categories": null
+        },
+        {
+            "Title": "Rammas Sentry",
+            "Slug": "Rammas-Sentry-CoE",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Rammas-Sentry.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "0",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Devoted."
+                ],
+                "Text": [
+                    "Devoted.",
+                    "While each hero you control has at least 1 resource in its resource pool, Rammas Sentry gains: “Response: Cancel 1 point of damage just dealt to a Gondor character. (Limit once per phase.)”"
+                ],
+                "Shadow": null,
+                "FlavorText": "“For if we fall, who shall stand?”\r\n—Beregond, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 17,
+            "Quantity": 3,
+            "Artist": "David Demaret",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300017",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1599,
+            "Categories": null
+        },
+        {
+            "Title": "It Should Be Spared",
+            "Slug": "It-Should-Be-Spared-CoE",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/It-Should-Be-Spared.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: After a Trap card you control attaches to an enemy, return it to your hand. Then, play it from your hand for no cost."
+                ],
+                "Shadow": null,
+                "FlavorText": "“But I do not slay man or beast needlessly, and not gladly even when it is needed.”\r\n—Faramir, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 3,
+            "Artist": "Ted Nasmith",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300011",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1275,
+            "Categories": null
+        },
+        {
+            "Title": "Spring the Trap",
+            "Slug": "Spring-the-Trap-CoE",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Spring-the-Trap.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After a Trap card you control attaches to an enemy, put a Ranger ally into play from your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "“The road may pass, but they shall not! Not while Faramir is Captain.” —Mablung, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 12,
+            "Quantity": 3,
+            "Artist": "Adrian Prado",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300012",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1275,
+            "Categories": null
+        },
+        {
+            "Title": "Open the Gates",
+            "Slug": "Open-the-Gates-CoE",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Open-the-Gates.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Search the top 5 cards of your deck for an ally that shares a Trait with each of your heroes and put it into play. Shuffle your deck. At the end of the phase, if that ally did not leave play, add it to your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "It seemed that word of their coming had gone before them: and at once they were admitted, silently, and without question. —The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Paul Lasaine",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300006",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 765,
+            "Categories": null
+        },
+        {
+            "Title": "The Last Alliance",
+            "Slug": "The-Last-Alliance-CoE",
+            "IsUnique": false,
+            "CardType": "Contract",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/The-Last-Alliance-SideA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Choose two traits, A and B. Each of your starting heroes and each ally in your deck must have either the printed A or B trait, but cannot have both. You must have at least 1 starting hero and 10 allies in your deck with each trait.",
+                    "Setup: Flip this card over."
+                ],
+                "Shadow": null,
+                "FlavorText": "“The strength of the Elves to resist him was greater long ago; and not all Men were estranged from them.”\r\n—Gandalf, The Fellowship of the Ring"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "While you control more A characters than B characters, reduce the cost of the first B ally you play this round by 1, and vice versa.",
+                    "Action: Exhaust The Last Alliance to choose a card in your hand or a card in play under your control. Replace each printed instance of “A” or “B” in that card’s ability text with “A or B” until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 85,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300085",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 539,
+            "Categories": null
+        },
+        {
+            "Title": "Feast of Plenty",
+            "Slug": "Feast-of-Plenty-CoE",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Feast-of-Plenty.jpg",
+                "Stats": {
+                    "ResourceCost": "4"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Feast of Plenty’s resource cost must be paid from a single hero’s resource pool.",
+                    "Action: Ready up to 3 heroes and add 1 resource to each of their resource pools. Only 1 copy of Feast of Plenty can be played by the players each round."
+                ],
+                "Shadow": null,
+                "FlavorText": "The feast was merry and the food all that his hunger could desire. —The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "David T. Wenzel",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300008",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 374,
+            "Categories": null
+        },
+        {
+            "Title": "Thengel",
+            "Slug": "Thengel-CoE",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Thengel.jpg",
+                "Stats": {
+                    "ThreatCost": "11",
+                    "Willpower": "3",
+                    "Attack": "1",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Noble.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After an ally is discarded from play, that ally’s owner searches the top 5 cards of their deck for an ally that shares a Trait with the discarded ally, puts it into play exhausted, and shuffles their deck. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "“My friend,” said Gandalf, “you had horses, and deeds of arms, and the free fields.” —The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300003",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 300,
+            "Categories": null
+        },
+        {
+            "Title": "Wealth of Adventure",
+            "Slug": "Wealth-of-Adventure-CoE",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Wealth-of-Adventure.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Search your deck for a card with the Skill trait and add it to your hand. Shuffle your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "“It’s a dangerous business, Frodo, going out of your door,” he used to say. “You step into the Road, and if you don’t keep your feet, there is no knowing where you might be swept off to.” —Frodo, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "My Silvergreen",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300007",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 250,
+            "Categories": null
+        },
+        {
+            "Title": "Ingold",
+            "Slug": "Ingold-CoE",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Ingold.jpg",
+                "Stats": {
+                    "ThreatCost": "10",
+                    "Willpower": "3",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After a Gondor or Warrior ally enters play under your control, draw 1 card. Then, either spend 1 resource from Ingold’s pool or raise your threat by 1. (Limit once per phase.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "“We wish for no strangers in the land at this time, unless they be mighty men of arms in whose faith and help we can trust.” —The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Agni Interactive",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 189,
+            "Categories": null
+        },
+        {
+            "Title": "Celador",
+            "Slug": "Celador-CoE",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Celador.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Ranger.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Ranged."
+                ],
+                "Text": [
+                    "Ranged.",
+                    "Reduce the total Threat in the staging area by 1 for each unattached Trap you control.",
+                    "Response: After a Trap card you control is attached to an enemy, either ready Celador or reduce your threat by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "“Wise man trusts not to chance-meeting on the road in this land.”\r\n—Faramir, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300002",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 150,
+            "Categories": null
+        },
+        {
+            "Title": "Herubrand",
+            "Slug": "Herubrand-CoE",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Herubrand.jpg",
+                "Stats": {
+                    "ThreatCost": "8",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Herubrand gets +1 Willpower for each hero you control with at least 1 restricted attachment.",
+                    "Response: After an enemy in the staging area is destroyed, draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": "“What burden do you bear, Men of Rohan?”\r\n—Imrahil, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 1,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300004",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 150,
+            "Categories": null
+        }
+    ]
 }

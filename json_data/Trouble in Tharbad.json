@@ -7,6 +7,84 @@
     "Cards": null,
     "cards": [
         {
+            "Title": "Lembas",
+            "Slug": "Lembas-TiT",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad/Lembas.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control a Noldor or Silvan hero. Attach to a hero.",
+                    "Action: Discard Lembas to ready attached hero and heal 3 damage from it."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...it is more strengthing than any food made by Men, and it is more pleasant than cram, by all accounts. -Lórien Elf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Trouble in Tharbad",
+            "EncounterInfo": null,
+            "Number": 64,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "OctgnGuid": "f86ea37a-d70d-4ff2-ac36-2a0ff1f7ffa9",
+            "RingsDbCardId": "08064",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 370841,
+            "Categories": null
+        },
+        {
+            "Title": "Galadhrim Minstrel",
+            "Slug": "Galadhrim-Minstrel-TiT",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad/Galadhrim-Minstrel.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Minstrel."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Galadhrim Minstrel enters play, search the top five cards of your deck for an event card and add it to your hand. Shuffle the other cards back into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "...the language was that of Elven-song and spoke of things little known on Middle-earth. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Trouble in Tharbad",
+            "EncounterInfo": null,
+            "Number": 63,
+            "Quantity": 3,
+            "Artist": "Arden Beckwith",
+            "HasErrata": false,
+            "OctgnGuid": "bd81ff6a-9c8f-415e-85fb-da84c21ef2a4",
+            "RingsDbCardId": "08063",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 250403,
+            "Categories": null
+        },
+        {
             "Title": "Haldir of Lórien",
             "Slug": "Haldir-of-Lorien-TiT",
             "IsUnique": true,
@@ -49,46 +127,6 @@
             "RingsDbCardId": "08056",
             "RingsDbPopularity": 8,
             "RingsDbVotes": 14092,
-            "Categories": null
-        },
-        {
-            "Title": "Herald of Anórien",
-            "Slug": "Herald-of-Anorien-TiT",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad/Herald-of-Anórien.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "0",
-                    "Defense": "1",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Gondor."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "You may give Herald of Anórien doomed 2 when you play it from your hand. If you do, it gains: `Response: After you play Herald of Anórien, choose a player. That player may put into play 1 ally from his hand with a printed cost 2 or lower.`"
-                ],
-                "Shadow": null,
-                "FlavorText": "`Send the heralds forth! Let them summon all who dwell nigh!` -Théoden, The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "Trouble in Tharbad",
-            "EncounterInfo": null,
-            "Number": 57,
-            "Quantity": 3,
-            "Artist": "Adam Lane",
-            "HasErrata": false,
-            "OctgnGuid": "8c6be9f6-f97c-40a9-88da-2f3ba7f640ed",
-            "RingsDbCardId": "08057",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 106479,
             "Categories": null
         },
         {
@@ -168,6 +206,90 @@
             "RingsDbCardId": "08059",
             "RingsDbPopularity": 6,
             "RingsDbVotes": 135740,
+            "Categories": null
+        },
+        {
+            "Title": "Defender of the Naith",
+            "Slug": "Defender-of-the-Naith-TiT",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad/Defender-of-the-Naith.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "0",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Sentinel.",
+                    "Response: After a Silvan ally you control leaves play, ready Defender of the Naith."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We have been keeping watch on the rivers, ever since we saw a great troop of Orcs going North toward Moria...` -Haldir, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Trouble in Tharbad",
+            "EncounterInfo": null,
+            "Number": 65,
+            "Quantity": 3,
+            "Artist": "Christine Griffin",
+            "HasErrata": false,
+            "OctgnGuid": "b91ba94d-e6b9-41f6-89ed-df1fb1f22335",
+            "RingsDbCardId": "08065",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 126381,
+            "Categories": null
+        },
+        {
+            "Title": "Herald of Anórien",
+            "Slug": "Herald-of-Anorien-TiT",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad/Herald-of-Anórien.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Gondor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "You may give Herald of Anórien doomed 2 when you play it from your hand. If you do, it gains: `Response: After you play Herald of Anórien, choose a player. That player may put into play 1 ally from his hand with a printed cost 2 or lower.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "`Send the heralds forth! Let them summon all who dwell nigh!` -Théoden, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Trouble in Tharbad",
+            "EncounterInfo": null,
+            "Number": 57,
+            "Quantity": 3,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "OctgnGuid": "8c6be9f6-f97c-40a9-88da-2f3ba7f640ed",
+            "RingsDbCardId": "08057",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 106479,
             "Categories": null
         },
         {
@@ -270,128 +392,6 @@
             "RingsDbCardId": "08062",
             "RingsDbPopularity": 2,
             "RingsDbVotes": 41728,
-            "Categories": null
-        },
-        {
-            "Title": "Galadhrim Minstrel",
-            "Slug": "Galadhrim-Minstrel-TiT",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad/Galadhrim-Minstrel.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "0",
-                    "Defense": "0",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Silvan.",
-                    "Minstrel."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Galadhrim Minstrel enters play, search the top five cards of your deck for an event card and add it to your hand. Shuffle the other cards back into your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "...the language was that of Elven-song and spoke of things little known on Middle-earth. -The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Trouble in Tharbad",
-            "EncounterInfo": null,
-            "Number": 63,
-            "Quantity": 3,
-            "Artist": "Arden Beckwith",
-            "HasErrata": false,
-            "OctgnGuid": "bd81ff6a-9c8f-415e-85fb-da84c21ef2a4",
-            "RingsDbCardId": "08063",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 250403,
-            "Categories": null
-        },
-        {
-            "Title": "Lembas",
-            "Slug": "Lembas-TiT",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad/Lembas.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Play only if you control a Noldor or Silvan hero. Attach to a hero.",
-                    "Action: Discard Lembas to ready attached hero and heal 3 damage from it."
-                ],
-                "Shadow": null,
-                "FlavorText": "`...it is more strengthing than any food made by Men, and it is more pleasant than cram, by all accounts. -Lórien Elf, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Trouble in Tharbad",
-            "EncounterInfo": null,
-            "Number": 64,
-            "Quantity": 3,
-            "Artist": "Sara Biddle",
-            "HasErrata": false,
-            "OctgnGuid": "f86ea37a-d70d-4ff2-ac36-2a0ff1f7ffa9",
-            "RingsDbCardId": "08064",
-            "RingsDbPopularity": 9,
-            "RingsDbVotes": 370841,
-            "Categories": null
-        },
-        {
-            "Title": "Defender of the Naith",
-            "Slug": "Defender-of-the-Naith-TiT",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Trouble-in-Tharbad/Defender-of-the-Naith.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "0",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Silvan.",
-                    "Warrior."
-                ],
-                "Keywords": [
-                    "Sentinel."
-                ],
-                "Text": [
-                    "Sentinel.",
-                    "Response: After a Silvan ally you control leaves play, ready Defender of the Naith."
-                ],
-                "Shadow": null,
-                "FlavorText": "`We have been keeping watch on the rivers, ever since we saw a great troop of Orcs going North toward Moria...` -Haldir, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Trouble in Tharbad",
-            "EncounterInfo": null,
-            "Number": 65,
-            "Quantity": 3,
-            "Artist": "Christine Griffin",
-            "HasErrata": false,
-            "OctgnGuid": "b91ba94d-e6b9-41f6-89ed-df1fb1f22335",
-            "RingsDbCardId": "08065",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 126381,
             "Categories": null
         }
     ]

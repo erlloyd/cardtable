@@ -7,44 +7,85 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Frodo Baggins",
-            "Slug": "Frodo-Baggins-TBR",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Dagger of Westernesse",
+            "Slug": "Dagger-of-Westernesse-TBR",
+            "IsUnique": false,
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Fellowship",
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Frodo-Baggins.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Dagger-of-Westernesse.jpg",
                 "Stats": {
-                    "ThreatCost": "0",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "2"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Hobbit.",
-                    "Ring-bearer."
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
                 ],
-                "Keywords": [],
+                "Keywords": [
+                    "Restricted."
+                ],
                 "Text": [
-                    "Response: Spend 1 Fellowship resource and exhaust The One Ring to cancel the effect of an encounter card just revealed from the encounter deck. Shuffle that card back into the encounter deck and reveal another encounter card."
+                    "Attach to a hero. Restricted.",
+                    "Attached hero gets +1 Attack (+2 Attack instead if attacking an enemy with an engagement cost higher than your threat)."
                 ],
                 "Shadow": null,
-                "FlavorText": "`I will take the Ring,` he said, `though I do not know the way.` -The Fellowship of the Ring"
+                "FlavorText": "...these blades were forged many long years ago by Men of Westernesse: they were foes of the Dark Lord...\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Black Riders",
             "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Jake Murray",
+            "Number": 14,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
             "HasErrata": false,
-            "OctgnGuid": "3217a119-6b86-47dd-b451-c5e45be3f874",
-            "RingsDbCardId": "141001",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 341,
+            "OctgnGuid": "418e6de7-af19-4ea7-bfbe-2a02838c6de4",
+            "RingsDbCardId": "141014",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 650655,
+            "Categories": null
+        },
+        {
+            "Title": "Pippin",
+            "Slug": "Pippin-TBR",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Pippin.jpg",
+                "Stats": {
+                    "ThreatCost": "6",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Each enemy in play gets +1 engagement cost for each Hobbit hero you control.",
+                    "Response: After you engage an enemy with an engagement cost higher than your threat, draw a card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We Hobbits ought to stick together, and we will`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 1,
+            "Artist": "Alexandre Dainche",
+            "HasErrata": false,
+            "OctgnGuid": "ce96b767-c569-48b8-a998-d8009b0143c7",
+            "RingsDbCardId": "141004",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 30766,
             "Categories": null
         },
         {
@@ -129,84 +170,41 @@
             "Categories": null
         },
         {
-            "Title": "Pippin",
-            "Slug": "Pippin-TBR",
+            "Title": "Elf-stone",
+            "Slug": "Elf-stone-TBR",
             "IsUnique": true,
-            "CardType": "Hero",
+            "CardType": "Attachment",
             "CardSubType": "None",
             "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Pippin.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Elf-stone.jpg",
                 "Stats": {
-                    "ThreatCost": "6",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Hobbit."
+                    "Artifact.",
+                    "Item."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Each enemy in play gets +1 engagement cost for each Hobbit hero you control.",
-                    "Response: After you engage an enemy with an engagement cost higher than your threat, draw a card."
+                    "Attach to the active location. Attached location gets +1 quest point.",
+                    "Response: After attached location leaves play as an explored location, the first player puts 1 ally into play from his hand."
                 ],
                 "Shadow": null,
-                "FlavorText": "`We Hobbits ought to stick together, and we will`\r\n-The Fellowship of the Ring"
+                "FlavorText": "`It is a beryl, an elf-stone. Whether it was set there, or let fall by chance, I cannot say, but it brings hope to me`\r\n-Aragorn, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Black Riders",
             "EncounterInfo": null,
-            "Number": 4,
-            "Quantity": 1,
-            "Artist": "Alexandre Dainche",
+            "Number": 16,
+            "Quantity": 3,
+            "Artist": "Sandara Tang",
             "HasErrata": false,
-            "OctgnGuid": "ce96b767-c569-48b8-a998-d8009b0143c7",
-            "RingsDbCardId": "141004",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 30766,
-            "Categories": null
-        },
-        {
-            "Title": "Fatty Bolger",
-            "Slug": "Fatty-Bolger-TBR",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Fatty-Bolger.jpg",
-                "Stats": {
-                    "ThreatCost": "7",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Hobbit."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Exhaust Fatty Bolger to choose an enemy in the staging area and raise your threat by that enemy`s Threat. Until the end of the phase, that enemy does not contribute its Threat. (Limit once per round.)"
-                ],
-                "Shadow": null,
-                "FlavorText": "`I only hope that you do not need rescuing before the day is out` -The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Black Riders",
-            "EncounterInfo": null,
-            "Number": 5,
-            "Quantity": 1,
-            "Artist": "Sebastian Giacobino",
-            "HasErrata": false,
-            "OctgnGuid": "5d75d4dd-7300-43d7-87f2-963271c9c904",
-            "RingsDbCardId": "141005",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 3413,
+            "OctgnGuid": "9bb32f2c-29fb-43ba-b7ba-2227b28f7b58",
+            "RingsDbCardId": "141016",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 373229,
             "Categories": null
         },
         {
@@ -250,6 +248,183 @@
             "RingsDbCardId": "141006",
             "RingsDbPopularity": 9,
             "RingsDbVotes": 372693,
+            "Categories": null
+        },
+        {
+            "Title": "Hobbit Cloak",
+            "Slug": "Hobbit-Cloak-TBR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Hobbit-Cloak.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Hobbit hero. Limit 1 per hero.",
+                    "Attached hero gets +2 Defense while defending against an attack by an enemy with an engagement cost higher than your threat."
+                ],
+                "Shadow": null,
+                "FlavorText": "In their dark cloaks they were invisible as if they all had magic rings. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": null,
+            "Number": 13,
+            "Quantity": 3,
+            "Artist": "Alexandre Dainche",
+            "HasErrata": false,
+            "OctgnGuid": "8e49ea86-375a-472e-b497-16a1164ae27f",
+            "RingsDbCardId": "141013",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 320674,
+            "Categories": null
+        },
+        {
+            "Title": "Halfling Determination",
+            "Slug": "Halfling-Determination-TBR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Halfling-Determination.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose a Hobbit character. That character gets +2 Willpower, +2 Attack and +2 Defense until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I have something to do before the end, and it lies ahead, not in the Shire. I must see it through, sir, if you understand me.` -Sam Gamgee, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "8e7e5c8d-0ea4-46df-ae38-d8d2fee7ca8b",
+            "RingsDbCardId": "141009",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 240560,
+            "Categories": null
+        },
+        {
+            "Title": "Hobbit Pipe",
+            "Slug": "Hobbit-Pipe-TBR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Hobbit-Pipe.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Pipe."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Hobbit character. Limit 1 per character.",
+                    "Response: After your threat is reduced by an event card effect, exhaust Hobbit Pipe to draw a card."
+                ],
+                "Shadow": null,
+                "FlavorText": "But even the Dúnedain of Gondor allow us this credit: Hobbits first put it into pipes. Not even the Wizards first thought of that before we did. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": null,
+            "Number": 15,
+            "Quantity": 3,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "OctgnGuid": "9c455b1a-a2d4-44f7-a9d3-9a3134c21a2a",
+            "RingsDbCardId": "141015",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 222726,
+            "Categories": null
+        },
+        {
+            "Title": "Smoke Rings",
+            "Slug": "Smoke-Rings-TBR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Smoke-Rings.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Reduce your threat by 1 for each Pipe you control. Each hero with a Pipe attachment gets +1 Willpower until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "...he smoked and blew smoke-rings with the same vigour and delight...-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Lane Brown",
+            "HasErrata": false,
+            "OctgnGuid": "9418c634-54c6-47de-9aae-798038a4a35b",
+            "RingsDbCardId": "141010",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 138314,
+            "Categories": null
+        },
+        {
+            "Title": "Frodo's Intuition",
+            "Slug": "Frodo's-Intuition-TBR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Frodo's-Intuition.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Each hero you control gets +1 Willpower until the end of the round. Draw 1 card for each Hobbit hero you control."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I wonder if that is Gandalf coming after us` said Frodo, but even as he said it, he had a feeling that it was not so... -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": null,
+            "Number": 12,
+            "Quantity": 3,
+            "Artist": "Winona Nelson",
+            "HasErrata": false,
+            "OctgnGuid": "96350b97-5c68-4033-bb2f-4305696a7ae7",
+            "RingsDbCardId": "141012",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 133440,
             "Categories": null
         },
         {
@@ -333,74 +508,6 @@
             "Categories": null
         },
         {
-            "Title": "Halfling Determination",
-            "Slug": "Halfling-Determination-TBR",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Halfling-Determination.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Choose a Hobbit character. That character gets +2 Willpower, +2 Attack and +2 Defense until the end of the phase."
-                ],
-                "Shadow": null,
-                "FlavorText": "`I have something to do before the end, and it lies ahead, not in the Shire. I must see it through, sir, if you understand me.` -Sam Gamgee, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Black Riders",
-            "EncounterInfo": null,
-            "Number": 9,
-            "Quantity": 3,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "8e7e5c8d-0ea4-46df-ae38-d8d2fee7ca8b",
-            "RingsDbCardId": "141009",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 240560,
-            "Categories": null
-        },
-        {
-            "Title": "Smoke Rings",
-            "Slug": "Smoke-Rings-TBR",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Smoke-Rings.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Reduce your threat by 1 for each Pipe you control. Each hero with a Pipe attachment gets +1 Willpower until the end of the phase."
-                ],
-                "Shadow": null,
-                "FlavorText": "...he smoked and blew smoke-rings with the same vigour and delight...-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Black Riders",
-            "EncounterInfo": null,
-            "Number": 10,
-            "Quantity": 3,
-            "Artist": "Lane Brown",
-            "HasErrata": false,
-            "OctgnGuid": "9418c634-54c6-47de-9aae-798038a4a35b",
-            "RingsDbCardId": "141010",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 138314,
-            "Categories": null
-        },
-        {
             "Title": "Take No Notice",
             "Slug": "Take-No-Notice-TBR",
             "IsUnique": false,
@@ -436,203 +543,55 @@
             "Categories": null
         },
         {
-            "Title": "Frodo's Intuition",
-            "Slug": "Frodo's-Intuition-TBR",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Fellowship",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Frodo's-Intuition.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Each hero you control gets +1 Willpower until the end of the round. Draw 1 card for each Hobbit hero you control."
-                ],
-                "Shadow": null,
-                "FlavorText": "`I wonder if that is Gandalf coming after us` said Frodo, but even as he said it, he had a feeling that it was not so... -The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Black Riders",
-            "EncounterInfo": null,
-            "Number": 12,
-            "Quantity": 3,
-            "Artist": "Winona Nelson",
-            "HasErrata": false,
-            "OctgnGuid": "96350b97-5c68-4033-bb2f-4305696a7ae7",
-            "RingsDbCardId": "141012",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 133440,
-            "Categories": null
-        },
-        {
-            "Title": "Hobbit Cloak",
-            "Slug": "Hobbit-Cloak-TBR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Hobbit-Cloak.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Hobbit hero. Limit 1 per hero.",
-                    "Attached hero gets +2 Defense while defending against an attack by an enemy with an engagement cost higher than your threat."
-                ],
-                "Shadow": null,
-                "FlavorText": "In their dark cloaks they were invisible as if they all had magic rings. -The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Black Riders",
-            "EncounterInfo": null,
-            "Number": 13,
-            "Quantity": 3,
-            "Artist": "Alexandre Dainche",
-            "HasErrata": false,
-            "OctgnGuid": "8e49ea86-375a-472e-b497-16a1164ae27f",
-            "RingsDbCardId": "141013",
-            "RingsDbPopularity": 9,
-            "RingsDbVotes": 320674,
-            "Categories": null
-        },
-        {
-            "Title": "Dagger of Westernesse",
-            "Slug": "Dagger-of-Westernesse-TBR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Dagger-of-Westernesse.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Artifact.",
-                    "Item.",
-                    "Weapon."
-                ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a hero. Restricted.",
-                    "Attached hero gets +1 Attack (+2 Attack instead if attacking an enemy with an engagement cost higher than your threat)."
-                ],
-                "Shadow": null,
-                "FlavorText": "...these blades were forged many long years ago by Men of Westernesse: they were foes of the Dark Lord...\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Black Riders",
-            "EncounterInfo": null,
-            "Number": 14,
-            "Quantity": 3,
-            "Artist": "Sara Biddle",
-            "HasErrata": false,
-            "OctgnGuid": "418e6de7-af19-4ea7-bfbe-2a02838c6de4",
-            "RingsDbCardId": "141014",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 650655,
-            "Categories": null
-        },
-        {
-            "Title": "Hobbit Pipe",
-            "Slug": "Hobbit-Pipe-TBR",
-            "IsUnique": false,
-            "CardType": "Attachment",
+            "Title": "Fatty Bolger",
+            "Slug": "Fatty-Bolger-TBR",
+            "IsUnique": true,
+            "CardType": "Hero",
             "CardSubType": "None",
             "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Hobbit-Pipe.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Fatty-Bolger.jpg",
                 "Stats": {
-                    "ResourceCost": "0"
+                    "ThreatCost": "7",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "3"
                 },
                 "Traits": [
-                    "Item.",
-                    "Pipe."
+                    "Hobbit."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a Hobbit character. Limit 1 per character.",
-                    "Response: After your threat is reduced by an event card effect, exhaust Hobbit Pipe to draw a card."
+                    "Action: Exhaust Fatty Bolger to choose an enemy in the staging area and raise your threat by that enemy`s Threat. Until the end of the phase, that enemy does not contribute its Threat. (Limit once per round.)"
                 ],
                 "Shadow": null,
-                "FlavorText": "But even the Dúnedain of Gondor allow us this credit: Hobbits first put it into pipes. Not even the Wizards first thought of that before we did. -The Fellowship of the Ring"
+                "FlavorText": "`I only hope that you do not need rescuing before the day is out` -The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Black Riders",
             "EncounterInfo": null,
-            "Number": 15,
-            "Quantity": 3,
-            "Artist": "Mike Nash",
+            "Number": 5,
+            "Quantity": 1,
+            "Artist": "Sebastian Giacobino",
             "HasErrata": false,
-            "OctgnGuid": "9c455b1a-a2d4-44f7-a9d3-9a3134c21a2a",
-            "RingsDbCardId": "141015",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 222726,
+            "OctgnGuid": "5d75d4dd-7300-43d7-87f2-963271c9c904",
+            "RingsDbCardId": "141005",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 3413,
             "Categories": null
         },
         {
-            "Title": "Elf-stone",
-            "Slug": "Elf-stone-TBR",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Elf-stone.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Artifact.",
-                    "Item."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to the active location. Attached location gets +1 quest point.",
-                    "Response: After attached location leaves play as an explored location, the first player puts 1 ally into play from his hand."
-                ],
-                "Shadow": null,
-                "FlavorText": "`It is a beryl, an elf-stone. Whether it was set there, or let fall by chance, I cannot say, but it brings hope to me`\r\n-Aragorn, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Black Riders",
-            "EncounterInfo": null,
-            "Number": 16,
-            "Quantity": 3,
-            "Artist": "Sandara Tang",
-            "HasErrata": false,
-            "OctgnGuid": "9bb32f2c-29fb-43ba-b7ba-2227b28f7b58",
-            "RingsDbCardId": "141016",
-            "RingsDbPopularity": 9,
-            "RingsDbVotes": 373229,
-            "Categories": null
-        },
-        {
-            "Title": "Mr. Underhill",
-            "Slug": "Mr-Underhill-TBR",
+            "Title": "Skilled Healer",
+            "Slug": "Skilled-Healer-TBR",
             "IsUnique": true,
             "CardType": "Attachment",
             "CardSubType": "Boon",
             "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Mr-Underhill.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Skilled-Healer.jpg",
                 "Stats": {
                     "ResourceCost": "0"
                 },
@@ -640,28 +599,68 @@
                     "Title."
                 ],
                 "Keywords": [
-                    "Permanent.",
-                    "Victory 1."
+                    "Permanent."
                 ],
                 "Text": [
                     "Permanent.",
-                    "Setup: Attach to the Ring-bearer.",
-                    "Action: Add Mr. Underhill to the victory display to choose an enemy engaged with you. Until the end of the round, that enemy cannot attack you."
+                    "Setup: Attach to a hero.",
+                    "Attached hero gets +2 hit points and gains the Healer trait."
                 ],
                 "Shadow": null,
-                "FlavorText": "`I will give you a travelling name now. When you go, go as Mr. Underhill.`\r\n-Gandalf, The Fellowship of the Ring"
+                "FlavorText": "`Few now have the skill of healing to match such evil weapons. But I will do what I can.`\r\n-Aragorn, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Black Riders",
             "EncounterInfo": null,
-            "Number": 17,
+            "Number": 19,
             "Quantity": 1,
-            "Artist": "Sebastian Giacobino",
+            "Artist": "Cristi Balanescu",
             "HasErrata": false,
-            "OctgnGuid": "d0ed393c-162a-4715-bed4-e338c24e9e36",
-            "RingsDbCardId": "141017",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "OctgnGuid": "1d1ab8a3-ad76-4992-ae5c-6a89fd0ed463",
+            "RingsDbCardId": "141019",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 7880,
+            "Categories": null
+        },
+        {
+            "Title": "Frodo Baggins",
+            "Slug": "Frodo-Baggins-TBR",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Frodo-Baggins.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit.",
+                    "Ring-bearer."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: Spend 1 Fellowship resource and exhaust The One Ring to cancel the effect of an encounter card just revealed from the encounter deck. Shuffle that card back into the encounter deck and reveal another encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I will take the Ring,` he said, `though I do not know the way.` -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "OctgnGuid": "3217a119-6b86-47dd-b451-c5e45be3f874",
+            "RingsDbCardId": "141001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 341,
             "Categories": null
         },
         {
@@ -705,15 +704,15 @@
             "Categories": null
         },
         {
-            "Title": "Skilled Healer",
-            "Slug": "Skilled-Healer-TBR",
+            "Title": "Mr. Underhill",
+            "Slug": "Mr-Underhill-TBR",
             "IsUnique": true,
             "CardType": "Attachment",
             "CardSubType": "Boon",
             "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Skilled-Healer.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Mr-Underhill.jpg",
                 "Stats": {
                     "ResourceCost": "0"
                 },
@@ -721,27 +720,28 @@
                     "Title."
                 ],
                 "Keywords": [
-                    "Permanent."
+                    "Permanent.",
+                    "Victory 1."
                 ],
                 "Text": [
                     "Permanent.",
-                    "Setup: Attach to a hero.",
-                    "Attached hero gets +2 hit points and gains the Healer trait."
+                    "Setup: Attach to the Ring-bearer.",
+                    "Action: Add Mr. Underhill to the victory display to choose an enemy engaged with you. Until the end of the round, that enemy cannot attack you."
                 ],
                 "Shadow": null,
-                "FlavorText": "`Few now have the skill of healing to match such evil weapons. But I will do what I can.`\r\n-Aragorn, The Fellowship of the Ring"
+                "FlavorText": "`I will give you a travelling name now. When you go, go as Mr. Underhill.`\r\n-Gandalf, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Black Riders",
             "EncounterInfo": null,
-            "Number": 19,
+            "Number": 17,
             "Quantity": 1,
-            "Artist": "Cristi Balanescu",
+            "Artist": "Sebastian Giacobino",
             "HasErrata": false,
-            "OctgnGuid": "1d1ab8a3-ad76-4992-ae5c-6a89fd0ed463",
-            "RingsDbCardId": "141019",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 7880,
+            "OctgnGuid": "d0ed393c-162a-4715-bed4-e338c24e9e36",
+            "RingsDbCardId": "141017",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
             "Categories": null
         },
         {

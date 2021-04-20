@@ -7,91 +7,6 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Idraen",
-            "Slug": "Idraen-TTT",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials/Idraen.jpg",
-                "Stats": {
-                    "ThreatCost": "11",
-                    "Willpower": "2",
-                    "Attack": "3",
-                    "Defense": "2",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Dúnedain.",
-                    "Ranger.",
-                    "Scout."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After a location is explored, ready Idraen."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Where now are the Dúnedain, Elessar, Elessar? Why do thy kinsfolk wander afar?` -Galadriel, The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Three Trials",
-            "EncounterInfo": null,
-            "Number": 25,
-            "Quantity": 1,
-            "Artist": "Jake Murray",
-            "HasErrata": false,
-            "OctgnGuid": "df9683da-d86f-46c9-9ef5-66001753dad5",
-            "RingsDbCardId": "08025",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 7335,
-            "Categories": null
-        },
-        {
-            "Title": "Rivendell Scout",
-            "Slug": "Rivendell-Scout-TTT",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials/Rivendell-Scout.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "0",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Noldor.",
-                    "Scout."
-                ],
-                "Keywords": [
-                    "Secrecy 2."
-                ],
-                "Text": [
-                    "Secrecy 2."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Elrond is sending Elves, and they will get in touch with the Rangers, and maybe with Thranduil`s folk in Mirkwood.` -Gandalf, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Three Trials",
-            "EncounterInfo": null,
-            "Number": 26,
-            "Quantity": 3,
-            "Artist": "Ilich Henriquez",
-            "HasErrata": false,
-            "OctgnGuid": "b1fb86fd-728b-4e1b-950a-73daa2a82753",
-            "RingsDbCardId": "08026",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 94115,
-            "Categories": null
-        },
-        {
             "Title": "Feigned Voices",
             "Slug": "Feigned-Voices-TTT",
             "IsUnique": false,
@@ -210,6 +125,165 @@
             "Categories": null
         },
         {
+            "Title": "Rivendell Scout",
+            "Slug": "Rivendell-Scout-TTT",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials/Rivendell-Scout.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Scout."
+                ],
+                "Keywords": [
+                    "Secrecy 2."
+                ],
+                "Text": [
+                    "Secrecy 2."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Elrond is sending Elves, and they will get in touch with the Rangers, and maybe with Thranduil`s folk in Mirkwood.` -Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Three Trials",
+            "EncounterInfo": null,
+            "Number": 26,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "OctgnGuid": "b1fb86fd-728b-4e1b-950a-73daa2a82753",
+            "RingsDbCardId": "08026",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 94115,
+            "Categories": null
+        },
+        {
+            "Title": "Warden of Arnor",
+            "Slug": "Warden-of-Arnor-TTT",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials/Warden-of-Arnor.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Scout hero.",
+                    "While attached character is committed to the quest, place 1 progress on the first location revealed by the encounter deck each round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I have had a hard life and a long: and the leagues that lie between here and Gondor are a small part in the count of my journeys.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Three Trials",
+            "EncounterInfo": null,
+            "Number": 31,
+            "Quantity": 3,
+            "Artist": "Melanie Maier",
+            "HasErrata": false,
+            "OctgnGuid": "f9b39223-3b12-4682-8db5-9ef4116b4919",
+            "RingsDbCardId": "08031",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 68141,
+            "Categories": null
+        },
+        {
+            "Title": "Idraen",
+            "Slug": "Idraen-TTT",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials/Idraen.jpg",
+                "Stats": {
+                    "ThreatCost": "11",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After a location is explored, ready Idraen."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Where now are the Dúnedain, Elessar, Elessar? Why do thy kinsfolk wander afar?` -Galadriel, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Three Trials",
+            "EncounterInfo": null,
+            "Number": 25,
+            "Quantity": 1,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "OctgnGuid": "df9683da-d86f-46c9-9ef5-66001753dad5",
+            "RingsDbCardId": "08025",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 7335,
+            "Categories": null
+        },
+        {
+            "Title": "Leaf Brooch",
+            "Slug": "Leaf-Brooch-TTT",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials/Leaf-Brooch.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero. Limit 1 per hero.",
+                    "The first event card you play each round that matches attached hero`s printed sphere gains secrecy 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "Each cloak was fastened about the neck with a brooch like a green leaf veined with silver. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Three Trials",
+            "EncounterInfo": null,
+            "Number": 34,
+            "Quantity": 3,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "OctgnGuid": "1c692a1a-4ccf-4185-b5bd-d2b8d300de42",
+            "RingsDbCardId": "08034",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 56258,
+            "Categories": null
+        },
+        {
             "Title": "Greyflood Wanderer",
             "Slug": "Greyflood-Wanderer-TTT",
             "IsUnique": false,
@@ -251,77 +325,6 @@
             "Categories": null
         },
         {
-            "Title": "Warden of Arnor",
-            "Slug": "Warden-of-Arnor-TTT",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials/Warden-of-Arnor.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Title."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Scout hero.",
-                    "While attached character is committed to the quest, place 1 progress on the first location revealed by the encounter deck each round."
-                ],
-                "Shadow": null,
-                "FlavorText": "`I have had a hard life and a long: and the leagues that lie between here and Gondor are a small part in the count of my journeys.` -Aragorn, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Three Trials",
-            "EncounterInfo": null,
-            "Number": 31,
-            "Quantity": 3,
-            "Artist": "Melanie Maier",
-            "HasErrata": false,
-            "OctgnGuid": "f9b39223-3b12-4682-8db5-9ef4116b4919",
-            "RingsDbCardId": "08031",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 68141,
-            "Categories": null
-        },
-        {
-            "Title": "Message from Elrond",
-            "Slug": "Message-from-Elrond-TTT",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials/Message-from-Elrond.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Choose a player. That player may choose 1 card from his hand and add it to another player`s hand. At the end of the round, if the chosen card is in that player`s hand or in play, shuffle it into its owner`s deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "`But we have heard rumours of your coming, for the messengers of Elrond passed by Lórien on the way home up the Dimrill Stair. -Haldir, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Three Trials",
-            "EncounterInfo": null,
-            "Number": 32,
-            "Quantity": 3,
-            "Artist": "Arden Beckwith",
-            "HasErrata": false,
-            "OctgnGuid": "cc4b0912-ba4a-44b6-b7c5-2c0f0b325ebf",
-            "RingsDbCardId": "08032",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 20884,
-            "Categories": null
-        },
-        {
             "Title": "Noiseless Movement",
             "Slug": "Noiseless-Movement-TTT",
             "IsUnique": false,
@@ -356,40 +359,37 @@
             "Categories": null
         },
         {
-            "Title": "Leaf Brooch",
-            "Slug": "Leaf-Brooch-TTT",
+            "Title": "Message from Elrond",
+            "Slug": "Message-from-Elrond-TTT",
             "IsUnique": false,
-            "CardType": "Attachment",
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials/Leaf-Brooch.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Three-Trials/Message-from-Elrond.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ResourceCost": "0"
                 },
-                "Traits": [
-                    "Item."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a hero. Limit 1 per hero.",
-                    "The first event card you play each round that matches attached hero`s printed sphere gains secrecy 1."
+                    "Action: Choose a player. That player may choose 1 card from his hand and add it to another player`s hand. At the end of the round, if the chosen card is in that player`s hand or in play, shuffle it into its owner`s deck."
                 ],
                 "Shadow": null,
-                "FlavorText": "Each cloak was fastened about the neck with a brooch like a green leaf veined with silver. -The Fellowship of the Ring"
+                "FlavorText": "`But we have heard rumours of your coming, for the messengers of Elrond passed by Lórien on the way home up the Dimrill Stair. -Haldir, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Three Trials",
             "EncounterInfo": null,
-            "Number": 34,
+            "Number": 32,
             "Quantity": 3,
-            "Artist": "Jason Ward",
+            "Artist": "Arden Beckwith",
             "HasErrata": false,
-            "OctgnGuid": "1c692a1a-4ccf-4185-b5bd-d2b8d300de42",
-            "RingsDbCardId": "08034",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 56258,
+            "OctgnGuid": "cc4b0912-ba4a-44b6-b7c5-2c0f0b325ebf",
+            "RingsDbCardId": "08032",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 20884,
             "Categories": null
         }
     ]

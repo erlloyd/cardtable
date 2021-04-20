@@ -7,6 +7,119 @@
     "Cards": null,
     "cards": [
         {
+            "Title": "Elrond's Counsel",
+            "Slug": "Elrond's-Counsel-TWitW",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Watcher-in-the-Water/Elrond's-Counsel.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: If you control a unique Noldor character, give another character +1 Willpower until the end of the phase and lower your threat by 3."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Watcher in the Water",
+            "EncounterInfo": null,
+            "Number": 59,
+            "Quantity": 3,
+            "Artist": "Anthony Palumbo",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801210c9005",
+            "RingsDbCardId": "04059",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 1291450,
+            "Categories": null
+        },
+        {
+            "Title": "Arwen Undómiel",
+            "Slug": "Arwen-Undomiel-TWitW",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Watcher-in-the-Water/Arwen-Undómiel.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Arwen Undómiel exhausts, choose a character. That character gains sentinel and gets +1 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...in whom it was said that the likeness of Lúthien had come on earth again...she was the Evenstar of her people.`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Watcher in the Water",
+            "EncounterInfo": null,
+            "Number": 58,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801210c9002",
+            "RingsDbCardId": "04058",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 961411,
+            "Categories": null
+        },
+        {
+            "Title": "Resourceful",
+            "Slug": "Resourceful-TWitW",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Watcher-in-the-Water/Resourceful.jpg",
+                "Stats": {
+                    "ResourceCost": "4"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Secrecy 3."
+                ],
+                "Text": [
+                    "Secrecy 3.",
+                    "Attach to a hero you control.",
+                    "Attached hero collects 1 additional resource during the resource phase each round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Watcher in the Water",
+            "EncounterInfo": null,
+            "Number": 62,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801210c9012",
+            "RingsDbCardId": "04062",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 679920,
+            "Categories": null
+        },
+        {
             "Title": "Aragorn",
             "Slug": "Aragorn-TWitW",
             "IsUnique": true,
@@ -51,40 +164,6 @@
             "Categories": null
         },
         {
-            "Title": "Grave Cairn",
-            "Slug": "Grave-Cairn-TWitW",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Watcher-in-the-Water/Grave-Cairn.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Response: After a character leaves play, add its Attack to another character`s Attack until the end of the round."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Watcher in the Water",
-            "EncounterInfo": null,
-            "Number": 54,
-            "Quantity": 3,
-            "Artist": "Trudi Castle",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801210c9007",
-            "RingsDbCardId": "04054",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 25973,
-            "Categories": null
-        },
-        {
             "Title": "Sword that was Broken",
             "Slug": "Sword-that-was-Broken-TWitW",
             "IsUnique": true,
@@ -119,6 +198,80 @@
             "RingsDbCardId": "04055",
             "RingsDbPopularity": 9,
             "RingsDbVotes": 387758,
+            "Categories": null
+        },
+        {
+            "Title": "Legacy of Durin",
+            "Slug": "Legacy-of-Durin-TWitW",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Watcher-in-the-Water/Legacy-of-Durin.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Dwarf hero.",
+                    "Response: After you play a Dwarf character from your hand, exhaust Legacy of Durin to draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Watcher in the Water",
+            "EncounterInfo": null,
+            "Number": 61,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": true,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801210c9009",
+            "RingsDbCardId": "04061",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 223084,
+            "Categories": null
+        },
+        {
+            "Title": "Rivendell Bow",
+            "Slug": "Rivendell-Bow-TWitW",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Watcher-in-the-Water/Rivendell-Bow.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Noldor or Silvan character, or to Aragorn. Limit 1 per character.Attached character gains ranged.If attached character has a printed ranged keyword, it gets +1 Attack during a ranged attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Watcher in the Water",
+            "EncounterInfo": null,
+            "Number": 57,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801210c9013",
+            "RingsDbCardId": "04057",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 214379,
             "Categories": null
         },
         {
@@ -166,100 +319,22 @@
             "Categories": null
         },
         {
-            "Title": "Rivendell Bow",
-            "Slug": "Rivendell-Bow-TWitW",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Watcher-in-the-Water/Rivendell-Bow.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item.",
-                    "Weapon."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Noldor or Silvan character, or to Aragorn. Limit 1 per character.Attached character gains ranged.If attached character has a printed ranged keyword, it gets +1 Attack during a ranged attack."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Watcher in the Water",
-            "EncounterInfo": null,
-            "Number": 57,
-            "Quantity": 3,
-            "Artist": "Sara Biddle",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801210c9013",
-            "RingsDbCardId": "04057",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 214379,
-            "Categories": null
-        },
-        {
-            "Title": "Arwen Undómiel",
-            "Slug": "Arwen-Undomiel-TWitW",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Watcher-in-the-Water/Arwen-Undómiel.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "2",
-                    "Attack": "0",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Noldor.",
-                    "Noble."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Arwen Undómiel exhausts, choose a character. That character gains sentinel and gets +1 Defense until the end of the round."
-                ],
-                "Shadow": null,
-                "FlavorText": "`...in whom it was said that the likeness of Lúthien had come on earth again...she was the Evenstar of her people.`\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Watcher in the Water",
-            "EncounterInfo": null,
-            "Number": 58,
-            "Quantity": 3,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801210c9002",
-            "RingsDbCardId": "04058",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 961411,
-            "Categories": null
-        },
-        {
-            "Title": "Elrond's Counsel",
-            "Slug": "Elrond's-Counsel-TWitW",
+            "Title": "Grave Cairn",
+            "Slug": "Grave-Cairn-TWitW",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Watcher-in-the-Water/Elrond's-Counsel.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Watcher-in-the-Water/Grave-Cairn.jpg",
                 "Stats": {
-                    "ResourceCost": "0"
+                    "ResourceCost": "1"
                 },
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Action: If you control a unique Noldor character, give another character +1 Willpower until the end of the phase and lower your threat by 3."
+                    "Response: After a character leaves play, add its Attack to another character`s Attack until the end of the round."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -267,14 +342,14 @@
             "Back": null,
             "CardSet": "The Watcher in the Water",
             "EncounterInfo": null,
-            "Number": 59,
+            "Number": 54,
             "Quantity": 3,
-            "Artist": "Anthony Palumbo",
+            "Artist": "Trudi Castle",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801210c9005",
-            "RingsDbCardId": "04059",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 1291450,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801210c9007",
+            "RingsDbCardId": "04054",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 25973,
             "Categories": null
         },
         {
@@ -309,81 +384,6 @@
             "RingsDbCardId": "04060",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 9797,
-            "Categories": null
-        },
-        {
-            "Title": "Legacy of Durin",
-            "Slug": "Legacy-of-Durin-TWitW",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Watcher-in-the-Water/Legacy-of-Durin.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Condition."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Dwarf hero.",
-                    "Response: After you play a Dwarf character from your hand, exhaust Legacy of Durin to draw 1 card."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Watcher in the Water",
-            "EncounterInfo": null,
-            "Number": 61,
-            "Quantity": 3,
-            "Artist": "Ilich Henriquez",
-            "HasErrata": true,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801210c9009",
-            "RingsDbCardId": "04061",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 223084,
-            "Categories": null
-        },
-        {
-            "Title": "Resourceful",
-            "Slug": "Resourceful-TWitW",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Watcher-in-the-Water/Resourceful.jpg",
-                "Stats": {
-                    "ResourceCost": "4"
-                },
-                "Traits": [],
-                "Keywords": [
-                    "Secrecy 3."
-                ],
-                "Text": [
-                    "Secrecy 3.",
-                    "Attach to a hero you control.",
-                    "Attached hero collects 1 additional resource during the resource phase each round."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Watcher in the Water",
-            "EncounterInfo": null,
-            "Number": 62,
-            "Quantity": 3,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801210c9012",
-            "RingsDbCardId": "04062",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 679920,
             "Categories": null
         }
     ]

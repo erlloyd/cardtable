@@ -7,21 +7,67 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Gwaihir",
-            "Slug": "Gwaihir-TLoSo",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Messenger of the King",
+            "Slug": "Messenger-of-the-King-TLoSo",
+            "IsUnique": false,
+            "CardType": "Contract",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Sorrow/Gwaihir.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Sorrow/Messenger-of-the-King-SideA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You cannot choose more than 2 heroes during setup.",
+                    "Setup: Choose a non-neutral unique ally from your deck and put it into play. Add the sum of that ally`s printed Willpower, Attack, Defense, and hit points to your starting threat. Then, flip this card over and attach it to that ally."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I am a messenger of the King,` he said. `You are speaking to the King`s friend, and one of the most renowned in all the lands of the West.`\r\n-Pippin, The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Attached ally loses the ally card type and gains the hero card type.",
+                    "Attached character cannot be readied more than once per phase.",
+                    "Messenger of the King is immune to card effects while attached character is in play. If attached character leaves play, remove Messenger of the King from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Land of Sorrow",
+            "EncounterInfo": null,
+            "Number": 134,
+            "Quantity": 1,
+            "Artist": "Justin Gerard",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22134",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 5159,
+            "Categories": null
+        },
+        {
+            "Title": "Wilyador",
+            "Slug": "Wilyador-TLoSo",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Sorrow/Wilyador.jpg",
                 "Stats": {
-                    "ThreatCost": "13",
-                    "Willpower": "2",
-                    "Attack": "4",
-                    "Defense": "3",
-                    "HitPoints": "4"
+                    "ResourceCost": "1",
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
                 },
                 "Traits": [
                     "Creature.",
@@ -33,8 +79,8 @@
                 ],
                 "Text": [
                     "Ranged. Sentinel.",
-                    "Cannot have restricted attachments. Gwaihir does not ready during the refresh phase.",
-                    "Response: After an Eagle ally enters or leaves play, ready Gwaihir. (Limit once per phase.)"
+                    "Cannot have restricted attachments.",
+                    "Forced: At the end of the round, discard Wilyador unless the players as a group spend 1 resource."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -42,58 +88,53 @@
             "Back": null,
             "CardSet": "The Land of Sorrow",
             "EncounterInfo": null,
-            "Number": 108,
-            "Quantity": 1,
-            "Artist": "Carlos Palma Cruchaga",
+            "Number": 117,
+            "Quantity": 3,
+            "Artist": "Sam White",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "22108",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 1297,
+            "RingsDbCardId": "22117",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 49363,
             "Categories": null
         },
         {
-            "Title": "Hobbit Archer",
-            "Slug": "Hobbit-Archer-TLoSo",
+            "Title": "Spare Pipe",
+            "Slug": "Spare-Pipe-TLoSo",
             "IsUnique": false,
-            "CardType": "Ally",
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Sorrow/Hobbit-Archer.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Sorrow/Spare-Pipe.jpg",
                 "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "0",
-                    "HitPoints": "2"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Hobbit.",
-                    "Archer."
+                    "Item.",
+                    "Pipe."
                 ],
-                "Keywords": [
-                    "Ranged."
-                ],
+                "Keywords": [],
                 "Text": [
-                    "Ranged.",
-                    "Hobbit Archer gets +1 Attack while attacking an enemy with a higher engagement cost than your threat."
+                    "Attach to a character.",
+                    "Attached character gets +1 hit point.",
+                    "Response: After you play Spare Pipe, search the top 5 cards of your deck for an event and add it to your hand. Shuffle your deck."
                 ],
                 "Shadow": null,
-                "FlavorText": "`If you lay a finger on this farmer, or on anyone else, you will be shot at once.`\r\n-Merry, The Return of the King"
+                "FlavorText": "`I have carried it a long way, though I don`t know why.`\r\n-Pippin, The Two Towers"
             },
             "Back": null,
             "CardSet": "The Land of Sorrow",
             "EncounterInfo": null,
-            "Number": 109,
+            "Number": 115,
             "Quantity": 3,
-            "Artist": "Aleksander Karcz",
+            "Artist": "Unknown",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "22109",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 16009,
+            "RingsDbCardId": "22115",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 39188,
             "Categories": null
         },
         {
@@ -135,46 +176,6 @@
             "RingsDbCardId": "22110",
             "RingsDbPopularity": 2,
             "RingsDbVotes": 26066,
-            "Categories": null
-        },
-        {
-            "Title": "Dale Messenger",
-            "Slug": "Dale-Messenger-TLoSo",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Sorrow/Dale-Messenger.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Dale."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Dale Messenger enters play, choose a player. That player heals 1 damage from each character he controls with a player card attachment."
-                ],
-                "Shadow": null,
-                "FlavorText": "`We discover that messengers have come also to King Brand in Dale...`\r\n-Glóin, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Land of Sorrow",
-            "EncounterInfo": null,
-            "Number": 111,
-            "Quantity": 3,
-            "Artist": "Sara Biddle",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "22111",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 8462,
             "Categories": null
         },
         {
@@ -257,79 +258,6 @@
             "Categories": null
         },
         {
-            "Title": "Bilbo's Plan",
-            "Slug": "Bilbo's-Plan-TLoSo",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Sorrow/Bilbo's-Plan.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Response: After you attack and destroy an enemy, shuffle the encounter discard pile into the encounter deck and discard cards from the top until an enemy is discarded. Add that enemy to the staging area to discard a non-unique location with Threat equal to or less that that enemy`s Threat."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Land of Sorrow",
-            "EncounterInfo": null,
-            "Number": 114,
-            "Quantity": 3,
-            "Artist": "Guillaume Ducos",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "22114",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 2689,
-            "Categories": null
-        },
-        {
-            "Title": "Spare Pipe",
-            "Slug": "Spare-Pipe-TLoSo",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Sorrow/Spare-Pipe.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item.",
-                    "Pipe."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a character.",
-                    "Attached character gets +1 hit point.",
-                    "Response: After you play Spare Pipe, search the top 5 cards of your deck for an event and add it to your hand. Shuffle your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "`I have carried it a long way, though I don`t know why.`\r\n-Pippin, The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Land of Sorrow",
-            "EncounterInfo": null,
-            "Number": 115,
-            "Quantity": 3,
-            "Artist": "Unknown",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "22115",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 39188,
-            "Categories": null
-        },
-        {
             "Title": "Smoke and Think",
             "Slug": "Smoke-and-Think-TLoSo",
             "IsUnique": false,
@@ -364,21 +292,139 @@
             "Categories": null
         },
         {
-            "Title": "Wilyador",
-            "Slug": "Wilyador-TLoSo",
-            "IsUnique": true,
+            "Title": "Hobbit Archer",
+            "Slug": "Hobbit-Archer-TLoSo",
+            "IsUnique": false,
             "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Sorrow/Wilyador.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Sorrow/Hobbit-Archer.jpg",
                 "Stats": {
-                    "ResourceCost": "1",
+                    "ResourceCost": "2",
                     "Willpower": "1",
-                    "Attack": "3",
-                    "Defense": "2",
-                    "HitPoints": "3"
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit.",
+                    "Archer."
+                ],
+                "Keywords": [
+                    "Ranged."
+                ],
+                "Text": [
+                    "Ranged.",
+                    "Hobbit Archer gets +1 Attack while attacking an enemy with a higher engagement cost than your threat."
+                ],
+                "Shadow": null,
+                "FlavorText": "`If you lay a finger on this farmer, or on anyone else, you will be shot at once.`\r\n-Merry, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Land of Sorrow",
+            "EncounterInfo": null,
+            "Number": 109,
+            "Quantity": 3,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22109",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 16009,
+            "Categories": null
+        },
+        {
+            "Title": "Dale Messenger",
+            "Slug": "Dale-Messenger-TLoSo",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Sorrow/Dale-Messenger.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dale."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Dale Messenger enters play, choose a player. That player heals 1 damage from each character he controls with a player card attachment."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We discover that messengers have come also to King Brand in Dale...`\r\n-Glóin, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Land of Sorrow",
+            "EncounterInfo": null,
+            "Number": 111,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22111",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 8462,
+            "Categories": null
+        },
+        {
+            "Title": "Bilbo's Plan",
+            "Slug": "Bilbo's-Plan-TLoSo",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Sorrow/Bilbo's-Plan.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: After you attack and destroy an enemy, shuffle the encounter discard pile into the encounter deck and discard cards from the top until an enemy is discarded. Add that enemy to the staging area to discard a non-unique location with Threat equal to or less that that enemy`s Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Land of Sorrow",
+            "EncounterInfo": null,
+            "Number": 114,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22114",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2689,
+            "Categories": null
+        },
+        {
+            "Title": "Gwaihir",
+            "Slug": "Gwaihir-TLoSo",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Sorrow/Gwaihir.jpg",
+                "Stats": {
+                    "ThreatCost": "13",
+                    "Willpower": "2",
+                    "Attack": "4",
+                    "Defense": "3",
+                    "HitPoints": "4"
                 },
                 "Traits": [
                     "Creature.",
@@ -390,8 +436,8 @@
                 ],
                 "Text": [
                     "Ranged. Sentinel.",
-                    "Cannot have restricted attachments.",
-                    "Forced: At the end of the round, discard Wilyador unless the players as a group spend 1 resource."
+                    "Cannot have restricted attachments. Gwaihir does not ready during the refresh phase.",
+                    "Response: After an Eagle ally enters or leaves play, ready Gwaihir. (Limit once per phase.)"
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -399,60 +445,14 @@
             "Back": null,
             "CardSet": "The Land of Sorrow",
             "EncounterInfo": null,
-            "Number": 117,
-            "Quantity": 3,
-            "Artist": "Sam White",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "22117",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 49363,
-            "Categories": null
-        },
-        {
-            "Title": "Messenger of the King",
-            "Slug": "Messenger-of-the-King-TLoSo",
-            "IsUnique": false,
-            "CardType": "Contract",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Sorrow/Messenger-of-the-King-SideA.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "You cannot choose more than 2 heroes during setup.",
-                    "Setup: Choose a non-neutral unique ally from your deck and put it into play. Add the sum of that ally`s printed Willpower, Attack, Defense, and hit points to your starting threat. Then, flip this card over and attach it to that ally."
-                ],
-                "Shadow": null,
-                "FlavorText": "`I am a messenger of the King,` he said. `You are speaking to the King`s friend, and one of the most renowned in all the lands of the West.`\r\n-Pippin, The Return of the King"
-            },
-            "Back": {
-                "Subtitle": null,
-                "ImagePath": null,
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Attached ally loses the ally card type and gains the hero card type.",
-                    "Attached character cannot be readied more than once per phase.",
-                    "Messenger of the King is immune to card effects while attached character is in play. If attached character leaves play, remove Messenger of the King from the game."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "CardSet": "The Land of Sorrow",
-            "EncounterInfo": null,
-            "Number": 134,
+            "Number": 108,
             "Quantity": 1,
-            "Artist": "Justin Gerard",
+            "Artist": "Carlos Palma Cruchaga",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "22134",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 5159,
+            "RingsDbCardId": "22108",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1297,
             "Categories": null
         }
     ]

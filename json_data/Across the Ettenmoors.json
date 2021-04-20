@@ -7,184 +7,30 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Dori",
-            "Slug": "Dori-AtE",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors/Dori.jpg",
-                "Stats": {
-                    "ThreatCost": "10",
-                    "Willpower": "1",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "5"
-                },
-                "Traits": [
-                    "Dwarf."
-                ],
-                "Keywords": [
-                    "Sentinel."
-                ],
-                "Text": [
-                    "Sentinel.",
-                    "Response: After another hero is declared as a defender, exhaust Dori to add his Defense to the defending hero`s Defense for this attack."
-                ],
-                "Shadow": null,
-                "FlavorText": "Dori was really a decent fellow in spite of his grumbling.\r\n-The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Across the Ettenmoors",
-            "EncounterInfo": null,
-            "Number": 54,
-            "Quantity": 1,
-            "Artist": "Sebastian Giacobino",
-            "HasErrata": false,
-            "OctgnGuid": "a25c47a4-3a9c-4883-a7a7-c40df596650c",
-            "RingsDbCardId": "10054",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 3204,
-            "Categories": null
-        },
-        {
-            "Title": "Ranger Provisions",
-            "Slug": "Ranger-Provisions-AtE",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors/Ranger-Provisions.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a location. Limit 1 per location.",
-                    "Response: After attached location is explored, the first player adds 1 resource to each of his heroes` resource pools."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Rangers have been here lately. It is they who left the firewood behind.`\r\n-Aragorn, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Across the Ettenmoors",
-            "EncounterInfo": null,
-            "Number": 55,
-            "Quantity": 3,
-            "Artist": "Drazenka Kimpel",
-            "HasErrata": false,
-            "OctgnGuid": "265b6ab0-446c-4090-a7e1-341ce987c903",
-            "RingsDbCardId": "10055",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 95065,
-            "Categories": null
-        },
-        {
-            "Title": "Dúnedain Message",
-            "Slug": "Dunedain-Message-AtE",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors/Dúnedain-Message.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Signal."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Search your deck for a side quest and add it to your hand. Shuffle your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "`I called for the help of the Dúnedain, and their watch was doubled...`\r\n-Gandalf, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Across the Ettenmoors",
-            "EncounterInfo": null,
-            "Number": 56,
-            "Quantity": 3,
-            "Artist": "Sara Biddle",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "10056",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 25910,
-            "Categories": null
-        },
-        {
-            "Title": "Longbeard Sentry",
-            "Slug": "Longbeard-Sentry-AtE",
+            "Title": "Wellinghall Preserver",
+            "Slug": "Wellinghall-Preserver-AtE",
             "IsUnique": false,
             "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors/Longbeard-Sentry.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors/Wellinghall-Preserver.jpg",
                 "Stats": {
                     "ResourceCost": "3",
-                    "Willpower": "0",
-                    "Attack": "1",
+                    "Willpower": "3",
+                    "Attack": "2",
                     "Defense": "2",
                     "HitPoints": "3"
                 },
                 "Traits": [
-                    "Dwarf.",
-                    "Warrior."
+                    "Ent."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Action: Discard 2 cards from the top of your deck to give Longbeard Sentry sentinel and +1 Defense until the end of the phase. (Limit once per phase.)"
-                ],
-                "Shadow": null,
-                "FlavorText": "`...many of them have had experience in the dreadful dwarf and goblin wars, of which you have no doubt heard.`\r\n-Bilbo Baggins, The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Across the Ettenmoors",
-            "EncounterInfo": null,
-            "Number": 57,
-            "Quantity": 3,
-            "Artist": "Michele Frigo",
-            "HasErrata": false,
-            "OctgnGuid": "54b219c4-a359-435f-9988-336cad0384b2",
-            "RingsDbCardId": "10057",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 87652,
-            "Categories": null
-        },
-        {
-            "Title": "Delay the Enemy",
-            "Slug": "Delay-the-Enemy-AtE",
-            "IsUnique": false,
-            "CardType": "Player_Side_Quest",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors/Delay-the-Enemy.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [
-                    "Battle.",
-                    "Victory 1."
-                ],
-                "Text": [
-                    "Limit 1 per deck.",
-                    "Battle.",
-                    "Response: When this stage is defeated, each player may choose and discard a non-unique enemy engaged with him."
+                    "Cannot have restricted attachments.",
+                    "Enters play exhausted.",
+                    "Response: After Wellinghall Preserver readies, heal 1 damage from an Ent character."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -192,14 +38,14 @@
             "Back": null,
             "CardSet": "Across the Ettenmoors",
             "EncounterInfo": null,
-            "Number": 58,
+            "Number": 61,
             "Quantity": 3,
-            "Artist": "Mark Behm",
+            "Artist": "Tomasz Jedruszek",
             "HasErrata": false,
-            "OctgnGuid": "b11ff1d9-c9e9-4cc1-b329-8226b73dd429",
-            "RingsDbCardId": "10058",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 17070,
+            "OctgnGuid": "68a9d6cc-13a2-417a-ad87-f213ddc2bf48",
+            "RingsDbCardId": "10061",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 403839,
             "Categories": null
         },
         {
@@ -277,48 +123,6 @@
             "Categories": null
         },
         {
-            "Title": "Wellinghall Preserver",
-            "Slug": "Wellinghall-Preserver-AtE",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors/Wellinghall-Preserver.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "3",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Ent."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Cannot have restricted attachments.",
-                    "Enters play exhausted.",
-                    "Response: After Wellinghall Preserver readies, heal 1 damage from an Ent character."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Across the Ettenmoors",
-            "EncounterInfo": null,
-            "Number": 61,
-            "Quantity": 3,
-            "Artist": "Tomasz Jedruszek",
-            "HasErrata": false,
-            "OctgnGuid": "68a9d6cc-13a2-417a-ad87-f213ddc2bf48",
-            "RingsDbCardId": "10061",
-            "RingsDbPopularity": 9,
-            "RingsDbVotes": 403839,
-            "Categories": null
-        },
-        {
             "Title": "None Return",
             "Slug": "None-Return-AtE",
             "IsUnique": false,
@@ -351,6 +155,120 @@
             "RingsDbCardId": "10062",
             "RingsDbPopularity": 5,
             "RingsDbVotes": 116228,
+            "Categories": null
+        },
+        {
+            "Title": "Ranger Provisions",
+            "Slug": "Ranger-Provisions-AtE",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors/Ranger-Provisions.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a location. Limit 1 per location.",
+                    "Response: After attached location is explored, the first player adds 1 resource to each of his heroes` resource pools."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Rangers have been here lately. It is they who left the firewood behind.`\r\n-Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Across the Ettenmoors",
+            "EncounterInfo": null,
+            "Number": 55,
+            "Quantity": 3,
+            "Artist": "Drazenka Kimpel",
+            "HasErrata": false,
+            "OctgnGuid": "265b6ab0-446c-4090-a7e1-341ce987c903",
+            "RingsDbCardId": "10055",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 95065,
+            "Categories": null
+        },
+        {
+            "Title": "Longbeard Sentry",
+            "Slug": "Longbeard-Sentry-AtE",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors/Longbeard-Sentry.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "0",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dwarf.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Discard 2 cards from the top of your deck to give Longbeard Sentry sentinel and +1 Defense until the end of the phase. (Limit once per phase.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`...many of them have had experience in the dreadful dwarf and goblin wars, of which you have no doubt heard.`\r\n-Bilbo Baggins, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Across the Ettenmoors",
+            "EncounterInfo": null,
+            "Number": 57,
+            "Quantity": 3,
+            "Artist": "Michele Frigo",
+            "HasErrata": false,
+            "OctgnGuid": "54b219c4-a359-435f-9988-336cad0384b2",
+            "RingsDbCardId": "10057",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 87652,
+            "Categories": null
+        },
+        {
+            "Title": "Dúnedain Message",
+            "Slug": "Dunedain-Message-AtE",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors/Dúnedain-Message.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Signal."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Search your deck for a side quest and add it to your hand. Shuffle your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I called for the help of the Dúnedain, and their watch was doubled...`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Across the Ettenmoors",
+            "EncounterInfo": null,
+            "Number": 56,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "10056",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 25910,
             "Categories": null
         },
         {
@@ -388,6 +306,88 @@
             "RingsDbCardId": "10063",
             "RingsDbPopularity": 2,
             "RingsDbVotes": 23913,
+            "Categories": null
+        },
+        {
+            "Title": "Dori",
+            "Slug": "Dori-AtE",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors/Dori.jpg",
+                "Stats": {
+                    "ThreatCost": "10",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Sentinel.",
+                    "Response: After another hero is declared as a defender, exhaust Dori to add his Defense to the defending hero`s Defense for this attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "Dori was really a decent fellow in spite of his grumbling.\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Across the Ettenmoors",
+            "EncounterInfo": null,
+            "Number": 54,
+            "Quantity": 1,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "OctgnGuid": "a25c47a4-3a9c-4883-a7a7-c40df596650c",
+            "RingsDbCardId": "10054",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 3204,
+            "Categories": null
+        },
+        {
+            "Title": "Delay the Enemy",
+            "Slug": "Delay-the-Enemy-AtE",
+            "IsUnique": false,
+            "CardType": "Player_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Across-the-Ettenmoors/Delay-the-Enemy.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Battle.",
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Limit 1 per deck.",
+                    "Battle.",
+                    "Response: When this stage is defeated, each player may choose and discard a non-unique enemy engaged with him."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Across the Ettenmoors",
+            "EncounterInfo": null,
+            "Number": 58,
+            "Quantity": 3,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "OctgnGuid": "b11ff1d9-c9e9-4cc1-b329-8226b73dd429",
+            "RingsDbCardId": "10058",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 17070,
             "Categories": null
         }
     ]

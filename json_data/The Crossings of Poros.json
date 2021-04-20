@@ -7,44 +7,42 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Quickbeam",
-            "Slug": "Quickbeam-CoP",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Magic Ring",
+            "Slug": "Magic-Ring-CoP",
+            "IsUnique": false,
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Quickbeam.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Magic-Ring.jpg",
                 "Stats": {
-                    "ThreatCost": "12",
-                    "Willpower": "2",
-                    "Attack": "4",
-                    "Defense": "1",
-                    "HitPoints": "5"
+                    "ResourceCost": "2"
                 },
                 "Traits": [
-                    "Ent."
+                    "Artifact.",
+                    "Item.",
+                    "Ring."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Cannot have restricted attachments.",
-                    "Action: Deal 2 damage to Quickbeam to ready him. (Limit once per phase.)"
+                    "Attach to a hero. Limit 1 per hero and 1 per deck.",
+                    "Action: Exhaust Magic Ring and raise your threat by 1 to (choose 1): heal 1 damage from attached hero, add 1 resource to attached hero`s pool, or ready attached hero."
                 ],
                 "Shadow": null,
-                "FlavorText": "`...he can move like a wind when he is roused.`\r\n-Pippin, The Two Towers"
+                "FlavorText": "`In Eregion long ago many Elven-rings were made, magic rings as you call them, and they were, of course, of various kinds...`\r\n-Gandalf, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Crossings of Poros",
             "EncounterInfo": null,
-            "Number": 135,
-            "Quantity": 1,
-            "Artist": "Guillaume Ducos",
+            "Number": 143,
+            "Quantity": 3,
+            "Artist": "Lucas Durham",
             "HasErrata": false,
-            "OctgnGuid": "b62716d9-5e70-4ec1-bcb7-852f67299e82",
-            "RingsDbCardId": "17135",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 1785,
+            "OctgnGuid": "c984e8e8-94a6-4af6-9455-824ad2cf46f9",
+            "RingsDbCardId": "17143",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 190100,
             "Categories": null
         },
         {
@@ -89,37 +87,83 @@
             "Categories": null
         },
         {
-            "Title": "Bulwark of the West",
-            "Slug": "Bulwark-of-the-West-CoP",
+            "Title": "Emyn Arnen Ranger",
+            "Slug": "Emyn-Arnen-Ranger-CoP",
             "IsUnique": false,
-            "CardType": "Event",
+            "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Bulwark-of-the-West.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Emyn-Arnen-Ranger.jpg",
                 "Stats": {
-                    "ResourceCost": "0"
+                    "ResourceCost": "2",
+                    "Willpower": "0",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
                 },
-                "Traits": [],
+                "Traits": [
+                    "Gondor.",
+                    "Ranger."
+                ],
                 "Keywords": [],
                 "Text": [
-                    "Action: Discard an ally you control to choose and discard a Condition attachment."
+                    "Response: After Emyn Arnen Ranger commits to the quest, choose an enemy with a Trap attachment. Until the end of the phase, Emyn Arnen Ranger gets +X Willpower, where X is the chosen enemy`s printed Threat."
                 ],
                 "Shadow": null,
-                "FlavorText": "`By our valour the wildfolk of the East are still restrained, and the terror of Morgul kept at bay; and thus alone are peace and freedom maintained in the lads behind us...\r\n-Boromir, The Fellowship of the Ring"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "The Crossings of Poros",
             "EncounterInfo": null,
-            "Number": 137,
+            "Number": 141,
             "Quantity": 3,
-            "Artist": "Stanislav Dikolenko",
+            "Artist": "Aleksander Karcz",
             "HasErrata": false,
-            "OctgnGuid": "110c523a-1fcb-49ee-bd8b-04f724bfe3cf",
-            "RingsDbCardId": "17137",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 22713,
+            "OctgnGuid": "67b8089a-af30-46eb-b581-5def4da14149",
+            "RingsDbCardId": "17141",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 56659,
+            "Categories": null
+        },
+        {
+            "Title": "Followed",
+            "Slug": "Followed-CoP",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Followed.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Condition.",
+                    "Trap."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play into your play area unattached.",
+                    "While unattached, attach to the next eligible enemy that engages you.",
+                    "While attached enemy is engaged with you, reduce the total Threat in the staging area by X, where X is attached enemy`s printed Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": null,
+            "Number": 139,
+            "Quantity": 3,
+            "Artist": "Dimitri Bielak",
+            "HasErrata": false,
+            "OctgnGuid": "b1edce11-55ce-468d-bf6a-b5d7035d41a3",
+            "RingsDbCardId": "17139",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 49314,
             "Categories": null
         },
         {
@@ -163,42 +207,37 @@
             "Categories": null
         },
         {
-            "Title": "Followed",
-            "Slug": "Followed-CoP",
+            "Title": "Bulwark of the West",
+            "Slug": "Bulwark-of-the-West-CoP",
             "IsUnique": false,
-            "CardType": "Attachment",
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Followed.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Bulwark-of-the-West.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ResourceCost": "0"
                 },
-                "Traits": [
-                    "Condition.",
-                    "Trap."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Play into your play area unattached.",
-                    "While unattached, attach to the next eligible enemy that engages you.",
-                    "While attached enemy is engaged with you, reduce the total Threat in the staging area by X, where X is attached enemy`s printed Threat."
+                    "Action: Discard an ally you control to choose and discard a Condition attachment."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "`By our valour the wildfolk of the East are still restrained, and the terror of Morgul kept at bay; and thus alone are peace and freedom maintained in the lads behind us...\r\n-Boromir, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Crossings of Poros",
             "EncounterInfo": null,
-            "Number": 139,
+            "Number": 137,
             "Quantity": 3,
-            "Artist": "Dimitri Bielak",
+            "Artist": "Stanislav Dikolenko",
             "HasErrata": false,
-            "OctgnGuid": "b1edce11-55ce-468d-bf6a-b5d7035d41a3",
-            "RingsDbCardId": "17139",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 49314,
+            "OctgnGuid": "110c523a-1fcb-49ee-bd8b-04f724bfe3cf",
+            "RingsDbCardId": "17137",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 22713,
             "Categories": null
         },
         {
@@ -237,47 +276,6 @@
             "Categories": null
         },
         {
-            "Title": "Emyn Arnen Ranger",
-            "Slug": "Emyn-Arnen-Ranger-CoP",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Emyn-Arnen-Ranger.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "0",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Gondor.",
-                    "Ranger."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Emyn Arnen Ranger commits to the quest, choose an enemy with a Trap attachment. Until the end of the phase, Emyn Arnen Ranger gets +X Willpower, where X is the chosen enemy`s printed Threat."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Crossings of Poros",
-            "EncounterInfo": null,
-            "Number": 141,
-            "Quantity": 3,
-            "Artist": "Aleksander Karcz",
-            "HasErrata": false,
-            "OctgnGuid": "67b8089a-af30-46eb-b581-5def4da14149",
-            "RingsDbCardId": "17141",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 56659,
-            "Categories": null
-        },
-        {
             "Title": "The Dam Bursts",
             "Slug": "The-Dam-Bursts-CoP",
             "IsUnique": false,
@@ -310,45 +308,6 @@
             "RingsDbCardId": "17142",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 17879,
-            "Categories": null
-        },
-        {
-            "Title": "Magic Ring",
-            "Slug": "Magic-Ring-CoP",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Magic-Ring.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Artifact.",
-                    "Item.",
-                    "Ring."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a hero. Limit 1 per hero and 1 per deck.",
-                    "Action: Exhaust Magic Ring and raise your threat by 1 to (choose 1): heal 1 damage from attached hero, add 1 resource to attached hero`s pool, or ready attached hero."
-                ],
-                "Shadow": null,
-                "FlavorText": "`In Eregion long ago many Elven-rings were made, magic rings as you call them, and they were, of course, of various kinds...`\r\n-Gandalf, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Crossings of Poros",
-            "EncounterInfo": null,
-            "Number": 143,
-            "Quantity": 3,
-            "Artist": "Lucas Durham",
-            "HasErrata": false,
-            "OctgnGuid": "c984e8e8-94a6-4af6-9455-824ad2cf46f9",
-            "RingsDbCardId": "17143",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 190100,
             "Categories": null
         },
         {
@@ -386,6 +345,47 @@
             "RingsDbCardId": "17144",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 6422,
+            "Categories": null
+        },
+        {
+            "Title": "Quickbeam",
+            "Slug": "Quickbeam-CoP",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Crossings-of-Poros/Quickbeam.jpg",
+                "Stats": {
+                    "ThreatCost": "12",
+                    "Willpower": "2",
+                    "Attack": "4",
+                    "Defense": "1",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Ent."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have restricted attachments.",
+                    "Action: Deal 2 damage to Quickbeam to ready him. (Limit once per phase.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`...he can move like a wind when he is roused.`\r\n-Pippin, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Crossings of Poros",
+            "EncounterInfo": null,
+            "Number": 135,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "b62716d9-5e70-4ec1-bcb7-852f67299e82",
+            "RingsDbCardId": "17135",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1785,
             "Categories": null
         }
     ]

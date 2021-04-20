@@ -7,49 +7,6 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Aragorn",
-            "Slug": "Aragorn-TFotW",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Fellowship",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Aragorn.jpg",
-                "Stats": {
-                    "ThreatCost": "0",
-                    "Willpower": "2",
-                    "Attack": "3",
-                    "Defense": "2",
-                    "HitPoints": "5"
-                },
-                "Traits": [
-                    "Dúnedain.",
-                    "Noble.",
-                    "Ranger."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "The first player gains control of Aragorn. If Aragorn leaves play, the players lose the game.",
-                    "While Aragorn has an Artifact attached, he gains sentinel and does not exhaust to quest."
-                ],
-                "Shadow": null,
-                "FlavorText": "`I have no help to send, therefore I must go myself...`\r\n-The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Flame of the West",
-            "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Javier Charro Martinez",
-            "HasErrata": false,
-            "OctgnGuid": "2e778689-9e3f-4da8-a473-781c777f6473",
-            "RingsDbCardId": "145001",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 173,
-            "Categories": null
-        },
-        {
             "Title": "Éowyn",
             "Slug": "Eowyn-TFotW",
             "IsUnique": true,
@@ -89,6 +46,162 @@
             "RingsDbCardId": "145002",
             "RingsDbPopularity": 10,
             "RingsDbVotes": 31250,
+            "Categories": null
+        },
+        {
+            "Title": "Golden Shield",
+            "Slug": "Golden-Shield-TFotW",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Golden-Shield.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item.",
+                    "Armor."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Rohan hero. Restricted.",
+                    "Response: After attached hero is declared as a defender, exhaust Golden Shield to add attached hero`s Willpower to its Defense for this attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "His golden shield was uncovered, and lo! it shone like an image of the Sun...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Flame of the West",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Sasha Jones",
+            "HasErrata": false,
+            "OctgnGuid": "a87da7c6-14fe-4213-b66f-43836531e213",
+            "RingsDbCardId": "145010",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 252600,
+            "Categories": null
+        },
+        {
+            "Title": "Grimbold",
+            "Slug": "Grimbold-TFotW",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Grimbold.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Combat Action: Discard Grimbold to choose an enemy engaged with a player. That enemy cannot attack that player this phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "Grimbold`s men turned aside and passed round to a great gap in the wall further eastward.\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Flame of the West",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Lucas Durham",
+            "HasErrata": false,
+            "OctgnGuid": "825dfbbb-6ba7-44ad-8327-d06ff46830eb",
+            "RingsDbCardId": "145004",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 246200,
+            "Categories": null
+        },
+        {
+            "Title": "Sterner than Steel",
+            "Slug": "Sterner-than-Steel-TFotW",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Sterner-than-Steel.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: Exhaust a Weapon or Armor card attached to the defending character to cancel a shadow effect just triggered during combat."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Do what you will; but I will hinder it, if I may.`\r\n-Éowyn, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Flame of the West",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Chris Rahn",
+            "HasErrata": false,
+            "OctgnGuid": "1f71a208-836b-4bf9-8cdb-a3f9bfa05667",
+            "RingsDbCardId": "145008",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 218000,
+            "Categories": null
+        },
+        {
+            "Title": "Ghân-buri-Ghân",
+            "Slug": "Ghan-buri-Ghan-TFotW",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Ghân-buri-Ghân.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "X",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Wose."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is the Threat of the active location.",
+                    "Travel Action: Discard Ghân-buri-Ghân to travel to a location without resolving its Travel effect."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Flame of the West",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Piya Wannachaiwong",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "145007",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 183250,
             "Categories": null
         },
         {
@@ -135,44 +248,37 @@
             "Categories": null
         },
         {
-            "Title": "Grimbold",
-            "Slug": "Grimbold-TFotW",
-            "IsUnique": true,
-            "CardType": "Ally",
+            "Title": "Desperate Defense",
+            "Slug": "Desperate-Defense-TFotW",
+            "IsUnique": false,
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Grimbold.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Desperate-Defense.jpg",
                 "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
+                    "ResourceCost": "1"
                 },
-                "Traits": [
-                    "Rohan.",
-                    "Warrior."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Combat Action: Discard Grimbold to choose an enemy engaged with a player. That enemy cannot attack that player this phase."
+                    "Response: After a sentinel character is declared as a defender, it gets +2 Defense for this attack. If this attack deals no damage, ready the defending character."
                 ],
                 "Shadow": null,
-                "FlavorText": "Grimbold`s men turned aside and passed round to a great gap in the wall further eastward.\r\n-The Return of the King"
+                "FlavorText": "...but alone in the porch upon the topmost step stood Beregond, clad in the black and silver of the Guard; and he held the door against them.\r\n-The Return of the King"
             },
             "Back": null,
             "CardSet": "The Flame of the West",
             "EncounterInfo": null,
-            "Number": 4,
+            "Number": 9,
             "Quantity": 3,
-            "Artist": "Lucas Durham",
+            "Artist": "Adam Lane",
             "HasErrata": false,
-            "OctgnGuid": "825dfbbb-6ba7-44ad-8327-d06ff46830eb",
-            "RingsDbCardId": "145004",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 246200,
+            "OctgnGuid": "478bc3aa-c148-4f20-8b4b-6b2a477a64b6",
+            "RingsDbCardId": "145009",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 148225,
             "Categories": null
         },
         {
@@ -259,152 +365,41 @@
             "Categories": null
         },
         {
-            "Title": "Ghân-buri-Ghân",
-            "Slug": "Ghan-buri-Ghan-TFotW",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Ghân-buri-Ghân.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "X",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Wose."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "X is the Threat of the active location.",
-                    "Travel Action: Discard Ghân-buri-Ghân to travel to a location without resolving its Travel effect."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Flame of the West",
-            "EncounterInfo": null,
-            "Number": 7,
-            "Quantity": 3,
-            "Artist": "Piya Wannachaiwong",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "145007",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 183250,
-            "Categories": null
-        },
-        {
-            "Title": "Sterner than Steel",
-            "Slug": "Sterner-than-Steel-TFotW",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Sterner-than-Steel.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Response: Exhaust a Weapon or Armor card attached to the defending character to cancel a shadow effect just triggered during combat."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Do what you will; but I will hinder it, if I may.`\r\n-Éowyn, The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Flame of the West",
-            "EncounterInfo": null,
-            "Number": 8,
-            "Quantity": 3,
-            "Artist": "Chris Rahn",
-            "HasErrata": false,
-            "OctgnGuid": "1f71a208-836b-4bf9-8cdb-a3f9bfa05667",
-            "RingsDbCardId": "145008",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 218000,
-            "Categories": null
-        },
-        {
-            "Title": "Desperate Defense",
-            "Slug": "Desperate-Defense-TFotW",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Desperate-Defense.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Response: After a sentinel character is declared as a defender, it gets +2 Defense for this attack. If this attack deals no damage, ready the defending character."
-                ],
-                "Shadow": null,
-                "FlavorText": "...but alone in the porch upon the topmost step stood Beregond, clad in the black and silver of the Guard; and he held the door against them.\r\n-The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Flame of the West",
-            "EncounterInfo": null,
-            "Number": 9,
-            "Quantity": 3,
-            "Artist": "Adam Lane",
-            "HasErrata": false,
-            "OctgnGuid": "478bc3aa-c148-4f20-8b4b-6b2a477a64b6",
-            "RingsDbCardId": "145009",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 148225,
-            "Categories": null
-        },
-        {
-            "Title": "Golden Shield",
-            "Slug": "Golden-Shield-TFotW",
+            "Title": "Roheryn",
+            "Slug": "Roheryn-TFotW",
             "IsUnique": true,
             "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Golden-Shield.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Roheryn.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ResourceCost": "2"
                 },
                 "Traits": [
-                    "Item.",
-                    "Armor."
+                    "Mount."
                 ],
-                "Keywords": [
-                    "Restricted."
-                ],
+                "Keywords": [],
                 "Text": [
-                    "Attach to a Rohan hero. Restricted.",
-                    "Response: After attached hero is declared as a defender, exhaust Golden Shield to add attached hero`s Willpower to its Defense for this attack."
+                    "Attach to a Dúnedain hero.",
+                    "If the attached hero is Aragorn, he gains a Tactics icon.",
+                    "Response: After you optionally engage an enemy, exhaust Roheryn and attached hero to declare attached hero as an attacker (and resolve its attack) against that eneny."
                 ],
                 "Shadow": null,
-                "FlavorText": "His golden shield was uncovered, and lo! it shone like an image of the Sun...\r\n-The Return of the King"
+                "FlavorText": "`Aragorn`s own horse that they had brought from the North; Roheryn was his name.`\r\n-The Return of the King"
             },
             "Back": null,
             "CardSet": "The Flame of the West",
             "EncounterInfo": null,
-            "Number": 10,
+            "Number": 12,
             "Quantity": 3,
-            "Artist": "Sasha Jones",
+            "Artist": "Eva Maria Toker",
             "HasErrata": false,
-            "OctgnGuid": "a87da7c6-14fe-4213-b66f-43836531e213",
-            "RingsDbCardId": "145010",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 252600,
+            "OctgnGuid": "83febe3a-95e8-4c38-8de7-4c1b1d43c917",
+            "RingsDbCardId": "145012",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 100555,
             "Categories": null
         },
         {
@@ -445,44 +440,6 @@
             "RingsDbCardId": "145011",
             "RingsDbPopularity": 4,
             "RingsDbVotes": 63950,
-            "Categories": null
-        },
-        {
-            "Title": "Roheryn",
-            "Slug": "Roheryn-TFotW",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Roheryn.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Mount."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Dúnedain hero.",
-                    "If the attached hero is Aragorn, he gains a Tactics icon.",
-                    "Response: After you optionally engage an enemy, exhaust Roheryn and attached hero to declare attached hero as an attacker (and resolve its attack) against that eneny."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Aragorn`s own horse that they had brought from the North; Roheryn was his name.`\r\n-The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Flame of the West",
-            "EncounterInfo": null,
-            "Number": 12,
-            "Quantity": 3,
-            "Artist": "Eva Maria Toker",
-            "HasErrata": false,
-            "OctgnGuid": "83febe3a-95e8-4c38-8de7-4c1b1d43c917",
-            "RingsDbCardId": "145012",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 100555,
             "Categories": null
         },
         {
@@ -604,6 +561,49 @@
             "RingsDbCardId": "145015",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 1480,
+            "Categories": null
+        },
+        {
+            "Title": "Aragorn",
+            "Slug": "Aragorn-TFotW",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Aragorn.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Noble.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The first player gains control of Aragorn. If Aragorn leaves play, the players lose the game.",
+                    "While Aragorn has an Artifact attached, he gains sentinel and does not exhaust to quest."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I have no help to send, therefore I must go myself...`\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Flame of the West",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Javier Charro Martinez",
+            "HasErrata": false,
+            "OctgnGuid": "2e778689-9e3f-4da8-a473-781c777f6473",
+            "RingsDbCardId": "145001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 173,
             "Categories": null
         }
     ]
