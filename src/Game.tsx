@@ -1664,9 +1664,15 @@ class Game extends Component<IProps, IState> {
     const cardInQuestion = card.faceup
       ? card.cardStack[0]
       : card.cardStack[card.cardStack.length - 1];
+
+    if (!cardInQuestion) {
+      console.error("Could not get card in question for stack:", card);
+    }
+
+    const idToGrab = cardInQuestion?.jsonId ?? "missing-id";
+
     return (
-      this.props.cardsData[cardInQuestion.jsonId]?.code ??
-      `code missing for ${cardInQuestion.jsonId}`
+      this.props.cardsData[idToGrab]?.code ?? `code missing for ${idToGrab}`
     );
   };
 
