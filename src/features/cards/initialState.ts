@@ -30,6 +30,7 @@ export interface ICardDetails {
 }
 
 export interface ICardsState {
+  outOfSyncWithRemote: boolean;
   cards: ICardStack[];
   ghostCards: ICardStack[];
   dropTargetCards: { [key: string]: ICardStack | null };
@@ -59,8 +60,10 @@ if (!!localStorageState.cards) {
 localStorageState.attachTargetCards = {};
 localStorageState.dropTargetCards = {};
 localStorageState.ghostCards = [];
+localStorageState.outOfSyncWithRemote = false;
 
 const defaultState: ICardsState = {
+  outOfSyncWithRemote: false,
   cards: [],
   ghostCards: [],
   dropTargetCards: {},

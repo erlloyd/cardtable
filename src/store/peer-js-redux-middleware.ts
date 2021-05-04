@@ -1,4 +1,5 @@
 import Peer from "peerjs";
+import cloneDeep from "lodash.clonedeep";
 import { myPeerRef } from "../constants/app-constants";
 import { togglePanMode } from "../features/cards/cards.slice";
 import {
@@ -18,7 +19,11 @@ import {
   updatePosition,
   updateZoom,
 } from "../features/game/game.slice";
-import { receiveRemoteGameState } from "./global.actions";
+import {
+  receiveRemoteGameState,
+  verifyRemoteGameState,
+} from "./global.actions";
+import { RootState } from "./rootReducer";
 
 const DEBUG = false;
 
@@ -53,6 +58,10 @@ const setupConnection = (conn: any, storeAPI: any) => {
           INITIAL_STATE_MSG: true,
           state: storeAPI.getState(),
         });
+      } else if (!!data.PING) {
+        // Check local state
+        data.REMOTE_ACTION = true;
+        storeAPI.dispatch(verifyRemoteGameState(data.state));
       } else {
         log("recieved remote action", data);
         data.REMOTE_ACTION = true;
@@ -119,10 +128,15 @@ export const peerJSMiddleware = (storeAPI: any) => {
 
     activeCon.on("open", () => {
       console.log("connection ready for data");
-      log("going to send initial state", storeAPI.getState());
+      const stateToSend: RootState = cloneDeep(storeAPI.getState());
+      // @ts-ignore
+      delete stateToSend.cardsData;
+
+      log("going to send initial state", stateToSend);
+
       activeCon.send({
         INITIAL_STATE_MSG: true,
-        state: storeAPI.getState(),
+        state: stateToSend,
       });
       // TODO: more complicated logic to handle multiple connections. Right now
       // this just changes the connecting client to blue
@@ -138,6 +152,18 @@ export const peerJSMiddleware = (storeAPI: any) => {
         })
       );
       storeAPI.dispatch(setPlayerColorAction);
+
+      // Set up periodic state verification
+      setInterval(() => {
+        const currentState: RootState = cloneDeep(storeAPI.getState());
+        // @ts-ignore
+        delete currentState.cardsData;
+
+        activeCon.send({
+          PING: true,
+          state: currentState,
+        });
+      }, 5000);
     });
 
     activeCon.on("error", (err) => {

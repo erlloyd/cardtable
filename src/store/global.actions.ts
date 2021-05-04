@@ -6,3 +6,7 @@ export const resetApp = createAction("resetAction");
 export const receiveRemoteGameState = createAction<RootState>(
   "receiveRemoteGameState"
 );
+
+export const verifyRemoteGameState = createAction<RootState>(
+  "verifyRemoteGameState"
+);

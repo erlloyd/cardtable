@@ -1,7 +1,9 @@
+import isEqual from "lodash.isequal";
 import {
   CaseReducer,
   createSlice,
   Draft,
+  original,
   PayloadAction,
 } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/types/types";
@@ -11,7 +13,11 @@ import {
   CounterTokenType,
   StatusTokenType,
 } from "../../constants/card-constants";
-import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
+import {
+  receiveRemoteGameState,
+  resetApp,
+  verifyRemoteGameState,
+} from "../../store/global.actions";
 import { getDistance } from "../../utilities/geo";
 import {
   addCardStackWithId,
@@ -476,6 +482,29 @@ const cardsSlice = createSlice({
       // TODO: find a way to keep this automatic
       state.cards = action.payload.liveState.present.cards.cards;
       state.ghostCards = action.payload.liveState.present.cards.ghostCards;
+    });
+
+    builder.addCase(verifyRemoteGameState, (state, action) => {
+      state.outOfSyncWithRemote = !(
+        isEqual(
+          original(state.cards),
+          action.payload.liveState.present.cards.cards
+        ) &&
+        isEqual(
+          original(state.ghostCards),
+          action.payload.liveState.present.cards.ghostCards
+        )
+      );
+
+      if (state.outOfSyncWithRemote) {
+        console.error(
+          "CARDS state is out of synce with remote!!!",
+          original(state),
+          action.payload.liveState.present.cards
+        );
+      } else {
+        console.log("CARDS state is in sync");
+      }
     });
 
     builder.addCase(replaceCardStack, (state, action) => {
