@@ -113,19 +113,22 @@ const unselectCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
   });
 };
 
-const toggleSelectCardReducer: CaseReducer<
-  ICardsState,
-  PayloadAction<string>
-> = (state, action) => {
-  mutateCardWithId(state, action.payload, (action as any).ACTOR_REF, (card) => {
-    card.selected = !card.selected;
-    if (!card.selected) {
-      card.controlledBy = "";
-    } else {
-      card.controlledBy = (action as any).ACTOR_REF;
-    }
-  });
-};
+const toggleSelectCardReducer: CaseReducer<ICardsState, PayloadAction<string>> =
+  (state, action) => {
+    mutateCardWithId(
+      state,
+      action.payload,
+      (action as any).ACTOR_REF,
+      (card) => {
+        card.selected = !card.selected;
+        if (!card.selected) {
+          card.controlledBy = "";
+        } else {
+          card.controlledBy = (action as any).ACTOR_REF;
+        }
+      }
+    );
+  };
 
 const exhaustCardReducer: CaseReducer<
   ICardsState,
@@ -409,8 +412,8 @@ const toggleTokenReducer: CaseReducer<
       cardToToggle.statusTokens[action.payload.tokenType] =
         action.payload.value;
     } else {
-      cardToToggle.statusTokens[action.payload.tokenType] = !cardToToggle
-        .statusTokens[action.payload.tokenType];
+      cardToToggle.statusTokens[action.payload.tokenType] =
+        !cardToToggle.statusTokens[action.payload.tokenType];
     }
   } else {
     foreachSelectedAndControlledCard(
@@ -420,9 +423,8 @@ const toggleTokenReducer: CaseReducer<
         if (action.payload.value !== undefined) {
           card.statusTokens[action.payload.tokenType] = action.payload.value;
         } else {
-          card.statusTokens[action.payload.tokenType] = !card.statusTokens[
-            action.payload.tokenType
-          ];
+          card.statusTokens[action.payload.tokenType] =
+            !card.statusTokens[action.payload.tokenType];
         }
       }
     );
@@ -487,8 +489,10 @@ const cardsSlice = createSlice({
     builder.addCase(verifyRemoteGameState, (state, action) => {
       state.outOfSyncWithRemote = !(
         isEqual(
-          original(state.cards),
-          action.payload.liveState.present.cards.cards
+          original(state.cards)?.filter((c) => !c.dragging),
+          action.payload.liveState.present.cards.cards.filter(
+            (c) => !c.dragging
+          )
         ) &&
         isEqual(
           original(state.ghostCards),
@@ -655,7 +659,7 @@ const cardsSlice = createSlice({
       }
 
       // First, unselect everything else of ours
-      unselectAllCardsReducer(state, (action as unknown) as any);
+      unselectAllCardsReducer(state, action as unknown as any);
 
       // Get the cardstack in question
       let cardStackToUse = state.cards.find(
