@@ -35,6 +35,7 @@ import { IGameState } from "./features/game/initialState";
 import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
 import "./Game.scss";
 import PeerConnector from "./PeerConnector";
+import RadialMenuContainer from "./RadialMenuContainer";
 import TokenValueModifier from "./TokenValueModifier";
 import TopLayer from "./TopLayer";
 import TouchMenuContainer from "./TouchMenuContainer";
@@ -431,6 +432,7 @@ class Game extends Component<IProps, IState> {
         onKeyDown={this.handleKeyDown}
         onKeyPress={this.handleKeyPress}
       >
+        <RadialMenuContainer></RadialMenuContainer>
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
         {this.renderPreviewCardModal()}
