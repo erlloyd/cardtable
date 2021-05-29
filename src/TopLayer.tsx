@@ -1,4 +1,4 @@
-import { Vector2d } from "konva/types/types";
+import { Vector2d } from "konva/lib/types";
 import * as React from "react";
 import { Component } from "react";
 import "./TopLayer.scss";

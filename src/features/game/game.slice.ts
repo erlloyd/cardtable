@@ -1,5 +1,5 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Vector2d } from "konva/types/types";
+import { Vector2d } from "konva/lib/types";
 import { GameType, PlayerColor } from "../../constants/app-constants";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import { IGameState, initialState } from "./initialState";
@@ -13,13 +13,11 @@ const updateZoomReducer: CaseReducer<IGameState, PayloadAction<Vector2d>> = (
   return state;
 };
 
-const updatePositionReducer: CaseReducer<
-  IGameState,
-  PayloadAction<Vector2d>
-> = (state, action) => {
-  state.stagePosition = action.payload;
-  return state;
-};
+const updatePositionReducer: CaseReducer<IGameState, PayloadAction<Vector2d>> =
+  (state, action) => {
+    state.stagePosition = action.payload;
+    return state;
+  };
 
 const connectToRemoteGameReducer: CaseReducer<
   IGameState,
@@ -40,16 +38,14 @@ const setPeerIdReducer: CaseReducer<IGameState, PayloadAction<string>> = (
   state.peerId = action.payload;
 };
 
-const setPreviewCardIdReducer: CaseReducer<
-  IGameState,
-  PayloadAction<string>
-> = (state, action) => {
-  if (!state.previewCard) {
-    state.previewCard = { id: action.payload };
-  } else if (state.previewCard.id !== action.payload) {
-    state.previewCard.id = action.payload;
-  }
-};
+const setPreviewCardIdReducer: CaseReducer<IGameState, PayloadAction<string>> =
+  (state, action) => {
+    if (!state.previewCard) {
+      state.previewCard = { id: action.payload };
+    } else if (state.previewCard.id !== action.payload) {
+      state.previewCard.id = action.payload;
+    }
+  };
 
 const clearPreviewCardReducer: CaseReducer<IGameState> = (state) => {
   state.previewCard = null;

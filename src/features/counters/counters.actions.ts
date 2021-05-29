@@ -1,5 +1,5 @@
 import { createAction } from "@reduxjs/toolkit";
-import { Vector2d } from "konva/types/types";
+import { Vector2d } from "konva/lib/types";
 
 export interface AddNewCounterWithIdPayload {
   pos: Vector2d;

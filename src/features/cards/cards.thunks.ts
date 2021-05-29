@@ -1,6 +1,6 @@
 import { Action, createAsyncThunk, ThunkAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import { Vector2d } from "konva/types/types";
+import { Vector2d } from "konva/lib/types";
 import { RootState } from "../../store/rootReducer";
 import {
   getCardsDataEncounterEntities,
@@ -46,112 +46,116 @@ export interface DrawCardsOutOfCardStackPayload {
   numberToDraw: number;
 }
 
-export const shuffleStack = (
-  id?: string
-): ThunkAction<void, RootState, unknown, Action<string>> => (
-  dispatch,
-  getState
-) => {
-  const cardsState = getCards(getState());
-  const stacksToShuffle = !!id
-    ? [cardsState.cards.find((c) => c.id === id)]
-    : cardsState.cards.filter(
-        (c) => c.selected && c.controlledBy === myPeerRef
-      );
-
-  stacksToShuffle
-    .filter((s): s is ICardStack => !!s && s.cardStack.length > 1)
-    .forEach((stackToShuffle) => {
-      dispatch(setStackShuffling({ id: stackToShuffle.id, shuffling: true }));
-      const shuffledStack = shuffle(stackToShuffle.cardStack);
-      dispatch(
-        replaceCardStack({ id: stackToShuffle.id, newStack: shuffledStack })
-      );
-
-      // We have to do a setTimeout here, because if we do it in this event loop,
-      // the overall change for this card is nothing for the shuffling param
-      setTimeout(() => {
-        dispatch(
-          setStackShuffling({ id: stackToShuffle.id, shuffling: false })
+export const shuffleStack =
+  (id?: string): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (dispatch, getState) => {
+    const cardsState = getCards(getState());
+    const stacksToShuffle = !!id
+      ? [cardsState.cards.find((c) => c.id === id)]
+      : cardsState.cards.filter(
+          (c) => c.selected && c.controlledBy === myPeerRef
         );
+
+    stacksToShuffle
+      .filter((s): s is ICardStack => !!s && s.cardStack.length > 1)
+      .forEach((stackToShuffle) => {
+        dispatch(setStackShuffling({ id: stackToShuffle.id, shuffling: true }));
+        const shuffledStack = shuffle(stackToShuffle.cardStack);
+        dispatch(
+          replaceCardStack({ id: stackToShuffle.id, newStack: shuffledStack })
+        );
+
+        // We have to do a setTimeout here, because if we do it in this event loop,
+        // the overall change for this card is nothing for the shuffling param
+        setTimeout(() => {
+          dispatch(
+            setStackShuffling({ id: stackToShuffle.id, shuffling: false })
+          );
+        });
       });
-    });
-};
-
-export const addCardStack = (
-  payload: AddCardStackPayload
-): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch) => {
-  const payloadWithId = {
-    ...payload,
-    id: uuidv4(),
   };
-  dispatch(addCardStackWithId(payloadWithId));
-};
 
-export const pullCardOutOfCardStack = (
-  payload: PullCardOutOfCardStackPayload
-): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch) => {
-  const payloadWithId = {
-    ...payload,
-    id: uuidv4(),
+export const addCardStack =
+  (
+    payload: AddCardStackPayload
+  ): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (dispatch) => {
+    const payloadWithId = {
+      ...payload,
+      id: uuidv4(),
+    };
+    dispatch(addCardStackWithId(payloadWithId));
   };
-  dispatch(pullCardOutOfCardStackWithId(payloadWithId));
-};
 
-export const startCardMove = (
-  payload: StartCardMovePayload
-): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch) => {
-  const payloadWithId = {
-    ...payload,
-    splitCardId: uuidv4(),
+export const pullCardOutOfCardStack =
+  (
+    payload: PullCardOutOfCardStackPayload
+  ): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (dispatch) => {
+    const payloadWithId = {
+      ...payload,
+      id: uuidv4(),
+    };
+    dispatch(pullCardOutOfCardStackWithId(payloadWithId));
   };
-  dispatch(startCardMoveWithSplitStackId(payloadWithId));
-};
 
-export const drawCardsOutOfCardStack = (
-  payload: DrawCardsOutOfCardStackPayload
-): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch) => {
-  const possibleIds = Array.from({ length: payload.numberToDraw }).map((_i) =>
-    uuidv4()
-  );
-  const payloadWithIds = {
-    ...payload,
-    idsToUse: possibleIds,
+export const startCardMove =
+  (
+    payload: StartCardMovePayload
+  ): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (dispatch) => {
+    const payloadWithId = {
+      ...payload,
+      splitCardId: uuidv4(),
+    };
+    dispatch(startCardMoveWithSplitStackId(payloadWithId));
   };
-  dispatch(drawCardsOutOfCardStackWithIds(payloadWithIds));
-};
 
-export const createDeckFromTxt = (payload: {
-  gameType: GameType;
-  position: Vector2d;
-  txtContents: string;
-}): ThunkAction<void, RootState, unknown, Action<string>> => (
-  dispatch,
-  getState
-) => {
-  if (payload.gameType === GameType.MarvelChampions) {
-    const heroCardsDataByName = getCardsDataHerosByName(getState());
-    const playerCardsDataByName = getCardsDataPlayerCardsByName(getState());
-    dispatch(
-      createDeckFromTextFileWithIds(
-        getMarvelCards(
-          convertMarvelTxtToDeckInfo(
-            heroCardsDataByName,
-            playerCardsDataByName,
-            payload.position,
-            payload.txtContents
-          ),
-          getState(),
-          {
-            gameType: payload.gameType,
-            decklistId: -1,
-            position: payload.position,
-          }
-        )
-      )
+export const drawCardsOutOfCardStack =
+  (
+    payload: DrawCardsOutOfCardStackPayload
+  ): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (dispatch) => {
+    const possibleIds = Array.from({ length: payload.numberToDraw }).map((_i) =>
+      uuidv4()
     );
-  }
-};
+    const payloadWithIds = {
+      ...payload,
+      idsToUse: possibleIds,
+    };
+    dispatch(drawCardsOutOfCardStackWithIds(payloadWithIds));
+  };
+
+export const createDeckFromTxt =
+  (payload: {
+    gameType: GameType;
+    position: Vector2d;
+    txtContents: string;
+  }): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (dispatch, getState) => {
+    if (payload.gameType === GameType.MarvelChampions) {
+      const heroCardsDataByName = getCardsDataHerosByName(getState());
+      const playerCardsDataByName = getCardsDataPlayerCardsByName(getState());
+      dispatch(
+        createDeckFromTextFileWithIds(
+          getMarvelCards(
+            convertMarvelTxtToDeckInfo(
+              heroCardsDataByName,
+              playerCardsDataByName,
+              payload.position,
+              payload.txtContents
+            ),
+            getState(),
+            {
+              gameType: payload.gameType,
+              decklistId: -1,
+              position: payload.position,
+            }
+          )
+        )
+      );
+    }
+  };
 
 export const fetchDecklistById = createAsyncThunk(
   "decklist/fetchByIdStatus",

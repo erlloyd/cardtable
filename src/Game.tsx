@@ -1,7 +1,7 @@
 import * as Intersects from "intersects";
 import Konva from "konva";
-import { KonvaEventObject } from "konva/types/Node";
-import { Vector2d } from "konva/types/types";
+import { KonvaEventObject } from "konva/lib/Node";
+import { Vector2d } from "konva/lib/types";
 import * as React from "react";
 import { Component } from "react";
 import { Layer, Rect, Stage } from "react-konva";
@@ -549,17 +549,16 @@ class Game extends Component<IProps, IState> {
     this.props.updateCounterValue({ id, delta });
   };
 
-  private handleCounterDrag = (id: string) => (
-    event: KonvaEventObject<DragEvent>
-  ) => {
-    this.props.moveCounter({
-      id,
-      newPos: {
-        x: event.target.x(),
-        y: event.target.y(),
-      },
-    });
-  };
+  private handleCounterDrag =
+    (id: string) => (event: KonvaEventObject<DragEvent>) => {
+      this.props.moveCounter({
+        id,
+        newPos: {
+          x: event.target.x(),
+          y: event.target.y(),
+        },
+      });
+    };
 
   private noOp = () => {};
 
@@ -773,13 +772,11 @@ class Game extends Component<IProps, IState> {
     this.props.connectToRemoteGame(peerId);
   };
 
-  private handleCardSelectedFromCardStack = (
-    cardStackId: string,
-    pos: Vector2d
-  ) => (jsonId: string) => {
-    this.clearCardSearch();
-    this.props.pullCardOutOfCardStack({ cardStackId, jsonId, pos });
-  };
+  private handleCardSelectedFromCardStack =
+    (cardStackId: string, pos: Vector2d) => (jsonId: string) => {
+      this.clearCardSearch();
+      this.props.pullCardOutOfCardStack({ cardStackId, jsonId, pos });
+    };
 
   private clearContextMenu = () => {
     this.setState({
@@ -866,49 +863,51 @@ class Game extends Component<IProps, IState> {
     this.props.updatePosition(newPos);
   };
 
-  private handleCounterContextMenu = (counterId: string) => (
-    event: KonvaEventObject<PointerEvent>
-  ) => {
-    event.evt.preventDefault();
-    event.cancelBubble = true;
+  private handleCounterContextMenu =
+    (counterId: string) => (event: KonvaEventObject<PointerEvent>) => {
+      event.evt.preventDefault();
+      event.cancelBubble = true;
 
-    const counter = this.props.counters.find((c) => c.id === counterId);
+      const counter = this.props.counters.find((c) => c.id === counterId);
 
-    const menuItems: ContextMenuItem[] = [
-      {
-        label: "Remove",
-        action: () => {
-          this.props.removeCounter(counterId);
+      const menuItems: ContextMenuItem[] = [
+        {
+          label: "Remove",
+          action: () => {
+            this.props.removeCounter(counterId);
+          },
         },
-      },
-      {
-        label: "Reset",
-        action: () => {
-          this.props.updateCounterValue({
-            id: counterId,
-            delta: (counter?.value ?? 0) * -1,
-          });
+        {
+          label: "Reset",
+          action: () => {
+            this.props.updateCounterValue({
+              id: counterId,
+              delta: (counter?.value ?? 0) * -1,
+            });
+          },
         },
-      },
-      {
-        label: "Set Color",
-        children: possibleColors.map((color) => {
-          return {
-            label: color,
-            action: () => {
-              this.props.updateCounterColor({ id: counterId, newColor: color });
-            },
-          };
-        }),
-      },
-    ];
+        {
+          label: "Set Color",
+          children: possibleColors.map((color) => {
+            return {
+              label: color,
+              action: () => {
+                this.props.updateCounterColor({
+                  id: counterId,
+                  newColor: color,
+                });
+              },
+            };
+          }),
+        },
+      ];
 
-    this.setState({
-      showContextMenu: true,
-      contextMenuPosition: this.stage?.getPointerPosition() ?? null,
-      contextMenuItems: menuItems,
-    });
-  };
+      this.setState({
+        showContextMenu: true,
+        contextMenuPosition: this.stage?.getPointerPosition() ?? null,
+        contextMenuItems: menuItems,
+      });
+    };
 
   private handleCardContextMenu = (
     cardId: string,
@@ -1106,23 +1105,22 @@ class Game extends Component<IProps, IState> {
     });
   };
 
-  private handleCardClick = (card: ICardStack) => (
-    cardId: string,
-    event: KonvaEventObject<MouseEvent>
-  ) => {
-    // Here check if modifier held down
-    const modifierKeyHeld =
-      event.evt.shiftKey || event.evt.metaKey || event.evt.ctrlKey;
+  private handleCardClick =
+    (card: ICardStack) =>
+    (cardId: string, event: KonvaEventObject<MouseEvent>) => {
+      // Here check if modifier held down
+      const modifierKeyHeld =
+        event.evt.shiftKey || event.evt.metaKey || event.evt.ctrlKey;
 
-    if (card.selected && (modifierKeyHeld || this.props.multiselectMode)) {
-      this.props.toggleSelectCard(cardId);
-    } else {
-      this.props.selectCard({
-        id: cardId,
-        unselectOtherCards: !modifierKeyHeld && !this.props.multiselectMode,
-      });
-    }
-  };
+      if (card.selected && (modifierKeyHeld || this.props.multiselectMode)) {
+        this.props.toggleSelectCard(cardId);
+      } else {
+        this.props.selectCard({
+          id: cardId,
+          unselectOtherCards: !modifierKeyHeld && !this.props.multiselectMode,
+        });
+      }
+    };
 
   private handleSelectAndExhaust = (
     cardId: string,

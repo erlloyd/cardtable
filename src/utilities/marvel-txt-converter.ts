@@ -1,4 +1,4 @@
-import { Vector2d } from "konva/types/types";
+import { Vector2d } from "konva/lib/types";
 import { CardData } from "../external-api/common-card-data";
 
 export const convertMarvelTxtToDeckInfo = (

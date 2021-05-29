@@ -1,5 +1,5 @@
 import { createAction } from "@reduxjs/toolkit";
-import { Vector2d } from "konva/types/types";
+import { Vector2d } from "konva/lib/types";
 import { ICardDetails } from "./initialState";
 
 export interface AddCardStackWithIdPayload {
@@ -44,30 +44,32 @@ export interface CreateDeckPayload {
   obligationDeckId: string;
 }
 
-export const addCardStackWithId = createAction<AddCardStackWithIdPayload>(
-  "addCardStackWithId"
-);
+export const addCardStackWithId =
+  createAction<AddCardStackWithIdPayload>("addCardStackWithId");
 
-export const pullCardOutOfCardStackWithId = createAction<PullCardOutOfCardStackWithIdPayload>(
-  "pullCardOutOfCardStackWithId"
-);
+export const pullCardOutOfCardStackWithId =
+  createAction<PullCardOutOfCardStackWithIdPayload>(
+    "pullCardOutOfCardStackWithId"
+  );
 
-export const drawCardsOutOfCardStackWithIds = createAction<DrawCardsOutOfCardStackWithIdsPayload>(
-  "drawCardsOutOfCardStackWithIds"
-);
+export const drawCardsOutOfCardStackWithIds =
+  createAction<DrawCardsOutOfCardStackWithIdsPayload>(
+    "drawCardsOutOfCardStackWithIds"
+  );
 
-export const startCardMoveWithSplitStackId = createAction<StartCardMoveWithSplitStackIdPayload>(
-  "startCardMoveWithSplitStackId"
-);
+export const startCardMoveWithSplitStackId =
+  createAction<StartCardMoveWithSplitStackIdPayload>(
+    "startCardMoveWithSplitStackId"
+  );
 
-export const replaceCardStack = createAction<ReplaceCardStackPayload>(
-  "replaceCardStack"
-);
+export const replaceCardStack =
+  createAction<ReplaceCardStackPayload>("replaceCardStack");
 
-export const setStackShuffling = createAction<{
-  id: string;
-  shuffling: boolean;
-}>("setStackShuffling");
+export const setStackShuffling =
+  createAction<{
+    id: string;
+    shuffling: boolean;
+  }>("setStackShuffling");
 
 export const createDeckFromTextFileWithIds = createAction<CreateDeckPayload>(
   "createDeckFromTextFileWithIds"

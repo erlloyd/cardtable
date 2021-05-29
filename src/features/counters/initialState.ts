@@ -1,4 +1,4 @@
-import { Vector2d } from "konva/types/types";
+import { Vector2d } from "konva/lib/types";
 import { PlayerColor } from "../../constants/app-constants";
 import { loadState } from "../../store/localStorage";
 import * as jc from "jsoncrush";

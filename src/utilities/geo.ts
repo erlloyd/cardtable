@@ -1,4 +1,4 @@
-import { Vector2d } from "konva/types/types";
+import { Vector2d } from "konva/lib/types";
 
 export const getDistance = (point1: Vector2d, point2: Vector2d): number => {
   const deltaX = point1.x - point2.x;

@@ -1,5 +1,5 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Vector2d } from "konva/types/types";
+import { Vector2d } from "konva/lib/types";
 import { PlayerColor } from "../../constants/app-constants";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import { addNewCounterWithId } from "./counters.actions";
@@ -29,12 +29,10 @@ const updateCounterColorReducer: CaseReducer<
   }
 };
 
-const removeCounterReducer: CaseReducer<
-  ICountersState,
-  PayloadAction<string>
-> = (state, action) => {
-  state.counters = state.counters.filter((c) => c.id !== action.payload);
-};
+const removeCounterReducer: CaseReducer<ICountersState, PayloadAction<string>> =
+  (state, action) => {
+    state.counters = state.counters.filter((c) => c.id !== action.payload);
+  };
 
 const moveCounterReducer: CaseReducer<
   ICountersState,

@@ -6,7 +6,7 @@ import {
   original,
   PayloadAction,
 } from "@reduxjs/toolkit";
-import { Vector2d } from "konva/types/types";
+import { Vector2d } from "konva/lib/types";
 import { v4 as uuidv4 } from "uuid";
 import {
   cardConstants,

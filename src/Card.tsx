@@ -1,11 +1,11 @@
 // tslint:disable:no-console
-import { KonvaEventObject } from "konva/types/Node";
-import { Rect as RectRef } from "konva/types/shapes/Rect";
-import { Vector2d } from "konva/types/types";
+import { KonvaEventObject } from "konva/lib/Node";
+import { Rect as RectRef } from "konva/lib/shapes/Rect";
+import { Vector2d } from "konva/lib/types";
 import * as React from "react";
 import { Component } from "react";
 import { Rect, Text } from "react-konva";
-import { animated, Spring } from "react-spring/renderprops-konva";
+import { animated, Spring } from "@react-spring/konva";
 import CardTokensContainer from "./CardTokensContainer";
 import { GameType, myPeerRef, PlayerColor } from "./constants/app-constants";
 import { cardConstants } from "./constants/card-constants";
@@ -331,7 +331,6 @@ class Card extends Component<IProps, IState> {
     const card = (
       <Spring
         key={`${this.props.id}-card`}
-        native={true}
         to={{
           rotation: this.props.exhausted ? 90 : 0,
         }}
@@ -401,7 +400,6 @@ class Card extends Component<IProps, IState> {
       (this.props.numCardsInStack || 1) > 1 ? (
         <Spring
           key={`${this.props.id}-cardStack`}
-          native={true}
           to={{
             rotation: this.props.exhausted ? 90 : 0,
           }}
@@ -652,7 +650,7 @@ class Card extends Component<IProps, IState> {
 
     this.touchTimer = setTimeout(() => {
       this.handleContextMenu(
-        (event as unknown) as KonvaEventObject<PointerEvent>
+        event as unknown as KonvaEventObject<PointerEvent>
       );
     }, 750);
   };

@@ -1,4 +1,4 @@
-import { Vector2d } from "konva/types/types";
+import { Vector2d } from "konva/lib/types";
 import {
   GameType,
   myPeerRef,
