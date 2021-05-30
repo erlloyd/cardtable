@@ -1132,7 +1132,8 @@ class Game extends Component<IProps, IState> {
           wasTouch &&
           !modifierKeyHeld &&
           !this.props.multiselectMode &&
-          !this.doubleTapTimer
+          !this.doubleTapTimer &&
+          !this.state.showContextMenu
         ) {
           this.doubleTapTimer = setTimeout(() => {
             this.props.showRadialMenuAtPosition(

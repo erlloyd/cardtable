@@ -11,7 +11,7 @@ import {
   // toggleToken,
   // adjustCounterToken,
 } from "./features/cards/cards.slice";
-// import { shuffleStack } from "./features/cards/cards.thunks";
+import { shuffleStack } from "./features/cards/cards.thunks";
 import { getGame, getRadialMenuPosition } from "./features/game/game.selectors";
 import { hideRadialMenu } from "./features/game/game.slice";
 import RadialMenu from "./RadialMenu";
@@ -30,7 +30,7 @@ const RadialMenuContainer = connect(mapStateToProps, {
   flipCards,
   exhaustCard,
   // toggleToken,
-  // shuffleStack,
+  shuffleStack,
   // adjustCounterToken,
   hideRadialMenu,
 })(RadialMenu);

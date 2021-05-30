@@ -3,10 +3,10 @@ import * as React from "react";
 import { Component } from "react";
 import "./TouchMenu.scss";
 //Icons
-import FlipIcon from "@material-ui/icons/Flip";
+// import FlipIcon from "@material-ui/icons/Flip";
 import OpenWithIcon from "@material-ui/icons/OpenWith";
-import AutorenewIcon from "@material-ui/icons/Autorenew";
-import ShuffleIcon from "@material-ui/icons/Shuffle";
+// import AutorenewIcon from "@material-ui/icons/Autorenew";
+// import ShuffleIcon from "@material-ui/icons/Shuffle";
 import SelectAllIcon from "@material-ui/icons/SelectAll";
 import { GameType } from "./constants/app-constants";
 import {
@@ -58,7 +58,7 @@ class TouchMenu extends Component<IProps> {
         >
           <SelectAllIcon fontSize="large" />
         </IconButton>
-        <IconButton
+        {/* <IconButton
           onClick={() => {
             this.props.flipCards();
           }}
@@ -71,14 +71,14 @@ class TouchMenu extends Component<IProps> {
           }}
         >
           <AutorenewIcon fontSize="large" />
-        </IconButton>
-        <IconButton
+        </IconButton> */}
+        {/* <IconButton
           onClick={() => {
             this.props.shuffleStack();
           }}
         >
           <ShuffleIcon fontSize="large" />
-        </IconButton>
+        </IconButton> */}
         {this.renderStatusCardButtons()}
       </div>
     );
