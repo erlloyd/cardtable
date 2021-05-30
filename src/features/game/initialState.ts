@@ -33,7 +33,7 @@ localStorageState.playerColors[myPeerRef] = "red";
 localStorageState.peerId = "";
 localStorageState.previewCard = null;
 localStorageState.menuPreviewCardJsonId = null;
-localStorageState.radialMenuPosition = { x: 50, y: 50 };
+localStorageState.radialMenuPosition = null;
 
 const defaultState: IGameState = {
   playerColors: {},

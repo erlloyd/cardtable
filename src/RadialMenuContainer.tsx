@@ -3,14 +3,14 @@ import { connect } from "react-redux";
 //   getMultiselectMode,
 //   getPanMode,
 // } from "./features/cards/cards.selectors";
-// import {
-//   exhaustCard,
-//   flipCards,
-//   togglePanMode,
-//   toggleMultiselectMode,
-//   toggleToken,
-//   adjustCounterToken,
-// } from "./features/cards/cards.slice";
+import {
+  exhaustCard,
+  flipCards,
+  // togglePanMode,
+  // toggleMultiselectMode,
+  // toggleToken,
+  // adjustCounterToken,
+} from "./features/cards/cards.slice";
 // import { shuffleStack } from "./features/cards/cards.thunks";
 import { getGame, getRadialMenuPosition } from "./features/game/game.selectors";
 import { hideRadialMenu } from "./features/game/game.slice";
@@ -27,8 +27,8 @@ const mapStateToProps = (state: RootState) => {
 const RadialMenuContainer = connect(mapStateToProps, {
   // togglePanMode,
   // toggleMultiselectMode,
-  // flipCards,
-  // exhaustCard,
+  flipCards,
+  exhaustCard,
   // toggleToken,
   // shuffleStack,
   // adjustCounterToken,

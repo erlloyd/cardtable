@@ -119,6 +119,7 @@ interface IProps {
     txtContents: string;
   }) => void;
   generateGameStateUrl: () => void;
+  showRadialMenuAtPosition: (payload: Vector2d) => void;
 }
 
 interface IState {
@@ -157,6 +158,7 @@ class Game extends Component<IProps, IState> {
   public stage: Konva.Stage | null = null;
 
   private touchTimer: any = null;
+  private doubleTapTimer: any = null;
 
   private lastCenter: Vector2d | null = null;
   private lastDist: number = 0;
@@ -1109,7 +1111,11 @@ class Game extends Component<IProps, IState> {
 
   private handleCardClick =
     (card: ICardStack) =>
-    (cardId: string, event: KonvaEventObject<MouseEvent>) => {
+    (
+      cardId: string,
+      event: KonvaEventObject<MouseEvent>,
+      wasTouch: boolean
+    ) => {
       // Here check if modifier held down
       const modifierKeyHeld =
         event.evt.shiftKey || event.evt.metaKey || event.evt.ctrlKey;
@@ -1121,6 +1127,20 @@ class Game extends Component<IProps, IState> {
           id: cardId,
           unselectOtherCards: !modifierKeyHeld && !this.props.multiselectMode,
         });
+
+        if (
+          wasTouch &&
+          !modifierKeyHeld &&
+          !this.props.multiselectMode &&
+          !this.doubleTapTimer
+        ) {
+          this.doubleTapTimer = setTimeout(() => {
+            this.props.showRadialMenuAtPosition(
+              this.stage?.getPointerPosition() || { x: 0, y: 0 }
+            );
+            this.doubleTapTimer = null;
+          }, 200);
+        }
       }
     };
 
@@ -1139,6 +1159,12 @@ class Game extends Component<IProps, IState> {
     cardId: string,
     _event: KonvaEventObject<TouchEvent>
   ) => {
+    // Clear the timer if we were waiting
+    if (!!this.doubleTapTimer) {
+      clearTimeout(this.doubleTapTimer);
+      this.doubleTapTimer = null;
+    }
+
     if (
       !!this.props.gameState.previewCard &&
       this.props.gameState.previewCard.id === cardId
