@@ -3,21 +3,16 @@ import * as React from "react";
 import { Component } from "react";
 import "./TouchMenu.scss";
 //Icons
-// import FlipIcon from "@material-ui/icons/Flip";
 import OpenWithIcon from "@material-ui/icons/OpenWith";
-// import AutorenewIcon from "@material-ui/icons/Autorenew";
-// import ShuffleIcon from "@material-ui/icons/Shuffle";
 import SelectAllIcon from "@material-ui/icons/SelectAll";
+import InfoIcon from "@material-ui/icons/Info";
+
 import { GameType } from "./constants/app-constants";
-import {
-  GamePropertiesMap,
-  NumericTokenInfo,
-  TokenInfo,
-} from "./constants/game-type-properties-mapping";
-import Button from "@material-ui/core/Button";
 import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
+import { Vector2d } from "konva/lib/types";
 
 interface IProps {
+  anyCardsSelected: boolean;
   currentGameType: GameType | null;
   panMode: boolean;
   multiselectMode: boolean;
@@ -37,6 +32,7 @@ interface IProps {
     delta?: number;
     value?: number;
   }) => void;
+  showRadialMenuAtPosition: (payload: Vector2d) => void;
 }
 class TouchMenu extends Component<IProps> {
   render() {
@@ -58,97 +54,18 @@ class TouchMenu extends Component<IProps> {
         >
           <SelectAllIcon fontSize="large" />
         </IconButton>
-        {/* <IconButton
-          onClick={() => {
-            this.props.flipCards();
-          }}
-        >
-          <FlipIcon fontSize="large" />
-        </IconButton>
         <IconButton
           onClick={() => {
-            this.props.exhaustCard();
+            if (this.props.anyCardsSelected) {
+              this.props.showRadialMenuAtPosition({ x: 0, y: 0 });
+            }
           }}
         >
-          <AutorenewIcon fontSize="large" />
-        </IconButton> */}
-        {/* <IconButton
-          onClick={() => {
-            this.props.shuffleStack();
-          }}
-        >
-          <ShuffleIcon fontSize="large" />
-        </IconButton> */}
-        {this.renderStatusCardButtons()}
+          <InfoIcon fontSize="large" />
+        </IconButton>
       </div>
     );
   }
-
-  private renderStatusCardButtons = () => {
-    if (!this.props.currentGameType) {
-      return null;
-    }
-    return Object.values(GamePropertiesMap[this.props.currentGameType].tokens)
-      .filter(
-        (tokenInfo): tokenInfo is TokenInfo | NumericTokenInfo => !!tokenInfo
-      )
-      .flatMap((tokenInfo) => {
-        let returnVal = [];
-        if ((tokenInfo as NumericTokenInfo).isNumeric) {
-          const addTokenInfo = {
-            ...tokenInfo,
-            touchMenuLetter: `${tokenInfo.touchMenuLetter} +`,
-          };
-          const removeTokenInfo = {
-            ...tokenInfo,
-            touchMenuLetter: `${tokenInfo.touchMenuLetter} -`,
-          };
-          returnVal = [addTokenInfo, removeTokenInfo];
-        } else {
-          returnVal = [tokenInfo];
-        }
-        return returnVal;
-      })
-      .map((tokenInfo) => {
-        let action: () => void;
-        if ((tokenInfo as NumericTokenInfo).isNumeric) {
-          action = () => {
-            this.props.adjustCounterToken({
-              tokenType: (tokenInfo as NumericTokenInfo).counterTokenType,
-              delta: tokenInfo.touchMenuLetter?.indexOf("+") !== -1 ? 1 : -1,
-            });
-          };
-        } else {
-          action = () => {
-            this.props.toggleToken({
-              tokenType: (tokenInfo as TokenInfo).tokenType,
-            });
-          };
-        }
-
-        let key = `touch-menu-button-${tokenInfo.menuText
-          .replace(/\s/g, "")
-          .toLocaleLowerCase()}`;
-
-        key =
-          key + (tokenInfo.touchMenuLetter?.indexOf("+") !== -1 ? "-plus" : "");
-
-        if (!!tokenInfo.touchMenuIcon) {
-          return (
-            <IconButton key={key} onClick={action}>
-              {tokenInfo.touchMenuIcon}
-            </IconButton>
-          );
-        } else if (!!tokenInfo.touchMenuLetter) {
-          return (
-            <Button key={key} onClick={action} className="text-button">
-              {tokenInfo.touchMenuLetter}
-            </Button>
-          );
-        }
-        return null;
-      });
-  };
 }
 
 export default TouchMenu;

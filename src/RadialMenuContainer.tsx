@@ -1,15 +1,10 @@
 import { connect } from "react-redux";
-// import {
-//   getMultiselectMode,
-//   getPanMode,
-// } from "./features/cards/cards.selectors";
 import {
   exhaustCard,
   flipCards,
-  // togglePanMode,
-  // toggleMultiselectMode,
-  // toggleToken,
-  // adjustCounterToken,
+  toggleToken,
+  adjustCounterToken,
+  clearCardTokens,
 } from "./features/cards/cards.slice";
 import { shuffleStack } from "./features/cards/cards.thunks";
 import { getGame, getRadialMenuPosition } from "./features/game/game.selectors";
@@ -25,14 +20,13 @@ const mapStateToProps = (state: RootState) => {
 };
 
 const RadialMenuContainer = connect(mapStateToProps, {
-  // togglePanMode,
-  // toggleMultiselectMode,
   flipCards,
   exhaustCard,
-  // toggleToken,
+  toggleToken,
   shuffleStack,
-  // adjustCounterToken,
+  adjustCounterToken,
   hideRadialMenu,
+  clearCardTokens,
 })(RadialMenu);
 
 export default RadialMenuContainer;

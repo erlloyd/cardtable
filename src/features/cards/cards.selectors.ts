@@ -11,6 +11,11 @@ export const getCardMapById = createSelector(getCards, (cards) => {
   }, {});
 });
 
+export const anyCardsSelectedWithPeerRef = (peerRef: string) =>
+  createSelector(getCards, (cards) => {
+    return cards.cards.some((c) => c.selected && c.controlledBy === peerRef);
+  });
+
 export const getPanMode = (state: RootState) =>
   state.liveState.present.cards.panMode;
 
