@@ -75,6 +75,17 @@ const quitGameReducer: CaseReducer<IGameState> = (state) => {
   state.activeGameType = null;
 };
 
+const showRadialMenuAtPositionReducer: CaseReducer<
+  IGameState,
+  PayloadAction<Vector2d>
+> = (state, action) => {
+  state.radialMenuPosition = action.payload;
+};
+
+const hideRadialMenuReducer: CaseReducer<IGameState> = (state) => {
+  state.radialMenuPosition = null;
+};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -92,6 +103,8 @@ const gameSlice = createSlice({
     clearMenuPreviewCardJsonId: clearMenuPreviewCardJsonIdReducer,
     updateActiveGameType: updateActiveGameTypeReducer,
     quitGame: quitGameReducer,
+    showRadialMenuAtPosition: showRadialMenuAtPositionReducer,
+    hideRadialMenu: hideRadialMenuReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -118,6 +131,8 @@ export const {
   clearMenuPreviewCardJsonId,
   updateActiveGameType,
   quitGame,
+  showRadialMenuAtPosition,
+  hideRadialMenu,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

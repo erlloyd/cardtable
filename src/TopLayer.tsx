@@ -4,16 +4,24 @@ import { Component } from "react";
 import "./TopLayer.scss";
 
 interface IProps {
+  trasparentBackground?: boolean;
+  offsetContent?: boolean;
   position: Vector2d;
   completed: () => void;
 }
 
 class TopLayer extends Component<IProps> {
   render() {
+    const offset = this.props.offsetContent ? 8 : 0;
     const containerStyle: React.CSSProperties = {
-      top: `${this.props.position.y + 8}px`,
-      left: `${this.props.position.x + 8}px`,
+      top: `${this.props.position.y + offset}px`,
+      left: `${this.props.position.x + offset}px`,
     };
+
+    if (!this.props.trasparentBackground) {
+      containerStyle.backgroundColor = "white";
+    }
+
     return (
       <div
         id="top-layer"

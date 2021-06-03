@@ -13,6 +13,7 @@ export interface IPreviewCard {
 export interface IGameState {
   stageZoom: Vector2d;
   stagePosition: Vector2d;
+  radialMenuPosition: Vector2d | null;
   playerColors: { [key: string]: PlayerColor };
   peerId: string;
   previewCard: IPreviewCard | null;
@@ -32,6 +33,7 @@ localStorageState.playerColors[myPeerRef] = "red";
 localStorageState.peerId = "";
 localStorageState.previewCard = null;
 localStorageState.menuPreviewCardJsonId = null;
+localStorageState.radialMenuPosition = null;
 
 const defaultState: IGameState = {
   playerColors: {},
@@ -41,6 +43,7 @@ const defaultState: IGameState = {
   previewCard: null,
   menuPreviewCardJsonId: null,
   activeGameType: null,
+  radialMenuPosition: null,
 };
 export const initialState: IGameState = {
   ...defaultState,

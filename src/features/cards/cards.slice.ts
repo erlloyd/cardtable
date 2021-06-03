@@ -145,6 +145,31 @@ const exhaustCardReducer: CaseReducer<
     });
 };
 
+const clearCardTokensReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<string | undefined>
+> = (state, action) => {
+  state.cards
+    .filter(
+      (card) =>
+        card.controlledBy === (action as any).ACTOR_REF &&
+        (card.id === (action.payload ?? "") || card.selected)
+    )
+    .forEach((card) => {
+      card.statusTokens = {
+        tough: false,
+        stunned: false,
+        confused: false,
+      };
+
+      card.counterTokens = {
+        damage: 0,
+        threat: 0,
+        generic: 0,
+      };
+    });
+};
+
 const getAttachDrawPos = (
   state: Draft<ICardsState>,
   baseCard: ICardStack
@@ -478,6 +503,7 @@ const cardsSlice = createSlice({
     resetCards: resetCardsReducer,
     toggleToken: toggleTokenReducer,
     adjustCounterToken: adjustCounterTokenReducer,
+    clearCardTokens: clearCardTokensReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -883,6 +909,7 @@ export const {
   resetCards,
   toggleToken,
   adjustCounterToken,
+  clearCardTokens,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

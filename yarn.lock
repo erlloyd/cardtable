@@ -6655,6 +6655,11 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
 
+hashids@^2.2.8:
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/hashids/-/hashids-2.2.8.tgz#d1e4e1be48e711ad6e5f27b32c37c399d5eeb5b4"
+  integrity sha512-OI6rsk/OqyX60nBsqxnNl3R7CDv9eMOgxzipshZwXE6cUcBcEyHf8rNDlWVdQJZK3TEynILYybCsNUEQfJsdLA==
+
 he@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
@@ -10356,6 +10361,11 @@ querystringify@^2.1.1:
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.2.0.tgz#3345941b4153cb9d082d8eee4cda2016a9aef7f6"
   integrity sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ==
 
+raf-schd@^4.0.2:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/raf-schd/-/raf-schd-4.0.3.tgz#5d6c34ef46f8b2a0e880a8fcdb743efc5bfdbc1a"
+  integrity sha512-tQkJl2GRWh83ui2DiPTJz9wEiMN20syf+5oKfB03yYP7ioZcJwsIK8FjrtLwH1m7C7e+Tt2yYBlrOpdT+dyeIQ==
+
 raf@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.1.tgz#0742e99a4a6552f445d73e3ee0328af0ff1ede39"
@@ -10478,6 +10488,16 @@ react-konva@^17.0.2-4:
   dependencies:
     react-reconciler "~0.26.2"
     scheduler "^0.20.2"
+
+react-pie-menu@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/react-pie-menu/-/react-pie-menu-0.3.0.tgz#0f32bb336650d81184106ad83966367f7f95d6fb"
+  integrity sha512-WZ2/um5iT4M3TVvaaojqKjf2oCCsgeM4FKZ6PxvjBbCujYAzDO/UhjfwXEEvQkHqNRZ5nGzAEjvN17kR5QbSGQ==
+  dependencies:
+    hashids "^2.2.8"
+    raf-schd "^4.0.2"
+    react-is "^17.0.1"
+    styled-components-theme-connector "^0.1.5"
 
 react-reconciler@~0.26.2:
   version "0.26.2"
@@ -11844,7 +11864,14 @@ style-loader@1.3.0:
     loader-utils "^2.0.0"
     schema-utils "^2.7.0"
 
-styled-components@5.3.0:
+styled-components-theme-connector@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/styled-components-theme-connector/-/styled-components-theme-connector-0.1.5.tgz#e0bbddf3042be86bb3c4ec15632dd60bf69dfa6b"
+  integrity sha512-QjGoOn/4T7eXk5OWD2NWR4Ja2fQOr+fFejT4fgYt6Lrl3dki91DTpHmQmu3KfarnXqp9jbdX6j3Ik8TyAnMkcw==
+  dependencies:
+    react-is "^17.0.1"
+
+styled-components@^5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-5.3.0.tgz#e47c3d3e9ddfff539f118a3dd0fd4f8f4fb25727"
   integrity sha512-bPJKwZCHjJPf/hwTJl6TbkSZg/3evha+XPEizrZUGb535jLImwDUdjTNxXqjjaASt2M4qO4AVfoHJNe3XB/tpQ==

@@ -48,6 +48,7 @@ import {
   setPreviewCardId,
   clearPreviewCard,
   quitGame,
+  showRadialMenuAtPosition,
 } from "./features/game/game.slice";
 
 import {
@@ -114,6 +115,7 @@ const GameContainer = connect(mapStateToProps, {
   updateCounterColor,
   createDeckFromTxt,
   generateGameStateUrl,
+  showRadialMenuAtPosition,
 })(Game);
 
 export default GameContainer;

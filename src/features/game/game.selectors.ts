@@ -19,6 +19,11 @@ export const getActiveGameType = createSelector(
   (game) => game.activeGameType
 );
 
+export const getRadialMenuPosition = createSelector(
+  getGame,
+  (game) => game.radialMenuPosition
+);
+
 export const getMenuPreviewCard = createSelector(getGame, (game) => {
   if (!game.menuPreviewCardJsonId) return null;
 
