@@ -690,7 +690,7 @@ const cardsSlice = createSlice({
           newCard.id = action.payload.idsToUse[index];
           newCard.selected = true;
           newCard.controlledBy = (action as any).ACTOR_REF;
-          newCard.faceup = true;
+          newCard.faceup = !action.payload.facedown;
           newCard.x = newCard.x + (cardConstants.CARD_WIDTH + 5) * (index + 1);
           newCard.y += cardConstants.CARD_HEIGHT;
 

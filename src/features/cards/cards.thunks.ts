@@ -44,6 +44,7 @@ export interface StartCardMovePayload {
 export interface DrawCardsOutOfCardStackPayload {
   cardStackId: string;
   numberToDraw: number;
+  facedown?: boolean;
 }
 
 export const shuffleStack =

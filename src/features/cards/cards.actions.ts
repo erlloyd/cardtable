@@ -24,6 +24,7 @@ export interface StartCardMoveWithSplitStackIdPayload {
 export interface DrawCardsOutOfCardStackWithIdsPayload {
   cardStackId: string;
   numberToDraw: number;
+  facedown?: boolean;
   idsToUse: string[];
 }
 
