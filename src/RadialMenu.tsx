@@ -1,11 +1,11 @@
 import { Vector2d } from "konva/lib/types";
 import React, { useState } from "react";
 import TopLayer from "./TopLayer";
-import FlipIcon from "@material-ui/icons/Flip";
+// import FlipIcon from "@material-ui/icons/Flip";
 // import IconButton from "@material-ui/core/IconButton";
 // import OpenWithIcon from "@material-ui/icons/OpenWith";
-import AutorenewIcon from "@material-ui/icons/Autorenew";
-import ShuffleIcon from "@material-ui/icons/Shuffle";
+// import AutorenewIcon from "@material-ui/icons/Autorenew";
+// import ShuffleIcon from "@material-ui/icons/Shuffle";
 import { GameType } from "./constants/app-constants";
 import {
   GamePropertiesMap,
@@ -25,6 +25,11 @@ enum MenuType {
   CounterTokenActions = "countertokenactions",
   DrawActions = "drawactions",
   DrawNumber = "drawnumber",
+}
+
+enum DrawMode {
+  FaceUp = "faceup",
+  FaceDown = "facedown",
 }
 
 let swallowClick = false;
@@ -53,6 +58,7 @@ interface IProps {
 }
 const RadialMenu = (props: IProps) => {
   const [visibleMenu, setVisibleMenu] = useState(MenuType.TopLevelActions);
+  const [currentDrawMode, setCurrentDrawMode] = useState(DrawMode.FaceDown);
 
   if (!props.position && visibleMenu !== MenuType.TopLevelActions) {
     setVisibleMenu(MenuType.TopLevelActions);
@@ -79,8 +85,14 @@ const RadialMenu = (props: IProps) => {
           }
         }}
       >
-        <PieMenu radius="128px" centerRadius="30px">
-          {renderMenuSlices(visibleMenu, setVisibleMenu, props)}
+        <PieMenu radius="156px" centerRadius="30px">
+          {renderMenuSlices(
+            visibleMenu,
+            setVisibleMenu,
+            currentDrawMode,
+            setCurrentDrawMode,
+            props
+          )}
         </PieMenu>
       </div>
     </TopLayer>
@@ -90,6 +102,8 @@ const RadialMenu = (props: IProps) => {
 const renderMenuSlices = (
   visibleMenu: MenuType,
   setVisibleMenu: (type: MenuType) => void,
+  currentDrawMode: DrawMode,
+  setCurrentDrawMode: (mode: DrawMode) => void,
   props: IProps
 ) => {
   switch (visibleMenu) {
@@ -98,9 +112,9 @@ const renderMenuSlices = (
     case MenuType.CounterTokenActions:
       return renderCounterTokensMenu(props);
     case MenuType.DrawActions:
-      return renderDrawMenu(props, setVisibleMenu);
+      return renderDrawMenu(props, setVisibleMenu, setCurrentDrawMode);
     case MenuType.DrawNumber:
-      return renderDrawNumberMenu(props);
+      return renderDrawNumberMenu(props, currentDrawMode);
     case MenuType.TopLevelActions:
     default:
       return renderTopLevelMenu(props, setVisibleMenu);
@@ -118,8 +132,10 @@ const renderTopLevelMenu = (
         props.flipCards();
       }}
     >
-      <FlipIcon fontSize="large" />
-      <div>Flip</div>
+      <div>
+        {/* <FlipIcon /> */}
+        <div>Flip</div>
+      </div>
     </Slice>,
     <Slice
       key={"exhaust-slice"}
@@ -127,8 +143,10 @@ const renderTopLevelMenu = (
         props.exhaustCard();
       }}
     >
-      <AutorenewIcon fontSize="large" />
-      <div>Exhaust</div>
+      <div>
+        {/* <AutorenewIcon /> */}
+        <div>Exhaust</div>
+      </div>
     </Slice>,
     <Slice
       key={"shuffle-slice"}
@@ -136,8 +154,10 @@ const renderTopLevelMenu = (
         props.shuffleStack();
       }}
     >
-      <ShuffleIcon fontSize="large" />
-      <div>Shuffle</div>
+      <div>
+        {/* <ShuffleIcon /> */}
+        <div>Shuffle</div>
+      </div>
     </Slice>,
     <Slice
       key={"statuses-slice"}
@@ -201,8 +221,10 @@ const renderStatusTokensMenu = (props: IProps) => {
       //   key + (tokenInfo.touchMenuLetter?.indexOf("+") !== -1 ? "-plus" : "");
       return (
         <Slice key={key} onSelect={action}>
-          {!!tokenInfo.touchMenuIcon ? tokenInfo.touchMenuIcon : null}
-          <div>{tokenInfo.menuText}</div>
+          <div>
+            {!!tokenInfo.touchMenuIcon ? tokenInfo.touchMenuIcon : null}
+            <div>{tokenInfo.menuText}</div>
+          </div>
         </Slice>
       );
     });
@@ -253,8 +275,10 @@ const renderCounterTokensMenu = (props: IProps) => {
         key + (tokenInfo.touchMenuLetter?.indexOf("+") !== -1 ? "-plus" : "");
       return (
         <Slice key={key} onSelect={action}>
-          {!!tokenInfo.touchMenuIcon ? tokenInfo.touchMenuIcon : null}
-          <div>{tokenInfo.touchMenuLetter}</div>
+          <div>
+            {!!tokenInfo.touchMenuIcon ? tokenInfo.touchMenuIcon : null}
+            <div>{tokenInfo.touchMenuLetter}</div>
+          </div>
         </Slice>
       );
     });
@@ -270,7 +294,8 @@ const renderCounterTokensMenu = (props: IProps) => {
 
 const renderDrawMenu = (
   props: IProps,
-  setVisibleMenu: (type: MenuType) => void
+  setVisibleMenu: (type: MenuType) => void,
+  setCurrentDrawMode: (mode: DrawMode) => void
 ) => {
   // if (!props.currentGameType) {
   return [
@@ -305,17 +330,28 @@ const renderDrawMenu = (
     <Slice
       key={"draw-x-faceup-slice"}
       onSelect={() => {
+        setCurrentDrawMode(DrawMode.FaceUp);
         setVisibleMenu(MenuType.DrawNumber);
         swallowClick = true;
       }}
     >
       X faceup
     </Slice>,
+    <Slice
+      key={"draw-x-facedown-slice"}
+      onSelect={() => {
+        setCurrentDrawMode(DrawMode.FaceDown);
+        setVisibleMenu(MenuType.DrawNumber);
+        swallowClick = true;
+      }}
+    >
+      X facedown
+    </Slice>,
   ];
   // }
 };
 
-const renderDrawNumberMenu = (props: IProps) => {
+const renderDrawNumberMenu = (props: IProps, currentDrawMode: DrawMode) => {
   return Array.from({ length: 10 }, (_, i) => i + 1).map((num) => {
     return (
       <Slice
@@ -325,7 +361,7 @@ const renderDrawNumberMenu = (props: IProps) => {
             props.drawCardsOutOfCardStack({
               cardStackId: props.selectedCardStacks[0].id,
               numberToDraw: num,
-              facedown: false,
+              facedown: currentDrawMode === DrawMode.FaceDown,
             });
           }
         }}
