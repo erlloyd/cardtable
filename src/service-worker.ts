@@ -86,7 +86,7 @@ registerRoute(
 
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
-  ({ url }) => url.pathname.includes("marvelcdb.com/api/public/decklist/"),
+  ({ url }) => url.pathname.includes("public/decklist"),
   // Customize this strategy as needed, e.g., by changing to CacheFirst.
   new NetworkFirst({
     cacheName: "decklists",
