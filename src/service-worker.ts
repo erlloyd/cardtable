@@ -71,7 +71,7 @@ registerRoute(
 
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
-  ({ url }) => url.pathname.endsWith(".json"),
+  ({ url }) => url.pathname.endsWith(".json") && url.pathname.includes('json_data'),
   // Customize this strategy as needed, e.g., by changing to CacheFirst.
   new StaleWhileRevalidate({
     cacheName: "json",
