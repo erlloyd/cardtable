@@ -12,7 +12,7 @@ import { clientsClaim } from "workbox-core";
 import { ExpirationPlugin } from "workbox-expiration";
 import { precacheAndRoute, createHandlerBoundToURL } from "workbox-precaching";
 import { registerRoute } from "workbox-routing";
-import { StaleWhileRevalidate } from "workbox-strategies";
+import { StaleWhileRevalidate, NetworkFirst } from "workbox-strategies";
 
 declare const self: ServiceWorkerGlobalScope;
 
@@ -64,23 +64,31 @@ registerRoute(
     plugins: [
       // Ensure that once this runtime cache reaches a maximum size the
       // least-recently used images are removed.
-      new ExpirationPlugin({ maxEntries: 200 }),
+      new ExpirationPlugin({ maxEntries: 500 }),
     ],
   })
 );
 
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
-  ({ url }) => url.pathname.endsWith(".json") && url.pathname.includes('json_data'),
+  ({ url }) =>
+    url.pathname.endsWith(".json") && url.pathname.includes("json_data"),
   // Customize this strategy as needed, e.g., by changing to CacheFirst.
   new StaleWhileRevalidate({
     cacheName: "json",
     plugins: [
       // Ensure that once this runtime cache reaches a maximum size the
       // least-recently used images are removed.
-      new ExpirationPlugin({ maxEntries: 300 }),
+      new ExpirationPlugin({ maxEntries: 1000 }),
     ],
   })
+);
+
+registerRoute(
+  // Add in any other file extensions or routing criteria as needed.
+  ({ url }) => url.pathname.includes("marvelcdb.com/api/public/decklist/"),
+  // Customize this strategy as needed, e.g., by changing to CacheFirst.
+  new NetworkFirst()
 );
 
 // This allows the web app to trigger skipWaiting via
