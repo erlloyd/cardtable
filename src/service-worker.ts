@@ -88,7 +88,9 @@ registerRoute(
   // Add in any other file extensions or routing criteria as needed.
   ({ url }) => url.pathname.includes("marvelcdb.com/api/public/decklist/"),
   // Customize this strategy as needed, e.g., by changing to CacheFirst.
-  new NetworkFirst()
+  new NetworkFirst({
+    cacheName: "decklists",
+  })
 );
 
 // This allows the web app to trigger skipWaiting via
