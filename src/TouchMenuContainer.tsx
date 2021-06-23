@@ -18,6 +18,7 @@ import { RootState } from "./store/rootReducer";
 import TouchMenu from "./TouchMenu";
 import { showRadialMenuAtPosition } from "./features/game/game.slice";
 import { myPeerRef } from "./constants/app-constants";
+import { ActionCreators } from "redux-undo";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -37,6 +38,8 @@ const TouchMenuContainer = connect(mapStateToProps, {
   shuffleStack,
   adjustCounterToken,
   showRadialMenuAtPosition,
+  undo: ActionCreators.undo,
+  redo: ActionCreators.redo,
 })(TouchMenu);
 
 export default TouchMenuContainer;

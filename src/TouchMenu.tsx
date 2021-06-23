@@ -6,6 +6,8 @@ import "./TouchMenu.scss";
 import OpenWithIcon from "@material-ui/icons/OpenWith";
 import SelectAllIcon from "@material-ui/icons/SelectAll";
 import InfoIcon from "@material-ui/icons/Info";
+import UndoIcon from "@material-ui/icons/Undo";
+import RedoIcon from "@material-ui/icons/Redo";
 
 import { GameType } from "./constants/app-constants";
 import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
@@ -33,6 +35,8 @@ interface IProps {
     value?: number;
   }) => void;
   showRadialMenuAtPosition: (payload: Vector2d) => void;
+  undo: () => void;
+  redo: () => void;
 }
 class TouchMenu extends Component<IProps> {
   render() {
@@ -62,6 +66,24 @@ class TouchMenu extends Component<IProps> {
           }}
         >
           <InfoIcon fontSize="large" />
+        </IconButton>
+        <IconButton
+          onClick={() => {
+            if (this.props.undo) {
+              this.props.undo();
+            }
+          }}
+        >
+          <UndoIcon fontSize="large" />
+        </IconButton>
+        <IconButton
+          onClick={() => {
+            if (this.props.redo) {
+              this.props.redo();
+            }
+          }}
+        >
+          <RedoIcon fontSize="large" />
         </IconButton>
       </div>
     );
