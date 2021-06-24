@@ -1,11 +1,6 @@
 import { Vector2d } from "konva/lib/types";
 import React, { useState } from "react";
 import TopLayer from "./TopLayer";
-// import FlipIcon from "@material-ui/icons/Flip";
-// import IconButton from "@material-ui/core/IconButton";
-// import OpenWithIcon from "@material-ui/icons/OpenWith";
-// import AutorenewIcon from "@material-ui/icons/Autorenew";
-// import ShuffleIcon from "@material-ui/icons/Shuffle";
 import { GameType } from "./constants/app-constants";
 import {
   GamePropertiesMap,
@@ -31,8 +26,6 @@ enum DrawMode {
   FaceUp = "faceup",
   FaceDown = "facedown",
 }
-
-let swallowClick = false;
 
 interface IProps {
   selectedCardStacks: ICardStack[];
@@ -78,11 +71,8 @@ const RadialMenu = (props: IProps) => {
     >
       <div
         onClick={(event) => {
-          if (swallowClick) {
-            event.stopPropagation();
-            event.preventDefault();
-            swallowClick = false;
-          }
+          event.stopPropagation();
+          event.preventDefault();
         }}
       >
         <PieMenu radius="156px" centerRadius="30px">
@@ -163,7 +153,6 @@ const renderTopLevelMenu = (
       key={"statuses-slice"}
       onSelect={() => {
         setVisibleMenu(MenuType.StatusTokenActions);
-        swallowClick = true;
       }}
     >
       <div>Statuses</div>
@@ -172,7 +161,6 @@ const renderTopLevelMenu = (
       key={"tokens-slice"}
       onSelect={() => {
         setVisibleMenu(MenuType.CounterTokenActions);
-        swallowClick = true;
       }}
     >
       <div>Tokens</div>
@@ -189,7 +177,6 @@ const renderTopLevelMenu = (
       key={"draw-menu-slice"}
       onSelect={() => {
         setVisibleMenu(MenuType.DrawActions);
-        swallowClick = true;
       }}
     >
       <div>Draw</div>
@@ -264,7 +251,6 @@ const renderCounterTokensMenu = (props: IProps) => {
           tokenType: tokenInfo.counterTokenType,
           delta: tokenInfo.touchMenuLetter?.indexOf("+") !== -1 ? 1 : -1,
         });
-        swallowClick = true;
       };
 
       let key = `touch-menu-slice-${tokenInfo.menuText
@@ -332,7 +318,6 @@ const renderDrawMenu = (
       onSelect={() => {
         setCurrentDrawMode(DrawMode.FaceUp);
         setVisibleMenu(MenuType.DrawNumber);
-        swallowClick = true;
       }}
     >
       X faceup
@@ -342,7 +327,6 @@ const renderDrawMenu = (
       onSelect={() => {
         setCurrentDrawMode(DrawMode.FaceDown);
         setVisibleMenu(MenuType.DrawNumber);
-        swallowClick = true;
       }}
     >
       X facedown
