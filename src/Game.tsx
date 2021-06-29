@@ -61,7 +61,10 @@ interface IProps {
   toggleSelectCard: (id: string) => void;
   startCardMove: (payload: { id: string; splitTopCard: boolean }) => void;
   unselectAllCards: (payload?: any) => void;
-  selectMultipleCards: (cards: { ids: string[] }) => void;
+  selectMultipleCards: (cards: {
+    ids: string[];
+    unselectOtherCards?: boolean;
+  }) => void;
   setPreviewCardId: (id: string) => void;
   clearPreviewCard: () => void;
   togglePanMode: () => void;
@@ -1412,7 +1415,9 @@ class Game extends Component<IProps, IState> {
     };
   };
 
-  private handleMouseUp = () => {
+  private handleMouseUp = (
+    event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>
+  ) => {
     // if we were selecting, check for intersection
     if (this.state.drewASelectionRect) {
       const selectRect = this.getSelectionRectInfo();
@@ -1438,8 +1443,13 @@ class Game extends Component<IProps, IState> {
         []
       );
 
+      // Here check if modifier held down
+      const modifierKeyHeld =
+        event.evt.shiftKey || event.evt.metaKey || event.evt.ctrlKey;
+
       this.props.selectMultipleCards({
         ids: selectedCards.map((card) => card.id),
+        unselectOtherCards: !modifierKeyHeld,
       });
     }
 
@@ -1552,7 +1562,7 @@ class Game extends Component<IProps, IState> {
     }
 
     if (!this.props.panMode) {
-      this.handleMouseUp();
+      this.handleMouseUp(event);
     }
   };
 

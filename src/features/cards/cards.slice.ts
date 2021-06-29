@@ -369,8 +369,13 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
 
 const selectMultipleCardsReducer: CaseReducer<
   ICardsState,
-  PayloadAction<{ ids: string[] }>
+  PayloadAction<{ ids: string[]; unselectOtherCards?: boolean }>
 > = (state, action) => {
+  // first, if we were told to unselect our other cards, do that
+  if (!!action.payload.unselectOtherCards) {
+    unselectAllCardsReducer(state, action as unknown as any);
+  }
+
   action.payload.ids
     .map((id) => state.cards.find((card) => card.id === id))
     .forEach((card) => {
