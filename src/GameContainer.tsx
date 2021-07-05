@@ -22,6 +22,7 @@ import {
   toggleToken,
   unselectAllCards,
   unselectCard,
+  adjustModifier,
 } from "./features/cards/cards.slice";
 import {
   addCardStack,
@@ -116,6 +117,7 @@ const GameContainer = connect(mapStateToProps, {
   createDeckFromTxt,
   generateGameStateUrl,
   showRadialMenuAtPosition,
+  adjustModifier,
 })(Game);
 
 export default GameContainer;

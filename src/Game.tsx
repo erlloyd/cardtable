@@ -123,6 +123,12 @@ interface IProps {
   }) => void;
   generateGameStateUrl: () => void;
   showRadialMenuAtPosition: (payload: Vector2d) => void;
+  adjustModifier: (payload: {
+    id?: string;
+    modifierId: string;
+    delta?: number;
+    value?: number;
+  }) => void;
 }
 
 interface IState {
@@ -940,7 +946,7 @@ class Game extends Component<IProps, IState> {
       tough: false,
     };
 
-    const menuItems = [
+    const menuItems: ContextMenuItem[] = [
       {
         label: "Flip",
         action: () => {
@@ -1104,6 +1110,42 @@ class Game extends Component<IProps, IState> {
         });
       },
     });
+
+    const modifiersForGameType =
+      GamePropertiesMap[this.props.currentGameType].modifiers;
+
+    if (modifiersForGameType.length > 0) {
+      menuItems.push({
+        label: "Modifiers",
+        children: modifiersForGameType.map((m) => {
+          return {
+            label: m.attributeName,
+            children: [
+              {
+                label: "+1",
+                action: () => {
+                  this.props.adjustModifier({
+                    id: card?.id || "",
+                    modifierId: m.attributeId,
+                    delta: 1,
+                  });
+                },
+              },
+              {
+                label: "- 1",
+                action: () => {
+                  this.props.adjustModifier({
+                    id: card?.id || "",
+                    modifierId: m.attributeId,
+                    delta: -1,
+                  });
+                },
+              },
+            ],
+          };
+        }),
+      });
+    }
 
     this.setState({
       showContextMenu: true,

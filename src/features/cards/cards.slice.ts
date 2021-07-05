@@ -487,6 +487,33 @@ const adjustCounterTokenReducer: CaseReducer<
     }
   });
 };
+
+const adjustModifierReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{
+    id?: string;
+    modifierId: string;
+    delta?: number;
+    value?: number;
+  }>
+> = (state, action) => {
+  let cardsToToggle = state.cards.filter(
+    (c) =>
+      (!!action.payload.id && action.payload.id === c.id) ||
+      (c.selected && c.controlledBy === (action as any).ACTOR_REF)
+  );
+
+  cardsToToggle.forEach((c) => {
+    if (action.payload.value !== undefined) {
+      c.modifiers[action.payload.modifierId] = action.payload.value;
+    } else if (action.payload.delta !== undefined) {
+      if (c.modifiers[action.payload.modifierId] === undefined) {
+        c.modifiers[action.payload.modifierId] = 0;
+      }
+      c.modifiers[action.payload.modifierId] += action.payload.delta;
+    }
+  });
+};
 // Selectors
 
 // slice
@@ -508,6 +535,7 @@ const cardsSlice = createSlice({
     resetCards: resetCardsReducer,
     toggleToken: toggleTokenReducer,
     adjustCounterToken: adjustCounterTokenReducer,
+    adjustModifier: adjustModifierReducer,
     clearCardTokens: clearCardTokensReducer,
   },
   extraReducers: (builder) => {
@@ -584,6 +612,7 @@ const cardsSlice = createSlice({
           threat: 0,
           generic: 0,
         },
+        modifiers: {},
       };
 
       state.cards.push(newStack);
@@ -794,6 +823,7 @@ const handleLoadDeck = (
       threat: 0,
       generic: 0,
     },
+    modifiers: {},
   };
 
   let mainDeckStack: ICardDetails[] = [];
@@ -828,6 +858,7 @@ const handleLoadDeck = (
       threat: 0,
       generic: 0,
     },
+    modifiers: {},
   };
 
   const encounterDeck: ICardStack = {
@@ -854,6 +885,7 @@ const handleLoadDeck = (
       threat: 0,
       generic: 0,
     },
+    modifiers: {},
   };
 
   const obligationDeck: ICardStack = {
@@ -880,6 +912,7 @@ const handleLoadDeck = (
       threat: 0,
       generic: 0,
     },
+    modifiers: {},
   };
 
   if (heroCard.cardStack.length > 0) {
@@ -915,6 +948,7 @@ export const {
   toggleToken,
   adjustCounterToken,
   clearCardTokens,
+  adjustModifier,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

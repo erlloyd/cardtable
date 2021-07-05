@@ -23,6 +23,9 @@ export interface ICardStack {
   counterTokens: {
     [K in CounterTokenType]: number;
   };
+  modifiers: {
+    [K: string]: number;
+  };
 }
 
 export interface ICardDetails {
@@ -54,6 +57,11 @@ if (!!localStorageState.cards) {
     c.controlledBy = "";
     c.selected = false;
     c.shuffling = false;
+
+    // handle missing modifiers
+    if (!c.modifiers) {
+      c.modifiers = {};
+    }
   });
 }
 

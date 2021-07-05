@@ -10,6 +10,7 @@ export interface GameProperties {
   decklistApi: string;
   encounterUiName: string;
   backgroundImageLocation: string;
+  modifiers: ModifierInfo[];
   tokens: {
     stunned: TokenInfo | null;
     confused: TokenInfo | null;
@@ -36,6 +37,12 @@ export interface TokenInfo extends TokenInfoBase {
   tokenType: StatusTokenType;
 }
 
+export interface ModifierInfo {
+  attributeId: string;
+  attributeName: string;
+  icon: string;
+}
+
 export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
   marvelchampions: {
     deckSite: "marvelcdb.com",
@@ -43,6 +50,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
     encounterUiName: "Encounter Set",
     backgroundImageLocation:
       process.env.PUBLIC_URL + "/images/table/background_marvelchampions.png",
+    modifiers: [],
     tokens: {
       stunned: {
         tokenType: StatusTokenType.Stunned,
@@ -101,6 +109,33 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
     encounterUiName: "Scenario",
     backgroundImageLocation:
       process.env.PUBLIC_URL + "/images/table/background_lotrlcg.jpg",
+    modifiers: [
+      {
+        attributeId: "willpower",
+        attributeName: "Willpower",
+        icon: process.env.PUBLIC_URL + "/images/standard/lotr/willpower.png",
+      },
+      {
+        attributeId: "attack",
+        attributeName: "Attack",
+        icon: process.env.PUBLIC_URL + "/images/standard/lotr/attack.png",
+      },
+      {
+        attributeId: "defense",
+        attributeName: "Defense",
+        icon: process.env.PUBLIC_URL + "/images/standard/lotr/defense.png",
+      },
+      {
+        attributeId: "hitpoints",
+        attributeName: "Hit Points",
+        icon: process.env.PUBLIC_URL + "/images/standard/lotr/hitpoints.png",
+      },
+      {
+        attributeId: "threat",
+        attributeName: "Threat",
+        icon: process.env.PUBLIC_URL + "/images/standard/lotr/threat.png",
+      },
+    ],
     tokens: {
       stunned: {
         tokenType: StatusTokenType.Stunned,
