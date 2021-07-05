@@ -1,0 +1,441 @@
+{
+    "Name": "The Aldburg Plot",
+    "Slug": "The-Aldburg-Plot",
+    "Abbreviation": "TAP",
+    "Cycle": "Oaths of the Rohirrim",
+    "SetType": "A_Long_extended_Party",
+    "Cards": null,
+    "cards": [
+        {
+            "Title": "Fatty Bolger",
+            "Slug": "Fatty-Bolger-TAP",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Fatty-Bolger.jpg",
+                "Stats": {
+                    "ThreatCost": "7",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Reduce your threat by 2.",
+                    "Response: Raise your threat by 4 and exhaust Fatty Bolger to cancel a non-unique enemy just revealed from the encounter deck and add it to the victory display. (Limit once per game for the group.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "Fatty Bolger had not been idle. As soon as he saw the dark shapes creep from the garden, he knew that he must run for it, or perish.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00001",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Widfast",
+            "Slug": "Widfast-TAP",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Widfast.jpg",
+                "Stats": {
+                    "ThreatCost": "10",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Woodman.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Search your collection for a Creature ally and add it to your hand. For the first round, reduce its cost by 2.",
+                    "Travel Action: If there is 1 active location, spend 1 resource from Widfast`s pool to travel to another location, resolving its Travel effect. (There are now 2 active locations.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00002",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Lily Cotton",
+            "Slug": "Lily-Cotton-TAP",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Lily-Cotton.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust Lily Cotton to ready a different Hobbit ally and add Lily Cotton`s Willpower, Attack, and Defense to that ally`s Willpower, Attack, and Defense respectively until the end of the phase. At the end of the phase, if that ally is still in play, return it to your hand (Limit once per phase.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "There is little or no magic about them, except the ordinary everyday sort which helps them disappear quietly and quickly...\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00003",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "A Lesson in Caution",
+            "Slug": "A-Lesson-in-Caution-TAP",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/A-Lesson-in-Caution.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Secrecy 1."
+                ],
+                "Text": [
+                    "Secrecy 1.",
+                    "Action: Draw 1 card. Then, either reduce your threat by 2, or the next card you play this phase gains secrecy 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "Hobbits go light, and their footprints are not easy even for a Ranger to read...\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "John Howe",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00004",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "There and Back Again",
+            "Slug": "There-and-Back-Again-TAP",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/There-and-Back-Again.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Secrecy 1."
+                ],
+                "Text": [
+                    "Response: After a Hobbit ally leaves play, search your hand or discard pile for a copy of that ally and put it into play, under any player`s control."
+                ],
+                "Shadow": null,
+                "FlavorText": "The legal bother, indeed, lasted for years. It was quite a long time before Mr. Baggins was in fact admitted to be alive again.\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00005",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Buckland Shirriff",
+            "Slug": "Buckland-Shirriff-TAP",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Buckland-Shirriff.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit.",
+                    "Shirriff."
+                ],
+                "Keywords": [
+                    "Devoted.",
+                    "Ranged."
+                ],
+                "Text": [
+                    "Response: After an enemy that shares a Trait with an enemy in the victory display is added to the staging area, spend 1 Lore resource to put Buckland Shirriff into play from your hand, under your control."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Justin Gerard",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00006",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Weep No More!",
+            "Slug": "Weep-No-More-TAP",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Weep-No-More.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Limit 3 copies of Weep No More! in the victory display.",
+                    "Response: After a `when revealed` effect or a shadow effect on a treachery card resolved, add Weep No More! to the victory display to add that treachery card to the victory display."
+                ],
+                "Shadow": null,
+                "FlavorText": "`At least we may yet be avenged. Let us gird ourselves and weep no more!`\r\n-Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00007",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Fear! Fire! Foes!",
+            "Slug": "Fear-Fire-Foes-TAP",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Fear-Fire-Foes.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Secrecy 1."
+                ],
+                "Text": [
+                    "Secrecy 1. Play only if you do not control a Warrior hero.",
+                    "Action: Choose a non-unique enemy and an attribute (Threat, Attack, or Defense). Until the end of the phase, reduce the chosen attribute of that enemy to 0."
+                ],
+                "Shadow": null,
+                "FlavorText": "Far away answering horns were heard. The alarm was spreading.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "John Howe",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00008",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Horn-call of Buckland",
+            "Slug": "Horn-call-of-Buckland-TAP",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Horn-call-of-Buckland.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Lore or Hobbit hero.",
+                    "Response: After you engage an enemy that shares a Trait with an enemy in the victory display, exhaust Horn-call of Buckland to ready attached hero. Then, that enemy gets -1 Attack and -1 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "At that moment, among the tress nearby, a horn rang out. It rent the night like fire on a hill-top.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00009",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Young Tom",
+            "Slug": "Young-Tom-TAP",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Young-Tom.jpg",
+                "Stats": {
+                    "ResourceCost": "1",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "During the round that Young Tom enters play, enemies get +5 engagement cost."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Not all is well there,` said Frodo, `but certainly gardeners are honoured.`\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00010",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Gavin",
+            "Slug": "Gavin-TAP",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Gavin.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Response: After resolving the staging of an encounter card without surge, exhaust Gavin to give that card surge and add 1 resource to the pool of Scout hero you control. If the next encounter card revealed is not a location, discard it without resolving its effects."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 3,
+            "Artist": "Unknown",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00011",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ]
+}
