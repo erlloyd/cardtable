@@ -7,6 +7,7 @@ import {
   toggleToken,
   adjustCounterToken,
   clearCardTokens,
+  adjustModifier,
 } from "./features/cards/cards.slice";
 import {
   shuffleStack,
@@ -34,6 +35,7 @@ const RadialMenuContainer = connect(mapStateToProps, {
   hideRadialMenu,
   clearCardTokens,
   drawCardsOutOfCardStack,
+  adjustModifier,
 })(RadialMenu);
 
 export default RadialMenuContainer;

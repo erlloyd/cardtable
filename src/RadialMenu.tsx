@@ -18,8 +18,10 @@ enum MenuType {
   TopLevelActions = "toplevelactions",
   StatusTokenActions = "statustokenactions",
   CounterTokenActions = "countertokenactions",
+  ModifierActions = "modifieractions",
   DrawActions = "drawactions",
   DrawNumber = "drawnumber",
+  ModifierNumber = "modifiernumber",
 }
 
 enum DrawMode {
@@ -48,10 +50,17 @@ interface IProps {
   }) => void;
   clearCardTokens: (id?: string) => void;
   drawCardsOutOfCardStack: (payload: DrawCardsOutOfCardStackPayload) => void;
+  adjustModifier: (payload: {
+    id?: string;
+    modifierId: string;
+    delta?: number;
+    value?: number;
+  }) => void;
 }
 const RadialMenu = (props: IProps) => {
   const [visibleMenu, setVisibleMenu] = useState(MenuType.TopLevelActions);
   const [currentDrawMode, setCurrentDrawMode] = useState(DrawMode.FaceDown);
+  const [currentModifier, setCurrentModifier] = useState("");
 
   if (!props.position && visibleMenu !== MenuType.TopLevelActions) {
     setVisibleMenu(MenuType.TopLevelActions);
@@ -81,6 +90,8 @@ const RadialMenu = (props: IProps) => {
             setVisibleMenu,
             currentDrawMode,
             setCurrentDrawMode,
+            currentModifier,
+            setCurrentModifier,
             props
           )}
         </PieMenu>
@@ -94,6 +105,8 @@ const renderMenuSlices = (
   setVisibleMenu: (type: MenuType) => void,
   currentDrawMode: DrawMode,
   setCurrentDrawMode: (mode: DrawMode) => void,
+  currentModifier: string,
+  setCurrentModifer: (mod: string) => void,
   props: IProps
 ) => {
   switch (visibleMenu) {
@@ -105,6 +118,10 @@ const renderMenuSlices = (
       return renderDrawMenu(props, setVisibleMenu, setCurrentDrawMode);
     case MenuType.DrawNumber:
       return renderDrawNumberMenu(props, currentDrawMode);
+    case MenuType.ModifierActions:
+      return renderModifierMenu(props, setVisibleMenu, setCurrentModifer);
+    case MenuType.ModifierNumber:
+      return renderModifierNumberMenu(props, currentModifier);
     case MenuType.TopLevelActions:
     default:
       return renderTopLevelMenu(props, setVisibleMenu);
@@ -115,7 +132,11 @@ const renderTopLevelMenu = (
   props: IProps,
   setVisibleMenu: (type: MenuType) => void
 ) => {
-  return [
+  if (!props.currentGameType) return null;
+
+  const modifiers = GamePropertiesMap[props.currentGameType].modifiers;
+
+  const slices = [
     <Slice
       key={"flip-slice"}
       onSelect={() => {
@@ -182,6 +203,21 @@ const renderTopLevelMenu = (
       <div>Draw</div>
     </Slice>,
   ];
+
+  if (modifiers.length > 0) {
+    slices.push(
+      <Slice
+        key={"modifiers-menu-slice"}
+        onSelect={() => {
+          setVisibleMenu(MenuType.ModifierActions);
+        }}
+      >
+        <div>Modifiers</div>
+      </Slice>
+    );
+  }
+
+  return slices;
 };
 
 const renderStatusTokensMenu = (props: IProps) => {
@@ -283,7 +319,6 @@ const renderDrawMenu = (
   setVisibleMenu: (type: MenuType) => void,
   setCurrentDrawMode: (mode: DrawMode) => void
 ) => {
-  // if (!props.currentGameType) {
   return [
     <Slice
       key={"draw-one-faceup-slice"}
@@ -332,7 +367,6 @@ const renderDrawMenu = (
       X facedown
     </Slice>,
   ];
-  // }
 };
 
 const renderDrawNumberMenu = (props: IProps, currentDrawMode: DrawMode) => {
@@ -354,6 +388,91 @@ const renderDrawNumberMenu = (props: IProps, currentDrawMode: DrawMode) => {
       </Slice>
     );
   });
+};
+
+const renderModifierMenu = (
+  props: IProps,
+  setVisibleMenu: (type: MenuType) => void,
+  setCurrentModifier: (mod: string) => void
+) => {
+  if (!props.currentGameType) return null;
+  return GamePropertiesMap[props.currentGameType].modifiers.map((m) => {
+    return (
+      <Slice
+        key={"modifier-slice"}
+        onSelect={() => {
+          setCurrentModifier(m.attributeId);
+          setVisibleMenu(MenuType.ModifierNumber);
+        }}
+      >
+        {m.attributeName}
+      </Slice>
+    );
+  });
+};
+
+const renderModifierNumberMenu = (props: IProps, currentModifier: string) => {
+  const basicNums = [
+    <Slice
+      key={`modifier-plus-one-slice`}
+      onSelect={() => {
+        props.adjustModifier({ modifierId: currentModifier, delta: 1 });
+      }}
+    >
+      Add 1
+    </Slice>,
+    <Slice
+      key={`modifier-minus-one-slice`}
+      onSelect={() => {
+        props.adjustModifier({ modifierId: currentModifier, delta: -1 });
+      }}
+    >
+      Remove 1
+    </Slice>,
+    <Slice
+      key={`modifier-zero-slice`}
+      onSelect={() => {
+        props.adjustModifier({ modifierId: currentModifier, value: 0 });
+      }}
+    >
+      0
+    </Slice>,
+  ];
+
+  const allNums = basicNums
+    .concat(
+      Array.from({ length: 3 }, (_, i) => i + 1).map((num) => {
+        return (
+          <Slice
+            key={`modifier-pos-${num}-cards-slice`}
+            onSelect={() => {
+              props.adjustModifier({ modifierId: currentModifier, value: num });
+            }}
+          >
+            {num}
+          </Slice>
+        );
+      })
+    )
+    .concat(
+      Array.from({ length: 3 }, (_, i) => i + 1).map((num) => {
+        return (
+          <Slice
+            key={`modifier-neg-${num}-cards-slice`}
+            onSelect={() => {
+              props.adjustModifier({
+                modifierId: currentModifier,
+                value: num * -1,
+              });
+            }}
+          >
+            {num * -1}
+          </Slice>
+        );
+      })
+    );
+
+  return allNums;
 };
 
 export default RadialMenu;

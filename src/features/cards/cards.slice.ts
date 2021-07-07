@@ -167,6 +167,8 @@ const clearCardTokensReducer: CaseReducer<
         threat: 0,
         generic: 0,
       };
+
+      card.modifiers = {};
     });
 };
 
