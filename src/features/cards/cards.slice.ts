@@ -436,29 +436,14 @@ const toggleTokenReducer: CaseReducer<
   ICardsState,
   PayloadAction<{ id?: string; tokenType: StatusTokenType; value?: boolean }>
 > = (state, action) => {
-  const cardToToggle = state.cards.find((c) => c.id === action.payload.id);
-  if (!!cardToToggle) {
+  foreachSelectedAndControlledCard(state, (action as any).ACTOR_REF, (card) => {
     if (action.payload.value !== undefined) {
-      cardToToggle.statusTokens[action.payload.tokenType] =
-        action.payload.value;
+      card.statusTokens[action.payload.tokenType] = action.payload.value;
     } else {
-      cardToToggle.statusTokens[action.payload.tokenType] =
-        !cardToToggle.statusTokens[action.payload.tokenType];
+      card.statusTokens[action.payload.tokenType] =
+        !card.statusTokens[action.payload.tokenType];
     }
-  } else {
-    foreachSelectedAndControlledCard(
-      state,
-      (action as any).ACTOR_REF,
-      (card) => {
-        if (action.payload.value !== undefined) {
-          card.statusTokens[action.payload.tokenType] = action.payload.value;
-        } else {
-          card.statusTokens[action.payload.tokenType] =
-            !card.statusTokens[action.payload.tokenType];
-        }
-      }
-    );
-  }
+  });
 };
 
 const adjustCounterTokenReducer: CaseReducer<
