@@ -23,6 +23,7 @@ import {
   unselectAllCards,
   unselectCard,
   adjustModifier,
+  clearAllModifiers,
 } from "./features/cards/cards.slice";
 import {
   addCardStack,
@@ -118,6 +119,7 @@ const GameContainer = connect(mapStateToProps, {
   generateGameStateUrl,
   showRadialMenuAtPosition,
   adjustModifier,
+  clearAllModifiers,
 })(Game);
 
 export default GameContainer;

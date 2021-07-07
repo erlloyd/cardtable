@@ -11,6 +11,7 @@ import { GameType, myPeerRef, PlayerColor } from "./constants/app-constants";
 import { cardConstants } from "./constants/card-constants";
 import { CARD_ALREADY_ROTATED_MAP } from "./constants/card-missing-image-map";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
+import CardModifiersContainer from "./CardModifiersContainer";
 
 export const HORIZONTAL_TYPE_CODES = [
   "main_scheme",
@@ -459,6 +460,17 @@ class Card extends Component<IProps, IState> {
         ></CardTokensContainer>
       );
 
+    const cardModifiers =
+      this.props.dragging || this.props.isGhost ? null : (
+        <CardModifiersContainer
+          currentGameType={this.props.currentGameType}
+          key={`${this.props.id}-cardModifiers`}
+          id={this.props.id}
+          x={this.props.x}
+          y={this.props.y}
+        ></CardModifiersContainer>
+      );
+
     const noImageCardNameText = this.renderCardName(
       offset,
       widthToUse,
@@ -473,6 +485,7 @@ class Card extends Component<IProps, IState> {
       confusedToken,
       toughToken,
       cardTokens,
+      cardModifiers,
     ];
   };
 

@@ -129,6 +129,7 @@ interface IProps {
     delta?: number;
     value?: number;
   }) => void;
+  clearAllModifiers: (payload: { id?: string }) => void;
 }
 
 interface IState {
@@ -1117,33 +1118,42 @@ class Game extends Component<IProps, IState> {
     if (modifiersForGameType.length > 0) {
       menuItems.push({
         label: "Modifiers",
-        children: modifiersForGameType.map((m) => {
-          return {
-            label: m.attributeName,
-            children: [
-              {
-                label: "+1",
-                action: () => {
-                  this.props.adjustModifier({
-                    id: card?.id || "",
-                    modifierId: m.attributeId,
-                    delta: 1,
-                  });
+        children: modifiersForGameType
+          .map((m) => {
+            return {
+              label: m.attributeName,
+              children: [
+                {
+                  label: "+1",
+                  action: () => {
+                    this.props.adjustModifier({
+                      id: card?.id || "",
+                      modifierId: m.attributeId,
+                      delta: 1,
+                    });
+                  },
                 },
-              },
-              {
-                label: "- 1",
-                action: () => {
-                  this.props.adjustModifier({
-                    id: card?.id || "",
-                    modifierId: m.attributeId,
-                    delta: -1,
-                  });
+                {
+                  label: "- 1",
+                  action: () => {
+                    this.props.adjustModifier({
+                      id: card?.id || "",
+                      modifierId: m.attributeId,
+                      delta: -1,
+                    });
+                  },
                 },
+              ],
+            } as ContextMenuItem;
+          })
+          .concat([
+            {
+              label: "Clear all modifiers",
+              action: () => {
+                this.props.clearAllModifiers({ id: card?.id || "" });
               },
-            ],
-          };
-        }),
+            },
+          ]),
       });
     }
 

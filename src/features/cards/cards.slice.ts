@@ -514,6 +514,23 @@ const adjustModifierReducer: CaseReducer<
     }
   });
 };
+
+const clearAllModifiersReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{
+    id?: string;
+  }>
+> = (state, action) => {
+  let cardsToToggle = state.cards.filter(
+    (c) =>
+      (!!action.payload.id && action.payload.id === c.id) ||
+      (c.selected && c.controlledBy === (action as any).ACTOR_REF)
+  );
+
+  cardsToToggle.forEach((c) => {
+    c.modifiers = {};
+  });
+};
 // Selectors
 
 // slice
@@ -536,6 +553,7 @@ const cardsSlice = createSlice({
     toggleToken: toggleTokenReducer,
     adjustCounterToken: adjustCounterTokenReducer,
     adjustModifier: adjustModifierReducer,
+    clearAllModifiers: clearAllModifiersReducer,
     clearCardTokens: clearCardTokensReducer,
   },
   extraReducers: (builder) => {
@@ -949,6 +967,7 @@ export const {
   adjustCounterToken,
   clearCardTokens,
   adjustModifier,
+  clearAllModifiers,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

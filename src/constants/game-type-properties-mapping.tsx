@@ -41,6 +41,7 @@ export interface ModifierInfo {
   attributeId: string;
   attributeName: string;
   icon: string;
+  slot: number;
 }
 
 export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
@@ -111,29 +112,34 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
       process.env.PUBLIC_URL + "/images/table/background_lotrlcg.jpg",
     modifiers: [
       {
+        attributeId: "threat",
+        attributeName: "Threat",
+        icon: process.env.PUBLIC_URL + "/images/standard/lotr/threat.png",
+        slot: 1,
+      },
+      {
         attributeId: "willpower",
         attributeName: "Willpower",
         icon: process.env.PUBLIC_URL + "/images/standard/lotr/willpower.png",
+        slot: 2,
       },
       {
         attributeId: "attack",
         attributeName: "Attack",
         icon: process.env.PUBLIC_URL + "/images/standard/lotr/attack.png",
+        slot: 3,
       },
       {
         attributeId: "defense",
         attributeName: "Defense",
         icon: process.env.PUBLIC_URL + "/images/standard/lotr/defense.png",
+        slot: 4,
       },
       {
         attributeId: "hitpoints",
         attributeName: "Hit Points",
         icon: process.env.PUBLIC_URL + "/images/standard/lotr/hitpoints.png",
-      },
-      {
-        attributeId: "threat",
-        attributeName: "Threat",
-        icon: process.env.PUBLIC_URL + "/images/standard/lotr/threat.png",
+        slot: 5,
       },
     ],
     tokens: {
