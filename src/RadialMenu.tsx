@@ -109,23 +109,64 @@ const renderMenuSlices = (
   setCurrentModifer: (mod: string) => void,
   props: IProps
 ) => {
+  let slices: JSX.Element[] | null = null;
+  let backMenu: MenuType | null = null;
+
   switch (visibleMenu) {
     case MenuType.StatusTokenActions:
-      return renderStatusTokensMenu(props);
+      slices = renderStatusTokensMenu(props);
+      backMenu = MenuType.TopLevelActions;
+      break;
     case MenuType.CounterTokenActions:
-      return renderCounterTokensMenu(props);
+      slices = renderCounterTokensMenu(props);
+      backMenu = MenuType.TopLevelActions;
+      break;
     case MenuType.DrawActions:
-      return renderDrawMenu(props, setVisibleMenu, setCurrentDrawMode);
+      slices = renderDrawMenu(props, setVisibleMenu, setCurrentDrawMode);
+      backMenu = MenuType.TopLevelActions;
+      break;
     case MenuType.DrawNumber:
-      return renderDrawNumberMenu(props, currentDrawMode);
+      slices = renderDrawNumberMenu(props, currentDrawMode);
+      backMenu = MenuType.DrawActions;
+      break;
     case MenuType.ModifierActions:
-      return renderModifierMenu(props, setVisibleMenu, setCurrentModifer);
+      slices = renderModifierMenu(props, setVisibleMenu, setCurrentModifer);
+      backMenu = MenuType.TopLevelActions;
+      break;
     case MenuType.ModifierNumber:
-      return renderModifierNumberMenu(props, currentModifier);
+      slices = renderModifierNumberMenu(props, currentModifier);
+      backMenu = MenuType.ModifierActions;
+      break;
     case MenuType.TopLevelActions:
     default:
-      return renderTopLevelMenu(props, setVisibleMenu);
+      slices = renderTopLevelMenu(props, setVisibleMenu);
   }
+  if (!!backMenu) {
+    slices = renderMenuWithBackButton(slices, backMenu, setVisibleMenu);
+  }
+
+  return slices;
+};
+
+const renderMenuWithBackButton = (
+  slices: JSX.Element[] | null,
+  backMenu: MenuType,
+  setVisibleMenu: (type: MenuType) => void
+): JSX.Element[] | null => {
+  if (!slices) return null;
+
+  const back = (
+    <Slice
+      key={"back-slice"}
+      onSelect={() => {
+        setVisibleMenu(backMenu);
+      }}
+    >
+      Back
+    </Slice>
+  );
+
+  return [back].concat(slices);
 };
 
 const renderTopLevelMenu = (

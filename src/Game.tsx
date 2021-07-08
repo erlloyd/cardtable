@@ -1124,7 +1124,7 @@ class Game extends Component<IProps, IState> {
               label: m.attributeName,
               children: [
                 {
-                  label: "+1",
+                  label: "Add 1",
                   action: () => {
                     this.props.adjustModifier({
                       id: card?.id || "",
@@ -1134,12 +1134,82 @@ class Game extends Component<IProps, IState> {
                   },
                 },
                 {
-                  label: "- 1",
+                  label: "Remove 1",
                   action: () => {
                     this.props.adjustModifier({
                       id: card?.id || "",
                       modifierId: m.attributeId,
                       delta: -1,
+                    });
+                  },
+                },
+                {
+                  label: "-3",
+                  action: () => {
+                    this.props.adjustModifier({
+                      id: card?.id || "",
+                      modifierId: m.attributeId,
+                      value: -3,
+                    });
+                  },
+                },
+                {
+                  label: "-2",
+                  action: () => {
+                    this.props.adjustModifier({
+                      id: card?.id || "",
+                      modifierId: m.attributeId,
+                      value: -2,
+                    });
+                  },
+                },
+                {
+                  label: "-1",
+                  action: () => {
+                    this.props.adjustModifier({
+                      id: card?.id || "",
+                      modifierId: m.attributeId,
+                      value: -1,
+                    });
+                  },
+                },
+                {
+                  label: "0",
+                  action: () => {
+                    this.props.adjustModifier({
+                      id: card?.id || "",
+                      modifierId: m.attributeId,
+                      value: 0,
+                    });
+                  },
+                },
+                {
+                  label: "1",
+                  action: () => {
+                    this.props.adjustModifier({
+                      id: card?.id || "",
+                      modifierId: m.attributeId,
+                      value: 1,
+                    });
+                  },
+                },
+                {
+                  label: "2",
+                  action: () => {
+                    this.props.adjustModifier({
+                      id: card?.id || "",
+                      modifierId: m.attributeId,
+                      value: 2,
+                    });
+                  },
+                },
+                {
+                  label: "3",
+                  action: () => {
+                    this.props.adjustModifier({
+                      id: card?.id || "",
+                      modifierId: m.attributeId,
+                      value: 3,
                     });
                   },
                 },
