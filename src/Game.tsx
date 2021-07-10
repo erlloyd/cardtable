@@ -39,6 +39,10 @@ import RadialMenuContainer from "./RadialMenuContainer";
 import TokenValueModifier from "./TokenValueModifier";
 import TopLayer from "./TopLayer";
 import TouchMenuContainer from "./TouchMenuContainer";
+import {
+  anyCardStackHasStatus,
+  getMySelectedCards,
+} from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
 import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
 
@@ -426,6 +430,7 @@ class Game extends Component<IProps, IState> {
                 faceup={card.faceup}
                 height={previewCardHeight / this.props.gameState.stageZoom.y}
                 width={previewCardWidth / this.props.gameState.stageZoom.x}
+                isPreview={true}
               />
             );
           })
@@ -941,11 +946,8 @@ class Game extends Component<IProps, IState> {
 
     const card = this.props.cards.cards.find((c) => c.id === cardId);
     const numCardsInStack = card?.cardStack?.length || 0;
-    const currentStatusTokens = card?.statusTokens || {
-      stunned: false,
-      confused: false,
-      tough: false,
-    };
+
+    const mySelectedCards = getMySelectedCards(this.props.cards.cards);
 
     const menuItems: ContextMenuItem[] = [
       {
@@ -983,14 +985,17 @@ class Game extends Component<IProps, IState> {
 
     if (!!tokenInfoForGameType.stunned) {
       menuItems.push({
-        label: !!currentStatusTokens.stunned
+        label: anyCardStackHasStatus(StatusTokenType.Stunned, mySelectedCards)
           ? tokenInfoForGameType.stunned.menuRemoveText
           : tokenInfoForGameType.stunned.menuText,
         action: () => {
           this.props.toggleToken({
             id: card?.id || "",
             tokenType: StatusTokenType.Stunned,
-            value: !currentStatusTokens.stunned,
+            value: !anyCardStackHasStatus(
+              StatusTokenType.Stunned,
+              mySelectedCards
+            ),
           });
         },
       });
@@ -998,14 +1003,17 @@ class Game extends Component<IProps, IState> {
 
     if (!!tokenInfoForGameType.confused) {
       menuItems.push({
-        label: !!currentStatusTokens.confused
+        label: anyCardStackHasStatus(StatusTokenType.Confused, mySelectedCards)
           ? tokenInfoForGameType.confused.menuRemoveText
           : tokenInfoForGameType.confused.menuText,
         action: () => {
           this.props.toggleToken({
             id: card?.id || "",
             tokenType: StatusTokenType.Confused,
-            value: !currentStatusTokens.confused,
+            value: !anyCardStackHasStatus(
+              StatusTokenType.Confused,
+              mySelectedCards
+            ),
           });
         },
       });
@@ -1013,14 +1021,17 @@ class Game extends Component<IProps, IState> {
 
     if (!!tokenInfoForGameType.tough) {
       menuItems.push({
-        label: !!currentStatusTokens.tough
+        label: anyCardStackHasStatus(StatusTokenType.Tough, mySelectedCards)
           ? tokenInfoForGameType.tough.menuRemoveText
           : tokenInfoForGameType.tough.menuText,
         action: () => {
           this.props.toggleToken({
             id: card?.id || "",
             tokenType: StatusTokenType.Tough,
-            value: !currentStatusTokens.tough,
+            value: !anyCardStackHasStatus(
+              StatusTokenType.Tough,
+              mySelectedCards
+            ),
           });
         },
       });
@@ -1366,9 +1377,7 @@ class Game extends Component<IProps, IState> {
       if (modifier) {
       } else {
         // First, get the selected card stack
-        const mySelectedCards = this.props.cards.cards.filter(
-          (c) => c.selected && c.controlledBy === myPeerRef
-        );
+        const mySelectedCards = getMySelectedCards(this.props.cards.cards);
         if (mySelectedCards.length !== 1) {
           console.log(
             "will not be drawing any cards because the number of selected stacks is " +

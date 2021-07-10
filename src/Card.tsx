@@ -65,6 +65,7 @@ interface IProps {
   height?: number;
   imgUrls: string[];
   isGhost?: boolean;
+  isPreview?: boolean;
   numCardsInStack?: number;
   typeCode?: string;
   faceup: boolean;
@@ -468,6 +469,9 @@ class Card extends Component<IProps, IState> {
           id={this.props.id}
           x={this.props.x}
           y={this.props.y}
+          cardHeight={this.props.height}
+          cardWidth={this.props.width}
+          isPreview={!!this.props.isPreview}
         ></CardModifiersContainer>
       );
 

@@ -12,6 +12,9 @@ interface IProps {
   x: number;
   y: number;
   card: ICardStack | undefined;
+  cardHeight: number | undefined;
+  cardWidth: number | undefined;
+  isPreview: boolean;
 }
 
 interface IState {
@@ -22,6 +25,8 @@ interface IState {
 
 const desiredWidth = 36;
 const desiredHeight = 36;
+
+const textWidth = 40;
 
 class CardModifiers extends Component<IProps, IState> {
   private imgs: { [K: string]: HTMLImageElement };
@@ -105,8 +110,12 @@ class CardModifiers extends Component<IProps, IState> {
     const nodesToRender: JSX.Element[] = [];
 
     modifiersInfo.forEach((m) => {
-      const modifierX =
-        this.props.x + cardConstants.CARD_WIDTH / 2 - desiredWidth / 2;
+      const modifierX = this.props.isPreview
+        ? this.props.x +
+          (this.props.cardWidth || 0) / 2 -
+          desiredWidth -
+          textWidth
+        : this.props.x + cardConstants.CARD_WIDTH / 2 - desiredWidth / 2;
       const modifierTextX = modifierX + desiredWidth - 2;
       const modifierY =
         this.props.y -
@@ -141,12 +150,12 @@ class CardModifiers extends Component<IProps, IState> {
           key={`${this.props.card?.id}-${m.attributeId}-modifier-text`}
           x={modifierTextX}
           y={modifierY}
-          width={20}
+          width={textWidth}
           height={desiredHeight}
         >
-          <Rect width={40} height={desiredHeight} fill="white"></Rect>
+          <Rect width={textWidth} height={desiredHeight} fill="white"></Rect>
           <Text
-            width={40}
+            width={textWidth}
             height={desiredHeight}
             text={`${modifierValue && modifierValue > 0 ? "+" : ""}${
               modifierValue ?? "?"
@@ -167,130 +176,6 @@ class CardModifiers extends Component<IProps, IState> {
         nodesToRender.push(modifierText);
       }
     });
-
-    // const damageX = this.props.x - desiredWidth / 2;
-    // const damageY = this.props.y - cardConstants.CARD_HEIGHT / 2 + 20;
-    // const showDamage =
-    //   this.state.imagesLoaded.damage && !!this.props.card.counterTokens.damage;
-
-    // const damageToken = showDamage ? (
-    //   <Rect
-    //     key={`${this.props.card.id}-damageToken`}
-    //     x={damageX}
-    //     y={damageY}
-    //     scale={{
-    //       x: desiredWidth / this.damageImg.naturalWidth,
-    //       y: desiredHeight / this.damageImg.naturalHeight,
-    //     }}
-    //     width={this.damageImg.naturalWidth}
-    //     height={this.damageImg.naturalHeight}
-    //     fillPatternImage={this.damageImg}
-    //   ></Rect>
-    // ) : null;
-
-    // const damageText = showDamage ? (
-    //   <Text
-    //     key={`${this.props.card.id}-damageText`}
-    //     x={damageX}
-    //     y={damageY}
-    //     width={
-    //       this.damageImg.naturalWidth *
-    //       (desiredWidth / this.damageImg.naturalWidth)
-    //     }
-    //     height={
-    //       this.damageImg.naturalHeight *
-    //       (desiredHeight / this.damageImg.naturalHeight)
-    //     }
-    //     text={`${this.props.card.counterTokens.damage}`}
-    //     fill="white"
-    //     align="center"
-    //     verticalAlign="middle"
-    //     fontSize={24}
-    //   ></Text>
-    // ) : null;
-
-    // const threatX = this.props.x - desiredWidth / 2;
-    // const threatY = damageY + desiredHeight + 5;
-    // const showThreat =
-    //   this.state.imagesLoaded.threat && !!this.props.card.counterTokens.threat;
-
-    // const threatToken = showThreat ? (
-    //   <Rect
-    //     key={`${this.props.card.id}-threatToken`}
-    //     x={threatX}
-    //     y={threatY}
-    //     scale={{
-    //       x: desiredWidth / this.threatImg.naturalWidth,
-    //       y: desiredHeight / this.threatImg.naturalHeight,
-    //     }}
-    //     width={this.threatImg.naturalWidth}
-    //     height={this.threatImg.naturalHeight}
-    //     fillPatternImage={this.threatImg}
-    //   ></Rect>
-    // ) : null;
-
-    // const threatText = showThreat ? (
-    //   <Text
-    //     key={`${this.props.card.id}-threatText`}
-    //     x={threatX}
-    //     y={threatY}
-    //     width={
-    //       this.threatImg.naturalWidth *
-    //       (desiredWidth / this.threatImg.naturalWidth)
-    //     }
-    //     height={
-    //       this.threatImg.naturalHeight *
-    //       (desiredHeight / this.threatImg.naturalHeight)
-    //     }
-    //     text={`${this.props.card.counterTokens.threat}`}
-    //     fill="white"
-    //     align="center"
-    //     verticalAlign="middle"
-    //     fontSize={24}
-    //   ></Text>
-    // ) : null;
-
-    // const genericX = this.props.x - desiredWidth / 2;
-    // const genericY = threatY + desiredHeight + 5;
-    // const showGeneric =
-    //   this.state.imagesLoaded.generic &&
-    //   !!this.props.card.counterTokens.generic;
-
-    // const genericToken = showGeneric ? (
-    //   <Rect
-    //     key={`${this.props.card.id}-genericToken`}
-    //     x={genericX}
-    //     y={genericY}
-    //     scale={{
-    //       x: desiredWidth / this.genericImg.naturalWidth,
-    //       y: desiredHeight / this.genericImg.naturalHeight,
-    //     }}
-    //     width={this.genericImg.naturalWidth}
-    //     height={this.genericImg.naturalHeight}
-    //     fillPatternImage={this.genericImg}
-    //   ></Rect>
-    // ) : null;
-
-    // const genericText = showGeneric ? (
-    //   <Text
-    //     key={`${this.props.card.id}-genericText`}
-    //     x={genericX}
-    //     y={genericY}
-    //     width={
-    //       this.genericImg.naturalWidth *
-    //       (desiredWidth / this.genericImg.naturalWidth)
-    //     }
-    //     height={
-    //       this.genericImg.naturalHeight *
-    //       (desiredHeight / this.genericImg.naturalHeight)
-    //     }
-    //     text={`${this.props.card.counterTokens.generic}`}
-    //     fill="white"
-    //     align="center"
-    //     verticalAlign="middle"
-    //     fontSize={24}
-    //   ></Text>
-    // ) : null;
 
     return nodesToRender;
   }
