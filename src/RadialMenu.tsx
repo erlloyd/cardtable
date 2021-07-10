@@ -10,6 +10,7 @@ import {
 import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import { ICardStack } from "./features/cards/initialState";
+import { anyCardStackHasStatus } from "./utilities/card-utils";
 const reactPieMenu = require("react-pie-menu");
 const PieMenu = reactPieMenu.default;
 const { Slice } = reactPieMenu;
@@ -265,6 +266,7 @@ const renderStatusTokensMenu = (props: IProps) => {
   if (!props.currentGameType) {
     return [<Slice></Slice>, <Slice></Slice>, <Slice></Slice>];
   }
+
   let slices = Object.values(GamePropertiesMap[props.currentGameType].tokens)
     .filter(
       (tokenInfo): tokenInfo is TokenInfo =>
@@ -274,6 +276,10 @@ const renderStatusTokensMenu = (props: IProps) => {
       const action = () => {
         props.toggleToken({
           tokenType: tokenInfo.tokenType,
+          value: !anyCardStackHasStatus(
+            tokenInfo.tokenType,
+            props.selectedCardStacks
+          ),
         });
       };
 
