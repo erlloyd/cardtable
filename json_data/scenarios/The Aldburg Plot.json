@@ -1,0 +1,1670 @@
+{
+    "Title": "The Aldburg Plot",
+    "Slug": "The-Aldburg-Plot",
+    "Product": "The Aldburg Plot",
+    "Number": 1,
+    "AllCards": [
+        {
+            "Title": "Old Farmhouse",
+            "Slug": "Old-Farmhouse-CoE",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Old-Farmhouse.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Village."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Old Farmhouse leaves play as an explored location, discard cards from the encounter deck until a location is discarded. Add that location to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "About a furlong from the main road, they met a stout barrier of old farm-carts upturned. That halted them.\r\n—The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": {
+                "EncounterSet": "Rohan Encampment",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 31,
+            "Quantity": 3,
+            "Artist": "Murat Khashkulov",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300031",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Abandoned Mill",
+            "Slug": "Abandoned-Mill-CoE",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Abandoned-Mill.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "1"
+                },
+                "Traits": [
+                    "Village."
+                ],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "Doomed 1. Immune to player card effects.",
+                    "Forced: After Abandoned Mill leaves play as an explored location, discard cards from the encounter deck until an enemy is discarded. Add that enemy to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "You’ve got to have grist before you can grind; and there was no more. —The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": {
+                "EncounterSet": "Rohan Encampment",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 32,
+            "Quantity": 2,
+            "Artist": "Murat Khashkulov",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300032",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Recreant Rider",
+            "Slug": "Recreant-Rider-CoE",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Recreant-Rider.jpg",
+                "Stats": {
+                    "EngagementCost": "31",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Traitor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Recreant Rider enters the staging area, it makes an immediate attack against the first player."
+                ],
+                "Shadow": "Shadow: Return attacking enemy to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": {
+                "EncounterSet": "Faithless Rohirrim",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 39,
+            "Quantity": 3,
+            "Artist": "CollaborationJS",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300039",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Deadly Defector",
+            "Slug": "Deadly-Defector-CoE",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Children-of-Eorl/Deadly-Defector.jpg",
+                "Stats": {
+                    "EngagementCost": "38",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Traitor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the combat phase, if Deadly Defector is in the staging area, it makes an immediate attack against the last player."
+                ],
+                "Shadow": "Shadow: If attacking enemy is in the staging area, it makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Children of Eorl",
+            "EncounterInfo": {
+                "EncounterSet": "Faithless Rohirrim",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 40,
+            "Quantity": 3,
+            "Artist": "Bryan Sola",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "300040",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Red Harvest",
+            "Slug": "Red-Harvest-TAP",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Red-Harvest.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Forced: After an enemy engages a player, that player deals 2 damage to a character they control.",
+                    "Forced: After this stage is defeated, shuffle the encounter discard pile into the encounter deck. Each player discards cards from the encounter deck until an enemy is discarded and adds that enemy to the staging area. Add The Armoury to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "With brutal speed, The Whisperer`s men fall upon you. You`ll have to fight tooth and nail to make your way to the armoury."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 12,
+            "Quantity": 1,
+            "Artist": "Jon Foster",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00012",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Prisoner in White",
+            "Slug": "The-Prisoner-in-White-TAP",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/The-Prisoner-in-White.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "The players cannot travel to locations or make locations active with player card effects.",
+                    "Forced: After this stage is defeated, add Ossian to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "In an attempt to cover his tracks, the spy master`s agent has infiltrated the prison."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 13,
+            "Quantity": 1,
+            "Artist": "Taleworlds Entertainment",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00013",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Man with the Twisted Lip",
+            "Slug": "The-Man-with-the-Twisted-Lip-TAP",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/The-Man-with-the-Twisted-Lip.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Forced: At the end of the round, raise each player`s threat by 1.",
+                    "Forced: After this stage is defeated, add The Spy Master to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "You`ve begun to track the secretive spy master of Aldburg, though it`s hard to tell which of you is the cat and which is the mouse."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 14,
+            "Quantity": 1,
+            "Artist": "servia-art",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00014",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "A Fire Rises",
+            "Slug": "A-Fire-Rises-TAP",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/A-Fire-Rises.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Increase the cost to play each event by 1.",
+                    "Forced: After this stage is defeated, reveal Spreading Inferno."
+                ],
+                "Shadow": null,
+                "FlavorText": "Something foul is afoot in Aldburg. As you begin putting the pieces together, you see smoke and flame from a nearby building."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 15,
+            "Quantity": 1,
+            "Artist": "Paolo Puggioni",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00015",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "A Case of Identity",
+            "Slug": "A-Case-of-Identity-TAP",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/A-Case-of-Identity.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Forced: At the end of the staging step, discard cards from the top of the encounter deck until an enemy is discarded. Reveal that enemy.",
+                    "Forced: After this stage is defeated, add Great Mead Hall to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "The mystery of The Whisperer`s true identity remains. You must be on the right trail, judging by her cutthroats skulking in the alleyways."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 16,
+            "Quantity": 1,
+            "Artist": "Nele Diel",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00016",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Whisperer in the Darkness",
+            "Slug": "Whisperer-in-the-Darkness-TAP",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Whisperer-in-the-Darkness.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    ">Forced: After a location is explored, raise each player`s threat by 1.",
+                    "Forced: After this stage is defeated, add The Whisperer to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "The tavern was alight with rumors of an assassin called `The Whisperer.` If you`re to unravel this mystery, you will have to seek her out, and stop her before she strikes."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": null,
+            "Number": 17,
+            "Quantity": 1,
+            "Artist": "JLIEN",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00017",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Spreading Inferno",
+            "Slug": "Spreading-Inferno-TAP",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Spreading-Inferno.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Inferno.",
+                    "Suspicious."
+                ],
+                "Keywords": [
+                    "Guarded (location)."
+                ],
+                "Text": [
+                    "Guarded (location).",
+                    "Forced: At the beginning of the travel phase, discard the attached location, raise each player`s threat by 1, and discard the lowest printed cost ally controlled by each player. Reveal Spreading Inferno.",
+                    "Forced: When the attached location is explored, flip this card over and reveal it."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 18,
+            "Quantity": 1,
+            "Artist": "Elli Lebedeva",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00018",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Ruby Cloak-pin",
+            "Slug": "Ruby-Cloak-pin-TAP",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Ruby-Cloak-pin.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Clue."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If unattached, attach to a hero with the fewest Clue objectives attached.",
+                    "Forced: After attached hero readies, discard the top 4 cards of your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "Among the ashes, you recognize this pin immediately. It belongs to the cur Gálmód. Queen Morwen`s `trusted` advisor."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 18,
+            "Quantity": 1,
+            "Artist": "June Jenseen",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00018",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Whisperer",
+            "Slug": "The-Whisperer-TAP",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/The-Whisperer.jpg",
+                "Stats": {
+                    "EngagementCost": "45",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Traitor.",
+                    "Suspicious."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the end of the round, return The Whisperer to the staging area, if able. The Whisperer makes an immediate attack against the first player. Damage that would be dealt by this attack is instead assigned as an increase to the first player`s threat.",
+                    "Forced: When The Whisperer is defeated, flip this card over and reveal it."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 19,
+            "Quantity": 1,
+            "Artist": "Akunohako",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00019",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Silver Dagger",
+            "Slug": "Silver-Dagger-TAP",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Silver-Dagger.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Clue."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add A Case of Identity and Red Harvest to the staging area.",
+                    "If unattached, attach to the hero with the fewest Clue objectives attached.",
+                    "Forced: After attached hero readies, deal 1 damage to it."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Whisperer has escaped into the streets of Aldburg, but she has left behind a distinctive, and expensive, weapon."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 19,
+            "Quantity": 1,
+            "Artist": "Bogdan Marica",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00019",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Spy Master",
+            "Slug": "The-Spy-Master-TAP",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/The-Spy-Master.jpg",
+                "Stats": {
+                    "EngagementCost": "0",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "4",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Spy.",
+                    "Suspicious."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When The Spy Master is dealt a shadow card with no shadow effect, deal 1 damage to the defending character and deal The Spy Master another shadow card (limit twice per attack).",
+                    "Forced: When The Spy Mmaster is defeated, flip this card over and reveal it."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 20,
+            "Quantity": 1,
+            "Artist": "Bethesda_Softworks",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00020",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Prison Key",
+            "Slug": "Prison-Key-TAP",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Prison-Key.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Clue."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add A Fire Rises and The Prisoner in White to the staging area.",
+                    "If unattached, attach to the hero with the fewest Clue objectives attached.",
+                    "Forced: After attached hero readies, discard a non-Clue objective from it."
+                ],
+                "Shadow": null,
+                "FlavorText": "Wounded and scrabbling for escape, the Spy Master parts with a key detail: one of his agents is already on the move, and heading for the town prison."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 20,
+            "Quantity": 1,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00020",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Ossian",
+            "Slug": "Ossian-TAP",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Ossian.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "3",
+                    "Attack": "6",
+                    "Defense": "5",
+                    "HitPoints": "7"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Assassin.",
+                    "Suspicious."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects. Ossian cannot take more than X damage each round, where X is the number of Clue objectives controlled by the players.",
+                    "Forced: When Ossian is defeated, flip this card over and reveal it."
+                ],
+                "Shadow": null,
+                "FlavorText": "You find Ossian bent over a white-clad corpse. Hearing your approach, he turns."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 1,
+            "Artist": "Oleksandra Ishchenko",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00021",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Traitor's Confession",
+            "Slug": "Traitor's-Confession-TAP",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Traitor's-Confession.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Clue."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If unattached, attach to the hero with the fewest Clue objectives attached.",
+                    "Forced: After attached hero readies, discard a card at random from your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "With his dying breath, the traitor Ossian reveals Gálmód commanded him to slay one of the members of his own éored: a witness to a terrible betrayal."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 1,
+            "Artist": "Alexander Nanitchkov",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00021",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Garrison Barracks",
+            "Slug": "Garrison-Barracks-TAP",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Garrison-Barracks.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Aldburg.",
+                    "Suspicious."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects. X is twice the number of Clue objectives controlled by the players.",
+                    "Travel: Shuffle all set aside Dunland enemies into the encounter deck.",
+                    "Forced: When Garrison Barracks is explored, flip this card over and reveal it."
+                ],
+                "Shadow": null,
+                "FlavorText": "The city watch has eyes and ears on everything in Aldburg. But who is watching them?"
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 22,
+            "Quantity": 1,
+            "Artist": "Michael Drake",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00022",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Raven Signet Ring",
+            "Slug": "Raven-Signet-Ring-TAP",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Raven-Signet-Ring.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Clue."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add The Man with the Twisted Lip to the staging area.",
+                    "If unattached, attach to the hero with the fewest Clue objectives attached.",
+                    "Forced: After attached hero readies, discard all resources in its resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "The prisoner has told the guards of an operative called `the spy master.` The only lead presently is this ring, believed to belong to him."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 22,
+            "Quantity": 1,
+            "Artist": "Jiefeng Jiao",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00022",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Horse's Tail",
+            "Slug": "The-Horse's-Tail-TAP",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/The-Horse's-Tail.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Aldburg.",
+                    "Suspicious."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add The Man with the Twisted Lip to the staging area.",
+                    "If unattached, attach to the hero with the fewest Clue objectives attached.",
+                    "Forced: After attached hero readies, discard all resources in its resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "The prisoner has told the guards of an operative called `the spy master.` The only lead presently is this ring, believed to belong to him."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 23,
+            "Quantity": 1,
+            "Artist": "Domink Zdenković",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00023",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Rohirric Coins",
+            "Slug": "Rohirric-Coins-TAP",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Rohirric-Coins.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Clue."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Add Whisperer in the Darkness to the staging area.",
+                    "If unattached, attach to a hero with the fewest Clue objectives attached.",
+                    "Forced: After attached hero readies, exhaust another character you control."
+                ],
+                "Shadow": null,
+                "FlavorText": "An unknown figure bumps inot your table. Apologizing profusely, he stumbles into the night. By the time you notice the sack of coin he left behind, he`s already gone."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 23,
+            "Quantity": 1,
+            "Artist": "Rockford Media",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00023",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Armoury",
+            "Slug": "The-Armoury-TAP",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/The-Armoury.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Aldburg.",
+                    "Suspicious."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Travel: Each player must exhaust the ready character they control with the highest Defense.",
+                    "Forced: When The Armoury is explored, flip this card over and reveal it."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Whisperer wielded a distinctive, familiar-looking dagger. Perhaps the armoury`s quartermaster can tell you something about it."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 24,
+            "Quantity": 1,
+            "Artist": "H.F. Evergreen",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00024",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Red Fletched Arrow",
+            "Slug": "Red-Fletched-Arrow-TAP",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Red-Fletched-Arrow.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Clue."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If unattached, attach to the hero with the fewest Clue objectives attached.",
+                    "Forced: After attached hero readies, raise your threat by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "The armoury`s quartermaster informs you that he personally forged the dagger, as well as this unusual arrow, for Lord Gálmód."
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 24,
+            "Quantity": 1,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00024",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Great Mead Hall",
+            "Slug": "Great-Mead-Hall-TAP",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Great-Mead-Hall.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Aldburg.",
+                    "Suspicious."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Travel: The players must raise their threat by X where X is the number of enemies in the staging area.",
+                    "Forced: When Great Mead Hall is explored, flip this card over and reveal it."
+                ],
+                "Shadow": null,
+                "FlavorText": "You have tracked the Whisperer`s agents to the very halls of Marshal Éomund. How deep does this conspiracy run?"
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 25,
+            "Quantity": 1,
+            "Artist": "Norm Newberry",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00025",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Letter from Dunland",
+            "Slug": "Letter-from-Dunland-TAP",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Letter-from-Dunland.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Clue."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If unattached, attach to the hero with the fewest Clue objectives attached.",
+                    "Forced: After attached hero readies, discard 2 progress from each location and quest card."
+                ],
+                "Shadow": null,
+                "FlavorText": "Hidden away, you find a sealed letter written in choppy Rohirric, signed `Grimrede.` It is addresses to a man you thought your friend - Gálmód"
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 25,
+            "Quantity": 1,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00025",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Town Guard",
+            "Slug": "Town-Guard-TAP",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Town-Guard.jpg",
+                "Stats": {
+                    "EngagementCost": "45",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "4",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Garrison."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If the players control 2 or more Clue objectives Town Guard gets +2 Threat.",
+                    "Forced: After Town Guard attacks and destroys a character you control. discard 1 resource from each hero you control with a Clue objective."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Do I hope in vain that you have been sent to me for a help in doubt and need?`\r\n-Éomer, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 26,
+            "Quantity": 3,
+            "Artist": "Bethesda_Softworks",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00026",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Dunlending Agents",
+            "Slug": "Dunlending-Agents-TAP",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Dunlending-Agents.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "1",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If the players control 2 or more Clue objectives, Dunlending Agents gets +2 Attack.",
+                    "Forced: After Dunlending Agents attacks and destroys a character you control, deal 1 damage to each hero you control with a Clue objective."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Dunlendings and many men of the garrison of the Burg were at work.\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 27,
+            "Quantity": 3,
+            "Artist": "Grafit Studio",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00027",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Aldburg Malcontent",
+            "Slug": "Aldburg-Malcontent-TAP",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Aldburg-Malcontent.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "1",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Traitor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: If the players control 3 or more Clue objectives, Aldburg Malcontent gains surge."
+                ],
+                "Shadow": "Shadow: If the players control 2 or more Clue objectives, return attacking enemy to the staging area after this attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 28,
+            "Quantity": 2,
+            "Artist": "Tom Edwards",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00028",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Misty Street",
+            "Slug": "Misty-Street-TAP",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Misty-Street.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Aldburg."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Discard all attachments and tokens from the highest cost ally the first player controls and attach that ally facedown under Misty Street.",
+                    "Forced: After Misty Street leaves play, return the attached ally to its owner`s control, faceup and ready."
+                ],
+                "Shadow": "Shadow: Discard a non-Clue attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 29,
+            "Quantity": 2,
+            "Artist": "John Valenti",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00029",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Well-lit Hall",
+            "Slug": "Well-lit-Hall-TAP",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Well-lit-Hall.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "1"
+                },
+                "Traits": [
+                    "Aldburg."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Well-lit Hall is in the staging area, no more than 3 progress can be placed on a quest card as a result of questing successfully."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if the defending character has a Clue attachment).</p>",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 30,
+            "Quantity": 2,
+            "Artist": "Jon Hodgson",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00030",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Decrepit Hovel",
+            "Slug": "Decrepit-Hovel-TAP",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Decrepit-Hovel.jpg",
+                "Stats": {
+                    "Threat": "1",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Aldburg."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Ally resource costs must be paid from a single hero`s resource pool."
+                ],
+                "Shadow": "Shadow: Discard 1 resource from a hero you control.",
+                "FlavorText": "`They go out there roving round, thieving or `gathering` as they call it.`\r\n-Tom Cotton, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 31,
+            "Quantity": 3,
+            "Artist": "Artur Jag",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00031",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Taken by the Night",
+            "Slug": "Taken-by-the-Night-TAP",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Taken-by-the-Night.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must discard the lowest printed cost ally they control. If no allies with a printed cost of 2 or higher were discarded this way, Taken by the Night gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if this enemy is attacking from the staging area).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 32,
+            "Quantity": 2,
+            "Artist": "Eric de Mander",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00032",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "False Lead",
+            "Slug": "False-Lead-TAP",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/False-Lead.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "Doomed 1.",
+                    "When Revealed: Each player removes a hero they control with an attached Clue objective from the quest, if able. Then, each player exhausts a hero they control that is not committed to the quest."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...are you now trying to snare me with a flasehood?`\r\n-Frodo Baggins, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 33,
+            "Quantity": 3,
+            "Artist": "Gunship Revolution",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00033",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Sudden Ambush",
+            "Slug": "Sudden-Ambush-TAP",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Sudden-Ambush.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: The first player must choose: either raise your threat by 4, or the topmost enemy in the encounter discard pile engages you and makes an immediate attack. You must declare the ready character you control with the highest Willpower as the defender for this attack, if able."
+                ],
+                "Shadow": "Shadow: Resolve this card`s `when revealed` effect.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 34,
+            "Quantity": 1,
+            "Artist": "Henrik Karppinen",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00034",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Evil Under the Moon",
+            "Slug": "Evil-Under-the-Moon-TAP",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Evil-Under-the-Moon-1A.jpg",
+                "Stats": {
+                    "StageNumber": "1A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Set each encounter side quest, each copy of Town Guard, and each copy of Dunlending Agents aside, out of play. Set each double-sided encounter card aside, out of play, Clue side facedown. Add Garrison Barracks and The Horse’s Tail to the staging area. Search the encounter deck for an enemy and add it to the staging area (2 different enemies instead if there are 3 or more players). Shuffle the encounter deck"
+                ],
+                "Shadow": null,
+                "FlavorText": "With the knowledge that a faction of rebels has taken up residence in Aldburg, Ealdwulf entreats you to root them out."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Evil-Under-the-Moon-1B.jpg",
+                "Stats": {
+                    "StageNumber": "1B",
+                    "QuestPoints": "-"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Enemies cannot be optionally engaged.",
+                    "Forced: At the end of the round, raise each player`s threat by 1.",
+                    "If the players control 1 or more Clue objectives, advance to the next stage."
+                ],
+                "Shadow": null,
+                "FlavorText": "Where to begin the hunt? Will you seek the help of the town guards or investigate the criminal underworld as a seedy tavern?"
+            },
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Rohan Encampment",
+                    "Faithless Rohirrim"
+                ],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 35,
+            "Quantity": 1,
+            "Artist": "Nick Silva",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00035",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Gathering Clues",
+            "Slug": "Gathering-Clues-TAP",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Gathering-Clues-2A.jpg",
+                "Stats": {
+                    "StageNumber": "2A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [],
+                "Shadow": null,
+                "FlavorText": "The Rohirric town of Aldburg is rife with mystery. Around every corner waits a new riddle, and behind every riddle a sharpened, desperate blade. Before the sun rises, you will have to go deeper to uncover the truth."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/Gathering-Clues-2B.jpg",
+                "Stats": {
+                    "StageNumber": "2B",
+                    "QuestPoints": "-"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: At the end of the round, if the players contol at least 4 Clue objectives, they may advance to stage 3A."
+                ],
+                "Shadow": null,
+                "FlavorText": "It appears Aldburg is playing host to a twin-headed mystery. If you can only graps a single thread, you may be able to untangle this corrupt and biter web. It is past midnight. Time is drawing thin."
+            },
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Rohan Encampment",
+                    "Faithless Rohirrim"
+                ],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 36,
+            "Quantity": 1,
+            "Artist": "Igor Kieryluk",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00036",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Uncertain Dawn",
+            "Slug": "The-Uncertain-Dawn-TAP",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/The-Uncertain-Dawn-3A.jpg",
+                "Stats": {
+                    "StageNumber": "3A"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove all Suspicious cards and encounter side quests from the game. Add any set aside Dunland or Garrison enemies to the staging area, if able."
+                ],
+                "Shadow": null,
+                "FlavorText": "As sun breaks over the streets of Aldburg, your cornered foes reveal themselves. You have gathered your clues. Now, bring them to bear as you battle for your lives - and for the soul of Rohan."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Aldburg-Plot/The-Uncertain-Dawn-3B.jpg",
+                "Stats": {
+                    "StageNumber": "3B",
+                    "QuestPoints": "45"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "The Uncertain Dawn gets -5 quest points for each Clue objective the players control.",
+                    "Forced: At the beginning of the quest phase, discard cards from the top of the encounter deck until an enemy is discarded. Reveal that enemy and add it to the staging area.",
+                    "This stage cannot be defeated except at the end of the round. If the players defeat this stage, they win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Aldburg Plot",
+            "EncounterInfo": {
+                "EncounterSet": "The Aldburg Plot",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Rohan Encampment",
+                    "Faithless Rohirrim"
+                ],
+                "StageNumber": 3,
+                "StageLetter": "A"
+            },
+            "Number": 37,
+            "Quantity": 1,
+            "Artist": "Min Bak",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00037",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ]
+}
