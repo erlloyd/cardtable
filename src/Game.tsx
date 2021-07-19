@@ -449,7 +449,15 @@ class Game extends Component<IProps, IState> {
         onKeyDown={this.handleKeyDown}
         onKeyPress={this.handleKeyPress}
       >
-        <RadialMenuContainer></RadialMenuContainer>
+        <RadialMenuContainer
+          showCardSelector={(card) => {
+            this.setState({
+              showCardSearch: true,
+              cardSearchPosition: this.stage?.getPointerPosition() ?? null,
+              cardStackForSearching: card,
+            });
+          }}
+        ></RadialMenuContainer>
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
         {this.renderPreviewCardModal()}

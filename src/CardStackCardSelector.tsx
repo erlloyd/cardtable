@@ -6,6 +6,9 @@ import { CardData } from "./external-api/common-card-data";
 import { ICardData } from "./features/cards-data/initialState";
 import { ICardStack } from "./features/cards/initialState";
 import { AutocompleteHighlightChangeReason } from "@material-ui/lab/useAutocomplete";
+import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
+import "./CardStackCardSelector.scss";
+
 interface IProps {
   cardsDataEntities: ICardData;
   card: ICardStack;
@@ -40,6 +43,20 @@ class CardStackCardSelector extends Component<IProps> {
           onHighlightChange={this.handleHighlightChange}
           renderInput={(params) => (
             <TextField {...params} label="Find Card..." variant="outlined" />
+          )}
+          renderOption={(option) => (
+            <div className="card-picker-row">
+              <div>{option.name}</div>
+              <div
+                onClick={(e) => {
+                  e.stopPropagation();
+                  this.props.preview(option.code);
+                }}
+                className="mobile-only"
+              >
+                <InfoOutlinedIcon />
+              </div>
+            </div>
           )}
         />
       </div>

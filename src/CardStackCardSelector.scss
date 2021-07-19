@@ -1,0 +1,19 @@
+@import "./mixins/devices";
+
+.card-picker-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .mobile-only {
+    visibility: hidden;
+    @include for-touch-device {
+      visibility: visible;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
