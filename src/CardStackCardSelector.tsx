@@ -34,7 +34,7 @@ class CardStackCardSelector extends Component<IProps> {
         <Autocomplete
           id="cardstack-card-selector-combobox"
           options={this.cardsDataInStack}
-          getOptionLabel={(option) => option.name}
+          getOptionLabel={(option) => option.name || "Unknown Card Name"}
           style={{ width: 300 }}
           onChange={this.handleSelected}
           onHighlightChange={this.handleHighlightChange}
