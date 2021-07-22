@@ -31,7 +31,7 @@ enum DrawMode {
 }
 
 interface IProps {
-  showCardSelector: (cardStack: ICardStack) => void;
+  showCardSelector: (cardStack: ICardStack, isSelect: boolean) => void;
   selectedCardStacks: ICardStack[];
   currentGameType: GameType | null;
   position: Vector2d | null;
@@ -372,12 +372,23 @@ const renderDrawMenu = (
       key={"find-card-slice"}
       onSelect={() => {
         if (props.selectedCardStacks.length === 1) {
-          props.showCardSelector(props.selectedCardStacks[0]);
+          props.showCardSelector(props.selectedCardStacks[0], false);
           props.hideRadialMenu();
         }
       }}
     >
       Find Card
+    </Slice>,
+    <Slice
+      key={"Select-cards-slice"}
+      onSelect={() => {
+        if (props.selectedCardStacks.length === 1) {
+          props.showCardSelector(props.selectedCardStacks[0], true);
+          props.hideRadialMenu();
+        }
+      }}
+    >
+      Select Card
     </Slice>,
     <Slice
       key={"draw-one-faceup-slice"}

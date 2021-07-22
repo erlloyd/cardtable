@@ -1,5 +1,12 @@
 @import "./mixins/devices";
 
+.card-picker-select {
+  .select {
+    width: 20%;
+    min-width: 200px;
+  }
+}
+
 .card-picker-row {
   width: 100%;
   display: flex;

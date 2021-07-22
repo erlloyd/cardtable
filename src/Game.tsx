@@ -155,6 +155,7 @@ interface IState {
   showEncounterImporter: boolean;
   encounterImporterPosition: Vector2d | null;
   showCardSearch: boolean;
+  cardSearchTouchBased: boolean;
   cardSearchPosition: Vector2d | null;
   cardStackForSearching: ICardStack | null;
   showPeerConnector: boolean;
@@ -203,6 +204,7 @@ class Game extends Component<IProps, IState> {
       showEncounterImporter: false,
       encounterImporterPosition: null,
       showCardSearch: false,
+      cardSearchTouchBased: false,
       cardSearchPosition: null,
       cardStackForSearching: null,
       showPeerConnector: false,
@@ -450,9 +452,10 @@ class Game extends Component<IProps, IState> {
         onKeyPress={this.handleKeyPress}
       >
         <RadialMenuContainer
-          showCardSelector={(card) => {
+          showCardSelector={(card, isSelect) => {
             this.setState({
               showCardSearch: true,
+              cardSearchTouchBased: isSelect,
               cardSearchPosition: this.stage?.getPointerPosition() ?? null,
               cardStackForSearching: card,
             });
@@ -712,6 +715,7 @@ class Game extends Component<IProps, IState> {
     return !!this.state.cardStackForSearching ? (
       <TopLayer position={pos} completed={this.clearCardSearch}>
         <CardStackCardSelectorContainer
+          touchBased={this.state.cardSearchTouchBased}
           card={this.state.cardStackForSearching}
           cardSelected={this.handleCardSelectedFromCardStack(
             this.state.cardStackForSearching.id,
@@ -838,6 +842,7 @@ class Game extends Component<IProps, IState> {
   private clearCardSearch = () => {
     this.setState({
       showCardSearch: false,
+      cardSearchTouchBased: false,
       cardSearchPosition: null,
       cardStackForSearching: null,
     });
