@@ -642,8 +642,9 @@ class Game extends Component<IProps, IState> {
   };
 
   private renderTouchMenu = () => {
-    if (this.props.cards.cards.length === 0) return null;
-    return <TouchMenuContainer></TouchMenuContainer>;
+    return <TouchMenuContainer showContextMenuAtPosition={(pos: Vector2d) => {
+      this.handleContextMenu(undefined, pos);
+    }}></TouchMenuContainer>;
   };
 
   private renderDeckImporter = () => {
@@ -1725,14 +1726,17 @@ class Game extends Component<IProps, IState> {
   };
 
   private handleContextMenu = (
-    event: KonvaEventObject<PointerEvent> | KonvaEventObject<TouchEvent>
+    event?: KonvaEventObject<PointerEvent> | KonvaEventObject<TouchEvent>,
+    pos?: Vector2d
   ): void => {
     if (!!this.touchTimer) {
       clearTimeout(this.touchTimer);
       this.touchTimer = null;
     }
-    event.evt.preventDefault();
-    event.cancelBubble = true;
+    if (!!event) {
+      event.evt.preventDefault();
+      event.cancelBubble = true;
+    }
 
     const menuItems = [
       {
@@ -1821,7 +1825,7 @@ class Game extends Component<IProps, IState> {
 
     this.setState({
       showContextMenu: true,
-      contextMenuPosition: this.stage?.getPointerPosition() ?? null,
+      contextMenuPosition: pos ?? this.stage?.getPointerPosition() ?? null,
       contextMenuItems: menuItems,
     });
   };

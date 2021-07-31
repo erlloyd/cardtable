@@ -3,6 +3,7 @@ import * as React from "react";
 import { Component } from "react";
 import "./TouchMenu.scss";
 //Icons
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import OpenWithIcon from "@material-ui/icons/OpenWith";
 import SelectAllIcon from "@material-ui/icons/SelectAll";
 import InfoIcon from "@material-ui/icons/Info";
@@ -35,6 +36,7 @@ interface IProps {
     value?: number;
   }) => void;
   showRadialMenuAtPosition: (payload: Vector2d) => void;
+  showContextMenuAtPosition: (payload: Vector2d) => void;
   undo: () => void;
   redo: () => void;
 }
@@ -42,6 +44,13 @@ class TouchMenu extends Component<IProps> {
   render() {
     return (
       <div className="touch-menu">
+        <IconButton
+          onClick={() => {
+            this.props.showContextMenuAtPosition({ x: 0, y: 0 });
+          }}
+        >
+          <MoreVertIcon fontSize="large" />
+        </IconButton>
         <IconButton
           className={this.props.panMode ? "toggle-on" : ""}
           onClick={() => {
