@@ -75,6 +75,14 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
     "0a59161d-7db6-4328-9eeb-1906ce8715a5" +
     ".b.jpg",
 
+  "02017": "https://hallofheroeshome.files.wordpress.com/2019/12/mutagen4a.jpg",
+  "02017_double_sided_back":
+    "https://hallofheroeshome.files.wordpress.com/2019/12/mutagen4b.jpg",
+
+  "02018": "https://hallofheroeshome.files.wordpress.com/2019/12/mutagen5a.jpg",
+  "02018_double_sided_back":
+    "https://hallofheroeshome.files.wordpress.com/2019/12/mutagen5b.jpg",
+
   "12020": "https://lcgcdn.s3.amazonaws.com/mc/MC13en_20.jpg",
 
   // Scarlet Witch Cards
@@ -161,11 +169,15 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "16059": "https://hallofheroeshome.files.wordpress.com/2021/04/d2.jpg",
   "16060": "https://hallofheroeshome.files.wordpress.com/2021/04/d3.jpg",
   "16061": "https://hallofheroeshome.files.wordpress.com/2021/04/d4a.jpg",
+  "16061a": "https://hallofheroeshome.files.wordpress.com/2021/04/d4a.jpg",
   "16061_double_sided_back":
     "https://hallofheroeshome.files.wordpress.com/2021/04/d4b.jpg",
+  "16061b": "https://hallofheroeshome.files.wordpress.com/2021/04/d4b.jpg",
   "16062": "https://hallofheroeshome.files.wordpress.com/2021/04/d5a.jpg",
+  "16062a": "https://hallofheroeshome.files.wordpress.com/2021/04/d5a.jpg",
   "16062_double_sided_back":
     "https://hallofheroeshome.files.wordpress.com/2021/04/d5b.jpg",
+  "16062b": "https://hallofheroeshome.files.wordpress.com/2021/04/d5b.jpg",
   "16063": "https://hallofheroeshome.files.wordpress.com/2021/04/d6.jpg",
   "16064": "https://hallofheroeshome.files.wordpress.com/2021/04/d7.jpg",
   "16065": "https://hallofheroeshome.files.wordpress.com/2021/04/d8.jpg",
