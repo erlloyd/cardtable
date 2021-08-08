@@ -106,6 +106,7 @@ export const getCardsDataEncounterEntitiesBySetCode = createSelector(
     );
 
     Object.values(encounterEntities)
+      .sort((a, b) => (a.code < b.code ? -1 : a.code > b.code ? 1 : 0))
       .concat(campaignCards)
       .forEach((encounterCard) => {
         const setCode = encounterCard.extraInfo.setCode || "unknown";
