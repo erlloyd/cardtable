@@ -40,7 +40,7 @@ const camelCaseToSpaces = (str: string) => {
 const renderGamePicker = (props: IProps) => {
   return (
     <div className="game-picker">
-      <h1>Card Game Playground</h1>
+      <h1>Cardtable</h1>
       <FormControl className="select">
         <InputLabel id="game-picker-label">Select Game</InputLabel>
         <Select
