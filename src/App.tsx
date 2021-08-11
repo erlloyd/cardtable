@@ -6,6 +6,7 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
+import mainLogo from "./images/card-table-transparent.png";
 interface IProps {
   activeGameType: GameType | null;
   updateActiveGameType: (val: GameType) => void;
@@ -40,7 +41,7 @@ const camelCaseToSpaces = (str: string) => {
 const renderGamePicker = (props: IProps) => {
   return (
     <div className="game-picker">
-      <h1>Cardtable</h1>
+      <img className="logo" alt="cardtable" src={mainLogo}></img>
       <FormControl className="select">
         <InputLabel id="game-picker-label">Select Game</InputLabel>
         <Select
