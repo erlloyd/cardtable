@@ -80,7 +80,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
       damage: {
         counterTokenType: CounterTokenType.Damage,
         isNumeric: true,
-        touchMenuLetter: "D",
+        touchMenuLetter: "Dmg",
         touchMenuIcon: null,
         menuText: "Set Damage",
         imagePath: process.env.PUBLIC_URL + "/images/standard/damage.png",
@@ -88,7 +88,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
       threat: {
         counterTokenType: CounterTokenType.Threat,
         isNumeric: true,
-        touchMenuLetter: "T",
+        touchMenuLetter: "Thr",
         touchMenuIcon: null,
         menuText: "Set Threat",
         imagePath: process.env.PUBLIC_URL + "/images/standard/threat.png",
@@ -96,7 +96,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
       generic: {
         counterTokenType: CounterTokenType.Generic,
         isNumeric: true,
-        touchMenuLetter: "G",
+        touchMenuLetter: "Gen",
         touchMenuIcon: null,
         menuText: "Set Generic Tokens",
         imagePath:
@@ -156,7 +156,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
       damage: {
         counterTokenType: CounterTokenType.Damage,
         isNumeric: true,
-        touchMenuLetter: "D",
+        touchMenuLetter: "Dmg",
         touchMenuIcon: null,
         menuText: "Set Damage",
         imagePath: process.env.PUBLIC_URL + "/images/standard/damage_lotr.png",
@@ -164,7 +164,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
       threat: {
         counterTokenType: CounterTokenType.Threat,
         isNumeric: true,
-        touchMenuLetter: "P",
+        touchMenuLetter: "Prg",
         touchMenuIcon: null,
         menuText: "Set Progress",
         imagePath: process.env.PUBLIC_URL + "/images/standard/progress.png",
@@ -172,7 +172,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
       generic: {
         counterTokenType: CounterTokenType.Generic,
         isNumeric: true,
-        touchMenuLetter: "R",
+        touchMenuLetter: "Res",
         touchMenuIcon: null,
         menuText: "Set Resource Tokens",
         imagePath: process.env.PUBLIC_URL + "/images/standard/resource.png",

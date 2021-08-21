@@ -3,7 +3,7 @@ import {
   CounterTokenType,
   StatusTokenType,
 } from "../../constants/card-constants";
-import * as jc from "jsoncrush";
+import JSONCrush from "jsoncrush";
 
 export interface ICardStack {
   controlledBy: string;
@@ -45,7 +45,7 @@ export interface ICardsState {
 const queryParams = new URLSearchParams(window.location.search);
 const queryParamsCardsString = queryParams.get("cards");
 const queryParamsCards = !!queryParamsCardsString
-  ? { cards: JSON.parse(jc.JSONUncrush(queryParamsCardsString)) }
+  ? { cards: JSON.parse(JSONCrush.uncrush(queryParamsCardsString)) }
   : null;
 
 const localStorageState: ICardsState =
