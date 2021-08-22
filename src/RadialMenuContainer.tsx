@@ -16,7 +16,10 @@ import {
 import { getGame, getRadialMenuPosition } from "./features/game/game.selectors";
 import { hideRadialMenu } from "./features/game/game.slice";
 import RadialMenu from "./RadialMenu";
+import PlanetMenu from "./PlanetMenu";
 import { RootState } from "./store/rootReducer";
+
+const usePlanetMenu = false;
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -36,6 +39,6 @@ const RadialMenuContainer = connect(mapStateToProps, {
   clearCardTokens,
   drawCardsOutOfCardStack,
   adjustModifier,
-})(RadialMenu);
+})(usePlanetMenu ? PlanetMenu : RadialMenu);
 
 export default RadialMenuContainer;

@@ -1,0 +1,12 @@
+.menu-orbit-item {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #9257ad;
+  // padding: 10px;
+  white-space: nowrap;
+
+  &.nested-menu-item {
+    background-color: blue;
+  }
+}

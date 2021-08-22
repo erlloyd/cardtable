@@ -1,0 +1,543 @@
+import { Vector2d } from "konva/lib/types";
+import React, { useState } from "react";
+import TopLayer from "./TopLayer";
+import { GameType } from "./constants/app-constants";
+import {
+  GamePropertiesMap,
+  NumericTokenInfo,
+  TokenInfo,
+} from "./constants/game-type-properties-mapping";
+import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
+import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
+import { ICardStack } from "./features/cards/initialState";
+import { anyCardStackHasStatus } from "./utilities/card-utils";
+import { Planet } from "react-planet";
+import "./PlanetMenu.scss";
+const reactPieMenu = require("react-pie-menu");
+const PieMenu = reactPieMenu.default;
+const { Slice } = reactPieMenu;
+
+enum MenuType {
+  TopLevelActions = "toplevelactions",
+  StatusTokenActions = "statustokenactions",
+  CounterTokenActions = "countertokenactions",
+  ModifierActions = "modifieractions",
+  DrawActions = "drawactions",
+  DrawNumber = "drawnumber",
+  ModifierNumber = "modifiernumber",
+}
+
+enum DrawMode {
+  FaceUp = "faceup",
+  FaceDown = "facedown",
+}
+
+interface IProps {
+  showCardSelector: (cardStack: ICardStack, isSelect: boolean) => void;
+  selectedCardStacks: ICardStack[];
+  currentGameType: GameType | null;
+  position: Vector2d | null;
+  hideRadialMenu: () => void;
+  flipCards: () => void;
+  exhaustCard: (id?: string) => void;
+  shuffleStack: (id?: string) => void;
+  toggleToken: (payload: {
+    id?: string;
+    tokenType: StatusTokenType;
+    value?: boolean;
+  }) => void;
+  adjustCounterToken: (payload: {
+    id?: string;
+    tokenType: CounterTokenType;
+    delta?: number;
+    value?: number;
+  }) => void;
+  clearCardTokens: (id?: string) => void;
+  drawCardsOutOfCardStack: (payload: DrawCardsOutOfCardStackPayload) => void;
+  adjustModifier: (payload: {
+    id?: string;
+    modifierId: string;
+    delta?: number;
+    value?: number;
+  }) => void;
+}
+const PlanetMenu = (props: IProps) => {
+  const [visibleMenu, setVisibleMenu] = useState(MenuType.TopLevelActions);
+  // const [currentDrawMode, setCurrentDrawMode] = useState(DrawMode.FaceDown);
+  // const [currentModifier, setCurrentModifier] = useState("");
+
+  if (!props.position && visibleMenu !== MenuType.TopLevelActions) {
+    setVisibleMenu(MenuType.TopLevelActions);
+  }
+
+  return !!props.position ? (
+    <TopLayer
+      trasparentBackground={true}
+      offsetContent={false}
+      position={{
+        x: Math.max(props.position.x - 32, 0),
+        y: Math.max(props.position.y - 32, 0),
+      }}
+      completed={() => {
+        props.hideRadialMenu();
+      }}
+    >
+      <div
+        onClick={(event) => {
+          event.stopPropagation();
+          event.preventDefault();
+        }}
+      >
+        <Planet
+          centerContent={
+            <div
+              style={{
+                display: "none",
+              }}
+            />
+          }
+          open
+          hideOrbit
+        >
+          {renderTopLevelMenu(props, setVisibleMenu)}
+          {/* <div
+            style={{
+              height: 70,
+              width: 70,
+              borderRadius: "50%",
+              backgroundColor: "#9257ad",
+            }}
+          />
+          <div
+            style={{
+              height: 70,
+              width: 70,
+              borderRadius: "50%",
+              backgroundColor: "#9257ad",
+            }}
+          /> */}
+        </Planet>
+      </div>
+    </TopLayer>
+  ) : null;
+};
+
+const renderMenuSlices = (
+  visibleMenu: MenuType,
+  setVisibleMenu: (type: MenuType) => void,
+  currentDrawMode: DrawMode,
+  setCurrentDrawMode: (mode: DrawMode) => void,
+  currentModifier: string,
+  setCurrentModifer: (mod: string) => void,
+  props: IProps
+) => {
+  let slices: JSX.Element[] | null = null;
+  let backMenu: MenuType | null = null;
+
+  switch (visibleMenu) {
+    case MenuType.StatusTokenActions:
+      slices = renderStatusTokensMenu(props);
+      backMenu = MenuType.TopLevelActions;
+      break;
+    case MenuType.CounterTokenActions:
+      slices = renderCounterTokensMenu(props);
+      backMenu = MenuType.TopLevelActions;
+      break;
+    case MenuType.DrawActions:
+      slices = renderDrawMenu(props, setVisibleMenu, setCurrentDrawMode);
+      backMenu = MenuType.TopLevelActions;
+      break;
+    case MenuType.DrawNumber:
+      slices = renderDrawNumberMenu(props, currentDrawMode);
+      backMenu = MenuType.DrawActions;
+      break;
+    case MenuType.ModifierActions:
+      slices = renderModifierMenu(props, setVisibleMenu, setCurrentModifer);
+      backMenu = MenuType.TopLevelActions;
+      break;
+    case MenuType.ModifierNumber:
+      slices = renderModifierNumberMenu(props, currentModifier);
+      backMenu = MenuType.ModifierActions;
+      break;
+    case MenuType.TopLevelActions:
+    default:
+      slices = renderTopLevelMenu(props, setVisibleMenu);
+  }
+  if (!!backMenu) {
+    slices = renderMenuWithBackButton(slices, backMenu, setVisibleMenu);
+  }
+
+  return slices;
+};
+
+const renderMenuWithBackButton = (
+  slices: JSX.Element[] | null,
+  backMenu: MenuType,
+  setVisibleMenu: (type: MenuType) => void
+): JSX.Element[] | null => {
+  if (!slices) return null;
+
+  const back = (
+    <Slice
+      key={"back-slice"}
+      onSelect={() => {
+        setVisibleMenu(backMenu);
+      }}
+    >
+      Back
+    </Slice>
+  );
+
+  return [back].concat(slices);
+};
+
+const renderTopLevelMenu = (
+  props: IProps,
+  setVisibleMenu: (type: MenuType) => void
+) => {
+  if (!props.currentGameType) return null;
+
+  const modifiers = GamePropertiesMap[props.currentGameType].modifiers;
+
+  const topLevelPlanets = [
+    <Planet
+      key={"flip-slice"}
+      onClick={() => {
+        props.flipCards();
+      }}
+      centerContent={<div className="menu-orbit-item">Flip</div>}
+    ></Planet>,
+    <Planet
+      key={"exhaust-slice"}
+      onClick={() => {
+        props.exhaustCard();
+      }}
+      centerContent={<div className="menu-orbit-item">Exhaust</div>}
+    ></Planet>,
+    <Planet
+      key={"shuffle-slice"}
+      onClick={() => {
+        props.shuffleStack();
+      }}
+      centerContent={<div className="menu-orbit-item">Shuffle</div>}
+    ></Planet>,
+    <Planet
+      key={"statuses-slice"}
+      centerContent={<div className="menu-orbit-item">Statuses</div>}
+    ></Planet>,
+    <Planet
+      key={"tokens-slice"}
+      centerContent={<div className="menu-orbit-item">Tokens</div>}
+      hideOrbit
+      autoClose
+    >
+      {renderCounterTokensMenu(props)}
+    </Planet>,
+    <Planet
+      key={"clear-slice"}
+      onClick={() => {
+        props.clearCardTokens();
+      }}
+      centerContent={<div className="menu-orbit-item">Clear</div>}
+    ></Planet>,
+    <Planet
+      key={"draw-menu-slice"}
+      centerContent={<div className="menu-orbit-item">Draw</div>}
+    ></Planet>,
+  ];
+
+  if (modifiers.length > 0) {
+    topLevelPlanets.push(
+      <div
+        key={"modifiers-menu-slice"}
+        className="menu-orbit-item"
+        onSelect={() => {
+          setVisibleMenu(MenuType.ModifierActions);
+        }}
+      >
+        <div>Modifiers</div>
+      </div>
+    );
+  }
+
+  return topLevelPlanets;
+};
+
+const renderStatusTokensMenu = (props: IProps) => {
+  if (!props.currentGameType) {
+    return [<Slice></Slice>, <Slice></Slice>, <Slice></Slice>];
+  }
+
+  let slices = Object.values(GamePropertiesMap[props.currentGameType].tokens)
+    .filter(
+      (tokenInfo): tokenInfo is TokenInfo =>
+        !!tokenInfo && !(tokenInfo as NumericTokenInfo).isNumeric
+    )
+    .map((tokenInfo) => {
+      const action = () => {
+        props.toggleToken({
+          tokenType: tokenInfo.tokenType,
+          value: !anyCardStackHasStatus(
+            tokenInfo.tokenType,
+            props.selectedCardStacks
+          ),
+        });
+      };
+
+      let key = `touch-menu-slice-${tokenInfo.menuText
+        .replace(/\s/g, "")
+        .toLocaleLowerCase()}`;
+
+      // key =
+      //   key + (tokenInfo.touchMenuLetter?.indexOf("+") !== -1 ? "-plus" : "");
+      return (
+        <Slice key={key} onSelect={action}>
+          <div>
+            {!!tokenInfo.touchMenuIcon ? tokenInfo.touchMenuIcon : null}
+            <div>{tokenInfo.menuText}</div>
+          </div>
+        </Slice>
+      );
+    });
+
+  while (slices.length < 3) {
+    slices = slices.concat([
+      <Slice key={`extra-slice-${Math.random()}`}></Slice>,
+    ]);
+  }
+
+  return slices;
+};
+
+const renderCounterTokensMenu = (props: IProps) => {
+  if (!props.currentGameType) {
+    return [];
+  }
+  let slices = Object.values(GamePropertiesMap[props.currentGameType].tokens)
+    .filter(
+      (tokenInfo): tokenInfo is NumericTokenInfo =>
+        !!tokenInfo && (tokenInfo as NumericTokenInfo).isNumeric
+    )
+    .flatMap((tokenInfo) => {
+      const addTokenInfo = {
+        ...tokenInfo,
+        touchMenuLetter: `${tokenInfo.touchMenuLetter} +`,
+      };
+      const removeTokenInfo = {
+        ...tokenInfo,
+        touchMenuLetter: `${tokenInfo.touchMenuLetter} -`,
+      };
+      return [addTokenInfo, removeTokenInfo];
+    })
+    .map((tokenInfo) => {
+      const action = () => {
+        props.adjustCounterToken({
+          tokenType: tokenInfo.counterTokenType,
+          delta: tokenInfo.touchMenuLetter?.indexOf("+") !== -1 ? 1 : -1,
+        });
+      };
+
+      let key = `touch-menu-slice-${tokenInfo.menuText
+        .replace(/\s/g, "")
+        .toLocaleLowerCase()}`;
+
+      key =
+        key + (tokenInfo.touchMenuLetter?.indexOf("+") !== -1 ? "-plus" : "");
+      return (
+        <div
+          className="menu-orbit-item nested-menu-item"
+          key={key}
+          onClick={action}
+        >
+          <div>{tokenInfo.touchMenuLetter}</div>
+        </div>
+      );
+    });
+
+  return slices;
+};
+
+const renderDrawMenu = (
+  props: IProps,
+  setVisibleMenu: (type: MenuType) => void,
+  setCurrentDrawMode: (mode: DrawMode) => void
+) => {
+  return [
+    <Slice
+      key={"find-card-slice"}
+      onSelect={() => {
+        if (props.selectedCardStacks.length === 1) {
+          props.showCardSelector(props.selectedCardStacks[0], false);
+          props.hideRadialMenu();
+        }
+      }}
+    >
+      Find Card
+    </Slice>,
+    <Slice
+      key={"Select-cards-slice"}
+      onSelect={() => {
+        if (props.selectedCardStacks.length === 1) {
+          props.showCardSelector(props.selectedCardStacks[0], true);
+          props.hideRadialMenu();
+        }
+      }}
+    >
+      Select Card
+    </Slice>,
+    <Slice
+      key={"draw-one-faceup-slice"}
+      onSelect={() => {
+        if (props.selectedCardStacks.length === 1) {
+          props.drawCardsOutOfCardStack({
+            cardStackId: props.selectedCardStacks[0].id,
+            numberToDraw: 1,
+            facedown: false,
+          });
+        }
+      }}
+    >
+      1 faceup
+    </Slice>,
+    <Slice
+      key={"draw-one-facedown-slice"}
+      onSelect={() => {
+        if (props.selectedCardStacks.length === 1) {
+          props.drawCardsOutOfCardStack({
+            cardStackId: props.selectedCardStacks[0].id,
+            numberToDraw: 1,
+            facedown: true,
+          });
+        }
+      }}
+    >
+      1 facedown
+    </Slice>,
+    <Slice
+      key={"draw-x-faceup-slice"}
+      onSelect={() => {
+        setCurrentDrawMode(DrawMode.FaceUp);
+        setVisibleMenu(MenuType.DrawNumber);
+      }}
+    >
+      X faceup
+    </Slice>,
+    <Slice
+      key={"draw-x-facedown-slice"}
+      onSelect={() => {
+        setCurrentDrawMode(DrawMode.FaceDown);
+        setVisibleMenu(MenuType.DrawNumber);
+      }}
+    >
+      X facedown
+    </Slice>,
+  ];
+};
+
+const renderDrawNumberMenu = (props: IProps, currentDrawMode: DrawMode) => {
+  return Array.from({ length: 10 }, (_, i) => i + 1).map((num) => {
+    return (
+      <Slice
+        key={`draw-${num}-cards-slice`}
+        onSelect={() => {
+          if (props.selectedCardStacks.length === 1) {
+            props.drawCardsOutOfCardStack({
+              cardStackId: props.selectedCardStacks[0].id,
+              numberToDraw: num,
+              facedown: currentDrawMode === DrawMode.FaceDown,
+            });
+          }
+        }}
+      >
+        {num}
+      </Slice>
+    );
+  });
+};
+
+const renderModifierMenu = (
+  props: IProps,
+  setVisibleMenu: (type: MenuType) => void,
+  setCurrentModifier: (mod: string) => void
+) => {
+  if (!props.currentGameType) return null;
+  return GamePropertiesMap[props.currentGameType].modifiers.map((m) => {
+    return (
+      <Slice
+        key={"modifier-slice"}
+        onSelect={() => {
+          setCurrentModifier(m.attributeId);
+          setVisibleMenu(MenuType.ModifierNumber);
+        }}
+      >
+        {m.attributeName}
+      </Slice>
+    );
+  });
+};
+
+const renderModifierNumberMenu = (props: IProps, currentModifier: string) => {
+  const basicNums = [
+    <Slice
+      key={`modifier-plus-one-slice`}
+      onSelect={() => {
+        props.adjustModifier({ modifierId: currentModifier, delta: 1 });
+      }}
+    >
+      Add 1
+    </Slice>,
+    <Slice
+      key={`modifier-minus-one-slice`}
+      onSelect={() => {
+        props.adjustModifier({ modifierId: currentModifier, delta: -1 });
+      }}
+    >
+      Remove 1
+    </Slice>,
+    <Slice
+      key={`modifier-zero-slice`}
+      onSelect={() => {
+        props.adjustModifier({ modifierId: currentModifier, value: 0 });
+      }}
+    >
+      0
+    </Slice>,
+  ];
+
+  const allNums = basicNums
+    .concat(
+      Array.from({ length: 3 }, (_, i) => i + 1).map((num) => {
+        return (
+          <Slice
+            key={`modifier-pos-${num}-cards-slice`}
+            onSelect={() => {
+              props.adjustModifier({ modifierId: currentModifier, value: num });
+            }}
+          >
+            {num}
+          </Slice>
+        );
+      })
+    )
+    .concat(
+      Array.from({ length: 3 }, (_, i) => i + 1).map((num) => {
+        return (
+          <Slice
+            key={`modifier-neg-${num}-cards-slice`}
+            onSelect={() => {
+              props.adjustModifier({
+                modifierId: currentModifier,
+                value: num * -1,
+              });
+            }}
+          >
+            {num * -1}
+          </Slice>
+        );
+      })
+    );
+
+  return allNums;
+};
+
+export default PlanetMenu;
