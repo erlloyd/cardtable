@@ -3,7 +3,7 @@ import * as React from "react";
 import { Component } from "react";
 import "./TouchMenu.scss";
 //Icons
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 import OpenWithIcon from "@material-ui/icons/OpenWith";
 import SelectAllIcon from "@material-ui/icons/SelectAll";
 import InfoIcon from "@material-ui/icons/Info";
@@ -70,7 +70,10 @@ class TouchMenu extends Component<IProps> {
         <IconButton
           onClick={() => {
             if (this.props.anyCardsSelected) {
-              this.props.showRadialMenuAtPosition({ x: 0, y: 0 });
+              this.props.showRadialMenuAtPosition({
+                x: 64,
+                y: window.visualViewport.height / 2,
+              });
             }
           }}
         >

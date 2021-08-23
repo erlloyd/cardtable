@@ -27,6 +27,18 @@ enum MenuType {
   ModifierNumber = "modifiernumber",
 }
 
+enum RenderType {
+  Normal = "normal",
+  LeftFan = "leftfan",
+  RightFan = "rightfan",
+  TopFan = "topfan",
+  BottomFan = "bottomfan",
+  LowerRightFan = "lowerrightfan",
+  LowerLeftFan = "lowerleftfan",
+  UpperRightFan = "upperrightfan",
+  UpperLeftFan = "upperleftfan",
+}
+
 enum DrawMode {
   FaceUp = "faceup",
   FaceDown = "facedown",
@@ -69,15 +81,95 @@ const PlanetMenu = (props: IProps) => {
   if (!props.position && visibleMenu !== MenuType.TopLevelActions) {
     setVisibleMenu(MenuType.TopLevelActions);
   }
+  const minScreenOffset = 128;
+  const maxScreenOffset = 190;
+  const initialPosition = props.position
+    ? {
+        x: props.position.x - 32,
+        y: props.position.y - 32,
+      }
+    : { x: 0, y: 0 };
+  const adjustedPosition = props.position
+    ? {
+        x: Math.min(
+          Math.max(props.position.x - 32, minScreenOffset),
+          window.visualViewport.width - maxScreenOffset
+        ),
+        y: Math.min(
+          Math.max(props.position.y - 32, minScreenOffset),
+          window.visualViewport.height - maxScreenOffset
+        ),
+      }
+    : { x: 0, y: 0 };
+
+  let renderType: RenderType = RenderType.Normal;
+  // Determine the fan type
+  if (!props.position) {
+    renderType = RenderType.Normal;
+  } else if (
+    props.position.x === adjustedPosition.x + 32 &&
+    props.position.y !== adjustedPosition.y + 32 &&
+    adjustedPosition.y === minScreenOffset
+  ) {
+    renderType = RenderType.BottomFan;
+  } else if (
+    props.position.y === adjustedPosition.y + 32 &&
+    props.position.x !== adjustedPosition.x + 32 &&
+    adjustedPosition.x === minScreenOffset
+  ) {
+    renderType = RenderType.RightFan;
+  } else if (
+    props.position.x === adjustedPosition.x + 32 &&
+    props.position.y !== adjustedPosition.y + 32 &&
+    adjustedPosition.y === window.visualViewport.height - maxScreenOffset
+  ) {
+    renderType = RenderType.TopFan;
+  } else if (
+    props.position.y === adjustedPosition.y + 32 &&
+    props.position.x !== adjustedPosition.x + 32 &&
+    adjustedPosition.x === window.visualViewport.width - maxScreenOffset
+  ) {
+    renderType = RenderType.LeftFan;
+  } else if (
+    props.position.x !== adjustedPosition.x + 32 &&
+    props.position.y !== adjustedPosition.y + 32 &&
+    adjustedPosition.x === minScreenOffset &&
+    adjustedPosition.y === minScreenOffset
+  ) {
+    renderType = RenderType.LowerRightFan;
+  } else if (
+    props.position.x !== adjustedPosition.x + 32 &&
+    props.position.y !== adjustedPosition.y + 32 &&
+    adjustedPosition.x === window.visualViewport.width - maxScreenOffset &&
+    adjustedPosition.y === window.visualViewport.height - maxScreenOffset
+  ) {
+    renderType = RenderType.UpperLeftFan;
+  } else if (
+    props.position.x !== adjustedPosition.x + 32 &&
+    props.position.y !== adjustedPosition.y + 32 &&
+    adjustedPosition.x === minScreenOffset &&
+    adjustedPosition.y === window.visualViewport.height - maxScreenOffset
+  ) {
+    renderType = RenderType.UpperRightFan;
+  } else if (
+    props.position.x !== adjustedPosition.x + 32 &&
+    props.position.y !== adjustedPosition.y + 32 &&
+    adjustedPosition.x === window.visualViewport.width - maxScreenOffset &&
+    adjustedPosition.y === minScreenOffset
+  ) {
+    renderType = RenderType.LowerLeftFan;
+  }
+
+  let orbitRadius: number | undefined = 190;
+  if (renderType === RenderType.Normal) {
+    orbitRadius = undefined;
+  }
 
   return !!props.position ? (
     <TopLayer
       trasparentBackground={true}
       offsetContent={false}
-      position={{
-        x: Math.max(props.position.x - 32, 0),
-        y: Math.max(props.position.y - 32, 0),
-      }}
+      position={initialPosition}
       completed={() => {
         props.hideRadialMenu();
       }}
@@ -98,77 +190,62 @@ const PlanetMenu = (props: IProps) => {
           }
           open
           hideOrbit
+          orbitRadius={orbitRadius}
         >
-          {renderTopLevelMenu(props, setVisibleMenu)}
-          {/* <div
-            style={{
-              height: 70,
-              width: 70,
-              borderRadius: "50%",
-              backgroundColor: "#9257ad",
-            }}
-          />
-          <div
-            style={{
-              height: 70,
-              width: 70,
-              borderRadius: "50%",
-              backgroundColor: "#9257ad",
-            }}
-          /> */}
+          {renderTopLevelMenu(props, renderType)}
         </Planet>
       </div>
     </TopLayer>
   ) : null;
 };
 
-const renderMenuSlices = (
-  visibleMenu: MenuType,
-  setVisibleMenu: (type: MenuType) => void,
-  currentDrawMode: DrawMode,
-  setCurrentDrawMode: (mode: DrawMode) => void,
-  currentModifier: string,
-  setCurrentModifer: (mod: string) => void,
-  props: IProps
-) => {
-  let slices: JSX.Element[] | null = null;
-  let backMenu: MenuType | null = null;
+// const renderMenuSlices = (
+//   visibleMenu: MenuType,
+//   setVisibleMenu: (type: MenuType) => void,
+//   currentDrawMode: DrawMode,
+//   setCurrentDrawMode: (mode: DrawMode) => void,
+//   currentModifier: string,
+//   setCurrentModifer: (mod: string) => void,
+//   props: IProps
+// ) => {
+//   let slices: JSX.Element[] | null = null;
+//   let backMenu: MenuType | null = null;
 
-  switch (visibleMenu) {
-    case MenuType.StatusTokenActions:
-      slices = renderStatusTokensMenu(props);
-      backMenu = MenuType.TopLevelActions;
-      break;
-    case MenuType.CounterTokenActions:
-      slices = renderCounterTokensMenu(props);
-      backMenu = MenuType.TopLevelActions;
-      break;
-    case MenuType.DrawActions:
-      slices = renderDrawMenu(props, setVisibleMenu, setCurrentDrawMode);
-      backMenu = MenuType.TopLevelActions;
-      break;
-    case MenuType.DrawNumber:
-      slices = renderDrawNumberMenu(props, currentDrawMode);
-      backMenu = MenuType.DrawActions;
-      break;
-    case MenuType.ModifierActions:
-      slices = renderModifierMenu(props, setVisibleMenu, setCurrentModifer);
-      backMenu = MenuType.TopLevelActions;
-      break;
-    case MenuType.ModifierNumber:
-      slices = renderModifierNumberMenu(props, currentModifier);
-      backMenu = MenuType.ModifierActions;
-      break;
-    case MenuType.TopLevelActions:
-    default:
-      slices = renderTopLevelMenu(props, setVisibleMenu);
-  }
-  if (!!backMenu) {
-    slices = renderMenuWithBackButton(slices, backMenu, setVisibleMenu);
-  }
+//   switch (visibleMenu) {
+//     case MenuType.StatusTokenActions:
+//       slices = renderStatusTokensMenu(props);
+//       backMenu = MenuType.TopLevelActions;
+//       break;
+//     case MenuType.CounterTokenActions:
+//       slices = renderCounterTokensMenu(props);
+//       backMenu = MenuType.TopLevelActions;
+//       break;
+//     case MenuType.DrawActions:
+//       slices = renderDrawMenu(props, setVisibleMenu, setCurrentDrawMode);
+//       backMenu = MenuType.TopLevelActions;
+//       break;
+//     case MenuType.DrawNumber:
+//       slices = renderDrawNumberMenu(props, currentDrawMode);
+//       backMenu = MenuType.DrawActions;
+//       break;
+//     case MenuType.ModifierActions:
+//       slices = renderModifierMenu(props, setVisibleMenu, setCurrentModifer);
+//       backMenu = MenuType.TopLevelActions;
+//       break;
+//     case MenuType.ModifierNumber:
+//       slices = renderModifierNumberMenu(props, currentModifier);
+//       backMenu = MenuType.ModifierActions;
+//       break;
+//     case MenuType.TopLevelActions:
+//     default:
+//       slices = renderTopLevelMenu(props, setVisibleMenu);
+//   }
+//   if (!!backMenu) {
+//     slices = renderMenuWithBackButton(slices, backMenu, setVisibleMenu);
+//   }
 
-  return slices;
-};
+//   return slices;
+// };
 
 const renderMenuWithBackButton = (
   slices: JSX.Element[] | null,
@@ -191,15 +268,12 @@ const renderMenuWithBackButton = (
   return [back].concat(slices);
 };
 
-const renderTopLevelMenu = (
-  props: IProps,
-  setVisibleMenu: (type: MenuType) => void
-) => {
+const renderTopLevelMenu = (props: IProps, renderType: RenderType) => {
   if (!props.currentGameType) return null;
 
   const modifiers = GamePropertiesMap[props.currentGameType].modifiers;
 
-  const topLevelPlanets = [
+  let topLevelPlanets = [
     <Planet
       key={"flip-slice"}
       onClick={() => {
@@ -208,11 +282,8 @@ const renderTopLevelMenu = (
       centerContent={<div className="menu-orbit-item">Flip</div>}
     ></Planet>,
     <Planet
-      key={"exhaust-slice"}
-      onClick={() => {
-        props.exhaustCard();
-      }}
-      centerContent={<div className="menu-orbit-item">Exhaust</div>}
+      key={"draw-menu-slice"}
+      centerContent={<div className="menu-orbit-item">Draw</div>}
     ></Planet>,
     <Planet
       key={"shuffle-slice"}
@@ -222,18 +293,6 @@ const renderTopLevelMenu = (
       centerContent={<div className="menu-orbit-item">Shuffle</div>}
     ></Planet>,
     <Planet
-      key={"statuses-slice"}
-      centerContent={<div className="menu-orbit-item">Statuses</div>}
-    ></Planet>,
-    <Planet
-      key={"tokens-slice"}
-      centerContent={<div className="menu-orbit-item">Tokens</div>}
-      hideOrbit
-      autoClose
-    >
-      {renderCounterTokensMenu(props)}
-    </Planet>,
-    <Planet
       key={"clear-slice"}
       onClick={() => {
         props.clearCardTokens();
@@ -241,23 +300,174 @@ const renderTopLevelMenu = (
       centerContent={<div className="menu-orbit-item">Clear</div>}
     ></Planet>,
     <Planet
-      key={"draw-menu-slice"}
-      centerContent={<div className="menu-orbit-item">Draw</div>}
+      key={"tokens-slice"}
+      centerContent={
+        <div
+          onClick={(evt) => {
+            const parent = (evt.target as any).closest(".makeStyles-root-3");
+            if (parent) parent.style.zIndex = 3;
+          }}
+          className="menu-orbit-item"
+        >
+          Tokens
+        </div>
+      }
+      hideOrbit
+      autoClose
+      onClose={(evt) => {
+        const parent = (evt.target as any).closest(".makeStyles-root-3");
+        if (parent) parent.style.zIndex = "";
+      }}
+    >
+      {renderCounterTokensMenu(props)}
+    </Planet>,
+    <Planet
+      key={"statuses-slice"}
+      centerContent={
+        <div
+          onClick={(evt) => {
+            const parent = (evt.target as any).closest(".makeStyles-root-3");
+            if (parent) parent.style.zIndex = 3;
+          }}
+          className="menu-orbit-item"
+        >
+          Statuses
+        </div>
+      }
+      hideOrbit
+      autoClose
+      onClose={(evt) => {
+        const parent = (evt.target as any).closest(".makeStyles-root-3");
+        if (parent) parent.style.zIndex = "";
+      }}
+    >
+      {renderStatusTokensMenu(props)}
+    </Planet>,
+    <Planet
+      key={"exhaust-slice"}
+      onClick={() => {
+        props.exhaustCard();
+      }}
+      centerContent={<div className="menu-orbit-item">Exhaust</div>}
     ></Planet>,
   ];
 
   if (modifiers.length > 0) {
     topLevelPlanets.push(
-      <div
+      <Planet
         key={"modifiers-menu-slice"}
-        className="menu-orbit-item"
-        onSelect={() => {
-          setVisibleMenu(MenuType.ModifierActions);
+        centerContent={
+          <div
+            onClick={(evt) => {
+              const parent = (evt.target as any).closest(".makeStyles-root-3");
+              if (parent) parent.style.zIndex = 3;
+            }}
+            className="menu-orbit-item"
+          >
+            Modifiers
+          </div>
+        }
+        hideOrbit
+        autoClose
+        onClose={(evt) => {
+          const parent = (evt.target as any).closest(".makeStyles-root-3");
+          if (parent) parent.style.zIndex = "";
         }}
-      >
-        <div>Modifiers</div>
-      </div>
+      ></Planet>
     );
+  }
+
+  const halfNumber = Math.floor(topLevelPlanets.length / 2);
+  const quarterNumber = Math.floor(topLevelPlanets.length / 4);
+  const half = Math.ceil(topLevelPlanets.length / 2);
+  const quarter = Math.ceil(topLevelPlanets.length / 4);
+  const firstHalf = topLevelPlanets.slice(0, half);
+  const secondHalf = topLevelPlanets.slice(-half);
+  const firstQuarter = topLevelPlanets.slice(0, quarter);
+  const last3_4ths = topLevelPlanets.slice(quarter);
+  const first3_4ths = topLevelPlanets.slice(
+    0,
+    topLevelPlanets.length - quarter
+  );
+  const lastQuarter = topLevelPlanets.slice(topLevelPlanets.length - quarter);
+
+  switch (renderType) {
+    case RenderType.RightFan:
+      topLevelPlanets = Array(topLevelPlanets.length)
+        .map(() => {
+          return <div></div>;
+        })
+        .concat(topLevelPlanets);
+      break;
+
+    case RenderType.LeftFan:
+      topLevelPlanets = topLevelPlanets.concat(
+        Array(topLevelPlanets.length).map(() => {
+          return <div></div>;
+        })
+      );
+      break;
+
+    case RenderType.TopFan:
+      topLevelPlanets = Array(Math.floor(topLevelPlanets.length / 2))
+        .map(() => {
+          return <div></div>;
+        })
+        .concat(topLevelPlanets)
+        .concat(
+          Array(Math.floor(topLevelPlanets.length / 2)).map(() => {
+            return <div></div>;
+          })
+        );
+      break;
+
+    case RenderType.BottomFan:
+      topLevelPlanets = firstHalf
+        .concat(
+          Array(topLevelPlanets.length).map(() => {
+            return <div></div>;
+          })
+        )
+        .concat(secondHalf);
+      break;
+
+    case RenderType.UpperLeftFan:
+      topLevelPlanets = Array(quarterNumber)
+        .map(() => {
+          return <div></div>;
+        })
+        .concat(topLevelPlanets)
+        .concat(
+          Array(halfNumber + quarterNumber).map(() => {
+            return <div></div>;
+          })
+        );
+      break;
+
+    case RenderType.UpperRightFan:
+      topLevelPlanets = Array(halfNumber + quarterNumber)
+        .map(() => {
+          return <div></div>;
+        })
+        .concat(topLevelPlanets)
+        .concat(
+          Array(quarterNumber).map(() => {
+            return <div></div>;
+          })
+        );
+      break;
+
+    case RenderType.LowerLeftFan:
+      topLevelPlanets = first3_4ths
+        .concat(Array(topLevelPlanets.length))
+        .concat(lastQuarter);
+      break;
+
+    case RenderType.LowerRightFan:
+      topLevelPlanets = firstQuarter
+        .concat(Array(topLevelPlanets.length))
+        .concat(last3_4ths);
+      break;
   }
 
   return topLevelPlanets;
@@ -265,7 +475,7 @@ const renderTopLevelMenu = (
 
 const renderStatusTokensMenu = (props: IProps) => {
   if (!props.currentGameType) {
-    return [<Slice></Slice>, <Slice></Slice>, <Slice></Slice>];
+    return [];
   }
 
   let slices = Object.values(GamePropertiesMap[props.currentGameType].tokens)
@@ -291,20 +501,15 @@ const renderStatusTokensMenu = (props: IProps) => {
       // key =
       //   key + (tokenInfo.touchMenuLetter?.indexOf("+") !== -1 ? "-plus" : "");
       return (
-        <Slice key={key} onSelect={action}>
-          <div>
-            {!!tokenInfo.touchMenuIcon ? tokenInfo.touchMenuIcon : null}
-            <div>{tokenInfo.menuText}</div>
-          </div>
-        </Slice>
+        <div
+          className="menu-orbit-item nested-menu-item"
+          key={key}
+          onClick={action}
+        >
+          <div>{tokenInfo.menuText}</div>
+        </div>
       );
     });
-
-  while (slices.length < 3) {
-    slices = slices.concat([
-      <Slice key={`extra-slice-${Math.random()}`}></Slice>,
-    ]);
-  }
 
   return slices;
 };

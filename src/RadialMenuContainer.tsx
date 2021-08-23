@@ -19,7 +19,7 @@ import RadialMenu from "./RadialMenu";
 import PlanetMenu from "./PlanetMenu";
 import { RootState } from "./store/rootReducer";
 
-const usePlanetMenu = false;
+const usePlanetMenu = true;
 
 const mapStateToProps = (state: RootState) => {
   return {
