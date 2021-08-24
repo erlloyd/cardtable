@@ -39,10 +39,10 @@ enum RenderType {
   UpperLeftFan = "upperleftfan",
 }
 
-// enum DrawMode {
-//   FaceUp = "faceup",
-//   FaceDown = "facedown",
-// }
+enum DrawMode {
+  FaceUp = "faceup",
+  FaceDown = "facedown",
+}
 
 interface IProps {
   showCardSelector: (cardStack: ICardStack, isSelect: boolean) => void;
@@ -283,8 +283,26 @@ const renderTopLevelMenu = (props: IProps, renderType: RenderType) => {
     ></Planet>,
     <Planet
       key={"draw-menu-slice"}
-      centerContent={<div className="menu-orbit-item">Draw</div>}
-    ></Planet>,
+      centerContent={
+        <div
+          onClick={(evt) => {
+            const parent = (evt.target as any).closest(".makeStyles-root-3");
+            if (parent) parent.style.zIndex = 3;
+          }}
+          className="menu-orbit-item"
+        >
+          Draw
+        </div>
+      }
+      hideOrbit
+      autoClose
+      onClose={(evt) => {
+        const parent = (evt.target as any).closest(".makeStyles-root-3");
+        if (parent) parent.style.zIndex = "";
+      }}
+    >
+      {renderDrawMenu(props)}
+    </Planet>,
     <Planet
       key={"shuffle-slice"}
       onClick={() => {
@@ -562,103 +580,122 @@ const renderCounterTokensMenu = (props: IProps) => {
   return slices;
 };
 
-// const renderDrawMenu = (
-//   props: IProps,
-//   setVisibleMenu: (type: MenuType) => void,
-//   setCurrentDrawMode: (mode: DrawMode) => void
-// ) => {
-//   return [
-//     <Slice
-//       key={"find-card-slice"}
-//       onSelect={() => {
-//         if (props.selectedCardStacks.length === 1) {
-//           props.showCardSelector(props.selectedCardStacks[0], false);
-//           props.hideRadialMenu();
-//         }
-//       }}
-//     >
-//       Find Card
-//     </Slice>,
-//     <Slice
-//       key={"Select-cards-slice"}
-//       onSelect={() => {
-//         if (props.selectedCardStacks.length === 1) {
-//           props.showCardSelector(props.selectedCardStacks[0], true);
-//           props.hideRadialMenu();
-//         }
-//       }}
-//     >
-//       Select Card
-//     </Slice>,
-//     <Slice
-//       key={"draw-one-faceup-slice"}
-//       onSelect={() => {
-//         if (props.selectedCardStacks.length === 1) {
-//           props.drawCardsOutOfCardStack({
-//             cardStackId: props.selectedCardStacks[0].id,
-//             numberToDraw: 1,
-//             facedown: false,
-//           });
-//         }
-//       }}
-//     >
-//       1 faceup
-//     </Slice>,
-//     <Slice
-//       key={"draw-one-facedown-slice"}
-//       onSelect={() => {
-//         if (props.selectedCardStacks.length === 1) {
-//           props.drawCardsOutOfCardStack({
-//             cardStackId: props.selectedCardStacks[0].id,
-//             numberToDraw: 1,
-//             facedown: true,
-//           });
-//         }
-//       }}
-//     >
-//       1 facedown
-//     </Slice>,
-//     <Slice
-//       key={"draw-x-faceup-slice"}
-//       onSelect={() => {
-//         setCurrentDrawMode(DrawMode.FaceUp);
-//         setVisibleMenu(MenuType.DrawNumber);
-//       }}
-//     >
-//       X faceup
-//     </Slice>,
-//     <Slice
-//       key={"draw-x-facedown-slice"}
-//       onSelect={() => {
-//         setCurrentDrawMode(DrawMode.FaceDown);
-//         setVisibleMenu(MenuType.DrawNumber);
-//       }}
-//     >
-//       X facedown
-//     </Slice>,
-//   ];
-// };
+const renderDrawMenu = (props: IProps) => {
+  return [
+    <Planet
+      key={"find-card-slice"}
+      centerContent={
+        <div className="menu-orbit-item nested-menu-item">Find Card</div>
+      }
+      onClick={() => {
+        if (props.selectedCardStacks.length === 1) {
+          props.showCardSelector(props.selectedCardStacks[0], false);
+          props.hideRadialMenu();
+        }
+      }}
+    />,
+    <Planet
+      key={"select-card-slice"}
+      centerContent={
+        <div className="menu-orbit-item nested-menu-item">Select Card</div>
+      }
+      onClick={() => {
+        if (props.selectedCardStacks.length === 1) {
+          props.showCardSelector(props.selectedCardStacks[0], true);
+          props.hideRadialMenu();
+        }
+      }}
+    />,
+    <Planet
+      key={"draw-one-faceup-slice"}
+      centerContent={
+        <div className="menu-orbit-item nested-menu-item">1 faceup</div>
+      }
+      onClick={() => {
+        if (props.selectedCardStacks.length === 1) {
+          props.drawCardsOutOfCardStack({
+            cardStackId: props.selectedCardStacks[0].id,
+            numberToDraw: 1,
+            facedown: false,
+          });
+        }
+      }}
+    />,
+    <Planet
+      key={"draw-one-facedown-slice"}
+      centerContent={
+        <div className="menu-orbit-item nested-menu-item">1 facedown</div>
+      }
+      onClick={() => {
+        if (props.selectedCardStacks.length === 1) {
+          props.drawCardsOutOfCardStack({
+            cardStackId: props.selectedCardStacks[0].id,
+            numberToDraw: 1,
+            facedown: true,
+          });
+        }
+      }}
+    />,
+    <Planet
+      key={"draw-x-faceup-slice"}
+      centerContent={
+        <div
+          onClick={(evt) => {
+            const parent = (evt.target as any).closest(".makeStyles-root-3");
+            if (parent) parent.style.zIndex = 4;
+          }}
+          className="menu-orbit-item nested-menu-item"
+        >
+          X faceup
+        </div>
+      }
+      autoClose
+      hideOrbit
+    >
+      {renderDrawNumberMenu(props, DrawMode.FaceUp)}
+    </Planet>,
+    <Planet
+      key={"draw-x-faceup-slice"}
+      centerContent={
+        <div
+          onClick={(evt) => {
+            const parent = (evt.target as any).closest(".makeStyles-root-3");
+            if (parent) parent.style.zIndex = 4;
+          }}
+          className="menu-orbit-item nested-menu-item"
+        >
+          X facedown
+        </div>
+      }
+      autoClose
+      hideOrbit
+    >
+      {renderDrawNumberMenu(props, DrawMode.FaceDown)}
+    </Planet>,
+  ];
+};
 
-// const renderDrawNumberMenu = (props: IProps, currentDrawMode: DrawMode) => {
-//   return Array.from({ length: 10 }, (_, i) => i + 1).map((num) => {
-//     return (
-//       <Slice
-//         key={`draw-${num}-cards-slice`}
-//         onSelect={() => {
-//           if (props.selectedCardStacks.length === 1) {
-//             props.drawCardsOutOfCardStack({
-//               cardStackId: props.selectedCardStacks[0].id,
-//               numberToDraw: num,
-//               facedown: currentDrawMode === DrawMode.FaceDown,
-//             });
-//           }
-//         }}
-//       >
-//         {num}
-//       </Slice>
-//     );
-//   });
-// };
+const renderDrawNumberMenu = (props: IProps, currentDrawMode: DrawMode) => {
+  return Array.from({ length: 10 }, (_, i) => i + 1).map((num) => {
+    return (
+      <div
+        key={`draw-${num}-cards-slice`}
+        className="menu-orbit-item double-nested-menu-item"
+        onClick={() => {
+          if (props.selectedCardStacks.length === 1) {
+            props.drawCardsOutOfCardStack({
+              cardStackId: props.selectedCardStacks[0].id,
+              numberToDraw: num,
+              facedown: currentDrawMode === DrawMode.FaceDown,
+            });
+          }
+        }}
+      >
+        {num}
+      </div>
+    );
+  });
+};
 
 // const renderModifierMenu = (
 //   props: IProps,

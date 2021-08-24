@@ -11,6 +11,10 @@
   white-space: nowrap;
 
   &.nested-menu-item {
-    background-color: blue;
+    background-color: rgb(235, 122, 105);
+  }
+
+  &.double-nested-menu-item {
+    background-color: rgb(235, 222, 105);
   }
 }
