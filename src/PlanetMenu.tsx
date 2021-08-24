@@ -13,6 +13,7 @@ import { ICardStack } from "./features/cards/initialState";
 import { anyCardStackHasStatus } from "./utilities/card-utils";
 import { Planet } from "react-planet";
 import "./PlanetMenu.scss";
+import { getRenderTypeByPosition, RenderType } from "./PlanetMenuUtils";
 // const reactPieMenu = require("react-pie-menu");
 // const PieMenu = reactPieMenu.default;
 // const { Slice } = reactPieMenu;
@@ -25,18 +26,6 @@ enum MenuType {
   DrawActions = "drawactions",
   DrawNumber = "drawnumber",
   ModifierNumber = "modifiernumber",
-}
-
-enum RenderType {
-  Normal = "normal",
-  LeftFan = "leftfan",
-  RightFan = "rightfan",
-  TopFan = "topfan",
-  BottomFan = "bottomfan",
-  LowerRightFan = "lowerrightfan",
-  LowerLeftFan = "lowerleftfan",
-  UpperRightFan = "upperrightfan",
-  UpperLeftFan = "upperleftfan",
 }
 
 enum DrawMode {
@@ -81,84 +70,15 @@ const PlanetMenu = (props: IProps) => {
   if (!props.position && visibleMenu !== MenuType.TopLevelActions) {
     setVisibleMenu(MenuType.TopLevelActions);
   }
-  const minScreenOffset = 128;
-  const maxScreenOffset = 190;
+
   const initialPosition = props.position
     ? {
         x: props.position.x - 32,
         y: props.position.y - 32,
       }
     : { x: 0, y: 0 };
-  const adjustedPosition = props.position
-    ? {
-        x: Math.min(
-          Math.max(props.position.x - 32, minScreenOffset),
-          window.visualViewport.width - maxScreenOffset
-        ),
-        y: Math.min(
-          Math.max(props.position.y - 32, minScreenOffset),
-          window.visualViewport.height - maxScreenOffset
-        ),
-      }
-    : { x: 0, y: 0 };
 
-  let renderType: RenderType = RenderType.Normal;
-  // Determine the fan type
-  if (!props.position) {
-    renderType = RenderType.Normal;
-  } else if (
-    props.position.x === adjustedPosition.x + 32 &&
-    props.position.y !== adjustedPosition.y + 32 &&
-    adjustedPosition.y === minScreenOffset
-  ) {
-    renderType = RenderType.BottomFan;
-  } else if (
-    props.position.y === adjustedPosition.y + 32 &&
-    props.position.x !== adjustedPosition.x + 32 &&
-    adjustedPosition.x === minScreenOffset
-  ) {
-    renderType = RenderType.RightFan;
-  } else if (
-    props.position.x === adjustedPosition.x + 32 &&
-    props.position.y !== adjustedPosition.y + 32 &&
-    adjustedPosition.y === window.visualViewport.height - maxScreenOffset
-  ) {
-    renderType = RenderType.TopFan;
-  } else if (
-    props.position.y === adjustedPosition.y + 32 &&
-    props.position.x !== adjustedPosition.x + 32 &&
-    adjustedPosition.x === window.visualViewport.width - maxScreenOffset
-  ) {
-    renderType = RenderType.LeftFan;
-  } else if (
-    props.position.x !== adjustedPosition.x + 32 &&
-    props.position.y !== adjustedPosition.y + 32 &&
-    adjustedPosition.x === minScreenOffset &&
-    adjustedPosition.y === minScreenOffset
-  ) {
-    renderType = RenderType.LowerRightFan;
-  } else if (
-    props.position.x !== adjustedPosition.x + 32 &&
-    props.position.y !== adjustedPosition.y + 32 &&
-    adjustedPosition.x === window.visualViewport.width - maxScreenOffset &&
-    adjustedPosition.y === window.visualViewport.height - maxScreenOffset
-  ) {
-    renderType = RenderType.UpperLeftFan;
-  } else if (
-    props.position.x !== adjustedPosition.x + 32 &&
-    props.position.y !== adjustedPosition.y + 32 &&
-    adjustedPosition.x === minScreenOffset &&
-    adjustedPosition.y === window.visualViewport.height - maxScreenOffset
-  ) {
-    renderType = RenderType.UpperRightFan;
-  } else if (
-    props.position.x !== adjustedPosition.x + 32 &&
-    props.position.y !== adjustedPosition.y + 32 &&
-    adjustedPosition.x === window.visualViewport.width - maxScreenOffset &&
-    adjustedPosition.y === minScreenOffset
-  ) {
-    renderType = RenderType.LowerLeftFan;
-  }
+  const renderType: RenderType = getRenderTypeByPosition(props.position);
 
   let orbitRadius: number | undefined = 190;
   if (renderType === RenderType.Normal) {
@@ -199,74 +119,31 @@ const PlanetMenu = (props: IProps) => {
   ) : null;
 };
 
-// const renderMenuSlices = (
-//   visibleMenu: MenuType,
-//   setVisibleMenu: (type: MenuType) => void,
-//   currentDrawMode: DrawMode,
-//   setCurrentDrawMode: (mode: DrawMode) => void,
-//   currentModifier: string,
-//   setCurrentModifer: (mod: string) => void,
-//   props: IProps
-// ) => {
-//   let slices: JSX.Element[] | null = null;
-//   let backMenu: MenuType | null = null;
+const setParentPlanetZIndex = (
+  evt: React.MouseEvent<HTMLDivElement, MouseEvent>
+) => {
+  const parent = getParentPlanet(evt);
+  if (parent) parent.style.zIndex = "3";
+};
 
-//   switch (visibleMenu) {
-//     case MenuType.StatusTokenActions:
-//       slices = renderStatusTokensMenu(props);
-//       backMenu = MenuType.TopLevelActions;
-//       break;
-//     case MenuType.CounterTokenActions:
-//       slices = renderCounterTokensMenu(props);
-//       backMenu = MenuType.TopLevelActions;
-//       break;
-//     case MenuType.DrawActions:
-//       slices = renderDrawMenu(props, setVisibleMenu, setCurrentDrawMode);
-//       backMenu = MenuType.TopLevelActions;
-//       break;
-//     case MenuType.DrawNumber:
-//       slices = renderDrawNumberMenu(props, currentDrawMode);
-//       backMenu = MenuType.DrawActions;
-//       break;
-//     case MenuType.ModifierActions:
-//       slices = renderModifierMenu(props, setVisibleMenu, setCurrentModifer);
-//       backMenu = MenuType.TopLevelActions;
-//       break;
-//     case MenuType.ModifierNumber:
-//       slices = renderModifierNumberMenu(props, currentModifier);
-//       backMenu = MenuType.ModifierActions;
-//       break;
-//     case MenuType.TopLevelActions:
-//     default:
-//       slices = renderTopLevelMenu(props, setVisibleMenu);
-//   }
-//   if (!!backMenu) {
-//     slices = renderMenuWithBackButton(slices, backMenu, setVisibleMenu);
-//   }
+const clearParentPlanetZIndex = (
+  evt: React.MouseEvent<HTMLDivElement | HTMLDocument, MouseEvent>
+) => {
+  const parent = getParentPlanet(evt);
+  if (parent) parent.style.zIndex = "";
+};
 
-//   return slices;
-// };
-
-// const renderMenuWithBackButton = (
-//   slices: JSX.Element[] | null,
-//   backMenu: MenuType,
-//   setVisibleMenu: (type: MenuType) => void
-// ): JSX.Element[] | null => {
-//   if (!slices) return null;
-
-//   const back = (
-//     <Slice
-//       key={"back-slice"}
-//       onSelect={() => {
-//         setVisibleMenu(backMenu);
-//       }}
-//     >
-//       Back
-//     </Slice>
-//   );
-
-//   return [back].concat(slices);
-// };
+const getParentPlanet = (
+  evt: React.MouseEvent<HTMLDivElement | HTMLDocument, MouseEvent>
+): HTMLElement | undefined => {
+  let parent = (evt.target as any).closest(".makeStyles-root-3");
+  if (!parent) {
+    parent = (evt.target as any)
+      .closest("div[class*=jss]")
+      .parentNode.parentNode.closest("div[class*=jss]");
+  }
+  return parent;
+};
 
 const renderTopLevelMenu = (props: IProps, renderType: RenderType) => {
   if (!props.currentGameType) return null;
@@ -284,22 +161,13 @@ const renderTopLevelMenu = (props: IProps, renderType: RenderType) => {
     <Planet
       key={"draw-menu-slice"}
       centerContent={
-        <div
-          onClick={(evt) => {
-            const parent = (evt.target as any).closest(".makeStyles-root-3");
-            if (parent) parent.style.zIndex = 3;
-          }}
-          className="menu-orbit-item"
-        >
+        <div onClick={setParentPlanetZIndex} className="menu-orbit-item">
           Draw
         </div>
       }
       hideOrbit
       autoClose
-      onClose={(evt) => {
-        const parent = (evt.target as any).closest(".makeStyles-root-3");
-        if (parent) parent.style.zIndex = "";
-      }}
+      onClose={clearParentPlanetZIndex}
     >
       {renderDrawMenu(props)}
     </Planet>,
@@ -320,44 +188,26 @@ const renderTopLevelMenu = (props: IProps, renderType: RenderType) => {
     <Planet
       key={"tokens-slice"}
       centerContent={
-        <div
-          onClick={(evt) => {
-            const parent = (evt.target as any).closest(".makeStyles-root-3");
-            if (parent) parent.style.zIndex = 3;
-          }}
-          className="menu-orbit-item"
-        >
+        <div onClick={setParentPlanetZIndex} className="menu-orbit-item">
           Tokens
         </div>
       }
       hideOrbit
       autoClose
-      onClose={(evt) => {
-        const parent = (evt.target as any).closest(".makeStyles-root-3");
-        if (parent) parent.style.zIndex = "";
-      }}
+      onClose={clearParentPlanetZIndex}
     >
       {renderCounterTokensMenu(props)}
     </Planet>,
     <Planet
       key={"statuses-slice"}
       centerContent={
-        <div
-          onClick={(evt) => {
-            const parent = (evt.target as any).closest(".makeStyles-root-3");
-            if (parent) parent.style.zIndex = 3;
-          }}
-          className="menu-orbit-item"
-        >
+        <div onClick={setParentPlanetZIndex} className="menu-orbit-item">
           Statuses
         </div>
       }
       hideOrbit
       autoClose
-      onClose={(evt) => {
-        const parent = (evt.target as any).closest(".makeStyles-root-3");
-        if (parent) parent.style.zIndex = "";
-      }}
+      onClose={clearParentPlanetZIndex}
     >
       {renderStatusTokensMenu(props)}
     </Planet>,
@@ -375,23 +225,16 @@ const renderTopLevelMenu = (props: IProps, renderType: RenderType) => {
       <Planet
         key={"modifiers-menu-slice"}
         centerContent={
-          <div
-            onClick={(evt) => {
-              const parent = (evt.target as any).closest(".makeStyles-root-3");
-              if (parent) parent.style.zIndex = 3;
-            }}
-            className="menu-orbit-item"
-          >
+          <div onClick={setParentPlanetZIndex} className="menu-orbit-item">
             Modifiers
           </div>
         }
         hideOrbit
         autoClose
-        onClose={(evt) => {
-          const parent = (evt.target as any).closest(".makeStyles-root-3");
-          if (parent) parent.style.zIndex = "";
-        }}
-      ></Planet>
+        onClose={clearParentPlanetZIndex}
+      >
+        {renderModifierMenu(props)}
+      </Planet>
     );
   }
 
@@ -640,15 +483,13 @@ const renderDrawMenu = (props: IProps) => {
       key={"draw-x-faceup-slice"}
       centerContent={
         <div
-          onClick={(evt) => {
-            const parent = (evt.target as any).closest(".makeStyles-root-3");
-            if (parent) parent.style.zIndex = 4;
-          }}
+          onClick={setParentPlanetZIndex}
           className="menu-orbit-item nested-menu-item"
         >
           X faceup
         </div>
       }
+      onClose={clearParentPlanetZIndex}
       autoClose
       hideOrbit
     >
@@ -658,15 +499,13 @@ const renderDrawMenu = (props: IProps) => {
       key={"draw-x-faceup-slice"}
       centerContent={
         <div
-          onClick={(evt) => {
-            const parent = (evt.target as any).closest(".makeStyles-root-3");
-            if (parent) parent.style.zIndex = 4;
-          }}
+          onClick={setParentPlanetZIndex}
           className="menu-orbit-item nested-menu-item"
         >
           X facedown
         </div>
       }
+      onClose={clearParentPlanetZIndex}
       autoClose
       hideOrbit
     >
@@ -697,89 +536,97 @@ const renderDrawNumberMenu = (props: IProps, currentDrawMode: DrawMode) => {
   });
 };
 
-// const renderModifierMenu = (
-//   props: IProps,
-//   setVisibleMenu: (type: MenuType) => void,
-//   setCurrentModifier: (mod: string) => void
-// ) => {
-//   if (!props.currentGameType) return null;
-//   return GamePropertiesMap[props.currentGameType].modifiers.map((m) => {
-//     return (
-//       <Slice
-//         key={"modifier-slice"}
-//         onSelect={() => {
-//           setCurrentModifier(m.attributeId);
-//           setVisibleMenu(MenuType.ModifierNumber);
-//         }}
-//       >
-//         {m.attributeName}
-//       </Slice>
-//     );
-//   });
-// };
+const renderModifierMenu = (props: IProps) => {
+  if (!props.currentGameType) return null;
+  return GamePropertiesMap[props.currentGameType].modifiers.map((m) => {
+    return (
+      <Planet
+        key={"modifier-slice"}
+        centerContent={
+          <div
+            onClick={setParentPlanetZIndex}
+            className="menu-orbit-item nested-menu-item"
+          >
+            {m.attributeName}
+          </div>
+        }
+        onClose={clearParentPlanetZIndex}
+        autoClose
+        hideOrbit
+      >
+        {renderModifierNumberMenu(props, m.attributeId)}
+      </Planet>
+    );
+  });
+};
 
-// const renderModifierNumberMenu = (props: IProps, currentModifier: string) => {
-//   const basicNums = [
-//     <Slice
-//       key={`modifier-plus-one-slice`}
-//       onSelect={() => {
-//         props.adjustModifier({ modifierId: currentModifier, delta: 1 });
-//       }}
-//     >
-//       Add 1
-//     </Slice>,
-//     <Slice
-//       key={`modifier-minus-one-slice`}
-//       onSelect={() => {
-//         props.adjustModifier({ modifierId: currentModifier, delta: -1 });
-//       }}
-//     >
-//       Remove 1
-//     </Slice>,
-//     <Slice
-//       key={`modifier-zero-slice`}
-//       onSelect={() => {
-//         props.adjustModifier({ modifierId: currentModifier, value: 0 });
-//       }}
-//     >
-//       0
-//     </Slice>,
-//   ];
+const renderModifierNumberMenu = (props: IProps, currentModifier: string) => {
+  const basicNums = [
+    <div
+      key={`modifier-plus-one-slice`}
+      className="menu-orbit-item double-nested-menu-item"
+      onClick={() => {
+        props.adjustModifier({ modifierId: currentModifier, delta: 1 });
+      }}
+    >
+      Add 1
+    </div>,
+    <div
+      key={`modifier-minus-one-slice`}
+      className="menu-orbit-item double-nested-menu-item"
+      onClick={() => {
+        props.adjustModifier({ modifierId: currentModifier, delta: -1 });
+      }}
+    >
+      Remove 1
+    </div>,
+    <div
+      key={`modifier-zero-slice`}
+      className="menu-orbit-item double-nested-menu-item"
+      onClick={() => {
+        props.adjustModifier({ modifierId: currentModifier, value: 0 });
+      }}
+    >
+      0
+    </div>,
+  ];
 
-//   const allNums = basicNums
-//     .concat(
-//       Array.from({ length: 3 }, (_, i) => i + 1).map((num) => {
-//         return (
-//           <Slice
-//             key={`modifier-pos-${num}-cards-slice`}
-//             onSelect={() => {
-//               props.adjustModifier({ modifierId: currentModifier, value: num });
-//             }}
-//           >
-//             {num}
-//           </Slice>
-//         );
-//       })
-//     )
-//     .concat(
-//       Array.from({ length: 3 }, (_, i) => i + 1).map((num) => {
-//         return (
-//           <Slice
-//             key={`modifier-neg-${num}-cards-slice`}
-//             onSelect={() => {
-//               props.adjustModifier({
-//                 modifierId: currentModifier,
-//                 value: num * -1,
-//               });
-//             }}
-//           >
-//             {num * -1}
-//           </Slice>
-//         );
-//       })
-//     );
+  const allNums = basicNums
+    .concat(
+      Array.from({ length: 3 }, (_, i) => i + 1).map((num) => {
+        return (
+          <div
+            key={`modifier-pos-${num}-cards-slice`}
+            className="menu-orbit-item double-nested-menu-item"
+            onClick={() => {
+              props.adjustModifier({ modifierId: currentModifier, value: num });
+            }}
+          >
+            {num}
+          </div>
+        );
+      })
+    )
+    .concat(
+      Array.from({ length: 3 }, (_, i) => i + 1).map((num) => {
+        return (
+          <div
+            key={`modifier-neg-${num}-cards-slice`}
+            className="menu-orbit-item double-nested-menu-item"
+            onClick={() => {
+              props.adjustModifier({
+                modifierId: currentModifier,
+                value: num * -1,
+              });
+            }}
+          >
+            {num * -1}
+          </div>
+        );
+      })
+    );
 
-//   return allNums;
-// };
+  return allNums;
+};
 
 export default PlanetMenu;
