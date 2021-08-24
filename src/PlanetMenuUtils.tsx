@@ -16,77 +16,166 @@ export enum RenderType {
 export const minScreenOffset = 128;
 export const maxScreenOffset = 190;
 
+// export const getRenderTypeByPosition = (pos: Vector2d | null): RenderType => {
+//   const adjustedPosition = pos
+//     ? {
+//         x: Math.min(
+//           Math.max(pos.x - 32, minScreenOffset),
+//           window.visualViewport.width - maxScreenOffset
+//         ),
+//         y: Math.min(
+//           Math.max(pos.y - 32, minScreenOffset),
+//           window.visualViewport.height - maxScreenOffset
+//         ),
+//       }
+//     : { x: 0, y: 0 };
+
+//   let renderType: RenderType = RenderType.Normal;
+
+//   // Determine the fan type
+//   if (!pos) {
+//     renderType = RenderType.Normal;
+//   } else if (
+//     pos.x === adjustedPosition.x + 32 &&
+//     pos.y !== adjustedPosition.y + 32 &&
+//     adjustedPosition.y === minScreenOffset
+//   ) {
+//     renderType = RenderType.BottomFan;
+//   } else if (
+//     pos.y === adjustedPosition.y + 32 &&
+//     pos.x !== adjustedPosition.x + 32 &&
+//     adjustedPosition.x === minScreenOffset
+//   ) {
+//     renderType = RenderType.RightFan;
+//   } else if (
+//     pos.x === adjustedPosition.x + 32 &&
+//     pos.y !== adjustedPosition.y + 32 &&
+//     adjustedPosition.y === window.visualViewport.height - maxScreenOffset
+//   ) {
+//     renderType = RenderType.TopFan;
+//   } else if (
+//     pos.y === adjustedPosition.y + 32 &&
+//     pos.x !== adjustedPosition.x + 32 &&
+//     adjustedPosition.x === window.visualViewport.width - maxScreenOffset
+//   ) {
+//     renderType = RenderType.LeftFan;
+//   } else if (
+//     pos.x !== adjustedPosition.x + 32 &&
+//     pos.y !== adjustedPosition.y + 32 &&
+//     adjustedPosition.x === minScreenOffset &&
+//     adjustedPosition.y === minScreenOffset
+//   ) {
+//     renderType = RenderType.LowerRightFan;
+//   } else if (
+//     pos.x !== adjustedPosition.x + 32 &&
+//     pos.y !== adjustedPosition.y + 32 &&
+//     adjustedPosition.x === window.visualViewport.width - maxScreenOffset &&
+//     adjustedPosition.y === window.visualViewport.height - maxScreenOffset
+//   ) {
+//     renderType = RenderType.UpperLeftFan;
+//   } else if (
+//     pos.x !== adjustedPosition.x + 32 &&
+//     pos.y !== adjustedPosition.y + 32 &&
+//     adjustedPosition.x === minScreenOffset &&
+//     adjustedPosition.y === window.visualViewport.height - maxScreenOffset
+//   ) {
+//     renderType = RenderType.UpperRightFan;
+//   } else if (
+//     pos.x !== adjustedPosition.x + 32 &&
+//     pos.y !== adjustedPosition.y + 32 &&
+//     adjustedPosition.x === window.visualViewport.width - maxScreenOffset &&
+//     adjustedPosition.y === minScreenOffset
+//   ) {
+//     renderType = RenderType.LowerLeftFan;
+//   }
+
+//   return renderType;
+// };
+
+const secondaryThreshold = 200;
+
 export const getRenderTypeByPosition = (pos: Vector2d | null): RenderType => {
-  const adjustedPosition = pos
-    ? {
-        x: Math.min(
-          Math.max(pos.x - 32, minScreenOffset),
-          window.visualViewport.width - maxScreenOffset
-        ),
-        y: Math.min(
-          Math.max(pos.y - 32, minScreenOffset),
-          window.visualViewport.height - maxScreenOffset
-        ),
-      }
-    : { x: 0, y: 0 };
+  if (!pos) return RenderType.Normal;
 
-  let renderType: RenderType = RenderType.Normal;
+  // If the screen is "landscape, prefer left/right fans, if the screen is widescreen, prefer top/bottom fans
+  let primaryCoord: number;
+  let primaryMax: number;
+  let secondaryCoord: number;
+  let secondaryMax: number;
+  let lowerHalfFanType: RenderType;
+  let upperHalfFanType: RenderType;
+  let secondaryLowerHalfFanType: RenderType;
+  let secondaryUpperHalfFanType: RenderType;
+  let corner1FanType: RenderType;
+  let corner2FanType: RenderType;
 
-  // Determine the fan type
-  if (!pos) {
-    renderType = RenderType.Normal;
-  } else if (
-    pos.x === adjustedPosition.x + 32 &&
-    pos.y !== adjustedPosition.y + 32 &&
-    adjustedPosition.y === minScreenOffset
-  ) {
-    renderType = RenderType.BottomFan;
-  } else if (
-    pos.y === adjustedPosition.y + 32 &&
-    pos.x !== adjustedPosition.x + 32 &&
-    adjustedPosition.x === minScreenOffset
-  ) {
-    renderType = RenderType.RightFan;
-  } else if (
-    pos.x === adjustedPosition.x + 32 &&
-    pos.y !== adjustedPosition.y + 32 &&
-    adjustedPosition.y === window.visualViewport.height - maxScreenOffset
-  ) {
-    renderType = RenderType.TopFan;
-  } else if (
-    pos.y === adjustedPosition.y + 32 &&
-    pos.x !== adjustedPosition.x + 32 &&
-    adjustedPosition.x === window.visualViewport.width - maxScreenOffset
-  ) {
-    renderType = RenderType.LeftFan;
-  } else if (
-    pos.x !== adjustedPosition.x + 32 &&
-    pos.y !== adjustedPosition.y + 32 &&
-    adjustedPosition.x === minScreenOffset &&
-    adjustedPosition.y === minScreenOffset
+  if (window.visualViewport.height <= window.visualViewport.width) {
+    primaryCoord = pos.y;
+    primaryMax = window.visualViewport.height;
+    secondaryCoord = pos.x;
+    secondaryMax = window.visualViewport.width;
+    lowerHalfFanType = RenderType.BottomFan;
+    upperHalfFanType = RenderType.TopFan;
+    secondaryLowerHalfFanType = RenderType.RightFan;
+    secondaryUpperHalfFanType = RenderType.LeftFan;
+    corner1FanType = RenderType.UpperRightFan;
+    corner2FanType = RenderType.LowerLeftFan;
+  } else {
+    primaryCoord = pos.x;
+    primaryMax = window.visualViewport.width;
+    secondaryCoord = pos.y;
+    secondaryMax = window.visualViewport.height;
+    lowerHalfFanType = RenderType.RightFan;
+    upperHalfFanType = RenderType.LeftFan;
+    secondaryLowerHalfFanType = RenderType.BottomFan;
+    secondaryUpperHalfFanType = RenderType.TopFan;
+    corner1FanType = RenderType.LowerLeftFan;
+    corner2FanType = RenderType.UpperRightFan;
+  }
+
+  let renderType = RenderType.Normal;
+
+  // first, if we're close enough to both extremes (in a corner) do that fan
+  if (
+    secondaryCoord < secondaryThreshold &&
+    primaryCoord < secondaryThreshold
   ) {
     renderType = RenderType.LowerRightFan;
   } else if (
-    pos.x !== adjustedPosition.x + 32 &&
-    pos.y !== adjustedPosition.y + 32 &&
-    adjustedPosition.x === window.visualViewport.width - maxScreenOffset &&
-    adjustedPosition.y === window.visualViewport.height - maxScreenOffset
+    secondaryCoord > secondaryMax - secondaryThreshold &&
+    primaryCoord > primaryMax - secondaryThreshold
   ) {
     renderType = RenderType.UpperLeftFan;
   } else if (
-    pos.x !== adjustedPosition.x + 32 &&
-    pos.y !== adjustedPosition.y + 32 &&
-    adjustedPosition.x === minScreenOffset &&
-    adjustedPosition.y === window.visualViewport.height - maxScreenOffset
+    secondaryCoord < secondaryThreshold &&
+    primaryCoord > primaryMax - secondaryThreshold
   ) {
-    renderType = RenderType.UpperRightFan;
+    renderType = corner1FanType;
   } else if (
-    pos.x !== adjustedPosition.x + 32 &&
-    pos.y !== adjustedPosition.y + 32 &&
-    adjustedPosition.x === window.visualViewport.width - maxScreenOffset &&
-    adjustedPosition.y === minScreenOffset
+    secondaryCoord > secondaryMax - secondaryThreshold &&
+    primaryCoord < secondaryThreshold
   ) {
-    renderType = RenderType.LowerLeftFan;
+    renderType = corner2FanType;
+  }
+
+  // next, if we're withing some threshold of the secondary axis extremes, and close enough
+  // to the middle of the primary axis, then use the secondary fan types
+  else if (
+    secondaryCoord < secondaryThreshold &&
+    primaryCoord >= secondaryThreshold &&
+    primaryCoord <= primaryMax - secondaryThreshold
+  ) {
+    renderType = secondaryLowerHalfFanType;
+  } else if (
+    secondaryCoord > secondaryMax - secondaryThreshold &&
+    primaryCoord >= secondaryThreshold &&
+    primaryCoord <= primaryMax - secondaryThreshold
+  ) {
+    renderType = secondaryUpperHalfFanType;
+  } else if (primaryCoord < primaryMax / 2) {
+    renderType = lowerHalfFanType;
+  } else {
+    renderType = upperHalfFanType;
   }
 
   return renderType;
