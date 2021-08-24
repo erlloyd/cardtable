@@ -13,7 +13,11 @@ import { ICardStack } from "./features/cards/initialState";
 import { anyCardStackHasStatus } from "./utilities/card-utils";
 import { Planet } from "react-planet";
 import "./PlanetMenu.scss";
-import { getRenderTypeByPosition, RenderType } from "./PlanetMenuUtils";
+import {
+  convertItemsToFanType,
+  getRenderTypeByPosition,
+  RenderType,
+} from "./PlanetMenuUtils";
 // const reactPieMenu = require("react-pie-menu");
 // const PieMenu = reactPieMenu.default;
 // const { Slice } = reactPieMenu;
@@ -196,7 +200,7 @@ const renderTopLevelMenu = (props: IProps, renderType: RenderType) => {
       autoClose
       onClose={clearParentPlanetZIndex}
     >
-      {renderCounterTokensMenu(props)}
+      {renderCounterTokensMenu(props, renderType)}
     </Planet>,
     <Planet
       key={"statuses-slice"}
@@ -209,7 +213,7 @@ const renderTopLevelMenu = (props: IProps, renderType: RenderType) => {
       autoClose
       onClose={clearParentPlanetZIndex}
     >
-      {renderStatusTokensMenu(props)}
+      {renderStatusTokensMenu(props, renderType)}
     </Planet>,
     <Planet
       key={"exhaust-slice"}
@@ -237,104 +241,10 @@ const renderTopLevelMenu = (props: IProps, renderType: RenderType) => {
       </Planet>
     );
   }
-
-  const halfNumber = Math.floor(topLevelPlanets.length / 2);
-  const quarterNumber = Math.floor(topLevelPlanets.length / 4);
-  const half = Math.ceil(topLevelPlanets.length / 2);
-  const quarter = Math.ceil(topLevelPlanets.length / 4);
-  const firstHalf = topLevelPlanets.slice(0, half);
-  const secondHalf = topLevelPlanets.slice(-half);
-  const firstQuarter = topLevelPlanets.slice(0, quarter);
-  const last3_4ths = topLevelPlanets.slice(quarter);
-  const first3_4ths = topLevelPlanets.slice(
-    0,
-    topLevelPlanets.length - quarter
-  );
-  const lastQuarter = topLevelPlanets.slice(topLevelPlanets.length - quarter);
-
-  switch (renderType) {
-    case RenderType.RightFan:
-      topLevelPlanets = Array(topLevelPlanets.length)
-        .map(() => {
-          return <div></div>;
-        })
-        .concat(topLevelPlanets);
-      break;
-
-    case RenderType.LeftFan:
-      topLevelPlanets = topLevelPlanets.concat(
-        Array(topLevelPlanets.length).map(() => {
-          return <div></div>;
-        })
-      );
-      break;
-
-    case RenderType.TopFan:
-      topLevelPlanets = Array(Math.floor(topLevelPlanets.length / 2))
-        .map(() => {
-          return <div></div>;
-        })
-        .concat(topLevelPlanets)
-        .concat(
-          Array(Math.floor(topLevelPlanets.length / 2)).map(() => {
-            return <div></div>;
-          })
-        );
-      break;
-
-    case RenderType.BottomFan:
-      topLevelPlanets = firstHalf
-        .concat(
-          Array(topLevelPlanets.length).map(() => {
-            return <div></div>;
-          })
-        )
-        .concat(secondHalf);
-      break;
-
-    case RenderType.UpperLeftFan:
-      topLevelPlanets = Array(quarterNumber)
-        .map(() => {
-          return <div></div>;
-        })
-        .concat(topLevelPlanets)
-        .concat(
-          Array(halfNumber + quarterNumber).map(() => {
-            return <div></div>;
-          })
-        );
-      break;
-
-    case RenderType.UpperRightFan:
-      topLevelPlanets = Array(halfNumber + quarterNumber)
-        .map(() => {
-          return <div></div>;
-        })
-        .concat(topLevelPlanets)
-        .concat(
-          Array(quarterNumber).map(() => {
-            return <div></div>;
-          })
-        );
-      break;
-
-    case RenderType.LowerLeftFan:
-      topLevelPlanets = first3_4ths
-        .concat(Array(topLevelPlanets.length))
-        .concat(lastQuarter);
-      break;
-
-    case RenderType.LowerRightFan:
-      topLevelPlanets = firstQuarter
-        .concat(Array(topLevelPlanets.length))
-        .concat(last3_4ths);
-      break;
-  }
-
-  return topLevelPlanets;
+  return convertItemsToFanType(topLevelPlanets, renderType);
 };
 
-const renderStatusTokensMenu = (props: IProps) => {
+const renderStatusTokensMenu = (props: IProps, renderType: RenderType) => {
   if (!props.currentGameType) {
     return [];
   }
@@ -372,10 +282,10 @@ const renderStatusTokensMenu = (props: IProps) => {
       );
     });
 
-  return slices;
+  return convertItemsToFanType(slices, renderType);
 };
 
-const renderCounterTokensMenu = (props: IProps) => {
+const renderCounterTokensMenu = (props: IProps, renderType: RenderType) => {
   if (!props.currentGameType) {
     return [];
   }
@@ -420,7 +330,7 @@ const renderCounterTokensMenu = (props: IProps) => {
       );
     });
 
-  return slices;
+  return convertItemsToFanType(slices, renderType);
 };
 
 const renderDrawMenu = (props: IProps) => {

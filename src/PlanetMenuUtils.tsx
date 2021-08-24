@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Vector2d } from "konva/lib/types";
 
 export enum RenderType {
@@ -89,4 +90,103 @@ export const getRenderTypeByPosition = (pos: Vector2d | null): RenderType => {
   }
 
   return renderType;
+};
+
+export const convertItemsToFanType = (
+  items: JSX.Element[],
+  renderType: RenderType
+) => {
+  if (items.length < 4) {
+    while (items.length < 4) {
+      items.push(<div></div>);
+    }
+  }
+
+  const halfNumber = Math.floor(items.length / 2);
+  const quarterNumber = Math.floor(items.length / 4);
+  const half = Math.ceil(items.length / 2);
+  const quarter = Math.ceil(items.length / 4);
+  const firstHalf = items.slice(0, half);
+  const secondHalf = items.slice(-half);
+  const firstQuarter = items.slice(0, quarter);
+  const last3_4ths = items.slice(quarter);
+  const first3_4ths = items.slice(0, items.length - quarter);
+  const lastQuarter = items.slice(items.length - quarter);
+
+  switch (renderType) {
+    case RenderType.RightFan:
+      items = Array(items.length)
+        .map(() => {
+          return <div></div>;
+        })
+        .concat(items);
+      break;
+
+    case RenderType.LeftFan:
+      items = items.concat(
+        Array(items.length).map(() => {
+          return <div></div>;
+        })
+      );
+      break;
+
+    case RenderType.TopFan:
+      items = Array(Math.floor(items.length / 2))
+        .map(() => {
+          return <div></div>;
+        })
+        .concat(items)
+        .concat(
+          Array(Math.floor(items.length / 2)).map(() => {
+            return <div></div>;
+          })
+        );
+      break;
+
+    case RenderType.BottomFan:
+      items = firstHalf
+        .concat(
+          Array(items.length).map(() => {
+            return <div></div>;
+          })
+        )
+        .concat(secondHalf);
+      break;
+
+    case RenderType.UpperLeftFan:
+      items = Array(quarterNumber)
+        .map(() => {
+          return <div></div>;
+        })
+        .concat(items)
+        .concat(
+          Array(halfNumber + quarterNumber).map(() => {
+            return <div></div>;
+          })
+        );
+      break;
+
+    case RenderType.UpperRightFan:
+      items = Array(halfNumber + quarterNumber)
+        .map(() => {
+          return <div></div>;
+        })
+        .concat(items)
+        .concat(
+          Array(quarterNumber).map(() => {
+            return <div></div>;
+          })
+        );
+      break;
+
+    case RenderType.LowerLeftFan:
+      items = first3_4ths.concat(Array(items.length)).concat(lastQuarter);
+      break;
+
+    case RenderType.LowerRightFan:
+      items = firstQuarter.concat(Array(items.length)).concat(last3_4ths);
+      break;
+  }
+
+  return items;
 };
