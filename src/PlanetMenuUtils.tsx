@@ -1,5 +1,15 @@
 import * as React from "react";
 import { Vector2d } from "konva/lib/types";
+import cloneDeep from "lodash.clonedeep";
+
+export interface MenuDataItem {
+  rot: number;
+  renderType: RenderType;
+  // orbit: number;
+}
+export interface MenuData {
+  [key: string]: MenuDataItem;
+}
 
 export enum RenderType {
   Normal = "normal",
@@ -177,105 +187,180 @@ export const getRenderTypeByPosition = (pos: Vector2d | null): RenderType => {
   } else {
     renderType = upperHalfFanType;
   }
-
   return renderType;
+};
+
+export const getRotFromRenderType = (renderType: RenderType): number => {
+  let rot = 0;
+  switch (renderType) {
+    case RenderType.RightFan:
+      rot = 0;
+      break;
+    case RenderType.LowerRightFan:
+      rot = 30;
+      break;
+    case RenderType.BottomFan:
+      rot = 90;
+      break;
+    case RenderType.LowerLeftFan:
+      rot = 110;
+      break;
+    case RenderType.LeftFan:
+      rot = 180;
+      break;
+    case RenderType.UpperLeftFan:
+      rot = 205;
+      break;
+    case RenderType.TopFan:
+      rot = 270;
+      break;
+    case RenderType.UpperRightFan:
+      rot = 300;
+      break;
+  }
+
+  return rot;
 };
 
 export const convertItemsToFanType = (
   items: JSX.Element[],
   renderType: RenderType
 ) => {
-  if (items.length < 4) {
-    while (items.length < 4) {
-      items.push(<div></div>);
-    }
-  }
+  const extraNodes =
+    renderType === RenderType.LowerLeftFan ||
+    renderType === RenderType.LowerRightFan ||
+    renderType === RenderType.UpperLeftFan ||
+    renderType === RenderType.UpperRightFan
+      ? 4
+      : 0;
 
-  const halfNumber = Math.floor(items.length / 2);
-  const quarterNumber = Math.floor(items.length / 4);
-  const half = Math.ceil(items.length / 2);
-  const quarter = Math.ceil(items.length / 4);
-  const firstHalf = items.slice(0, half);
-  const secondHalf = items.slice(-half);
-  const firstQuarter = items.slice(0, quarter);
-  const last3_4ths = items.slice(quarter);
-  const first3_4ths = items.slice(0, items.length - quarter);
-  const lastQuarter = items.slice(items.length - quarter);
-
-  switch (renderType) {
-    case RenderType.RightFan:
-      items = Array(items.length)
-        .map(() => {
-          return <div></div>;
-        })
-        .concat(items);
-      break;
-
-    case RenderType.LeftFan:
-      items = items.concat(
-        Array(items.length).map(() => {
-          return <div></div>;
-        })
-      );
-      break;
-
-    case RenderType.TopFan:
-      items = Array(Math.floor(items.length / 2))
-        .map(() => {
-          return <div></div>;
-        })
-        .concat(items)
-        .concat(
-          Array(Math.floor(items.length / 2)).map(() => {
-            return <div></div>;
-          })
-        );
-      break;
-
-    case RenderType.BottomFan:
-      items = firstHalf
-        .concat(
-          Array(items.length).map(() => {
-            return <div></div>;
-          })
-        )
-        .concat(secondHalf);
-      break;
-
-    case RenderType.UpperLeftFan:
-      items = Array(quarterNumber)
-        .map(() => {
-          return <div></div>;
-        })
-        .concat(items)
-        .concat(
-          Array(halfNumber + quarterNumber).map(() => {
-            return <div></div>;
-          })
-        );
-      break;
-
-    case RenderType.UpperRightFan:
-      items = Array(halfNumber + quarterNumber)
-        .map(() => {
-          return <div></div>;
-        })
-        .concat(items)
-        .concat(
-          Array(quarterNumber).map(() => {
-            return <div></div>;
-          })
-        );
-      break;
-
-    case RenderType.LowerLeftFan:
-      items = first3_4ths.concat(Array(items.length)).concat(lastQuarter);
-      break;
-
-    case RenderType.LowerRightFan:
-      items = firstQuarter.concat(Array(items.length)).concat(last3_4ths);
-      break;
-  }
-
+  items = Array(items.length)
+    .map(() => {
+      return <div></div>;
+    })
+    .concat(
+      Array(extraNodes).map(() => {
+        return <div></div>;
+      })
+    )
+    .concat(items);
   return items;
+};
+
+// export const convertItemsToFanType = (
+//   items: JSX.Element[],
+//   renderType: RenderType
+// ) => {
+//   if (items.length < 4) {
+//     while (items.length < 4) {
+//       items.push(<div></div>);
+//     }
+//   }
+
+//   const halfNumber = Math.floor(items.length / 2);
+//   const quarterNumber = Math.floor(items.length / 4);
+//   const half = Math.ceil(items.length / 2);
+//   const quarter = Math.ceil(items.length / 4);
+//   const firstHalf = items.slice(0, half);
+//   const secondHalf = items.slice(-half);
+//   const firstQuarter = items.slice(0, quarter);
+//   const last3_4ths = items.slice(quarter);
+//   const first3_4ths = items.slice(0, items.length - quarter);
+//   const lastQuarter = items.slice(items.length - quarter);
+
+//   switch (renderType) {
+//     case RenderType.RightFan:
+//       items = Array(items.length)
+//         .map(() => {
+//           return <div></div>;
+//         })
+//         .concat(items);
+//       break;
+
+//     case RenderType.LeftFan:
+//       items = items.concat(
+//         Array(items.length).map(() => {
+//           return <div></div>;
+//         })
+//       );
+//       break;
+
+//     case RenderType.TopFan:
+//       items = Array(Math.floor(items.length / 2))
+//         .map(() => {
+//           return <div></div>;
+//         })
+//         .concat(items)
+//         .concat(
+//           Array(Math.floor(items.length / 2)).map(() => {
+//             return <div></div>;
+//           })
+//         );
+//       break;
+
+//     case RenderType.BottomFan:
+//       items = firstHalf
+//         .concat(
+//           Array(items.length).map(() => {
+//             return <div></div>;
+//           })
+//         )
+//         .concat(secondHalf);
+//       break;
+
+//     case RenderType.UpperLeftFan:
+//       items = Array(quarterNumber + 1)
+//         .map(() => {
+//           return <div></div>;
+//         })
+//         .concat(items)
+//         .concat(
+//           Array(halfNumber + quarterNumber + 1).map(() => {
+//             return <div></div>;
+//           })
+//         );
+//       break;
+
+//     case RenderType.UpperRightFan:
+//       items = Array(halfNumber + quarterNumber + 1)
+//         .map(() => {
+//           return <div></div>;
+//         })
+//         .concat(items)
+//         .concat(
+//           Array(quarterNumber + 1).map(() => {
+//             return <div></div>;
+//           })
+//         );
+//       break;
+
+//     case RenderType.LowerLeftFan:
+//       items = first3_4ths.concat(Array(items.length)).concat(lastQuarter);
+//       break;
+
+//     case RenderType.LowerRightFan:
+//       items = firstQuarter.concat(Array(items.length + 1)).concat(last3_4ths);
+//       break;
+//   }
+
+//   return items;
+// };
+
+export const updateMenuDataForEvent = (
+  evt: React.MouseEvent<HTMLDivElement>,
+  key: string,
+  menuData: MenuData,
+  setMenuData: (d: MenuData) => void
+) => {
+  const clonedMenuData = cloneDeep(menuData);
+  const rT = getRenderTypeByPosition({
+    x: evt.clientX,
+    y: evt.clientY,
+  });
+  const rot = getRotFromRenderType(rT);
+  clonedMenuData[key] = {
+    renderType: rT,
+    rot,
+  };
+  setMenuData(clonedMenuData);
 };

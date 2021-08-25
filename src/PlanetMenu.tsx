@@ -16,21 +16,24 @@ import "./PlanetMenu.scss";
 import {
   convertItemsToFanType,
   getRenderTypeByPosition,
+  getRotFromRenderType,
+  MenuData,
   RenderType,
+  updateMenuDataForEvent,
 } from "./PlanetMenuUtils";
 // const reactPieMenu = require("react-pie-menu");
 // const PieMenu = reactPieMenu.default;
 // const { Slice } = reactPieMenu;
 
-enum MenuType {
-  TopLevelActions = "toplevelactions",
-  StatusTokenActions = "statustokenactions",
-  CounterTokenActions = "countertokenactions",
-  ModifierActions = "modifieractions",
-  DrawActions = "drawactions",
-  DrawNumber = "drawnumber",
-  ModifierNumber = "modifiernumber",
-}
+// enum MenuType {
+//   TopLevelActions = "toplevelactions",
+//   StatusTokenActions = "statustokenactions",
+//   CounterTokenActions = "countertokenactions",
+//   ModifierActions = "modifieractions",
+//   DrawActions = "drawactions",
+//   DrawNumber = "drawnumber",
+//   ModifierNumber = "modifiernumber",
+// }
 
 enum DrawMode {
   FaceUp = "faceup",
@@ -66,14 +69,15 @@ interface IProps {
     value?: number;
   }) => void;
 }
-const PlanetMenu = (props: IProps) => {
-  const [visibleMenu, setVisibleMenu] = useState(MenuType.TopLevelActions);
-  // const [currentDrawMode, setCurrentDrawMode] = useState(DrawMode.FaceDown);
-  // const [currentModifier, setCurrentModifier] = useState("");
 
-  if (!props.position && visibleMenu !== MenuType.TopLevelActions) {
-    setVisibleMenu(MenuType.TopLevelActions);
-  }
+const PlanetMenu = (props: IProps) => {
+  // const [visibleMenu, setVisibleMenu] = useState(MenuType.TopLevelActions);
+  // const [currentDrawMode, setCurrentDrawMode] = useState(DrawMode.FaceDown);
+  const [menuData, setMenuData] = useState({} as MenuData);
+
+  // if (!props.position && visibleMenu !== MenuType.TopLevelActions) {
+  //   setVisibleMenu(MenuType.TopLevelActions);
+  // }
 
   const initialPosition = props.position
     ? {
@@ -83,6 +87,7 @@ const PlanetMenu = (props: IProps) => {
     : { x: 0, y: 0 };
 
   const renderType: RenderType = getRenderTypeByPosition(props.position);
+  const rot = getRotFromRenderType(renderType);
 
   let orbitRadius: number | undefined = 190;
   if (renderType === RenderType.Normal) {
@@ -115,8 +120,9 @@ const PlanetMenu = (props: IProps) => {
           open
           hideOrbit
           orbitRadius={orbitRadius}
+          rotation={rot}
         >
-          {renderTopLevelMenu(props, renderType)}
+          {renderTopLevelMenu(props, menuData, setMenuData)}
         </Planet>
       </div>
     </TopLayer>
@@ -144,12 +150,16 @@ const getParentPlanet = (
   if (!parent) {
     parent = (evt.target as any)
       .closest("div[class*=jss]")
-      .parentNode.parentNode.closest("div[class*=jss]");
+      .parentNode?.parentNode?.closest("div[class*=jss]");
   }
   return parent;
 };
 
-const renderTopLevelMenu = (props: IProps, renderType: RenderType) => {
+const renderTopLevelMenu = (
+  props: IProps,
+  menuData: MenuData,
+  setMenuData: (d: MenuData) => void
+) => {
   if (!props.currentGameType) return null;
 
   const modifiers = GamePropertiesMap[props.currentGameType].modifiers;
@@ -165,15 +175,26 @@ const renderTopLevelMenu = (props: IProps, renderType: RenderType) => {
     <Planet
       key={"draw-menu-slice"}
       centerContent={
-        <div onClick={setParentPlanetZIndex} className="menu-orbit-item">
+        <div
+          onClick={(evt) => {
+            setParentPlanetZIndex(evt);
+            updateMenuDataForEvent(evt, "draw", menuData, setMenuData);
+          }}
+          className="menu-orbit-item"
+        >
           Draw
         </div>
       }
       hideOrbit
       autoClose
       onClose={clearParentPlanetZIndex}
+      rotation={menuData["draw"]?.rot ?? 0}
+      orbitRadius={150}
     >
-      {renderDrawMenu(props)}
+      {convertItemsToFanType(
+        renderDrawMenu(props),
+        menuData["draw"]?.renderType ?? RenderType.Normal
+      )}
     </Planet>,
     <Planet
       key={"shuffle-slice"}
@@ -192,28 +213,50 @@ const renderTopLevelMenu = (props: IProps, renderType: RenderType) => {
     <Planet
       key={"tokens-slice"}
       centerContent={
-        <div onClick={setParentPlanetZIndex} className="menu-orbit-item">
+        <div
+          onClick={(evt) => {
+            setParentPlanetZIndex(evt);
+            updateMenuDataForEvent(evt, "tokens", menuData, setMenuData);
+          }}
+          className="menu-orbit-item"
+        >
           Tokens
         </div>
       }
       hideOrbit
       autoClose
       onClose={clearParentPlanetZIndex}
+      rotation={menuData["tokens"]?.rot ?? 0}
+      orbitRadius={150}
     >
-      {renderCounterTokensMenu(props, renderType)}
+      {convertItemsToFanType(
+        renderCounterTokensMenu(props),
+        menuData["tokens"]?.renderType ?? RenderType.Normal
+      )}
     </Planet>,
     <Planet
       key={"statuses-slice"}
       centerContent={
-        <div onClick={setParentPlanetZIndex} className="menu-orbit-item">
+        <div
+          onClick={(evt) => {
+            setParentPlanetZIndex(evt);
+            updateMenuDataForEvent(evt, "statuses", menuData, setMenuData);
+          }}
+          className="menu-orbit-item"
+        >
           Statuses
         </div>
       }
       hideOrbit
       autoClose
       onClose={clearParentPlanetZIndex}
+      rotation={menuData["statuses"]?.rot ?? 0}
+      orbitRadius={150}
     >
-      {renderStatusTokensMenu(props, renderType)}
+      {convertItemsToFanType(
+        renderStatusTokensMenu(props),
+        menuData["statuses"]?.renderType ?? RenderType.Normal
+      )}
     </Planet>,
     <Planet
       key={"exhaust-slice"}
@@ -229,22 +272,36 @@ const renderTopLevelMenu = (props: IProps, renderType: RenderType) => {
       <Planet
         key={"modifiers-menu-slice"}
         centerContent={
-          <div onClick={setParentPlanetZIndex} className="menu-orbit-item">
+          <div
+            onClick={(evt) => {
+              setParentPlanetZIndex(evt);
+              updateMenuDataForEvent(evt, "modifiers", menuData, setMenuData);
+            }}
+            className="menu-orbit-item"
+          >
             Modifiers
           </div>
         }
         hideOrbit
         autoClose
         onClose={clearParentPlanetZIndex}
+        rotation={menuData["modifiers"]?.rot ?? 0}
+        orbitRadius={150}
       >
-        {renderModifierMenu(props)}
+        {convertItemsToFanType(
+          renderModifierMenu(props) ?? [],
+          menuData["modifiers"]?.renderType ?? RenderType.Normal
+        )}
       </Planet>
     );
   }
-  return convertItemsToFanType(topLevelPlanets, renderType);
+  return convertItemsToFanType(
+    topLevelPlanets,
+    menuData["modifiers"]?.renderType ?? RenderType.Normal
+  );
 };
 
-const renderStatusTokensMenu = (props: IProps, renderType: RenderType) => {
+const renderStatusTokensMenu = (props: IProps) => {
   if (!props.currentGameType) {
     return [];
   }
@@ -282,10 +339,10 @@ const renderStatusTokensMenu = (props: IProps, renderType: RenderType) => {
       );
     });
 
-  return convertItemsToFanType(slices, renderType);
+  return slices;
 };
 
-const renderCounterTokensMenu = (props: IProps, renderType: RenderType) => {
+const renderCounterTokensMenu = (props: IProps) => {
   if (!props.currentGameType) {
     return [];
   }
@@ -330,7 +387,7 @@ const renderCounterTokensMenu = (props: IProps, renderType: RenderType) => {
       );
     });
 
-  return convertItemsToFanType(slices, renderType);
+  return slices;
 };
 
 const renderDrawMenu = (props: IProps) => {
