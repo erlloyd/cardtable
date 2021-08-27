@@ -46,7 +46,7 @@ interface IProps {
   fill: string;
   handleClick?: (
     id: string,
-    event: KonvaEventObject<MouseEvent>,
+    event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>,
     wasTouch: boolean
   ) => void;
   handleDoubleClick?: (id: string, event: KonvaEventObject<MouseEvent>) => void;
@@ -651,7 +651,7 @@ class Card extends Component<IProps, IState> {
     }
   };
 
-  private handleTap = (event: KonvaEventObject<MouseEvent>) => {
+  private handleTap = (event: KonvaEventObject<TouchEvent>) => {
     this.handleTapOrClick(event, true);
   };
 
@@ -660,7 +660,7 @@ class Card extends Component<IProps, IState> {
   };
 
   private handleTapOrClick = (
-    event: KonvaEventObject<MouseEvent>,
+    event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>,
     wasTouch: boolean
   ) => {
     if (this.props.handleClick) {

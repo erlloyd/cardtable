@@ -642,9 +642,13 @@ class Game extends Component<IProps, IState> {
   };
 
   private renderTouchMenu = () => {
-    return <TouchMenuContainer showContextMenuAtPosition={(pos: Vector2d) => {
-      this.handleContextMenu(undefined, pos);
-    }}></TouchMenuContainer>;
+    return (
+      <TouchMenuContainer
+        showContextMenuAtPosition={(pos: Vector2d) => {
+          this.handleContextMenu(undefined, pos);
+        }}
+      ></TouchMenuContainer>
+    );
   };
 
   private renderDeckImporter = () => {
@@ -1263,7 +1267,7 @@ class Game extends Component<IProps, IState> {
     (card: ICardStack) =>
     (
       cardId: string,
-      event: KonvaEventObject<MouseEvent>,
+      event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>,
       wasTouch: boolean
     ) => {
       // Here check if modifier held down
