@@ -158,6 +158,28 @@ export const createDeckFromTxt =
     }
   };
 
+export const createDeckFromJson =
+  (payload: {
+    gameType: GameType;
+    position: Vector2d;
+    jsonContents: string;
+  }): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (dispatch, getState) => {
+    if (payload.gameType === GameType.MarvelChampions) {
+      // const heroCardsDataByName = getCardsDataHerosByName(getState());
+      // const playerCardsDataByName = getCardsDataPlayerCardsByName(getState());
+      dispatch(
+        createDeckFromTextFileWithIds(
+          getMarvelCards(JSON.parse(payload.jsonContents), getState(), {
+            gameType: payload.gameType,
+            decklistId: -1,
+            position: payload.position,
+          })
+        )
+      );
+    }
+  };
+
 export const fetchDecklistById = createAsyncThunk(
   "decklist/fetchByIdStatus",
   async (

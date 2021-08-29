@@ -33,6 +33,7 @@ import {
   shuffleStack,
   drawCardsOutOfCardStack,
   createDeckFromTxt,
+  createDeckFromJson,
 } from "./features/cards/cards.thunks";
 import { generateGameStateUrl } from "./features/game/game.thunks";
 import { allJsonData } from "./features/cards-data/cards-data.thunks";
@@ -116,6 +117,7 @@ const GameContainer = connect(mapStateToProps, {
   quitGame,
   updateCounterColor,
   createDeckFromTxt,
+  createDeckFromJson,
   generateGameStateUrl,
   showRadialMenuAtPosition,
   adjustModifier,

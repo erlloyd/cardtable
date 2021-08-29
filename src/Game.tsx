@@ -125,6 +125,11 @@ interface IProps {
     position: Vector2d;
     txtContents: string;
   }) => void;
+  createDeckFromJson: (payload: {
+    gameType: GameType;
+    position: Vector2d;
+    jsonContents: string;
+  }) => void;
   generateGameStateUrl: () => void;
   showRadialMenuAtPosition: (payload: Vector2d) => void;
   adjustModifier: (payload: {
@@ -1756,7 +1761,10 @@ class Game extends Component<IProps, IState> {
         action: () => {
           this.setState({
             showDeckImporter: true,
-            deckImporterPosition: this.stage?.getPointerPosition() ?? null,
+            deckImporterPosition: this.stage?.getPointerPosition() ?? {
+              x: 0,
+              y: 0,
+            },
           });
         },
       },
@@ -1767,6 +1775,17 @@ class Game extends Component<IProps, IState> {
             gameType: this.props.currentGameType,
             position: this.stage?.getPointerPosition() ?? { x: 0, y: 0 },
             txtContents,
+          });
+        },
+        fileUploader: true,
+      },
+      {
+        label: "Load Deck from json file",
+        fileLoadedAction: (jsonContents: string) => {
+          this.props.createDeckFromJson({
+            gameType: this.props.currentGameType,
+            position: this.stage?.getPointerPosition() ?? { x: 0, y: 0 },
+            jsonContents,
           });
         },
         fileUploader: true,
