@@ -356,4 +356,33 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "21028": "https://hallofheroeshome.files.wordpress.com/2021/08/n3.jpg",
   "21029": "https://hallofheroeshome.files.wordpress.com/2021/08/n5.jpg",
   "21030": "https://hallofheroeshome.files.wordpress.com/2021/08/n6.jpg",
+
+  // Ebony Maw
+  "21071": "https://hallofheroeshome.files.wordpress.com/2021/08/e1.jpg",
+  "21072": "https://hallofheroeshome.files.wordpress.com/2021/08/e2.jpg",
+  "21073": "https://hallofheroeshome.files.wordpress.com/2021/08/e3.jpg",
+  "21074a": "https://hallofheroeshome.files.wordpress.com/2021/08/e4a.jpg",
+  "21074b": "https://hallofheroeshome.files.wordpress.com/2021/08/e4b.jpg",
+  "21075a": "https://hallofheroeshome.files.wordpress.com/2021/08/e5a.jpg",
+  "21075b": "https://hallofheroeshome.files.wordpress.com/2021/08/e5b.jpg",
+  "21076": "https://hallofheroeshome.files.wordpress.com/2021/08/e6.jpg",
+  "21077": "https://hallofheroeshome.files.wordpress.com/2021/08/e8.jpg",
+  "21078": "https://hallofheroeshome.files.wordpress.com/2021/08/e10.jpg",
+  "21079": "https://hallofheroeshome.files.wordpress.com/2021/08/e12.jpg",
+  "21080": "https://hallofheroeshome.files.wordpress.com/2021/08/e14.jpg",
+  "21081": "https://hallofheroeshome.files.wordpress.com/2021/08/e16.jpg",
+  "21082": "https://hallofheroeshome.files.wordpress.com/2021/08/e19.jpg",
+  "21083": "https://hallofheroeshome.files.wordpress.com/2021/08/e20.jpg",
+  "21084": "https://hallofheroeshome.files.wordpress.com/2021/08/e21.jpg",
+
+  // Black Order
+  "21085": "https://hallofheroeshome.files.wordpress.com/2021/08/b1-1.jpg",
+  "21086": "https://hallofheroeshome.files.wordpress.com/2021/08/b2-1.jpg",
+  "21087": "https://hallofheroeshome.files.wordpress.com/2021/08/b3-1.jpg",
+  "21088": "https://hallofheroeshome.files.wordpress.com/2021/08/b4-1.jpg",
+
+  // Armies of Titan
+  "21089": "https://hallofheroeshome.files.wordpress.com/2021/08/a1-2.jpg",
+  "21090": "https://hallofheroeshome.files.wordpress.com/2021/08/a3-2.jpg",
+  "21091": "https://hallofheroeshome.files.wordpress.com/2021/08/a5-2.jpg",
 };
