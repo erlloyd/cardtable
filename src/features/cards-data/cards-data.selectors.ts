@@ -101,9 +101,9 @@ export const getCardsDataEncounterEntitiesBySetCode = createSelector(
   (encounterEntities, herosData, setData): IEncounterEntity[] => {
     const setTypesEncounters: { [key: string]: CardData[] } = {};
 
-    const campaignCards = Object.values(herosData).filter(
-      (pc) => pc.extraInfo.factionCode === "campaign"
-    );
+    const campaignCards = Object.values(herosData)
+      .filter((pc) => pc.extraInfo.factionCode === "campaign")
+      .sort((a, b) => (a.code < b.code ? -1 : a.code > b.code ? 1 : 0));
 
     Object.values(encounterEntities)
       .sort((a, b) => (a.code < b.code ? -1 : a.code > b.code ? 1 : 0))
