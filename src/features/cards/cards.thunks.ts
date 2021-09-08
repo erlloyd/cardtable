@@ -1,14 +1,19 @@
 import { Action, createAsyncThunk, ThunkAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Vector2d } from "konva/lib/types";
+import { v4 as uuidv4 } from "uuid";
+import { GameType, myPeerRef } from "../../constants/app-constants";
+import { EXTRA_CARDS } from "../../constants/card-pack-mapping";
+import { GamePropertiesMap } from "../../constants/game-type-properties-mapping";
 import { RootState } from "../../store/rootReducer";
+import { convertMarvelTxtToDeckInfo } from "../../utilities/marvel-txt-converter";
 import {
   getCardsDataEncounterEntities,
   getCardsDataHeroEntities,
   getCardsDataHerosByName,
   getCardsDataPlayerCardsByName,
 } from "../cards-data/cards-data.selectors";
-import { v4 as uuidv4 } from "uuid";
+import { ICardData } from "../cards-data/initialState";
 import {
   addCardStackWithId,
   createDeckFromTextFileWithIds,
@@ -18,12 +23,13 @@ import {
   setStackShuffling,
   startCardMoveWithSplitStackId,
 } from "./cards.actions";
-import { ICardDetails, ICardStack } from "./initialState";
 import { getCards } from "./cards.selectors";
-import { EXTRA_CARDS } from "../../constants/card-pack-mapping";
-import { GameType, myPeerRef } from "../../constants/app-constants";
-import { GamePropertiesMap } from "../../constants/game-type-properties-mapping";
-import { convertMarvelTxtToDeckInfo } from "../../utilities/marvel-txt-converter";
+import { ICardDetails, ICardStack } from "./initialState";
+
+interface DeckData {
+  investigator_code: string;
+  slots: { [key: string]: number };
+}
 
 interface AddCardStackPayload {
   cardJsonIds: string[];
@@ -201,7 +207,7 @@ export const fetchDecklistById = createAsyncThunk(
 );
 
 const getMarvelCards = (
-  response: any,
+  response: { data: DeckData },
   state: RootState,
   payload: { gameType: GameType; decklistId: number; position: Vector2d }
 ) => {
@@ -246,13 +252,32 @@ const getMarvelCards = (
   return {
     position: payload.position,
     heroId: uuidv4(),
-    data: response.data,
+    data: replaceDuplicateCards(response.data, heroCardsData),
     dataId: uuidv4(),
     extraHeroCards: extraCards,
     relatedEncounterDeck: heroEncounterDeck,
     encounterDeckId: uuidv4(),
     relatedObligationDeck: heroObligationDeck,
     obligationDeckId: uuidv4(),
+  };
+};
+
+const replaceDuplicateCards = (
+  data: DeckData,
+  heroData: ICardData
+): DeckData => {
+  const newSlots: { [key: string]: number } = {};
+  Object.keys(data.slots).forEach((jsonId) => {
+    const cardData = heroData[jsonId];
+    if (cardData && cardData.duplicate_of) {
+      newSlots[cardData.duplicate_of] = data.slots[jsonId];
+    } else {
+      newSlots[jsonId] = data.slots[jsonId];
+    }
+  });
+  return {
+    investigator_code: data.investigator_code,
+    slots: newSlots,
   };
 };
 

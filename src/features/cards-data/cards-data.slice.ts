@@ -46,65 +46,67 @@ const convertMarvelToCommonFormat = (
       packCode: cardMarvelFormat.pack_code,
       factionCode: cardMarvelFormat.faction_code,
     },
+    duplicate_of: cardMarvelFormat.duplicate_of,
   };
   return mappedCardData;
 };
 
-const convertLOTRToCommonFormat = (encounterCard: boolean) => (
-  cardLOTRFormat: CardDataLOTR
-): CardData => {
-  // if (!cardLOTRFormat.RingsDbCardId) {
-  //   console.log(
-  //     `No RingsDB Id for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`
-  //   );
-  // }
+const convertLOTRToCommonFormat =
+  (encounterCard: boolean) =>
+  (cardLOTRFormat: CardDataLOTR): CardData => {
+    // if (!cardLOTRFormat.RingsDbCardId) {
+    //   console.log(
+    //     `No RingsDB Id for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`
+    //   );
+    // }
 
-  // if (cardLOTRFormat.Front && !cardLOTRFormat.Front.ImagePath) {
-  //   console.log(
-  //     `No Front Image Path for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`
-  //   );
-  // }
+    // if (cardLOTRFormat.Front && !cardLOTRFormat.Front.ImagePath) {
+    //   console.log(
+    //     `No Front Image Path for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`
+    //   );
+    // }
 
-  let cardBackImage = cardLOTRFormat.Back?.ImagePath;
+    let cardBackImage = cardLOTRFormat.Back?.ImagePath;
 
-  if (cardLOTRFormat.Back && !cardLOTRFormat.Back.ImagePath) {
-    const frontImage = cardLOTRFormat.Front.ImagePath;
-    const frontImageWithoutExtension = frontImage
-      .split(".")
-      .slice(0, -1)
-      .join(".");
-    if (
-      frontImageWithoutExtension[frontImageWithoutExtension.length - 1] !== "A"
-    ) {
-      console.log(
-        `No Non-B Back Image Path for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`
-      );
-    } else {
-      cardBackImage = frontImage.replaceAll("A.", "B.");
+    if (cardLOTRFormat.Back && !cardLOTRFormat.Back.ImagePath) {
+      const frontImage = cardLOTRFormat.Front.ImagePath;
+      const frontImageWithoutExtension = frontImage
+        .split(".")
+        .slice(0, -1)
+        .join(".");
+      if (
+        frontImageWithoutExtension[frontImageWithoutExtension.length - 1] !==
+        "A"
+      ) {
+        console.log(
+          `No Non-B Back Image Path for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`
+        );
+      } else {
+        cardBackImage = frontImage.replaceAll("A.", "B.");
+      }
     }
-  }
 
-  const mappedCardData: CardData = {
-    code: encounterCard ? cardLOTRFormat.Slug : cardLOTRFormat.RingsDbCardId,
-    name: cardLOTRFormat.Title,
-    images: {
-      front: cardLOTRFormat.Front.ImagePath,
-      back: cardBackImage ?? null,
-    },
-    octgnId: cardLOTRFormat.OctgnGuid ?? null,
-    quantity: cardLOTRFormat.Quantity ?? 1,
-    doubleSided: !!cardLOTRFormat.Back,
-    backLink: null,
-    typeCode: cardLOTRFormat.CardType,
-    subTypeCode: cardLOTRFormat.CardSubType,
-    extraInfo: {
-      setCode: cardLOTRFormat.CardSet ?? null,
-      packCode: "TODO - lotr",
-      factionCode: encounterCard ? "encounter" : "player",
-    },
+    const mappedCardData: CardData = {
+      code: encounterCard ? cardLOTRFormat.Slug : cardLOTRFormat.RingsDbCardId,
+      name: cardLOTRFormat.Title,
+      images: {
+        front: cardLOTRFormat.Front.ImagePath,
+        back: cardBackImage ?? null,
+      },
+      octgnId: cardLOTRFormat.OctgnGuid ?? null,
+      quantity: cardLOTRFormat.Quantity ?? 1,
+      doubleSided: !!cardLOTRFormat.Back,
+      backLink: null,
+      typeCode: cardLOTRFormat.CardType,
+      subTypeCode: cardLOTRFormat.CardSubType,
+      extraInfo: {
+        setCode: cardLOTRFormat.CardSet ?? null,
+        packCode: "TODO - lotr",
+        factionCode: encounterCard ? "encounter" : "player",
+      },
+    };
+    return mappedCardData;
   };
-  return mappedCardData;
-};
 
 // Reducers
 const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
@@ -194,38 +196,40 @@ const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
   return state;
 };
 
-const storeCardData = (isPlayerPack: boolean, careAboutDups: boolean) => (cs: {
-  location: Draft<IGameCardsDataState> | undefined;
-  card: CardData;
-}) => {
-  const stateLocation = isPlayerPack
-    ? (cs.location as IGameCardsDataState).entities
-    : (cs.location as IGameCardsDataState).encounterEntities;
+const storeCardData =
+  (isPlayerPack: boolean, careAboutDups: boolean) =>
+  (cs: {
+    location: Draft<IGameCardsDataState> | undefined;
+    card: CardData;
+  }) => {
+    const stateLocation = isPlayerPack
+      ? (cs.location as IGameCardsDataState).entities
+      : (cs.location as IGameCardsDataState).encounterEntities;
 
-  // if (!card.octgn_id) {
-  //   console.error(`Card ${card.code} had no octgn_id!`);
-  // }
+    // if (!card.octgn_id) {
+    //   console.error(`Card ${card.code} had no octgn_id!`);
+    // }
 
-  if (!(cs.card.code[0] === "0" && cs.card.code[1] === "0")) {
-    if (stateLocation[cs.card.code]) {
-      if (careAboutDups) {
-        console.error(
-          "Found multiple cards with code " +
-            cs.card.code +
-            " " +
-            cs.card.name +
-            " " +
-            cs.card.extraInfo.setCode +
-            " Existing card is " +
-            stateLocation[cs.card.code].name +
-            " " +
-            stateLocation[cs.card.code].extraInfo.setCode
-        );
+    if (!(cs.card.code[0] === "0" && cs.card.code[1] === "0")) {
+      if (stateLocation[cs.card.code]) {
+        if (careAboutDups) {
+          console.error(
+            "Found multiple cards with code " +
+              cs.card.code +
+              " " +
+              cs.card.name +
+              " " +
+              cs.card.extraInfo.setCode +
+              " Existing card is " +
+              stateLocation[cs.card.code].name +
+              " " +
+              stateLocation[cs.card.code].extraInfo.setCode
+          );
+        }
       }
+      stateLocation[cs.card.code] = cs.card;
     }
-    stateLocation[cs.card.code] = cs.card;
-  }
-};
+  };
 
 const loadCardsForEncounterSetReducer: CaseReducer<
   ICardsDataState,
@@ -336,10 +340,7 @@ const cardsDataSlice = createSlice({
   },
 });
 
-export const {
-  loadCardsData,
-  loadCardsDataForPack,
-  loadCardsForEncounterSet,
-} = cardsDataSlice.actions;
+export const { loadCardsData, loadCardsDataForPack, loadCardsForEncounterSet } =
+  cardsDataSlice.actions;
 
 export default cardsDataSlice.reducer;

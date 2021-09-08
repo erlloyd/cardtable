@@ -22,4 +22,5 @@ export interface CardData {
   thwart?: number | null;
   traits?: string;
   type_code: string;
+  duplicate_of?: string;
 }

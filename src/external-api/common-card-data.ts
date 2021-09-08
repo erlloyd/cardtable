@@ -16,4 +16,5 @@ export interface CardData {
     packCode: string | null;
     factionCode: string | null;
   };
+  duplicate_of?: string;
 }
