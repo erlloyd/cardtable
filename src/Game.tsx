@@ -1855,8 +1855,14 @@ class Game extends Component<IProps, IState> {
 
   private getCardType = (card: ICardStack): string => {
     if (Object.keys(this.props.cardsData).length === 0) return "";
-
-    const cardData = this.props.cardsData[card.cardStack[0].jsonId];
+    let cardData;
+    const mainCardData = this.props.cardsData[card.cardStack[0].jsonId];
+    if (!!mainCardData) {
+      cardData = mainCardData;
+      if (!card.faceup && !!mainCardData.backLink) {
+        cardData = this.props.cardsData[mainCardData.backLink];
+      }
+    }
 
     return (cardData?.typeCode ?? "").toLocaleLowerCase();
   };

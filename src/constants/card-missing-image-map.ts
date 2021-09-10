@@ -507,4 +507,63 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "21149": "https://hallofheroeshome.files.wordpress.com/2021/08/h14.jpg",
   "21150": "https://hallofheroeshome.files.wordpress.com/2021/08/h16.jpg",
   "21151": "https://hallofheroeshome.files.wordpress.com/2021/08/h18.jpg",
+
+  // Legions of Hel
+  "21152": "https://hallofheroeshome.files.wordpress.com/2021/08/l1-1.jpg",
+  "21153": "https://hallofheroeshome.files.wordpress.com/2021/08/l3-1.jpg",
+  "21154": "https://hallofheroeshome.files.wordpress.com/2021/08/l5-1.jpg",
+  "21155": "https://hallofheroeshome.files.wordpress.com/2021/08/l6.jpg",
+
+  // Frost Giants
+  "21156": "https://hallofheroeshome.files.wordpress.com/2021/08/f1.jpg",
+  "21157": "https://hallofheroeshome.files.wordpress.com/2021/08/f2.jpg",
+  "21158": "https://hallofheroeshome.files.wordpress.com/2021/08/f4.jpg",
+  "21159": "https://hallofheroeshome.files.wordpress.com/2021/08/f6.jpg",
+
+  // Loki
+  "21160": "https://hallofheroeshome.files.wordpress.com/2021/08/l1.jpg",
+  "21161": "https://hallofheroeshome.files.wordpress.com/2021/08/l2.jpg",
+  "21162": "https://hallofheroeshome.files.wordpress.com/2021/08/l3.jpg",
+  "21163": "https://hallofheroeshome.files.wordpress.com/2021/08/l4.jpg",
+  "21164": "https://hallofheroeshome.files.wordpress.com/2021/08/l5.jpg",
+  "21165a": "https://hallofheroeshome.files.wordpress.com/2021/08/l6a.jpg",
+  "21165b": "https://hallofheroeshome.files.wordpress.com/2021/08/l6b.jpg",
+  "21166": "https://hallofheroeshome.files.wordpress.com/2021/08/l7.jpg",
+  "21167": "https://hallofheroeshome.files.wordpress.com/2021/08/l8.jpg",
+  "21168": "https://hallofheroeshome.files.wordpress.com/2021/08/l9.jpg",
+  "21169": "https://hallofheroeshome.files.wordpress.com/2021/08/l10.jpg",
+  "21170": "https://hallofheroeshome.files.wordpress.com/2021/08/l11.jpg",
+  "21171": "https://hallofheroeshome.files.wordpress.com/2021/08/l12.jpg",
+  "21172": "https://hallofheroeshome.files.wordpress.com/2021/08/l13.jpg",
+  "21173": "https://hallofheroeshome.files.wordpress.com/2021/08/l14.jpg",
+  "21174": "https://hallofheroeshome.files.wordpress.com/2021/08/l15.jpg",
+  "21175": "https://hallofheroeshome.files.wordpress.com/2021/08/l17.jpg",
+  "21176": "https://hallofheroeshome.files.wordpress.com/2021/08/l19.jpg",
+
+  // Enchantress
+  "21177": "https://hallofheroeshome.files.wordpress.com/2021/08/e1-1.jpg",
+  "21178": "https://hallofheroeshome.files.wordpress.com/2021/08/e2-1.jpg",
+  "21179": "https://hallofheroeshome.files.wordpress.com/2021/08/e4.jpg",
+
+  // MTS Campaign
+  "21180a": "https://hallofheroeshome.files.wordpress.com/2021/08/c1a.jpg",
+  "21180b": "https://hallofheroeshome.files.wordpress.com/2021/08/c1b.jpg",
+  "21181": "https://hallofheroeshome.files.wordpress.com/2021/08/c2.jpg",
+  "21182a": "https://hallofheroeshome.files.wordpress.com/2021/08/c3a.jpg",
+  "21182b": "https://hallofheroeshome.files.wordpress.com/2021/08/c3b.jpg",
+  "21183": "https://hallofheroeshome.files.wordpress.com/2021/08/c4.jpg",
+  "21184a": "https://hallofheroeshome.files.wordpress.com/2021/08/c8a.jpg",
+  "21184b": "https://hallofheroeshome.files.wordpress.com/2021/08/c8b.jpg",
+  "21185": "https://hallofheroeshome.files.wordpress.com/2021/08/c9.jpg",
+  "21186a": "https://hallofheroeshome.files.wordpress.com/2021/08/c13a.jpg",
+  "21186b": "https://hallofheroeshome.files.wordpress.com/2021/08/c13b.jpg",
+  "21187a": "https://hallofheroeshome.files.wordpress.com/2021/08/c14a.jpg",
+  "21187b": "https://hallofheroeshome.files.wordpress.com/2021/08/c14b.jpg",
+  "21188": "https://hallofheroeshome.files.wordpress.com/2021/08/c18.jpg",
+  "21189a": "https://hallofheroeshome.files.wordpress.com/2021/08/c19a.jpg",
+  "21189b": "https://hallofheroeshome.files.wordpress.com/2021/08/c19b.jpg",
+  "21190": "https://hallofheroeshome.files.wordpress.com/2021/08/c20.jpg",
+  "21191": "https://hallofheroeshome.files.wordpress.com/2021/08/c21.jpg",
+  "21192": "https://hallofheroeshome.files.wordpress.com/2021/08/c22.jpg",
+  "21193": "https://hallofheroeshome.files.wordpress.com/2021/08/c23.jpg",
 };
