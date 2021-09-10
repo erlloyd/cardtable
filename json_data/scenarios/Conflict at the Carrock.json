@@ -1234,9 +1234,11 @@
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "You are playing Nightmare mode.\n\nStage 1A should read, `Remove 5 unique Troll cards` instead of 4.",
+                    "You are playing Nightmare mode.",
+                    "Stage 1A should read, `Remove 5 unique Troll cards` instead of 4.",
                     "Stage 2B should read, `When Revealed: Place Louis, Morris, Rupert and Stuart into the staging area.`",
-                    "Forced: At the end of the quest phase, if no progress was placed on the current quest this phase, place 1 progress on the current quest (bypassing the active location).\n\nReponse: After defeating a unique Troll enemy, you may choose and discard 1 `Sacked!` card from play."
+                    "Forced: At the end of the quest phase, if no progress was placed on the current quest this phase, place 1 progress on the current quest (bypassing the active location).",
+                    "Reponse: After defeating a unique Troll enemy, you may choose and discard 1 `Sacked!` card from play."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -1248,7 +1250,26 @@
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Begin with the standard quest deck and encounter deck for the Conflict at the Carrock scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n1x Grimbeorn the Old\n1x Louis\n1x Morris\n1x Stuart\n1x Rupert\n3x Bee Pastures\n3x Oak-wood Grove\n1x Roasted Slowly\n3x Misty Mountain Goblins\n2x Banks of the Anduin\n1x Wolf Rider\n2x Goblin Sniper\n2x Wargs\n2x Despair\n2x The Brown Lands\n2x The East Bight\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Conflict at the Carrock encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                    "Begin with the standard quest deck and encounter deck for the Conflict at the Carrock scenario.",
+                    "Remove the following cards, in the specified quantities, from the standard encounter deck:",
+                    "1x Grimbeorn the Old",
+                    "1x Louis",
+                    "1x Morris",
+                    "1x Stuart",
+                    "1x Rupert",
+                    "3x Bee Pastures",
+                    "3x Oak-wood Grove",
+                    "1x Roasted Slowly",
+                    "3x Misty Mountain Goblins",
+                    "2x Banks of the Anduin",
+                    "1x Wolf Rider",
+                    "2x Goblin Sniper",
+                    "2x Wargs",
+                    "2x Despair",
+                    "2x The Brown Lands",
+                    "2x The East Bight",
+                    "Then, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Conflict at the Carrock encounter deck.",
+                    "Finally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -1338,7 +1359,7 @@
                     "Forced: After Rob and Bob makes its first attack each round, if there are two or more players, it engages the next player and makes an additional attack (discard and deal a new shadow card for this attack)."
                 ],
                 "Shadow": null,
-                "FlavorText": "Yes, I am afraid trolls do behave like that, even those with only one head each. -The Hobbit"
+                "FlavorText": "Yes, I am afraid trolls do behave like that, even those with only one head each.\r\n-The Hobbit"
             },
             "Back": null,
             "CardSet": "Conflict at the Carrock Nightmare",
@@ -1620,7 +1641,7 @@
                     "Forced: After any amount of progress is placed on Hives and Hives, deal 1 damage to each character in play."
                 ],
                 "Shadow": "Shadow: Attacking enemy gets +2 Attack.",
-                "FlavorText": "There was a buzzing and a whirring and a droning in the air. Bees were busy everywhere. And such bees! Bilbo had never seen anything like them. -The Hobbit"
+                "FlavorText": "There was a buzzing and a whirring and a droning in the air. Bees were busy everywhere. And such bees! Bilbo had never seen anything like them.\r\n-The Hobbit"
             },
             "Back": null,
             "CardSet": "Conflict at the Carrock Nightmare",
@@ -1658,7 +1679,7 @@
                     "When Revealed: The first player chooses a hero in any player`s discard pile and removes that hero from the game. Then, heal all damage from each Troll enemy in play. If no damage is removed from any Troll enemy as a result of this effect, Time for Supper gains surge."
                 ],
                 "Shadow": null,
-                "FlavorText": "In the end they decided to mince them fine and boil them. So they got a black pot, and they took out their knives. -The Hobbit"
+                "FlavorText": "In the end they decided to mince them fine and boil them. So they got a black pot, and they took out their knives.\r\n-The Hobbit"
             },
             "Back": null,
             "CardSet": "Conflict at the Carrock Nightmare",
@@ -1719,12 +1740,15 @@
             "EncounterInfo": {
                 "EncounterSet": "Conflict at the Carrock Nightmare",
                 "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
+                "IncludedEncounterSets": [
+                    "Journey Along the Anduin",
+                    "Wilderlands"
+                ],
                 "StageNumber": 3,
                 "StageLetter": "A"
             },
             "Number": 11,
-            "Quantity": 3,
+            "Quantity": 1,
             "Artist": "Tiziano Baracchi",
             "HasErrata": false,
             "OctgnGuid": "",
