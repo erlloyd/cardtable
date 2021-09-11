@@ -1944,7 +1944,8 @@ class Game extends Component<IProps, IState> {
       if (!card.faceup) {
         if (!cardData.images.back) {
           return [
-            topCardData.extraInfo.factionCode === "encounter"
+            topCardData.extraInfo.factionCode === "encounter" ||
+            topCardData.typeCode === "side_scheme"
               ? process.env.PUBLIC_URL +
                 "/images/standard/encounter_card_back_" +
                 this.props.currentGameType +
@@ -1976,7 +1977,8 @@ class Game extends Component<IProps, IState> {
       } else {
         cardData = null;
         urls = [
-          topCardData.extraInfo.factionCode === "encounter"
+          topCardData.extraInfo.factionCode === "encounter" ||
+          topCardData.typeCode === "side_scheme"
             ? process.env.PUBLIC_URL +
               "/images/standard/encounter_card_back_" +
               this.props.currentGameType +
