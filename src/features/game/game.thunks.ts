@@ -10,9 +10,7 @@ export const generateGameStateUrl =
     const cards = currentStoreState.liveState.present.cards.cards;
     const counters = currentStoreState.liveState.present.counters;
     const gameType = currentStoreState.game.activeGameType;
-    console.log(cards);
     const crushedCardsString = JSONCrush.crush(JSON.stringify(cards));
-    console.log(crushedCardsString);
     const crushedCountersString = JSONCrush.crush(JSON.stringify(counters));
     copyToClipboard(
       `${getBaseUrl()}?gameType=${gameType}&cards=${encodeURIComponent(
