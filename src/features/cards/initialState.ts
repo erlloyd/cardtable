@@ -44,6 +44,10 @@ export interface ICardsState {
 
 const queryParams = new URLSearchParams(window.location.search);
 const queryParamsCardsString = queryParams.get("cards");
+if (!!queryParamsCardsString) {
+  const uncrush = JSONCrush.uncrush(queryParamsCardsString);
+  console.log(uncrush);
+}
 const queryParamsCards = !!queryParamsCardsString
   ? { cards: JSON.parse(JSONCrush.uncrush(queryParamsCardsString)) }
   : null;
