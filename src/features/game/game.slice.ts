@@ -13,11 +13,13 @@ const updateZoomReducer: CaseReducer<IGameState, PayloadAction<Vector2d>> = (
   return state;
 };
 
-const updatePositionReducer: CaseReducer<IGameState, PayloadAction<Vector2d>> =
-  (state, action) => {
-    state.stagePosition = action.payload;
-    return state;
-  };
+const updatePositionReducer: CaseReducer<
+  IGameState,
+  PayloadAction<Vector2d>
+> = (state, action) => {
+  state.stagePosition = action.payload;
+  return state;
+};
 
 const connectToRemoteGameReducer: CaseReducer<
   IGameState,
@@ -38,14 +40,16 @@ const setPeerIdReducer: CaseReducer<IGameState, PayloadAction<string>> = (
   state.peerId = action.payload;
 };
 
-const setPreviewCardIdReducer: CaseReducer<IGameState, PayloadAction<string>> =
-  (state, action) => {
-    if (!state.previewCard) {
-      state.previewCard = { id: action.payload };
-    } else if (state.previewCard.id !== action.payload) {
-      state.previewCard.id = action.payload;
-    }
-  };
+const setPreviewCardIdReducer: CaseReducer<
+  IGameState,
+  PayloadAction<string>
+> = (state, action) => {
+  if (!state.previewCard) {
+    state.previewCard = { id: action.payload };
+  } else if (state.previewCard.id !== action.payload) {
+    state.previewCard.id = action.payload;
+  }
+};
 
 const clearPreviewCardReducer: CaseReducer<IGameState> = (state) => {
   state.previewCard = null;
@@ -86,6 +90,17 @@ const hideRadialMenuReducer: CaseReducer<IGameState> = (state) => {
   state.radialMenuPosition = null;
 };
 
+const showSpecificCardLoaderReducer: CaseReducer<
+  IGameState,
+  PayloadAction<Vector2d>
+> = (state, action) => {
+  state.specificCardLoaderPosition = action.payload;
+};
+
+const hideSpecificCardLoaderReducer: CaseReducer<IGameState> = (state) => {
+  state.specificCardLoaderPosition = null;
+};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -105,6 +120,8 @@ const gameSlice = createSlice({
     quitGame: quitGameReducer,
     showRadialMenuAtPosition: showRadialMenuAtPositionReducer,
     hideRadialMenu: hideRadialMenuReducer,
+    showSpecificCardLoader: showSpecificCardLoaderReducer,
+    hideSpecificCardLoader: hideSpecificCardLoaderReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -133,6 +150,8 @@ export const {
   quitGame,
   showRadialMenuAtPosition,
   hideRadialMenu,
+  showSpecificCardLoader,
+  hideSpecificCardLoader,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

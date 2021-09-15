@@ -37,6 +37,13 @@ export const getCardsDataHeroEntities = createSelector(
   }
 );
 
+export const getCardsDataHeroEntitiesArrayWithoutDuplicates = createSelector(
+  getCardsDataHeroEntities,
+  (cardsData) => {
+    return Object.values(cardsData).filter((c) => !c.duplicate_of);
+  }
+);
+
 export const getCardsDataHerosByName = createSelector(
   getCardsData,
   (cardsData) => {

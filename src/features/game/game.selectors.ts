@@ -24,6 +24,11 @@ export const getRadialMenuPosition = createSelector(
   (game) => game.radialMenuPosition
 );
 
+export const getSpecificCardLoaderPosition = createSelector(
+  getGame,
+  (game) => game.specificCardLoaderPosition
+);
+
 export const getPreviewCard = createSelector(
   getGame,
   (game) => game.previewCard

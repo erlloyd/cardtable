@@ -38,6 +38,7 @@ interface IProps {
   hideRadialMenu: () => void;
   flipCards: () => void;
   exhaustCard: (id?: string) => void;
+  deleteCardStack: (id?: string) => void;
   shuffleStack: (id?: string) => void;
   toggleToken: (payload: {
     id?: string;

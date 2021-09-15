@@ -14,6 +14,7 @@ import {
   cardMove,
   endCardMove,
   exhaustCard,
+  deleteCardStack,
   flipCards,
   selectCard,
   selectMultipleCards,
@@ -52,6 +53,7 @@ import {
   clearPreviewCard,
   quitGame,
   showRadialMenuAtPosition,
+  showSpecificCardLoader,
 } from "./features/game/game.slice";
 
 import {
@@ -84,6 +86,7 @@ const GameContainer = connect(mapStateToProps, {
   cardMove,
   endCardMove,
   exhaustCard,
+  deleteCardStack,
   loadCardsData,
   allJsonData,
   selectCard,
@@ -120,6 +123,7 @@ const GameContainer = connect(mapStateToProps, {
   createDeckFromJson,
   generateGameStateUrl,
   showRadialMenuAtPosition,
+  showSpecificCardLoader,
   adjustModifier,
   clearAllModifiers,
 })(Game);

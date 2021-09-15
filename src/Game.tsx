@@ -36,6 +36,7 @@ import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
 import "./Game.scss";
 import PeerConnector from "./PeerConnector";
 import RadialMenuContainer from "./RadialMenuContainer";
+import SpecificCardLoaderContainer from "./SpecificCardLoaderContainer";
 import TokenValueModifier from "./TokenValueModifier";
 import TopLayer from "./TopLayer";
 import TouchMenuContainer from "./TouchMenuContainer";
@@ -60,6 +61,7 @@ interface IProps {
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
   endCardMove: (id: string) => void;
   exhaustCard: (id?: string) => void;
+  deleteCardStack: (id?: string) => void;
   selectCard: (payload: { id: string; unselectOtherCards: boolean }) => void;
   unselectCard: (id: string) => void;
   toggleSelectCard: (id: string) => void;
@@ -132,6 +134,7 @@ interface IProps {
   }) => void;
   generateGameStateUrl: () => void;
   showRadialMenuAtPosition: (payload: Vector2d) => void;
+  showSpecificCardLoader: (payload: Vector2d) => void;
   adjustModifier: (payload: {
     id?: string;
     modifierId: string;
@@ -466,6 +469,7 @@ class Game extends Component<IProps, IState> {
             });
           }}
         ></RadialMenuContainer>
+        <SpecificCardLoaderContainer></SpecificCardLoaderContainer>
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
         {this.renderPreviewCardModal()}
@@ -1003,6 +1007,13 @@ class Game extends Component<IProps, IState> {
       });
     }
 
+    menuItems.push({
+      label: "Delete",
+      action: () => {
+        this.props.deleteCardStack();
+      },
+    });
+
     const tokenInfoForGameType =
       GamePropertiesMap[this.props.currentGameType].tokens;
 
@@ -1527,7 +1538,7 @@ class Game extends Component<IProps, IState> {
     const transform = target.getAbsoluteTransform().copy();
     transform.invert();
     let pos = posParam || target.getPointerPosition();
-    return transform.point(pos) as Vector2d;
+    return transform.point(pos ?? { x: 20, y: 20 }) as Vector2d;
   };
 
   private handleMouseDown = (
@@ -1747,7 +1758,7 @@ class Game extends Component<IProps, IState> {
       event.cancelBubble = true;
     }
 
-    const menuItems = [
+    const menuItems: ContextMenuItem[] = [
       {
         label: "Undo",
         action: this.props.undo,
@@ -1769,17 +1780,6 @@ class Game extends Component<IProps, IState> {
         },
       },
       {
-        label: "Load Deck from txt file",
-        fileLoadedAction: (txtContents: string) => {
-          this.props.createDeckFromTxt({
-            gameType: this.props.currentGameType,
-            position: this.stage?.getPointerPosition() ?? { x: 0, y: 0 },
-            txtContents,
-          });
-        },
-        fileUploader: true,
-      },
-      {
         label: "Load Deck from json file",
         fileLoadedAction: (jsonContents: string) => {
           this.props.createDeckFromJson({
@@ -1799,6 +1799,14 @@ class Game extends Component<IProps, IState> {
             showEncounterImporter: true,
             encounterImporterPosition: this.stage?.getPointerPosition() ?? null,
           });
+        },
+      },
+      {
+        label: `Load Specific Card`,
+        action: () => {
+          this.props.showSpecificCardLoader(
+            this.stage?.getPointerPosition() || { x: 0, y: 0 }
+          );
         },
       },
       {

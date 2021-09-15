@@ -113,22 +113,19 @@ const unselectCardReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
   });
 };
 
-const toggleSelectCardReducer: CaseReducer<ICardsState, PayloadAction<string>> =
-  (state, action) => {
-    mutateCardWithId(
-      state,
-      action.payload,
-      (action as any).ACTOR_REF,
-      (card) => {
-        card.selected = !card.selected;
-        if (!card.selected) {
-          card.controlledBy = "";
-        } else {
-          card.controlledBy = (action as any).ACTOR_REF;
-        }
-      }
-    );
-  };
+const toggleSelectCardReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<string>
+> = (state, action) => {
+  mutateCardWithId(state, action.payload, (action as any).ACTOR_REF, (card) => {
+    card.selected = !card.selected;
+    if (!card.selected) {
+      card.controlledBy = "";
+    } else {
+      card.controlledBy = (action as any).ACTOR_REF;
+    }
+  });
+};
 
 const exhaustCardReducer: CaseReducer<
   ICardsState,
@@ -143,6 +140,18 @@ const exhaustCardReducer: CaseReducer<
     .forEach((card) => {
       card.exhausted = !card.exhausted;
     });
+};
+
+const deleteCardStackReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<string | undefined>
+> = (state, action) => {
+  foreachSelectedAndControlledCard(state, (action as any).ACTOR_REF, (card) => {
+    const stackIndex = state.cards.findIndex((c) => c.id === card.id);
+    if (!!stackIndex) {
+      state.cards.splice(stackIndex, 1);
+    }
+  });
 };
 
 const clearCardTokensReducer: CaseReducer<
@@ -529,6 +538,7 @@ const cardsSlice = createSlice({
     unselectCard: unselectCardReducer,
     toggleSelectCard: toggleSelectCardReducer,
     exhaustCard: exhaustCardReducer,
+    deleteCardStack: deleteCardStackReducer,
     cardMove: cardMoveReducer,
     endCardMove: endCardMoveReducer,
     selectMultipleCards: selectMultipleCardsReducer,
@@ -942,6 +952,7 @@ export const {
   unselectCard,
   toggleSelectCard,
   exhaustCard,
+  deleteCardStack,
   cardMove,
   endCardMove,
   selectMultipleCards,

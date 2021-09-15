@@ -21,19 +21,6 @@ import {
   RenderType,
   updateMenuDataForEvent,
 } from "./PlanetMenuUtils";
-// const reactPieMenu = require("react-pie-menu");
-// const PieMenu = reactPieMenu.default;
-// const { Slice } = reactPieMenu;
-
-// enum MenuType {
-//   TopLevelActions = "toplevelactions",
-//   StatusTokenActions = "statustokenactions",
-//   CounterTokenActions = "countertokenactions",
-//   ModifierActions = "modifieractions",
-//   DrawActions = "drawactions",
-//   DrawNumber = "drawnumber",
-//   ModifierNumber = "modifiernumber",
-// }
 
 enum DrawMode {
   FaceUp = "faceup",
@@ -48,6 +35,7 @@ interface IProps {
   hideRadialMenu: () => void;
   flipCards: () => void;
   exhaustCard: (id?: string) => void;
+  deleteCardStack: (id?: string) => void;
   shuffleStack: (id?: string) => void;
   toggleToken: (payload: {
     id?: string;
@@ -71,13 +59,7 @@ interface IProps {
 }
 
 const PlanetMenu = (props: IProps) => {
-  // const [visibleMenu, setVisibleMenu] = useState(MenuType.TopLevelActions);
-  // const [currentDrawMode, setCurrentDrawMode] = useState(DrawMode.FaceDown);
   const [menuData, setMenuData] = useState({} as MenuData);
-
-  // if (!props.position && visibleMenu !== MenuType.TopLevelActions) {
-  //   setVisibleMenu(MenuType.TopLevelActions);
-  // }
 
   const initialPosition = props.position
     ? {
@@ -264,6 +246,13 @@ const renderTopLevelMenu = (
         props.exhaustCard();
       }}
       centerContent={<div className="menu-orbit-item">Exhaust</div>}
+    ></Planet>,
+    <Planet
+      key={"delete-slice"}
+      onClick={() => {
+        props.deleteCardStack();
+      }}
+      centerContent={<div className="menu-orbit-item">Delete</div>}
     ></Planet>,
   ];
 

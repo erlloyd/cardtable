@@ -3,6 +3,7 @@ import { myPeerRef } from "./constants/app-constants";
 import { cardsSelectedWithPeerRef } from "./features/cards/cards.selectors";
 import {
   exhaustCard,
+  deleteCardStack,
   flipCards,
   toggleToken,
   adjustCounterToken,
@@ -32,6 +33,7 @@ const mapStateToProps = (state: RootState) => {
 const RadialMenuContainer = connect(mapStateToProps, {
   flipCards,
   exhaustCard,
+  deleteCardStack,
   toggleToken,
   shuffleStack,
   adjustCounterToken,
