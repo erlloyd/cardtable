@@ -2,6 +2,7 @@ import { Action, ThunkAction } from "@reduxjs/toolkit";
 import { RootState } from "../../store/rootReducer";
 import JSONCrush from "jsoncrush";
 import { copyToClipboard, getBaseUrl } from "../../utilities/text-utils";
+import { ICardStack } from "../cards/initialState";
 export const generateGameStateUrl =
   (): ThunkAction<void, RootState, unknown, Action<any>> =>
   (_dispatch, getState) => {
@@ -30,4 +31,51 @@ export const clearQueryParams =
         window.location.pathname || "/"
       );
     }
+  };
+
+export const saveDeckAsJson =
+  (
+    cardStack: ICardStack | undefined
+  ): ThunkAction<void, RootState, unknown, Action<any>> =>
+  () => {
+    if (!cardStack || cardStack.cardStack.length < 1) return;
+
+    const topCard = cardStack.cardStack[0];
+
+    // convert to an object
+    const objectData: any = {
+      data: {
+        investigator_code: topCard.jsonId,
+      },
+    };
+
+    const slots: { [key: string]: number } = {};
+
+    cardStack.cardStack.forEach((c, index) => {
+      if (index === 0) return;
+
+      if (!!slots[c.jsonId]) {
+        slots[c.jsonId] = slots[c.jsonId] + 1;
+      } else {
+        slots[c.jsonId] = 1;
+      }
+    });
+
+    objectData.data.slots = slots;
+
+    let filename = `${topCard.jsonId}_deck.json`;
+    let contentType = "application/json;charset=utf-8;";
+
+    var a = document.createElement("a");
+    a.style.display = "none";
+    a.download = filename;
+    a.href =
+      "data:" +
+      contentType +
+      "," +
+      encodeURIComponent(JSON.stringify(objectData, null, 2));
+    a.target = "_blank";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   };

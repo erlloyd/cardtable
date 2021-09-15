@@ -36,7 +36,10 @@ import {
   createDeckFromTxt,
   createDeckFromJson,
 } from "./features/cards/cards.thunks";
-import { generateGameStateUrl } from "./features/game/game.thunks";
+import {
+  generateGameStateUrl,
+  saveDeckAsJson,
+} from "./features/game/game.thunks";
 import { allJsonData } from "./features/cards-data/cards-data.thunks";
 import {
   getGame,
@@ -122,6 +125,7 @@ const GameContainer = connect(mapStateToProps, {
   createDeckFromTxt,
   createDeckFromJson,
   generateGameStateUrl,
+  saveDeckAsJson,
   showRadialMenuAtPosition,
   showSpecificCardLoader,
   adjustModifier,

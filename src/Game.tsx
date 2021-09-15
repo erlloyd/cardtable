@@ -133,6 +133,7 @@ interface IProps {
     jsonContents: string;
   }) => void;
   generateGameStateUrl: () => void;
+  saveDeckAsJson: (stack: ICardStack | undefined) => void;
   showRadialMenuAtPosition: (payload: Vector2d) => void;
   showSpecificCardLoader: (payload: Vector2d) => void;
   adjustModifier: (payload: {
@@ -1011,6 +1012,13 @@ class Game extends Component<IProps, IState> {
       label: "Delete",
       action: () => {
         this.props.deleteCardStack();
+      },
+    });
+
+    menuItems.push({
+      label: "Save Deck as json file",
+      action: () => {
+        this.props.saveDeckAsJson(card);
       },
     });
 
