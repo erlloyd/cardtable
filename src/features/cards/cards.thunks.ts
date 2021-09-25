@@ -221,7 +221,9 @@ const getMarvelCards = (
     .filter(
       ([_key, value]) =>
         (value.extraInfo.setCode === `${heroSetCode}` ||
-          value.extraInfo.setCode === `${heroSetCode}_nemesis`) &&
+          value.extraInfo.setCode === `${heroSetCode}_nemesis` ||
+          value.extraInfo.setCode ===
+            `${heroSetCode?.replace("_hero", "")}_nemesis`) &&
         value.typeCode === "obligation"
     )
     .forEach(([key, value]) => {
@@ -233,7 +235,9 @@ const getMarvelCards = (
   // get the encounter cards for this deck
   const heroEncounterDeckData = Object.values(encounterCardsData).filter(
     (value) =>
-      value.extraInfo.setCode === `${heroSetCode}_nemesis` &&
+      (value.extraInfo.setCode === `${heroSetCode}_nemesis` ||
+        value.extraInfo.setCode ===
+          `${heroSetCode?.replace("_hero", "")}_nemesis`) &&
       value.typeCode !== "obligation"
   );
 
