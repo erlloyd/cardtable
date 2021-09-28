@@ -46,6 +46,7 @@ import {
 } from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
 import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
+import PlayerHand from "./PlayerHand";
 
 const SCALE_BY = 1.02;
 
@@ -460,6 +461,7 @@ class Game extends Component<IProps, IState> {
         onKeyDown={this.handleKeyDown}
         onKeyPress={this.handleKeyPress}
       >
+        <PlayerHand></PlayerHand>
         <RadialMenuContainer
           showCardSelector={(card, isSelect) => {
             this.setState({
