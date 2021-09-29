@@ -188,6 +188,8 @@ class Game extends Component<IProps, IState> {
   private lastCenter: Vector2d | null = null;
   private lastDist: number = 0;
 
+  private lastMousePos: Vector2d = { x: 0, y: 0 };
+
   constructor(props: IProps) {
     super(props);
 
@@ -460,8 +462,29 @@ class Game extends Component<IProps, IState> {
         tabIndex={1}
         onKeyDown={this.handleKeyDown}
         onKeyPress={this.handleKeyPress}
+        onTouchMove={(event) => {
+          if (event.touches.length > 0) {
+            this.lastMousePos = {
+              x: event.touches.item(0).clientX,
+              y: event.touches.item(0).clientY,
+            };
+          }
+        }}
+        onMouseMove={(event) => {
+          this.lastMousePos = { x: event.clientX, y: event.clientY };
+        }}
       >
-        <PlayerHand></PlayerHand>
+        <PlayerHand
+          droppedOnTable={() => {
+            this.props.addCardStack({
+              cardJsonIds: ["22028"],
+              position: this.getRelativePositionFromTarget(
+                this.stage,
+                this.lastMousePos
+              ),
+            });
+          }}
+        ></PlayerHand>
         <RadialMenuContainer
           showCardSelector={(card, isSelect) => {
             this.setState({
