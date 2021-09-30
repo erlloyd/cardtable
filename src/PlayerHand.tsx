@@ -4,11 +4,11 @@ import {
   Draggable,
   DraggableStateSnapshot,
   DraggingStyle,
-  DragUpdate,
   Droppable,
   DropResult,
   NotDraggingStyle,
 } from "react-beautiful-dnd";
+import "./PlayerHand.scss";
 
 interface Item {
   id: string;
@@ -62,7 +62,7 @@ const getItemStyle = (
         margin: `0 ${grid}px 0 0`,
 
         // change background colour if dragging
-        background: snapshot.isDragging ? "lightgreen" : "grey",
+        // background: snapshot.isDragging ? "lightgreen" : "grey",
 
         // styles we need to apply on draggables
         ...draggableStyle,
@@ -73,9 +73,11 @@ const getListStyle = (isDraggingOver: boolean) =>
   ({
     background: isDraggingOver ? "lightblue" : "lightgrey",
     display: "flex",
+    alignItems: "flex-end",
     padding: grid,
     overflow: "auto",
     position: "absolute",
+    bottom: "0px",
     width: "100vw",
     zIndex: 10000,
     boxSizing: "border-box",
@@ -83,13 +85,13 @@ const getListStyle = (isDraggingOver: boolean) =>
 
 const getListStyle2 = (isDraggingOver: boolean, isDraggingAtAll: boolean) => {
   return {
-    background: isDraggingOver ? "rgb(0,0,0,0)" : "red",
+    background: "rgb(0,0,0,0)",
     display: isDraggingAtAll ? "flex" : "none",
     padding: grid,
     overflow: "auto",
     position: "absolute",
-    top: "100px",
-    height: "500px",
+    top: "0px",
+    height: "",
     width: "100vw",
     boxSizing: "border-box",
     zIndex: 10000,
@@ -113,7 +115,6 @@ class PlayerHand extends Component<IProps, IState> {
     };
     this.onDragEnd = this.onDragEnd.bind(this);
     this.onDragStart = this.onDragStart.bind(this);
-    this.onDragUpdate = this.onDragUpdate.bind(this);
   }
 
   onDragStart() {
@@ -121,7 +122,6 @@ class PlayerHand extends Component<IProps, IState> {
   }
 
   onDragEnd(result: DropResult, provided: any) {
-    console.log("provided", provided);
     // dropped outside the list
     if (!result.destination) {
       this.setState({ dragging: false });
@@ -146,10 +146,6 @@ class PlayerHand extends Component<IProps, IState> {
     });
   }
 
-  onDragUpdate(initial: DragUpdate) {
-    console.log("initial ", initial);
-  }
-
   // Normally you would want to split things out into separate components.
   // But in this example everything is just done in one place for simplicity
   render() {
@@ -157,7 +153,6 @@ class PlayerHand extends Component<IProps, IState> {
       <DragDropContext
         onDragEnd={this.onDragEnd}
         onBeforeCapture={this.onDragStart}
-        onDragUpdate={this.onDragUpdate}
       >
         <Droppable droppableId="droppable" direction="horizontal">
           {(provided, snapshot) => (
@@ -170,6 +165,7 @@ class PlayerHand extends Component<IProps, IState> {
                 <Draggable key={item.id} draggableId={item.id} index={index}>
                   {(provided, snapshot) => (
                     <div
+                      className="player-hand-card"
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
@@ -197,6 +193,7 @@ class PlayerHand extends Component<IProps, IState> {
       <Droppable droppableId="droppable-while-dragging" direction="horizontal">
         {(provided, snapshot) => (
           <div
+            className="card-dropzone"
             ref={provided.innerRef}
             style={getListStyle2(snapshot.isDraggingOver, this.state.dragging)}
             {...provided.droppableProps}
