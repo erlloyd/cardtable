@@ -35,6 +35,7 @@ import { IGameState } from "./features/game/initialState";
 import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
 import "./Game.scss";
 import PeerConnector from "./PeerConnector";
+import PlayerHandContainer from "./PlayerHandContainer";
 import RadialMenuContainer from "./RadialMenuContainer";
 import SpecificCardLoaderContainer from "./SpecificCardLoaderContainer";
 import TokenValueModifier from "./TokenValueModifier";
@@ -46,7 +47,6 @@ import {
 } from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
 import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
-import PlayerHand from "./PlayerHand";
 
 const SCALE_BY = 1.02;
 
@@ -474,7 +474,8 @@ class Game extends Component<IProps, IState> {
           this.lastMousePos = { x: event.clientX, y: event.clientY };
         }}
       >
-        <PlayerHand
+        <PlayerHandContainer
+          playerNumber={1}
           droppedOnTable={() => {
             this.props.addCardStack({
               cardJsonIds: ["22028"],
@@ -484,7 +485,7 @@ class Game extends Component<IProps, IState> {
               ),
             });
           }}
-        ></PlayerHand>
+        ></PlayerHandContainer>
         <RadialMenuContainer
           showCardSelector={(card, isSelect) => {
             this.setState({

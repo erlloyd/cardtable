@@ -5,6 +5,10 @@ import {
 } from "../../constants/card-constants";
 import JSONCrush from "jsoncrush";
 
+export interface IPlayerHand {
+  cards: ICardDetails[];
+}
+
 export interface ICardStack {
   controlledBy: string;
   dragging: boolean;
@@ -36,6 +40,7 @@ export interface ICardsState {
   outOfSyncWithRemote: boolean;
   cards: ICardStack[];
   ghostCards: ICardStack[];
+  playerHands: IPlayerHand[];
   dropTargetCards: { [key: string]: ICardStack | null };
   attachTargetCards: { [key: string]: ICardStack | null };
   panMode: boolean;
@@ -65,6 +70,11 @@ if (!!localStorageState.cards) {
   });
 }
 
+// TODO: just dummy data
+localStorageState.playerHands = [
+  { cards: [{ jsonId: "22028" }, { jsonId: "22029" }, { jsonId: "22030" }] },
+];
+
 localStorageState.attachTargetCards = {};
 localStorageState.dropTargetCards = {};
 localStorageState.ghostCards = [];
@@ -78,6 +88,7 @@ const defaultState: ICardsState = {
   attachTargetCards: {},
   panMode: true,
   multiselectMode: false,
+  playerHands: [],
 };
 
 export const initialState: ICardsState = {

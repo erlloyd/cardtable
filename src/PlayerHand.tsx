@@ -8,6 +8,7 @@ import {
   DropResult,
   NotDraggingStyle,
 } from "react-beautiful-dnd";
+import { ICardDetails, IPlayerHand } from "./features/cards/initialState";
 import "./PlayerHand.scss";
 
 interface Item {
@@ -35,7 +36,7 @@ const reorder = (
   return result;
 };
 
-const remove = (list: Item[], startIndex: number): Item[] => {
+const remove = (list: ICardDetails[], startIndex: number): ICardDetails[] => {
   const result = Array.from(list);
   result.splice(startIndex, 1);
 
@@ -48,10 +49,6 @@ const getItemStyle = (
   snapshot: DraggableStateSnapshot,
   draggableStyle: any
 ): DraggingStyle | NotDraggingStyle | undefined => {
-  if (snapshot.dropAnimation) {
-    console.log("drop animating, snapshot", snapshot);
-  }
-
   return snapshot.dropAnimation &&
     snapshot.draggingOver === "droppable-while-dragging"
     ? { ...draggableStyle, visibility: "hidden" }
@@ -73,12 +70,14 @@ const getListStyle = (isDraggingOver: boolean) =>
   ({
     background: isDraggingOver ? "lightblue" : "lightgrey",
     display: "flex",
-    alignItems: "flex-end",
+    alignItems: "flex-start",
     padding: grid,
-    overflow: "auto",
+    overflowX: "auto",
+    overflowY: "hidden",
     position: "absolute",
     bottom: "0px",
     width: "100vw",
+    height: "70px",
     zIndex: 10000,
     boxSizing: "border-box",
   } as React.CSSProperties);
@@ -100,9 +99,16 @@ const getListStyle2 = (isDraggingOver: boolean, isDraggingAtAll: boolean) => {
 
 interface IProps {
   droppedOnTable: () => void;
+  reorderPlayerHand: (
+    playerNumber: number,
+    sourceIndex: number,
+    destinationIndex: number
+  ) => void;
+  removeFromPlayerHand: (playerNumber: number, index: number) => void;
+  playerHandData: IPlayerHand | null;
+  playerNumber: number;
 }
 interface IState {
-  items: Item[];
   dragging: boolean;
 }
 
@@ -110,7 +116,6 @@ class PlayerHand extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
-      items: getItems(6),
       dragging: false,
     };
     this.onDragEnd = this.onDragEnd.bind(this);
@@ -128,20 +133,21 @@ class PlayerHand extends Component<IProps, IState> {
       return;
     }
 
-    let items: Item[];
     if (result.destination?.droppableId !== result.source.droppableId) {
-      items = remove(this.state.items, result.source.index);
+      this.props.removeFromPlayerHand(
+        this.props.playerNumber,
+        result.source.index
+      );
       this.props.droppedOnTable();
     } else {
-      items = reorder(
-        this.state.items,
+      this.props.reorderPlayerHand(
+        this.props.playerNumber,
         result.source.index,
         result.destination.index
       );
     }
 
     this.setState({
-      items,
       dragging: false,
     });
   }
@@ -149,6 +155,7 @@ class PlayerHand extends Component<IProps, IState> {
   // Normally you would want to split things out into separate components.
   // But in this example everything is just done in one place for simplicity
   render() {
+    const cards = this.props.playerHandData?.cards ?? [];
     return (
       <DragDropContext
         onDragEnd={this.onDragEnd}
@@ -161,8 +168,12 @@ class PlayerHand extends Component<IProps, IState> {
               style={getListStyle(snapshot.isDraggingOver)}
               {...provided.droppableProps}
             >
-              {this.state.items.map((item, index) => (
-                <Draggable key={item.id} draggableId={item.id} index={index}>
+              {cards.map((card, index) => (
+                <Draggable
+                  key={`player-hand-${this.props.playerNumber}-${index}`}
+                  draggableId={`player-hand-${this.props.playerNumber}-${index}`}
+                  index={index}
+                >
                   {(provided, snapshot) => (
                     <div
                       className="player-hand-card"
@@ -174,7 +185,7 @@ class PlayerHand extends Component<IProps, IState> {
                         provided.draggableProps.style
                       )}
                     >
-                      {item.content}
+                      {card.jsonId}
                     </div>
                   )}
                 </Draggable>

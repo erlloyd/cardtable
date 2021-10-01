@@ -1,11 +1,7 @@
 .player-hand-card {
-  height: 50px;
   background-color: grey;
-  transition: height 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  &:hover {
-    background-color: blue;
-    height: 100px;
-  }
+  height: 69.6px;
+  width: 50px;
 }
 
 .player-hand-dropzone {
