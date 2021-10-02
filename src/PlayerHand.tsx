@@ -7,41 +7,10 @@ import {
   Droppable,
   DropResult,
   NotDraggingStyle,
+  ResponderProvided,
 } from "react-beautiful-dnd";
-import { ICardDetails, IPlayerHand } from "./features/cards/initialState";
+import { IPlayerHand } from "./features/cards/initialState";
 import "./PlayerHand.scss";
-
-interface Item {
-  id: string;
-  content: string;
-}
-
-// fake data generator
-const getItems = (count: number): Item[] =>
-  Array.from({ length: count }, (v, k) => k).map((k) => ({
-    id: `item-${k}`,
-    content: `item ${k}`,
-  }));
-
-// a little function to help us with reordering the result
-const reorder = (
-  list: Item[],
-  startIndex: number,
-  endIndex: number
-): Item[] => {
-  const result = Array.from(list);
-  const [removed] = result.splice(startIndex, 1);
-  result.splice(endIndex, 0, removed);
-
-  return result;
-};
-
-const remove = (list: ICardDetails[], startIndex: number): ICardDetails[] => {
-  const result = Array.from(list);
-  result.splice(startIndex, 1);
-
-  return result;
-};
 
 const grid = 8;
 
@@ -98,13 +67,16 @@ const getListStyle2 = (isDraggingOver: boolean, isDraggingAtAll: boolean) => {
 };
 
 interface IProps {
-  droppedOnTable: () => void;
-  reorderPlayerHand: (
-    playerNumber: number,
-    sourceIndex: number,
-    destinationIndex: number
-  ) => void;
-  removeFromPlayerHand: (playerNumber: number, index: number) => void;
+  droppedOnTable: (id: string) => void;
+  reorderPlayerHand: (payload: {
+    playerNumber: number;
+    sourceIndex: number;
+    destinationIndex: number;
+  }) => void;
+  removeFromPlayerHand: (payload: {
+    playerNumber: number;
+    index: number;
+  }) => void;
   playerHandData: IPlayerHand | null;
   playerNumber: number;
 }
@@ -126,7 +98,7 @@ class PlayerHand extends Component<IProps, IState> {
     this.setState({ dragging: true });
   }
 
-  onDragEnd(result: DropResult, provided: any) {
+  onDragEnd(result: DropResult, provided: ResponderProvided) {
     // dropped outside the list
     if (!result.destination) {
       this.setState({ dragging: false });
@@ -134,17 +106,21 @@ class PlayerHand extends Component<IProps, IState> {
     }
 
     if (result.destination?.droppableId !== result.source.droppableId) {
-      this.props.removeFromPlayerHand(
-        this.props.playerNumber,
+      this.props.removeFromPlayerHand({
+        playerNumber: this.props.playerNumber,
+        index: result.source.index,
+      });
+      const cardDroppedJson = (this.props.playerHandData?.cards ?? [])[
         result.source.index
-      );
-      this.props.droppedOnTable();
+      ];
+      console.log(cardDroppedJson.jsonId);
+      this.props.droppedOnTable(cardDroppedJson.jsonId);
     } else {
-      this.props.reorderPlayerHand(
-        this.props.playerNumber,
-        result.source.index,
-        result.destination.index
-      );
+      this.props.reorderPlayerHand({
+        playerNumber: this.props.playerNumber,
+        sourceIndex: result.source.index,
+        destinationIndex: result.destination.index,
+      });
     }
 
     this.setState({

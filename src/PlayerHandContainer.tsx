@@ -1,4 +1,8 @@
 import { connect } from "react-redux";
+import {
+  reorderPlayerHand,
+  removeFromPlayerHand,
+} from "./features/cards/cards.slice";
 import { getPlayerCardsForPlayerNumber } from "./features/cards/cards.selectors";
 import PlayerHand from "./PlayerHand";
 import { RootState } from "./store/rootReducer";
@@ -15,8 +19,8 @@ const mapStateToProps = (state: RootState, ownProps: IProps) => {
 };
 
 const PlayerHandContainer = connect(mapStateToProps, {
-  reorderPlayerHand: () => {},
-  removeFromPlayerHand: () => {},
+  reorderPlayerHand,
+  removeFromPlayerHand,
 })(PlayerHand);
 
 export default PlayerHandContainer;

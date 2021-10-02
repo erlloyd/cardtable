@@ -476,9 +476,9 @@ class Game extends Component<IProps, IState> {
       >
         <PlayerHandContainer
           playerNumber={1}
-          droppedOnTable={() => {
+          droppedOnTable={(id: string) => {
             this.props.addCardStack({
-              cardJsonIds: ["22028"],
+              cardJsonIds: [id],
               position: this.getRelativePositionFromTarget(
                 this.stage,
                 this.lastMousePos

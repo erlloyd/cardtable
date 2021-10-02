@@ -527,6 +527,40 @@ const clearAllModifiersReducer: CaseReducer<
     c.modifiers = {};
   });
 };
+
+const reorderPlayerHandReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{
+    playerNumber: number;
+    sourceIndex: number;
+    destinationIndex: number;
+  }>
+> = (state, action) => {
+  if (state.playerHands.length >= action.payload.playerNumber) {
+    const hand = state.playerHands[action.payload.playerNumber - 1];
+    const result = Array.from(hand.cards);
+    const [removed] = result.splice(action.payload.sourceIndex, 1);
+    result.splice(action.payload.destinationIndex, 0, removed);
+
+    hand.cards = result;
+  }
+};
+
+const removeFromPlayerHandReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{
+    playerNumber: number;
+    index: number;
+  }>
+> = (state, action) => {
+  if (state.playerHands.length >= action.payload.playerNumber) {
+    const hand = state.playerHands[action.payload.playerNumber - 1];
+    const result = Array.from(hand.cards);
+    result.splice(action.payload.index, 1);
+
+    hand.cards = result;
+  }
+};
 // Selectors
 
 // slice
@@ -552,6 +586,8 @@ const cardsSlice = createSlice({
     adjustModifier: adjustModifierReducer,
     clearAllModifiers: clearAllModifiersReducer,
     clearCardTokens: clearCardTokensReducer,
+    reorderPlayerHand: reorderPlayerHandReducer,
+    removeFromPlayerHand: removeFromPlayerHandReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -966,6 +1002,8 @@ export const {
   clearCardTokens,
   adjustModifier,
   clearAllModifiers,
+  reorderPlayerHand,
+  removeFromPlayerHand,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;
