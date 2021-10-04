@@ -53,7 +53,7 @@ const getListStyle = (isDraggingOver: boolean) =>
     bottom: "0px",
     width: "100vw",
     height: "70px",
-    zIndex: 10000,
+    zIndex: 99,
     boxSizing: "border-box",
   } as React.CSSProperties);
 
@@ -68,7 +68,7 @@ const getListStyle2 = (isDraggingOver: boolean, isDraggingAtAll: boolean) => {
     height: "",
     width: "100vw",
     boxSizing: "border-box",
-    zIndex: 10000,
+    zIndex: 100,
   } as React.CSSProperties;
 };
 
@@ -110,6 +110,8 @@ interface IProps {
     playerNumber: number;
     index: number;
   }) => void;
+  setPreviewCardJsonId: (jsonId: string) => void;
+  clearPreviewCardJsonId: () => void;
   playerHandData: IPlayerHand | null;
   playerCardData: ICardData;
   playerNumber: number;
@@ -157,7 +159,6 @@ class PlayerHand extends Component<IProps, IState> {
       const cardDroppedJson = (this.props.playerHandData?.cards ?? [])[
         result.source.index
       ];
-      console.log(cardDroppedJson.jsonId);
       this.props.droppedOnTable(cardDroppedJson.jsonId);
     } else {
       this.props.reorderPlayerHand({
@@ -184,6 +185,7 @@ class PlayerHand extends Component<IProps, IState> {
         <Droppable droppableId="droppable" direction="horizontal">
           {(provided, snapshot) => (
             <div
+              onClick={this.props.clearPreviewCardJsonId}
               ref={provided.innerRef}
               style={getListStyle(snapshot.isDraggingOver)}
               {...provided.droppableProps}
@@ -196,6 +198,21 @@ class PlayerHand extends Component<IProps, IState> {
                 >
                   {(provided, snapshot) => (
                     <div
+                      onPointerEnter={(event) => {
+                        if (event.pointerType === "mouse") {
+                          this.props.setPreviewCardJsonId(card.jsonId);
+                        }
+                      }}
+                      onPointerLeave={this.props.clearPreviewCardJsonId}
+                      onClick={(event) => {
+                        if (
+                          (event.nativeEvent as PointerEvent).pointerType ===
+                          "touch"
+                        ) {
+                          this.props.setPreviewCardJsonId(card.jsonId);
+                          event.stopPropagation();
+                        }
+                      }}
                       className="player-hand-card"
                       ref={provided.innerRef}
                       {...provided.draggableProps}
@@ -237,27 +254,34 @@ class PlayerHand extends Component<IProps, IState> {
       }
     });
 
-    // TODO: How to only show the first one if multiple images load
+    // Only want to show the first image if multiple are loaded
+    const imgsWithData = imgs.map((i) => ({
+      url: i,
+      status: this.state.imgUrlToStatusMap[i],
+    }));
+    const loadedImgs = imgsWithData.filter(
+      (iData) => iData.status === ImageLoadingStatus.Loaded
+    );
+    const firstLoadedImage = loadedImgs.length > 0 ? loadedImgs[0].url : null;
 
-    return imgs
-      .map((i) => ({ url: i, status: this.state.imgUrlToStatusMap[i] }))
-      .map((iData) => (
+    return imgs.map((i, index) => {
+      return (
         <img
-          className={
-            iData.status !== ImageLoadingStatus.Loaded ? "hide-img" : "show-img"
-          }
+          key={`card-${card.jsonId}-img-${index}`}
+          className={i !== firstLoadedImage ? "hide-img" : "show-img"}
           onLoad={(event) => {
             this.setState({
               imgUrlToStatusMap: {
                 ...this.state.imgUrlToStatusMap,
-                [iData.url]: ImageLoadingStatus.Loaded,
+                [i]: ImageLoadingStatus.Loaded,
               },
             });
           }}
           alt="card"
-          src={iData.url}
+          src={i}
         ></img>
-      ));
+      );
+    });
   }
 
   renderDroppableIfDragging() {

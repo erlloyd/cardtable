@@ -8,7 +8,10 @@ import PlayerHand from "./PlayerHand";
 import { RootState } from "./store/rootReducer";
 import { getCardsDataHeroEntities } from "./features/cards-data/cards-data.selectors";
 import { getGame } from "./features/game/game.selectors";
-
+import {
+  setMenuPreviewCardJsonId,
+  clearMenuPreviewCardJsonId,
+} from "./features/game/game.slice";
 interface IProps {
   playerNumber: number;
 }
@@ -25,6 +28,8 @@ const mapStateToProps = (state: RootState, ownProps: IProps) => {
 const PlayerHandContainer = connect(mapStateToProps, {
   reorderPlayerHand,
   removeFromPlayerHand,
+  setPreviewCardJsonId: setMenuPreviewCardJsonId,
+  clearPreviewCardJsonId: clearMenuPreviewCardJsonId,
 })(PlayerHand);
 
 export default PlayerHandContainer;
