@@ -9,8 +9,15 @@ import {
   NotDraggingStyle,
   ResponderProvided,
 } from "react-beautiful-dnd";
-import { IPlayerHand } from "./features/cards/initialState";
+import { GameType, myPeerRef } from "./constants/app-constants";
+import { ICardData } from "./features/cards-data/initialState";
+import {
+  ICardDetails,
+  ICardStack,
+  IPlayerHand,
+} from "./features/cards/initialState";
 import "./PlayerHand.scss";
+import { getImgUrls } from "./utilities/card-utils";
 
 const grid = 8;
 
@@ -24,7 +31,6 @@ const getItemStyle = (
     : {
         // some basic styles to make the items look a bit nicer
         userSelect: "none",
-        padding: grid * 2,
         margin: `0 ${grid}px 0 0`,
 
         // change background colour if dragging
@@ -66,6 +72,33 @@ const getListStyle2 = (isDraggingOver: boolean, isDraggingAtAll: boolean) => {
   } as React.CSSProperties;
 };
 
+const makeFakeCardStackFromJsonId = (jsonId: string): ICardStack => {
+  return {
+    controlledBy: myPeerRef,
+    dragging: false,
+    shuffling: false,
+    exhausted: false,
+    faceup: true,
+    fill: "anything",
+    id: "fake-id",
+    selected: false,
+    x: 0,
+    y: 0,
+    cardStack: [{ jsonId }],
+    statusTokens: {
+      stunned: false,
+      confused: false,
+      tough: false,
+    },
+    counterTokens: {
+      damage: 0,
+      threat: 0,
+      generic: 0,
+    },
+    modifiers: {},
+  };
+};
+
 interface IProps {
   droppedOnTable: (id: string) => void;
   reorderPlayerHand: (payload: {
@@ -78,10 +111,20 @@ interface IProps {
     index: number;
   }) => void;
   playerHandData: IPlayerHand | null;
+  playerCardData: ICardData;
   playerNumber: number;
+  currentGameType: GameType | null;
 }
 interface IState {
   dragging: boolean;
+  imgUrlToStatusMap: { [key: string]: ImageLoadingStatus };
+}
+
+enum ImageLoadingStatus {
+  NotLoaded,
+  Loading,
+  LoadingFailed,
+  Loaded,
 }
 
 class PlayerHand extends Component<IProps, IState> {
@@ -89,6 +132,7 @@ class PlayerHand extends Component<IProps, IState> {
     super(props);
     this.state = {
       dragging: false,
+      imgUrlToStatusMap: {},
     };
     this.onDragEnd = this.onDragEnd.bind(this);
     this.onDragStart = this.onDragStart.bind(this);
@@ -161,7 +205,7 @@ class PlayerHand extends Component<IProps, IState> {
                         provided.draggableProps.style
                       )}
                     >
-                      {card.jsonId}
+                      {this.renderCardContents(card)}
                     </div>
                   )}
                 </Draggable>
@@ -173,6 +217,47 @@ class PlayerHand extends Component<IProps, IState> {
         {this.renderDroppableIfDragging()}
       </DragDropContext>
     );
+  }
+
+  renderCardContents(card: ICardDetails) {
+    const imgs = getImgUrls(
+      makeFakeCardStackFromJsonId(card.jsonId),
+      this.props.playerCardData,
+      this.props.currentGameType ?? GameType.MarvelChampions
+    );
+
+    imgs.forEach((i) => {
+      if (this.state.imgUrlToStatusMap[i] === undefined) {
+        this.setState({
+          imgUrlToStatusMap: {
+            ...this.state.imgUrlToStatusMap,
+            [i]: ImageLoadingStatus.Loading,
+          },
+        });
+      }
+    });
+
+    // TODO: How to only show the first one if multiple images load
+
+    return imgs
+      .map((i) => ({ url: i, status: this.state.imgUrlToStatusMap[i] }))
+      .map((iData) => (
+        <img
+          className={
+            iData.status !== ImageLoadingStatus.Loaded ? "hide-img" : "show-img"
+          }
+          onLoad={(event) => {
+            this.setState({
+              imgUrlToStatusMap: {
+                ...this.state.imgUrlToStatusMap,
+                [iData.url]: ImageLoadingStatus.Loaded,
+              },
+            });
+          }}
+          alt="card"
+          src={iData.url}
+        ></img>
+      ));
   }
 
   renderDroppableIfDragging() {
