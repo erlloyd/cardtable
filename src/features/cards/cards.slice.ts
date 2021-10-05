@@ -148,7 +148,7 @@ const deleteCardStackReducer: CaseReducer<
 > = (state, action) => {
   foreachSelectedAndControlledCard(state, (action as any).ACTOR_REF, (card) => {
     const stackIndex = state.cards.findIndex((c) => c.id === card.id);
-    if (!!stackIndex) {
+    if (stackIndex !== -1) {
       state.cards.splice(stackIndex, 1);
     }
   });
@@ -528,6 +528,35 @@ const clearAllModifiersReducer: CaseReducer<
   });
 };
 
+const addToPlayerHandReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{
+    playerNumber: number;
+  }>
+> = (state, action) => {
+  const playerIndex = action.payload.playerNumber - 1;
+  if (playerIndex < 0 || playerIndex >= state.playerHands.length) {
+    console.error(
+      `Got an invalid playerNumber: ${action.payload.playerNumber}. PlayerHands length is ${state.playerHands.length}`
+    );
+    return;
+  }
+
+  const playerHand = state.playerHands[playerIndex];
+
+  foreachSelectedAndControlledCard(state, (action as any).ACTOR_REF, (card) => {
+    state.playerHands[playerIndex].cards = card.cardStack.concat(
+      playerHand.cards
+    );
+  });
+
+  deleteCardStackReducer(state, {
+    ACTOR_REF: (action as any).ACTOR_REF,
+    payload: undefined,
+    type: deleteCardStack.type,
+  } as any);
+};
+
 const reorderPlayerHandReducer: CaseReducer<
   ICardsState,
   PayloadAction<{
@@ -588,6 +617,7 @@ const cardsSlice = createSlice({
     clearCardTokens: clearCardTokensReducer,
     reorderPlayerHand: reorderPlayerHandReducer,
     removeFromPlayerHand: removeFromPlayerHandReducer,
+    addToPlayerHand: addToPlayerHandReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -1004,6 +1034,7 @@ export const {
   clearAllModifiers,
   reorderPlayerHand,
   removeFromPlayerHand,
+  addToPlayerHand,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

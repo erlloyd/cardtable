@@ -56,6 +56,7 @@ interface IProps {
   panMode: boolean;
   multiselectMode: boolean;
   playerColors: { [key: string]: PlayerColor };
+  playerNumbers: { [key: string]: number };
   menuPreviewCard: ICardStack | null;
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
   endCardMove: (id: string) => void;
@@ -142,6 +143,7 @@ interface IProps {
     value?: number;
   }) => void;
   clearAllModifiers: (payload: { id?: string }) => void;
+  addToPlayerHand: (payload: { playerNumber: number }) => void;
 }
 
 interface IState {
@@ -489,7 +491,7 @@ class Game extends Component<IProps, IState> {
         }}
       >
         <PlayerHandContainer
-          playerNumber={1}
+          playerNumber={this.props.playerNumbers[myPeerRef] ?? 1}
           droppedOnTable={(id: string) => {
             this.props.addCardStack({
               cardJsonIds: [id],
@@ -1018,6 +1020,14 @@ class Game extends Component<IProps, IState> {
     const mySelectedCards = getMySelectedCards(this.props.cards.cards);
 
     const menuItems: ContextMenuItem[] = [
+      {
+        label: "Add to hand",
+        action: () => {
+          this.props.addToPlayerHand({
+            playerNumber: this.props.gameState.playerNumbers[myPeerRef],
+          });
+        },
+      },
       {
         label: "Flip",
         action: () => {

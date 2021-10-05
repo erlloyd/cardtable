@@ -70,11 +70,6 @@ if (!!localStorageState.cards) {
   });
 }
 
-// TODO: just dummy data
-localStorageState.playerHands = [
-  { cards: [{ jsonId: "22002" }, { jsonId: "22003" }, { jsonId: "22004" }] },
-];
-
 localStorageState.attachTargetCards = {};
 localStorageState.dropTargetCards = {};
 localStorageState.ghostCards = [];

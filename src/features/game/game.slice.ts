@@ -31,6 +31,7 @@ const setPlayerInfoReducer: CaseReducer<
   PayloadAction<{ ref: string; color: PlayerColor; playerNumber: number }>
 > = (state, action) => {
   state.playerColors[action.payload.ref] = action.payload.color;
+  state.playerNumbers[action.payload.ref] = action.payload.playerNumber;
 };
 
 const setPeerIdReducer: CaseReducer<IGameState, PayloadAction<string>> = (
