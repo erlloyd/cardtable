@@ -26,9 +26,9 @@ const connectToRemoteGameReducer: CaseReducer<
   PayloadAction<string>
 > = () => {};
 
-const setPlayerColorReducer: CaseReducer<
+const setPlayerInfoReducer: CaseReducer<
   IGameState,
-  PayloadAction<{ ref: string; color: PlayerColor }>
+  PayloadAction<{ ref: string; color: PlayerColor; playerNumber: number }>
 > = (state, action) => {
   state.playerColors[action.payload.ref] = action.payload.color;
 };
@@ -109,7 +109,7 @@ const gameSlice = createSlice({
     updateZoom: updateZoomReducer,
     updatePosition: updatePositionReducer,
     connectToRemoteGame: connectToRemoteGameReducer,
-    setPlayerColor: setPlayerColorReducer,
+    setPlayerInfo: setPlayerInfoReducer,
     setPeerId: setPeerIdReducer,
     requestResync: requestResyncReducer,
     setPreviewCardId: setPreviewCardIdReducer,
@@ -139,7 +139,7 @@ export const {
   updateZoom,
   updatePosition,
   connectToRemoteGame,
-  setPlayerColor,
+  setPlayerInfo,
   setPeerId,
   requestResync,
   setPreviewCardId,

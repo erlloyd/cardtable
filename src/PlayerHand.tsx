@@ -17,6 +17,7 @@ import {
   IPlayerHand,
 } from "./features/cards/initialState";
 import "./PlayerHand.scss";
+import TopLayer from "./TopLayer";
 import { getImgUrls } from "./utilities/card-utils";
 
 const grid = 8;
@@ -119,6 +120,7 @@ interface IProps {
 }
 interface IState {
   dragging: boolean;
+  modal: boolean;
   imgUrlToStatusMap: { [key: string]: ImageLoadingStatus };
 }
 
@@ -134,6 +136,7 @@ class PlayerHand extends Component<IProps, IState> {
     super(props);
     this.state = {
       dragging: false,
+      modal: false,
       imgUrlToStatusMap: {},
     };
     this.onDragEnd = this.onDragEnd.bind(this);
@@ -178,62 +181,80 @@ class PlayerHand extends Component<IProps, IState> {
   render() {
     const cards = this.props.playerHandData?.cards ?? [];
     return (
-      <DragDropContext
-        onDragEnd={this.onDragEnd}
-        onBeforeCapture={this.onDragStart}
-      >
-        <Droppable droppableId="droppable" direction="horizontal">
-          {(provided, snapshot) => (
-            <div
-              onClick={this.props.clearPreviewCardJsonId}
-              ref={provided.innerRef}
-              style={getListStyle(snapshot.isDraggingOver)}
-              {...provided.droppableProps}
-            >
-              {cards.map((card, index) => (
-                <Draggable
-                  key={`player-hand-${this.props.playerNumber}-${index}`}
-                  draggableId={`player-hand-${this.props.playerNumber}-${index}`}
-                  index={index}
-                >
-                  {(provided, snapshot) => (
-                    <div
-                      onPointerEnter={(event) => {
-                        if (event.pointerType === "mouse") {
-                          this.props.setPreviewCardJsonId(card.jsonId);
-                        }
-                      }}
-                      onPointerLeave={this.props.clearPreviewCardJsonId}
-                      onClick={(event) => {
-                        if (
-                          (event.nativeEvent as PointerEvent).pointerType ===
-                          "touch"
-                        ) {
-                          this.props.setPreviewCardJsonId(card.jsonId);
-                          event.stopPropagation();
-                        }
-                      }}
-                      className="player-hand-card"
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                      style={getItemStyle(
-                        snapshot,
-                        provided.draggableProps.style
-                      )}
-                    >
-                      {this.renderCardContents(card)}
-                    </div>
-                  )}
-                </Draggable>
-              ))}
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
-        {this.renderDroppableIfDragging()}
-      </DragDropContext>
+      <div>
+        {this.renderTopLayer()}
+        <DragDropContext
+          onDragEnd={this.onDragEnd}
+          onBeforeCapture={this.onDragStart}
+        >
+          <Droppable droppableId="droppable" direction="horizontal">
+            {(provided, snapshot) => (
+              <div
+                onClick={this.props.clearPreviewCardJsonId}
+                ref={provided.innerRef}
+                style={getListStyle(snapshot.isDraggingOver)}
+                {...provided.droppableProps}
+              >
+                {cards.map((card, index) => (
+                  <Draggable
+                    key={`player-hand-${this.props.playerNumber}-${index}`}
+                    draggableId={`player-hand-${this.props.playerNumber}-${index}`}
+                    index={index}
+                  >
+                    {(provided, snapshot) => (
+                      <div
+                        onPointerEnter={(event) => {
+                          if (event.pointerType === "mouse") {
+                            this.props.setPreviewCardJsonId(card.jsonId);
+                          }
+                        }}
+                        onPointerLeave={this.props.clearPreviewCardJsonId}
+                        onClick={(event) => {
+                          if (
+                            (event.nativeEvent as PointerEvent).pointerType ===
+                            "touch"
+                          ) {
+                            this.setState({ modal: true });
+                            this.props.setPreviewCardJsonId(card.jsonId);
+                            event.stopPropagation();
+                          }
+                        }}
+                        className="player-hand-card"
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        style={getItemStyle(
+                          snapshot,
+                          provided.draggableProps.style
+                        )}
+                      >
+                        {this.renderCardContents(card)}
+                      </div>
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+          {this.renderDroppableIfDragging()}
+        </DragDropContext>
+      </div>
     );
+  }
+
+  renderTopLayer() {
+    return this.state.modal ? (
+      <TopLayer
+        position={{ x: 0, y: 0 }}
+        completed={() => {
+          this.props.clearPreviewCardJsonId();
+          this.setState({
+            modal: false,
+          });
+        }}
+      ></TopLayer>
+    ) : null;
   }
 
   renderCardContents(card: ICardDetails) {

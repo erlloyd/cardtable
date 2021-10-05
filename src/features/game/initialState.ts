@@ -16,6 +16,7 @@ export interface IGameState {
   radialMenuPosition: Vector2d | null;
   specificCardLoaderPosition: Vector2d | null;
   playerColors: { [key: string]: PlayerColor };
+  playerNumbers: { [key: string]: number };
   peerId: string;
   previewCard: IPreviewCard | null;
   menuPreviewCardJsonId: string | null;
@@ -31,6 +32,8 @@ const localStorageState: IGameState = !!queryParamsGameType
 
 localStorageState.playerColors = {};
 localStorageState.playerColors[myPeerRef] = "red";
+localStorageState.playerNumbers = {};
+localStorageState.playerNumbers[myPeerRef] = 1;
 localStorageState.peerId = "";
 localStorageState.previewCard = null;
 localStorageState.menuPreviewCardJsonId = null;
@@ -39,6 +42,7 @@ localStorageState.specificCardLoaderPosition = null;
 
 const defaultState: IGameState = {
   playerColors: {},
+  playerNumbers: {},
   stageZoom: { x: 0.5, y: 0.5 },
   stagePosition: { x: 0, y: 0 },
   peerId: "",
