@@ -31,6 +31,7 @@ import {
 } from "./cards.actions";
 import { fetchDecklistById } from "./cards.thunks";
 import {
+  generateDefaultPlayerHands,
   ICardDetails,
   ICardsState,
   ICardStack,
@@ -441,6 +442,7 @@ const flipCardsReducer: CaseReducer<ICardsState> = (state, action) => {
 
 const resetCardsReducer: CaseReducer<ICardsState> = (state) => {
   state.cards = [];
+  state.playerHands = generateDefaultPlayerHands();
 };
 
 const toggleTokenReducer: CaseReducer<
@@ -662,6 +664,7 @@ const cardsSlice = createSlice({
 
     builder.addCase(resetApp, (state) => {
       state.cards = [];
+      state.playerHands = generateDefaultPlayerHands();
       // state.previewCard = null;
       state.dropTargetCards = {};
       state.ghostCards = [];

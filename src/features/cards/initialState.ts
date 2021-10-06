@@ -47,6 +47,11 @@ export interface ICardsState {
   multiselectMode: boolean;
 }
 
+const MAX_PLAYERS = 4;
+
+export const generateDefaultPlayerHands = (): IPlayerHand[] =>
+  Array(MAX_PLAYERS).fill({ cards: [] });
+
 const queryParams = new URLSearchParams(window.location.search);
 const queryParamsCardsString = queryParams.get("cards");
 const queryParamsCards = !!queryParamsCardsString
@@ -83,7 +88,7 @@ const defaultState: ICardsState = {
   attachTargetCards: {},
   panMode: true,
   multiselectMode: false,
-  playerHands: [{ cards: [] }],
+  playerHands: generateDefaultPlayerHands(),
 };
 
 export const initialState: ICardsState = {
