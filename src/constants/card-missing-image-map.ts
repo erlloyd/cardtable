@@ -591,4 +591,8 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "22029": "https://hallofheroeshome.files.wordpress.com/2021/09/e3.jpg",
   "22030": "https://hallofheroeshome.files.wordpress.com/2021/09/e4.jpg",
   "22031": "https://hallofheroeshome.files.wordpress.com/2021/09/e5.jpg",
+  "22032": "https://hallofheroeshome.files.wordpress.com/2021/09/e7.jpg",
+  "22033": "https://hallofheroeshome.files.wordpress.com/2021/09/e8.jpg",
+  "22034": "https://hallofheroeshome.files.wordpress.com/2021/09/e9.jpg",
+  "22035": "https://hallofheroeshome.files.wordpress.com/2021/09/e10.jpg",
 };
