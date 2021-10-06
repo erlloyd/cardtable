@@ -83,7 +83,7 @@ const defaultState: ICardsState = {
   attachTargetCards: {},
   panMode: true,
   multiselectMode: false,
-  playerHands: [],
+  playerHands: [{ cards: [] }],
 };
 
 export const initialState: ICardsState = {
