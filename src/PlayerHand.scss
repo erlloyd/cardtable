@@ -1,0 +1,24 @@
+.player-hand-card {
+  background-color: grey;
+  height: 85.6px;
+  width: 66px;
+  min-width: 66px;
+  position: relative;
+
+  img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &.hide-img {
+      display: none;
+    }
+  }
+}
+
+.card-dropzone {
+  position: absolute;
+  top: 0px;
+  height: calc(100% - 70px);
+}

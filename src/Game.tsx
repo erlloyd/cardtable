@@ -15,18 +15,15 @@ import {
   possibleColors,
 } from "./constants/app-constants";
 import {
+  cardConstants,
   CounterTokenType,
   StatusTokenType,
-  cardConstants,
 } from "./constants/card-constants";
-import { MISSING_CARD_IMAGE_MAP } from "./constants/card-missing-image-map";
-import { CARD_PACK_REMAPPING } from "./constants/card-pack-mapping";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import ContextMenu, { ContextMenuItem } from "./ContextMenu";
 import Counter from "./Counter";
 import DeckLoader from "./DeckLoader";
 import EncounterLoaderContainer from "./EncounterLoaderContainer";
-import { CardData } from "./external-api/common-card-data";
 import { ICardData } from "./features/cards-data/initialState";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import { ICardsState, ICardStack } from "./features/cards/initialState";
@@ -35,6 +32,7 @@ import { IGameState } from "./features/game/initialState";
 import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
 import "./Game.scss";
 import PeerConnector from "./PeerConnector";
+import PlayerHandContainer from "./PlayerHandContainer";
 import RadialMenuContainer from "./RadialMenuContainer";
 import SpecificCardLoaderContainer from "./SpecificCardLoaderContainer";
 import TokenValueModifier from "./TokenValueModifier";
@@ -42,6 +40,7 @@ import TopLayer from "./TopLayer";
 import TouchMenuContainer from "./TouchMenuContainer";
 import {
   anyCardStackHasStatus,
+  getImgUrls,
   getMySelectedCards,
 } from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
@@ -57,6 +56,7 @@ interface IProps {
   panMode: boolean;
   multiselectMode: boolean;
   playerColors: { [key: string]: PlayerColor };
+  playerNumbers: { [key: string]: number };
   menuPreviewCard: ICardStack | null;
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
   endCardMove: (id: string) => void;
@@ -143,6 +143,7 @@ interface IProps {
     value?: number;
   }) => void;
   clearAllModifiers: (payload: { id?: string }) => void;
+  addToPlayerHand: (payload: { playerNumber: number }) => void;
 }
 
 interface IState {
@@ -186,6 +187,8 @@ class Game extends Component<IProps, IState> {
 
   private lastCenter: Vector2d | null = null;
   private lastDist: number = 0;
+
+  private lastMousePos: Vector2d = { x: 0, y: 0 };
 
   constructor(props: IProps) {
     super(props);
@@ -306,7 +309,11 @@ class Game extends Component<IProps, IState> {
             handleHover={this.props.setPreviewCardId}
             handleHoverLeave={this.props.clearPreviewCard}
             handleContextMenu={this.handleCardContextMenu}
-            imgUrls={this.getImgUrls(card)}
+            imgUrls={getImgUrls(
+              card,
+              this.props.cardsData,
+              this.props.currentGameType
+            )}
             typeCode={this.getCardType(card)}
             faceup={card.faceup}
             numCardsInStack={card.cardStack.length}
@@ -337,7 +344,11 @@ class Game extends Component<IProps, IState> {
           selected={false}
           dragging={false}
           shuffling={false}
-          imgUrls={this.getImgUrls(card)}
+          imgUrls={getImgUrls(
+            card,
+            this.props.cardsData,
+            this.props.currentGameType
+          )}
           typeCode={this.getCardType(card)}
           faceup={card.faceup}
           isGhost={true}
@@ -369,7 +380,11 @@ class Game extends Component<IProps, IState> {
             handleDragStart={this.handleCardDragStart}
             handleDragMove={this.props.cardMove}
             handleDragEnd={this.props.endCardMove}
-            imgUrls={this.getImgUrls(card)}
+            imgUrls={getImgUrls(
+              card,
+              this.props.cardsData,
+              this.props.currentGameType
+            )}
             typeCode={this.getCardType(card)}
             faceup={card.faceup}
             numCardsInStack={card.cardStack.length}
@@ -396,7 +411,11 @@ class Game extends Component<IProps, IState> {
             const isHorizontal = HORIZONTAL_TYPE_CODES.includes(
               this.getCardType(card)
             );
-            const imgUrls = this.getImgUrls(card);
+            const imgUrls = getImgUrls(
+              card,
+              this.props.cardsData,
+              this.props.currentGameType
+            );
             const rawPos = this.getRawPreviewCardPosition(isHorizontal);
             const previewPos = this.getRelativePositionFromTarget(
               this.stage,
@@ -459,7 +478,30 @@ class Game extends Component<IProps, IState> {
         tabIndex={1}
         onKeyDown={this.handleKeyDown}
         onKeyPress={this.handleKeyPress}
+        onTouchMove={(event) => {
+          if (event.touches.length > 0) {
+            this.lastMousePos = {
+              x: event.touches.item(0).clientX,
+              y: event.touches.item(0).clientY,
+            };
+          }
+        }}
+        onMouseMove={(event) => {
+          this.lastMousePos = { x: event.clientX, y: event.clientY };
+        }}
       >
+        <PlayerHandContainer
+          playerNumber={this.props.playerNumbers[myPeerRef] ?? 1}
+          droppedOnTable={(id: string) => {
+            this.props.addCardStack({
+              cardJsonIds: [id],
+              position: this.getRelativePositionFromTarget(
+                this.stage,
+                this.lastMousePos
+              ),
+            });
+          }}
+        ></PlayerHandContainer>
         <RadialMenuContainer
           showCardSelector={(card, isSelect) => {
             this.setState({
@@ -978,6 +1020,14 @@ class Game extends Component<IProps, IState> {
     const mySelectedCards = getMySelectedCards(this.props.cards.cards);
 
     const menuItems: ContextMenuItem[] = [
+      {
+        label: "Add to hand",
+        action: () => {
+          this.props.addToPlayerHand({
+            playerNumber: this.props.gameState.playerNumbers[myPeerRef],
+          });
+        },
+      },
       {
         label: "Flip",
         action: () => {
@@ -1904,142 +1954,6 @@ class Game extends Component<IProps, IState> {
     return (
       this.props.cardsData[idToGrab]?.code ?? `code missing for ${idToGrab}`
     );
-  };
-
-  private checkMissingImageMap(code: string): string | null {
-    return MISSING_CARD_IMAGE_MAP[code] ?? null;
-  }
-
-  private generateLCGCDNImageUrl(card: CardData, faceup: boolean): string {
-    if (!card) {
-      return `https://lcgcdn.s3.amazonaws.com/mc/NOPE.jpg`;
-    }
-
-    // get the first two digits
-    let codeToUse = card.code;
-
-    if (!faceup && !!card.backLink) {
-      codeToUse = card.backLink;
-    }
-
-    const groupCode =
-      CARD_PACK_REMAPPING[card.extraInfo.packCode ?? ""] ??
-      codeToUse.substring(0, 2);
-    let cardCode = codeToUse.substring(2);
-
-    //trim leading "0" chars
-    while (cardCode[0] === "0") {
-      cardCode = cardCode.substring(1);
-    }
-
-    cardCode = cardCode.toLocaleUpperCase();
-
-    let cardSuffix = "";
-
-    if (!!card.doubleSided) {
-      cardSuffix = faceup ? "A" : "B";
-    }
-
-    return `https://lcgcdn.s3.amazonaws.com/mc/MC${groupCode}en_${cardCode}${cardSuffix}.jpg`;
-  }
-
-  private getImgUrls = (card: ICardStack): string[] => {
-    if (Object.keys(this.props.cardsData).length === 0) return [];
-
-    let urls: string[] = [];
-
-    const topCardData = this.props.cardsData[card.cardStack[0].jsonId];
-
-    if (!topCardData) {
-      return [];
-    }
-
-    let cardData: CardData | null = topCardData;
-
-    if (!!cardData.images) {
-      if (!card.faceup) {
-        if (!cardData.images.back) {
-          return [
-            topCardData.extraInfo.factionCode === "encounter" ||
-            topCardData.typeCode === "side_scheme"
-              ? process.env.PUBLIC_URL +
-                "/images/standard/encounter_card_back_" +
-                this.props.currentGameType +
-                ".png"
-              : process.env.PUBLIC_URL +
-                "/images/standard/card_back_" +
-                this.props.currentGameType +
-                ".png",
-          ];
-        } else {
-          return [cardData.images.back];
-        }
-      } else {
-        return [cardData.images.front];
-      }
-    }
-
-    if (!card.faceup) {
-      if (!!topCardData.backLink || !!topCardData.doubleSided) {
-        urls = [
-          this.generateLCGCDNImageUrl(topCardData, card.faceup),
-          // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.png`,
-          // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.jpg`,
-          // process.env.PUBLIC_URL +
-          //   "/images/cards/" +
-          //   bottomCardData.octgn_id +
-          //   ".b.jpg",
-        ];
-      } else {
-        cardData = null;
-        urls = [
-          topCardData.extraInfo.factionCode === "encounter" ||
-          topCardData.typeCode === "side_scheme"
-            ? process.env.PUBLIC_URL +
-              "/images/standard/encounter_card_back_" +
-              this.props.currentGameType +
-              ".png"
-            : process.env.PUBLIC_URL +
-              "/images/standard/card_back_" +
-              this.props.currentGameType +
-              ".png",
-        ];
-      }
-    } else {
-      urls = [
-        this.generateLCGCDNImageUrl(topCardData, card.faceup),
-        // `https://marvelcdb.com/bundles/cards/${topCardData.code}.png`,
-        // `https://marvelcdb.com/bundles/cards/${topCardData.code}.jpg`,
-        // process.env.PUBLIC_URL +
-        //   "/images/cards/" +
-        //   topCardData.octgn_id +
-        //   ".jpg",
-      ];
-    }
-
-    let codeForMissingCheck = "";
-
-    if (!!cardData) {
-      if (card.faceup) {
-        codeForMissingCheck = cardData.code;
-      } else {
-        if (!!cardData.backLink) {
-          codeForMissingCheck = cardData.backLink;
-        } else if (cardData.doubleSided) {
-          codeForMissingCheck = `${cardData.code}_double_sided_back`;
-        }
-      }
-    }
-
-    const missingImageOverride = !!cardData
-      ? this.checkMissingImageMap(codeForMissingCheck)
-      : null;
-
-    if (!!missingImageOverride) {
-      urls.unshift(missingImageOverride);
-    }
-
-    return urls;
   };
 
   private handleResize = () => {

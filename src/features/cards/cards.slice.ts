@@ -31,6 +31,7 @@ import {
 } from "./cards.actions";
 import { fetchDecklistById } from "./cards.thunks";
 import {
+  generateDefaultPlayerHands,
   ICardDetails,
   ICardsState,
   ICardStack,
@@ -148,7 +149,7 @@ const deleteCardStackReducer: CaseReducer<
 > = (state, action) => {
   foreachSelectedAndControlledCard(state, (action as any).ACTOR_REF, (card) => {
     const stackIndex = state.cards.findIndex((c) => c.id === card.id);
-    if (!!stackIndex) {
+    if (stackIndex !== -1) {
       state.cards.splice(stackIndex, 1);
     }
   });
@@ -441,6 +442,7 @@ const flipCardsReducer: CaseReducer<ICardsState> = (state, action) => {
 
 const resetCardsReducer: CaseReducer<ICardsState> = (state) => {
   state.cards = [];
+  state.playerHands = generateDefaultPlayerHands();
 };
 
 const toggleTokenReducer: CaseReducer<
@@ -527,6 +529,69 @@ const clearAllModifiersReducer: CaseReducer<
     c.modifiers = {};
   });
 };
+
+const addToPlayerHandReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{
+    playerNumber: number;
+  }>
+> = (state, action) => {
+  const playerIndex = action.payload.playerNumber - 1;
+  if (playerIndex < 0 || playerIndex >= state.playerHands.length) {
+    console.error(
+      `Got an invalid playerNumber: ${action.payload.playerNumber}. PlayerHands length is ${state.playerHands.length}`
+    );
+    return;
+  }
+
+  const playerHand = state.playerHands[playerIndex];
+
+  foreachSelectedAndControlledCard(state, (action as any).ACTOR_REF, (card) => {
+    state.playerHands[playerIndex].cards = card.cardStack.concat(
+      playerHand.cards
+    );
+  });
+
+  deleteCardStackReducer(state, {
+    ACTOR_REF: (action as any).ACTOR_REF,
+    payload: undefined,
+    type: deleteCardStack.type,
+  } as any);
+};
+
+const reorderPlayerHandReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{
+    playerNumber: number;
+    sourceIndex: number;
+    destinationIndex: number;
+  }>
+> = (state, action) => {
+  if (state.playerHands.length >= action.payload.playerNumber) {
+    const hand = state.playerHands[action.payload.playerNumber - 1];
+    const result = Array.from(hand.cards);
+    const [removed] = result.splice(action.payload.sourceIndex, 1);
+    result.splice(action.payload.destinationIndex, 0, removed);
+
+    hand.cards = result;
+  }
+};
+
+const removeFromPlayerHandReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{
+    playerNumber: number;
+    index: number;
+  }>
+> = (state, action) => {
+  if (state.playerHands.length >= action.payload.playerNumber) {
+    const hand = state.playerHands[action.payload.playerNumber - 1];
+    const result = Array.from(hand.cards);
+    result.splice(action.payload.index, 1);
+
+    hand.cards = result;
+  }
+};
 // Selectors
 
 // slice
@@ -552,6 +617,9 @@ const cardsSlice = createSlice({
     adjustModifier: adjustModifierReducer,
     clearAllModifiers: clearAllModifiersReducer,
     clearCardTokens: clearCardTokensReducer,
+    reorderPlayerHand: reorderPlayerHandReducer,
+    removeFromPlayerHand: removeFromPlayerHandReducer,
+    addToPlayerHand: addToPlayerHandReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -596,6 +664,7 @@ const cardsSlice = createSlice({
 
     builder.addCase(resetApp, (state) => {
       state.cards = [];
+      state.playerHands = generateDefaultPlayerHands();
       // state.previewCard = null;
       state.dropTargetCards = {};
       state.ghostCards = [];
@@ -966,6 +1035,9 @@ export const {
   clearCardTokens,
   adjustModifier,
   clearAllModifiers,
+  reorderPlayerHand,
+  removeFromPlayerHand,
+  addToPlayerHand,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

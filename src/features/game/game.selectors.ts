@@ -12,6 +12,10 @@ export const getPlayerColors = createSelector(getGame, (game) => {
   return game.playerColors;
 });
 
+export const getPlayerNumbers = createSelector(getGame, (game) => {
+  return game.playerNumbers;
+});
+
 export const getPeerId = createSelector(getGame, (game) => game.peerId);
 
 export const getActiveGameType = createSelector(

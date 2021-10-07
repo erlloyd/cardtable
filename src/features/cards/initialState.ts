@@ -5,6 +5,10 @@ import {
 } from "../../constants/card-constants";
 import JSONCrush from "jsoncrush";
 
+export interface IPlayerHand {
+  cards: ICardDetails[];
+}
+
 export interface ICardStack {
   controlledBy: string;
   dragging: boolean;
@@ -36,11 +40,17 @@ export interface ICardsState {
   outOfSyncWithRemote: boolean;
   cards: ICardStack[];
   ghostCards: ICardStack[];
+  playerHands: IPlayerHand[];
   dropTargetCards: { [key: string]: ICardStack | null };
   attachTargetCards: { [key: string]: ICardStack | null };
   panMode: boolean;
   multiselectMode: boolean;
 }
+
+const MAX_PLAYERS = 4;
+
+export const generateDefaultPlayerHands = (): IPlayerHand[] =>
+  Array(MAX_PLAYERS).fill({ cards: [] });
 
 const queryParams = new URLSearchParams(window.location.search);
 const queryParamsCardsString = queryParams.get("cards");
@@ -78,6 +88,7 @@ const defaultState: ICardsState = {
   attachTargetCards: {},
   panMode: true,
   multiselectMode: false,
+  playerHands: generateDefaultPlayerHands(),
 };
 
 export const initialState: ICardsState = {

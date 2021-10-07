@@ -25,6 +25,7 @@ import {
   unselectCard,
   adjustModifier,
   clearAllModifiers,
+  addToPlayerHand,
 } from "./features/cards/cards.slice";
 import {
   addCardStack,
@@ -46,6 +47,7 @@ import {
   getMenuPreviewCard,
   getPeerId,
   getPlayerColors,
+  getPlayerNumbers,
 } from "./features/game/game.selectors";
 import {
   connectToRemoteGame,
@@ -73,6 +75,7 @@ import { getCurrentCounters } from "./features/counters/counters.selectors";
 const mapStateToProps = (state: RootState) => {
   return {
     playerColors: getPlayerColors(state),
+    playerNumbers: getPlayerNumbers(state),
     cards: getCards(state),
     cardsData: getCardsDataEntities(state),
     panMode: getPanMode(state),
@@ -130,6 +133,7 @@ const GameContainer = connect(mapStateToProps, {
   showSpecificCardLoader,
   adjustModifier,
   clearAllModifiers,
+  addToPlayerHand,
 })(Game);
 
 export default GameContainer;

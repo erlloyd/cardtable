@@ -14,7 +14,7 @@ import {
   requestResync,
   setMenuPreviewCardJsonId,
   setPeerId,
-  setPlayerColor,
+  setPlayerInfo,
   setPreviewCardId,
   updatePosition,
   updateZoom,
@@ -140,18 +140,20 @@ export const peerJSMiddleware = (storeAPI: any) => {
       });
       // TODO: more complicated logic to handle multiple connections. Right now
       // this just changes the connecting client to blue
-      const setPlayerColorAction = setPlayerColor({
+      const setPlayerInfoAction = setPlayerInfo({
         ref: activeCon.metadata.ref,
         color: "blue",
+        playerNumber: 2,
       });
-      activeCon.send(setPlayerColorAction);
+      activeCon.send(setPlayerInfoAction);
       activeCon.send(
-        setPlayerColor({
+        setPlayerInfo({
           ref: myPeerRef,
           color: "red",
+          playerNumber: 1,
         })
       );
-      storeAPI.dispatch(setPlayerColorAction);
+      storeAPI.dispatch(setPlayerInfoAction);
 
       // Set up periodic state verification
       setInterval(() => {
