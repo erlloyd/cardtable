@@ -1,7 +1,7 @@
 import Peer from "peerjs";
 import cloneDeep from "lodash.clonedeep";
 import { myPeerRef } from "../constants/app-constants";
-import { togglePanMode } from "../features/cards/cards.slice";
+import { togglePanMode, cardFromHandMove } from "../features/cards/cards.slice";
 import {
   loadCardsData,
   loadCardsDataForPack,
@@ -16,6 +16,8 @@ import {
   setPeerId,
   setPlayerInfo,
   setPreviewCardId,
+  startDraggingCardFromHand,
+  stopDraggingCardFromHand,
   updatePosition,
   updateZoom,
 } from "../features/game/game.slice";
@@ -27,6 +29,12 @@ import { RootState } from "./rootReducer";
 
 const DEBUG = false;
 
+// These are the actions that we explicitly don't want
+// to send to any peers. These are actions that represent
+// updates we would only want to display visually on the
+// screen of the player initiating the action. Zooming is
+// a great example. One player adjusting their zoom shouldn't
+// affect any other player's zoom.
 const blacklistRemoteActions = {
   [connectToRemoteGame.type]: true,
   [updatePosition.type]: true,
@@ -41,6 +49,9 @@ const blacklistRemoteActions = {
   [loadCardsData.type]: true,
   [loadCardsDataForPack.type]: true,
   [loadCardsForEncounterSet.type]: true,
+  [startDraggingCardFromHand.type]: true,
+  [stopDraggingCardFromHand.type]: true,
+  [cardFromHandMove.type]: true,
 };
 
 const log = (...args: any[]) => {

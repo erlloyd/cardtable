@@ -21,6 +21,7 @@ export interface IGameState {
   previewCard: IPreviewCard | null;
   menuPreviewCardJsonId: string | null;
   activeGameType: GameType | null;
+  draggingCardFromHand: boolean;
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -39,6 +40,7 @@ localStorageState.previewCard = null;
 localStorageState.menuPreviewCardJsonId = null;
 localStorageState.radialMenuPosition = null;
 localStorageState.specificCardLoaderPosition = null;
+localStorageState.draggingCardFromHand = false;
 
 const defaultState: IGameState = {
   playerColors: {},
@@ -51,6 +53,7 @@ const defaultState: IGameState = {
   activeGameType: null,
   radialMenuPosition: null,
   specificCardLoaderPosition: null,
+  draggingCardFromHand: false,
 };
 export const initialState: IGameState = {
   ...defaultState,

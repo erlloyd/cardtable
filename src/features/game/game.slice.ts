@@ -102,6 +102,14 @@ const hideSpecificCardLoaderReducer: CaseReducer<IGameState> = (state) => {
   state.specificCardLoaderPosition = null;
 };
 
+const startDraggingCardFromHandReducer: CaseReducer<IGameState> = (state) => {
+  state.draggingCardFromHand = true;
+};
+
+const stopDraggingCardFromHandReducer: CaseReducer<IGameState> = (state) => {
+  state.draggingCardFromHand = false;
+};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -123,6 +131,8 @@ const gameSlice = createSlice({
     hideRadialMenu: hideRadialMenuReducer,
     showSpecificCardLoader: showSpecificCardLoaderReducer,
     hideSpecificCardLoader: hideSpecificCardLoaderReducer,
+    startDraggingCardFromHand: startDraggingCardFromHandReducer,
+    stopDraggingCardFromHand: stopDraggingCardFromHandReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -153,6 +163,8 @@ export const {
   hideRadialMenu,
   showSpecificCardLoader,
   hideSpecificCardLoader,
+  startDraggingCardFromHand,
+  stopDraggingCardFromHand,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

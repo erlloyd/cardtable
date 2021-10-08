@@ -113,13 +113,15 @@ interface IProps {
   }) => void;
   setPreviewCardJsonId: (jsonId: string) => void;
   clearPreviewCardJsonId: () => void;
+  startDraggingCardFromHand: () => void;
+  stopDraggingCardFromHand: () => void;
   playerHandData: IPlayerHand | null;
   playerCardData: ICardData;
   playerNumber: number;
   currentGameType: GameType | null;
+  dragging: boolean;
 }
 interface IState {
-  dragging: boolean;
   modal: boolean;
   imgUrlToStatusMap: { [key: string]: ImageLoadingStatus };
 }
@@ -135,7 +137,6 @@ class PlayerHand extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
-      dragging: false,
       modal: false,
       imgUrlToStatusMap: {},
     };
@@ -144,13 +145,13 @@ class PlayerHand extends Component<IProps, IState> {
   }
 
   onDragStart() {
-    this.setState({ dragging: true });
+    this.props.startDraggingCardFromHand();
   }
 
   onDragEnd(result: DropResult, provided: ResponderProvided) {
     // dropped outside the list
     if (!result.destination) {
-      this.setState({ dragging: false });
+      this.props.stopDraggingCardFromHand();
       return;
     }
 
@@ -171,9 +172,7 @@ class PlayerHand extends Component<IProps, IState> {
       });
     }
 
-    this.setState({
-      dragging: false,
-    });
+    this.props.stopDraggingCardFromHand();
   }
 
   // Normally you would want to split things out into separate components.
@@ -312,7 +311,7 @@ class PlayerHand extends Component<IProps, IState> {
           <div
             className="card-dropzone"
             ref={provided.innerRef}
-            style={getListStyle2(snapshot.isDraggingOver, this.state.dragging)}
+            style={getListStyle2(snapshot.isDraggingOver, this.props.dragging)}
             {...provided.droppableProps}
           >
             {provided.placeholder}

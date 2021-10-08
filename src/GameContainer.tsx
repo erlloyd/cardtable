@@ -13,6 +13,7 @@ import {
   adjustCounterToken,
   cardMove,
   endCardMove,
+  cardFromHandMove,
   exhaustCard,
   deleteCardStack,
   flipCards,
@@ -26,6 +27,7 @@ import {
   adjustModifier,
   clearAllModifiers,
   addToPlayerHand,
+  addToExistingCardStack,
 } from "./features/cards/cards.slice";
 import {
   addCardStack,
@@ -91,6 +93,7 @@ const mapStateToProps = (state: RootState) => {
 const GameContainer = connect(mapStateToProps, {
   cardMove,
   endCardMove,
+  cardFromHandMove,
   exhaustCard,
   deleteCardStack,
   loadCardsData,
@@ -134,6 +137,7 @@ const GameContainer = connect(mapStateToProps, {
   adjustModifier,
   clearAllModifiers,
   addToPlayerHand,
+  addToExistingCardStack,
 })(Game);
 
 export default GameContainer;

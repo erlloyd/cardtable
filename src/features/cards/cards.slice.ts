@@ -84,6 +84,35 @@ const foreachUnselectedCard = (
     .forEach((card) => callback(card));
 };
 
+const getDropTargetCard = (
+  state: ICardsState,
+  draggedCardPosition: Vector2d,
+  allowedDistance: number = CARD_DROP_TARGET_DISTANCE
+): ICardStack | null => {
+  // go through and find if any unselected cards are potential drop targets
+  // If so, get the closest one. But only if the card is owned / controlled by us
+  const possibleDropTargets: { distance: number; card: ICardStack }[] = [];
+
+  foreachUnselectedCard(state, (card) => {
+    // console.log(`card pos: ${card.x}, ${card.y}`);
+    // console.log(
+    //   `compare pos: ${draggedCardPosition.x}, ${draggedCardPosition.y}`
+    // );
+    const distance = getDistance({ x: card.x, y: card.y }, draggedCardPosition);
+    if (distance < allowedDistance) {
+      possibleDropTargets.push({
+        distance,
+        card,
+      });
+    }
+  });
+
+  return (
+    possibleDropTargets.sort((c1, c2) => c1.distance - c2.distance)[0]?.card ??
+    null
+  );
+};
+
 // Reducers
 const selectCardReducer: CaseReducer<
   ICardsState,
@@ -200,6 +229,17 @@ const getAttachDrawPos = (
   return drawPos;
 };
 
+const cardFromHandMoveReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{ x: number; y: number }>
+> = (state, action) => {
+  state.dropTargetCards[(action as any).ACTOR_REF] = getDropTargetCard(
+    state,
+    action.payload,
+    CARD_DROP_TARGET_DISTANCE * 2
+  );
+};
+
 const cardMoveReducer: CaseReducer<
   ICardsState,
   PayloadAction<{ id: string; dx: number; dy: number }>
@@ -225,30 +265,18 @@ const cardMoveReducer: CaseReducer<
       movedCards.push(card);
     });
 
-  // go through and find if any unselected cards are potential drop targets
-  // If so, get the closest one. But only if the card is owned / controlled by us
-  const possibleDropTargets: { distance: number; card: ICardStack }[] = [];
+  // Not sure why I have to do this typescript....
+  primaryCard = primaryCard as ICardStack | null;
+
   if (
     !!primaryCard &&
     (primaryCard as ICardStack).controlledBy === (action as any).ACTOR_REF
   ) {
-    foreachUnselectedCard(state, (card) => {
-      const distance = getDistance(
-        { x: card.x, y: card.y },
-        !!primaryCard ? { x: primaryCard.x, y: primaryCard.y } : { x: 0, y: 0 }
-      );
-      if (distance < CARD_DROP_TARGET_DISTANCE) {
-        possibleDropTargets.push({
-          distance,
-          card,
-        });
-      }
-    });
+    state.dropTargetCards[(action as any).ACTOR_REF] = getDropTargetCard(
+      state,
+      !!primaryCard ? { x: primaryCard.x, y: primaryCard.y } : { x: 0, y: 0 }
+    );
   }
-
-  state.dropTargetCards[(action as any).ACTOR_REF] =
-    possibleDropTargets.sort((c1, c2) => c1.distance - c2.distance)[0]?.card ??
-    null;
 
   // go through and find if any unselected cards are potential attach targets
   // If so, get the closest one. But only if the card is owned / controlled by us
@@ -592,6 +620,25 @@ const removeFromPlayerHandReducer: CaseReducer<
     hand.cards = result;
   }
 };
+
+const addToExistingCardStackReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{
+    existingStackId: string;
+    cardJsonIds: string[];
+  }>
+> = (state, action) => {
+  let existingStack =
+    state.cards.filter((c) => c.id === action.payload.existingStackId)[0] ??
+    null;
+  if (existingStack) {
+    existingStack.cardStack = action.payload.cardJsonIds
+      .map((id) => ({ jsonId: id }))
+      .concat(existingStack.cardStack);
+  }
+
+  state.dropTargetCards[(action as any).ACTOR_REF] = null;
+};
 // Selectors
 
 // slice
@@ -606,6 +653,7 @@ const cardsSlice = createSlice({
     deleteCardStack: deleteCardStackReducer,
     cardMove: cardMoveReducer,
     endCardMove: endCardMoveReducer,
+    cardFromHandMove: cardFromHandMoveReducer,
     selectMultipleCards: selectMultipleCardsReducer,
     unselectAllCards: unselectAllCardsReducer,
     togglePanMode: togglePanModeReducer,
@@ -620,6 +668,7 @@ const cardsSlice = createSlice({
     reorderPlayerHand: reorderPlayerHandReducer,
     removeFromPlayerHand: removeFromPlayerHandReducer,
     addToPlayerHand: addToPlayerHandReducer,
+    addToExistingCardStack: addToExistingCardStackReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -1024,6 +1073,7 @@ export const {
   deleteCardStack,
   cardMove,
   endCardMove,
+  cardFromHandMove,
   selectMultipleCards,
   unselectAllCards,
   togglePanMode,
@@ -1038,6 +1088,7 @@ export const {
   reorderPlayerHand,
   removeFromPlayerHand,
   addToPlayerHand,
+  addToExistingCardStack,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

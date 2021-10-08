@@ -11,6 +11,8 @@ import { getGame } from "./features/game/game.selectors";
 import {
   setMenuPreviewCardJsonId,
   clearMenuPreviewCardJsonId,
+  startDraggingCardFromHand,
+  stopDraggingCardFromHand,
 } from "./features/game/game.slice";
 interface IProps {
   playerNumber: number;
@@ -21,6 +23,7 @@ const mapStateToProps = (state: RootState, ownProps: IProps) => {
     playerHandData: getPlayerCardsForPlayerNumber(ownProps.playerNumber)(state),
     playerCardData: getCardsDataHeroEntities(state),
     currentGameType: getGame(state).activeGameType,
+    dragging: getGame(state).draggingCardFromHand,
     ...ownProps,
   };
 };
@@ -30,6 +33,8 @@ const PlayerHandContainer = connect(mapStateToProps, {
   removeFromPlayerHand,
   setPreviewCardJsonId: setMenuPreviewCardJsonId,
   clearPreviewCardJsonId: clearMenuPreviewCardJsonId,
+  startDraggingCardFromHand,
+  stopDraggingCardFromHand,
 })(PlayerHand);
 
 export default PlayerHandContainer;

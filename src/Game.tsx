@@ -60,6 +60,7 @@ interface IProps {
   menuPreviewCard: ICardStack | null;
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
   endCardMove: (id: string) => void;
+  cardFromHandMove: (pos: Vector2d) => void;
   exhaustCard: (id?: string) => void;
   deleteCardStack: (id?: string) => void;
   selectCard: (payload: { id: string; unselectOtherCards: boolean }) => void;
@@ -89,6 +90,10 @@ interface IProps {
   addCardStack: (payload: {
     cardJsonIds: string[];
     position: Vector2d;
+  }) => void;
+  addToExistingCardStack: (payload: {
+    existingStackId: string;
+    cardJsonIds: string[];
   }) => void;
   toggleToken: (payload: {
     id?: string;
@@ -488,18 +493,34 @@ class Game extends Component<IProps, IState> {
         }}
         onMouseMove={(event) => {
           this.lastMousePos = { x: event.clientX, y: event.clientY };
+          if (this.props.gameState.draggingCardFromHand) {
+            this.props.cardFromHandMove(
+              this.getRelativePositionFromTarget(this.stage, this.lastMousePos)
+            );
+          }
         }}
       >
         <PlayerHandContainer
           playerNumber={this.props.playerNumbers[myPeerRef] ?? 1}
           droppedOnTable={(id: string) => {
-            this.props.addCardStack({
-              cardJsonIds: [id],
-              position: this.getRelativePositionFromTarget(
-                this.stage,
-                this.lastMousePos
-              ),
-            });
+            const myDropTargetCard =
+              Object.values(this.props.dropTargetCardsById).filter(
+                (dt) => dt.ownerRef === myPeerRef
+              )[0] ?? null;
+            if (!!myDropTargetCard) {
+              this.props.addToExistingCardStack({
+                existingStackId: myDropTargetCard.card?.id ?? "",
+                cardJsonIds: [id],
+              });
+            } else {
+              this.props.addCardStack({
+                cardJsonIds: [id],
+                position: this.getRelativePositionFromTarget(
+                  this.stage,
+                  this.lastMousePos
+                ),
+              });
+            }
           }}
         ></PlayerHandContainer>
         <RadialMenuContainer
