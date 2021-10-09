@@ -194,6 +194,7 @@ class Game extends Component<IProps, IState> {
   private lastDist: number = 0;
 
   private lastMousePos: Vector2d = { x: 0, y: 0 };
+  private captureLastMousePos = true;
 
   constructor(props: IProps) {
     super(props);
@@ -483,16 +484,40 @@ class Game extends Component<IProps, IState> {
         tabIndex={1}
         onKeyDown={this.handleKeyDown}
         onKeyPress={this.handleKeyPress}
+        onMouseUp={(_event) => {
+          if (this.props.gameState.draggingCardFromHand) {
+            this.captureLastMousePos = false;
+          }
+        }}
+        onTouchEnd={(_event) => {
+          if (this.props.gameState.draggingCardFromHand) {
+            this.captureLastMousePos = false;
+          }
+        }}
         onTouchMove={(event) => {
           if (event.touches.length > 0) {
-            this.lastMousePos = {
-              x: event.touches.item(0).clientX,
-              y: event.touches.item(0).clientY,
-            };
+            if (this.captureLastMousePos) {
+              this.lastMousePos = {
+                x: event.touches.item(0).clientX,
+                y: event.touches.item(0).clientY,
+              };
+            }
+
+            if (this.props.gameState.draggingCardFromHand) {
+              this.props.cardFromHandMove(
+                this.getRelativePositionFromTarget(
+                  this.stage,
+                  this.lastMousePos
+                )
+              );
+            }
           }
         }}
         onMouseMove={(event) => {
-          this.lastMousePos = { x: event.clientX, y: event.clientY };
+          if (this.captureLastMousePos) {
+            this.lastMousePos = { x: event.clientX, y: event.clientY };
+          }
+
           if (this.props.gameState.draggingCardFromHand) {
             this.props.cardFromHandMove(
               this.getRelativePositionFromTarget(this.stage, this.lastMousePos)
@@ -521,6 +546,8 @@ class Game extends Component<IProps, IState> {
                 ),
               });
             }
+
+            this.captureLastMousePos = true;
           }}
         ></PlayerHandContainer>
         <RadialMenuContainer
