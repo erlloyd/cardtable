@@ -16,7 +16,10 @@ import { shuffleStack } from "./features/cards/cards.thunks";
 import { getGame } from "./features/game/game.selectors";
 import { RootState } from "./store/rootReducer";
 import OptionsMenu from "./OptionsMenu";
-import { showRadialMenuAtPosition } from "./features/game/game.slice";
+import {
+  showRadialMenuAtPosition,
+  toggleDrawCardsIntoHand,
+} from "./features/game/game.slice";
 import { myPeerRef } from "./constants/app-constants";
 import { ActionCreators } from "redux-undo";
 
@@ -26,6 +29,7 @@ const mapStateToProps = (state: RootState) => {
     currentGameType: getGame(state).activeGameType,
     panMode: getPanMode(state),
     multiselectMode: getMultiselectMode(state),
+    drawCardsIntoHand: getGame(state).drawCardsIntoHand,
   };
 };
 
@@ -40,6 +44,7 @@ const OptionsMenuContainer = connect(mapStateToProps, {
   showRadialMenuAtPosition,
   undo: ActionCreators.undo,
   redo: ActionCreators.redo,
+  toggleDrawCardsIntoHand,
 })(OptionsMenu);
 
 export default OptionsMenuContainer;

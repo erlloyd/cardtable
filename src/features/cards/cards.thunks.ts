@@ -14,6 +14,7 @@ import {
   getCardsDataPlayerCardsByName,
 } from "../cards-data/cards-data.selectors";
 import { ICardData } from "../cards-data/initialState";
+import { getGame } from "../game/game.selectors";
 import {
   addCardStackWithId,
   createDeckFromTextFileWithIds,
@@ -122,13 +123,17 @@ export const drawCardsOutOfCardStack =
   (
     payload: DrawCardsOutOfCardStackPayload
   ): ThunkAction<void, RootState, unknown, Action<string>> =>
-  (dispatch) => {
+  (dispatch, getState) => {
+    const myPlayerNumber = getGame(getState()).playerNumbers[myPeerRef];
+    const drawCardsIntoHand = getGame(getState()).drawCardsIntoHand;
     const possibleIds = Array.from({ length: payload.numberToDraw }).map((_i) =>
       uuidv4()
     );
     const payloadWithIds = {
       ...payload,
       idsToUse: possibleIds,
+      drawIntoHand: drawCardsIntoHand,
+      playerNumber: myPlayerNumber,
     };
     dispatch(drawCardsOutOfCardStackWithIds(payloadWithIds));
   };

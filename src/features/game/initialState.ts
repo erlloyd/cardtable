@@ -22,6 +22,7 @@ export interface IGameState {
   menuPreviewCardJsonId: string | null;
   activeGameType: GameType | null;
   draggingCardFromHand: boolean;
+  drawCardsIntoHand: boolean;
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -54,6 +55,7 @@ const defaultState: IGameState = {
   radialMenuPosition: null,
   specificCardLoaderPosition: null,
   draggingCardFromHand: false,
+  drawCardsIntoHand: true,
 };
 export const initialState: IGameState = {
   ...defaultState,

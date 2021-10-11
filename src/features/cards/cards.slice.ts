@@ -868,32 +868,44 @@ const cardsSlice = createSlice({
       const sourceCardStackId = cardStackToUse.id;
 
       //Next, for each card we should draw, remove it from the stack and make a new stack, which should be selected
+      // In the case that we're told to draw it into our hand, we don't need to make
+      // any new stacks
       for (let index = 0; index < action.payload.numberToDraw; index++) {
         if (!!cardStackToUse) {
           const topCardDetails = cardStackToUse.cardStack.shift();
           if (!topCardDetails) {
             throw new Error("Expected to find a top card, but didn't");
           }
-          const newCardStack: ICardDetails[] = [
-            { jsonId: topCardDetails.jsonId },
-          ];
-          const newCard = Object.assign({}, cardStackToUse, {
-            cardStack: newCardStack,
-          });
-          newCard.id = action.payload.idsToUse[index];
-          newCard.selected = true;
-          newCard.controlledBy = (action as any).ACTOR_REF;
-          newCard.faceup = !action.payload.facedown;
-          newCard.x = newCard.x + (cardConstants.CARD_WIDTH + 5) * (index + 1);
-          newCard.y += cardConstants.CARD_HEIGHT;
+          if (action.payload.drawIntoHand) {
+            const playerIndex = action.payload.playerNumber - 1;
+            state.playerHands[playerIndex].cards.push({
+              jsonId: topCardDetails.jsonId,
+            });
+          } else {
+            const newCardStack: ICardDetails[] = [
+              { jsonId: topCardDetails.jsonId },
+            ];
+            const newCard = Object.assign({}, cardStackToUse, {
+              cardStack: newCardStack,
+            });
+            newCard.id = action.payload.idsToUse[index];
+            newCard.selected = true;
+            newCard.controlledBy = (action as any).ACTOR_REF;
+            newCard.faceup = !action.payload.facedown;
+            newCard.x =
+              newCard.x + (cardConstants.CARD_WIDTH + 5) * (index + 1);
+            newCard.y += cardConstants.CARD_HEIGHT;
 
-          if (cardStackToUse.cardStack.length === 0) {
-            // we went through all the cards, remove the original card
-            state.cards = state.cards.filter((c) => c.id !== sourceCardStackId);
-            cardStackToUse = undefined;
+            if (cardStackToUse.cardStack.length === 0) {
+              // we went through all the cards, remove the original card
+              state.cards = state.cards.filter(
+                (c) => c.id !== sourceCardStackId
+              );
+              cardStackToUse = undefined;
+            }
+
+            state.cards.push(newCard);
           }
-
-          state.cards.push(newCard);
         }
       }
     });

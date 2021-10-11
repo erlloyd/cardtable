@@ -26,6 +26,8 @@ export interface DrawCardsOutOfCardStackWithIdsPayload {
   numberToDraw: number;
   facedown?: boolean;
   idsToUse: string[];
+  drawIntoHand: boolean;
+  playerNumber: number;
 }
 
 export interface ReplaceCardStackPayload {
@@ -66,11 +68,10 @@ export const startCardMoveWithSplitStackId =
 export const replaceCardStack =
   createAction<ReplaceCardStackPayload>("replaceCardStack");
 
-export const setStackShuffling =
-  createAction<{
-    id: string;
-    shuffling: boolean;
-  }>("setStackShuffling");
+export const setStackShuffling = createAction<{
+  id: string;
+  shuffling: boolean;
+}>("setStackShuffling");
 
 export const createDeckFromTextFileWithIds = createAction<CreateDeckPayload>(
   "createDeckFromTextFileWithIds"

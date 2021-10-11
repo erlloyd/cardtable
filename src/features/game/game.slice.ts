@@ -110,6 +110,10 @@ const stopDraggingCardFromHandReducer: CaseReducer<IGameState> = (state) => {
   state.draggingCardFromHand = false;
 };
 
+const toggleDrawCardsIntoHandReducer: CaseReducer<IGameState> = (state) => {
+  state.drawCardsIntoHand = !state.drawCardsIntoHand;
+};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -133,6 +137,7 @@ const gameSlice = createSlice({
     hideSpecificCardLoader: hideSpecificCardLoaderReducer,
     startDraggingCardFromHand: startDraggingCardFromHandReducer,
     stopDraggingCardFromHand: stopDraggingCardFromHandReducer,
+    toggleDrawCardsIntoHand: toggleDrawCardsIntoHandReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -165,6 +170,7 @@ export const {
   hideSpecificCardLoader,
   startDraggingCardFromHand,
   stopDraggingCardFromHand,
+  toggleDrawCardsIntoHand,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

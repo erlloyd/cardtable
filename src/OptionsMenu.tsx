@@ -9,6 +9,7 @@ import SelectAllIcon from "@material-ui/icons/SelectAll";
 import InfoIcon from "@material-ui/icons/Info";
 import UndoIcon from "@material-ui/icons/Undo";
 import RedoIcon from "@material-ui/icons/Redo";
+import PanToolIcon from "@material-ui/icons/PanTool";
 
 import { GameType } from "./constants/app-constants";
 import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
@@ -21,6 +22,7 @@ interface IProps {
   currentGameType: GameType | null;
   panMode: boolean;
   multiselectMode: boolean;
+  drawCardsIntoHand: boolean;
   togglePanMode: () => void;
   toggleMultiselectMode: () => void;
   flipCards: () => void;
@@ -41,6 +43,7 @@ interface IProps {
   showContextMenuAtPosition: (payload: Vector2d) => void;
   undo: () => void;
   redo: () => void;
+  toggleDrawCardsIntoHand: () => void;
 }
 class OptionsMenu extends Component<IProps> {
   render() {
@@ -62,6 +65,16 @@ class OptionsMenu extends Component<IProps> {
             }}
           >
             <OpenWithIcon fontSize="large" />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Toggle Draw Cards into Hand">
+          <IconButton
+            className={cx({ "toggle-on": this.props.drawCardsIntoHand })}
+            onClick={() => {
+              this.props.toggleDrawCardsIntoHand();
+            }}
+          >
+            <PanToolIcon fontSize="large" />
           </IconButton>
         </Tooltip>
         <IconButton
