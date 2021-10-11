@@ -263,17 +263,6 @@ class PlayerHand extends Component<IProps, IState> {
       this.props.currentGameType ?? GameType.MarvelChampions
     );
 
-    imgs.forEach((i) => {
-      if (this.state.imgUrlToStatusMap[i] === undefined) {
-        this.setState({
-          imgUrlToStatusMap: {
-            ...this.state.imgUrlToStatusMap,
-            [i]: ImageLoadingStatus.Loading,
-          },
-        });
-      }
-    });
-
     // Only want to show the first image if multiple are loaded
     const imgsWithData = imgs.map((i) => ({
       url: i,
@@ -289,11 +278,19 @@ class PlayerHand extends Component<IProps, IState> {
         <img
           key={`card-${card.jsonId}-img-${index}`}
           className={i !== firstLoadedImage ? "hide-img" : "show-img"}
-          onLoad={(event) => {
+          onLoad={() => {
             this.setState({
               imgUrlToStatusMap: {
                 ...this.state.imgUrlToStatusMap,
                 [i]: ImageLoadingStatus.Loaded,
+              },
+            });
+          }}
+          onError={() => {
+            this.setState({
+              imgUrlToStatusMap: {
+                ...this.state.imgUrlToStatusMap,
+                [i]: ImageLoadingStatus.LoadingFailed,
               },
             });
           }}

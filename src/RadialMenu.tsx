@@ -193,6 +193,16 @@ const renderTopLevelMenu = (
       </div>
     </Slice>,
     <Slice
+      key={"delete-slice"}
+      onSelect={() => {
+        props.deleteCardStack();
+      }}
+    >
+      <div>
+        <div>Delete</div>
+      </div>
+    </Slice>,
+    <Slice
       key={"exhaust-slice"}
       onSelect={() => {
         props.exhaustCard();
