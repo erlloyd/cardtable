@@ -37,7 +37,7 @@ import RadialMenuContainer from "./RadialMenuContainer";
 import SpecificCardLoaderContainer from "./SpecificCardLoaderContainer";
 import TokenValueModifier from "./TokenValueModifier";
 import TopLayer from "./TopLayer";
-import TouchMenuContainer from "./TouchMenuContainer";
+import OptionsMenuContainer from "./OptionsMenuContainer";
 import {
   anyCardStackHasStatus,
   getImgUrls,
@@ -564,7 +564,7 @@ class Game extends Component<IProps, IState> {
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
         {this.renderPreviewCardModal()}
-        {this.renderTouchMenu()}
+        {this.renderOptionsMenu()}
         {this.renderDeckImporter()}
         {this.renderEncounterImporter()}
         {this.renderCardSearch()}
@@ -741,13 +741,13 @@ class Game extends Component<IProps, IState> {
     );
   };
 
-  private renderTouchMenu = () => {
+  private renderOptionsMenu = () => {
     return (
-      <TouchMenuContainer
+      <OptionsMenuContainer
         showContextMenuAtPosition={(pos: Vector2d) => {
           this.handleContextMenu(undefined, pos);
         }}
-      ></TouchMenuContainer>
+      ></OptionsMenuContainer>
     );
   };
 

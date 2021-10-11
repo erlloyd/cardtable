@@ -15,7 +15,7 @@ import {
 import { shuffleStack } from "./features/cards/cards.thunks";
 import { getGame } from "./features/game/game.selectors";
 import { RootState } from "./store/rootReducer";
-import TouchMenu from "./TouchMenu";
+import OptionsMenu from "./OptionsMenu";
 import { showRadialMenuAtPosition } from "./features/game/game.slice";
 import { myPeerRef } from "./constants/app-constants";
 import { ActionCreators } from "redux-undo";
@@ -29,7 +29,7 @@ const mapStateToProps = (state: RootState) => {
   };
 };
 
-const TouchMenuContainer = connect(mapStateToProps, {
+const OptionsMenuContainer = connect(mapStateToProps, {
   togglePanMode,
   toggleMultiselectMode,
   flipCards,
@@ -40,6 +40,6 @@ const TouchMenuContainer = connect(mapStateToProps, {
   showRadialMenuAtPosition,
   undo: ActionCreators.undo,
   redo: ActionCreators.redo,
-})(TouchMenu);
+})(OptionsMenu);
 
-export default TouchMenuContainer;
+export default OptionsMenuContainer;

@@ -1,7 +1,7 @@
 import IconButton from "@material-ui/core/IconButton";
 import * as React from "react";
 import { Component } from "react";
-import "./TouchMenu.scss";
+import "./OptionsMenu.scss";
 //Icons
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import OpenWithIcon from "@material-ui/icons/OpenWith";
@@ -13,6 +13,8 @@ import RedoIcon from "@material-ui/icons/Redo";
 import { GameType } from "./constants/app-constants";
 import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
 import { Vector2d } from "konva/lib/types";
+import cx from "classnames";
+import Tooltip from "@material-ui/core/Tooltip";
 
 interface IProps {
   anyCardsSelected: boolean;
@@ -40,27 +42,32 @@ interface IProps {
   undo: () => void;
   redo: () => void;
 }
-class TouchMenu extends Component<IProps> {
+class OptionsMenu extends Component<IProps> {
   render() {
     return (
-      <div className="touch-menu">
+      <div className="options-menu">
         <IconButton
+          className={"render-touch-only"}
           onClick={() => {
             this.props.showContextMenuAtPosition({ x: 0, y: 0 });
           }}
         >
           <MoreVertIcon fontSize="large" />
         </IconButton>
+        <Tooltip title="Toggle Pan Mode">
+          <IconButton
+            className={cx({ "toggle-on": this.props.panMode })}
+            onClick={() => {
+              this.props.togglePanMode();
+            }}
+          >
+            <OpenWithIcon fontSize="large" />
+          </IconButton>
+        </Tooltip>
         <IconButton
-          className={this.props.panMode ? "toggle-on" : ""}
-          onClick={() => {
-            this.props.togglePanMode();
-          }}
-        >
-          <OpenWithIcon fontSize="large" />
-        </IconButton>
-        <IconButton
-          className={this.props.multiselectMode ? "toggle-on" : ""}
+          className={cx("render-touch-only", {
+            "toggle-on": this.props.multiselectMode,
+          })}
           onClick={() => {
             this.props.toggleMultiselectMode();
           }}
@@ -68,6 +75,7 @@ class TouchMenu extends Component<IProps> {
           <SelectAllIcon fontSize="large" />
         </IconButton>
         <IconButton
+          className={"render-touch-only"}
           onClick={() => {
             if (this.props.anyCardsSelected) {
               this.props.showRadialMenuAtPosition({
@@ -79,27 +87,31 @@ class TouchMenu extends Component<IProps> {
         >
           <InfoIcon fontSize="large" />
         </IconButton>
-        <IconButton
-          onClick={() => {
-            if (this.props.undo) {
-              this.props.undo();
-            }
-          }}
-        >
-          <UndoIcon fontSize="large" />
-        </IconButton>
-        <IconButton
-          onClick={() => {
-            if (this.props.redo) {
-              this.props.redo();
-            }
-          }}
-        >
-          <RedoIcon fontSize="large" />
-        </IconButton>
+        <Tooltip title="Undo">
+          <IconButton
+            onClick={() => {
+              if (this.props.undo) {
+                this.props.undo();
+              }
+            }}
+          >
+            <UndoIcon fontSize="large" />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Redo">
+          <IconButton
+            onClick={() => {
+              if (this.props.redo) {
+                this.props.redo();
+              }
+            }}
+          >
+            <RedoIcon fontSize="large" />
+          </IconButton>
+        </Tooltip>
       </div>
     );
   }
 }
 
-export default TouchMenu;
+export default OptionsMenu;
