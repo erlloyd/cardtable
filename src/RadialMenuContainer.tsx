@@ -29,6 +29,7 @@ const mapStateToProps = (state: RootState) => {
     currentGameType: getGame(state).activeGameType,
     position: getRadialMenuPosition(state),
     playerNumber: getGame(state).playerNumbers[myPeerRef],
+    drawCardsIntoHand: getGame(state).drawCardsIntoHand,
   };
 };
 

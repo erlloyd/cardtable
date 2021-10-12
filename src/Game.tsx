@@ -1069,7 +1069,7 @@ class Game extends Component<IProps, IState> {
 
     const menuItems: ContextMenuItem[] = [
       {
-        label: "Add to hand",
+        label: "Add all to hand",
         action: () => {
           this.props.addToPlayerHand({
             playerNumber: this.props.gameState.playerNumbers[myPeerRef],
@@ -1490,7 +1490,13 @@ class Game extends Component<IProps, IState> {
           upperRightPoint,
           this.getRelativePositionFromTarget(this.stage)
         );
-        if (distance < 50) {
+
+        const dragDistanceThreshold =
+          event.evt instanceof TouchEvent
+            ? cardConstants.TOUCH_DRAG_SPLIT_DISTANCE
+            : cardConstants.MOUSE_DRAG_SPLIT_DISTANCE;
+
+        if (distance < dragDistanceThreshold) {
           splitTopCard = true;
         }
       }

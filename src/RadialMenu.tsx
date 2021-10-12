@@ -61,6 +61,7 @@ interface IProps {
     value?: number;
   }) => void;
   addToPlayerHand: (payload: { playerNumber: number }) => void;
+  drawCardsIntoHand: boolean;
 }
 const RadialMenu = (props: IProps) => {
   const [visibleMenu, setVisibleMenu] = useState(MenuType.TopLevelActions);
@@ -380,7 +381,7 @@ const renderDrawMenu = (
   setVisibleMenu: (type: MenuType) => void,
   setCurrentDrawMode: (mode: DrawMode) => void
 ) => {
-  return [
+  const drawMenu = [
     <Slice
       key={"find-card-slice"}
       onSelect={() => {
@@ -457,9 +458,21 @@ const renderDrawMenu = (
         });
       }}
     >
-      To hand
+      All to hand
     </Slice>,
   ];
+
+  return drawMenu.filter((mi) => {
+    if (
+      !!mi.key &&
+      mi.key.toString().includes("facedown") &&
+      props.drawCardsIntoHand
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  });
 };
 
 const renderDrawNumberMenu = (props: IProps, currentDrawMode: DrawMode) => {

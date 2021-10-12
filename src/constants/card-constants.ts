@@ -3,6 +3,8 @@ export const cardConstants = {
   CARD_WIDTH: 150,
   CARD_PREVIEW_HEIGHT: 418,
   CARD_PREVIEW_WIDTH: 300,
+  MOUSE_DRAG_SPLIT_DISTANCE: 50,
+  TOUCH_DRAG_SPLIT_DISTANCE: 100,
 };
 
 export enum StatusTokenType {
