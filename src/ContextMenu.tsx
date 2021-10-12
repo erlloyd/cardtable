@@ -8,7 +8,7 @@ import FileUploader from "./FileUploader";
 
 export interface ContextMenuItem {
   label: string;
-  action?: () => void;
+  action?: (fromTouch?: boolean) => void;
   fileLoadedAction?: (fileContents: string) => void;
   children?: ContextMenuItem[];
   fileUploader?: boolean;
@@ -145,20 +145,21 @@ class ContextMenu extends Component<IProps, IState> {
     event.preventDefault();
   };
 
-  private handleContextItemClicked = (item: ContextMenuItem) => () => {
-    if (!!item.action) {
-      item.action();
-    }
-    if (!!this.props.contextItemClicked) {
-      this.props.contextItemClicked(this.props.items[0]);
-    }
-    if (!!item.action) {
-      if (!!this.nestedRef) {
-        this.nestedRef.blur();
+  private handleContextItemClicked =
+    (item: ContextMenuItem) => (event: any) => {
+      if (!!item.action) {
+        item.action(event?.nativeEvent?.pointerType === "touch");
       }
-      this.props.hideContextMenu();
-    }
-  };
+      if (!!this.props.contextItemClicked) {
+        this.props.contextItemClicked(this.props.items[0]);
+      }
+      if (!!item.action) {
+        if (!!this.nestedRef) {
+          this.nestedRef.blur();
+        }
+        this.props.hideContextMenu();
+      }
+    };
 }
 
 export default ContextMenu;

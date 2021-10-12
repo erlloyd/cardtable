@@ -6,7 +6,7 @@ import {
 import { getPlayerCardsForPlayerNumber } from "./features/cards/cards.selectors";
 import PlayerHand from "./PlayerHand";
 import { RootState } from "./store/rootReducer";
-import { getCardsDataHeroEntities } from "./features/cards-data/cards-data.selectors";
+import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
 import { getGame } from "./features/game/game.selectors";
 import {
   setMenuPreviewCardJsonId,
@@ -21,7 +21,7 @@ interface IProps {
 const mapStateToProps = (state: RootState, ownProps: IProps) => {
   return {
     playerHandData: getPlayerCardsForPlayerNumber(ownProps.playerNumber)(state),
-    playerCardData: getCardsDataHeroEntities(state),
+    cardData: getCardsDataEntities(state),
     currentGameType: getGame(state).activeGameType,
     dragging: getGame(state).draggingCardFromHand,
     ...ownProps,

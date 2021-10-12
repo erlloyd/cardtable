@@ -527,7 +527,7 @@ class Game extends Component<IProps, IState> {
       >
         <PlayerHandContainer
           playerNumber={this.props.playerNumbers[myPeerRef] ?? 1}
-          droppedOnTable={(id: string) => {
+          droppedOnTable={(id: string, pos?: Vector2d) => {
             const myDropTargetCard =
               Object.values(this.props.dropTargetCardsById).filter(
                 (dt) => dt.ownerRef === myPeerRef
@@ -542,7 +542,7 @@ class Game extends Component<IProps, IState> {
                 cardJsonIds: [id],
                 position: this.getRelativePositionFromTarget(
                   this.stage,
-                  this.lastMousePos
+                  !!pos ? pos : this.lastMousePos
                 ),
               });
             }

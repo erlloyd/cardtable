@@ -22,6 +22,7 @@ import { getImgUrls } from "./utilities/card-utils";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { IconButton } from "@material-ui/core";
 import ContextMenu from "./ContextMenu";
+import { Vector2d } from "konva/lib/types";
 
 const grid = 8;
 
@@ -104,7 +105,7 @@ const makeFakeCardStackFromJsonId = (jsonId: string): ICardStack => {
 };
 
 interface IProps {
-  droppedOnTable: (id: string) => void;
+  droppedOnTable: (id: string, pos?: Vector2d) => void;
   reorderPlayerHand: (payload: {
     playerNumber: number;
     sourceIndex: number;
@@ -119,7 +120,7 @@ interface IProps {
   startDraggingCardFromHand: () => void;
   stopDraggingCardFromHand: () => void;
   playerHandData: IPlayerHand | null;
-  playerCardData: ICardData;
+  cardData: ICardData;
   playerNumber: number;
   currentGameType: GameType | null;
   dragging: boolean;
@@ -195,7 +196,7 @@ class PlayerHand extends Component<IProps, IState> {
             items={[
               {
                 label: "Drop random card",
-                action: () => {
+                action: (wasTouch) => {
                   if (cards.length > 0) {
                     const randIndex = Math.floor(Math.random() * cards.length);
                     const cardDetails = cards[randIndex];
@@ -203,7 +204,10 @@ class PlayerHand extends Component<IProps, IState> {
                       playerNumber: this.props.playerNumber,
                       index: randIndex,
                     });
-                    this.props.droppedOnTable(cardDetails.jsonId);
+
+                    const dropPos = wasTouch ? { x: 100, y: 100 } : undefined;
+
+                    this.props.droppedOnTable(cardDetails.jsonId, dropPos);
                   }
                 },
               },
@@ -301,7 +305,7 @@ class PlayerHand extends Component<IProps, IState> {
   renderCardContents(card: ICardDetails) {
     const imgs = getImgUrls(
       makeFakeCardStackFromJsonId(card.jsonId),
-      this.props.playerCardData,
+      this.props.cardData,
       this.props.currentGameType ?? GameType.MarvelChampions
     );
 
