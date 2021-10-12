@@ -15,7 +15,8 @@ export interface ContextMenuItem {
 }
 
 interface IProps {
-  position: Vector2d;
+  position?: Vector2d;
+  anchorEl?: HTMLElement;
   items: ContextMenuItem[];
   contextItemClicked?: (item: ContextMenuItem) => void;
   hideContextMenu: () => void;
@@ -56,11 +57,18 @@ class ContextMenu extends Component<IProps, IState> {
           keepMounted
           open={this.state.menuOpen}
           onClose={this.handleMenuClosed}
-          anchorReference="anchorPosition"
-          anchorPosition={{
-            top: this.props.position.y + 8,
-            left: this.props.position.x + 8,
-          }}
+          anchorReference={
+            !!this.props.anchorEl ? "anchorEl" : "anchorPosition"
+          }
+          anchorEl={this.props.anchorEl}
+          anchorPosition={
+            !!this.props.position
+              ? {
+                  top: this.props.position.y + 8,
+                  left: this.props.position.x + 8,
+                }
+              : undefined
+          }
         >
           {this.props.items.map((i, index) => this.renderMenuItem(i, index))}
         </Menu>

@@ -34,6 +34,7 @@ interface IProps {
   showCardSelector: (cardStack: ICardStack, isSelect: boolean) => void;
   selectedCardStacks: ICardStack[];
   currentGameType: GameType | null;
+  playerNumber: number;
   position: Vector2d | null;
   hideRadialMenu: () => void;
   flipCards: () => void;
@@ -59,6 +60,7 @@ interface IProps {
     delta?: number;
     value?: number;
   }) => void;
+  addToPlayerHand: (payload: { playerNumber: number }) => void;
 }
 const RadialMenu = (props: IProps) => {
   const [visibleMenu, setVisibleMenu] = useState(MenuType.TopLevelActions);
@@ -446,6 +448,16 @@ const renderDrawMenu = (
       }}
     >
       X facedown
+    </Slice>,
+    <Slice
+      key={"add-to-hand-slice"}
+      onSelect={() => {
+        props.addToPlayerHand({
+          playerNumber: props.playerNumber,
+        });
+      }}
+    >
+      To hand
     </Slice>,
   ];
 };

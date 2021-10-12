@@ -19,6 +19,9 @@ import {
 import "./PlayerHand.scss";
 import TopLayer from "./TopLayer";
 import { getImgUrls } from "./utilities/card-utils";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import { IconButton } from "@material-ui/core";
+import ContextMenu from "./ContextMenu";
 
 const grid = 8;
 
@@ -124,6 +127,8 @@ interface IProps {
 interface IState {
   modal: boolean;
   imgUrlToStatusMap: { [key: string]: ImageLoadingStatus };
+  showMenu: boolean;
+  anchorEl: HTMLElement | undefined;
 }
 
 enum ImageLoadingStatus {
@@ -139,6 +144,8 @@ class PlayerHand extends Component<IProps, IState> {
     this.state = {
       modal: false,
       imgUrlToStatusMap: {},
+      showMenu: false,
+      anchorEl: undefined,
     };
     this.onDragEnd = this.onDragEnd.bind(this);
     this.onDragStart = this.onDragStart.bind(this);
@@ -182,6 +189,30 @@ class PlayerHand extends Component<IProps, IState> {
     return (
       <div>
         {this.renderTopLayer()}
+        {this.state.showMenu && (
+          <ContextMenu
+            anchorEl={this.state.anchorEl}
+            items={[
+              {
+                label: "Drop random card",
+                action: () => {
+                  if (cards.length > 0) {
+                    const randIndex = Math.floor(Math.random() * cards.length);
+                    const cardDetails = cards[randIndex];
+                    this.props.removeFromPlayerHand({
+                      playerNumber: this.props.playerNumber,
+                      index: randIndex,
+                    });
+                    this.props.droppedOnTable(cardDetails.jsonId);
+                  }
+                },
+              },
+            ]}
+            hideContextMenu={() => {
+              this.setState({ anchorEl: undefined, showMenu: false });
+            }}
+          ></ContextMenu>
+        )}
         <DragDropContext
           onDragEnd={this.onDragEnd}
           onBeforeCapture={this.onDragStart}
@@ -194,6 +225,17 @@ class PlayerHand extends Component<IProps, IState> {
                 style={getListStyle(snapshot.isDraggingOver)}
                 {...provided.droppableProps}
               >
+                <IconButton
+                  onClick={(event) => {
+                    this.setState({
+                      showMenu: true,
+                      anchorEl: event.nativeEvent.target as HTMLElement,
+                    });
+                  }}
+                  className="options-menu-button"
+                >
+                  <MoreVertIcon fontSize="large" />
+                </IconButton>
                 {cards.map((card, index) => (
                   <Draggable
                     key={`player-hand-${this.props.playerNumber}-${index}`}

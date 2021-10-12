@@ -9,6 +9,7 @@ import {
   adjustCounterToken,
   clearCardTokens,
   adjustModifier,
+  addToPlayerHand,
 } from "./features/cards/cards.slice";
 import {
   shuffleStack,
@@ -27,6 +28,7 @@ const mapStateToProps = (state: RootState) => {
     selectedCardStacks: cardsSelectedWithPeerRef(myPeerRef)(state),
     currentGameType: getGame(state).activeGameType,
     position: getRadialMenuPosition(state),
+    playerNumber: getGame(state).playerNumbers[myPeerRef],
   };
 };
 
@@ -41,6 +43,7 @@ const RadialMenuContainer = connect(mapStateToProps, {
   clearCardTokens,
   drawCardsOutOfCardStack,
   adjustModifier,
+  addToPlayerHand,
 })(usePlanetMenu ? PlanetMenu : RadialMenu);
 
 export default RadialMenuContainer;
