@@ -7,6 +7,39 @@
     "Cards": null,
     "cards": [
         {
+            "Title": "Council of the Wise",
+            "Slug": "Council-of-the-Wise-UtAM",
+            "IsUnique": false,
+            "CardType": "Contract",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Council-of-the-Wise.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You cannot include more than 1 copy of a card, by title, in your deck.",
+                    "Response: After you play an event from your hand, choose one: reduce your threat by 1, draw 1 card, or add 1 resource to your hero`s resource pool. You can only choose each option once per round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I must go to this lords` council and learn what I can.`\r\n-Gandalf, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Under the Ash Mountains",
+            "EncounterInfo": null,
+            "Number": 91,
+            "Quantity": 1,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22091",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 1774,
+            "Categories": null
+        },
+        {
             "Title": "Stone of Elostirion",
             "Slug": "Stone-of-Elostirion-UtAM",
             "IsUnique": true,
@@ -45,44 +78,7 @@
             "OctgnGuid": "",
             "RingsDbCardId": "22084",
             "RingsDbPopularity": 2,
-            "RingsDbVotes": 28040,
-            "Categories": null
-        },
-        {
-            "Title": "Defiant Challenge",
-            "Slug": "Defiant-Challenge-UtAM",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Defiant-Challenge.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [
-                    "Doomed 2."
-                ],
-                "Text": [
-                    "Doomed 2.",
-                    "Action: Each player may ready a characer he controls."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Go back to the Shadow!`\r\n-Gandalf, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Under the Ash Mountains",
-            "EncounterInfo": null,
-            "Number": 89,
-            "Quantity": 3,
-            "Artist": "Greg Opalinski",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "22089",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 20878,
+            "RingsDbVotes": 43389,
             "Categories": null
         },
         {
@@ -122,86 +118,8 @@
             "HasErrata": false,
             "OctgnGuid": "",
             "RingsDbCardId": "22083",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 19664,
-            "Categories": null
-        },
-        {
-            "Title": "Well Preserved",
-            "Slug": "Well-Preserved-UtAM",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Well-Preserved.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Master."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to the hero with The One Ring.",
-                    "Limit 1 per hero. Attached hero gets + 1 hit point.",
-                    "Response: At the beginning of the round, exhaust The One Ring and raise your threat by 1 to heal all damage from attached hero."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Under the Ash Mountains",
-            "EncounterInfo": null,
-            "Number": 85,
-            "Quantity": 3,
-            "Artist": "Torbjörn Källström",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "22085",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 19539,
-            "Categories": null
-        },
-        {
-            "Title": "Odo Proudfoot",
-            "Slug": "Odo-Proudfoot-UtAM",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Odo-Proudfoot.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Hobbit."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Odo Proudfoot enters play, search the top 5 cards of your deck for a Hobbit ally and add it to your hand. Shuffle the other cards back into your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "`ProudFEET! shouted an elderly hobbit from the back of the pavilion.\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Under the Ash Mountains",
-            "EncounterInfo": null,
-            "Number": 88,
-            "Quantity": 3,
-            "Artist": "Torbjörn Källström",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "22088",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 18507,
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 42532,
             "Categories": null
         },
         {
@@ -244,8 +162,123 @@
             "HasErrata": false,
             "OctgnGuid": "",
             "RingsDbCardId": "22086",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 18390,
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 33618,
+            "Categories": null
+        },
+        {
+            "Title": "Defiant Challenge",
+            "Slug": "Defiant-Challenge-UtAM",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Defiant-Challenge.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 2."
+                ],
+                "Text": [
+                    "Doomed 2.",
+                    "Action: Each player may ready a characer he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Go back to the Shadow!`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Under the Ash Mountains",
+            "EncounterInfo": null,
+            "Number": 89,
+            "Quantity": 3,
+            "Artist": "Greg Opalinski",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22089",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 33601,
+            "Categories": null
+        },
+        {
+            "Title": "Odo Proudfoot",
+            "Slug": "Odo-Proudfoot-UtAM",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Odo-Proudfoot.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Odo Proudfoot enters play, search the top 5 cards of your deck for a Hobbit ally and add it to your hand. Shuffle the other cards back into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`ProudFEET! shouted an elderly hobbit from the back of the pavilion.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Under the Ash Mountains",
+            "EncounterInfo": null,
+            "Number": 88,
+            "Quantity": 3,
+            "Artist": "Torbjörn Källström",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22088",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 30139,
+            "Categories": null
+        },
+        {
+            "Title": "Well Preserved",
+            "Slug": "Well-Preserved-UtAM",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Well-Preserved.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Master."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to the hero with The One Ring.",
+                    "Limit 1 per hero. Attached hero gets + 1 hit point.",
+                    "Response: At the beginning of the round, exhaust The One Ring and raise your threat by 1 to heal all damage from attached hero."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Under the Ash Mountains",
+            "EncounterInfo": null,
+            "Number": 85,
+            "Quantity": 3,
+            "Artist": "Torbjörn Källström",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22085",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 28060,
             "Categories": null
         },
         {
@@ -282,7 +315,7 @@
             "OctgnGuid": "",
             "RingsDbCardId": "22087",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 14642,
+            "RingsDbVotes": 24840,
             "Categories": null
         },
         {
@@ -317,7 +350,7 @@
             "OctgnGuid": "",
             "RingsDbCardId": "22090",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 11970,
+            "RingsDbVotes": 22200,
             "Categories": null
         },
         {
@@ -357,40 +390,7 @@
             "OctgnGuid": "",
             "RingsDbCardId": "22082",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 7425,
-            "Categories": null
-        },
-        {
-            "Title": "Council of the Wise",
-            "Slug": "Council-of-the-Wise-UtAM",
-            "IsUnique": false,
-            "CardType": "Contract",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Under-the-Ash-Mountains/Council-of-the-Wise.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "You cannot include more than 1 copy of a card, by title, in your deck.",
-                    "Response: After you play an event from your hand, choose one: reduce your threat by 1, draw 1 card, or add 1 resource to your hero`s resource pool. You can only choose each option once per round."
-                ],
-                "Shadow": null,
-                "FlavorText": "`I must go to this lords` council and learn what I can.`\r\n-Gandalf, The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "Under the Ash Mountains",
-            "EncounterInfo": null,
-            "Number": 91,
-            "Quantity": 1,
-            "Artist": "Aleksander Karcz",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "22091",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 1630,
+            "RingsDbVotes": 15813,
             "Categories": null
         },
         {
@@ -431,7 +431,7 @@
             "OctgnGuid": "",
             "RingsDbCardId": "22081",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 705,
+            "RingsDbVotes": 1139,
             "Categories": null
         }
     ]

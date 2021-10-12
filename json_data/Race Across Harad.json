@@ -7,83 +7,6 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Thurindir",
-            "Slug": "Thurindir-RaH",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Thurindir.jpg",
-                "Stats": {
-                    "ThreatCost": "8",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "0",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Dúnedain.",
-                    "Ranger."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Thurindir gets +1 Willpower for each side quest in the victory display.",
-                    "Setup: Search your deck for a side quest and add it to your hand. Shuffle your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "`He is one of the wandering folk - Rangers we call them.`\r\n-Barliman Butterbur, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Race Across Harad",
-            "EncounterInfo": null,
-            "Number": 28,
-            "Quantity": 1,
-            "Artist": "Álvaro Calvo Escudero",
-            "HasErrata": false,
-            "OctgnGuid": "12946b30-a231-4074-a524-960365081360",
-            "RingsDbCardId": "17028",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 10334,
-            "Categories": null
-        },
-        {
-            "Title": "Proud Hunters",
-            "Slug": "Proud-Hunters-RaH",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Proud-Hunters.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Play only if you control a unique character with the Noble trait and another unique character with the Ranger trait.",
-                    "Response: After a hero you control participates in an attack that destroys an enemy, add X resources to that hero’s pool. X is the just destroyed enemy’s printed Threat."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Race Across Harad",
-            "EncounterInfo": null,
-            "Number": 32,
-            "Quantity": 3,
-            "Artist": "Rafał Hrynkiewicz",
-            "HasErrata": false,
-            "OctgnGuid": "953f3b7f-f4ca-4f6f-92d5-8d4b465231df",
-            "RingsDbCardId": "17032",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 115832,
-            "Categories": null
-        },
-        {
             "Title": "Steed of the North",
             "Slug": "Steed-of-the-North-RaH",
             "IsUnique": false,
@@ -118,8 +41,43 @@
             "HasErrata": false,
             "OctgnGuid": "e7df2c09-6d38-4f92-9279-eba5f41370cd",
             "RingsDbCardId": "17030",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 132205,
+            "Categories": null
+        },
+        {
+            "Title": "Proud Hunters",
+            "Slug": "Proud-Hunters-RaH",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Proud-Hunters.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control a unique character with the Noble trait and another unique character with the Ranger trait.",
+                    "Response: After a hero you control participates in an attack that destroys an enemy, add X resources to that hero’s pool. X is the just destroyed enemy’s printed Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": null,
+            "Number": 32,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "OctgnGuid": "953f3b7f-f4ca-4f6f-92d5-8d4b465231df",
+            "RingsDbCardId": "17032",
             "RingsDbPopularity": 5,
-            "RingsDbVotes": 113286,
+            "RingsDbVotes": 124972,
             "Categories": null
         },
         {
@@ -160,7 +118,7 @@
             "OctgnGuid": "7114f4a4-aed2-4b6e-87bc-c0e564e55d67",
             "RingsDbCardId": "17033",
             "RingsDbPopularity": 5,
-            "RingsDbVotes": 97322,
+            "RingsDbVotes": 105774,
             "Categories": null
         },
         {
@@ -199,8 +157,50 @@
             "HasErrata": false,
             "OctgnGuid": "32ab123f-b12f-4f9d-a6e5-556f54eb6c06",
             "RingsDbCardId": "17037",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 81213,
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 91197,
+            "Categories": null
+        },
+        {
+            "Title": "Thurindir",
+            "Slug": "Thurindir-RaH",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Thurindir.jpg",
+                "Stats": {
+                    "ThreatCost": "8",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Thurindir gets +1 Willpower for each side quest in the victory display.",
+                    "Setup: Search your deck for a side quest and add it to your hand. Shuffle your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`He is one of the wandering folk - Rangers we call them.`\r\n-Barliman Butterbur, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": null,
+            "Number": 28,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "OctgnGuid": "12946b30-a231-4074-a524-960365081360",
+            "RingsDbCardId": "17028",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 11646,
             "Categories": null
         },
         {
@@ -240,7 +240,7 @@
             "OctgnGuid": "129f6237-c00c-41a2-af6e-98a6f966aad1",
             "RingsDbCardId": "17029",
             "RingsDbPopularity": 3,
-            "RingsDbVotes": 46343,
+            "RingsDbVotes": 55529,
             "Categories": null
         },
         {
@@ -279,8 +279,8 @@
             "HasErrata": false,
             "OctgnGuid": "1e88c101-4e02-4f9a-8447-15a6f2a4e566",
             "RingsDbCardId": "17035",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 41348,
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 48885,
             "Categories": null
         },
         {
@@ -317,7 +317,42 @@
             "OctgnGuid": "d7e2e209-7730-48fe-87c7-e226143e462b",
             "RingsDbCardId": "17036",
             "RingsDbPopularity": 2,
-            "RingsDbVotes": 31651,
+            "RingsDbVotes": 36202,
+            "Categories": null
+        },
+        {
+            "Title": "Backtrack",
+            "Slug": "Backtrack-RaH",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Backtrack.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Play only if the main quest has no keywords.",
+                    "Action: Remove X progress from the main quest to place X progress on a location in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Well,` said Boromir, `when heads are at a loss bodies must serve...`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Race Across Harad",
+            "EncounterInfo": null,
+            "Number": 34,
+            "Quantity": 3,
+            "Artist": "John Pacer",
+            "HasErrata": false,
+            "OctgnGuid": "7b60b869-4232-40cf-bbc5-6856edeef419",
+            "RingsDbCardId": "17034",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 19828,
             "Categories": null
         },
         {
@@ -355,42 +390,7 @@
             "OctgnGuid": "775422b6-68bd-4ae3-8229-ce65e38465a9",
             "RingsDbCardId": "17031",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 17531,
-            "Categories": null
-        },
-        {
-            "Title": "Backtrack",
-            "Slug": "Backtrack-RaH",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Race-Across-Harad/Backtrack.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Play only if the main quest has no keywords.",
-                    "Action: Remove X progress from the main quest to place X progress on a location in the staging area."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Well,` said Boromir, `when heads are at a loss bodies must serve...`\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Race Across Harad",
-            "EncounterInfo": null,
-            "Number": 34,
-            "Quantity": 3,
-            "Artist": "John Pacer",
-            "HasErrata": false,
-            "OctgnGuid": "7b60b869-4232-40cf-bbc5-6856edeef419",
-            "RingsDbCardId": "17034",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 17159,
+            "RingsDbVotes": 19516,
             "Categories": null
         }
     ]

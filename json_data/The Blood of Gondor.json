@@ -42,8 +42,8 @@
             "HasErrata": false,
             "OctgnGuid": "d4f034b0-2444-4b61-a249-8d86e8856f7c",
             "RingsDbCardId": "06108",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 216773,
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 241252,
             "Categories": null
         },
         {
@@ -84,7 +84,45 @@
             "OctgnGuid": "ef8aec20-e0c9-4d02-9dea-20b6e7c2278b",
             "RingsDbCardId": "06114",
             "RingsDbPopularity": 6,
-            "RingsDbVotes": 158050,
+            "RingsDbVotes": 179482,
+            "Categories": null
+        },
+        {
+            "Title": "Poisoned Stakes",
+            "Slug": "Poisoned-Stakes-TBoG",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor/Poisoned-Stakes.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Trap."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play Poisoned Stakes into the staging area unattached.",
+                    "If unattached, attach Poisoned Stakes to the next eligble enemy that enters the staging area.",
+                    "At the end of each round, deal 2 damage to attached enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Blood of Gondor",
+            "EncounterInfo": null,
+            "Number": 115,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "OctgnGuid": "30e0c679-3ced-4862-a681-b67ceb8939d3",
+            "RingsDbCardId": "06115",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 168712,
             "Categories": null
         },
         {
@@ -125,45 +163,41 @@
             "OctgnGuid": "06baca74-330a-4038-9387-32ce8657dd8f",
             "RingsDbCardId": "06110",
             "RingsDbPopularity": 6,
-            "RingsDbVotes": 148021,
+            "RingsDbVotes": 163363,
             "Categories": null
         },
         {
-            "Title": "Poisoned Stakes",
-            "Slug": "Poisoned-Stakes-TBoG",
+            "Title": "Well-Equipped",
+            "Slug": "Well-Equipped-TBoG",
             "IsUnique": false,
-            "CardType": "Attachment",
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Lore",
+            "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor/Poisoned-Stakes.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor/Well-Equipped.jpg",
                 "Stats": {
-                    "ResourceCost": "2"
+                    "ResourceCost": "0"
                 },
-                "Traits": [
-                    "Trap."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Play Poisoned Stakes into the staging area unattached.",
-                    "If unattached, attach Poisoned Stakes to the next eligble enemy that enters the staging area.",
-                    "At the end of each round, deal 2 damage to attached enemy."
+                    "Action: Discard the top 2 cards of your deck. You may attach 1 attachment card discarded by this effect to an eligible Dwarf character in play."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "Gimli the Dwarf alone wore openly a short shirt of steel-rings, for dwarves make light of burdens...\r\n-The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Blood of Gondor",
             "EncounterInfo": null,
-            "Number": 115,
+            "Number": 116,
             "Quantity": 3,
-            "Artist": "Sara Biddle",
+            "Artist": "Blake Henriksen",
             "HasErrata": false,
-            "OctgnGuid": "30e0c679-3ced-4862-a681-b67ceb8939d3",
-            "RingsDbCardId": "06115",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 144762,
+            "OctgnGuid": "0f027b32-f63f-4d37-8305-5ba2b059289d",
+            "RingsDbCardId": "06116",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 110613,
             "Categories": null
         },
         {
@@ -203,7 +237,7 @@
             "OctgnGuid": "314eaf40-1554-4c1a-b643-1f4353e25633",
             "RingsDbCardId": "06112",
             "RingsDbPopularity": 5,
-            "RingsDbVotes": 101634,
+            "RingsDbVotes": 108910,
             "Categories": null
         },
         {
@@ -240,41 +274,75 @@
             "OctgnGuid": "e88d7165-821c-4b04-9869-80ee1f33905c",
             "RingsDbCardId": "06109",
             "RingsDbPopularity": 5,
-            "RingsDbVotes": 99994,
+            "RingsDbVotes": 106621,
             "Categories": null
         },
         {
-            "Title": "Well-Equipped",
-            "Slug": "Well-Equipped-TBoG",
+            "Title": "The Hammer-stroke",
+            "Slug": "The-Hammer-stroke-TBoG",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor/Well-Equipped.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor/The-Hammer-stroke.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Encounter Action: Engage each enemy in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "..we have this honour: ever we bear the brunt of the chief hatred of the Dark Lord, for that hatred comes down out of the of the depths of time and over the deeps of the Sea.\r\n-Denethor, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Blood of Gondor",
+            "EncounterInfo": null,
+            "Number": 111,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "cc2f73af-86c8-4d81-b706-14127adc0b37",
+            "RingsDbCardId": "06111",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 41614,
+            "Categories": null
+        },
+        {
+            "Title": "Children of the Sea",
+            "Slug": "Children-of-the-Sea-TBoG",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor/Children-of-the-Sea.jpg",
                 "Stats": {
                     "ResourceCost": "0"
                 },
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Action: Discard the top 2 cards of your deck. You may attach 1 attachment card discarded by this effect to an eligible Dwarf character in play."
+                    "Action: Choose a Silvan or Noldor ally you control. That ally gets +2 Willpower until the end of the phase. At the end of the phase, shuffle that ally into its owner`s deck if it is still in play."
                 ],
                 "Shadow": null,
-                "FlavorText": "Gimli the Dwarf alone wore openly a short shirt of steel-rings, for dwarves make light of burdens...\r\n-The Fellowship of the Ring"
+                "FlavorText": "`For deep in the hears of all my kindred lies the sea-longing, which it is perilous to stir`\r\n-Legolas, The Return of the King"
             },
             "Back": null,
             "CardSet": "The Blood of Gondor",
             "EncounterInfo": null,
-            "Number": 116,
+            "Number": 113,
             "Quantity": 3,
-            "Artist": "Blake Henriksen",
+            "Artist": "Mark Winters",
             "HasErrata": false,
-            "OctgnGuid": "0f027b32-f63f-4d37-8305-5ba2b059289d",
-            "RingsDbCardId": "06116",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 94847,
+            "OctgnGuid": "65d3b334-df93-43c6-9525-12674bbb7f06",
+            "RingsDbCardId": "06113",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 33541,
             "Categories": null
         },
         {
@@ -313,76 +381,8 @@
             "HasErrata": true,
             "OctgnGuid": "60725069-031c-4251-9b2c-3f368545e9ac",
             "RingsDbCardId": "06107",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 5554,
-            "Categories": null
-        },
-        {
-            "Title": "The Hammer-stroke",
-            "Slug": "The-Hammer-stroke-TBoG",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor/The-Hammer-stroke.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Encounter Action: Engage each enemy in play."
-                ],
-                "Shadow": null,
-                "FlavorText": "..we have this honour: ever we bear the brunt of the chief hatred of the Dark Lord, for that hatred comes down out of the of the depths of time and over the deeps of the Sea.\r\n-Denethor, The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Blood of Gondor",
-            "EncounterInfo": null,
-            "Number": 111,
-            "Quantity": 3,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "cc2f73af-86c8-4d81-b706-14127adc0b37",
-            "RingsDbCardId": "06111",
             "RingsDbPopularity": 2,
-            "RingsDbVotes": 38154,
-            "Categories": null
-        },
-        {
-            "Title": "Children of the Sea",
-            "Slug": "Children-of-the-Sea-TBoG",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Blood-of-Gondor/Children-of-the-Sea.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Choose a Silvan or Noldor ally you control. That ally gets +2 Willpower until the end of the phase. At the end of the phase, shuffle that ally into its owner`s deck if it is still in play."
-                ],
-                "Shadow": null,
-                "FlavorText": "`For deep in the hears of all my kindred lies the sea-longing, which it is perilous to stir`\r\n-Legolas, The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Blood of Gondor",
-            "EncounterInfo": null,
-            "Number": 113,
-            "Quantity": 3,
-            "Artist": "Mark Winters",
-            "HasErrata": false,
-            "OctgnGuid": "65d3b334-df93-43c6-9525-12674bbb7f06",
-            "RingsDbCardId": "06113",
-            "RingsDbPopularity": 2,
-            "RingsDbVotes": 31645,
+            "RingsDbVotes": 5778,
             "Categories": null
         }
     ]
