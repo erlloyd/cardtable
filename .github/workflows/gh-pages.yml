@@ -38,16 +38,13 @@ jobs:
       - name: Build 🔧
         run: yarn build:prod
 
-      - name: Set current date as env variable
-        run: echo "NOW::$(date +'%Y-%m-%dT%H:%M')" >> $GITHUB_ENV
-
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          find: "_REPLACE_DATE_"
-          replace: $NOW
+          find: "_REPLACE_VERSION_"
+          replace: "$GITHUB_SHA"
           include: "build/**"
-          regex: true
+          regex: false
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
