@@ -54,7 +54,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: "_REPLACE_VERSION_"
-          replace: $GITHUB_RUN_NUMBER
+          replace: ${{ github.run_number }}
           include: "build/**"
           regex: false
 
