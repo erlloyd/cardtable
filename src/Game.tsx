@@ -1964,6 +1964,10 @@ class Game extends Component<IProps, IState> {
           this.props.generateGameStateUrl();
         },
       },
+      {
+        label: `Version built on _REPLACE_DATE_`,
+        action: () => {},
+      },
     ];
 
     this.setState({
