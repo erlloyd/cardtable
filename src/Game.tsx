@@ -1965,7 +1965,7 @@ class Game extends Component<IProps, IState> {
         },
       },
       {
-        label: `Version built on _REPLACE_DATE_`,
+        label: `Version _REPLACE_VERSION_`,
         action: () => {},
       },
     ];
