@@ -11,9 +11,9 @@ import { getGame } from "./features/game/game.selectors";
 import {
   setMenuPreviewCardJsonId,
   clearMenuPreviewCardJsonId,
-  startDraggingCardFromHand,
   stopDraggingCardFromHand,
 } from "./features/game/game.slice";
+import { startDraggingCardFromHand } from "./store/global.actions";
 interface IProps {
   playerNumber: number;
 }

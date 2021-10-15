@@ -10,3 +10,7 @@ export const receiveRemoteGameState = createAction<RootState>(
 export const verifyRemoteGameState = createAction<RootState>(
   "verifyRemoteGameState"
 );
+
+export const startDraggingCardFromHand = createAction(
+  "startDraggingCardFromHand"
+);

@@ -1,7 +1,11 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/lib/types";
 import { GameType, PlayerColor } from "../../constants/app-constants";
-import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
+import {
+  receiveRemoteGameState,
+  resetApp,
+  startDraggingCardFromHand,
+} from "../../store/global.actions";
 import { IGameState, initialState } from "./initialState";
 
 // Reducers
@@ -102,10 +106,6 @@ const hideSpecificCardLoaderReducer: CaseReducer<IGameState> = (state) => {
   state.specificCardLoaderPosition = null;
 };
 
-const startDraggingCardFromHandReducer: CaseReducer<IGameState> = (state) => {
-  state.draggingCardFromHand = true;
-};
-
 const stopDraggingCardFromHandReducer: CaseReducer<IGameState> = (state) => {
   state.draggingCardFromHand = false;
 };
@@ -135,7 +135,6 @@ const gameSlice = createSlice({
     hideRadialMenu: hideRadialMenuReducer,
     showSpecificCardLoader: showSpecificCardLoaderReducer,
     hideSpecificCardLoader: hideSpecificCardLoaderReducer,
-    startDraggingCardFromHand: startDraggingCardFromHandReducer,
     stopDraggingCardFromHand: stopDraggingCardFromHandReducer,
     toggleDrawCardsIntoHand: toggleDrawCardsIntoHandReducer,
   },
@@ -143,10 +142,13 @@ const gameSlice = createSlice({
     builder.addCase(receiveRemoteGameState, (state, action) => {
       state.activeGameType = action.payload.game.activeGameType;
     });
-    builder.addCase(resetApp, (state, action) => {
+    builder.addCase(resetApp, (state, _action) => {
       state.stagePosition = { x: 0, y: 0 };
       state.stageZoom = { x: 0.5, y: 0.5 };
       state.previewCard = null;
+    });
+    builder.addCase(startDraggingCardFromHand, (state, _action) => {
+      state.draggingCardFromHand = true;
     });
   },
 });
@@ -168,7 +170,6 @@ export const {
   hideRadialMenu,
   showSpecificCardLoader,
   hideSpecificCardLoader,
-  startDraggingCardFromHand,
   stopDraggingCardFromHand,
   toggleDrawCardsIntoHand,
 } = gameSlice.actions;

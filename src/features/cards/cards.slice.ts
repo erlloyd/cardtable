@@ -16,6 +16,7 @@ import {
 import {
   receiveRemoteGameState,
   resetApp,
+  startDraggingCardFromHand,
   verifyRemoteGameState,
 } from "../../store/global.actions";
 import { getDistance } from "../../utilities/geo";
@@ -896,15 +897,13 @@ const cardsSlice = createSlice({
               newCard.x + (cardConstants.CARD_WIDTH + 5) * (index + 1);
             newCard.y += cardConstants.CARD_HEIGHT;
 
-            if (cardStackToUse.cardStack.length === 0) {
-              // we went through all the cards, remove the original card
-              state.cards = state.cards.filter(
-                (c) => c.id !== sourceCardStackId
-              );
-              cardStackToUse = undefined;
-            }
-
             state.cards.push(newCard);
+          }
+
+          if (cardStackToUse.cardStack.length === 0) {
+            // we went through all the cards, remove the original card
+            state.cards = state.cards.filter((c) => c.id !== sourceCardStackId);
+            cardStackToUse = undefined;
           }
         }
       }
@@ -926,6 +925,11 @@ const cardsSlice = createSlice({
     builder.addCase(fetchDecklistById.fulfilled, (state, action) =>
       handleLoadDeck(state, action)
     );
+
+    builder.addCase(startDraggingCardFromHand, (state, action) => {
+      // Clear all our selected cards
+      unselectAllCardsReducer(state, action as unknown as any);
+    });
   },
 });
 

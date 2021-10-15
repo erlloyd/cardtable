@@ -16,13 +16,13 @@ import {
   setPeerId,
   setPlayerInfo,
   setPreviewCardId,
-  startDraggingCardFromHand,
   stopDraggingCardFromHand,
   updatePosition,
   updateZoom,
 } from "../features/game/game.slice";
 import {
   receiveRemoteGameState,
+  startDraggingCardFromHand,
   verifyRemoteGameState,
 } from "./global.actions";
 import { RootState } from "./rootReducer";
