@@ -527,6 +527,9 @@ class Game extends Component<IProps, IState> {
       >
         <PlayerHandContainer
           playerNumber={this.props.playerNumbers[myPeerRef] ?? 1}
+          droppedBackInHand={() => {
+            this.captureLastMousePos = true;
+          }}
           droppedOnTable={(id: string, pos?: Vector2d) => {
             const myDropTargetCard =
               Object.values(this.props.dropTargetCardsById).filter(

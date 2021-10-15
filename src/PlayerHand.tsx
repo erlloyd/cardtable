@@ -106,6 +106,7 @@ const makeFakeCardStackFromJsonId = (jsonId: string): ICardStack => {
 
 interface IProps {
   droppedOnTable: (id: string, pos?: Vector2d) => void;
+  droppedBackInHand: () => void;
   reorderPlayerHand: (payload: {
     playerNumber: number;
     sourceIndex: number;
@@ -178,6 +179,7 @@ class PlayerHand extends Component<IProps, IState> {
         sourceIndex: result.source.index,
         destinationIndex: result.destination.index,
       });
+      this.props.droppedBackInHand();
     }
 
     this.props.stopDraggingCardFromHand();
