@@ -23,3 +23,7 @@ export const possibleColors: PlayerColor[] = [
   "magenta",
   "yellow",
 ];
+
+export const playerHandHeightPx: number = 70;
+
+export const playerHandElementId: string = "card-table-player-hand-area";

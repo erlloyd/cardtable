@@ -12,6 +12,7 @@ import {
   GameType,
   myPeerRef,
   PlayerColor,
+  playerHandHeightPx,
   possibleColors,
 } from "./constants/app-constants";
 import {
@@ -308,7 +309,6 @@ class Game extends Component<IProps, IState> {
             shuffling={card.shuffling}
             handleDragStart={this.handleCardDragStart}
             handleDragMove={this.props.cardMove}
-            handleDragEnd={this.props.endCardMove}
             handleDoubleClick={this.handleSelectAndExhaust}
             handleDoubleTap={this.showOrToggleModalPreviewCard}
             handleClick={this.handleCardClick(card)}
@@ -385,7 +385,7 @@ class Game extends Component<IProps, IState> {
             shuffling={card.shuffling}
             handleDragStart={this.handleCardDragStart}
             handleDragMove={this.props.cardMove}
-            handleDragEnd={this.props.endCardMove}
+            handleDragEnd={this.handleCardDragEnd}
             imgUrls={getImgUrls(
               card,
               this.props.cardsData,
@@ -1506,6 +1506,28 @@ class Game extends Component<IProps, IState> {
     }
 
     this.props.startCardMove({ id: cardId, splitTopCard });
+  };
+
+  private handleCardDragEnd = (
+    cardId: string,
+    event: KonvaEventObject<DragEvent>
+  ) => {
+    const verticalMax = window.innerHeight;
+    const verticalMin = window.innerHeight - playerHandHeightPx;
+    const max = { x: 0, y: verticalMax };
+    const min = { x: 0, y: verticalMin };
+
+    const translatedMax = this.getRelativePositionFromTarget(this.stage, max);
+    const translatedMin = this.getRelativePositionFromTarget(this.stage, min);
+    this.props.endCardMove(cardId);
+    if (
+      event.target.y() > translatedMin.y &&
+      event.target.y() < translatedMax.y
+    ) {
+      this.props.addToPlayerHand({
+        playerNumber: this.props.gameState.playerNumbers[myPeerRef],
+      });
+    }
   };
 
   private handleKeyPress = (event: React.KeyboardEvent<HTMLElement>) => {

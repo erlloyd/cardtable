@@ -9,7 +9,12 @@ import {
   NotDraggingStyle,
   ResponderProvided,
 } from "react-beautiful-dnd";
-import { GameType, myPeerRef } from "./constants/app-constants";
+import {
+  GameType,
+  myPeerRef,
+  playerHandElementId,
+  playerHandHeightPx,
+} from "./constants/app-constants";
 import { ICardData } from "./features/cards-data/initialState";
 import {
   ICardDetails,
@@ -57,7 +62,7 @@ const getListStyle = (isDraggingOver: boolean) =>
     position: "absolute",
     bottom: "0px",
     width: "100vw",
-    height: "70px",
+    height: `${playerHandHeightPx}px`,
     zIndex: 99,
     boxSizing: "border-box",
   } as React.CSSProperties);
@@ -141,6 +146,8 @@ enum ImageLoadingStatus {
 }
 
 class PlayerHand extends Component<IProps, IState> {
+  private tapped: NodeJS.Timeout | null = null;
+
   constructor(props: IProps) {
     super(props);
     this.state = {
@@ -226,6 +233,7 @@ class PlayerHand extends Component<IProps, IState> {
           <Droppable droppableId="droppable" direction="horizontal">
             {(provided, snapshot) => (
               <div
+                id={playerHandElementId}
                 onClick={this.props.clearPreviewCardJsonId}
                 ref={provided.innerRef}
                 style={getListStyle(snapshot.isDraggingOver)}
@@ -261,8 +269,19 @@ class PlayerHand extends Component<IProps, IState> {
                             (event.nativeEvent as PointerEvent).pointerType ===
                             "touch"
                           ) {
-                            this.setState({ modal: true });
-                            this.props.setPreviewCardJsonId(card.jsonId);
+                            if (!this.tapped) {
+                              //if tap is not set, set up single tap
+                              this.tapped = setTimeout(() => {
+                                this.tapped = null;
+                              }, 200); //wait 200ms then run single click code
+                            } else {
+                              //tapped within 200ms of last tap. double tap
+                              clearTimeout(this.tapped); //stop single tap callback
+                              this.tapped = null;
+                              this.setState({ modal: true });
+                              this.props.setPreviewCardJsonId(card.jsonId);
+                            }
+                            event.preventDefault();
                             event.stopPropagation();
                           }
                         }}

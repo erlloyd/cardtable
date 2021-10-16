@@ -53,7 +53,7 @@ interface IProps {
   handleDoubleTap?: (id: string, event: KonvaEventObject<TouchEvent>) => void;
   handleDragStart?: (id: string, event: KonvaEventObject<DragEvent>) => void;
   handleDragMove?: (info: { id: string; dx: number; dy: number }) => void;
-  handleDragEnd?: (id: string) => void;
+  handleDragEnd?: (id: string, event: KonvaEventObject<DragEvent>) => void;
   handleHover?: (id: string) => void;
   handleHoverLeave?: (id: string) => void;
   id: string;
@@ -645,9 +645,9 @@ class Card extends Component<IProps, IState> {
     }
   };
 
-  private handleDragEnd = () => {
+  private handleDragEnd = (event: KonvaEventObject<DragEvent>) => {
     if (this.props.handleDragEnd && this.props.dragging) {
-      this.props.handleDragEnd(this.props.id);
+      this.props.handleDragEnd(this.props.id, event);
     }
   };
 
