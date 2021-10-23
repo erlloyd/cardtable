@@ -187,7 +187,7 @@ const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
     if (!!activeData) {
       activeData.setData[scenario.Slug] = {
         name: scenario.Title,
-        setTypeCode: scenario.Product,
+        setTypeCode: scenario.Cycle || scenario.Product,
         cardsInSet: [],
       };
     }

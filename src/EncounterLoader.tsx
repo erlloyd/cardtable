@@ -17,6 +17,7 @@ class EncounterLoader extends Component<IProps> {
       <div onClick={this.cancelBubble} onKeyPress={this.cancelBubble}>
         <Autocomplete
           id="encounter-loader-combobox"
+          groupBy={(option) => option.setData.setTypeCode}
           options={this.props.encounterData || []}
           getOptionLabel={(option) => option.setData.name}
           style={{ width: 300 }}

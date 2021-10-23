@@ -89,7 +89,7 @@ export const getCardsDataSetDataAsEncounterEntities = createSelector(
   getCardsDataSetData,
   getCardsDataEncounterEntities,
   (setData, encounterEntities) => {
-    return Object.entries(setData).map(([key, value]) => {
+    const setDataToReturn = Object.entries(setData).map(([key, value]) => {
       const encounterEntity: IEncounterEntity = {
         setCode: key,
         setData: value,
@@ -98,6 +98,21 @@ export const getCardsDataSetDataAsEncounterEntities = createSelector(
 
       return encounterEntity;
     });
+
+    // Go through and get the original index of every "type" of set
+    const originalOrder = setDataToReturn.reduce((orderMap, entity, index) => {
+      if (!orderMap[entity.setData.setTypeCode]) {
+        orderMap[entity.setData.setTypeCode] = index;
+      }
+
+      return orderMap;
+    }, {} as { [key: string]: number });
+
+    return setDataToReturn.sort(
+      (a, b) =>
+        originalOrder[a.setData.setTypeCode] -
+        originalOrder[b.setData.setTypeCode]
+    );
   }
 );
 
@@ -124,7 +139,7 @@ export const getCardsDataEncounterEntitiesBySetCode = createSelector(
         }
       });
 
-    return Object.entries(setTypesEncounters)
+    const setDataToReturn = Object.entries(setTypesEncounters)
       .map(([key, value]) => ({
         setCode: key,
         setData: setData[key],
@@ -134,7 +149,23 @@ export const getCardsDataEncounterEntitiesBySetCode = createSelector(
         (set) =>
           set.setData.setTypeCode !== "nemesis" &&
           set.setData.setTypeCode !== "hero"
-      )
-      .sort((a, b) => (a.setData.name > b.setData.name ? 1 : -1));
+      );
+
+    // Go through and get the original index of every "type" of set
+    const originalOrder = setDataToReturn.reduce((orderMap, entity, index) => {
+      if (orderMap[entity.setData.setTypeCode] === undefined) {
+        orderMap[entity.setData.setTypeCode] = index;
+      }
+
+      return orderMap;
+    }, {} as { [key: string]: number });
+
+    console.log(originalOrder);
+
+    return setDataToReturn.sort(
+      (a, b) =>
+        originalOrder[a.setData.setTypeCode] -
+        originalOrder[b.setData.setTypeCode]
+    );
   }
 );
