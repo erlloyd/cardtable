@@ -24,9 +24,18 @@
   }
 
   button {
-    margin-bottom: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 0);
+    border: 0;
+    cursor: pointer;
+    padding: 5px;
+    margin-bottom: 10px;
     &.toggle-on {
       background-color: white;
+      color: gray;
     }
     &:not(.toggle-on) {
       color: white;

@@ -1,4 +1,3 @@
-import IconButton from "@material-ui/core/IconButton";
 import * as React from "react";
 import { Component } from "react";
 import "./OptionsMenu.scss";
@@ -49,35 +48,35 @@ class OptionsMenu extends Component<IProps> {
   render() {
     return (
       <div className="options-menu">
-        <IconButton
+        <button
           className={"render-touch-only"}
           onClick={() => {
             this.props.showContextMenuAtPosition({ x: 0, y: 0 });
           }}
         >
           <MoreVertIcon fontSize="large" />
-        </IconButton>
+        </button>
         <Tooltip title="Toggle Pan Mode">
-          <IconButton
+          <button
             className={cx({ "toggle-on": this.props.panMode })}
             onClick={() => {
               this.props.togglePanMode();
             }}
           >
             <OpenWithIcon fontSize="large" />
-          </IconButton>
+          </button>
         </Tooltip>
         <Tooltip title="Toggle Draw Cards into Hand">
-          <IconButton
+          <button
             className={cx({ "toggle-on": this.props.drawCardsIntoHand })}
             onClick={() => {
               this.props.toggleDrawCardsIntoHand();
             }}
           >
             <PanToolIcon fontSize="large" />
-          </IconButton>
+          </button>
         </Tooltip>
-        <IconButton
+        <button
           className={cx("render-touch-only", {
             "toggle-on": this.props.multiselectMode,
           })}
@@ -86,8 +85,8 @@ class OptionsMenu extends Component<IProps> {
           }}
         >
           <SelectAllIcon fontSize="large" />
-        </IconButton>
-        <IconButton
+        </button>
+        <button
           className={"render-touch-only"}
           onClick={() => {
             if (this.props.anyCardsSelected) {
@@ -99,9 +98,9 @@ class OptionsMenu extends Component<IProps> {
           }}
         >
           <InfoIcon fontSize="large" />
-        </IconButton>
+        </button>
         <Tooltip title="Undo">
-          <IconButton
+          <button
             onClick={() => {
               if (this.props.undo) {
                 this.props.undo();
@@ -109,10 +108,10 @@ class OptionsMenu extends Component<IProps> {
             }}
           >
             <UndoIcon fontSize="large" />
-          </IconButton>
+          </button>
         </Tooltip>
         <Tooltip title="Redo">
-          <IconButton
+          <button
             onClick={() => {
               if (this.props.redo) {
                 this.props.redo();
@@ -120,7 +119,7 @@ class OptionsMenu extends Component<IProps> {
             }}
           >
             <RedoIcon fontSize="large" />
-          </IconButton>
+          </button>
         </Tooltip>
       </div>
     );
