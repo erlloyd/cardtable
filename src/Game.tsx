@@ -150,6 +150,8 @@ interface IProps {
   }) => void;
   clearAllModifiers: (payload: { id?: string }) => void;
   addToPlayerHand: (payload: { playerNumber: number }) => void;
+  addExtraIcon: (icon: string) => void;
+  removeExtraIcon: (icon: string) => void;
 }
 
 interface IState {
@@ -1269,6 +1271,9 @@ class Game extends Component<IProps, IState> {
     const modifiersForGameType =
       GamePropertiesMap[this.props.currentGameType].modifiers;
 
+    const extraIconsForGameType =
+      GamePropertiesMap[this.props.currentGameType].possibleIcons;
+
     if (modifiersForGameType.length > 0) {
       menuItems.push({
         label: "Modifiers",
@@ -1370,6 +1375,30 @@ class Game extends Component<IProps, IState> {
               ],
             } as ContextMenuItem;
           })
+          .concat(
+            extraIconsForGameType.length > 0
+              ? [
+                  {
+                    label: "Add Icon",
+                    children: extraIconsForGameType.map((icon) => ({
+                      label: icon.iconName,
+                      action: () => {
+                        this.props.addExtraIcon(icon.iconId);
+                      },
+                    })),
+                  },
+                  {
+                    label: "Remove Icon",
+                    children: extraIconsForGameType.map((icon) => ({
+                      label: icon.iconName,
+                      action: () => {
+                        this.props.removeExtraIcon(icon.iconId);
+                      },
+                    })),
+                  },
+                ]
+              : []
+          )
           .concat([
             {
               label: "Clear all modifiers",

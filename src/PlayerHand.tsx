@@ -106,6 +106,7 @@ const makeFakeCardStackFromJsonId = (jsonId: string): ICardStack => {
       generic: 0,
     },
     modifiers: {},
+    extraIcons: [],
   };
 };
 

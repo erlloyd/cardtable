@@ -10,6 +10,7 @@ import {
   clearCardTokens,
   adjustModifier,
   addToPlayerHand,
+  toggleExtraIcon,
 } from "./features/cards/cards.slice";
 import {
   shuffleStack,
@@ -45,6 +46,7 @@ const RadialMenuContainer = connect(mapStateToProps, {
   drawCardsOutOfCardStack,
   adjustModifier,
   addToPlayerHand,
+  toggleExtraIcon,
 })(usePlanetMenu ? PlanetMenu : RadialMenu);
 
 export default RadialMenuContainer;

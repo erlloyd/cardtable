@@ -30,6 +30,7 @@ export interface ICardStack {
   modifiers: {
     [K: string]: number;
   };
+  extraIcons: string[];
 }
 
 export interface ICardDetails {
@@ -71,6 +72,11 @@ if (!!localStorageState.cards) {
     // handle missing modifiers
     if (!c.modifiers) {
       c.modifiers = {};
+    }
+
+    // handle missing possibleIcons
+    if (!c.extraIcons) {
+      c.extraIcons = [];
     }
   });
 }

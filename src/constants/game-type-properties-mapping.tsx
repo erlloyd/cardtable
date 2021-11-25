@@ -10,6 +10,7 @@ export interface GameProperties {
   decklistApi: string;
   encounterUiName: string;
   backgroundImageLocation: string;
+  possibleIcons: IconInfo[];
   modifiers: ModifierInfo[];
   tokens: {
     stunned: TokenInfo | null;
@@ -44,6 +45,12 @@ export interface ModifierInfo {
   slot: number;
 }
 
+export interface IconInfo {
+  iconId: string;
+  iconName: string;
+  iconImageUrl: string;
+}
+
 export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
   marvelchampions: {
     deckSite: "marvelcdb.com",
@@ -51,6 +58,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
     encounterUiName: "Encounter Set",
     backgroundImageLocation:
       process.env.PUBLIC_URL + "/images/table/background_marvelchampions.png",
+    possibleIcons: [],
     modifiers: [],
     tokens: {
       stunned: {
@@ -110,6 +118,31 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
     encounterUiName: "Scenario",
     backgroundImageLocation:
       process.env.PUBLIC_URL + "/images/table/background_lotrlcg.jpg",
+    possibleIcons: [
+      {
+        iconId: "tactics",
+        iconName: "Tactics",
+        iconImageUrl:
+          process.env.PUBLIC_URL + "/images/standard/lotr/tactics.png",
+      },
+      {
+        iconId: "leadership",
+        iconName: "Leadership",
+        iconImageUrl:
+          process.env.PUBLIC_URL + "/images/standard/lotr/leadership.png",
+      },
+      {
+        iconId: "spirit",
+        iconName: "Spirit",
+        iconImageUrl:
+          process.env.PUBLIC_URL + "/images/standard/lotr/spirit.png",
+      },
+      {
+        iconId: "lore",
+        iconName: "Lore",
+        iconImageUrl: process.env.PUBLIC_URL + "/images/standard/lotr/lore.png",
+      },
+    ],
     modifiers: [
       {
         attributeId: "threat",

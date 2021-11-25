@@ -209,6 +209,7 @@ const clearCardTokensReducer: CaseReducer<
       };
 
       card.modifiers = {};
+      card.extraIcons = [];
     });
 };
 
@@ -556,6 +557,7 @@ const clearAllModifiersReducer: CaseReducer<
 
   cardsToToggle.forEach((c) => {
     c.modifiers = {};
+    c.extraIcons = [];
   });
 };
 
@@ -640,6 +642,41 @@ const addToExistingCardStackReducer: CaseReducer<
 
   state.dropTargetCards[(action as any).ACTOR_REF] = null;
 };
+
+const addExtraIconReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
+  state,
+  action
+) => {
+  foreachSelectedAndControlledCard(state, (action as any).ACTOR_REF, (card) => {
+    if (!card.extraIcons.includes(action.payload)) {
+      card.extraIcons.push(action.payload);
+    }
+  });
+};
+
+const removeExtraIconReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<string>
+> = (state, action) => {
+  foreachSelectedAndControlledCard(state, (action as any).ACTOR_REF, (card) => {
+    if (card.extraIcons.includes(action.payload)) {
+      card.extraIcons.splice(card.extraIcons.indexOf(action.payload), 1);
+    }
+  });
+};
+
+const toggleExtraIconReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<string>
+> = (state, action) => {
+  foreachSelectedAndControlledCard(state, (action as any).ACTOR_REF, (card) => {
+    if (card.extraIcons.includes(action.payload)) {
+      card.extraIcons.splice(card.extraIcons.indexOf(action.payload), 1);
+    } else {
+      card.extraIcons.push(action.payload);
+    }
+  });
+};
 // Selectors
 
 // slice
@@ -670,6 +707,9 @@ const cardsSlice = createSlice({
     removeFromPlayerHand: removeFromPlayerHandReducer,
     addToPlayerHand: addToPlayerHandReducer,
     addToExistingCardStack: addToExistingCardStackReducer,
+    addExtraIcon: addExtraIconReducer,
+    removeExtraIcon: removeExtraIconReducer,
+    toggleExtraIcon: toggleExtraIconReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -747,6 +787,7 @@ const cardsSlice = createSlice({
           generic: 0,
         },
         modifiers: {},
+        extraIcons: [],
       };
 
       state.cards.push(newStack);
@@ -973,6 +1014,7 @@ const handleLoadDeck = (
       generic: 0,
     },
     modifiers: {},
+    extraIcons: [],
   };
 
   let mainDeckStack: ICardDetails[] = [];
@@ -1008,6 +1050,7 @@ const handleLoadDeck = (
       generic: 0,
     },
     modifiers: {},
+    extraIcons: [],
   };
 
   const encounterDeck: ICardStack = {
@@ -1035,6 +1078,7 @@ const handleLoadDeck = (
       generic: 0,
     },
     modifiers: {},
+    extraIcons: [],
   };
 
   const obligationDeck: ICardStack = {
@@ -1062,6 +1106,7 @@ const handleLoadDeck = (
       generic: 0,
     },
     modifiers: {},
+    extraIcons: [],
   };
 
   if (heroCard.cardStack.length > 0) {
@@ -1105,6 +1150,9 @@ export const {
   removeFromPlayerHand,
   addToPlayerHand,
   addToExistingCardStack,
+  addExtraIcon,
+  removeExtraIcon,
+  toggleExtraIcon,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

@@ -28,6 +28,8 @@ import {
   clearAllModifiers,
   addToPlayerHand,
   addToExistingCardStack,
+  addExtraIcon,
+  removeExtraIcon,
 } from "./features/cards/cards.slice";
 import {
   addCardStack,
@@ -138,6 +140,8 @@ const GameContainer = connect(mapStateToProps, {
   clearAllModifiers,
   addToPlayerHand,
   addToExistingCardStack,
+  addExtraIcon,
+  removeExtraIcon,
 })(Game);
 
 export default GameContainer;

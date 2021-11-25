@@ -23,6 +23,7 @@ enum MenuType {
   DrawActions = "drawactions",
   DrawNumber = "drawnumber",
   ModifierNumber = "modifiernumber",
+  ModifierExtraIcons = "modifierextraicons",
 }
 
 enum DrawMode {
@@ -62,6 +63,7 @@ interface IProps {
   }) => void;
   addToPlayerHand: (payload: { playerNumber: number }) => void;
   drawCardsIntoHand: boolean;
+  toggleExtraIcon: (icon: string) => void;
 }
 const RadialMenu = (props: IProps) => {
   const [visibleMenu, setVisibleMenu] = useState(MenuType.TopLevelActions);
@@ -141,6 +143,10 @@ const renderMenuSlices = (
       break;
     case MenuType.ModifierNumber:
       slices = renderModifierNumberMenu(props, currentModifier);
+      backMenu = MenuType.ModifierActions;
+      break;
+    case MenuType.ModifierExtraIcons:
+      slices = renderModifierExtraIconsMenu(props);
       backMenu = MenuType.ModifierActions;
       break;
     case MenuType.TopLevelActions:
@@ -502,19 +508,37 @@ const renderModifierMenu = (
   setCurrentModifier: (mod: string) => void
 ) => {
   if (!props.currentGameType) return null;
-  return GamePropertiesMap[props.currentGameType].modifiers.map((m) => {
-    return (
-      <Slice
-        key={"modifier-slice"}
-        onSelect={() => {
-          setCurrentModifier(m.attributeId);
-          setVisibleMenu(MenuType.ModifierNumber);
-        }}
-      >
-        {m.attributeName}
-      </Slice>
+
+  const possibleIcons = GamePropertiesMap[props.currentGameType].possibleIcons;
+
+  return GamePropertiesMap[props.currentGameType].modifiers
+    .map((m) => {
+      return (
+        <Slice
+          key={"modifier-slice"}
+          onSelect={() => {
+            setCurrentModifier(m.attributeId);
+            setVisibleMenu(MenuType.ModifierNumber);
+          }}
+        >
+          {m.attributeName}
+        </Slice>
+      );
+    })
+    .concat(
+      possibleIcons.length > 0
+        ? [
+            <Slice
+              key={"extra-icons-slice"}
+              onSelect={() => {
+                setVisibleMenu(MenuType.ModifierExtraIcons);
+              }}
+            >
+              Extra Icons
+            </Slice>,
+          ]
+        : []
     );
-  });
 };
 
 const renderModifierNumberMenu = (props: IProps, currentModifier: string) => {
@@ -579,6 +603,24 @@ const renderModifierNumberMenu = (props: IProps, currentModifier: string) => {
     );
 
   return allNums;
+};
+
+const renderModifierExtraIconsMenu = (props: IProps) => {
+  if (!props.currentGameType) return null;
+
+  const allIcons = GamePropertiesMap[props.currentGameType].possibleIcons.map(
+    (icon) => (
+      <Slice
+        key={`modifier-extra-icon-${icon.iconId}`}
+        onSelect={() => {
+          props.toggleExtraIcon(icon.iconId);
+        }}
+      >
+        {icon.iconName}
+      </Slice>
+    )
+  );
+  return allIcons;
 };
 
 export default RadialMenu;

@@ -42,6 +42,9 @@ class CardModifiers extends Component<IProps, IState> {
     const modifiersInfo =
       GamePropertiesMap[this.props.currentGameType].modifiers;
 
+    const additionalIcons =
+      GamePropertiesMap[this.props.currentGameType].possibleIcons;
+
     const newImagesLoaded: {
       [K: string]: boolean;
     } = {};
@@ -49,6 +52,11 @@ class CardModifiers extends Component<IProps, IState> {
     modifiersInfo.forEach((m) => {
       this.imgs[m.attributeId] = new Image();
       newImagesLoaded[m.attributeId] = false;
+    });
+
+    additionalIcons.forEach((a) => {
+      this.imgs[a.iconId] = new Image();
+      newImagesLoaded[a.iconId] = false;
     });
 
     this.state = {
@@ -68,10 +76,28 @@ class CardModifiers extends Component<IProps, IState> {
       };
     });
 
+    additionalIcons.forEach((a) => {
+      this.imgs[a.iconId].onload = () => {
+        if (!this.unmounted) {
+          const updatedImagesLoaded = cloneDeep(this.state.imagesLoaded);
+          updatedImagesLoaded[a.iconId] = true;
+          this.setState({
+            imagesLoaded: updatedImagesLoaded,
+          });
+        }
+      };
+    });
+
     // set up the img src values
     modifiersInfo.forEach((m) => {
       if (!!this.props.card?.modifiers[m.attributeId]) {
         this.imgs[m.attributeId].src = m.icon;
+      }
+    });
+
+    additionalIcons.forEach((a) => {
+      if (!!this.props.card?.extraIcons.includes(a.iconId)) {
+        this.imgs[a.iconId].src = a.iconImageUrl;
       }
     });
   }
@@ -79,6 +105,9 @@ class CardModifiers extends Component<IProps, IState> {
   public componentDidUpdate(prevProps: IProps, prevState: IState) {
     const modifiersInfo =
       GamePropertiesMap[this.props.currentGameType].modifiers;
+
+    const additionalIcons =
+      GamePropertiesMap[this.props.currentGameType].possibleIcons;
 
     // handle change
     modifiersInfo.forEach((m) => {
@@ -88,6 +117,16 @@ class CardModifiers extends Component<IProps, IState> {
         !!this.props.card?.modifiers[m.attributeId]
       ) {
         this.imgs[m.attributeId].src = m.icon;
+      }
+    });
+
+    additionalIcons.forEach((a) => {
+      if (
+        !this.state.imagesLoaded[a.iconId] &&
+        !prevProps.card?.extraIcons.includes(a.iconId) &&
+        !!this.props.card?.extraIcons.includes(a.iconId)
+      ) {
+        this.imgs[a.iconId].src = a.iconImageUrl;
       }
     });
   }
@@ -106,6 +145,9 @@ class CardModifiers extends Component<IProps, IState> {
 
     const modifiersInfo =
       GamePropertiesMap[this.props.currentGameType].modifiers;
+
+    const additionalIcons =
+      GamePropertiesMap[this.props.currentGameType].possibleIcons;
 
     const nodesToRender: JSX.Element[] = [];
 
@@ -174,6 +216,43 @@ class CardModifiers extends Component<IProps, IState> {
       }
       if (!!modifierText) {
         nodesToRender.push(modifierText);
+      }
+    });
+
+    additionalIcons.forEach((a, index) => {
+      const iconX = this.props.isPreview
+        ? this.props.x - (this.props.cardWidth || 0) / 2 + desiredWidth
+        : this.props.x - cardConstants.CARD_WIDTH / 2 - desiredWidth / 2;
+
+      const iconY =
+        this.props.y -
+        cardConstants.CARD_HEIGHT / 2 +
+        10 * index +
+        desiredHeight * index;
+
+      const img = this.imgs[a.iconId];
+
+      const showIcon =
+        this.state.imagesLoaded[a.iconId] &&
+        !!this.props.card?.extraIcons.includes(a.iconId);
+
+      const icon = showIcon ? (
+        <Rect
+          key={`${this.props.card?.id}-${a.iconId}-icon`}
+          x={iconX}
+          y={iconY}
+          scale={{
+            x: desiredWidth / img.naturalWidth,
+            y: desiredHeight / img.naturalHeight,
+          }}
+          width={img.naturalWidth}
+          height={img.naturalHeight}
+          fillPatternImage={img}
+        ></Rect>
+      ) : null;
+
+      if (!!icon) {
+        nodesToRender.push(icon);
       }
     });
 
