@@ -13,6 +13,14 @@ import { CARD_ALREADY_ROTATED_MAP } from "./constants/card-missing-image-map";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import CardModifiersContainer from "./CardModifiersContainer";
 
+// There is a bug somewhere in react-konva or react-spring/konva, where, if you use the generic
+// `animated` WithAnimations type, you get the following typescript error in typescript ~4.5:
+//
+// Type instantiation is excessively deep and possibly infinite
+//
+// We are explicitly casting to an any for now just until this bug is (hopefully) fixed
+const AnimatedAny = animated as any;
+
 export const HORIZONTAL_TYPE_CODES = [
   "main_scheme",
   "side_scheme",
@@ -342,9 +350,9 @@ class Card extends Component<IProps, IState> {
         }}
       >
         {(animatedProps: any) => (
-          <animated.Rect
+          <AnimatedAny.Rect
             {...animatedProps}
-            ref={(node) => {
+            ref={(node: any) => {
               if (!!node) {
                 this.rect = node;
               }
@@ -411,7 +419,7 @@ class Card extends Component<IProps, IState> {
           }}
         >
           {(animatedProps: any) => (
-            <animated.Rect
+            <AnimatedAny.Rect
               {...animatedProps}
               cornerRadius={[9, 9, 9, 9]}
               x={this.props.x}
