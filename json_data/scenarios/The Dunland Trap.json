@@ -5,6 +5,303 @@
     "Number": 1,
     "AllCards": [
         {
+            "Title": "Dunland Tribesman",
+            "Slug": "Dunland-Tribesman-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Dunland-Tribesman.jpg",
+                "Stats": {
+                    "EngagementCost": "37",
+                    "Threat": "0",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player draws a card.",
+                    "Forced: After a player draws any number of cards, Dunland Tribesman gets +1 Threat until the end of the round."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Dunland Warriors",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 46,
+            "Quantity": 2,
+            "Artist": "David Horne",
+            "HasErrata": false,
+            "OctgnGuid": "c749f16f-1b34-48ce-ba8e-45f36b8b8229",
+            "RingsDbCardId": "07046",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Dunland Chieftain",
+            "Slug": "Dunland-Chieftain-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Dunland-Chieftain.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Dunland Chieftain engages a player, discard X cards from the top of the encounter deck where X is the number of cards in the engages player`s hand. Put the topmost Dunland enemy discarded this way into play engaged with that player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Dunland Warriors",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 47,
+            "Quantity": 2,
+            "Artist": "Jim Pavelec",
+            "HasErrata": false,
+            "OctgnGuid": "ceb5ede8-0acc-40b6-ac43-b9f1ff006d9e",
+            "RingsDbCardId": "07047",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Dunland Berserker",
+            "Slug": "Dunland-Berserker-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Dunland-Berserker.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After the engaged player draws any number of cards. Dunland Berserker makes an immediate attack."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Dunland Warriors",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 48,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "OctgnGuid": "def7d5a8-3af5-428d-ac94-485c33388ff9",
+            "RingsDbCardId": "07048",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Wild Men of Dunland",
+            "Slug": "Wild-Men-of-Dunland-VoI",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Wild-Men-of-Dunland.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: Attach to the current quest. (Counts as a Condition attachment with the text: `Forced: After a player draws any number of cards, that player deals 1 damage to a character he controls.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`I looked on the hillmen and they seemed over large for me...` -Gimli, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Dunland Warriors",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 49,
+            "Quantity": 2,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "OctgnGuid": "ef975c81-544a-4f1b-a3c4-d0bc42ef636c",
+            "RingsDbCardId": "07049",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Low on Provisions",
+            "Slug": "Low-on-Provisions-VoI",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Low-on-Provisions.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player must assign X damage among characters he controls, where X is the number of characters he controls."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if the defending character is undamaged.)",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Weary Travelers",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 56,
+            "Quantity": 3,
+            "Artist": "Régis Moulun",
+            "HasErrata": false,
+            "OctgnGuid": "5f18c4ca-fcda-46d2-874b-3a1a73ef7c53",
+            "RingsDbCardId": "07056",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Off Track",
+            "Slug": "Off-Track-VoI",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Off-Track.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: Attach to a location in play. (Counts as a Condition attachment with the text: `Limit 1 per location. Attached location gets +2 quest points and Gain: `Forced: Remove an additional time counter from the current quest at the end of each refresh phase, if able.``)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Weary Travelers",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 57,
+            "Quantity": 2,
+            "Artist": "Sarah Morris",
+            "HasErrata": false,
+            "OctgnGuid": "7fc629f3-3115-47df-b997-4a5026d97d2b",
+            "RingsDbCardId": "07057",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "In Need of Rest",
+            "Slug": "In-Need-of-Rest-VoI",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/In-Need-of-Rest.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Remove a hero from the quest and attach In Need of Rest to that hero. (Counts as a Condition attachment with the text: `Limit 1 per hero. Forced: After a time counter is removed from the current quest, attached hero takes 1 damage.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": "I have just about enough strength left to find some hole away up there. And then I must rest a little.\r\n-Frodo, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Weary Travelers",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 58,
+            "Quantity": 2,
+            "Artist": "Sara Betsy",
+            "HasErrata": false,
+            "OctgnGuid": "3a8869dc-077e-4b8c-b3d5-474e4f9c14ba",
+            "RingsDbCardId": "07058",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
             "Title": "The Road to Tharbad",
             "Slug": "The-Road-to-Tharbad-TDT",
             "IsUnique": false,

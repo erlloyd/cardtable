@@ -5,6 +5,185 @@
     "Number": 3,
     "AllCards": [
         {
+            "Title": "Orc Skirmisher",
+            "Slug": "Orc-Skirmisher-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Orc-Skirmisher.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Orc Skirmisher engages a player, that player must either deal 3 damage to a character he controls, or remove 1 time counter from the current quest."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Misty Mountain Orcs",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 38,
+            "Quantity": 3,
+            "Artist": "Diego Gisbert Llorens",
+            "HasErrata": false,
+            "OctgnGuid": "ded946a7-99f0-42bf-92f6-a2c46ca64d98",
+            "RingsDbCardId": "07038",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Hunter",
+            "Slug": "Orc-Hunter-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Orc-Hunter.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either reveal an additional encounter card, or remove 1 time counter from the current quest."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Misty Mountain Orcs",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 39,
+            "Quantity": 3,
+            "Artist": "Diego Gisbert Llorens",
+            "HasErrata": false,
+            "OctgnGuid": "a835576b-6a6c-4407-8f40-0151b70f5902",
+            "RingsDbCardId": "07039",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Hound",
+            "Slug": "Orc-Hound-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Orc-Hound.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "Forced: After Orc Hound engages a player, that player must exhaust a character he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Misty Mountain Orcs",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 40,
+            "Quantity": 2,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "OctgnGuid": "119cfabc-2cbf-4ffd-a25e-00ec140b8f26",
+            "RingsDbCardId": "07040",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Hunting Party",
+            "Slug": "Orc-Hunting-Party-VoI",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Orc-Hunting-Party.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Deal each Orc enemy in play a shadow card. Each Orc enemy gets -15 engagement cost until the end of the round. If there are no Orc enemies in the staging area, Orc Hunting Party gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The scouts have come back at last,` said an Orc close at hand. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Misty Mountain Orcs",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 41,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "OctgnGuid": "bc041e0b-dd7f-4b82-8eb0-d155b1b08398",
+            "RingsDbCardId": "07041",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
             "Title": "Double Dealings",
             "Slug": "Double-Dealings-TiT",
             "IsUnique": false,

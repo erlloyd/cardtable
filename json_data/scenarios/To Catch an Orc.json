@@ -5,6 +5,630 @@
     "Number": 2,
     "AllCards": [
         {
+            "Title": "Mugash",
+            "Slug": "Mugash-Enemy-VoI",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Mugash-Enemy.jpg",
+                "Stats": {
+                    "EngagementCost": "1",
+                    "Threat": "4",
+                    "Attack": "7",
+                    "Defense": "4",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Forced: After Mugash is defeated, the first player attaches him to a hero he controls and exhausts that hero. (Counts as a Captive attachment with the text: `Attached hero cannot ready. If attached hero leaves play, the players lose the game.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "To Catch an Orc",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 24,
+            "Quantity": 1,
+            "Artist": "Brent Hollowel",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "07024",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Mugash's Guard",
+            "Slug": "Mugash's-Guard-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Mugash's-Guard.jpg",
+                "Stats": {
+                    "EngagementCost": "40",
+                    "Threat": "3",
+                    "Attack": "6",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "While a player controls a hero with Mugash attached, Mugash`s Guard engages that player.",
+                    "Forced: After Mugash`s Guard destroys a character, if Mugash is attached to a hero, return Mugash to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "To Catch an Orc",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 25,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "OctgnGuid": "7d55e738-cc23-4e78-9a88-2a25fa4f3ca4",
+            "RingsDbCardId": "07025",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Methedras Orc",
+            "Slug": "Methedras-Orc-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Methedras-Orc.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Methedras Orc attacks, the defending player shuffles 1 random card from his hand into his out-of-play deck."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, remove 1 time counter from the current quest.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "To Catch an Orc",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 26,
+            "Quantity": 3,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "OctgnGuid": "cd883a3f-65b8-473e-97f7-b8ac12f91194",
+            "RingsDbCardId": "07026",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Methedras",
+            "Slug": "Methedras-VoI",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Methedras.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Mountain."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Methedras is the active location, each location in the staging area gets +1 Threat.",
+                    "Forced: When Methedras leaves play as an explored location, each player Searches 3."
+                ],
+                "Shadow": null,
+                "FlavorText": "Beyond there glimmered far away, as if floating on a grey cloud, the white head of tall Methedras, the last peak of the Misty Mountains. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "To Catch an Orc",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 27,
+            "Quantity": 4,
+            "Artist": "Stacey Diana Clark",
+            "HasErrata": false,
+            "OctgnGuid": "05a0e539-e140-4dfc-a151-21cd8aaef094",
+            "RingsDbCardId": "07027",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Cave",
+            "Slug": "Orc-Cave-VoI",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Orc-Cave.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Mountain.",
+                    "Cave."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Orc Cave leaves play as an explored location, the first player Searches 5.",
+                    "Travel: Discard the top X cards of the encounter deck to travel here. X is the number of players in the game. Add each Orc enemy discarded this way to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "To Catch an Orc",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 28,
+            "Quantity": 3,
+            "Artist": "Michael Rasmussen",
+            "HasErrata": false,
+            "OctgnGuid": "de212258-f124-4cda-baab-4f696c2b5766",
+            "RingsDbCardId": "07028",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Mugash's Lair",
+            "Slug": "Mugash's-Lair-VoI",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Mugash's-Lair.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Mountain.",
+                    "Cave."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the beginning of the encounter phase, reveal the top card of each player`s out-of-play deck. Add each revealed enemy to the staging area and discard the rest."
+                ],
+                "Shadow": "Shadow: Defending player discards an attachment he controls.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "To Catch an Orc",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 29,
+            "Quantity": 2,
+            "Artist": "Michael Rasmussen",
+            "HasErrata": false,
+            "OctgnGuid": "8dad9a85-eae9-4a39-a823-1c58d8c0f86b",
+            "RingsDbCardId": "07029",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Territory",
+            "Slug": "Orc-Territory-VoI",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Orc-Territory.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player searches the encounter deck and discard pile for a location and adds it to the staging area. If the total Threat in the staging area is less than the total Willpower of all characters committed to the quest, each Orc enemy engaged with a player makes an immediate attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "To Catch an Orc",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 30,
+            "Quantity": 2,
+            "Artist": "Joel Hustak",
+            "HasErrata": false,
+            "OctgnGuid": "87c80644-57bb-4c66-8df6-c60cadc32d32",
+            "RingsDbCardId": "07030",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Skirmisher",
+            "Slug": "Orc-Skirmisher-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Orc-Skirmisher.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Orc Skirmisher engages a player, that player must either deal 3 damage to a character he controls, or remove 1 time counter from the current quest."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Misty Mountain Orcs",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 38,
+            "Quantity": 3,
+            "Artist": "Diego Gisbert Llorens",
+            "HasErrata": false,
+            "OctgnGuid": "ded946a7-99f0-42bf-92f6-a2c46ca64d98",
+            "RingsDbCardId": "07038",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Hunter",
+            "Slug": "Orc-Hunter-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Orc-Hunter.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "2",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either reveal an additional encounter card, or remove 1 time counter from the current quest."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Misty Mountain Orcs",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 39,
+            "Quantity": 3,
+            "Artist": "Diego Gisbert Llorens",
+            "HasErrata": false,
+            "OctgnGuid": "a835576b-6a6c-4407-8f40-0151b70f5902",
+            "RingsDbCardId": "07039",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Hound",
+            "Slug": "Orc-Hound-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Orc-Hound.jpg",
+                "Stats": {
+                    "EngagementCost": "20",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "Forced: After Orc Hound engages a player, that player must exhaust a character he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Misty Mountain Orcs",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 40,
+            "Quantity": 2,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "OctgnGuid": "119cfabc-2cbf-4ffd-a25e-00ec140b8f26",
+            "RingsDbCardId": "07040",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc Hunting Party",
+            "Slug": "Orc-Hunting-Party-VoI",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Orc-Hunting-Party.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Deal each Orc enemy in play a shadow card. Each Orc enemy gets -15 engagement cost until the end of the round. If there are no Orc enemies in the staging area, Orc Hunting Party gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The scouts have come back at last,` said an Orc close at hand. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Misty Mountain Orcs",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 41,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "OctgnGuid": "bc041e0b-dd7f-4b82-8eb0-d155b1b08398",
+            "RingsDbCardId": "07041",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Prowling Wolf",
+            "Slug": "Prowling-Wolf-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Prowling-Wolf.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "3",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Creature."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While engaged with a player, Prowling Wolf gets +1 Attack for each location in the staging area."
+                ],
+                "Shadow": "Shadow: Defending player exhausts a character he controls.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Broken Lands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 53,
+            "Quantity": 3,
+            "Artist": "Piya Wannachaiwong",
+            "HasErrata": false,
+            "OctgnGuid": "7c463bf7-9a1a-4d8a-879b-f966f19d0695",
+            "RingsDbCardId": "07053",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Broken Lands",
+            "Slug": "Broken-Lands-Location-VoI",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Broken-Lands-Location.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Highlands."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Broken Lands is in the staging area, progress cannot be placed on locations in the staging area."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each location in the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Broken Lands",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 54,
+            "Quantity": 3,
+            "Artist": "Joel Hustak",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "07054",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Take Cover!",
+            "Slug": "Take-Cover-VoI",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Take-Cover.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: Either deal 1 damage to each exhausted character, or remove 1 time counter from the current quest."
+                ],
+                "Shadow": null,
+                "FlavorText": "Out of the darkness arrows whistled. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Broken Lands",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 55,
+            "Quantity": 3,
+            "Artist": "Sandra Duchiewicz",
+            "HasErrata": false,
+            "OctgnGuid": "8f3395ff-bccf-4620-beec-581c585682f2",
+            "RingsDbCardId": "07055",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
             "Title": "Orders from Orthanc",
             "Slug": "Orders-from-Orthanc-VoI",
             "IsUnique": false,

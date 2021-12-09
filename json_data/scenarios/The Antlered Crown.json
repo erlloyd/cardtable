@@ -5,6 +5,366 @@
     "Number": 6,
     "AllCards": [
         {
+            "Title": "Dunland Prowler",
+            "Slug": "Dunland-Prowler-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Dunland-Prowler.jpg",
+                "Stats": {
+                    "EngagementCost": "30",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While any player has 3 or more cards in hand, Dunland Prowler gains surge.",
+                    "While any player has 5 or more cards in hand, Dunland Powler gets +1 Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": "...the wild men of the Dunland fells. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Dunland Raiders",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 42,
+            "Quantity": 3,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "OctgnGuid": "d80a5ca5-20d8-4c4b-814c-0c91bba40d43",
+            "RingsDbCardId": "07042",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Dunlending Bandit",
+            "Slug": "Dunlending-Bandit-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Dunlending-Bandit.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While engaged with a player, Dunlending Bandit gets +1 Attack for each card in that player`s hand."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if the defending player has at least 3 cards in his hand).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Dunland Raiders",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 43,
+            "Quantity": 2,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "OctgnGuid": "8ab3701c-7814-403c-be93-21cdff4283ed",
+            "RingsDbCardId": "07043",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Dunland Raider",
+            "Slug": "Dunland-Raider-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Dunland-Raider.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Dunland Raider engages a player, that player must deal X damage divided among characters he controls where X equals the number of cards in his hand."
+                ],
+                "Shadow": "Shadow: Discard an attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Dunland Raiders",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 44,
+            "Quantity": 2,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "OctgnGuid": "7b491dcc-668a-431f-b0a1-ec2bf34840a7",
+            "RingsDbCardId": "07044",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Old Hatreds",
+            "Slug": "Old-Hatreds-VoI",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Old-Hatreds.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: Attach to the current quest. (Counts as a Condition attachment with the text: `Forced: After a player draws an number of cards, raise his threat by 1.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`They hate us, and they are glad; for our doom seems certain to them.` -Gamling, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Dunland Raiders",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 45,
+            "Quantity": 2,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "OctgnGuid": "a0d5be90-8618-4fe4-a917-d8d969c11264",
+            "RingsDbCardId": "07045",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Dunland Tribesman",
+            "Slug": "Dunland-Tribesman-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Dunland-Tribesman.jpg",
+                "Stats": {
+                    "EngagementCost": "37",
+                    "Threat": "0",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player draws a card.",
+                    "Forced: After a player draws any number of cards, Dunland Tribesman gets +1 Threat until the end of the round."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Dunland Warriors",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 46,
+            "Quantity": 2,
+            "Artist": "David Horne",
+            "HasErrata": false,
+            "OctgnGuid": "c749f16f-1b34-48ce-ba8e-45f36b8b8229",
+            "RingsDbCardId": "07046",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Dunland Chieftain",
+            "Slug": "Dunland-Chieftain-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Dunland-Chieftain.jpg",
+                "Stats": {
+                    "EngagementCost": "35",
+                    "Threat": "3",
+                    "Attack": "5",
+                    "Defense": "3",
+                    "HitPoints": "6"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Dunland Chieftain engages a player, discard X cards from the top of the encounter deck where X is the number of cards in the engages player`s hand. Put the topmost Dunland enemy discarded this way into play engaged with that player."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Dunland Warriors",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 47,
+            "Quantity": 2,
+            "Artist": "Jim Pavelec",
+            "HasErrata": false,
+            "OctgnGuid": "ceb5ede8-0acc-40b6-ac43-b9f1ff006d9e",
+            "RingsDbCardId": "07047",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Dunland Berserker",
+            "Slug": "Dunland-Berserker-VoI",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Dunland-Berserker.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After the engaged player draws any number of cards. Dunland Berserker makes an immediate attack."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Dunland Warriors",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 48,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "OctgnGuid": "def7d5a8-3af5-428d-ac94-485c33388ff9",
+            "RingsDbCardId": "07048",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Wild Men of Dunland",
+            "Slug": "Wild-Men-of-Dunland-VoI",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Voice-of-Isengard/Wild-Men-of-Dunland.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: Attach to the current quest. (Counts as a Condition attachment with the text: `Forced: After a player draws any number of cards, that player deals 1 damage to a character he controls.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`I looked on the hillmen and they seemed over large for me...` -Gimli, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Voice of Isengard",
+            "EncounterInfo": {
+                "EncounterSet": "Dunland Warriors",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 49,
+            "Quantity": 2,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "OctgnGuid": "ef975c81-544a-4f1b-a3c4-d0bc42ef636c",
+            "RingsDbCardId": "07049",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
             "Title": "Battle for Dunland",
             "Slug": "Battle-for-Dunland-TAC",
             "IsUnique": false,
