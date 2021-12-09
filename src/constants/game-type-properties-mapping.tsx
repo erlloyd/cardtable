@@ -59,7 +59,26 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
     backgroundImageLocation:
       process.env.PUBLIC_URL + "/images/table/background_marvelchampions.png",
     possibleIcons: [],
-    modifiers: [],
+    modifiers: [
+      {
+        attributeId: "thwart",
+        attributeName: "Thwart",
+        icon: process.env.PUBLIC_URL + "/images/standard/marvel/thwart.png",
+        slot: 1,
+      },
+      {
+        attributeId: "attack",
+        attributeName: "Attack",
+        icon: process.env.PUBLIC_URL + "/images/standard/marvel/attack.png",
+        slot: 2,
+      },
+      {
+        attributeId: "defense",
+        attributeName: "Defense",
+        icon: process.env.PUBLIC_URL + "/images/standard/marvel/defense.png",
+        slot: 3,
+      },
+    ],
     tokens: {
       stunned: {
         tokenType: StatusTokenType.Stunned,
