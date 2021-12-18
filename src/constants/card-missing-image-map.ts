@@ -3,85 +3,35 @@ export const CARD_ALREADY_ROTATED_MAP: { [key: string]: boolean } = {
 };
 
 export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
-  "02001a":
-    process.env.PUBLIC_URL +
-    "/images/cards/" +
-    "8665869b-fae4-494e-91d1-1e8c308220c2" +
-    ".jpg",
+  "02001a": process.env.PUBLIC_URL + "/images/cards/8665869b-fae4-494e-91d1-1e8c308220c2.jpg",
 
-  "02001b":
-    process.env.PUBLIC_URL +
-    "/images/cards/" +
-    "8665869b-fae4-494e-91d1-1e8c308220c2" +
-    ".b.jpg",
+  "02001b": process.env.PUBLIC_URL + "/images/cards/8665869b-fae4-494e-91d1-1e8c308220c2.b.jpg",
 
-  "02002a":
-    process.env.PUBLIC_URL +
-    "/images/cards/" +
-    "cfd051be-4ade-4cf8-b575-4b673cfa9a92" +
-    ".jpg",
+  "02002a": process.env.PUBLIC_URL + "/images/cards/cfd051be-4ade-4cf8-b575-4b673cfa9a92.jpg",
 
-  "02002b":
-    process.env.PUBLIC_URL +
-    "/images/cards/" +
-    "cfd051be-4ade-4cf8-b575-4b673cfa9a92" +
-    ".b.jpg",
+  "02002b": process.env.PUBLIC_URL + "/images/cards/cfd051be-4ade-4cf8-b575-4b673cfa9a92.b.jpg",
 
-  "02003a":
-    process.env.PUBLIC_URL +
-    "/images/cards/" +
-    "b16187a4-3f29-4a4b-8b66-6e8c7524c402" +
-    ".jpg",
+  "02003a": process.env.PUBLIC_URL + "/images/cards/b16187a4-3f29-4a4b-8b66-6e8c7524c402.jpg",
 
-  "02003b":
-    process.env.PUBLIC_URL +
-    "/images/cards/" +
-    "b16187a4-3f29-4a4b-8b66-6e8c7524c402" +
-    ".b.jpg",
+  "02003b": process.env.PUBLIC_URL + "/images/cards/b16187a4-3f29-4a4b-8b66-6e8c7524c402.b.jpg",
 
-  "02004":
-    process.env.PUBLIC_URL +
-    "/images/cards/" +
-    "b35084d9-3a2b-418c-b1a4-e4929de16a2c" +
-    ".jpg",
+  "02004": process.env.PUBLIC_URL + "/images/cards/b35084d9-3a2b-418c-b1a4-e4929de16a2c.jpg",
 
-  "02004_double_sided_back":
-    process.env.PUBLIC_URL +
-    "/images/cards/" +
-    "b35084d9-3a2b-418c-b1a4-e4929de16a2c" +
-    ".b.jpg",
+  "02004_double_sided_back": process.env.PUBLIC_URL + "/images/cards/b35084d9-3a2b-418c-b1a4-e4929de16a2c.b.jpg",
 
-  "02005":
-    process.env.PUBLIC_URL +
-    "/images/cards/" +
-    "1eae757a-25b2-4b29-a8e7-f43b12c531b0" +
-    ".jpg",
+  "02005": process.env.PUBLIC_URL + "/images/cards/1eae757a-25b2-4b29-a8e7-f43b12c531b0.jpg",
 
-  "02005_double_sided_back":
-    process.env.PUBLIC_URL +
-    "/images/cards/" +
-    "1eae757a-25b2-4b29-a8e7-f43b12c531b0" +
-    ".b.jpg",
+  "02005_double_sided_back": process.env.PUBLIC_URL + "/images/cards/1eae757a-25b2-4b29-a8e7-f43b12c531b0.b.jpg",
 
-  "02006a":
-    process.env.PUBLIC_URL +
-    "/images/cards/" +
-    "0a59161d-7db6-4328-9eeb-1906ce8715a5" +
-    ".jpg",
+  "02006a": process.env.PUBLIC_URL + "/images/cards/0a59161d-7db6-4328-9eeb-1906ce8715a5.jpg",
 
-  "02006b":
-    process.env.PUBLIC_URL +
-    "/images/cards/" +
-    "0a59161d-7db6-4328-9eeb-1906ce8715a5" +
-    ".b.jpg",
+  "02006b": process.env.PUBLIC_URL + "/images/cards/0a59161d-7db6-4328-9eeb-1906ce8715a5.b.jpg",
 
   "02017": "https://hallofheroeshome.files.wordpress.com/2019/12/mutagen4a.jpg",
-  "02017_double_sided_back":
-    "https://hallofheroeshome.files.wordpress.com/2019/12/mutagen4b.jpg",
+  "02017_double_sided_back": "https://hallofheroeshome.files.wordpress.com/2019/12/mutagen4b.jpg",
 
   "02018": "https://hallofheroeshome.files.wordpress.com/2019/12/mutagen5a.jpg",
-  "02018_double_sided_back":
-    "https://hallofheroeshome.files.wordpress.com/2019/12/mutagen5b.jpg",
+  "02018_double_sided_back": "https://hallofheroeshome.files.wordpress.com/2019/12/mutagen5b.jpg",
 
   "12020": "https://lcgcdn.s3.amazonaws.com/mc/MC13en_20.jpg",
 
@@ -140,8 +90,7 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
 
   // Rocket Cards
   "16029a": "https://marvelcdb.com/bundles/cards/16029a.png",
-  "16029b":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/r0a.jpg?w=300",
+  "16029b": "https://hallofheroeshome.files.wordpress.com/2021/04/r0a.jpg?w=300",
   "16030": "https://hallofheroeshome.files.wordpress.com/2021/04/r1.jpg?w=300",
   "16031": "https://hallofheroeshome.files.wordpress.com/2021/04/r3.jpg?w=300",
   "16032": "https://hallofheroeshome.files.wordpress.com/2021/04/r5.jpg?w=300",
@@ -152,48 +101,31 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "16037": "https://hallofheroeshome.files.wordpress.com/2021/04/r12.jpg?w=300",
   "16038": "https://hallofheroeshome.files.wordpress.com/2021/04/r13.jpg?w=300",
   "16039": "https://hallofheroeshome.files.wordpress.com/2021/04/r15.jpg?w=300",
-  "16040":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/z1-1.jpg?w=300",
-  "16043":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/z4-1.jpg?w=300",
-  "16045":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/z6-1.jpg?w=300",
-  "16046":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/z7-1.jpg?w=300",
-  "16047":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/z8-1.jpg?w=300",
-  "16048":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/z9-1.jpg?w=300",
-  "16052":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/z13-1.jpg?w=300",
+  "16040": "https://hallofheroeshome.files.wordpress.com/2021/04/z1-1.jpg?w=300",
+  "16043": "https://hallofheroeshome.files.wordpress.com/2021/04/z4-1.jpg?w=300",
+  "16045": "https://hallofheroeshome.files.wordpress.com/2021/04/z6-1.jpg?w=300",
+  "16046": "https://hallofheroeshome.files.wordpress.com/2021/04/z7-1.jpg?w=300",
+  "16047": "https://hallofheroeshome.files.wordpress.com/2021/04/z8-1.jpg?w=300",
+  "16048": "https://hallofheroeshome.files.wordpress.com/2021/04/z9-1.jpg?w=300",
+  "16052": "https://hallofheroeshome.files.wordpress.com/2021/04/z13-1.jpg?w=300",
   "16053": "https://hallofheroeshome.files.wordpress.com/2021/04/n0.jpg?w=300",
-  "16054":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/n1-1.jpg?w=300",
-  "16055":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/n2-1.jpg?w=300",
-  "16056":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/n3-1.jpg?w=300",
-  "16057":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/n4-1.jpg?w=300",
+  "16054": "https://hallofheroeshome.files.wordpress.com/2021/04/n1-1.jpg?w=300",
+  "16055": "https://hallofheroeshome.files.wordpress.com/2021/04/n2-1.jpg?w=300",
+  "16056": "https://hallofheroeshome.files.wordpress.com/2021/04/n3-1.jpg?w=300",
+  "16057": "https://hallofheroeshome.files.wordpress.com/2021/04/n4-1.jpg?w=300",
 
   // Brotherhood of Badoon
   "16058": "https://hallofheroeshome.files.wordpress.com/2021/04/d1.jpg?w=300",
   "16059": "https://hallofheroeshome.files.wordpress.com/2021/04/d2.jpg?w=300",
   "16060": "https://hallofheroeshome.files.wordpress.com/2021/04/d3.jpg?w=300",
   "16061": "https://hallofheroeshome.files.wordpress.com/2021/04/d4a.jpg?w=300",
-  "16061a":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/d4a.jpg?w=300",
-  "16061_double_sided_back":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/d4b.jpg?w=300",
-  "16061b":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/d4b.jpg?w=300",
+  "16061a": "https://hallofheroeshome.files.wordpress.com/2021/04/d4a.jpg?w=300",
+  "16061_double_sided_back": "https://hallofheroeshome.files.wordpress.com/2021/04/d4b.jpg?w=300",
+  "16061b": "https://hallofheroeshome.files.wordpress.com/2021/04/d4b.jpg?w=300",
   "16062": "https://hallofheroeshome.files.wordpress.com/2021/04/d5a.jpg?w=300",
-  "16062a":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/d5a.jpg?w=300",
-  "16062_double_sided_back":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/d5b.jpg?w=300",
-  "16062b":
-    "https://hallofheroeshome.files.wordpress.com/2021/04/d5b.jpg?w=300",
+  "16062a": "https://hallofheroeshome.files.wordpress.com/2021/04/d5a.jpg?w=300",
+  "16062_double_sided_back": "https://hallofheroeshome.files.wordpress.com/2021/04/d5b.jpg?w=300",
+  "16062b": "https://hallofheroeshome.files.wordpress.com/2021/04/d5b.jpg?w=300",
   "16063": "https://hallofheroeshome.files.wordpress.com/2021/04/d6.jpg?w=300",
   "16064": "https://hallofheroeshome.files.wordpress.com/2021/04/d7.jpg?w=300",
   "16065": "https://hallofheroeshome.files.wordpress.com/2021/04/d8.jpg?w=300",
@@ -252,46 +184,31 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   // Gamora
   "18001a": "https://marvelcdb.com/bundles/cards/18001a.png",
   "18001b": "https://marvelcdb.com/bundles/cards/18001b.png",
-  "18002":
-    "https://hallofheroeshome.files.wordpress.com/2021/05/g1-1.jpg?w=300",
-  "18003":
-    "https://hallofheroeshome.files.wordpress.com/2021/05/g2-1.jpg?w=300",
-  "18004":
-    "https://hallofheroeshome.files.wordpress.com/2021/05/g4-1.jpg?w=300",
-  "18005":
-    "https://hallofheroeshome.files.wordpress.com/2021/05/g6-1.jpg?w=300",
-  "18006":
-    "https://hallofheroeshome.files.wordpress.com/2021/05/g8-1.jpg?w=300",
-  "18007":
-    "https://hallofheroeshome.files.wordpress.com/2021/05/g10-1.jpg?w=300",
-  "18008":
-    "https://hallofheroeshome.files.wordpress.com/2021/05/g12-1.jpg?w=300",
-  "18009":
-    "https://hallofheroeshome.files.wordpress.com/2021/05/g13-1.jpg?w=300",
-  "18010":
-    "https://hallofheroeshome.files.wordpress.com/2021/05/g15-1.jpg?w=300",
+  "18002": "https://hallofheroeshome.files.wordpress.com/2021/05/g1-1.jpg?w=300",
+  "18003": "https://hallofheroeshome.files.wordpress.com/2021/05/g2-1.jpg?w=300",
+  "18004": "https://hallofheroeshome.files.wordpress.com/2021/05/g4-1.jpg?w=300",
+  "18005": "https://hallofheroeshome.files.wordpress.com/2021/05/g6-1.jpg?w=300",
+  "18006": "https://hallofheroeshome.files.wordpress.com/2021/05/g8-1.jpg?w=300",
+  "18007": "https://hallofheroeshome.files.wordpress.com/2021/05/g10-1.jpg?w=300",
+  "18008": "https://hallofheroeshome.files.wordpress.com/2021/05/g12-1.jpg?w=300",
+  "18009": "https://hallofheroeshome.files.wordpress.com/2021/05/g13-1.jpg?w=300",
+  "18010": "https://hallofheroeshome.files.wordpress.com/2021/05/g15-1.jpg?w=300",
   "18011": "https://hallofheroeshome.files.wordpress.com/2021/05/z0.png",
   "18012": "https://hallofheroeshome.files.wordpress.com/2021/05/c1.jpg?w=300",
   "18013": "https://hallofheroeshome.files.wordpress.com/2021/05/d1.jpg?w=300",
   "18015": "https://hallofheroeshome.files.wordpress.com/2021/05/f1.jpg?w=300",
-  "18016":
-    "https://hallofheroeshome.files.wordpress.com/2021/05/i111.jpg?w=300",
-  "18018":
-    "https://hallofheroeshome.files.wordpress.com/2021/05/aaa1.jpg?w=300",
-  "18019":
-    "https://hallofheroeshome.files.wordpress.com/2021/05/gamora-spoilers-41024_1.jpg?w=300",
+  "18016": "https://hallofheroeshome.files.wordpress.com/2021/05/i111.jpg?w=300",
+  "18018": "https://hallofheroeshome.files.wordpress.com/2021/05/aaa1.jpg?w=300",
+  "18019": "https://hallofheroeshome.files.wordpress.com/2021/05/gamora-spoilers-41024_1.jpg?w=300",
   "18020": "https://hallofheroeshome.files.wordpress.com/2021/05/h1.jpg?w=300",
   "18024": "https://hallofheroeshome.files.wordpress.com/2021/05/n1.jpg?w=300",
   "18025": "https://hallofheroeshome.files.wordpress.com/2021/05/s1.jpg?w=300",
   "18026": "https://hallofheroeshome.files.wordpress.com/2021/05/n3.jpg?w=300",
   "18027": "https://hallofheroeshome.files.wordpress.com/2021/05/n4.jpg?w=300",
   "18028": "https://hallofheroeshome.files.wordpress.com/2021/05/n5.jpg?w=300",
-  "18029":
-    "https://hallofheroeshome.files.wordpress.com/2021/05/zzz1.jpg?w=300",
-  "18030":
-    "https://hallofheroeshome.files.wordpress.com/2021/05/zzz2.jpg?w=300",
-  "18031":
-    "https://hallofheroeshome.files.wordpress.com/2021/05/zzz3.jpg?w=300",
+  "18029": "https://hallofheroeshome.files.wordpress.com/2021/05/zzz1.jpg?w=300",
+  "18030": "https://hallofheroeshome.files.wordpress.com/2021/05/zzz2.jpg?w=300",
+  "18031": "https://hallofheroeshome.files.wordpress.com/2021/05/zzz3.jpg?w=300",
 
   // Drax
   "19001a": "https://marvelcdb.com/bundles/cards/19001a.png",
@@ -355,10 +272,8 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "20029": "https://hallofheroeshome.files.wordpress.com/2021/07/z4.jpg?w=300",
 
   // Spectrum
-  "21001a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/m0b.jpg?w=300",
-  "21001b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/m0a.jpg?w=300",
+  "21001a": "https://hallofheroeshome.files.wordpress.com/2021/08/m0b.jpg?w=300",
+  "21001b": "https://hallofheroeshome.files.wordpress.com/2021/08/m0a.jpg?w=300",
   "21002": "https://hallofheroeshome.files.wordpress.com/2021/08/m1.jpg?w=300",
   "21003": "https://hallofheroeshome.files.wordpress.com/2021/08/m2.jpg?w=300",
   "21004": "https://hallofheroeshome.files.wordpress.com/2021/08/m3.jpg?w=300",
@@ -390,28 +305,17 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "21030": "https://hallofheroeshome.files.wordpress.com/2021/08/n6.jpg?w=300",
 
   //Adam Warlock
-  "21031a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/a0b.jpg?w=300",
-  "21031b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/a0a.jpg?w=300",
-  "21032":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/a1-1.jpg?w=300",
-  "21033":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/a2-1.jpg?w=300",
-  "21034":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/a3-1.jpg?w=300",
-  "21035":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/a4-1.jpg?w=300",
-  "21036":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/a5-1.jpg?w=300",
-  "21037":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/a7-1.jpg?w=300",
-  "21038":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/a9-1.jpg?w=300",
-  "21039":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/a12-1.jpg?w=300",
-  "21040":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/a14-1.jpg?w=300",
+  "21031a": "https://hallofheroeshome.files.wordpress.com/2021/08/a0b.jpg?w=300",
+  "21031b": "https://hallofheroeshome.files.wordpress.com/2021/08/a0a.jpg?w=300",
+  "21032": "https://hallofheroeshome.files.wordpress.com/2021/08/a1-1.jpg?w=300",
+  "21033": "https://hallofheroeshome.files.wordpress.com/2021/08/a2-1.jpg?w=300",
+  "21034": "https://hallofheroeshome.files.wordpress.com/2021/08/a3-1.jpg?w=300",
+  "21035": "https://hallofheroeshome.files.wordpress.com/2021/08/a4-1.jpg?w=300",
+  "21036": "https://hallofheroeshome.files.wordpress.com/2021/08/a5-1.jpg?w=300",
+  "21037": "https://hallofheroeshome.files.wordpress.com/2021/08/a7-1.jpg?w=300",
+  "21038": "https://hallofheroeshome.files.wordpress.com/2021/08/a9-1.jpg?w=300",
+  "21039": "https://hallofheroeshome.files.wordpress.com/2021/08/a12-1.jpg?w=300",
+  "21040": "https://hallofheroeshome.files.wordpress.com/2021/08/a14-1.jpg?w=300",
   "21041": "https://hallofheroeshome.files.wordpress.com/2021/08/b1.jpg?w=300",
   "21042": "https://hallofheroeshome.files.wordpress.com/2021/08/b2.jpg?w=300",
   "21043": "https://hallofheroeshome.files.wordpress.com/2021/08/b3.jpg?w=300",
@@ -438,27 +342,19 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "21064": "https://hallofheroeshome.files.wordpress.com/2021/08/b24.jpg?w=300",
   "21065": "https://hallofheroeshome.files.wordpress.com/2021/08/b25.jpg?w=300",
   "21066": "https://hallofheroeshome.files.wordpress.com/2021/08/n0.jpg?w=300",
-  "21067":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/n1-1.jpg?w=300",
-  "21068":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/n2-1.jpg?w=300",
-  "21069":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/n3-1.jpg?w=300",
-  "21070":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/n5-1.jpg?w=300",
+  "21067": "https://hallofheroeshome.files.wordpress.com/2021/08/n1-1.jpg?w=300",
+  "21068": "https://hallofheroeshome.files.wordpress.com/2021/08/n2-1.jpg?w=300",
+  "21069": "https://hallofheroeshome.files.wordpress.com/2021/08/n3-1.jpg?w=300",
+  "21070": "https://hallofheroeshome.files.wordpress.com/2021/08/n5-1.jpg?w=300",
 
   // Ebony Maw
   "21071": "https://hallofheroeshome.files.wordpress.com/2021/08/e1.jpg?w=300",
   "21072": "https://hallofheroeshome.files.wordpress.com/2021/08/e2.jpg?w=300",
   "21073": "https://hallofheroeshome.files.wordpress.com/2021/08/e3.jpg?w=300",
-  "21074a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/e4a.jpg?w=300",
-  "21074b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/e4b.jpg?w=300",
-  "21075a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/e5a.jpg?w=300",
-  "21075b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/e5b.jpg?w=300",
+  "21074a": "https://hallofheroeshome.files.wordpress.com/2021/08/e4a.jpg?w=300",
+  "21074b": "https://hallofheroeshome.files.wordpress.com/2021/08/e4b.jpg?w=300",
+  "21075a": "https://hallofheroeshome.files.wordpress.com/2021/08/e5a.jpg?w=300",
+  "21075b": "https://hallofheroeshome.files.wordpress.com/2021/08/e5b.jpg?w=300",
   "21076": "https://hallofheroeshome.files.wordpress.com/2021/08/e6.jpg?w=300",
   "21077": "https://hallofheroeshome.files.wordpress.com/2021/08/e8.jpg?w=300",
   "21078": "https://hallofheroeshome.files.wordpress.com/2021/08/e10.jpg?w=300",
@@ -470,22 +366,15 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "21084": "https://hallofheroeshome.files.wordpress.com/2021/08/e21.jpg?w=300",
 
   // Black Order
-  "21085":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/b1-1.jpg?w=300",
-  "21086":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/b2-1.jpg?w=300",
-  "21087":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/b3-1.jpg?w=300",
-  "21088":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/b4-1.jpg?w=300",
+  "21085": "https://hallofheroeshome.files.wordpress.com/2021/08/b1-1.jpg?w=300",
+  "21086": "https://hallofheroeshome.files.wordpress.com/2021/08/b2-1.jpg?w=300",
+  "21087": "https://hallofheroeshome.files.wordpress.com/2021/08/b3-1.jpg?w=300",
+  "21088": "https://hallofheroeshome.files.wordpress.com/2021/08/b4-1.jpg?w=300",
 
   // Armies of Titan
-  "21089":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/a1-2.jpg?w=300",
-  "21090":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/a3-2.jpg?w=300",
-  "21091":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/a5-2.jpg?w=300",
+  "21089": "https://hallofheroeshome.files.wordpress.com/2021/08/a1-2.jpg?w=300",
+  "21090": "https://hallofheroeshome.files.wordpress.com/2021/08/a3-2.jpg?w=300",
+  "21091": "https://hallofheroeshome.files.wordpress.com/2021/08/a5-2.jpg?w=300",
 
   // Tower Defense
   "21092": "https://hallofheroeshome.files.wordpress.com/2021/08/t1.jpg?w=300",
@@ -494,18 +383,12 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "21095": "https://hallofheroeshome.files.wordpress.com/2021/08/t4.jpg?w=300",
   "21096": "https://hallofheroeshome.files.wordpress.com/2021/08/t5.jpg?w=300",
   "21097": "https://hallofheroeshome.files.wordpress.com/2021/08/t6.jpg?w=300",
-  "21098a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t7a.jpg?w=300",
-  "21098b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t7b.jpg?w=300",
-  "21099a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t8a.jpg?w=300",
-  "21099b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t8b.jpg?w=300",
-  "21100a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t9a.jpg?w=300",
-  "21100b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t9b.jpg?w=300",
+  "21098a": "https://hallofheroeshome.files.wordpress.com/2021/08/t7a.jpg?w=300",
+  "21098b": "https://hallofheroeshome.files.wordpress.com/2021/08/t7b.jpg?w=300",
+  "21099a": "https://hallofheroeshome.files.wordpress.com/2021/08/t8a.jpg?w=300",
+  "21099b": "https://hallofheroeshome.files.wordpress.com/2021/08/t8b.jpg?w=300",
+  "21100a": "https://hallofheroeshome.files.wordpress.com/2021/08/t9a.jpg?w=300",
+  "21100b": "https://hallofheroeshome.files.wordpress.com/2021/08/t9b.jpg?w=300",
   "21101": "https://hallofheroeshome.files.wordpress.com/2021/08/t10.jpg?w=300",
   "21102": "https://hallofheroeshome.files.wordpress.com/2021/08/t11.jpg?w=300",
   "21103": "https://hallofheroeshome.files.wordpress.com/2021/08/t15.jpg?w=300",
@@ -518,43 +401,28 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "21110": "https://hallofheroeshome.files.wordpress.com/2021/08/t26.jpg?w=300",
 
   // Thanos
-  "21111":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t1-1.jpg?w=300",
-  "21112":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t2-1.jpg?w=300",
-  "21113":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t3-1.jpg?w=300",
-  "21114a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t4a.jpg?w=300",
-  "21114b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t4b.jpg?w=300",
-  "21115a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t5a.jpg?w=300",
-  "21115b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t5b.jpg?w=300",
-  "21116":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t6-1.jpg?w=300",
+  "21111": "https://hallofheroeshome.files.wordpress.com/2021/08/t1-1.jpg?w=300",
+  "21112": "https://hallofheroeshome.files.wordpress.com/2021/08/t2-1.jpg?w=300",
+  "21113": "https://hallofheroeshome.files.wordpress.com/2021/08/t3-1.jpg?w=300",
+  "21114a": "https://hallofheroeshome.files.wordpress.com/2021/08/t4a.jpg?w=300",
+  "21114b": "https://hallofheroeshome.files.wordpress.com/2021/08/t4b.jpg?w=300",
+  "21115a": "https://hallofheroeshome.files.wordpress.com/2021/08/t5a.jpg?w=300",
+  "21115b": "https://hallofheroeshome.files.wordpress.com/2021/08/t5b.jpg?w=300",
+  "21116": "https://hallofheroeshome.files.wordpress.com/2021/08/t6-1.jpg?w=300",
   "21117": "https://hallofheroeshome.files.wordpress.com/2021/08/t7.jpg?w=300",
   "21118": "https://hallofheroeshome.files.wordpress.com/2021/08/t8.jpg?w=300",
   "21119": "https://hallofheroeshome.files.wordpress.com/2021/08/t9.jpg?w=300",
-  "21120":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t11-1.jpg?w=300",
-  "21121":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t13-1.jpg?w=300",
-  "21122":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t15-1.jpg?w=300",
-  "21123":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t17-1.jpg?w=300",
-  "21124":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/t19-1.jpg?w=300",
+  "21120": "https://hallofheroeshome.files.wordpress.com/2021/08/t11-1.jpg?w=300",
+  "21121": "https://hallofheroeshome.files.wordpress.com/2021/08/t13-1.jpg?w=300",
+  "21122": "https://hallofheroeshome.files.wordpress.com/2021/08/t15-1.jpg?w=300",
+  "21123": "https://hallofheroeshome.files.wordpress.com/2021/08/t17-1.jpg?w=300",
+  "21124": "https://hallofheroeshome.files.wordpress.com/2021/08/t19-1.jpg?w=300",
 
   // Children of Thanos
   "21125": "https://hallofheroeshome.files.wordpress.com/2021/08/c1.jpg?w=300",
-  "21126":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/c2-1.jpg?w=300",
+  "21126": "https://hallofheroeshome.files.wordpress.com/2021/08/c2-1.jpg?w=300",
   "21127": "https://hallofheroeshome.files.wordpress.com/2021/08/c3.jpg?w=300",
-  "21128":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/c4-1.jpg?w=300",
+  "21128": "https://hallofheroeshome.files.wordpress.com/2021/08/c4-1.jpg?w=300",
 
   // Infinity Guantlet
   "21129": "https://hallofheroeshome.files.wordpress.com/2021/08/i1.jpg?w=300",
@@ -566,22 +434,14 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "21135": "https://hallofheroeshome.files.wordpress.com/2021/08/i7.jpg?w=300",
 
   // Hela
-  "21136a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/h1a.jpg?w=300",
-  "21136b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/h1b.jpg?w=300",
-  "21137a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/h2a.jpg?w=300",
-  "21137b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/h2b.jpg?w=300",
-  "21138a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/h3a.jpg?w=300",
-  "21138b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/h3b.jpg?w=300",
-  "21139a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/h4a.jpg?w=300",
-  "21139b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/h4b.jpg?w=300",
+  "21136a": "https://hallofheroeshome.files.wordpress.com/2021/08/h1a.jpg?w=300",
+  "21136b": "https://hallofheroeshome.files.wordpress.com/2021/08/h1b.jpg?w=300",
+  "21137a": "https://hallofheroeshome.files.wordpress.com/2021/08/h2a.jpg?w=300",
+  "21137b": "https://hallofheroeshome.files.wordpress.com/2021/08/h2b.jpg?w=300",
+  "21138a": "https://hallofheroeshome.files.wordpress.com/2021/08/h3a.jpg?w=300",
+  "21138b": "https://hallofheroeshome.files.wordpress.com/2021/08/h3b.jpg?w=300",
+  "21139a": "https://hallofheroeshome.files.wordpress.com/2021/08/h4a.jpg?w=300",
+  "21139b": "https://hallofheroeshome.files.wordpress.com/2021/08/h4b.jpg?w=300",
   "21140": "https://hallofheroeshome.files.wordpress.com/2021/08/h5.jpg?w=300",
   "21141": "https://hallofheroeshome.files.wordpress.com/2021/08/h6.jpg?w=300",
   "21142": "https://hallofheroeshome.files.wordpress.com/2021/08/h7.jpg?w=300",
@@ -596,12 +456,9 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "21151": "https://hallofheroeshome.files.wordpress.com/2021/08/h18.jpg?w=300",
 
   // Legions of Hel
-  "21152":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/l1-1.jpg?w=300",
-  "21153":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/l3-1.jpg?w=300",
-  "21154":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/l5-1.jpg?w=300",
+  "21152": "https://hallofheroeshome.files.wordpress.com/2021/08/l1-1.jpg?w=300",
+  "21153": "https://hallofheroeshome.files.wordpress.com/2021/08/l3-1.jpg?w=300",
+  "21154": "https://hallofheroeshome.files.wordpress.com/2021/08/l5-1.jpg?w=300",
   "21155": "https://hallofheroeshome.files.wordpress.com/2021/08/l6.jpg?w=300",
 
   // Frost Giants
@@ -616,10 +473,8 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "21162": "https://hallofheroeshome.files.wordpress.com/2021/08/l3.jpg?w=300",
   "21163": "https://hallofheroeshome.files.wordpress.com/2021/08/l4.jpg?w=300",
   "21164": "https://hallofheroeshome.files.wordpress.com/2021/08/l5.jpg?w=300",
-  "21165a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/l6a.jpg?w=300",
-  "21165b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/l6b.jpg?w=300",
+  "21165a": "https://hallofheroeshome.files.wordpress.com/2021/08/l6a.jpg?w=300",
+  "21165b": "https://hallofheroeshome.files.wordpress.com/2021/08/l6b.jpg?w=300",
   "21166": "https://hallofheroeshome.files.wordpress.com/2021/08/l7.jpg?w=300",
   "21167": "https://hallofheroeshome.files.wordpress.com/2021/08/l8.jpg?w=300",
   "21168": "https://hallofheroeshome.files.wordpress.com/2021/08/l9.jpg?w=300",
@@ -633,41 +488,27 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "21176": "https://hallofheroeshome.files.wordpress.com/2021/08/l19.jpg?w=300",
 
   // Enchantress
-  "21177":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/e1-1.jpg?w=300",
-  "21178":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/e2-1.jpg?w=300",
+  "21177": "https://hallofheroeshome.files.wordpress.com/2021/08/e1-1.jpg?w=300",
+  "21178": "https://hallofheroeshome.files.wordpress.com/2021/08/e2-1.jpg?w=300",
   "21179": "https://hallofheroeshome.files.wordpress.com/2021/08/e4.jpg?w=300",
 
   // MTS Campaign
-  "21180a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/c1a.jpg?w=300",
-  "21180b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/c1b.jpg?w=300",
+  "21180a": "https://hallofheroeshome.files.wordpress.com/2021/08/c1a.jpg?w=300",
+  "21180b": "https://hallofheroeshome.files.wordpress.com/2021/08/c1b.jpg?w=300",
   "21181": "https://hallofheroeshome.files.wordpress.com/2021/08/c2.jpg?w=300",
-  "21182a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/c3a.jpg?w=300",
-  "21182b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/c3b.jpg?w=300",
+  "21182a": "https://hallofheroeshome.files.wordpress.com/2021/08/c3a.jpg?w=300",
+  "21182b": "https://hallofheroeshome.files.wordpress.com/2021/08/c3b.jpg?w=300",
   "21183": "https://hallofheroeshome.files.wordpress.com/2021/08/c4.jpg?w=300",
-  "21184a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/c8a.jpg?w=300",
-  "21184b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/c8b.jpg?w=300",
+  "21184a": "https://hallofheroeshome.files.wordpress.com/2021/08/c8a.jpg?w=300",
+  "21184b": "https://hallofheroeshome.files.wordpress.com/2021/08/c8b.jpg?w=300",
   "21185": "https://hallofheroeshome.files.wordpress.com/2021/08/c9.jpg?w=300",
-  "21186a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/c13a.jpg?w=300",
-  "21186b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/c13b.jpg?w=300",
-  "21187a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/c14a.jpg?w=300",
-  "21187b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/c14b.jpg?w=300",
+  "21186a": "https://hallofheroeshome.files.wordpress.com/2021/08/c13a.jpg?w=300",
+  "21186b": "https://hallofheroeshome.files.wordpress.com/2021/08/c13b.jpg?w=300",
+  "21187a": "https://hallofheroeshome.files.wordpress.com/2021/08/c14a.jpg?w=300",
+  "21187b": "https://hallofheroeshome.files.wordpress.com/2021/08/c14b.jpg?w=300",
   "21188": "https://hallofheroeshome.files.wordpress.com/2021/08/c18.jpg?w=300",
-  "21189a":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/c19a.jpg?w=300",
-  "21189b":
-    "https://hallofheroeshome.files.wordpress.com/2021/08/c19b.jpg?w=300",
+  "21189a": "https://hallofheroeshome.files.wordpress.com/2021/08/c19a.jpg?w=300",
+  "21189b": "https://hallofheroeshome.files.wordpress.com/2021/08/c19b.jpg?w=300",
   "21190": "https://hallofheroeshome.files.wordpress.com/2021/08/c20.jpg?w=300",
   "21191": "https://hallofheroeshome.files.wordpress.com/2021/08/c21.jpg?w=300",
   "21192": "https://hallofheroeshome.files.wordpress.com/2021/08/c22.jpg?w=300",
@@ -703,10 +544,8 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "22035": "https://hallofheroeshome.files.wordpress.com/2021/09/e10.jpg?w=300",
 
   // war machine
-  "23001a":
-    "https://hallofheroeshome.files.wordpress.com/2021/11/1-1.jpg?w=300",
-  "23001b":
-    "https://hallofheroeshome.files.wordpress.com/2021/11/2-1.jpg?w=300",
+  "23001a": "https://hallofheroeshome.files.wordpress.com/2021/11/1-1.jpg?w=300",
+  "23001b": "https://hallofheroeshome.files.wordpress.com/2021/11/2-1.jpg?w=300",
   "23002": "https://hallofheroeshome.files.wordpress.com/2021/11/3.jpg?w=300",
   "23003": "https://hallofheroeshome.files.wordpress.com/2021/11/4.jpg?w=300",
   "23004": "https://hallofheroeshome.files.wordpress.com/2021/11/5.jpg?w=300",
@@ -732,4 +571,102 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "23033": "https://hallofheroeshome.files.wordpress.com/2021/11/a6.jpg?w=300",
   "23034": "https://hallofheroeshome.files.wordpress.com/2021/11/a7.jpg?w=300",
   "23035": "https://hallofheroeshome.files.wordpress.com/2021/11/a8.jpg?w=300",
+
+  // hood
+  "24001": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24001.png",
+  "24002": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24002.png",
+  "24003": "https://ik.imagekit.io/cardtable/tr:wt-300/marvel_champions/24003.png",
+  "24004": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24004A.png",
+  "24004_double_sided_back": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24004B.png",
+  "24005": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24005A.png",
+  "24005_double_sided_back": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24005B.png",
+  "24006": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24006A.png",
+  "24006_double_sided_back": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24006B.png",
+  "24007": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24007.png",
+  "24008": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24008.png",
+  "24009": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24009.png",
+  "24010": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24010.png",
+  "24011": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24011.png",
+  "24012": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24012.png",
+  "24013": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24013.png",
+
+  // beasty boys
+  "24014": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24014.png",
+  "24015": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24015.png",
+  "24016": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24016.png",
+  "24017": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24017.png",
+
+  // brothers grimm
+  "24018": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24018.png",
+  "24019": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24019.png",
+  "24020": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24020.png",
+  "24021": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24021.png",
+  "24022": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24022.png",
+
+  // crossfire's crew
+  "24023": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24023.png",
+  "24024": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24024.png",
+  "24025": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24025.png",
+  "24026": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24026.png",
+  "24027": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24027.png",
+  "24028": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24028.png",
+
+  // expert 2
+  "24029": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24029.png",
+  "24030": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24030.png",
+  "24031": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24031.png",
+  "24032": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24032.png",
+
+  // mister hyde
+  "24033": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24033.png",
+  "24034": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24034.png",
+  "24035": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24035.png",
+  "24036": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24036.png",
+
+  // ransacked armory
+  "24037": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24037.png",
+  "24038": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24038.png",
+  "24039": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24039.png",
+  "24040": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24040.png",
+  "24041": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24041.png",
+
+  // sinister syndicate
+  "24042": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24042.png",
+  "24043": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24043.png",
+  "24044": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24044.png",
+  "24045": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24045.png",
+  "24046": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24046.png",
+  "24047": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24047.png",
+  "24048": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24048.png",
+
+  // standard 2
+  "24049": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24049A.png",
+  "24049_double_sided_back": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24049B.png",
+  "24050": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24050.png",
+  "24051": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24051.png",
+  "24052": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24052.png",
+  "24053": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24053.png",
+  "24054": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24054.png",
+
+  // state of emergency
+  "24055": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24055.png",
+  "24056": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24056.png",
+  "24057": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24057.png",
+  "24058": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24058.png",
+  "24059": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24059.png",
+
+  // streets of mayhem
+  "24060": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24060.png",
+  "24061": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24061.png",
+  "24062": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24062.png",
+  "24063": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24063.png",
+
+  // the wrecking crew
+  "24064": "https://ik.imagekit.io/cardtable/tr:h-300/marvel_champions/24064.png",
+  "24065": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24065.png",
+  "24066": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24066.png",
+  "24067": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24067.png",
+  "24068": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24068.png",
+  "24069": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24069.png",
+  "24070": "https://ik.imagekit.io/cardtable/tr:w-300/marvel_champions/24070.png",
 };
