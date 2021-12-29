@@ -11,5 +11,10 @@ module.exports = function override(config, env) {
     })
   );
 
+  if (!config.ignoreWarnings) {
+    config.ignoreWarnings = [];
+  }
+  config.ignoreWarnings.push(/Failed to parse source map/);
+
   return config;
 };
