@@ -57,7 +57,7 @@
     "uuid": "^8.3.2"
   },
   "scripts": {
-    "start": "react-app-rewired start",
+    "start": "WDS_SOCKET_PORT=0 react-app-rewired start",
     "build": "react-app-rewired build",
     "build:prod": "NODE_ENV=production react-app-rewired build",
     "test": "react-app-rewired test",
