@@ -483,7 +483,7 @@ class Game extends Component<IProps, IState> {
     return (
       <div
         className="play-area"
-        tabIndex={1}
+        // tabIndex={1} // For some reason this makes safari super slow....
         onKeyDown={this.handleKeyDown}
         onKeyPress={this.handleKeyPress}
         onMouseUp={(_event) => {
@@ -1523,10 +1523,9 @@ class Game extends Component<IProps, IState> {
           this.getRelativePositionFromTarget(this.stage)
         );
 
-        const dragDistanceThreshold =
-          event.evt instanceof TouchEvent
-            ? cardConstants.TOUCH_DRAG_SPLIT_DISTANCE
-            : cardConstants.MOUSE_DRAG_SPLIT_DISTANCE;
+        const dragDistanceThreshold = !!(event.evt as any).touches
+          ? cardConstants.TOUCH_DRAG_SPLIT_DISTANCE
+          : cardConstants.MOUSE_DRAG_SPLIT_DISTANCE;
 
         if (distance < dragDistanceThreshold) {
           splitTopCard = true;
@@ -1712,7 +1711,7 @@ class Game extends Component<IProps, IState> {
   ) => {
     if (
       (event.evt instanceof MouseEvent && event.evt.button === 0) ||
-      event.evt instanceof TouchEvent
+      !!(event.evt as TouchEvent).touches
     ) {
       // Only do something if it's the primary button (not a right-click)
       const pos = this.getRelativePositionFromTarget(this.stage);
