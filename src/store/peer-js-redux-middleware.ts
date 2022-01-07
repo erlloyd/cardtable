@@ -17,6 +17,8 @@ import {
   setPlayerInfo,
   setPreviewCardId,
   stopDraggingCardFromHand,
+  toggleDrawCardsIntoHand,
+  toggleSnapCardsToGrid,
   updatePosition,
   updateZoom,
 } from "../features/game/game.slice";
@@ -52,6 +54,8 @@ const blacklistRemoteActions = {
   [startDraggingCardFromHand.type]: true,
   [stopDraggingCardFromHand.type]: true,
   [cardFromHandMove.type]: true,
+  [toggleDrawCardsIntoHand.type]: true,
+  [toggleSnapCardsToGrid.type]: true,
 };
 
 const log = (...args: any[]) => {

@@ -38,6 +38,11 @@ export const getPreviewCard = createSelector(
   (game) => game.previewCard
 );
 
+export const getSnapCardsToGrid = createSelector(
+  getGame,
+  (game) => game.snapCardsToGrid
+);
+
 export const getMenuPreviewCard = createSelector(getGame, (game) => {
   if (!game.menuPreviewCardJsonId) return null;
 

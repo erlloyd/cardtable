@@ -242,12 +242,11 @@ const cardFromHandMoveReducer: CaseReducer<
   );
 };
 
-const cardMoveReducer: CaseReducer<
+const cardMoveWithSnapReducer: CaseReducer<
   ICardsState,
-  PayloadAction<{ id: string; dx: number; dy: number }>
+  PayloadAction<{ id: string; dx: number; dy: number; snap: boolean }>
 > = (state, action) => {
   const movedCards: ICardStack[] = [];
-
   let primaryCard: ICardStack | null = null;
 
   state.cards
@@ -265,6 +264,36 @@ const cardMoveReducer: CaseReducer<
       card.y += action.payload.dy;
 
       movedCards.push(card);
+
+      if (action.payload.snap) {
+        const snapCard = JSON.parse(JSON.stringify(card));
+        snapCard.id = `${card.id}-grid`;
+        snapCard.x =
+          Math.round(card.x / cardConstants.GRID_SNAP_WIDTH) *
+          cardConstants.GRID_SNAP_WIDTH;
+        snapCard.y =
+          Math.round(card.y / cardConstants.GRID_SNAP_HEIGHT) *
+          cardConstants.GRID_SNAP_HEIGHT;
+        snapCard.cardStack = [{ jsonId: `grid` }];
+
+        // Check if there is already a snap card for this card
+        // rendered at the x,y pos
+        if (
+          !state.ghostCards.some(
+            (gc) =>
+              gc.id === `${card.id}-grid` &&
+              gc.x === snapCard.x &&
+              gc.y === snapCard.y
+          )
+        ) {
+          //remove all other snap cards for this card
+          state.ghostCards = state.ghostCards.filter(
+            (gc) => gc.id !== `${card.id}-grid`
+          );
+          // add the new snap card
+          state.ghostCards.push(snapCard);
+        }
+      }
     });
 
   // Not sure why I have to do this typescript....
@@ -344,6 +373,8 @@ const cardMoveReducer: CaseReducer<
     );
   }
 
+  // Create the 'snap guideline' cards
+
   // put the moved cards at the end. TODO: we could just store the move order or move time
   // or something, and the array could be a selector
   movedCards.forEach((movedCard) => {
@@ -351,26 +382,36 @@ const cardMoveReducer: CaseReducer<
   });
 };
 
-const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
-  state,
-  action
-) => {
+const endCardMoveWithSnapReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{ id: string; snap: boolean }>
+> = (state, action) => {
   let dropTargetCards: ICardDetails[] = [];
   let attachTargetCardStacks: ICardStack[] = [];
   state.cards
     .filter(
       (card) =>
-        card.id === action.payload ||
+        card.id === action.payload.id ||
         (card.selected && card.controlledBy === (action as any).ACTOR_REF)
     )
     .forEach((card) => {
       card.dragging = false;
 
-      if (!!state.attachTargetCards[(action as any).ACTOR_REF]) {
-        attachTargetCardStacks.push(card);
-      } else if (!!state.dropTargetCards[(action as any).ACTOR_REF]) {
-        // Add the cards to the drop Target card stack
-        dropTargetCards = dropTargetCards.concat(card.cardStack);
+      // GRID SNAPPING
+      if (action.payload.snap) {
+        card.x =
+          Math.round(card.x / cardConstants.GRID_SNAP_WIDTH) *
+          cardConstants.GRID_SNAP_WIDTH;
+        card.y =
+          Math.round(card.y / cardConstants.GRID_SNAP_HEIGHT) *
+          cardConstants.GRID_SNAP_HEIGHT;
+
+        if (!!state.attachTargetCards[(action as any).ACTOR_REF]) {
+          attachTargetCardStacks.push(card);
+        } else if (!!state.dropTargetCards[(action as any).ACTOR_REF]) {
+          // Add the cards to the drop Target card stack
+          dropTargetCards = dropTargetCards.concat(card.cardStack);
+        }
       }
     });
 
@@ -388,7 +429,7 @@ const endCardMoveReducer: CaseReducer<ICardsState, PayloadAction<string>> = (
     state.cards = state.cards.filter(
       (card) =>
         !(
-          card.id === action.payload ||
+          card.id === action.payload.id ||
           (card.selected && card.controlledBy === (action as any).ACTOR_REF)
         )
     );
@@ -689,8 +730,8 @@ const cardsSlice = createSlice({
     toggleSelectCard: toggleSelectCardReducer,
     exhaustCard: exhaustCardReducer,
     deleteCardStack: deleteCardStackReducer,
-    cardMove: cardMoveReducer,
-    endCardMove: endCardMoveReducer,
+    cardMoveWithSnap: cardMoveWithSnapReducer,
+    endCardMoveWithSnap: endCardMoveWithSnapReducer,
     cardFromHandMove: cardFromHandMoveReducer,
     selectMultipleCards: selectMultipleCardsReducer,
     unselectAllCards: unselectAllCardsReducer,
@@ -1132,8 +1173,8 @@ export const {
   toggleSelectCard,
   exhaustCard,
   deleteCardStack,
-  cardMove,
-  endCardMove,
+  cardMoveWithSnap,
+  endCardMoveWithSnap,
   cardFromHandMove,
   selectMultipleCards,
   unselectAllCards,

@@ -242,6 +242,10 @@ class Game extends Component<IProps, IState> {
   }
 
   public componentDidMount() {
+    document.addEventListener("keydown", this.handleKeyDown);
+    document.addEventListener("keypress", this.handleKeyPress);
+    window.addEventListener("resize", this.handleResize);
+
     const image = new Image();
     image.onload = () => {
       this.setState({
@@ -257,11 +261,11 @@ class Game extends Component<IProps, IState> {
       GamePropertiesMap[this.props.currentGameType].backgroundImageLocation;
     this.props.loadCardsData();
     this.props.allJsonData("");
-
-    window.addEventListener("resize", this.handleResize);
   }
 
   public componentWillUnmount = () => {
+    document.removeEventListener("keydown", this.handleKeyDown);
+    document.removeEventListener("keypress", this.handleKeyPress);
     window.removeEventListener("resize", this.handleResize);
   };
 
@@ -274,13 +278,13 @@ class Game extends Component<IProps, IState> {
     //       if the body has focus, so we're going to
     //       force the game area to have focus if it
     //       lost it
-    if (document.activeElement === document.body) {
-      // setTimeout so we don't manually change the dom while rendering
-      setTimeout(() => {
-        const el = document.querySelector(".play-area") as HTMLElement;
-        el?.focus();
-      }, 0);
-    }
+    // if (document.activeElement === document.body) {
+    //   // setTimeout so we don't manually change the dom while rendering
+    //   setTimeout(() => {
+    //     const el = document.querySelector(".play-area") as HTMLElement;
+    //     el?.focus();
+    //   }, 0);
+    // }
     // END HACK
 
     const staticCards = this.props.cards.cards
@@ -483,9 +487,7 @@ class Game extends Component<IProps, IState> {
     return (
       <div
         className="play-area"
-        // tabIndex={1} // For some reason this makes safari super slow....
-        onKeyDown={this.handleKeyDown}
-        onKeyPress={this.handleKeyPress}
+        // tabIndex={0} // For some reason this makes safari super slow....
         onMouseUp={(_event) => {
           if (this.props.gameState.draggingCardFromHand) {
             this.captureLastMousePos = false;
@@ -1558,7 +1560,7 @@ class Game extends Component<IProps, IState> {
     }
   };
 
-  private handleKeyPress = (event: React.KeyboardEvent<HTMLElement>) => {
+  private handleKeyPress = (event: KeyboardEvent) => {
     const modifier: boolean = event.ctrlKey || event.metaKey;
     const code = event.key.toLocaleLowerCase();
     const intCode = parseInt(code);
@@ -1592,7 +1594,7 @@ class Game extends Component<IProps, IState> {
     }
   };
 
-  private handleKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+  private handleKeyDown = (event: KeyboardEvent) => {
     const code = event.key.toLocaleLowerCase();
     const intCode = parseInt(code);
 
