@@ -264,36 +264,6 @@ const cardMoveWithSnapReducer: CaseReducer<
       card.y += action.payload.dy;
 
       movedCards.push(card);
-
-      if (action.payload.snap) {
-        const snapCard = JSON.parse(JSON.stringify(card));
-        snapCard.id = `${card.id}-grid`;
-        snapCard.x =
-          Math.round(card.x / cardConstants.GRID_SNAP_WIDTH) *
-          cardConstants.GRID_SNAP_WIDTH;
-        snapCard.y =
-          Math.round(card.y / cardConstants.GRID_SNAP_HEIGHT) *
-          cardConstants.GRID_SNAP_HEIGHT;
-        snapCard.cardStack = [{ jsonId: `grid` }];
-
-        // Check if there is already a snap card for this card
-        // rendered at the x,y pos
-        if (
-          !state.ghostCards.some(
-            (gc) =>
-              gc.id === `${card.id}-grid` &&
-              gc.x === snapCard.x &&
-              gc.y === snapCard.y
-          )
-        ) {
-          //remove all other snap cards for this card
-          state.ghostCards = state.ghostCards.filter(
-            (gc) => gc.id !== `${card.id}-grid`
-          );
-          // add the new snap card
-          state.ghostCards.push(snapCard);
-        }
-      }
     });
 
   // Not sure why I have to do this typescript....
@@ -339,6 +309,7 @@ const cardMoveWithSnapReducer: CaseReducer<
     possibleAttachTargets.sort((c1, c2) => c1.distance - c2.distance)[0]
       ?.card ?? null;
 
+  const dropTarget = state.dropTargetCards[(action as any).ACTOR_REF];
   const attachTarget = state.attachTargetCards[(action as any).ACTOR_REF];
   if (!!attachTarget) {
     // First, figure out where we should draw the ghost card. Keep moving up
@@ -373,7 +344,47 @@ const cardMoveWithSnapReducer: CaseReducer<
     );
   }
 
-  // Create the 'snap guideline' cards
+  // Create the 'snap guideline' cards if we don't have a drop target or attach target
+  if (action.payload.snap && !dropTarget && !attachTarget) {
+    foreachSelectedAndControlledCard(
+      state,
+      (action as any).ACTOR_REF,
+      (card) => {
+        const snapCard = JSON.parse(JSON.stringify(card));
+        snapCard.id = `${card.id}-grid`;
+        snapCard.x =
+          Math.round(card.x / cardConstants.GRID_SNAP_WIDTH) *
+          cardConstants.GRID_SNAP_WIDTH;
+        snapCard.y =
+          Math.round(card.y / cardConstants.GRID_SNAP_HEIGHT) *
+          cardConstants.GRID_SNAP_HEIGHT;
+        snapCard.cardStack = [{ jsonId: `grid` }];
+
+        // Check if there is already a snap card for this card
+        // rendered at the x,y pos
+        if (
+          !state.ghostCards.some(
+            (gc) =>
+              gc.id === `${card.id}-grid` &&
+              gc.x === snapCard.x &&
+              gc.y === snapCard.y
+          )
+        ) {
+          //remove all other snap cards for this card
+          state.ghostCards = state.ghostCards.filter(
+            (gc) => gc.id !== `${card.id}-grid`
+          );
+          // add the new snap card
+          state.ghostCards.push(snapCard);
+        }
+      }
+    );
+  } else if (action.payload.snap && (!!dropTarget || !!attachTarget)) {
+    // remove all snap cards
+    state.ghostCards = state.ghostCards.filter(
+      (gc) => !gc.id.includes("-grid")
+    );
+  }
 
   // put the moved cards at the end. TODO: we could just store the move order or move time
   // or something, and the array could be a selector
