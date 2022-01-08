@@ -114,6 +114,10 @@ const toggleDrawCardsIntoHandReducer: CaseReducer<IGameState> = (state) => {
   state.drawCardsIntoHand = !state.drawCardsIntoHand;
 };
 
+const toggleSnapCardsToGridReducer: CaseReducer<IGameState> = (state) => {
+  state.snapCardsToGrid = !state.snapCardsToGrid;
+};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -137,6 +141,7 @@ const gameSlice = createSlice({
     hideSpecificCardLoader: hideSpecificCardLoaderReducer,
     stopDraggingCardFromHand: stopDraggingCardFromHandReducer,
     toggleDrawCardsIntoHand: toggleDrawCardsIntoHandReducer,
+    toggleSnapCardsToGrid: toggleSnapCardsToGridReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -172,6 +177,7 @@ export const {
   hideSpecificCardLoader,
   stopDraggingCardFromHand,
   toggleDrawCardsIntoHand,
+  toggleSnapCardsToGrid,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

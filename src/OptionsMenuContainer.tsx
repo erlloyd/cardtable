@@ -13,12 +13,13 @@ import {
   adjustCounterToken,
 } from "./features/cards/cards.slice";
 import { shuffleStack } from "./features/cards/cards.thunks";
-import { getGame } from "./features/game/game.selectors";
+import { getGame, getSnapCardsToGrid } from "./features/game/game.selectors";
 import { RootState } from "./store/rootReducer";
 import OptionsMenu from "./OptionsMenu";
 import {
   showRadialMenuAtPosition,
   toggleDrawCardsIntoHand,
+  toggleSnapCardsToGrid,
 } from "./features/game/game.slice";
 import { myPeerRef } from "./constants/app-constants";
 import { ActionCreators } from "redux-undo";
@@ -30,6 +31,7 @@ const mapStateToProps = (state: RootState) => {
     panMode: getPanMode(state),
     multiselectMode: getMultiselectMode(state),
     drawCardsIntoHand: getGame(state).drawCardsIntoHand,
+    snapCardsToGrid: getSnapCardsToGrid(state),
   };
 };
 
@@ -45,6 +47,7 @@ const OptionsMenuContainer = connect(mapStateToProps, {
   undo: ActionCreators.undo,
   redo: ActionCreators.redo,
   toggleDrawCardsIntoHand,
+  toggleSnapCardsToGrid,
 })(OptionsMenu);
 
 export default OptionsMenuContainer;

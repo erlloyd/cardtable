@@ -5,6 +5,7 @@ import "./OptionsMenu.scss";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import OpenWithIcon from "@material-ui/icons/OpenWith";
 import SelectAllIcon from "@material-ui/icons/SelectAll";
+import GridOnIcon from "@material-ui/icons/GridOn";
 import InfoIcon from "@material-ui/icons/Info";
 import UndoIcon from "@material-ui/icons/Undo";
 import RedoIcon from "@material-ui/icons/Redo";
@@ -22,6 +23,7 @@ interface IProps {
   panMode: boolean;
   multiselectMode: boolean;
   drawCardsIntoHand: boolean;
+  snapCardsToGrid: boolean;
   togglePanMode: () => void;
   toggleMultiselectMode: () => void;
   flipCards: () => void;
@@ -43,6 +45,7 @@ interface IProps {
   undo: () => void;
   redo: () => void;
   toggleDrawCardsIntoHand: () => void;
+  toggleSnapCardsToGrid: () => void;
 }
 class OptionsMenu extends Component<IProps> {
   render() {
@@ -74,6 +77,16 @@ class OptionsMenu extends Component<IProps> {
             }}
           >
             <PanToolIcon fontSize="large" />
+          </button>
+        </Tooltip>
+        <Tooltip title="Toggle Snap To Grid">
+          <button
+            className={cx({ "toggle-on": this.props.snapCardsToGrid })}
+            onClick={() => {
+              this.props.toggleSnapCardsToGrid();
+            }}
+          >
+            <GridOnIcon fontSize="large" />
           </button>
         </Tooltip>
         <button

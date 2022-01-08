@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import undoable, { excludeAction, groupByActionTypes } from "redux-undo";
 import cardsData from "../features/cards-data/cards-data.slice";
 import { startCardMoveWithSplitStackId } from "../features/cards/cards.actions";
-import cards, { cardMove } from "../features/cards/cards.slice";
+import cards, { cardMoveWithSnap } from "../features/cards/cards.slice";
 import game, {
   clearPreviewCard,
   setPreviewCardId,
@@ -23,7 +23,7 @@ const rootReducer = combineReducers({
     groupBy: groupByActionTypes([moveCounter.type]),
     filter: excludeAction([
       startCardMoveWithSplitStackId.type,
-      cardMove.type,
+      cardMoveWithSnap.type,
       setPreviewCardId.type,
       clearPreviewCard.type,
     ]),
