@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import { ActionCreators } from "redux-undo";
-import Game from "./Game";
 import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
 import { loadCardsData } from "./features/cards-data/cards-data.slice";
+import { allJsonData } from "./features/cards-data/cards-data.thunks";
 import {
   getCards,
   getDropTargetCardsById,
@@ -10,11 +10,16 @@ import {
   getPanMode,
 } from "./features/cards/cards.selectors";
 import {
+  addExtraIcon,
+  addToExistingCardStack,
+  addToPlayerHand,
   adjustCounterToken,
-  cardFromHandMove,
-  exhaustCard,
+  adjustModifier,
+  clearAllModifiers,
   deleteCardStack,
+  exhaustCard,
   flipCards,
+  removeExtraIcon,
   selectCard,
   selectMultipleCards,
   togglePanMode,
@@ -22,30 +27,28 @@ import {
   toggleToken,
   unselectAllCards,
   unselectCard,
-  adjustModifier,
-  clearAllModifiers,
-  addToPlayerHand,
-  addToExistingCardStack,
-  addExtraIcon,
-  removeExtraIcon,
 } from "./features/cards/cards.slice";
 import {
   addCardStack,
+  cardFromHandMove,
+  cardMove,
+  createDeckFromJson,
+  createDeckFromTxt,
+  drawCardsOutOfCardStack,
+  endCardMove,
   fetchDecklistById,
   pullCardOutOfCardStack,
-  startCardMove,
   shuffleStack,
-  drawCardsOutOfCardStack,
-  createDeckFromTxt,
-  createDeckFromJson,
-  cardMove,
-  endCardMove,
+  startCardMove,
 } from "./features/cards/cards.thunks";
+import { getCurrentCounters } from "./features/counters/counters.selectors";
 import {
-  generateGameStateUrl,
-  saveDeckAsJson,
-} from "./features/game/game.thunks";
-import { allJsonData } from "./features/cards-data/cards-data.thunks";
+  moveCounter,
+  removeCounter,
+  updateCounterColor,
+  updateCounterValue,
+} from "./features/counters/counters.slice";
+import { addNewCounter } from "./features/counters/counters.thunks";
 import {
   getGame,
   getMenuPreviewCard,
@@ -54,27 +57,23 @@ import {
   getPlayerNumbers,
 } from "./features/game/game.selectors";
 import {
+  clearPreviewCard,
   connectToRemoteGame,
-  updatePosition,
-  updateZoom,
+  quitGame,
   requestResync,
   setPreviewCardId,
-  clearPreviewCard,
-  quitGame,
   showRadialMenuAtPosition,
   showSpecificCardLoader,
+  updatePosition,
+  updateZoom,
 } from "./features/game/game.slice";
-
 import {
-  moveCounter,
-  removeCounter,
-  updateCounterValue,
-  updateCounterColor,
-} from "./features/counters/counters.slice";
-import { addNewCounter } from "./features/counters/counters.thunks";
+  generateGameStateUrl,
+  saveDeckAsJson,
+} from "./features/game/game.thunks";
+import Game from "./Game";
 import { resetApp } from "./store/global.actions";
 import { RootState } from "./store/rootReducer";
-import { getCurrentCounters } from "./features/counters/counters.selectors";
 
 const mapStateToProps = (state: RootState) => {
   return {

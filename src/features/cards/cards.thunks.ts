@@ -16,7 +16,7 @@ import {
 import { ICardData } from "../cards-data/initialState";
 import { getGame, getSnapCardsToGrid } from "../game/game.selectors";
 import {
-  addCardStackWithId,
+  addCardStackWithSnapAndId,
   createDeckFromTextFileWithIds,
   drawCardsOutOfCardStackWithIds,
   pullCardOutOfCardStackWithId,
@@ -25,7 +25,11 @@ import {
   startCardMoveWithSplitStackId,
 } from "./cards.actions";
 import { getCards } from "./cards.selectors";
-import { cardMoveWithSnap, endCardMoveWithSnap } from "./cards.slice";
+import {
+  cardFromHandMoveWithSnap,
+  cardMoveWithSnap,
+  endCardMoveWithSnap,
+} from "./cards.slice";
 import { ICardDetails, ICardStack } from "./initialState";
 
 interface DeckData {
@@ -54,6 +58,13 @@ export interface DrawCardsOutOfCardStackPayload {
   numberToDraw: number;
   facedown?: boolean;
 }
+
+export const cardFromHandMove =
+  (pos: Vector2d): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (dispatch, getState) => {
+    const snap = getSnapCardsToGrid(getState());
+    dispatch(cardFromHandMoveWithSnap({ ...pos, snap }));
+  };
 
 export const cardMove =
   (info: {
@@ -106,12 +117,14 @@ export const addCardStack =
   (
     payload: AddCardStackPayload
   ): ThunkAction<void, RootState, unknown, Action<string>> =>
-  (dispatch) => {
+  (dispatch, getState) => {
+    const snap = getSnapCardsToGrid(getState());
     const payloadWithId = {
       ...payload,
+      snap,
       id: uuidv4(),
     };
-    dispatch(addCardStackWithId(payloadWithId));
+    dispatch(addCardStackWithSnapAndId(payloadWithId));
   };
 
 export const pullCardOutOfCardStack =

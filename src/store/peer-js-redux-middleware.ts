@@ -1,7 +1,10 @@
 import Peer from "peerjs";
 import cloneDeep from "lodash.clonedeep";
 import { myPeerRef } from "../constants/app-constants";
-import { togglePanMode, cardFromHandMove } from "../features/cards/cards.slice";
+import {
+  togglePanMode,
+  cardFromHandMoveWithSnap,
+} from "../features/cards/cards.slice";
 import {
   loadCardsData,
   loadCardsDataForPack,
@@ -53,7 +56,7 @@ const blacklistRemoteActions = {
   [loadCardsForEncounterSet.type]: true,
   [startDraggingCardFromHand.type]: true,
   [stopDraggingCardFromHand.type]: true,
-  [cardFromHandMove.type]: true,
+  [cardFromHandMoveWithSnap.type]: true,
   [toggleDrawCardsIntoHand.type]: true,
   [toggleSnapCardsToGrid.type]: true,
 };

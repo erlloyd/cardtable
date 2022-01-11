@@ -21,7 +21,7 @@ import {
 } from "../../store/global.actions";
 import { getDistance } from "../../utilities/geo";
 import {
-  addCardStackWithId,
+  addCardStackWithSnapAndId,
   createDeckFromTextFileWithIds,
   CreateDeckPayload,
   drawCardsOutOfCardStackWithIds,
@@ -38,12 +38,140 @@ import {
   ICardStack,
   initialState,
 } from "./initialState";
+import { myPeerRef } from "../../constants/app-constants";
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 const CARD_ATTACH_TARGET_MIN_DISTANCE = 50;
 const CARD_ATTACH_TARGET_MAX_DISTANCE = 150;
 
+// const getSnapCard = (
+//   card: ICardStack,
+//   ghostCards: ICardStack[]
+// ): ICardStack => {
+//   const snapCard = JSON.parse(JSON.stringify(card));
+//   snapCard.id = `${card.id}-grid`;
+//   snapCard.x =
+//     Math.round(card.x / cardConstants.GRID_SNAP_WIDTH) *
+//     cardConstants.GRID_SNAP_WIDTH;
+//   snapCard.y =
+//     Math.round(card.y / cardConstants.GRID_SNAP_HEIGHT) *
+//     cardConstants.GRID_SNAP_HEIGHT;
+//   snapCard.cardStack = [{ jsonId: `grid` }];
+//   return snapCard;
+// };
+
 // Helper methods
+const createNewEmptyCardStackWithId = (id: string): ICardStack => {
+  return {
+    controlledBy: "",
+    x: 0,
+    y: 0,
+    dragging: false,
+    shuffling: false,
+    exhausted: false,
+    faceup: true,
+    fill: "red",
+    id,
+    cardStack: [],
+    selected: false,
+    statusTokens: {
+      stunned: false,
+      confused: false,
+      tough: false,
+    },
+    counterTokens: {
+      damage: 0,
+      threat: 0,
+      generic: 0,
+    },
+    modifiers: {},
+    extraIcons: [],
+  };
+};
+
+const transformGhostCardsWhenSnapping = (
+  state: ICardsState,
+  shouldSnap: boolean,
+  actorRef: string,
+  hasDropTarget: boolean,
+  hasAttachTarget: boolean,
+  card?: ICardStack
+): ICardStack[] => {
+  let returnCards: ICardStack[] = state.ghostCards;
+  if (shouldSnap && !hasDropTarget && !hasAttachTarget) {
+    if (!!card) {
+      //////////
+      ////TODO: Figure out how to generalize this
+      //////////
+      const snapCard = JSON.parse(JSON.stringify(card));
+      snapCard.id = `${card.id}-grid`;
+      snapCard.x =
+        Math.round(card.x / cardConstants.GRID_SNAP_WIDTH) *
+        cardConstants.GRID_SNAP_WIDTH;
+      snapCard.y =
+        Math.round(card.y / cardConstants.GRID_SNAP_HEIGHT) *
+        cardConstants.GRID_SNAP_HEIGHT;
+      snapCard.cardStack = [{ jsonId: `grid` }];
+
+      // Check if there is already a snap card for this card
+      // rendered at the x,y pos
+      if (
+        !state.ghostCards.some(
+          (gc) =>
+            gc.id === `${card.id}-grid` &&
+            gc.x === snapCard.x &&
+            gc.y === snapCard.y
+        )
+      ) {
+        //remove all other snap cards for this card
+        returnCards = state.ghostCards.filter(
+          (gc) => gc.id !== `${card.id}-grid`
+        );
+        // add the new snap card
+        returnCards.push(snapCard);
+      }
+      //////////
+      ////END HACKY DUPLICATE SECTION
+      //////////
+    } else {
+      foreachSelectedAndControlledCard(state, actorRef, (card) => {
+        const snapCard = JSON.parse(JSON.stringify(card));
+        snapCard.id = `${card.id}-grid`;
+        snapCard.x =
+          Math.round(card.x / cardConstants.GRID_SNAP_WIDTH) *
+          cardConstants.GRID_SNAP_WIDTH;
+        snapCard.y =
+          Math.round(card.y / cardConstants.GRID_SNAP_HEIGHT) *
+          cardConstants.GRID_SNAP_HEIGHT;
+        snapCard.cardStack = [{ jsonId: `grid` }];
+
+        // Check if there is already a snap card for this card
+        // rendered at the x,y pos
+        if (
+          !state.ghostCards.some(
+            (gc) =>
+              gc.id === `${card.id}-grid` &&
+              gc.x === snapCard.x &&
+              gc.y === snapCard.y
+          )
+        ) {
+          //remove all other snap cards for this card
+          returnCards = state.ghostCards.filter(
+            (gc) => gc.id !== `${card.id}-grid`
+          );
+          // add the new snap card
+          returnCards.push(snapCard);
+        }
+      });
+    }
+  } else if (shouldSnap && (hasDropTarget || hasAttachTarget)) {
+    // remove all snap cards
+    returnCards = state.ghostCards.filter((gc) => !gc.id.includes("-grid"));
+  }
+
+  return returnCards;
+};
+
 const getCardStackWithId = (
   state: ICardsState,
   id: string
@@ -95,10 +223,6 @@ const getDropTargetCard = (
   const possibleDropTargets: { distance: number; card: ICardStack }[] = [];
 
   foreachUnselectedCard(state, (card) => {
-    // console.log(`card pos: ${card.x}, ${card.y}`);
-    // console.log(
-    //   `compare pos: ${draggedCardPosition.x}, ${draggedCardPosition.y}`
-    // );
     const distance = getDistance({ x: card.x, y: card.y }, draggedCardPosition);
     if (distance < allowedDistance) {
       possibleDropTargets.push({
@@ -231,14 +355,28 @@ const getAttachDrawPos = (
   return drawPos;
 };
 
-const cardFromHandMoveReducer: CaseReducer<
+const cardFromHandMoveWithSnapReducer: CaseReducer<
   ICardsState,
-  PayloadAction<{ x: number; y: number }>
+  PayloadAction<{ x: number; y: number; snap: boolean }>
 > = (state, action) => {
   state.dropTargetCards[(action as any).ACTOR_REF] = getDropTargetCard(
     state,
     action.payload,
     CARD_DROP_TARGET_DISTANCE * 2
+  );
+
+  const dropTarget = state.dropTargetCards[(action as any).ACTOR_REF];
+
+  const newEmptyCard = createNewEmptyCardStackWithId(`${myPeerRef}-fromHand`);
+  newEmptyCard.x = action.payload.x;
+  newEmptyCard.y = action.payload.y;
+  state.ghostCards = transformGhostCardsWhenSnapping(
+    state,
+    action.payload.snap,
+    (action as any).ACTOR_REF,
+    !!dropTarget,
+    false,
+    newEmptyCard
   );
 };
 
@@ -345,46 +483,13 @@ const cardMoveWithSnapReducer: CaseReducer<
   }
 
   // Create the 'snap guideline' cards if we don't have a drop target or attach target
-  if (action.payload.snap && !dropTarget && !attachTarget) {
-    foreachSelectedAndControlledCard(
-      state,
-      (action as any).ACTOR_REF,
-      (card) => {
-        const snapCard = JSON.parse(JSON.stringify(card));
-        snapCard.id = `${card.id}-grid`;
-        snapCard.x =
-          Math.round(card.x / cardConstants.GRID_SNAP_WIDTH) *
-          cardConstants.GRID_SNAP_WIDTH;
-        snapCard.y =
-          Math.round(card.y / cardConstants.GRID_SNAP_HEIGHT) *
-          cardConstants.GRID_SNAP_HEIGHT;
-        snapCard.cardStack = [{ jsonId: `grid` }];
-
-        // Check if there is already a snap card for this card
-        // rendered at the x,y pos
-        if (
-          !state.ghostCards.some(
-            (gc) =>
-              gc.id === `${card.id}-grid` &&
-              gc.x === snapCard.x &&
-              gc.y === snapCard.y
-          )
-        ) {
-          //remove all other snap cards for this card
-          state.ghostCards = state.ghostCards.filter(
-            (gc) => gc.id !== `${card.id}-grid`
-          );
-          // add the new snap card
-          state.ghostCards.push(snapCard);
-        }
-      }
-    );
-  } else if (action.payload.snap && (!!dropTarget || !!attachTarget)) {
-    // remove all snap cards
-    state.ghostCards = state.ghostCards.filter(
-      (gc) => !gc.id.includes("-grid")
-    );
-  }
+  state.ghostCards = transformGhostCardsWhenSnapping(
+    state,
+    action.payload.snap,
+    (action as any).ACTOR_REF,
+    !!dropTarget,
+    !!attachTarget
+  );
 
   // put the moved cards at the end. TODO: we could just store the move order or move time
   // or something, and the array could be a selector
@@ -743,7 +848,7 @@ const cardsSlice = createSlice({
     deleteCardStack: deleteCardStackReducer,
     cardMoveWithSnap: cardMoveWithSnapReducer,
     endCardMoveWithSnap: endCardMoveWithSnapReducer,
-    cardFromHandMove: cardFromHandMoveReducer,
+    cardFromHandMoveWithSnap: cardFromHandMoveWithSnapReducer,
     selectMultipleCards: selectMultipleCardsReducer,
     unselectAllCards: unselectAllCardsReducer,
     togglePanMode: togglePanModeReducer,
@@ -813,11 +918,22 @@ const cardsSlice = createSlice({
       state.panMode = true;
     });
 
-    builder.addCase(addCardStackWithId, (state, action) => {
+    builder.addCase(addCardStackWithSnapAndId, (state, action) => {
+      const x = action.payload.snap
+        ? Math.round(
+            action.payload.position.x / cardConstants.GRID_SNAP_WIDTH
+          ) * cardConstants.GRID_SNAP_WIDTH
+        : action.payload.position.x;
+      const y = action.payload.snap
+        ? Math.round(
+            action.payload.position.y / cardConstants.GRID_SNAP_HEIGHT
+          ) * cardConstants.GRID_SNAP_HEIGHT
+        : action.payload.position.y;
+
       const newStack: ICardStack = {
         controlledBy: "",
-        x: action.payload.position.x,
-        y: action.payload.position.y,
+        x,
+        y,
         dragging: false,
         shuffling: false,
         exhausted: false,
@@ -859,7 +975,7 @@ const cardsSlice = createSlice({
         newCard.id = action.payload.id;
         newCard.selected = true;
         newCard.controlledBy = (action as any).ACTOR_REF;
-        newCard.x = newCard.x + cardConstants.CARD_WIDTH + 5;
+        newCard.x = newCard.x + cardConstants.GRID_SNAP_WIDTH;
 
         // Find the first instance of the card with the json id. Note that because there
         // might be multiple cards with the same json id, we can't just do a filter
@@ -986,8 +1102,7 @@ const cardsSlice = createSlice({
             newCard.selected = true;
             newCard.controlledBy = (action as any).ACTOR_REF;
             newCard.faceup = !action.payload.facedown;
-            newCard.x =
-              newCard.x + (cardConstants.CARD_WIDTH + 5) * (index + 1);
+            newCard.x = newCard.x + cardConstants.GRID_SNAP_WIDTH * (index + 1);
             newCard.y += cardConstants.CARD_HEIGHT;
 
             state.cards.push(newCard);
@@ -1186,7 +1301,7 @@ export const {
   deleteCardStack,
   cardMoveWithSnap,
   endCardMoveWithSnap,
-  cardFromHandMove,
+  cardFromHandMoveWithSnap,
   selectMultipleCards,
   unselectAllCards,
   togglePanMode,

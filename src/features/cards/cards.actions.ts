@@ -2,9 +2,10 @@ import { createAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/lib/types";
 import { ICardDetails } from "./initialState";
 
-export interface AddCardStackWithIdPayload {
+export interface AddCardStackWithSnapAndIdPayload {
   cardJsonIds: string[];
   position: Vector2d;
+  snap: boolean;
   id: string;
 }
 
@@ -47,8 +48,8 @@ export interface CreateDeckPayload {
   obligationDeckId: string;
 }
 
-export const addCardStackWithId =
-  createAction<AddCardStackWithIdPayload>("addCardStackWithId");
+export const addCardStackWithSnapAndId =
+  createAction<AddCardStackWithSnapAndIdPayload>("addCardStackWithSnapAndId");
 
 export const pullCardOutOfCardStackWithId =
   createAction<PullCardOutOfCardStackWithIdPayload>(
