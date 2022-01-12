@@ -44,23 +44,30 @@ const CARD_DROP_TARGET_DISTANCE = 30;
 const CARD_ATTACH_TARGET_MIN_DISTANCE = 50;
 const CARD_ATTACH_TARGET_MAX_DISTANCE = 150;
 
-// const getSnapCard = (
-//   card: ICardStack,
-//   ghostCards: ICardStack[]
-// ): ICardStack => {
-//   const snapCard = JSON.parse(JSON.stringify(card));
-//   snapCard.id = `${card.id}-grid`;
-//   snapCard.x =
-//     Math.round(card.x / cardConstants.GRID_SNAP_WIDTH) *
-//     cardConstants.GRID_SNAP_WIDTH;
-//   snapCard.y =
-//     Math.round(card.y / cardConstants.GRID_SNAP_HEIGHT) *
-//     cardConstants.GRID_SNAP_HEIGHT;
-//   snapCard.cardStack = [{ jsonId: `grid` }];
-//   return snapCard;
-// };
-
 // Helper methods
+const addAttachedCard = (attachee: ICardStack, attacher: ICardStack) => {
+  let cardIds = attachee.attachedCardIds;
+
+  if (!cardIds) {
+    cardIds = [];
+  }
+
+  cardIds.push(attacher.id);
+  return cardIds;
+};
+
+const removeAttachedCard = (state: ICardsState, card: ICardStack) => {
+  if (card.attachedTo) {
+    const attachedTo = state.cards.find((c) => c.id === card.attachedTo);
+    if (!!attachedTo && !!attachedTo.attachedCardIds) {
+      attachedTo.attachedCardIds = attachedTo.attachedCardIds.filter(
+        (cId) => cId !== card.id
+      );
+    }
+    card.attachedTo = null;
+  }
+};
+
 const createNewEmptyCardStackWithId = (id: string): ICardStack => {
   return {
     controlledBy: "",
@@ -389,9 +396,7 @@ const cardMoveWithSnapReducer: CaseReducer<
 
   state.cards
     .filter(
-      (card) =>
-        card.id === action.payload.id ||
-        (card.selected && card.controlledBy === (action as any).ACTOR_REF)
+      (card) => card.dragging && card.controlledBy === (action as any).ACTOR_REF
     )
     .forEach((card) => {
       if (card.id === action.payload.id) {
@@ -506,9 +511,7 @@ const endCardMoveWithSnapReducer: CaseReducer<
   let attachTargetCardStacks: ICardStack[] = [];
   state.cards
     .filter(
-      (card) =>
-        card.id === action.payload.id ||
-        (card.selected && card.controlledBy === (action as any).ACTOR_REF)
+      (card) => card.dragging && card.controlledBy === (action as any).ACTOR_REF
     )
     .forEach((card) => {
       card.dragging = false;
@@ -521,23 +524,36 @@ const endCardMoveWithSnapReducer: CaseReducer<
         card.y =
           Math.round(card.y / cardConstants.GRID_SNAP_HEIGHT) *
           cardConstants.GRID_SNAP_HEIGHT;
-
-        if (!!state.attachTargetCards[(action as any).ACTOR_REF]) {
-          attachTargetCardStacks.push(card);
-        } else if (!!state.dropTargetCards[(action as any).ACTOR_REF]) {
-          // Add the cards to the drop Target card stack
-          dropTargetCards = dropTargetCards.concat(card.cardStack);
-        }
+      }
+      if (!!state.attachTargetCards[(action as any).ACTOR_REF]) {
+        attachTargetCardStacks.push(card);
+      } else if (!!state.dropTargetCards[(action as any).ACTOR_REF]) {
+        // Add the cards to the drop Target card stack
+        dropTargetCards = dropTargetCards.concat(card.cardStack);
       }
     });
 
   const attachTarget = state.attachTargetCards[(action as any).ACTOR_REF];
-  if (!!attachTarget) {
-    const drawPos = getAttachDrawPos(state, attachTarget);
+  const attachTargetCardFromState = state.cards.find(
+    (c) => c.id === attachTarget?.id
+  );
 
+  if (!!attachTarget && !!attachTargetCardFromState) {
+    const drawPos = getAttachDrawPos(state, attachTarget);
     attachTargetCardStacks.forEach((cs, index) => {
       cs.x = drawPos.x + index * 50;
       cs.y = drawPos.y - index * 50;
+
+      removeAttachedCard(state, cs);
+
+      cs.attachedTo = attachTarget.id;
+      attachTargetCardFromState.attachedCardIds = addAttachedCard(
+        attachTarget,
+        cs
+      );
+      console.log(
+        `attached ${cs.cardStack[0].jsonId} to ${attachTargetCardFromState.cardStack[0].jsonId}`
+      );
       state.cards.unshift(state.cards.splice(state.cards.indexOf(cs), 1)[0]);
     });
     // Now, if there was a drop target card, remove all those cards from the state
@@ -1047,6 +1063,20 @@ const cardsSlice = createSlice({
           (action as any).ACTOR_REF,
           (card) => {
             card.dragging = true;
+
+            // if the card has other attached cards, select them and drag them
+            if (!!card.attachedCardIds && card.attachedCardIds.length > 0) {
+              state.cards
+                .filter((c) => card.attachedCardIds?.some((aC) => aC === c.id))
+                .forEach((card) => {
+                  card.dragging = true;
+                  card.selected = true;
+                  card.controlledBy = myPeerRef;
+                });
+            } else {
+              // Otherwise clear if the card is attached to something else
+              removeAttachedCard(state, card);
+            }
             state.ghostCards.push(Object.assign({}, card));
           }
         );
