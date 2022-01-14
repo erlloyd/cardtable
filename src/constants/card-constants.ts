@@ -7,6 +7,7 @@ export const cardConstants = {
   TOUCH_DRAG_SPLIT_DISTANCE: 100,
   GRID_SNAP_WIDTH: 209 + 20,
   GRID_SNAP_HEIGHT: 209 + 50,
+  ATTACHMENT_OFFSET: 50,
 };
 
 export enum StatusTokenType {
