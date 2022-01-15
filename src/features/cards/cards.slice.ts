@@ -535,10 +535,21 @@ const endCardMoveWithSnapReducer: CaseReducer<
     }
   });
 
-  const attachTarget = state.attachTargetCards[(action as any).ACTOR_REF];
-  const attachTargetCardFromState = state.cards.find(
+  let attachTarget = state.attachTargetCards[(action as any).ACTOR_REF];
+  let attachTargetCardFromState = state.cards.find(
     (c) => c.id === attachTarget?.id
   );
+
+  // If we are about to attach to a card that's already attached to something else,
+  // get the base card
+  let checkAttachedTo = attachTargetCardFromState?.attachedTo;
+  while (!!checkAttachedTo) {
+    attachTargetCardFromState = state.cards.find(
+      (c) => c.id === checkAttachedTo
+    );
+    attachTarget = attachTargetCardFromState ?? null;
+    checkAttachedTo = attachTargetCardFromState?.attachedTo;
+  }
 
   if (!!attachTarget && !!attachTargetCardFromState) {
     const drawPos = getAttachDrawPos(state, attachTarget);
@@ -548,16 +559,24 @@ const endCardMoveWithSnapReducer: CaseReducer<
 
       removeAttachedCard(state, cs);
 
-      cs.attachedTo = attachTarget.id;
-      attachTargetCardFromState.attachedCardIds = addAttachedCard(
-        attachTargetCardFromState,
-        cs
-      );
-      console.log(
-        `attached ${cs.cardStack[0].jsonId} to ${attachTargetCardFromState.cardStack[0].jsonId}`
-      );
-      console.log(JSON.stringify(attachTargetCardFromState.attachedCardIds));
-      state.cards.unshift(state.cards.splice(state.cards.indexOf(cs), 1)[0]);
+      // I don't know why I have to do this conditional check...
+      if (attachTargetCardFromState && attachTarget) {
+        cs.attachedTo = attachTarget.id;
+        attachTargetCardFromState.attachedCardIds = addAttachedCard(
+          attachTargetCardFromState,
+          cs
+        );
+        console.log(`attached ${cs.id} to ${attachTargetCardFromState.id}`);
+        console.log(
+          "cards attached to " +
+            attachTargetCardFromState.id +
+            " " +
+            JSON.stringify(attachTargetCardFromState.attachedCardIds)
+        );
+        state.cards.unshift(state.cards.splice(state.cards.indexOf(cs), 1)[0]);
+      } else {
+        console.error("How did this happen??");
+      }
     });
     // Now, if there was a drop target card, remove all those cards from the state
   } else if (!!state.dropTargetCards[(action as any).ACTOR_REF]) {
