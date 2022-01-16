@@ -542,13 +542,15 @@ const endCardMoveWithSnapReducer: CaseReducer<
 
   // If we are about to attach to a card that's already attached to something else,
   // get the base card
-  let checkAttachedTo = attachTargetCardFromState?.attachedTo;
-  while (!!checkAttachedTo) {
+  for (
+    let checkAttachedTo = attachTargetCardFromState?.attachedTo;
+    !!checkAttachedTo;
+    checkAttachedTo = attachTargetCardFromState?.attachedTo
+  ) {
     attachTargetCardFromState = state.cards.find(
       (c) => c.id === checkAttachedTo
     );
     attachTarget = attachTargetCardFromState ?? null;
-    checkAttachedTo = attachTargetCardFromState?.attachedTo;
   }
 
   if (!!attachTarget && !!attachTargetCardFromState) {
