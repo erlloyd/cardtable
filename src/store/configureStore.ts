@@ -18,7 +18,15 @@ export default function configureStore() {
   const store = rtkConfigureStore({
     reducer: rootReducer,
     middleware: customizedMiddleware,
-    devTools: process.env.NODE_ENV !== "production",
+    devTools:
+      process.env.NODE_ENV !== "production"
+        ? {
+            stateSanitizer: (state) =>
+              (state as any).cardsData
+                ? { ...state, cardsData: "<<LOTS OF DATA>>" }
+                : state,
+          }
+        : false,
   });
 
   store.subscribe(

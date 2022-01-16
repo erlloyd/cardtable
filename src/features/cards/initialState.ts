@@ -31,6 +31,8 @@ export interface ICardStack {
     [K: string]: number;
   };
   extraIcons: string[];
+  attachedTo?: string | null;
+  attachedCardIds?: string[] | null;
 }
 
 export interface ICardDetails {
