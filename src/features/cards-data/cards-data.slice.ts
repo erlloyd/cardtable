@@ -26,6 +26,7 @@ import {
 } from "../../external-api/beorn-json-data";
 import { updateActiveGameType } from "../game/game.slice";
 import { receiveRemoteGameState } from "../../store/global.actions";
+import { getCardIncludingOverrides } from "../../utilities/cards-data-utils";
 
 // Utilities
 const convertMarvelToCommonFormat = (
@@ -87,7 +88,9 @@ const convertLOTRToCommonFormat =
     }
 
     const mappedCardData: CardData = {
-      code: encounterCard ? cardLOTRFormat.Slug : cardLOTRFormat.RingsDbCardId,
+      code: encounterCard
+        ? cardLOTRFormat.Slug
+        : getCardIncludingOverrides(cardLOTRFormat),
       name: cardLOTRFormat.Title,
       images: {
         front: cardLOTRFormat.Front.ImagePath,
