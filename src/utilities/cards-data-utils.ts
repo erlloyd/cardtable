@@ -1,6 +1,6 @@
 import { CardData as CardDataLOTR } from "../external-api/beorn-json-data";
 
-export const getCardIncludingOverrides = (card: CardDataLOTR): string => {
+export const getCardCodeIncludingOverrides = (card: CardDataLOTR): string => {
   let code = card.RingsDbCardId;
   if (Object.keys(cardDataSetCodeOverride).includes(card.CardSet)) {
     code = cardDataSetCodeOverride[card.CardSet](card.RingsDbCardId);

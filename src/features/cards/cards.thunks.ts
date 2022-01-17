@@ -37,6 +37,12 @@ interface DeckData {
   slots: { [key: string]: number };
 }
 
+interface LOTRDeckData {
+  heroes: { [key: string]: number };
+  slots: { [key: string]: number };
+  sideslots?: { [key: string]: number };
+}
+
 interface AddCardStackPayload {
   cardJsonIds: string[];
   position: Vector2d;
@@ -323,7 +329,7 @@ const replaceDuplicateCards = (
 };
 
 const getLOTRCards = (
-  response: any,
+  response: { data: LOTRDeckData },
   state: RootState,
   payload: { gameType: GameType; decklistId: number; position: Vector2d }
 ) => {
@@ -352,6 +358,22 @@ const getLOTRCards = (
     }
   });
 
+  let sideboardStack: string[] = [];
+
+  Object.entries(response.data.sideslots ?? []).forEach(([key, value]) => {
+    const cardData = heroCardsData[key];
+    if (!cardData) {
+      throw new Error(`Couldn't find card data for sideboard card ${key}`);
+    }
+
+    if (cardData.typeCode !== "Hero") {
+      const cardDetails: string[] = Array.from(Array(value).keys()).map(
+        (): string => key
+      );
+      sideboardStack = sideboardStack.concat(cardDetails);
+    }
+  });
+
   response.data.slots = newSlots;
 
   return {
@@ -360,7 +382,7 @@ const getLOTRCards = (
     data: response.data,
     dataId: uuidv4(),
     extraHeroCards: heroStack,
-    relatedEncounterDeck: [],
+    relatedEncounterDeck: sideboardStack,
     encounterDeckId: uuidv4(),
     relatedObligationDeck: [],
     obligationDeckId: uuidv4(),
