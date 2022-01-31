@@ -152,6 +152,7 @@ interface IProps {
   addToPlayerHand: (payload: { playerNumber: number }) => void;
   addExtraIcon: (icon: string) => void;
   removeExtraIcon: (icon: string) => void;
+  clearMyGhostCards: () => void;
 }
 
 interface IState {
@@ -533,6 +534,7 @@ class Game extends Component<IProps, IState> {
           playerNumber={this.props.playerNumbers[myPeerRef] ?? 1}
           droppedBackInHand={() => {
             this.captureLastMousePos = true;
+            this.props.clearMyGhostCards();
           }}
           droppedOnTable={(id: string, pos?: Vector2d) => {
             const myDropTargetCard =

@@ -376,6 +376,7 @@ const cardFromHandMoveWithSnapReducer: CaseReducer<
   const dropTarget = state.dropTargetCards[(action as any).ACTOR_REF];
 
   const newEmptyCard = createNewEmptyCardStackWithId(`${myPeerRef}-fromHand`);
+  newEmptyCard.controlledBy = myPeerRef;
   newEmptyCard.x = action.payload.x;
   newEmptyCard.y = action.payload.y;
   state.ghostCards = transformGhostCardsWhenSnapping(
@@ -567,13 +568,6 @@ const endCardMoveWithSnapReducer: CaseReducer<
         attachTargetCardFromState.attachedCardIds = addAttachedCard(
           attachTargetCardFromState,
           cs
-        );
-        console.log(`attached ${cs.id} to ${attachTargetCardFromState.id}`);
-        console.log(
-          "cards attached to " +
-            attachTargetCardFromState.id +
-            " " +
-            JSON.stringify(attachTargetCardFromState.attachedCardIds)
         );
         state.cards.unshift(state.cards.splice(state.cards.indexOf(cs), 1)[0]);
       } else {
@@ -893,6 +887,12 @@ const toggleExtraIconReducer: CaseReducer<
     }
   });
 };
+
+const clearMyGhostCardsReducer: CaseReducer<ICardsState> = (state, action) => {
+  state.ghostCards = state.ghostCards.filter(
+    (gc) => gc.controlledBy !== (action as any).ACTOR_REF
+  );
+};
 // Selectors
 
 // slice
@@ -926,6 +926,7 @@ const cardsSlice = createSlice({
     addExtraIcon: addExtraIconReducer,
     removeExtraIcon: removeExtraIconReducer,
     toggleExtraIcon: toggleExtraIconReducer,
+    clearMyGhostCards: clearMyGhostCardsReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -1418,6 +1419,7 @@ export const {
   addExtraIcon,
   removeExtraIcon,
   toggleExtraIcon,
+  clearMyGhostCards,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

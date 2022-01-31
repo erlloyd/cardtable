@@ -27,6 +27,7 @@ import {
   toggleToken,
   unselectAllCards,
   unselectCard,
+  clearMyGhostCards,
 } from "./features/cards/cards.slice";
 import {
   addCardStack,
@@ -141,6 +142,7 @@ const GameContainer = connect(mapStateToProps, {
   addToExistingCardStack,
   addExtraIcon,
   removeExtraIcon,
+  clearMyGhostCards,
 })(Game);
 
 export default GameContainer;
