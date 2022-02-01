@@ -21,3 +21,10 @@ export enum CounterTokenType {
   Threat = "threat",
   Generic = "generic",
 }
+
+export const HORIZONTAL_TYPE_CODES = [
+  "main_scheme",
+  "side_scheme",
+  "quest",
+  "player_side_quest",
+];

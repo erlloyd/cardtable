@@ -1,3 +1,7 @@
+import { IconButton } from "@material-ui/core";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import cx from "classnames";
+import { Vector2d } from "konva/lib/types";
 import React, { Component } from "react";
 import {
   DragDropContext,
@@ -15,6 +19,8 @@ import {
   playerHandElementId,
   playerHandHeightPx,
 } from "./constants/app-constants";
+import { HORIZONTAL_TYPE_CODES } from "./constants/card-constants";
+import ContextMenu from "./ContextMenu";
 import { ICardData } from "./features/cards-data/initialState";
 import {
   ICardDetails,
@@ -23,11 +29,11 @@ import {
 } from "./features/cards/initialState";
 import "./PlayerHand.scss";
 import TopLayer from "./TopLayer";
-import { getImgUrls } from "./utilities/card-utils";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import { IconButton } from "@material-ui/core";
-import ContextMenu from "./ContextMenu";
-import { Vector2d } from "konva/lib/types";
+import {
+  getCardTypeWithoutStack,
+  getImgUrls,
+  shouldRenderImageHorizontal,
+} from "./utilities/card-utils";
 
 const grid = 8;
 
@@ -342,10 +348,25 @@ class PlayerHand extends Component<IProps, IState> {
     const firstLoadedImage = loadedImgs.length > 0 ? loadedImgs[0].url : null;
 
     return imgs.map((i, index) => {
+      const cardType = getCardTypeWithoutStack(
+        card.jsonId,
+        true /* cards in hand are always faceup */,
+        this.props.cardData
+      );
+      const shouldRotate = shouldRenderImageHorizontal(
+        card.jsonId,
+        cardType,
+        HORIZONTAL_TYPE_CODES,
+        false /* We're never showing card backs */
+      );
       return (
         <img
           key={`card-${card.jsonId}-img-${index}`}
-          className={i !== firstLoadedImage ? "hide-img" : "show-img"}
+          className={cx({
+            "hide-img": i !== firstLoadedImage,
+            "show-img": i === firstLoadedImage,
+            "rotate-card": shouldRotate,
+          })}
           onLoad={() => {
             this.setState({
               imgUrlToStatusMap: {

@@ -1,6 +1,9 @@
 import { GameType, myPeerRef } from "../constants/app-constants";
 import { StatusTokenType } from "../constants/card-constants";
-import { MISSING_CARD_IMAGE_MAP } from "../constants/card-missing-image-map";
+import {
+  CARD_ALREADY_ROTATED_MAP,
+  MISSING_CARD_IMAGE_MAP,
+} from "../constants/card-missing-image-map";
 import { CARD_PACK_REMAPPING } from "../constants/card-pack-mapping";
 import { CardData } from "../external-api/common-card-data";
 import { ICardData } from "../features/cards-data/initialState";
@@ -156,3 +159,35 @@ export const getImgUrls = (
 
   return urls;
 };
+
+export const shouldRenderImageHorizontal = (
+  code: string,
+  type: string,
+  typeCodes: string[],
+  plainCardBack: boolean
+): boolean => {
+  const shouldRotateByType =
+    typeCodes.includes(type.toLocaleLowerCase()) && !plainCardBack;
+  return shouldRotateByType && !CARD_ALREADY_ROTATED_MAP[code];
+};
+
+export const getCardTypeWithoutStack = (
+  jsonId: string,
+  faceup: boolean,
+  cardsData: ICardData
+): string => {
+  if (Object.keys(cardsData).length === 0) return "";
+  let cardData;
+  const mainCardData = cardsData[jsonId];
+  if (!!mainCardData) {
+    cardData = mainCardData;
+    if (!faceup && !!mainCardData.backLink) {
+      cardData = cardsData[mainCardData.backLink];
+    }
+  }
+
+  return (cardData?.typeCode ?? "").toLocaleLowerCase();
+};
+
+export const getCardType = (card: ICardStack, cardsData: ICardData): string =>
+  getCardTypeWithoutStack(card.cardStack[0].jsonId, card.faceup, cardsData);

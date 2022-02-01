@@ -8,10 +8,13 @@ import { Rect, Text } from "react-konva";
 import { animated, Spring } from "@react-spring/konva";
 import CardTokensContainer from "./CardTokensContainer";
 import { GameType, myPeerRef, PlayerColor } from "./constants/app-constants";
-import { cardConstants } from "./constants/card-constants";
-import { CARD_ALREADY_ROTATED_MAP } from "./constants/card-missing-image-map";
+import {
+  cardConstants,
+  HORIZONTAL_TYPE_CODES,
+} from "./constants/card-constants";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import CardModifiersContainer from "./CardModifiersContainer";
+import { shouldRenderImageHorizontal } from "./utilities/card-utils";
 
 // There is a bug somewhere in react-konva or react-spring/konva, where, if you use the generic
 // `animated` WithAnimations type, you get the following typescript error in typescript ~4.5:
@@ -20,13 +23,6 @@ import CardModifiersContainer from "./CardModifiersContainer";
 //
 // We are explicitly casting to an any for now just until this bug is (hopefully) fixed
 const AnimatedAny = animated as any;
-
-export const HORIZONTAL_TYPE_CODES = [
-  "main_scheme",
-  "side_scheme",
-  "quest",
-  "player_side_quest",
-];
 
 export interface CardTokens {
   damage: number;
@@ -367,10 +363,11 @@ class Card extends Component<IProps, IState> {
             strokeWidth={!!this.getStrokeColor() ? 4 : 0}
             fillPatternRotation={
               !imageLoaded ||
-              this.shouldRenderImageHorizontal(
+              shouldRenderImageHorizontal(
                 this.props.code,
                 this.props.typeCode || "",
-                HORIZONTAL_TYPE_CODES
+                HORIZONTAL_TYPE_CODES,
+                this.plainCardBack
               )
                 ? 270
                 : 0
@@ -574,15 +571,15 @@ class Card extends Component<IProps, IState> {
     ) : null;
   }
 
-  private shouldRenderImageHorizontal(
-    code: string,
-    type: string,
-    typeCodes: string[]
-  ): boolean {
-    const shouldRotateByType =
-      typeCodes.includes(type.toLocaleLowerCase()) && !this.plainCardBack;
-    return shouldRotateByType && !CARD_ALREADY_ROTATED_MAP[code];
-  }
+  // private shouldRenderImageHorizontal(
+  //   code: string,
+  //   type: string,
+  //   typeCodes: string[]
+  // ): boolean {
+  //   const shouldRotateByType =
+  //     typeCodes.includes(type.toLocaleLowerCase()) && !this.plainCardBack;
+  //   return shouldRotateByType && !CARD_ALREADY_ROTATED_MAP[code];
+  // }
 
   private get plainCardBack() {
     return (
@@ -610,10 +607,11 @@ class Card extends Component<IProps, IState> {
       ? widthToUse / img.naturalHeight
       : heightToUse;
 
-    return this.shouldRenderImageHorizontal(
+    return shouldRenderImageHorizontal(
       this.props.code,
       this.props.typeCode || "",
-      HORIZONTAL_TYPE_CODES
+      HORIZONTAL_TYPE_CODES,
+      this.plainCardBack
     )
       ? { width: widthHorizontal, height: heightHorizontal }
       : { width, height };

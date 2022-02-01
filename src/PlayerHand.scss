@@ -14,6 +14,20 @@
     &.hide-img {
       display: none;
     }
+    &.rotate-card {
+      width: 85.6px;
+      height: 66px;
+      -webkit-transform: translateX(-100%) rotate(-90deg); /* Safari */
+      -moz-transform: translateX(-100%) rotate(-90deg); /* Firefox 3.6 Firefox 4 */
+      -ms-transform: translateX(-100%) rotate(-90deg); /* IE9 */
+      -o-transform: translateX(-100%) rotate(-90deg); /* Opera */
+      transform: translateX(-100%) rotate(-90deg); /* W3C */
+      -webkit-transform-origin: top right;
+      -moz-transform-origin: top right;
+      -ms-transform-origin: top right;
+      -o-transform-origin: top right;
+      transform-origin: top right;
+    }
   }
 }
 

@@ -6,7 +6,7 @@ import * as React from "react";
 import { Component } from "react";
 import { Layer, Rect, Stage } from "react-konva";
 import { Provider, ReactReduxContext } from "react-redux";
-import Card, { HORIZONTAL_TYPE_CODES } from "./Card";
+import Card from "./Card";
 import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
 import {
   GameType,
@@ -18,6 +18,7 @@ import {
 import {
   cardConstants,
   CounterTokenType,
+  HORIZONTAL_TYPE_CODES,
   StatusTokenType,
 } from "./constants/card-constants";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
@@ -41,6 +42,7 @@ import TopLayer from "./TopLayer";
 import OptionsMenuContainer from "./OptionsMenuContainer";
 import {
   anyCardStackHasStatus,
+  getCardType,
   getImgUrls,
   getMySelectedCards,
 } from "./utilities/card-utils";
@@ -327,7 +329,7 @@ class Game extends Component<IProps, IState> {
               this.props.cardsData,
               this.props.currentGameType
             )}
-            typeCode={this.getCardType(card)}
+            typeCode={getCardType(card, this.props.cardsData)}
             faceup={card.faceup}
             numCardsInStack={card.cardStack.length}
             cardState={{
@@ -362,7 +364,7 @@ class Game extends Component<IProps, IState> {
             this.props.cardsData,
             this.props.currentGameType
           )}
-          typeCode={this.getCardType(card)}
+          typeCode={getCardType(card, this.props.cardsData)}
           faceup={card.faceup}
           isGhost={true}
         />
@@ -398,7 +400,7 @@ class Game extends Component<IProps, IState> {
               this.props.cardsData,
               this.props.currentGameType
             )}
-            typeCode={this.getCardType(card)}
+            typeCode={getCardType(card, this.props.cardsData)}
             faceup={card.faceup}
             numCardsInStack={card.cardStack.length}
           />
@@ -422,7 +424,7 @@ class Game extends Component<IProps, IState> {
           .filter((_card) => !this.state.selecting && !iAmDragging)
           .map((card) => {
             const isHorizontal = HORIZONTAL_TYPE_CODES.includes(
-              this.getCardType(card)
+              getCardType(card, this.props.cardsData)
             );
             const imgUrls = getImgUrls(
               card,
@@ -469,7 +471,7 @@ class Game extends Component<IProps, IState> {
                 dragging={false}
                 shuffling={false}
                 imgUrls={imgUrls}
-                typeCode={this.getCardType(card)}
+                typeCode={getCardType(card, this.props.cardsData)}
                 faceup={card.faceup}
                 height={previewCardHeight / this.props.gameState.stageZoom.y}
                 width={previewCardWidth / this.props.gameState.stageZoom.x}
@@ -2032,20 +2034,6 @@ class Game extends Component<IProps, IState> {
       contextMenuPosition: pos ?? this.stage?.getPointerPosition() ?? null,
       contextMenuItems: menuItems,
     });
-  };
-
-  private getCardType = (card: ICardStack): string => {
-    if (Object.keys(this.props.cardsData).length === 0) return "";
-    let cardData;
-    const mainCardData = this.props.cardsData[card.cardStack[0].jsonId];
-    if (!!mainCardData) {
-      cardData = mainCardData;
-      if (!card.faceup && !!mainCardData.backLink) {
-        cardData = this.props.cardsData[mainCardData.backLink];
-      }
-    }
-
-    return (cardData?.typeCode ?? "").toLocaleLowerCase();
   };
 
   private getCardName = (card: ICardStack) => {
