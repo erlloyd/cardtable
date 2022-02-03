@@ -269,6 +269,7 @@ class PlayerHand extends Component<IProps, IState> {
                 >
                   <MoreVertIcon fontSize="large" />
                 </IconButton>
+                <div className="player-number">P{this.props.playerNumber}</div>
                 {cards.map((card, index) => (
                   <Draggable
                     key={`player-hand-${this.props.playerNumber}-${index}`}
