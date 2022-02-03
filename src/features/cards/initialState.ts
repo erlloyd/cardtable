@@ -50,7 +50,7 @@ export interface ICardsState {
   multiselectMode: boolean;
 }
 
-const MAX_PLAYERS = 4;
+export const MAX_PLAYERS = 6;
 
 export const generateDefaultPlayerHands = (): IPlayerHand[] =>
   Array(MAX_PLAYERS).fill({ cards: [] });

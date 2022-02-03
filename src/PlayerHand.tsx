@@ -26,6 +26,7 @@ import {
   ICardDetails,
   ICardStack,
   IPlayerHand,
+  MAX_PLAYERS,
 } from "./features/cards/initialState";
 import "./PlayerHand.scss";
 import TopLayer from "./TopLayer";
@@ -137,6 +138,7 @@ interface IProps {
   playerNumber: number;
   currentGameType: GameType | null;
   dragging: boolean;
+  setVisiblePlayerHandNumber: (num: number) => void;
 }
 interface IState {
   modal: boolean;
@@ -210,6 +212,16 @@ class PlayerHand extends Component<IProps, IState> {
           <ContextMenu
             anchorEl={this.state.anchorEl}
             items={[
+              {
+                label: "Show player hand",
+                children: Array.from({ length: MAX_PLAYERS }).map((_, i) => ({
+                  label: `Player ${i + 1}`,
+                  action: () => {
+                    this.props.setVisiblePlayerHandNumber(i + 1);
+                  },
+                })),
+                // .filter((_, i) => this.props.playerNumber !== i + 1),
+              },
               {
                 label: "Drop random card",
                 action: (wasTouch) => {

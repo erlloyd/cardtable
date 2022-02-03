@@ -25,11 +25,14 @@ import { RootState } from "./store/rootReducer";
 const usePlanetMenu = false;
 
 const mapStateToProps = (state: RootState) => {
+  const playerNumberToShow =
+    getGame(state).currentVisiblePlayerHandNumber ??
+    getGame(state).playerNumbers[myPeerRef];
   return {
     selectedCardStacks: cardsSelectedWithPeerRef(myPeerRef)(state),
     currentGameType: getGame(state).activeGameType,
     position: getRadialMenuPosition(state),
-    playerNumber: getGame(state).playerNumbers[myPeerRef],
+    playerNumber: playerNumberToShow,
     drawCardsIntoHand: getGame(state).drawCardsIntoHand,
   };
 };

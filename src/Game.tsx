@@ -1083,7 +1083,9 @@ class Game extends Component<IProps, IState> {
         label: "Add all to hand",
         action: () => {
           this.props.addToPlayerHand({
-            playerNumber: this.props.gameState.playerNumbers[myPeerRef],
+            playerNumber:
+              this.props.gameState.currentVisiblePlayerHandNumber ??
+              this.props.gameState.playerNumbers[myPeerRef],
           });
         },
       },
@@ -1559,7 +1561,9 @@ class Game extends Component<IProps, IState> {
       event.target.y() < translatedMax.y
     ) {
       this.props.addToPlayerHand({
-        playerNumber: this.props.gameState.playerNumbers[myPeerRef],
+        playerNumber:
+          this.props.gameState.currentVisiblePlayerHandNumber ??
+          this.props.gameState.playerNumbers[myPeerRef],
       });
     }
   };

@@ -933,6 +933,7 @@ const cardsSlice = createSlice({
       // TODO: find a way to keep this automatic
       state.cards = action.payload.liveState.present.cards.cards;
       state.ghostCards = action.payload.liveState.present.cards.ghostCards;
+      state.playerHands = action.payload.liveState.present.cards.playerHands;
     });
 
     builder.addCase(verifyRemoteGameState, (state, action) => {
@@ -946,6 +947,10 @@ const cardsSlice = createSlice({
         isEqual(
           original(state.ghostCards),
           action.payload.liveState.present.cards.ghostCards
+        ) &&
+        isEqual(
+          original(state.playerHands),
+          action.payload.liveState.present.cards.playerHands
         )
       );
 

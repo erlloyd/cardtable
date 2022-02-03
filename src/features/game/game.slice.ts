@@ -1,11 +1,16 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/lib/types";
-import { GameType, PlayerColor } from "../../constants/app-constants";
+import {
+  GameType,
+  myPeerRef,
+  PlayerColor,
+} from "../../constants/app-constants";
 import {
   receiveRemoteGameState,
   resetApp,
   startDraggingCardFromHand,
 } from "../../store/global.actions";
+import { MAX_PLAYERS } from "../cards/initialState";
 import { IGameState, initialState } from "./initialState";
 
 // Reducers
@@ -118,6 +123,19 @@ const toggleSnapCardsToGridReducer: CaseReducer<IGameState> = (state) => {
   state.snapCardsToGrid = !state.snapCardsToGrid;
 };
 
+const setVisiblePlayerHandNumberReducer: CaseReducer<
+  IGameState,
+  PayloadAction<number>
+> = (state, action) => {
+  if (action.payload >= 1 && action.payload <= MAX_PLAYERS) {
+    if (state.playerNumbers[myPeerRef] === action.payload) {
+      state.currentVisiblePlayerHandNumber = null;
+    } else {
+      state.currentVisiblePlayerHandNumber = action.payload;
+    }
+  }
+};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -142,6 +160,7 @@ const gameSlice = createSlice({
     stopDraggingCardFromHand: stopDraggingCardFromHandReducer,
     toggleDrawCardsIntoHand: toggleDrawCardsIntoHandReducer,
     toggleSnapCardsToGrid: toggleSnapCardsToGridReducer,
+    setVisiblePlayerHandNumber: setVisiblePlayerHandNumberReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -178,6 +197,7 @@ export const {
   stopDraggingCardFromHand,
   toggleDrawCardsIntoHand,
   toggleSnapCardsToGrid,
+  setVisiblePlayerHandNumber,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

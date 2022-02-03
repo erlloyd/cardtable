@@ -19,6 +19,7 @@ import {
   setPeerId,
   setPlayerInfo,
   setPreviewCardId,
+  setVisiblePlayerHandNumber,
   stopDraggingCardFromHand,
   toggleDrawCardsIntoHand,
   toggleSnapCardsToGrid,
@@ -59,6 +60,7 @@ const blacklistRemoteActions = {
   [cardFromHandMoveWithSnap.type]: true,
   [toggleDrawCardsIntoHand.type]: true,
   [toggleSnapCardsToGrid.type]: true,
+  [setVisiblePlayerHandNumber.type]: true,
 };
 
 const log = (...args: any[]) => {

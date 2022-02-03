@@ -162,7 +162,9 @@ export const drawCardsOutOfCardStack =
     payload: DrawCardsOutOfCardStackPayload
   ): ThunkAction<void, RootState, unknown, Action<string>> =>
   (dispatch, getState) => {
-    const myPlayerNumber = getGame(getState()).playerNumbers[myPeerRef];
+    const playerNumberToUse =
+      getGame(getState()).currentVisiblePlayerHandNumber ??
+      getGame(getState()).playerNumbers[myPeerRef];
     const drawCardsIntoHand = getGame(getState()).drawCardsIntoHand;
     const possibleIds = Array.from({ length: payload.numberToDraw }).map((_i) =>
       uuidv4()
@@ -171,7 +173,7 @@ export const drawCardsOutOfCardStack =
       ...payload,
       idsToUse: possibleIds,
       drawIntoHand: drawCardsIntoHand,
-      playerNumber: myPlayerNumber,
+      playerNumber: playerNumberToUse,
     };
     dispatch(drawCardsOutOfCardStackWithIds(payloadWithIds));
   };

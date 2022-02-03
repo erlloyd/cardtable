@@ -17,6 +17,7 @@ export interface IGameState {
   specificCardLoaderPosition: Vector2d | null;
   playerColors: { [key: string]: PlayerColor };
   playerNumbers: { [key: string]: number };
+  currentVisiblePlayerHandNumber: number | null; // If null, view your own hand
   peerId: string;
   previewCard: IPreviewCard | null;
   menuPreviewCardJsonId: string | null;
@@ -61,6 +62,7 @@ const defaultState: IGameState = {
   draggingCardFromHand: false,
   drawCardsIntoHand: true,
   snapCardsToGrid: true,
+  currentVisiblePlayerHandNumber: null,
 };
 export const initialState: IGameState = {
   ...defaultState,
