@@ -1701,7 +1701,7 @@ class Game extends Component<IProps, IState> {
           y: heightToUse / 2,
         }
       : {
-          x: widthToUse / 2,
+          x: widthToUse / 2 + 55,
           y: heightToUse / 2,
         };
   };
