@@ -10,13 +10,19 @@ export const generateGameStateUrl =
 
     const cards = currentStoreState.liveState.present.cards.cards;
     const counters = currentStoreState.liveState.present.counters;
+    const playerHands = currentStoreState.liveState.present.cards.playerHands;
     const gameType = currentStoreState.game.activeGameType;
     const crushedCardsString = JSONCrush.crush(JSON.stringify(cards));
     const crushedCountersString = JSONCrush.crush(JSON.stringify(counters));
+    const crushedPlayerHandString = JSONCrush.crush(
+      JSON.stringify(playerHands)
+    );
     copyToClipboard(
       `${getBaseUrl()}?gameType=${gameType}&cards=${encodeURIComponent(
         crushedCardsString
-      )}&counters=${encodeURIComponent(crushedCountersString)}`
+      )}&counters=${encodeURIComponent(
+        crushedCountersString
+      )}&hands=${encodeURIComponent(crushedPlayerHandString)}`
     );
   };
 

@@ -56,10 +56,20 @@ export const generateDefaultPlayerHands = (): IPlayerHand[] =>
   Array(MAX_PLAYERS).fill({ cards: [] });
 
 const queryParams = new URLSearchParams(window.location.search);
+
+const queryParamsHandsString = queryParams.get("hands");
+const queryParamsHands = !!queryParamsHandsString
+  ? JSON.parse(JSONCrush.uncrush(queryParamsHandsString))
+  : null;
+
 const queryParamsCardsString = queryParams.get("cards");
 const queryParamsCards = !!queryParamsCardsString
   ? { cards: JSON.parse(JSONCrush.uncrush(queryParamsCardsString)) }
   : null;
+
+if (queryParamsCards && queryParamsHands) {
+  (queryParamsCards as any).playerHands = queryParamsHands;
+}
 
 const localStorageState: ICardsState =
   queryParamsCards || (loadState("liveState")?.cards ?? {});
