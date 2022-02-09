@@ -807,6 +807,364 @@
             "RingsDbPopularity": 0,
             "RingsDbVotes": 0,
             "Categories": null
+        },
+        {
+            "Title": "Journey to the Cross-roads Nightmare",
+            "Slug": "Journey-to-the-Cross-roads-Nightmare-JttCN",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-to-the-Cross-roads-Nightmare/Journey-to-the-Cross-roads-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Setup: Place 1 Southron Warrior per player facedown under The Cross-roads, then shuffle the facedown cards under The Cross-roads. Set any remaining Southron Warriors aside, out of play."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Great strength of them was reported to us some days ago, marching north. One of their regiments is due by our reckoning to pass by, some time ere noon...`\r\n-Mablung, The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Journey to the Cross-roads scenario.",
+                    "Remove the following cards, in the specified quantities, from the standard encounter deck:",
+                    "1x Captain of Harad",
+                    "1x Henneth Annun",
+                    "2x Southward Road",
+                    "4x Hills of Ithilien",
+                    "3x The Dark Lord`s Summons",
+                    "Then, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard the Journey to the Cross-roads encounter deck.",
+                    "Finally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Journey to the Cross-roads Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00001",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Southron Warrior",
+            "Slug": "Southron-Warrior-JttCN",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-to-the-Cross-roads-Nightmare/Southron-Warrior.jpg",
+                "Stats": {
+                    "EngagementCost": "46",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [
+                    "Archery 2."
+                ],
+                "Text": [
+                    "Archery 2.",
+                    "Forced: After Southron Warrior engages you, discard an ally you control."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if the defending character is damaged.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey to the Cross-roads Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 4,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00002",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Southron Rearguard",
+            "Slug": "Southron-Rearguard-JttCN",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-to-the-Cross-roads-Nightmare/Southron-Rearguard.jpg",
+                "Stats": {
+                    "EngagementCost": "38",
+                    "Threat": "4",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Harad."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments or be placed under The Black Gate.",
+                    "Southron Rearguard gets -1 engagement cost for each progress token on stage 1B."
+                ],
+                "Shadow": "Shadow: Return attacking enemy to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey to the Cross-roads Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00003",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Wooded Glade",
+            "Slug": "Wooded-Glade-JttCN",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-to-the-Cross-roads-Nightmare/Wooded-Glade.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Wooded Glade is the active location, treat each non-objective attachment`s text box as if it were blank."
+                ],
+                "Shadow": "Shadow: Discard a non-objective attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey to the Cross-roads Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00004",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Dense Fern-brake",
+            "Slug": "Dense-Fern-brake-JttCN",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-to-the-Cross-roads-Nightmare/Dense-Fern-brake.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Dense Fern-brake is the active location, enemies in the staging area are immune to player card effects."
+                ],
+                "Shadow": "Shadow: Exhaust a character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey to the Cross-roads Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00005",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Shadowy Thicket",
+            "Slug": "Shadowy-Thicket-JttCN",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-to-the-Cross-roads-Nightmare/Shadowy-Thicket.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "8"
+                },
+                "Traits": [
+                    "Forest."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Shadowy Thicket gets +2 Threat for each facedown card under The Black Gate.",
+                    "Travel: The first player reveals the top facedown card under The Cross-roads and adds it to the staging area to travel here."
+                ],
+                "Shadow": null,
+                "FlavorText": "...presently the noise of fighting broke out near at hand, just above their hiding-place.\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Journey to the Cross-roads Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00006",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Blind Wrath",
+            "Slug": "Blind-Wrath-JttCN",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-to-the-Cross-roads-Nightmare/Blind-Wrath.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Until the end of the round, each Harad enemy in the staging area gets +2 Threat, -30 engagement cost, and cannot be optionally engaged."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, return attacking enemy to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey to the Cross-roads Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Ivan Dixon",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00007",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Ware! Ware!",
+            "Slug": "Ware-Ware-JttCN",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-to-the-Cross-roads-Nightmare/Ware-Ware.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril.",
+                    "Surge."
+                ],
+                "Text": [
+                    "Peril. Surge.",
+                    "When Revealed: Either place this card facedown under The Black Gate, or put the top card under The Cross-roads into play engaged with you."
+                ],
+                "Shadow": "Shadow: Choose an enemy in the staging area. Engage that enemy and deal it a shadow card.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Journey to the Cross-roads Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Journey to the Cross-roads Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Uriah Voth",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00008",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
         }
     ],
     "Cycle": "The Lord of the Rings"

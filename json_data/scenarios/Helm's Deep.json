@@ -1097,6 +1097,369 @@
             "RingsDbPopularity": 0,
             "RingsDbVotes": 0,
             "Categories": null
+        },
+        {
+            "Title": "Helm's Deep Nightmare",
+            "Slug": "Helm's-Deep-Nightmare-HDN",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Helm's-Deep-Nightmare/Helm's-Deep-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode."
+                ],
+                "Shadow": null,
+                "FlavorText": "Arrows thick as the rain came whistling over the battlements, and fell clinking and glancing on the stones. Some found a mark. The assault on Helm`s Deep had begun...\r\n-The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for the Helm`s Deep scenario.",
+                    "Remove the following cards, in the specified quantities, from the standard encounter deck:",
+                    "1x Isengard Uruk",
+                    "3x Uruk-hai Fighter",
+                    "3x Wild Hillman",
+                    "3x The Hornburg",
+                    "1x Deeping Wall",
+                    "2x Postern Door",
+                    "2x Reckless Hate",
+                    "Then, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Helm`s Deep encounter deck.",
+                    "Finally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "Helm's Deep Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00001",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Host of Isengard",
+            "Slug": "Host-of-Isengard-HDN",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Helm's-Deep-Nightmare/Host-of-Isengard.jpg",
+                "Stats": {
+                    "EngagementCost": "48",
+                    "Threat": "4",
+                    "Attack": "8",
+                    "Defense": "2",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk-hai."
+                ],
+                "Keywords": [
+                    "Toughness 2."
+                ],
+                "Text": [
+                    "Toughness 2. Cannot have attachments.",
+                    "While Host of Isengard is in the staging area, it gains: `Forced: At the end of the round, place 1 progress on the current quest (bypassing any active location).`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Helm's Deep Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 3,
+            "Artist": "Nicholas Gregory",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00002",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Bloodied Berserker",
+            "Slug": "Bloodied-Berserker-HDN",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Helm's-Deep-Nightmare/Bloodied-Berserker.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Dunland."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Bloodied Berserker is dealt a shadow card with no effect, either place 2 progress on the active location, or Bloodied Berserker makes an additional attack against you."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Helm's Deep Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 4,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00003",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Helm's Dike",
+            "Slug": "Helm's-Dike-HDN",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Helm's-Deep-Nightmare/Helm's-Dike.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Helm's Deep."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Helm`s Dike is the active location, each enemy gets -10 engagement cost.",
+                    "Forced: When Helm`s Dike is explored, shuffle the encounter discard pile into the encounter deck and discard cards from the top until an enemy is discarded. Add the discarded enemy to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Helm's Deep Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 2,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00004",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Hornburg Wall",
+            "Slug": "Hornburg-Wall-HDN",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Helm's-Deep-Nightmare/Hornburg-Wall.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Helm's Deep."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Each enemy gains Toughness 1.",
+                    "Forced: When Hornburg Wall is explored, exhaust each ally in play."
+                ],
+                "Shadow": "Shadow: Discard a non-objective attachment you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Helm's Deep Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00005",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Glittering Caves",
+            "Slug": "Glittering-Caves-HDN",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Helm's-Deep-Nightmare/Glittering-Caves.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Helm's Deep."
+                ],
+                "Keywords": [
+                    "Victory 2."
+                ],
+                "Text": [
+                    "Immune to player card effects.",
+                    "The players cannot travel here unless they are at stage 4B.",
+                    "While Glittering Caves is the active location, it gains: `Skip the combat phase. Forced: At the end of the round, add Glittering Caves to the victory display and raise each player`s threat by 2.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Helm's Deep Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 2,
+            "Artist": "Monztre",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00006",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Rain of Arrows",
+            "Slug": "Rain-of-Arrows-HDN",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Helm's-Deep-Nightmare/Rain-of-Arrows.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Either remove 1 resource token from The Defense of Helm`s Deep, or each location in the staging area gains archery 1 until the end of the round."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack against you after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Helm's Deep Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Tropa Entertainment",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00007",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Crippling Weariness",
+            "Slug": "Crippling-Weariness-HDN",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Helm's-Deep-Nightmare/Crippling-Weariness.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "Doomed 1.",
+                    "When Revealed: Each player exhausts a character he controls. Until the end of the round, characters cannot be readied by player card effects."
+                ],
+                "Shadow": "Shadow: Until the end of the round, defending character cannot ready.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Helm's Deep Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 2,
+            "Artist": "Kim Sokol",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00008",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
         }
     ],
     "Cycle": "The Lord of the Rings"

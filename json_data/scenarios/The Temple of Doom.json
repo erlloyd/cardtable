@@ -1,0 +1,1302 @@
+{
+    "Title": "The Temple of Doom",
+    "Slug": "The-Temple-of-Doom",
+    "Product": "A Shadow in the East",
+    "Number": 3,
+    "AllCards": [
+        {
+            "Title": "Easterling Raider",
+            "Slug": "Easterling-Raider-ASitE",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Easterling-Raider.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "2",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [
+                    "Archery 1."
+                ],
+                "Text": [
+                    "Archery 1.",
+                    "Easterling Raider gets +1 Attack and +1 Defense for each Easterling attachment on it."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack (+2 Attack instead if it has an Easterling attachment).",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Easterling Raiders",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 20,
+            "Quantity": 3,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "OctgnGuid": "4befb4c8-e350-48ed-a7dd-ee803e2ca8d7",
+            "RingsDbCardId": "21020",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Warrior of Rhûn",
+            "Slug": "Warrior-of-Rhun-ASitE",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Warrior-of-Rhûn.jpg",
+                "Stats": {
+                    "EngagementCost": "34",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Warrior of Rhûn attacks, attach the top Easterling treachery in the discard pile to it."
+                ],
+                "Shadow": "Shadow: Attach the top Easterling treachery in the discard pile to attacking enemy.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Easterling Raiders",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 3,
+            "Artist": "Chris Grun",
+            "HasErrata": false,
+            "OctgnGuid": "aabc830a-4833-42cf-9b26-d8f2c5eb9658",
+            "RingsDbCardId": "21021",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Sword of Rhûn",
+            "Slug": "Sword-of-Rhun-ASitE",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Sword-of-Rhûn.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "While attached to an enemy, counts as a Weapon attachment with the text: `Attached enemy gets +2 Attack.`",
+                    "When Revealed: Attach to the Easterling enemy with the lowest Attack without a Sword of Rhûn."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Easterling Raiders",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 22,
+            "Quantity": 2,
+            "Artist": "Sebastian Zakrzewski",
+            "HasErrata": false,
+            "OctgnGuid": "b897b63d-86ac-417c-88d2-1a594f3674f1",
+            "RingsDbCardId": "21022",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Recurve Bow",
+            "Slug": "Recurve-Bow-ASitE",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Recurve-Bow.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "While attached to an enemy, counts as a Weapon attachment with the text: `Attached enemy gains Archery 2.`",
+                    "When Revealed: Attach to the highest engagement cost Easterling enemy without a Recurve Bow."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Easterling Raiders",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 23,
+            "Quantity": 2,
+            "Artist": "Martin de Diego Sádaba",
+            "HasErrata": false,
+            "OctgnGuid": "576b4f3c-add2-42b6-b78c-8a2e482290ae",
+            "RingsDbCardId": "21023",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Warriors of the East",
+            "Slug": "Warriors-of-the-East-ASitE",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Warriors-of-the-East.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge.",
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: After an Easterling enemy enters play, attach the top Easterling treachery in the discard pile to that enemy.",
+                    "Forced: After Warriors of the East becomes the current quest, the highest Attack Easterling enemy in the staging area attacks the first player."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Easterlings are fearless warriors, but a stern defense may dissuade them."
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": null,
+            "Number": 24,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "OctgnGuid": "bbc72a18-cf4c-469f-bd01-6b1d3492c2ff",
+            "RingsDbCardId": "21024",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Tribute to Mordor",
+            "Slug": "Tribute-to-Mordor-ASitE",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Tribute-to-Mordor.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Forced: At the end of the round, place 1 damage token here. Then, if there are 4 or more damage tokens here, remove 4 of them and reveal the top card of the Power of Mordor deck. If you cannot, the player lose the game.",
+                    "This stage cannot be the active quest while Thane Ulchor has any hit points remaining. When this stage is defeated, the players win the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "The servants of Sauron perform ritual sacrifice to invoke the power of Mordor."
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": null,
+            "Number": 53,
+            "Quantity": 1,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "OctgnGuid": "20a011e7-0153-45b1-9c6c-a68753683a79",
+            "RingsDbCardId": "21053",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Thane Ulchor",
+            "Slug": "Thane-Ulchor-ASitE",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Thane-Ulchor.jpg",
+                "Stats": {
+                    "EngagementCost": "50",
+                    "Threat": "X",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [
+                    "Indestructible.",
+                    "Victory 6."
+                ],
+                "Text": [
+                    "Indestructible. Immune to player card effects.",
+                    "X is 1 more than the number of quest stages in the victory display. Cannot be engaged unless X is equal to 5.",
+                    "Forced: When Thane Ulchor attacks and destroys a character, place 1 damage token on Tribute to Mordor."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The Temple of Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 54,
+            "Quantity": 1,
+            "Artist": "Ivan Dixon",
+            "HasErrata": false,
+            "OctgnGuid": "039a688f-8bef-4a77-97c4-84b942f3d91a",
+            "RingsDbCardId": "21054",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Temple of Sauron",
+            "Slug": "Temple-of-Sauron-ASitE",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Temple-of-Sauron.jpg",
+                "Stats": {
+                    "Threat": "4",
+                    "QuestPoints": "1"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: When Temple of Sauron leaves play, place 1 damage token on Tribute to Mordor."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each quest stage in the victory display.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The Temple of Doom",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 55,
+            "Quantity": 2,
+            "Artist": "Alexander Chelyshev",
+            "HasErrata": false,
+            "OctgnGuid": "89fba072-2af9-460c-8556-3bf3a8f0091e",
+            "RingsDbCardId": "21055",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Hall of Horrors",
+            "Slug": "Hall-of-Horrors-ASitE",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Hall-of-Horrors.jpg",
+                "Stats": {
+                    "Threat": "X",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "X is 1 more than the number of quest stages in the victory display.",
+                    "Forced: When Hall of Horrors leaves play, each player deals X damage to a character he controls."
+                ],
+                "Shadow": null,
+                "FlavorText": "...they had worshipped Sauron in the Dark Years.\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The Temple of Doom",
+                "EasyModeQuantity": 2,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 56,
+            "Quantity": 3,
+            "Artist": "Álvaro Calvo Escudero",
+            "HasErrata": false,
+            "OctgnGuid": "2744032b-21e4-4b52-a66e-f4c1926f451b",
+            "RingsDbCardId": "21056",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Place of Evil",
+            "Slug": "Place-of-Evil-ASitE",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Place-of-Evil.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Place 1 damage token on Tribute to Mordor. Then, either place 1 additional damage token on Tribute to Mordor, or Place of Evil gains surge."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +1 Attack. If this attack destroys a character, place 1 damage token on Tribute to Mordor.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The Temple of Doom",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 57,
+            "Quantity": 3,
+            "Artist": "Federico Musetti",
+            "HasErrata": false,
+            "OctgnGuid": "24ffba46-0c66-4559-ae13-d0980180f537",
+            "RingsDbCardId": "21057",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Ulchor's Guard",
+            "Slug": "Ulchor's-Guard-ASitE",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Ulchor's-Guard.jpg",
+                "Stats": {
+                    "EngagementCost": "25",
+                    "Threat": "2",
+                    "Attack": "4",
+                    "Defense": "1",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Thane of Ulchor is engaged with a player, Ulchor`s Guard engages that player."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +2 Defense until the end of the phase.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Ulchor's Guard",
+                "EasyModeQuantity": 3,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 58,
+            "Quantity": 4,
+            "Artist": "Kevin Zamir Goeke",
+            "HasErrata": false,
+            "OctgnGuid": "74ceb68a-a1c9-41bc-aeb8-41738b34a3bb",
+            "RingsDbCardId": "21058",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Ulchor's Rage",
+            "Slug": "Ulchor's-Rage-ASitE",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Ulchor's-Rage.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Thane Ulchor makes an immediate attack against the first player. If no attack is made this way, Ulchor`s Rage gains surge."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to the defening character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Ulchor's Guard",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 59,
+            "Quantity": 3,
+            "Artist": "Ivan Dixon",
+            "HasErrata": false,
+            "OctgnGuid": "8d61982f-acf9-4b03-969f-6e75688ee1fd",
+            "RingsDbCardId": "21059",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Fanaticism",
+            "Slug": "Fanaticism-ASitE",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Fanaticism.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Easterling."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While attached to an enemy, counts as a Condition attachment with the text: `Attached enemy gets +1 Threat, +1 Attack, +1 Defense, and is immune to player card effects.`",
+                    "When Revealed: Attach to the Easterling enemy with the lowest Defense without a copy of Fanaticism. Otherwise, Fanaticism gains surge."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Ulchor's Guard",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 60,
+            "Quantity": 2,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "1ac7e2b5-aa19-4608-b101-e22390c8a906",
+            "RingsDbCardId": "21060",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Twisted Tunnel",
+            "Slug": "Twisted-Tunnel-ASitE",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Twisted-Tunnel.jpg",
+                "Stats": {
+                    "Threat": "2",
+                    "QuestPoints": "2"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Discard cards from the top of the encounter deck until an enemy is discarded. Add that enemy to the staging area."
+                ],
+                "Shadow": "Shadow: Discard the top card of the encounter deck. If that card is an enemy, add it to the staging area.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Twisted Tunnels",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 61,
+            "Quantity": 2,
+            "Artist": "Dual Brush Studios",
+            "HasErrata": false,
+            "OctgnGuid": "67251171-ee5f-46d5-b3c8-10523350c60c",
+            "RingsDbCardId": "21061",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Narrow Opening",
+            "Slug": "Narrow-Opening-ASitE",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Narrow-Opening.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Narrow Opening is the active location, each player cannot play more than 1 card each round.",
+                    "Forced: When Narrow Opening leaves play, each player discards 1 random card from his hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I got stuck in the door, which was only open a crack, and I lost lots of buttons...`\r\n-Bilbo, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Twisted Tunnels",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 62,
+            "Quantity": 2,
+            "Artist": "Dimitri Bielak",
+            "HasErrata": false,
+            "OctgnGuid": "4b678143-ec9f-4727-998a-85dfef48d47a",
+            "RingsDbCardId": "21062",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Crumbling Passage",
+            "Slug": "Crumbling-Passage-ASitE",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Crumbling-Passage.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "3"
+                },
+                "Traits": [
+                    "Underground."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Make Crumbling Passage the active location, returning any previously active location to the staging area.",
+                    "Forced: When Crumbling Passage leaves play, deal 1 damage to each exhausted character."
+                ],
+                "Shadow": null,
+                "FlavorText": "...at that moment a stone hurtling from above smote heavily on his helm, and he fell with a crash and knew no more.\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Twisted Tunnels",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 63,
+            "Quantity": 2,
+            "Artist": "Matthew Cowdery",
+            "HasErrata": false,
+            "OctgnGuid": "6885658b-983d-459f-83f8-5a4d3ee5db9d",
+            "RingsDbCardId": "21063",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Fearful Shadows",
+            "Slug": "Fearful-Shadows-ASitE",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Fearful-Shadows.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1."
+                ],
+                "Text": [
+                    "Doomed 1.",
+                    "When Revealed: Until the end of the round, treat the printed text box of each character as if it were blank (except for Traits)."
+                ],
+                "Shadow": "Shadow: Defending character cannot ready until the end of the round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "Twisted Tunnels",
+                "EasyModeQuantity": 1,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 64,
+            "Quantity": 2,
+            "Artist": "Drazenka Kimpel",
+            "HasErrata": false,
+            "OctgnGuid": "64d1e3f3-3265-44a8-97f7-9a1c744a01b9",
+            "RingsDbCardId": "21064",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Lost in the Dark",
+            "Slug": "Lost-in-the-Dark-ASitE",
+            "IsUnique": false,
+            "CardType": "Encounter_Side_Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Lost-in-the-Dark.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "When Revealed: Each player places the top 10 cards of his deck facedown under his threat dial (without looking at them). When this stage is defeated, each player shuffles all cards under his threat dial back into his deck.",
+                    "Forced: After a player raises his threat by any amount, he discards the top card from under his threat dial."
+                ],
+                "Shadow": null,
+                "FlavorText": "It`s nearly impossible to find your way through this maze of dark tunnels."
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": null,
+            "Number": 65,
+            "Quantity": 1,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "OctgnGuid": "c33f8472-2563-438e-94d3-77490d7c2175",
+            "RingsDbCardId": "21065",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Khamûl the Easterling",
+            "Slug": "Khamul-the-Easterling-ASitE",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Khamûl-the-Easterling.jpg",
+                "Stats": {
+                    "EngagementCost": "49",
+                    "Threat": "4",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "9"
+                },
+                "Traits": [
+                    "Nazgûl.",
+                    "Easterling.",
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "Khamûl the Easterling engages the first player.",
+                    "Only the engaged player can declare attackers or defenders against Khamûl the Easterling."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The Power of Mordor",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 66,
+            "Quantity": 1,
+            "Artist": "Sam Lamont",
+            "HasErrata": false,
+            "OctgnGuid": "2fe95d8c-0f30-4c20-b926-d92e4feea8e2",
+            "RingsDbCardId": "21066",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Tower of Barad-dûr",
+            "Slug": "The-Tower-of-Barad-dur-ASitE",
+            "IsUnique": true,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/The-Tower-of-Barad-dûr.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "-"
+                },
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects.",
+                    "The player cannot travel here.",
+                    "Each player`s threat elimination level is reduced by 5."
+                ],
+                "Shadow": null,
+                "FlavorText": "...wall upon wall, battlement upon battlement, black, immeasurably strong, mountain of iron, gate of steel, tower of adamant, he saw it: Barad-dûr, Fortress of Sauron. All hope left him.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The Power of Mordor",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 67,
+            "Quantity": 1,
+            "Artist": "Federico Musetti",
+            "HasErrata": false,
+            "OctgnGuid": "47ecf6a6-84e9-4aa7-ba23-9afe914027cd",
+            "RingsDbCardId": "21067",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Under the Watchful Eye",
+            "Slug": "Under-the-Watchful-Eye-ASitE",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Under-the-Watchful-Eye.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "When Revealed: Each player with more than 5 cards in his hand discards cards from his hand until he has only 5.",
+                    "Forced: After a player draws any number of cards, he raises his threat by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Nothing can hide from them.`\r\n-Gollum, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The Power of Mordor",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 68,
+            "Quantity": 1,
+            "Artist": "Tomasz Jedruszek",
+            "HasErrata": false,
+            "OctgnGuid": "4cd62a82-6bc9-4e38-8561-49b5fa2aba7e",
+            "RingsDbCardId": "21068",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Armies of Mordor",
+            "Slug": "The-Armies-of-Mordor-ASitE",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/The-Armies-of-Mordor.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After a non-unique enemy engages a player, that enemy cannot take damage until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "...here the Dark Power, moving its armies like pieces on the board, was gathering them together.\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The Power of Mordor",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 69,
+            "Quantity": 1,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "OctgnGuid": "bd837efe-9358-4fe9-8770-69b9b1fefb48",
+            "RingsDbCardId": "21069",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Covered in Darkness",
+            "Slug": "Covered-in-Darkness-ASitE",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Covered-in-Darkness.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Mordor."
+                ],
+                "Keywords": [
+                    "Doomed 5."
+                ],
+                "Text": [
+                    "Doomed 5.",
+                    "Each player`s threat cannot be reduced by more than 1 each round by player card effects."
+                ],
+                "Shadow": null,
+                "FlavorText": "Darkness lay there under the Sun. Fire glowed amid the smoke. Mount Doom was burning, and a great reek rising.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The Power of Mordor",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 70,
+            "Quantity": 1,
+            "Artist": "Dimitri Bielak",
+            "HasErrata": false,
+            "OctgnGuid": "f3285b0c-ccd9-48b1-9c20-c8fbc4bd1695",
+            "RingsDbCardId": "21070",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Forgotten Temple",
+            "Slug": "The-Forgotten-Temple-ASitE",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/The-Forgotten-Temple-1A.jpg",
+                "Stats": {
+                    "StageNumber": "1A"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Victory 10."
+                ],
+                "Text": [
+                    "Setup: Shuffle each of the stage 2 quest cards together and place them facedown under this stage. Create The Power of Mordor deck (see insert) and set it next to the quest deck. Add Thane Ulchor and Tribute to Mordor to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "Your search for the missing Dorwinions has led you up the mountains of Rhûn. There you discover the remains of an ancient temple built to honor Sauron during the dark years of Middle-earth."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/The-Forgotten-Temple-1B.jpg",
+                "Stats": {
+                    "StageNumber": "1B",
+                    "QuestPoints": "-"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Skip the quest phase.",
+                    "Forced: At the end of the planning phase, place 1 resource token here. Then, if there are 2 resource tokens here, add this stage to the victory display and advance to the topmost stage 2A."
+                ],
+                "Shadow": null,
+                "FlavorText": "The journey to reach this place has been difficult and you take a moment to prepare yourself before entering the dark temple."
+            },
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The Temple of Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Ulchor's Guard",
+                    "Twisted Tunnels",
+                    "Easterling Raiders",
+                    "The Power of Mordor"
+                ],
+                "StageNumber": 1,
+                "StageLetter": "A"
+            },
+            "Number": 80,
+            "Quantity": 1,
+            "Artist": "Kevin Zamir Goeke",
+            "HasErrata": false,
+            "OctgnGuid": "31acc133-3c82-4c6e-8fc1-ced6537f735e",
+            "RingsDbCardId": "21080",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Legacy of Mordor",
+            "Slug": "The-Legacy-of-Mordor-ASitE",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/The-Legacy-of-Mordor-2A.jpg",
+                "Stats": {
+                    "StageNumber": "2A"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Reveal 1 encounter card per player."
+                ],
+                "Shadow": null,
+                "FlavorText": "Rows of iron-barred cells line both sides of a dark dungeon built beneath the old temple. You shudder to think what horrible fate befell the captives that were held here in years past as you continue to search for the missing Dorwinions."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/The-Legacy-of-Mordor-2B.jpg",
+                "Stats": {
+                    "StageNumber": "2B",
+                    "QuestPoints": "8"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the beginning of the quest phase, each player deals 1 damage to a hero he controls and exhausts that hero. That hero cannot ready or be healed until the refresh phase.",
+                    "While there are 4 quest stages in the victory display, progress cannot be placed here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The Temple of Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Ulchor's Guard",
+                    "Twisted Tunnels",
+                    "Easterling Raiders",
+                    "The Power of Mordor"
+                ],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 81,
+            "Quantity": 1,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "OctgnGuid": "ffe7cb9e-8ac6-411d-a8b9-77ebaf8ee12e",
+            "RingsDbCardId": "21081",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Memory of the Dark Years",
+            "Slug": "Memory-of-the-Dark-Years-ASitE",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Memory-of-the-Dark-Years-2A.jpg",
+                "Stats": {
+                    "StageNumber": "2A"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Reveal 1 encounter card per player."
+                ],
+                "Shadow": null,
+                "FlavorText": "All about you are the cruel trappings of Mordor: evidence of torture and death callously strewn about the cavern floor. You search among the bones and debris for fresh signs of those you seek."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Memory-of-the-Dark-Years-2B.jpg",
+                "Stats": {
+                    "StageNumber": "2B",
+                    "QuestPoints": "12"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the beginning of the quest phase, discard X cards from the top of the encounter deck, where X is 1 more than the number of quest stages in the victory display. Add 2 to the total Threat in the staging area for each different card type discarded this way.",
+                    "While there are 4 quest stages in the victory display, progress cannot be place here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The Temple of Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Ulchor's Guard",
+                    "Twisted Tunnels",
+                    "Easterling Raiders",
+                    "The Power of Mordor"
+                ],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 83,
+            "Quantity": 1,
+            "Artist": "Dual Brush Studios",
+            "HasErrata": false,
+            "OctgnGuid": "f015bc92-42c1-405d-a54e-1a1c7bc0afae",
+            "RingsDbCardId": "21083",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Shrine to Sauron",
+            "Slug": "Shrine-to-Sauron-ASitE",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Shrine-to-Sauron-2A.jpg",
+                "Stats": {
+                    "StageNumber": "2A"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Reveal 1 encounter card per player."
+                ],
+                "Shadow": null,
+                "FlavorText": "A blood-stained altar to the Dark Lord of Mordor looks to have been used recently. Though the carved stone is ancient, the blood and cloth you find on it are fresh. You search about frantically to find the captive Dorwinions before more are slaughtered."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/Shrine-to-Sauron-2B.jpg",
+                "Stats": {
+                    "StageNumber": "2B",
+                    "QuestPoints": "16"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Forced: At the beginning of the quest phase, each player discards the top X cards of his deck, where X is 1 more than the number of quest stages in the victory display. Each player examines the cards he controls and the cards in his hand. If any of these cards are copies of the cards he just discarded from the top of his deck, he must discard those copies as well.",
+                    "While there are 4 quest stages in the victory display, progress cannot be placed here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The Temple of Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Ulchor's Guard",
+                    "Twisted Tunnels",
+                    "Easterling Raiders",
+                    "The Power of Mordor"
+                ],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 84,
+            "Quantity": 1,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "OctgnGuid": "ea80809a-c719-41a9-8729-5f58cdec149b",
+            "RingsDbCardId": "21084",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Lord of Middle-earth",
+            "Slug": "The-Lord-of-Middle-earth-ASitE",
+            "IsUnique": false,
+            "CardType": "Quest",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/The-Lord-of-Middle-earth-2A.jpg",
+                "Stats": {
+                    "StageNumber": "2A"
+                },
+                "Traits": [],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "When Revealed: Reveal 1 encounter card per player."
+                ],
+                "Shadow": null,
+                "FlavorText": "At the center of a large temple room is a hideous state of Sauron seated upon an iron throne. It is a terrible reminder of the darkness that awaits Middle-earth should you fail in your vigilance."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/A-Shadow-in-the-East/The-Lord-of-Middle-earth-2B.jpg",
+                "Stats": {
+                    "StageNumber": "2B",
+                    "QuestPoints": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "This stage gets +4 quest points per player.",
+                    "Forced: At the beginning of the quest phase, each player discards 1 card from his hand. Until the end of the round, no more than X progress can be placed on this stage. X is the total cost of each card discarded by this effect.",
+                    "While there are 4 quest stages in the victory display, progress cannot be placed here."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "A Shadow in the East",
+            "EncounterInfo": {
+                "EncounterSet": "The Temple of Doom",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [
+                    "Ulchor's Guard",
+                    "Twisted Tunnels",
+                    "Easterling Raiders",
+                    "The Power of Mordor"
+                ],
+                "StageNumber": 2,
+                "StageLetter": "A"
+            },
+            "Number": 85,
+            "Quantity": 1,
+            "Artist": "Alexander Chelyshev",
+            "HasErrata": false,
+            "OctgnGuid": "91c259ee-7c5c-45d4-9a97-bb0a2a05d7f8",
+            "RingsDbCardId": "21085",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        }
+    ],
+    "Cycle": null
+}

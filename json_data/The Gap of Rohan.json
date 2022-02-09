@@ -7,126 +7,191 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Barliman Butterbur",
-            "Slug": "Barliman-Butterbur-TGoR",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Seasoned Forager",
+            "Slug": "Seasoned-Forager-TGoR",
+            "IsUnique": false,
+            "CardType": "Attachment",
             "CardSubType": "None",
             "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Barliman-Butterbur.png",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Seasoned-Forager.png",
                 "Stats": {
-                    "ThreatCost": "8",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "0",
-                    "HitPoints": "5"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Bree."
+                    "Skill."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Response: After Barliman Butterbur takes damage from an undefended attack, draw 1 card."
+                    "Attach to a hero you control. Limit 1 per player.",
+                    "Your heroes cannot gain resources from player card effects.",
+                    "Action: Exhaust Seasoned Forager to reduce the cost of the next card you play this phase that matches the attached hero’s sphere by 1."
                 ],
                 "Shadow": null,
-                "FlavorText": "“I’m run off my feet; but I’ll see what I can do for you.”\r\n—The Fellowship of the Ring"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "The Gap of Rohan",
             "EncounterInfo": null,
-            "Number": 71,
-            "Quantity": 1,
-            "Artist": "Stanislav Dikolenko",
+            "Number": 77,
+            "Quantity": 3,
+            "Artist": "Bethesda Softworks",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00071",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "303077",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 3562,
             "Categories": null
         },
         {
-            "Title": "Nob",
-            "Slug": "Nob-TGoR",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Half-pint",
+            "Slug": "Half-pint-TGoR",
+            "IsUnique": false,
+            "CardType": "Attachment",
             "CardSubType": "None",
             "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Nob.png",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Half-pint.png",
                 "Stats": {
-                    "ThreatCost": "7",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "0",
-                    "HitPoints": "3"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Hobbit.",
-                    "Bree.",
-                    "Servant."
+                    "Item."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Reduce the cost of the first Item attachment you play on another Bree or Hobbit character each round by 1.",
-                    "Action: Exhaust Nob to draw a card. If that card is an Item attachment, ready a Bree character. (Limit once per round.)"
+                    "Attach to a character.",
+                    "Refresh Action: Discard Half-pint to heal up to 2 damage from attached character. Then, put an Item attachment in your discard pile on the top of your deck."
                 ],
                 "Shadow": null,
-                "FlavorText": "“Where are you, you woolly-footed slow-coach?”\r\n—Barliman Butterbur, The Fellowship of the Ring"
+                "FlavorText": "“I’ve a drop of good ale on tap, if you and your friends are willing.”\r\n—Farmer Maggot, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "The Gap of Rohan",
             "EncounterInfo": null,
-            "Number": 72,
-            "Quantity": 1,
-            "Artist": "Stanislav Dikolenko",
+            "Number": 76,
+            "Quantity": 3,
+            "Artist": "Bethesda Softworks",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00072",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "303076",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 3303,
             "Categories": null
         },
         {
-            "Title": "Harry Goatleaf",
-            "Slug": "Harry-Goatleaf-TGoR",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "A Stout Heart",
+            "Slug": "A-Stout-Heart-TGoR",
+            "IsUnique": false,
+            "CardType": "Event",
             "CardSubType": "None",
             "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Harry-Goatleaf.png",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/A-Stout-Heart.png",
                 "Stats": {
-                    "ThreatCost": "8",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "0",
-                    "HitPoints": "4"
+                    "ResourceCost": "0"
                 },
-                "Traits": [
-                    "Bree."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Response: Cancel 1 point of combat damage just dealt to a hero you control. (Limit once per round per hero.)"
+                    "Response: Cancel a shadow effect just triggered during an undefended attack. After this attack damages a single hero, the controller of that hero may spend 1 resource from its pool to reduce their threat by 3."
                 ],
                 "Shadow": null,
-                "FlavorText": "“Your business is your own, no doubt, but it’s my business to ask questions after nightfall.”\r\n—The Fellowship of the Ring"
+                "FlavorText": "“We come now to the very brink, where hope and despair are akin. To waver is to fall.”\r\n—Aragorn, The Return of the King"
             },
             "Back": null,
             "CardSet": "The Gap of Rohan",
             "EncounterInfo": null,
-            "Number": 73,
-            "Quantity": 1,
-            "Artist": "Lukasz Jaskolski",
+            "Number": 81,
+            "Quantity": 3,
+            "Artist": "John Howe",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00073",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "303081",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 3105,
+            "Categories": null
+        },
+        {
+            "Title": "Bree Pony",
+            "Slug": "Bree-Pony-TGoR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Bree-Pony.png",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Mount."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Bree or Hobbit character. Restricted.",
+                    "Attached character gets +1 hit point.",
+                    "Response: When attached character takes damage from an undefended attack, exhaust Bree Pony to reduce that damage by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "No horse or pony was to be got for love or money in the neighbourhood – except one.\r\n—The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Gap of Rohan",
+            "EncounterInfo": null,
+            "Number": 75,
+            "Quantity": 3,
+            "Artist": "Ted Nasmith",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "303075",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2621,
+            "Categories": null
+        },
+        {
+            "Title": "Pint",
+            "Slug": "Pint-TGoR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Pint.png",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control a unique Bree character.",
+                    "Attach to a hero.",
+                    "Action: Exhaust Pint to heal 1 damage from attached hero.",
+                    "Action: Discard Pint to heal 5 damage from attached hero."
+                ],
+                "Shadow": null,
+                "FlavorText": "“Well, my merry folk, will you drink another draught with me before you go?”\r\n—Treebeard, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Gap of Rohan",
+            "EncounterInfo": null,
+            "Number": 78,
+            "Quantity": 3,
+            "Artist": "Darek Zabrocki",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "303078",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2616,
             "Categories": null
         },
         {
@@ -166,163 +231,9 @@
             "Artist": "Stanislav Dikolenko",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00074",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Bree Pony",
-            "Slug": "Bree-Pony-TGoR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Bree-Pony.png",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Mount."
-                ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a Bree or Hobbit character. Restricted.",
-                    "Attached character gets +1 hit point.",
-                    "Response: When attached character takes damage from an undefended attack, exhaust Bree Pony to reduce that damage by 1."
-                ],
-                "Shadow": null,
-                "FlavorText": "No horse or pony was to be got for love or money in the neighbourhood – except one.\r\n—The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Gap of Rohan",
-            "EncounterInfo": null,
-            "Number": 75,
-            "Quantity": 3,
-            "Artist": "Ted Nasmith",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00075",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Half-pint",
-            "Slug": "Half-pint-TGoR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Half-pint.png",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a character.",
-                    "Refresh Action: Discard Half-pint to heal up to 2 damage from attached character. Then, put an Item attachment in your discard pile on the top of your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "“I’ve a drop of good ale on tap, if you and your friends are willing.”\r\n—Farmer Maggot, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Gap of Rohan",
-            "EncounterInfo": null,
-            "Number": 76,
-            "Quantity": 3,
-            "Artist": "Bethesda Softworks",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00076",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Seasoned Forager",
-            "Slug": "Seasoned-Forager-TGoR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Seasoned-Forager.png",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Skill."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a hero you control. Limit 1 per player.",
-                    "Your heroes cannot gain resources from player card effects.",
-                    "Action: Exhaust Seasoned Forager to reduce the cost of the next card you play this phase that matches the attached hero’s sphere by 1."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Gap of Rohan",
-            "EncounterInfo": null,
-            "Number": 77,
-            "Quantity": 3,
-            "Artist": "Bethesda Softworks",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00077",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Pint",
-            "Slug": "Pint-TGoR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Pint.png",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Item."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Play only if you control a unique Bree character.",
-                    "Attach to a hero.",
-                    "Action: Exhaust Pint to heal 1 damage from attached hero.",
-                    "Action: Discard Pint to heal 5 damage from attached hero."
-                ],
-                "Shadow": null,
-                "FlavorText": "“Well, my merry folk, will you drink another draught with me before you go?”\r\n—Treebeard, The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Gap of Rohan",
-            "EncounterInfo": null,
-            "Number": 78,
-            "Quantity": 3,
-            "Artist": "Darek Zabrocki",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00078",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "303074",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 970,
             "Categories": null
         },
         {
@@ -360,9 +271,9 @@
             "Artist": "Aleksandra_Wojtas",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00079",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "303079",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 816,
             "Categories": null
         },
         {
@@ -404,80 +315,9 @@
             "Artist": "Gal Or",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00080",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "A Stout Heart",
-            "Slug": "A-Stout-Heart-TGoR",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/A-Stout-Heart.png",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Response: Cancel a shadow effect just triggered during an undefended attack. After this attack damages a single hero, the controller of that hero may spend 1 resource from its pool to reduce their threat by 3."
-                ],
-                "Shadow": null,
-                "FlavorText": "“We come now to the very brink, where hope and despair are akin. To waver is to fall.”\r\n—Aragorn, The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "The Gap of Rohan",
-            "EncounterInfo": null,
-            "Number": 81,
-            "Quantity": 3,
-            "Artist": "John Howe",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00081",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Gift of Foresight",
-            "Slug": "Gift-of-Foresight-TGoR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Gift-of-Foresight.png",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Condition."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a hero with at least 2 printed Willpower. Limit 1 per hero.",
-                    "Attached hero gets +2 Defense if it has not committed to the quest this round."
-                ],
-                "Shadow": null,
-                "FlavorText": "“Do not think that only by singing amid the trees, nor even by the slender arrows of elven-bows, is this land of Lothlórien maintained and defended.”\r\n–Galadriel, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "The Gap of Rohan",
-            "EncounterInfo": null,
-            "Number": 82,
-            "Quantity": 3,
-            "Artist": "Incantata",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00082",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "303080",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 816,
             "Categories": null
         },
         {
@@ -518,9 +358,169 @@
             "Artist": "Dan Scott",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00083",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "303083",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 816,
+            "Categories": null
+        },
+        {
+            "Title": "Gift of Foresight",
+            "Slug": "Gift-of-Foresight-TGoR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Gift-of-Foresight.png",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero with at least 2 printed Willpower. Limit 1 per hero.",
+                    "Attached hero gets +2 Defense if it has not committed to the quest this round."
+                ],
+                "Shadow": null,
+                "FlavorText": "“Do not think that only by singing amid the trees, nor even by the slender arrows of elven-bows, is this land of Lothlórien maintained and defended.”\r\n–Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Gap of Rohan",
+            "EncounterInfo": null,
+            "Number": 82,
+            "Quantity": 3,
+            "Artist": "Incantata",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "303082",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 690,
+            "Categories": null
+        },
+        {
+            "Title": "Nob",
+            "Slug": "Nob-TGoR",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Nob.png",
+                "Stats": {
+                    "ThreatCost": "7",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Hobbit.",
+                    "Bree.",
+                    "Servant."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Reduce the cost of the first Item attachment you play on another Bree or Hobbit character each round by 1.",
+                    "Action: Exhaust Nob to draw a card. If that card is an Item attachment, ready a Bree character. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "“Where are you, you woolly-footed slow-coach?”\r\n—Barliman Butterbur, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Gap of Rohan",
+            "EncounterInfo": null,
+            "Number": 72,
+            "Quantity": 1,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "303072",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 166,
+            "Categories": null
+        },
+        {
+            "Title": "Harry Goatleaf",
+            "Slug": "Harry-Goatleaf-TGoR",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Harry-Goatleaf.png",
+                "Stats": {
+                    "ThreatCost": "8",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Bree."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: Cancel 1 point of combat damage just dealt to a hero you control. (Limit once per round per hero.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "“Your business is your own, no doubt, but it’s my business to ask questions after nightfall.”\r\n—The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Gap of Rohan",
+            "EncounterInfo": null,
+            "Number": 73,
+            "Quantity": 1,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "303073",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 96,
+            "Categories": null
+        },
+        {
+            "Title": "Barliman Butterbur",
+            "Slug": "Barliman-Butterbur-TGoR",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Gap-of-Rohan/Barliman-Butterbur.png",
+                "Stats": {
+                    "ThreatCost": "8",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Bree."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Barliman Butterbur takes damage from an undefended attack, draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": "“I’m run off my feet; but I’ll see what I can do for you.”\r\n—The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Gap of Rohan",
+            "EncounterInfo": null,
+            "Number": 71,
+            "Quantity": 1,
+            "Artist": "Stanislav Dikolenko",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "303071",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 73,
             "Categories": null
         }
     ]

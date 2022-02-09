@@ -883,6 +883,428 @@
             "RingsDbPopularity": 0,
             "RingsDbVotes": 0,
             "Categories": null
+        },
+        {
+            "Title": "The Uruk-hai Nightmare",
+            "Slug": "The-Uruk-hai-Nightmare-TUHN",
+            "IsUnique": false,
+            "CardType": "Nightmare_Setup",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Uruk-hai-Nightmare/The-Uruk-hai-Nightmare-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Nightmare mode.",
+                    "Each Captive is immune to player card effects.",
+                    "Setup: Set Mauhúr aisde, out of play.",
+                    "Forced: When the players advance to  stage 2A, add Mauhúr to the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "`You`ll run with me behind you,` said Uglúk. `Run! Or you`ll never see your beloved holes again.`\r\n-The Two Towers"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Begin with the standard quest deck and encounter deck for The Uruk-hai scenario.",
+                    "Remove the following cards, in the specified quantities, from the standard encounter deck:",
+                    "3x Uruk-hai Figter",
+                    "1x Snaga",
+                    "2x Eastemnet",
+                    "2x Plains of Rohan",
+                    "3x The Wold",
+                    "2x Unseen Barrier",
+                    "Then, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Uruk-hai encounter deck.",
+                    "Finally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "CardSet": "The Uruk-hai Nightmare",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Lucas Staniec",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00001",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Mauhúr",
+            "Slug": "Mauhur-TUHN",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Uruk-hai-Nightmare/Mauhúr.jpg",
+                "Stats": {
+                    "EngagementCost": "24",
+                    "Threat": "4",
+                    "Attack": "5",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk-hai."
+                ],
+                "Keywords": [
+                    "Toughness 1.",
+                    "Archery 2.",
+                    "Victory 4."
+                ],
+                "Text": [
+                    "Toughness 1. Archery 2.",
+                    "Forced: After Mauhúr attacks, increase the pursuit value by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Mauhúr and his lads are in the forest, and they should turn up any time now.` -Uglúk, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Uruk-hai Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Monztre",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00002",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Lugdush",
+            "Slug": "Lugdush-TUHN",
+            "IsUnique": true,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Uruk-hai-Nightmare/Lugdush.jpg",
+                "Stats": {
+                    "EngagementCost": "32",
+                    "Threat": "3",
+                    "Attack": "4",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk-hai."
+                ],
+                "Keywords": [
+                    "Toughness 2.",
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Toughness 2.",
+                    "While Lugdush is engaged with a player, each other enemy cannot take damage."
+                ],
+                "Shadow": "Shadow: If attacking enemy is unique, it cannot take damage until the end of the round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Uruk-hai Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 3,
+            "Quantity": 1,
+            "Artist": "Monztre",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00003",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc of the White Hand",
+            "Slug": "Orc-of-the-White-Hand-TUHN",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Uruk-hai-Nightmare/Orc-of-the-White-Hand.jpg",
+                "Stats": {
+                    "EngagementCost": "28",
+                    "Threat": "3",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Orc.",
+                    "Uruk-hai."
+                ],
+                "Keywords": [
+                    "Toughness 2."
+                ],
+                "Text": [
+                    "Toughness 2.",
+                    "Forced: After Orc of the White Hand attacks and destroy a character, increase the pursuit value by 1."
+                ],
+                "Shadow": "Shadow: If this attack destroys a character, increase the pursuit value by 1.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Uruk-hai Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 4,
+            "Quantity": 4,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00004",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Wold of Rohan",
+            "Slug": "Wold-of-Rohan-TUHN",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Uruk-hai-Nightmare/Wold-of-Rohan.jpg",
+                "Stats": {
+                    "Threat": "5",
+                    "QuestPoints": "5"
+                },
+                "Traits": [
+                    "Plains.",
+                    "Hills."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Increase the pursuit value by 1 to place 1 progress on Wold of Rohan."
+                ],
+                "Shadow": "Shadow: Discard a non-objective attachment you control.",
+                "FlavorText": "...the land sloped down into a wide shallow depression, where the ground was soft and wet. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Uruk-hai Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 5,
+            "Quantity": 2,
+            "Artist": "Tropa Entertainment",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00005",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Enchanted Land",
+            "Slug": "Enchanted-Land-TUHN",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Uruk-hai-Nightmare/Enchanted-Land.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "4"
+                },
+                "Traits": [
+                    "Plains."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After an encounter card effect is canceled, increase the pursuit value by 1."
+                ],
+                "Shadow": "Shadow: Either increase the pursuit value by 1, or attacking enemy cannot take damage until the end of the round.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Uruk-hai Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Nicholas Gregory",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00006",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "The Uruk's Trail",
+            "Slug": "The-Uruk's-Trail-TUHN",
+            "IsUnique": false,
+            "CardType": "Location",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Uruk-hai-Nightmare/The-Uruk's-Trail.jpg",
+                "Stats": {
+                    "Threat": "3",
+                    "QuestPoints": "6"
+                },
+                "Traits": [
+                    "Plains."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While The Uruk`s Trail is the active location, it gains: `Response: After The Uruk`s Trail is explored, reduce the pursuit value by 3.`",
+                    "Travel: Search the encounter deck and discard pile for a non-unique Uruk-hai enemy and add it to the staging area. Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Uruk-hai Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 7,
+            "Quantity": 3,
+            "Artist": "Mariusz Gandzel",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00007",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Uglúk's Command",
+            "Slug": "Ugluk's-Command-TUHN",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Uruk-hai-Nightmare/Uglúk's-Command.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril."
+                ],
+                "Text": [
+                    "Peril.",
+                    "When Revealed: Either increase the pursuit value by 4, or Uglúk makes an immediate attack against you."
+                ],
+                "Shadow": "Shadow: Attacking enemy gets +X Attack, where X is the tens digit of the pursuit value.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Uruk-hai Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00008",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
+        },
+        {
+            "Title": "Orc-draught",
+            "Slug": "Orc-draught-TUHN",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Uruk-hai-Nightmare/Orc-draught.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril.",
+                    "Surge."
+                ],
+                "Text": [
+                    "Peril. Surge.",
+                    "When Revealed: Either discard an ally you control, or increase the pursuit value by 1."
+                ],
+                "Shadow": "Shadow: Exhaust a character you control.",
+                "FlavorText": "The Orcs clapped and hooted. `Can`t take his medicine,` they jeered.\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Uruk-hai Nightmare",
+            "EncounterInfo": {
+                "EncounterSet": "The Uruk-hai Nightmare",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00009",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null
         }
     ],
     "Cycle": "The Lord of the Rings"
