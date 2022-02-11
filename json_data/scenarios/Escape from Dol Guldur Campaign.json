@@ -5,6 +5,353 @@
     "Number": 3,
     "AllCards": [
         {
+            "Title": "Escape from Dol Guldur",
+            "Slug": "Escape-from-Dol-Guldur-Campaign-RevCore",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Escape-from-Dol-Guldur-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Campaign Mode.",
+                    "Setup: Put Mendor into play. Attached Appointed by Fate to a hero of the first player`s choice.",
+                    "Forced: When a hero would be randomly selected to be a `prisoner`, the `prisoner` from the Campaign Log is selected instead. Each card attached to that hero is turned facedown until that hero is `rescued.` Mendor is captured as well. Place Mendor facedown next to the prisoner (this does not cause him to leave play). Flip this card over."
+                ],
+                "Shadow": null,
+                "FlavorText": "Your guide, Mendor, has also been taken by the enemy!"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: After the first objective is claimed, flip Mendor face-up and place 1 damage token on him.",
+                    "Resolution: Determine one of the following:",
+                    "1) If Mendor is still in play, add Mendor to the Campaign Pool.",
+                    "If you do, put Mendor into play at the start of each scenario during your next campaign. Each player may include 1 copy of Mendor`s Support in their deck during that campaign.",
+                    "2) If Mendor is not in play, do not adjust the Campaign Pool for your next campaign."
+                ],
+                "Shadow": null,
+                "FlavorText": "`It has been an honor to share such a perilous adventure with you, friends,` says Mendor. `If you ever need my aid again, I would be glad to journey with you once more.`\r\nSadly, you bear Mendor`s body back to Galadriel to prepare for his passing into the West."
+            },
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": null,
+            "Number": 131,
+            "Quantity": 1,
+            "Artist": "Ben Zweifel",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00131",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Mendor",
+            "Slug": "Mendor-RevCore",
+            "IsUnique": true,
+            "CardType": "Objective_Ally",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Mendor.jpg",
+                "Stats": {
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Scout."
+                ],
+                "Keywords": [
+                    "Ranged."
+                ],
+                "Text": [
+                    "Ranged.",
+                    "The first player gains control of Mendor.",
+                    "Response: After a quest card is defeated, ready Mendor. Then, each player draws 1 card.",
+                    "If Mendor leaves play, remove him from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 135,
+            "Quantity": 1,
+            "Artist": "Cris Griffin",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00135",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Mendor's Support",
+            "Slug": "Mendor's-Support-RevCore",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Mendor's-Support.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Only one copy of Mendor`s Support can be played each round.",
+                    "Action: Mendor gets +2 Willpower, +2 Attack, and +2 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": null,
+            "Number": 132,
+            "Quantity": 4,
+            "Artist": "Chris Rahn",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00132",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Valor",
+            "Slug": "Valor-RevCore",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Valor.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent. Limit 1 per hero.",
+                    "Response: After attached hero is declared as an attacker, exhaust Valor to heal 1 damage from attached hero and deal 1 damage to the defening enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": null,
+            "Number": 133,
+            "Quantity": 4,
+            "Artist": "Chris Rahn",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00133",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Appointed by Fate",
+            "Slug": "Appointed-by-Fate-RevCore",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Appointed-by-Fate.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attached hero collects 1 additional resource during each resource phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Yet it is not our part to master all the tides of the world, but to do what is in us for the succour of those years wherein we are set...`\r\n-Gandalf, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": null,
+            "Number": 134,
+            "Quantity": 1,
+            "Artist": "Anders Finer",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00134",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Ungoliant's Swarm",
+            "Slug": "Ungoliant's-Swarm-RevCore",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Ungoliant's-Swarm.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "3",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Spider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Ungoliant`s Swarm engages a player, that player must choose and exhaust 2 characters they control."
+                ],
+                "Shadow": "Shadow: Put Ungoliant`s Swarm into play engaged with you.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": {
+                "EncounterSet": "Passage Through Mirkwood Campaign",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 136,
+            "Quantity": 1,
+            "Artist": "Andrew Ryan",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00136",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Lingering Venom",
+            "Slug": "Lingering-Venom-RevCore",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Lingering-Venom.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: Each player must choose: either exhaust each damaged character you control, or deal 2 damage to the hero you control with the most damage on it."
+                ],
+                "Shadow": "Shadow: Exhaust each damaged character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": {
+                "EncounterSet": "Passage Through Mirkwood Campaign",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 137,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00137",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Scarred",
+            "Slug": "Scarred-RevCore",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Scarred.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent. Limit 1 per hero.",
+                    "Forced: After a character you control is destroyed, raise your threat by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": {
+                "EncounterSet": "Journey Along the Anduin Campaign",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 138,
+            "Quantity": 4,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00138",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
             "Title": "King Spider",
             "Slug": "King-Spider-RevCore",
             "IsUnique": false,
@@ -1227,461 +1574,6 @@
             "HasErrata": true,
             "OctgnGuid": "",
             "RingsDbCardId": "00125",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Escape from Dol Guldur",
-            "Slug": "Escape-from-Dol-Guldur-Campaign-RevCore",
-            "IsUnique": false,
-            "CardType": "Campaign",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Escape-from-Dol-Guldur-SetupA.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "You are playing Campaign Mode.",
-                    "Setup: Put Mendor into play. Attached Appointed by Fate to a hero of the first player`s choice.",
-                    "Forced: When a hero would be randomly selected to be a `prisoner`, the `prisoner` from the Campaign Log is selected instead. Each card attached to that hero is turned facedown until that hero is `rescued.` Mendor is captured as well. Place Mendor facedown next to the prisoner (this does not cause him to leave play). Flip this card over."
-                ],
-                "Shadow": null,
-                "FlavorText": "Your guide, Mendor, has also been taken by the enemy!"
-            },
-            "Back": {
-                "Subtitle": null,
-                "ImagePath": null,
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Response: After the first objective is claimed, flip Mendor face-up and place 1 damage token on him.",
-                    "Resolution: Determine one of the following:",
-                    "1) If Mendor is still in play, add Mendor to the Campaign Pool.",
-                    "If you do, put Mendor into play at the start of each scenario during your next campaign. Each player may include 1 copy of Mendor`s Support in their deck during that campaign.",
-                    "2) If Mendor is not in play, do not adjust the Campaign Pool for your next campaign."
-                ],
-                "Shadow": null,
-                "FlavorText": "`It has been an honor to share such a perilous adventure with you, friends,` says Mendor. `If you ever need my aid again, I would be glad to journey with you once more.`\r\nSadly, you bear Mendor`s body back to Galadriel to prepare for his passing into the West."
-            },
-            "CardSet": "Revised Core Set",
-            "EncounterInfo": null,
-            "Number": 131,
-            "Quantity": 1,
-            "Artist": "Ben Zweifel",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00131",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Escape from Dol Guldur Nightmare",
-            "Slug": "Escape-from-Dol-Guldur-Nightmare-EFDGN",
-            "IsUnique": false,
-            "CardType": "Nightmare_Setup",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Dol-Guldur-Nightmare/Escape-from-Dol-Guldur-Nightmare-SetupA.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "You are playing Nightmare mode.",
-                    "Forced: When stage 1B is revealed, the number of random heroes captured is determined by the number of players, as follows: 1-2 players = 1 hero captured, 3 players = 2 heroes captured, 4 players = 3 heroes captured. All captured heroes are turned face down and considered `the prisoner,` cannot be used, cannot be damaged, and do not collect resources until they are rescued, (A single player cannot have more than 1 hero captured by this effect.)"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": {
-                "Subtitle": null,
-                "ImagePath": null,
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Begin with the standard quest deck and encounter deck for the Escape from Dol Guldur scenario found in the LOTR LCG core set.",
-                    "Remove the following cards, in the specified quantities, from the standard encounter deck:",
-                    "2x Dol Guldur Orcs",
-                    "2x Enchanted Stream",
-                    "1x Great Forest Web",
-                    "3x Mountains of Mirkwood",
-                    "2x Caught in a Web",
-                    "1x The Necromancer`s Reach",
-                    "1x Necromancer`s Pass",
-                    "2x Under the Shadow",
-                    "2x Tower Gate",
-                    "1x Iron Shackles",
-                    "Then, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Escape from Dol Guldur encounter deck.",
-                    "Finally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "CardSet": "Escape from Dol Guldur Nightmare",
-            "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Jim Pavelec",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00001",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Torture Master",
-            "Slug": "Torture-Master-EFDGN",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Dol-Guldur-Nightmare/Torture-Master.jpg",
-                "Stats": {
-                    "EngagementCost": "45",
-                    "Threat": "5",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Dol Guldur.",
-                    "Orc."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "When Revealed: Add 1 resource token to each Dol Guldur location in play."
-                ],
-                "Shadow": "Shadow: Any hero damaged but not defeated by this attack is turned face down, as a `prisoner.` Then, if the players are on stage 3, return to stage 2B of the quest.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Escape from Dol Guldur Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Escape from Dol Guldur Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 2,
-            "Quantity": 3,
-            "Artist": "Rafał Hrynkiewicz",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00002",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Crazed Captive",
-            "Slug": "Crazed-Captive-EFDGN",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Dol-Guldur-Nightmare/Crazed-Captive.jpg",
-                "Stats": {
-                    "EngagementCost": "13",
-                    "Threat": "2",
-                    "Attack": "1",
-                    "Defense": "3",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Captive."
-                ],
-                "Keywords": [
-                    "Doomed 1."
-                ],
-                "Text": [
-                    "Doomed 1.",
-                    "Forced: If Crazed Captive is defeated, raise each players threat by 7."
-                ],
-                "Shadow": "Shadow: If attacking enemy is not defeated this phase, raise defending player`s threat by 7 at the end of the phase.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Escape from Dol Guldur Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Escape from Dol Guldur Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 3,
-            "Quantity": 2,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00003",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Spider of Dol Guldur",
-            "Slug": "Spider-of-Dol-Guldur-EFDGN",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Dol-Guldur-Nightmare/Spider-of-Dol-Guldur.jpg",
-                "Stats": {
-                    "EngagementCost": "28",
-                    "Threat": "3",
-                    "Attack": "3",
-                    "Defense": "3",
-                    "HitPoints": "6"
-                },
-                "Traits": [
-                    "Creature.",
-                    "Spider.",
-                    "Dol Guldur."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "If there are any unclaimed objectives in play, Spider of Dol Guldur gains surge."
-                ],
-                "Shadow": "Shadow: Attacking enemy gets +3 Attack for each unclaimed objective in play.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Escape from Dol Guldur Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Escape from Dol Guldur Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 4,
-            "Quantity": 3,
-            "Artist": "Andrew Ryan",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00004",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Torture Chamber",
-            "Slug": "Torture-Chamber-EFDGN",
-            "IsUnique": false,
-            "CardType": "Location",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Dol-Guldur-Nightmare/Torture-Chamber.jpg",
-                "Stats": {
-                    "Threat": "3",
-                    "QuestPoints": "6"
-                },
-                "Traits": [
-                    "Dol Guldur."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "If Torture Chamber has 4 or more resource tokens on it, all `prisoners` were killed, and the players have lost the game.",
-                    "Forced: At the end of each round, place 1 resource token on each Dol Guldur location in play."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Escape from Dol Guldur Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Escape from Dol Guldur Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 5,
-            "Quantity": 2,
-            "Artist": "Ben Zweifel",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00005",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Dungeon Labyrinth",
-            "Slug": "Dungeon-Labyrinth-EFDGN",
-            "IsUnique": false,
-            "CardType": "Location",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Dol-Guldur-Nightmare/Dungeon-Labyrinth.jpg",
-                "Stats": {
-                    "Threat": "1",
-                    "QuestPoints": "4"
-                },
-                "Traits": [
-                    "Dol Guldur."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Dungeon Labyrinth gets +1 Threat and +1 quest point for each resource token on it.",
-                    "Forced: At the end of each round, place 1 resource token on Dungeon Labyrinth for each player in the game."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Some here will remember that many years ago I myself dared to pass the doors of the Necromancer in Dol Guldur...` -Gandalf, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Escape from Dol Guldur Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Escape from Dol Guldur Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 6,
-            "Quantity": 3,
-            "Artist": "S. C. Watson",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00006",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Sentinel of Shadow",
-            "Slug": "Sentinel-of-Shadow-EFDGN",
-            "IsUnique": false,
-            "CardType": "Treachery",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Dol-Guldur-Nightmare/Sentinel-of-Shadow.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "When Revealed: The staging area gets +X Threat until the end of the phase, where X is twice the number of players in the game. If the players quest unsuccessfully this phase, put the Nazgûl of Dol Guldur into play (from any out of play area), engaged with the first player. (Cannot be canceled.)"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Escape from Dol Guldur Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Escape from Dol Guldur Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 7,
-            "Quantity": 2,
-            "Artist": "Rafał Hrynkiewicz",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00007",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Catacomb Inspection",
-            "Slug": "Catacomb-Inspection-EFDGN",
-            "IsUnique": false,
-            "CardType": "Treachery",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Dol-Guldur-Nightmare/Catacomb-Inspection.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [
-                    "Surge."
-                ],
-                "Text": [
-                    "Surge.",
-                    "When Revealed: Add 1 resource token to each Dol Guldur location in play."
-                ],
-                "Shadow": "Shadow: If there is a Dol Guldur location in the staging area, move 1 resource token from each of your heroes` resource pools to that location. (Resolve this effect for each Dol Guldur location.)",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Escape from Dol Guldur Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Escape from Dol Guldur Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 8,
-            "Quantity": 2,
-            "Artist": "Rafał Hrynkiewicz",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00008",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Dark Interrogation",
-            "Slug": "Dark-Interrogation-EFDGN",
-            "IsUnique": false,
-            "CardType": "Treachery",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Dol-Guldur-Nightmare/Dark-Interrogation.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "When Revealed: Each player must choose and discard cards from hand until he has only 2 cards in hand. (Each player with 2 or fewer cards in hand must instead reveal 1 card from the encounter deck.)"
-                ],
-                "Shadow": "Shadow: Discard each card you control that has at least 1 copy of itself in your discard pile. (If this attack is undefended, each player must resolve this effect.)",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Escape from Dol Guldur Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Escape from Dol Guldur Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 9,
-            "Quantity": 2,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00009",
             "RingsDbPopularity": 0,
             "RingsDbVotes": 0,
             "Categories": null

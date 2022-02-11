@@ -5,6 +5,351 @@
     "Number": 1,
     "AllCards": [
         {
+            "Title": "Passage Through Mirkwood",
+            "Slug": "Passage-Through-Mirkwood-Campaign-RevCore",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Passage-Through-Mirkwood-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Campaign Mode.",
+                    "Setup: Put Mendor into play.",
+                    "If Mendor leaves play, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "King Thranduil has assigned a guide, Mendor, to assist you in your passage through Mirkwood Forest."
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Resolution: Each player earns 1 copy of the Mendor`s Support boon crd. Add the earned cards to the Campaign Pool.",
+                    "If Stage 3B was Beorn`s Path, add the Ungoliant`s Swarm burden card to the Campaign Pool.",
+                    "If Stage 3B was Don`t Leave the Path, add the Lingering Venom burden card to the Campaign Pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The forest is dangerous, but that was beyond what one might expect to find.` Mendor seems shaken. `I fear something is not right in the land. I shall continue to travel with you.`"
+            },
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": null,
+            "Number": 129,
+            "Quantity": 1,
+            "Artist": "Ben Zweifel",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00129",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Mendor",
+            "Slug": "Mendor-RevCore",
+            "IsUnique": true,
+            "CardType": "Objective_Ally",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Mendor.jpg",
+                "Stats": {
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Scout."
+                ],
+                "Keywords": [
+                    "Ranged."
+                ],
+                "Text": [
+                    "Ranged.",
+                    "The first player gains control of Mendor.",
+                    "Response: After a quest card is defeated, ready Mendor. Then, each player draws 1 card.",
+                    "If Mendor leaves play, remove him from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 135,
+            "Quantity": 1,
+            "Artist": "Cris Griffin",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00135",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Mendor's Support",
+            "Slug": "Mendor's-Support-RevCore",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Mendor's-Support.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Only one copy of Mendor`s Support can be played each round.",
+                    "Action: Mendor gets +2 Willpower, +2 Attack, and +2 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": null,
+            "Number": 132,
+            "Quantity": 4,
+            "Artist": "Chris Rahn",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00132",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Valor",
+            "Slug": "Valor-RevCore",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Valor.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent. Limit 1 per hero.",
+                    "Response: After attached hero is declared as an attacker, exhaust Valor to heal 1 damage from attached hero and deal 1 damage to the defening enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": null,
+            "Number": 133,
+            "Quantity": 4,
+            "Artist": "Chris Rahn",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00133",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Appointed by Fate",
+            "Slug": "Appointed-by-Fate-RevCore",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Appointed-by-Fate.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attached hero collects 1 additional resource during each resource phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Yet it is not our part to master all the tides of the world, but to do what is in us for the succour of those years wherein we are set...`\r\n-Gandalf, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": null,
+            "Number": 134,
+            "Quantity": 1,
+            "Artist": "Anders Finer",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00134",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Ungoliant's Swarm",
+            "Slug": "Ungoliant's-Swarm-RevCore",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Ungoliant's-Swarm.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "3",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Spider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Ungoliant`s Swarm engages a player, that player must choose and exhaust 2 characters they control."
+                ],
+                "Shadow": "Shadow: Put Ungoliant`s Swarm into play engaged with you.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": {
+                "EncounterSet": "Passage Through Mirkwood Campaign",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 136,
+            "Quantity": 1,
+            "Artist": "Andrew Ryan",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00136",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Lingering Venom",
+            "Slug": "Lingering-Venom-RevCore",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Lingering-Venom.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: Each player must choose: either exhaust each damaged character you control, or deal 2 damage to the hero you control with the most damage on it."
+                ],
+                "Shadow": "Shadow: Exhaust each damaged character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": {
+                "EncounterSet": "Passage Through Mirkwood Campaign",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 137,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00137",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Scarred",
+            "Slug": "Scarred-RevCore",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Scarred.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent. Limit 1 per hero.",
+                    "Forced: After a character you control is destroyed, raise your threat by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": {
+                "EncounterSet": "Journey Along the Anduin Campaign",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 138,
+            "Quantity": 4,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "00138",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
             "Title": "King Spider",
             "Slug": "King-Spider-RevCore",
             "IsUnique": false,
@@ -1058,538 +1403,6 @@
             "HasErrata": false,
             "OctgnGuid": "",
             "RingsDbCardId": "00122",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Passage Through Mirkwood",
-            "Slug": "Passage-Through-Mirkwood-Campaign-RevCore",
-            "IsUnique": false,
-            "CardType": "Campaign",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Passage-Through-Mirkwood-SetupA.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "You are playing Campaign Mode.",
-                    "Setup: Put Mendor into play.",
-                    "If Mendor leaves play, the players lose the game."
-                ],
-                "Shadow": null,
-                "FlavorText": "King Thranduil has assigned a guide, Mendor, to assist you in your passage through Mirkwood Forest."
-            },
-            "Back": {
-                "Subtitle": null,
-                "ImagePath": null,
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Resolution: Each player earns 1 copy of the Mendor`s Support boon crd. Add the earned cards to the Campaign Pool.",
-                    "If Stage 3B was Beorn`s Path, add the Ungoliant`s Swarm burden card to the Campaign Pool.",
-                    "If Stage 3B was Don`t Leave the Path, add the Lingering Venom burden card to the Campaign Pool."
-                ],
-                "Shadow": null,
-                "FlavorText": "`The forest is dangerous, but that was beyond what one might expect to find.` Mendor seems shaken. `I fear something is not right in the land. I shall continue to travel with you.`"
-            },
-            "CardSet": "Revised Core Set",
-            "EncounterInfo": null,
-            "Number": 129,
-            "Quantity": 1,
-            "Artist": "Ben Zweifel",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00129",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Ungoliant's Swarm",
-            "Slug": "Ungoliant's-Swarm-RevCore",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "Burden",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Ungoliant's-Swarm.jpg",
-                "Stats": {
-                    "EngagementCost": "33",
-                    "Threat": "3",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "5"
-                },
-                "Traits": [
-                    "Creature.",
-                    "Spider."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Forced: After Ungoliant`s Swarm engages a player, that player must choose and exhaust 2 characters they control."
-                ],
-                "Shadow": "Shadow: Put Ungoliant`s Swarm into play engaged with you.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Revised Core Set",
-            "EncounterInfo": {
-                "EncounterSet": "Passage Through Mirkwood Campaign",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 136,
-            "Quantity": 1,
-            "Artist": "Andrew Ryan",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00136",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Lingering Venom",
-            "Slug": "Lingering-Venom-RevCore",
-            "IsUnique": false,
-            "CardType": "Treachery",
-            "CardSubType": "Burden",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Lingering-Venom.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [
-                    "Surge."
-                ],
-                "Text": [
-                    "Surge.",
-                    "When Revealed: Each player must choose: either exhaust each damaged character you control, or deal 2 damage to the hero you control with the most damage on it."
-                ],
-                "Shadow": "Shadow: Exhaust each damaged character you control.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Revised Core Set",
-            "EncounterInfo": {
-                "EncounterSet": "Passage Through Mirkwood Campaign",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 137,
-            "Quantity": 1,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00137",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Passage Through Mirkwood Nightmare",
-            "Slug": "Passage-Through-Mirkwood-Nightmare-PTMN",
-            "IsUnique": false,
-            "CardType": "Nightmare_Setup",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Passage-Through-Mirkwood-Nightmare/Passage-Through-Mirkwood-Nightmare-SetupA.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "You are playing Nightmare mode.",
-                    "Forced: During setup, each player reveals 1 card from the encounter deck and adds it to the staging area."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": {
-                "Subtitle": null,
-                "ImagePath": null,
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Begin with the standard quest deck and encounter deck for the Passage Through Mirkwood scenario found in the LOTR LCG core set.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\nUngoliant`s Spawn x1\nBlack Forest Bats x1\nForest Spider x3\nDol Guldur Orcs x3\nOld Forest Road x1\nForest Gate x2\nMountains of Mirkwood x3\nCaught in a Web x2\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Passage Through Mirkwood encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effect remains active throughout the game, which is now ready to begin."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "CardSet": "Passage Through Mirkwood Nightmare",
-            "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Stacey Diana Clark",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00001",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Ungoliant's Spawn",
-            "Slug": "Ungoliant's-Spawn-PTMN",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Passage-Through-Mirkwood-Nightmare/Ungoliant's-Spawn.jpg",
-                "Stats": {
-                    "EngagementCost": "32",
-                    "Threat": "3",
-                    "Attack": "5",
-                    "Defense": "3",
-                    "HitPoints": "9"
-                },
-                "Traits": [
-                    "Creature.",
-                    "Spider."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "When Revealed: Until the end of the phase, each character currently committed to the quest gets -2 Willpower and is discarded if its Willpower is 0."
-                ],
-                "Shadow": "Shadow: Raise defending player`s threat by 5. (Raise defending player`s threat by 10 instead if undefended.)",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Passage Through Mirkwood Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Passage Through Mirkwood Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 2,
-            "Quantity": 1,
-            "Artist": "Christopher Burdett",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00002",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Ungoliant's Brood",
-            "Slug": "Ungoliant's-Brood-PTMN",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Passage-Through-Mirkwood-Nightmare/Ungoliant's-Brood.jpg",
-                "Stats": {
-                    "EngagementCost": "31",
-                    "Threat": "2",
-                    "Attack": "3",
-                    "Defense": "2",
-                    "HitPoints": "5"
-                },
-                "Traits": [
-                    "Creature.",
-                    "Spider."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Forced: After you engage Ungoliant`s Brood, your cards cannot ready for the remainder of the round."
-                ],
-                "Shadow": "Shadow: If this attack is undefended, exhaust all characters you control.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Passage Through Mirkwood Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Passage Through Mirkwood Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 3,
-            "Quantity": 3,
-            "Artist": "S. C. Watson",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00003",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Forest Flies",
-            "Slug": "Forest-Flies-PTMN",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Passage-Through-Mirkwood-Nightmare/Forest-Flies.jpg",
-                "Stats": {
-                    "EngagementCost": "27",
-                    "Threat": "4",
-                    "Attack": "1",
-                    "Defense": "0",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Creature.",
-                    "Insect."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Forced: After you engage Forest Flies, deal 1 damage to each exhausted character you control."
-                ],
-                "Shadow": "Shadow: If attacking enemy is an Insect, deal it 2 additional shadow cards.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Passage Through Mirkwood Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Passage Through Mirkwood Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 4,
-            "Quantity": 3,
-            "Artist": "Rafał Hrynkiewicz",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00004",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Spiders of Mirkwood",
-            "Slug": "Spiders-of-Mirkwood-PTMN",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Passage-Through-Mirkwood-Nightmare/Spiders-of-Mirkwood.jpg",
-                "Stats": {
-                    "EngagementCost": "18",
-                    "Threat": "3",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Spider."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "While it is engaged with you, Spiders of Mirkwood gets +1 for each exhausted character you control."
-                ],
-                "Shadow": "Shadow: Choose and exhaust 1 character you control. If this attack is undefended, also deal that character 2 damage.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Passage Through Mirkwood Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Passage Through Mirkwood Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 5,
-            "Quantity": 2,
-            "Artist": "Andrew Ryan",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00005",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "The Spider's Web",
-            "Slug": "The-Spider's-Web-PTMN",
-            "IsUnique": false,
-            "CardType": "Treachery",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Passage-Through-Mirkwood-Nightmare/The-Spider's-Web.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "When Revealed: The player with the highest threat exhausts all heroes he controls. Then, attach this card to one of that player`s heroes. (Counts as a Condition attachment with the text, `Each time attached hero readies, deal it 1 damage.`)"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Passage Through Mirkwood Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Passage Through Mirkwood Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 6,
-            "Quantity": 3,
-            "Artist": "Rafał Hrynkiewicz",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00006",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Backtrack!",
-            "Slug": "Backtrack-PTMN",
-            "IsUnique": false,
-            "CardType": "Treachery",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Passage-Through-Mirkwood-Nightmare/Backtrack.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [
-                    "Surge."
-                ],
-                "Text": [
-                    "Surge.",
-                    "When Revealed: The topmost enemy or location card in the encounter discard pile is returned to the staging area."
-                ],
-                "Shadow": "Shadow: Deal and resolve the topmost Shadow effect in the encounter discard pile for this attack.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Passage Through Mirkwood Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Passage Through Mirkwood Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 7,
-            "Quantity": 2,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00007",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Abandoned Camp",
-            "Slug": "Abandoned-Camp-PTMN",
-            "IsUnique": false,
-            "CardType": "Location",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Passage-Through-Mirkwood-Nightmare/Abandoned-Camp.jpg",
-                "Stats": {
-                    "Threat": "2",
-                    "QuestPoints": "2"
-                },
-                "Traits": [
-                    "Mirkwood."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Immune to player card effects.",
-                    "Forced: After Abandoned Camp leaves play, each player must deal 2 damage to each exhausted character he controls."
-                ],
-                "Shadow": "Shadow: If this attack is undefended, discard all attachment cards players control.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Passage Through Mirkwood Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Passage Through Mirkwood Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 8,
-            "Quantity": 3,
-            "Artist": "Dana Li",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00008",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Glade of the Spawn",
-            "Slug": "Glade-of-the-Spawn-PTMN",
-            "IsUnique": false,
-            "CardType": "Location",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Passage-Through-Mirkwood-Nightmare/Glade-of-the-Spawn.jpg",
-                "Stats": {
-                    "Threat": "4",
-                    "QuestPoints": "4"
-                },
-                "Traits": [
-                    "Mirkwood."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "While Glade of the Spawn is the active location, it gains: `Forced: After a Spider enemy enters play, each player must choose and exhaust 1 character he controls.`"
-                ],
-                "Shadow": null,
-                "FlavorText": "...black even for that forest, like a patch of midnight that had never been cleared away. -The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Passage Through Mirkwood Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Passage Through Mirkwood Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 9,
-            "Quantity": 2,
-            "Artist": "S. C. Watson",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00009",
             "RingsDbPopularity": 0,
             "RingsDbVotes": 0,
             "Categories": null
