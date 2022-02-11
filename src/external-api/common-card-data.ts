@@ -12,6 +12,7 @@ export interface CardData {
   typeCode: string;
   subTypeCode: string | null;
   extraInfo: {
+    campaign?: boolean;
     setCode: string | null;
     packCode: string | null;
     factionCode: string | null;

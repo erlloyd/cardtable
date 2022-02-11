@@ -897,7 +897,7 @@ class Game extends Component<IProps, IState> {
     cards.forEach((c, index) => {
       this.props.addCardStack({
         position: {
-          x: position.x + (cardConstants.CARD_WIDTH + 10) * index,
+          x: position.x + cardConstants.GRID_SNAP_WIDTH * index,
           y: position.y,
         },
         cardJsonIds: c,

@@ -103,6 +103,7 @@ const convertLOTRToCommonFormat =
       typeCode: cardLOTRFormat.CardType,
       subTypeCode: cardLOTRFormat.CardSubType,
       extraInfo: {
+        campaign: cardLOTRFormat.CAMPAIGN,
         setCode: cardLOTRFormat.CardSet ?? null,
         packCode: "TODO - lotr",
         factionCode: encounterCard ? "encounter" : "player",

@@ -53,6 +53,7 @@ export interface CardData {
   RingsDbPopularity: number;
   RingsDbVotes: number;
   Categories: any | null;
+  CAMPAIGN?: boolean;
 }
 
 export interface CardPack {

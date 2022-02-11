@@ -38,6 +38,7 @@ class EncounterLoader extends Component<IProps> {
 
   private handleSelected = (_event: any, value: IEncounterEntity | null) => {
     if (!!value) {
+      let campaignCards: string[] = [];
       let questCards: string[] = [];
       let encounterCards: string[] = [];
       const filteredCards = value.cards
@@ -52,8 +53,20 @@ class EncounterLoader extends Component<IProps> {
           );
         });
 
+      // Right now these are set manually in the separate JSON repo and only for some card sets
       filteredCards
-        .filter((c) => c.typeCode.toLocaleLowerCase() !== "quest")
+        .filter((c) => c.extraInfo.campaign === true)
+        .forEach((c) => {
+          campaignCards = campaignCards.concat(
+            Array.from({ length: c.quantity }).map((_i) => c.code)
+          );
+        });
+
+      filteredCards
+        .filter(
+          (c) =>
+            c.typeCode.toLocaleLowerCase() !== "quest" && !c.extraInfo.campaign
+        )
         .forEach((c) => {
           encounterCards = encounterCards.concat(
             Array.from({ length: c.quantity }).map((_i) => c.code)
@@ -62,6 +75,10 @@ class EncounterLoader extends Component<IProps> {
       let totalCards = [encounterCards];
       if (questCards.length > 0) {
         totalCards = [questCards].concat(totalCards);
+      }
+
+      if (campaignCards.length > 0) {
+        totalCards = totalCards.concat([campaignCards]);
       }
 
       this.props.loadCards(totalCards);
