@@ -48,6 +48,7 @@ import {
 } from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
 import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
+import CurvedArrowsContainer from "./CurvedArrowsContainer";
 
 const SCALE_BY = 1.02;
 
@@ -665,7 +666,7 @@ class Game extends Component<IProps, IState> {
                   <FirstPlayerTokenContainer
                     currentGameType={this.props.currentGameType}
                   ></FirstPlayerTokenContainer>
-
+                  <CurvedArrowsContainer></CurvedArrowsContainer>
                   {previewCards}
                 </Layer>
                 <Layer>
