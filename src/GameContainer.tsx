@@ -67,6 +67,7 @@ import {
   showSpecificCardLoader,
   updatePosition,
   updateZoom,
+  setDrawingArrow,
 } from "./features/game/game.slice";
 import {
   generateGameStateUrl,
@@ -143,6 +144,7 @@ const GameContainer = connect(mapStateToProps, {
   addExtraIcon,
   removeExtraIcon,
   clearMyGhostCards,
+  setDrawingArrow,
 })(Game);
 
 export default GameContainer;

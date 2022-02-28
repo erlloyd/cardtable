@@ -156,6 +156,7 @@ interface IProps {
   addExtraIcon: (icon: string) => void;
   removeExtraIcon: (icon: string) => void;
   clearMyGhostCards: () => void;
+  setDrawingArrow: (val: boolean) => void;
 }
 
 interface IState {
@@ -247,6 +248,7 @@ class Game extends Component<IProps, IState> {
 
   public componentDidMount() {
     document.addEventListener("keydown", this.handleKeyDown);
+    document.addEventListener("keyup", this.handleKeyUp);
     document.addEventListener("keypress", this.handleKeyPress);
     window.addEventListener("resize", this.handleResize);
 
@@ -597,13 +599,9 @@ class Game extends Component<IProps, IState> {
               height={this.state.stageHeight}
               onClick={this.handleStageClickOrTap}
               onTap={this.handleStageClickOrTap}
-              onMouseDown={
-                this.props.panMode ? this.noOp : this.handleMouseDown
-              }
-              onMouseUp={this.props.panMode ? this.noOp : this.handleMouseUp}
-              onMouseMove={
-                this.props.panMode ? this.noOp : this.handleMouseMove
-              }
+              onMouseDown={this.handleMouseDown}
+              onMouseUp={this.handleMouseUp}
+              onMouseMove={this.handleMouseMove}
               onTouchStart={this.handleTouchStart}
               onTouchMove={this.handleTouchMove}
               onTouchEnd={this.handleTouchEnd}
@@ -1607,6 +1605,10 @@ class Game extends Component<IProps, IState> {
     const code = event.key.toLocaleLowerCase();
     const intCode = parseInt(code);
 
+    if (event.key === "a") {
+      this.props.setDrawingArrow(true);
+    }
+
     if ((event.ctrlKey || event.metaKey) && !Number.isNaN(intCode)) {
       const tokenInfoForGameType =
         GamePropertiesMap[this.props.currentGameType].tokens;
@@ -1677,6 +1679,12 @@ class Game extends Component<IProps, IState> {
     }
   };
 
+  private handleKeyUp = (event: KeyboardEvent) => {
+    if (event.key === "a") {
+      this.props.setDrawingArrow(false);
+    }
+  };
+
   private getRawPreviewCardPosition = (horizontal: boolean): Vector2d => {
     const pointerPos = this.stage?.getPointerPosition() ?? { x: 0, y: 0 };
     const screenMidPointX = window.innerWidth / 2;
@@ -1720,6 +1728,11 @@ class Game extends Component<IProps, IState> {
   private handleMouseDown = (
     event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>
   ) => {
+    // If we're in pan mode and not drawing an arrow, there is nothing to do
+    if (this.props.panMode && !this.props.gameState.drawingArrow) {
+      return false;
+    }
+
     if (
       (event.evt instanceof MouseEvent && event.evt.button === 0) ||
       !!(event.evt as TouchEvent).touches
@@ -1759,6 +1772,11 @@ class Game extends Component<IProps, IState> {
   private handleMouseUp = (
     event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>
   ) => {
+    // If we're in pan mode and not drawing an arrow, there is nothing to do
+    if (this.props.panMode && !this.props.gameState.drawingArrow) {
+      return false;
+    }
+
     // if we were selecting, check for intersection
     if (this.state.drewASelectionRect) {
       const selectRect = this.getSelectionRectInfo();
@@ -1816,9 +1834,7 @@ class Game extends Component<IProps, IState> {
       this.handleContextMenu(event);
     }, 750);
 
-    if (!this.props.panMode) {
-      this.handleMouseDown(event);
-    }
+    this.handleMouseDown(event);
   };
 
   private handleTouchMove = (e: any) => {
@@ -1901,15 +1917,20 @@ class Game extends Component<IProps, IState> {
       clearTimeout(this.touchTimer);
       this.touchTimer = null;
     }
-
-    if (!this.props.panMode) {
-      this.handleMouseUp(event);
-    }
+    this.handleMouseUp(event);
   };
 
   private handleMouseMove = (event: any) => {
-    if (this.state.selecting) {
-      const pos = this.getRelativePositionFromTarget(event.currentTarget);
+    // console.log(this.props.gameState.drawingArrow);
+    // console.log(this.props.panMode && !this.props.gameState.drawingArrow);
+    if (this.props.panMode && !this.props.gameState.drawingArrow) {
+      return false;
+    }
+
+    const pos = this.getRelativePositionFromTarget(event.currentTarget);
+    if (this.props.gameState.drawingArrow) {
+      console.log(`drawing arrow end`);
+    } else if (this.state.selecting) {
       this.setState({
         drewASelectionRect: true,
         selectRect: {
