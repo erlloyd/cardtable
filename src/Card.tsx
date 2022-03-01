@@ -48,6 +48,7 @@ interface IProps {
   exhausted: boolean;
   cardState?: CardUIState;
   fill: string;
+  disableDragging?: boolean;
   handleClick?: (
     id: string,
     event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>,
@@ -60,6 +61,7 @@ interface IProps {
   handleDragEnd?: (id: string, event: KonvaEventObject<DragEvent>) => void;
   handleHover?: (id: string) => void;
   handleHoverLeave?: (id: string) => void;
+  handleMouseDownWhenNotDraggable?: (id: string) => void;
   id: string;
   selected: boolean;
   dropTargetColor?: string;
@@ -380,8 +382,9 @@ class Card extends Component<IProps, IState> {
             hitStrokeWidth={0}
             opacity={this.props.isGhost ? 0.5 : 1}
             draggable={
-              this.props.controlledBy === "" ||
-              this.props.controlledBy === myPeerRef
+              (this.props.controlledBy === "" ||
+                this.props.controlledBy === myPeerRef) &&
+              !this.props.disableDragging
             }
             onDragStart={this.handleDragStart}
             onDragMove={this.handleDragMove}
@@ -528,7 +531,7 @@ class Card extends Component<IProps, IState> {
           onClick={this.handleClick}
           onTap={this.handleClick}
           onMouseDown={this.handleMouseDown}
-          onTouchStart={this.handleMouseDown}
+          onTouchStart={this.handleTouchStart}
           onMouseOver={this.handleMouseOver}
           onMouseOut={this.handleMouseOut}
           onContextMenu={this.handleContextMenu}
@@ -677,6 +680,12 @@ class Card extends Component<IProps, IState> {
 
   private handleMouseDown = (event: any) => {
     event.cancelBubble = true;
+    if (
+      this.props.handleMouseDownWhenNotDraggable &&
+      !!this.props.disableDragging
+    ) {
+      this.props.handleMouseDownWhenNotDraggable(this.props.id);
+    }
   };
 
   private handleTouchStart = (event: KonvaEventObject<TouchEvent>) => {

@@ -157,6 +157,11 @@ interface IProps {
   removeExtraIcon: (icon: string) => void;
   clearMyGhostCards: () => void;
   setDrawingArrow: (val: boolean) => void;
+  startNewArrow: (payload: { startCardId: string; myRef: string }) => void;
+  updateDisconnectedArrowPosition: (payload: {
+    endPos: Vector2d;
+    myRef: string;
+  }) => void;
 }
 
 interface IState {
@@ -310,6 +315,7 @@ class Game extends Component<IProps, IState> {
             x={card.x}
             y={card.y}
             exhausted={card.exhausted}
+            disableDragging={this.props.gameState.drawingArrow}
             fill={card.fill}
             selected={card.selected}
             dropTargetColor={
@@ -324,6 +330,7 @@ class Game extends Component<IProps, IState> {
             handleDoubleClick={this.handleSelectAndExhaust}
             handleDoubleTap={this.showOrToggleModalPreviewCard}
             handleClick={this.handleCardClick(card)}
+            handleMouseDownWhenNotDraggable={this.handleStartArrow}
             handleHover={this.props.setPreviewCardId}
             handleHoverLeave={this.props.clearPreviewCard}
             handleContextMenu={this.handleCardContextMenu}
@@ -1460,6 +1467,10 @@ class Game extends Component<IProps, IState> {
       }
     };
 
+  private handleStartArrow = (id: string) => {
+    this.props.startNewArrow({ startCardId: id, myRef: myPeerRef });
+  };
+
   private handleSelectAndExhaust = (
     cardId: string,
     event: KonvaEventObject<MouseEvent>
@@ -1605,7 +1616,7 @@ class Game extends Component<IProps, IState> {
     const code = event.key.toLocaleLowerCase();
     const intCode = parseInt(code);
 
-    if (event.key === "a") {
+    if (event.key === "a" && !this.props.gameState.drawingArrow) {
       this.props.setDrawingArrow(true);
     }
 
@@ -1680,7 +1691,7 @@ class Game extends Component<IProps, IState> {
   };
 
   private handleKeyUp = (event: KeyboardEvent) => {
-    if (event.key === "a") {
+    if (event.key === "a" && this.props.gameState.drawingArrow) {
       this.props.setDrawingArrow(false);
     }
   };
@@ -1929,7 +1940,10 @@ class Game extends Component<IProps, IState> {
 
     const pos = this.getRelativePositionFromTarget(event.currentTarget);
     if (this.props.gameState.drawingArrow) {
-      console.log(`drawing arrow end`);
+      this.props.updateDisconnectedArrowPosition({
+        endPos: pos,
+        myRef: myPeerRef,
+      });
     } else if (this.state.selecting) {
       this.setState({
         drewASelectionRect: true,

@@ -70,6 +70,10 @@ import {
   setDrawingArrow,
 } from "./features/game/game.slice";
 import {
+  startNewArrow,
+  updateDisconnectedArrowPosition,
+} from "./features/arrows/arrows.slice";
+import {
   generateGameStateUrl,
   saveDeckAsJson,
 } from "./features/game/game.thunks";
@@ -145,6 +149,8 @@ const GameContainer = connect(mapStateToProps, {
   removeExtraIcon,
   clearMyGhostCards,
   setDrawingArrow,
+  startNewArrow,
+  updateDisconnectedArrowPosition,
 })(Game);
 
 export default GameContainer;

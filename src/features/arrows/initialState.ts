@@ -1,10 +1,10 @@
 import { Vector2d } from "konva/lib/types";
-import { PlayerColor } from "../../constants/app-constants";
+import { myPeerRef, PlayerColor } from "../../constants/app-constants";
 import { loadState } from "../../store/localStorage";
 import JSONCrush from "jsoncrush";
 
 export interface IArrowsState {
-  arrows: IArrow[];
+  arrows: { [key: string]: IArrow[] };
 }
 
 export interface IArrow {
@@ -23,10 +23,12 @@ const queryParamsArrows = !!queryParamsArrowsString
 const localStorageState: IArrowsState =
   queryParamsArrows || (loadState("liveState")?.arrows ?? {});
 
-localStorageState.arrows = [{ startCardId: "blah", color: "red" }];
+localStorageState.arrows = {
+  [myPeerRef]: [{ startCardId: "blah", color: "red" }],
+};
 
 const defaultState: IArrowsState = {
-  arrows: [],
+  arrows: {},
 };
 export const initialState: IArrowsState = {
   ...defaultState,
