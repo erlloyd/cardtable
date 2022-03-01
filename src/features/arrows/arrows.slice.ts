@@ -16,6 +16,23 @@ const startNewArrowReducer: CaseReducer<
   myArrows.push({ startCardId: action.payload.startCardId, color: "red" });
 };
 
+const endDisconnectedArrowReducer: CaseReducer<
+  IArrowsState,
+  PayloadAction<{ endCardId: string; myRef: string }>
+> = (state, action) => {
+  let myArrows = state.arrows[action.payload.myRef];
+  if (!!myArrows) {
+    // get the first arrow without an end card.
+    // that is currently how we're finding the "drawing"
+    // arrow
+    const drawingArrow = myArrows.find((a) => !a.endCardId);
+    if (drawingArrow) {
+      drawingArrow.endCardId = action.payload.endCardId;
+      drawingArrow.endArrowPosition = null;
+    }
+  }
+};
+
 const updateDisconnectedArrowPositionReducer: CaseReducer<
   IArrowsState,
   PayloadAction<{ endPos: Vector2d; myRef: string }>
@@ -32,6 +49,16 @@ const updateDisconnectedArrowPositionReducer: CaseReducer<
   }
 };
 
+const removeAnyDisconnectedArrowsReducer: CaseReducer<
+  IArrowsState,
+  PayloadAction<string>
+> = (state, action) => {
+  const myArrows = state.arrows[action.payload];
+  if (!!myArrows) {
+    state.arrows[action.payload] = myArrows.filter((a) => !!a.endCardId);
+  }
+};
+
 // slice
 const arrowsSlice = createSlice({
   name: "arrows",
@@ -39,6 +66,8 @@ const arrowsSlice = createSlice({
   reducers: {
     startNewArrow: startNewArrowReducer,
     updateDisconnectedArrowPosition: updateDisconnectedArrowPositionReducer,
+    removeAnyDisconnectedArrows: removeAnyDisconnectedArrowsReducer,
+    endDisconnectedArrow: endDisconnectedArrowReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -51,7 +80,11 @@ const arrowsSlice = createSlice({
   },
 });
 
-export const { startNewArrow, updateDisconnectedArrowPosition } =
-  arrowsSlice.actions;
+export const {
+  startNewArrow,
+  updateDisconnectedArrowPosition,
+  removeAnyDisconnectedArrows,
+  endDisconnectedArrow,
+} = arrowsSlice.actions;
 
 export default arrowsSlice.reducer;

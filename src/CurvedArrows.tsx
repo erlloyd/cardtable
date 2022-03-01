@@ -2,6 +2,7 @@ import { Vector2d } from "konva/lib/types";
 import React from "react";
 import { Group } from "react-konva";
 import Arrow from "./Arrow";
+import { cardConstants } from "./constants/card-constants";
 import { IArrow } from "./features/arrows/initialState";
 import { ICardStack } from "./features/cards/initialState";
 interface IProps {
@@ -14,11 +15,10 @@ const CurvedArrows = (props: IProps) => {
     <Group>
       {props.arrows
         ?.map((arrowData) => {
-          const start = getStartPointFromCards(
-            arrowData.startCardId,
-            props.cards
-          );
-          const end = arrowData.endArrowPosition;
+          const start = getPointFromCards(arrowData.startCardId, props.cards);
+          const end = arrowData.endCardId
+            ? getPointFromCards(arrowData.endCardId, props.cards, true)
+            : adjustEndPositionForDrawing(arrowData.endArrowPosition);
 
           return start && end ? (
             <Arrow startPoint={start} endPoint={end}></Arrow>
@@ -29,12 +29,26 @@ const CurvedArrows = (props: IProps) => {
   );
 };
 
-const getStartPointFromCards = (
+const getPointFromCards = (
   cardId: string,
-  cards: ICardStack[]
+  cards: ICardStack[],
+  alignToBottom?: boolean
 ): Vector2d | null => {
-  const startCard = cards.find((c) => c.id === cardId);
-  return !!startCard ? { x: startCard.x, y: startCard.y } : null;
+  const card = cards.find((c) => c.id === cardId);
+  let returnPos = !!card ? { x: card.x, y: card.y } : null;
+  if (!!returnPos && alignToBottom) {
+    returnPos.y += cardConstants.CARD_HEIGHT / 2;
+  }
+
+  return returnPos;
+};
+
+const adjustEndPositionForDrawing = (point?: Vector2d | null) => {
+  if (!!point) {
+    return { x: point.x - 50, y: point.y + 50 };
+  }
+
+  return null;
 };
 
 export default CurvedArrows;

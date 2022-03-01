@@ -62,6 +62,7 @@ interface IProps {
   handleHover?: (id: string) => void;
   handleHoverLeave?: (id: string) => void;
   handleMouseDownWhenNotDraggable?: (id: string) => void;
+  handleMouseUpWhenNotDraggable?: (id: string) => void;
   id: string;
   selected: boolean;
   dropTargetColor?: string;
@@ -394,6 +395,7 @@ class Card extends Component<IProps, IState> {
             onClick={this.handleClick}
             onTap={this.handleTap}
             onMouseDown={this.handleMouseDown}
+            onMouseUp={this.handleMouseUp}
             onTouchStart={this.handleTouchStart}
             onTouchMove={this.handleTouchMove}
             onTouchEnd={this.handleTouchEnd}
@@ -531,6 +533,7 @@ class Card extends Component<IProps, IState> {
           onClick={this.handleClick}
           onTap={this.handleClick}
           onMouseDown={this.handleMouseDown}
+          onMouseUp={this.handleMouseUp}
           onTouchStart={this.handleTouchStart}
           onMouseOver={this.handleMouseOver}
           onMouseOut={this.handleMouseOut}
@@ -685,6 +688,15 @@ class Card extends Component<IProps, IState> {
       !!this.props.disableDragging
     ) {
       this.props.handleMouseDownWhenNotDraggable(this.props.id);
+    }
+  };
+
+  private handleMouseUp = (event: any) => {
+    if (
+      this.props.handleMouseUpWhenNotDraggable &&
+      !!this.props.disableDragging
+    ) {
+      this.props.handleMouseUpWhenNotDraggable(this.props.id);
     }
   };
 

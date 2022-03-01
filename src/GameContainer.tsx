@@ -72,6 +72,8 @@ import {
 import {
   startNewArrow,
   updateDisconnectedArrowPosition,
+  removeAnyDisconnectedArrows,
+  endDisconnectedArrow,
 } from "./features/arrows/arrows.slice";
 import {
   generateGameStateUrl,
@@ -151,6 +153,8 @@ const GameContainer = connect(mapStateToProps, {
   setDrawingArrow,
   startNewArrow,
   updateDisconnectedArrowPosition,
+  removeAnyDisconnectedArrows,
+  endDisconnectedArrow,
 })(Game);
 
 export default GameContainer;

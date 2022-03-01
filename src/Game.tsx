@@ -158,10 +158,12 @@ interface IProps {
   clearMyGhostCards: () => void;
   setDrawingArrow: (val: boolean) => void;
   startNewArrow: (payload: { startCardId: string; myRef: string }) => void;
+  endDisconnectedArrow: (payload: { endCardId: string; myRef: string }) => void;
   updateDisconnectedArrowPosition: (payload: {
     endPos: Vector2d;
     myRef: string;
   }) => void;
+  removeAnyDisconnectedArrows: (myRef: string) => void;
 }
 
 interface IState {
@@ -331,6 +333,7 @@ class Game extends Component<IProps, IState> {
             handleDoubleTap={this.showOrToggleModalPreviewCard}
             handleClick={this.handleCardClick(card)}
             handleMouseDownWhenNotDraggable={this.handleStartArrow}
+            handleMouseUpWhenNotDraggable={this.handleEndArrow}
             handleHover={this.props.setPreviewCardId}
             handleHoverLeave={this.props.clearPreviewCard}
             handleContextMenu={this.handleCardContextMenu}
@@ -1471,6 +1474,13 @@ class Game extends Component<IProps, IState> {
     this.props.startNewArrow({ startCardId: id, myRef: myPeerRef });
   };
 
+  private handleEndArrow = (id: string) => {
+    if (this.props.gameState.drawingArrow) {
+      this.props.setDrawingArrow(false);
+    }
+    this.props.endDisconnectedArrow({ endCardId: id, myRef: myPeerRef });
+  };
+
   private handleSelectAndExhaust = (
     cardId: string,
     event: KonvaEventObject<MouseEvent>
@@ -1693,6 +1703,7 @@ class Game extends Component<IProps, IState> {
   private handleKeyUp = (event: KeyboardEvent) => {
     if (event.key === "a" && this.props.gameState.drawingArrow) {
       this.props.setDrawingArrow(false);
+      this.props.removeAnyDisconnectedArrows(myPeerRef);
     }
   };
 
@@ -1787,7 +1798,6 @@ class Game extends Component<IProps, IState> {
     if (this.props.panMode && !this.props.gameState.drawingArrow) {
       return false;
     }
-
     // if we were selecting, check for intersection
     if (this.state.drewASelectionRect) {
       const selectRect = this.getSelectionRectInfo();
