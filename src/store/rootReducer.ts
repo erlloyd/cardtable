@@ -9,8 +9,13 @@ import game, {
 } from "../features/game/game.slice";
 
 import counters, { moveCounter } from "../features/counters/counters.slice";
+import arrows, {
+  startNewArrowForCards,
+  updateDisconnectedArrowPosition,
+} from "../features/arrows/arrows.slice";
 
 const undoableState = combineReducers({
+  arrows,
   counters,
   cards,
 });
@@ -22,6 +27,8 @@ const rootReducer = combineReducers({
     limit: 20,
     groupBy: groupByActionTypes([moveCounter.type]),
     filter: excludeAction([
+      startNewArrowForCards.type,
+      updateDisconnectedArrowPosition.type,
       startCardMoveWithSplitStackId.type,
       cardMoveWithSnap.type,
       setPreviewCardId.type,

@@ -136,6 +136,13 @@ const setVisiblePlayerHandNumberReducer: CaseReducer<
   }
 };
 
+const setDrawingArrowReducer: CaseReducer<
+  IGameState,
+  PayloadAction<boolean>
+> = (state, action) => {
+  state.drawingArrow = action.payload;
+};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -161,6 +168,7 @@ const gameSlice = createSlice({
     toggleDrawCardsIntoHand: toggleDrawCardsIntoHandReducer,
     toggleSnapCardsToGrid: toggleSnapCardsToGridReducer,
     setVisiblePlayerHandNumber: setVisiblePlayerHandNumberReducer,
+    setDrawingArrow: setDrawingArrowReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -198,6 +206,7 @@ export const {
   toggleDrawCardsIntoHand,
   toggleSnapCardsToGrid,
   setVisiblePlayerHandNumber,
+  setDrawingArrow,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

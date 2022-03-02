@@ -48,6 +48,7 @@ import {
 } from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
 import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
+import CurvedArrowsContainer from "./CurvedArrowsContainer";
 
 const SCALE_BY = 1.02;
 
@@ -155,6 +156,15 @@ interface IProps {
   addExtraIcon: (icon: string) => void;
   removeExtraIcon: (icon: string) => void;
   clearMyGhostCards: () => void;
+  setDrawingArrow: (val: boolean) => void;
+  startNewArrow: (startCardId: string) => void;
+  endDisconnectedArrow: (payload: { endCardId: string; myRef: string }) => void;
+  updateDisconnectedArrowPosition: (payload: {
+    endPos: Vector2d;
+    myRef: string;
+  }) => void;
+  removeAnyDisconnectedArrows: (myRef: string) => void;
+  removeAllArrows: () => void;
 }
 
 interface IState {
@@ -246,6 +256,7 @@ class Game extends Component<IProps, IState> {
 
   public componentDidMount() {
     document.addEventListener("keydown", this.handleKeyDown);
+    document.addEventListener("keyup", this.handleKeyUp);
     document.addEventListener("keypress", this.handleKeyPress);
     window.addEventListener("resize", this.handleResize);
 
@@ -307,6 +318,7 @@ class Game extends Component<IProps, IState> {
             x={card.x}
             y={card.y}
             exhausted={card.exhausted}
+            disableDragging={this.props.gameState.drawingArrow}
             fill={card.fill}
             selected={card.selected}
             dropTargetColor={
@@ -321,6 +333,8 @@ class Game extends Component<IProps, IState> {
             handleDoubleClick={this.handleSelectAndExhaust}
             handleDoubleTap={this.showOrToggleModalPreviewCard}
             handleClick={this.handleCardClick(card)}
+            handleMouseDownWhenNotDraggable={this.handleStartArrow}
+            handleMouseUpWhenNotDraggable={this.handleEndArrow}
             handleHover={this.props.setPreviewCardId}
             handleHoverLeave={this.props.clearPreviewCard}
             handleContextMenu={this.handleCardContextMenu}
@@ -500,6 +514,11 @@ class Game extends Component<IProps, IState> {
           if (this.props.gameState.draggingCardFromHand) {
             this.captureLastMousePos = false;
           }
+
+          if (this.props.gameState.drawingArrow) {
+            this.props.setDrawingArrow(false);
+            this.props.removeAnyDisconnectedArrows(myPeerRef);
+          }
         }}
         onTouchMove={(event) => {
           if (event.touches.length > 0) {
@@ -596,13 +615,9 @@ class Game extends Component<IProps, IState> {
               height={this.state.stageHeight}
               onClick={this.handleStageClickOrTap}
               onTap={this.handleStageClickOrTap}
-              onMouseDown={
-                this.props.panMode ? this.noOp : this.handleMouseDown
-              }
-              onMouseUp={this.props.panMode ? this.noOp : this.handleMouseUp}
-              onMouseMove={
-                this.props.panMode ? this.noOp : this.handleMouseMove
-              }
+              onMouseDown={this.handleMouseDown}
+              onMouseUp={this.handleMouseUp}
+              onMouseMove={this.handleMouseMove}
               onTouchStart={this.handleTouchStart}
               onTouchMove={this.handleTouchMove}
               onTouchEnd={this.handleTouchEnd}
@@ -665,7 +680,7 @@ class Game extends Component<IProps, IState> {
                   <FirstPlayerTokenContainer
                     currentGameType={this.props.currentGameType}
                   ></FirstPlayerTokenContainer>
-
+                  <CurvedArrowsContainer></CurvedArrowsContainer>
                   {previewCards}
                 </Layer>
                 <Layer>
@@ -1461,6 +1476,17 @@ class Game extends Component<IProps, IState> {
       }
     };
 
+  private handleStartArrow = (id: string) => {
+    this.props.startNewArrow(id);
+  };
+
+  private handleEndArrow = (id: string) => {
+    if (this.props.gameState.drawingArrow) {
+      this.props.setDrawingArrow(false);
+    }
+    this.props.endDisconnectedArrow({ endCardId: id, myRef: myPeerRef });
+  };
+
   private handleSelectAndExhaust = (
     cardId: string,
     event: KonvaEventObject<MouseEvent>
@@ -1606,6 +1632,10 @@ class Game extends Component<IProps, IState> {
     const code = event.key.toLocaleLowerCase();
     const intCode = parseInt(code);
 
+    if (event.key === "a" && !this.props.gameState.drawingArrow) {
+      this.props.setDrawingArrow(true);
+    }
+
     if ((event.ctrlKey || event.metaKey) && !Number.isNaN(intCode)) {
       const tokenInfoForGameType =
         GamePropertiesMap[this.props.currentGameType].tokens;
@@ -1676,6 +1706,13 @@ class Game extends Component<IProps, IState> {
     }
   };
 
+  private handleKeyUp = (event: KeyboardEvent) => {
+    if (event.key === "a" && this.props.gameState.drawingArrow) {
+      this.props.setDrawingArrow(false);
+      this.props.removeAnyDisconnectedArrows(myPeerRef);
+    }
+  };
+
   private getRawPreviewCardPosition = (horizontal: boolean): Vector2d => {
     const pointerPos = this.stage?.getPointerPosition() ?? { x: 0, y: 0 };
     const screenMidPointX = window.innerWidth / 2;
@@ -1719,6 +1756,11 @@ class Game extends Component<IProps, IState> {
   private handleMouseDown = (
     event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>
   ) => {
+    // If we're in pan mode and not drawing an arrow, there is nothing to do
+    if (this.props.panMode && !this.props.gameState.drawingArrow) {
+      return false;
+    }
+
     if (
       (event.evt instanceof MouseEvent && event.evt.button === 0) ||
       !!(event.evt as TouchEvent).touches
@@ -1758,6 +1800,10 @@ class Game extends Component<IProps, IState> {
   private handleMouseUp = (
     event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>
   ) => {
+    // If we're in pan mode and not drawing an arrow, there is nothing to do
+    if (this.props.panMode && !this.props.gameState.drawingArrow) {
+      return false;
+    }
     // if we were selecting, check for intersection
     if (this.state.drewASelectionRect) {
       const selectRect = this.getSelectionRectInfo();
@@ -1815,9 +1861,7 @@ class Game extends Component<IProps, IState> {
       this.handleContextMenu(event);
     }, 750);
 
-    if (!this.props.panMode) {
-      this.handleMouseDown(event);
-    }
+    this.handleMouseDown(event);
   };
 
   private handleTouchMove = (e: any) => {
@@ -1900,15 +1944,23 @@ class Game extends Component<IProps, IState> {
       clearTimeout(this.touchTimer);
       this.touchTimer = null;
     }
-
-    if (!this.props.panMode) {
-      this.handleMouseUp(event);
-    }
+    this.handleMouseUp(event);
   };
 
   private handleMouseMove = (event: any) => {
-    if (this.state.selecting) {
-      const pos = this.getRelativePositionFromTarget(event.currentTarget);
+    // console.log(this.props.gameState.drawingArrow);
+    // console.log(this.props.panMode && !this.props.gameState.drawingArrow);
+    if (this.props.panMode && !this.props.gameState.drawingArrow) {
+      return false;
+    }
+
+    const pos = this.getRelativePositionFromTarget(event.currentTarget);
+    if (this.props.gameState.drawingArrow) {
+      this.props.updateDisconnectedArrowPosition({
+        endPos: pos,
+        myRef: myPeerRef,
+      });
+    } else if (this.state.selecting) {
       this.setState({
         drewASelectionRect: true,
         selectRect: {
@@ -1992,6 +2044,7 @@ class Game extends Component<IProps, IState> {
           );
         },
       },
+      { label: "Remove all arrows", action: this.props.removeAllArrows },
       { label: "Reset Game", action: this.props.resetApp },
       {
         label: "Quit Game",

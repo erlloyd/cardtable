@@ -25,6 +25,7 @@ export interface IGameState {
   draggingCardFromHand: boolean;
   drawCardsIntoHand: boolean;
   snapCardsToGrid: boolean;
+  drawingArrow: boolean;
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -44,6 +45,7 @@ localStorageState.menuPreviewCardJsonId = null;
 localStorageState.radialMenuPosition = null;
 localStorageState.specificCardLoaderPosition = null;
 localStorageState.draggingCardFromHand = false;
+localStorageState.drawingArrow = false;
 
 // TESTING
 localStorageState.snapCardsToGrid = true;
@@ -63,6 +65,7 @@ const defaultState: IGameState = {
   drawCardsIntoHand: true,
   snapCardsToGrid: true,
   currentVisiblePlayerHandNumber: null,
+  drawingArrow: false,
 };
 export const initialState: IGameState = {
   ...defaultState,

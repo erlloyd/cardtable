@@ -17,10 +17,11 @@ import {
   drawCardsOutOfCardStack,
 } from "./features/cards/cards.thunks";
 import { getGame, getRadialMenuPosition } from "./features/game/game.selectors";
-import { hideRadialMenu } from "./features/game/game.slice";
+import { hideRadialMenu, setDrawingArrow } from "./features/game/game.slice";
 import RadialMenu from "./RadialMenu";
 import PlanetMenu from "./PlanetMenu";
 import { RootState } from "./store/rootReducer";
+import { startNewArrow } from "./features/arrows/arrows.thunks";
 
 const usePlanetMenu = false;
 
@@ -50,6 +51,8 @@ const RadialMenuContainer = connect(mapStateToProps, {
   adjustModifier,
   addToPlayerHand,
   toggleExtraIcon,
+  setDrawingArrow,
+  startNewArrow,
 })(usePlanetMenu ? PlanetMenu : RadialMenu);
 
 export default RadialMenuContainer;
