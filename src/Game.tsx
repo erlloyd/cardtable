@@ -157,13 +157,14 @@ interface IProps {
   removeExtraIcon: (icon: string) => void;
   clearMyGhostCards: () => void;
   setDrawingArrow: (val: boolean) => void;
-  startNewArrow: (payload: { startCardId: string; myRef: string }) => void;
+  startNewArrow: (startCardId: string) => void;
   endDisconnectedArrow: (payload: { endCardId: string; myRef: string }) => void;
   updateDisconnectedArrowPosition: (payload: {
     endPos: Vector2d;
     myRef: string;
   }) => void;
   removeAnyDisconnectedArrows: (myRef: string) => void;
+  removeAllArrows: () => void;
 }
 
 interface IState {
@@ -512,6 +513,11 @@ class Game extends Component<IProps, IState> {
         onTouchEnd={(_event) => {
           if (this.props.gameState.draggingCardFromHand) {
             this.captureLastMousePos = false;
+          }
+
+          if (this.props.gameState.drawingArrow) {
+            this.props.setDrawingArrow(false);
+            this.props.removeAnyDisconnectedArrows(myPeerRef);
           }
         }}
         onTouchMove={(event) => {
@@ -1471,7 +1477,7 @@ class Game extends Component<IProps, IState> {
     };
 
   private handleStartArrow = (id: string) => {
-    this.props.startNewArrow({ startCardId: id, myRef: myPeerRef });
+    this.props.startNewArrow(id);
   };
 
   private handleEndArrow = (id: string) => {
@@ -2038,6 +2044,7 @@ class Game extends Component<IProps, IState> {
           );
         },
       },
+      { label: "Remove all arrows", action: this.props.removeAllArrows },
       { label: "Reset Game", action: this.props.resetApp },
       {
         label: "Quit Game",

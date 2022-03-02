@@ -70,10 +70,10 @@ import {
   setDrawingArrow,
 } from "./features/game/game.slice";
 import {
-  startNewArrow,
   updateDisconnectedArrowPosition,
   removeAnyDisconnectedArrows,
   endDisconnectedArrow,
+  removeAllArrows,
 } from "./features/arrows/arrows.slice";
 import {
   generateGameStateUrl,
@@ -82,6 +82,7 @@ import {
 import Game from "./Game";
 import { resetApp } from "./store/global.actions";
 import { RootState } from "./store/rootReducer";
+import { startNewArrow } from "./features/arrows/arrows.thunks";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -155,6 +156,7 @@ const GameContainer = connect(mapStateToProps, {
   updateDisconnectedArrowPosition,
   removeAnyDisconnectedArrows,
   endDisconnectedArrow,
+  removeAllArrows,
 })(Game);
 
 export default GameContainer;

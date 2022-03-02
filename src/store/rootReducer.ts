@@ -10,7 +10,7 @@ import game, {
 
 import counters, { moveCounter } from "../features/counters/counters.slice";
 import arrows, {
-  startNewArrow,
+  startNewArrowForCards,
   updateDisconnectedArrowPosition,
 } from "../features/arrows/arrows.slice";
 
@@ -27,7 +27,7 @@ const rootReducer = combineReducers({
     limit: 20,
     groupBy: groupByActionTypes([moveCounter.type]),
     filter: excludeAction([
-      startNewArrow.type,
+      startNewArrowForCards.type,
       updateDisconnectedArrowPosition.type,
       startCardMoveWithSplitStackId.type,
       cardMoveWithSnap.type,

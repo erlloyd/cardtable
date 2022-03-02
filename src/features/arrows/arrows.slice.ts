@@ -4,16 +4,18 @@ import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import { IArrowsState, initialState } from "./initialState";
 
 // Reducers
-const startNewArrowReducer: CaseReducer<
+const startNewArrowForCardsReducer: CaseReducer<
   IArrowsState,
-  PayloadAction<{ startCardId: string; myRef: string }>
+  PayloadAction<{ startCardIds: string[]; myRef: string }>
 > = (state, action) => {
   let myArrows = state.arrows[action.payload.myRef];
   if (!myArrows) {
     myArrows = [];
     state.arrows[action.payload.myRef] = myArrows;
   }
-  myArrows.push({ startCardId: action.payload.startCardId, color: "red" });
+  state.arrows[action.payload.myRef] = myArrows.concat(
+    action.payload.startCardIds.map((sc) => ({ startCardId: sc, color: "red" }))
+  );
 };
 
 const endDisconnectedArrowReducer: CaseReducer<
@@ -22,14 +24,12 @@ const endDisconnectedArrowReducer: CaseReducer<
 > = (state, action) => {
   let myArrows = state.arrows[action.payload.myRef];
   if (!!myArrows) {
-    // get the first arrow without an end card.
-    // that is currently how we're finding the "drawing"
-    // arrow
-    const drawingArrow = myArrows.find((a) => !a.endCardId);
-    if (drawingArrow) {
-      drawingArrow.endCardId = action.payload.endCardId;
-      drawingArrow.endArrowPosition = null;
-    }
+    myArrows
+      .filter((a) => !a.endCardId)
+      .forEach((drawingArrow) => {
+        drawingArrow.endCardId = action.payload.endCardId;
+        drawingArrow.endArrowPosition = null;
+      });
   }
 };
 
@@ -39,13 +39,11 @@ const updateDisconnectedArrowPositionReducer: CaseReducer<
 > = (state, action) => {
   let myArrows = state.arrows[action.payload.myRef];
   if (!!myArrows) {
-    // get the first arrow without an end card.
-    // that is currently how we're finding the "drawing"
-    // arrow
-    const drawingArrow = myArrows.find((a) => !a.endCardId);
-    if (drawingArrow) {
-      drawingArrow.endArrowPosition = action.payload.endPos;
-    }
+    myArrows
+      .filter((a) => !a.endCardId)
+      .forEach((drawingArrow) => {
+        drawingArrow.endArrowPosition = action.payload.endPos;
+      });
   }
 };
 
@@ -59,15 +57,20 @@ const removeAnyDisconnectedArrowsReducer: CaseReducer<
   }
 };
 
+const removeAllArrowsReducer: CaseReducer<IArrowsState> = (state) => {
+  state.arrows = {};
+};
+
 // slice
 const arrowsSlice = createSlice({
   name: "arrows",
   initialState: initialState,
   reducers: {
-    startNewArrow: startNewArrowReducer,
+    startNewArrowForCards: startNewArrowForCardsReducer,
     updateDisconnectedArrowPosition: updateDisconnectedArrowPositionReducer,
     removeAnyDisconnectedArrows: removeAnyDisconnectedArrowsReducer,
     endDisconnectedArrow: endDisconnectedArrowReducer,
+    removeAllArrows: removeAllArrowsReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -81,10 +84,11 @@ const arrowsSlice = createSlice({
 });
 
 export const {
-  startNewArrow,
+  startNewArrowForCards,
   updateDisconnectedArrowPosition,
   removeAnyDisconnectedArrows,
   endDisconnectedArrow,
+  removeAllArrows,
 } = arrowsSlice.actions;
 
 export default arrowsSlice.reducer;

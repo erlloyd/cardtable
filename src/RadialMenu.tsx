@@ -1,3 +1,4 @@
+import "./RadialMenu.scss";
 import { Vector2d } from "konva/lib/types";
 import React, { useState } from "react";
 import TopLayer from "./TopLayer";
@@ -64,6 +65,8 @@ interface IProps {
   addToPlayerHand: (payload: { playerNumber: number }) => void;
   drawCardsIntoHand: boolean;
   toggleExtraIcon: (icon: string) => void;
+  setDrawingArrow: (val: boolean) => void;
+  startNewArrow: (id?: string) => void;
 }
 const RadialMenu = (props: IProps) => {
   const [visibleMenu, setVisibleMenu] = useState(MenuType.TopLevelActions);
@@ -92,7 +95,11 @@ const RadialMenu = (props: IProps) => {
           event.preventDefault();
         }}
       >
-        <PieMenu radius="156px" centerRadius="30px">
+        <PieMenu
+          className="cardtable-pie-menu"
+          radius="156px"
+          centerRadius="30px"
+        >
           {renderMenuSlices(
             visibleMenu,
             setVisibleMenu,
@@ -190,6 +197,18 @@ const renderTopLevelMenu = (
   const modifiers = GamePropertiesMap[props.currentGameType].modifiers;
 
   const slices = [
+    <Slice
+      key={"arrow-slice"}
+      onSelect={() => {
+        props.setDrawingArrow(true);
+        props.startNewArrow();
+        props.hideRadialMenu();
+      }}
+    >
+      <div>
+        <div>Arrow</div>
+      </div>
+    </Slice>,
     <Slice
       key={"flip-slice"}
       onSelect={() => {

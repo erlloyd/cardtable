@@ -726,6 +726,9 @@ class Card extends Component<IProps, IState> {
       clearTimeout(this.touchTimer);
       this.touchTimer = null;
     }
+    if (!!this.props.handleMouseUpWhenNotDraggable) {
+      this.props.handleMouseUpWhenNotDraggable(this.props.id);
+    }
   };
 
   private handleMouseOver = () => {

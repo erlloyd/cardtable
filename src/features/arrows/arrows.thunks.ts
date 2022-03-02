@@ -1,17 +1,27 @@
-export {};
-// import { Vector2d } from "konva/lib/types";
-// import { Action } from "redux";
-// import { ThunkAction } from "redux-thunk";
-// import { v4 as uuidv4 } from "uuid";
-// import { RootState } from "../../store/rootReducer";
-// import { addNewCounterWithId } from "./counters.actions";
+import { Action } from "redux";
+import { ThunkAction } from "redux-thunk";
+import { myPeerRef } from "../../constants/app-constants";
+import { RootState } from "../../store/rootReducer";
+import { getCards } from "../cards/cards.selectors";
+import { startNewArrowForCards } from "./arrows.slice";
 
-// export const addNewCounter =
-//   (pos: Vector2d): ThunkAction<void, RootState, unknown, Action<string>> =>
-//   (dispatch) => {
-//     const payloadWithId = {
-//       pos,
-//       id: uuidv4(),
-//     };
-//     dispatch(addNewCounterWithId(payloadWithId));
-//   };
+export const startNewArrow =
+  (
+    specificCardId?: string
+  ): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (dispatch, getState) => {
+    // get all of the current selected cards for my peer ref
+    const mySelectedCardIds = getCards(getState())
+      .cards.filter((c) => c.controlledBy === myPeerRef)
+      .map((c) => c.id);
+
+    if (!!specificCardId && !mySelectedCardIds.includes(specificCardId)) {
+      mySelectedCardIds.push(specificCardId);
+    }
+    dispatch(
+      startNewArrowForCards({
+        startCardIds: mySelectedCardIds,
+        myRef: myPeerRef,
+      })
+    );
+  };
