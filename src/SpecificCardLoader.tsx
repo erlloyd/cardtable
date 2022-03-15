@@ -4,7 +4,6 @@ import {
   AutocompleteHighlightChangeReason,
 } from "@material-ui/lab";
 import { Vector2d } from "konva/lib/types";
-import * as React from "react";
 import { CardData } from "./external-api/common-card-data";
 import TopLayer from "./TopLayer";
 

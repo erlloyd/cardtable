@@ -1,5 +1,4 @@
 import { Vector2d } from "konva/lib/types";
-import React from "react";
 import { Group } from "react-konva";
 import Arrow from "./Arrow";
 import { cardConstants } from "./constants/card-constants";

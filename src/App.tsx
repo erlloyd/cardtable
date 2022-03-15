@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { GameType } from "./constants/app-constants";
 import GameContainer from "./GameContainer";
 import "./App.scss";

@@ -1,5 +1,4 @@
 import { GameType } from "./app-constants";
-import * as React from "react";
 import NewReleasesIcon from "@material-ui/icons/NewReleases";
 import HelpIcon from "@material-ui/icons/Help";
 import SecurityIcon from "@material-ui/icons/Security";

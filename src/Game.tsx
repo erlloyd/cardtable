@@ -2,7 +2,6 @@ import * as Intersects from "intersects";
 import Konva from "konva";
 import { KonvaEventObject } from "konva/lib/Node";
 import { Vector2d } from "konva/lib/types";
-import * as React from "react";
 import { Component } from "react";
 import { Layer, Rect, Stage } from "react-konva";
 import { Provider, ReactReduxContext } from "react-redux";
@@ -1574,12 +1573,12 @@ class Game extends Component<IProps, IState> {
     cardId: string,
     event: KonvaEventObject<DragEvent>
   ) => {
-    const verticalMax = window.innerHeight;
+    // const verticalMax = window.innerHeight;
     const verticalMin = window.innerHeight - playerHandHeightPx;
-    const max = { x: 0, y: verticalMax };
+    // const max = { x: 0, y: verticalMax };
     const min = { x: 0, y: verticalMin };
 
-    const translatedMax = this.getRelativePositionFromTarget(this.stage, max);
+    // const translatedMax = this.getRelativePositionFromTarget(this.stage, max);
     const translatedMin = this.getRelativePositionFromTarget(this.stage, min);
     this.props.endCardMove(cardId);
 

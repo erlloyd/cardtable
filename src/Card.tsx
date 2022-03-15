@@ -2,7 +2,6 @@
 import { KonvaEventObject } from "konva/lib/Node";
 import { Rect as RectRef } from "konva/lib/shapes/Rect";
 import { Vector2d } from "konva/lib/types";
-import * as React from "react";
 import { Component } from "react";
 import { Rect, Text } from "react-konva";
 import { animated, Spring } from "@react-spring/konva";

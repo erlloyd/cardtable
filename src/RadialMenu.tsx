@@ -1,6 +1,6 @@
 import "./RadialMenu.scss";
 import { Vector2d } from "konva/lib/types";
-import React, { useState } from "react";
+import { useState } from "react";
 import TopLayer from "./TopLayer";
 import { GameType } from "./constants/app-constants";
 import {

@@ -1,5 +1,4 @@
 import { Vector2d } from "konva/lib/types";
-import React from "react";
 import { Arrow as KonvaArrow } from "react-konva";
 import { getPointsForCurvedArrowFlattened } from "./utilities/geo";
 interface IProps {
