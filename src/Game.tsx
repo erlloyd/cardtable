@@ -1582,10 +1582,8 @@ class Game extends Component<IProps, IState> {
     const translatedMax = this.getRelativePositionFromTarget(this.stage, max);
     const translatedMin = this.getRelativePositionFromTarget(this.stage, min);
     this.props.endCardMove(cardId);
-    if (
-      event.target.y() > translatedMin.y &&
-      event.target.y() < translatedMax.y
-    ) {
+
+    if (event.target.y() > translatedMin.y) {
       this.props.addToPlayerHand({
         playerNumber:
           this.props.gameState.currentVisiblePlayerHandNumber ??
