@@ -31,6 +31,11 @@ import {
 import "./PlayerHand.scss";
 import TopLayer from "./TopLayer";
 import {
+  is_safari_or_uiwebview,
+  is_touch_supported,
+  is_uiwebview,
+} from "./utilities/browser-utils";
+import {
   getCardTypeWithoutStack,
   getImgUrls,
   shouldRenderImageHorizontal,
@@ -284,27 +289,8 @@ class PlayerHand extends Component<IProps, IState> {
                           }
                         }}
                         onPointerLeave={this.props.clearPreviewCardJsonId}
-                        onClick={(event) => {
-                          if (
-                            (event.nativeEvent as PointerEvent).pointerType ===
-                            "touch"
-                          ) {
-                            if (!this.tapped) {
-                              //if tap is not set, set up single tap
-                              this.tapped = setTimeout(() => {
-                                this.tapped = null;
-                              }, 200); //wait 200ms then run single click code
-                            } else {
-                              //tapped within 200ms of last tap. double tap
-                              clearTimeout(this.tapped); //stop single tap callback
-                              this.tapped = null;
-                              this.setState({ modal: true });
-                              this.props.setPreviewCardJsonId(card.jsonId);
-                            }
-                            event.preventDefault();
-                            event.stopPropagation();
-                          }
-                        }}
+                        onClick={this.handleClickAndPointerUp(card)}
+                        // onPointerUp={this.handleClickAndPointerUp(card)}
                         className="player-hand-card"
                         ref={provided.innerRef}
                         {...provided.draggableProps}
@@ -328,6 +314,33 @@ class PlayerHand extends Component<IProps, IState> {
       </div>
     );
   }
+
+  handleClickAndPointerUp =
+    (card: ICardDetails) => (event: React.MouseEvent) => {
+      const uiWebView = is_uiwebview;
+      const uiSafariOrWebView = is_safari_or_uiwebview;
+      console.log(uiWebView, uiSafariOrWebView);
+      if (
+        (event.nativeEvent as PointerEvent).pointerType === "touch" ||
+        is_safari_or_uiwebview ||
+        is_touch_supported
+      ) {
+        if (!this.tapped) {
+          //if tap is not set, set up single tap
+          this.tapped = setTimeout(() => {
+            this.tapped = null;
+          }, 200); //wait 200ms then run single click code
+        } else {
+          //tapped within 200ms of last tap. double tap
+          clearTimeout(this.tapped); //stop single tap callback
+          this.tapped = null;
+          this.setState({ modal: true });
+          this.props.setPreviewCardJsonId(card.jsonId);
+        }
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    };
 
   renderTopLayer() {
     return this.state.modal ? (
