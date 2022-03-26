@@ -48,6 +48,10 @@ import {
 import { getCenter, getDistance } from "./utilities/geo";
 import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
 import CurvedArrowsContainer from "./CurvedArrowsContainer";
+import ContextualOptionsMenuContainer from "./ContextualOptionsMenuContainer";
+
+const USE_RADIAL_MENU = true;
+const USE_CONTEXTUAL_OPTIONS_MENU = false;
 
 const SCALE_BY = 1.02;
 
@@ -579,21 +583,13 @@ class Game extends Component<IProps, IState> {
             this.captureLastMousePos = true;
           }}
         ></PlayerHandContainer>
-        <RadialMenuContainer
-          showCardSelector={(card, isSelect) => {
-            this.setState({
-              showCardSearch: true,
-              cardSearchTouchBased: isSelect,
-              cardSearchPosition: this.stage?.getPointerPosition() ?? null,
-              cardStackForSearching: card,
-            });
-          }}
-        ></RadialMenuContainer>
+        {this.renderRadialOptionsMenu()}
         <SpecificCardLoaderContainer></SpecificCardLoaderContainer>
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
         {this.renderPreviewCardModal()}
         {this.renderOptionsMenu()}
+        {this.renderContextualOptionsMenu()}
         {this.renderDeckImporter()}
         {this.renderEncounterImporter()}
         {this.renderCardSearch()}
@@ -774,6 +770,31 @@ class Game extends Component<IProps, IState> {
         }}
       ></OptionsMenuContainer>
     );
+  };
+
+  private renderContextualOptionsMenu = () => {
+    return USE_CONTEXTUAL_OPTIONS_MENU ? (
+      <ContextualOptionsMenuContainer
+        showContextMenuAtPosition={(pos: Vector2d) => {
+          this.handleContextMenu(undefined, pos);
+        }}
+      ></ContextualOptionsMenuContainer>
+    ) : null;
+  };
+
+  private renderRadialOptionsMenu = () => {
+    return USE_RADIAL_MENU ? (
+      <RadialMenuContainer
+        showCardSelector={(card, isSelect) => {
+          this.setState({
+            showCardSearch: true,
+            cardSearchTouchBased: isSelect,
+            cardSearchPosition: this.stage?.getPointerPosition() ?? null,
+            cardStackForSearching: card,
+          });
+        }}
+      ></RadialMenuContainer>
+    ) : null;
   };
 
   private renderDeckImporter = () => {
@@ -1729,9 +1750,12 @@ class Game extends Component<IProps, IState> {
       };
     }
 
+    const mySelectedCards = getMySelectedCards(this.props.cards.cards);
+    const anySelectedCards = mySelectedCards.length > 0;
+
     return pointerPos.x < screenMidPointX
       ? {
-          x: window.innerWidth - widthToUse / 2,
+          x: window.innerWidth - widthToUse / 2 - (anySelectedCards ? 55 : 0),
           y: heightToUse / 2,
         }
       : {
