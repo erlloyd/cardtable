@@ -1750,12 +1750,12 @@ class Game extends Component<IProps, IState> {
       };
     }
 
-    const mySelectedCards = getMySelectedCards(this.props.cards.cards);
-    const anySelectedCards = mySelectedCards.length > 0;
-
+    // const mySelectedCards = getMySelectedCards(this.props.cards.cards);
+    // const anySelectedCards = mySelectedCards.length > 0;
+    const anySelectedCards = true;
     return pointerPos.x < screenMidPointX
       ? {
-          x: window.innerWidth - widthToUse / 2 - (anySelectedCards ? 55 : 0),
+          x: window.innerWidth - widthToUse / 2 - (anySelectedCards ? 85 : 0),
           y: heightToUse / 2,
         }
       : {

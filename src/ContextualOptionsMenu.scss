@@ -1,7 +1,9 @@
 @import "./mixins/devices";
 
+$menuWidth: 85px;
+
 .contextual-options-menu {
-  width: 55px;
+  width: $menuWidth;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -14,8 +16,12 @@
   padding: 5px 5px;
   background-color: gray;
   color: white;
-  opacity: 0.5;
+  opacity: 0.75;
   z-index: 99;
+
+  &.inset {
+    right: $menuWidth;
+  }
 
   .render-touch-only {
     display: none;
@@ -25,6 +31,7 @@
   }
 
   button {
+    font-size: 1rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
