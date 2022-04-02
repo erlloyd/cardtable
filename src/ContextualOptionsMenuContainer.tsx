@@ -15,8 +15,13 @@ import {
   deleteCardStack,
   addToPlayerHand,
   clearCardTokens,
+  adjustModifier,
+  toggleExtraIcon,
 } from "./features/cards/cards.slice";
-import { shuffleStack } from "./features/cards/cards.thunks";
+import {
+  drawCardsOutOfCardStack,
+  shuffleStack,
+} from "./features/cards/cards.thunks";
 import { getGame, getSnapCardsToGrid } from "./features/game/game.selectors";
 import { RootState } from "./store/rootReducer";
 import ContextualOptionsMenu from "./ContextualOptionsMenu";
@@ -65,6 +70,9 @@ const ContextualOptionsMenuContainer = connect(mapStateToProps, {
   addToPlayerHand,
   setDrawingArrow,
   startNewArrow,
+  adjustModifier,
+  toggleExtraIcon,
+  drawCardsOutOfCardStack,
 })(ContextualOptionsMenu);
 
 export default ContextualOptionsMenuContainer;

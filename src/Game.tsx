@@ -775,8 +775,13 @@ class Game extends Component<IProps, IState> {
   private renderContextualOptionsMenu = () => {
     return USE_CONTEXTUAL_OPTIONS_MENU ? (
       <ContextualOptionsMenuContainer
-        showContextMenuAtPosition={(pos: Vector2d) => {
-          this.handleContextMenu(undefined, pos);
+        showCardSelector={(card, isSelect) => {
+          this.setState({
+            showCardSearch: true,
+            cardSearchTouchBased: isSelect,
+            cardSearchPosition: this.stage?.getPointerPosition() ?? null,
+            cardStackForSearching: card,
+          });
         }}
       ></ContextualOptionsMenuContainer>
     ) : null;
@@ -1755,7 +1760,7 @@ class Game extends Component<IProps, IState> {
     const anySelectedCards = true;
     return pointerPos.x < screenMidPointX
       ? {
-          x: window.innerWidth - widthToUse / 2 - (anySelectedCards ? 85 : 0),
+          x: window.innerWidth - widthToUse / 2 - (anySelectedCards ? 95 : 0),
           y: heightToUse / 2,
         }
       : {

@@ -13,6 +13,7 @@ import {
 } from "./constants/game-type-properties-mapping";
 import { anyCardStackHasStatus } from "./utilities/card-utils";
 import { ICardStack } from "./features/cards/initialState";
+import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 
 interface IProps {
   anyCardsSelected: boolean;
@@ -35,7 +36,6 @@ interface IProps {
     value?: number;
   }) => void;
   showRadialMenuAtPosition: (payload: Vector2d) => void;
-  showContextMenuAtPosition: (payload: Vector2d) => void;
   undo: () => void;
   redo: () => void;
   toggleDrawCardsIntoHand: () => void;
@@ -53,6 +53,15 @@ interface IProps {
   addToPlayerHand: (payload: { playerNumber: number }) => void;
   setDrawingArrow: (val: boolean) => void;
   startNewArrow: (id?: string) => void;
+  adjustModifier: (payload: {
+    id?: string;
+    modifierId: string;
+    delta?: number;
+    value?: number;
+  }) => void;
+  toggleExtraIcon: (icon: string) => void;
+  showCardSelector: (cardStack: ICardStack, isSelect: boolean) => void;
+  drawCardsOutOfCardStack: (payload: DrawCardsOutOfCardStackPayload) => void;
 }
 
 enum MenuType {
@@ -66,21 +75,21 @@ enum MenuType {
   ModifierExtraIcons = "modifierextraicons",
 }
 
-// enum DrawMode {
-//   FaceUp = "faceup",
-//   FaceDown = "facedown",
-// }
+enum DrawMode {
+  FaceUp = "faceup",
+  FaceDown = "facedown",
+}
 
 const ContextualOptionsMenu = (props: IProps) => {
-  const [visibleMenu, setVisibleMenu] = useState(MenuType.NoMenu);
+  const [visibleMenus, setVisibleMenus] = useState<MenuType[]>([]);
   const [visibleMenuYPosition, setVisibleMenuYPosition] = useState(0);
-  // const [currentDrawMode, setCurrentDrawMode] = useState(DrawMode.FaceDown);
-  // const [currentModifier, setCurrentModifier] = useState("");
+  const [currentDrawMode, setCurrentDrawMode] = useState(DrawMode.FaceDown);
+  const [currentModifier, setCurrentModifier] = useState("");
 
   if (!props.anyCardsSelected) {
     // reset our state
-    if (visibleMenu !== MenuType.NoMenu) {
-      setVisibleMenu(MenuType.NoMenu);
+    if (visibleMenus.length !== 0) {
+      setVisibleMenus([]);
     }
     return null;
   }
@@ -88,6 +97,65 @@ const ContextualOptionsMenu = (props: IProps) => {
   return (
     <div>
       <div className="contextual-options-menu">
+        <Tooltip title="Get Cards from stack">
+          <button
+            onClick={(evt) => {
+              if (visibleMenus.includes(MenuType.DrawActions)) {
+                setVisibleMenus([]);
+              } else {
+                setVisibleMenus([...visibleMenus, MenuType.DrawActions]);
+                setVisibleMenuYPosition(evt.clientY);
+              }
+            }}
+          >
+            Draw
+          </button>
+        </Tooltip>
+        <Tooltip title="Set Modifiers">
+          <button
+            onClick={(evt) => {
+              if (visibleMenus.includes(MenuType.ModifierActions)) {
+                setVisibleMenus([]);
+              } else {
+                setVisibleMenus([...visibleMenus, MenuType.ModifierActions]);
+                setVisibleMenuYPosition(evt.clientY);
+              }
+            }}
+          >
+            Mods
+          </button>
+        </Tooltip>
+        <Tooltip title="Set Statuses">
+          <button
+            onClick={(evt) => {
+              if (visibleMenus.includes(MenuType.StatusTokenActions)) {
+                setVisibleMenus([]);
+              } else {
+                setVisibleMenus([...visibleMenus, MenuType.StatusTokenActions]);
+                setVisibleMenuYPosition(evt.clientY);
+              }
+            }}
+          >
+            Status
+          </button>
+        </Tooltip>
+        <Tooltip title="Set Tokens">
+          <button
+            onClick={(evt) => {
+              if (visibleMenus.includes(MenuType.CounterTokenActions)) {
+                setVisibleMenus([]);
+              } else {
+                setVisibleMenus([
+                  ...visibleMenus,
+                  MenuType.CounterTokenActions,
+                ]);
+                setVisibleMenuYPosition(evt.clientY);
+              }
+            }}
+          >
+            Token
+          </button>
+        </Tooltip>
         <Tooltip title="Flip cards">
           <button
             onClick={() => {
@@ -154,41 +222,43 @@ const ContextualOptionsMenu = (props: IProps) => {
             Arrow
           </button>
         </Tooltip>
-        <Tooltip title="Set Statuses">
-          <button
-            onClick={(evt) => {
-              if (visibleMenu === MenuType.StatusTokenActions) {
-                setVisibleMenu(MenuType.NoMenu);
-              } else {
-                setVisibleMenu(MenuType.StatusTokenActions);
-                setVisibleMenuYPosition(evt.clientY);
-              }
-            }}
-          >
-            Status
-          </button>
-        </Tooltip>
-        <Tooltip title="Set Tokens">
-          <button
-            onClick={(evt) => {
-              if (visibleMenu === MenuType.CounterTokenActions) {
-                setVisibleMenu(MenuType.NoMenu);
-              } else {
-                setVisibleMenu(MenuType.CounterTokenActions);
-                setVisibleMenuYPosition(evt.clientY);
-              }
-            }}
-          >
-            Token
-          </button>
-        </Tooltip>
       </div>
 
-      {visibleMenu === MenuType.StatusTokenActions &&
+      {visibleMenus.includes(MenuType.StatusTokenActions) &&
         renderStatusTokenActionsSubMenu(props, visibleMenuYPosition)}
 
-      {visibleMenu === MenuType.CounterTokenActions &&
+      {visibleMenus.includes(MenuType.CounterTokenActions) &&
         renderModifierTokenActionsSubMenu(props, visibleMenuYPosition)}
+
+      {visibleMenus.includes(MenuType.ModifierActions) &&
+        renderModifierActionsSubMenu(
+          props,
+          visibleMenus,
+          currentModifier,
+          setVisibleMenus,
+          setCurrentModifier,
+          visibleMenuYPosition
+        )}
+
+      {visibleMenus.includes(MenuType.ModifierNumber) &&
+        renderModifierNumberSubMenu(
+          props,
+          currentModifier,
+          visibleMenuYPosition
+        )}
+
+      {visibleMenus.includes(MenuType.ModifierExtraIcons) &&
+        renderModifierExtraIconsSubMenu(props, visibleMenuYPosition)}
+
+      {visibleMenus.includes(MenuType.DrawActions) &&
+        renderDrawActionsSubMenu(
+          props,
+          visibleMenus,
+          currentDrawMode,
+          setVisibleMenus,
+          setCurrentDrawMode,
+          visibleMenuYPosition
+        )}
     </div>
   );
 };
@@ -264,7 +334,7 @@ const renderModifierTokenActionsSubMenu = (props: IProps, ypos: number) => {
         });
       };
 
-      let key = `touch-menu-slice-${tokenInfo.menuText
+      let key = `touch-menu-button-${tokenInfo.menuText
         .replace(/\s/g, "")
         .toLocaleLowerCase()}`;
 
@@ -283,6 +353,310 @@ const renderModifierTokenActionsSubMenu = (props: IProps, ypos: number) => {
       style={{ top: `${Math.max(ypos - 10, 0)}px` }}
     >
       {buttons}
+    </div>
+  );
+};
+
+const renderModifierActionsSubMenu = (
+  props: IProps,
+  visibleMenus: MenuType[],
+  currentModifier: string,
+  setVisibleMenus: (m: MenuType[]) => void,
+  setCurrentModifier: (mod: string) => void,
+  ypos: number
+) => {
+  if (!props.currentGameType) return null;
+
+  const possibleIcons = GamePropertiesMap[props.currentGameType].possibleIcons;
+
+  const buttons = GamePropertiesMap[props.currentGameType].modifiers
+    .map((m) => {
+      return (
+        <button
+          key={"modifier-button"}
+          onClick={() => {
+            if (
+              visibleMenus.includes(MenuType.ModifierNumber) &&
+              currentModifier === m.attributeId
+            ) {
+              setVisibleMenus(
+                visibleMenus.filter((m) => m !== MenuType.ModifierNumber)
+              );
+            } else {
+              setCurrentModifier(m.attributeId);
+              //show the modifier number menu, but only if it's not
+              // already visible
+              if (!visibleMenus.includes(MenuType.ModifierNumber)) {
+                setVisibleMenus(
+                  visibleMenus
+                    .filter((m) => m !== MenuType.ModifierExtraIcons)
+                    .concat([MenuType.ModifierNumber])
+                );
+              }
+            }
+          }}
+        >
+          {m.attributeName}
+        </button>
+      );
+    })
+    .concat(
+      possibleIcons.length > 0
+        ? [
+            <button
+              key={"extra-icons-button"}
+              onClick={() => {
+                // If the number submenu is open, close it
+                setVisibleMenus(
+                  visibleMenus
+                    .filter((m) => m !== MenuType.ModifierNumber)
+                    .concat([MenuType.ModifierExtraIcons])
+                );
+              }}
+            >
+              Extra Icons
+            </button>,
+          ]
+        : []
+    );
+
+  return (
+    <div
+      className="contextual-options-menu inset"
+      style={{ top: `${Math.max(ypos - 10, 0)}px` }}
+    >
+      {buttons}
+    </div>
+  );
+};
+
+const renderModifierNumberSubMenu = (
+  props: IProps,
+  currentModifier: string,
+  ypos: number
+) => {
+  const basicNums = [
+    <button
+      key={`modifier-plus-one-button`}
+      onClick={() => {
+        props.adjustModifier({ modifierId: currentModifier, delta: 1 });
+      }}
+    >
+      Add 1
+    </button>,
+    <button
+      key={`modifier-minus-one-button`}
+      onClick={() => {
+        props.adjustModifier({ modifierId: currentModifier, delta: -1 });
+      }}
+    >
+      Remove 1
+    </button>,
+    <button
+      key={`modifier-zero-button`}
+      onClick={() => {
+        props.adjustModifier({ modifierId: currentModifier, value: 0 });
+      }}
+    >
+      0
+    </button>,
+  ];
+
+  const allNums = basicNums
+    .concat(
+      Array.from({ length: 3 }, (_, i) => i + 1).map((num) => {
+        return (
+          <button
+            key={`modifier-pos-${num}-cards-button`}
+            onClick={() => {
+              props.adjustModifier({ modifierId: currentModifier, value: num });
+            }}
+          >
+            {num}
+          </button>
+        );
+      })
+    )
+    .concat(
+      Array.from({ length: 3 }, (_, i) => i + 1).map((num) => {
+        return (
+          <button
+            key={`modifier-neg-${num}-cards-button`}
+            onClick={() => {
+              props.adjustModifier({
+                modifierId: currentModifier,
+                value: num * -1,
+              });
+            }}
+          >
+            {num * -1}
+          </button>
+        );
+      })
+    );
+
+  return (
+    <div
+      className="contextual-options-menu inset2"
+      style={{ top: `${Math.max(ypos - 10, 0)}px` }}
+    >
+      {allNums}
+    </div>
+  );
+};
+
+const renderModifierExtraIconsSubMenu = (props: IProps, ypos: number) => {
+  if (!props.currentGameType) return null;
+
+  const allIcons = GamePropertiesMap[props.currentGameType].possibleIcons.map(
+    (icon) => (
+      <button
+        key={`modifier-extra-icon-${icon.iconId}`}
+        onClick={() => {
+          props.toggleExtraIcon(icon.iconId);
+        }}
+      >
+        {icon.iconName}
+      </button>
+    )
+  );
+  return (
+    <div
+      className="contextual-options-menu inset2"
+      style={{ top: `${Math.max(ypos - 10, 0)}px` }}
+    >
+      {allIcons}
+    </div>
+  );
+};
+
+const renderDrawActionsSubMenu = (
+  props: IProps,
+  visibleMenus: MenuType[],
+  currentDrawMode: string,
+  setVisibleMenus: (m: MenuType[]) => void,
+  setCurrentDrawMode: (mod: DrawMode) => void,
+  ypos: number
+) => {
+  const drawMenu = [
+    <button
+      key={"find-card-button"}
+      onClick={() => {
+        if (props.selectedCardStacks.length === 1) {
+          props.showCardSelector(props.selectedCardStacks[0], false);
+          setVisibleMenus([]);
+        }
+      }}
+    >
+      Find Card
+    </button>,
+    <button
+      key={"Select-cards-button"}
+      onClick={() => {
+        if (props.selectedCardStacks.length === 1) {
+          props.showCardSelector(props.selectedCardStacks[0], true);
+          setVisibleMenus([]);
+        }
+      }}
+    >
+      Select Card
+    </button>,
+    <button
+      key={"draw-one-faceup-button"}
+      onClick={() => {
+        if (props.selectedCardStacks.length === 1) {
+          props.drawCardsOutOfCardStack({
+            cardStackId: props.selectedCardStacks[0].id,
+            numberToDraw: 1,
+            facedown: false,
+          });
+        }
+      }}
+    >
+      1 faceup
+    </button>,
+    <button
+      key={"draw-one-facedown-button"}
+      onClick={() => {
+        if (props.selectedCardStacks.length === 1) {
+          props.drawCardsOutOfCardStack({
+            cardStackId: props.selectedCardStacks[0].id,
+            numberToDraw: 1,
+            facedown: true,
+          });
+        }
+      }}
+    >
+      1 facedown
+    </button>,
+    <button
+      key={"draw-x-faceup-button"}
+      onClick={() => {
+        if (
+          visibleMenus.includes(MenuType.DrawNumber) &&
+          currentDrawMode === DrawMode.FaceUp
+        ) {
+          setVisibleMenus(
+            visibleMenus.filter((m) => m !== MenuType.DrawNumber)
+          );
+        }
+        setCurrentDrawMode(DrawMode.FaceUp);
+        if (!visibleMenus.includes(MenuType.DrawNumber)) {
+          setVisibleMenus([...visibleMenus, MenuType.DrawNumber]);
+        }
+      }}
+    >
+      X faceup
+    </button>,
+    <button
+      key={"draw-x-facedown-button"}
+      onClick={() => {
+        if (
+          visibleMenus.includes(MenuType.DrawNumber) &&
+          currentDrawMode === DrawMode.FaceDown
+        ) {
+          setVisibleMenus(
+            visibleMenus.filter((m) => m !== MenuType.DrawNumber)
+          );
+        }
+        setCurrentDrawMode(DrawMode.FaceDown);
+        if (!visibleMenus.includes(MenuType.DrawNumber)) {
+          setVisibleMenus([...visibleMenus, MenuType.DrawNumber]);
+        }
+      }}
+    >
+      X facedown
+    </button>,
+    <button
+      key={"add-to-hand-button"}
+      onClick={() => {
+        props.addToPlayerHand({
+          playerNumber: props.playerNumber,
+        });
+      }}
+    >
+      All to hand
+    </button>,
+  ];
+
+  const renderDrawMenuItems = drawMenu.filter((mi) => {
+    if (
+      !!mi.key &&
+      mi.key.toString().includes("facedown") &&
+      props.drawCardsIntoHand
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  });
+
+  return (
+    <div
+      className="contextual-options-menu inset"
+      style={{ top: `${Math.max(ypos - 10, 0)}px` }}
+    >
+      {renderDrawMenuItems}
     </div>
   );
 };

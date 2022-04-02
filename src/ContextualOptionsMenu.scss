@@ -1,6 +1,6 @@
 @import "./mixins/devices";
 
-$menuWidth: 85px;
+$menuWidth: 95px;
 
 .contextual-options-menu {
   width: $menuWidth;
@@ -21,6 +21,11 @@ $menuWidth: 85px;
 
   &.inset {
     right: $menuWidth;
+  }
+
+  &.inset2 {
+    right: calc($menuWidth * 2);
+    width: auto;
   }
 
   .render-touch-only {
