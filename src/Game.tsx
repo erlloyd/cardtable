@@ -50,8 +50,8 @@ import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
 import CurvedArrowsContainer from "./CurvedArrowsContainer";
 import ContextualOptionsMenuContainer from "./ContextualOptionsMenuContainer";
 
-const USE_RADIAL_MENU = true;
-const USE_CONTEXTUAL_OPTIONS_MENU = false;
+const USE_RADIAL_MENU = false;
+const USE_CONTEXTUAL_OPTIONS_MENU = true;
 
 const SCALE_BY = 1.02;
 
@@ -776,10 +776,16 @@ class Game extends Component<IProps, IState> {
     return USE_CONTEXTUAL_OPTIONS_MENU ? (
       <ContextualOptionsMenuContainer
         showCardSelector={(card, isSelect) => {
+          const containerRect = this.stage?.container().getBoundingClientRect();
           this.setState({
             showCardSearch: true,
             cardSearchTouchBased: isSelect,
-            cardSearchPosition: this.stage?.getPointerPosition() ?? null,
+            cardSearchPosition: containerRect
+              ? {
+                  x: (containerRect.right - containerRect.left) / 2 - 100,
+                  y: (containerRect.bottom - containerRect.top) / 4,
+                }
+              : null,
             cardStackForSearching: card,
           });
         }}

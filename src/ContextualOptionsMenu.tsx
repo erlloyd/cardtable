@@ -259,6 +259,14 @@ const ContextualOptionsMenu = (props: IProps) => {
           setCurrentDrawMode,
           visibleMenuYPosition
         )}
+
+      {visibleMenus.includes(MenuType.DrawNumber) &&
+        renderDrawNumberSubMenu(
+          props,
+          currentDrawMode,
+          setVisibleMenus,
+          visibleMenuYPosition
+        )}
     </div>
   );
 };
@@ -570,6 +578,7 @@ const renderDrawActionsSubMenu = (
             numberToDraw: 1,
             facedown: false,
           });
+          setVisibleMenus([]);
         }
       }}
     >
@@ -584,6 +593,7 @@ const renderDrawActionsSubMenu = (
             numberToDraw: 1,
             facedown: true,
           });
+          setVisibleMenus([]);
         }
       }}
     >
@@ -633,6 +643,7 @@ const renderDrawActionsSubMenu = (
         props.addToPlayerHand({
           playerNumber: props.playerNumber,
         });
+        setVisibleMenus([]);
       }}
     >
       All to hand
@@ -657,6 +668,42 @@ const renderDrawActionsSubMenu = (
       style={{ top: `${Math.max(ypos - 10, 0)}px` }}
     >
       {renderDrawMenuItems}
+    </div>
+  );
+};
+
+const renderDrawNumberSubMenu = (
+  props: IProps,
+  currentDrawMode: DrawMode,
+  setVisibleMenus: (m: MenuType[]) => void,
+  ypos: number
+) => {
+  const buttons = Array.from({ length: 10 }, (_, i) => i + 1).map((num) => {
+    return (
+      <button
+        key={`draw-${num}-cards-button`}
+        onClick={() => {
+          if (props.selectedCardStacks.length === 1) {
+            props.drawCardsOutOfCardStack({
+              cardStackId: props.selectedCardStacks[0].id,
+              numberToDraw: num,
+              facedown: currentDrawMode === DrawMode.FaceDown,
+            });
+            setVisibleMenus([]);
+          }
+        }}
+      >
+        {num}
+      </button>
+    );
+  });
+
+  return (
+    <div
+      className="contextual-options-menu inset2"
+      style={{ top: `${Math.max(ypos - 10, 0)}px` }}
+    >
+      {buttons}
     </div>
   );
 };
