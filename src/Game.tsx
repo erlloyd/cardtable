@@ -579,7 +579,7 @@ class Game extends Component<IProps, IState> {
                 ),
               });
             }
-
+            this.props.clearMyGhostCards();
             this.captureLastMousePos = true;
           }}
         ></PlayerHandContainer>
