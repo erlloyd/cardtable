@@ -205,7 +205,7 @@ export const peerJSMiddleware = (storeAPI: any) => {
         activeCon.peerConnection.connectionState === "disconnected"
       ) {
         console.log(
-          "CLEARING CLIENT OWNED CARDS for " + activeCon.metadata.ref
+          "Should be CLEARING CLIENT OWNED CARDS for " + activeCon.metadata.ref
         );
       }
     };
