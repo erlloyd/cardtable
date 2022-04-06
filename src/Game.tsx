@@ -1980,8 +1980,6 @@ class Game extends Component<IProps, IState> {
   };
 
   private handleMouseMove = (event: any) => {
-    // console.log(this.props.gameState.drawingArrow);
-    // console.log(this.props.panMode && !this.props.gameState.drawingArrow);
     if (this.props.panMode && !this.props.gameState.drawingArrow) {
       return false;
     }

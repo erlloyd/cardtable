@@ -4,7 +4,8 @@ import { Component } from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 // import NestedMenuItem from "material-ui-nested-menu-item";
-import { NestedMenuItem } from "mui-nested-menu";
+// import { NestedMenuItem } from "mui-nested-menu";
+import { NestedMenuItem } from "./custom-components/CardtableNestedMenuItem/components/NestedMenuItem";
 import FileUploader from "./FileUploader";
 
 export interface ContextMenuItem {
@@ -43,14 +44,6 @@ class ContextMenu extends Component<IProps, IState> {
     };
   }
 
-  componentDidMount() {
-    console.log(`Context Menu did mount`);
-  }
-
-  componentWillUnmount() {
-    console.log(`Context Menu will unmount`);
-  }
-
   render() {
     return (
       <div
@@ -62,11 +55,6 @@ class ContextMenu extends Component<IProps, IState> {
           }
         }}
       >
-        {/* <Menu open={true}>
-          <MenuItem>One</MenuItem>
-          <MenuItem>Two</MenuItem>
-          <MenuItem>Three</MenuItem>
-        </Menu> */}
         <Menu
           keepMounted={true}
           open={this.state.menuOpen}
@@ -100,14 +88,6 @@ class ContextMenu extends Component<IProps, IState> {
           key={`contextMenu-item-${index}`}
           parentMenuOpen={this.state.menuOpen}
           label={i.label}
-          onClick={(event) => {
-            if (!!this.nestedRef) {
-              event.stopPropagation();
-              // This is a hack to force the nested menu to open on touch devices.
-              // the `NestedMenuItem` library doesn't correctly support touch events, only hover
-              this.nestedRef.parentElement.focus();
-            }
-          }}
         >
           {i.children.map((nestedI, nestedIndex) => {
             return this.renderMenuItem(nestedI, index * 1000 + nestedIndex);

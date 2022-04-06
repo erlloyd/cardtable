@@ -33,7 +33,6 @@ import TopLayer from "./TopLayer";
 import {
   is_safari_or_uiwebview,
   is_touch_supported,
-  is_uiwebview,
 } from "./utilities/browser-utils";
 import {
   getCardTypeWithoutStack,
@@ -317,9 +316,9 @@ class PlayerHand extends Component<IProps, IState> {
 
   handleClickAndPointerUp =
     (card: ICardDetails) => (event: React.MouseEvent) => {
-      const uiWebView = is_uiwebview;
-      const uiSafariOrWebView = is_safari_or_uiwebview;
-      console.log(uiWebView, uiSafariOrWebView);
+      // const uiWebView = is_uiwebview;
+      // const uiSafariOrWebView = is_safari_or_uiwebview;
+      // console.log(uiWebView, uiSafariOrWebView);
       if (
         (event.nativeEvent as PointerEvent).pointerType === "touch" ||
         is_safari_or_uiwebview ||

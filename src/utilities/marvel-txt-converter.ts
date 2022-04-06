@@ -42,7 +42,6 @@ export const convertMarvelTxtToDeckInfo = (
     slots[card.code] = quantity;
   });
 
-  console.log(heroName);
   return {
     data: {
       investigator_code: hero.code,

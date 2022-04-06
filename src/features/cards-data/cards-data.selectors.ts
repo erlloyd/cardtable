@@ -160,8 +160,6 @@ export const getCardsDataEncounterEntitiesBySetCode = createSelector(
       return orderMap;
     }, {} as { [key: string]: number });
 
-    console.log(originalOrder);
-
     return setDataToReturn.sort(
       (a, b) =>
         originalOrder[a.setData.setTypeCode] -
