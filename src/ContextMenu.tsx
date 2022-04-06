@@ -1,9 +1,10 @@
 import { Vector2d } from "konva/lib/types";
 import * as React from "react";
 import { Component } from "react";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import NestedMenuItem from "material-ui-nested-menu-item";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+// import NestedMenuItem from "material-ui-nested-menu-item";
+import { NestedMenuItem } from "mui-nested-menu";
 import FileUploader from "./FileUploader";
 
 export interface ContextMenuItem {
@@ -42,6 +43,14 @@ class ContextMenu extends Component<IProps, IState> {
     };
   }
 
+  componentDidMount() {
+    console.log(`Context Menu did mount`);
+  }
+
+  componentWillUnmount() {
+    console.log(`Context Menu will unmount`);
+  }
+
   render() {
     return (
       <div
@@ -53,8 +62,13 @@ class ContextMenu extends Component<IProps, IState> {
           }
         }}
       >
+        {/* <Menu open={true}>
+          <MenuItem>One</MenuItem>
+          <MenuItem>Two</MenuItem>
+          <MenuItem>Three</MenuItem>
+        </Menu> */}
         <Menu
-          keepMounted
+          keepMounted={true}
           open={this.state.menuOpen}
           onClose={this.handleMenuClosed}
           anchorReference={

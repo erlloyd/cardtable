@@ -4,7 +4,7 @@ import "./ContextualOptionsMenu.scss";
 import { GameType } from "./constants/app-constants";
 import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
 import { Vector2d } from "konva/lib/types";
-import Tooltip from "@material-ui/core/Tooltip";
+import Tooltip from "@mui/material/Tooltip";
 import { useState } from "react";
 import {
   GamePropertiesMap,

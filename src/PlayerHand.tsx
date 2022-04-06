@@ -1,4 +1,4 @@
-import { IconButton } from "@material-ui/core";
+import { IconButton } from "@mui/material";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import cx from "classnames";
 import { Vector2d } from "konva/lib/types";

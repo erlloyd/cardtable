@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { GameType } from "./constants/app-constants";
 import GameContainer from "./GameContainer";
 import "./App.scss";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
 import mainLogo from "./images/card-table-transparent.png";
 interface IProps {
   activeGameType: GameType | null;
@@ -50,6 +50,7 @@ const renderGamePicker = (props: IProps) => {
           onChange={(e) => {
             props.updateActiveGameType(e.target.value as GameType);
           }}
+          variant={"standard"}
         >
           {Object.entries(GameType).map(([key, value]) => {
             const label = camelCaseToSpaces(key);

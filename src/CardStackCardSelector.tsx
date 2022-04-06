@@ -1,17 +1,17 @@
 import { Component } from "react";
-import Select from "@material-ui/core/Select";
-import FormControl from "@material-ui/core/FormControl";
-import MenuItem from "@material-ui/core/MenuItem";
+import Select from "@mui/material/Select";
+import FormControl from "@mui/material/FormControl";
+import MenuItem from "@mui/material/MenuItem";
 import * as React from "react";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import TextField from "@material-ui/core/TextField";
+import TextField from "@mui/material/TextField";
 import { CardData } from "./external-api/common-card-data";
 import { ICardData } from "./features/cards-data/initialState";
 import { ICardStack } from "./features/cards/initialState";
 import { AutocompleteHighlightChangeReason } from "@material-ui/lab/useAutocomplete";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import "./CardStackCardSelector.scss";
-import InputLabel from "@material-ui/core/InputLabel";
+import InputLabel from "@mui/material/InputLabel";
 
 interface IProps {
   cardsDataEntities: ICardData;
