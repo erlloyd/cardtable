@@ -805,4 +805,19 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "27070": "https://hallofheroeshome.files.wordpress.com/2022/03/s15.jpg?w=300",
   "27071": "https://hallofheroeshome.files.wordpress.com/2022/03/s16.jpg?w=300",
   "27072": "https://hallofheroeshome.files.wordpress.com/2022/03/s17.jpg?w=300",
+
+  // venom
+  "27073": "https://hallofheroeshome.files.wordpress.com/2022/03/v1.jpg?w=300",
+  "27074": "https://hallofheroeshome.files.wordpress.com/2022/03/v2.jpg?w=300",
+  "27075": "https://hallofheroeshome.files.wordpress.com/2022/03/v3.jpg?w=300",
+  "27076a": "https://hallofheroeshome.files.wordpress.com/2022/03/v4a.jpg?h=300",
+  "27076b": "https://hallofheroeshome.files.wordpress.com/2022/03/v4b.jpg?h=300",
+  "27077a": "https://hallofheroeshome.files.wordpress.com/2022/03/v5a.jpg?w=300",
+  "27077b": "https://hallofheroeshome.files.wordpress.com/2022/03/v5b.jpg?w=300",
+  "27078": "https://hallofheroeshome.files.wordpress.com/2022/03/v3.jpg?w=300",
+  "27079": "https://hallofheroeshome.files.wordpress.com/2022/03/v8.jpg?h=300",
+  "27080": "https://hallofheroeshome.files.wordpress.com/2022/03/v9.jpg?h=300",
+  "27081": "https://hallofheroeshome.files.wordpress.com/2022/03/v10.jpg?h=300",
+  "27082": "https://hallofheroeshome.files.wordpress.com/2022/03/v11.jpg?w=300",
+  "27083": "https://hallofheroeshome.files.wordpress.com/2022/03/v13.jpg?w=300",
 };
