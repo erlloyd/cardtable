@@ -351,10 +351,10 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "21071": "https://hallofheroeshome.files.wordpress.com/2021/08/e1.jpg?w=300",
   "21072": "https://hallofheroeshome.files.wordpress.com/2021/08/e2.jpg?w=300",
   "21073": "https://hallofheroeshome.files.wordpress.com/2021/08/e3.jpg?w=300",
-  "21074a": "https://hallofheroeshome.files.wordpress.com/2021/08/e4a.jpg?w=300",
-  "21074b": "https://hallofheroeshome.files.wordpress.com/2021/08/e4b.jpg?w=300",
-  "21075a": "https://hallofheroeshome.files.wordpress.com/2021/08/e5a.jpg?w=300",
-  "21075b": "https://hallofheroeshome.files.wordpress.com/2021/08/e5b.jpg?w=300",
+  "21074": "https://hallofheroeshome.files.wordpress.com/2021/08/e4a.jpg?h=300",
+  "21074_double_sided_back": "https://hallofheroeshome.files.wordpress.com/2021/08/e4b.jpg?h=300",
+  "21075": "https://hallofheroeshome.files.wordpress.com/2021/08/e5a.jpg?h=300",
+  "21075_double_sided_back": "https://hallofheroeshome.files.wordpress.com/2021/08/e5b.jpg?h=300",
   "21076": "https://hallofheroeshome.files.wordpress.com/2021/08/e6.jpg?w=300",
   "21077": "https://hallofheroeshome.files.wordpress.com/2021/08/e8.jpg?w=300",
   "21078": "https://hallofheroeshome.files.wordpress.com/2021/08/e10.jpg?w=300",
@@ -899,4 +899,21 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "27139": "https://hallofheroeshome.files.wordpress.com/2022/03/4-7.jpg?w=300",
   "27140": "https://hallofheroeshome.files.wordpress.com/2022/03/5-7.jpg?h=300",
   "27141": "https://hallofheroeshome.files.wordpress.com/2022/03/6-5.jpg?w=300",
+
+  // Guerilla Tactics
+  "27142": "https://hallofheroeshome.files.wordpress.com/2022/03/1-9.jpg?w=300",
+  "27143": "https://hallofheroeshome.files.wordpress.com/2022/03/3-10.jpg?h=300",
+  "27144": "https://hallofheroeshome.files.wordpress.com/2022/03/4-8.jpg?h=300",
+  "27145": "https://hallofheroeshome.files.wordpress.com/2022/03/5-8.jpg?h=300",
+  "27146": "https://hallofheroeshome.files.wordpress.com/2022/03/6-6.jpg?w=300",
+
+  // Osborn Tech
+  "27147": "https://hallofheroeshome.files.wordpress.com/2022/03/1-11.jpg?w=300",
+  "27148": "https://hallofheroeshome.files.wordpress.com/2022/03/2-11.jpg?w=300",
+  "27149": "https://hallofheroeshome.files.wordpress.com/2022/03/3-11.jpg?w=300",
+  "27150": "https://hallofheroeshome.files.wordpress.com/2022/03/4-9.jpg?w=300",
+  "27151": "https://hallofheroeshome.files.wordpress.com/2022/03/5-9.jpg?w=300",
+  "27152": "https://hallofheroeshome.files.wordpress.com/2022/03/6-7.jpg?w=300",
+
+  // Personal Nightmare
 };
