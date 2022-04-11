@@ -4,6 +4,7 @@ import { myPeerRef } from "../constants/app-constants";
 import {
   togglePanMode,
   cardFromHandMoveWithSnap,
+  toggleMultiselectMode,
 } from "../features/cards/cards.slice";
 import {
   loadCardsData,
@@ -61,6 +62,7 @@ const blacklistRemoteActions = {
   [toggleDrawCardsIntoHand.type]: true,
   [toggleSnapCardsToGrid.type]: true,
   [setVisiblePlayerHandNumber.type]: true,
+  [toggleMultiselectMode.type]: true,
 };
 
 const log = (...args: any[]) => {
