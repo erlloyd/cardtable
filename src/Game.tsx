@@ -584,7 +584,17 @@ class Game extends Component<IProps, IState> {
           }}
         ></PlayerHandContainer>
         {this.renderRadialOptionsMenu()}
-        <SpecificCardLoaderContainer></SpecificCardLoaderContainer>
+        <SpecificCardLoaderContainer
+          cardSelected={(id) => {
+            this.props.addCardStack({
+              cardJsonIds: [id],
+              position: this.getRelativePositionFromTarget(
+                this.stage,
+                this.lastMousePos
+              ),
+            });
+          }}
+        ></SpecificCardLoaderContainer>
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
         {this.renderPreviewCardModal()}

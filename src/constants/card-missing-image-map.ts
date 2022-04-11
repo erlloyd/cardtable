@@ -2,37 +2,28 @@ export const CARD_ALREADY_ROTATED_MAP: { [key: string]: boolean } = {
   "05026": true,
 };
 
+export const FORCE_ENCOUNTER_CARD_BACK_MAP: { [key: string]: boolean } = {
+  "27175": true,
+  "27181": true,
+};
+
 export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "02001a": process.env.PUBLIC_URL + "/images/cards/8665869b-fae4-494e-91d1-1e8c308220c2.jpg",
-
   "02001b": process.env.PUBLIC_URL + "/images/cards/8665869b-fae4-494e-91d1-1e8c308220c2.b.jpg",
-
   "02002a": process.env.PUBLIC_URL + "/images/cards/cfd051be-4ade-4cf8-b575-4b673cfa9a92.jpg",
-
   "02002b": process.env.PUBLIC_URL + "/images/cards/cfd051be-4ade-4cf8-b575-4b673cfa9a92.b.jpg",
-
   "02003a": process.env.PUBLIC_URL + "/images/cards/b16187a4-3f29-4a4b-8b66-6e8c7524c402.jpg",
-
   "02003b": process.env.PUBLIC_URL + "/images/cards/b16187a4-3f29-4a4b-8b66-6e8c7524c402.b.jpg",
-
   "02004": process.env.PUBLIC_URL + "/images/cards/b35084d9-3a2b-418c-b1a4-e4929de16a2c.jpg",
-
   "02004_double_sided_back": process.env.PUBLIC_URL + "/images/cards/b35084d9-3a2b-418c-b1a4-e4929de16a2c.b.jpg",
-
   "02005": process.env.PUBLIC_URL + "/images/cards/1eae757a-25b2-4b29-a8e7-f43b12c531b0.jpg",
-
   "02005_double_sided_back": process.env.PUBLIC_URL + "/images/cards/1eae757a-25b2-4b29-a8e7-f43b12c531b0.b.jpg",
-
   "02006a": process.env.PUBLIC_URL + "/images/cards/0a59161d-7db6-4328-9eeb-1906ce8715a5.jpg",
-
   "02006b": process.env.PUBLIC_URL + "/images/cards/0a59161d-7db6-4328-9eeb-1906ce8715a5.b.jpg",
-
   "02017": "https://hallofheroeshome.files.wordpress.com/2019/12/mutagen4a.jpg",
   "02017_double_sided_back": "https://hallofheroeshome.files.wordpress.com/2019/12/mutagen4b.jpg",
-
   "02018": "https://hallofheroeshome.files.wordpress.com/2019/12/mutagen5a.jpg",
   "02018_double_sided_back": "https://hallofheroeshome.files.wordpress.com/2019/12/mutagen5b.jpg",
-
   "12020": "https://lcgcdn.s3.amazonaws.com/mc/MC13en_20.jpg",
 
   // Scarlet Witch Cards
@@ -916,4 +907,68 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "27152": "https://hallofheroeshome.files.wordpress.com/2022/03/6-7.jpg?w=300",
 
   // Personal Nightmare
+  "27153": "https://hallofheroeshome.files.wordpress.com/2022/03/1-12.jpg?w=300",
+  "27154": "https://hallofheroeshome.files.wordpress.com/2022/03/2-12.jpg?w=300",
+  "27155": "https://hallofheroeshome.files.wordpress.com/2022/03/4-10.jpg?h=300",
+  "27156": "https://hallofheroeshome.files.wordpress.com/2022/03/5-10.jpg?h=300",
+  "27157": "https://hallofheroeshome.files.wordpress.com/2022/03/6-8.jpg?w=300",
+
+  // Sinister Assault
+  "27158": "https://hallofheroeshome.files.wordpress.com/2022/03/1-13.jpg?w=300",
+  "27159": "https://hallofheroeshome.files.wordpress.com/2022/03/2-13.jpg?w=300",
+  "27160": "https://hallofheroeshome.files.wordpress.com/2022/03/3-13.jpg?w=300",
+  "27161": "https://hallofheroeshome.files.wordpress.com/2022/03/4-11.jpg?w=300",
+  "27162": "https://hallofheroeshome.files.wordpress.com/2022/03/5-11.jpg?w=300",
+  "27163": "https://hallofheroeshome.files.wordpress.com/2022/03/6-9.jpg?w=300",
+
+  // Symbiotic Strength
+  "27164": "https://hallofheroeshome.files.wordpress.com/2022/03/1-14.jpg?w=300",
+  "27165": "https://hallofheroeshome.files.wordpress.com/2022/03/2-14.jpg?w=300",
+  "27166": "https://hallofheroeshome.files.wordpress.com/2022/03/3-14.jpg?w=300",
+  "27167": "https://hallofheroeshome.files.wordpress.com/2022/03/4-12.jpg?w=300",
+  "27168": "https://hallofheroeshome.files.wordpress.com/2022/03/7-6.jpg?w=300",
+  "27169": "https://hallofheroeshome.files.wordpress.com/2022/03/9-2.jpg?w=300",
+
+  // Whispers of Paranoia
+  "27170": "https://hallofheroeshome.files.wordpress.com/2022/03/a.jpg?w=300",
+  "27171": "https://hallofheroeshome.files.wordpress.com/2022/03/c.jpg?w=300",
+  "27172": "https://hallofheroeshome.files.wordpress.com/2022/03/d.jpg?w=300",
+  "27173": "https://hallofheroeshome.files.wordpress.com/2022/03/e.jpg?h=300",
+
+  // Campaign / Bad Publicity
+  "27174a": "https://hallofheroeshome.files.wordpress.com/2022/03/1a.jpg?w=300",
+  "27174b": "https://hallofheroeshome.files.wordpress.com/2022/03/1b.jpg?w=300",
+  "27175": "https://hallofheroeshome.files.wordpress.com/2022/03/2-5.jpg?w=300",
+
+  // Campaign / Community Service
+  "27176": "https://hallofheroeshome.files.wordpress.com/2022/03/3-6.jpg?h=300",
+  "27177": "https://hallofheroeshome.files.wordpress.com/2022/03/4-4.jpg?h=300",
+  "27178": "https://hallofheroeshome.files.wordpress.com/2022/03/5-4.jpg?h=300",
+  "27179": "https://hallofheroeshome.files.wordpress.com/2022/03/6-3.jpg?h=300",
+  "27180": "https://hallofheroeshome.files.wordpress.com/2022/03/7-2.jpg?h=300",
+
+  // Campaign / Snitches Get Stitches
+  "27181": "https://hallofheroeshome.files.wordpress.com/2022/03/8-2.jpg?w=300",
+
+  // Campaign / Shield Tech
+  "27182a": "https://hallofheroeshome.files.wordpress.com/2022/03/9a.jpg?w=300",
+  "27182b": "https://hallofheroeshome.files.wordpress.com/2022/03/9b.jpg?w=300",
+  "27183a": "https://hallofheroeshome.files.wordpress.com/2022/03/10a.jpg?w=300",
+  "27183b": "https://hallofheroeshome.files.wordpress.com/2022/03/10b.jpg?w=300",
+  "27184a": "https://hallofheroeshome.files.wordpress.com/2022/03/11a.jpg?w=300",
+  "27184b": "https://hallofheroeshome.files.wordpress.com/2022/03/11b.jpg?w=300",
+  "27185a": "https://hallofheroeshome.files.wordpress.com/2022/03/12a.jpg?w=300",
+  "27185b": "https://hallofheroeshome.files.wordpress.com/2022/03/12b.jpg?w=300",
+  "27186a": "https://hallofheroeshome.files.wordpress.com/2022/03/13a.jpg?w=300",
+  "27186b": "https://hallofheroeshome.files.wordpress.com/2022/03/13b.jpg?w=300",
+  "27187a": "https://hallofheroeshome.files.wordpress.com/2022/03/14a.jpg?w=300",
+  "27187b": "https://hallofheroeshome.files.wordpress.com/2022/03/14b.jpg?w=300",
+  "27188a": "https://hallofheroeshome.files.wordpress.com/2022/03/15a.jpg?w=300",
+  "27188b": "https://hallofheroeshome.files.wordpress.com/2022/03/15b.jpg?w=300",
+  "27189a": "https://hallofheroeshome.files.wordpress.com/2022/03/16a.jpg?w=300",
+  "27189b": "https://hallofheroeshome.files.wordpress.com/2022/03/16b.jpg?w=300",
+
+  // Other sinister movtives player cards
+  "27190": "https://hallofheroeshome.files.wordpress.com/2022/03/17.jpg?w=300",
+  "27191": "https://hallofheroeshome.files.wordpress.com/2022/03/18.jpg?w=300",
 };

@@ -2,6 +2,7 @@ import { GameType, myPeerRef } from "../constants/app-constants";
 import { StatusTokenType } from "../constants/card-constants";
 import {
   CARD_ALREADY_ROTATED_MAP,
+  FORCE_ENCOUNTER_CARD_BACK_MAP,
   MISSING_CARD_IMAGE_MAP,
 } from "../constants/card-missing-image-map";
 import { CARD_PACK_REMAPPING } from "../constants/card-pack-mapping";
@@ -79,7 +80,8 @@ export const getImgUrls = (
       if (!cardData.images.back) {
         return [
           topCardData.extraInfo.factionCode === "encounter" ||
-          topCardData.typeCode === "side_scheme"
+          topCardData.typeCode === "side_scheme" ||
+          FORCE_ENCOUNTER_CARD_BACK_MAP[topCardData.code]
             ? process.env.PUBLIC_URL +
               "/images/standard/encounter_card_back_" +
               currentGameType +
@@ -112,7 +114,8 @@ export const getImgUrls = (
       cardData = null;
       urls = [
         topCardData.extraInfo.factionCode === "encounter" ||
-        topCardData.typeCode === "side_scheme"
+        topCardData.typeCode === "side_scheme" ||
+        FORCE_ENCOUNTER_CARD_BACK_MAP[topCardData.code]
           ? process.env.PUBLIC_URL +
             "/images/standard/encounter_card_back_" +
             currentGameType +

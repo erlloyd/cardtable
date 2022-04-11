@@ -11,7 +11,7 @@ interface IProps {
   position: Vector2d | null;
   heroData: CardData[];
   hideSpecificCardLoader: () => void;
-  // cardSelected: (jsonId: string) => void;
+  cardSelected: (jsonId: string) => void;
   preview: (jsonId: string) => void;
   clearPreview: () => void;
 }
@@ -69,9 +69,10 @@ const handleHighlightChange =
 const handleSelected =
   (props: IProps) => (_event: any, value: CardData | null) => {
     props.clearPreview();
-    // if (!!value && !!props.cardSelected) {
-    //   props.cardSelected(value.code);
-    // }
+    if (!!value && !!props.cardSelected) {
+      props.cardSelected(value.code);
+      props.hideSpecificCardLoader();
+    }
   };
 
 export default SpecificCardLoader;
