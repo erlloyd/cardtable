@@ -103,7 +103,7 @@ const ContextualOptionsMenu = (props: IProps) => {
               if (visibleMenus.includes(MenuType.DrawActions)) {
                 setVisibleMenus([]);
               } else {
-                setVisibleMenus([...visibleMenus, MenuType.DrawActions]);
+                setVisibleMenus([MenuType.DrawActions]);
                 setVisibleMenuYPosition(evt.clientY);
               }
             }}
@@ -117,7 +117,7 @@ const ContextualOptionsMenu = (props: IProps) => {
               if (visibleMenus.includes(MenuType.ModifierActions)) {
                 setVisibleMenus([]);
               } else {
-                setVisibleMenus([...visibleMenus, MenuType.ModifierActions]);
+                setVisibleMenus([MenuType.ModifierActions]);
                 setVisibleMenuYPosition(evt.clientY);
               }
             }}
@@ -131,7 +131,7 @@ const ContextualOptionsMenu = (props: IProps) => {
               if (visibleMenus.includes(MenuType.StatusTokenActions)) {
                 setVisibleMenus([]);
               } else {
-                setVisibleMenus([...visibleMenus, MenuType.StatusTokenActions]);
+                setVisibleMenus([MenuType.StatusTokenActions]);
                 setVisibleMenuYPosition(evt.clientY);
               }
             }}
@@ -145,10 +145,7 @@ const ContextualOptionsMenu = (props: IProps) => {
               if (visibleMenus.includes(MenuType.CounterTokenActions)) {
                 setVisibleMenus([]);
               } else {
-                setVisibleMenus([
-                  ...visibleMenus,
-                  MenuType.CounterTokenActions,
-                ]);
+                setVisibleMenus([MenuType.CounterTokenActions]);
                 setVisibleMenuYPosition(evt.clientY);
               }
             }}
