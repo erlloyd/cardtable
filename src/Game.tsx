@@ -49,6 +49,7 @@ import { getCenter, getDistance } from "./utilities/geo";
 import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
 import CurvedArrowsContainer from "./CurvedArrowsContainer";
 import ContextualOptionsMenuContainer from "./ContextualOptionsMenuContainer";
+import CardtableAlertsContainer from "./CardtableAlertsContainer";
 
 const USE_RADIAL_MENU = false;
 const USE_CONTEXTUAL_OPTIONS_MENU = true;
@@ -608,98 +609,104 @@ class Game extends Component<IProps, IState> {
 
         <ReactReduxContext.Consumer>
           {({ store }) => (
-            <Stage
-              ref={(ref) => {
-                if (!ref) return;
-
-                this.stage = ref;
-              }}
-              x={this.props.gameState.stagePosition.x}
-              y={this.props.gameState.stagePosition.y}
-              width={this.state.stageWidth}
-              height={this.state.stageHeight}
-              onClick={this.handleStageClickOrTap}
-              onTap={this.handleStageClickOrTap}
-              onMouseDown={this.handleMouseDown}
-              onMouseUp={this.handleMouseUp}
-              onMouseMove={this.handleMouseMove}
-              onTouchStart={this.handleTouchStart}
-              onTouchMove={this.handleTouchMove}
-              onTouchEnd={this.handleTouchEnd}
-              onContextMenu={this.handleContextMenu}
-              scale={this.props.gameState.stageZoom}
-              onWheel={this.handleWheel}
-              draggable={this.props.panMode}
-              onDragMove={this.noOp}
-              onDragEnd={this.noOp}
-              preventDefault={true}
-            >
+            <div>
               <Provider store={store}>
-                <Layer>
-                  <Rect
-                    fill={
-                      this.state.playmatImageLoaded ? undefined : "lightgray"
-                    }
-                    scale={{
-                      x: playmatScale,
-                      y: playmatScale,
-                    }}
-                    width={
-                      this.state.playmatImageLoaded
-                        ? this.state.playmatImage?.naturalWidth
-                        : 2880
-                    }
-                    height={
-                      this.state.playmatImageLoaded
-                        ? this.state.playmatImage?.naturalHeight
-                        : 1440
-                    }
-                    fillPatternImage={
-                      this.state.playmatImageLoaded && !!this.state.playmatImage
-                        ? this.state.playmatImage
-                        : undefined
-                    }
-                  ></Rect>
-                </Layer>
-                <Layer>
-                  {this.props.counters.map((counter) => (
-                    <Counter
-                      key={`${counter.id}-counter`}
-                      id={counter.id}
-                      pos={counter.position}
-                      value={counter.value}
-                      color={counter.color}
-                      updateCounterValueBy={this.handleCounterValueUpdate(
-                        counter.id
-                      )}
-                      handleContextMenu={this.handleCounterContextMenu(
-                        counter.id
-                      )}
-                      onDragEnd={this.handleCounterDrag(counter.id)}
-                    ></Counter>
-                  ))}
-                </Layer>
-                <Layer preventDefault={true}>
-                  {ghostCards.concat(staticCards).concat(movingCards)}
-
-                  <FirstPlayerTokenContainer
-                    currentGameType={this.props.currentGameType}
-                  ></FirstPlayerTokenContainer>
-                  <CurvedArrowsContainer></CurvedArrowsContainer>
-                  {previewCards}
-                </Layer>
-                <Layer>
-                  <Rect
-                    x={this.state.selectStartPos.x}
-                    y={this.state.selectStartPos.y}
-                    width={this.state.selectRect.width}
-                    height={this.state.selectRect.height}
-                    stroke="yellow"
-                    strokeWidth={4}
-                  />
-                </Layer>
+                <CardtableAlertsContainer></CardtableAlertsContainer>
               </Provider>
-            </Stage>
+              <Stage
+                ref={(ref) => {
+                  if (!ref) return;
+
+                  this.stage = ref;
+                }}
+                x={this.props.gameState.stagePosition.x}
+                y={this.props.gameState.stagePosition.y}
+                width={this.state.stageWidth}
+                height={this.state.stageHeight}
+                onClick={this.handleStageClickOrTap}
+                onTap={this.handleStageClickOrTap}
+                onMouseDown={this.handleMouseDown}
+                onMouseUp={this.handleMouseUp}
+                onMouseMove={this.handleMouseMove}
+                onTouchStart={this.handleTouchStart}
+                onTouchMove={this.handleTouchMove}
+                onTouchEnd={this.handleTouchEnd}
+                onContextMenu={this.handleContextMenu}
+                scale={this.props.gameState.stageZoom}
+                onWheel={this.handleWheel}
+                draggable={this.props.panMode}
+                onDragMove={this.noOp}
+                onDragEnd={this.noOp}
+                preventDefault={true}
+              >
+                <Provider store={store}>
+                  <Layer>
+                    <Rect
+                      fill={
+                        this.state.playmatImageLoaded ? undefined : "lightgray"
+                      }
+                      scale={{
+                        x: playmatScale,
+                        y: playmatScale,
+                      }}
+                      width={
+                        this.state.playmatImageLoaded
+                          ? this.state.playmatImage?.naturalWidth
+                          : 2880
+                      }
+                      height={
+                        this.state.playmatImageLoaded
+                          ? this.state.playmatImage?.naturalHeight
+                          : 1440
+                      }
+                      fillPatternImage={
+                        this.state.playmatImageLoaded &&
+                        !!this.state.playmatImage
+                          ? this.state.playmatImage
+                          : undefined
+                      }
+                    ></Rect>
+                  </Layer>
+                  <Layer>
+                    {this.props.counters.map((counter) => (
+                      <Counter
+                        key={`${counter.id}-counter`}
+                        id={counter.id}
+                        pos={counter.position}
+                        value={counter.value}
+                        color={counter.color}
+                        updateCounterValueBy={this.handleCounterValueUpdate(
+                          counter.id
+                        )}
+                        handleContextMenu={this.handleCounterContextMenu(
+                          counter.id
+                        )}
+                        onDragEnd={this.handleCounterDrag(counter.id)}
+                      ></Counter>
+                    ))}
+                  </Layer>
+                  <Layer preventDefault={true}>
+                    {ghostCards.concat(staticCards).concat(movingCards)}
+
+                    <FirstPlayerTokenContainer
+                      currentGameType={this.props.currentGameType}
+                    ></FirstPlayerTokenContainer>
+                    <CurvedArrowsContainer></CurvedArrowsContainer>
+                    {previewCards}
+                  </Layer>
+                  <Layer>
+                    <Rect
+                      x={this.state.selectStartPos.x}
+                      y={this.state.selectStartPos.y}
+                      width={this.state.selectRect.width}
+                      height={this.state.selectRect.height}
+                      stroke="yellow"
+                      strokeWidth={4}
+                    />
+                  </Layer>
+                </Provider>
+              </Stage>
+            </div>
           )}
         </ReactReduxContext.Consumer>
       </div>
