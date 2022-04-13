@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { GameType } from "./constants/app-constants";
 import GameContainer from "./GameContainer";
 import "./App.scss";
@@ -7,6 +7,10 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import mainLogo from "./images/card-table-transparent.png";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import { Button, IconButton, Snackbar } from "@mui/material";
+import React from "react";
+import CloseIcon from "@material-ui/icons/Close";
 interface IProps {
   activeGameType: GameType | null;
   updateActiveGameType: (val: GameType) => void;
@@ -14,15 +18,69 @@ interface IProps {
 }
 
 const App = (props: IProps) => {
+  const [showReload, setShowReload] = useState(false);
+  const [waitingWorker, setWaitingWorker] = useState<ServiceWorker | null>(
+    null
+  );
+
+  const onSWUpdate = (registration: ServiceWorkerRegistration) => {
+    setShowReload(true);
+    setWaitingWorker(registration.waiting);
+  };
+
   const clearQueryParams = props.clearQueryParams;
   useEffect(() => {
     clearQueryParams();
   }, [clearQueryParams]);
 
+  useEffect(() => {
+    serviceWorkerRegistration.register({ onUpdate: onSWUpdate });
+  }, []);
+
+  const reloadPage = () => {
+    waitingWorker?.postMessage({ type: "SKIP_WAITING" });
+    setShowReload(false);
+    window.location.reload();
+  };
+
+  const handleClose = (
+    event: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+  };
+
+  const action = (
+    <React.Fragment>
+      <Button color="secondary" size="small" onClick={reloadPage}>
+        Reload
+      </Button>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleClose}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </React.Fragment>
+  );
+
   return !!props.activeGameType ? (
-    <GameContainer currentGameType={props.activeGameType}></GameContainer>
+    <div>
+      <Snackbar
+        open={showReload}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        message="New version available"
+        action={action}
+      />
+      <GameContainer currentGameType={props.activeGameType}></GameContainer>
+    </div>
   ) : (
-    renderGamePicker(props)
+    <div>{renderGamePicker(props)}</div>
   );
 };
 
