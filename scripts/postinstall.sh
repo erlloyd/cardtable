@@ -1,3 +1,5 @@
+yarn patch-package
+
 mkdir -p src/external
 mkdir -p public/images/cards
 if [ ! -d "src/external/ringsteki-json-data" ]

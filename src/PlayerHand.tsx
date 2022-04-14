@@ -52,7 +52,7 @@ const getItemStyle = (
     : {
         // some basic styles to make the items look a bit nicer
         userSelect: "none",
-        margin: `0 ${grid}px 0 0`,
+        margin: `10px ${grid}px 0 0`,
 
         // change background colour if dragging
         // background: snapshot.isDragging ? "lightgreen" : "grey",
