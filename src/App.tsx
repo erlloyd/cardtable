@@ -54,7 +54,7 @@ const App = (props: IProps) => {
 
   const action = (
     <React.Fragment>
-      <Button color="secondary" size="small" onClick={reloadPage}>
+      <Button color="inherit" size="small" onClick={reloadPage}>
         Reload
       </Button>
       <IconButton

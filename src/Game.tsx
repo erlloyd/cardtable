@@ -254,7 +254,7 @@ class Game extends Component<IProps, IState> {
       playmatImageLoaded: false,
       previewCardModal: false,
       stageWidth: window.innerWidth,
-      stageHeight: window.innerHeight,
+      stageHeight: window.innerHeight - playerHandHeightPx,
     };
   }
 
@@ -2165,7 +2165,7 @@ class Game extends Component<IProps, IState> {
 
   private handleResize = () => {
     this.setState({
-      stageHeight: window.innerHeight,
+      stageHeight: window.innerHeight - playerHandHeightPx,
       stageWidth: window.innerWidth,
     });
   };

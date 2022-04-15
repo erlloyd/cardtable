@@ -74,7 +74,6 @@ const getListStyle = (isDraggingOver: boolean) =>
     bottom: "0px",
     width: "100vw",
     height: `${playerHandHeightPx}px`,
-    zIndex: 99,
     boxSizing: "border-box",
   } as React.CSSProperties);
 
