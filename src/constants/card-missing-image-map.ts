@@ -729,7 +729,7 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "27001b": "https://marvelcdb.com/bundles/cards/27001b.png",
   "27002": "https://hallofheroeshome.files.wordpress.com/2022/03/1-4.jpg?w=300",
   "27003": "https://hallofheroeshome.files.wordpress.com/2022/03/4-3.jpg?w=300",
-  "27004": "https://hallofheroeshome.files.wordpress.com/2022/03/4-3.jpg?w=300",
+  "27004": "https://hallofheroeshome.files.wordpress.com/2022/03/5-3.jpg?w=300",
   "27005": "https://hallofheroeshome.files.wordpress.com/2022/03/8-1.jpg?w=300",
   "27006": "https://hallofheroeshome.files.wordpress.com/2022/03/10-1.jpg?w=300",
   "27007": "https://hallofheroeshome.files.wordpress.com/2022/03/12-1.jpg?w=300",
