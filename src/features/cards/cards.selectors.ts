@@ -42,6 +42,10 @@ export const getDropTargetCardsById = createSelector(getCards, (cards) => {
   return returnVal;
 });
 
+export const anyCardsDragging = createSelector(getCards, (cards) => {
+  return !cards.cards.some((c) => c.dragging);
+});
+
 export const getPlayerCardsForPlayerNumber = (num: number) =>
   createSelector(getPlayerHands, (playerHands) => {
     const index = num - 1;

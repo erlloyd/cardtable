@@ -33,6 +33,7 @@ import {
   verifyRemoteGameState,
 } from "./global.actions";
 import { RootState } from "./rootReducer";
+import { anyCardsDragging } from "../features/cards/cards.selectors";
 
 const DEBUG = false;
 
@@ -180,13 +181,19 @@ export const peerJSMiddleware = (storeAPI: any) => {
       // Set up periodic state verification
       setInterval(() => {
         const currentState: RootState = cloneDeep(storeAPI.getState());
-        // @ts-ignore
-        delete currentState.cardsData;
 
-        activeCon.send({
-          PING: true,
-          state: currentState,
-        });
+        // only check state if no cards are moving
+        if (anyCardsDragging(currentState)) {
+          // @ts-ignore
+          delete currentState.cardsData;
+
+          activeCon.send({
+            PING: true,
+            state: currentState,
+          });
+        } else {
+          console.log(`Some card is dragging, not checking remote state sync`);
+        }
       }, 5000);
     });
 

@@ -937,29 +937,57 @@ const cardsSlice = createSlice({
     });
 
     builder.addCase(verifyRemoteGameState, (state, action) => {
+      const cardsThatArentDragging = original(state.cards)?.filter(
+        (c) => !c.dragging
+      );
+      const remoteCardsThatArentDragging =
+        action.payload.liveState.present.cards.cards.filter((c) => !c.dragging);
+
+      const cardsInSync = isEqual(
+        cardsThatArentDragging,
+        remoteCardsThatArentDragging
+      );
+
+      const ghostCardsInSync = isEqual(
+        original(state.ghostCards),
+        action.payload.liveState.present.cards.ghostCards
+      );
+
+      const playerHandsInSync = isEqual(
+        original(state.playerHands),
+        action.payload.liveState.present.cards.playerHands
+      );
+
       state.outOfSyncWithRemote = !(
-        isEqual(
-          original(state.cards)?.filter((c) => !c.dragging),
-          action.payload.liveState.present.cards.cards.filter(
-            (c) => !c.dragging
-          )
-        ) &&
-        isEqual(
-          original(state.ghostCards),
-          action.payload.liveState.present.cards.ghostCards
-        ) &&
-        isEqual(
-          original(state.playerHands),
-          action.payload.liveState.present.cards.playerHands
-        )
+        cardsInSync &&
+        ghostCardsInSync &&
+        playerHandsInSync
       );
 
       if (state.outOfSyncWithRemote) {
-        console.error(
-          "CARDS state is out of synce with remote!!!",
-          original(state),
-          action.payload.liveState.present.cards
-        );
+        if (!cardsInSync) {
+          console.error(
+            "CARDS state is out of synce with remote!!!",
+            cardsThatArentDragging,
+            remoteCardsThatArentDragging
+          );
+        }
+
+        if (!ghostCardsInSync) {
+          console.error(
+            "GHOST CARDS state is out of synce with remote!!!",
+            original(state.ghostCards),
+            action.payload.liveState.present.cards.ghostCards
+          );
+        }
+
+        if (!playerHandsInSync) {
+          console.error(
+            "PLAYER HANDS state is out of synce with remote!!!",
+            original(state.playerHands),
+            action.payload.liveState.present.cards.playerHands
+          );
+        }
       } else {
         console.log("CARDS state is in sync");
       }
