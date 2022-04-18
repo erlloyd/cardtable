@@ -8,6 +8,7 @@ interface IProps {
   offsetContent?: boolean;
   position: Vector2d;
   completed: () => void;
+  children?: React.ReactNode;
 }
 
 class TopLayer extends Component<IProps> {
