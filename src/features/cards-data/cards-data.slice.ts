@@ -27,6 +27,7 @@ import {
 import { updateActiveGameType } from "../game/game.slice";
 import { receiveRemoteGameState } from "../../store/global.actions";
 import { getCardCodeIncludingOverrides } from "../../utilities/cards-data-utils";
+import { MISSING_BACK_IMAGE_MAP } from "../../constants/card-missing-image-map";
 
 // Utilities
 const convertMarvelToCommonFormat = (
@@ -79,9 +80,14 @@ const convertLOTRToCommonFormat =
         frontImageWithoutExtension[frontImageWithoutExtension.length - 1] !==
         "A"
       ) {
-        console.log(
-          `No Non-B Back Image Path for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`
-        );
+        if (MISSING_BACK_IMAGE_MAP[cardLOTRFormat.RingsDbCardId]) {
+          cardBackImage = MISSING_BACK_IMAGE_MAP[cardLOTRFormat.RingsDbCardId];
+        } else {
+          console.log(
+            `No Non-B Back Image Path for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`,
+            cardLOTRFormat.RingsDbCardId
+          );
+        }
       } else {
         cardBackImage = frontImage.replaceAll("A.", "B.");
       }
@@ -318,7 +324,7 @@ const loadCardsDataForPackReducer: CaseReducer<
       .map((c) => {
         return { location: state.data[action.payload.packType], card: c };
       })
-      .forEach(storeCardData(true, true));
+      .forEach(storeCardData(true, pack.Name !== "Revised Core Set"));
   }
 
   return state;

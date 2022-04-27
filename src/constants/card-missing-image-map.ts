@@ -7,6 +7,31 @@ export const FORCE_ENCOUNTER_CARD_BACK_MAP: { [key: string]: boolean } = {
   "27181": true,
 };
 
+export const MISSING_BACK_IMAGE_MAP: { [key: string]: string } = {
+  "11027": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Lost-Island.jpg",
+  "11030": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Lost-Island.jpg",
+  "11031": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Lost-Island.jpg",
+  "11072": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Lost-Island.jpg",
+  "11073": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Lost-Island.jpg",
+  "11074": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Lost-Island.jpg",
+  "00002": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Lost-Island.jpg",
+  "00003": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Lost-Island.jpg",
+  "00004": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Lost-Island.jpg",
+  "00005": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Lost-Island.jpg",
+  "00006": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Lost-Island.jpg",
+  "00007": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Lost-Island.jpg",
+  "00008": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fate-of-Numenor-Nightmare/Lost-Island.jpg",
+  "12068": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Temple-of-the-Deceived/Temple-of-the-Deceived.jpg",
+  "12069": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Temple-of-the-Deceived/Temple-of-the-Deceived.jpg",
+  "12072": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Temple-of-the-Deceived/Lost-Island.jpg",
+  "12073": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Temple-of-the-Deceived/Lost-Island.jpg",
+  "12074": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Temple-of-the-Deceived/Lost-Island.jpg",
+  "22161": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Castle-Garrison.jpg",
+  "22162": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Castle-Garrison.jpg",
+  "22163": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Castle-Garrison.jpg",
+  "22164": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Castle-Garrison.jpg",
+};
+
 export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "02001a": process.env.PUBLIC_URL + "/images/cards/8665869b-fae4-494e-91d1-1e8c308220c2.jpg",
   "02001b": process.env.PUBLIC_URL + "/images/cards/8665869b-fae4-494e-91d1-1e8c308220c2.b.jpg",
@@ -805,7 +830,7 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "27076b": "https://hallofheroeshome.files.wordpress.com/2022/03/v4b.jpg?h=300",
   "27077a": "https://hallofheroeshome.files.wordpress.com/2022/03/v5a.jpg?w=300",
   "27077b": "https://hallofheroeshome.files.wordpress.com/2022/03/v5b.jpg?w=300",
-  "27078": "https://hallofheroeshome.files.wordpress.com/2022/03/v3.jpg?w=300",
+  "27078": "https://hallofheroeshome.files.wordpress.com/2022/03/v6.jpg?w=300",
   "27079": "https://hallofheroeshome.files.wordpress.com/2022/03/v8.jpg?h=300",
   "27080": "https://hallofheroeshome.files.wordpress.com/2022/03/v9.jpg?h=300",
   "27081": "https://hallofheroeshome.files.wordpress.com/2022/03/v10.jpg?h=300",
