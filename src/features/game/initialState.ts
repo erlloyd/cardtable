@@ -19,6 +19,7 @@ export interface IGameState {
   playerNumbers: { [key: string]: number };
   currentVisiblePlayerHandNumber: number | null; // If null, view your own hand
   peerId: string;
+  multiplayerGameName: string;
   previewCard: IPreviewCard | null;
   menuPreviewCardJsonId: string | null;
   activeGameType: GameType | null;
@@ -56,6 +57,7 @@ const defaultState: IGameState = {
   stageZoom: { x: 0.5, y: 0.5 },
   stagePosition: { x: 0, y: 0 },
   peerId: "",
+  multiplayerGameName: "",
   previewCard: null,
   menuPreviewCardJsonId: null,
   activeGameType: null,

@@ -50,6 +50,13 @@ const setPeerIdReducer: CaseReducer<IGameState, PayloadAction<string>> = (
   state.peerId = action.payload;
 };
 
+const setMultiplayerGameNameReducer: CaseReducer<
+  IGameState,
+  PayloadAction<string>
+> = (state, action) => {
+  state.multiplayerGameName = action.payload;
+};
+
 const setPreviewCardIdReducer: CaseReducer<
   IGameState,
   PayloadAction<string>
@@ -153,6 +160,7 @@ const gameSlice = createSlice({
     connectToRemoteGame: connectToRemoteGameReducer,
     setPlayerInfo: setPlayerInfoReducer,
     setPeerId: setPeerIdReducer,
+    setMultiplayerGameName: setMultiplayerGameNameReducer,
     requestResync: requestResyncReducer,
     setPreviewCardId: setPreviewCardIdReducer,
     clearPreviewCard: clearPreviewCardReducer,
@@ -191,6 +199,7 @@ export const {
   connectToRemoteGame,
   setPlayerInfo,
   setPeerId,
+  setMultiplayerGameName,
   requestResync,
   setPreviewCardId,
   clearPreviewCard,

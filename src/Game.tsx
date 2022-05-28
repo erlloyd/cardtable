@@ -129,6 +129,7 @@ interface IProps {
   counters: ICounter[];
   requestResync: () => void;
   peerId: string;
+  multiplayerGameName: string;
   dropTargetCardsById: {
     [key: string]: { ownerRef: string; card: ICardStack | null };
   };
@@ -2118,6 +2119,16 @@ class Game extends Component<IProps, IState> {
         action: () => {
           if (!!this.props.peerId) {
             copyToClipboard(generateRemoteGameUrl(this.props.peerId));
+          }
+        },
+      },
+      {
+        label: `Current game name is ${this.props.multiplayerGameName}`,
+        action: () => {
+          if (!!this.props.peerId) {
+            copyToClipboard(
+              generateRemoteGameUrl(this.props.multiplayerGameName)
+            );
           }
         },
       },

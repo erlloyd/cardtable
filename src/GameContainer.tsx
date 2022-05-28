@@ -53,6 +53,7 @@ import { addNewCounter } from "./features/counters/counters.thunks";
 import {
   getGame,
   getMenuPreviewCard,
+  getMultiplayerGameName,
   getPeerId,
   getPlayerColors,
   getPlayerNumbers,
@@ -95,6 +96,7 @@ const mapStateToProps = (state: RootState) => {
     gameState: getGame(state),
     counters: getCurrentCounters(state),
     peerId: getPeerId(state),
+    multiplayerGameName: getMultiplayerGameName(state),
     dropTargetCardsById: getDropTargetCardsById(state),
     menuPreviewCard: getMenuPreviewCard(state),
   };

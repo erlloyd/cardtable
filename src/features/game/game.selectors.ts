@@ -18,6 +18,11 @@ export const getPlayerNumbers = createSelector(getGame, (game) => {
 
 export const getPeerId = createSelector(getGame, (game) => game.peerId);
 
+export const getMultiplayerGameName = createSelector(
+  getGame,
+  (game) => game.multiplayerGameName
+);
+
 export const getActiveGameType = createSelector(
   getGame,
   (game) => game.activeGameType

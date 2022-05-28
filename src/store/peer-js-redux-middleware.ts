@@ -2,69 +2,20 @@ import Peer from "peerjs";
 import cloneDeep from "lodash.clonedeep";
 import { myPeerRef } from "../constants/app-constants";
 import {
-  togglePanMode,
-  cardFromHandMoveWithSnap,
-  toggleMultiselectMode,
-} from "../features/cards/cards.slice";
-import {
-  loadCardsData,
-  loadCardsDataForPack,
-  loadCardsForEncounterSet,
-} from "../features/cards-data/cards-data.slice";
-import {
-  clearMenuPreviewCardJsonId,
-  clearPreviewCard,
   connectToRemoteGame,
   requestResync,
-  setMenuPreviewCardJsonId,
   setPeerId,
   setPlayerInfo,
-  setPreviewCardId,
-  setVisiblePlayerHandNumber,
-  stopDraggingCardFromHand,
-  toggleDrawCardsIntoHand,
-  toggleSnapCardsToGrid,
-  updatePosition,
-  updateZoom,
 } from "../features/game/game.slice";
 import {
   receiveRemoteGameState,
-  startDraggingCardFromHand,
   verifyRemoteGameState,
 } from "./global.actions";
 import { RootState } from "./rootReducer";
 import { anyCardsDragging } from "../features/cards/cards.selectors";
+import { blacklistRemoteActions } from "./middleware-utilities";
 
 const DEBUG = false;
-
-// These are the actions that we explicitly don't want
-// to send to any peers. These are actions that represent
-// updates we would only want to display visually on the
-// screen of the player initiating the action. Zooming is
-// a great example. One player adjusting their zoom shouldn't
-// affect any other player's zoom.
-const blacklistRemoteActions = {
-  [connectToRemoteGame.type]: true,
-  [updatePosition.type]: true,
-  [updateZoom.type]: true,
-  [setPreviewCardId.type]: true,
-  [clearPreviewCard.type]: true,
-  [setMenuPreviewCardJsonId.type]: true,
-  [clearMenuPreviewCardJsonId.type]: true,
-  [togglePanMode.type]: true,
-  [receiveRemoteGameState.type]: true,
-  [requestResync.type]: true,
-  [loadCardsData.type]: true,
-  [loadCardsDataForPack.type]: true,
-  [loadCardsForEncounterSet.type]: true,
-  [startDraggingCardFromHand.type]: true,
-  [stopDraggingCardFromHand.type]: true,
-  [cardFromHandMoveWithSnap.type]: true,
-  [toggleDrawCardsIntoHand.type]: true,
-  [toggleSnapCardsToGrid.type]: true,
-  [setVisiblePlayerHandNumber.type]: true,
-  [toggleMultiselectMode.type]: true,
-};
 
 const log = (...args: any[]) => {
   if (DEBUG) {
@@ -130,6 +81,7 @@ export const peerJSMiddleware = (storeAPI: any) => {
 
   cgpPeer.on("open", (id) => {
     console.log("My peer ID is: " + id);
+    console.log("myPeerRef is: " + myPeerRef);
     storeAPI.dispatch(setPeerId(id));
 
     //look for query param
