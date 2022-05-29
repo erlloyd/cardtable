@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 
 export const myPeerRef = uuidv4();
+(window as any).myPeerRef = myPeerRef;
 
 export enum GameType {
   MarvelChampions = "marvelchampions",
@@ -17,9 +18,9 @@ export type PlayerColor =
 
 export const possibleColors: PlayerColor[] = [
   "red",
-  "cyan",
-  "green",
   "blue",
+  "green",
+  "cyan",
   "magenta",
   "yellow",
 ];

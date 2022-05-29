@@ -38,5 +38,7 @@ export default function configureStore() {
     }, 1000)
   );
 
+  (window as any).cardTableStore = store;
+
   return store;
 }

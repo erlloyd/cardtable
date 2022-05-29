@@ -1,16 +1,24 @@
-import { myPeerRef } from "../constants/app-constants";
-import { getMultiplayerGameName } from "../features/game/game.selectors";
+import cloneDeep from "lodash.clonedeep";
+import { myPeerRef, possibleColors } from "../constants/app-constants";
+import {
+  getMultiplayerGameName,
+  getPlayerColors,
+  getPlayerNumbers,
+} from "../features/game/game.selectors";
 import {
   connectToRemoteGame,
   requestResync,
   setMultiplayerGameName,
-  setPlayerInfo,
+  setAllPlayerInfo,
 } from "../features/game/game.slice";
 import {
   receiveRemoteGameState,
   verifyRemoteGameState,
 } from "./global.actions";
-import { blacklistRemoteActions } from "./middleware-utilities";
+import {
+  blacklistRemoteActions,
+  misingPlayerNumInSeq,
+} from "./middleware-utilities";
 
 interface IMessage {
   type: string;
@@ -95,29 +103,43 @@ export const websocketMiddleware = (storeAPI: any) => {
           updateUrl(data.payload);
           break;
         case "newplayerconnected":
-          const setPlayerInfoAction = setPlayerInfo({
-            ref: data.payload.playerRef,
-            color: "blue",
-            playerNumber: 2,
-          });
+          const currentPlayerColors = getPlayerColors(storeAPI.getState());
+          const currentPlayerNumbers = getPlayerNumbers(storeAPI.getState());
 
-          ws.send(
-            JSON.stringify({
-              type: "remoteaction",
-              payload: setPlayerInfoAction,
+          let newPlayerNumbers = cloneDeep(currentPlayerNumbers);
+
+          // First, figure out the first available player number
+          if (
+            !Object.keys(currentPlayerNumbers).includes(data.payload.playerRef)
+          ) {
+            const nextPlayerNum = misingPlayerNumInSeq(
+              Object.values(currentPlayerNumbers)
+            );
+            newPlayerNumbers[data.payload.playerRef] = nextPlayerNum;
+            console.log(
+              "new player added, going to be player number " + nextPlayerNum
+            );
+          }
+
+          let newPlayerColors = cloneDeep(currentPlayerColors);
+          if (
+            !Object.keys(currentPlayerColors).includes(data.payload.playerRef)
+          ) {
+            const num = newPlayerNumbers[data.payload.playerRef];
+            const playerColorByNum =
+              possibleColors[(num - 1) % possibleColors.length];
+            newPlayerColors[data.payload.playerRef] = playerColorByNum;
+            console.log(
+              "new player added, going to be player color " + playerColorByNum
+            );
+          }
+
+          storeAPI.dispatch(
+            setAllPlayerInfo({
+              colors: newPlayerColors,
+              numbers: newPlayerNumbers,
             })
           );
-          ws.send(
-            JSON.stringify({
-              type: "remoteaction",
-              payload: setPlayerInfo({
-                ref: myPeerRef,
-                color: "red",
-                playerNumber: 1,
-              }),
-            })
-          );
-          storeAPI.dispatch(setPlayerInfoAction);
           break;
         case "remoteaction":
           handleRemoteAction(data.payload);
@@ -134,6 +156,14 @@ export const websocketMiddleware = (storeAPI: any) => {
     } else if (!action.ACTOR_REF) {
       console.error(`Received a REMOTE action without an ACTOR_REF:`);
       console.log(action);
+    }
+
+    if (action.type === setAllPlayerInfo.type) {
+      if (action.ACTOR_REF === myPeerRef) {
+        console.log("RECEIVED SET ALL PLAYER INFO FROM LOCAL");
+      } else {
+        console.log("RECEIVED SET ALL PLAYER INFO FROM REMOTE");
+      }
     }
 
     if (action.type === connectToRemoteGame.type) {

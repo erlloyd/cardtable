@@ -43,6 +43,17 @@ const setPlayerInfoReducer: CaseReducer<
   state.playerNumbers[action.payload.ref] = action.payload.playerNumber;
 };
 
+const setAllPlayerInfoReducer: CaseReducer<
+  IGameState,
+  PayloadAction<{
+    colors: { [key: string]: PlayerColor };
+    numbers: { [key: string]: number };
+  }>
+> = (state, action) => {
+  state.playerColors = action.payload.colors;
+  state.playerNumbers = action.payload.numbers;
+};
+
 const setPeerIdReducer: CaseReducer<IGameState, PayloadAction<string>> = (
   state,
   action
@@ -159,6 +170,7 @@ const gameSlice = createSlice({
     updatePosition: updatePositionReducer,
     connectToRemoteGame: connectToRemoteGameReducer,
     setPlayerInfo: setPlayerInfoReducer,
+    setAllPlayerInfo: setAllPlayerInfoReducer,
     setPeerId: setPeerIdReducer,
     setMultiplayerGameName: setMultiplayerGameNameReducer,
     requestResync: requestResyncReducer,
@@ -198,6 +210,7 @@ export const {
   updatePosition,
   connectToRemoteGame,
   setPlayerInfo,
+  setAllPlayerInfo,
   setPeerId,
   setMultiplayerGameName,
   requestResync,

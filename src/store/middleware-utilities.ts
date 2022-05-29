@@ -58,3 +58,25 @@ export const blacklistRemoteActions = {
   [toggleMultiselectMode.type]: true,
   [setMultiplayerGameName.type]: true,
 };
+
+export const misingPlayerNumInSeq = (
+  source: number[],
+  min = 0,
+  max = source.length
+): number => {
+  const sorted = [...source].sort();
+  let missingNumber = -1;
+  sorted.every((element, i) => {
+    if (element !== i + 1) {
+      missingNumber = i + 1;
+      return false;
+    }
+    return true;
+  });
+
+  if (missingNumber === -1) {
+    missingNumber = sorted.length + 1;
+  }
+
+  return missingNumber;
+};
