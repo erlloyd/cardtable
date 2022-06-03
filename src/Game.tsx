@@ -2102,35 +2102,55 @@ class Game extends Component<IProps, IState> {
         },
       },
       {
-        label: "Connect to Remote Game",
-        action: () => {
-          this.setState({
-            showPeerConnector: true,
-            peerConnectorPosition: this.stage?.getPointerPosition() ?? null,
-          });
-        },
-      },
-      {
-        label: "Request resync from Remote Game",
-        action: this.props.requestResync,
-      },
-      {
-        label: `Peer id is ${this.props.peerId}`,
-        action: () => {
-          if (!!this.props.peerId) {
-            copyToClipboard(generateRemoteGameUrl(this.props.peerId));
-          }
-        },
-      },
-      {
-        label: `Current game name is ${this.props.multiplayerGameName}`,
-        action: () => {
-          if (!!this.props.peerId) {
-            copyToClipboard(
-              generateRemoteGameUrl(this.props.multiplayerGameName)
-            );
-          }
-        },
+        label: "Multiplayer",
+        children: [
+          {
+            label: "Connect to online game",
+            action: () => {
+              this.setState({
+                showPeerConnector: true,
+                peerConnectorPosition: this.stage?.getPointerPosition() ?? null,
+              });
+            },
+          },
+          // {
+          //   label: "Connect to Internet Game",
+          //   action: () => {
+          //     this.setState({
+          //       showPeerConnector: true,
+          //       peerConnectorPosition: this.stage?.getPointerPosition() ?? null,
+          //     });
+          //   },
+          // },
+          {
+            label: "Request resync from Remote Game",
+            action: this.props.requestResync,
+          },
+          {
+            label: `Peer id is ${this.props.peerId}`,
+            action: () => {
+              if (!!this.props.peerId) {
+                copyToClipboard(this.props.peerId);
+              }
+            },
+          },
+          {
+            label: `Copy my online game link`,
+            action: () => {
+              if (!!this.props.peerId) {
+                copyToClipboard(generateRemoteGameUrl(this.props.peerId));
+              }
+            },
+          },
+          {
+            label: `Copy current game url ${this.props.peerId}`,
+            action: () => {
+              if (!!this.props.peerId) {
+                copyToClipboard(generateRemoteGameUrl(this.props.peerId));
+              }
+            },
+          },
+        ],
       },
       {
         label: `Copy game state as url`,

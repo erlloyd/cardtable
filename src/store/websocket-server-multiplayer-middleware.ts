@@ -20,6 +20,7 @@ import {
   misingPlayerNumInSeq,
 } from "./middleware-utilities";
 
+const useDevWSServer = localStorage.getItem("__dev_ws__");
 interface IMessage {
   type: string;
   payload: any;
@@ -32,7 +33,11 @@ const updateUrl = (gameName: string) => {
 };
 
 export const websocketMiddleware = (storeAPI: any) => {
-  const ws = new WebSocket("wss://local-cardtable-server.middle-earth.house");
+  const ws = new WebSocket(
+    `wss://${
+      !!useDevWSServer ? "local-" : ""
+    }cardtable-server.middle-earth.house`
+  );
 
   const handleRemoteAction = (action: any) => {
     if (!action.INITIAL_STATE_MSG) {

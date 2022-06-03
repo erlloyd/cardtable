@@ -52,22 +52,8 @@ const setupConnection = (conn: any, storeAPI: any) => {
 };
 
 export const peerJSMiddleware = (storeAPI: any) => {
-  const cgpPeer = new Peer(undefined, {
-    host: "peerjs.middle-earth.house",
-    path: "/cgp",
-    secure: true,
-    debug: 0,
-    config: {
-      iceServers: [
-        { urls: "stun:stun.l.google.com:19302" },
-        {
-          urls: "turn:numb.viagenie.ca",
-          username: "webrtc@live.com",
-          credential: "muazkh",
-        },
-      ],
-    },
-  });
+  const cgpPeer = new Peer(undefined, { debug: 2 });
+
   let activeCon: Peer.DataConnection;
 
   cgpPeer.on("error", (err) => {
@@ -185,6 +171,7 @@ export const peerJSMiddleware = (storeAPI: any) => {
     if (action.type === connectToRemoteGame.type) {
       console.log("going to connect to peer " + action.payload);
       activeCon = cgpPeer.connect(action.payload, {
+        reliable: true,
         metadata: { ref: myPeerRef },
       });
       setupConnection(activeCon, storeAPI);
