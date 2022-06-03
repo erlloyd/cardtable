@@ -2142,14 +2142,6 @@ class Game extends Component<IProps, IState> {
               }
             },
           },
-          {
-            label: `Copy current game url ${this.props.peerId}`,
-            action: () => {
-              if (!!this.props.peerId) {
-                copyToClipboard(generateRemoteGameUrl(this.props.peerId));
-              }
-            },
-          },
         ],
       },
       {
