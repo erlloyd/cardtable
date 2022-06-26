@@ -11,6 +11,7 @@ class PeerConnector extends Component<IProps> {
     return (
       <div onClick={this.cancelBubble} onKeyPress={this.cancelBubble}>
         <input
+          autoCapitalize="none"
           ref={(ref) => {
             if (!ref) return;
             this.inputRef = ref;

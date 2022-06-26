@@ -43,7 +43,7 @@ import { myPeerRef } from "../../constants/app-constants";
 const CARD_DROP_TARGET_DISTANCE = 30;
 const CARD_ATTACH_TARGET_MIN_DISTANCE = 50;
 const CARD_ATTACH_TARGET_MAX_DISTANCE = 150;
-
+export const COUNT_OUT_OF_SYNC_THRESHOLD = 3;
 // Helper methods
 const addAttachedCard = (attachee: ICardStack, attacher: ICardStack) => {
   let cardIds = attachee.attachedCardIds;
@@ -603,7 +603,7 @@ const endCardMoveWithSnapReducer: CaseReducer<
 
         if (!attachedCard) {
           console.error(
-            `Card ${card.id} said card ${aCId} was attaches, but we couldn't find it in the cards that had been dragging`
+            `Card ${card.id} said card ${aCId} was attached, but we couldn't find it in the cards that had been dragging`
           );
           return;
         }
@@ -948,44 +948,46 @@ const cardsSlice = createSlice({
         remoteCardsThatArentDragging
       );
 
-      const ghostCardsInSync = isEqual(
-        original(state.ghostCards),
-        action.payload.liveState.present.cards.ghostCards
-      );
+      // const ghostCardsInSync = isEqual(
+      //   original(state.ghostCards),
+      //   action.payload.liveState.present.cards.ghostCards
+      // );
 
       const playerHandsInSync = isEqual(
         original(state.playerHands),
         action.payload.liveState.present.cards.playerHands
       );
 
-      state.outOfSyncWithRemote = !(
+      state.outOfSyncWithRemoteCount =
         cardsInSync &&
-        ghostCardsInSync &&
+        // ghostCardsInSync &&
         playerHandsInSync
-      );
-
-      if (state.outOfSyncWithRemote) {
+          ? 0
+          : state.outOfSyncWithRemoteCount + 1;
+      if (state.outOfSyncWithRemoteCount >= COUNT_OUT_OF_SYNC_THRESHOLD) {
         if (!cardsInSync) {
           console.error(
-            "CARDS state is out of synce with remote!!!",
-            cardsThatArentDragging,
-            remoteCardsThatArentDragging
+            "CARDS state is out of sync with remote!!!",
+            JSON.stringify(cardsThatArentDragging),
+            "\n\n********************\n\n",
+            JSON.stringify(remoteCardsThatArentDragging)
           );
         }
 
-        if (!ghostCardsInSync) {
-          console.error(
-            "GHOST CARDS state is out of synce with remote!!!",
-            original(state.ghostCards),
-            action.payload.liveState.present.cards.ghostCards
-          );
-        }
+        // if (!ghostCardsInSync) {
+        //   console.error(
+        //     "GHOST CARDS state is out of sync with remote!!!",
+        //     original(state.ghostCards),
+        //     action.payload.liveState.present.cards.ghostCards
+        //   );
+        // }
 
         if (!playerHandsInSync) {
           console.error(
-            "PLAYER HANDS state is out of synce with remote!!!",
-            original(state.playerHands),
-            action.payload.liveState.present.cards.playerHands
+            "PLAYER HANDS state is out of sync with remote!!!",
+            JSON.stringify(original(state.playerHands)),
+            "\n\n********************\n\n",
+            JSON.stringify(action.payload.liveState.present.cards.playerHands)
           );
         }
       } else {
@@ -1148,7 +1150,7 @@ const cardsSlice = createSlice({
                 .forEach((card) => {
                   card.dragging = true;
                   card.selected = true;
-                  card.controlledBy = myPeerRef;
+                  card.controlledBy = (action as any).ACTOR_REF;
                 });
             }
             state.ghostCards.push(Object.assign({}, card));

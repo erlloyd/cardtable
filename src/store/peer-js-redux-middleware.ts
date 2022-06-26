@@ -1,5 +1,12 @@
 import Peer from "peerjs";
 import cloneDeep from "lodash.clonedeep";
+import {
+  adjectives,
+  animals,
+  colors,
+  Config,
+  uniqueNamesGenerator,
+} from "unique-names-generator";
 import { myPeerRef } from "../constants/app-constants";
 import {
   connectToRemoteGame,
@@ -14,6 +21,8 @@ import {
 import { RootState } from "./rootReducer";
 import { anyCardsDragging } from "../features/cards/cards.selectors";
 import { blacklistRemoteActions } from "./middleware-utilities";
+
+const STATE_CHECK_INTERVAL_MS = 5000;
 
 const DEBUG = false;
 
@@ -52,7 +61,14 @@ const setupConnection = (conn: any, storeAPI: any) => {
 };
 
 export const peerJSMiddleware = (storeAPI: any) => {
-  const cgpPeer = new Peer(undefined, { debug: 2 });
+  const customConfig: Config = {
+    dictionaries: [adjectives, colors, animals],
+    separator: "-",
+    length: 3,
+    style: "lowerCase",
+  };
+  const gameName = uniqueNamesGenerator(customConfig);
+  const cgpPeer = new Peer(gameName, { debug: 2 });
 
   let activeCon: Peer.DataConnection;
 
@@ -132,7 +148,7 @@ export const peerJSMiddleware = (storeAPI: any) => {
         } else {
           console.log(`Some card is dragging, not checking remote state sync`);
         }
-      }, 5000);
+      }, STATE_CHECK_INTERVAL_MS);
     });
 
     activeCon.on("error", (err) => {

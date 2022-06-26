@@ -40,7 +40,7 @@ export interface ICardDetails {
 }
 
 export interface ICardsState {
-  outOfSyncWithRemote: boolean;
+  outOfSyncWithRemoteCount: number;
   cards: ICardStack[];
   ghostCards: ICardStack[];
   playerHands: IPlayerHand[];
@@ -96,10 +96,10 @@ if (!!localStorageState.cards) {
 localStorageState.attachTargetCards = {};
 localStorageState.dropTargetCards = {};
 localStorageState.ghostCards = [];
-localStorageState.outOfSyncWithRemote = false;
+localStorageState.outOfSyncWithRemoteCount = 0;
 
 const defaultState: ICardsState = {
-  outOfSyncWithRemote: false,
+  outOfSyncWithRemoteCount: 0,
   cards: [],
   ghostCards: [],
   dropTargetCards: {},
