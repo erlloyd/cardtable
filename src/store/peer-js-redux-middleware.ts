@@ -1,4 +1,4 @@
-import Peer from "peerjs";
+import Peer, { DataConnection } from "peerjs";
 import cloneDeep from "lodash.clonedeep";
 import {
   adjectives,
@@ -70,7 +70,7 @@ export const peerJSMiddleware = (storeAPI: any) => {
   const gameName = uniqueNamesGenerator(customConfig);
   const cgpPeer = new Peer(gameName, { debug: 2 });
 
-  let activeCon: Peer.DataConnection;
+  let activeCon: DataConnection;
 
   cgpPeer.on("error", (err) => {
     console.error("*****************Server error");
