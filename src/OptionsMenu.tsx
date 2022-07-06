@@ -9,7 +9,7 @@ import InfoIcon from "@material-ui/icons/Info";
 import UndoIcon from "@material-ui/icons/Undo";
 import RedoIcon from "@material-ui/icons/Redo";
 import PanToolIcon from "@material-ui/icons/PanTool";
-
+import NotesIcon from "@material-ui/icons/Notes";
 import { GameType } from "./constants/app-constants";
 import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
 import { Vector2d } from "konva/lib/types";
@@ -23,7 +23,9 @@ interface IProps {
   multiselectMode: boolean;
   drawCardsIntoHand: boolean;
   snapCardsToGrid: boolean;
+  notesVisible: boolean;
   togglePanMode: () => void;
+  toggleNotes: () => void;
   toggleMultiselectMode: () => void;
   flipCards: () => void;
   exhaustCard: (id?: string) => void;
@@ -111,6 +113,18 @@ class OptionsMenu extends Component<IProps> {
         >
           <InfoIcon fontSize="large" />
         </button>
+        <Tooltip title="Toggle Notes">
+          <button
+            className={cx({ "toggle-on": this.props.notesVisible })}
+            onClick={() => {
+              if (this.props.toggleNotes) {
+                this.props.toggleNotes();
+              }
+            }}
+          >
+            <NotesIcon fontSize="large" />
+          </button>
+        </Tooltip>
         <Tooltip title="Undo">
           <button
             onClick={() => {

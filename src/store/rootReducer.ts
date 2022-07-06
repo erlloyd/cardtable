@@ -17,12 +17,14 @@ import arrows, {
   startNewArrowForCards,
   updateDisconnectedArrowPosition,
 } from "../features/arrows/arrows.slice";
+import notes from "../features/notes/notes.slice";
 import { startDraggingCardFromHand } from "./global.actions";
 
 const undoableState = combineReducers({
   arrows,
   counters,
   cards,
+  notes,
 });
 
 const rootReducer = combineReducers({

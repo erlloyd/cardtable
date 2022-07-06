@@ -50,6 +50,7 @@ import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
 import CurvedArrowsContainer from "./CurvedArrowsContainer";
 import ContextualOptionsMenuContainer from "./ContextualOptionsMenuContainer";
 import CardtableAlertsContainer from "./CardtableAlertsContainer";
+import NotesContainer from "./NotesContainer";
 
 const USE_RADIAL_MENU = false;
 const USE_CONTEXTUAL_OPTIONS_MENU = true;
@@ -597,6 +598,7 @@ class Game extends Component<IProps, IState> {
             });
           }}
         ></SpecificCardLoaderContainer>
+        <NotesContainer></NotesContainer>
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
         {this.renderPreviewCardModal()}

@@ -12,6 +12,7 @@ import {
   toggleToken,
   adjustCounterToken,
 } from "./features/cards/cards.slice";
+import { toggleNotes } from "./features/notes/notes.slice";
 import { shuffleStack } from "./features/cards/cards.thunks";
 import { getGame, getSnapCardsToGrid } from "./features/game/game.selectors";
 import { RootState } from "./store/rootReducer";
@@ -23,6 +24,7 @@ import {
 } from "./features/game/game.slice";
 import { myPeerRef } from "./constants/app-constants";
 import { ActionCreators } from "redux-undo";
+import { isNoteVisible } from "./features/notes/notes.selectors";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -32,11 +34,13 @@ const mapStateToProps = (state: RootState) => {
     multiselectMode: getMultiselectMode(state),
     drawCardsIntoHand: getGame(state).drawCardsIntoHand,
     snapCardsToGrid: getSnapCardsToGrid(state),
+    notesVisible: isNoteVisible(state),
   };
 };
 
 const OptionsMenuContainer = connect(mapStateToProps, {
   togglePanMode,
+  toggleNotes,
   toggleMultiselectMode,
   flipCards,
   exhaustCard,

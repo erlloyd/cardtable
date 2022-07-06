@@ -29,6 +29,7 @@ import {
   updatePosition,
   updateZoom,
 } from "../features/game/game.slice";
+import { toggleNotes } from "../features/notes/notes.slice";
 import {
   receiveRemoteGameState,
   startDraggingCardFromHand,
@@ -57,6 +58,7 @@ export const blacklistRemoteActions = {
   [setVisiblePlayerHandNumber.type]: true,
   [toggleMultiselectMode.type]: true,
   [setMultiplayerGameName.type]: true,
+  [toggleNotes.type]: true,
 };
 
 export const misingPlayerNumInSeq = (
