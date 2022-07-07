@@ -739,7 +739,7 @@ class Game extends Component<IProps, IState> {
     return (
       <div>
         <span>
-          Right click and select 'Load Deck ID' to load a deck from{" "}
+          Right click and select 'Load Deck by ID' to load a deck from{" "}
           {GamePropertiesMap[this.props.currentGameType].deckSite}
         </span>
       </div>

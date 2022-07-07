@@ -58,8 +58,41 @@ const generateLCGCDNImageUrl = (card: CardData, faceup: boolean): string => {
   return `https://lcgcdn.s3.amazonaws.com/mc/MC${groupCode}en_${cardCode}${cardSuffix}.jpg`;
 };
 
+export const cacheImages = async (imgUrls: string[]) => {
+  const promises = imgUrls.map(
+    (src) =>
+      new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+          console.log("loaded img " + img.src);
+          resolve(1);
+        };
+        img.onerror = () => {
+          console.log("errored img " + img.src);
+          reject();
+        };
+      })
+  );
+
+  return Promise.all(promises);
+};
+
 export const getImgUrls = (
   card: ICardStack,
+  cardsData: ICardData,
+  currentGameType: GameType
+): string[] =>
+  getImgUrlsFromJsonId(
+    card.cardStack[0].jsonId,
+    card.faceup,
+    cardsData,
+    currentGameType
+  );
+
+export const getImgUrlsFromJsonId = (
+  cardJsonId: string,
+  faceup: boolean,
   cardsData: ICardData,
   currentGameType: GameType
 ): string[] => {
@@ -67,7 +100,7 @@ export const getImgUrls = (
 
   let urls: string[] = [];
 
-  const topCardData = cardsData[card.cardStack[0].jsonId];
+  const topCardData = cardsData[cardJsonId];
 
   if (!topCardData) {
     return [];
@@ -76,7 +109,7 @@ export const getImgUrls = (
   let cardData: CardData | null = topCardData;
 
   if (!!cardData.images) {
-    if (!card.faceup) {
+    if (!faceup) {
       if (!cardData.images.back) {
         return [
           topCardData.extraInfo.factionCode === "encounter" ||
@@ -99,10 +132,10 @@ export const getImgUrls = (
     }
   }
 
-  if (!card.faceup) {
+  if (!faceup) {
     if (!!topCardData.backLink || !!topCardData.doubleSided) {
       urls = [
-        generateLCGCDNImageUrl(topCardData, card.faceup),
+        generateLCGCDNImageUrl(topCardData, faceup),
         // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.png`,
         // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.jpg`,
         // process.env.PUBLIC_URL +
@@ -128,7 +161,7 @@ export const getImgUrls = (
     }
   } else {
     urls = [
-      generateLCGCDNImageUrl(topCardData, card.faceup),
+      generateLCGCDNImageUrl(topCardData, faceup),
       // `https://marvelcdb.com/bundles/cards/${topCardData.code}.png`,
       // `https://marvelcdb.com/bundles/cards/${topCardData.code}.jpg`,
       // process.env.PUBLIC_URL +
@@ -141,7 +174,7 @@ export const getImgUrls = (
   let codeForMissingCheck = "";
 
   if (!!cardData) {
-    if (card.faceup) {
+    if (faceup) {
       codeForMissingCheck = cardData.code;
     } else {
       if (!!cardData.backLink) {

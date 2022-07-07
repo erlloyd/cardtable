@@ -6,9 +6,11 @@ import { GameType, myPeerRef } from "../../constants/app-constants";
 import { EXTRA_CARDS } from "../../constants/card-pack-mapping";
 import { GamePropertiesMap } from "../../constants/game-type-properties-mapping";
 import { RootState } from "../../store/rootReducer";
+import { cacheImages, getImgUrlsFromJsonId } from "../../utilities/card-utils";
 import { convertMarvelTxtToDeckInfo } from "../../utilities/marvel-txt-converter";
 import {
   getCardsDataEncounterEntities,
+  getCardsDataEntities,
   getCardsDataHeroEntities,
   getCardsDataHerosByName,
   getCardsDataPlayerCardsByName,
@@ -242,12 +244,42 @@ export const fetchDecklistById = createAsyncThunk(
     );
     const state: RootState = thunkApi.getState() as RootState;
 
+    let returnCards;
+    let codes: string[] = [];
+
     switch (payload.gameType) {
       case GameType.MarvelChampions:
-        return getMarvelCards(response, state, payload);
+        returnCards = getMarvelCards(response, state, payload);
+        codes = [returnCards.data.investigator_code];
+        break;
       case GameType.LordOfTheRingsLivingCardGame:
-        return getLOTRCards(response, state, payload);
+        returnCards = getLOTRCards(response, state, payload);
+        break;
     }
+
+    // Cache the images (main deck only for now: TODO)
+    codes = codes.concat(Object.keys(returnCards.data.slots));
+    const imgUrls = codes.reduce((urls, code) => {
+      const faceupCard = getImgUrlsFromJsonId(
+        code,
+        true,
+        getCardsDataEntities(state),
+        payload.gameType
+      );
+      const facedownCard = getImgUrlsFromJsonId(
+        code,
+        false,
+        getCardsDataEntities(state),
+        payload.gameType
+      );
+      return urls.concat(faceupCard, facedownCard);
+    }, [] as string[]);
+
+    const uniqueUrls = Array.from(new Set(imgUrls));
+
+    cacheImages(uniqueUrls);
+
+    return returnCards;
   }
 );
 
