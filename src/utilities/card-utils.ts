@@ -65,11 +65,11 @@ export const cacheImages = async (imgUrls: string[]) => {
         const img = new Image();
         img.src = src;
         img.onload = () => {
-          console.log("loaded img " + img.src);
+          console.log("loaded img for cache: " + img.src);
           resolve(1);
         };
         img.onerror = () => {
-          console.log("errored img " + img.src);
+          console.log("errored loading img for cache" + img.src);
           reject();
         };
       })

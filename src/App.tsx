@@ -11,6 +11,7 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import { Button, IconButton, Snackbar } from "@mui/material";
 import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
+import { cacheCommonImages } from "./utilities/game-utils";
 interface IProps {
   activeGameType: GameType | null;
   updateActiveGameType: (val: GameType) => void;
@@ -107,6 +108,9 @@ const renderGamePicker = (props: IProps) => {
           labelId="game-picker-label"
           onChange={(e) => {
             props.updateActiveGameType(e.target.value as GameType);
+
+            // Cache the common images
+            cacheCommonImages(e.target.value as GameType);
           }}
           variant={"standard"}
         >
