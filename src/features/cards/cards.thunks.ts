@@ -257,8 +257,13 @@ export const fetchDecklistById = createAsyncThunk(
         break;
     }
 
-    // Cache the images (main deck only for now: TODO)
-    codes = codes.concat(Object.keys(returnCards.data.slots));
+    // Cache the images
+    codes = codes
+      .concat(Object.keys(returnCards.data.slots)) // The main data decklist
+      .concat(returnCards.extraHeroCards.map((hc) => hc.jsonId)) // the extra hero cards
+      .concat(returnCards.relatedEncounterDeck) // Encounter Deck
+      .concat(returnCards.relatedObligationDeck); // Obligation deck
+
     const imgUrls = codes.reduce((urls, code) => {
       const faceupCard = getImgUrlsFromJsonId(
         code,

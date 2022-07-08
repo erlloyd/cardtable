@@ -41,8 +41,10 @@ import TopLayer from "./TopLayer";
 import OptionsMenuContainer from "./OptionsMenuContainer";
 import {
   anyCardStackHasStatus,
+  cacheImages,
   getCardType,
   getImgUrls,
+  getImgUrlsFromJsonId,
   getMySelectedCards,
 } from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
@@ -969,6 +971,27 @@ class Game extends Component<IProps, IState> {
         cardJsonIds: c,
       });
     });
+
+    // Cache the images
+    const imgUrls = cards.flat().reduce((urls, code) => {
+      const faceupCard = getImgUrlsFromJsonId(
+        code,
+        true,
+        this.props.cardsData,
+        this.props.currentGameType
+      );
+      const facedownCard = getImgUrlsFromJsonId(
+        code,
+        false,
+        this.props.cardsData,
+        this.props.currentGameType
+      );
+      return urls.concat(faceupCard, facedownCard);
+    }, [] as string[]);
+
+    const uniqueUrls = Array.from(new Set(imgUrls));
+
+    cacheImages(uniqueUrls);
   };
 
   private handleImportDeck = (position: Vector2d) => (id: number) => {
