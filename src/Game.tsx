@@ -205,6 +205,8 @@ interface IState {
   stageHeight: number;
 }
 class Game extends Component<IProps, IState> {
+  public isSetUp = false;
+
   public stage: Konva.Stage | null = null;
 
   private touchTimer: any = null;
@@ -259,26 +261,29 @@ class Game extends Component<IProps, IState> {
   }
 
   public componentDidMount() {
-    document.addEventListener("keydown", this.handleKeyDown);
-    document.addEventListener("keyup", this.handleKeyUp);
-    document.addEventListener("keypress", this.handleKeyPress);
-    window.addEventListener("resize", this.handleResize);
+    if (!this.isSetUp) {
+      document.addEventListener("keydown", this.handleKeyDown);
+      document.addEventListener("keyup", this.handleKeyUp);
+      document.addEventListener("keypress", this.handleKeyPress);
+      window.addEventListener("resize", this.handleResize);
 
-    const image = new Image();
-    image.onload = () => {
-      this.setState({
-        playmatImage: image,
-        playmatImageLoaded: true,
-      });
-    };
+      const image = new Image();
+      image.onload = () => {
+        this.setState({
+          playmatImage: image,
+          playmatImageLoaded: true,
+        });
+      };
 
-    image.onerror = (e) => {
-      console.error(e);
-    };
-    image.src =
-      GamePropertiesMap[this.props.currentGameType].backgroundImageLocation;
-    this.props.loadCardsData();
-    this.props.allJsonData("");
+      image.onerror = (e) => {
+        console.error(e);
+      };
+      image.src =
+        GamePropertiesMap[this.props.currentGameType].backgroundImageLocation;
+      this.props.loadCardsData();
+      this.props.allJsonData("");
+      this.isSetUp = true;
+    }
   }
 
   public componentWillUnmount = () => {
