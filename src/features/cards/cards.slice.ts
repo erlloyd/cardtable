@@ -1326,7 +1326,7 @@ const handleLoadDeck = (
     mainDeckStack = mainDeckStack.concat(cardDetails);
   });
 
-  const cardPadding = cardConstants.CARD_WIDTH + 10;
+  const cardPadding = cardConstants.GRID_SNAP_WIDTH;
 
   const newDeck: ICardStack = {
     controlledBy: (action as any).ACTOR_REF,
