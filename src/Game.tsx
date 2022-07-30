@@ -7,6 +7,7 @@ import { Layer, Rect, Stage } from "react-konva";
 import { Provider, ReactReduxContext } from "react-redux";
 import Card from "./Card";
 import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
+import CardtableAlertsContainer from "./CardtableAlertsContainer";
 import {
   GameType,
   myPeerRef,
@@ -22,7 +23,9 @@ import {
 } from "./constants/card-constants";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import ContextMenu, { ContextMenuItem } from "./ContextMenu";
+import ContextualOptionsMenuContainer from "./ContextualOptionsMenuContainer";
 import Counter from "./Counter";
+import CurvedArrowsContainer from "./CurvedArrowsContainer";
 import DeckLoader from "./DeckLoader";
 import EncounterLoaderContainer from "./EncounterLoaderContainer";
 import { ICardData } from "./features/cards-data/initialState";
@@ -32,13 +35,13 @@ import { ICounter } from "./features/counters/initialState";
 import { IGameState } from "./features/game/initialState";
 import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
 import "./Game.scss";
+import NotesContainer from "./NotesContainer";
+import OptionsMenuContainer from "./OptionsMenuContainer";
 import PeerConnector from "./PeerConnector";
 import PlayerHandContainer from "./PlayerHandContainer";
-import RadialMenuContainer from "./RadialMenuContainer";
 import SpecificCardLoaderContainer from "./SpecificCardLoaderContainer";
 import TokenValueModifier from "./TokenValueModifier";
 import TopLayer from "./TopLayer";
-import OptionsMenuContainer from "./OptionsMenuContainer";
 import {
   anyCardStackHasStatus,
   cacheImages,
@@ -49,13 +52,6 @@ import {
 } from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
 import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
-import CurvedArrowsContainer from "./CurvedArrowsContainer";
-import ContextualOptionsMenuContainer from "./ContextualOptionsMenuContainer";
-import CardtableAlertsContainer from "./CardtableAlertsContainer";
-import NotesContainer from "./NotesContainer";
-
-const USE_RADIAL_MENU = false;
-const USE_CONTEXTUAL_OPTIONS_MENU = true;
 
 const SCALE_BY = 1.02;
 
@@ -588,7 +584,6 @@ class Game extends Component<IProps, IState> {
             this.captureLastMousePos = true;
           }}
         ></PlayerHandContainer>
-        {this.renderRadialOptionsMenu()}
         <SpecificCardLoaderContainer
           cardSelected={(id) => {
             this.props.addCardStack({
@@ -795,7 +790,7 @@ class Game extends Component<IProps, IState> {
   };
 
   private renderContextualOptionsMenu = () => {
-    return USE_CONTEXTUAL_OPTIONS_MENU ? (
+    return (
       <ContextualOptionsMenuContainer
         showCardSelector={(card, isSelect) => {
           const containerRect = this.stage?.container().getBoundingClientRect();
@@ -812,22 +807,7 @@ class Game extends Component<IProps, IState> {
           });
         }}
       ></ContextualOptionsMenuContainer>
-    ) : null;
-  };
-
-  private renderRadialOptionsMenu = () => {
-    return USE_RADIAL_MENU ? (
-      <RadialMenuContainer
-        showCardSelector={(card, isSelect) => {
-          this.setState({
-            showCardSearch: true,
-            cardSearchTouchBased: isSelect,
-            cardSearchPosition: this.stage?.getPointerPosition() ?? null,
-            cardStackForSearching: card,
-          });
-        }}
-      ></RadialMenuContainer>
-    ) : null;
+    );
   };
 
   private renderDeckImporter = () => {
