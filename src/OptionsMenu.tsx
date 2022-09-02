@@ -106,7 +106,7 @@ class OptionsMenu extends Component<IProps> {
             if (this.props.anyCardsSelected) {
               this.props.showRadialMenuAtPosition({
                 x: 64,
-                y: window.visualViewport.height / 2,
+                y: (window.visualViewport as VisualViewport).height / 2,
               });
             }
           }}
