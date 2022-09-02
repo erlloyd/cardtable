@@ -82,9 +82,9 @@ const createNewEmptyCardStackWithId = (id: string): ICardStack => {
     cardStack: [],
     selected: false,
     statusTokens: {
-      stunned: false,
-      confused: false,
-      tough: false,
+      stunned: 0,
+      confused: 0,
+      tough: 0,
     },
     counterTokens: {
       damage: 0,
@@ -329,9 +329,9 @@ const clearCardTokensReducer: CaseReducer<
     )
     .forEach((card) => {
       card.statusTokens = {
-        tough: false,
-        stunned: false,
-        confused: false,
+        tough: 0,
+        stunned: 0,
+        confused: 0,
       };
 
       card.counterTokens = {
@@ -691,10 +691,31 @@ const toggleTokenReducer: CaseReducer<
 > = (state, action) => {
   foreachSelectedAndControlledCard(state, (action as any).ACTOR_REF, (card) => {
     if (action.payload.value !== undefined) {
-      card.statusTokens[action.payload.tokenType] = action.payload.value;
+      card.statusTokens[action.payload.tokenType] = action.payload.value
+        ? 1
+        : 0;
     } else {
-      card.statusTokens[action.payload.tokenType] =
-        !card.statusTokens[action.payload.tokenType];
+      card.statusTokens[action.payload.tokenType] = !card.statusTokens[
+        action.payload.tokenType
+      ]
+        ? 1
+        : 0;
+    }
+  });
+};
+
+const adjustStatusTokenReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{
+    tokenType: StatusTokenType;
+    delta: number;
+  }>
+> = (state, action) => {
+  foreachSelectedAndControlledCard(state, (action as any).ACTOR_REF, (card) => {
+    card.statusTokens[action.payload.tokenType] += action.payload.delta;
+
+    if (card.statusTokens[action.payload.tokenType] < 0) {
+      card.statusTokens[action.payload.tokenType] = 0;
     }
   });
 };
@@ -916,6 +937,7 @@ const cardsSlice = createSlice({
     resetCards: resetCardsReducer,
     toggleToken: toggleTokenReducer,
     adjustCounterToken: adjustCounterTokenReducer,
+    adjustStatusToken: adjustStatusTokenReducer,
     adjustModifier: adjustModifierReducer,
     clearAllModifiers: clearAllModifiersReducer,
     clearCardTokens: clearCardTokensReducer,
@@ -1040,9 +1062,9 @@ const cardsSlice = createSlice({
         })),
         selected: false,
         statusTokens: {
-          stunned: false,
-          confused: false,
-          tough: false,
+          stunned: 0,
+          confused: 0,
+          tough: 0,
         },
         counterTokens: {
           damage: 0,
@@ -1305,9 +1327,9 @@ const handleLoadDeck = (
     id: action.payload.heroId,
     cardStack: heroCardStack,
     statusTokens: {
-      stunned: false,
-      confused: false,
-      tough: false,
+      stunned: 0,
+      confused: 0,
+      tough: 0,
     },
     counterTokens: {
       damage: 0,
@@ -1341,9 +1363,9 @@ const handleLoadDeck = (
     id: action.payload.dataId,
     cardStack: mainDeckStack,
     statusTokens: {
-      stunned: false,
-      confused: false,
-      tough: false,
+      stunned: 0,
+      confused: 0,
+      tough: 0,
     },
     counterTokens: {
       damage: 0,
@@ -1369,9 +1391,9 @@ const handleLoadDeck = (
       jsonId,
     })),
     statusTokens: {
-      stunned: false,
-      confused: false,
-      tough: false,
+      stunned: 0,
+      confused: 0,
+      tough: 0,
     },
     counterTokens: {
       damage: 0,
@@ -1397,9 +1419,9 @@ const handleLoadDeck = (
       jsonId,
     })),
     statusTokens: {
-      stunned: false,
-      confused: false,
-      tough: false,
+      stunned: 0,
+      confused: 0,
+      tough: 0,
     },
     counterTokens: {
       damage: 0,

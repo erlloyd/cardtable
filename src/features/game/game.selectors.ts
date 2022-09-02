@@ -60,9 +60,9 @@ export const getMenuPreviewCard = createSelector(getGame, (game) => {
     x: 0,
     y: 0,
     statusTokens: {
-      stunned: false,
-      confused: false,
-      tough: false,
+      stunned: 0,
+      confused: 0,
+      tough: 0,
     },
     counterTokens: {
       damage: 0,

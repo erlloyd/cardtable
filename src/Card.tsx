@@ -3,7 +3,7 @@ import { KonvaEventObject } from "konva/lib/Node";
 import { Rect as RectRef } from "konva/lib/shapes/Rect";
 import { Vector2d } from "konva/lib/types";
 import { Component } from "react";
-import { Rect, Text } from "react-konva";
+import { Group, Rect, Text } from "react-konva";
 import { animated, Spring } from "@react-spring/konva";
 import CardTokensContainer from "./CardTokensContainer";
 import { GameType, myPeerRef, PlayerColor } from "./constants/app-constants";
@@ -30,9 +30,9 @@ export interface CardTokens {
 }
 
 export interface CardUIState {
-  stunned: boolean;
-  confused: boolean;
-  tough: boolean;
+  stunned: number;
+  confused: number;
+  tough: number;
   tokens: CardTokens;
 }
 
@@ -442,18 +442,21 @@ class Card extends Component<IProps, IState> {
 
     const stunnedToken = this.getTokenInSlot(
       shouldRenderStunned,
+      this.props.cardState?.stunned || 0,
       this.stunnedImg,
       offset,
       0
     );
     const confusedToken = this.getTokenInSlot(
       !!this.props.cardState?.confused && this.state.tokenImagesLoaded.confused,
+      this.props.cardState?.confused || 0,
       this.confusedImg,
       offset,
       1
     );
     const toughToken = this.getTokenInSlot(
       !!this.props.cardState?.tough && this.state.tokenImagesLoaded.tough,
+      this.props.cardState?.tough || 0,
       this.toughImg,
       offset,
       2
@@ -545,6 +548,7 @@ class Card extends Component<IProps, IState> {
 
   private getTokenInSlot(
     shouldRender: boolean,
+    numberToRender: number,
     img: HTMLImageElement,
     offset: { x: number; y: number },
     slot: 0 | 1 | 2
@@ -559,20 +563,49 @@ class Card extends Component<IProps, IState> {
       y: offset.y - dimensions.height * slot - 5 * (slot + 1) - 10,
     };
 
+    const textOffset = {
+      x: stunnedOffset.x - 5,
+      y: stunnedOffset.y - 5,
+    };
+
+    const numberText =
+      numberToRender > 1 ? (
+        <Group width={20} height={20} offset={textOffset}>
+          <Rect width={20} height={20} fill="white"></Rect>
+          <Text
+            width={20}
+            height={20}
+            text={`${numberToRender}`}
+            fill="black"
+            background="white"
+            align="center"
+            verticalAlign="middle"
+            fontSize={20}
+          ></Text>
+        </Group>
+      ) : null;
+
     return shouldRender ? (
-      <Rect
-        key={`${this.props.id}-status${slot}`}
-        native={true}
-        cornerRadius={8}
+      <Group
         x={this.props.x}
         y={this.props.y}
         width={dimensions.width}
         height={dimensions.height}
-        fillPatternScaleX={0.5}
-        fillPatternScaleY={0.5}
-        offset={stunnedOffset}
-        fillPatternImage={img}
-      />
+        key={`${this.props.id}-status${slot}-group`}
+      >
+        <Rect
+          key={`${this.props.id}-status${slot}`}
+          native={true}
+          cornerRadius={8}
+          width={dimensions.width}
+          height={dimensions.height}
+          fillPatternScaleX={0.5}
+          fillPatternScaleY={0.5}
+          offset={stunnedOffset}
+          fillPatternImage={img}
+        />
+        {numberText}
+      </Group>
     ) : null;
   }
 

@@ -106,9 +106,9 @@ const makeFakeCardStackFromJsonId = (jsonId: string): ICardStack => {
     y: 0,
     cardStack: [{ jsonId }],
     statusTokens: {
-      stunned: false,
-      confused: false,
-      tough: false,
+      stunned: 0,
+      confused: 0,
+      tough: 0,
     },
     counterTokens: {
       damage: 0,

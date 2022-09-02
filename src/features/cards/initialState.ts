@@ -22,7 +22,7 @@ export interface ICardStack {
   y: number;
   cardStack: ICardDetails[];
   statusTokens: {
-    [K in StatusTokenType]: boolean;
+    [K in StatusTokenType]: number;
   };
   counterTokens: {
     [K in CounterTokenType]: number;
@@ -89,6 +89,25 @@ if (!!localStorageState.cards) {
     // handle missing possibleIcons
     if (!c.extraIcons) {
       c.extraIcons = [];
+    }
+
+    // handle any boolean status tokens
+    if ((c.statusTokens.stunned as unknown as boolean) === false) {
+      c.statusTokens.stunned = 0;
+    } else if ((c.statusTokens.stunned as unknown as boolean) === true) {
+      c.statusTokens.stunned = 1;
+    }
+
+    if ((c.statusTokens.confused as unknown as boolean) === false) {
+      c.statusTokens.confused = 0;
+    } else if ((c.statusTokens.confused as unknown as boolean) === true) {
+      c.statusTokens.confused = 1;
+    }
+
+    if ((c.statusTokens.tough as unknown as boolean) === false) {
+      c.statusTokens.tough = 0;
+    } else if ((c.statusTokens.tough as unknown as boolean) === true) {
+      c.statusTokens.tough = 1;
     }
   });
 }

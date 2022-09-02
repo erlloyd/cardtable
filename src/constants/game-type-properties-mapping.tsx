@@ -1,7 +1,4 @@
 import { GameType } from "./app-constants";
-import NewReleasesIcon from "@material-ui/icons/NewReleases";
-import HelpIcon from "@material-ui/icons/Help";
-import SecurityIcon from "@material-ui/icons/Security";
 import { CounterTokenType, StatusTokenType } from "../constants/card-constants";
 
 export interface GameProperties {
@@ -23,7 +20,6 @@ export interface GameProperties {
 
 export interface TokenInfoBase {
   touchMenuLetter: string | null;
-  touchMenuIcon: JSX.Element | null;
   menuText: string;
   imagePath: string;
 }
@@ -33,6 +29,7 @@ export interface NumericTokenInfo extends TokenInfoBase {
 }
 
 export interface TokenInfo extends TokenInfoBase {
+  canStackMultiple: boolean;
   menuRemoveText: string;
   tokenType: StatusTokenType;
 }
@@ -80,25 +77,25 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
     ],
     tokens: {
       stunned: {
+        canStackMultiple: true,
         tokenType: StatusTokenType.Stunned,
         touchMenuLetter: null,
-        touchMenuIcon: <NewReleasesIcon fontSize="large"></NewReleasesIcon>,
         menuText: "Stun",
         menuRemoveText: "Remove Stun",
         imagePath: process.env.PUBLIC_URL + "/images/standard/stunned.png",
       },
       confused: {
+        canStackMultiple: true,
         tokenType: StatusTokenType.Confused,
         touchMenuLetter: null,
-        touchMenuIcon: <HelpIcon fontSize="large"></HelpIcon>,
         menuText: "Confuse",
         menuRemoveText: "Remove Confuse",
         imagePath: process.env.PUBLIC_URL + "/images/standard/confused.png",
       },
       tough: {
+        canStackMultiple: true,
         tokenType: StatusTokenType.Tough,
         touchMenuLetter: null,
-        touchMenuIcon: <SecurityIcon fontSize="large"></SecurityIcon>,
         menuText: "Tough",
         menuRemoveText: "Remove Tough",
         imagePath: process.env.PUBLIC_URL + "/images/standard/tough.png",
@@ -107,7 +104,6 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
         counterTokenType: CounterTokenType.Damage,
         isNumeric: true,
         touchMenuLetter: "Dmg",
-        touchMenuIcon: null,
         menuText: "Set Damage",
         imagePath: process.env.PUBLIC_URL + "/images/standard/damage.png",
       },
@@ -115,7 +111,6 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
         counterTokenType: CounterTokenType.Threat,
         isNumeric: true,
         touchMenuLetter: "Thr",
-        touchMenuIcon: null,
         menuText: "Set Threat",
         imagePath: process.env.PUBLIC_URL + "/images/standard/threat.png",
       },
@@ -123,7 +118,6 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
         counterTokenType: CounterTokenType.Generic,
         isNumeric: true,
         touchMenuLetter: "Gen",
-        touchMenuIcon: null,
         menuText: "Set Generic Tokens",
         imagePath:
           process.env.PUBLIC_URL + "/images/standard/generic_counter.png",
@@ -195,9 +189,9 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
     ],
     tokens: {
       stunned: {
+        canStackMultiple: false,
         tokenType: StatusTokenType.Stunned,
         touchMenuLetter: "Q",
-        touchMenuIcon: null,
         menuText: "Quest",
         menuRemoveText: "Remove From Quest",
         imagePath: process.env.PUBLIC_URL + "/images/standard/quest.png",
@@ -208,7 +202,6 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
         counterTokenType: CounterTokenType.Damage,
         isNumeric: true,
         touchMenuLetter: "Dmg",
-        touchMenuIcon: null,
         menuText: "Set Damage",
         imagePath: process.env.PUBLIC_URL + "/images/standard/damage_lotr.png",
       },
@@ -216,7 +209,6 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
         counterTokenType: CounterTokenType.Threat,
         isNumeric: true,
         touchMenuLetter: "Prg",
-        touchMenuIcon: null,
         menuText: "Set Progress",
         imagePath: process.env.PUBLIC_URL + "/images/standard/progress.png",
       },
@@ -224,7 +216,6 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
         counterTokenType: CounterTokenType.Generic,
         isNumeric: true,
         touchMenuLetter: "Res",
-        touchMenuIcon: null,
         menuText: "Set Resource Tokens",
         imagePath: process.env.PUBLIC_URL + "/images/standard/resource.png",
       },
