@@ -107,6 +107,11 @@ interface IProps {
     tokenType: StatusTokenType;
     value?: boolean;
   }) => void;
+  adjustStatusToken: (payload: {
+    id?: string;
+    tokenType: StatusTokenType;
+    delta: number;
+  }) => void;
   adjustCounterToken: (payload: {
     id?: string;
     tokenType: CounterTokenType;
@@ -1211,57 +1216,138 @@ class Game extends Component<IProps, IState> {
       GamePropertiesMap[this.props.currentGameType].tokens;
 
     if (!!tokenInfoForGameType.stunned) {
-      menuItems.push({
-        label: anyCardStackHasStatus(StatusTokenType.Stunned, mySelectedCards)
-          ? tokenInfoForGameType.stunned.menuRemoveText
-          : tokenInfoForGameType.stunned.menuText,
-        action: () => {
-          this.props.toggleToken({
-            id: card?.id || "",
-            tokenType: StatusTokenType.Stunned,
-            value: !anyCardStackHasStatus(
-              StatusTokenType.Stunned,
-              mySelectedCards
-            ),
+      if (tokenInfoForGameType.stunned.canStackMultiple) {
+        // Add status token
+        menuItems.push({
+          label: `Add ${tokenInfoForGameType.stunned.menuText}`,
+          action: () => {
+            this.props.adjustStatusToken({
+              tokenType: StatusTokenType.Stunned,
+              delta: 1,
+            });
+          },
+        });
+
+        if (card?.statusTokens?.stunned ?? -1 > 0) {
+          // Remove status token
+          menuItems.push({
+            label: `Remove ${tokenInfoForGameType.stunned.menuText}`,
+            action: () => {
+              this.props.adjustStatusToken({
+                tokenType: StatusTokenType.Stunned,
+                delta: -1,
+              });
+            },
           });
-        },
-      });
+        }
+      } else {
+        menuItems.push({
+          label: anyCardStackHasStatus(StatusTokenType.Stunned, mySelectedCards)
+            ? tokenInfoForGameType.stunned.menuRemoveText
+            : tokenInfoForGameType.stunned.menuText,
+          action: () => {
+            this.props.toggleToken({
+              id: card?.id || "",
+              tokenType: StatusTokenType.Stunned,
+              value: !anyCardStackHasStatus(
+                StatusTokenType.Stunned,
+                mySelectedCards
+              ),
+            });
+          },
+        });
+      }
     }
 
     if (!!tokenInfoForGameType.confused) {
-      menuItems.push({
-        label: anyCardStackHasStatus(StatusTokenType.Confused, mySelectedCards)
-          ? tokenInfoForGameType.confused.menuRemoveText
-          : tokenInfoForGameType.confused.menuText,
-        action: () => {
-          this.props.toggleToken({
-            id: card?.id || "",
-            tokenType: StatusTokenType.Confused,
-            value: !anyCardStackHasStatus(
-              StatusTokenType.Confused,
-              mySelectedCards
-            ),
+      if (tokenInfoForGameType.confused.canStackMultiple) {
+        // Add status token
+        menuItems.push({
+          label: `Add ${tokenInfoForGameType.confused.menuText}`,
+          action: () => {
+            this.props.adjustStatusToken({
+              tokenType: StatusTokenType.Confused,
+              delta: 1,
+            });
+          },
+        });
+
+        if (card?.statusTokens?.confused ?? -1 > 0) {
+          // Remove status token
+          menuItems.push({
+            label: `Remove ${tokenInfoForGameType.confused.menuText}`,
+            action: () => {
+              this.props.adjustStatusToken({
+                tokenType: StatusTokenType.Confused,
+                delta: -1,
+              });
+            },
           });
-        },
-      });
+        }
+      } else {
+        menuItems.push({
+          label: anyCardStackHasStatus(
+            StatusTokenType.Confused,
+            mySelectedCards
+          )
+            ? tokenInfoForGameType.confused.menuRemoveText
+            : tokenInfoForGameType.confused.menuText,
+          action: () => {
+            this.props.toggleToken({
+              id: card?.id || "",
+              tokenType: StatusTokenType.Confused,
+              value: !anyCardStackHasStatus(
+                StatusTokenType.Confused,
+                mySelectedCards
+              ),
+            });
+          },
+        });
+      }
     }
 
     if (!!tokenInfoForGameType.tough) {
-      menuItems.push({
-        label: anyCardStackHasStatus(StatusTokenType.Tough, mySelectedCards)
-          ? tokenInfoForGameType.tough.menuRemoveText
-          : tokenInfoForGameType.tough.menuText,
-        action: () => {
-          this.props.toggleToken({
-            id: card?.id || "",
-            tokenType: StatusTokenType.Tough,
-            value: !anyCardStackHasStatus(
-              StatusTokenType.Tough,
-              mySelectedCards
-            ),
+      if (tokenInfoForGameType.tough.canStackMultiple) {
+        // Add status token
+        menuItems.push({
+          label: `Add ${tokenInfoForGameType.tough.menuText}`,
+          action: () => {
+            this.props.adjustStatusToken({
+              tokenType: StatusTokenType.Tough,
+              delta: 1,
+            });
+          },
+        });
+
+        if (card?.statusTokens?.tough ?? -1 > 0) {
+          // Remove status token
+          menuItems.push({
+            label: `Remove ${tokenInfoForGameType.tough.menuText}`,
+            action: () => {
+              this.props.adjustStatusToken({
+                tokenType: StatusTokenType.Tough,
+                delta: -1,
+              });
+            },
           });
-        },
-      });
+        }
+      } else {
+        menuItems.push({
+          label: anyCardStackHasStatus(StatusTokenType.Tough, mySelectedCards)
+            ? tokenInfoForGameType.tough.menuRemoveText
+            : tokenInfoForGameType.tough.menuText,
+          action: () => {
+            this.props.toggleToken({
+              id: card?.id || "",
+              tokenType: StatusTokenType.Tough,
+              value: !anyCardStackHasStatus(
+                StatusTokenType.Tough,
+                mySelectedCards
+              ),
+            });
+          },
+        });
+      }
     }
 
     if (!!tokenInfoForGameType.damage) {
