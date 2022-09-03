@@ -1465,6 +1465,7 @@ export const {
   flipCards,
   resetCards,
   toggleToken,
+  adjustStatusToken,
   adjustCounterToken,
   clearCardTokens,
   adjustModifier,

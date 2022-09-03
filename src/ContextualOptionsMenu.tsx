@@ -29,6 +29,11 @@ interface IProps {
     tokenType: StatusTokenType;
     value?: boolean;
   }) => void;
+  adjustStatusToken: (payload: {
+    id?: string;
+    tokenType: StatusTokenType;
+    delta: number;
+  }) => void;
   adjustCounterToken: (payload: {
     id?: string;
     tokenType: CounterTokenType;
@@ -278,7 +283,7 @@ const renderStatusTokenActionsSubMenu = (props: IProps, ypos: number) => {
       (tokenInfo): tokenInfo is TokenInfo =>
         !!tokenInfo && !(tokenInfo as NumericTokenInfo).isNumeric
     )
-    .map((tokenInfo) => {
+    .reduce((elements, tokenInfo) => {
       const action = () => {
         props.toggleToken({
           tokenType: tokenInfo.tokenType,
@@ -289,16 +294,43 @@ const renderStatusTokenActionsSubMenu = (props: IProps, ypos: number) => {
         });
       };
 
+      const addAction = () => {
+        props.adjustStatusToken({
+          tokenType: tokenInfo.tokenType,
+          delta: 1,
+        });
+      };
+
+      const removeAction = () => {
+        props.adjustStatusToken({
+          tokenType: tokenInfo.tokenType,
+          delta: -1,
+        });
+      };
+
       let key = `contextual-options-menu-button-${tokenInfo.menuText
         .replace(/\s/g, "")
         .toLocaleLowerCase()}`;
 
-      return (
+      let buttons = [
         <button key={key} onClick={action}>
           {tokenInfo.menuText}
-        </button>
-      );
-    });
+        </button>,
+      ];
+
+      if (tokenInfo.canStackMultiple) {
+        buttons = [
+          <button key={key} onClick={addAction}>
+            {tokenInfo.menuText}+
+          </button>,
+          <button key={key} onClick={removeAction}>
+            {tokenInfo.menuText}-
+          </button>,
+        ];
+      }
+
+      return elements.concat(buttons);
+    }, [] as JSX.Element[]);
 
   return (
     <div
