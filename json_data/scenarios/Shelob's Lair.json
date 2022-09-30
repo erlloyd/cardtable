@@ -5,6 +5,50 @@
     "Number": 12,
     "AllCards": [
         {
+            "Title": "A Heavy Burden",
+            "Slug": "A-Heavy-Burden-TLoS",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/A-Heavy-Burden.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent.",
+                    "Setup: Attach to the Ring-bearer.",
+                    "Forced: At the end of the planning phase, either raise each player`s threat by 1, or exhaust the Ring-bearer."
+                ],
+                "Shadow": null,
+                "FlavorText": "`It`s heavy on me, Sam lad, very heavy. I wonder how far I can carry it?`\r\n—Frodo Baggins, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Shelob's Lair",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 52,
+            "Quantity": 1,
+            "Artist": "Kara Williams",
+            "HasErrata": false,
+            "OctgnGuid": "a40aef89-ca91-467c-93f3-9afc97bdbc24",
+            "RingsDbCardId": "144052",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1480,
+            "Categories": null
+        },
+        {
             "Title": "Shelob",
             "Slug": "Shelob-TLoS",
             "IsUnique": true,
@@ -22,6 +66,7 @@
                     "HitPoints": "8"
                 },
                 "Traits": [
+                    "Creature.",
                     "Spider."
                 ],
                 "Keywords": [
@@ -545,50 +590,6 @@
             "Categories": null
         },
         {
-            "Title": "A Heavy Burden",
-            "Slug": "A-Heavy-Burden-TLoS",
-            "IsUnique": false,
-            "CardType": "Objective",
-            "CardSubType": "Burden",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/A-Heavy-Burden.jpg",
-                "Stats": {},
-                "Traits": [
-                    "Condition."
-                ],
-                "Keywords": [
-                    "Permanent."
-                ],
-                "Text": [
-                    "Permanent.",
-                    "Setup: Attach to the Ring-bearer.",
-                    "Forced: At the end of the planning phase, either raise each player`s threat by 1, or exhaust the Ring-bearer."
-                ],
-                "Shadow": null,
-                "FlavorText": "`It`s heavy on me, Sam lad, very heavy. I wonder how far I can carry it?`\r\n—Frodo Baggins, The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Land of Shadow",
-            "EncounterInfo": {
-                "EncounterSet": "Shelob's Lair",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 52,
-            "Quantity": 1,
-            "Artist": "Kara Williams",
-            "HasErrata": false,
-            "OctgnGuid": "a40aef89-ca91-467c-93f3-9afc97bdbc24",
-            "RingsDbCardId": "144052",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
             "Title": "Morgul Wraith",
             "Slug": "Morgul-Wraith-TLoS",
             "IsUnique": false,
@@ -768,9 +769,7 @@
                 "Subtitle": null,
                 "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Shelob's-Poison.jpg",
                 "Stats": {},
-                "Traits": [
-                    "Poison."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
                     "When Revealed: Attach to a hero you control and exhaust that hero. (Counts as a Condition attachment with the text: `Limit 1 per hero. Treat attached hero’s text box as blank, except for Traits. Attached hero cannot ready.`)"
@@ -1554,6 +1553,5 @@
             "RingsDbVotes": 0,
             "Categories": null
         }
-    ],
-    "Cycle": "The Lord of the Rings"
+    ]
 }

@@ -7,48 +7,231 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Rowan",
-            "Slug": "Rowan-MotR",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "Beorn's Welcome",
+            "Slug": "Beorn's-Welcome-MotR",
+            "IsUnique": false,
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Rowan.png",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Beorn's-Welcome.png",
                 "Stats": {
-                    "ThreatCost": "10",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "3",
-                    "HitPoints": "3"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Woodman.",
-                    "Warrior."
+                    "Boon."
                 ],
-                "Keywords": [
-                    "Sentinel."
-                ],
+                "Keywords": [],
                 "Text": [
-                    "Sentinel.",
-                    "Response: After you play an attachment on a location, add 1 resource to the pool of a hero you control. (Limit once per round.)",
-                    "Quest Action: Choose a player to take control of the first player token. Each player can only be chosen once per game."
+                    "Play only if you control a Beorning hero. Attach to a hero. Limit 1 per hero.",
+                    "Response: After you spend any resources from attached hero’s pool for a purpose other than paying to play a card, exhaust Beorn’s Welcome to add 1 resource to attached hero’s pool."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "“I am Gandalf,” said the wizard. “Never heard of him,” growled the man.\r\n—The Hobbit"
             },
             "Back": null,
             "CardSet": "Mustering of the Rohirrim",
             "EncounterInfo": null,
-            "Number": 144,
-            "Quantity": 1,
-            "Artist": "yang zheyy",
+            "Number": 152,
+            "Quantity": 3,
+            "Artist": "Jon Hodgson",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00144",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "305152",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2305,
+            "Categories": null
+        },
+        {
+            "Title": "Beorning Pony",
+            "Slug": "Beorning-Pony-MotR",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Beorning-Pony.png",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Beorning.",
+                    "Pony."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have attachments.",
+                    "Response: After Beorning Pony enters play, discard the top 5 cards of your deck. Then, you may spend 1 Tactics resource to add one of the cards discarded by this effect to your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "There was just room to get the ponies through with a squeeze, when they had been unpacked and unsaddled.\r\n—The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Mustering of the Rohirrim",
+            "EncounterInfo": null,
+            "Number": 149,
+            "Quantity": 3,
+            "Artist": "Torbjörn Källström",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "305149",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2259,
+            "Categories": null
+        },
+        {
+            "Title": "Subdued",
+            "Slug": "Subdued-MotR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Subdued.png",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a damaged enemy engaged with you. Limit 1 per enemy.",
+                    "Attached enemy gets −4 Attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "His miserable enemy lay grovelling on the stones whimpering.\r\n—The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Mustering of the Rohirrim",
+            "EncounterInfo": null,
+            "Number": 153,
+            "Quantity": 3,
+            "Artist": "Alan Lee",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "305153",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1598,
+            "Categories": null
+        },
+        {
+            "Title": "Birna",
+            "Slug": "Birna-MotR",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Birna.png",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Beorning."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust Birna and spend 1 Tactics resource to put a Beorning ally from your discard pile into play. At the end of the phase, if that ally is still in play or in your discard pile, shuffle it into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "In that last hour Beorn himself had appeared - no one knew how or from where.\r\n—The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Mustering of the Rohirrim",
+            "EncounterInfo": null,
+            "Number": 150,
+            "Quantity": 3,
+            "Artist": "Simone De Salvatore",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "305150",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1056,
+            "Categories": null
+        },
+        {
+            "Title": "Descendants of Beorn",
+            "Slug": "Descendants-of-Beorn-MotR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Descendants-of-Beorn.png",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: When a Beorning ally you control leaves play, add 1 resource to a Beorning hero’s pool for each damage token that was on that ally (up to that ally’s printed hit points)."
+                ],
+                "Shadow": null,
+                "FlavorText": "He tossed wolves and goblins from his path like straws and feathers.\r\n—The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Mustering of the Rohirrim",
+            "EncounterInfo": null,
+            "Number": 151,
+            "Quantity": 3,
+            "Artist": "Jon Hodgson",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "305151",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 425,
+            "Categories": null
+        },
+        {
+            "Title": "Woodmen's Outpost",
+            "Slug": "Woodmen's-Outpost-MotR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Woodmen's-Outpost.png",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a location. Limit 1 per location.",
+                    "Response: After attached location is explored, each character controlled by the first player gets +1 Attack and +1 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "“…even the Wargs dared not attack them if there were many together, or in the bright day.”\r\n—The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Mustering of the Rohirrim",
+            "EncounterInfo": null,
+            "Number": 146,
+            "Quantity": 3,
+            "Artist": "Jon Hodgson",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "305146",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 408,
             "Categories": null
         },
         {
@@ -87,9 +270,9 @@
             "Artist": "Torbjörn Källström",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00145",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "305145",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 117,
             "Categories": null
         },
         {
@@ -129,46 +312,54 @@
             "Artist": "Torbjörn Källström",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00145",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "305145",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 117,
             "Categories": null
         },
         {
-            "Title": "Woodmen's Outpost",
-            "Slug": "Woodmen's-Outpost-MotR",
-            "IsUnique": false,
-            "CardType": "Attachment",
+            "Title": "Rowan",
+            "Slug": "Rowan-MotR",
+            "IsUnique": true,
+            "CardType": "Hero",
             "CardSubType": "None",
             "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Woodmen's-Outpost.png",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Rowan.png",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ThreatCost": "10",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "3",
+                    "HitPoints": "3"
                 },
                 "Traits": [
-                    "Condition."
+                    "Woodman.",
+                    "Warrior."
                 ],
-                "Keywords": [],
+                "Keywords": [
+                    "Sentinel."
+                ],
                 "Text": [
-                    "Attach to a location. Limit 1 per location.",
-                    "Response: After attached location is explored, each character controlled by the first player gets +1 Attack and +1 Defense until the end of the round."
+                    "Sentinel.",
+                    "Response: After you play an attachment on a location, add 1 resource to the pool of a hero you control. (Limit once per round.)",
+                    "Quest Action: Choose a player to take control of the first player token. Each player can only be chosen once per game."
                 ],
                 "Shadow": null,
-                "FlavorText": "“…even the Wargs dared not attack them if there were many together, or in the bright day.”\r\n—The Hobbit"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "Mustering of the Rohirrim",
             "EncounterInfo": null,
-            "Number": 146,
-            "Quantity": 3,
-            "Artist": "Jon Hodgson",
+            "Number": 144,
+            "Quantity": 1,
+            "Artist": "yang zheyy",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00146",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "305144",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 74,
             "Categories": null
         },
         {
@@ -203,7 +394,7 @@
             "Artist": "Sarel Theron",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00147",
+            "RingsDbCardId": "305147",
             "RingsDbPopularity": 0,
             "RingsDbVotes": 0,
             "Categories": null
@@ -247,198 +438,7 @@
             "Artist": "Charmaine Zoe",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00148",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Beorning Pony",
-            "Slug": "Beorning-Pony-MotR",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Beorning-Pony.png",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Creature.",
-                    "Beorning.",
-                    "Pony."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Cannot have attachments.",
-                    "Response: After Beorning Pony enters play, discard the top 5 cards of your deck. Then, you may spend 1 Tactics resource to add one of the cards discarded by this effect to your hand."
-                ],
-                "Shadow": null,
-                "FlavorText": "There was just room to get the ponies through with a squeeze, when they had been unpacked and unsaddled.\r\n—The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Mustering of the Rohirrim",
-            "EncounterInfo": null,
-            "Number": 149,
-            "Quantity": 3,
-            "Artist": "Torbjörn Källström",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00149",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Birna",
-            "Slug": "Birna-MotR",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Birna.png",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "2",
-                    "Attack": "0",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Beorning."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Exhaust Birna and spend 1 Tactics resource to put a Beorning ally from your discard pile into play. At the end of the phase, if that ally is still in play or in your discard pile, shuffle it into your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "In that last hour Beorn himself had appeared - no one knew how or from where.\r\n—The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Mustering of the Rohirrim",
-            "EncounterInfo": null,
-            "Number": 150,
-            "Quantity": 3,
-            "Artist": "Simone De Salvatore",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00150",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Descendants of Beorn",
-            "Slug": "Descendants-of-Beorn-MotR",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Descendants-of-Beorn.png",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Response: When a Beorning ally you control leaves play, add 1 resource to a Beorning hero’s pool for each damage token that was on that ally (up to that ally’s printed hit points)."
-                ],
-                "Shadow": null,
-                "FlavorText": "He tossed wolves and goblins from his path like straws and feathers.\r\n—The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Mustering of the Rohirrim",
-            "EncounterInfo": null,
-            "Number": 151,
-            "Quantity": 3,
-            "Artist": "Jon Hodgson",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00151",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Beorn’s Welcome",
-            "Slug": "Beorn's-Welcome-MotR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Beorn's-Welcome.png",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Boon."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Play only if you control a Beorning hero. Attach to a hero. Limit 1 per hero.",
-                    "Response: After you spend any resources from attached hero’s pool for a purpose other than paying to play a card, exhaust Beorn’s Welcome to add 1 resource to attached hero’s pool."
-                ],
-                "Shadow": null,
-                "FlavorText": "“I am Gandalf,” said the wizard. “Never heard of him,” growled the man.\r\n—The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Mustering of the Rohirrim",
-            "EncounterInfo": null,
-            "Number": 152,
-            "Quantity": 3,
-            "Artist": "Jon Hodgson",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00152",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Subdued",
-            "Slug": "Subdued-MotR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Subdued.png",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Condition."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a damaged enemy engaged with you. Limit 1 per enemy.",
-                    "Attached enemy gets −4 Attack."
-                ],
-                "Shadow": null,
-                "FlavorText": "His miserable enemy lay grovelling on the stones whimpering.\r\n—The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "Mustering of the Rohirrim",
-            "EncounterInfo": null,
-            "Number": 153,
-            "Quantity": 3,
-            "Artist": "Alan Lee",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00153",
+            "RingsDbCardId": "305148",
             "RingsDbPopularity": 0,
             "RingsDbVotes": 0,
             "Categories": null
@@ -475,7 +475,7 @@
             "Artist": "Vincent Van Gogh",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00154",
+            "RingsDbCardId": "305154",
             "RingsDbPopularity": 0,
             "RingsDbVotes": 0,
             "Categories": null

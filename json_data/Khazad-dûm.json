@@ -2,7 +2,7 @@
     "Name": "Khazad-dûm",
     "Slug": "Khazad-dum",
     "Abbreviation": "KD",
-    "Cycle": null,
+    "Cycle": "Dwarrowdelf",
     "SetType": "Deluxe_Expansion",
     "Cards": null,
     "cards": [
@@ -42,8 +42,8 @@
             "HasErrata": true,
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9088",
             "RingsDbCardId": "03009",
-            "RingsDbPopularity": 10,
-            "RingsDbVotes": 498151,
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 585543,
             "Categories": null
         },
         {
@@ -83,8 +83,8 @@
             "HasErrata": false,
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9030",
             "RingsDbCardId": "03011",
-            "RingsDbPopularity": 9,
-            "RingsDbVotes": 402676,
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 499166,
             "Categories": null
         },
         {
@@ -124,8 +124,8 @@
             "HasErrata": false,
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9026",
             "RingsDbCardId": "03007",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 322893,
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 393879,
             "Categories": null
         },
         {
@@ -161,8 +161,115 @@
             "HasErrata": true,
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9050",
             "RingsDbCardId": "03003",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 302662,
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 359466,
+            "Categories": null
+        },
+        {
+            "Title": "Durin's Song",
+            "Slug": "Durin's-Song-KD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Durin's-Song.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose a Dwarf hero. That hero gets +2 Willpower, +2 Attack, and +2 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "A king he was on carven throne\r\nIn many-pillared halls of stone\r\nWith golden roof and silver floor,\r\nAnd runes of power upon the door.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Khazad-dûm",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Cristi Balanescu",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9024",
+            "RingsDbCardId": "03004",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 323103,
+            "Categories": null
+        },
+        {
+            "Title": "Boots from Erebor",
+            "Slug": "Boots-from-Erebor-KD",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Boots-from-Erebor.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Dwarf or Hobbit character. Limit 1 Boots from Erebor per character.",
+                    "Attached character gets +1 hit point."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Khazad-dûm",
+            "EncounterInfo": null,
+            "Number": 13,
+            "Quantity": 3,
+            "Artist": "Carolina Eade",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9012",
+            "RingsDbCardId": "03013",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 321443,
+            "Categories": null
+        },
+        {
+            "Title": "Khazâd! Khazâd!",
+            "Slug": "Khazad-Khazad-KD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Khazâd-Khazâd.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose a Dwarf character. Until the end of the phase, that character gets +3 Attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "Down from the wall leapt Gimli with a fierce cry the echoed in the cliffs. `Khazâd! Khazâd!` He soon had work enough.\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Khazad-dûm",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Igor Kieryluk",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9044",
+            "RingsDbCardId": "03008",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 316083,
             "Categories": null
         },
         {
@@ -201,115 +308,8 @@
             "HasErrata": false,
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9008",
             "RingsDbCardId": "03002",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 18365,
-            "Categories": null
-        },
-        {
-            "Title": "Boots from Erebor",
-            "Slug": "Boots-from-Erebor-KD",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Boots-from-Erebor.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [
-                    "Item."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Dwarf or Hobbit character. Limit 1 Boots from Erebor per character.",
-                    "Attached character gets +1 hit point."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Khazad-dûm",
-            "EncounterInfo": null,
-            "Number": 13,
-            "Quantity": 3,
-            "Artist": "Carolina Eade",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9012",
-            "RingsDbCardId": "03013",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 271343,
-            "Categories": null
-        },
-        {
-            "Title": "Durin's Song",
-            "Slug": "Durin's-Song-KD",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Durin's-Song.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Song."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Choose a Dwarf hero. That hero gets +2 Willpower, +2 Attack, and +2 Defense until the end of the round."
-                ],
-                "Shadow": null,
-                "FlavorText": "A king he was on carven throne\r\nIn many-pillared halls of stone\r\nWith golden roof and silver floor,\r\nAnd runes of power upon the door.\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Khazad-dûm",
-            "EncounterInfo": null,
-            "Number": 4,
-            "Quantity": 3,
-            "Artist": "Cristi Balanescu",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9024",
-            "RingsDbCardId": "03004",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 269709,
-            "Categories": null
-        },
-        {
-            "Title": "Khazâd! Khazâd!",
-            "Slug": "Khazad-Khazad-KD",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Khazad-dum/Khazâd-Khazâd.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Choose a Dwarf character. Until the end of the phase, that character gets +3 Attack."
-                ],
-                "Shadow": null,
-                "FlavorText": "Down from the wall leapt Gimli with a fierce cry the echoed in the cliffs. `Khazâd! Khazâd!` He soon had work enough.\r\n-The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "Khazad-dûm",
-            "EncounterInfo": null,
-            "Number": 8,
-            "Quantity": 3,
-            "Artist": "Igor Kieryluk",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9044",
-            "RingsDbCardId": "03008",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 259180,
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 21313,
             "Categories": null
         },
         {
@@ -349,8 +349,8 @@
             "HasErrata": false,
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9085",
             "RingsDbCardId": "03006",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 123022,
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 145240,
             "Categories": null
         },
         {
@@ -383,8 +383,8 @@
             "HasErrata": false,
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9083",
             "RingsDbCardId": "03010",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 107036,
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 136299,
             "Categories": null
         },
         {
@@ -417,8 +417,8 @@
             "HasErrata": false,
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9007",
             "RingsDbCardId": "03012",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 98726,
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 117223,
             "Categories": null
         },
         {
@@ -452,7 +452,7 @@
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9031",
             "RingsDbCardId": "03005",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 24394,
+            "RingsDbVotes": 28520,
             "Categories": null
         },
         {
@@ -492,7 +492,7 @@
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801207c9025",
             "RingsDbCardId": "03001",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 4167,
+            "RingsDbVotes": 5291,
             "Categories": null
         }
     ]

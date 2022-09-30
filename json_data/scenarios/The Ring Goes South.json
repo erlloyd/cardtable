@@ -5,6 +5,49 @@
     "Number": 4,
     "AllCards": [
         {
+            "Title": "Lust for the Ring",
+            "Slug": "Lust-for-the-Ring-RD",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Lust-for-the-Ring.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Corruption."
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to a non-Fellowship hero in play. Counts as a Condition attachment with the text: `Forced: After The One Ring exhausts, raise each player`s threat by 1 and reduce attached hero`s Willpower to 0 until the end of the round.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 84,
+            "Quantity": 1,
+            "Artist": "Arden Beckwith",
+            "HasErrata": false,
+            "OctgnGuid": "7068731b-3837-40f3-9e98-6c996af4dddc",
+            "RingsDbCardId": "142084",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1960,
+            "Categories": null
+        },
+        {
             "Title": "The Ring Goes South",
             "Slug": "The-Ring-Goes-South-Campaign-RD",
             "IsUnique": false,
@@ -292,7 +335,8 @@
                     "Indestructible."
                 ],
                 "Text": [
-                    "Immune to player card effects. Cannot leave the staging area but is considered to be engaged with each player.",
+                    "Immune to player card effects.",
+                    "Cannot leave the staging area but is considered to be engaged with each player.",
                     "Forced: After placing the 6th damage here, the first player takes control of the Ring-bearer, exhausted with 1 damage on it."
                 ],
                 "Shadow": null,
@@ -944,49 +988,6 @@
             "Categories": null
         },
         {
-            "Title": "Lust for the Ring",
-            "Slug": "Lust-for-the-Ring-RD",
-            "IsUnique": false,
-            "CardType": "Treachery",
-            "CardSubType": "Burden",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Lust-for-the-Ring.jpg",
-                "Stats": {},
-                "Traits": [
-                    "Corruption."
-                ],
-                "Keywords": [
-                    "Peril.",
-                    "Surge."
-                ],
-                "Text": [
-                    "When Revealed: Attach to a non-Fellowship hero in play. Counts as a Condition attachment with the text: `Forced: After The One Ring exhausts, raise each player`s threat by 1 and reduce attached hero`s Willpower to 0 until the end of the round.`"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Road Darkens",
-            "EncounterInfo": {
-                "EncounterSet": "The Ring Goes South",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 84,
-            "Quantity": 1,
-            "Artist": "Arden Beckwith",
-            "HasErrata": false,
-            "OctgnGuid": "7068731b-3837-40f3-9e98-6c996af4dddc",
-            "RingsDbCardId": "142084",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
             "Title": "The Ring Goes South Nightmare",
             "Slug": "The-Ring-Goes-South-Nightmare-TRGSN",
             "IsUnique": false,
@@ -1355,6 +1356,5 @@
             "RingsDbVotes": 0,
             "Categories": null
         }
-    ],
-    "Cycle": "The Lord of the Rings"
+    ]
 }

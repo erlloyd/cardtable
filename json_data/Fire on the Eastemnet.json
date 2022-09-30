@@ -7,6 +7,42 @@
     "Cards": null,
     "cards": [
         {
+            "Title": "Hidden Roosts",
+            "Slug": "Hidden-Roosts-FotE",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-on-the-Eastemnet/Hidden-Roosts.png",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Eagle."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: When an Eagle ally leaves play, that ally’s controller reduces their threat by X, where X is the printed cost of the ally. If X is 2 or less, that player also draws 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": "“May the wind under your wings bear you where the sun sails and moon walks.”\r\nGandalf, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Fire on the Eastemnet",
+            "EncounterInfo": null,
+            "Number": 48,
+            "Quantity": 3,
+            "Artist": "John Howe",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "302048",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 21609,
+            "Categories": null
+        },
+        {
             "Title": "Veteran Eagle",
             "Slug": "Veteran-Eagle-FotE",
             "IsUnique": false,
@@ -46,43 +82,48 @@
             "OctgnGuid": "",
             "RingsDbCardId": "302041",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 9929,
+            "RingsDbVotes": 19795,
             "Categories": null
         },
         {
-            "Title": "Hidden Roosts",
-            "Slug": "Hidden-Roosts-FotE",
+            "Title": "Roving Herbmaster",
+            "Slug": "Roving-Herbmaster-FotE",
             "IsUnique": false,
-            "CardType": "Event",
+            "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-on-the-Eastemnet/Hidden-Roosts.png",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-on-the-Eastemnet/Roving-Herbmaster.png",
                 "Stats": {
-                    "ResourceCost": "0"
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "1"
                 },
                 "Traits": [
-                    "Eagle."
+                    "Dúnedain.",
+                    "Healer."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Response: When an Eagle ally leaves play, that ally’s controller reduces their threat by X, where X is the printed cost of the ally. If X is 2 or less, that player also draws 1 card."
+                    "Response: After a player reduces their threat, heal 1 damage from a character you control. Then, you may give control of Roving Herbmaster to another player. (Limit once per round.)"
                 ],
                 "Shadow": null,
-                "FlavorText": "“May the wind under your wings bear you where the sun sails and moon walks.”\r\nGandalf, The Hobbit"
+                "FlavorText": "“Crush one in the water, and wash the wound clean, and I will bind it. Now it is your turn.”\r\nAragorn, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Fire on the Eastemnet",
             "EncounterInfo": null,
-            "Number": 48,
+            "Number": 44,
             "Quantity": 3,
-            "Artist": "John Howe",
+            "Artist": "Cubicle 7",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "302048",
+            "RingsDbCardId": "302044",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 9269,
+            "RingsDbVotes": 15071,
             "Categories": null
         },
         {
@@ -127,7 +168,7 @@
             "OctgnGuid": "",
             "RingsDbCardId": "302042",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 7026,
+            "RingsDbVotes": 15044,
             "Categories": null
         },
         {
@@ -163,46 +204,7 @@
             "OctgnGuid": "",
             "RingsDbCardId": "302049",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 6843,
-            "Categories": null
-        },
-        {
-            "Title": "Golden Crown",
-            "Slug": "Golden-Crown-FotE",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-on-the-Eastemnet/Golden-Crown.png",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item.",
-                    "Artifact.",
-                    "Eagle."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to an Eagle hero. Attached hero gains the Noble trait.",
-                    "Action: Exhaust Golden Crown to choose an Eagle ally you own under any player’s control. Either discard that ally from play to add 1 resource to attached hero’s pool, or give control of that ally to a different player."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Fire on the Eastemnet",
-            "EncounterInfo": null,
-            "Number": 50,
-            "Quantity": 3,
-            "Artist": "José Derivaldo Júnior",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "302050",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 6589,
+            "RingsDbVotes": 14353,
             "Categories": null
         },
         {
@@ -245,74 +247,70 @@
             "OctgnGuid": "",
             "RingsDbCardId": "302040",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 6500,
+            "RingsDbVotes": 13382,
             "Categories": null
         },
         {
-            "Title": "Roving Herbmaster",
-            "Slug": "Roving-Herbmaster-FotE",
-            "IsUnique": false,
-            "CardType": "Ally",
+            "Title": "Box of Earth",
+            "Slug": "Box-of-Earth-FotE",
+            "IsUnique": true,
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-on-the-Eastemnet/Roving-Herbmaster.png",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-on-the-Eastemnet/Box-of-Earth.png",
                 "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "0",
-                    "Defense": "0",
-                    "HitPoints": "1"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Dúnedain.",
-                    "Healer."
+                    "Item.",
+                    "Gift."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Response: After a player reduces their threat, heal 1 damage from a character you control. Then, you may give control of Roving Herbmaster to another player. (Limit once per round.)"
+                    "Play only if you control a Noldor or Silvan hero.",
+                    "Attach to a hero.",
+                    "Action: Exhaust Box of Earth to choose a location. Place 1 progress on that location and give it the Forest trait until the end of the round."
                 ],
                 "Shadow": null,
-                "FlavorText": "“Crush one in the water, and wash the wound clean, and I will bind it. Now it is your turn.”\r\nAragorn, The Fellowship of the Ring"
+                "FlavorText": "“It will not keep you on your road, nor defend you against any peril; but if you keep it… it may reward you.”\r\nGaladriel, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Fire on the Eastemnet",
             "EncounterInfo": null,
-            "Number": 44,
+            "Number": 43,
             "Quantity": 3,
-            "Artist": "Cubicle 7",
+            "Artist": "Edward Beard Jr.",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "302044",
+            "RingsDbCardId": "302043",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 6063,
+            "RingsDbVotes": 10843,
             "Categories": null
         },
         {
-            "Title": "Grip",
-            "Slug": "Grip-FotE",
+            "Title": "Golden Crown",
+            "Slug": "Golden-Crown-FotE",
             "IsUnique": true,
-            "CardType": "Ally",
+            "CardType": "Attachment",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-on-the-Eastemnet/Grip.png",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-on-the-Eastemnet/Golden-Crown.png",
                 "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "1"
+                    "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Creature."
+                    "Item.",
+                    "Artifact.",
+                    "Eagle."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Limit 1 per deck. Cannot have attachments. Each enemy in play gets +1 engagement cost.",
-                    "Response: After Grip enters play, search your deck for a Creature ally and add it to your hand. Until the end of the phase, that ally does not require a resource match. Shuffle your deck."
+                    "Attach to an Eagle hero. Attached hero gains the Noble trait.",
+                    "Action: Exhaust Golden Crown to choose an Eagle ally you own under any player’s control. Either discard that ally from play to add 1 resource to attached hero’s pool, or give control of that ally to a different player."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -320,14 +318,14 @@
             "Back": null,
             "CardSet": "Fire on the Eastemnet",
             "EncounterInfo": null,
-            "Number": 45,
-            "Quantity": 1,
-            "Artist": "Damian Audino",
+            "Number": 50,
+            "Quantity": 3,
+            "Artist": "José Derivaldo Júnior",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "302045",
+            "RingsDbCardId": "302050",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 3320,
+            "RingsDbVotes": 9877,
             "Categories": null
         },
         {
@@ -368,84 +366,7 @@
             "OctgnGuid": "",
             "RingsDbCardId": "302046",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 3120,
-            "Categories": null
-        },
-        {
-            "Title": "Guided by Fate",
-            "Slug": "Guided-by-Fate-FotE",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-on-the-Eastemnet/Guided-by-Fate.png",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Condition."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a hero.",
-                    "Response: When you would shuffle a set-aside card with the encounter keyword into the encounter deck, shuffle it into the top 5 cards instead.",
-                    "Action: If the encounter deck has 5 or more cards in it, exhaust Guided by Fate and raise your threat by 1 to shuffle the top card of the encounter discard pile into the top 5 cards of the encounter deck."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Fire on the Eastemnet",
-            "EncounterInfo": null,
-            "Number": 51,
-            "Quantity": 3,
-            "Artist": "Detlef Ott",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "302051",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 2944,
-            "Categories": null
-        },
-        {
-            "Title": "Box of Earth",
-            "Slug": "Box-of-Earth-FotE",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-on-the-Eastemnet/Box-of-Earth.png",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item.",
-                    "Gift."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Play only if you control a Noldor or Silvan hero.",
-                    "Attach to a hero.",
-                    "Action: Exhaust Box of Earth to choose a location. Place 1 progress on that location and give it the Forest trait until the end of the round."
-                ],
-                "Shadow": null,
-                "FlavorText": "“It will not keep you on your road, nor defend you against any peril; but if you keep it… it may reward you.”\r\nGaladriel, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Fire on the Eastemnet",
-            "EncounterInfo": null,
-            "Number": 43,
-            "Quantity": 3,
-            "Artist": "Edward Beard Jr.",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "302043",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 2649,
+            "RingsDbVotes": 8160,
             "Categories": null
         },
         {
@@ -486,49 +407,86 @@
             "OctgnGuid": "",
             "RingsDbCardId": "302047",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 2610,
+            "RingsDbVotes": 7890,
             "Categories": null
         },
         {
-            "Title": "Alagos",
-            "Slug": "Alagos-FotE",
+            "Title": "Grip",
+            "Slug": "Grip-FotE",
             "IsUnique": true,
-            "CardType": "Hero",
+            "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-on-the-Eastemnet/Alagos.png",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-on-the-Eastemnet/Grip.png",
                 "Stats": {
-                    "ThreatCost": "12",
-                    "Willpower": "3",
-                    "Attack": "3",
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
                     "Defense": "1",
-                    "HitPoints": "4"
+                    "HitPoints": "1"
                 },
                 "Traits": [
-                    "Creature.",
-                    "Eagle."
+                    "Creature."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Cannot have restricted attachments.",
-                    "Response: After an Eagle ally enters a player’s play area, add 1 resource to the pool of a hero that player controls. (Limit once per round.)"
+                    "Limit 1 per deck. Cannot have attachments. Each enemy in play gets +1 engagement cost.",
+                    "Response: After Grip enters play, search your deck for a Creature ally and add it to your hand. Until the end of the phase, that ally does not require a resource match. Shuffle your deck."
                 ],
                 "Shadow": null,
-                "FlavorText": "“What is all this uproar in the forest tonight?”\r\nThe Lord of the Eagles, The Hobbit"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "Fire on the Eastemnet",
             "EncounterInfo": null,
-            "Number": 38,
+            "Number": 45,
             "Quantity": 1,
-            "Artist": "Ted Nasmith",
+            "Artist": "Damian Audino",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "302038",
+            "RingsDbCardId": "302045",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 527,
+            "RingsDbVotes": 7470,
+            "Categories": null
+        },
+        {
+            "Title": "Guided by Fate",
+            "Slug": "Guided-by-Fate-FotE",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-on-the-Eastemnet/Guided-by-Fate.png",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero.",
+                    "Response: When you would shuffle a set-aside card with the encounter keyword into the encounter deck, shuffle it into the top 5 cards instead.",
+                    "Action: If the encounter deck has 5 or more cards in it, exhaust Guided by Fate and raise your threat by 1 to shuffle the top card of the encounter discard pile into the top 5 cards of the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Fire on the Eastemnet",
+            "EncounterInfo": null,
+            "Number": 51,
+            "Quantity": 3,
+            "Artist": "Detlef Ott",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "302051",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4798,
             "Categories": null
         },
         {
@@ -570,7 +528,49 @@
             "OctgnGuid": "",
             "RingsDbCardId": "302039",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 524,
+            "RingsDbVotes": 1159,
+            "Categories": null
+        },
+        {
+            "Title": "Alagos",
+            "Slug": "Alagos-FotE",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fire-on-the-Eastemnet/Alagos.png",
+                "Stats": {
+                    "ThreatCost": "12",
+                    "Willpower": "3",
+                    "Attack": "3",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Eagle."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Cannot have restricted attachments.",
+                    "Response: After an Eagle ally enters a player’s play area, add 1 resource to the pool of a hero that player controls. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "“What is all this uproar in the forest tonight?”\r\nThe Lord of the Eagles, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Fire on the Eastemnet",
+            "EncounterInfo": null,
+            "Number": 38,
+            "Quantity": 1,
+            "Artist": "Ted Nasmith",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "302038",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 907,
             "Categories": null
         }
     ]

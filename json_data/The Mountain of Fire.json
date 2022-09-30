@@ -42,8 +42,8 @@
             "HasErrata": false,
             "OctgnGuid": "0baaf661-4bfd-48ed-80d4-bfa98217da1c",
             "RingsDbCardId": "146005",
-            "RingsDbPopularity": 8,
-            "RingsDbVotes": 307241,
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 366786,
             "Categories": null
         },
         {
@@ -80,7 +80,7 @@
             "OctgnGuid": "04aa368e-b411-4d20-9ca3-f7baf4670599",
             "RingsDbCardId": "146012",
             "RingsDbPopularity": 5,
-            "RingsDbVotes": 162516,
+            "RingsDbVotes": 205060,
             "Categories": null
         },
         {
@@ -121,8 +121,48 @@
             "HasErrata": false,
             "OctgnGuid": "769dbf59-9e02-4750-9605-b1ad6c8783e2",
             "RingsDbCardId": "146008",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 151663,
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 166801,
+            "Categories": null
+        },
+        {
+            "Title": "Gúthwinë",
+            "Slug": "Guthwine-TMoF",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Gúthwinë.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Rohan hero. Restricted.",
+                    "Response: After attached hero is declared as an attacker, exhaust Gúthwinë to give that hero +2 Attack for this attack. If this attack destroys an enemy, return a Rohan ally from your discard pile to your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Gúthwinë!` cried Éomer. `Gúthwinë for the Mark!`\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 3,
+            "Artist": "Kamila Szutenberg",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "146011",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 165012,
             "Categories": null
         },
         {
@@ -163,48 +203,8 @@
             "HasErrata": false,
             "OctgnGuid": "51512531-0697-4005-9fb6-884da5b02f75",
             "RingsDbCardId": "146007",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 144438,
-            "Categories": null
-        },
-        {
-            "Title": "Gúthwinë",
-            "Slug": "Guthwine-TMoF",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Gúthwinë.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Item.",
-                    "Weapon."
-                ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a Rohan hero. Restricted.",
-                    "Response: After attached hero is declared as an attacker, exhaust Gúthwinë to give that hero +2 Attack for this attack. If this attack destroys an enemy, return a Rohan ally from your discard pile to your hand."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Gúthwinë!` cried Éomer. `Gúthwinë for the Mark!`\r\n-The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "The Mountain of Fire",
-            "EncounterInfo": null,
-            "Number": 11,
-            "Quantity": 3,
-            "Artist": "Kamila Szutenberg",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "146011",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 137291,
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 160851,
             "Categories": null
         },
         {
@@ -242,8 +242,8 @@
             "HasErrata": false,
             "OctgnGuid": "e4fd6941-6ced-4ddc-970d-a933ae7d5cb5",
             "RingsDbCardId": "146013",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 102032,
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 115951,
             "Categories": null
         },
         {
@@ -283,76 +283,8 @@
             "HasErrata": false,
             "OctgnGuid": "0ff72c0f-a6d6-48d3-8781-1988a7e3ba11",
             "RingsDbCardId": "146006",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 100216,
-            "Categories": null
-        },
-        {
-            "Title": "Raise the Shire",
-            "Slug": "Raise-the-Shire-TMoF",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Raise-the-Shire.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Response: After you engage an enemy, search the top 5 cards of your deck for a Hobbit ally and put it into play (search you entire deck instead if that enemy`s engagement cost is higher than your threat). Shuffle your deck. At the end of the round, if that ally is still in play, return it to your hand."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Mountain of Fire",
-            "EncounterInfo": null,
-            "Number": 10,
-            "Quantity": 3,
-            "Artist": "Nikolas Hagialas",
-            "HasErrata": false,
-            "OctgnGuid": "08d95282-e88d-4a9c-a01b-651d569052ee",
-            "RingsDbCardId": "146010",
             "RingsDbPopularity": 2,
-            "RingsDbVotes": 45666,
-            "Categories": null
-        },
-        {
-            "Title": "Captains of the West",
-            "Slug": "Captains-of-the-West-TMoF",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Captains-of-the-West.jpg",
-                "Stats": {
-                    "ResourceCost": "3"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Quest Action: Until the end of the phase, each Noble hero gets +1 Willpower and does not exhaust to commit to the quest."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Mountain of Fire",
-            "EncounterInfo": null,
-            "Number": 9,
-            "Quantity": 3,
-            "Artist": "Igor Artyomenko",
-            "HasErrata": false,
-            "OctgnGuid": "cb08f48e-7acf-44ff-ac6f-36d4f017a962",
-            "RingsDbCardId": "146009",
-            "RingsDbPopularity": 1,
-            "RingsDbVotes": 12116,
+            "RingsDbVotes": 111016,
             "Categories": null
         },
         {
@@ -393,8 +325,76 @@
             "HasErrata": false,
             "OctgnGuid": "7a1bc81a-c226-4589-a1cf-65668846c64b",
             "RingsDbCardId": "146003",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 7711,
+            "Categories": null
+        },
+        {
+            "Title": "Raise the Shire",
+            "Slug": "Raise-the-Shire-TMoF",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Raise-the-Shire.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: After you engage an enemy, search the top 5 cards of your deck for a Hobbit ally and put it into play (search you entire deck instead if that enemy`s engagement cost is higher than your threat). Shuffle your deck. At the end of the round, if that ally is still in play, return it to your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Nikolas Hagialas",
+            "HasErrata": false,
+            "OctgnGuid": "08d95282-e88d-4a9c-a01b-651d569052ee",
+            "RingsDbCardId": "146010",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 5975,
+            "RingsDbVotes": 52401,
+            "Categories": null
+        },
+        {
+            "Title": "Captains of the West",
+            "Slug": "Captains-of-the-West-TMoF",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Captains-of-the-West.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Quest Action: Until the end of the phase, each Noble hero gets +1 Willpower and does not exhaust to commit to the quest."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Igor Artyomenko",
+            "HasErrata": false,
+            "OctgnGuid": "cb08f48e-7acf-44ff-ac6f-36d4f017a962",
+            "RingsDbCardId": "146009",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 14241,
             "Categories": null
         },
         {
@@ -435,7 +435,7 @@
             "OctgnGuid": "bbab76d6-7554-40da-af74-fb502d08d9a8",
             "RingsDbCardId": "146004",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 4425,
+            "RingsDbVotes": 5025,
             "Categories": null
         },
         {
@@ -476,7 +476,7 @@
             "OctgnGuid": "b937644c-ccbb-4a39-ae3c-24857d1d4d57",
             "RingsDbCardId": "146001",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 498,
+            "RingsDbVotes": 598,
             "Categories": null
         },
         {

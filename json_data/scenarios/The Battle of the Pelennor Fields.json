@@ -5,6 +5,57 @@
     "Number": 15,
     "AllCards": [
         {
+            "Title": "Wraith on Wings",
+            "Slug": "Wraith-on-Wings-TFotW",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Wraith-on-Wings.jpg",
+                "Stats": {
+                    "EngagementCost": "45",
+                    "Threat": "0",
+                    "Attack": "6",
+                    "Defense": "4",
+                    "HitPoints": "12"
+                },
+                "Traits": [
+                    "Nazgûl."
+                ],
+                "Keywords": [
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Setup: Add Wraith on Wings to the staging area.",
+                    "Cannot have non-Morgul attachments.",
+                    "Wraith on Wings gets +1 Threat and -1 enagement cost for each resource on it.",
+                    "Forced: At the beginning of the quest phase, place 1 resource on Wraith on Wings (Limit 5 resources.)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Flame of the West",
+            "EncounterInfo": {
+                "EncounterSet": "The Battle of the Pelennor Fields",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 62,
+            "Quantity": 4,
+            "Artist": "S. C. Watson",
+            "HasErrata": false,
+            "OctgnGuid": "0c030b4b-1012-4b80-a942-0177e3923903",
+            "RingsDbCardId": "145062",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2516,
+            "Categories": null
+        },
+        {
             "Title": "Minas Tirith",
             "Slug": "Minas-Tirith-TFotW",
             "IsUnique": true,
@@ -856,57 +907,6 @@
             "Categories": null
         },
         {
-            "Title": "Wraith on Wings",
-            "Slug": "Wraith-on-Wings-TFotW",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "Burden",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Wraith-on-Wings.jpg",
-                "Stats": {
-                    "EngagementCost": "45",
-                    "Threat": "0",
-                    "Attack": "6",
-                    "Defense": "4",
-                    "HitPoints": "12"
-                },
-                "Traits": [
-                    "Nazgûl."
-                ],
-                "Keywords": [
-                    "Victory 5."
-                ],
-                "Text": [
-                    "Setup: Add Wraith on Wings to the staging area.",
-                    "Cannot have non-Morgul attachments.",
-                    "Wraith on Wings gets +1 Threat and -1 enagement cost for each resource on it.",
-                    "Forced: At the beginning of the quest phase, place 1 resource on Wraith on Wings (Limit 5 resources.)"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Flame of the West",
-            "EncounterInfo": {
-                "EncounterSet": "The Battle of the Pelennor Fields",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 62,
-            "Quantity": 4,
-            "Artist": "S. C. Watson",
-            "HasErrata": false,
-            "OctgnGuid": "0c030b4b-1012-4b80-a942-0177e3923903",
-            "RingsDbCardId": "145062",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
             "Title": "The Garrison of Gondor",
             "Slug": "The-Garrison-of-Gondor-TFotW",
             "IsUnique": false,
@@ -1329,6 +1329,5 @@
             "RingsDbVotes": 0,
             "Categories": null
         }
-    ],
-    "Cycle": "The Lord of the Rings"
+    ]
 }

@@ -43,7 +43,7 @@
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9023",
             "RingsDbCardId": "04031",
             "RingsDbPopularity": 10,
-            "RingsDbVotes": 594776,
+            "RingsDbVotes": 688416,
             "Categories": null
         },
         {
@@ -76,8 +76,8 @@
             "HasErrata": false,
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9015",
             "RingsDbCardId": "04030",
-            "RingsDbPopularity": 7,
-            "RingsDbVotes": 244023,
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 310373,
             "Categories": null
         },
         {
@@ -113,31 +113,36 @@
             "HasErrata": true,
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9020",
             "RingsDbCardId": "04036",
-            "RingsDbPopularity": 6,
-            "RingsDbVotes": 210842,
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 245229,
             "Categories": null
         },
         {
-            "Title": "Song of Eärendil",
-            "Slug": "Song-of-Earendil-RtR",
-            "IsUnique": false,
-            "CardType": "Attachment",
+            "Title": "Elladan",
+            "Slug": "Elladan-RtR",
+            "IsUnique": true,
+            "CardType": "Hero",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Song-of-Eärendil.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Elladan.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ThreatCost": "10",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "4"
                 },
                 "Traits": [
-                    "Song."
+                    "Noldor.",
+                    "Noble.",
+                    "Ranger."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a Spirit hero.",
-                    "Response: After Song of Eärendil enters play, draw 1 card.",
-                    "Response: After another player raises his threat, raise your threat by 1 to reduce that player`s threat by 1."
+                    "While Elrohir is in play, Elladan gets +2 Attack.",
+                    "Response: After Elladan is declared as an attacker, pay 1 resource from his resource pool to ready him."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -145,14 +150,14 @@
             "Back": null,
             "CardSet": "Road to Rivendell",
             "EncounterInfo": null,
-            "Number": 34,
-            "Quantity": 3,
-            "Artist": "K. R. Harris",
+            "Number": 28,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
             "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9026",
-            "RingsDbCardId": "04034",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 114980,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9010",
+            "RingsDbCardId": "04028",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 10265,
             "Categories": null
         },
         {
@@ -191,8 +196,46 @@
             "HasErrata": false,
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9022",
             "RingsDbCardId": "04033",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 109907,
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 131639,
+            "Categories": null
+        },
+        {
+            "Title": "Song of Eärendil",
+            "Slug": "Song-of-Earendil-RtR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Song-of-Eärendil.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Spirit hero.",
+                    "Response: After Song of Eärendil enters play, draw 1 card.",
+                    "Response: After another player raises his threat, raise your threat by 1 to reduce that player`s threat by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Road to Rivendell",
+            "EncounterInfo": null,
+            "Number": 34,
+            "Quantity": 3,
+            "Artist": "K. R. Harris",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9026",
+            "RingsDbCardId": "04034",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 129428,
             "Categories": null
         },
         {
@@ -225,8 +268,8 @@
             "HasErrata": false,
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9014",
             "RingsDbCardId": "04032",
-            "RingsDbPopularity": 5,
-            "RingsDbVotes": 105339,
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 124210,
             "Categories": null
         },
         {
@@ -270,8 +313,8 @@
             "HasErrata": false,
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9009",
             "RingsDbCardId": "04029",
-            "RingsDbPopularity": 4,
-            "RingsDbVotes": 88734,
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 111699,
             "Categories": null
         },
         {
@@ -310,51 +353,8 @@
             "HasErrata": false,
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9007",
             "RingsDbCardId": "04035",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 69873,
-            "Categories": null
-        },
-        {
-            "Title": "Elladan",
-            "Slug": "Elladan-RtR",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Road-to-Rivendell/Elladan.jpg",
-                "Stats": {
-                    "ThreatCost": "10",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Noldor.",
-                    "Noble.",
-                    "Ranger."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "While Elrohir is in play, Elladan gets +2 Attack.",
-                    "Response: After Elladan is declared as an attacker, pay 1 resource from his resource pool to ready him."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Road to Rivendell",
-            "EncounterInfo": null,
-            "Number": 28,
-            "Quantity": 1,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9010",
-            "RingsDbCardId": "04028",
-            "RingsDbPopularity": 3,
-            "RingsDbVotes": 8686,
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 86853,
             "Categories": null
         },
         {
@@ -388,7 +388,7 @@
             "OctgnGuid": "51223bd0-ffd1-11df-a976-0801209c9027",
             "RingsDbCardId": "04037",
             "RingsDbPopularity": 1,
-            "RingsDbVotes": 11741,
+            "RingsDbVotes": 12839,
             "Categories": null
         }
     ]

@@ -5,6 +5,53 @@
     "Number": 1,
     "AllCards": [
         {
+            "Title": "Ungoliant's Swarm",
+            "Slug": "Ungoliant's-Swarm-RevCore",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Ungoliant's-Swarm.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "3",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Spider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Ungoliant`s Swarm engages a player, that player must choose and exhaust 2 characters they control."
+                ],
+                "Shadow": "Shadow: Put Ungoliant`s Swarm into play engaged with you.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": {
+                "EncounterSet": "Passage Through Mirkwood (Campaign)",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 136,
+            "Quantity": 1,
+            "Artist": "Andrew Ryan",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "01136",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 10,
+            "Categories": null
+        },
+        {
             "Title": "King Spider",
             "Slug": "King-Spider-RevCore",
             "IsUnique": false,
@@ -1110,53 +1157,6 @@
             "Categories": null
         },
         {
-            "Title": "Ungoliant's Swarm",
-            "Slug": "Ungoliant's-Swarm-RevCore",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "Burden",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Ungoliant's-Swarm.jpg",
-                "Stats": {
-                    "EngagementCost": "33",
-                    "Threat": "3",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "5"
-                },
-                "Traits": [
-                    "Creature.",
-                    "Spider."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Forced: After Ungoliant`s Swarm engages a player, that player must choose and exhaust 2 characters they control."
-                ],
-                "Shadow": "Shadow: Put Ungoliant`s Swarm into play engaged with you.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Revised Core Set",
-            "EncounterInfo": {
-                "EncounterSet": "Passage Through Mirkwood (Campaign)",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 136,
-            "Quantity": 1,
-            "Artist": "Andrew Ryan",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "01136",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
             "Title": "Lingering Venom",
             "Slug": "Lingering-Venom-RevCore",
             "IsUnique": false,
@@ -1594,6 +1594,5 @@
             "RingsDbVotes": 0,
             "Categories": null
         }
-    ],
-    "Cycle": null
+    ]
 }
