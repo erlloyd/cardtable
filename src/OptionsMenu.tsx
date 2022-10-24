@@ -53,7 +53,6 @@ class OptionsMenu extends Component<IProps> {
     return (
       <div className="options-menu">
         <button
-          className={"render-touch-only"}
           onClick={() => {
             this.props.showContextMenuAtPosition({ x: 0, y: 0 });
           }}

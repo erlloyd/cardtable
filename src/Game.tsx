@@ -1,7 +1,9 @@
+import { IconButton, Snackbar } from "@mui/material";
 import * as Intersects from "intersects";
 import Konva from "konva";
 import { KonvaEventObject } from "konva/lib/Node";
 import { Vector2d } from "konva/lib/types";
+import React from "react";
 import { Component } from "react";
 import { Layer, Rect, Stage } from "react-konva";
 import { Provider, ReactReduxContext } from "react-redux";
@@ -52,6 +54,8 @@ import {
 } from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
 import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
+import CloseIcon from "@material-ui/icons/Close";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 const SCALE_BY = 1.02;
 
@@ -177,6 +181,7 @@ interface IProps {
 }
 
 interface IState {
+  showEmptyMessage: boolean;
   drewASelectionRect: boolean;
   selectRect: {
     height: number;
@@ -231,6 +236,7 @@ class Game extends Component<IProps, IState> {
     }
 
     this.state = {
+      showEmptyMessage: true,
       drewASelectionRect: false,
       selectRect: {
         height: 0,
@@ -741,15 +747,51 @@ class Game extends Component<IProps, IState> {
   private noOp = () => {};
 
   private renderEmptyMessage = () => {
-    if (this.props.cards.cards.length > 0) return null;
+    const open =
+      this.props.cards.cards.length === 0 && this.state.showEmptyMessage;
+    if (!open) return null;
+
+    const handleClose = (
+      event: React.SyntheticEvent | Event,
+      reason?: string
+    ) => {
+      if (reason === "clickaway") {
+        return;
+      }
+
+      this.setState({ showEmptyMessage: false });
+    };
+
+    const action = (
+      <React.Fragment>
+        <IconButton
+          size="small"
+          aria-label="close"
+          color="inherit"
+          onClick={handleClose}
+        >
+          <CloseIcon fontSize="small" />
+        </IconButton>
+      </React.Fragment>
+    );
+
+    const message = (
+      <React.Fragment>
+        <div className="snack-text">
+          Use the
+          <MoreVertIcon fontSize="small" />
+          button to load a deck or scenario
+        </div>
+      </React.Fragment>
+    );
 
     return (
-      <div>
-        <span>
-          Right click and select 'Load Deck by ID' to load a deck from{" "}
-          {GamePropertiesMap[this.props.currentGameType].deckSite}
-        </span>
-      </div>
+      <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        open={true}
+        message={message}
+        action={action}
+      />
     );
   };
 
