@@ -3,6 +3,16 @@
 		"attack": 1,
 		"back_link": "33001b",
 		"code": "33001a",
+		"deck_options": [
+			{
+				"trait": [
+					"x-men"
+				],
+				"type": [
+					"ally"
+				]
+			}
+		],
 		"defense": 2,
 		"double_sided": true,
 		"faction_code": "hero",
@@ -15,7 +25,8 @@
 				"#e8b844",
 				"#0e294a",
 				"#fffffd"
-			]
+			],
+			"offset": "-38px -35px"
 		},
 		"name": "Cyclops",
 		"octgn_id": "7da2a29c-3abd-4e3b-b36e-9f140c033001",
@@ -80,7 +91,7 @@
 		"pack_code": "cyclops",
 		"position": 3,
 		"quantity": 1,
-		"resource_physical": "1",
+		"resource_physical": 1,
 		"set_code": "cyclops",
 		"set_position": 2,
 		"text": "<b>Hero Resource</b>: Exhaust this card → generate a [energy] resource for your <i>\"Optic Blast\"</i> ability. That attack gains piercing and ranged.",
@@ -98,7 +109,7 @@
 		"pack_code": "cyclops",
 		"position": 4,
 		"quantity": 1,
-		"resource_physical": "1",
+		"resource_physical": 1,
 		"set_code": "cyclops",
 		"set_position": 3,
 		"text": "You take the first turn during player phase. <i>(When your turn is done, play proceeds in player order, starting with the first player. You do not take another turn.)</i>\nEach Cyclops upgrade attached to a minion loses the temporary keyword.",
@@ -115,7 +126,7 @@
 		"pack_code": "cyclops",
 		"position": 5,
 		"quantity": 2,
-		"resource_physical": "1",
+		"resource_physical": 1,
 		"set_code": "cyclops",
 		"set_position": 4,
 		"text": "Attach to an enemy. Max 1 per enemy.\nTemporary.\nIncrease the amount of damage attached enemy takes from each attack by 1.",
@@ -149,7 +160,7 @@
 		"pack_code": "cyclops",
 		"position": 7,
 		"quantity": 2,
-		"resource_mental": "1",
+		"resource_mental": 1,
 		"set_code": "cyclops",
 		"set_position": 8,
 		"text": "Attach to an enemy. Max 1 per enemy.\nTemporary.\n<b>Interrupt</b>: When attached enemy is defeated, the player who defeated it draws 2 cards.",
@@ -166,7 +177,7 @@
 		"pack_code": "cyclops",
 		"position": 8,
 		"quantity": 1,
-		"resource_physical": "1",
+		"resource_physical": 1,
 		"set_code": "cyclops",
 		"set_position": 10,
 		"text": "<b>Hero Interrupt</b>: When you use your <i>\"Optic Blast\"</i> ability, exhaust Cyclops → this attack deals 8 additionnal damage and gains overkill.",
@@ -200,7 +211,7 @@
 		"pack_code": "cyclops",
 		"position": 10,
 		"quantity": 3,
-		"resource_mental": "1",
+		"resource_mental": 1,
 		"set_code": "cyclops",
 		"set_position": 13,
 		"text": "<b>Hero Action</b> <i>(thwart)</i>: Dremove 3 threat from a scheme. Choose a [[TACTIC]] card in your discard pile and add it to your hand.",
@@ -220,7 +231,7 @@
 		"pack_code": "cyclops",
 		"position": 11,
 		"quantity": 1,
-		"resource_mental": "1",
+		"resource_mental": 1,
 		"subname": "Hank Mccoy",
 		"text": "<b>Response</b>: After Beast enters play, search your deck and discard pile for a resource card and add it to your hand. <i>(Shuffle.)</i>",
 		"thwart": 2,
@@ -260,7 +271,7 @@
 		"pack_code": "cyclops",
 		"position": 13,
 		"quantity": 1,
-		"resource_physical": "1",
+		"resource_physical": 1,
 		"subname": "Santo Vaccarro",
 		"text": "Retaliate 1.",
 		"thwart": 1,
@@ -280,7 +291,7 @@
 		"pack_code": "cyclops",
 		"position": 14,
 		"quantity": 1,
-		"resource_physical": "1",
+		"resource_physical": 1,
 		"subname": "Ruth Aldine",
 		"text": "<b>Response</b>: After Blindfold enters play, look at the top 5 cards of the encounter deck. Discard 1 of those cards and put the rest back in the same order.",
 		"thwart": 2,
@@ -297,7 +308,7 @@
 		"pack_code": "cyclops",
 		"position": 15,
 		"quantity": 3,
-		"resource_mental": "1",
+		"resource_mental": 1,
 		"text": "Attach to an [[X-MEN]] ally. Max 1 [[TRAINING]] upgrade per ally.\nAttached ally gets +1 THW, +1 ATK and +1 hot point.",
 		"traits": "Training.",
 		"type_code": "upgrade"
@@ -312,7 +323,7 @@
 		"pack_code": "cyclops",
 		"position": 16,
 		"quantity": 3,
-		"resource_physical": "1",
+		"resource_physical": 1,
 		"text": "Attach to an minion. Max 1 per minion.\nEach ally takes -1 consequential damage ([consequential]) when attacking attached minion.",
 		"traits": "Tactic.",
 		"type_code": "upgrade"
@@ -351,7 +362,7 @@
 		"pack_code": "cyclops",
 		"position": 19,
 		"quantity": 1,
-		"resource_mental": "1",
+		"resource_mental": 1,
 		"subname": "Warren Worthington III",
 		"text": "Reduce the cost to play Angel by 1 if your identity has the [[MUTANT]] or [[X-MEN]] trait.",
 		"thwart": 1,
@@ -369,8 +380,8 @@
 		"pack_code": "cyclops",
 		"position": 20,
 		"quantity": 1,
-		"resource_physical": "1",
-		"text": "If each of your allies has the [[X-MEN]] trait, increase your ally limit by 1.",
+		"resource_physical": 1,
+		"text": "If each of your allies has the [[X-MEN]] trait, increase your ally limit by 1.\n<b>Response:</b> After an [[X-MEN]] ally enters play, exhaust Utopia -> ready an [[X-MEN]] character.",
 		"traits": "Location. X-Men.",
 		"type_code": "support"
 	},
@@ -450,6 +461,7 @@
 		"pack_code": "cyclops",
 		"position": 32,
 		"quantity": 3,
+		"resource_physical": 1,
 		"text": "Attach to an minion. Max 1 per minion.\nAttacks against attached minion gain overkill.",
 		"traits": "Tactic.",
 		"type_code": "upgrade"
@@ -464,6 +476,7 @@
 		"pack_code": "cyclops",
 		"position": 33,
 		"quantity": 3,
+		"resource_physical": 1,
 		"text": "Attach to an minion. Max 1 per minion.\n<b>Interrupt</b>: When a character makes a basic attack against attached minion, that character uses THW instead of their ATK.",
 		"traits": "Tactic.",
 		"type_code": "upgrade"
@@ -478,6 +491,7 @@
 		"pack_code": "cyclops",
 		"position": 34,
 		"quantity": 3,
+		"resource_physical": 1,
 		"text": "Attach to an minion. Max 1 per minion.\nAttached minion gets -2 ATK.",
 		"traits": "Tactic.",
 		"type_code": "upgrade"
@@ -492,6 +506,7 @@
 		"pack_code": "cyclops",
 		"position": 35,
 		"quantity": 3,
+		"resource_physical": 1,
 		"text": "Play only if your identity has the [[X-MEN]] trait.\nAttach to a friendly character.\nAttached character gets +1 hit point and gains the [[X-MEN]] trait.",
 		"traits": "Title.",
 		"type_code": "upgrade"
