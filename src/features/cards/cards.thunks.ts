@@ -356,7 +356,12 @@ const replaceDuplicateCards = (
   Object.keys(data.slots).forEach((jsonId) => {
     const cardData = heroData[jsonId];
     if (cardData && cardData.duplicate_of) {
-      newSlots[cardData.duplicate_of] = data.slots[jsonId];
+      // Go all the way down the `duplicate_of` chain
+      let currentCardData = cardData;
+      while (currentCardData.duplicate_of) {
+        currentCardData = heroData[currentCardData.duplicate_of];
+      }
+      newSlots[currentCardData.code] = data.slots[jsonId];
     } else {
       newSlots[jsonId] = data.slots[jsonId];
     }

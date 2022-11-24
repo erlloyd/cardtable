@@ -35,4 +35,5 @@ export const EXTRA_CARDS: { [key: string]: ICardDetails[] } = {
   wsp: [{ jsonId: "13001c" }],
   ironheart: [{ jsonId: "29002a" }, { jsonId: "29003a" }],
   spdr: [{ jsonId: "31002a" }],
+  storm: [{ jsonId: "36002" }, { jsonId: "36003" }, { jsonId: "36004" }, { jsonId: "36005" }],
 };
