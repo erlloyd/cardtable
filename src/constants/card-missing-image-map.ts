@@ -1547,4 +1547,105 @@ export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "36037": "https://hallofheroeshome.files.wordpress.com/2022/11/o9.jpg?h=300",
   "36038": "https://hallofheroeshome.files.wordpress.com/2022/11/o10.jpg?w=300",
   "36039": "https://hallofheroeshome.files.wordpress.com/2022/11/o12.jpg?w=300",
+
+  // MaGog
+  "39001a": "https://hallofheroeshome.files.wordpress.com/2022/11/39001a.jpg?w=300",
+  "39001b": "https://hallofheroeshome.files.wordpress.com/2022/11/39001b.jpg?w=300",
+  "39002a": "https://hallofheroeshome.files.wordpress.com/2022/11/39002a.jpg?h=300",
+  "39002b": "https://hallofheroeshome.files.wordpress.com/2022/11/39002b.jpg?h=300",
+  "39003a": "https://hallofheroeshome.files.wordpress.com/2022/11/39003a.jpg?w=300",
+  "39003b": "https://hallofheroeshome.files.wordpress.com/2022/11/39003b.jpg?w=300",
+  "39004a": "https://hallofheroeshome.files.wordpress.com/2022/11/39004a.jpg?w=300",
+  "39004b": "https://hallofheroeshome.files.wordpress.com/2022/11/39004b.jpg?w=300",
+  "39005": "https://hallofheroeshome.files.wordpress.com/2022/11/39005.jpg?w=300",
+  "39006": "https://hallofheroeshome.files.wordpress.com/2022/11/39006.jpg?w=300",
+  "39007": "https://hallofheroeshome.files.wordpress.com/2022/11/39007.jpg?w=300",
+  "39008": "https://hallofheroeshome.files.wordpress.com/2022/11/39008.jpg?h=300",
+  "39009": "https://hallofheroeshome.files.wordpress.com/2022/11/39009.jpg?w=300",
+  "39010": "https://hallofheroeshome.files.wordpress.com/2022/11/39010.jpg?w=300",
+  "39011": "https://hallofheroeshome.files.wordpress.com/2022/11/39011.jpg?w=300",
+
+  // Spiral
+  "39012a": "https://hallofheroeshome.files.wordpress.com/2022/11/39012a.jpg?w=300",
+  "39012b": "https://hallofheroeshome.files.wordpress.com/2022/11/39012b.jpg?w=300",
+  "39013a": "https://hallofheroeshome.files.wordpress.com/2022/11/39013a.jpg?w=300",
+  "39013b": "https://hallofheroeshome.files.wordpress.com/2022/11/39013b.jpg?w=300",
+  "39014a": "https://hallofheroeshome.files.wordpress.com/2022/11/39014a.jpg?w=300",
+  "39014b": "https://hallofheroeshome.files.wordpress.com/2022/11/39014b.jpg?w=300",
+  "39015a": "https://hallofheroeshome.files.wordpress.com/2022/11/39015a.jpg?h=300",
+  "39015b": "https://hallofheroeshome.files.wordpress.com/2022/11/39015b.jpg?h=300",
+  "39016": "https://hallofheroeshome.files.wordpress.com/2022/11/39016.jpg?h=300",
+  "39017": "https://hallofheroeshome.files.wordpress.com/2022/11/39017.jpg?w=300",
+  "39018": "https://hallofheroeshome.files.wordpress.com/2022/11/39018.jpg?w=300",
+  "39019": "https://hallofheroeshome.files.wordpress.com/2022/11/39019.jpg?w=300",
+  "39020": "https://hallofheroeshome.files.wordpress.com/2022/11/390.jpg?w=300",
+  "39021": "https://hallofheroeshome.files.wordpress.com/2022/11/39017.jpg?w=300",
+
+  // Mojo
+  "39022": "https://hallofheroeshome.files.wordpress.com/2022/11/39022.jpg?w=300",
+  "39023": "https://hallofheroeshome.files.wordpress.com/2022/11/39023.jpg?w=300",
+  "39024": "https://hallofheroeshome.files.wordpress.com/2022/11/39024.jpg?w=300",
+  "39025a": "https://hallofheroeshome.files.wordpress.com/2022/11/39025a.jpg?h=300",
+  "39025b": "https://hallofheroeshome.files.wordpress.com/2022/11/39025b.jpg?h=300",
+  "39026a": "https://hallofheroeshome.files.wordpress.com/2022/11/39026a.jpg?w=300",
+  "39026b": "https://hallofheroeshome.files.wordpress.com/2022/11/39026b.jpg?w=300",
+  "39027": "https://hallofheroeshome.files.wordpress.com/2022/11/39027.jpg?w=300",
+  "39028": "https://hallofheroeshome.files.wordpress.com/2022/11/39028.jpg?w=300",
+  "39029": "https://hallofheroeshome.files.wordpress.com/2022/11/39029.jpg?w=300",
+  "39030": "https://hallofheroeshome.files.wordpress.com/2022/11/39030.jpg?w=300",
+  "39031": "https://hallofheroeshome.files.wordpress.com/2022/11/39031.jpg?w=300",
+  "39032": "https://hallofheroeshome.files.wordpress.com/2022/11/39032.jpg?w=300",
+  "39033": "https://hallofheroeshome.files.wordpress.com/2022/11/39033.jpg?w=300",
+  "39034": "https://hallofheroeshome.files.wordpress.com/2022/11/39034.jpg?w=300",
+
+  // Crime
+  "39035": "https://hallofheroeshome.files.wordpress.com/2022/11/39035.jpg?w=300",
+  "39036": "https://hallofheroeshome.files.wordpress.com/2022/11/39036.jpg?w=300",
+  "39037": "https://hallofheroeshome.files.wordpress.com/2022/11/39037.jpg?h=300",
+  "39038": "https://hallofheroeshome.files.wordpress.com/2022/11/39038.jpg?h=300",
+  "39039": "https://hallofheroeshome.files.wordpress.com/2022/11/39039.jpg?h=300",
+  "39040": "https://hallofheroeshome.files.wordpress.com/2022/11/39040.jpg?w=300",
+
+  // Fantasy
+  "39041": "https://hallofheroeshome.files.wordpress.com/2022/11/39041.jpg?w=300",
+  "39042": "https://hallofheroeshome.files.wordpress.com/2022/11/39042.jpg?w=300",
+  "39043": "https://hallofheroeshome.files.wordpress.com/2022/11/39043.jpg?w=300",
+  "39044": "https://hallofheroeshome.files.wordpress.com/2022/11/39044.jpg?w=300",
+  "39045": "https://hallofheroeshome.files.wordpress.com/2022/11/39045.jpg?h=300",
+  "39046": "https://hallofheroeshome.files.wordpress.com/2022/11/39046.jpg?w=300",
+
+  // Horror
+  "39047": "https://hallofheroeshome.files.wordpress.com/2022/11/39047.jpg?w=300",
+  "39048": "https://hallofheroeshome.files.wordpress.com/2022/11/39048.jpg?w=300",
+  "39049": "https://hallofheroeshome.files.wordpress.com/2022/11/39049.jpg?w=300",
+  "39050": "https://hallofheroeshome.files.wordpress.com/2022/11/39050.jpg?w=300",
+  "39051": "https://hallofheroeshome.files.wordpress.com/2022/11/39051.jpg?w=300",
+  "39052": "https://hallofheroeshome.files.wordpress.com/2022/11/39052.jpg?w=300",
+
+  // Sci-Fi
+  "39053": "https://hallofheroeshome.files.wordpress.com/2022/11/39053.jpg?w=300",
+  "39054": "https://hallofheroeshome.files.wordpress.com/2022/11/39054.jpg?w=300",
+  "39055": "https://hallofheroeshome.files.wordpress.com/2022/11/39055.jpg?w=300",
+  "39056": "https://hallofheroeshome.files.wordpress.com/2022/11/39056.jpg?w=300",
+  "39057": "https://hallofheroeshome.files.wordpress.com/2022/11/39057.jpg?w=300",
+  "39058": "https://hallofheroeshome.files.wordpress.com/2022/11/39058.jpg?w=300",
+  "39059": "https://hallofheroeshome.files.wordpress.com/2022/11/39059.jpg?h=300",
+
+  // Sitcom
+  "39060": "https://hallofheroeshome.files.wordpress.com/2022/11/39060.jpg?w=300",
+  "39061": "https://hallofheroeshome.files.wordpress.com/2022/11/39061.jpg?w=300",
+  "39062": "https://hallofheroeshome.files.wordpress.com/2022/11/39062.jpg?w=300",
+  "39063": "https://hallofheroeshome.files.wordpress.com/2022/11/39063.jpg?w=300",
+  "39064": "https://hallofheroeshome.files.wordpress.com/2022/11/39064.jpg?w=300",
+  "39065": "https://hallofheroeshome.files.wordpress.com/2022/11/39065.jpg?w=300",
+
+  // Western
+  "39066": "https://hallofheroeshome.files.wordpress.com/2022/11/39066.jpg?w=300",
+  "39067": "https://hallofheroeshome.files.wordpress.com/2022/11/39067.jpg?w=300",
+  "39068": "https://hallofheroeshome.files.wordpress.com/2022/11/39068.jpg?w=300",
+  "39069": "https://hallofheroeshome.files.wordpress.com/2022/11/39069.jpg?w=300",
+  "39070": "https://hallofheroeshome.files.wordpress.com/2022/11/39070.jpg?w=300",
+
+  // Longshot
+  "39071": "https://hallofheroeshome.files.wordpress.com/2022/11/39071.jpg?w=300",
 };
