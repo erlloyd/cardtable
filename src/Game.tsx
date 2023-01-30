@@ -56,6 +56,7 @@ import { getCenter, getDistance } from "./utilities/geo";
 import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
 import CloseIcon from "@material-ui/icons/Close";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import DeckSearchContainer from "./DeckSearchContainer";
 
 const SCALE_BY = 1.02;
 
@@ -90,11 +91,12 @@ interface IProps {
   loadCardsData: () => void;
   allJsonData: (payload: any) => void;
   shuffleStack: (id?: string) => void;
-  fetchDecklistById: (payload: {
-    gameType: GameType;
-    decklistId: number;
-    position: Vector2d;
-  }) => void;
+  fetchDecklistById: any;
+  // fetchDecklistById: (payload: {
+  //   gameType: GameType;
+  //   decklistId: number;
+  //   position: Vector2d;
+  // }) => void;
   updateZoom: (zoom: Vector2d) => void;
   updatePosition: (pos: Vector2d) => void;
   resetApp: () => void;
@@ -158,6 +160,7 @@ interface IProps {
   saveDeckAsJson: (stack: ICardStack | undefined) => void;
   showRadialMenuAtPosition: (payload: Vector2d) => void;
   showSpecificCardLoader: (payload: Vector2d) => void;
+  showDeckSearch: (payload: Vector2d) => void;
   adjustModifier: (payload: {
     id?: string;
     modifierId: string;
@@ -611,6 +614,7 @@ class Game extends Component<IProps, IState> {
             });
           }}
         ></SpecificCardLoaderContainer>
+        <DeckSearchContainer></DeckSearchContainer>
         <NotesContainer></NotesContainer>
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
@@ -2193,16 +2197,24 @@ class Game extends Component<IProps, IState> {
         },
       },
       {
-        label: "Load Deck from json file",
-        fileLoadedAction: (jsonContents: string) => {
-          this.props.createDeckFromJson({
-            gameType: this.props.currentGameType,
-            position: this.stage?.getPointerPosition() ?? { x: 0, y: 0 },
-            jsonContents,
-          });
+        label: `Search for Online Deck`,
+        action: () => {
+          this.props.showDeckSearch(
+            this.stage?.getPointerPosition() || { x: 0, y: 0 }
+          );
         },
-        fileUploader: true,
       },
+      // {
+      //   label: "Load Deck from json file",
+      //   fileLoadedAction: (jsonContents: string) => {
+      //     this.props.createDeckFromJson({
+      //       gameType: this.props.currentGameType,
+      //       position: this.stage?.getPointerPosition() ?? { x: 0, y: 0 },
+      //       jsonContents,
+      //     });
+      //   },
+      //   fileUploader: true,
+      // },
       {
         label: `Load ${
           GamePropertiesMap[this.props.currentGameType].encounterUiName

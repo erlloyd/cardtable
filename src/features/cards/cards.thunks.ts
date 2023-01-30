@@ -2,6 +2,7 @@ import { Action, createAsyncThunk, ThunkAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Vector2d } from "konva/lib/types";
 import { v4 as uuidv4 } from "uuid";
+import { scrapeApi } from "../../constants/api-constants";
 import { GameType, myPeerRef } from "../../constants/app-constants";
 import { EXTRA_CARDS } from "../../constants/card-pack-mapping";
 import { GamePropertiesMap } from "../../constants/game-type-properties-mapping";
@@ -232,6 +233,30 @@ export const createDeckFromJson =
       );
     }
   };
+
+export const getListOfDecklistsFromSearchTerm = createAsyncThunk(
+  "decklist/getListOfDecklistFromSearchTermStatus",
+  async (
+    payload: {
+      gameType: GameType;
+      decklistSearchTerm: string;
+      position: Vector2d;
+    },
+    thunkApi
+  ) => {
+    const search = "Drunk";
+    const uriToScrape = `${
+      GamePropertiesMap[payload.gameType].decklistSearchApi
+    }?name=${encodeURIComponent(search)}&${
+      GamePropertiesMap[payload.gameType].decklistSearchApiConstants ?? ""
+    }`;
+    const response = await axios.get(
+      `${scrapeApi}?uri=${encodeURIComponent(uriToScrape)}`
+    );
+    console.log(response.data);
+    // GamePropertiesMap[payload.gameType].decklistSearchApiParsing(response)
+  }
+);
 
 export const fetchDecklistById = createAsyncThunk(
   "decklist/fetchByIdStatus",

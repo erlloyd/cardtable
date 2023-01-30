@@ -38,6 +38,11 @@ export const getSpecificCardLoaderPosition = createSelector(
   (game) => game.specificCardLoaderPosition
 );
 
+export const getDeckSearchPosition = createSelector(
+  getGame,
+  (game) => game.deckSearchPosition
+);
+
 export const getPreviewCard = createSelector(
   getGame,
   (game) => game.previewCard

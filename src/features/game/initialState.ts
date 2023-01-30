@@ -15,6 +15,7 @@ export interface IGameState {
   stagePosition: Vector2d;
   radialMenuPosition: Vector2d | null;
   specificCardLoaderPosition: Vector2d | null;
+  deckSearchPosition: Vector2d | null;
   playerColors: { [key: string]: PlayerColor };
   playerNumbers: { [key: string]: number };
   currentVisiblePlayerHandNumber: number | null; // If null, view your own hand
@@ -45,6 +46,7 @@ localStorageState.previewCard = null;
 localStorageState.menuPreviewCardJsonId = null;
 localStorageState.radialMenuPosition = null;
 localStorageState.specificCardLoaderPosition = null;
+localStorageState.deckSearchPosition = null;
 localStorageState.draggingCardFromHand = false;
 localStorageState.drawingArrow = false;
 
@@ -63,6 +65,7 @@ const defaultState: IGameState = {
   activeGameType: null,
   radialMenuPosition: null,
   specificCardLoaderPosition: null,
+  deckSearchPosition: null,
   draggingCardFromHand: false,
   drawCardsIntoHand: true,
   snapCardsToGrid: true,

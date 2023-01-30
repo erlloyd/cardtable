@@ -70,6 +70,7 @@ import {
   updatePosition,
   updateZoom,
   setDrawingArrow,
+  showDeckSearch,
 } from "./features/game/game.slice";
 import {
   updateDisconnectedArrowPosition,
@@ -148,6 +149,7 @@ const GameContainer = connect(mapStateToProps, {
   saveDeckAsJson,
   showRadialMenuAtPosition,
   showSpecificCardLoader,
+  showDeckSearch,
   adjustModifier,
   clearAllModifiers,
   addToPlayerHand,

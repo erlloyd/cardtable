@@ -4,6 +4,8 @@ import { CounterTokenType, StatusTokenType } from "../constants/card-constants";
 export interface GameProperties {
   deckSite: string;
   decklistApi: string;
+  decklistSearchApi: string;
+  decklistSearchApiConstants?: string;
   encounterUiName: string;
   backgroundImageLocation: string;
   possibleIcons: IconInfo[];
@@ -51,6 +53,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
   marvelchampions: {
     deckSite: "marvelcdb.com",
     decklistApi: "https://marvelcdb.com/api/public/decklist/",
+    decklistSearchApi: "https://marvelcdb.com/decklists",
     encounterUiName: "Encounter Set",
     backgroundImageLocation:
       process.env.PUBLIC_URL + "/images/table/background_marvelchampions.png",
@@ -127,6 +130,8 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
   lotrlcg: {
     deckSite: "ringsdb.com",
     decklistApi: "https://ringsdb.com/api/public/decklist/",
+    decklistSearchApi: "https://ringsdb.com/decklists/find",
+    decklistSearchApiConstants: "numcores=3",
     encounterUiName: "Scenario",
     backgroundImageLocation:
       process.env.PUBLIC_URL + "/images/table/background_lotrlcg.jpg",
