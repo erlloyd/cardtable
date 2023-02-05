@@ -5,13 +5,42 @@ import {
 } from "@material-ui/lab";
 import { Vector2d } from "konva/lib/types";
 import TopLayer from "./TopLayer";
+import { GameType } from "./constants/app-constants";
+import debounce from "lodash/debounce";
+import {
+  OnlineDeckDataWithId,
+  OnlineDeckDataMap,
+} from "./features/game/initialState";
+import { useState } from "react";
 
 interface IProps {
+  gameType: GameType | null;
   position: Vector2d | null;
+  searching: boolean;
+  mostRecentResults: OnlineDeckDataMap;
   hideDeckSearch: () => void;
+  getListOfDecklistsFromSearchTerm: (payload: {
+    decklistSearchTerm: string;
+    position: Vector2d;
+  }) => void;
+  loadDeckId: (id: number) => void;
 }
 
 const DeckSearch = (props: IProps) => {
+  const [internalSearching, setInternalSearching] = useState(false);
+
+  const handleValueChanged = (v: any) => {
+    setInternalSearching(true);
+    handleValueChangedDebounced(v);
+  };
+  const handleValueChangedDebounced = debounce((v) => {
+    setInternalSearching(false);
+    props.getListOfDecklistsFromSearchTerm({
+      decklistSearchTerm: v.target.value,
+      position: { x: 0, y: 0 },
+    });
+  }, 500);
+
   return !!props.position ? (
     <TopLayer
       trasparentBackground={false}
@@ -29,22 +58,44 @@ const DeckSearch = (props: IProps) => {
       >
         <Autocomplete
           id="specific-card-loader-combobox"
-          options={[]}
-          // getOptionLabel={(cd) => cd.name}
+          options={getOptions(props, internalSearching)}
+          filterOptions={(options) => options}
+          getOptionLabel={(deckInfo) => deckInfo.Name}
           style={{ width: 300 }}
-          // onChange={handleSelected(props)}
+          onChange={(_, value) => {
+            if (!!value) {
+              props.loadDeckId(value.Id);
+            }
+            props.hideDeckSearch();
+          }}
           // onHighlightChange={handleHighlightChange(props)}
           renderInput={(params) => (
             <TextField
               {...params}
               label={"Search Online Decks"}
               variant="outlined"
+              onChange={handleValueChanged}
             />
           )}
         />
       </div>
     </TopLayer>
   ) : null;
+};
+
+const getOptions = (
+  props: IProps,
+  internalSearching: boolean
+): OnlineDeckDataWithId[] => {
+  if (props.searching || internalSearching) {
+    return [
+      { Likes: 0, Name: "Getting Decklists...", By: "", Hero: "", Id: -1 },
+    ];
+  }
+
+  return Object.entries(props.mostRecentResults).map((val) => {
+    return { ...val[1], Id: +val[0] };
+  });
 };
 
 // const handleHighlightChange =

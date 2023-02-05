@@ -6,6 +6,20 @@ import {
 } from "../../constants/app-constants";
 import { loadState } from "../../store/localStorage";
 
+export interface OnlineDeckDataMap {
+  [key: string]: OnlineDeckData;
+}
+export interface OnlineDeckData {
+  Name: string;
+  Hero: string;
+  By: string;
+  Likes: number;
+}
+
+export interface OnlineDeckDataWithId extends OnlineDeckData {
+  Id: number;
+}
+
 export interface IPreviewCard {
   id: string;
 }
@@ -28,6 +42,8 @@ export interface IGameState {
   drawCardsIntoHand: boolean;
   snapCardsToGrid: boolean;
   drawingArrow: boolean;
+  searchingForOnlineDecks: boolean;
+  mostRecentOnlineDeckSearchResults: OnlineDeckDataMap;
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -49,6 +65,8 @@ localStorageState.specificCardLoaderPosition = null;
 localStorageState.deckSearchPosition = null;
 localStorageState.draggingCardFromHand = false;
 localStorageState.drawingArrow = false;
+localStorageState.searchingForOnlineDecks = false;
+localStorageState.mostRecentOnlineDeckSearchResults = {};
 
 // TESTING
 localStorageState.snapCardsToGrid = true;
@@ -71,6 +89,8 @@ const defaultState: IGameState = {
   snapCardsToGrid: true,
   currentVisiblePlayerHandNumber: null,
   drawingArrow: false,
+  searchingForOnlineDecks: false,
+  mostRecentOnlineDeckSearchResults: {},
 };
 export const initialState: IGameState = {
   ...defaultState,

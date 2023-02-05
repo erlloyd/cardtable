@@ -614,7 +614,16 @@ class Game extends Component<IProps, IState> {
             });
           }}
         ></SpecificCardLoaderContainer>
-        <DeckSearchContainer></DeckSearchContainer>
+        <DeckSearchContainer
+          loadDeckId={this.handleImportDeck(
+            !!this.stage
+              ? this.getRelativePositionFromTarget(
+                  this.stage,
+                  this.lastMousePos
+                )
+              : { x: 0, y: 0 }
+          )}
+        ></DeckSearchContainer>
         <NotesContainer></NotesContainer>
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
@@ -1899,6 +1908,11 @@ class Game extends Component<IProps, IState> {
     if (event.key === "a" && this.props.gameState.drawingArrow) {
       this.props.setDrawingArrow(false);
       this.props.removeAnyDisconnectedArrows(myPeerRef);
+    } else if (
+      event.key.toLocaleLowerCase() === "delete" ||
+      event.key.toLocaleLowerCase() === "backspace"
+    ) {
+      this.props.deleteCardStack();
     }
   };
 

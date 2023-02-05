@@ -84,3 +84,13 @@ export const getMenuPreviewCard = createSelector(getGame, (game) => {
 
   return menuPreviewCard;
 });
+
+export const getIsSearchingForOnlineDecks = createSelector(
+  getGame,
+  (game) => game.searchingForOnlineDecks
+);
+
+export const getMostRecentOnlineDeckSearchResults = createSelector(
+  getGame,
+  (game) => game.mostRecentOnlineDeckSearchResults
+);

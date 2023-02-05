@@ -17,7 +17,12 @@ import {
   getCardsDataPlayerCardsByName,
 } from "../cards-data/cards-data.selectors";
 import { ICardData } from "../cards-data/initialState";
-import { getGame, getSnapCardsToGrid } from "../game/game.selectors";
+import {
+  getActiveGameType,
+  getGame,
+  getSnapCardsToGrid,
+} from "../game/game.selectors";
+import { OnlineDeckDataMap } from "../game/initialState";
 import {
   addCardStackWithSnapAndId,
   createDeckFromTextFileWithIds,
@@ -238,23 +243,30 @@ export const getListOfDecklistsFromSearchTerm = createAsyncThunk(
   "decklist/getListOfDecklistFromSearchTermStatus",
   async (
     payload: {
-      gameType: GameType;
       decklistSearchTerm: string;
       position: Vector2d;
     },
     thunkApi
   ) => {
-    const search = "Drunk";
-    const uriToScrape = `${
-      GamePropertiesMap[payload.gameType].decklistSearchApi
-    }?name=${encodeURIComponent(search)}&${
-      GamePropertiesMap[payload.gameType].decklistSearchApiConstants ?? ""
-    }`;
-    const response = await axios.get(
-      `${scrapeApi}?uri=${encodeURIComponent(uriToScrape)}`
-    );
-    console.log(response.data);
-    // GamePropertiesMap[payload.gameType].decklistSearchApiParsing(response)
+    const gameType = getActiveGameType(thunkApi.getState() as RootState);
+    if (!!gameType) {
+      const uriToScrape = `${
+        GamePropertiesMap[gameType].decklistSearchApi
+      }?name=${encodeURIComponent(payload.decklistSearchTerm)}&${
+        GamePropertiesMap[gameType].decklistSearchApiConstants ?? ""
+      }`;
+      const response = await axios.get<{
+        StatusCode: number;
+        Decks: OnlineDeckDataMap;
+      }>(`${scrapeApi}?uri=${encodeURIComponent(uriToScrape)}`);
+
+      if (response.data.StatusCode !== 200) {
+        console.error(`Scraper couldn't get the data. Check scraper logs`);
+        throw new Error(`Scraper couldn't get the data. Check scraper logs`);
+      }
+
+      return response.data.Decks;
+    }
   }
 );
 

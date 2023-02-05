@@ -10,6 +10,7 @@ import {
   resetApp,
   startDraggingCardFromHand,
 } from "../../store/global.actions";
+import { getListOfDecklistsFromSearchTerm } from "../cards/cards.thunks";
 import { MAX_PLAYERS } from "../cards/initialState";
 import { IGameState, initialState } from "./initialState";
 
@@ -215,6 +216,27 @@ const gameSlice = createSlice({
     builder.addCase(startDraggingCardFromHand, (state, _action) => {
       state.draggingCardFromHand = true;
     });
+    builder.addCase(
+      getListOfDecklistsFromSearchTerm.pending,
+      (state, _action) => {
+        state.searchingForOnlineDecks = true;
+        state.mostRecentOnlineDeckSearchResults = {};
+      }
+    );
+    builder.addCase(
+      getListOfDecklistsFromSearchTerm.fulfilled,
+      (state, action) => {
+        state.searchingForOnlineDecks = false;
+        state.mostRecentOnlineDeckSearchResults = action.payload ?? {};
+      }
+    );
+    builder.addCase(
+      getListOfDecklistsFromSearchTerm.rejected,
+      (state, _action) => {
+        state.searchingForOnlineDecks = false;
+        state.mostRecentOnlineDeckSearchResults = {};
+      }
+    );
   },
 });
 
