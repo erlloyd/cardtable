@@ -10,6 +10,7 @@ import FileUploader from "./FileUploader";
 
 export interface ContextMenuItem {
   label: string;
+  labelHTML?: string;
   action?: (fromTouch?: boolean) => void;
   fileLoadedAction?: (fileContents: string) => void;
   children?: ContextMenuItem[];
@@ -88,6 +89,7 @@ class ContextMenu extends Component<IProps, IState> {
           key={`contextMenu-item-${index}`}
           parentMenuOpen={this.state.menuOpen}
           label={i.label}
+          labelHTML={i.labelHTML}
         >
           {i.children.map((nestedI, nestedIndex) => {
             return this.renderMenuItem(nestedI, index * 1000 + nestedIndex);

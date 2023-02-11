@@ -13,14 +13,18 @@ const CurvedArrows = (props: IProps) => {
   return (
     <Group>
       {props.arrows
-        ?.map((arrowData) => {
+        ?.map((arrowData, index) => {
           const start = getPointFromCards(arrowData.startCardId, props.cards);
           const end = arrowData.endCardId
             ? getPointFromCards(arrowData.endCardId, props.cards, true)
             : adjustEndPositionForDrawing(arrowData.endArrowPosition);
 
           return start && end ? (
-            <Arrow startPoint={start} endPoint={end}></Arrow>
+            <Arrow
+              key={`arrow-index-${index}`}
+              startPoint={start}
+              endPoint={end}
+            ></Arrow>
           ) : null;
         })
         .filter((a) => !!a)}

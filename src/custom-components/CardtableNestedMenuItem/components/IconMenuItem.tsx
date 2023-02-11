@@ -24,6 +24,7 @@ interface IconMenuItemProps {
   rightIcon?: React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLLIElement>;
   label?: string;
+  labelHTML?: string;
   className?: string;
   MenuItemProps?: MenuItemProps;
   ref?: RefObject<HTMLLIElement>;
@@ -31,7 +32,16 @@ interface IconMenuItemProps {
 
 const IconMenuItem = forwardRef<HTMLLIElement, IconMenuItemProps>(
   (
-    { leftIcon, rightIcon, onClick, label, MenuItemProps, className, ...props },
+    {
+      leftIcon,
+      rightIcon,
+      onClick,
+      label,
+      labelHTML,
+      MenuItemProps,
+      className,
+      ...props
+    },
     ref
   ) => {
     return (
@@ -44,7 +54,13 @@ const IconMenuItem = forwardRef<HTMLLIElement, IconMenuItemProps>(
       >
         <FlexBox>
           {leftIcon}
-          <StyledTypography>{label}</StyledTypography>
+          <StyledTypography
+            dangerouslySetInnerHTML={
+              labelHTML ? { __html: labelHTML } : undefined
+            }
+          >
+            {labelHTML ? null : label}
+          </StyledTypography>
         </FlexBox>
         {rightIcon}
       </StyledMenuItem>

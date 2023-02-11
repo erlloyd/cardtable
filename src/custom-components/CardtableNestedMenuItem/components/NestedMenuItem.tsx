@@ -7,6 +7,7 @@ export interface NestedMenuItemProps extends Omit<MenuItemProps, "button"> {
   parentMenuOpen: boolean;
   component?: React.ElementType;
   label?: string;
+  labelHTML?: string;
   rightIcon?: React.ReactNode;
   leftIcon?: React.ReactNode;
   children?: React.ReactNode;
@@ -26,6 +27,7 @@ const NestedMenuItem = React.forwardRef<
   const {
     parentMenuOpen,
     label,
+    labelHTML,
     rightIcon = <ChevronRight />,
     leftIcon = null,
     children,
@@ -139,6 +141,7 @@ const NestedMenuItem = React.forwardRef<
         leftIcon={leftIcon}
         rightIcon={rightIcon}
         label={label}
+        labelHTML={labelHTML}
         onClick={(e) => {
           // This was added so if we click on the submenu item
           // (specifically in a touch interface) the submenu will open

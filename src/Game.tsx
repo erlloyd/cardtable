@@ -2266,7 +2266,8 @@ class Game extends Component<IProps, IState> {
         },
       },
       {
-        label: "Multiplayer",
+        label: "",
+        labelHTML: "Multiplayer <span><b>(BETA)</b></span>",
         children: [
           {
             label: "Connect to online game",
@@ -2291,7 +2292,7 @@ class Game extends Component<IProps, IState> {
             action: this.props.requestResync,
           },
           {
-            label: `Peer id is ${this.props.peerId}`,
+            label: `Peer id is ${this.props.peerId} (click to copy)`,
             action: () => {
               if (!!this.props.peerId) {
                 copyToClipboard(this.props.peerId);
@@ -2309,7 +2310,7 @@ class Game extends Component<IProps, IState> {
         ],
       },
       {
-        label: `Copy game state as url`,
+        label: `Copy game to clipboard`,
         action: () => {
           this.props.generateGameStateUrl();
         },

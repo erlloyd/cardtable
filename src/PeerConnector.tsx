@@ -1,31 +1,55 @@
 import { Component } from "react";
 import * as React from "react";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 interface IProps {
   connect: (peerId: string) => void;
 }
 
 class PeerConnector extends Component<IProps> {
-  public inputRef: HTMLInputElement | null = null;
+  inputValue: string = "";
+
+  private focusInputField = (input: any) => {
+    if (input) {
+      setTimeout(() => {
+        input.querySelector("input").focus();
+      }, 100);
+    }
+  };
 
   render() {
     return (
-      <div onClick={this.cancelBubble} onKeyPress={this.cancelBubble}>
-        <input
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "5px",
+        }}
+        onClick={this.cancelBubble}
+        onKeyPress={this.cancelBubble}
+      >
+        <TextField
+          label="Enter peer id"
           autoCapitalize="none"
-          ref={(ref) => {
-            if (!ref) return;
-            this.inputRef = ref;
+          ref={this.focusInputField}
+          onKeyPress={this.connect}
+          onClick={this.cancelBubble}
+          onChange={(event) => {
+            this.inputValue = event.target.value;
           }}
-        ></input>
-        <button onClick={this.connect}>Connect</button>
+          variant="outlined"
+        ></TextField>
+        <Button variant="outlined" onClick={this.connect}>
+          Connect
+        </Button>
       </div>
     );
   }
 
   private connect = (_event: any) => {
-    console.log("connecting with peer id " + this.inputRef?.value);
+    console.log("connecting with peer id " + this.inputValue);
 
-    this.props.connect(this.inputRef?.value || "");
+    this.props.connect(this.inputValue || "");
   };
 
   private cancelBubble = (event: React.SyntheticEvent) => {
