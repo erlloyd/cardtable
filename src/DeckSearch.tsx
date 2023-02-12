@@ -26,6 +26,14 @@ interface IProps {
   loadDeckId: (id: number) => void;
 }
 
+const focusInputField = (input: any) => {
+  if (input) {
+    setTimeout(() => {
+      input.querySelector("input").focus();
+    }, 100);
+  }
+};
+
 const DeckSearch = (props: IProps) => {
   const [internalSearching, setInternalSearching] = useState(false);
 
@@ -72,6 +80,7 @@ const DeckSearch = (props: IProps) => {
           renderInput={(params) => (
             <TextField
               {...params}
+              ref={focusInputField}
               label={"Search Online Decks"}
               variant="outlined"
               onChange={handleValueChanged}

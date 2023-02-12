@@ -26,6 +26,7 @@ class DeckLoader extends Component<IProps> {
       >
         <TextField
           ref={this.focusInputField}
+          label="Enter Online Deck ID"
           onKeyPress={this.handleKeyPress}
           onClick={this.cancelBubble}
           onChange={(event) => {
