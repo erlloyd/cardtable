@@ -94,3 +94,8 @@ export const getMostRecentOnlineDeckSearchResults = createSelector(
   getGame,
   (game) => game.mostRecentOnlineDeckSearchResults
 );
+
+export const isDoneLoadingJSONData = createSelector(
+  getGame,
+  (game) => game.allJsonDataLoaded
+);

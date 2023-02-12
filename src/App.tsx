@@ -116,7 +116,11 @@ const renderGamePicker = (props: IProps) => {
         >
           {Object.entries(GameType).map(([key, value]) => {
             const label = camelCaseToSpaces(key);
-            return <MenuItem value={value}>{label}</MenuItem>;
+            return (
+              <MenuItem key={`menu-item-${key}`} value={value}>
+                {label}
+              </MenuItem>
+            );
           })}
         </Select>
       </FormControl>

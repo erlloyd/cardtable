@@ -5,6 +5,8 @@
 // a great example. One player adjusting their zoom shouldn't
 
 import {
+  bulkLoadCardsDataForPack,
+  bulkLoadCardsForEncounterSet,
   loadCardsData,
   loadCardsDataForPack,
   loadCardsForEncounterSet,
@@ -28,6 +30,7 @@ import {
   toggleSnapCardsToGrid,
   updatePosition,
   updateZoom,
+  doneLoadingJSON,
 } from "../features/game/game.slice";
 import { toggleNotes } from "../features/notes/notes.slice";
 import {
@@ -59,6 +62,9 @@ export const blacklistRemoteActions = {
   [toggleMultiselectMode.type]: true,
   [setMultiplayerGameName.type]: true,
   [toggleNotes.type]: true,
+  [doneLoadingJSON.type]: true,
+  [bulkLoadCardsDataForPack.type]: true,
+  [bulkLoadCardsForEncounterSet.type]: true,
 };
 
 export const misingPlayerNumInSeq = (

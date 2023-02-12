@@ -58,6 +58,7 @@ import {
   getPeerId,
   getPlayerColors,
   getPlayerNumbers,
+  isDoneLoadingJSONData,
 } from "./features/game/game.selectors";
 import {
   clearPreviewCard,
@@ -101,6 +102,7 @@ const mapStateToProps = (state: RootState) => {
     multiplayerGameName: getMultiplayerGameName(state),
     dropTargetCardsById: getDropTargetCardsById(state),
     menuPreviewCard: getMenuPreviewCard(state),
+    isDoneLoadingJSONData: isDoneLoadingJSONData(state),
   };
 };
 

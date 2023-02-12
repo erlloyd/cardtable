@@ -173,6 +173,10 @@ const setDrawingArrowReducer: CaseReducer<
   state.drawingArrow = action.payload;
 };
 
+const doneLoadingJSONReducer: CaseReducer<IGameState> = (state) => {
+  state.allJsonDataLoaded = true;
+};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -203,6 +207,7 @@ const gameSlice = createSlice({
     toggleSnapCardsToGrid: toggleSnapCardsToGridReducer,
     setVisiblePlayerHandNumber: setVisiblePlayerHandNumberReducer,
     setDrawingArrow: setDrawingArrowReducer,
+    doneLoadingJSON: doneLoadingJSONReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -266,6 +271,7 @@ export const {
   toggleSnapCardsToGrid,
   setVisiblePlayerHandNumber,
   setDrawingArrow,
+  doneLoadingJSON,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

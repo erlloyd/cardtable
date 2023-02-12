@@ -70,6 +70,7 @@ interface IProps {
   playerColors: { [key: string]: PlayerColor };
   playerNumbers: { [key: string]: number };
   menuPreviewCard: ICardStack | null;
+  isDoneLoadingJSONData: boolean;
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
   endCardMove: (id: string) => void;
   cardFromHandMove: (pos: Vector2d) => void;
@@ -323,6 +324,10 @@ class Game extends Component<IProps, IState> {
     //   }, 0);
     // }
     // END HACK
+
+    // if (!this.props.isDoneLoadingJSONData) {
+    //   return <div>LOADING JSON DATA...</div>;
+    // }
 
     const staticCards = this.props.cards.cards
       .filter((card) => !card.dragging)

@@ -44,6 +44,7 @@ export interface IGameState {
   drawingArrow: boolean;
   searchingForOnlineDecks: boolean;
   mostRecentOnlineDeckSearchResults: OnlineDeckDataMap;
+  allJsonDataLoaded: boolean;
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -67,6 +68,7 @@ localStorageState.draggingCardFromHand = false;
 localStorageState.drawingArrow = false;
 localStorageState.searchingForOnlineDecks = false;
 localStorageState.mostRecentOnlineDeckSearchResults = {};
+localStorageState.allJsonDataLoaded = false;
 
 // TESTING
 localStorageState.snapCardsToGrid = true;
@@ -91,6 +93,7 @@ const defaultState: IGameState = {
   drawingArrow: false,
   searchingForOnlineDecks: false,
   mostRecentOnlineDeckSearchResults: {},
+  allJsonDataLoaded: false,
 };
 export const initialState: IGameState = {
   ...defaultState,

@@ -241,6 +241,23 @@ const storeCardData =
     }
   };
 
+const bulkLoadCardsForEncounterSetReducer: CaseReducer<
+  ICardsDataState,
+  PayloadAction<
+    {
+      setCode: string;
+      cards: CardDataLOTR[];
+    }[]
+  >
+> = (state, action) => {
+  action.payload.forEach((r) =>
+    loadCardsForEncounterSetReducer(state, {
+      type: loadCardsForEncounterSet.type,
+      payload: r,
+    })
+  );
+};
+
 const loadCardsForEncounterSetReducer: CaseReducer<
   ICardsDataState,
   PayloadAction<{
@@ -282,6 +299,24 @@ const loadCardsForEncounterSetReducer: CaseReducer<
   }
 
   return state;
+};
+
+const bulkLoadCardsDataForPackReducer: CaseReducer<
+  ICardsDataState,
+  PayloadAction<
+    {
+      packType: GameType;
+      pack: CardPackMarvel | CardPackLOTR;
+      pack_code: string;
+    }[]
+  >
+> = (state, action) => {
+  action.payload.forEach((r) =>
+    loadCardsDataForPackReducer(state, {
+      type: loadCardsDataForPack.type,
+      payload: r,
+    })
+  );
 };
 
 const loadCardsDataForPackReducer: CaseReducer<
@@ -337,7 +372,9 @@ const cardsDataSlice = createSlice({
   reducers: {
     loadCardsData: loadCardsDataReducer,
     loadCardsDataForPack: loadCardsDataForPackReducer,
+    bulkLoadCardsDataForPack: bulkLoadCardsDataForPackReducer,
     loadCardsForEncounterSet: loadCardsForEncounterSetReducer,
+    bulkLoadCardsForEncounterSet: bulkLoadCardsForEncounterSetReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -350,7 +387,12 @@ const cardsDataSlice = createSlice({
   },
 });
 
-export const { loadCardsData, loadCardsDataForPack, loadCardsForEncounterSet } =
-  cardsDataSlice.actions;
+export const {
+  loadCardsData,
+  loadCardsDataForPack,
+  bulkLoadCardsDataForPack,
+  loadCardsForEncounterSet,
+  bulkLoadCardsForEncounterSet,
+} = cardsDataSlice.actions;
 
 export default cardsDataSlice.reducer;
