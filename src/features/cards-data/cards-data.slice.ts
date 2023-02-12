@@ -27,7 +27,10 @@ import {
 import { updateActiveGameType } from "../game/game.slice";
 import { receiveRemoteGameState } from "../../store/global.actions";
 import { getCardCodeIncludingOverrides } from "../../utilities/cards-data-utils";
-import { MISSING_BACK_IMAGE_MAP } from "../../constants/card-missing-image-map";
+import {
+  FORCE_CARD_BACK_MAP,
+  MISSING_BACK_IMAGE_MAP,
+} from "../../constants/card-missing-image-map";
 
 // Utilities
 const convertMarvelToCommonFormat = (
@@ -223,6 +226,11 @@ const storeCardData =
     if (!(cs.card.code[0] === "0" && cs.card.code[1] === "0")) {
       if (stateLocation[cs.card.code]) {
         if (careAboutDups) {
+          // If we have an explicit back, don't worry abou tit
+          if (!!FORCE_CARD_BACK_MAP[cs.card.code]) {
+            return;
+          }
+
           console.error(
             "Found multiple cards with code " +
               cs.card.code +
@@ -235,6 +243,8 @@ const storeCardData =
               " " +
               stateLocation[cs.card.code].extraInfo.setCode
           );
+          console.log(cs.card);
+          console.log(stateLocation[cs.card.code]);
         }
       }
       stateLocation[cs.card.code] = cs.card;

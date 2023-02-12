@@ -9,6 +9,10 @@ export const FORCE_ENCOUNTER_CARD_BACK_MAP: { [key: string]: boolean } = {
   "27181": true,
 };
 
+export const FORCE_CARD_BACK_MAP: { [key: string]: string } = {
+  "305145": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Osbera-SideB.png",
+};
+
 export const MISSING_BACK_IMAGE_MAP: { [key: string]: string } = {
   "11027": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Lost-Island.jpg",
   "11030": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Lost-Island.jpg",

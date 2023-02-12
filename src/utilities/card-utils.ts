@@ -2,6 +2,7 @@ import { GameType, myPeerRef } from "../constants/app-constants";
 import { StatusTokenType } from "../constants/card-constants";
 import {
   CARD_ALREADY_ROTATED_MAP,
+  FORCE_CARD_BACK_MAP,
   FORCE_ENCOUNTER_CARD_BACK_MAP,
   MISSING_CARD_IMAGE_MAP,
 } from "../constants/card-missing-image-map";
@@ -111,6 +112,13 @@ export const getImgUrlsFromJsonId = (
   if (!!cardData.images) {
     if (!faceup) {
       if (!cardData.images.back) {
+        const defaultBack =
+          FORCE_CARD_BACK_MAP[topCardData.code] ||
+          process.env.PUBLIC_URL +
+            "/images/standard/card_back_" +
+            currentGameType +
+            ".png";
+
         return [
           topCardData.extraInfo.factionCode === "encounter" ||
           topCardData.typeCode === "side_scheme" ||
@@ -119,13 +127,12 @@ export const getImgUrlsFromJsonId = (
               "/images/standard/encounter_card_back_" +
               currentGameType +
               ".png"
-            : process.env.PUBLIC_URL +
-              "/images/standard/card_back_" +
-              currentGameType +
-              ".png",
+            : defaultBack,
         ];
       } else {
-        return [cardData.images.back];
+        return (
+          [FORCE_CARD_BACK_MAP[topCardData.code]] || [cardData.images.back]
+        );
       }
     } else {
       return [cardData.images.front];
