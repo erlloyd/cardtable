@@ -281,17 +281,22 @@ export const fetchDecklistById = createAsyncThunk(
     );
     const state: RootState = thunkApi.getState() as RootState;
 
-    let returnCards;
     let codes: string[] = [];
+    let returnCards;
 
-    switch (payload.gameType) {
-      case GameType.MarvelChampions:
-        returnCards = getMarvelCards(response, state, payload);
-        codes = [returnCards.data.investigator_code];
-        break;
-      case GameType.LordOfTheRingsLivingCardGame:
-        returnCards = getLOTRCards(response, state, payload);
-        break;
+    try {
+      switch (payload.gameType) {
+        case GameType.MarvelChampions:
+          returnCards = getMarvelCards(response, state, payload);
+          codes = [returnCards.data.investigator_code];
+          break;
+        case GameType.LordOfTheRingsLivingCardGame:
+          returnCards = getLOTRCards(response, state, payload);
+          break;
+      }
+    } catch (e) {
+      console.error(`Error loading cards ${e}`);
+      throw e;
     }
 
     // Cache the images

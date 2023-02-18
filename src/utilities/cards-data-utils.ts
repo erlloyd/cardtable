@@ -15,7 +15,13 @@ export const cardDataSetCodeOverride: { [key: string]: (s: string) => string } =
       if (!!code && code[0] === "0") {
         returnCode = `303${code.substring(2)}`;
       }
-
+      return returnCode;
+    },
+    "Blood in the Isen": (code: string) => {
+      let returnCode = code;
+      if (!!code && code[0] === "0") {
+        returnCode = `306${code.substring(2)}`;
+      }
       return returnCode;
     },
   };

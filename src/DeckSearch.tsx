@@ -34,20 +34,24 @@ const focusInputField = (input: any) => {
   }
 };
 
-const DeckSearch = (props: IProps) => {
-  const [internalSearching, setInternalSearching] = useState(false);
-
-  const handleValueChanged = (v: any) => {
-    setInternalSearching(true);
-    handleValueChangedDebounced(v);
-  };
-  const handleValueChangedDebounced = debounce((v) => {
+const handleValueChangedDebounced = debounce(
+  (v, props: IProps, setInternalSearching: (v: boolean) => void) => {
     setInternalSearching(false);
     props.getListOfDecklistsFromSearchTerm({
       decklistSearchTerm: v.target.value,
       position: { x: 0, y: 0 },
     });
-  }, 500);
+  },
+  500
+);
+
+const DeckSearch = (props: IProps) => {
+  const [internalSearching, setInternalSearching] = useState(false);
+
+  const handleValueChanged = (v: any) => {
+    setInternalSearching(true);
+    handleValueChangedDebounced(v, props, setInternalSearching);
+  };
 
   return !!props.position ? (
     <TopLayer
