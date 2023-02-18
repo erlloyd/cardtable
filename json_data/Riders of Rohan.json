@@ -7,209 +7,37 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Éomer",
-            "Slug": "Eomer-RoR",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Éomer.jpg",
-                "Stats": {
-                    "ThreatCost": "10",
-                    "Willpower": "1",
-                    "Attack": "3",
-                    "Defense": "2",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Rohan.",
-                    "Noble.",
-                    "Warrior."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After a character leaves play, Éomer gets +2 Attack until the end of the round. (Limit once per round.)"
-                ],
-                "Shadow": null,
-                "FlavorText": "`I am named Éomer son of Éomund, and am called the Third Marshal of Riddermark.` -The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340001",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Hirgon",
-            "Slug": "Hirgon-RoR",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Hirgon.jpg",
-                "Stats": {
-                    "ThreatCost": "9",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "1",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Gondor.",
-                    "Scout."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Hirgon quests successfully, play a Tactics ally from your hand, reducing its cost by 1 (to a minimum of 1). Then, you may raise your threat by 1 to give that ally +1 Attack and +1 Defense until the end of the round."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Hirgon I am, errand-rider of Denethor, who bring you this token of war.`\r\n-The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 2,
-            "Quantity": 1,
-            "Artist": "Aleksander Karcz",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340002",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Lothíriel",
-            "Slug": "Lothiriel-RoR",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Lothíriel.jpg",
-                "Stats": {
-                    "ThreatCost": "8",
-                    "Willpower": "3",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Gondor.",
-                    "Noble."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "If Éomer is in play, Lothíriel gains the Rohan trait.",
-                    "Response: After Lothíriel commits to a quest, choose an ally in your hand. If that ally shares a Trait with her, put that ally into play exhausted and committed to the quest. At the end of the phase, if that ally is still in play, shuffle it into your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 3,
-            "Quantity": 1,
-            "Artist": "Álvaro Calvo Escudero",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340003",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Éomund",
-            "Slug": "Eomund-RoR",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Éomund.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Rohan."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Éomund leaves play, ready all Rohan characters in play."
-                ],
-                "Shadow": null,
-                "FlavorText": "`You I have not seen before, for you are young, but I have spoken with Éomund your father...` -Aragorn, The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 4,
-            "Quantity": 3,
-            "Artist": "Katherine Dinger",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340004",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Escort from Edoras",
-            "Slug": "Escort-from-Edoras-RoR",
+            "Title": "A Test of Will",
+            "Slug": "A-Test-of-Will-RoR",
             "IsUnique": false,
-            "CardType": "Ally",
+            "CardType": "Event",
             "CardSubType": "None",
             "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Escort-from-Edoras.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/A-Test-of-Will.jpg",
                 "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "2",
-                    "Attack": "0",
-                    "Defense": "0",
-                    "HitPoints": "1"
+                    "ResourceCost": "1"
                 },
-                "Traits": [
-                    "Rohan."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "While committed to a quest, Escort from Edoras gets +2 Willpower.",
-                    "Forced: After resolving a quest to which Escort from Edoras was committed, discard Escort from Edoras from play."
+                    "Response: Cancel the `when revealed` effects of a card that was just revealed from the encounter deck."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "`There is naught that you can do, other than to resist, with hope or without it`\r\n-Elrond, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Riders of Rohan",
             "EncounterInfo": null,
-            "Number": 5,
-            "Quantity": 3,
-            "Artist": "Mark Winters",
+            "Number": 20,
+            "Quantity": 2,
+            "Artist": "Ryan Barger",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "340005",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "01050",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 3704686,
             "Categories": null
         },
         {
@@ -248,9 +76,441 @@
             "Artist": "Lucas Graciano",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "340006",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "01073",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 3666635,
+            "Categories": null
+        },
+        {
+            "Title": "Feint",
+            "Slug": "Feint-RoR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Feint.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Combat Action: Choose an enemy engaged with a player. That enemy cannot attack that player this phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "A few brave men were strung before them to make a feint of resistance, and many there fell before the rest drew back and fled to either side. -The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 22,
+            "Quantity": 2,
+            "Artist": "Lius Lasahido",
+            "HasErrata": true,
+            "OctgnGuid": "",
+            "RingsDbCardId": "01034",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 2269597,
+            "Categories": null
+        },
+        {
+            "Title": "Ancient Mathom",
+            "Slug": "Ancient-Mathom-RoR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Ancient-Mathom.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Mathom."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a location.",
+                    "Response: After attached location is explored, the first player draws 3 cards."
+                ],
+                "Shadow": null,
+                "FlavorText": "The Mathom-house it was called; for anything that Hobbits had no immediate use for, but were unwilling to throw away, they called a mathom. Their dwellings were apt to become rather crowded with mathoms... -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 15,
+            "Quantity": 3,
+            "Artist": "Anna Mohrbacher",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "02056",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 890573,
+            "Categories": null
+        },
+        {
+            "Title": "West Road Traveller",
+            "Slug": "West-Road-Traveller-RoR",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/West-Road-Traveller.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Rohan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After you play West Road Traveller from your hand, switch the active location with any other location in the staging area."
+                ],
+                "Shadow": null,
+                "FlavorText": "The dark world was rushing by, and the wind sang loudly in his ears. -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 10,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "02121",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 608547,
+            "Categories": null
+        },
+        {
+            "Title": "Rohan Warhorse",
+            "Slug": "Rohan-Warhorse-RoR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Rohan-Warhorse.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Mount."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Tactics or Rohan hero. Restricted.",
+                    "Response: After attached hero participates in an attack that destroys an enemy, exhaust Rohan Warhorse to ready attached hero."
+                ],
+                "Shadow": null,
+                "FlavorText": "Their horses were of great stature, strong and clean-limbed... -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 31,
+            "Quantity": 3,
+            "Artist": "Jeff Lee Johnson",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "07008",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 510994,
+            "Categories": null
+        },
+        {
+            "Title": "Westfold Horse-breeder",
+            "Slug": "Westfold-Horse-breeder-RoR",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Westfold-Horse-breeder.jpg",
+                "Stats": {
+                    "ResourceCost": "1",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Rohan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Westfold Horse-breeder enters play, search the top 10 cards of your deck for a Mount attachment and add it to your hand. Shuffle your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`They love their horses next to their kin.` -Boromir, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 12,
+            "Quantity": 3,
+            "Artist": "Mike Capprotti",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "07007",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 488230,
+            "Categories": null
+        },
+        {
+            "Title": "The Riddermark's Finest",
+            "Slug": "The-Riddermark's-Finest-RoR",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/The-Riddermark's-Finest.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Rohan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust and discard The Riddermark`s Finest to place 2 progress tokens on any location."
+                ],
+                "Shadow": null,
+                "FlavorText": "`And there are no horses like the ones that are bred in that great vale between the Misty Mountains and the White.`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 28,
+            "Quantity": 3,
+            "Artist": "Andrew Johanson",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "02077",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 379201,
+            "Categories": null
+        },
+        {
+            "Title": "Éomund",
+            "Slug": "Eomund-RoR",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Éomund.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Rohan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Éomund leaves play, ready all Rohan characters in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "`You I have not seen before, for you are young, but I have spoken with Éomund your father...` -Aragorn, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Katherine Dinger",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "02030",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 332238,
+            "Categories": null
+        },
+        {
+            "Title": "Westfold Outrider",
+            "Slug": "Westfold-Outrider-RoR",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Westfold-Outrider.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "0",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Discard Westfold Outrider to choose an enemy not engaged with you. Engage the chosen enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Erkenbrand of Westfold has drawn off those men he could gather towards his fastness at Helm`s Deep. The rest are scattered.`-Rider of Rohan, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 14,
+            "Quantity": 3,
+            "Artist": "Diego Gisbert Llorens",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "07006",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 319303,
+            "Categories": null
+        },
+        {
+            "Title": "Westfold Horse-Breaker",
+            "Slug": "Westfold-Horse-Breaker-RoR",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Westfold-Horse-Breaker.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Rohan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Discard Westfold Horse-Breaker to choose and ready a hero."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Your own valour has done more, and the stout legs of the Westfold-men marching through the night.` -Gandalf, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "02006",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 309994,
+            "Categories": null
+        },
+        {
+            "Title": "Firefoot",
+            "Slug": "Firefoot-RoR",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Firefoot.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Mount."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Tactics or Rohan hero. Restricted.",
+                    "Attached hero gets +1 Attack (+2 Attack instead if attached hero is Éomer).",
+                    "Response: After attached hero attacks alone, exhaust Firefoot to choose a non-unique enemy engaged with you. Excess damage dealt by this attack is assigned to the chosen enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 16,
+            "Quantity": 3,
+            "Artist": "Nora Brisotti",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "08004",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 299559,
+            "Categories": null
+        },
+        {
+            "Title": "Spear of the Mark",
+            "Slug": "Spear-of-the-Mark-RoR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Spear-of-the-Mark.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Rohan character. Restricted.",
+                    "Attached character gets +1 Attack. (+2 Attack instead if attacking an enemy in the staging area)."
+                ],
+                "Shadow": null,
+                "FlavorText": "Right through the press drove Théoden Thengel`s son, and his spear was shivered as he threw down thier chieftan. -The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 29,
+            "Quantity": 3,
+            "Artist": "Jon Bosco",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "06137",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 227475,
             "Categories": null
         },
         {
@@ -289,9 +549,91 @@
             "Artist": "Aaron B. Miller",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "340007",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "06110",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 204835,
+            "Categories": null
+        },
+        {
+            "Title": "War Axe",
+            "Slug": "War-Axe-RoR",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/War-Axe.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Tactics character. Limit 1 per character. Restricted.",
+                    "Attached characters gets +1 Attack for each attachment it has with the restricted keyword."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Gimli Glóin`s son, have you your axe ready?`\r\n-Éomer, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 19,
+            "Quantity": 3,
+            "Artist": "Tamires Para",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22032",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 194861,
+            "Categories": null
+        },
+        {
+            "Title": "Éomer",
+            "Slug": "Eomer-RoR",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Éomer.jpg",
+                "Stats": {
+                    "ThreatCost": "10",
+                    "Willpower": "1",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Rohan.",
+                    "Noble.",
+                    "Warrior."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After a character leaves play, Éomer gets +2 Attack until the end of the round. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`I am named Éomer son of Éomund, and am called the Third Marshal of Riddermark.` -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "07001",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 14589,
             "Categories": null
         },
         {
@@ -332,9 +674,43 @@
             "Artist": "Loren Fetterman",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "340008",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "01030",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 168261,
+            "Categories": null
+        },
+        {
+            "Title": "Astonishing Speed",
+            "Slug": "Astonishing-Speed-RoR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Astonishing-Speed.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Until the end of the phase, all Rohan characters get +2 Willpower."
+                ],
+                "Shadow": null,
+                "FlavorText": "With astonishing speed and skill they checked their steeds, wheeled, and came charging round. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 21,
+            "Quantity": 3,
+            "Artist": "Anna Christenson",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "02122",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 151693,
             "Categories": null
         },
         {
@@ -373,288 +749,46 @@
             "Artist": "Sebastian Zakrzewski",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "340009",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "17112",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 140771,
             "Categories": null
         },
         {
-            "Title": "West Road Traveller",
-            "Slug": "West-Road-Traveller-RoR",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/West-Road-Traveller.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "2",
-                    "Attack": "0",
-                    "Defense": "0",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Rohan."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After you play West Road Traveller from your hand, switch the active location with any other location in the staging area."
-                ],
-                "Shadow": null,
-                "FlavorText": "The dark world was rushing by, and the wind sang loudly in his ears. -The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 10,
-            "Quantity": 3,
-            "Artist": "Sara Biddle",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340010",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Westfold Horse-Breaker",
-            "Slug": "Westfold-Horse-Breaker-RoR",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Westfold-Horse-Breaker.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "0",
-                    "Defense": "1",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Rohan."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Discard Westfold Horse-Breaker to choose and ready a hero."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Your own valour has done more, and the stout legs of the Westfold-men marching through the night.` -Gandalf, The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 11,
-            "Quantity": 3,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340011",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Westfold Horse-breeder",
-            "Slug": "Westfold-Horse-breeder-RoR",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Westfold-Horse-breeder.jpg",
-                "Stats": {
-                    "ResourceCost": "1",
-                    "Willpower": "1",
-                    "Attack": "0",
-                    "Defense": "0",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Rohan."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Westfold Horse-breeder enters play, search the top 10 cards of your deck for a Mount attachment and add it to your hand. Shuffle your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "`They love their horses next to their kin.` -Boromir, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 12,
-            "Quantity": 3,
-            "Artist": "Mike Capprotti",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340012",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Westfold Lancer",
-            "Slug": "Westfold-Lancer-RoR",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Westfold-Lancer.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "0",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Rohan.",
-                    "Warrior."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Westfold Lancer quests successfully, discard it to choose a non-unique enemy in the staging area. Deal 2 damage to the chosen enemy."
-                ],
-                "Shadow": null,
-                "FlavorText": "...the white fury of the Northmen burned the hotter, and more skilled was their knighthood with long spears...\r\n-The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 13,
-            "Quantity": 3,
-            "Artist": "Stanislav Dikolenko",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340013",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Westfold Outrider",
-            "Slug": "Westfold-Outrider-RoR",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Westfold-Outrider.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "0",
-                    "Attack": "2",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Rohan.",
-                    "Scout."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Discard Westfold Outrider to choose an enemy not engaged with you. Engage the chosen enemy."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Erkenbrand of Westfold has drawn off those men he could gather towards his fastness at Helm`s Deep. The rest are scattered.`-Rider of Rohan, The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 14,
-            "Quantity": 3,
-            "Artist": "Diego Gisbert Llorens",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340014",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Ancient Mathom",
-            "Slug": "Ancient-Mathom-RoR",
+            "Title": "Steed of the Mark",
+            "Slug": "Steed-of-the-Mark-RoR",
             "IsUnique": false,
             "CardType": "Attachment",
             "CardSubType": "None",
             "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Ancient-Mathom.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Steed-of-the-Mark.jpg",
                 "Stats": {
                     "ResourceCost": "1"
                 },
                 "Traits": [
-                    "Mathom."
+                    "Mount."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a location.",
-                    "Response: After attached location is explored, the first player draws 3 cards."
+                    "Attach to a Gondor or Rohan hero.",
+                    "Response: after attached hero commits to a quest, spend 1 resource from attached hero`s resource pool to ready attached hero."
                 ],
                 "Shadow": null,
-                "FlavorText": "The Mathom-house it was called; for anything that Hobbits had no immediate use for, but were unwilling to throw away, they called a mathom. Their dwellings were apt to become rather crowded with mathoms... -The Fellowship of the Ring"
+                "FlavorText": "...fresh horses were always in readiness to bear his errand-riders to Rohan in the Noth... -The Return of the King"
             },
             "Back": null,
             "CardSet": "Riders of Rohan",
             "EncounterInfo": null,
-            "Number": 15,
+            "Number": 30,
             "Quantity": 3,
-            "Artist": "Anna Mohrbacher",
+            "Artist": "Sandara Tang",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "340015",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Firefoot",
-            "Slug": "Firefoot-RoR",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Firefoot.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Mount."
-                ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a Tactics or Rohan hero. Restricted.",
-                    "Attached hero gets +1 Attack (+2 Attack instead if attached hero is Éomer).",
-                    "Response: After attached hero attacks alone, exhaust Firefoot to choose a non-unique enemy engaged with you. Excess damage dealt by this attack is assigned to the chosen enemy."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 16,
-            "Quantity": 3,
-            "Artist": "Nora Brisotti",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340016",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "06139",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 138010,
             "Categories": null
         },
         {
@@ -692,9 +826,84 @@
             "Artist": "Derek D. Edgell",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "340017",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "22035",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 125830,
+            "Categories": null
+        },
+        {
+            "Title": "Wait no Longer",
+            "Slug": "Wait-no-Longer-RoR",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Wait-no-Longer.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: At the beginning of the quest phase, search the top 5 cards of the encounter deck for an enemy and put it into play engaged with you. Then, reveal 1 less encounter card this phase (to a minimum of 0). Shuffle the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We must press our Enemy, and no longer wait upon him for the move.`\r\n-Aragorn, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 26,
+            "Quantity": 3,
+            "Artist": "John Pacer",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "17005",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 123726,
+            "Categories": null
+        },
+        {
+            "Title": "Hirgon",
+            "Slug": "Hirgon-RoR",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Hirgon.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Gondor.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Hirgon quests successfully, play a Tactics ally from your hand, reducing its cost by 1 (to a minimum of 1). Then, you may raise your threat by 1 to give that ally +1 Attack and +1 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Hirgon I am, errand-rider of Denethor, who bring you this token of war.`\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "17055",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 9611,
             "Categories": null
         },
         {
@@ -733,151 +942,84 @@
             "Artist": "Stanislav Dikolenko",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "340018",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "17058",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 114370,
             "Categories": null
         },
         {
-            "Title": "War Axe",
-            "Slug": "War-Axe-RoR",
+            "Title": "Westfold Lancer",
+            "Slug": "Westfold-Lancer-RoR",
             "IsUnique": false,
-            "CardType": "Attachment",
+            "CardType": "Ally",
             "CardSubType": "None",
             "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/War-Axe.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Westfold-Lancer.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "2"
                 },
                 "Traits": [
-                    "Item.",
-                    "Weapon."
+                    "Rohan.",
+                    "Warrior."
                 ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a Tactics character. Limit 1 per character. Restricted.",
-                    "Attached characters gets +1 Attack for each attachment it has with the restricted keyword."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Gimli Glóin`s son, have you your axe ready?`\r\n-Éomer, The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 19,
-            "Quantity": 3,
-            "Artist": "Tamires Para",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340019",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "A Test of Will",
-            "Slug": "A-Test-of-Will-RoR",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/A-Test-of-Will.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Response: Cancel the `when revealed` effects of a card that was just revealed from the encounter deck."
+                    "Response: After Westfold Lancer quests successfully, discard it to choose a non-unique enemy in the staging area. Deal 2 damage to the chosen enemy."
                 ],
                 "Shadow": null,
-                "FlavorText": "`There is naught that you can do, other than to resist, with hope or without it`\r\n-Elrond, The Fellowship of the Ring"
+                "FlavorText": "...the white fury of the Northmen burned the hotter, and more skilled was their knighthood with long spears...\r\n-The Return of the King"
             },
             "Back": null,
             "CardSet": "Riders of Rohan",
             "EncounterInfo": null,
-            "Number": 20,
-            "Quantity": 2,
-            "Artist": "Ryan Barger",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340020",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Astonishing Speed",
-            "Slug": "Astonishing-Speed-RoR",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Astonishing-Speed.jpg",
-                "Stats": {
-                    "ResourceCost": "3"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Until the end of the phase, all Rohan characters get +2 Willpower."
-                ],
-                "Shadow": null,
-                "FlavorText": "With astonishing speed and skill they checked their steeds, wheeled, and came charging round. -The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 21,
+            "Number": 13,
             "Quantity": 3,
-            "Artist": "Anna Christenson",
+            "Artist": "Stanislav Dikolenko",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "340021",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "22142",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 84107,
             "Categories": null
         },
         {
-            "Title": "Feint",
-            "Slug": "Feint-RoR",
+            "Title": "Charge of the Rohirrim",
+            "Slug": "Charge-of-the-Rohirrim-RoR",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
             "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Feint.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Charge-of-the-Rohirrim.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ResourceCost": "2"
                 },
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Combat Action: Choose an enemy engaged with a player. That enemy cannot attack that player this phase."
+                    "Action: Until the end of the phase, each Rohan character with a Mount attachment gets +3 Attack."
                 ],
                 "Shadow": null,
-                "FlavorText": "A few brave men were strung before them to make a feint of resistance, and many there fell before the rest drew back and fled to either side. -The Hobbit"
+                "FlavorText": "`Arise, arise, riders of Théoden!` -Théoden, The Return of the King"
             },
             "Back": null,
             "CardSet": "Riders of Rohan",
             "EncounterInfo": null,
-            "Number": 22,
-            "Quantity": 2,
-            "Artist": "Lius Lasahido",
-            "HasErrata": true,
+            "Number": 32,
+            "Quantity": 3,
+            "Artist": "Igor Kieryluk",
+            "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "340022",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "08116",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 74779,
             "Categories": null
         },
         {
@@ -909,64 +1051,36 @@
             "Artist": "Darek Zabrocki",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "340023",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "06138",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 74777,
             "Categories": null
         },
         {
-            "Title": "Oath of Eorl",
-            "Slug": "Oath-of-Eorl-RoR",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Oath-of-Eorl.jpg",
-                "Stats": {
-                    "ResourceCost": "3"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Play only if you control a unique character with the Rohan trait and another unique character with the Gondor trait.",
-                    "Response: At the beginning of the combat phase, you resolve the step in which you attack enemies before resolving enemy attacks this phase. (Each other player resolves the combat phase as normal after you resolve your attacks.)"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 24,
-            "Quantity": 3,
-            "Artist": "Rafał Hrynkiewicz",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340024",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "The Muster of Rohan",
-            "Slug": "The-Muster-of-Rohan-RoR",
-            "IsUnique": false,
-            "CardType": "Event",
+            "Title": "Lothíriel",
+            "Slug": "Lothiriel-RoR",
+            "IsUnique": true,
+            "CardType": "Hero",
             "CardSubType": "None",
             "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/The-Muster-of-Rohan.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Lothíriel.jpg",
                 "Stats": {
-                    "ResourceCost": "4"
+                    "ThreatCost": "8",
+                    "Willpower": "3",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
                 },
-                "Traits": [],
+                "Traits": [
+                    "Gondor.",
+                    "Noble."
+                ],
                 "Keywords": [],
                 "Text": [
-                    "While paying for The Muster of Rohan, each Rohan hero you control is considered to have a Spirit icon.",
-                    "Planning Action: Search the top 10 cards of your deck for up to 4 Rohan allies and put them into play. Shuffle your deck. If any of those allies are still in play at the end of the round, discard them."
+                    "If Éomer is in play, Lothíriel gains the Rohan trait.",
+                    "Response: After Lothíriel commits to a quest, choose an ally in your hand. If that ally shares a Trait with her, put that ally into play exhausted and committed to the quest. At the end of the phase, if that ally is still in play, shuffle it into your deck."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -974,48 +1088,14 @@
             "Back": null,
             "CardSet": "Riders of Rohan",
             "EncounterInfo": null,
-            "Number": 25,
-            "Quantity": 3,
-            "Artist": "Vilius Petrauskas",
+            "Number": 3,
+            "Quantity": 1,
+            "Artist": "Álvaro Calvo Escudero",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "340025",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Wait no Longer",
-            "Slug": "Wait-no-Longer-RoR",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Wait-no-Longer.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Response: At the beginning of the quest phase, search the top 5 cards of the encounter deck for an enemy and put it into play engaged with you. Then, reveal 1 less encounter card this phase (to a minimum of 0). Shuffle the encounter deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "`We must press our Enemy, and no longer wait upon him for the move.`\r\n-Aragorn, The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 26,
-            "Quantity": 3,
-            "Artist": "John Pacer",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340026",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "22027",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 6895,
             "Categories": null
         },
         {
@@ -1054,198 +1134,118 @@
             "Artist": "Lukasz Jaskolski",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "340027",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "17081",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 6163,
             "Categories": null
         },
         {
-            "Title": "The Riddermark's Finest",
-            "Slug": "The-Riddermark's-Finest-RoR",
+            "Title": "The Muster of Rohan",
+            "Slug": "The-Muster-of-Rohan-RoR",
             "IsUnique": false,
-            "CardType": "Ally",
+            "CardType": "Event",
             "CardSubType": "None",
             "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/The-Riddermark's-Finest.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/The-Muster-of-Rohan.jpg",
                 "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "0",
-                    "HitPoints": "2"
+                    "ResourceCost": "4"
                 },
-                "Traits": [
-                    "Creature.",
-                    "Rohan."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Action: Exhaust and discard The Riddermark`s Finest to place 2 progress tokens on any location."
+                    "While paying for The Muster of Rohan, each Rohan hero you control is considered to have a Spirit icon.",
+                    "Planning Action: Search the top 10 cards of your deck for up to 4 Rohan allies and put them into play. Shuffle your deck. If any of those allies are still in play at the end of the round, discard them."
                 ],
                 "Shadow": null,
-                "FlavorText": "`And there are no horses like the ones that are bred in that great vale between the Misty Mountains and the White.`\r\n-Gandalf, The Fellowship of the Ring"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "Riders of Rohan",
             "EncounterInfo": null,
-            "Number": 28,
+            "Number": 25,
             "Quantity": 3,
-            "Artist": "Andrew Johanson",
+            "Artist": "Vilius Petrauskas",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "340028",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "22062",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 53050,
             "Categories": null
         },
         {
-            "Title": "Spear of the Mark",
-            "Slug": "Spear-of-the-Mark-RoR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Spear-of-the-Mark.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item.",
-                    "Weapon."
-                ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a Rohan character. Restricted.",
-                    "Attached character gets +1 Attack. (+2 Attack instead if attacking an enemy in the staging area)."
-                ],
-                "Shadow": null,
-                "FlavorText": "Right through the press drove Théoden Thengel`s son, and his spear was shivered as he threw down thier chieftan. -The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 29,
-            "Quantity": 3,
-            "Artist": "Jon Bosco",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340029",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Steed of the Mark",
-            "Slug": "Steed-of-the-Mark-RoR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Steed-of-the-Mark.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Mount."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Gondor or Rohan hero.",
-                    "Response: after attached hero commits to a quest, spend 1 resource from attached hero`s resource pool to ready attached hero."
-                ],
-                "Shadow": null,
-                "FlavorText": "...fresh horses were always in readiness to bear his errand-riders to Rohan in the Noth... -The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 30,
-            "Quantity": 3,
-            "Artist": "Sandara Tang",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340030",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Rohan Warhorse",
-            "Slug": "Rohan-Warhorse-RoR",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Rohan-Warhorse.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Mount."
-                ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a Tactics or Rohan hero. Restricted.",
-                    "Response: After attached hero participates in an attack that destroys an enemy, exhaust Rohan Warhorse to ready attached hero."
-                ],
-                "Shadow": null,
-                "FlavorText": "Their horses were of great stature, strong and clean-limbed... -The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "Riders of Rohan",
-            "EncounterInfo": null,
-            "Number": 31,
-            "Quantity": 3,
-            "Artist": "Jeff Lee Johnson",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "340031",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Charge of the Rohirrim",
-            "Slug": "Charge-of-the-Rohirrim-RoR",
+            "Title": "Oath of Eorl",
+            "Slug": "Oath-of-Eorl-RoR",
             "IsUnique": false,
             "CardType": "Event",
             "CardSubType": "None",
             "Sphere": "Tactics",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Charge-of-the-Rohirrim.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Oath-of-Eorl.jpg",
                 "Stats": {
-                    "ResourceCost": "2"
+                    "ResourceCost": "3"
                 },
                 "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Action: Until the end of the phase, each Rohan character with a Mount attachment gets +3 Attack."
+                    "Play only if you control a unique character with the Rohan trait and another unique character with the Gondor trait.",
+                    "Response: At the beginning of the combat phase, you resolve the step in which you attack enemies before resolving enemy attacks this phase. (Each other player resolves the combat phase as normal after you resolve your attacks.)"
                 ],
                 "Shadow": null,
-                "FlavorText": "`Arise, arise, riders of Théoden!` -Théoden, The Return of the King"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "Riders of Rohan",
             "EncounterInfo": null,
-            "Number": 32,
+            "Number": 24,
             "Quantity": 3,
-            "Artist": "Igor Kieryluk",
+            "Artist": "Rafał Hrynkiewicz",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "340032",
+            "RingsDbCardId": "17085",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 46516,
+            "Categories": null
+        },
+        {
+            "Title": "Escort from Edoras",
+            "Slug": "Escort-from-Edoras-RoR",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Riders-of-Rohan/Escort-from-Edoras.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Rohan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While committed to a quest, Escort from Edoras gets +2 Willpower.",
+                    "Forced: After resolving a quest to which Escort from Edoras was committed, discard Escort from Edoras from play."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Riders of Rohan",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Mark Winters",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "340005",
             "RingsDbPopularity": 0,
             "RingsDbVotes": 0,
             "Categories": null

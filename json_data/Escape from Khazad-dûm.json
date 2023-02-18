@@ -7,28 +7,29 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Gandalf",
-            "Slug": "Gandalf-EfKD",
+            "Title": "Arwen Undómiel",
+            "Slug": "Arwen-Undomiel-EfKD",
             "IsUnique": true,
             "CardType": "Hero",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Khazad-dum/Gandalf.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Khazad-dum/Arwen-Undómiel.jpg",
                 "Stats": {
-                    "ThreatCost": "14",
+                    "ThreatCost": "9",
                     "Willpower": "3",
-                    "Attack": "3",
-                    "Defense": "3",
-                    "HitPoints": "5"
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "3"
                 },
                 "Traits": [
-                    "Istari."
+                    "Noldor.",
+                    "Noble."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Play with the top card of your deck faceup. Once per phase, you may play the top card of your deck as if it was in your hand. When playing a card this way, Gandalf is considered to have the printed Leadership, Lore, Tactics, and Spirit icons."
+                    "Action: Discard a card from your hand to add 1 resource to a Noldor hero`s resource pool, or to Aragorn`s resource pool. (Limit once per round.)"
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -36,14 +37,14 @@
             "Back": null,
             "CardSet": "Escape from Khazad-dûm",
             "EncounterInfo": null,
-            "Number": 2,
+            "Number": 140,
             "Quantity": 1,
-            "Artist": "Rafał Hrynkiewicz",
+            "Artist": "Magali Villeneuve",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00002",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "10140",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 45588,
             "Categories": null
         },
         {
@@ -83,35 +84,34 @@
             "Artist": "Magali Villeneuve",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00128",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "04128",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 42457,
             "Categories": null
         },
         {
-            "Title": "Arwen Undómiel",
-            "Slug": "Arwen-Undomiel-EfKD",
+            "Title": "Sam Gamgee",
+            "Slug": "Sam-Gamgee-EfKD",
             "IsUnique": true,
             "CardType": "Hero",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Khazad-dum/Arwen-Undómiel.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Khazad-dum/Sam-Gamgee.jpg",
                 "Stats": {
-                    "ThreatCost": "9",
+                    "ThreatCost": "8",
                     "Willpower": "3",
                     "Attack": "1",
-                    "Defense": "2",
+                    "Defense": "1",
                     "HitPoints": "3"
                 },
                 "Traits": [
-                    "Noldor.",
-                    "Noble."
+                    "Hobbit."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Action: Discard a card from your hand to add 1 resource to a Noldor hero`s resource pool, or to Aragorn`s resource pool. (Limit once per round.)"
+                    "Response: After you engage an enemy with a higher engagement cost than your threat, ready Sam Gamgee. He gets +1 Willpower, +1 Attack and +1 Defense until the end of the round."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -119,14 +119,54 @@
             "Back": null,
             "CardSet": "Escape from Khazad-dûm",
             "EncounterInfo": null,
-            "Number": 140,
+            "Number": 2,
             "Quantity": 1,
-            "Artist": "Magali Villeneuve",
+            "Artist": "Alexandre Dainche",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00140",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "141002",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 40682,
+            "Categories": null
+        },
+        {
+            "Title": "Gandalf",
+            "Slug": "Gandalf-EfKD",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Khazad-dum/Gandalf.jpg",
+                "Stats": {
+                    "ThreatCost": "14",
+                    "Willpower": "3",
+                    "Attack": "3",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Istari."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play with the top card of your deck faceup. Once per phase, you may play the top card of your deck as if it was in your hand. When playing a card this way, Gandalf is considered to have the printed Leadership, Lore, Tactics, and Spirit icons."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Escape from Khazad-dûm",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "142002",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 32158,
             "Categories": null
         },
         {
@@ -168,49 +208,9 @@
             "Artist": "Magali Villeneuve",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "00001",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Sam Gamgee",
-            "Slug": "Sam-Gamgee-EfKD",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Escape-from-Khazad-dum/Sam-Gamgee.jpg",
-                "Stats": {
-                    "ThreatCost": "8",
-                    "Willpower": "3",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Hobbit."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After you engage an enemy with a higher engagement cost than your threat, ready Sam Gamgee. He gets +1 Willpower, +1 Attack and +1 Defense until the end of the round."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Escape from Khazad-dûm",
-            "EncounterInfo": null,
-            "Number": 2,
-            "Quantity": 1,
-            "Artist": "Alexandre Dainche",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00002",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "05001",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 26443,
             "Categories": null
         }
     ]

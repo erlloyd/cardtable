@@ -7,44 +7,306 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Celeborn",
-            "Slug": "Celeborn-EoL",
-            "IsUnique": true,
-            "CardType": "Hero",
+            "Title": "A Test of Will",
+            "Slug": "A-Test-of-Will-EoL",
+            "IsUnique": false,
+            "CardType": "Event",
             "CardSubType": "None",
-            "Sphere": "Leadership",
+            "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Celeborn.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/A-Test-of-Will.jpg",
                 "Stats": {
-                    "ThreatCost": "11",
-                    "Willpower": "3",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "4"
+                    "ResourceCost": "1"
                 },
-                "Traits": [
-                    "Silvan.",
-                    "Noble."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Response: After a Silvan ally enters play, that ally gets +1 Willpower, +1 Attack and +1 Defense until the end of the round."
+                    "Response: Cancel the `when revealed` effects of a card that was just revealed from the encounter deck."
                 ],
                 "Shadow": null,
-                "FlavorText": "`...the lord of the Galadhrim is accounted wisest of the Elves of Middle-earth, and a giver of gifts beyond the power of kings.` -Galadriel, The Fellowship of the Ring"
+                "FlavorText": "`There is naught that you can do, other than to resist, with hope or without it`\r\n-Elrond, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Elves of Lórien",
             "EncounterInfo": null,
-            "Number": 1,
+            "Number": 19,
+            "Quantity": 2,
+            "Artist": "Ryan Barger",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "01050",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 3704686,
+            "Categories": null
+        },
+        {
+            "Title": "Gandalf",
+            "Slug": "Gandalf-EoL",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Gandalf.jpg",
+                "Stats": {
+                    "ResourceCost": "5",
+                    "Willpower": "4",
+                    "Attack": "4",
+                    "Defense": "4",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Istari."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "At the end of the round, discard Gandalf from play.",
+                    "Response: After Gandalf enters play, (choose 1): draw 3 cards, deal 4 damage to 1 enemy in play, or reduce your threat by 5."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 7,
+            "Quantity": 2,
+            "Artist": "Lucas Graciano",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "01073",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 3666635,
+            "Categories": null
+        },
+        {
+            "Title": "Daeron's Runes",
+            "Slug": "Daeron's-Runes-EoL",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Daeron's-Runes.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Draw 2 cards. Then, discard 1 card from your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "`These are Daeron`s Runes, such as were used of old in Moria...`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 20,
+            "Quantity": 3,
+            "Artist": "Carolina Eade",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "04108",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 2222089,
+            "Categories": null
+        },
+        {
+            "Title": "Elrond's Counsel",
+            "Slug": "Elrond's-Counsel-EoL",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Elrond's-Counsel.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: If you control a unique Noldor character, give another character +1 Willpower until the end of the phase and lower your threat by 3."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 21,
+            "Quantity": 3,
+            "Artist": "Anthony Palumbo",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "04059",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 1683085,
+            "Categories": null
+        },
+        {
+            "Title": "Henamarth Riversong",
+            "Slug": "Henamarth-Riversong-EoL",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Henamarth-Riversong.jpg",
+                "Stats": {
+                    "ResourceCost": "1",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Silvan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust Henamarth Riversong to look at the top card of the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "`And I reckon there`s Elves and Elves. They`re all elvish enough, but they`re not all the same.`\r\n-Sam Gamgee,\r\nThe Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 2,
+            "Artist": "Jen Zee",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "01060",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 920213,
+            "Categories": null
+        },
+        {
+            "Title": "Galadriel's Handmaiden",
+            "Slug": "Galadriel's-Handmaiden-EoL",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Galadriel's-Handmaiden.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Silvan."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Galadriel`s Handmaiden enters play, choose a player. That player reduces his threat by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "Her maidens stood silent about her, and a while she looked upon her guests. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 6,
+            "Quantity": 3,
+            "Artist": "Nathália Gomes",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "08117",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 821878,
+            "Categories": null
+        },
+        {
+            "Title": "Elrond",
+            "Slug": "Elrond-EoL",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Elrond.jpg",
+                "Stats": {
+                    "ThreatCost": "13",
+                    "Willpower": "3",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Noldor.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "You may spend resources from Elrond`s resource pool to pay for Spirit, Leadership, and Tactics allies.",
+                    "Response: After a character is healed by another card effect, heal 1 damage on it."
+                ],
+                "Shadow": null,
+                "FlavorText": "`But you do not stand alone.`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 31,
             "Quantity": 1,
             "Artist": "Magali Villeneuve",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "320001",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "04128",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 42457,
+            "Categories": null
+        },
+        {
+            "Title": "Vilya",
+            "Slug": "Vilya-EoL",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Vilya.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Ring.",
+                    "Artifact."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to Elrond. He gains a Spirit resource icon.",
+                    "Action: Exhaust Elrond and Vilya to reveal the top card of your deck. You can immediately play or put into play the revealed card for no cost, if able. Otherwise, move the revealed card to the bottom of your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "...mightiest of the Three. -Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 30,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "04137",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 530432,
             "Categories": null
         },
         {
@@ -84,9 +346,362 @@
             "Artist": "Magali Villeneuve",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "320002",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "08112",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 36584,
+            "Categories": null
+        },
+        {
+            "Title": "Nenya",
+            "Slug": "Nenya-EoL",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Nenya.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Ring."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to Galadriel. She gains a Lore resource icon.",
+                    "Quest Action: Exhaust Nenya and Galadriel to add her Willpower to another character`s Willpower until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The is Nenya, the Ring of Adamant, and I am its keeper.` -Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 16,
+            "Quantity": 3,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "08121",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 496229,
+            "Categories": null
+        },
+        {
+            "Title": "Lembas",
+            "Slug": "Lembas-EoL",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Lembas.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Play only if you control a Noldor or Silvan hero. Attach to a hero.",
+                    "Action: Discard Lembas to ready attached hero and heal 3 damage from it."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...it is more strengthing than any food made by Men, and it is more pleasant than cram, by all accounts. -Lórien Elf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 15,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "08064",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 486871,
+            "Categories": null
+        },
+        {
+            "Title": "Galadhon Archer",
+            "Slug": "Galadhon-Archer-EoL",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Galadhon-Archer.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "0",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Ranged."
+                ],
+                "Text": [
+                    "Ranged.",
+                    "Response: After Galadhon Archer enters play, deal 1 damage to an enemy not engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...they say that you breathe so loud that they could shoot you in the dark.` -Legolas, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 25,
+            "Quantity": 3,
+            "Artist": "Sara K. Diesel",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "08087",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 448231,
+            "Categories": null
+        },
+        {
+            "Title": "Hands Upon the Bow",
+            "Slug": "Hands-Upon-the-Bow-EoL",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Hands-Upon-the-Bow.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust a character you control with ranged to immediately declare it as an attacker (and resolve its attack) against an enemy in the staging area. It gets +1 Attack during this attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 28,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "04131",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 414845,
+            "Categories": null
+        },
+        {
+            "Title": "Galadhrim Minstrel",
+            "Slug": "Galadhrim-Minstrel-EoL",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Galadhrim-Minstrel.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Minstrel."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Galadhrim Minstrel enters play, search the top five cards of your deck for an event card and add it to your hand. Shuffle the other cards back into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "...the language was that of Elven-song and spoke of things little known on Middle-earth. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Arden Beckwith",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "08063",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 341522,
+            "Categories": null
+        },
+        {
+            "Title": "Bow of the Galadhrim",
+            "Slug": "Bow-of-the-Galadhrim-EoL",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Tactics",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Bow-of-the-Galadhrim.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Silvan character with the ranged keyword. Restricted.",
+                    "Attached character gets +1 Attack. (+2 Attack instead if attacking an enemy not engaged with you.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "...longer and stronger than the bows of Mirkwood, and strung with a string of elf-hair. -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 27,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "08088",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 336054,
+            "Categories": null
+        },
+        {
+            "Title": "Naith Guide",
+            "Slug": "Naith-Guide-EoL",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Naith-Guide.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Naith Guide enters play, choose a hero. That hero does not exhaust to quest this round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...I shall lead you well...` -Haldir, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "08002",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 331787,
+            "Categories": null
+        },
+        {
+            "Title": "Wingfoot",
+            "Slug": "Wingfoot-EoL",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Wingfoot.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Ranger hero.",
+                    "Response: After attached hero commits to a quest, name enemy, location or treachery. If a card of the named type is revealed during this quest phase, exhaust Wingfoot to ready attached hero."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Wingfoot I name you. This deed of the three friends should be sung in many a hall. Forty leagues and five you have measured ere the forth day is ended!`\r\n-Éomer, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 18,
+            "Quantity": 3,
+            "Artist": "Gabriel Verdon",
+            "HasErrata": true,
+            "OctgnGuid": "",
+            "RingsDbCardId": "08092",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 308485,
+            "Categories": null
+        },
+        {
+            "Title": "Silvan Refugee",
+            "Slug": "Silvan-Refugee-EoL",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Silvan-Refugee.jpg",
+                "Stats": {
+                    "ResourceCost": "1",
+                    "Willpower": "2",
+                    "Attack": "0",
+                    "Defense": "0",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Scout."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After a character leaves play, discard Silvan Refugee from play."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The Elves have their own labours and their own sorrows...` -Gildor, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 13,
+            "Quantity": 3,
+            "Artist": "Lorraine Schleter",
+            "HasErrata": true,
+            "OctgnGuid": "",
+            "RingsDbCardId": "06037",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 287711,
             "Categories": null
         },
         {
@@ -129,175 +744,9 @@
             "Artist": "Sebastian Giacobino",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "320003",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Defender of the Naith",
-            "Slug": "Defender-of-the-Naith-EoL",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Defender-of-the-Naith.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "0",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Silvan.",
-                    "Warrior."
-                ],
-                "Keywords": [
-                    "Sentinel."
-                ],
-                "Text": [
-                    "Sentinel.",
-                    "Response: After a Silvan ally you control leaves play, ready Defender of the Naith."
-                ],
-                "Shadow": null,
-                "FlavorText": "`We have been keeping watch on the rivers, ever since we saw a great troop of Orcs going North toward Moria...` -Haldir, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 4,
-            "Quantity": 3,
-            "Artist": "Christine Griffin",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320004",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Galadhrim Minstrel",
-            "Slug": "Galadhrim-Minstrel-EoL",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Galadhrim-Minstrel.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "0",
-                    "Defense": "0",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Silvan.",
-                    "Minstrel."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Galadhrim Minstrel enters play, search the top five cards of your deck for an event card and add it to your hand. Shuffle the other cards back into your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "...the language was that of Elven-song and spoke of things little known on Middle-earth. -The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 5,
-            "Quantity": 3,
-            "Artist": "Arden Beckwith",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320005",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Galadriel's Handmaiden",
-            "Slug": "Galadriel's-Handmaiden-EoL",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Galadriel's-Handmaiden.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "2",
-                    "Attack": "0",
-                    "Defense": "1",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Silvan."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Galadriel`s Handmaiden enters play, choose a player. That player reduces his threat by 1."
-                ],
-                "Shadow": null,
-                "FlavorText": "Her maidens stood silent about her, and a while she looked upon her guests. -The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 6,
-            "Quantity": 3,
-            "Artist": "Nathália Gomes",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320006",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Gandalf",
-            "Slug": "Gandalf-EoL",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Gandalf.jpg",
-                "Stats": {
-                    "ResourceCost": "5",
-                    "Willpower": "4",
-                    "Attack": "4",
-                    "Defense": "4",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Istari."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "At the end of the round, discard Gandalf from play.",
-                    "Response: After Gandalf enters play, (choose 1): draw 3 cards, deal 4 damage to 1 enemy in play, or reduce your threat by 5."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 7,
-            "Quantity": 2,
-            "Artist": "Lucas Graciano",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320007",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "08056",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 19217,
             "Categories": null
         },
         {
@@ -338,131 +787,154 @@
             "Artist": "Tawny Fritzinger",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "320008",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "16003",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 252241,
             "Categories": null
         },
         {
-            "Title": "Henamarth Riversong",
-            "Slug": "Henamarth-Riversong-EoL",
+            "Title": "O Lórien!",
+            "Slug": "O-Lorien-EoL",
             "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/O-Lórien.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero.",
+                    "Action: Exhaust O Lorien! to lower the cost of the next Silvan ally played this phase by 1 (to a minimum of 1)."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I sang of leaves, of leaves of gold, and\r\nleaves of gold there grew:\r\nOf wind I sang, a wind there came and in the\r\nbranches blew.` -Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 17,
+            "Quantity": 3,
+            "Artist": "Carolina Eade",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "08058",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 250650,
+            "Categories": null
+        },
+        {
+            "Title": "Silvan Tracker",
+            "Slug": "Silvan-Tracker-EoL",
+            "IsUnique": false,
             "CardType": "Ally",
             "CardSubType": "None",
             "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Henamarth-Riversong.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Silvan-Tracker.jpg",
                 "Stats": {
-                    "ResourceCost": "1",
+                    "ResourceCost": "3",
                     "Willpower": "1",
                     "Attack": "1",
-                    "Defense": "0",
-                    "HitPoints": "1"
+                    "Defense": "1",
+                    "HitPoints": "3"
                 },
                 "Traits": [
                     "Silvan."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Action: Exhaust Henamarth Riversong to look at the top card of the encounter deck."
+                    "Response: After a Silvan character readies during the refresh phase, heal 1 damage from that character."
                 ],
                 "Shadow": null,
-                "FlavorText": "`And I reckon there`s Elves and Elves. They`re all elvish enough, but they`re not all the same.`\r\n-Sam Gamgee,\r\nThe Fellowship of the Ring"
+                "FlavorText": "`The Wood-elves tracked him first, an easy task for them, for his trail was still fresh then.` -Gandalf, The Fellowship of the Rings"
             },
             "Back": null,
             "CardSet": "Elves of Lórien",
             "EncounterInfo": null,
-            "Number": 9,
-            "Quantity": 2,
-            "Artist": "Jen Zee",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320009",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Mirkwood Runner",
-            "Slug": "Mirkwood-Runner-EoL",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Mirkwood-Runner.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "1",
-                    "Attack": "2",
-                    "Defense": "0",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Silvan.",
-                    "Scout."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "While Mirkwood Runner is attacking alone, the defending enemy does not count its Defense."
-                ],
-                "Shadow": null,
-                "FlavorText": "`...let a ploughman plough, but choose an otter for swimming, and for running light over grass and leaf or over snow-an Elf.` -Legolas, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 10,
+            "Number": 14,
             "Quantity": 3,
             "Artist": "Magali Villeneuve",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "320010",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "02102",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 242567,
             "Categories": null
         },
         {
-            "Title": "Naith Guide",
-            "Slug": "Naith-Guide-EoL",
+            "Title": "Feigned Voices",
+            "Slug": "Feigned-Voices-EoL",
             "IsUnique": false,
-            "CardType": "Ally",
+            "CardType": "Event",
             "CardSubType": "None",
             "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Naith-Guide.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Feigned-Voices.jpg",
                 "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "0",
-                    "HitPoints": "1"
+                    "ResourceCost": "0"
                 },
-                "Traits": [
-                    "Silvan.",
-                    "Scout."
-                ],
+                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Response: After Naith Guide enters play, choose a hero. That hero does not exhaust to quest this round."
+                    "Combat Action: Return a Silvan ally you control to your hand to choose an enemy engaged with a player. That enemy cannot attack that player this phase."
                 ],
                 "Shadow": null,
-                "FlavorText": "`...I shall lead you well...` -Haldir, The Fellowship of the Ring"
+                "FlavorText": "`The three of us could not challenge a hundred, so we went ahead and spoke with feigned voices, leading them on into the wood.` -Haldir, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Elves of Lórien",
             "EncounterInfo": null,
-            "Number": 11,
+            "Number": 22,
             "Quantity": 3,
-            "Artist": "Magali Villeneuve",
+            "Artist": "Sara Betsy",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "320011",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "08027",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 241986,
+            "Categories": null
+        },
+        {
+            "Title": "The Tree People",
+            "Slug": "The-Tree-People-EoL",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/The-Tree-People.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Return a Silvan ally you control to your hand to search the top 5 cards of your deck for a Silvan ally. Put that ally into play and shuffle the other cards back into your deck. You can only play 1 copy of The Tree People each phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "No folk could they see, nor hear any feet upon the paths; but there were many voices, about them, and in the air above. –The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 24,
+            "Quantity": 3,
+            "Artist": "Stacey Diana Clark",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "08009",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 224339,
             "Categories": null
         },
         {
@@ -504,487 +976,50 @@
             "Artist": "Magali Villeneuve",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "320012",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "08114",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 223725,
             "Categories": null
         },
         {
-            "Title": "Silvan Refugee",
-            "Slug": "Silvan-Refugee-EoL",
-            "IsUnique": false,
-            "CardType": "Ally",
+            "Title": "Celeborn",
+            "Slug": "Celeborn-EoL",
+            "IsUnique": true,
+            "CardType": "Hero",
             "CardSubType": "None",
-            "Sphere": "Spirit",
+            "Sphere": "Leadership",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Silvan-Refugee.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Celeborn.jpg",
                 "Stats": {
-                    "ResourceCost": "1",
-                    "Willpower": "2",
-                    "Attack": "0",
-                    "Defense": "0",
-                    "HitPoints": "1"
+                    "ThreatCost": "11",
+                    "Willpower": "3",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "4"
                 },
                 "Traits": [
                     "Silvan.",
-                    "Scout."
+                    "Noble."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Forced: After a character leaves play, discard Silvan Refugee from play."
+                    "Response: After a Silvan ally enters play, that ally gets +1 Willpower, +1 Attack and +1 Defense until the end of the round."
                 ],
                 "Shadow": null,
-                "FlavorText": "`The Elves have their own labours and their own sorrows...` -Gildor, The Fellowship of the Ring"
+                "FlavorText": "`...the lord of the Galadhrim is accounted wisest of the Elves of Middle-earth, and a giver of gifts beyond the power of kings.` -Galadriel, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Elves of Lórien",
             "EncounterInfo": null,
-            "Number": 13,
-            "Quantity": 3,
-            "Artist": "Lorraine Schleter",
-            "HasErrata": true,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320013",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Silvan Tracker",
-            "Slug": "Silvan-Tracker-EoL",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Silvan-Tracker.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Silvan."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After a Silvan character readies during the refresh phase, heal 1 damage from that character."
-                ],
-                "Shadow": null,
-                "FlavorText": "`The Wood-elves tracked him first, an easy task for them, for his trail was still fresh then.` -Gandalf, The Fellowship of the Rings"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 14,
-            "Quantity": 3,
+            "Number": 1,
+            "Quantity": 1,
             "Artist": "Magali Villeneuve",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "320014",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Lembas",
-            "Slug": "Lembas-EoL",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Lembas.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Item."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Play only if you control a Noldor or Silvan hero. Attach to a hero.",
-                    "Action: Discard Lembas to ready attached hero and heal 3 damage from it."
-                ],
-                "Shadow": null,
-                "FlavorText": "`...it is more strengthing than any food made by Men, and it is more pleasant than cram, by all accounts. -Lórien Elf, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 15,
-            "Quantity": 3,
-            "Artist": "Sara Biddle",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320015",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Nenya",
-            "Slug": "Nenya-EoL",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Nenya.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Artifact.",
-                    "Ring."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to Galadriel. She gains a Lore resource icon.",
-                    "Quest Action: Exhaust Nenya and Galadriel to add her Willpower to another character`s Willpower until the end of the phase."
-                ],
-                "Shadow": null,
-                "FlavorText": "`The is Nenya, the Ring of Adamant, and I am its keeper.` -Galadriel, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 16,
-            "Quantity": 3,
-            "Artist": "Mike Nash",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320016",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "O Lórien!",
-            "Slug": "O-Lorien-EoL",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/O-Lórien.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Song."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a hero.",
-                    "Action: Exhaust O Lorien! to lower the cost of the next Silvan ally played this phase by 1 (to a minimum of 1)."
-                ],
-                "Shadow": null,
-                "FlavorText": "`I sang of leaves, of leaves of gold, and\r\nleaves of gold there grew:\r\nOf wind I sang, a wind there came and in the\r\nbranches blew.` -Galadriel, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 17,
-            "Quantity": 3,
-            "Artist": "Carolina Eade",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320017",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Wingfoot",
-            "Slug": "Wingfoot-EoL",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Wingfoot.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Title."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Ranger hero.",
-                    "Response: After attached hero commits to a quest, name enemy, location or treachery. If a card of the named type is revealed during this quest phase, exhaust Wingfoot to ready attached hero."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Wingfoot I name you. This deed of the three friends should be sung in many a hall. Forty leagues and five you have measured ere the forth day is ended!`\r\n-Éomer, The Two Towers"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 18,
-            "Quantity": 3,
-            "Artist": "Gabriel Verdon",
-            "HasErrata": true,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320018",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "A Test of Will",
-            "Slug": "A-Test-of-Will-EoL",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/A-Test-of-Will.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Response: Cancel the `when revealed` effects of a card that was just revealed from the encounter deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "`There is naught that you can do, other than to resist, with hope or without it`\r\n-Elrond, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 19,
-            "Quantity": 2,
-            "Artist": "Ryan Barger",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320019",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Daeron's Runes",
-            "Slug": "Daeron's-Runes-EoL",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Daeron's-Runes.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Draw 2 cards. Then, discard 1 card from your hand."
-                ],
-                "Shadow": null,
-                "FlavorText": "`These are Daeron`s Runes, such as were used of old in Moria...`\r\n-Gandalf, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 20,
-            "Quantity": 3,
-            "Artist": "Carolina Eade",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320020",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Elrond's Counsel",
-            "Slug": "Elrond's-Counsel-EoL",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Elrond's-Counsel.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: If you control a unique Noldor character, give another character +1 Willpower until the end of the phase and lower your threat by 3."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 21,
-            "Quantity": 3,
-            "Artist": "Anthony Palumbo",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320021",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Feigned Voices",
-            "Slug": "Feigned-Voices-EoL",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Feigned-Voices.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Combat Action: Return a Silvan ally you control to your hand to choose an enemy engaged with a player. That enemy cannot attack that player this phase."
-                ],
-                "Shadow": null,
-                "FlavorText": "`The three of us could not challenge a hundred, so we went ahead and spoke with feigned voices, leading them on into the wood.` -Haldir, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 22,
-            "Quantity": 3,
-            "Artist": "Sara Betsy",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320022",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Host of Galadhrim",
-            "Slug": "Host-of-Galadhrim-EoL",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Host-of-Galadhrim.jpg",
-                "Stats": {
-                    "ResourceCost": "4"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Planning Action: Return each Silvan ally you control to your hand. Then, play each of those allies from your hand one at a time at no cost."
-                ],
-                "Shadow": null,
-                "FlavorText": "Celeborn came forth and led the host of Lórien...\r\n-The Return of the King"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 23,
-            "Quantity": 3,
-            "Artist": "Leanna Crossan",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320023",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "The Tree People",
-            "Slug": "The-Tree-People-EoL",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/The-Tree-People.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Return a Silvan ally you control to your hand to search the top 5 cards of your deck for a Silvan ally. Put that ally into play and shuffle the other cards back into your deck. You can only play 1 copy of The Tree People each phase."
-                ],
-                "Shadow": null,
-                "FlavorText": "No folk could they see, nor hear any feet upon the paths; but there were many voices, about them, and in the air above. –The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 24,
-            "Quantity": 3,
-            "Artist": "Stacey Diana Clark",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320024",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Galadhon Archer",
-            "Slug": "Galadhon-Archer-EoL",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Galadhon-Archer.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "0",
-                    "Attack": "2",
-                    "Defense": "0",
-                    "HitPoints": "1"
-                },
-                "Traits": [
-                    "Silvan.",
-                    "Warrior."
-                ],
-                "Keywords": [
-                    "Ranged."
-                ],
-                "Text": [
-                    "Ranged.",
-                    "Response: After Galadhon Archer enters play, deal 1 damage to an enemy not engaged with you."
-                ],
-                "Shadow": null,
-                "FlavorText": "`...they say that you breathe so loud that they could shoot you in the dark.` -Legolas, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 25,
-            "Quantity": 3,
-            "Artist": "Sara K. Diesel",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320025",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "08001",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 15291,
             "Categories": null
         },
         {
@@ -1026,83 +1061,128 @@
             "Artist": "Melanie Maier",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "320026",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "08028",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 172493,
             "Categories": null
         },
         {
-            "Title": "Bow of the Galadhrim",
-            "Slug": "Bow-of-the-Galadhrim-EoL",
+            "Title": "Mirkwood Runner",
+            "Slug": "Mirkwood-Runner-EoL",
             "IsUnique": false,
-            "CardType": "Attachment",
+            "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Tactics",
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Bow-of-the-Galadhrim.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Mirkwood-Runner.jpg",
                 "Stats": {
-                    "ResourceCost": "1"
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "0",
+                    "HitPoints": "2"
                 },
                 "Traits": [
-                    "Item.",
-                    "Weapon."
+                    "Silvan.",
+                    "Scout."
                 ],
-                "Keywords": [
-                    "Restricted."
-                ],
-                "Text": [
-                    "Attach to a Silvan character with the ranged keyword. Restricted.",
-                    "Attached character gets +1 Attack. (+2 Attack instead if attacking an enemy not engaged with you.)"
-                ],
-                "Shadow": null,
-                "FlavorText": "...longer and stronger than the bows of Mirkwood, and strung with a string of elf-hair. -The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 27,
-            "Quantity": 3,
-            "Artist": "Sara Biddle",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320027",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Hands Upon the Bow",
-            "Slug": "Hands-Upon-the-Bow-EoL",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Tactics",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Hands-Upon-the-Bow.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [],
                 "Keywords": [],
                 "Text": [
-                    "Action: Exhaust a character you control with ranged to immediately declare it as an attacker (and resolve its attack) against an enemy in the staging area. It gets +1 Attack during this attack."
+                    "While Mirkwood Runner is attacking alone, the defending enemy does not count its Defense."
                 ],
                 "Shadow": null,
-                "FlavorText": null
+                "FlavorText": "`...let a ploughman plough, but choose an otter for swimming, and for running light over grass and leaf or over snow-an Elf.` -Legolas, The Fellowship of the Ring"
             },
             "Back": null,
             "CardSet": "Elves of Lórien",
             "EncounterInfo": null,
-            "Number": 28,
+            "Number": 10,
             "Quantity": 3,
             "Artist": "Magali Villeneuve",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "320028",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "02123",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 169322,
+            "Categories": null
+        },
+        {
+            "Title": "Defender of the Naith",
+            "Slug": "Defender-of-the-Naith-EoL",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Defender-of-the-Naith.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "0",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "Sentinel.",
+                    "Response: After a Silvan ally you control leaves play, ready Defender of the Naith."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We have been keeping watch on the rivers, ever since we saw a great troop of Orcs going North toward Moria...` -Haldir, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Christine Griffin",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "08065",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 166657,
+            "Categories": null
+        },
+        {
+            "Title": "Host of Galadhrim",
+            "Slug": "Host-of-Galadhrim-EoL",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Host-of-Galadhrim.jpg",
+                "Stats": {
+                    "ResourceCost": "4"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Planning Action: Return each Silvan ally you control to your hand. Then, play each of those allies from your hand one at a time at no cost."
+                ],
+                "Shadow": null,
+                "FlavorText": "Celeborn came forth and led the host of Lórien...\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Elves of Lórien",
+            "EncounterInfo": null,
+            "Number": 23,
+            "Quantity": 3,
+            "Artist": "Leanna Crossan",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "22036",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 64842,
             "Categories": null
         },
         {
@@ -1134,89 +1214,9 @@
             "Artist": "Cristi Balanescu",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "320029",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Vilya",
-            "Slug": "Vilya-EoL",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Vilya.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Ring.",
-                    "Artifact."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to Elrond. He gains a Spirit resource icon.",
-                    "Action: Exhaust Elrond and Vilya to reveal the top card of your deck. You can immediately play or put into play the revealed card for no cost, if able. Otherwise, move the revealed card to the bottom of your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": "...mightiest of the Three. -Return of the King"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 30,
-            "Quantity": 3,
-            "Artist": "Sara Biddle",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320030",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Elrond",
-            "Slug": "Elrond-EoL",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Elves-of-Lorien/Elrond.jpg",
-                "Stats": {
-                    "ThreatCost": "13",
-                    "Willpower": "3",
-                    "Attack": "2",
-                    "Defense": "3",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Noldor.",
-                    "Noble."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "You may spend resources from Elrond`s resource pool to pay for Spirit, Leadership, and Tactics allies.",
-                    "Response: After a character is healed by another card effect, heal 1 damage on it."
-                ],
-                "Shadow": null,
-                "FlavorText": "`But you do not stand alone.`\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Elves of Lórien",
-            "EncounterInfo": null,
-            "Number": 31,
-            "Quantity": 1,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "320031",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "08060",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 62029,
             "Categories": null
         }
     ]

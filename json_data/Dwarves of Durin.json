@@ -7,149 +7,29 @@
     "Cards": null,
     "cards": [
         {
-            "Title": "Dáin Ironfoot",
-            "Slug": "Dain-Ironfoot-DoD",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Dáin-Ironfoot.jpg",
-                "Stats": {
-                    "ThreatCost": "11",
-                    "Willpower": "1",
-                    "Attack": "2",
-                    "Defense": "3",
-                    "HitPoints": "5"
-                },
-                "Traits": [
-                    "Dwarf.",
-                    "Noble."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "While Dáin Ironfoot is ready, Dwarf characters get +1 Attack and +1 Willpower."
-                ],
-                "Shadow": null,
-                "FlavorText": "`You have not heard of Dáin and the dwarves of the Iron Hills?`\r\n-Bilbo Baggins, The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Tiziano Baracchi",
-            "HasErrata": true,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310001",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Ori",
-            "Slug": "Ori-DoD",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Ori.jpg",
-                "Stats": {
-                    "ThreatCost": "8",
-                    "Willpower": "2",
-                    "Attack": "2",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Dwarf."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "If you control at least 5 Dwarf characters, draw 1 additional card at the beginning of the resource phase."
-                ],
-                "Shadow": null,
-                "FlavorText": "`He could write well and speedily, and often used the Elvish characters.`\r\n-Gimli, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 2,
-            "Quantity": 1,
-            "Artist": "Blake Henriksen",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310002",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Bifur",
-            "Slug": "Bifur-DoD",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Bifur.jpg",
-                "Stats": {
-                    "ThreatCost": "7",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Dwarf."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Pay 1 resource from a hero`s resource pool to add 1 resource to Bifur`s resource pool. Any player may trigger this ability. (Limit once per round.)"
-                ],
-                "Shadow": null,
-                "FlavorText": "`And winter comes after autumn.` - Bifur, The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 3,
-            "Quantity": 1,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310003",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Bombur",
-            "Slug": "Bombur-DoD",
+            "Title": "Gandalf",
+            "Slug": "Gandalf-DoD",
             "IsUnique": true,
             "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": "Lore",
+            "Sphere": null,
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Bombur.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Gandalf.jpg",
                 "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "0",
-                    "Attack": "0",
-                    "Defense": "1",
-                    "HitPoints": "3"
+                    "ResourceCost": "5",
+                    "Willpower": "4",
+                    "Attack": "4",
+                    "Defense": "4",
+                    "HitPoints": "4"
                 },
                 "Traits": [
-                    "Dwarf."
+                    "Istari."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Action: Exhaust Bombur to choose a location. That location gets -1 Threat until the end of the phase. (That location does not contribute its Threat instead if it is an Underground location.)"
+                    "At the end of the round, discard Gandalf from play.",
+                    "Response: After Gandalf enters play, (choose 1): draw 3 cards, deal 4 damage to 1 enemy in play, or reduce your threat by 5."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -157,54 +37,14 @@
             "Back": null,
             "CardSet": "Dwarves of Durin",
             "EncounterInfo": null,
-            "Number": 4,
+            "Number": 10,
             "Quantity": 3,
-            "Artist": "Winona Nelson",
+            "Artist": "Lucas Graciano",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "310004",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Dori",
-            "Slug": "Dori-DoD",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Dori.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "1",
-                    "Attack": "2",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Dwarf."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After a hero is assigned any amount of damage, exhaust Dori to place that damage on Dori instead."
-                ],
-                "Shadow": null,
-                "FlavorText": "`I can`t always be carrying burglars on my back,` said Dori, `down tunnels and up trees! What do you think I am? A porter?`\r\n-Dori, The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 5,
-            "Quantity": 3,
-            "Artist": "Jake Murray",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310005",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "01073",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 3666635,
             "Categories": null
         },
         {
@@ -243,9 +83,194 @@
             "Artist": "Empty Room Studios",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "310006",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "01059",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 869926,
+            "Categories": null
+        },
+        {
+            "Title": "A Very Good Tale",
+            "Slug": "A-Very-Good-Tale-DoD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/A-Very-Good-Tale.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust 2 allies you control to shuffle your deck and discard the top 5 cards. Put up to 2 allies discarded by this effect into play under your control. The total cost of the allies put into play cannot exceed the total cost of the allies exhausted to pay for this effect."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 20,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "131014",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 836012,
+            "Categories": null
+        },
+        {
+            "Title": "Miner of the Iron Hills",
+            "Slug": "Miner-of-the-Iron-Hills-DoD",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Miner-of-the-Iron-Hills.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "0",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Miner of the Iron Hills enters play, choose and discard 1 Condition attachment from play."
+                ],
+                "Shadow": null,
+                "FlavorText": "...while the four dwarves sat around the table, and talked about mines and gold and troubles with goblins...\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 13,
+            "Quantity": 2,
+            "Artist": "Loren Fetterman",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "01061",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 749676,
+            "Categories": null
+        },
+        {
+            "Title": "Cram",
+            "Slug": "Cram-DoD",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Cram.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero.",
+                    "Action: Discard Cram to ready attached hero."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 14,
+            "Quantity": 3,
+            "Artist": "Adam Lane",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "131011",
+            "RingsDbPopularity": 10,
+            "RingsDbVotes": 640929,
+            "Categories": null
+        },
+        {
+            "Title": "Zigil Miner",
+            "Slug": "Zigil-Miner-DoD",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Zigil-Miner.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "1"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust Zigil Miner and name a number to discard the top 2 cards of your deck. If at least one of those cards has cost equal to the named number, choose a hero you control. For each card that matches the named number, add 1 resource to that hero`s resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 28,
+            "Quantity": 3,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": true,
+            "OctgnGuid": "",
+            "RingsDbCardId": "03009",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 585543,
+            "Categories": null
+        },
+        {
+            "Title": "We Are Not Idle",
+            "Slug": "We-Are-Not-Idle-DoD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/We-Are-Not-Idle.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Exhaust X Dwarf heroes to add X resources to a hero`s resource pool and draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`You should see the stone-paved roads of many colours! And the halls and cavernous streets under the earth with arches carved like trees; and the terraces and towers upon the Mountain`s sides! Then you would see that we have not been idle.`\r\n-Glóin, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 23,
+            "Quantity": 3,
+            "Artist": "Charles Urbach",
+            "HasErrata": true,
+            "OctgnGuid": "",
+            "RingsDbCardId": "04129",
+            "RingsDbPopularity": 9,
+            "RingsDbVotes": 510615,
             "Categories": null
         },
         {
@@ -284,726 +309,9 @@
             "Artist": "Andrew Johanson",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "310007",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Ered Luin Miner",
-            "Slug": "Ered-Luin-Miner-DoD",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Ered-Luin-Miner.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Dwarf."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Ered Luin Miner is discarded from your deck, put it into play under your control."
-                ],
-                "Shadow": null,
-                "FlavorText": "Tools were to be found in plenty that the miners and quarriers and builders of old had used; and at such work the dwarves were still very skilled.\r\n-The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 8,
-            "Quantity": 3,
-            "Artist": "Lukasz Jaskolski",
-            "HasErrata": true,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310008",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Ered Nimrais Prospector",
-            "Slug": "Ered-Nimrais-Prospector-DoD",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Ered-Nimrais-Prospector.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "1",
-                    "Attack": "0",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Dwarf."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Ered Nimrais Prospector enters play, discard the top 3 cards of your deck. Then, choose and shuffle 1 card from your discard pile back into your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 9,
-            "Quantity": 3,
-            "Artist": "Jason Ward",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310009",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Gandalf",
-            "Slug": "Gandalf-DoD",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Gandalf.jpg",
-                "Stats": {
-                    "ResourceCost": "5",
-                    "Willpower": "4",
-                    "Attack": "4",
-                    "Defense": "4",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Istari."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "At the end of the round, discard Gandalf from play.",
-                    "Response: After Gandalf enters play, (choose 1): draw 3 cards, deal 4 damage to 1 enemy in play, or reduce your threat by 5."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 10,
-            "Quantity": 3,
-            "Artist": "Lucas Graciano",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310010",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Glóin",
-            "Slug": "Gloin-DoD",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Glóin.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "3"
-                },
-                "Traits": [
-                    "Dwarf."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "While you control at least 5 Dwarf characters, Glóin gains: `Response: After you play Glóin from your hand, choose a hero. Add 2 resources to that hero`s resource pool.`"
-                ],
-                "Shadow": null,
-                "FlavorText": "Glóin lit several more torches, and then they all crept out, one by one...\r\n-The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 11,
-            "Quantity": 3,
-            "Artist": "Jeff Lee Johnson",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310011",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Longbeard Elder",
-            "Slug": "Longbeard-Elder-DoD",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Longbeard-Elder.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Dwarf."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Longbeard Elder commits to a quest, look at the top card of the encounter deck. If that card is a location, place 1 progress token on the current quest. Otherwise, Longbeard Elder gets -1 Willpower until the end of the phase."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 12,
-            "Quantity": 3,
-            "Artist": "Eric Braddock",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310012",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Miner of the Iron Hills",
-            "Slug": "Miner-of-the-Iron-Hills-DoD",
-            "IsUnique": false,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Miner-of-the-Iron-Hills.jpg",
-                "Stats": {
-                    "ResourceCost": "2",
-                    "Willpower": "0",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Dwarf."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Miner of the Iron Hills enters play, choose and discard 1 Condition attachment from play."
-                ],
-                "Shadow": null,
-                "FlavorText": "...while the four dwarves sat around the table, and talked about mines and gold and troubles with goblins...\r\n-The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 13,
-            "Quantity": 2,
-            "Artist": "Loren Fetterman",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310013",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Cram",
-            "Slug": "Cram-DoD",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Cram.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [
-                    "Item."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a hero.",
-                    "Action: Discard Cram to ready attached hero."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 14,
-            "Quantity": 3,
-            "Artist": "Adam Lane",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310014",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Healing Herbs",
-            "Slug": "Healing-Herbs-DoD",
-            "IsUnique": false,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Healing-Herbs.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [
-                    "Item."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Lore hero.",
-                    "Action: Discard Healing Herbs and exhaust attached hero to heal all damage on 1 character."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 15,
-            "Quantity": 3,
-            "Artist": "Sara Biddle",
-            "HasErrata": true,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310015",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "King Under the Mountain",
-            "Slug": "King-Under-the-Mountain-DoD",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/King-Under-the-Mountain.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Title."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Dwarf hero.",
-                    "Action: Exhaust King Under the Mountain to look at the top 2 cards of your deck. Add 1 to your hand and discard the other."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Long ago in my grandfather Thror`s time our family was driven out of the far North, and came back with all their wealth and tools to this Mountain on the map.`\r\n-Thorin, The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 16,
-            "Quantity": 3,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310016",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Legacy of Durin",
-            "Slug": "Legacy-of-Durin-DoD",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Legacy-of-Durin.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Condition."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Dwarf hero.",
-                    "Response: After you play a Dwarf character from your hand, exhaust Legacy of Durin to draw 1 card."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 17,
-            "Quantity": 3,
-            "Artist": "Ilich Henriquez",
-            "HasErrata": true,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310017",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Narvi's Belt",
-            "Slug": "Narvi's-Belt-DoD",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Narvi's-Belt.jpg",
-                "Stats": {
-                    "ResourceCost": "2"
-                },
-                "Traits": [
-                    "Item."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a Dwarf hero.",
-                    "Action: Exhaust Narvi`s Belt to give attached hero a Leadership, Lore, Tactics, or Spirit icon until the end of the phase."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 18,
-            "Quantity": 3,
-            "Artist": "Carolina Eade",
-            "HasErrata": true,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310018",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Thrór's Map",
-            "Slug": "Thror's-Map-DoD",
-            "IsUnique": true,
-            "CardType": "Attachment",
-            "CardSubType": "None",
-            "Sphere": "Lore",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Thrór's-Map.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Artifact.",
-                    "Item."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Attach to a hero.",
-                    "Travel Action: Discard Thrór`s Map to choose a location in the staging area. Make that location the active location. (If there is another active location, return it to the staging area.)"
-                ],
-                "Shadow": null,
-                "FlavorText": "`This was made by Thrór, your grandfather, Thorin.` he said in answer to the dwarves` excited questions. `It is a plan of the Mountain.` -Gandalf, The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 19,
-            "Quantity": 3,
-            "Artist": "Jake Murray",
-            "HasErrata": true,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310019",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "A Very Good Tale",
-            "Slug": "A-Very-Good-Tale-DoD",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/A-Very-Good-Tale.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Exhaust 2 allies you control to shuffle your deck and discard the top 5 cards. Put up to 2 allies discarded by this effect into play under your control. The total cost of the allies put into play cannot exceed the total cost of the allies exhausted to pay for this effect."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 20,
-            "Quantity": 3,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310020",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Hidden Cache",
-            "Slug": "Hidden-Cache-DoD",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Hidden-Cache.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Response: After Hidden Cache is discarded from your deck, add 2 resources to the resource pool of a hero you control.",
-                    "Action: Spend 1 resource to draw 1 card."
-                ],
-                "Shadow": null,
-                "FlavorText": "...there was a good deal of food jumbled carlessly on shelves and on the ground, among an untidy litter of plunder...\r\n-The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 21,
-            "Quantity": 3,
-            "Artist": "Aurelien Hubert",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310021",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Lure of Moria",
-            "Slug": "Lure-of-Moria-DoD",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Lure-of-Moria.jpg",
-                "Stats": {
-                    "ResourceCost": "3"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Ready all Dwarf characters."
-                ],
-                "Shadow": null,
-                "FlavorText": "`The road that I speak of leads to the Mines of Moria,` said Gandalf. Only Gimli lifted up his head; a smouldering fire was in his eyes.\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 22,
-            "Quantity": 3,
-            "Artist": "Mike Nash",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310022",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "We Are Not Idle",
-            "Slug": "We-Are-Not-Idle-DoD",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/We-Are-Not-Idle.jpg",
-                "Stats": {
-                    "ResourceCost": "0"
-                },
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Action: Exhaust X Dwarf heroes to add X resources to a hero`s resource pool and draw 1 card."
-                ],
-                "Shadow": null,
-                "FlavorText": "`You should see the stone-paved roads of many colours! And the halls and cavernous streets under the earth with arches carved like trees; and the terraces and towers upon the Mountain`s sides! Then you would see that we have not been idle.`\r\n-Glóin, The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 23,
-            "Quantity": 3,
-            "Artist": "Charles Urbach",
-            "HasErrata": true,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310023",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Durin's Song",
-            "Slug": "Durin's-Song-DoD",
-            "IsUnique": false,
-            "CardType": "Event",
-            "CardSubType": "None",
-            "Sphere": "Leadership",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Durin's-Song.jpg",
-                "Stats": {
-                    "ResourceCost": "1"
-                },
-                "Traits": [
-                    "Song."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Choose a Dwarf hero. That hero gets +2 Willpower, +2 Attack, and +2 Defense until the end of the round."
-                ],
-                "Shadow": null,
-                "FlavorText": "A king he was on carven throne\r\nIn many-pillared halls of stone\r\nWith golden roof and silver floor,\r\nAnd runes of power upon the door.\r\n-The Fellowship of the Ring"
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 24,
-            "Quantity": 3,
-            "Artist": "Cristi Balanescu",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310024",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Nori",
-            "Slug": "Nori-DoD",
-            "IsUnique": true,
-            "CardType": "Hero",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Nori.jpg",
-                "Stats": {
-                    "ThreatCost": "9",
-                    "Willpower": "2",
-                    "Attack": "1",
-                    "Defense": "2",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Dwarf."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After you play a Dwarf character from your hand, reduce your threat by 1."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Nori, at your service.`\r\n-Nori, The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 25,
-            "Quantity": 1,
-            "Artist": "Blake Henriksen",
-            "HasErrata": true,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310025",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Kili",
-            "Slug": "Kili-DoD",
-            "IsUnique": true,
-            "CardType": "Ally",
-            "CardSubType": "None",
-            "Sphere": "Spirit",
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Kili.jpg",
-                "Stats": {
-                    "ResourceCost": "3",
-                    "Willpower": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "2"
-                },
-                "Traits": [
-                    "Dwarf."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Response: After you play Kili from your hand during the planning phase, search your deck for Fili and put him into play under your control. Then, shuffle your deck."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Dwarves of Durin",
-            "EncounterInfo": null,
-            "Number": 26,
-            "Quantity": 3,
-            "Artist": "Carmen Cianelti",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "310026",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "03011",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 499166,
             "Categories": null
         },
         {
@@ -1041,34 +349,34 @@
             "Artist": "Carmen Cianelti",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "310027",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "131006",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 496152,
             "Categories": null
         },
         {
-            "Title": "Zigil Miner",
-            "Slug": "Zigil-Miner-DoD",
-            "IsUnique": false,
+            "Title": "Kili",
+            "Slug": "Kili-DoD",
+            "IsUnique": true,
             "CardType": "Ally",
             "CardSubType": "None",
             "Sphere": "Spirit",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Zigil-Miner.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Kili.jpg",
                 "Stats": {
-                    "ResourceCost": "2",
+                    "ResourceCost": "3",
                     "Willpower": "1",
                     "Attack": "1",
                     "Defense": "1",
-                    "HitPoints": "1"
+                    "HitPoints": "2"
                 },
                 "Traits": [
                     "Dwarf."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Action: Exhaust Zigil Miner and name a number to discard the top 2 cards of your deck. If at least one of those cards has cost equal to the named number, choose a hero you control. For each card that matches the named number, add 1 resource to that hero`s resource pool."
+                    "Response: After you play Kili from your hand during the planning phase, search your deck for Fili and put him into play under your control. Then, shuffle your deck."
                 ],
                 "Shadow": null,
                 "FlavorText": null
@@ -1076,14 +384,628 @@
             "Back": null,
             "CardSet": "Dwarves of Durin",
             "EncounterInfo": null,
-            "Number": 28,
+            "Number": 26,
+            "Quantity": 3,
+            "Artist": "Carmen Cianelti",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "131007",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 469458,
+            "Categories": null
+        },
+        {
+            "Title": "King Under the Mountain",
+            "Slug": "King-Under-the-Mountain-DoD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/King-Under-the-Mountain.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Dwarf hero.",
+                    "Action: Exhaust King Under the Mountain to look at the top 2 cards of your deck. Add 1 to your hand and discard the other."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Long ago in my grandfather Thror`s time our family was driven out of the far North, and came back with all their wealth and tools to this Mountain on the map.`\r\n-Thorin, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 16,
             "Quantity": 3,
             "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "132018",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 447973,
+            "Categories": null
+        },
+        {
+            "Title": "Dáin Ironfoot",
+            "Slug": "Dain-Ironfoot-DoD",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Dáin-Ironfoot.jpg",
+                "Stats": {
+                    "ThreatCost": "11",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dwarf.",
+                    "Noble."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While Dáin Ironfoot is ready, Dwarf characters get +1 Attack and +1 Willpower."
+                ],
+                "Shadow": null,
+                "FlavorText": "`You have not heard of Dáin and the dwarves of the Iron Hills?`\r\n-Bilbo Baggins, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Tiziano Baracchi",
             "HasErrata": true,
             "OctgnGuid": "",
-            "RingsDbCardId": "310028",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "02116",
+            "RingsDbPopularity": 8,
+            "RingsDbVotes": 29776,
+            "Categories": null
+        },
+        {
+            "Title": "Hidden Cache",
+            "Slug": "Hidden-Cache-DoD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Hidden-Cache.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Hidden Cache is discarded from your deck, add 2 resources to the resource pool of a hero you control.",
+                    "Action: Spend 1 resource to draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": "...there was a good deal of food jumbled carlessly on shelves and on the ground, among an untidy litter of plunder...\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 21,
+            "Quantity": 3,
+            "Artist": "Aurelien Hubert",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "06143",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 398932,
+            "Categories": null
+        },
+        {
+            "Title": "Narvi's Belt",
+            "Slug": "Narvi's-Belt-DoD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Narvi's-Belt.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Dwarf hero.",
+                    "Action: Exhaust Narvi`s Belt to give attached hero a Leadership, Lore, Tactics, or Spirit icon until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 18,
+            "Quantity": 3,
+            "Artist": "Carolina Eade",
+            "HasErrata": true,
+            "OctgnGuid": "",
+            "RingsDbCardId": "03003",
+            "RingsDbPopularity": 7,
+            "RingsDbVotes": 359466,
+            "Categories": null
+        },
+        {
+            "Title": "Dori",
+            "Slug": "Dori-DoD",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Dori.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After a hero is assigned any amount of damage, exhaust Dori to place that damage on Dori instead."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I can`t always be carrying burglars on my back,` said Dori, `down tunnels and up trees! What do you think I am? A porter?`\r\n-Dori, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 5,
+            "Quantity": 3,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "131009",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 329518,
+            "Categories": null
+        },
+        {
+            "Title": "Legacy of Durin",
+            "Slug": "Legacy-of-Durin-DoD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Legacy-of-Durin.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Dwarf hero.",
+                    "Response: After you play a Dwarf character from your hand, exhaust Legacy of Durin to draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 17,
+            "Quantity": 3,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": true,
+            "OctgnGuid": "",
+            "RingsDbCardId": "04061",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 325403,
+            "Categories": null
+        },
+        {
+            "Title": "Durin's Song",
+            "Slug": "Durin's-Song-DoD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Durin's-Song.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Choose a Dwarf hero. That hero gets +2 Willpower, +2 Attack, and +2 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "A king he was on carven throne\r\nIn many-pillared halls of stone\r\nWith golden roof and silver floor,\r\nAnd runes of power upon the door.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 24,
+            "Quantity": 3,
+            "Artist": "Cristi Balanescu",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "03004",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 323103,
+            "Categories": null
+        },
+        {
+            "Title": "Glóin",
+            "Slug": "Gloin-DoD",
+            "IsUnique": true,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Glóin.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "While you control at least 5 Dwarf characters, Glóin gains: `Response: After you play Glóin from your hand, choose a hero. Add 2 resources to that hero`s resource pool.`"
+                ],
+                "Shadow": null,
+                "FlavorText": "Glóin lit several more torches, and then they all crept out, one by one...\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 3,
+            "Artist": "Jeff Lee Johnson",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "132006",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 322201,
+            "Categories": null
+        },
+        {
+            "Title": "Longbeard Elder",
+            "Slug": "Longbeard-Elder-DoD",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Longbeard-Elder.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Longbeard Elder commits to a quest, look at the top card of the encounter deck. If that card is a location, place 1 progress token on the current quest. Otherwise, Longbeard Elder gets -1 Willpower until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 12,
+            "Quantity": 3,
+            "Artist": "Eric Braddock",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "04102",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 312819,
+            "Categories": null
+        },
+        {
+            "Title": "Lure of Moria",
+            "Slug": "Lure-of-Moria-DoD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "None",
+            "Sphere": "Leadership",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Lure-of-Moria.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Action: Ready all Dwarf characters."
+                ],
+                "Shadow": null,
+                "FlavorText": "`The road that I speak of leads to the Mines of Moria,` said Gandalf. Only Gimli lifted up his head; a smouldering fire was in his eyes.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 22,
+            "Quantity": 3,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "04030",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 310373,
+            "Categories": null
+        },
+        {
+            "Title": "Magic Ring",
+            "Slug": "Magic-Ring-DoD",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Magic-Ring.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Ring."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero. Limit 1 per hero and 1 per deck.",
+                    "Action: Exhaust Magic Ring and raise your threat by 1 to (choose 1): heal 1 damage from attached hero, add 1 resource to attached hero`s pool, or ready attached hero."
+                ],
+                "Shadow": null,
+                "FlavorText": "`In Eregion long ago many Elven-rings were made, magic rings as you call them, and they were, of course, of various kinds...`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 31,
+            "Quantity": 1,
+            "Artist": "Lucas Durham",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "17143",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 284820,
+            "Categories": null
+        },
+        {
+            "Title": "Ered Luin Miner",
+            "Slug": "Ered-Luin-Miner-DoD",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Ered-Luin-Miner.jpg",
+                "Stats": {
+                    "ResourceCost": "3",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Ered Luin Miner is discarded from your deck, put it into play under your control."
+                ],
+                "Shadow": null,
+                "FlavorText": "Tools were to be found in plenty that the miners and quarriers and builders of old had used; and at such work the dwarves were still very skilled.\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 8,
+            "Quantity": 3,
+            "Artist": "Lukasz Jaskolski",
+            "HasErrata": true,
+            "OctgnGuid": "",
+            "RingsDbCardId": "12066",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 264176,
+            "Categories": null
+        },
+        {
+            "Title": "Bifur",
+            "Slug": "Bifur-DoD",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Bifur.jpg",
+                "Stats": {
+                    "ThreatCost": "7",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Pay 1 resource from a hero`s resource pool to add 1 resource to Bifur`s resource pool. Any player may trigger this ability. (Limit once per round.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`And winter comes after autumn.` - Bifur, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 3,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "03002",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 21313,
+            "Categories": null
+        },
+        {
+            "Title": "Ori",
+            "Slug": "Ori-DoD",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Ori.jpg",
+                "Stats": {
+                    "ThreatCost": "8",
+                    "Willpower": "2",
+                    "Attack": "2",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "If you control at least 5 Dwarf characters, draw 1 additional card at the beginning of the resource phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`He could write well and speedily, and often used the Elvish characters.`\r\n-Gimli, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "Blake Henriksen",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "131004",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 20393,
+            "Categories": null
+        },
+        {
+            "Title": "Nori",
+            "Slug": "Nori-DoD",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Spirit",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Nori.jpg",
+                "Stats": {
+                    "ThreatCost": "9",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After you play a Dwarf character from your hand, reduce your threat by 1."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Nori, at your service.`\r\n-Nori, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 25,
+            "Quantity": 1,
+            "Artist": "Blake Henriksen",
+            "HasErrata": true,
+            "OctgnGuid": "",
+            "RingsDbCardId": "131003",
+            "RingsDbPopularity": 6,
+            "RingsDbVotes": 18443,
+            "Categories": null
+        },
+        {
+            "Title": "Thrór's Map",
+            "Slug": "Thror's-Map-DoD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Thrór's-Map.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero.",
+                    "Travel Action: Discard Thrór`s Map to choose a location in the staging area. Make that location the active location. (If there is another active location, return it to the staging area.)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`This was made by Thrór, your grandfather, Thorin.` he said in answer to the dwarves` excited questions. `It is a plan of the Mountain.` -Gandalf, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 19,
+            "Quantity": 3,
+            "Artist": "Jake Murray",
+            "HasErrata": true,
+            "OctgnGuid": "",
+            "RingsDbCardId": "131013",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 224306,
             "Categories": null
         },
         {
@@ -1125,9 +1047,86 @@
             "Artist": "Marius Bota",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "310029",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "16004",
+            "RingsDbPopularity": 5,
+            "RingsDbVotes": 210996,
+            "Categories": null
+        },
+        {
+            "Title": "Ered Nimrais Prospector",
+            "Slug": "Ered-Nimrais-Prospector-DoD",
+            "IsUnique": false,
+            "CardType": "Ally",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Ered-Nimrais-Prospector.jpg",
+                "Stats": {
+                    "ResourceCost": "2",
+                    "Willpower": "1",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Dwarf."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Ered Nimrais Prospector enters play, discard the top 3 cards of your deck. Then, choose and shuffle 1 card from your discard pile back into your deck."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 9,
+            "Quantity": 3,
+            "Artist": "Jason Ward",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "06141",
+            "RingsDbPopularity": 4,
+            "RingsDbVotes": 178713,
+            "Categories": null
+        },
+        {
+            "Title": "Healing Herbs",
+            "Slug": "Healing-Herbs-DoD",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "None",
+            "Sphere": "Lore",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Healing-Herbs.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a Lore hero.",
+                    "Action: Discard Healing Herbs and exhaust attached hero to heal all damage on 1 character."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Dwarves of Durin",
+            "EncounterInfo": null,
+            "Number": 15,
+            "Quantity": 3,
+            "Artist": "Sara Biddle",
+            "HasErrata": true,
+            "OctgnGuid": "",
+            "RingsDbCardId": "04109",
+            "RingsDbPopularity": 3,
+            "RingsDbVotes": 161303,
             "Categories": null
         },
         {
@@ -1163,48 +1162,49 @@
             "Artist": "Mark Bulahao",
             "HasErrata": true,
             "OctgnGuid": "",
-            "RingsDbCardId": "310030",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "17007",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 111647,
             "Categories": null
         },
         {
-            "Title": "Magic Ring",
-            "Slug": "Magic-Ring-DoD",
-            "IsUnique": false,
-            "CardType": "Attachment",
+            "Title": "Bombur",
+            "Slug": "Bombur-DoD",
+            "IsUnique": true,
+            "CardType": "Ally",
             "CardSubType": "None",
-            "Sphere": null,
+            "Sphere": "Lore",
             "Front": {
                 "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Magic-Ring.jpg",
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Dwarves-of-Durin/Bombur.jpg",
                 "Stats": {
-                    "ResourceCost": "2"
+                    "ResourceCost": "3",
+                    "Willpower": "0",
+                    "Attack": "0",
+                    "Defense": "1",
+                    "HitPoints": "3"
                 },
                 "Traits": [
-                    "Artifact.",
-                    "Item.",
-                    "Ring."
+                    "Dwarf."
                 ],
                 "Keywords": [],
                 "Text": [
-                    "Attach to a hero. Limit 1 per hero and 1 per deck.",
-                    "Action: Exhaust Magic Ring and raise your threat by 1 to (choose 1): heal 1 damage from attached hero, add 1 resource to attached hero`s pool, or ready attached hero."
+                    "Action: Exhaust Bombur to choose a location. That location gets -1 Threat until the end of the phase. (That location does not contribute its Threat instead if it is an Underground location.)"
                 ],
                 "Shadow": null,
-                "FlavorText": "`In Eregion long ago many Elven-rings were made, magic rings as you call them, and they were, of course, of various kinds...`\r\n-Gandalf, The Fellowship of the Ring"
+                "FlavorText": null
             },
             "Back": null,
             "CardSet": "Dwarves of Durin",
             "EncounterInfo": null,
-            "Number": 31,
-            "Quantity": 1,
-            "Artist": "Lucas Durham",
+            "Number": 4,
+            "Quantity": 3,
+            "Artist": "Winona Nelson",
             "HasErrata": false,
             "OctgnGuid": "",
-            "RingsDbCardId": "310031",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
+            "RingsDbCardId": "04035",
+            "RingsDbPopularity": 2,
+            "RingsDbVotes": 86853,
             "Categories": null
         }
     ]
