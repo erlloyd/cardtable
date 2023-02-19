@@ -130,9 +130,9 @@ export const getImgUrlsFromJsonId = (
             : defaultBack,
         ];
       } else {
-        return (
-          [FORCE_CARD_BACK_MAP[topCardData.code]] || [cardData.images.back]
-        );
+        const back =
+          FORCE_CARD_BACK_MAP[topCardData.code] || cardData.images.back;
+        return [back];
       }
     } else {
       return [cardData.images.front];

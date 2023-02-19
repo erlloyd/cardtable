@@ -380,14 +380,39 @@ const getMarvelCards = (
   return {
     position: payload.position,
     heroId: uuidv4(),
-    data: replaceDuplicateCards(response.data, heroCardsData),
+    data: fixSlotsCardCodes(
+      replaceDuplicateCards(response.data, heroCardsData)
+    ),
     dataId: uuidv4(),
-    extraHeroCards: extraCards,
-    relatedEncounterDeck: heroEncounterDeck,
+    extraHeroCards: fixCardDetailsCardCodes(extraCards),
+    relatedEncounterDeck: fixCodeList(heroEncounterDeck),
     encounterDeckId: uuidv4(),
-    relatedObligationDeck: heroObligationDeck,
+    relatedObligationDeck: fixCodeList(heroObligationDeck),
     obligationDeckId: uuidv4(),
   };
+};
+
+const fixCardCode = (code: string): string =>
+  code.startsWith("99") ? code.slice(2) : code;
+
+const fixCodeList = (list: string[]) => list.map((l) => fixCardCode(l));
+
+const fixCardDetailsCardCodes = (details: ICardDetails[]): ICardDetails[] =>
+  details.map((d) => ({ jsonId: fixCardCode(d.jsonId) }));
+
+const fixSlotsCardCodes = (data: DeckData): DeckData => {
+  // Some cards (in LOTR I've found are special in rings db but aren't represented in the
+  // data as such. These cards are prefixed with `99`. So if we find any card codes starting
+  // with 99, just remove the 99
+  const fixedSlots: { [key: string]: number } = Object.keys(data.slots).reduce(
+    (newSlots, key) => {
+      newSlots[fixCardCode(key)] = data.slots[key];
+      return newSlots;
+    },
+    {} as { [key: string]: number }
+  );
+
+  return { ...data, slots: fixedSlots };
 };
 
 const replaceDuplicateCards = (
@@ -424,6 +449,7 @@ const getLOTRCards = (
   let heroStack: ICardDetails[] = [];
 
   Object.entries(response.data.heroes).forEach(([key, value]) => {
+    key = fixCardCode(key);
     const cardDetails: ICardDetails[] = Array.from(Array(value).keys()).map(
       (): ICardDetails => ({ jsonId: key })
     );
@@ -433,6 +459,7 @@ const getLOTRCards = (
   const newSlots: { [key: string]: number } = {};
 
   Object.entries(response.data.slots).forEach(([key, value]) => {
+    key = fixCardCode(key);
     //get the card data to make sure it's not a hero
     const cardData = heroCardsData[key];
     if (!cardData) {
@@ -447,6 +474,7 @@ const getLOTRCards = (
   let sideboardStack: string[] = [];
 
   Object.entries(response.data.sideslots ?? []).forEach(([key, value]) => {
+    key = fixCardCode(key);
     const cardData = heroCardsData[key];
     if (!cardData) {
       throw new Error(`Couldn't find card data for sideboard card ${key}`);
