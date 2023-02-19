@@ -54,6 +54,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
     deckSite: "marvelcdb.com",
     decklistApi: "https://marvelcdb.com/api/public/decklist/",
     decklistSearchApi: "https://marvelcdb.com/decklists",
+    decklistSearchApiConstants: "sort=likes",
     encounterUiName: "Encounter Set",
     backgroundImageLocation:
       process.env.PUBLIC_URL + "/images/table/background_marvelchampions.png",
@@ -131,7 +132,7 @@ export const GamePropertiesMap: { [key in GameType]: GameProperties } = {
     deckSite: "ringsdb.com",
     decklistApi: "https://ringsdb.com/api/public/decklist/",
     decklistSearchApi: "https://ringsdb.com/decklists/find",
-    decklistSearchApiConstants: "numcores=3",
+    decklistSearchApiConstants: "numcores=3&sort=likes",
     encounterUiName: "Scenario",
     backgroundImageLocation:
       process.env.PUBLIC_URL + "/images/table/background_lotrlcg.jpg",

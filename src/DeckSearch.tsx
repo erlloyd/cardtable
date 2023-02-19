@@ -106,9 +106,11 @@ const getOptions = (
     ];
   }
 
-  return Object.entries(props.mostRecentResults).map((val) => {
-    return { ...val[1], Id: +val[0] };
-  });
+  return Object.entries(props.mostRecentResults)
+    .map((val) => {
+      return { ...val[1], Id: +val[0] };
+    })
+    .sort((a, b) => b.Likes - a.Likes);
 };
 
 // const handleHighlightChange =
