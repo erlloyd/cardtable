@@ -8,6 +8,7 @@ import GridOnIcon from "@material-ui/icons/GridOn";
 import InfoIcon from "@material-ui/icons/Info";
 import UndoIcon from "@material-ui/icons/Undo";
 import RedoIcon from "@material-ui/icons/Redo";
+import HelpIcon from "@material-ui/icons/Help";
 import PanToolIcon from "@material-ui/icons/PanTool";
 import NotesIcon from "@material-ui/icons/Notes";
 import { GameType } from "./constants/app-constants";
@@ -144,6 +145,19 @@ class OptionsMenu extends Component<IProps> {
             }}
           >
             <RedoIcon fontSize="large" />
+          </button>
+        </Tooltip>
+        <Tooltip title="Help">
+          <button
+            onClick={() => {
+              window.open(
+                "https://erlloyd.github.io/cardtable-docs/",
+                "_blank",
+                "noreferrer"
+              );
+            }}
+          >
+            <HelpIcon fontSize="large" />
           </button>
         </Tooltip>
       </div>
