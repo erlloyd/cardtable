@@ -5,7 +5,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import OpenWithIcon from "@material-ui/icons/OpenWith";
 import SelectAllIcon from "@material-ui/icons/SelectAll";
 import GridOnIcon from "@material-ui/icons/GridOn";
-import InfoIcon from "@material-ui/icons/Info";
+// import InfoIcon from "@material-ui/icons/Info";
 import UndoIcon from "@material-ui/icons/Undo";
 import RedoIcon from "@material-ui/icons/Redo";
 import HelpIcon from "@material-ui/icons/Help";
@@ -100,7 +100,7 @@ class OptionsMenu extends Component<IProps> {
         >
           <SelectAllIcon fontSize="large" />
         </button>
-        <button
+        {/* <button
           className={"render-touch-only"}
           onClick={() => {
             if (this.props.anyCardsSelected) {
@@ -112,7 +112,7 @@ class OptionsMenu extends Component<IProps> {
           }}
         >
           <InfoIcon fontSize="large" />
-        </button>
+        </button> */}
         <Tooltip title="Toggle Notes">
           <button
             className={cx({ "toggle-on": this.props.notesVisible })}
