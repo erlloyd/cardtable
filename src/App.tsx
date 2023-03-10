@@ -12,6 +12,7 @@ import { Button, IconButton, Snackbar } from "@mui/material";
 import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
 import { cacheCommonImages } from "./utilities/game-utils";
+import mixpanel from "mixpanel-browser";
 interface IProps {
   activeGameType: GameType | null;
   updateActiveGameType: (val: GameType) => void;
@@ -35,6 +36,8 @@ const App = (props: IProps) => {
   }, [clearQueryParams]);
 
   useEffect(() => {
+    mixpanel.init("c33a3e2ef8f81f3f8b1d8c4984e72760");
+    mixpanel.track("Cardtable loaded");
     serviceWorkerRegistration.register({ onUpdate: onSWUpdate });
   }, []);
 
