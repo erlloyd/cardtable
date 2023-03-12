@@ -406,9 +406,75 @@ class Card extends Component<IProps, IState> {
       </Spring>
     );
 
+    const countDim = 40;
+
+    const stackCountMainOffset = {
+      x: 0,
+      y: heightToUse / 2,
+    };
+
+    const stackCountoffset = {
+      x: 20,
+      y: 20
+    }
+
+    const cardStackCount =
+      (this.props.numCardsInStack || 1) > 1 && !this.props.isGhost ? (
+        <Spring
+          key={`${this.props.id}-cardStackCount`}
+          to={{
+            rotation: this.props.exhausted ? 90 : 0,
+            textRotation: this.props.exhausted ? -90 : 0,
+          }}
+        >
+          {(animatedProps: any) => (
+            <AnimatedAny.Group
+              x={this.props.x}
+              y={this.props.y}
+              width={countDim}
+              height={countDim}
+              offset={stackCountMainOffset}
+              {...animatedProps}
+            >
+              <AnimatedAny.Group
+              width={countDim}
+              height={countDim}
+              >
+              <AnimatedAny.Rect
+                offset={stackCountoffset}
+                cornerRadius={[9, 9, 9, 9]}
+                opacity={0.6}
+                fill={"black"}
+                shadowForStrokeEnabled={false}
+                hitStrokeWidth={0}
+                width={countDim}
+                height={countDim}
+              />
+              <AnimatedAny.Text
+                rotation={animatedProps.textRotation}
+                offset={stackCountoffset}
+                key={`${this.props.id}-cardstackcounttext`}
+                width={countDim}
+                height={countDim}
+                verticalAlign={"middle"}
+                align={"center"}
+                fontSize={(this.props.numCardsInStack || 1) > 99 ? 18 : 24}
+                fill={"white"}
+                text={`${this.props.numCardsInStack}`}
+                draggable={
+                  this.props.controlledBy === "" ||
+                  this.props.controlledBy === myPeerRef
+                }
+              />
+              </AnimatedAny.Group>
+            </AnimatedAny.Group>
+          )}
+        </Spring>
+      ) : null;
+
     const cardStackOffset = {
-      x: offset.x + 4,
-      y: offset.y - 4,
+      x: offset.x + 6,
+      y: offset.y - 6,
     };
 
     const cardStack =
@@ -496,6 +562,7 @@ class Card extends Component<IProps, IState> {
     return [
       cardStack,
       card,
+      cardStackCount,
       noImageCardNameText,
       stunnedToken,
       confusedToken,
