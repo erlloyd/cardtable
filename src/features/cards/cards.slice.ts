@@ -224,21 +224,47 @@ const foreachUnselectedCard = (
 const getDropTargetCard = (
   state: ICardsState,
   draggedCardPosition: Vector2d,
+  snapping: boolean = false,
   allowedDistance: number = CARD_DROP_TARGET_DISTANCE
 ): ICardStack | null => {
   // go through and find if any unselected cards are potential drop targets
   // If so, get the closest one. But only if the card is owned / controlled by us
   const possibleDropTargets: { distance: number; card: ICardStack }[] = [];
 
-  foreachUnselectedCard(state, (card) => {
-    const distance = getDistance({ x: card.x, y: card.y }, draggedCardPosition);
-    if (distance < allowedDistance) {
-      possibleDropTargets.push({
-        distance,
-        card,
-      });
-    }
-  });
+  if (snapping) {
+    const wouldSnapX =
+      Math.round(draggedCardPosition.x / cardConstants.GRID_SNAP_WIDTH) *
+      cardConstants.GRID_SNAP_WIDTH;
+    const wouldSnapY =
+      Math.round(draggedCardPosition.y / cardConstants.GRID_SNAP_HEIGHT) *
+      cardConstants.GRID_SNAP_HEIGHT;
+
+    foreachUnselectedCard(state, (card) => {
+      if (card.x === wouldSnapX && card.y === wouldSnapY) {
+        // give the smallest possible distance so it will be picked
+        possibleDropTargets.push({
+          distance: 0,
+          card,
+        });
+      }
+    });
+  }
+
+  // If we didn't find a candidate based on snapping, then check distances
+  if (possibleDropTargets.length === 0) {
+    foreachUnselectedCard(state, (card) => {
+      const distance = getDistance(
+        { x: card.x, y: card.y },
+        draggedCardPosition
+      );
+      if (distance < allowedDistance) {
+        possibleDropTargets.push({
+          distance,
+          card,
+        });
+      }
+    });
+  }
 
   return (
     possibleDropTargets.sort((c1, c2) => c1.distance - c2.distance)[0]?.card ??
@@ -370,6 +396,7 @@ const cardFromHandMoveWithSnapReducer: CaseReducer<
   state.dropTargetCards[(action as any).ACTOR_REF] = getDropTargetCard(
     state,
     action.payload,
+    action.payload.snap,
     CARD_DROP_TARGET_DISTANCE * 2
   );
 
@@ -418,9 +445,11 @@ const cardMoveWithSnapReducer: CaseReducer<
     !!primaryCard &&
     (primaryCard as ICardStack).controlledBy === (action as any).ACTOR_REF
   ) {
+    console.log();
     state.dropTargetCards[(action as any).ACTOR_REF] = getDropTargetCard(
       state,
-      !!primaryCard ? { x: primaryCard.x, y: primaryCard.y } : { x: 0, y: 0 }
+      !!primaryCard ? { x: primaryCard.x, y: primaryCard.y } : { x: 0, y: 0 },
+      action.payload.snap
     );
   }
 
