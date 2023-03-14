@@ -57,7 +57,7 @@ services:
         - sed -i '3d' ./package.json
 
         # build
-        - yarn build:tugboat
+        - NODE_OPTIONS="--max-old-space-size=1536" yarn build
 
         # clean up build artifacts
         - rm -rf node_modules
