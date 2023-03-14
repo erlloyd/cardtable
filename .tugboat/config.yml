@@ -29,10 +29,6 @@ services:
         - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
       build:
-        # stop OOM errors
-        - npm install -g increase-memory-limit
-        - increase-memory-limit
-
         # install deps
         - yarn install
 
@@ -57,7 +53,7 @@ services:
         - sed -i '3d' ./package.json
 
         # build
-        - NODE_OPTIONS="--max-old-space-size=1536" yarn build
+        - NODE_OPTIONS=--max_old_space_size=8192 yarn build
 
         # clean up build artifacts
         - rm -rf node_modules
