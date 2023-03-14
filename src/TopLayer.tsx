@@ -34,6 +34,9 @@ class TopLayer extends Component<IProps> {
           style={containerStyle}
           onContextMenu={this.preventDefault}
           onClick={this.handleClick}
+          onKeyDown={this.stopProp}
+          onKeyPress={this.stopProp}
+          onKeyUp={this.stopProp}
         >
           {this.props.children}
         </div>
@@ -46,10 +49,12 @@ class TopLayer extends Component<IProps> {
     this.props.completed();
   };
 
-  private preventDefault = (
-    event: React.MouseEvent<HTMLElement, MouseEvent>
-  ) => {
+  private preventDefault = (event: any) => {
     event.preventDefault();
+  };
+
+  private stopProp = (event: any) => {
+    event.stopPropagation();
   };
 }
 

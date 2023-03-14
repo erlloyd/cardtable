@@ -16,7 +16,7 @@ services:
         # Check for updates to apt-get, and then use it to install nodejs / npm / yarn
         - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
         - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-        - curl -sL https://deb.nodesource.com/setup_14.x | bash -
+        - curl -sL https://deb.nodesource.com/setup_16.x | bash -
         - apt-get update
         - apt-get install nodejs yarn unzip
 
@@ -53,7 +53,7 @@ services:
         - sed -i '3d' ./package.json
 
         # build
-        - yarn build
+        - NODE_OPTIONS=--max_old_space_size=8192 yarn build:tugboat
 
         # clean up build artifacts
         - rm -rf node_modules
