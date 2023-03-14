@@ -13,6 +13,8 @@ import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
 import { cacheCommonImages } from "./utilities/game-utils";
 import mixpanel from "mixpanel-browser";
+import { H } from "highlight.run";
+
 interface IProps {
   activeGameType: GameType | null;
   updateActiveGameType: (val: GameType) => void;
@@ -36,8 +38,25 @@ const App = (props: IProps) => {
   }, [clearQueryParams]);
 
   useEffect(() => {
+    // Mixpanel
     mixpanel.init("c33a3e2ef8f81f3f8b1d8c4984e72760");
     mixpanel.track("Cardtable loaded");
+
+    // highlight.io
+    if (process.env.NODE_ENV === "production") {
+      H.init("zg03k0g9", {
+        tracingOrigins: true,
+        networkRecording: {
+          enabled: true,
+          recordHeadersAndBody: true,
+          urlBlocklist: [
+            // insert urls you don't want to record here
+          ],
+        },
+      });
+    }
+
+    // Service Worker
     serviceWorkerRegistration.register({ onUpdate: onSWUpdate });
   }, []);
 

@@ -5,15 +5,18 @@ import { Provider } from "react-redux";
 // import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import configureStore from "./store/configureStore";
 import AppContainer from "./AppContainer";
+import { ErrorBoundary } from "@highlight-run/react";
 
 const store = configureStore();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <AppContainer />
-    </Provider>
-  </React.StrictMode>,
+  <ErrorBoundary>
+    <React.StrictMode>
+      <Provider store={store}>
+        <AppContainer />
+      </Provider>
+    </React.StrictMode>
+  </ErrorBoundary>,
   document.getElementById("root")
 );
 
