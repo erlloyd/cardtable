@@ -88,6 +88,9 @@ interface IProps {
   setPreviewCardId: (id: string) => void;
   clearPreviewCard: () => void;
   togglePanMode: () => void;
+  toggleDrawCardsIntoHand: () => void;
+  toggleSnapCardsToGrid: () => void;
+  toggleNotes: () => void;
   flipCards: () => void;
   loadCardsData: () => void;
   allJsonData: (payload: any) => void;
@@ -1806,6 +1809,18 @@ class Game extends Component<IProps, IState> {
       this.props.togglePanMode();
     } else if (code === "f") {
       this.props.flipCards();
+    } else if (code === "h") {
+      this.props.toggleDrawCardsIntoHand();
+    } else if (code === "g") {
+      this.props.toggleSnapCardsToGrid();
+    } else if (code === "n") {
+      this.props.toggleNotes();
+    } else if (code === "?") {
+      window.open(
+        "https://erlloyd.github.io/cardtable-docs/",
+        "_blank",
+        "noreferrer"
+      );
     } else if (code === "e") {
       this.props.exhaustCard();
     } else if (code === "s") {
