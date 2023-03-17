@@ -140,6 +140,7 @@ const GameContainer = connect(mapStateToProps, {
   requestResync,
   undo: ActionCreators.undo,
   redo: ActionCreators.redo,
+  clearHistory: ActionCreators.clearHistory,
   drawCardsOutOfCardStack,
   setPreviewCardId,
   clearPreviewCard,

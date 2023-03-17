@@ -31,7 +31,7 @@ const rootReducer = combineReducers({
   game,
   cardsData,
   liveState: undoable(undoableState, {
-    limit: 20,
+    limit: 40,
     groupBy: groupByActionTypes([moveCounter.type]),
     filter: excludeAction([
       startNewArrowForCards.type,
