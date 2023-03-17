@@ -72,6 +72,8 @@ import {
   updateZoom,
   setDrawingArrow,
   showDeckSearch,
+  toggleDrawCardsIntoHand,
+  toggleSnapCardsToGrid,
 } from "./features/game/game.slice";
 import {
   updateDisconnectedArrowPosition,
@@ -87,6 +89,7 @@ import Game from "./Game";
 import { resetApp } from "./store/global.actions";
 import { RootState } from "./store/rootReducer";
 import { startNewArrow } from "./features/arrows/arrows.thunks";
+import { toggleNotes } from "./features/notes/notes.slice";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -121,6 +124,9 @@ const GameContainer = connect(mapStateToProps, {
   startCardMove,
   unselectAllCards,
   togglePanMode,
+  toggleDrawCardsIntoHand,
+  toggleSnapCardsToGrid,
+  toggleNotes,
   flipCards,
   shuffleStack,
   fetchDecklistById,
@@ -140,6 +146,7 @@ const GameContainer = connect(mapStateToProps, {
   requestResync,
   undo: ActionCreators.undo,
   redo: ActionCreators.redo,
+  clearHistory: ActionCreators.clearHistory,
   drawCardsOutOfCardStack,
   setPreviewCardId,
   clearPreviewCard,
