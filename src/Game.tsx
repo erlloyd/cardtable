@@ -2267,9 +2267,9 @@ class Game extends Component<IProps, IState> {
       {
         label: "Quit Game",
         action: () => {
-          this.props.clearHistory();
           this.props.quitGame();
           this.props.resetApp();
+          this.props.clearHistory();
         },
       },
       {
