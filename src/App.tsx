@@ -45,6 +45,12 @@ const App = (props: IProps) => {
     // highlight.io
     if (process.env.NODE_ENV === "production") {
       H.init("zg03k0g9", {
+        enableCanvasRecording: true,
+        samplingStrategy: {
+          canvas: 15,
+          canvasQuality: "low",
+          canvasMaxSnapshotDimension: 480,
+        },
         tracingOrigins: true,
         networkRecording: {
           enabled: true,
