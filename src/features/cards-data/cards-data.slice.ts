@@ -7,7 +7,7 @@ import {
 import {
   initialState,
   ICardsDataState,
-  IGameCardsDataState,
+  IGameCardsDataStateStored,
 } from "./initialState";
 
 // import * as PackData from "../../generated/packs";
@@ -210,27 +210,27 @@ const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
 };
 
 const storeCardData =
-  (isPlayerPack: boolean, careAboutDups: boolean) =>
+  (isPlayerPack: boolean) =>
   (cs: {
-    location: Draft<IGameCardsDataState> | undefined;
+    location: Draft<IGameCardsDataStateStored> | undefined;
     card: CardData;
   }) => {
     const stateLocation = isPlayerPack
-      ? (cs.location as IGameCardsDataState).entities
-      : (cs.location as IGameCardsDataState).encounterEntities;
-
-    // if (!card.octgn_id) {
-    //   console.error(`Card ${card.code} had no octgn_id!`);
-    // }
+      ? (cs.location as IGameCardsDataStateStored).entities
+      : (cs.location as IGameCardsDataStateStored).encounterEntities;
 
     if (!(cs.card.code[0] === "0" && cs.card.code[1] === "0")) {
-      if (stateLocation[cs.card.code]) {
-        if (careAboutDups) {
-          // If we have an explicit back, don't worry abou tit
-          if (!!FORCE_CARD_BACK_MAP[cs.card.code]) {
-            return;
-          }
+      if (
+        stateLocation[cs.card.code] &&
+        stateLocation[cs.card.code].length > 0
+      ) {
+        // If we have an explicit back, don't worry about it
+        if (!!FORCE_CARD_BACK_MAP[cs.card.code]) {
+          return;
+        }
 
+        // Only error if the code and name are different
+        if (cs.card.name !== stateLocation[cs.card.code][0].name) {
           console.error(
             "Found multiple cards with code " +
               cs.card.code +
@@ -238,16 +238,20 @@ const storeCardData =
               cs.card.name +
               " " +
               cs.card.extraInfo.setCode +
-              " Existing card is " +
-              stateLocation[cs.card.code].name +
+              " Existing card(s) are " +
+              stateLocation[cs.card.code].map((c) => c.name) +
               " " +
-              stateLocation[cs.card.code].extraInfo.setCode
+              stateLocation[cs.card.code].map((c) => c.extraInfo.setCode)
           );
           console.log(cs.card);
           console.log(stateLocation[cs.card.code]);
         }
+      } else {
+        stateLocation[cs.card.code] = [];
       }
-      stateLocation[cs.card.code] = cs.card;
+      stateLocation[cs.card.code] = stateLocation[cs.card.code].concat([
+        cs.card,
+      ]);
     }
   };
 
@@ -291,7 +295,7 @@ const loadCardsForEncounterSetReducer: CaseReducer<
         card: c,
       };
     })
-    .forEach(storeCardData(false, false));
+    .forEach(storeCardData(false));
 
   if (!!activeSet) {
     activeSet.cardsInSet = activeSet.cardsInSet.concat(
@@ -356,7 +360,7 @@ const loadCardsDataForPackReducer: CaseReducer<
       .map((c) => {
         return { location: state.data[action.payload.packType], card: c };
       })
-      .forEach(storeCardData(isHeroPack, true));
+      .forEach(storeCardData(isHeroPack));
   } else if (
     action.payload.packType === GameType.LordOfTheRingsLivingCardGame
   ) {
@@ -369,7 +373,7 @@ const loadCardsDataForPackReducer: CaseReducer<
       .map((c) => {
         return { location: state.data[action.payload.packType], card: c };
       })
-      .forEach(storeCardData(true, pack.Name !== "Revised Core Set"));
+      .forEach(storeCardData(true));
   }
 
   return state;

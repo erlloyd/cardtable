@@ -6,6 +6,9 @@ import { IGameState } from "../game/initialState";
 export interface ICardData {
   [key: string]: CardData;
 }
+export interface ICardDataStored {
+  [key: string]: CardData[];
+}
 
 export interface CardInSet {
   code: string;
@@ -22,13 +25,23 @@ export interface ISetData {
   [key: string]: Set;
 }
 
-export interface ICardsDataState {
+export interface ICardsDataStateUserView {
   activeDataType: GameType;
   data: { [key in GameType]?: IGameCardsDataState };
+}
+export interface ICardsDataState {
+  activeDataType: GameType;
+  data: { [key in GameType]?: IGameCardsDataStateStored };
 }
 export interface IGameCardsDataState {
   entities: ICardData;
   encounterEntities: ICardData;
+  setData: ISetData;
+}
+
+export interface IGameCardsDataStateStored {
+  entities: ICardDataStored;
+  encounterEntities: ICardDataStored;
   setData: ISetData;
 }
 
