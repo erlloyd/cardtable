@@ -45,6 +45,7 @@ const App = (props: IProps) => {
     // highlight.io
     if (process.env.NODE_ENV === "production") {
       H.init("zg03k0g9", {
+        version: "_REPLACE_VERSION_",
         enableCanvasRecording: true,
         samplingStrategy: {
           canvas: 15,
