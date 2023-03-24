@@ -83,8 +83,8 @@ export const peerJSMiddleware = (storeAPI: any) => {
   });
 
   cgpPeer.on("open", (id) => {
-    loglevellog.debug("My peer ID is: " + id);
-    loglevellog.debug("myPeerRef is: " + myPeerRef);
+    loglevellog.info("My peer ID is: " + id);
+    loglevellog.info("myPeerRef is: " + myPeerRef);
     storeAPI.dispatch(setPeerId(id));
 
     //look for query param

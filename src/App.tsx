@@ -14,6 +14,9 @@ import CloseIcon from "@material-ui/icons/Close";
 import { cacheCommonImages } from "./utilities/game-utils";
 import mixpanel from "mixpanel-browser";
 import { H } from "highlight.run";
+import log from "loglevel";
+
+(window as any).log = log;
 
 interface IProps {
   activeGameType: GameType | null;
@@ -38,6 +41,13 @@ const App = (props: IProps) => {
   }, [clearQueryParams]);
 
   useEffect(() => {
+    //Default Log Level. Can override in the console with
+    if (process.env.NODE_ENV !== "production") {
+      log.setDefaultLevel("info");
+    } else {
+      log.setDefaultLevel("warn");
+    }
+
     // Mixpanel
     mixpanel.init("c33a3e2ef8f81f3f8b1d8c4984e72760");
     mixpanel.track("Cardtable loaded");

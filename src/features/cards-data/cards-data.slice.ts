@@ -221,11 +221,17 @@ const storeCardData =
 
       // TODO: Sort here so that custom scenario cards are behind others
       stateLocation[cs.card.code] = stateLocation[cs.card.code].sort((a, b) => {
-        if (a.extraInfo.setType === "Custom_Scenario_Kit") {
+        if (
+          a.extraInfo.setType === "Custom_Scenario_Kit" ||
+          a.extraInfo.setType === "Fellowship_Deck"
+        ) {
           return 1;
         }
 
-        if (b.extraInfo.setType === "Custom_Scenario_Kit") {
+        if (
+          b.extraInfo.setType === "Custom_Scenario_Kit" ||
+          b.extraInfo.setType === "Fellowship_Deck"
+        ) {
           return -1;
         }
 
