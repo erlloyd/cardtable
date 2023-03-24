@@ -57,6 +57,7 @@ import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
 import CloseIcon from "@material-ui/icons/Close";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import DeckSearchContainer from "./DeckSearchContainer";
+import log from "loglevel";
 
 const SCALE_BY = 1.02;
 
@@ -295,7 +296,7 @@ class Game extends Component<IProps, IState> {
       };
 
       image.onerror = (e) => {
-        console.error(e);
+        log.error(e);
       };
       image.src =
         GamePropertiesMap[this.props.currentGameType].backgroundImageLocation;
@@ -1833,7 +1834,7 @@ class Game extends Component<IProps, IState> {
         // First, get the selected card stack
         const mySelectedCards = getMySelectedCards(this.props.cards.cards);
         if (mySelectedCards.length !== 1) {
-          console.log(
+          log.info(
             "will not be drawing any cards because the number of selected stacks is " +
               mySelectedCards.length
           );
@@ -2363,7 +2364,7 @@ class Game extends Component<IProps, IState> {
       : card.cardStack[card.cardStack.length - 1];
 
     if (!cardInQuestion) {
-      console.error("Could not get card in question for stack:", card);
+      log.error("Could not get card in question for stack:", card);
     }
 
     const idToGrab = cardInQuestion?.jsonId ?? "missing-id";

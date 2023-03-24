@@ -21,6 +21,7 @@ import {
 import { RootState } from "./rootReducer";
 import { anyCardsDragging } from "../features/cards/cards.selectors";
 import { blacklistRemoteActions } from "./middleware-utilities";
+import loglevellog from "loglevel";
 
 const STATE_CHECK_INTERVAL_MS = 5000;
 
@@ -28,7 +29,7 @@ const DEBUG = false;
 
 const log = (...args: any[]) => {
   if (DEBUG) {
-    console.log(args[0], args[1]);
+    loglevellog.debug(args[0], args[1]);
   }
 };
 
@@ -52,7 +53,7 @@ const setupConnection = (conn: any, storeAPI: any) => {
         storeAPI.dispatch(data);
       }
     } else {
-      console.log("going to replace (most of) state with", data.state);
+      loglevellog.debug("going to replace (most of) state with", data.state);
       setTimeout(() => {
         storeAPI.dispatch(receiveRemoteGameState(data.state));
       }, 0);
@@ -73,24 +74,26 @@ export const peerJSMiddleware = (storeAPI: any) => {
   let activeCon: DataConnection;
 
   cgpPeer.on("error", (err) => {
-    console.error("*****************Server error");
-    console.error(err);
+    loglevellog.error("*****************Server error");
+    loglevellog.error(err);
   });
 
   cgpPeer.on("disconnected", () => {
-    console.log("****Peer server connection disconnected");
+    loglevellog.debug("****Peer server connection disconnected");
   });
 
   cgpPeer.on("open", (id) => {
-    console.log("My peer ID is: " + id);
-    console.log("myPeerRef is: " + myPeerRef);
+    loglevellog.info("My peer ID is: " + id);
+    loglevellog.info("myPeerRef is: " + myPeerRef);
     storeAPI.dispatch(setPeerId(id));
 
     //look for query param
     const remoteParamArray = window.location.href.split("remote=");
     if (remoteParamArray.length > 1) {
       const remoteId = remoteParamArray[1].split("&")[0];
-      console.log("FOUND QUERY PARAM. Going to connect to peer " + remoteId);
+      loglevellog.debug(
+        "FOUND QUERY PARAM. Going to connect to peer " + remoteId
+      );
       activeCon = cgpPeer.connect(remoteId, {
         metadata: { ref: myPeerRef },
       });
@@ -99,12 +102,12 @@ export const peerJSMiddleware = (storeAPI: any) => {
   });
 
   cgpPeer.on("connection", (conn) => {
-    console.log("Connection received!");
+    loglevellog.debug("Connection received!");
     activeCon = conn;
     setupConnection(activeCon, storeAPI);
 
     activeCon.on("open", () => {
-      console.log("connection ready for data");
+      loglevellog.debug("connection ready for data");
       const stateToSend: RootState = cloneDeep(storeAPI.getState());
       // @ts-ignore
       delete stateToSend.cardsData;
@@ -146,28 +149,32 @@ export const peerJSMiddleware = (storeAPI: any) => {
             state: currentState,
           });
         } else {
-          console.log(`Some card is dragging, not checking remote state sync`);
+          loglevellog.debug(
+            `Some card is dragging, not checking remote state sync`
+          );
         }
       }, STATE_CHECK_INTERVAL_MS);
     });
 
     activeCon.on("error", (err) => {
-      console.error("****************Connection error:", err);
+      loglevellog.error("****************Connection error:", err);
     });
 
     activeCon.on("close", () => {
-      console.log("******connection closed for ref " + activeCon.metadata.ref);
+      loglevellog.debug(
+        "******connection closed for ref " + activeCon.metadata.ref
+      );
     });
 
     activeCon.peerConnection.onconnectionstatechange = (ev: Event) => {
-      console.log(`connection state changed`);
-      console.log(ev);
-      console.log(activeCon.peerConnection.connectionState);
+      loglevellog.debug(`connection state changed`);
+      loglevellog.debug(ev);
+      loglevellog.debug(activeCon.peerConnection.connectionState);
       if (
         activeCon.peerConnection.connectionState === "closed" ||
         activeCon.peerConnection.connectionState === "disconnected"
       ) {
-        console.log(
+        loglevellog.debug(
           "Should be CLEARING CLIENT OWNED CARDS for " + activeCon.metadata.ref
         );
       }
@@ -180,12 +187,12 @@ export const peerJSMiddleware = (storeAPI: any) => {
     if (!action.REMOTE_ACTION) {
       action.ACTOR_REF = myPeerRef;
     } else if (!action.ACTOR_REF) {
-      console.error(`Received a REMOTE action without an ACTOR_REF:`);
-      console.log(action);
+      loglevellog.error(`Received a REMOTE action without an ACTOR_REF:`);
+      loglevellog.debug(action);
     }
 
     if (action.type === connectToRemoteGame.type) {
-      console.log("going to connect to peer " + action.payload);
+      loglevellog.debug("going to connect to peer " + action.payload);
       activeCon = cgpPeer.connect(action.payload, {
         reliable: true,
         metadata: { ref: myPeerRef },

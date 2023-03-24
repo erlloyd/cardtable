@@ -15,6 +15,7 @@ import {
 } from "./cards-data.slice";
 import { GameType } from "../../constants/app-constants";
 import { doneLoadingJSON } from "../game/game.slice";
+import log from "loglevel";
 
 export const allJsonData =
   (): ThunkAction<void, RootState, unknown, Action<string>> =>
@@ -25,7 +26,7 @@ export const allJsonData =
 
     let failed = resultsList.filter((r) => r.res.status !== 200);
     if (failed.length > 0) {
-      console.error(
+      log.error(
         "Failed to load some JSON data:",
         failed.map((r) => r.packCode)
       );
@@ -43,27 +44,13 @@ export const allJsonData =
 
     dispatch(bulkLoadCardsDataForPack(cardsData));
 
-    // resultsList.forEach((result) => {
-    //   if (result.res.status === 200) {
-    //     dispatch(
-    //       loadCardsDataForPack({
-    //         packType: GameType.MarvelChampions,
-    //         pack: result.res.data as any,
-    //         pack_code: result.packCode,
-    //       })
-    //     );
-    //   } else {
-    //     console.error("Failed to load some json data");
-    //   }
-    // });
-
     const resultsListLOTR = await Promise.all(
       lotrPackList.map((pack) => getSpecificLOTRPack(pack))
     );
 
     failed = resultsList.filter((r) => r.res.status !== 200);
     if (failed.length > 0) {
-      console.error(
+      log.error(
         "Failed to load some JSON data:",
         failed.map((r) => r.packCode)
       );
@@ -80,19 +67,6 @@ export const allJsonData =
       });
 
     dispatch(bulkLoadCardsDataForPack(cardsDataLOTR));
-    // resultsListLOTR.forEach((result) => {
-    //   if (result.res.status === 200) {
-    //     dispatch(
-    //       loadCardsDataForPack({
-    //         packType: GameType.LordOfTheRingsLivingCardGame,
-    //         pack: result.res.data as any,
-    //         pack_code: result.packCode,
-    //       })
-    //     );
-    //   } else {
-    //     console.error("Failed to load some json data");
-    //   }
-    // });
 
     const resultsListLOTRScenarios = await Promise.all(
       scenarioListLOTR.map((scenario) =>
@@ -104,7 +78,7 @@ export const allJsonData =
       (r) => r.status !== 200
     );
     if (failedScenario.length > 0) {
-      console.error(
+      log.error(
         "Failed to load some JSON data:",
         failedScenario.map((r) => r.data.Slug)
       );
@@ -118,19 +92,6 @@ export const allJsonData =
     });
 
     dispatch(bulkLoadCardsForEncounterSet(scenarioData));
-
-    // resultsListLOTRScenarios.forEach((result) => {
-    //   if (result.status === 200) {
-    //     dispatch(
-    //       loadCardsForEncounterSet({
-    //         setCode: result.data.Slug,
-    //         cards: result.data.AllCards,
-    //       })
-    //     );
-    //   } else {
-    //     console.error("Failed to load some json data");
-    //   }
-    // });
 
     dispatch(doneLoadingJSON());
   };

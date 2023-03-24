@@ -1,7 +1,13 @@
 import { createSelector } from "@reduxjs/toolkit";
+import { GameType } from "../../constants/app-constants";
 import { CardData } from "../../external-api/common-card-data";
 import { RootState } from "../../store/rootReducer";
-import { ICardsDataState, Set } from "../cards-data/initialState";
+import {
+  ICardData,
+  ICardsDataStateUserView,
+  IGameCardsDataState,
+  Set,
+} from "../cards-data/initialState";
 
 export interface IEncounterEntity {
   setCode: string;
@@ -9,7 +15,7 @@ export interface IEncounterEntity {
   cards: CardData[];
 }
 
-const getCurrentCardData = (cardsData: ICardsDataState) => {
+const getCurrentCardData = (cardsData: ICardsDataStateUserView) => {
   return (
     cardsData.data[cardsData.activeDataType] ?? {
       entities: {},
@@ -19,7 +25,74 @@ const getCurrentCardData = (cardsData: ICardsDataState) => {
   );
 };
 
-export const getCardsData = (state: RootState) => state.cardsData;
+export const getRawCardsData = (state: RootState) => state.cardsData;
+
+export const getCardsData = createSelector(
+  getRawCardsData,
+  (rawCardsData): ICardsDataStateUserView => {
+    // TODO: When we have the option for a player to pick
+    // which version of a card they want to use, we
+    // should probably apply that here once. For now this
+    // will just map everything
+    const dataToReturn: { [key in GameType]?: IGameCardsDataState } = {
+      marvelchampions: undefined,
+      lotrlcg: undefined,
+    };
+    // TODO: Make this a generic loop
+    let data = rawCardsData.data.marvelchampions;
+    if (data !== undefined) {
+      // This is stupid, have to do it for typescript
+      const eData = data;
+      const flattenedEntities = Object.keys(data.entities).reduce(
+        (result, key) => {
+          result[key] = eData.entities[key][0];
+          return result;
+        },
+        {} as ICardData
+      );
+
+      const flattenedEncounterEntities = Object.keys(
+        data.encounterEntities
+      ).reduce((result, key) => {
+        result[key] = eData.encounterEntities[key][0];
+        return result;
+      }, {} as ICardData);
+
+      dataToReturn.marvelchampions = {
+        entities: flattenedEntities,
+        encounterEntities: flattenedEncounterEntities,
+        setData: data.setData,
+      };
+    }
+
+    data = rawCardsData.data.lotrlcg;
+    if (data !== undefined) {
+      // This is stupid, have to do it for typescript
+      const eData = data;
+      const flattenedEntities = Object.keys(data.entities).reduce(
+        (result, key) => {
+          result[key] = eData.entities[key][0];
+          return result;
+        },
+        {} as ICardData
+      );
+
+      const flattenedEncounterEntities = Object.keys(
+        data.encounterEntities
+      ).reduce((result, key) => {
+        result[key] = eData.encounterEntities[key][0];
+        return result;
+      }, {} as ICardData);
+
+      dataToReturn.lotrlcg = {
+        entities: flattenedEntities,
+        encounterEntities: flattenedEncounterEntities,
+        setData: data.setData,
+      };
+    }
+    return { activeDataType: rawCardsData.activeDataType, data: dataToReturn };
+  }
+);
 
 export const getCardsDataEntities = createSelector(
   getCardsData,

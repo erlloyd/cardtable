@@ -39,6 +39,7 @@ import {
   endCardMoveWithSnap,
 } from "./cards.slice";
 import { ICardDetails, ICardStack } from "./initialState";
+import log from "loglevel";
 
 interface DeckData {
   investigator_code: string;
@@ -261,7 +262,7 @@ export const getListOfDecklistsFromSearchTerm = createAsyncThunk(
       }>(`${scrapeApi}?uri=${encodeURIComponent(uriToScrape)}`);
 
       if (response.data.StatusCode !== 200) {
-        console.error(`Scraper couldn't get the data. Check scraper logs`);
+        log.error(`Scraper couldn't get the data. Check scraper logs`);
         throw new Error(`Scraper couldn't get the data. Check scraper logs`);
       }
 
@@ -295,7 +296,7 @@ export const fetchDecklistById = createAsyncThunk(
           break;
       }
     } catch (e) {
-      console.error(`Error loading cards ${e}`);
+      log.error(`Error loading cards ${e}`);
       throw e;
     }
 
