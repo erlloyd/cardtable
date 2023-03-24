@@ -39,6 +39,7 @@ import {
   initialState,
 } from "./initialState";
 import { myPeerRef } from "../../constants/app-constants";
+import log from "loglevel";
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 const CARD_ATTACH_TARGET_MIN_DISTANCE = 50;
@@ -445,7 +446,6 @@ const cardMoveWithSnapReducer: CaseReducer<
     !!primaryCard &&
     (primaryCard as ICardStack).controlledBy === (action as any).ACTOR_REF
   ) {
-    console.log();
     state.dropTargetCards[(action as any).ACTOR_REF] = getDropTargetCard(
       state,
       !!primaryCard ? { x: primaryCard.x, y: primaryCard.y } : { x: 0, y: 0 },
@@ -600,7 +600,7 @@ const endCardMoveWithSnapReducer: CaseReducer<
         );
         state.cards.unshift(state.cards.splice(state.cards.indexOf(cs), 1)[0]);
       } else {
-        console.error("How did this happen??");
+        log.error("How did this happen??");
       }
     });
     // Now, if there was a drop target card, remove all those cards from the state
@@ -631,7 +631,7 @@ const endCardMoveWithSnapReducer: CaseReducer<
         const attachedCard = cardsThatWereDragging.find((c) => c.id === aCId);
 
         if (!attachedCard) {
-          console.error(
+          log.error(
             `Card ${card.id} said card ${aCId} was attached, but we couldn't find it in the cards that had been dragging`
           );
           return;
@@ -829,7 +829,7 @@ const addToPlayerHandReducer: CaseReducer<
 > = (state, action) => {
   const playerIndex = action.payload.playerNumber - 1;
   if (playerIndex < 0 || playerIndex >= state.playerHands.length) {
-    console.error(
+    log.error(
       `Got an invalid playerNumber: ${action.payload.playerNumber}. PlayerHands length is ${state.playerHands.length}`
     );
     return;
@@ -1017,7 +1017,7 @@ const cardsSlice = createSlice({
           : state.outOfSyncWithRemoteCount + 1;
       if (state.outOfSyncWithRemoteCount >= COUNT_OUT_OF_SYNC_THRESHOLD) {
         if (!cardsInSync) {
-          console.error(
+          log.error(
             "CARDS state is out of sync with remote!!!",
             JSON.stringify(cardsThatArentDragging),
             "\n\n********************\n\n",
@@ -1025,16 +1025,8 @@ const cardsSlice = createSlice({
           );
         }
 
-        // if (!ghostCardsInSync) {
-        //   console.error(
-        //     "GHOST CARDS state is out of sync with remote!!!",
-        //     original(state.ghostCards),
-        //     action.payload.liveState.present.cards.ghostCards
-        //   );
-        // }
-
         if (!playerHandsInSync) {
-          console.error(
+          log.error(
             "PLAYER HANDS state is out of sync with remote!!!",
             JSON.stringify(original(state.playerHands)),
             "\n\n********************\n\n",
@@ -1042,7 +1034,7 @@ const cardsSlice = createSlice({
           );
         }
       } else {
-        console.log("CARDS state is in sync");
+        log.debug("CARDS state is in sync");
       }
     });
 
@@ -1226,7 +1218,7 @@ const cardsSlice = createSlice({
               !!card.attachedTo &&
               !draggingCards.some((c) => c.id === card.attachedTo)
             ) {
-              console.log(
+              log.debug(
                 card.cardStack[0].jsonId +
                   " isn't attached any more, removing from " +
                   card.attachedTo
@@ -1330,8 +1322,8 @@ const handleLoadDeck = (
   state: Draft<ICardsState>,
   action: PayloadAction<CreateDeckPayload>
 ) => {
-  console.log("got decklist");
-  console.log(action);
+  log.debug("got decklist");
+  log.debug(action);
 
   const potentialHeroCard: ICardDetails[] = action.payload.data
     .investigator_code

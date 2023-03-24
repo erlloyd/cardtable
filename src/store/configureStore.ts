@@ -7,6 +7,7 @@ import rootReducer from "./rootReducer";
 import { saveState } from "./localStorage";
 import { websocketMiddleware } from "./websocket-server-multiplayer-middleware";
 import { peerJSMiddleware } from "./peer-js-redux-middleware";
+import log from "loglevel";
 
 const baseCustomizedMiddleware = getDefaultMiddleware({
   thunk: true,
@@ -21,7 +22,7 @@ const peerJSCustomizedMiddleware =
   baseCustomizedMiddleware.concat(peerJSMiddleware);
 
 export default function configureStore() {
-  console.log("configuring store. NODE_ENV is " + process.env.NODE_ENV);
+  log.debug("configuring store. NODE_ENV is " + process.env.NODE_ENV);
   const store = rtkConfigureStore({
     reducer: rootReducer,
     middleware: useWS ? wsCustomizedMiddleware : peerJSCustomizedMiddleware,

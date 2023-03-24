@@ -31,6 +31,7 @@ import {
   FORCE_CARD_BACK_MAP,
   MISSING_BACK_IMAGE_MAP,
 } from "../../constants/card-missing-image-map";
+import log from "loglevel";
 
 // Utilities
 const convertMarvelToCommonFormat = (
@@ -57,20 +58,8 @@ const convertMarvelToCommonFormat = (
 };
 
 const convertLOTRToCommonFormat =
-  (encounterCard: boolean) =>
+  (setType: string, encounterCard: boolean) =>
   (cardLOTRFormat: CardDataLOTR): CardData => {
-    // if (!cardLOTRFormat.RingsDbCardId) {
-    //   console.log(
-    //     `No RingsDB Id for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`
-    //   );
-    // }
-
-    // if (cardLOTRFormat.Front && !cardLOTRFormat.Front.ImagePath) {
-    //   console.log(
-    //     `No Front Image Path for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`
-    //   );
-    // }
-
     let cardBackImage = cardLOTRFormat.Back?.ImagePath;
 
     if (cardLOTRFormat.Back && !cardLOTRFormat.Back.ImagePath) {
@@ -86,7 +75,7 @@ const convertLOTRToCommonFormat =
         if (MISSING_BACK_IMAGE_MAP[cardLOTRFormat.RingsDbCardId]) {
           cardBackImage = MISSING_BACK_IMAGE_MAP[cardLOTRFormat.RingsDbCardId];
         } else {
-          console.log(
+          log.warn(
             `No Non-B Back Image Path for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`,
             cardLOTRFormat.RingsDbCardId
           );
@@ -115,6 +104,7 @@ const convertLOTRToCommonFormat =
         campaign: cardLOTRFormat.CAMPAIGN,
         setCode: cardLOTRFormat.CardSet ?? null,
         packCode: "TODO - lotr",
+        setType: setType,
         factionCode: encounterCard ? "encounter" : "player",
       },
     };
@@ -125,41 +115,6 @@ const convertLOTRToCommonFormat =
 const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
   //This reducer is only intended to be called a single time each load.
   state.data = {};
-  // const heroPacks = Object.entries(PackData)
-  //   .filter(([key, _value]) => !key.includes("_encounter"))
-  //   .map(([key, value]) => (value as unknown) as CardPackMarvel);
-
-  // const encounterPacks = Object.entries(PackData)
-  //   .filter(([key, value]) => key.includes("_encounter"))
-  //   .map(([key, value]) => (value as unknown) as CardPackMarvel);
-
-  // heroPacks.forEach((pack) =>
-  //   pack.map(convertMarvelToCommonFormat).forEach((card: CardData) => {
-  //     if (state.entities[card.code]) {
-  //       console.error("Found multiple cards with code " + card.code);
-  //     }
-
-  //     // if (!card.octgn_id) {
-  //     //   console.error(`Card ${card.code} had no octgn_id!`);
-  //     // }
-
-  //     state.entities[card.code] = card;
-  //   })
-  // );
-
-  // encounterPacks.forEach((pack) =>
-  //   pack.map(convertMarvelToCommonFormat).forEach((card: CardData) => {
-  //     if (state.encounterEntities[card.code]) {
-  //       console.error("Found multiple cards with code " + card.code);
-  //     }
-
-  //     // if (!card.octgn_id) {
-  //     //   console.error(`Card ${card.code}: ${card.name} had no octgn_id!`);
-  //     // }
-
-  //     state.encounterEntities[card.code] = card;
-  //   })
-  // );
 
   let activeData = state.data[GameType.MarvelChampions];
   if (!!activeData) {
@@ -229,9 +184,19 @@ const storeCardData =
           return;
         }
 
+        // Next check if the card we are about to add is exactly the
+        // same as any other card, if so, skip it
+        if (
+          stateLocation[cs.card.code].some(
+            (c) => JSON.stringify(cs.card) === JSON.stringify(c)
+          )
+        ) {
+          return;
+        }
+
         // Only error if the code and name are different
         if (cs.card.name !== stateLocation[cs.card.code][0].name) {
-          console.error(
+          log.warn(
             "Found multiple cards with code " +
               cs.card.code +
               " " +
@@ -243,15 +208,36 @@ const storeCardData =
               " " +
               stateLocation[cs.card.code].map((c) => c.extraInfo.setCode)
           );
-          console.log(cs.card);
-          console.log(stateLocation[cs.card.code]);
+          log.warn(cs.card);
+          log.warn(stateLocation[cs.card.code]);
         }
       } else {
         stateLocation[cs.card.code] = [];
       }
+
       stateLocation[cs.card.code] = stateLocation[cs.card.code].concat([
         cs.card,
       ]);
+
+      // TODO: Sort here so that custom scenario cards are behind others
+      stateLocation[cs.card.code] = stateLocation[cs.card.code].sort((a, b) => {
+        if (a.extraInfo.setType === "Custom_Scenario_Kit") {
+          return 1;
+        }
+
+        if (b.extraInfo.setType === "Custom_Scenario_Kit") {
+          return -1;
+        }
+
+        return 0;
+      });
+
+      if (stateLocation[cs.card.code].length > 1) {
+        log.info(
+          `Stored multiple versions of card ${cs.card.code}, now is`,
+          stateLocation[cs.card.code]
+        );
+      }
     }
   };
 
@@ -283,12 +269,12 @@ const loadCardsForEncounterSetReducer: CaseReducer<
   const activeSet = activeData?.setData[action.payload.setCode];
 
   if (!action.payload.cards.map) {
-    console.log("No cards found for scenario " + action.payload.setCode);
+    log.warn("No cards found for scenario " + action.payload.setCode);
     return;
   }
 
   action.payload.cards
-    .map(convertLOTRToCommonFormat(true))
+    .map(convertLOTRToCommonFormat("todo - encounter set", true))
     .map((c) => {
       return {
         location: state.data[GameType.LordOfTheRingsLivingCardGame],
@@ -366,10 +352,10 @@ const loadCardsDataForPackReducer: CaseReducer<
   ) {
     const pack = action.payload.pack as CardPackLOTR;
     if (!pack.cards) {
-      console.log(pack);
+      log.warn(pack);
     }
     pack.cards
-      .map(convertLOTRToCommonFormat(false))
+      .map(convertLOTRToCommonFormat(pack.SetType, false))
       .map((c) => {
         return { location: state.data[action.payload.packType], card: c };
       })

@@ -2,6 +2,7 @@ import { Component } from "react";
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import log from "loglevel";
 interface IProps {
   connect: (peerId: string) => void;
 }
@@ -47,7 +48,7 @@ class PeerConnector extends Component<IProps> {
   }
 
   private connect = (_event: any) => {
-    console.log("connecting with peer id " + this.inputValue);
+    log.debug("connecting with peer id " + this.inputValue);
 
     this.props.connect(this.inputValue || "");
   };

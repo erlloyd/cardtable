@@ -1,3 +1,4 @@
+import log from "loglevel";
 import { GameType, myPeerRef } from "../constants/app-constants";
 import { StatusTokenType } from "../constants/card-constants";
 import {
@@ -66,11 +67,11 @@ export const cacheImages = async (imgUrls: string[]) => {
         const img = new Image();
         img.src = src;
         img.onload = () => {
-          console.log("loaded img for cache: " + img.src);
+          log.debug("loaded img for cache: " + img.src);
           resolve(1);
         };
         img.onerror = () => {
-          console.log("errored loading img for cache" + img.src);
+          log.debug("errored loading img for cache" + img.src);
           reject();
         };
       })

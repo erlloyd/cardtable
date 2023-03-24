@@ -1,3 +1,4 @@
+import log from "loglevel";
 import { RootState } from "./rootReducer";
 
 export const loadState = (key: string) => {
@@ -10,7 +11,7 @@ export const loadState = (key: string) => {
 
     return baseState.present ?? baseState;
   } catch (err) {
-    console.error("problem parsing");
+    log.error("problem parsing");
     return {};
   }
 };
@@ -26,6 +27,6 @@ export const saveState = (state: RootState) => {
     });
   } catch {
     // ignore write errors
-    console.error("Error writing state to local storage");
+    log.error("Error writing state to local storage");
   }
 };
