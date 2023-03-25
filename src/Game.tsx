@@ -59,6 +59,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import DeckSearchContainer from "./DeckSearchContainer";
 import log from "loglevel";
+import NotificationsContainer from "./Notifications/NotificationsContainer";
 
 const SCALE_BY = 1.02;
 
@@ -653,6 +654,7 @@ class Game extends Component<IProps, IState> {
             <div>
               <Provider store={store}>
                 <CardtableAlertsContainer></CardtableAlertsContainer>
+                <NotificationsContainer></NotificationsContainer>
               </Provider>
               <Stage
                 ref={(ref) => {
@@ -2316,14 +2318,7 @@ class Game extends Component<IProps, IState> {
             label: "Request resync from Remote Game",
             action: this.props.requestResync,
           },
-          {
-            label: `Peer id is ${this.props.peerId} (click to copy)`,
-            action: () => {
-              if (!!this.props.peerId) {
-                copyToClipboard(this.props.peerId);
-              }
-            },
-          },
+
           {
             label: `Copy my online game link`,
             action: () => {
@@ -2332,18 +2327,33 @@ class Game extends Component<IProps, IState> {
               }
             },
           },
-        ].concat(
-          useWS
-            ? [
-                {
-                  label: `Start Hosting a new online game`,
-                  action: () => {
-                    this.props.createNewMultiplayerGame();
+        ]
+          .concat(
+            !!this.props.peerId
+              ? [
+                  {
+                    label: `Peer id is ${this.props.peerId} (click to copy)`,
+                    action: () => {
+                      if (!!this.props.peerId) {
+                        copyToClipboard(this.props.peerId);
+                      }
+                    },
                   },
-                },
-              ]
-            : []
-        ),
+                ]
+              : []
+          )
+          .concat(
+            useWS
+              ? [
+                  {
+                    label: `Start hosting a new online game`,
+                    action: () => {
+                      this.props.createNewMultiplayerGame();
+                    },
+                  },
+                ]
+              : []
+          ),
       },
       {
         label: `Copy game to clipboard`,
