@@ -31,6 +31,8 @@ const updatePositionReducer: CaseReducer<
   return state;
 };
 
+const createNewMultiplayerGameReducer: CaseReducer<IGameState> = () => {};
+
 const connectToRemoteGameReducer: CaseReducer<
   IGameState,
   PayloadAction<string>
@@ -185,6 +187,7 @@ const gameSlice = createSlice({
     updateZoom: updateZoomReducer,
     updatePosition: updatePositionReducer,
     connectToRemoteGame: connectToRemoteGameReducer,
+    createNewMultiplayerGame: createNewMultiplayerGameReducer,
     setPlayerInfo: setPlayerInfoReducer,
     setAllPlayerInfo: setAllPlayerInfoReducer,
     setPeerId: setPeerIdReducer,
@@ -249,6 +252,7 @@ export const {
   updateZoom,
   updatePosition,
   connectToRemoteGame,
+  createNewMultiplayerGame,
   setPlayerInfo,
   setAllPlayerInfo,
   setPeerId,

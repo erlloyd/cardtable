@@ -1,5 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
 
+// For multiplayer type
+export const useDevWSServer = localStorage.getItem("__dev_ws__");
+export const useWS = localStorage.getItem("__ws_mp__");
+
+// Peer ref (for webrtc mode)
 export const myPeerRef = uuidv4();
 (window as any).myPeerRef = myPeerRef;
 

@@ -20,6 +20,7 @@ import {
   clearMenuPreviewCardJsonId,
   clearPreviewCard,
   connectToRemoteGame,
+  createNewMultiplayerGame,
   requestResync,
   setMenuPreviewCardJsonId,
   setMultiplayerGameName,
@@ -41,6 +42,7 @@ import {
 // affect any other player's zoom.
 export const blacklistRemoteActions = {
   [connectToRemoteGame.type]: true,
+  [createNewMultiplayerGame.type]: true,
   [updatePosition.type]: true,
   [updateZoom.type]: true,
   [setPreviewCardId.type]: true,
