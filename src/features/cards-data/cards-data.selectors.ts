@@ -38,7 +38,7 @@ export const getCardsData = createSelector(
       marvelchampions: undefined,
       lotrlcg: undefined,
     };
-    // TODO: Make this a generic loop
+    // TODO: Make this a generic loop rather than hard-coding the types
     let data = rawCardsData.data.marvelchampions;
     if (data !== undefined) {
       // This is stupid, have to do it for typescript

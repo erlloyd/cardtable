@@ -1,5 +1,9 @@
 import cloneDeep from "lodash.clonedeep";
-import { myPeerRef, possibleColors } from "../constants/app-constants";
+import {
+  myPeerRef,
+  possibleColors,
+  useDevWSServer,
+} from "../constants/app-constants";
 import {
   getMultiplayerGameName,
   getPlayerColors,
@@ -10,6 +14,7 @@ import {
   requestResync,
   setMultiplayerGameName,
   setAllPlayerInfo,
+  createNewMultiplayerGame,
 } from "../features/game/game.slice";
 import {
   receiveRemoteGameState,
@@ -19,8 +24,7 @@ import {
   blacklistRemoteActions,
   misingPlayerNumInSeq,
 } from "./middleware-utilities";
-
-const useDevWSServer = localStorage.getItem("__dev_ws__");
+import log from "loglevel";
 interface IMessage {
   type: string;
   payload: any;
@@ -61,7 +65,7 @@ export const websocketMiddleware = (storeAPI: any) => {
         storeAPI.dispatch(action);
       }
     } else {
-      console.log("going to replace (most of) state with", action.state);
+      log.debug("going to replace (most of) state with", action.state);
       setTimeout(() => {
         storeAPI.dispatch(receiveRemoteGameState(action.state));
       }, 0);
@@ -69,14 +73,14 @@ export const websocketMiddleware = (storeAPI: any) => {
   };
 
   ws.addEventListener("open", () => {
-    console.log("We are connected to the WS");
+    log.debug("We are connected to the WS");
 
     //Check for a query param
     const url = new URL(window.location as any);
     const remoteQueryParam = url.searchParams.get("remote");
     if (!!remoteQueryParam) {
       // connect to the remote game
-      console.log(`going to connect to ${remoteQueryParam}`);
+      log.debug(`going to connect to ${remoteQueryParam}`);
       ws.send(
         JSON.stringify({
           type: "connecttogame",
@@ -85,11 +89,12 @@ export const websocketMiddleware = (storeAPI: any) => {
       );
     } else {
       // create a new game
-      ws.send(
-        JSON.stringify({
-          type: "newgame",
-        })
-      );
+      // NOTE: Commented out to try to be specific about when we create a new game
+      // ws.send(
+      //   JSON.stringify({
+      //     type: "newgame",
+      //   })
+      // );
     }
   });
 
@@ -121,7 +126,7 @@ export const websocketMiddleware = (storeAPI: any) => {
               Object.values(currentPlayerNumbers)
             );
             newPlayerNumbers[data.payload.playerRef] = nextPlayerNum;
-            console.log(
+            log.debug(
               "new player added, going to be player number " + nextPlayerNum
             );
           }
@@ -134,7 +139,7 @@ export const websocketMiddleware = (storeAPI: any) => {
             const playerColorByNum =
               possibleColors[(num - 1) % possibleColors.length];
             newPlayerColors[data.payload.playerRef] = playerColorByNum;
-            console.log(
+            log.debug(
               "new player added, going to be player color " + playerColorByNum
             );
           }
@@ -151,7 +156,7 @@ export const websocketMiddleware = (storeAPI: any) => {
           break;
       }
     } catch (e) {
-      console.error(`Problem handling message:`, e);
+      log.error(`Problem handling message:`, e);
     }
   });
 
@@ -159,20 +164,27 @@ export const websocketMiddleware = (storeAPI: any) => {
     if (!action.REMOTE_ACTION) {
       action.ACTOR_REF = myPeerRef;
     } else if (!action.ACTOR_REF) {
-      console.error(`Received a REMOTE action without an ACTOR_REF:`);
-      console.log(action);
+      log.error(`Received a REMOTE action without an ACTOR_REF:`);
+      log.error(action);
     }
 
     if (action.type === setAllPlayerInfo.type) {
       if (action.ACTOR_REF === myPeerRef) {
-        console.log("RECEIVED SET ALL PLAYER INFO FROM LOCAL");
+        log.debug("RECEIVED SET ALL PLAYER INFO FROM LOCAL");
       } else {
-        console.log("RECEIVED SET ALL PLAYER INFO FROM REMOTE");
+        log.debug("RECEIVED SET ALL PLAYER INFO FROM REMOTE");
       }
     }
 
-    if (action.type === connectToRemoteGame.type) {
-      console.log("going to connect to game " + action.payload);
+    if (action.type === createNewMultiplayerGame.type) {
+      log.debug("going to create new game");
+      ws.send(
+        JSON.stringify({
+          type: "newgame",
+        })
+      );
+    } else if (action.type === connectToRemoteGame.type) {
+      log.debug("going to connect to game " + action.payload);
       ws.send(
         JSON.stringify({
           type: "connecttogame",
@@ -197,7 +209,7 @@ export const websocketMiddleware = (storeAPI: any) => {
       !!ws.OPEN &&
       !blacklistRemoteActions[action.type]
     ) {
-      // console.log("going to send action to websocket!");
+      // log.debug("going to send action to websocket!");
       const message = {
         type: "remoteaction",
         game: getMultiplayerGameName(storeAPI.getState()),

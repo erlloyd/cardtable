@@ -8,6 +8,7 @@ import { saveState } from "./localStorage";
 import { websocketMiddleware } from "./websocket-server-multiplayer-middleware";
 import { peerJSMiddleware } from "./peer-js-redux-middleware";
 import log from "loglevel";
+import { useWS } from "../constants/app-constants";
 
 const baseCustomizedMiddleware = getDefaultMiddleware({
   thunk: true,
@@ -15,7 +16,6 @@ const baseCustomizedMiddleware = getDefaultMiddleware({
   serializableCheck: false,
 });
 
-const useWS = localStorage.getItem("__ws_mp__");
 const wsCustomizedMiddleware =
   baseCustomizedMiddleware.concat(websocketMiddleware);
 const peerJSCustomizedMiddleware =

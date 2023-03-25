@@ -16,6 +16,7 @@ import {
   PlayerColor,
   playerHandHeightPx,
   possibleColors,
+  useWS,
 } from "./constants/app-constants";
 import {
   cardConstants,
@@ -138,6 +139,7 @@ interface IProps {
   updateCounterValue: (payload: { id: string; delta: number }) => void;
   removeCounter: (id: string) => void;
   moveCounter: (payload: { id: string; newPos: Vector2d }) => void;
+  createNewMultiplayerGame: () => void;
   connectToRemoteGame: (peerId: string) => void;
   undo: () => void;
   redo: () => void;
@@ -2330,7 +2332,18 @@ class Game extends Component<IProps, IState> {
               }
             },
           },
-        ],
+        ].concat(
+          useWS
+            ? [
+                {
+                  label: `Start Hosting a new online game`,
+                  action: () => {
+                    this.props.createNewMultiplayerGame();
+                  },
+                },
+              ]
+            : []
+        ),
       },
       {
         label: `Copy game to clipboard`,

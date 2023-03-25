@@ -63,6 +63,7 @@ import {
 import {
   clearPreviewCard,
   connectToRemoteGame,
+  createNewMultiplayerGame,
   quitGame,
   requestResync,
   setPreviewCardId,
@@ -143,6 +144,7 @@ const GameContainer = connect(mapStateToProps, {
   removeCounter,
   moveCounter,
   connectToRemoteGame,
+  createNewMultiplayerGame,
   requestResync,
   undo: ActionCreators.undo,
   redo: ActionCreators.redo,
