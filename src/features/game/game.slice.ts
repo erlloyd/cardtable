@@ -57,6 +57,18 @@ const setAllPlayerInfoReducer: CaseReducer<
   state.playerNumbers = action.payload.numbers;
 };
 
+const removePlayerReducer: CaseReducer<IGameState, PayloadAction<string>> = (
+  state,
+  action
+) => {
+  if (!!state.playerColors[action.payload]) {
+    delete state.playerColors[action.payload];
+  }
+  if (!!state.playerNumbers[action.payload]) {
+    delete state.playerNumbers[action.payload];
+  }
+};
+
 const setPeerIdReducer: CaseReducer<IGameState, PayloadAction<string>> = (
   state,
   action
@@ -190,6 +202,7 @@ const gameSlice = createSlice({
     createNewMultiplayerGame: createNewMultiplayerGameReducer,
     setPlayerInfo: setPlayerInfoReducer,
     setAllPlayerInfo: setAllPlayerInfoReducer,
+    removePlayer: removePlayerReducer,
     setPeerId: setPeerIdReducer,
     setMultiplayerGameName: setMultiplayerGameNameReducer,
     requestResync: requestResyncReducer,
@@ -255,6 +268,7 @@ export const {
   createNewMultiplayerGame,
   setPlayerInfo,
   setAllPlayerInfo,
+  removePlayer,
   setPeerId,
   setMultiplayerGameName,
   requestResync,

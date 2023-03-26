@@ -16,6 +16,7 @@ import {
   setMultiplayerGameName,
   setAllPlayerInfo,
   createNewMultiplayerGame,
+  removePlayer,
 } from "../features/game/game.slice";
 import {
   receiveRemoteGameState,
@@ -100,6 +101,28 @@ export const websocketMiddleware = (storeAPI: any) => {
     }
   });
 
+  ws.addEventListener("close", () => {
+    log.warn("WS connection closed");
+    storeAPI.dispatch(
+      sendNotification({
+        id: uuidv4(),
+        level: "warning",
+        message: `Lost connection to the multiplayer server. Try refreshing the page.`,
+      })
+    );
+  });
+
+  ws.addEventListener("error", () => {
+    log.warn("WS connection errored");
+    storeAPI.dispatch(
+      sendNotification({
+        id: uuidv4(),
+        level: "error",
+        message: `There was a problem with the multiplayer server connection. Multiplayer games are unavailable`,
+      })
+    );
+  });
+
   ws.addEventListener("message", (msg) => {
     try {
       const data: IMessage = JSON.parse(msg.data);
@@ -176,6 +199,18 @@ export const websocketMiddleware = (storeAPI: any) => {
             })
           );
           break;
+        case "playerleft":
+          const playerNums = getPlayerNumbers(storeAPI.getState());
+          const playerNumToRemove = playerNums[data.payload.playerRef];
+          storeAPI.dispatch(removePlayer(data.payload.playerRef));
+          storeAPI.dispatch(
+            sendNotification({
+              id: uuidv4(),
+              level: "info",
+              message: `Player number ${playerNumToRemove} left the game`,
+            })
+          );
+          break;
         case "remoteaction":
           handleRemoteAction(data.payload);
           break;
@@ -208,6 +243,7 @@ export const websocketMiddleware = (storeAPI: any) => {
       ws.send(
         JSON.stringify({
           type: "newgame",
+          payload: { playerRef: myPeerRef },
         })
       );
     } else if (action.type === connectToRemoteGame.type) {

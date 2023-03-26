@@ -40,6 +40,7 @@ import {
 } from "./cards.slice";
 import { ICardDetails, ICardStack } from "./initialState";
 import log from "loglevel";
+import { sendNotification } from "../notifications/notifications.slice";
 
 interface DeckData {
   investigator_code: string;
@@ -277,9 +278,26 @@ export const fetchDecklistById = createAsyncThunk(
     payload: { gameType: GameType; decklistId: number; position: Vector2d },
     thunkApi
   ) => {
-    const response = await axios.get(
-      `${GamePropertiesMap[payload.gameType].decklistApi}${payload.decklistId}`
-    );
+    let response;
+    try {
+      response = await axios.get(
+        `${GamePropertiesMap[payload.gameType].decklistApi}${
+          payload.decklistId
+        }`
+      );
+    } catch (e) {
+      thunkApi.dispatch(
+        sendNotification({
+          id: uuidv4(),
+          level: "error",
+          message: `Couldn't load deck ${payload.decklistId}. Ensure the id is correct and not a private deck. Cardtable can only support public decks at this time.`,
+        })
+      );
+      throw e;
+    }
+
+    if (!response) throw new Error("Empty response");
+
     const state: RootState = thunkApi.getState() as RootState;
 
     let codes: string[] = [];
