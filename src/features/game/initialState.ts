@@ -59,6 +59,7 @@ localStorageState.playerColors[myPeerRef] = "red";
 localStorageState.playerNumbers = {};
 localStorageState.playerNumbers[myPeerRef] = 1;
 localStorageState.peerId = "";
+localStorageState.multiplayerGameName = "";
 localStorageState.previewCard = null;
 localStorageState.menuPreviewCardJsonId = null;
 localStorageState.radialMenuPosition = null;

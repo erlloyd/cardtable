@@ -1,4 +1,5 @@
 import cloneDeep from "lodash.clonedeep";
+import { v4 as uuidv4 } from "uuid";
 import {
   myPeerRef,
   possibleColors,
@@ -15,6 +16,7 @@ import {
   setMultiplayerGameName,
   setAllPlayerInfo,
   createNewMultiplayerGame,
+  removePlayer,
 } from "../features/game/game.slice";
 import {
   receiveRemoteGameState,
@@ -25,6 +27,7 @@ import {
   misingPlayerNumInSeq,
 } from "./middleware-utilities";
 import log from "loglevel";
+import { sendNotification } from "../features/notifications/notifications.slice";
 interface IMessage {
   type: string;
   payload: any;
@@ -98,6 +101,28 @@ export const websocketMiddleware = (storeAPI: any) => {
     }
   });
 
+  ws.addEventListener("close", () => {
+    log.warn("WS connection closed");
+    storeAPI.dispatch(
+      sendNotification({
+        id: uuidv4(),
+        level: "warning",
+        message: `Lost connection to the multiplayer server. Try refreshing the page.`,
+      })
+    );
+  });
+
+  ws.addEventListener("error", () => {
+    log.warn("WS connection errored");
+    storeAPI.dispatch(
+      sendNotification({
+        id: uuidv4(),
+        level: "error",
+        message: `There was a problem with the multiplayer server connection. Multiplayer games are unavailable`,
+      })
+    );
+  });
+
   ws.addEventListener("message", (msg) => {
     try {
       const data: IMessage = JSON.parse(msg.data);
@@ -105,11 +130,27 @@ export const websocketMiddleware = (storeAPI: any) => {
       switch (data.type) {
         case "newgamecreated":
           storeAPI.dispatch(setMultiplayerGameName(data.payload as string));
+          storeAPI.dispatch(
+            sendNotification({
+              id: uuidv4(),
+              level: "success",
+              message: `Successfully created game ${data.payload as string}`,
+            })
+          );
           updateUrl(data.payload);
           break;
         case "connectedtogame":
           storeAPI.dispatch(setMultiplayerGameName(data.payload as string));
           storeAPI.dispatch(requestResync());
+          storeAPI.dispatch(
+            sendNotification({
+              id: uuidv4(),
+              level: "success",
+              message: `Successfully connected to game ${
+                data.payload as string
+              }`,
+            })
+          );
           updateUrl(data.payload);
           break;
         case "newplayerconnected":
@@ -128,6 +169,13 @@ export const websocketMiddleware = (storeAPI: any) => {
             newPlayerNumbers[data.payload.playerRef] = nextPlayerNum;
             log.debug(
               "new player added, going to be player number " + nextPlayerNum
+            );
+            storeAPI.dispatch(
+              sendNotification({
+                id: uuidv4(),
+                level: "success",
+                message: `Player number ${nextPlayerNum} joined the game!`,
+              })
             );
           }
 
@@ -151,6 +199,18 @@ export const websocketMiddleware = (storeAPI: any) => {
             })
           );
           break;
+        case "playerleft":
+          const playerNums = getPlayerNumbers(storeAPI.getState());
+          const playerNumToRemove = playerNums[data.payload.playerRef];
+          storeAPI.dispatch(removePlayer(data.payload.playerRef));
+          storeAPI.dispatch(
+            sendNotification({
+              id: uuidv4(),
+              level: "info",
+              message: `Player number ${playerNumToRemove} left the game`,
+            })
+          );
+          break;
         case "remoteaction":
           handleRemoteAction(data.payload);
           break;
@@ -161,6 +221,8 @@ export const websocketMiddleware = (storeAPI: any) => {
   });
 
   return (next: any) => (action: any) => {
+    const mpGameName = getMultiplayerGameName(storeAPI.getState());
+
     if (!action.REMOTE_ACTION) {
       action.ACTOR_REF = myPeerRef;
     } else if (!action.ACTOR_REF) {
@@ -181,6 +243,7 @@ export const websocketMiddleware = (storeAPI: any) => {
       ws.send(
         JSON.stringify({
           type: "newgame",
+          payload: { playerRef: myPeerRef },
         })
       );
     } else if (action.type === connectToRemoteGame.type) {
@@ -193,11 +256,11 @@ export const websocketMiddleware = (storeAPI: any) => {
       );
       // setupConnection(activeCon, storeAPI);
     } else if (action.type === requestResync.type) {
-      if (ws.OPEN) {
+      if (!!ws.OPEN && !!mpGameName) {
         ws.send(
           JSON.stringify({
             type: "resync",
-            game: getMultiplayerGameName(storeAPI.getState()),
+            game: mpGameName,
             payload: { RESYNC: true },
           })
         );
@@ -207,12 +270,13 @@ export const websocketMiddleware = (storeAPI: any) => {
     if (
       !action.REMOTE_ACTION &&
       !!ws.OPEN &&
-      !blacklistRemoteActions[action.type]
+      !blacklistRemoteActions[action.type] &&
+      !!mpGameName
     ) {
-      // log.debug("going to send action to websocket!");
+      log.trace(`Sending ${action.type} over the websocket`);
       const message = {
         type: "remoteaction",
-        game: getMultiplayerGameName(storeAPI.getState()),
+        game: mpGameName,
         payload: action,
       };
       ws.send(JSON.stringify(message));

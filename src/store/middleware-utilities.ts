@@ -32,8 +32,13 @@ import {
   updatePosition,
   updateZoom,
   doneLoadingJSON,
+  removePlayer,
 } from "../features/game/game.slice";
 import { toggleNotes } from "../features/notes/notes.slice";
+import {
+  clearNotification,
+  sendNotification,
+} from "../features/notifications/notifications.slice";
 import {
   receiveRemoteGameState,
   startDraggingCardFromHand,
@@ -67,6 +72,9 @@ export const blacklistRemoteActions = {
   [doneLoadingJSON.type]: true,
   [bulkLoadCardsDataForPack.type]: true,
   [bulkLoadCardsForEncounterSet.type]: true,
+  [sendNotification.type]: true,
+  [clearNotification.type]: true,
+  [removePlayer.type]: true,
 };
 
 export const misingPlayerNumInSeq = (

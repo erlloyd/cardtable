@@ -12,6 +12,8 @@ import game, {
   stopDraggingCardFromHand,
 } from "../features/game/game.slice";
 
+import notifications from "../features/notifications/notifications.slice";
+
 import counters, { moveCounter } from "../features/counters/counters.slice";
 import arrows, {
   startNewArrowForCards,
@@ -30,6 +32,7 @@ const undoableState = combineReducers({
 const rootReducer = combineReducers({
   game,
   cardsData,
+  notifications,
   liveState: undoable(undoableState, {
     limit: 40,
     groupBy: groupByActionTypes([moveCounter.type]),
