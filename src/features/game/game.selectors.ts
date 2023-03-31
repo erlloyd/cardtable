@@ -3,6 +3,7 @@ import { RootState } from "../../store/rootReducer";
 import { ICardStack } from "../cards/initialState";
 import { useWSLocalStorage } from "../../constants/app-constants";
 
+
 export const getGame = (state: RootState) => state.game;
 
 export const getCurrentZoom = createSelector(getGame, (game) => {
