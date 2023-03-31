@@ -15,6 +15,8 @@ import { cacheCommonImages } from "./utilities/game-utils";
 import mixpanel from "mixpanel-browser";
 import { H } from "highlight.run";
 import log from "loglevel";
+import { useKonami } from "react-konami-code";
+import DevSettings from "./DevSettings";
 
 (window as any).log = log;
 
@@ -29,6 +31,14 @@ const App = (props: IProps) => {
   const [waitingWorker, setWaitingWorker] = useState<ServiceWorker | null>(
     null
   );
+  const [showDevSettings, setShowDevSettings] = useState(false);
+
+  // Set up konami code handler to show / hide dev settings panel
+  const toggleDevSetting = () => {
+    setShowDevSettings(!showDevSettings);
+  };
+
+  useKonami(toggleDevSetting);
 
   const onSWUpdate = (registration: ServiceWorkerRegistration) => {
     setShowReload(true);
@@ -108,19 +118,30 @@ const App = (props: IProps) => {
     </React.Fragment>
   );
 
-  return !!props.activeGameType ? (
+  return (
     <div>
-      <Snackbar
-        open={showReload}
-        onClose={handleClose}
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        message="New version available"
-        action={action}
-      />
-      <GameContainer currentGameType={props.activeGameType}></GameContainer>
+      {showDevSettings && (
+        <DevSettings
+          onClose={() => {
+            setShowDevSettings(false);
+          }}
+        ></DevSettings>
+      )}
+      {!!props.activeGameType ? (
+        <div>
+          <Snackbar
+            open={showReload}
+            onClose={handleClose}
+            anchorOrigin={{ vertical: "top", horizontal: "center" }}
+            message="New version available"
+            action={action}
+          />
+          <GameContainer currentGameType={props.activeGameType}></GameContainer>
+        </div>
+      ) : (
+        <div>{renderGamePicker(props)}</div>
+      )}
     </div>
-  ) : (
-    <div>{renderGamePicker(props)}</div>
   );
 };
 

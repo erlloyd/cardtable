@@ -1,8 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
 
 // For multiplayer type
-export const useDevWSServer = localStorage.getItem("__dev_ws__");
-export const useWS = localStorage.getItem("__ws_mp__");
+export const DEV_WS_LS_KEY = "__dev_ws__";
+export const USE_WS_LS_KEY = "__ws_mp__";
+export const useDevWSServerLocalStorage = !!localStorage.getItem(DEV_WS_LS_KEY);
+export const useWSLocalStorage = !!localStorage.getItem(USE_WS_LS_KEY);
 
 // Peer ref (for webrtc mode)
 export const myPeerRef = uuidv4();
