@@ -24,9 +24,9 @@ const queryParamsCounters = !!queryParamsCountersString
 const localStorageState: ICountersState =
   queryParamsCounters || (loadState("liveState")?.counters ?? {});
 
-const defaultState: ICountersState = {
+export const defaultState: ICountersState = {
   counters: [],
-  firstPlayerCounterPosition: { x: 0, y: 0 },
+  firstPlayerCounterPosition: { x: 100, y: 0 },
 };
 export const initialState: ICountersState = {
   ...defaultState,

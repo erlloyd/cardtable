@@ -818,6 +818,9 @@ class Game extends Component<IProps, IState> {
         open={true}
         message={message}
         action={action}
+        sx={{
+          left: "55px",
+        }}
       />
     );
   };

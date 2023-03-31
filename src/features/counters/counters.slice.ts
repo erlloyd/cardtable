@@ -3,7 +3,7 @@ import { Vector2d } from "konva/lib/types";
 import { PlayerColor } from "../../constants/app-constants";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import { addNewCounterWithId } from "./counters.actions";
-import { ICountersState, initialState } from "./initialState";
+import { defaultState, ICountersState, initialState } from "./initialState";
 
 // Reducers
 const updateCounterValueReducer: CaseReducer<
@@ -29,10 +29,12 @@ const updateCounterColorReducer: CaseReducer<
   }
 };
 
-const removeCounterReducer: CaseReducer<ICountersState, PayloadAction<string>> =
-  (state, action) => {
-    state.counters = state.counters.filter((c) => c.id !== action.payload);
-  };
+const removeCounterReducer: CaseReducer<
+  ICountersState,
+  PayloadAction<string>
+> = (state, action) => {
+  state.counters = state.counters.filter((c) => c.id !== action.payload);
+};
 
 const moveCounterReducer: CaseReducer<
   ICountersState,
@@ -77,7 +79,8 @@ const countersSlice = createSlice({
 
     builder.addCase(resetApp, (state, action) => {
       state.counters = [];
-      state.firstPlayerCounterPosition = { x: 0, y: 0 };
+      state.firstPlayerCounterPosition =
+        defaultState.firstPlayerCounterPosition;
     });
 
     builder.addCase(addNewCounterWithId, (state, action) => {

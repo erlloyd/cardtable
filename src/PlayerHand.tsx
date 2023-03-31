@@ -1,5 +1,5 @@
 import { IconButton } from "@mui/material";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import cx from "classnames";
 import { Vector2d } from "konva/lib/types";
 import React, { Component } from "react";
@@ -270,7 +270,7 @@ class PlayerHand extends Component<IProps, IState> {
                   }}
                   className="options-menu-button"
                 >
-                  <MoreVertIcon fontSize="large" />
+                  <MoreHorizIcon fontSize="large" />
                 </IconButton>
                 <div className="player-number">P{this.props.playerNumber}</div>
                 {cards.map((card, index) => (
