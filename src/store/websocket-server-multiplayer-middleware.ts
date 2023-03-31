@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import {
   myPeerRef,
   possibleColors,
-  useDevWSServer,
+  useDevWSServerLocalStorage,
 } from "../constants/app-constants";
 import {
   getMultiplayerGameName,
@@ -42,7 +42,7 @@ const updateUrl = (gameName: string) => {
 export const websocketMiddleware = (storeAPI: any) => {
   const ws = new WebSocket(
     `wss://${
-      !!useDevWSServer ? "local-" : ""
+      !!useDevWSServerLocalStorage ? "local-" : ""
     }cardtable-server.middle-earth.house`
   );
 

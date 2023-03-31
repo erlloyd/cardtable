@@ -1,7 +1,7 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { RootState } from "../../store/rootReducer";
 import { ICardStack } from "../cards/initialState";
-import { useWS } from "../../constants/app-constants";
+import { useWSLocalStorage } from "../../constants/app-constants";
 
 export const getGame = (state: RootState) => state.game;
 
@@ -18,7 +18,7 @@ export const getPlayerNumbers = createSelector(getGame, (game) => {
 });
 
 export const getPeerId = createSelector(getGame, (game) =>
-  useWS ? game.multiplayerGameName : game.peerId
+  useWSLocalStorage ? game.multiplayerGameName : game.peerId
 );
 
 export const getMultiplayerGameName = createSelector(

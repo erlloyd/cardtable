@@ -16,7 +16,7 @@ import {
   PlayerColor,
   playerHandHeightPx,
   possibleColors,
-  useWS,
+  useWSLocalStorage,
 } from "./constants/app-constants";
 import {
   cardConstants,
@@ -2343,7 +2343,7 @@ class Game extends Component<IProps, IState> {
               : []
           )
           .concat(
-            useWS
+            useWSLocalStorage
               ? [
                   {
                     label: `Start hosting a new online game`,
