@@ -14,6 +14,7 @@ import {
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import CardModifiersContainer from "./CardModifiersContainer";
 import { shouldRenderImageHorizontal } from "./utilities/card-utils";
+import { debounce } from "lodash";
 
 // There is a bug somewhere in react-konva or react-spring/konva, where, if you use the generic
 // `animated` WithAnimations type, you get the following typescript error in typescript ~4.5:
@@ -356,8 +357,6 @@ class Card extends Component<IProps, IState> {
               }
             }}
             cornerRadius={9}
-            x={this.props.x}
-            y={this.props.y}
             width={widthToUse}
             height={heightToUse}
             offset={offset}
@@ -381,26 +380,6 @@ class Card extends Component<IProps, IState> {
             shadowForStrokeEnabled={false}
             hitStrokeWidth={0}
             opacity={this.props.isGhost ? 0.5 : 1}
-            draggable={
-              (this.props.controlledBy === "" ||
-                this.props.controlledBy === myPeerRef) &&
-              !this.props.disableDragging
-            }
-            onDragStart={this.handleDragStart}
-            onDragMove={this.handleDragMove}
-            onDragEnd={this.handleDragEnd}
-            onDblClick={this.handleDoubleClick}
-            onDblTap={this.handleDoubleTap}
-            onClick={this.handleClick}
-            onTap={this.handleTap}
-            onMouseDown={this.handleMouseDown}
-            onMouseUp={this.handleMouseUp}
-            onTouchStart={this.handleTouchStart}
-            onTouchMove={this.handleTouchMove}
-            onTouchEnd={this.handleTouchEnd}
-            onMouseOver={this.handleMouseOver}
-            onMouseOut={this.handleMouseOut}
-            onContextMenu={this.handleContextMenu}
           />
         )}
       </Spring>
@@ -415,8 +394,10 @@ class Card extends Component<IProps, IState> {
 
     const stackCountoffset = {
       x: 20,
-      y: 20
-    }
+      y: 20,
+    };
+
+    // const card
 
     const cardStackCount =
       (this.props.numCardsInStack || 1) > 1 && !this.props.isGhost ? (
@@ -429,43 +410,34 @@ class Card extends Component<IProps, IState> {
         >
           {(animatedProps: any) => (
             <AnimatedAny.Group
-              x={this.props.x}
-              y={this.props.y}
               width={countDim}
               height={countDim}
               offset={stackCountMainOffset}
               {...animatedProps}
             >
-              <AnimatedAny.Group
-              width={countDim}
-              height={countDim}
-              >
-              <AnimatedAny.Rect
-                offset={stackCountoffset}
-                cornerRadius={[9, 9, 9, 9]}
-                opacity={0.6}
-                fill={"black"}
-                shadowForStrokeEnabled={false}
-                hitStrokeWidth={0}
-                width={countDim}
-                height={countDim}
-              />
-              <AnimatedAny.Text
-                rotation={animatedProps.textRotation}
-                offset={stackCountoffset}
-                key={`${this.props.id}-cardstackcounttext`}
-                width={countDim}
-                height={countDim}
-                verticalAlign={"middle"}
-                align={"center"}
-                fontSize={(this.props.numCardsInStack || 1) > 99 ? 18 : 24}
-                fill={"white"}
-                text={`${this.props.numCardsInStack}`}
-                draggable={
-                  this.props.controlledBy === "" ||
-                  this.props.controlledBy === myPeerRef
-                }
-              />
+              <AnimatedAny.Group width={countDim} height={countDim}>
+                <AnimatedAny.Rect
+                  offset={stackCountoffset}
+                  cornerRadius={[9, 9, 9, 9]}
+                  opacity={0.6}
+                  fill={"black"}
+                  shadowForStrokeEnabled={false}
+                  hitStrokeWidth={0}
+                  width={countDim}
+                  height={countDim}
+                />
+                <AnimatedAny.Text
+                  rotation={animatedProps.textRotation}
+                  offset={stackCountoffset}
+                  key={`${this.props.id}-cardstackcounttext`}
+                  width={countDim}
+                  height={countDim}
+                  verticalAlign={"middle"}
+                  align={"center"}
+                  fontSize={(this.props.numCardsInStack || 1) > 99 ? 18 : 24}
+                  fill={"white"}
+                  text={`${this.props.numCardsInStack}`}
+                />
               </AnimatedAny.Group>
             </AnimatedAny.Group>
           )}
@@ -489,8 +461,6 @@ class Card extends Component<IProps, IState> {
             <AnimatedAny.Rect
               {...animatedProps}
               cornerRadius={[9, 9, 9, 9]}
-              x={this.props.x}
-              y={this.props.y}
               width={widthToUse}
               height={heightToUse}
               offset={cardStackOffset}
@@ -534,8 +504,8 @@ class Card extends Component<IProps, IState> {
           currentGameType={this.props.currentGameType}
           key={`${this.props.id}-cardTokens`}
           id={this.props.id}
-          x={this.props.x}
-          y={this.props.y}
+          x={0}
+          y={0}
         ></CardTokensContainer>
       );
 
@@ -545,8 +515,8 @@ class Card extends Component<IProps, IState> {
           currentGameType={this.props.currentGameType}
           key={`${this.props.id}-cardModifiers`}
           id={this.props.id}
-          x={this.props.x}
-          y={this.props.y}
+          x={0}
+          y={0}
           cardHeight={this.props.height}
           cardWidth={this.props.width}
           isPreview={!!this.props.isPreview}
@@ -559,17 +529,42 @@ class Card extends Component<IProps, IState> {
       heightToUse
     );
 
-    return [
-      cardStack,
-      card,
-      cardStackCount,
-      noImageCardNameText,
-      stunnedToken,
-      confusedToken,
-      toughToken,
-      cardTokens,
-      cardModifiers,
-    ];
+    return (
+      <Group
+        draggable={
+          (this.props.controlledBy === "" ||
+            this.props.controlledBy === myPeerRef) &&
+          !this.props.disableDragging
+        }
+        onDragStart={this.handleDragStart}
+        onDragMove={this.handleDragMove}
+        onDragEnd={this.handleDragEnd}
+        onDblClick={this.handleDoubleClick}
+        onDblTap={this.handleDoubleTap}
+        onClick={this.handleClick}
+        onTap={this.handleTap}
+        onMouseDown={this.handleMouseDown}
+        onMouseUp={this.handleMouseUp}
+        onTouchStart={this.handleTouchStart}
+        onTouchMove={this.handleTouchMove}
+        onTouchEnd={this.handleTouchEnd}
+        onMouseOver={this.handleMouseOver}
+        onMouseOut={this.handleMouseOut}
+        onContextMenu={this.handleContextMenu}
+        x={this.props.x}
+        y={this.props.y}
+      >
+        {cardStack}
+        {card}
+        {cardStackCount}
+        {noImageCardNameText}
+        {stunnedToken}
+        {confusedToken}
+        {toughToken}
+        {cardTokens}
+        {cardModifiers}
+      </Group>
+    );
   };
 
   private renderCardName(
@@ -584,29 +579,10 @@ class Card extends Component<IProps, IState> {
         <Text
           key={`${this.props.id}-cardnametext`}
           offset={textOffset}
-          x={this.props.x}
-          y={this.props.y}
           width={cardWidth - 10}
           height={cardHeight - 20}
           fontSize={24}
           text={`${this.props.name} ${this.props.code}`}
-          draggable={
-            this.props.controlledBy === "" ||
-            this.props.controlledBy === myPeerRef
-          }
-          onDragStart={this.handleDragStart}
-          onDragMove={this.handleDragMove}
-          onDragEnd={this.handleDragEnd}
-          onDblClick={this.handleDoubleClick}
-          onDblTap={this.handleDoubleClick}
-          onClick={this.handleClick}
-          onTap={this.handleClick}
-          onMouseDown={this.handleMouseDown}
-          onMouseUp={this.handleMouseUp}
-          onTouchStart={this.handleTouchStart}
-          onMouseOver={this.handleMouseOver}
-          onMouseOut={this.handleMouseOut}
-          onContextMenu={this.handleContextMenu}
         ></Text>
       ) : null;
 
@@ -654,8 +630,6 @@ class Card extends Component<IProps, IState> {
 
     return shouldRender ? (
       <Group
-        x={this.props.x}
-        y={this.props.y}
         width={dimensions.width}
         height={dimensions.height}
         key={`${this.props.id}-status${slot}-group`}
@@ -746,7 +720,7 @@ class Card extends Component<IProps, IState> {
     }
   };
 
-  private handleDragMove = (event: any) => {
+  private handleDragMove = debounce((event: any) => {
     if (this.props.handleDragMove) {
       this.props.handleDragMove({
         id: this.props.id,
@@ -754,7 +728,7 @@ class Card extends Component<IProps, IState> {
         dy: event.target.y() - this.props.y,
       });
     }
-  };
+  }, 5);
 
   private handleDragEnd = (event: KonvaEventObject<DragEvent>) => {
     if (this.props.handleDragEnd && this.props.dragging) {
