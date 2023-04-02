@@ -83,6 +83,7 @@ interface IProps {
 }
 
 interface IState {
+  showDragHandle: boolean;
   imageLoaded: boolean;
   imageLoadFailed: number;
   prevImgUrls: string[];
@@ -107,6 +108,7 @@ class Card extends Component<IProps, IState> {
   static getDerivedStateFromProps(props: IProps, state: IState): IState | null {
     if (!stringArraysEqual(props.imgUrls, state.prevImgUrls ?? [])) {
       return {
+        showDragHandle: true,
         imageLoaded: false,
         imageLoadFailed: 0,
         prevImgUrls: props.imgUrls,
@@ -136,6 +138,7 @@ class Card extends Component<IProps, IState> {
     this.unmounted = true;
 
     this.state = {
+      showDragHandle: true,
       imageLoaded: false,
       imageLoadFailed: 0,
       prevImgUrls: this.props.imgUrls,
@@ -347,6 +350,9 @@ class Card extends Component<IProps, IState> {
         to={{
           rotation: this.props.exhausted ? 90 : 0,
         }}
+        onRest={() => {
+          this.setState({ showDragHandle: true });
+        }}
       >
         {(animatedProps: any) => (
           <AnimatedAny.Rect
@@ -442,6 +448,63 @@ class Card extends Component<IProps, IState> {
             </AnimatedAny.Group>
           )}
         </Spring>
+      ) : null;
+
+    const dragHandleSize = 40;
+    const dragHandleMainOffset = {
+      x: this.props.exhausted
+        ? widthToUse / 2 - dragHandleSize / 2
+        : -widthToUse / 2 + dragHandleSize / 2,
+      y: heightToUse / 2 - dragHandleSize / 2,
+    };
+
+    const dragHandleOffset = {
+      x: dragHandleSize / 2,
+      y: dragHandleSize / 2,
+    };
+
+    const cardStackDragHandle =
+      (this.props.numCardsInStack || 1) > 1 &&
+      !this.props.isGhost &&
+      this.state.showDragHandle ? (
+        <Group
+          width={dragHandleSize}
+          height={dragHandleSize}
+          offset={dragHandleMainOffset}
+          rotation={this.props.exhausted ? 90 : 0}
+          onMouseEnter={() => {
+            window.document.body.style.cursor = "ne-resize";
+          }}
+          onMouseLeave={() => {
+            window.document.body.style.cursor = "default";
+          }}
+        >
+          <Group width={dragHandleSize} height={dragHandleSize}>
+            <Rect
+              offset={dragHandleOffset}
+              cornerRadius={[9, 9, 9, 9]}
+              opacity={0.6}
+              fill={"black"}
+              shadowForStrokeEnabled={false}
+              hitStrokeWidth={0}
+              width={dragHandleSize}
+              height={dragHandleSize}
+            />
+            <Text
+              rotation={this.props.exhausted ? -90 : 0}
+              offset={dragHandleOffset}
+              key={`${this.props.id}-cardstackdraghandleicon`}
+              width={dragHandleSize}
+              height={dragHandleSize}
+              verticalAlign={"middle"}
+              align={"center"}
+              fontSize={(this.props.numCardsInStack || 1) > 99 ? 18 : 24}
+              fontFamily={'"Font Awesome 6 Free"'}
+              fill={"white"}
+              text={`\uf14d`}
+            />
+          </Group>
+        </Group>
       ) : null;
 
     const cardStackOffset = {
@@ -557,6 +620,7 @@ class Card extends Component<IProps, IState> {
         {cardStack}
         {card}
         {cardStackCount}
+        {cardStackDragHandle}
         {noImageCardNameText}
         {stunnedToken}
         {confusedToken}
@@ -704,12 +768,14 @@ class Card extends Component<IProps, IState> {
 
   private handleDoubleClick = (event: KonvaEventObject<MouseEvent>) => {
     if (this.props.handleDoubleClick) {
+      this.setState({ showDragHandle: false });
       this.props.handleDoubleClick(this.props.id, event);
     }
   };
 
   private handleDoubleTap = (event: KonvaEventObject<TouchEvent>) => {
     if (this.props.handleDoubleTap) {
+      this.setState({ showDragHandle: false });
       this.props.handleDoubleTap(this.props.id, event);
     }
   };
@@ -732,6 +798,8 @@ class Card extends Component<IProps, IState> {
 
   private handleDragEnd = (event: KonvaEventObject<DragEvent>) => {
     if (this.props.handleDragEnd && this.props.dragging) {
+      // First make sure the cursor is back to normal
+      window.document.body.style.cursor = "grab";
       this.props.handleDragEnd(this.props.id, event);
     }
   };
@@ -805,12 +873,14 @@ class Card extends Component<IProps, IState> {
   };
 
   private handleMouseOver = () => {
+    window.document.body.style.cursor = "grab";
     if (this.props.handleHover) {
       this.props.handleHover(this.props.id);
     }
   };
 
   private handleMouseOut = () => {
+    window.document.body.style.cursor = "default";
     if (this.props.handleHoverLeave) {
       this.props.handleHoverLeave(this.props.id);
     }
