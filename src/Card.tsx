@@ -210,6 +210,16 @@ class Card extends Component<IProps, IState> {
   }
 
   public componentDidUpdate(prevProps: IProps, prevState: IState) {
+    // If we changed exhausted => unexhausted or vice versa, hide
+    // the drag handle, becuase there's not a great way to
+    // animate between the two positions
+    if (
+      this.state.showDragHandle &&
+      prevProps.exhausted !== this.props.exhausted
+    ) {
+      this.setState({ showDragHandle: false });
+    }
+
     // if we just went from not shuffling -> shuffling, animate
     if (!prevProps.shuffling && this.props.shuffling) {
       if (!!this.rect) {
