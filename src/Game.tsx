@@ -5,7 +5,7 @@ import { KonvaEventObject } from "konva/lib/Node";
 import { Vector2d } from "konva/lib/types";
 import React from "react";
 import { Component } from "react";
-import { Layer, Rect, Stage } from "react-konva";
+import { Group, Layer, Rect, Stage } from "react-konva";
 import { Provider, ReactReduxContext } from "react-redux";
 import Card from "./Card";
 import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
@@ -684,68 +684,72 @@ class Game extends Component<IProps, IState> {
               >
                 <Provider store={store}>
                   <Layer>
-                    <Rect
-                      fill={
-                        this.state.playmatImageLoaded ? undefined : "lightgray"
-                      }
-                      scale={{
-                        x: playmatScale,
-                        y: playmatScale,
-                      }}
-                      width={
-                        this.state.playmatImageLoaded
-                          ? this.state.playmatImage?.naturalWidth
-                          : 2880
-                      }
-                      height={
-                        this.state.playmatImageLoaded
-                          ? this.state.playmatImage?.naturalHeight
-                          : 1440
-                      }
-                      fillPatternImage={
-                        this.state.playmatImageLoaded &&
-                        !!this.state.playmatImage
-                          ? this.state.playmatImage
-                          : undefined
-                      }
-                    ></Rect>
-                  </Layer>
-                  <Layer>
-                    {this.props.counters.map((counter) => (
-                      <Counter
-                        key={`${counter.id}-counter`}
-                        id={counter.id}
-                        pos={counter.position}
-                        value={counter.value}
-                        color={counter.color}
-                        updateCounterValueBy={this.handleCounterValueUpdate(
-                          counter.id
-                        )}
-                        handleContextMenu={this.handleCounterContextMenu(
-                          counter.id
-                        )}
-                        onDragEnd={this.handleCounterDrag(counter.id)}
-                      ></Counter>
-                    ))}
-                  </Layer>
-                  <Layer preventDefault={true}>
-                    {ghostCards.concat(staticCards).concat(movingCards)}
+                    <Group>
+                      <Rect
+                        fill={
+                          this.state.playmatImageLoaded
+                            ? undefined
+                            : "lightgray"
+                        }
+                        scale={{
+                          x: playmatScale,
+                          y: playmatScale,
+                        }}
+                        width={
+                          this.state.playmatImageLoaded
+                            ? this.state.playmatImage?.naturalWidth
+                            : 2880
+                        }
+                        height={
+                          this.state.playmatImageLoaded
+                            ? this.state.playmatImage?.naturalHeight
+                            : 1440
+                        }
+                        fillPatternImage={
+                          this.state.playmatImageLoaded &&
+                          !!this.state.playmatImage
+                            ? this.state.playmatImage
+                            : undefined
+                        }
+                      ></Rect>
+                    </Group>
+                    <Group>
+                      {this.props.counters.map((counter) => (
+                        <Counter
+                          key={`${counter.id}-counter`}
+                          id={counter.id}
+                          pos={counter.position}
+                          value={counter.value}
+                          color={counter.color}
+                          updateCounterValueBy={this.handleCounterValueUpdate(
+                            counter.id
+                          )}
+                          handleContextMenu={this.handleCounterContextMenu(
+                            counter.id
+                          )}
+                          onDragEnd={this.handleCounterDrag(counter.id)}
+                        ></Counter>
+                      ))}
+                    </Group>
+                    <Group preventDefault={true}>
+                      {ghostCards.concat(staticCards).concat(movingCards)}
 
-                    <FirstPlayerTokenContainer
-                      currentGameType={this.props.currentGameType}
-                    ></FirstPlayerTokenContainer>
-                    <CurvedArrowsContainer></CurvedArrowsContainer>
-                    {previewCards}
-                  </Layer>
-                  <Layer>
-                    <Rect
-                      x={this.state.selectStartPos.x}
-                      y={this.state.selectStartPos.y}
-                      width={this.state.selectRect.width}
-                      height={this.state.selectRect.height}
-                      stroke="yellow"
-                      strokeWidth={4}
-                    />
+                      <FirstPlayerTokenContainer
+                        currentGameType={this.props.currentGameType}
+                      ></FirstPlayerTokenContainer>
+                      <CurvedArrowsContainer></CurvedArrowsContainer>
+                      {previewCards}
+                    </Group>
+                    <Group>
+                      <Rect
+                        x={this.state.selectStartPos.x}
+                        y={this.state.selectStartPos.y}
+                        width={this.state.selectRect.width}
+                        height={this.state.selectRect.height}
+                        stroke="yellow"
+                        strokeWidth={4}
+                      />
+                    </Group>
                   </Layer>
                 </Provider>
               </Stage>
