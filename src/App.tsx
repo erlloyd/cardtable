@@ -32,9 +32,13 @@ const App = (props: IProps) => {
     null
   );
   const [showDevSettings, setShowDevSettings] = useState(false);
+  const [numImageClicks, setNumImageClicks] = useState(0);
 
   // Set up konami code handler to show / hide dev settings panel
   const toggleDevSetting = () => {
+    if (!showDevSettings) {
+      setNumImageClicks(0);
+    }
     setShowDevSettings(!showDevSettings);
   };
 
@@ -139,7 +143,14 @@ const App = (props: IProps) => {
           <GameContainer currentGameType={props.activeGameType}></GameContainer>
         </div>
       ) : (
-        <div>{renderGamePicker(props)}</div>
+        <div>
+          {renderGamePicker(
+            props,
+            toggleDevSetting,
+            numImageClicks,
+            setNumImageClicks
+          )}
+        </div>
       )}
     </div>
   );
@@ -157,10 +168,27 @@ const camelCaseToSpaces = (str: string) => {
   );
 };
 
-const renderGamePicker = (props: IProps) => {
+const renderGamePicker = (
+  props: IProps,
+  toggleDevSetting: () => void,
+  numImageClicks: number,
+  setNumImageClicks: (n: number) => void
+) => {
   return (
     <div className="game-picker">
-      <img className="logo" alt="cardtable" src={mainLogo}></img>
+      <img
+        onClick={() => {
+          if (numImageClicks >= 9) {
+            toggleDevSetting();
+            setNumImageClicks(0);
+          } else {
+            setNumImageClicks(numImageClicks + 1);
+          }
+        }}
+        className="logo"
+        alt="cardtable"
+        src={mainLogo}
+      ></img>
       <FormControl className="select">
         <InputLabel id="game-picker-label">Select Game</InputLabel>
         <Select
