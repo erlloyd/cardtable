@@ -810,6 +810,10 @@ class Card extends Component<IProps, IState> {
     if (this.props.handleDragEnd && this.props.dragging) {
       // First make sure the cursor is back to normal
       window.document.body.style.cursor = "grab";
+
+      // Next, cancel any outstanding move things that haven't debounced
+      this.handleDragMove.cancel();
+
       this.props.handleDragEnd(this.props.id, event);
     }
   };
