@@ -33,6 +33,7 @@ import {
   updateZoom,
   doneLoadingJSON,
   removePlayer,
+  showSpecificCardLoader,
 } from "../features/game/game.slice";
 import { toggleNotes } from "../features/notes/notes.slice";
 import {
@@ -75,6 +76,7 @@ export const blacklistRemoteActions = {
   [sendNotification.type]: true,
   [clearNotification.type]: true,
   [removePlayer.type]: true,
+  [showSpecificCardLoader.type]: true,
 };
 
 export const misingPlayerNumInSeq = (

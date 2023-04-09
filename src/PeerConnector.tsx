@@ -27,13 +27,17 @@ class PeerConnector extends Component<IProps> {
           gap: "5px",
         }}
         onClick={this.cancelBubble}
-        onKeyPress={this.cancelBubble}
+        onKeyDown={this.cancelBubble}
       >
         <TextField
           label="Enter peer id"
           autoCapitalize="none"
           ref={this.focusInputField}
-          onKeyPress={this.connect}
+          onKeyPress={(event) => {
+            if (event.key === "Enter") {
+              this.connect(event);
+            }
+          }}
           onClick={this.cancelBubble}
           onChange={(event) => {
             this.inputValue = event.target.value;
