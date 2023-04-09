@@ -842,7 +842,7 @@ class Game extends Component<IProps, IState> {
       <ContextMenu
         position={{
           x: containerRect.left + pointerPosition.x,
-          y: containerRect.top + pointerPosition.y,
+          y: Math.max(containerRect.top, 0) + pointerPosition.y,
         }}
         items={this.state.contextMenuItems}
         hideContextMenu={() => this.clearContextMenu()}
@@ -886,7 +886,8 @@ class Game extends Component<IProps, IState> {
             cardSearchPosition: containerRect
               ? {
                   x: (containerRect.right - containerRect.left) / 2 - 100,
-                  y: (containerRect.bottom - containerRect.top) / 4,
+                  y:
+                    (containerRect.bottom - Math.max(containerRect.top, 0)) / 4,
                 }
               : null,
             cardStackForSearching: card,
@@ -909,7 +910,7 @@ class Game extends Component<IProps, IState> {
       <TopLayer
         position={{
           x: containerRect.left + pointerPosition.x,
-          y: containerRect.top + pointerPosition.y,
+          y: Math.max(containerRect.top, 0) + pointerPosition.y,
         }}
         completed={this.clearDeckImporter}
       >
@@ -933,7 +934,7 @@ class Game extends Component<IProps, IState> {
 
     const pos = {
       x: containerRect.left + pointerPosition.x,
-      y: containerRect.top + pointerPosition.y,
+      y: Math.max(containerRect.top, 0) + pointerPosition.y,
     };
 
     return (
@@ -959,7 +960,7 @@ class Game extends Component<IProps, IState> {
 
     const pos = {
       x: containerRect.left + pointerPosition.x,
-      y: containerRect.top + pointerPosition.y,
+      y: Math.max(containerRect.top, 0) + pointerPosition.y,
     };
 
     return !!this.state.cardStackForSearching ? (
@@ -987,7 +988,7 @@ class Game extends Component<IProps, IState> {
 
     const pos = {
       x: containerRect.left + pointerPosition.x,
-      y: containerRect.top + pointerPosition.y,
+      y: Math.max(containerRect.top, 0) + pointerPosition.y,
     };
 
     return !!this.state.showPeerConnector ? (
@@ -1008,7 +1009,7 @@ class Game extends Component<IProps, IState> {
 
     const pos = {
       x: containerRect.left + pointerPosition.x,
-      y: containerRect.top + pointerPosition.y,
+      y: Math.max(containerRect.top, 0) + pointerPosition.y,
     };
 
     return !!this.state.showTokenValueModifier &&
