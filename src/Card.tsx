@@ -724,16 +724,6 @@ class Card extends Component<IProps, IState> {
     ) : null;
   }
 
-  // private shouldRenderImageHorizontal(
-  //   code: string,
-  //   type: string,
-  //   typeCodes: string[]
-  // ): boolean {
-  //   const shouldRotateByType =
-  //     typeCodes.includes(type.toLocaleLowerCase()) && !this.plainCardBack;
-  //   return shouldRotateByType && !CARD_ALREADY_ROTATED_MAP[code];
-  // }
-
   private get plainCardBack() {
     return (
       this.props.imgUrls.some((i) => i.includes("standard")) &&
