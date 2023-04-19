@@ -5,6 +5,310 @@
     "Number": 2,
     "AllCards": [
         {
+            "Title": "Journey Along the Anduin",
+            "Slug": "Journey-Along-the-Anduin-Campaign-RevCore",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Journey-Along-the-Anduin-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "You are playing Campaign Mode.",
+                    "Setup: Put Mendor into play. Set each copy of Valor and Scarred aside, out of play.",
+                    "Response: After a Hill Troll is defeated, each player attaches 1 set-side copy of Valor to a hero they control, if able.",
+                    "Forced: After a character is destroyed by a Hill Troll, each player attaches 1 set-aside copy of Scarred to a hero they control. (Limit once per game.)",
+                    "If Mendor leaves play, the players lose the game"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Resolution: Add each copy of Valor and Scarred in play to the Campaign Pool. Record the names of the heroes with Valor and/or Scarred attached in the notes section of the Campaign Log and attach them to those heroes when setting up each subsequent scenario in this campaign.",
+                    "The hero with the most damage will be taken prisoner at the beginning of Escape from Dol Guldur (in case of a tie, randomly select among the heroes with the most damage.) Record the name of the `prisoner` in the notes section of the Campaign Log."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Our pursuers were too persistent and their ambush too well planned to be mere coincidence,` says Mendor after finally reaching the shores of Lórien. `I fear a greater evil directs them from the shadows.`"
+            },
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": null,
+            "Number": 130,
+            "Quantity": 1,
+            "Artist": "Ben Zweifel",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "01130",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Mendor",
+            "Slug": "Mendor-RevCore",
+            "IsUnique": true,
+            "CardType": "Objective_Ally",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Mendor.jpg",
+                "Stats": {
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Silvan.",
+                    "Scout."
+                ],
+                "Keywords": [
+                    "Ranged."
+                ],
+                "Text": [
+                    "Ranged.",
+                    "The first player gains control of Mendor.",
+                    "Response: After a quest card is defeated, ready Mendor. Then, each player draws 1 card.",
+                    "If Mendor leaves play, remove him from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": {
+                "EncounterSet": "",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 135,
+            "Quantity": 1,
+            "Artist": "Cris Griffin",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "01135",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 470,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Mendor's Support",
+            "Slug": "Mendor's-Support-RevCore",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Mendor's-Support.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Only one copy of Mendor`s Support can be played each round.",
+                    "Action: Mendor gets +2 Willpower, +2 Attack, and +2 Defense until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": null,
+            "Number": 132,
+            "Quantity": 4,
+            "Artist": "Chris Rahn",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "01132",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 744,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Valor",
+            "Slug": "Valor-RevCore",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Valor.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent. Limit 1 per hero.",
+                    "Response: After attached hero is declared as an attacker, exhaust Valor to heal 1 damage from attached hero and deal 1 damage to the defening enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": null,
+            "Number": 133,
+            "Quantity": 4,
+            "Artist": "Chris Rahn",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "01133",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 506,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Appointed by Fate",
+            "Slug": "Appointed-by-Fate-RevCore",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Appointed-by-Fate.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attached hero collects 1 additional resource during each resource phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Yet it is not our part to master all the tides of the world, but to do what is in us for the succour of those years wherein we are set...`\r\n-Gandalf, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": null,
+            "Number": 134,
+            "Quantity": 1,
+            "Artist": "Anders Finer",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "01134",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 40,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Ungoliant's Swarm",
+            "Slug": "Ungoliant's-Swarm-RevCore",
+            "IsUnique": false,
+            "CardType": "Enemy",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Ungoliant's-Swarm.jpg",
+                "Stats": {
+                    "EngagementCost": "33",
+                    "Threat": "3",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Creature.",
+                    "Spider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Forced: After Ungoliant`s Swarm engages a player, that player must choose and exhaust 2 characters they control."
+                ],
+                "Shadow": "Shadow: Put Ungoliant`s Swarm into play engaged with you.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": {
+                "EncounterSet": "Passage Through Mirkwood (Campaign)",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 136,
+            "Quantity": 1,
+            "Artist": "Andrew Ryan",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "01136",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 10,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Lingering Venom",
+            "Slug": "Lingering-Venom-RevCore",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Lingering-Venom.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: Each player must choose: either exhaust each damaged character you control, or deal 2 damage to the hero you control with the most damage on it."
+                ],
+                "Shadow": "Shadow: Exhaust each damaged character you control.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "Revised Core Set",
+            "EncounterInfo": {
+                "EncounterSet": "Passage Through Mirkwood (Campaign)",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 137,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "01137",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
             "Title": "Scarred",
             "Slug": "Scarred-RevCore",
             "IsUnique": false,
@@ -43,7 +347,8 @@
             "RingsDbCardId": "01138",
             "RingsDbPopularity": 1,
             "RingsDbVotes": 10,
-            "Categories": null
+            "Categories": null,
+            "CAMPAIGN": true
         },
         {
             "Title": "Wolf Rider",
@@ -1219,439 +1524,6 @@
             "HasErrata": false,
             "OctgnGuid": "",
             "RingsDbCardId": "01128",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Journey Along the Anduin",
-            "Slug": "Journey-Along-the-Anduin-Campaign-RevCore",
-            "IsUnique": false,
-            "CardType": "Campaign",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Revised-Core-Set/Journey-Along-the-Anduin-SetupA.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "You are playing Campaign Mode.",
-                    "Setup: Put Mendor into play. Set each copy of Valor and Scarred aside, out of play.",
-                    "Response: After a Hill Troll is defeated, each player attaches 1 set-side copy of Valor to a hero they control, if able.",
-                    "Forced: After a character is destroyed by a Hill Troll, each player attaches 1 set-aside copy of Scarred to a hero they control. (Limit once per game.)",
-                    "If Mendor leaves play, the players lose the game"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": {
-                "Subtitle": null,
-                "ImagePath": null,
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Resolution: Add each copy of Valor and Scarred in play to the Campaign Pool. Record the names of the heroes with Valor and/or Scarred attached in the notes section of the Campaign Log and attach them to those heroes when setting up each subsequent scenario in this campaign.",
-                    "The hero with the most damage will be taken prisoner at the beginning of Escape from Dol Guldur (in case of a tie, randomly select among the heroes with the most damage.) Record the name of the `prisoner` in the notes section of the Campaign Log."
-                ],
-                "Shadow": null,
-                "FlavorText": "`Our pursuers were too persistent and their ambush too well planned to be mere coincidence,` says Mendor after finally reaching the shores of Lórien. `I fear a greater evil directs them from the shadows.`"
-            },
-            "CardSet": "Revised Core Set",
-            "EncounterInfo": null,
-            "Number": 130,
-            "Quantity": 1,
-            "Artist": "Ben Zweifel",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "01130",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Journey Along the Anduin Nightmare",
-            "Slug": "Journey-Along-the-Anduin-Nightmare-JAtAN",
-            "IsUnique": false,
-            "CardType": "Nightmare_Setup",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Journey-Along-the-Anduin-Nightmare-SetupA.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "You are playing Nightmare mode.",
-                    "All Troll enemies gain the text: `Cannot have attachments.`",
-                    "If the encounter deck is empty (at any time), shuffle the encounter discard pile back into the encounter deck."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": {
-                "Subtitle": null,
-                "ImagePath": null,
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Begin with the standard quest deck and encounter deck for the Journey Along the Anduin scenario found in the LOTR LCG core set.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Evil Storm\n2x Treacherous Fog\n2x Banks of the Anduin\n3x Dol Guldur Orcs\n2x Enchanted Stream\n2x Despair\n3x Misty Mountain Goblins\n2x Necromancer`s Pass\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Journey Along the Anduin encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "CardSet": "Journey Along the Anduin Nightmare",
-            "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Alexandre Dainche",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00001",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Marshland Outlaws",
-            "Slug": "Marshland-Outlaws-JAtAN",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Marshland-Outlaws.jpg",
-                "Stats": {
-                    "EngagementCost": "21",
-                    "Threat": "2",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "8"
-                },
-                "Traits": [
-                    "Marshland."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "If you are engaged with this enemy, you cannot attack or deal damage (through effects) to enemies with a title other than Marshland Outlaws."
-                ],
-                "Shadow": "Shadow: Raise your threat by X. X is the amount of damage dealt by this attack.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Journey Along the Anduin Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Journey Along the Anduin Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 2,
-            "Quantity": 2,
-            "Artist": "Rafał Hrynkiewicz",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00002",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Anduin Troll Spawn",
-            "Slug": "Anduin-Troll-Spawn-JAtAN",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Anduin-Troll-Spawn.jpg",
-                "Stats": {
-                    "EngagementCost": "26",
-                    "Threat": "2",
-                    "Attack": "4",
-                    "Defense": "3",
-                    "HitPoints": "5"
-                },
-                "Traits": [
-                    "Troll."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "If there is no Hill Troll in play, Anduin Troll Spawn gains surge.\n\nForced: At the beginning of the combat phase, Anduin Troll Spawn engages a player engaged with a Hill Troll."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Journey Along the Anduin Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Journey Along the Anduin Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 3,
-            "Quantity": 3,
-            "Artist": "Chun Lo",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00003",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Brown Water Rats",
-            "Slug": "Brown-Water-Rats-JAtAN",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Brown-Water-Rats.jpg",
-                "Stats": {
-                    "EngagementCost": "1",
-                    "Threat": "1",
-                    "Attack": "1",
-                    "Defense": "1",
-                    "HitPoints": "-"
-                },
-                "Traits": [
-                    "Creature.",
-                    "Rat."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Brown Water Rats cannot be damaged.",
-                    "Forced: If the players are on stage 3 and all remaining enemies have the printed Rat trait, discard Brown Water Rats from play."
-                ],
-                "Shadow": "Shadow: Attacking enemy cannot be damaged this round.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Journey Along the Anduin Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Journey Along the Anduin Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 4,
-            "Quantity": 3,
-            "Artist": "Rafał Hrynkiewicz",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00004",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "A Flooded Ford",
-            "Slug": "A-Flooded-Ford-JAtAN",
-            "IsUnique": false,
-            "CardType": "Location",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/A-Flooded-Ford.jpg",
-                "Stats": {
-                    "Threat": "3",
-                    "QuestPoints": "6"
-                },
-                "Traits": [
-                    "Riverland."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Each card revealed by the encounter deck gains doomed X. X is the number of progress tokens on this card."
-                ],
-                "Shadow": "Shadow: If this attack is undefended, put A Flooded Ford into the staging area with 1 progress token on it.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Journey Along the Anduin Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Journey Along the Anduin Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 5,
-            "Quantity": 2,
-            "Artist": "Alexandre Dainche",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00005",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Gladden Marshlands",
-            "Slug": "Gladden-Marshlands-JAtAN",
-            "IsUnique": false,
-            "CardType": "Location",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Gladden-Marshlands.jpg",
-                "Stats": {
-                    "Threat": "10",
-                    "QuestPoints": "10"
-                },
-                "Traits": [
-                    "Marshland."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Action: Deal 1 damage to a hero you control to reduce Gladden Marshlands Threat by 1 until the end of the phase. Any player may trigger this effect."
-                ],
-                "Shadow": "Shadow: Each enemy engaged with the defender player gets +1 Attack until the end of the phase. (+2 Attack instead if this attack is undefended.)",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Journey Along the Anduin Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Journey Along the Anduin Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 6,
-            "Quantity": 3,
-            "Artist": "Trudi Castle",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00006",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Pursuit on the Shore",
-            "Slug": "Pursuit-on-the-Shore-JAtAN",
-            "IsUnique": false,
-            "CardType": "Treachery",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Pursuit-on-the-Shore.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "When Revealed: Search the victory display and encounter discard pile for the enemy with the most hit points. Return that enemy to the staging area. If no enemy is returned by this effect, Pursuit on the Shore gains surge. (Cannot be canceled.)"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Journey Along the Anduin Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Journey Along the Anduin Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 7,
-            "Quantity": 2,
-            "Artist": "Allison Theus",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00007",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Troll Attack",
-            "Slug": "Troll-Attack-JAtAN",
-            "IsUnique": false,
-            "CardType": "Treachery",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Troll-Attack.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "When Revealed: All engaged Troll enemies attack. If no Troll enemies are engaged, Troll Attack gains surge."
-                ],
-                "Shadow": "Shadow: If attacking enemy is a Troll, resolve this attack against each player. (Attack is undefended against each player not engaged with this enemy.)",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Journey Along the Anduin Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Journey Along the Anduin Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 8,
-            "Quantity": 2,
-            "Artist": "Rafał Hrynkiewicz",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00008",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Smoking Blood",
-            "Slug": "Smoking-Blood-JAtAN",
-            "IsUnique": false,
-            "CardType": "Treachery",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Journey-Along-the-Anduin-Nightmare/Smoking-Blood.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "When Revealed: Remove all damage from all enemies. Then, each player raises his threat by the amount of just removed from his engaged enemies. If no damage is removed by this effect, Smoking Blood gains surge."
-                ],
-                "Shadow": "Shadow: Move all damage on this enemy to the defending character. (If undefended, move the damage to the hero damaged by this attack.)",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Journey Along the Anduin Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Journey Along the Anduin Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 9,
-            "Quantity": 2,
-            "Artist": "Magali Villeneuve",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00009",
             "RingsDbPopularity": 0,
             "RingsDbVotes": 0,
             "Categories": null

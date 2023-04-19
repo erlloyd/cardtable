@@ -5,6 +5,471 @@
     "Number": 6,
     "AllCards": [
         {
+            "Title": "Bilbo Baggins",
+            "Slug": "Bilbo-Baggins-THOHaUH",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Baggins",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-Over-Hill-and-Under-Hill/Bilbo-Baggins.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The first player gains control of Bilbo Baggins.",
+                    "Bilbo Baggins cannot gain resources from player card effects.",
+                    "If Bilbo Baggins leaves play, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: Over Hill and Under Hill",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-1801204c9017",
+            "RingsDbCardId": "131001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 907,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Bilbo Baggins",
+            "Slug": "Bilbo-Baggins-THOtD",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Baggins",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-On-the-Doorstep/Bilbo-Baggins.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Hobbit.",
+                    "Burglar."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Bilbo Baggins does not count against the hero limit and cannot gain resources from non-treasure cards.",
+                    "The first player gains control of Bilbo Baggins.",
+                    "Action: Spend 1 Baggins resource to search your deck for a treasure card and add it to your hand.",
+                    "If Bilbo Baggins leaves play, the players have lost the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: On the Doorstep",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "4e61b160-2104-497f-9977-4b353e54fbb7",
+            "RingsDbCardId": "132001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 265,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Glamdring",
+            "Slug": "Glamdring-THOHaUH",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-Over-Hill-and-Under-Hill/Glamdring.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a hero or Gandalf.",
+                    "Attached character gets +2 Attack.",
+                    "Response: After attached character destroys an Orc enemy, draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: Over Hill and Under Hill",
+            "EncounterInfo": null,
+            "Number": 22,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-1801204c9037",
+            "RingsDbCardId": "131022",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 32040,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Sting",
+            "Slug": "Sting-THOHaUH",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-Over-Hill-and-Under-Hill/Sting.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to Bilbo Baggins.",
+                    "Bilbo Baggins gets +1 Willpower, +1 Attack, and +1 Defense.",
+                    "Response: After Bilbo Baggins exhausts to defend, discard the top card of the encounter deck. Deal damage to the attacking enemy equal to the discarded card`s Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I shall call you Sting.` -Bilbo, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: Over Hill and Under Hill",
+            "EncounterInfo": null,
+            "Number": 20,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-1801204c9075",
+            "RingsDbCardId": "131020",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 29040,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Orcrist",
+            "Slug": "Orcrist-THOHaUH",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-Over-Hill-and-Under-Hill/Orcrist.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a hero.",
+                    "Attached character gets +2 Attack.Response: After attached hero destroys an Orc enemy, add 1 resource to that hero`s resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "`This, Thorin, the runes name Orcrist, the Goblin-cleaver in the ancient tongue of Gondolin; it was a famous blade.` -Elrond, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: Over Hill and Under Hill",
+            "EncounterInfo": null,
+            "Number": 21,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-1801204c9064",
+            "RingsDbCardId": "131021",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 27240,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Bilbo's Magic Ring",
+            "Slug": "Bilbo's-Magic-Ring-THOtD",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-On-the-Doorstep/Bilbo's-Magic-Ring.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Ring."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to Bilbo Baggins.",
+                    "Action: Exhaust Bilbo`s Magic Ring and raise your threat by 1 to gain 1 Baggins resource. (Limit once per round.)",
+                    "Response: After Bilbo Baggins exhausts to defend an attack, exhaust Bilbo`s Magic Ring and raise your threat by 3 to cancel all damage from this attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: On the Doorstep",
+            "EncounterInfo": null,
+            "Number": 19,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "9dd6bf3e-e090-4ebf-a056-765c94e8a199",
+            "RingsDbCardId": "132019",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 13650,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Mithril Shirt",
+            "Slug": "Mithril-Shirt-THOtD",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-On-the-Doorstep/Mithril-Shirt.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Erebor.",
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to Bilbo Baggins.",
+                    "Attached hero gets +1 Defense and +1 hit point."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Mr. Baggins!` he cried. `Here is the first payment of your reward! Cast off your old coat and put on this!`\r\n-Thorin, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: On the Doorstep",
+            "EncounterInfo": null,
+            "Number": 21,
+            "Quantity": 1,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "OctgnGuid": "12d51424-0edd-4977-9df1-5f6a7a5a96e1",
+            "RingsDbCardId": "132021",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 7010,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Thrór's Golden Cup",
+            "Slug": "Thror's-Golden-Cup-THOtD",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-On-the-Doorstep/Thrór's-Golden-Cup.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Erebor.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Attach to a hero.",
+                    "Action: Add Thror`s Golden Cup to the victory display to draw 3 cards."
+                ],
+                "Shadow": null,
+                "FlavorText": "...the great golden cup of Thror, two-handed, hammered and carven with birds and flowers whose eyes and petals were of jewels...\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: On the Doorstep",
+            "EncounterInfo": null,
+            "Number": 24,
+            "Quantity": 1,
+            "Artist": "Melanie Maier",
+            "HasErrata": false,
+            "OctgnGuid": "ff7b0b9d-f8ae-4464-9db3-7205c5ae4db7",
+            "RingsDbCardId": "132024",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4760,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Thrór's Hunting Bow",
+            "Slug": "Thror's-Hunting-Bow-THOtD",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-On-the-Doorstep/Thrór's-Hunting-Bow.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Erebor.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a hero. Restricted.",
+                    "Attached hero gains Ranged.",
+                    "When making a ranged attack, attached hero gets +2 Attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "Thorin seized a bow of horn and shot an arrow at the speaker.\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: On the Doorstep",
+            "EncounterInfo": null,
+            "Number": 23,
+            "Quantity": 1,
+            "Artist": "David Horne",
+            "HasErrata": false,
+            "OctgnGuid": "7adc49c0-640d-4934-89c5-312ab584b77c",
+            "RingsDbCardId": "132023",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4750,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "The Arkenstone",
+            "Slug": "The-Arkenstone-THOtD",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-On-the-Doorstep/The-Arkenstone.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Erebor.",
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero.",
+                    "Action: Exhaust The Arkenstone and raise your threat by X to lower by X the cost of the next ally you play this phase that matches the attached hero`s sphere."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...the Heart of the Mountain; and it is also the heart of Thorin. He values it above a rive of gold.`\r\n-Bilbo, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: On the Doorstep",
+            "EncounterInfo": null,
+            "Number": 20,
+            "Quantity": 1,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "OctgnGuid": "ae774680-c6e9-49eb-96b8-fcdebe90b49d",
+            "RingsDbCardId": "132020",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4610,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Thrór's Battle Axe",
+            "Slug": "Thror's-Battle-Axe-THOtD",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-On-the-Doorstep/Thrór's-Battle-Axe.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Erebor.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a hero. Restricted.",
+                    "Attached hero gets +2 Attack.",
+                    "Response: After attached hero attacks and destroys an enemy, deal 1 damage to another enemy engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "Royal indeed did Thorin look, clad in a coat of gold-plated rings, with a silver hafted axe...\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: On the Doorstep",
+            "EncounterInfo": null,
+            "Number": 22,
+            "Quantity": 1,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "OctgnGuid": "857d6dc8-ba1e-4839-8e96-a8a0136a2302",
+            "RingsDbCardId": "132022",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4310,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
             "Title": "The Gathering of the Clouds",
             "Slug": "The-Gathering-of-the-Clouds-THOtD",
             "IsUnique": false,
@@ -1120,321 +1585,8 @@
             "RingsDbPopularity": 0,
             "RingsDbVotes": 0,
             "Categories": null
-        },
-        {
-            "Title": "The Battle of Five Armies Nightmare",
-            "Slug": "The-Battle-of-Five-Armies-Nightmare-FaSN",
-            "IsUnique": false,
-            "CardType": "Nightmare_Setup",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Five-Armies-Nightmare/The-Battle-of-Five-Armies-Nightmare-SetupA.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "You are playing Nightmare mode.",
-                    "While the players are at stage 5b, this card gains: `Forced: When the players are instructed to remove any amount of progress from a quest stage, place 1 progress here instead.`",
-                    "If there are X progress tokens here, the players lose the game. X depends on the number of players in the game:",
-                    "1 player: X equals 5",
-                    "2 players: X equals 7",
-                    "3 players: X equals 9",
-                    "4 players: X equals 11"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": {
-                "Subtitle": null,
-                "ImagePath": null,
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Begin with the standard quest deck and encounter deck for The Battle of Five Armies Nightmare scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Dark Bats\n3x Hidden Path\n2x Fighting Among Friends\n1x Vanguard of Bolg\n1x Ravenous Warg\n4x Gundabad Climber\n3x Gundabad Wolf Rider\n1x Misty Mountain Eagle\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard The Battle of Five Armies Nightmare encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "CardSet": "The Battle of Five Armies Nightmare",
-            "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Jason Ward",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00001",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Great Warg",
-            "Slug": "Great-Warg-FaSN",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Five-Armies-Nightmare/Great-Warg.jpg",
-                "Stats": {
-                    "EngagementCost": "25",
-                    "Threat": "4",
-                    "Attack": "5",
-                    "Defense": "3",
-                    "HitPoints": "5"
-                },
-                "Traits": [
-                    "Creature."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Forced: After Great Warg attacks and destroys a character, remove all progress from the current quest."
-                ],
-                "Shadow": "Shadow: Defending player discards 1 attachment he controls.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Battle of Five Armies Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "The Battle of Five Armies Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 2,
-            "Quantity": 3,
-            "Artist": "Jon Bosco",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00002",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Frenzied Warg-Rider",
-            "Slug": "Frenzied-Warg-Rider-FaSN",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Five-Armies-Nightmare/Frenzied-Warg-Rider.jpg",
-                "Stats": {
-                    "EngagementCost": "15",
-                    "Threat": "3",
-                    "Attack": "3",
-                    "Defense": "2",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Goblin.",
-                    "Orc."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Forced: When Frenzied Warg-Rider attacks, remove 1 progress from each quest stage."
-                ],
-                "Shadow": "Shadow: Deal 1 damage to the defending character (2 damage instead if the current quest has no progress on it).",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Battle of Five Armies Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "The Battle of Five Armies Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 3,
-            "Quantity": 4,
-            "Artist": "Beth Sobel",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00003",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Gundabad Elite",
-            "Slug": "Gundabad-Elite-FaSN",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Five-Armies-Nightmare/Gundabad-Elite.jpg",
-                "Stats": {
-                    "EngagementCost": "40",
-                    "Threat": "2",
-                    "Attack": "5",
-                    "Defense": "3",
-                    "HitPoints": "5"
-                },
-                "Traits": [
-                    "Goblin.",
-                    "Orc."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Cannot be optionally engaged.",
-                    "Forced: At the end of the round, if Gundabad Elite is in the staging area, either remove 2 progress from the current quest, or Gundabad Elite makes an attack against the first player."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Battle of Five Armies Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "The Battle of Five Armies Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 4,
-            "Quantity": 4,
-            "Artist": "Florian Devos",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00004",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Embattled Valley",
-            "Slug": "Embattled-Valley-FaSN",
-            "IsUnique": false,
-            "CardType": "Location",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Five-Armies-Nightmare/Embattled-Valley.jpg",
-                "Stats": {
-                    "Threat": "5",
-                    "QuestPoints": "5"
-                },
-                "Traits": [
-                    "Valley."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Forced: At the end of the round, each player assigns X damage among heroes he controls. X is the number of quest stages with no progress on them.",
-                    "Travel: The players (as a group) exhaust X characters. X is the number of quest stages with no progress on them."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Battle of Five Armies Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "The Battle of Five Armies Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 5,
-            "Quantity": 2,
-            "Artist": "Jason Ward",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00005",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Eastern Ridge",
-            "Slug": "Eastern-Ridge-FaSN",
-            "IsUnique": false,
-            "CardType": "Location",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Five-Armies-Nightmare/Eastern-Ridge.jpg",
-                "Stats": {
-                    "Threat": "3",
-                    "QuestPoints": "6"
-                },
-                "Traits": [
-                    "Mountain."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Forced: At the end of the round, raise each player`s threat by 1 for each quest stage with no progress on it."
-                ],
-                "Shadow": "Shadow: Until the end of the phase, attacking enemy gets +1 Defense for each quest stage with no progress on it.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Battle of Five Armies Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "The Battle of Five Armies Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 6,
-            "Quantity": 3,
-            "Artist": "Alyn Spiller",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00006",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Dread Has Come!",
-            "Slug": "Dread-Has-Come-FaSN",
-            "IsUnique": false,
-            "CardType": "Treachery",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Battle-of-Five-Armies-Nightmare/Dread-Has-Come.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "When Revealed: Bolg makes an attack against each player in turn order. If at least 1 character is destroyed by one of these attacks, the players cannot place progress on the current quest phase this round."
-                ],
-                "Shadow": "Shadow: Attacking enemy gets +2 Attack.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Battle of Five Armies Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "The Battle of Five Armies Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 7,
-            "Quantity": 3,
-            "Artist": "Anthony Devine",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00007",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
         }
-    ]
+    ],
+    "Cycle": "The Hobbit",
+    "SetType": "Saga_Expansion"
 }

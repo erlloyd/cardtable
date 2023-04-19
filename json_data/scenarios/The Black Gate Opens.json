@@ -5,6 +5,2160 @@
     "Number": 17,
     "AllCards": [
         {
+            "Title": "The Black Gate Opens",
+            "Slug": "The-Black-Gate-Opens-Campaign-TMoF",
+            "IsUnique": false,
+            "CardType": "Campaign",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/The-Black-Gate-Opens-SetupA.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Each player may change heroes he controls without incurring the +1 threat penalty. The first player may raise each player`s threat by 1 to search his deck for Anduril and add it to his hand. Remove each burden with the following burden set icons from the encounter deck: A Shadow of the Past, Flight to the Ford, The Ring Goes South, The Passage of the Marshes, Shelob`s Lair"
+                ],
+                "Shadow": null,
+                "FlavorText": "They were come to the last end of their folly, and stood forlorn and chill in the grey light of early day before towers and walls which their army could not assault with hope...\r\n-The Return of the King"
+            },
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": null,
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Resolution: Record the number of resource tokens on The Black Gate in the notes section of the campaign log. If a Wraith on Wings is in the victory display, remove that copy from the campaign pool. If the first player controls Gwaihir, add him to the campaign pool. The players have earned that boon. If a hero is in its controller`s discard pile, do not add that hero`s name to the list of fallen heroes."
+                ],
+                "Shadow": null,
+                "FlavorText": "`So it ends as I guessed it would,` his thought said, even as it fluttered away; and it laughed a little within him ere it fled, almost gay it seemed to be casting off at last all doubt and care and fear. And then even as it winged away into forgetfulness it heard voices, and they seemed to be crying in some forgotten world far above: `The Eagles are coming! The Eagles are coming!`\r\n-The Return of the King"
+            },
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": null,
+            "Number": 74,
+            "Quantity": 1,
+            "Artist": "Rafał Hrynkiewicz",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "146074",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "The One Ring",
+            "Slug": "The-One-Ring-TBR",
+            "IsUnique": true,
+            "CardType": "Objective",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/The-One-Ring.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Ring."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Setup: The first player claims The One Ring and attaches it to the Ring-bearer.",
+                    "Attached hero does not count against the hero limit. The first player gains control of attached hero.",
+                    "If The One Ring leaves play, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": {
+                "EncounterSet": "The Black Riders",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 85,
+            "Quantity": 1,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "OctgnGuid": "c9575426-59ea-4863-bf6a-407e9eae3f33",
+            "RingsDbCardId": "141085",
+            "RingsDbPopularity": 0,
+            "RingsDbVotes": 0,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Frodo Baggins",
+            "Slug": "Frodo-Baggins-TBR",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Frodo-Baggins.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit.",
+                    "Ring-bearer."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: Spend 1 Fellowship resource and exhaust The One Ring to cancel the effect of an encounter card just revealed from the encounter deck. Shuffle that card back into the encounter deck and reveal another encounter card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I will take the Ring,` he said, `though I do not know the way.` -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Jake Murray",
+            "HasErrata": false,
+            "OctgnGuid": "3217a119-6b86-47dd-b451-c5e45be3f874",
+            "RingsDbCardId": "141001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1424,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Frodo Baggins",
+            "Slug": "Frodo-Baggins-RD",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Frodo-Baggins.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit.",
+                    "Ring-bearer."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Response: After Frodo Baggins exhausts to defend an attack, exhaust The One Ring and spend 1 Fellowship resource to target the attacking enemy. Then, this attack deals no damage and each player raises his threat by 2."
+                ],
+                "Shadow": null,
+                "FlavorText": "`But there is more about you now than appears on the surface.`\r\n-Bilbo, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "OctgnGuid": "f9196cda-8f50-4cc5-9aad-1c56cb677bca",
+            "RingsDbCardId": "142001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 540,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Aragorn",
+            "Slug": "Aragorn-ToS",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Aragorn.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Noble.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The first player gains control of Aragorn. If Aragorn leaves play, the players lose the game.",
+                    "Action: Spend 2 resources from Aragorn`s resource pool to ready a hero."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "OctgnGuid": "f5178135-1485-43c5-9660-99232a4cdca8",
+            "RingsDbCardId": "143001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1156,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Frodo Baggins",
+            "Slug": "Frodo-Baggins-TLoS",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Frodo-Baggins.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit.",
+                    "Ring-bearer."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Action: Spend 1 Fellowship resource and exhaust The One Ring to give Frodo Baggins +2 Willpower and +2 Attack until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`It`s my doom, I think, to go to that Shadow yonder, so that a way will be found.`\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Melanie Maier",
+            "HasErrata": false,
+            "OctgnGuid": "fe58a6d3-7028-41c1-ab00-5e33e7d77b5f",
+            "RingsDbCardId": "144001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 719,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Aragorn",
+            "Slug": "Aragorn-TFotW",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Aragorn.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Noble.",
+                    "Ranger."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The first player gains control of Aragorn. If Aragorn leaves play, the players lose the game.",
+                    "While Aragorn has an Artifact attached, he gains sentinel and does not exhaust to quest."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I have no help to send, therefore I must go myself...`\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Flame of the West",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Javier Charro Martinez",
+            "HasErrata": false,
+            "OctgnGuid": "2e778689-9e3f-4da8-a473-781c777f6473",
+            "RingsDbCardId": "145001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 521,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Frodo Baggins",
+            "Slug": "Frodo-Baggins-TMoF",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Frodo-Baggins.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "2",
+                    "Attack": "1",
+                    "Defense": "2",
+                    "HitPoints": "2"
+                },
+                "Traits": [
+                    "Hobbit.",
+                    "Ring-bearer."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Planning Action: Exhaust The One Ring to add 1 resource to a hero`s pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I must carry the burden to the end.`\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Aleksander Karcz",
+            "HasErrata": false,
+            "OctgnGuid": "b937644c-ccbb-4a39-ae3c-24857d1d4d57",
+            "RingsDbCardId": "146001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 598,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Aragorn",
+            "Slug": "Aragorn-TMoF",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Fellowship",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/Aragorn.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "2",
+                    "Attack": "3",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Dúnedain.",
+                    "Gondor.",
+                    "Noble.",
+                    "Warrior."
+                ],
+                "Keywords": [
+                    "Sentinel."
+                ],
+                "Text": [
+                    "The first player gains control of Aragorn.",
+                    "Action: Spend 1 resource from Aragorn`s pool to ready him. (Limit once per phase.)",
+                    "If Aragorn leaves play the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "`As I have begun, so I will go on.`\r\n-The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Mountain of Fire",
+            "EncounterInfo": null,
+            "Number": 2,
+            "Quantity": 1,
+            "Artist": "David A. Nash",
+            "HasErrata": false,
+            "OctgnGuid": "f1cc6057-ced3-4105-9172-869d26a54af5",
+            "RingsDbCardId": "146002",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 50,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Mr. Underhill",
+            "Slug": "Mr-Underhill-TBR",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Mr-Underhill.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [
+                    "Permanent.",
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Permanent.",
+                    "Setup: Attach to the Ring-bearer.",
+                    "Action: Add Mr. Underhill to the victory display to choose an enemy engaged with you. Until the end of the round, that enemy cannot attack you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I will give you a travelling name now. When you go, go as Mr. Underhill.`\r\n-Gandalf, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": null,
+            "Number": 17,
+            "Quantity": 1,
+            "Artist": "Sebastian Giacobino",
+            "HasErrata": false,
+            "OctgnGuid": "d0ed393c-162a-4715-bed4-e338c24e9e36",
+            "RingsDbCardId": "141017",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4420,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Gildor Inglorion",
+            "Slug": "Gildor-Inglorion-TBR",
+            "IsUnique": true,
+            "CardType": "Objective_Ally",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Gildor-Inglorion.jpg",
+                "Stats": {
+                    "Willpower": "3",
+                    "Attack": "2",
+                    "Defense": "3",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Noldor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The first player gains control of Gildor Inglorion.",
+                    "Forced: At the end of the round, discard Gildor Inglorion. The first player may spend 1 Fellowship resource to cancel this effect."
+                ],
+                "Shadow": null,
+                "FlavorText": "`We think you had best come now with us.`\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": {
+                "EncounterSet": "A Shadow of the Past",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 77,
+            "Quantity": 1,
+            "Artist": "Alexandre Dainche",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "141077",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 3930,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Gandalf's Delay",
+            "Slug": "Gandalf's-Delay-TBR",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Gandalf's-Delay.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Add Gandalf`s Delay to the staging area.",
+                    "Each player draws 1 less card in his starting hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "The next day Frodo became really anxious, and kept a constant look-out for Gandalf. Thursday, his birthday morning, dawned as fair and clear as it had long ago for Bilbo`s great party. Still Gandalf did not appear.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": {
+                "EncounterSet": "A Shadow of the Past",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 78,
+            "Quantity": 1,
+            "Artist": "Drazenka Kimpel",
+            "HasErrata": false,
+            "OctgnGuid": "d95a6076-3ead-4ff6-a1ba-ca320d2bd4e1",
+            "RingsDbCardId": "141078",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1720,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "The Ring Draws Them",
+            "Slug": "The-Ring-Draws-Them-TBR",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/The-Ring-Draws-Them.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: At the end of the phase, each enemy in the staging area engages the first player. If the One Ring is exhausted, this effect cannot be canceled."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Also,` he added, and his voice sank to a whisper, `the Ring draws them` -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": {
+                "EncounterSet": "A Shadow of the Past",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 79,
+            "Quantity": 1,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "OctgnGuid": "1c5f4854-c10c-430b-9c40-2d84c5997b8f",
+            "RingsDbCardId": "141079",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1480,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Weight of the Ring",
+            "Slug": "Weight-of-the-Ring-TBR",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Weight-of-the-Ring.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: Attach to the Ring-bearer. (Counts as a Condition attachment with the text: `Forced: At the beginning of each quest phase, either exhaust The One Ring or reveal and additional encounter card this phase.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": "Once more the desire to slip on the Ring came over Frodo... -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": {
+                "EncounterSet": "Flight to the Ford",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 80,
+            "Quantity": 1,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "OctgnGuid": "40c95b3d-6216-4def-bb93-f44871f3ec70",
+            "RingsDbCardId": "141080",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1480,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Fear of Discovery",
+            "Slug": "Fear-of-Discovery-TBR",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Fear-of-Discovery.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: The first player must either exhaust the Ring-bearer or reveal and additional encounter card"
+                ],
+                "Shadow": "Shadow: Defending player raises his threat by 3.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": {
+                "EncounterSet": "Flight to the Ford",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 81,
+            "Quantity": 1,
+            "Artist": "Chris Rahn",
+            "HasErrata": false,
+            "OctgnGuid": "074cad39-ce55-4dc1-9775-e95363682ef7",
+            "RingsDbCardId": "141081",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1480,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Eaten Alive!",
+            "Slug": "Eaten-Alive-TBR",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Eaten-Alive.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: The first player must deal X damage divided among heroes he controls where X is the number of players in the game."
+                ],
+                "Shadow": "Shadow: Deal 1 damage to defending character.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": {
+                "EncounterSet": "Flight to the Ford",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 82,
+            "Quantity": 1,
+            "Artist": "Melanie Maier",
+            "HasErrata": false,
+            "OctgnGuid": "e8f413bf-3593-47fc-8813-4553d55dbb2a",
+            "RingsDbCardId": "141082",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1480,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Panicked",
+            "Slug": "Panicked-TBR",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Panicked.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: The first player raises his threat by 3 and passes the first player token to the next player."
+                ],
+                "Shadow": "Shadow: Defending player exhausts a character he controls.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": {
+                "EncounterSet": "Flight to the Ford",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 83,
+            "Quantity": 1,
+            "Artist": "Marcia George-Bogdan",
+            "HasErrata": false,
+            "OctgnGuid": "50c19cd1-3094-4bf7-b2dc-e21b145827b7",
+            "RingsDbCardId": "141083",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1480,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Overcome by Terror",
+            "Slug": "Overcome-by-Terror-TBR",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Overcome-by-Terror.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Surge."
+                ],
+                "Text": [
+                    "Surge.",
+                    "When Revealed: The first player must exhaust The One Ring. If The One Ring is already exhausted, the first player must discard 2 cards at random from his hand."
+                ],
+                "Shadow": "Shadow: Defending player discards 1 card at random from his hand.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": {
+                "EncounterSet": "Flight to the Ford",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 84,
+            "Quantity": 1,
+            "Artist": "Daarken",
+            "HasErrata": false,
+            "OctgnGuid": "cdc303cb-bb1a-4409-a479-aa4155bd8ed5",
+            "RingsDbCardId": "141084",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1960,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Old Bogey-stories",
+            "Slug": "Old-Bogey-stories-TOF",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Old-Forest/Old-Bogey-stories.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Tale."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Setup: The first player attaches Old Bogey-stories to a hero in play.",
+                    "Action: Add Old Bogey-stories to the victory display to shuffle your hand of at least 6 cards into your deck. Then, draw 6 cards."
+                ],
+                "Shadow": null,
+                "FlavorText": "`If you mean the old bogey-stories Fatty`s nurses used to tell him, about goblins and wolves and things of that sort, I should say no.` -Merry, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Old Forest",
+            "EncounterInfo": null,
+            "Number": 24,
+            "Quantity": 1,
+            "Artist": "Brian Valenzuela",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "147024",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 13310,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Ho! Tom Bombadil!",
+            "Slug": "Ho-Tom-Bombadil-FotBD",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Fog-on-the-Barrow-downs/Ho-Tom-Bombadil.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Song."
+                ],
+                "Keywords": [
+                    "Victory 1."
+                ],
+                "Text": [
+                    "Setup: The first player adds this card to his hand.",
+                    "Response: Add this card to the victory display and remove it from the campaign pool to cancel the `when revealed` effects of an encounter card just revealed from the encounter deck."
+                ],
+                "Shadow": null,
+                "FlavorText": "By fire, sun and moon, harken now and hear us!\r\nCome, Tom Bombadil, for our need is near us!\r\n-Frodo, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "Fog on the Barrow-downs",
+            "EncounterInfo": null,
+            "Number": 21,
+            "Quantity": 1,
+            "Artist": "Romana Kendelic",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "148021",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 11840,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Tireless Ranger",
+            "Slug": "Tireless-Ranger-TBR",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Tireless-Ranger.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent.",
+                    "Setup: Attach to a hero.",
+                    "Attached hero gets +1 defense and gains the Ranger trait."
+                ],
+                "Shadow": null,
+                "FlavorText": "`What roads would any dare to tread, what safety would there be in quiet lands, or in the homes of simple men at night, if the Dúnedain were asleep, or were all gone into the grave?`\r\n-Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": null,
+            "Number": 18,
+            "Quantity": 1,
+            "Artist": "Cristi Balanescu",
+            "HasErrata": false,
+            "OctgnGuid": "ef014a91-c2d9-44ca-acd0-cc1a339c051f",
+            "RingsDbCardId": "141018",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 6140,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Skilled Healer",
+            "Slug": "Skilled-Healer-TBR",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Skilled-Healer.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent.",
+                    "Setup: Attach to a hero.",
+                    "Attached hero gets +2 hit points and gains the Healer trait."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Few now have the skill of healing to match such evil weapons. But I will do what I can.`\r\n-Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": null,
+            "Number": 19,
+            "Quantity": 1,
+            "Artist": "Cristi Balanescu",
+            "HasErrata": false,
+            "OctgnGuid": "1d1ab8a3-ad76-4992-ae5c-6a89fd0ed463",
+            "RingsDbCardId": "141019",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 13550,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Noble Hero",
+            "Slug": "Noble-Hero-TBR",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Noble-Hero.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent.",
+                    "Setup: Attach to a hero.",
+                    "Attached hero gets +1 Willpower and gains the Noble trait."
+                ],
+                "Shadow": null,
+                "FlavorText": "Venerable he seemed as a king crowned with many winters, and yet hale as a tried warrior in the fullness of his strength.\r\n-The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": null,
+            "Number": 21,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "af49e5ea-c6a2-4be4-bbf3-ac53c100e887",
+            "RingsDbCardId": "141021",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 3450,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Valiant Warrior",
+            "Slug": "Valiant-Warrior-TBR",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Black-Riders/Valiant-Warrior.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent.",
+                    "Setup: Attach to a hero.",
+                    "Attached hero gets +1 Attack and gains the Warrior trait."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Three of the servants of Sauron were upon the Bridge, but they withdrew and I pursued them westward.`\r\n-Glorfindel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Black Riders",
+            "EncounterInfo": null,
+            "Number": 20,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "ff574390-bd68-4277-9065-dd9dbf552d00",
+            "RingsDbCardId": "141020",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2960,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Sting",
+            "Slug": "Sting-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Sting.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Hobbit hero. Restricted.",
+                    "Attached hero gets +1 Willpower, +1 Attack, and +1 Defense.",
+                    "Response: After attached hero exhausts to defend an attack, discard the top card of the encounter deck. Deal damage to the attacking enemy equal to the discarded card`s Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 11,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "7791cd04-7ffe-41f3-9633-cf57ad3a34ca",
+            "RingsDbCardId": "142011",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 17080,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Andúril",
+            "Slug": "Anduril-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Andúril.jpg",
+                "Stats": {
+                    "ResourceCost": "3"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Noble hero or Aragorn. Restricted.",
+                    "Attached hero gets +1 Willpower, +1 Attack, and +1 Defense.",
+                    "Response: After an attack in which the attached hero defended resolves, exhaust Andúril to target the enemy that just attacked. Declare attached hero as an attacker against that enemy (and resolve the attack)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 14,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "24eabbac-62b1-4d2c-93a0-f97c04a2aefa",
+            "RingsDbCardId": "142014",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 16400,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Mithril Shirt",
+            "Slug": "Mithril-Shirt-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Mithril-Shirt.jpg",
+                "Stats": {
+                    "ResourceCost": "1"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Armor."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to the Ring-bearer.",
+                    "Attached hero gets +1 Defense and +1 hit point."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I should feel happier if I knew you were wearing it. I have a fancy it would turn even the knives of the Black Riders...`\r\n-Bilbo, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 12,
+            "Quantity": 1,
+            "Artist": "Sara Betsy",
+            "HasErrata": false,
+            "OctgnGuid": "23acfc2e-3262-4f22-8496-a753fa9089bd",
+            "RingsDbCardId": "142012",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 11840,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Phial of Galadriel",
+            "Slug": "Phial-of-Galadriel-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Phial-of-Galadriel.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Gift."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Setup: Attach to a hero in play.",
+                    "Add Phial of Galadriel to the victory display and remove it from the campaign pool, to give each enemy engaged with you -4 Attack until the end of the round."
+                ],
+                "Shadow": null,
+                "FlavorText": "`May it be a light to you in dark places, when all other lights go out.` -Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 15,
+            "Quantity": 1,
+            "Artist": "Cynthia Sheppard",
+            "HasErrata": false,
+            "OctgnGuid": "14cbe0e1-0916-427f-8f19-abef59232dd2",
+            "RingsDbCardId": "142015",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 11320,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Glamdring",
+            "Slug": "Glamdring-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Glamdring.jpg",
+                "Stats": {
+                    "ResourceCost": "2"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a Warrior hero or Gandalf. Restricted.",
+                    "Attached character gets +2 Attack.",
+                    "Response: After attached character destroys an Orc enemy, draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...at his side was the elven-sword Glamdring, the mate of Orcrist that lay now upon the breast of Thorin under the Lonely Mountain.` -The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 13,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "c7f5eac0-dbda-419f-994c-c182775682b3",
+            "RingsDbCardId": "142013",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 10000,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Leaf-wrapped Lembas",
+            "Slug": "Leaf-wrapped-Lembas-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Leaf-wrapped-Lembas.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Gift."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Setup: Attach to a hero in play.",
+                    "Action: Add Leaf-wrapped Lembas to the victory display, and remove it from the campaign pool, to ready all heroes in play."
+                ],
+                "Shadow": null,
+                "FlavorText": "Often in their hearts they thanked the lady of Lórien for the gift of lembas, for they could eat of it and find new strength even as they ran. -The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 18,
+            "Quantity": 1,
+            "Artist": "Owen William Weber",
+            "HasErrata": false,
+            "OctgnGuid": "8b15901c-c6b2-421e-8c6d-3200558e3609",
+            "RingsDbCardId": "142018",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4440,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Three Golden Hairs",
+            "Slug": "Three-Golden-Hairs-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Three-Golden-Hairs.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Gift."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Setup: Attach to a hero in play.",
+                    "Action: Add Three Golden Hairs to the victory display and remove it from the campaign pool, to lower each player`s threat by 3. Then, each player draws 3 cards."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...your hands shall flow with gold, and yet over you gold shall have no dominion.` -Galadriel, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 16,
+            "Quantity": 1,
+            "Artist": "Rovina Cai",
+            "HasErrata": false,
+            "OctgnGuid": "37488d87-8c07-4f13-b354-66bbdc9e5263",
+            "RingsDbCardId": "142016",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 3920,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Lórien Rope",
+            "Slug": "Lorien-Rope-RD",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Lórien-Rope.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Item.",
+                    "Gift."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Setup: Attach to a hero in play.",
+                    "Action: Add Lórien Rope to the victory display, and remove it from the campaign pool to give each location in the staging area -2 Threat until the end of the phase."
+                ],
+                "Shadow": null,
+                "FlavorText": "`What a piece of luck you had that rope!` -Frodo, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": null,
+            "Number": 17,
+            "Quantity": 1,
+            "Artist": "Rick Price",
+            "HasErrata": false,
+            "OctgnGuid": "606ee31e-a9cf-4ccf-8eed-003c006e5168",
+            "RingsDbCardId": "142017",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 3210,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Lust for the Ring",
+            "Slug": "Lust-for-the-Ring-RD",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Lust-for-the-Ring.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Corruption."
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to a non-Fellowship hero in play. Counts as a Condition attachment with the text: `Forced: After The One Ring exhausts, raise each player`s threat by 1 and reduce attached hero`s Willpower to 0 until the end of the round.`"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "The Ring Goes South",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 84,
+            "Quantity": 1,
+            "Artist": "Arden Beckwith",
+            "HasErrata": false,
+            "OctgnGuid": "7068731b-3837-40f3-9e98-6c996af4dddc",
+            "RingsDbCardId": "142084",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1960,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Shadow of Fear",
+            "Slug": "Shadow-of-Fear-RD",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Shadow-of-Fear.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1.",
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Treat the printed text box of each character in play as blank (except for Traits) until the end of the round."
+                ],
+                "Shadow": "Shadow: Defending character does not count its Defense.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 85,
+            "Quantity": 1,
+            "Artist": "Mark Behm",
+            "HasErrata": false,
+            "OctgnGuid": "d2e3342e-f2eb-47fe-a653-2b1824b808dc",
+            "RingsDbCardId": "142085",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1960,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Pursued by the Enemy",
+            "Slug": "Pursued-by-the-Enemy-RD",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Pursued-by-the-Enemy.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Doomed 1.",
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Each enemy engaged with a player, and not in the staging area, makes an immediate attack."
+                ],
+                "Shadow": "Shadow: Attacking enemy makes an additional attack after this one.",
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 86,
+            "Quantity": 1,
+            "Artist": "Claudio Pozas",
+            "HasErrata": false,
+            "OctgnGuid": "3b05acf1-2c72-4e6c-9f59-a2bacde4820b",
+            "RingsDbCardId": "142086",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1960,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Overcome by Grief",
+            "Slug": "Overcome-by-Grief-RD",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Overcome-by-Grief.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Despair."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Add Overcome by Grief to the staging area.",
+                    "Forced: After a character is destroyed, if Overcome by Grief is unattached, attach to a hero. (Counts as a Condition attachment with the text: `Forced: After a character you control is destroyed, exhaust attached hero. Until the end of the round, attached hero cannot ready.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 87,
+            "Quantity": 1,
+            "Artist": "Guillaume Ducos",
+            "HasErrata": false,
+            "OctgnGuid": "0c4b67f7-6bd3-452b-8a7d-8b1e206dca0e",
+            "RingsDbCardId": "142087",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2200,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Grievous Wound",
+            "Slug": "Grievous-Wound-RD",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Grievous-Wound.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Wound."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Setup: Add Grievous Wound to the staging area.",
+                    "`Forced: After a hero takes damage, if Grievous Wound is unattached, attach to that hero. (Counts as a Condition attachment with the text: `Forced: After attached hero exhausts, deal 1 damage to it.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Journey in the Dark",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 88,
+            "Quantity": 1,
+            "Artist": "Sara K. Diesel",
+            "HasErrata": false,
+            "OctgnGuid": "7056509d-298d-4a21-be0c-9780f30b149e",
+            "RingsDbCardId": "142088",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2200,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Followed by Night",
+            "Slug": "Followed-by-Night-RD",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Followed-by-Night.jpg",
+                "Stats": {},
+                "Traits": [],
+                "Keywords": [
+                    "Peril.",
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Put the topmost enemy of the encounter deck discard pile into play engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Quite apart from murder by night on his own account, he may put any enemy that is about on our track.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 89,
+            "Quantity": 1,
+            "Artist": "Gabriel Verdon",
+            "HasErrata": false,
+            "OctgnGuid": "9317bbd9-12e5-47e1-a038-360df6c837b1",
+            "RingsDbCardId": "142089",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2200,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Ill Fate",
+            "Slug": "Ill-Fate-RD",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Road-Darkens/Ill-Fate.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Despair."
+                ],
+                "Keywords": [
+                    "Peril.",
+                    "Surge."
+                ],
+                "Text": [
+                    "When Revealed: Attach to a hero you control. (Counts as a Condition attachment with the text: `Forced: After a character you control is destroyed, raise your threat by 2.`)"
+                ],
+                "Shadow": null,
+                "FlavorText": "`Alas! An ill fate is on me this day, and all that I do goes amiss.` -Aragorn, The Fellowship of the Ring"
+            },
+            "Back": null,
+            "CardSet": "The Road Darkens",
+            "EncounterInfo": {
+                "EncounterSet": "Breaking of the Fellowship",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 90,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "a09670b1-ccfe-449a-8743-e468c9d76782",
+            "RingsDbCardId": "142090",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1480,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Hands of a Healer",
+            "Slug": "Hands-of-a-Healer-ToS",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Hands-of-a-Healer.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent.",
+                    "Setup: Attach to a Healer hero.",
+                    "Action: Exhaust attached hero and Hands of a Healer to heal up to 3 damage from a hero."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Life to the dying\r\nIn the king`s hand lying!`\r\n-Herb-master, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 16,
+            "Quantity": 1,
+            "Artist": "Kristina Gehrmann",
+            "HasErrata": false,
+            "OctgnGuid": "36ed632c-33be-452c-97a5-17201a5cc381",
+            "RingsDbCardId": "143016",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 10360,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Palantír of Orthanc",
+            "Slug": "Palantir-of-Orthanc-ToS",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Palantír-of-Orthanc.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Victory 5."
+                ],
+                "Text": [
+                    "Attach to Fellowship Aragorn.",
+                    "Quest Action: Exhaust Aragorn and Palantír of Orthanc to discard the top card of the encounter deck. If Aragorn`s Willpower is greater than the discarded card`s Threat, you may add Palantír of Orthanc to the victory display and remove it from the campaign pool to choose a player. That player reveals 1 fewer encounter card this phase (to a minimum of 0)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 20,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "58001a33-adef-4766-872d-334b2570e167",
+            "RingsDbCardId": "143020",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 8650,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Forewarned",
+            "Slug": "Forewarned-ToS",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Forewarned.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent.",
+                    "Setup: Attach to a Ranger hero.",
+                    "Response: After attached hero is declared as a defender against a non-unique enemy, exhaust Forewarned to discard 1 shadow card from that enemy."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Faint and far are the feet of our enemies.`\r\n-Aragorn, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 17,
+            "Quantity": 1,
+            "Artist": "Carly Janine Mazur",
+            "HasErrata": false,
+            "OctgnGuid": "528de9d6-9da4-4ac4-b265-773f70d68102",
+            "RingsDbCardId": "143017",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4430,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Beyond All Hope",
+            "Slug": "Beyond-All-Hope-ToS",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Beyond-All-Hope.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Favor."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent.",
+                    "Setup: Attach to a hero.",
+                    "Attached hero gets +1 Willpower, +1 Attack, +1 Defense and cannot have treachery card attachments."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Beyond all hope you return to us in our need!`\r\n-Aragorn, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 19,
+            "Quantity": 1,
+            "Artist": "Ilich Henriquez",
+            "HasErrata": false,
+            "OctgnGuid": "1665d088-793c-4350-82f3-e35fd307463d",
+            "RingsDbCardId": "143019",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 3460,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Intimidation",
+            "Slug": "Intimidation-ToS",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Intimidation.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent.",
+                    "Setup: Attach to a Warrior hero.",
+                    "Response: After attached hero is declared as the only attacker against a non-unique enemy, exhaust Intimidation to give that enemy -2 Defense for this attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "`None knows what the new day shall bring him,` said Aragorn. `Get you gone, ere it turn to your evil!`\r\n-Aragorn, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 15,
+            "Quantity": 1,
+            "Artist": "Matt Stawicki",
+            "HasErrata": false,
+            "OctgnGuid": "d490e091-b01c-4067-9c60-01f2b41ad6cf",
+            "RingsDbCardId": "143015",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2960,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Leader of Men",
+            "Slug": "Leader-of-Men-ToS",
+            "IsUnique": false,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Leader-of-Men.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Skill."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent.",
+                    "Setup: Attach to a Noble hero.",
+                    "Response: After attached hero quests successfully, exhaust Leader of Men to add 1 resource to attached hero`s pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Take this, dear lord!` said a clear voice. `It was ever at your service.`\r\n-The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": null,
+            "Number": 18,
+            "Quantity": 1,
+            "Artist": "Arden Beckwith",
+            "HasErrata": false,
+            "OctgnGuid": "3892b2e4-358c-42af-b5be-2f54d252ea2a",
+            "RingsDbCardId": "143018",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2960,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Poisoned Counsels",
+            "Slug": "Poisoned-Counsels-ToS",
+            "IsUnique": false,
+            "CardType": "Treachery",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Treason-of-Saruman/Poisoned-Counsels.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Corruption."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Poisoned Counsels functions like a player card.",
+                    "Forced: After you draw this card, discard all other cards in your hand."
+                ],
+                "Shadow": null,
+                "FlavorText": "`And ever Wormtongue`s whispering was in your ears, poisoning your thought, chilling your heart, weakening your limbs...` -Gandalf, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Treason of Saruman",
+            "EncounterInfo": {
+                "EncounterSet": "Helm's Deep",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 21,
+            "Quantity": 4,
+            "Artist": "John Gravato",
+            "HasErrata": false,
+            "OctgnGuid": "c7ada690-5aa3-4855-b2c1-35e30336edac",
+            "RingsDbCardId": "143021",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2516,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Brace of Coneys",
+            "Slug": "Brace-of-Coneys-TLoS",
+            "IsUnique": false,
+            "CardType": "Event",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/Brace-of-Coneys.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Gift."
+                ],
+                "Keywords": [
+                    "Victory 2."
+                ],
+                "Text": [
+                    "Play only if you control the Ring-bearer.",
+                    "Planning Action: Add Brace of Coneys to the victory display to (choose 2): heal up to 2 damage from a hero, add 2 resources to a hero`s pool, draw 2 cards, or reduce a player`s threat by 2."
+                ],
+                "Shadow": null,
+                "FlavorText": "``Sméagol always helps,` he said. `He has brought rabbits, nice rabbits.`` —Gollum, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": null,
+            "Number": 14,
+            "Quantity": 4,
+            "Artist": "Cristina Vela",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "144014",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 11722,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "A Heavy Burden",
+            "Slug": "A-Heavy-Burden-TLoS",
+            "IsUnique": false,
+            "CardType": "Objective",
+            "CardSubType": "Burden",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Land-of-Shadow/A-Heavy-Burden.jpg",
+                "Stats": {},
+                "Traits": [
+                    "Condition."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent.",
+                    "Setup: Attach to the Ring-bearer.",
+                    "Forced: At the end of the planning phase, either raise each player`s threat by 1, or exhaust the Ring-bearer."
+                ],
+                "Shadow": null,
+                "FlavorText": "`It`s heavy on me, Sam lad, very heavy. I wonder how far I can carry it?`\r\n—Frodo Baggins, The Two Towers"
+            },
+            "Back": null,
+            "CardSet": "The Land of Shadow",
+            "EncounterInfo": {
+                "EncounterSet": "Shelob's Lair",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 52,
+            "Quantity": 1,
+            "Artist": "Kara Williams",
+            "HasErrata": false,
+            "OctgnGuid": "a40aef89-ca91-467c-93f3-9afc97bdbc24",
+            "RingsDbCardId": "144052",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 1480,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Esquire of Rohan",
+            "Slug": "Esquire-of-Rohan-TFotW",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Esquire-of-Rohan.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent.",
+                    "Setup: Attach to a hero.",
+                    "Attached hero gains the Rohan trait.",
+                    "Attached hero gets +1 Attack while attacking with another Rohan character."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Rise now, Meriadoc, esquire of Rohan of the household of Meduseld!`\r\n-Théoden, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Flame of the West",
+            "EncounterInfo": null,
+            "Number": 14,
+            "Quantity": 1,
+            "Artist": "Romana Kendelic",
+            "HasErrata": false,
+            "OctgnGuid": "9eb45361-6325-4e39-9029-9a8401d0d294",
+            "RingsDbCardId": "145014",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4440,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Esquire of Gondor",
+            "Slug": "Esquire-of-Gondor-TFotW",
+            "IsUnique": true,
+            "CardType": "Attachment",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Esquire-of-Gondor.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Title."
+                ],
+                "Keywords": [
+                    "Permanent."
+                ],
+                "Text": [
+                    "Permanent.",
+                    "Setup: Attach to a hero.",
+                    "Attached hero gains the Gondor trait.",
+                    "Attached hero gets +1 Willpower while commited to the quest with another Gondor character."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Here do I swear fealty and service to Gondor, and to the Lord and Steward of the realm...`\r\n-Pippin, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Flame of the West",
+            "EncounterInfo": null,
+            "Number": 15,
+            "Quantity": 1,
+            "Artist": "Romana Kendelic",
+            "HasErrata": false,
+            "OctgnGuid": "b2df0294-f962-4e05-998a-d824d88cc13c",
+            "RingsDbCardId": "145015",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4440,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Army of the Dead",
+            "Slug": "Army-of-the-Dead-Objective-Ally-TFotW",
+            "IsUnique": true,
+            "CardType": "Objective_Ally",
+            "CardSubType": "Boon",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Flame-of-the-West/Army-of-the-Dead-Objective-Ally.jpg",
+                "Stats": {
+                    "Willpower": "4",
+                    "Attack": "6",
+                    "Defense": "2",
+                    "HitPoints": "8"
+                },
+                "Traits": [
+                    "Undead."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Immune to player card effects. The first player gains control of Army of the Dead.",
+                    "Setup: The first player takes control of Army of the Dead.",
+                    "If Army of the Dead leaves play, remove it from the game."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Now come! By the Black Stone I call you!`\r\n-Aragorn, The Return of the King"
+            },
+            "Back": null,
+            "CardSet": "The Flame of the West",
+            "EncounterInfo": {
+                "EncounterSet": "The Passing of the Grey Company",
+                "EasyModeQuantity": 0,
+                "IncludedEncounterSets": [],
+                "StageNumber": null,
+                "StageLetter": null
+            },
+            "Number": 68,
+            "Quantity": 1,
+            "Artist": "Uwe Jarling",
+            "HasErrata": false,
+            "OctgnGuid": "",
+            "RingsDbCardId": "145068",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 2960,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
             "Title": "The Black Gate",
             "Slug": "The-Black-Gate-TMoF",
             "IsUnique": true,
@@ -1049,49 +3203,6 @@
             "Categories": null
         },
         {
-            "Title": "The Black Gate Opens",
-            "Slug": "The-Black-Gate-Opens-Campaign-TMoF",
-            "IsUnique": false,
-            "CardType": "Campaign",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Mountain-of-Fire/The-Black-Gate-Opens-SetupA.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Setup: Each player may change heroes he controls without incurring the +1 threat penalty. The first player may raise each player`s threat by 1 to search his deck for Anduril and add it to his hand. Remove each burden with the following burden set icons from the encounter deck: A Shadow of the Past, Flight to the Ford, The Ring Goes South, The Passage of the Marshes, Shelob`s Lair"
-                ],
-                "Shadow": null,
-                "FlavorText": "They were come to the last end of their folly, and stood forlorn and chill in the grey light of early day before towers and walls which their army could not assault with hope...\r\n-The Return of the King"
-            },
-            "Back": {
-                "Subtitle": null,
-                "ImagePath": null,
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Resolution: Record the number of resource tokens on The Black Gate in the notes section of the campaign log. If a Wraith on Wings is in the victory display, remove that copy from the campaign pool. If the first player controls Gwaihir, add him to the campaign pool. The players have earned that boon. If a hero is in its controller`s discard pile, do not add that hero`s name to the list of fallen heroes."
-                ],
-                "Shadow": null,
-                "FlavorText": "`So it ends as I guessed it would,` his thought said, even as it fluttered away; and it laughed a little within him ere it fled, almost gay it seemed to be casting off at last all doubt and care and fear. And then even as it winged away into forgetfulness it heard voices, and they seemed to be crying in some forgotten world far above: `The Eagles are coming! The Eagles are coming!`\r\n-The Return of the King"
-            },
-            "CardSet": "The Mountain of Fire",
-            "EncounterInfo": null,
-            "Number": 74,
-            "Quantity": 1,
-            "Artist": "Rafał Hrynkiewicz",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "146074",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
             "Title": "Epic Multiplayer Mode",
             "Slug": "Epic-Multiplayer-Mode-Campaign-TMoF",
             "IsUnique": false,
@@ -1218,5 +3329,7 @@
             "RingsDbVotes": 0,
             "Categories": null
         }
-    ]
+    ],
+    "Cycle": "The Lord of the Rings",
+    "SetType": "Saga_Expansion"
 }

@@ -5,6 +5,471 @@
     "Number": 4,
     "AllCards": [
         {
+            "Title": "Bilbo Baggins",
+            "Slug": "Bilbo-Baggins-THOHaUH",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Baggins",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-Over-Hill-and-Under-Hill/Bilbo-Baggins.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Hobbit."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "The first player gains control of Bilbo Baggins.",
+                    "Bilbo Baggins cannot gain resources from player card effects.",
+                    "If Bilbo Baggins leaves play, the players lose the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: Over Hill and Under Hill",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-1801204c9017",
+            "RingsDbCardId": "131001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 907,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Bilbo Baggins",
+            "Slug": "Bilbo-Baggins-THOtD",
+            "IsUnique": true,
+            "CardType": "Hero",
+            "CardSubType": "None",
+            "Sphere": "Baggins",
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-On-the-Doorstep/Bilbo-Baggins.jpg",
+                "Stats": {
+                    "ThreatCost": "0",
+                    "Willpower": "1",
+                    "Attack": "1",
+                    "Defense": "1",
+                    "HitPoints": "3"
+                },
+                "Traits": [
+                    "Hobbit.",
+                    "Burglar."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Bilbo Baggins does not count against the hero limit and cannot gain resources from non-treasure cards.",
+                    "The first player gains control of Bilbo Baggins.",
+                    "Action: Spend 1 Baggins resource to search your deck for a treasure card and add it to your hand.",
+                    "If Bilbo Baggins leaves play, the players have lost the game."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: On the Doorstep",
+            "EncounterInfo": null,
+            "Number": 1,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "4e61b160-2104-497f-9977-4b353e54fbb7",
+            "RingsDbCardId": "132001",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 265,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Glamdring",
+            "Slug": "Glamdring-THOHaUH",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-Over-Hill-and-Under-Hill/Glamdring.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a hero or Gandalf.",
+                    "Attached character gets +2 Attack.",
+                    "Response: After attached character destroys an Orc enemy, draw 1 card."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: Over Hill and Under Hill",
+            "EncounterInfo": null,
+            "Number": 22,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-1801204c9037",
+            "RingsDbCardId": "131022",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 32040,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Sting",
+            "Slug": "Sting-THOHaUH",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-Over-Hill-and-Under-Hill/Sting.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to Bilbo Baggins.",
+                    "Bilbo Baggins gets +1 Willpower, +1 Attack, and +1 Defense.",
+                    "Response: After Bilbo Baggins exhausts to defend, discard the top card of the encounter deck. Deal damage to the attacking enemy equal to the discarded card`s Threat."
+                ],
+                "Shadow": null,
+                "FlavorText": "`I shall call you Sting.` -Bilbo, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: Over Hill and Under Hill",
+            "EncounterInfo": null,
+            "Number": 20,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-1801204c9075",
+            "RingsDbCardId": "131020",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 29040,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Orcrist",
+            "Slug": "Orcrist-THOHaUH",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-Over-Hill-and-Under-Hill/Orcrist.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Weapon."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a hero.",
+                    "Attached character gets +2 Attack.Response: After attached hero destroys an Orc enemy, add 1 resource to that hero`s resource pool."
+                ],
+                "Shadow": null,
+                "FlavorText": "`This, Thorin, the runes name Orcrist, the Goblin-cleaver in the ancient tongue of Gondolin; it was a famous blade.` -Elrond, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: Over Hill and Under Hill",
+            "EncounterInfo": null,
+            "Number": 21,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "51223bd0-ffd1-11df-a976-1801204c9064",
+            "RingsDbCardId": "131021",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 27240,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Bilbo's Magic Ring",
+            "Slug": "Bilbo's-Magic-Ring-THOtD",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-On-the-Doorstep/Bilbo's-Magic-Ring.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Item.",
+                    "Ring."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to Bilbo Baggins.",
+                    "Action: Exhaust Bilbo`s Magic Ring and raise your threat by 1 to gain 1 Baggins resource. (Limit once per round.)",
+                    "Response: After Bilbo Baggins exhausts to defend an attack, exhaust Bilbo`s Magic Ring and raise your threat by 3 to cancel all damage from this attack."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: On the Doorstep",
+            "EncounterInfo": null,
+            "Number": 19,
+            "Quantity": 1,
+            "Artist": "Magali Villeneuve",
+            "HasErrata": false,
+            "OctgnGuid": "9dd6bf3e-e090-4ebf-a056-765c94e8a199",
+            "RingsDbCardId": "132019",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 13650,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Mithril Shirt",
+            "Slug": "Mithril-Shirt-THOtD",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-On-the-Doorstep/Mithril-Shirt.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Erebor.",
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to Bilbo Baggins.",
+                    "Attached hero gets +1 Defense and +1 hit point."
+                ],
+                "Shadow": null,
+                "FlavorText": "`Mr. Baggins!` he cried. `Here is the first payment of your reward! Cast off your old coat and put on this!`\r\n-Thorin, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: On the Doorstep",
+            "EncounterInfo": null,
+            "Number": 21,
+            "Quantity": 1,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "OctgnGuid": "12d51424-0edd-4977-9df1-5f6a7a5a96e1",
+            "RingsDbCardId": "132021",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 7010,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Thrór's Golden Cup",
+            "Slug": "Thror's-Golden-Cup-THOtD",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-On-the-Doorstep/Thrór's-Golden-Cup.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Erebor.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Victory 3."
+                ],
+                "Text": [
+                    "Attach to a hero.",
+                    "Action: Add Thror`s Golden Cup to the victory display to draw 3 cards."
+                ],
+                "Shadow": null,
+                "FlavorText": "...the great golden cup of Thror, two-handed, hammered and carven with birds and flowers whose eyes and petals were of jewels...\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: On the Doorstep",
+            "EncounterInfo": null,
+            "Number": 24,
+            "Quantity": 1,
+            "Artist": "Melanie Maier",
+            "HasErrata": false,
+            "OctgnGuid": "ff7b0b9d-f8ae-4464-9db3-7205c5ae4db7",
+            "RingsDbCardId": "132024",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4760,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Thrór's Hunting Bow",
+            "Slug": "Thror's-Hunting-Bow-THOtD",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-On-the-Doorstep/Thrór's-Hunting-Bow.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Erebor.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a hero. Restricted.",
+                    "Attached hero gains Ranged.",
+                    "When making a ranged attack, attached hero gets +2 Attack."
+                ],
+                "Shadow": null,
+                "FlavorText": "Thorin seized a bow of horn and shot an arrow at the speaker.\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: On the Doorstep",
+            "EncounterInfo": null,
+            "Number": 23,
+            "Quantity": 1,
+            "Artist": "David Horne",
+            "HasErrata": false,
+            "OctgnGuid": "7adc49c0-640d-4934-89c5-312ab584b77c",
+            "RingsDbCardId": "132023",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4750,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "The Arkenstone",
+            "Slug": "The-Arkenstone-THOtD",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-On-the-Doorstep/The-Arkenstone.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Erebor.",
+                    "Item."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Attach to a hero.",
+                    "Action: Exhaust The Arkenstone and raise your threat by X to lower by X the cost of the next ally you play this phase that matches the attached hero`s sphere."
+                ],
+                "Shadow": null,
+                "FlavorText": "`...the Heart of the Mountain; and it is also the heart of Thorin. He values it above a rive of gold.`\r\n-Bilbo, The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: On the Doorstep",
+            "EncounterInfo": null,
+            "Number": 20,
+            "Quantity": 1,
+            "Artist": "Mike Nash",
+            "HasErrata": false,
+            "OctgnGuid": "ae774680-c6e9-49eb-96b8-fcdebe90b49d",
+            "RingsDbCardId": "132020",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4610,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
+            "Title": "Thrór's Battle Axe",
+            "Slug": "Thror's-Battle-Axe-THOtD",
+            "IsUnique": true,
+            "CardType": "Treasure",
+            "CardSubType": "None",
+            "Sphere": null,
+            "Front": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Hobbit-On-the-Doorstep/Thrór's-Battle-Axe.jpg",
+                "Stats": {
+                    "ResourceCost": "0"
+                },
+                "Traits": [
+                    "Artifact.",
+                    "Erebor.",
+                    "Item."
+                ],
+                "Keywords": [
+                    "Restricted."
+                ],
+                "Text": [
+                    "Attach to a hero. Restricted.",
+                    "Attached hero gets +2 Attack.",
+                    "Response: After attached hero attacks and destroys an enemy, deal 1 damage to another enemy engaged with you."
+                ],
+                "Shadow": null,
+                "FlavorText": "Royal indeed did Thorin look, clad in a coat of gold-plated rings, with a silver hafted axe...\r\n-The Hobbit"
+            },
+            "Back": null,
+            "CardSet": "The Hobbit: On the Doorstep",
+            "EncounterInfo": null,
+            "Number": 22,
+            "Quantity": 1,
+            "Artist": "Tiziano Baracchi",
+            "HasErrata": false,
+            "OctgnGuid": "857d6dc8-ba1e-4839-8e96-a8a0136a2302",
+            "RingsDbCardId": "132022",
+            "RingsDbPopularity": 1,
+            "RingsDbVotes": 4310,
+            "Categories": null,
+            "CAMPAIGN": true
+        },
+        {
             "Title": "Into Mirkwood",
             "Slug": "Into-Mirkwood-THOtD",
             "IsUnique": false,
@@ -844,360 +1309,8 @@
             "RingsDbPopularity": 0,
             "RingsDbVotes": 0,
             "Categories": null
-        },
-        {
-            "Title": "Flies and Spiders Nightmare",
-            "Slug": "Flies-and-Spiders-Nightmare-FaSN",
-            "IsUnique": false,
-            "CardType": "Nightmare_Setup",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/Flies-and-Spiders-Nightmare-SetupA.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "You are playing Nightmare mode.\n\nSetup: Each player gives 1 poison to a hero he controls."
-                ],
-                "Shadow": null,
-                "FlavorText": "Hundreds of angry spiders were goggling at them all round and about and above. It looked pretty hopeless. -The Hobbit"
-            },
-            "Back": {
-                "Subtitle": null,
-                "ImagePath": null,
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "Begin with the standard quest deck and encounter deck for the Flies and Spiders scenario.\n\nRemove the following cards, in the specified quantities, from the standard encounter deck:\n\n3x Dark Bats\n3x Hidden Path\n2x Fighting Among Friends\n5x Wicked Spider\n1x Fat Spider\n1x Giant Web\n\nThen, shuffle the encounter cards in this Nightmare Deck into the remainder of the standard Flies and Spiders encounter deck.\n\nFinally, flip this setup card over and place it next to the quest deck. Its effects remain active throughout the game, which is now ready to begin."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "CardSet": "Flies and Spiders Nightmare",
-            "EncounterInfo": null,
-            "Number": 1,
-            "Quantity": 1,
-            "Artist": "Jon Bosco",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00001",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Attercop",
-            "Slug": "Attercop-FaSN",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/Attercop.jpg",
-                "Stats": {
-                    "EngagementCost": "35",
-                    "Threat": "4",
-                    "Attack": "6",
-                    "Defense": "3",
-                    "HitPoints": "6"
-                },
-                "Traits": [
-                    "Creature.",
-                    "Spider."
-                ],
-                "Keywords": [
-                    "Venom."
-                ],
-                "Text": [
-                    "Venom.",
-                    "Attercop gets -1 engagement cost for each poison in play.",
-                    "Poisoned characters cannot be declared as attackers or defenders against Attercop."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Flies and Spiders Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Flies and Spiders Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 2,
-            "Quantity": 3,
-            "Artist": "Jon Bosco",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00002",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Venomous Spider",
-            "Slug": "Venomous-Spider-FaSN",
-            "IsUnique": false,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/Venomous-Spider.jpg",
-                "Stats": {
-                    "EngagementCost": "25",
-                    "Threat": "3",
-                    "Attack": "4",
-                    "Defense": "2",
-                    "HitPoints": "5"
-                },
-                "Traits": [
-                    "Creature.",
-                    "Spider."
-                ],
-                "Keywords": [
-                    "Venom."
-                ],
-                "Text": [
-                    "Venom.",
-                    "Forced: After a character is declared as a defender against Venomous Spider, give it 1 poison."
-                ],
-                "Shadow": "Shadow: Give 2 poison to the defending character.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Flies and Spiders Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Flies and Spiders Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 3,
-            "Quantity": 5,
-            "Artist": "Florian Devos",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00003",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Dark Colony",
-            "Slug": "Dark-Colony-FaSN",
-            "IsUnique": false,
-            "CardType": "Location",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/Dark-Colony.jpg",
-                "Stats": {
-                    "Threat": "4",
-                    "QuestPoints": "4"
-                },
-                "Traits": [
-                    "Forest."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "While Dark Colony is the active location, poisoned characters cannot ready.",
-                    "Travel: A player at this stage must give 1 poison to a hero he controls to travel here."
-                ],
-                "Shadow": null,
-                "FlavorText": "Suddenly he saw, too, that there were spiders huge and horrible sitting in the branches above him, and ring or no ring he trembled with fear lest they should discover him.\r\n -The Hobbit"
-            },
-            "Back": null,
-            "CardSet": "Flies and Spiders Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Flies and Spiders Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 4,
-            "Quantity": 2,
-            "Artist": "Mark Behm",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00004",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Mirkwood Path",
-            "Slug": "Mirkwood-Path-FaSN",
-            "IsUnique": false,
-            "CardType": "Location",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/Mirkwood-Path.jpg",
-                "Stats": {
-                    "Threat": "X",
-                    "QuestPoints": "3"
-                },
-                "Traits": [
-                    "Forest."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "X is the number of poison in play.",
-                    "Forced: When this location is explored, make 1 hero unconscious."
-                ],
-                "Shadow": "Shadow: Attacking enemy gets +1 Attack for each poisoned character you control.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Flies and Spiders Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Flies and Spiders Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 5,
-            "Quantity": 2,
-            "Artist": "Trudi Castle",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00005",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Patch of Midnight",
-            "Slug": "Patch-of-Midnight-FaSN",
-            "IsUnique": false,
-            "CardType": "Location",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/Patch-of-Midnight.jpg",
-                "Stats": {
-                    "Threat": "3",
-                    "QuestPoints": "5"
-                },
-                "Traits": [
-                    "Forest."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "While Patch of Midnight is the active location, treat the text box of each poisoned character as if it were blank (except for Traits)."
-                ],
-                "Shadow": "Shadow: Raise your threat by 1 for each poisoned character you control.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Flies and Spiders Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Flies and Spiders Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 6,
-            "Quantity": 3,
-            "Artist": "Rafał Hrynkiewicz",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00006",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "A Horrible Battle",
-            "Slug": "A-Horrible-Battle-FaSN",
-            "IsUnique": false,
-            "CardType": "Treachery",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/A-Horrible-Battle.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [],
-                "Text": [
-                    "When Revealed: Each player must either give 1 poison to each hero he controls, or reveal an encounter card."
-                ],
-                "Shadow": "Shadow: Attacking enemy makes an additional attack against the defending player after this one.",
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Flies and Spiders Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Flies and Spiders Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 7,
-            "Quantity": 2,
-            "Artist": "Diego Gisbert Llorens",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00007",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Spider Bite",
-            "Slug": "Spider-Bite-FaSN",
-            "IsUnique": false,
-            "CardType": "Treachery",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Flies-and-Spiders-Nightmare/Spider-Bite.jpg",
-                "Stats": {},
-                "Traits": [],
-                "Keywords": [
-                    "Surge."
-                ],
-                "Text": [
-                    "Surge.",
-                    "When Revealed: Attach to a hero that is not unconscious. (Counts as a Condition attachment with the text: `Limit 1 per hero. Forced: At the end of the refresh phase, give attached hero 1 poison. When attached hero becomes unconscious, discard Spider Bite.`)"
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "Flies and Spiders Nightmare",
-            "EncounterInfo": {
-                "EncounterSet": "Flies and Spiders Nightmare",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 8,
-            "Quantity": 2,
-            "Artist": "Florian Devos",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "00008",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
         }
-    ]
+    ],
+    "Cycle": "The Hobbit",
+    "SetType": "Saga_Expansion"
 }
