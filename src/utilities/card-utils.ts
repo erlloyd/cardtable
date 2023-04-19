@@ -23,8 +23,15 @@ export const getMySelectedCards = (stacks: ICardStack[]) => {
   return stacks.filter((c) => c.selected && c.controlledBy === myPeerRef);
 };
 
-const checkMissingImageMap = (code: string): string | null => {
-  return MISSING_CARD_IMAGE_MAP[code] ?? null;
+const checkMissingImageMap = (
+  gameType: GameType,
+  code: string
+): string | null => {
+  const missingImageMapForGame = MISSING_CARD_IMAGE_MAP[gameType];
+
+  if (missingImageMapForGame === null) return null;
+
+  return missingImageMapForGame[code] ?? null;
 };
 
 const generateLCGCDNImageUrl = (card: CardData, faceup: boolean): string => {
@@ -194,7 +201,7 @@ export const getImgUrlsFromJsonId = (
   }
 
   const missingImageOverride = !!cardData
-    ? checkMissingImageMap(codeForMissingCheck)
+    ? checkMissingImageMap(currentGameType, codeForMissingCheck)
     : null;
 
   if (!!missingImageOverride) {

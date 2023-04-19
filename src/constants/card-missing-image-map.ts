@@ -1,4 +1,6 @@
+import { CodeToImageMap } from "../game-modules/GameModule";
 import GameManager from "../game-modules/GameModuleManager";
+import { GameType } from "./app-constants";
 
 export const CARD_ALREADY_ROTATED_MAP: { [key: string]: boolean } = {
   "05026": true,
@@ -40,4 +42,4 @@ export const MISSING_BACK_IMAGE_MAP: { [key: string]: string } = {
   "22164": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Fortress-of-Nurn/Castle-Garrison.jpg",
 };
 
-export const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = GameManager.cardImageMap;
+export const MISSING_CARD_IMAGE_MAP: { [key in GameType]: CodeToImageMap } = GameManager.cardImageMap;

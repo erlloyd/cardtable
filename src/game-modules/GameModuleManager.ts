@@ -19,13 +19,13 @@ const games: { type: GameType; module: GameModule }[] = [
 class GamePluginManager {
   private _games: null | { type: GameType; module: GameModule }[] = null;
   private _properties: null | { [key in GameType]: GameProperties } = null;
-  private _cardImageMap: null | CodeToImageMap = null;
+  private _cardImageMap: null | { [key in GameType]: CodeToImageMap } = null;
 
   public get properties(): { [key in GameType]: GameProperties } {
     return this._properties!;
   }
 
-  public get cardImageMap(): CodeToImageMap {
+  public get cardImageMap(): { [key in GameType]: CodeToImageMap } {
     return this._cardImageMap!;
   }
 
@@ -38,8 +38,9 @@ class GamePluginManager {
     }, {} as { [key in GameType]: GameProperties });
 
     this._cardImageMap = games.reduce((imageMap, g) => {
-      return { ...imageMap, ...g.module.imageMap };
-    }, {} as CodeToImageMap);
+      imageMap[g.type] = g.module.imageMap;
+      return imageMap;
+    }, {} as { [key in GameType]: CodeToImageMap });
   }
 }
 
