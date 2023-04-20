@@ -19,7 +19,6 @@ import {
 import SetData from "../../external/marvelsdb-json-data/sets.json";
 import Scenarios from "../../external/ringsteki-json-data/scenarios.json";
 import { CardData } from "../../external-api/common-card-data";
-import { GameType } from "../../constants/app-constants";
 import {
   CardPack as CardPackLOTR,
   CardData as CardDataLOTR,
@@ -32,6 +31,7 @@ import {
   MISSING_BACK_IMAGE_MAP,
 } from "../../constants/card-missing-image-map";
 import log from "loglevel";
+import { GameType } from "../../game-modules/GameModule";
 
 // Utilities
 const convertMarvelToCommonFormat = (
@@ -112,7 +112,10 @@ const convertLOTRToCommonFormat =
   };
 
 // Reducers
-const loadCardsDataReducer: CaseReducer<ICardsDataState> = (state) => {
+const loadCardsDataReducer: CaseReducer<
+  ICardsDataState,
+  PayloadAction<GameType>
+> = (state, _action) => {
   //This reducer is only intended to be called a single time each load.
   state.data = {};
 

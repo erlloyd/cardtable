@@ -11,7 +11,6 @@ import Card from "./Card";
 import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
 import CardtableAlertsContainer from "./CardtableAlertsContainer";
 import {
-  GameType,
   myPeerRef,
   PlayerColor,
   playerHandHeightPx,
@@ -60,6 +59,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import DeckSearchContainer from "./DeckSearchContainer";
 import log from "loglevel";
 import NotificationsContainer from "./Notifications/NotificationsContainer";
+import { GameType } from "./game-modules/GameModule";
 
 const SCALE_BY = 1.02;
 
@@ -95,7 +95,7 @@ interface IProps {
   toggleSnapCardsToGrid: () => void;
   toggleNotes: () => void;
   flipCards: () => void;
-  loadCardsData: () => void;
+  loadCardsData: (gameType: GameType) => void;
   allJsonData: (payload: any) => void;
   shuffleStack: (id?: string) => void;
   fetchDecklistById: any;
@@ -303,7 +303,7 @@ class Game extends Component<IProps, IState> {
       };
       image.src =
         GamePropertiesMap[this.props.currentGameType].backgroundImageLocation;
-      this.props.loadCardsData();
+      this.props.loadCardsData(this.props.currentGameType);
       this.props.allJsonData("");
       this.isSetUp = true;
     }

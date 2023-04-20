@@ -59,3 +59,8 @@ export abstract class GameModule {
     this.imageMap = imageMap;
   }
 }
+
+export enum GameType {
+  MarvelChampions = "marvelchampions",
+  LordOfTheRingsLivingCardGame = "lotrlcg",
+}

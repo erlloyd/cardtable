@@ -13,7 +13,7 @@ import {
   bulkLoadCardsDataForPack,
   bulkLoadCardsForEncounterSet,
 } from "./cards-data.slice";
-import { GameType } from "../../constants/app-constants";
+import { GameType } from "../../game-modules/GameModule";
 import { doneLoadingJSON } from "../game/game.slice";
 import log from "loglevel";
 

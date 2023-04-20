@@ -1,6 +1,6 @@
 import { CodeToImageMap } from "../game-modules/GameModule";
 import GameManager from "../game-modules/GameModuleManager";
-import { GameType } from "./app-constants";
+import { GameType } from "../game-modules/GameModule";
 
 export const CARD_ALREADY_ROTATED_MAP: { [key: string]: boolean } = {
   "05026": true,

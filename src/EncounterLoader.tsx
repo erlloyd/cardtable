@@ -4,7 +4,7 @@ import { IEncounterEntity } from "./features/cards-data/cards-data.selectors";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import TextField from "@mui/material/TextField";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
-import { GameType } from "./constants/app-constants";
+import { GameType } from "./game-modules/GameModule";
 interface IProps {
   currentGameType: GameType;
   encounterData: IEncounterEntity[];

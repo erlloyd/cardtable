@@ -1,4 +1,4 @@
-import { GameType } from "./app-constants";
+import { GameType } from "../game-modules/GameModule";
 import { CounterTokenType, StatusTokenType } from "../constants/card-constants";
 import GameManager from "../game-modules/GameModuleManager";
 

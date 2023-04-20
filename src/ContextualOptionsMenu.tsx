@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import "./ContextualOptionsMenu.scss";
 
-import { GameType } from "./constants/app-constants";
+import { GameType } from "./game-modules/GameModule";
 import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
 import { Vector2d } from "konva/lib/types";
 import Tooltip from "@mui/material/Tooltip";

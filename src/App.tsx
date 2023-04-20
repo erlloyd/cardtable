@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { GameType } from "./constants/app-constants";
+import { GameType } from "./game-modules/GameModule";
 import GameContainer from "./GameContainer";
 import "./App.scss";
 import Select from "@mui/material/Select";

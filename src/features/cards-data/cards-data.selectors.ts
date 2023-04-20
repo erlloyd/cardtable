@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { GameType } from "../../constants/app-constants";
+import { GameType } from "../../game-modules/GameModule";
 import { CardData } from "../../external-api/common-card-data";
 import { RootState } from "../../store/rootReducer";
 import {

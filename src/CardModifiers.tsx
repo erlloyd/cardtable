@@ -2,7 +2,7 @@ import { Component } from "react";
 import { ICardStack } from "./features/cards/initialState";
 import { Group, Rect, Text } from "react-konva";
 import { cardConstants } from "./constants/card-constants";
-import { GameType } from "./constants/app-constants";
+import { GameType } from "./game-modules/GameModule";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import cloneDeep from "lodash.clonedeep";
 

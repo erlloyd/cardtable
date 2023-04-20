@@ -1,5 +1,5 @@
 import { CodeToImageMap, GameModule } from "./GameModule";
-import { GameType } from "../constants/app-constants";
+import { GameType } from "./GameModule";
 import { GameProperties } from "./GameModule";
 
 import MarvelChampionsGameModule from "./marvel-champions/MavelChampionsGameModule";

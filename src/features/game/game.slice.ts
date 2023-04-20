@@ -1,10 +1,6 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/lib/types";
-import {
-  GameType,
-  myPeerRef,
-  PlayerColor,
-} from "../../constants/app-constants";
+import { myPeerRef, PlayerColor } from "../../constants/app-constants";
 import {
   receiveRemoteGameState,
   resetApp,
@@ -13,6 +9,7 @@ import {
 import { getListOfDecklistsFromSearchTerm } from "../cards/cards.thunks";
 import { MAX_PLAYERS } from "../cards/initialState";
 import { IGameState, initialState } from "./initialState";
+import { GameType } from "../../game-modules/GameModule";
 
 // Reducers
 const updateZoomReducer: CaseReducer<IGameState, PayloadAction<Vector2d>> = (

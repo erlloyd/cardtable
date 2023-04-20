@@ -6,7 +6,7 @@ import { Component } from "react";
 import { Group, Rect, Text } from "react-konva";
 import { animated, Spring } from "@react-spring/konva";
 import CardTokensContainer from "./CardTokensContainer";
-import { GameType, myPeerRef, PlayerColor } from "./constants/app-constants";
+import { myPeerRef, PlayerColor } from "./constants/app-constants";
 import {
   cardConstants,
   HORIZONTAL_TYPE_CODES,
@@ -15,6 +15,7 @@ import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import CardModifiersContainer from "./CardModifiersContainer";
 import { shouldRenderImageHorizontal } from "./utilities/card-utils";
 import { debounce } from "lodash";
+import { GameType } from "./game-modules/GameModule";
 
 // There is a bug somewhere in react-konva or react-spring/konva, where, if you use the generic
 // `animated` WithAnimations type, you get the following typescript error in typescript ~4.5:

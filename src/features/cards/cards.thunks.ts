@@ -3,7 +3,7 @@ import axios from "axios";
 import { Vector2d } from "konva/lib/types";
 import { v4 as uuidv4 } from "uuid";
 import { scrapeApi } from "../../constants/api-constants";
-import { GameType, myPeerRef } from "../../constants/app-constants";
+import { myPeerRef } from "../../constants/app-constants";
 import { EXTRA_CARDS } from "../../constants/card-pack-mapping";
 import { GamePropertiesMap } from "../../constants/game-type-properties-mapping";
 import { RootState } from "../../store/rootReducer";
@@ -41,6 +41,7 @@ import {
 import { ICardDetails, ICardStack } from "./initialState";
 import log from "loglevel";
 import { sendNotification } from "../notifications/notifications.slice";
+import { GameType } from "../../game-modules/GameModule";
 
 interface DeckData {
   investigator_code: string;

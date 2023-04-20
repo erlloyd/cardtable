@@ -14,7 +14,6 @@ import {
   ResponderProvided,
 } from "react-beautiful-dnd";
 import {
-  GameType,
   myPeerRef,
   playerHandElementId,
   playerHandHeightPx,
@@ -39,6 +38,7 @@ import {
   getImgUrls,
   shouldRenderImageHorizontal,
 } from "./utilities/card-utils";
+import { GameType } from "./game-modules/GameModule";
 
 const grid = 8;
 

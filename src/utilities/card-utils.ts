@@ -1,5 +1,5 @@
 import log from "loglevel";
-import { GameType, myPeerRef } from "../constants/app-constants";
+import { myPeerRef } from "../constants/app-constants";
 import { StatusTokenType } from "../constants/card-constants";
 import {
   CARD_ALREADY_ROTATED_MAP,
@@ -11,6 +11,7 @@ import { CARD_PACK_REMAPPING } from "../constants/card-pack-mapping";
 import { CardData } from "../external-api/common-card-data";
 import { ICardData } from "../features/cards-data/initialState";
 import { ICardStack } from "../features/cards/initialState";
+import { GameType } from "../game-modules/GameModule";
 
 export const anyCardStackHasStatus = (
   status: StatusTokenType,

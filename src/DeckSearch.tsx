@@ -5,7 +5,7 @@ import {
 } from "@material-ui/lab";
 import { Vector2d } from "konva/lib/types";
 import TopLayer from "./TopLayer";
-import { GameType } from "./constants/app-constants";
+import { GameType } from "./game-modules/GameModule";
 import debounce from "lodash/debounce";
 import {
   OnlineDeckDataWithId,

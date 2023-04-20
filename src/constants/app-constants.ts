@@ -10,11 +10,6 @@ export const useWSLocalStorage = !!localStorage.getItem(USE_WS_LS_KEY);
 export const myPeerRef = uuidv4();
 (window as any).myPeerRef = myPeerRef;
 
-export enum GameType {
-  MarvelChampions = "marvelchampions",
-  LordOfTheRingsLivingCardGame = "lotrlcg",
-}
-
 export type PlayerColor =
   | "red"
   | "cyan"

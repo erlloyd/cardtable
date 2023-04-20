@@ -11,7 +11,7 @@ import RedoIcon from "@material-ui/icons/Redo";
 import HelpIcon from "@material-ui/icons/Help";
 import PanToolIcon from "@material-ui/icons/PanTool";
 import NotesIcon from "@material-ui/icons/Notes";
-import { GameType } from "./constants/app-constants";
+import { GameType } from "./game-modules/GameModule";
 import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
 import { Vector2d } from "konva/lib/types";
 import cx from "classnames";
