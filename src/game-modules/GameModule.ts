@@ -1,4 +1,5 @@
 import { CounterTokenType, StatusTokenType } from "../constants/card-constants";
+import { ISetData } from "../features/cards-data/initialState";
 
 export interface TokenInfoBase {
   touchMenuLetter: string | null;
@@ -58,6 +59,8 @@ export abstract class GameModule {
     this.properties = properties;
     this.imageMap = imageMap;
   }
+
+  abstract getSetData(): ISetData;
 }
 
 export enum GameType {

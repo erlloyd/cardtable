@@ -16,8 +16,6 @@ import {
   CardData as CardDataMarvel,
   CardPack as CardPackMarvel,
 } from "../../external-api/marvel-card-data";
-import SetData from "../../external/marvelsdb-json-data/sets.json";
-import Scenarios from "../../external/ringsteki-json-data/scenarios.json";
 import { CardData } from "../../external-api/common-card-data";
 import {
   CardPack as CardPackLOTR,
@@ -32,6 +30,7 @@ import {
 } from "../../constants/card-missing-image-map";
 import log from "loglevel";
 import { GameType } from "../../game-modules/GameModule";
+import GameManager from "../../game-modules/GameModuleManager";
 
 // Utilities
 const convertMarvelToCommonFormat = (
@@ -115,54 +114,26 @@ const convertLOTRToCommonFormat =
 const loadCardsDataReducer: CaseReducer<
   ICardsDataState,
   PayloadAction<GameType>
-> = (state, _action) => {
+> = (state, action) => {
   //This reducer is only intended to be called a single time each load.
   state.data = {};
 
-  let activeData = state.data[GameType.MarvelChampions];
+  let activeData = state.data[action.payload];
   if (!!activeData) {
     activeData.setData = {};
   } else {
-    state.data[GameType.MarvelChampions] = {
+    state.data[action.payload] = {
       entities: {},
       encounterEntities: {},
       setData: {},
     };
-    activeData = state.data[GameType.MarvelChampions];
+    activeData = state.data[action.payload];
   }
 
-  SetData.forEach((set) => {
-    if (!!activeData) {
-      activeData.setData[set.code] = {
-        name: set.name,
-        setTypeCode: set.card_set_type_code,
-        cardsInSet: [],
-      };
-    }
-  });
-
-  activeData = state.data[GameType.LordOfTheRingsLivingCardGame];
-
+  const setData = GameManager.getModuleForType(action.payload).getSetData();
   if (!!activeData) {
-    activeData.setData = {};
-  } else {
-    state.data[GameType.LordOfTheRingsLivingCardGame] = {
-      entities: {},
-      encounterEntities: {},
-      setData: {},
-    };
-    activeData = state.data[GameType.LordOfTheRingsLivingCardGame];
+    activeData.setData = setData;
   }
-
-  Scenarios.forEach((scenario) => {
-    if (!!activeData) {
-      activeData.setData[scenario.Slug] = {
-        name: scenario.Title,
-        setTypeCode: scenario.Product,
-        cardsInSet: [],
-      };
-    }
-  });
 
   return state;
 };

@@ -21,12 +21,28 @@ class GamePluginManager {
   private _properties: null | { [key in GameType]: GameProperties } = null;
   private _cardImageMap: null | { [key in GameType]: CodeToImageMap } = null;
 
+  public get allRegisteredGameTypes(): GameType[] {
+    return this._games?.map((g) => g.type) ?? [];
+  }
+
   public get properties(): { [key in GameType]: GameProperties } {
     return this._properties!;
   }
 
   public get cardImageMap(): { [key in GameType]: CodeToImageMap } {
     return this._cardImageMap!;
+  }
+
+  getModuleForType(type: GameType): GameModule {
+    const module = this._games?.find((g) => g.type === type)?.module ?? null;
+
+    if (!module) {
+      throw new Error(
+        `Tried to get module for game type ${type} that isn't registered`
+      );
+    }
+
+    return module;
   }
 
   registerModules(games: { type: GameType; module: GameModule }[]) {

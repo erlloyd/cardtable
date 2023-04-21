@@ -2,7 +2,9 @@ import {
   CounterTokenType,
   StatusTokenType,
 } from "../../constants/card-constants";
+import { ISetData } from "../../features/cards-data/initialState";
 import { GameModule } from "../GameModule";
+import SetData from "../../external/marvelsdb-json-data/sets.json";
 
 import MissingCardImages from "./missing-images";
 
@@ -87,5 +89,18 @@ export default class MarvelChampionsGameModule extends GameModule {
       },
     };
     super(properties, MissingCardImages);
+  }
+
+  getSetData(): ISetData {
+    const setData = {} as ISetData;
+    SetData.forEach((set) => {
+      setData[set.code] = {
+        name: set.name,
+        setTypeCode: set.card_set_type_code,
+        cardsInSet: [],
+      };
+    });
+
+    return setData;
   }
 }

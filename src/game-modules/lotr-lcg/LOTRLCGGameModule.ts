@@ -2,7 +2,9 @@ import {
   CounterTokenType,
   StatusTokenType,
 } from "../../constants/card-constants";
+import { ISetData } from "../../features/cards-data/initialState";
 import { GameModule } from "../GameModule";
+import Scenarios from "../../external/ringsteki-json-data/scenarios.json";
 
 export default class LOTRLCGGameModule extends GameModule {
   constructor() {
@@ -108,5 +110,18 @@ export default class LOTRLCGGameModule extends GameModule {
       },
     };
     super(properties, {});
+  }
+
+  getSetData(): ISetData {
+    const setData = {} as ISetData;
+    Scenarios.forEach((scenario) => {
+      setData[scenario.Slug] = {
+        name: scenario.Title,
+        setTypeCode: scenario.Product,
+        cardsInSet: [],
+      };
+    });
+
+    return setData;
   }
 }
