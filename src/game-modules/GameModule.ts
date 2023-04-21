@@ -1,6 +1,11 @@
 import { CounterTokenType, StatusTokenType } from "../constants/card-constants";
 import { ISetData } from "../features/cards-data/initialState";
 
+export interface ILoadCardsData {
+  packType: GameType;
+  pack: any;
+  pack_code: string;
+}
 export interface TokenInfoBase {
   touchMenuLetter: string | null;
   menuText: string;
@@ -61,6 +66,7 @@ export abstract class GameModule {
   }
 
   abstract getSetData(): ISetData;
+  abstract getCardsData(): Promise<ILoadCardsData[]>;
 }
 
 export enum GameType {

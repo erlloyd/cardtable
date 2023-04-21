@@ -9,9 +9,6 @@ import {
   ICardsDataState,
   IGameCardsDataStateStored,
 } from "./initialState";
-
-// import * as PackData from "../../generated/packs";
-// import { CardData as CardDataLOTR } from "../../external-api/beorn-json-data";
 import {
   CardData as CardDataMarvel,
   CardPack as CardPackMarvel,

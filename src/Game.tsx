@@ -96,7 +96,7 @@ interface IProps {
   toggleNotes: () => void;
   flipCards: () => void;
   loadCardsData: (gameType: GameType) => void;
-  allJsonData: (payload: any) => void;
+  allJsonData: (payload: GameType) => void;
   shuffleStack: (id?: string) => void;
   fetchDecklistById: any;
   // fetchDecklistById: (payload: {
@@ -304,7 +304,7 @@ class Game extends Component<IProps, IState> {
       image.src =
         GamePropertiesMap[this.props.currentGameType].backgroundImageLocation;
       this.props.loadCardsData(this.props.currentGameType);
-      this.props.allJsonData("");
+      this.props.allJsonData(this.props.currentGameType);
       this.isSetUp = true;
     }
   }

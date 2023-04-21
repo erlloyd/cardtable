@@ -3,8 +3,12 @@ import {
   StatusTokenType,
 } from "../../constants/card-constants";
 import { ISetData } from "../../features/cards-data/initialState";
-import { GameModule } from "../GameModule";
+import { GameModule, GameType, ILoadCardsData } from "../GameModule";
 import SetData from "../../external/marvelsdb-json-data/sets.json";
+import { packList as marvelPackList } from "../../generated/packsList";
+import log from "loglevel";
+import axios, { AxiosResponse } from "axios";
+import { CardPack as CardPackMarvel } from "../../external-api/marvel-card-data";
 
 import MissingCardImages from "./missing-images";
 
@@ -103,4 +107,40 @@ export default class MarvelChampionsGameModule extends GameModule {
 
     return setData;
   }
+
+  async getCardsData(): Promise<ILoadCardsData[]> {
+    let resultsList = await Promise.all(
+      marvelPackList.map((pack) => getSpecificMarvelPack(pack))
+    );
+
+    let failed = resultsList.filter((r) => r.res.status !== 200);
+    if (failed.length > 0) {
+      log.error(
+        "Failed to load some JSON data:",
+        failed.map((r) => r.packCode)
+      );
+    }
+
+    return resultsList
+      .filter((r) => r.res.status === 200)
+      .map((r) => {
+        return {
+          packType: GameType.MarvelChampions,
+          pack: r.res.data as any,
+          pack_code: r.packCode,
+        };
+      });
+  }
 }
+
+const getSpecificMarvelPack = async (
+  packName: string
+): Promise<{ res: AxiosResponse<CardPackMarvel>; packCode: string }> => {
+  const response = await axios.get<CardPackMarvel>(
+    process.env.PUBLIC_URL + "/json_data/" + packName
+  );
+  return {
+    res: response,
+    packCode: packName.split(".json")[0],
+  };
+};

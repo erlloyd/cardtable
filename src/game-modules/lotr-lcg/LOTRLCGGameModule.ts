@@ -3,8 +3,12 @@ import {
   StatusTokenType,
 } from "../../constants/card-constants";
 import { ISetData } from "../../features/cards-data/initialState";
-import { GameModule } from "../GameModule";
+import { GameModule, GameType, ILoadCardsData } from "../GameModule";
 import Scenarios from "../../external/ringsteki-json-data/scenarios.json";
+import { packList as lotrPackList } from "../../generated/packsList_lotr";
+import log from "loglevel";
+import axios, { AxiosResponse } from "axios";
+import { CardPack as CardPackLOTR } from "../../external-api/beorn-json-data";
 
 export default class LOTRLCGGameModule extends GameModule {
   constructor() {
@@ -124,4 +128,40 @@ export default class LOTRLCGGameModule extends GameModule {
 
     return setData;
   }
+
+  async getCardsData(): Promise<ILoadCardsData[]> {
+    const resultsList = await Promise.all(
+      lotrPackList.map((pack) => getSpecificLOTRPack(pack))
+    );
+
+    const failed = resultsList.filter((r) => r.res.status !== 200);
+    if (failed.length > 0) {
+      log.error(
+        "Failed to load some JSON data:",
+        failed.map((r) => r.packCode)
+      );
+    }
+
+    return resultsList
+      .filter((r) => r.res.status === 200)
+      .map((r) => {
+        return {
+          packType: GameType.LordOfTheRingsLivingCardGame,
+          pack: r.res.data as any,
+          pack_code: r.packCode,
+        };
+      });
+  }
 }
+
+const getSpecificLOTRPack = async (
+  packName: string
+): Promise<{ res: AxiosResponse<CardPackLOTR>; packCode: string }> => {
+  const response = await axios.get<CardPackLOTR>(
+    process.env.PUBLIC_URL + "/json_data/" + packName
+  );
+  return {
+    res: response,
+    packCode: packName.split(".json")[0],
+  };
+};
