@@ -6,6 +6,12 @@ export interface ILoadCardsData {
   pack: any;
   pack_code: string;
 }
+
+export interface ILoadEncounterSetData {
+  setCode: string;
+  cards: any[];
+}
+
 export interface TokenInfoBase {
   touchMenuLetter: string | null;
   menuText: string;
@@ -67,6 +73,7 @@ export abstract class GameModule {
 
   abstract getSetData(): ISetData;
   abstract getCardsData(): Promise<ILoadCardsData[]>;
+  abstract getEncounterSetData(): Promise<ILoadEncounterSetData[]>;
 }
 
 export enum GameType {

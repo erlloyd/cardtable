@@ -223,7 +223,7 @@ const bulkLoadCardsForEncounterSetReducer: CaseReducer<
   PayloadAction<
     {
       setCode: string;
-      cards: CardDataLOTR[];
+      cards: any[];
     }[]
   >
 > = (state, action) => {
@@ -239,7 +239,7 @@ const loadCardsForEncounterSetReducer: CaseReducer<
   ICardsDataState,
   PayloadAction<{
     setCode: string;
-    cards: CardDataLOTR[];
+    cards: any[];
   }>
 > = (state, action) => {
   const activeData = state.data[GameType.LordOfTheRingsLivingCardGame];

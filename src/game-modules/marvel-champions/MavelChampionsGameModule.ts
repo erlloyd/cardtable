@@ -3,7 +3,12 @@ import {
   StatusTokenType,
 } from "../../constants/card-constants";
 import { ISetData } from "../../features/cards-data/initialState";
-import { GameModule, GameType, ILoadCardsData } from "../GameModule";
+import {
+  GameModule,
+  GameType,
+  ILoadCardsData,
+  ILoadEncounterSetData,
+} from "../GameModule";
 import SetData from "../../external/marvelsdb-json-data/sets.json";
 import { packList as marvelPackList } from "../../generated/packsList";
 import log from "loglevel";
@@ -130,6 +135,11 @@ export default class MarvelChampionsGameModule extends GameModule {
           pack_code: r.packCode,
         };
       });
+  }
+
+  async getEncounterSetData(): Promise<ILoadEncounterSetData[]> {
+    // No encounter sets for Marvel Champions
+    return [];
   }
 }
 

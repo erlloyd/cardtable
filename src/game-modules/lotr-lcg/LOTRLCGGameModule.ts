@@ -3,12 +3,21 @@ import {
   StatusTokenType,
 } from "../../constants/card-constants";
 import { ISetData } from "../../features/cards-data/initialState";
-import { GameModule, GameType, ILoadCardsData } from "../GameModule";
+import {
+  GameModule,
+  GameType,
+  ILoadCardsData,
+  ILoadEncounterSetData,
+} from "../GameModule";
 import Scenarios from "../../external/ringsteki-json-data/scenarios.json";
 import { packList as lotrPackList } from "../../generated/packsList_lotr";
 import log from "loglevel";
 import axios, { AxiosResponse } from "axios";
-import { CardPack as CardPackLOTR } from "../../external-api/beorn-json-data";
+import {
+  CardPack as CardPackLOTR,
+  Scenario,
+} from "../../external-api/beorn-json-data";
+import scenarioListLOTR from "../../external/ringsteki-json-data/scenarios.json";
 
 export default class LOTRLCGGameModule extends GameModule {
   constructor() {
@@ -152,8 +161,34 @@ export default class LOTRLCGGameModule extends GameModule {
         };
       });
   }
+
+  async getEncounterSetData(): Promise<ILoadEncounterSetData[]> {
+    const resultsListLOTRScenarios = await Promise.all(
+      scenarioListLOTR.map((scenario) =>
+        getSpecificLOTRScenario(scenario.Title)
+      )
+    );
+
+    const failedScenario = resultsListLOTRScenarios.filter(
+      (r) => r.status !== 200
+    );
+    if (failedScenario.length > 0) {
+      log.error(
+        "Failed to load some JSON data:",
+        failedScenario.map((r) => r.data.Slug)
+      );
+    }
+
+    return resultsListLOTRScenarios.map((r) => {
+      return {
+        setCode: r.data.Slug,
+        cards: r.data.AllCards,
+      };
+    });
+  }
 }
 
+// Helper methods
 const getSpecificLOTRPack = async (
   packName: string
 ): Promise<{ res: AxiosResponse<CardPackLOTR>; packCode: string }> => {
@@ -164,4 +199,13 @@ const getSpecificLOTRPack = async (
     res: response,
     packCode: packName.split(".json")[0],
   };
+};
+
+const getSpecificLOTRScenario = async (
+  scenario: string
+): Promise<AxiosResponse<Scenario>> => {
+  const response = await axios.get<Scenario>(
+    process.env.PUBLIC_URL + "/json_data/scenarios/" + scenario + ".json"
+  );
+  return response;
 };
