@@ -1,5 +1,11 @@
 import { CounterTokenType, StatusTokenType } from "../constants/card-constants";
+import { CardData } from "../external-api/common-card-data";
 import { ISetData } from "../features/cards-data/initialState";
+
+export interface IPackMetadata {
+  setType: string;
+  encounterPack: boolean;
+}
 
 export interface ILoadCardsData {
   packType: GameType;
@@ -8,6 +14,7 @@ export interface ILoadCardsData {
 }
 
 export interface ILoadEncounterSetData {
+  gameType: GameType;
   setCode: string;
   cards: any[];
 }
@@ -74,6 +81,12 @@ export abstract class GameModule {
   abstract getSetData(): ISetData;
   abstract getCardsData(): Promise<ILoadCardsData[]>;
   abstract getEncounterSetData(): Promise<ILoadEncounterSetData[]>;
+
+  abstract checkIsPlayerPack(packCode: string): boolean;
+  abstract convertCardDataToCommonFormat(packWithMetadata: {
+    pack: any;
+    metadata: IPackMetadata;
+  }): CardData[];
 }
 
 export enum GameType {

@@ -16,6 +16,7 @@ import axios, { AxiosResponse } from "axios";
 import { CardPack as CardPackMarvel } from "../../external-api/marvel-card-data";
 
 import MissingCardImages from "./missing-images";
+import { CardData } from "../../external-api/common-card-data";
 
 export default class MarvelChampionsGameModule extends GameModule {
   constructor() {
@@ -140,6 +141,37 @@ export default class MarvelChampionsGameModule extends GameModule {
   async getEncounterSetData(): Promise<ILoadEncounterSetData[]> {
     // No encounter sets for Marvel Champions
     return [];
+  }
+
+  convertCardDataToCommonFormat(packWithMetadata: {
+    pack: any;
+    metadata: any;
+  }): CardData[] {
+    const marvelPack = packWithMetadata.pack as CardPackMarvel;
+    return marvelPack.map((cardMarvelFormat) => {
+      const mappedCardData: CardData = {
+        code: cardMarvelFormat.code,
+        name: cardMarvelFormat.name,
+        images: null,
+        octgnId: cardMarvelFormat.octgn_id ?? null,
+        quantity: cardMarvelFormat.quantity,
+        doubleSided: !!cardMarvelFormat.double_sided,
+        backLink: cardMarvelFormat.back_link ?? null,
+        typeCode: cardMarvelFormat.type_code,
+        subTypeCode: null,
+        extraInfo: {
+          setCode: cardMarvelFormat.set_code ?? null,
+          packCode: cardMarvelFormat.pack_code,
+          factionCode: cardMarvelFormat.faction_code,
+        },
+        duplicate_of: cardMarvelFormat.duplicate_of,
+      };
+      return mappedCardData;
+    });
+  }
+
+  checkIsPlayerPack(packCode: string): boolean {
+    return !packCode.includes("_encounter");
   }
 }
 

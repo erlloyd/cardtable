@@ -9,103 +9,15 @@ import {
   ICardsDataState,
   IGameCardsDataStateStored,
 } from "./initialState";
-import {
-  CardData as CardDataMarvel,
-  CardPack as CardPackMarvel,
-} from "../../external-api/marvel-card-data";
 import { CardData } from "../../external-api/common-card-data";
-import {
-  CardPack as CardPackLOTR,
-  CardData as CardDataLOTR,
-} from "../../external-api/beorn-json-data";
 import { updateActiveGameType } from "../game/game.slice";
 import { receiveRemoteGameState } from "../../store/global.actions";
-import { getCardCodeIncludingOverrides } from "../../utilities/cards-data-utils";
-import {
-  FORCE_CARD_BACK_MAP,
-  MISSING_BACK_IMAGE_MAP,
-} from "../../constants/card-missing-image-map";
+
+// TODO: Get this into modules
+import { FORCE_CARD_BACK_MAP } from "../../constants/card-missing-image-map";
 import log from "loglevel";
-import { GameType } from "../../game-modules/GameModule";
+import { GameType, ILoadEncounterSetData } from "../../game-modules/GameModule";
 import GameManager from "../../game-modules/GameModuleManager";
-
-// Utilities
-const convertMarvelToCommonFormat = (
-  cardMarvelFormat: CardDataMarvel
-): CardData => {
-  const mappedCardData: CardData = {
-    code: cardMarvelFormat.code,
-    name: cardMarvelFormat.name,
-    images: null,
-    octgnId: cardMarvelFormat.octgn_id ?? null,
-    quantity: cardMarvelFormat.quantity,
-    doubleSided: !!cardMarvelFormat.double_sided,
-    backLink: cardMarvelFormat.back_link ?? null,
-    typeCode: cardMarvelFormat.type_code,
-    subTypeCode: null,
-    extraInfo: {
-      setCode: cardMarvelFormat.set_code ?? null,
-      packCode: cardMarvelFormat.pack_code,
-      factionCode: cardMarvelFormat.faction_code,
-    },
-    duplicate_of: cardMarvelFormat.duplicate_of,
-  };
-  return mappedCardData;
-};
-
-const convertLOTRToCommonFormat =
-  (setType: string, encounterCard: boolean) =>
-  (cardLOTRFormat: CardDataLOTR): CardData => {
-    let cardBackImage = cardLOTRFormat.Back?.ImagePath;
-
-    if (cardLOTRFormat.Back && !cardLOTRFormat.Back.ImagePath) {
-      const frontImage = cardLOTRFormat.Front.ImagePath;
-      const frontImageWithoutExtension = frontImage
-        .split(".")
-        .slice(0, -1)
-        .join(".");
-      if (
-        frontImageWithoutExtension[frontImageWithoutExtension.length - 1] !==
-        "A"
-      ) {
-        if (MISSING_BACK_IMAGE_MAP[cardLOTRFormat.RingsDbCardId]) {
-          cardBackImage = MISSING_BACK_IMAGE_MAP[cardLOTRFormat.RingsDbCardId];
-        } else {
-          log.warn(
-            `No Non-B Back Image Path for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`,
-            cardLOTRFormat.RingsDbCardId
-          );
-        }
-      } else {
-        cardBackImage = frontImage.replaceAll("A.", "B.");
-      }
-    }
-
-    const mappedCardData: CardData = {
-      code: encounterCard
-        ? cardLOTRFormat.Slug
-        : getCardCodeIncludingOverrides(cardLOTRFormat),
-      name: cardLOTRFormat.Title,
-      images: {
-        front: cardLOTRFormat.Front.ImagePath,
-        back: cardBackImage ?? null,
-      },
-      octgnId: cardLOTRFormat.OctgnGuid ?? null,
-      quantity: cardLOTRFormat.Quantity ?? 1,
-      doubleSided: !!cardLOTRFormat.Back,
-      backLink: null,
-      typeCode: cardLOTRFormat.CardType,
-      subTypeCode: cardLOTRFormat.CardSubType,
-      extraInfo: {
-        campaign: cardLOTRFormat.CAMPAIGN,
-        setCode: cardLOTRFormat.CardSet ?? null,
-        packCode: "TODO - lotr",
-        setType: setType,
-        factionCode: encounterCard ? "encounter" : "player",
-      },
-    };
-    return mappedCardData;
-  };
 
 // Reducers
 const loadCardsDataReducer: CaseReducer<
@@ -220,12 +132,7 @@ const storeCardData =
 
 const bulkLoadCardsForEncounterSetReducer: CaseReducer<
   ICardsDataState,
-  PayloadAction<
-    {
-      setCode: string;
-      cards: any[];
-    }[]
-  >
+  PayloadAction<ILoadEncounterSetData[]>
 > = (state, action) => {
   action.payload.forEach((r) =>
     loadCardsForEncounterSetReducer(state, {
@@ -237,12 +144,9 @@ const bulkLoadCardsForEncounterSetReducer: CaseReducer<
 
 const loadCardsForEncounterSetReducer: CaseReducer<
   ICardsDataState,
-  PayloadAction<{
-    setCode: string;
-    cards: any[];
-  }>
+  PayloadAction<ILoadEncounterSetData>
 > = (state, action) => {
-  const activeData = state.data[GameType.LordOfTheRingsLivingCardGame];
+  const activeData = state.data[action.payload.gameType];
   const activeSet = activeData?.setData[action.payload.setCode];
 
   if (!action.payload.cards.map) {
@@ -250,11 +154,22 @@ const loadCardsForEncounterSetReducer: CaseReducer<
     return;
   }
 
-  action.payload.cards
-    .map(convertLOTRToCommonFormat("todo - encounter set", true))
+  const fakePack = {
+    cards: action.payload.cards,
+  };
+
+  const module = GameManager.getModuleForType(action.payload.gameType);
+  module
+    .convertCardDataToCommonFormat({
+      pack: fakePack,
+      metadata: {
+        setType: "todo - encounter set",
+        encounterPack: true,
+      },
+    })
     .map((c) => {
       return {
-        location: state.data[GameType.LordOfTheRingsLivingCardGame],
+        location: state.data[action.payload.gameType],
         card: c,
       };
     })
@@ -283,7 +198,7 @@ const bulkLoadCardsDataForPackReducer: CaseReducer<
   PayloadAction<
     {
       packType: GameType;
-      pack: CardPackMarvel | CardPackLOTR;
+      pack: any;
       pack_code: string;
     }[]
   >
@@ -300,7 +215,7 @@ const loadCardsDataForPackReducer: CaseReducer<
   ICardsDataState,
   PayloadAction<{
     packType: GameType;
-    pack: CardPackMarvel | CardPackLOTR;
+    pack: any;
     pack_code: string;
   }>
 > = (state, action) => {
@@ -312,32 +227,19 @@ const loadCardsDataForPackReducer: CaseReducer<
     };
   }
 
-  if (action.payload.packType === GameType.MarvelChampions) {
-    //This reducer is only intended to be called a single time each load.
-    const isHeroPack = !action.payload.pack_code.includes("_encounter");
+  const module = GameManager.getModuleForType(action.payload.packType);
 
-    const pack = action.payload.pack as CardPackMarvel;
+  const isHeroPack = module.checkIsPlayerPack(action.payload.pack_code);
 
-    pack
-      .map(convertMarvelToCommonFormat)
-      .map((c) => {
-        return { location: state.data[action.payload.packType], card: c };
-      })
-      .forEach(storeCardData(isHeroPack));
-  } else if (
-    action.payload.packType === GameType.LordOfTheRingsLivingCardGame
-  ) {
-    const pack = action.payload.pack as CardPackLOTR;
-    if (!pack.cards) {
-      log.warn(pack);
-    }
-    pack.cards
-      .map(convertLOTRToCommonFormat(pack.SetType, false))
-      .map((c) => {
-        return { location: state.data[action.payload.packType], card: c };
-      })
-      .forEach(storeCardData(true));
-  }
+  module
+    .convertCardDataToCommonFormat({
+      pack: action.payload.pack,
+      metadata: { setType: action.payload.pack.SetType, encounterPack: false },
+    })
+    .map((c) => {
+      return { location: state.data[action.payload.packType], card: c };
+    })
+    .forEach(storeCardData(isHeroPack));
 
   return state;
 };

@@ -8,6 +8,7 @@ import {
   GameType,
   ILoadCardsData,
   ILoadEncounterSetData,
+  IPackMetadata,
 } from "../GameModule";
 import Scenarios from "../../external/ringsteki-json-data/scenarios.json";
 import { packList as lotrPackList } from "../../generated/packsList_lotr";
@@ -15,9 +16,12 @@ import log from "loglevel";
 import axios, { AxiosResponse } from "axios";
 import {
   CardPack as CardPackLOTR,
+  CardData as CardDataLOTR,
   Scenario,
 } from "../../external-api/beorn-json-data";
 import scenarioListLOTR from "../../external/ringsteki-json-data/scenarios.json";
+import { CardData } from "../../external-api/common-card-data";
+import { MISSING_BACK_IMAGE_MAP } from "./missing-images";
 
 export default class LOTRLCGGameModule extends GameModule {
   constructor() {
@@ -181,14 +185,106 @@ export default class LOTRLCGGameModule extends GameModule {
 
     return resultsListLOTRScenarios.map((r) => {
       return {
+        gameType: GameType.LordOfTheRingsLivingCardGame,
         setCode: r.data.Slug,
         cards: r.data.AllCards,
       };
     });
   }
+
+  checkIsPlayerPack(_packCode: string): boolean {
+    return true;
+  }
+
+  convertCardDataToCommonFormat(packWithMetadata: {
+    pack: any;
+    metadata: IPackMetadata;
+  }): CardData[] {
+    const lotrPack = packWithMetadata.pack as CardPackLOTR;
+    return lotrPack.cards.map((cardLOTRFormat) => {
+      let cardBackImage = cardLOTRFormat.Back?.ImagePath;
+
+      if (cardLOTRFormat.Back && !cardLOTRFormat.Back.ImagePath) {
+        const frontImage = cardLOTRFormat.Front.ImagePath;
+        const frontImageWithoutExtension = frontImage
+          .split(".")
+          .slice(0, -1)
+          .join(".");
+        if (
+          frontImageWithoutExtension[frontImageWithoutExtension.length - 1] !==
+          "A"
+        ) {
+          if (MISSING_BACK_IMAGE_MAP[cardLOTRFormat.RingsDbCardId]) {
+            cardBackImage =
+              MISSING_BACK_IMAGE_MAP[cardLOTRFormat.RingsDbCardId];
+          } else {
+            log.warn(
+              `No Non-B Back Image Path for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`,
+              cardLOTRFormat.RingsDbCardId
+            );
+          }
+        } else {
+          cardBackImage = frontImage.replaceAll("A.", "B.");
+        }
+      }
+
+      const mappedCardData: CardData = {
+        code: packWithMetadata.metadata.encounterPack
+          ? cardLOTRFormat.Slug
+          : getCardCodeIncludingOverrides(cardLOTRFormat),
+        name: cardLOTRFormat.Title,
+        images: {
+          front: cardLOTRFormat.Front.ImagePath,
+          back: cardBackImage ?? null,
+        },
+        octgnId: cardLOTRFormat.OctgnGuid ?? null,
+        quantity: cardLOTRFormat.Quantity ?? 1,
+        doubleSided: !!cardLOTRFormat.Back,
+        backLink: null,
+        typeCode: cardLOTRFormat.CardType,
+        subTypeCode: cardLOTRFormat.CardSubType,
+        extraInfo: {
+          campaign: cardLOTRFormat.CAMPAIGN,
+          setCode: cardLOTRFormat.CardSet ?? null,
+          packCode: "TODO - lotr",
+          setType: packWithMetadata.metadata.setType,
+          factionCode: packWithMetadata.metadata.encounterPack
+            ? "encounter"
+            : "player",
+        },
+      };
+      return mappedCardData;
+    });
+  }
 }
 
 // Helper methods
+export const getCardCodeIncludingOverrides = (card: CardDataLOTR): string => {
+  let code = card.RingsDbCardId;
+  if (Object.keys(cardDataSetCodeOverride).includes(card.CardSet)) {
+    code = cardDataSetCodeOverride[card.CardSet](card.RingsDbCardId);
+  }
+  return code;
+};
+
+export const cardDataSetCodeOverride: { [key: string]: (s: string) => string } =
+  {
+    "The Gap of Rohan": (code: string) => {
+      let returnCode = code;
+      if (!!code && code[0] === "0") {
+        returnCode = `303${code.substring(2)}`;
+      }
+      return returnCode;
+    },
+    "Blood in the Isen": (code: string) => {
+      let returnCode = code;
+      if (!!code && code[0] === "0") {
+        returnCode = `306${code.substring(2)}`;
+      }
+      return returnCode;
+    },
+  };
+
 const getSpecificLOTRPack = async (
   packName: string
 ): Promise<{ res: AxiosResponse<CardPackLOTR>; packCode: string }> => {
