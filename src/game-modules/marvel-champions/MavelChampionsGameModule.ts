@@ -8,6 +8,7 @@ import {
   GameType,
   ILoadCardsData,
   ILoadEncounterSetData,
+  ILoadedDeck,
 } from "../GameModule";
 import SetData from "../../external/marvelsdb-json-data/sets.json";
 import { packList as marvelPackList } from "../../generated/packsList";
@@ -17,6 +18,11 @@ import { CardPack as CardPackMarvel } from "../../external-api/marvel-card-data"
 
 import MissingCardImages from "./missing-images";
 import { CardData } from "../../external-api/common-card-data";
+import { Vector2d } from "konva/lib/types";
+import { getMarvelCards } from "./getMarvelCards";
+import { EXTRA_CARDS } from "./extraCards";
+import { RootState } from "../../store/rootReducer";
+import { CARD_PACK_REMAPPING } from "./remappedPacks";
 
 export default class MarvelChampionsGameModule extends GameModule {
   constructor() {
@@ -98,7 +104,7 @@ export default class MarvelChampionsGameModule extends GameModule {
         },
       },
     };
-    super(properties, MissingCardImages);
+    super(properties, MissingCardImages, EXTRA_CARDS, CARD_PACK_REMAPPING);
   }
 
   getSetData(): ISetData {
@@ -172,6 +178,17 @@ export default class MarvelChampionsGameModule extends GameModule {
 
   checkIsPlayerPack(packCode: string): boolean {
     return !packCode.includes("_encounter");
+  }
+
+  parseDecklist(
+    response: AxiosResponse<any, any>,
+    state: RootState,
+    payload: { gameType: GameType; decklistId: number; position: Vector2d }
+  ): [string[], ILoadedDeck] {
+    const returnCards = getMarvelCards(response, state, payload);
+    const codes = [returnCards.data.investigator_code];
+
+    return [codes, returnCards];
   }
 }
 

@@ -7,11 +7,11 @@ import {
   FORCE_ENCOUNTER_CARD_BACK_MAP,
   MISSING_CARD_IMAGE_MAP,
 } from "../constants/card-missing-image-map";
-import { CARD_PACK_REMAPPING } from "../constants/card-pack-mapping";
 import { CardData } from "../external-api/common-card-data";
 import { ICardData } from "../features/cards-data/initialState";
 import { ICardStack } from "../features/cards/initialState";
 import { GameType } from "../game-modules/GameModule";
+import GameManager from "../game-modules/GameModuleManager";
 
 export const anyCardStackHasStatus = (
   status: StatusTokenType,
@@ -35,7 +35,11 @@ const checkMissingImageMap = (
   return missingImageMapForGame[code] ?? null;
 };
 
-const generateLCGCDNImageUrl = (card: CardData, faceup: boolean): string => {
+const generateLCGCDNImageUrl = (
+  currentGameType: GameType,
+  card: CardData,
+  faceup: boolean
+): string => {
   if (!card) {
     return `https://lcgcdn.s3.amazonaws.com/mc/NOPE.jpg`;
   }
@@ -48,8 +52,9 @@ const generateLCGCDNImageUrl = (card: CardData, faceup: boolean): string => {
   }
 
   const groupCode =
-    CARD_PACK_REMAPPING[card.extraInfo.packCode ?? ""] ??
-    codeToUse.substring(0, 2);
+    GameManager.getModuleForType(currentGameType).remappedPacks[
+      card.extraInfo.packCode ?? ""
+    ] ?? codeToUse.substring(0, 2);
   let cardCode = codeToUse.substring(2);
 
   //trim leading "0" chars
@@ -151,7 +156,7 @@ export const getImgUrlsFromJsonId = (
   if (!faceup) {
     if (!!topCardData.backLink || !!topCardData.doubleSided) {
       urls = [
-        generateLCGCDNImageUrl(topCardData, faceup),
+        generateLCGCDNImageUrl(currentGameType, topCardData, faceup),
         // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.png`,
         // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.jpg`,
         // process.env.PUBLIC_URL +
@@ -177,7 +182,7 @@ export const getImgUrlsFromJsonId = (
     }
   } else {
     urls = [
-      generateLCGCDNImageUrl(topCardData, faceup),
+      generateLCGCDNImageUrl(currentGameType, topCardData, faceup),
       // `https://marvelcdb.com/bundles/cards/${topCardData.code}.png`,
       // `https://marvelcdb.com/bundles/cards/${topCardData.code}.jpg`,
       // process.env.PUBLIC_URL +

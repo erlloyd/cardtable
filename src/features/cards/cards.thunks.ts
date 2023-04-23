@@ -4,19 +4,11 @@ import { Vector2d } from "konva/lib/types";
 import { v4 as uuidv4 } from "uuid";
 import { scrapeApi } from "../../constants/api-constants";
 import { myPeerRef } from "../../constants/app-constants";
-import { EXTRA_CARDS } from "../../constants/card-pack-mapping";
 import { GamePropertiesMap } from "../../constants/game-type-properties-mapping";
 import { RootState } from "../../store/rootReducer";
 import { cacheImages, getImgUrlsFromJsonId } from "../../utilities/card-utils";
-import { convertMarvelTxtToDeckInfo } from "../../utilities/marvel-txt-converter";
-import {
-  getCardsDataEncounterEntities,
-  getCardsDataEntities,
-  getCardsDataHeroEntities,
-  getCardsDataHerosByName,
-  getCardsDataPlayerCardsByName,
-} from "../cards-data/cards-data.selectors";
-import { ICardData } from "../cards-data/initialState";
+// import { convertMarvelTxtToDeckInfo } from "../../utilities/marvel-txt-converter";
+import { getCardsDataEntities } from "../cards-data/cards-data.selectors";
 import {
   getActiveGameType,
   getGame,
@@ -25,7 +17,7 @@ import {
 import { OnlineDeckDataMap } from "../game/initialState";
 import {
   addCardStackWithSnapAndId,
-  createDeckFromTextFileWithIds,
+  // createDeckFromTextFileWithIds,
   drawCardsOutOfCardStackWithIds,
   pullCardOutOfCardStackWithId,
   replaceCardStack,
@@ -41,18 +33,8 @@ import {
 import { ICardDetails, ICardStack } from "./initialState";
 import log from "loglevel";
 import { sendNotification } from "../notifications/notifications.slice";
-import { GameType } from "../../game-modules/GameModule";
-
-interface DeckData {
-  investigator_code: string;
-  slots: { [key: string]: number };
-}
-
-interface LOTRDeckData {
-  heroes: { [key: string]: number };
-  slots: { [key: string]: number };
-  sideslots?: { [key: string]: number };
-}
+import { GameType, ILoadedDeck } from "../../game-modules/GameModule";
+import GameManager from "../../game-modules/GameModuleManager";
 
 interface AddCardStackPayload {
   cardJsonIds: string[];
@@ -195,29 +177,30 @@ export const createDeckFromTxt =
     position: Vector2d;
     txtContents: string;
   }): ThunkAction<void, RootState, unknown, Action<string>> =>
-  (dispatch, getState) => {
-    if (payload.gameType === GameType.MarvelChampions) {
-      const heroCardsDataByName = getCardsDataHerosByName(getState());
-      const playerCardsDataByName = getCardsDataPlayerCardsByName(getState());
-      dispatch(
-        createDeckFromTextFileWithIds(
-          getMarvelCards(
-            convertMarvelTxtToDeckInfo(
-              heroCardsDataByName,
-              playerCardsDataByName,
-              payload.position,
-              payload.txtContents
-            ),
-            getState(),
-            {
-              gameType: payload.gameType,
-              decklistId: -1,
-              position: payload.position,
-            }
-          )
-        )
-      );
-    }
+  (_dispatch, _getState) => {
+    console.error(`NOT SUPPORTED`);
+    // if (payload.gameType === GameType.MarvelChampions) {
+    //   const heroCardsDataByName = getCardsDataHerosByName(getState());
+    //   const playerCardsDataByName = getCardsDataPlayerCardsByName(getState());
+    //   dispatch(
+    //     createDeckFromTextFileWithIds(
+    //       getMarvelCards(
+    //         convertMarvelTxtToDeckInfo(
+    //           heroCardsDataByName,
+    //           playerCardsDataByName,
+    //           payload.position,
+    //           payload.txtContents
+    //         ),
+    //         getState(),
+    //         {
+    //           gameType: payload.gameType,
+    //           decklistId: -1,
+    //           position: payload.position,
+    //         }
+    //       )
+    //     )
+    //   );
+    // }
   };
 
 export const createDeckFromJson =
@@ -226,20 +209,21 @@ export const createDeckFromJson =
     position: Vector2d;
     jsonContents: string;
   }): ThunkAction<void, RootState, unknown, Action<string>> =>
-  (dispatch, getState) => {
-    if (payload.gameType === GameType.MarvelChampions) {
-      // const heroCardsDataByName = getCardsDataHerosByName(getState());
-      // const playerCardsDataByName = getCardsDataPlayerCardsByName(getState());
-      dispatch(
-        createDeckFromTextFileWithIds(
-          getMarvelCards(JSON.parse(payload.jsonContents), getState(), {
-            gameType: payload.gameType,
-            decklistId: -1,
-            position: payload.position,
-          })
-        )
-      );
-    }
+  (_dispatch, _getState) => {
+    console.error(`NOT SUPPORTED`);
+    // if (payload.gameType === GameType.MarvelChampions) {
+    //   // const heroCardsDataByName = getCardsDataHerosByName(getState());
+    //   // const playerCardsDataByName = getCardsDataPlayerCardsByName(getState());
+    //   dispatch(
+    //     createDeckFromTextFileWithIds(
+    //       getMarvelCards(JSON.parse(payload.jsonContents), getState(), {
+    //         gameType: payload.gameType,
+    //         decklistId: -1,
+    //         position: payload.position,
+    //       })
+    //     )
+    //   );
+    // }
   };
 
 export const getListOfDecklistsFromSearchTerm = createAsyncThunk(
@@ -302,21 +286,19 @@ export const fetchDecklistById = createAsyncThunk(
     const state: RootState = thunkApi.getState() as RootState;
 
     let codes: string[] = [];
-    let returnCards;
+    let returnCards: ILoadedDeck | null = null;
 
     try {
-      switch (payload.gameType) {
-        case GameType.MarvelChampions:
-          returnCards = getMarvelCards(response, state, payload);
-          codes = [returnCards.data.investigator_code];
-          break;
-        case GameType.LordOfTheRingsLivingCardGame:
-          returnCards = getLOTRCards(response, state, payload);
-          break;
-      }
+      [codes, returnCards] = GameManager.getModuleForType(
+        payload.gameType
+      ).parseDecklist(response, state, payload);
     } catch (e) {
       log.error(`Error loading cards ${e}`);
       throw e;
+    }
+
+    if (returnCards === null) {
+      throw new Error(`returnCards was null`);
     }
 
     // Cache the images
@@ -349,179 +331,6 @@ export const fetchDecklistById = createAsyncThunk(
     return returnCards;
   }
 );
-
-const getMarvelCards = (
-  response: { data: DeckData },
-  state: RootState,
-  payload: { gameType: GameType; decklistId: number; position: Vector2d }
-) => {
-  const heroCardsData = getCardsDataHeroEntities(state);
-  const heroSet = heroCardsData[response.data.investigator_code];
-  const heroSetCode = heroSet.extraInfo.setCode;
-  const encounterCardsData = getCardsDataEncounterEntities(state);
-
-  let heroObligationDeck: string[] = [];
-  Object.entries(encounterCardsData)
-    .filter(
-      ([_key, value]) =>
-        (value.extraInfo.setCode === `${heroSetCode}` ||
-          value.extraInfo.setCode === `${heroSetCode}_nemesis` ||
-          value.extraInfo.setCode ===
-            `${heroSetCode?.replace("_hero", "")}_nemesis`) &&
-        value.typeCode === "obligation"
-    )
-    .forEach(([key, value]) => {
-      heroObligationDeck = heroObligationDeck.concat(
-        Array.from({ length: value.quantity }).map((_i) => key)
-      );
-    });
-
-  // get the encounter cards for this deck
-  const heroEncounterDeckData = Object.values(encounterCardsData).filter(
-    (value) =>
-      (value.extraInfo.setCode === `${heroSetCode}_nemesis` ||
-        value.extraInfo.setCode ===
-          `${heroSetCode?.replace("_hero", "")}_nemesis`) &&
-      value.typeCode !== "obligation"
-  );
-
-  let heroEncounterDeck: string[] = [];
-  heroEncounterDeckData.forEach((cd) => {
-    heroEncounterDeck = heroEncounterDeck.concat(
-      Array.from({ length: cd.quantity }).map((_i) => cd.code)
-    );
-  });
-
-  // check to see if there are any special extra cards for this hero
-  const extraCards = EXTRA_CARDS[heroSetCode ?? ""] ?? [];
-
-  // response.data.slots = { ...extraCards, ...response.data.slots };
-
-  return {
-    position: payload.position,
-    heroId: uuidv4(),
-    data: fixSlotsCardCodes(
-      replaceDuplicateCards(response.data, heroCardsData)
-    ),
-    dataId: uuidv4(),
-    extraHeroCards: fixCardDetailsCardCodes(extraCards),
-    relatedEncounterDeck: fixCodeList(heroEncounterDeck),
-    encounterDeckId: uuidv4(),
-    relatedObligationDeck: fixCodeList(heroObligationDeck),
-    obligationDeckId: uuidv4(),
-  };
-};
-
-const fixCardCode = (code: string): string =>
-  code.startsWith("99") ? code.slice(2) : code;
-
-const fixCodeList = (list: string[]) => list.map((l) => fixCardCode(l));
-
-const fixCardDetailsCardCodes = (details: ICardDetails[]): ICardDetails[] =>
-  details.map((d) => ({ jsonId: fixCardCode(d.jsonId) }));
-
-const fixSlotsCardCodes = (data: DeckData): DeckData => {
-  // Some cards (in LOTR I've found are special in rings db but aren't represented in the
-  // data as such. These cards are prefixed with `99`. So if we find any card codes starting
-  // with 99, just remove the 99
-  const fixedSlots: { [key: string]: number } = Object.keys(data.slots).reduce(
-    (newSlots, key) => {
-      newSlots[fixCardCode(key)] = data.slots[key];
-      return newSlots;
-    },
-    {} as { [key: string]: number }
-  );
-
-  return { ...data, slots: fixedSlots };
-};
-
-const replaceDuplicateCards = (
-  data: DeckData,
-  heroData: ICardData
-): DeckData => {
-  const newSlots: { [key: string]: number } = {};
-  Object.keys(data.slots).forEach((jsonId) => {
-    const cardData = heroData[jsonId];
-    if (cardData && cardData.duplicate_of) {
-      // Go all the way down the `duplicate_of` chain
-      let currentCardData = cardData;
-      while (currentCardData.duplicate_of) {
-        currentCardData = heroData[currentCardData.duplicate_of];
-      }
-      newSlots[currentCardData.code] = data.slots[jsonId];
-    } else {
-      newSlots[jsonId] = data.slots[jsonId];
-    }
-  });
-  return {
-    investigator_code: data.investigator_code,
-    slots: newSlots,
-  };
-};
-
-const getLOTRCards = (
-  response: { data: LOTRDeckData },
-  state: RootState,
-  payload: { gameType: GameType; decklistId: number; position: Vector2d }
-) => {
-  const heroCardsData = getCardsDataHeroEntities(state);
-
-  let heroStack: ICardDetails[] = [];
-
-  Object.entries(response.data.heroes).forEach(([key, value]) => {
-    key = fixCardCode(key);
-    const cardDetails: ICardDetails[] = Array.from(Array(value).keys()).map(
-      (): ICardDetails => ({ jsonId: key })
-    );
-    heroStack = heroStack.concat(cardDetails);
-  });
-
-  const newSlots: { [key: string]: number } = {};
-
-  Object.entries(response.data.slots).forEach(([key, value]) => {
-    key = fixCardCode(key);
-    //get the card data to make sure it's not a hero
-    const cardData = heroCardsData[key];
-    if (!cardData) {
-      throw new Error(`Couldn't find card data for ${key}`);
-    }
-
-    if (cardData.typeCode !== "Hero") {
-      newSlots[key] = value as number;
-    }
-  });
-
-  let sideboardStack: string[] = [];
-
-  Object.entries(response.data.sideslots ?? []).forEach(([key, value]) => {
-    key = fixCardCode(key);
-    const cardData = heroCardsData[key];
-    if (!cardData) {
-      throw new Error(`Couldn't find card data for sideboard card ${key}`);
-    }
-
-    if (cardData.typeCode !== "Hero") {
-      const cardDetails: string[] = Array.from(Array(value).keys()).map(
-        (): string => key
-      );
-      sideboardStack = sideboardStack.concat(cardDetails);
-    }
-  });
-
-  response.data.slots = newSlots;
-
-  return {
-    position: payload.position,
-    heroId: uuidv4(),
-    data: response.data,
-    dataId: uuidv4(),
-    extraHeroCards: heroStack,
-    relatedEncounterDeck: sideboardStack,
-    encounterDeckId: uuidv4(),
-    relatedObligationDeck: [],
-    obligationDeckId: uuidv4(),
-  };
-};
 
 const shuffle = (array: ICardDetails[]): ICardDetails[] => {
   const returnArray = JSON.parse(JSON.stringify(array));

@@ -1,6 +1,29 @@
+import { Vector2d } from "konva/lib/types";
 import { CounterTokenType, StatusTokenType } from "../constants/card-constants";
 import { CardData } from "../external-api/common-card-data";
 import { ISetData } from "../features/cards-data/initialState";
+import { ICardDetails } from "../features/cards/initialState";
+import { AxiosResponse } from "axios";
+import { RootState } from "../store/rootReducer";
+
+export type CardPackRemapping = { [key: string]: string };
+
+export type ExtraCards = { [key: string]: ICardDetails[] };
+export interface ILoadedDeck {
+  position: Vector2d;
+  heroId: string;
+  data: IDeckData;
+  dataId: string;
+  extraHeroCards: ICardDetails[];
+  relatedEncounterDeck: string[];
+  encounterDeckId: string;
+  relatedObligationDeck: string[];
+  obligationDeckId: string;
+}
+
+export interface IDeckData {
+  slots: { [key: string]: number };
+}
 
 export interface IPackMetadata {
   setType: string;
@@ -72,10 +95,19 @@ export interface GameProperties {
 export abstract class GameModule {
   properties: GameProperties;
   imageMap: CodeToImageMap;
+  extraCards: ExtraCards;
+  remappedPacks: CardPackRemapping;
 
-  constructor(properties: GameProperties, imageMap: CodeToImageMap) {
+  constructor(
+    properties: GameProperties,
+    imageMap: CodeToImageMap,
+    extraCards: ExtraCards,
+    remappedPacks: CardPackRemapping
+  ) {
     this.properties = properties;
     this.imageMap = imageMap;
+    this.extraCards = extraCards;
+    this.remappedPacks = remappedPacks;
   }
 
   abstract getSetData(): ISetData;
@@ -87,6 +119,16 @@ export abstract class GameModule {
     pack: any;
     metadata: IPackMetadata;
   }): CardData[];
+
+  abstract parseDecklist(
+    response: AxiosResponse<any, any>,
+    state: RootState,
+    payload: {
+      gameType: GameType;
+      decklistId: number;
+      position: Vector2d;
+    }
+  ): [string[], ILoadedDeck];
 }
 
 export enum GameType {

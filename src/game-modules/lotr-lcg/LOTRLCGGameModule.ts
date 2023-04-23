@@ -8,6 +8,7 @@ import {
   GameType,
   ILoadCardsData,
   ILoadEncounterSetData,
+  ILoadedDeck,
   IPackMetadata,
 } from "../GameModule";
 import Scenarios from "../../external/ringsteki-json-data/scenarios.json";
@@ -22,6 +23,9 @@ import {
 import scenarioListLOTR from "../../external/ringsteki-json-data/scenarios.json";
 import { CardData } from "../../external-api/common-card-data";
 import { MISSING_BACK_IMAGE_MAP } from "./missing-images";
+import { RootState } from "../../store/rootReducer";
+import { Vector2d } from "konva/lib/types";
+import { getLOTRCards } from "./getLOTRCards";
 
 export default class LOTRLCGGameModule extends GameModule {
   constructor() {
@@ -126,7 +130,7 @@ export default class LOTRLCGGameModule extends GameModule {
         },
       },
     };
-    super(properties, {});
+    super(properties, {}, {}, {});
   }
 
   getSetData(): ISetData {
@@ -255,6 +259,15 @@ export default class LOTRLCGGameModule extends GameModule {
       };
       return mappedCardData;
     });
+  }
+
+  parseDecklist(
+    response: AxiosResponse<any, any>,
+    state: RootState,
+    payload: { gameType: GameType; decklistId: number; position: Vector2d }
+  ): [string[], ILoadedDeck] {
+    const returnCards = getLOTRCards(response, state, payload);
+    return [[], returnCards];
   }
 }
 
