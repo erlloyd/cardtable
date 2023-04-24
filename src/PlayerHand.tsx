@@ -39,6 +39,7 @@ import {
   shouldRenderImageHorizontal,
 } from "./utilities/card-utils";
 import { GameType } from "./game-modules/GameModule";
+import GameManager from "./game-modules/GameModuleManager";
 
 const grid = 8;
 
@@ -355,7 +356,7 @@ class PlayerHand extends Component<IProps, IState> {
     const imgs = getImgUrls(
       makeFakeCardStackFromJsonId(card.jsonId),
       this.props.cardData,
-      this.props.currentGameType ?? GameType.MarvelChampions
+      this.props.currentGameType ?? GameManager.allRegisteredGameTypes[0]
     );
 
     // Only want to show the first image if multiple are loaded

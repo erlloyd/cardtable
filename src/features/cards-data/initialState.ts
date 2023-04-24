@@ -2,6 +2,7 @@ import { GameType } from "../../game-modules/GameModule";
 import { CardData } from "../../external-api/common-card-data";
 import { loadState } from "../../store/localStorage";
 import { IGameState } from "../game/initialState";
+import GameManager from "../../game-modules/GameModuleManager";
 
 export interface ICardData {
   [key: string]: CardData;
@@ -53,6 +54,7 @@ const localGameState: IGameState = loadState("game");
 const gameType = queryParamsGameType ?? localGameState.activeGameType;
 
 export const initialState: ICardsDataState = {
-  activeDataType: (gameType as GameType) ?? GameType.MarvelChampions,
+  activeDataType:
+    (gameType as GameType) ?? GameManager.allRegisteredGameTypes[0],
   data: {},
 };

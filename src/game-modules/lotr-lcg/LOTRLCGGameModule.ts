@@ -2,7 +2,7 @@ import {
   CounterTokenType,
   StatusTokenType,
 } from "../../constants/card-constants";
-import { ISetData } from "../../features/cards-data/initialState";
+import { ICardData, ISetData } from "../../features/cards-data/initialState";
 import {
   GameModule,
   GameType,
@@ -26,6 +26,8 @@ import { MISSING_BACK_IMAGE_MAP } from "./missing-images";
 import { RootState } from "../../store/rootReducer";
 import { Vector2d } from "konva/lib/types";
 import { getLOTRCards } from "./getLOTRCards";
+import { IEncounterEntity } from "../../features/cards-data/cards-data.selectors";
+import { loadEncounterEntities } from "./loadEncounterEntities";
 
 export default class LOTRLCGGameModule extends GameModule {
   constructor() {
@@ -268,6 +270,14 @@ export default class LOTRLCGGameModule extends GameModule {
   ): [string[], ILoadedDeck] {
     const returnCards = getLOTRCards(response, state, payload);
     return [[], returnCards];
+  }
+
+  getEncounterEntitiesFromState(
+    setData: ISetData,
+    herosData: ICardData,
+    encounterEntities: ICardData
+  ): IEncounterEntity[] {
+    return loadEncounterEntities(setData, herosData, encounterEntities);
   }
 }
 

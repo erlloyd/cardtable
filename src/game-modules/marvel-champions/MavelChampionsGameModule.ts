@@ -2,7 +2,7 @@ import {
   CounterTokenType,
   StatusTokenType,
 } from "../../constants/card-constants";
-import { ISetData } from "../../features/cards-data/initialState";
+import { ICardData, ISetData } from "../../features/cards-data/initialState";
 import {
   GameModule,
   GameType,
@@ -23,6 +23,8 @@ import { getMarvelCards } from "./getMarvelCards";
 import { EXTRA_CARDS } from "./extraCards";
 import { RootState } from "../../store/rootReducer";
 import { CARD_PACK_REMAPPING } from "./remappedPacks";
+import { IEncounterEntity } from "../../features/cards-data/cards-data.selectors";
+import { loadEncounterEntities } from "./loadEncounterEntities";
 
 export default class MarvelChampionsGameModule extends GameModule {
   constructor() {
@@ -189,6 +191,14 @@ export default class MarvelChampionsGameModule extends GameModule {
     const codes = [returnCards.data.investigator_code];
 
     return [codes, returnCards];
+  }
+
+  getEncounterEntitiesFromState(
+    setData: ISetData,
+    herosData: ICardData,
+    encounterEntities: ICardData
+  ): IEncounterEntity[] {
+    return loadEncounterEntities(setData, herosData, encounterEntities);
   }
 }
 

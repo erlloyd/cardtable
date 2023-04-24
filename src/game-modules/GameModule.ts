@@ -1,10 +1,11 @@
 import { Vector2d } from "konva/lib/types";
 import { CounterTokenType, StatusTokenType } from "../constants/card-constants";
 import { CardData } from "../external-api/common-card-data";
-import { ISetData } from "../features/cards-data/initialState";
+import { ICardData, ISetData } from "../features/cards-data/initialState";
 import { ICardDetails } from "../features/cards/initialState";
 import { AxiosResponse } from "axios";
 import { RootState } from "../store/rootReducer";
+import { IEncounterEntity } from "../features/cards-data/cards-data.selectors";
 
 export type CardPackRemapping = { [key: string]: string };
 
@@ -129,6 +130,12 @@ export abstract class GameModule {
       position: Vector2d;
     }
   ): [string[], ILoadedDeck];
+
+  abstract getEncounterEntitiesFromState(
+    setData: ISetData,
+    herosData: ICardData,
+    encounterEntities: ICardData
+  ): IEncounterEntity[];
 }
 
 export enum GameType {
