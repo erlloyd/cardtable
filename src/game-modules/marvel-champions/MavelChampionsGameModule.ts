@@ -31,6 +31,7 @@ export default class MarvelChampionsGameModule extends GameModule {
     const properties = {
       deckSite: "marvelcdb.com",
       decklistApi: "https://marvelcdb.com/api/public/decklist/",
+      privateDecklistApi: "https://marvelcdb.com/api/public/deck/",
       decklistSearchApi: "https://marvelcdb.com/decklists",
       decklistSearchApiConstants: "sort=likes",
       encounterUiName: "Encounter Set",

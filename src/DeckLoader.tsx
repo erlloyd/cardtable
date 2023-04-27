@@ -1,13 +1,17 @@
 import { Component } from "react";
 import * as React from "react";
 import TextField from "@mui/material/TextField";
+import CheckBox from "@mui/material/Checkbox";
+import { FormControlLabel } from "@mui/material";
 
 interface IProps {
-  loadDeckId: (id: number) => void;
+  loadDeckId: (id: number, usePrivateApi: boolean) => void;
+  showPrivateApiOption: boolean;
 }
 
 class DeckLoader extends Component<IProps> {
-  inputValue: string = "";
+  deckId: string = "";
+  privateApiSelected: boolean = false;
 
   private focusInputField = (input: any) => {
     if (input) {
@@ -30,11 +34,23 @@ class DeckLoader extends Component<IProps> {
           onKeyPress={this.handleKeyPress}
           onClick={this.cancelBubble}
           onChange={(event) => {
-            this.inputValue = event.target.value;
+            this.deckId = event.target.value;
           }}
           type="number"
           variant="outlined"
         ></TextField>{" "}
+        <div hidden={!this.props.showPrivateApiOption}>
+          <FormControlLabel
+            label="Use Private Deck ID?"
+            control={
+              <CheckBox
+                onChange={(event) => {
+                  this.privateApiSelected = event.currentTarget.checked;
+                }}
+              />
+            }
+          ></FormControlLabel>
+        </div>
       </div>
     );
   }
@@ -45,7 +61,7 @@ class DeckLoader extends Component<IProps> {
 
   private handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key.toLocaleLowerCase() === "enter") {
-      this.props.loadDeckId(+this.inputValue);
+      this.props.loadDeckId(+this.deckId, this.privateApiSelected);
     }
   };
 }

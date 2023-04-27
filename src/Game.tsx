@@ -102,6 +102,7 @@ interface IProps {
   // fetchDecklistById: (payload: {
   //   gameType: GameType;
   //   decklistId: number;
+  //   usePrivateApi: boolean;
   //   position: Vector2d;
   // }) => void;
   updateZoom: (zoom: Vector2d) => void;
@@ -900,6 +901,9 @@ class Game extends Component<IProps, IState> {
   private renderDeckImporter = () => {
     if (!this.state.showDeckImporter) return null;
 
+    const privateApiAvailable =
+      !!GamePropertiesMap[this.props.currentGameType].privateDecklistApi;
+
     const containerRect = this.stage?.container().getBoundingClientRect();
     const pointerPosition = this.state.deckImporterPosition;
     if (!containerRect || !pointerPosition) {
@@ -918,6 +922,7 @@ class Game extends Component<IProps, IState> {
           loadDeckId={this.handleImportDeck(
             this.getRelativePositionFromTarget(this.stage)
           )}
+          showPrivateApiOption={privateApiAvailable}
         />
       </TopLayer>
     );
@@ -1061,11 +1066,12 @@ class Game extends Component<IProps, IState> {
     cacheImages(uniqueUrls);
   };
 
-  private handleImportDeck = (position: Vector2d) => (id: number) => {
+  private handleImportDeck = (position: Vector2d) => (id: number, usePrivateApi: boolean) => {
     this.clearDeckImporter();
     this.props.fetchDecklistById({
       gameType: this.props.currentGameType,
       decklistId: id,
+      usePrivateApi: usePrivateApi,
       position,
     });
   };
@@ -1154,10 +1160,9 @@ class Game extends Component<IProps, IState> {
       y: (pointer.y - this.stage.y()) / oldScale,
     };
 
-    const isZoomIn = event.evt.deltaY < 0 || event.evt.deltaX > 0
+    const isZoomIn = event.evt.deltaY < 0 || event.evt.deltaX > 0;
 
-    const newScale =
-      isZoomIn ? oldScale * SCALE_BY : oldScale / SCALE_BY;
+    const newScale = isZoomIn ? oldScale * SCALE_BY : oldScale / SCALE_BY;
 
     this.props.updateZoom({ x: newScale, y: newScale });
 

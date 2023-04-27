@@ -77,6 +77,7 @@ export type CodeToImageMap = { [key: string]: string };
 export interface GameProperties {
   deckSite: string;
   decklistApi: string;
+  privateDecklistApi?: string;
   decklistSearchApi: string;
   decklistSearchApiConstants?: string;
   encounterUiName: string;
