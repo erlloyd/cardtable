@@ -1154,8 +1154,10 @@ class Game extends Component<IProps, IState> {
       y: (pointer.y - this.stage.y()) / oldScale,
     };
 
+    const isZoomIn = event.evt.deltaY < 0 || event.evt.deltaX > 0
+
     const newScale =
-      event.evt.deltaY < 0 ? oldScale * SCALE_BY : oldScale / SCALE_BY;
+      isZoomIn ? oldScale * SCALE_BY : oldScale / SCALE_BY;
 
     this.props.updateZoom({ x: newScale, y: newScale });
 
