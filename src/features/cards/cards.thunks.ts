@@ -278,11 +278,24 @@ export const fetchDecklistById = createAsyncThunk(
     try {
       response = await axios.get(`${apiUrl}${payload.decklistId}`);
     } catch (e) {
+      let errorMessage = `Couldn't load deck ${payload.decklistId}. `;
+      if (privateApiUrl) {
+        if (payload.usePrivateApi) {
+          errorMessage +=
+            ' Ensure the id is correct and not a public deck id, and that "Share your decks" is checked in the user\'s settings.';
+        } else {
+          errorMessage +=
+            'Ensure the id is correct and not a private deck. If it is private, check the use the "private deck" option';
+        }
+      } else {
+        errorMessage +=
+          "Ensure the id is correct and not a private deck. This game can only support public decks at this time.";
+      }
       thunkApi.dispatch(
         sendNotification({
           id: uuidv4(),
           level: "error",
-          message: `Couldn't load deck ${payload.decklistId}. If this is a private deck, ensure "Share your decks" is checked in the user's settings.`,
+          message: errorMessage,
         })
       );
       throw e;
