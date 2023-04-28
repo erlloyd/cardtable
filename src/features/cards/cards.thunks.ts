@@ -260,22 +260,42 @@ export const getListOfDecklistsFromSearchTerm = createAsyncThunk(
 export const fetchDecklistById = createAsyncThunk(
   "decklist/fetchByIdStatus",
   async (
-    payload: { gameType: GameType; decklistId: number; position: Vector2d },
+    payload: {
+      gameType: GameType;
+      decklistId: number;
+      usePrivateApi: boolean;
+      position: Vector2d;
+    },
     thunkApi
   ) => {
     let response;
+    const privateApiUrl =
+      GamePropertiesMap[payload.gameType].privateDecklistApi;
+    const publicApiUrl = GamePropertiesMap[payload.gameType].decklistApi;
+    // if usePrivateApi is true and the game has a private decklist endpoint available, use it. Otherwise use public
+    const apiUrl =
+      payload.usePrivateApi && privateApiUrl ? privateApiUrl : publicApiUrl;
     try {
-      response = await axios.get(
-        `${GamePropertiesMap[payload.gameType].decklistApi}${
-          payload.decklistId
-        }`
-      );
+      response = await axios.get(`${apiUrl}${payload.decklistId}`);
     } catch (e) {
+      let errorMessage = `Couldn't load deck ${payload.decklistId}. `;
+      if (privateApiUrl) {
+        if (payload.usePrivateApi) {
+          errorMessage +=
+            ' Ensure the id is correct and not a public deck id, and that "Share your decks" is checked in the user\'s settings.';
+        } else {
+          errorMessage +=
+            'Ensure the id is correct and not a private deck. If it is private, check the use the "private deck" option';
+        }
+      } else {
+        errorMessage +=
+          "Ensure the id is correct and not a private deck. This game can only support public decks at this time.";
+      }
       thunkApi.dispatch(
         sendNotification({
           id: uuidv4(),
           level: "error",
-          message: `Couldn't load deck ${payload.decklistId}. Ensure the id is correct and not a private deck. Cardtable can only support public decks at this time.`,
+          message: errorMessage,
         })
       );
       throw e;

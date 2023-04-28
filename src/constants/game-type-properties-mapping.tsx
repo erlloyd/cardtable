@@ -5,6 +5,7 @@ import GameManager from "../game-modules/GameModuleManager";
 export interface GameProperties {
   deckSite: string;
   decklistApi: string;
+  privateDecklistApi?: string;
   decklistSearchApi: string;
   decklistSearchApiConstants?: string;
   encounterUiName: string;

@@ -23,7 +23,7 @@ interface IProps {
     decklistSearchTerm: string;
     position: Vector2d;
   }) => void;
-  loadDeckId: (id: number) => void;
+  loadDeckId: (id: number, usePrivateApi: boolean) => void;
 }
 
 const focusInputField = (input: any) => {
@@ -76,7 +76,7 @@ const DeckSearch = (props: IProps) => {
           style={{ width: 300 }}
           onChange={(_, value) => {
             if (!!value) {
-              props.loadDeckId(value.Id);
+              props.loadDeckId(value.Id, false);
             }
             props.hideDeckSearch();
           }}
