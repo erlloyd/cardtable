@@ -43,7 +43,7 @@ export const websocketMiddleware = (storeAPI: any) => {
   const ws = new WebSocket(
     `wss://${
       !!useDevWSServerLocalStorage ? "local-" : ""
-    }cardtable-server.middle-earth.house`
+    }cardtable-server.middle-earth.house${!useDevWSServerLocalStorage ? ":3333" : ""}`
   );
 
   const handleRemoteAction = (action: any) => {
