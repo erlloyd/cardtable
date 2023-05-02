@@ -258,7 +258,8 @@ const cardsDataSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
       state.activeDataType =
-        action.payload.game.activeGameType ?? GameType.MarvelChampions;
+        action.payload.game.activeGameType ??
+        GameManager.allRegisteredGameTypes[0];
     });
     builder.addCase(updateActiveGameType, (state, action) => {
       state.activeDataType = action.payload;
