@@ -1160,7 +1160,17 @@ class Game extends Component<IProps, IState> {
       y: (pointer.y - this.stage.y()) / oldScale,
     };
 
-    const isZoomIn = event.evt.deltaY < 0 || event.evt.deltaX > 0;
+    //fix for "yo-yo" issue when scrolling slightly diagonal on a trackpad
+    // whichever scroll direction is larger will be checked, the smaller movement is ignored
+    const isVerticalScroll =
+      Math.abs(event.evt.deltaY) > Math.abs(event.evt.deltaX);
+
+    let isZoomIn;
+    if (isVerticalScroll) {
+      isZoomIn = event.evt.deltaY < 0;
+    } else {
+      isZoomIn = event.evt.deltaX > 0;
+    }
 
     const newScale = isZoomIn ? oldScale * SCALE_BY : oldScale / SCALE_BY;
 
