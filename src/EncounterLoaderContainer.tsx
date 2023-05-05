@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { GameType } from "./game-modules/GameModule";
+import { GameType } from "./game-modules/GameType";
 import EncounterLoader from "./EncounterLoader";
 import { getEncounterEntities } from "./features/cards-data/cards-data.selectors";
 

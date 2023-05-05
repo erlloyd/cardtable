@@ -18,7 +18,6 @@ import {
   playerHandElementId,
   playerHandHeightPx,
 } from "./constants/app-constants";
-import { HORIZONTAL_TYPE_CODES } from "./constants/card-constants";
 import ContextMenu from "./ContextMenu";
 import { ICardData } from "./features/cards-data/initialState";
 import {
@@ -38,7 +37,7 @@ import {
   getImgUrls,
   shouldRenderImageHorizontal,
 } from "./utilities/card-utils";
-import { GameType } from "./game-modules/GameModule";
+import { GameType } from "./game-modules/GameType";
 import GameManager from "./game-modules/GameModuleManager";
 
 const grid = 8;
@@ -378,7 +377,9 @@ class PlayerHand extends Component<IProps, IState> {
       const shouldRotate = shouldRenderImageHorizontal(
         card.jsonId,
         cardType,
-        HORIZONTAL_TYPE_CODES,
+        GameManager.horizontalCardTypes[
+          this.props.currentGameType ?? GameManager.allRegisteredGameTypes[0]
+        ],
         false /* We're never showing card backs */
       );
       return (

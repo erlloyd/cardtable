@@ -5,7 +5,6 @@ import {
 import { ICardData, ISetData } from "../../features/cards-data/initialState";
 import {
   GameModule,
-  GameType,
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
@@ -28,6 +27,7 @@ import { Vector2d } from "konva/lib/types";
 import { getLOTRCards } from "./getLOTRCards";
 import { IEncounterEntity } from "../../features/cards-data/cards-data.selectors";
 import { loadEncounterEntities } from "./loadEncounterEntities";
+import { GameType } from "../GameType";
 
 export default class LOTRLCGGameModule extends GameModule {
   constructor() {
@@ -132,7 +132,7 @@ export default class LOTRLCGGameModule extends GameModule {
         },
       },
     };
-    super(properties, {}, {}, {});
+    super(properties, {}, {}, {}, ["quest", "player_side_quest"]);
   }
 
   getSetData(): ISetData {

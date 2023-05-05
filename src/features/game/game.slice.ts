@@ -9,7 +9,7 @@ import {
 import { getListOfDecklistsFromSearchTerm } from "../cards/cards.thunks";
 import { MAX_PLAYERS } from "../cards/initialState";
 import { IGameState, initialState } from "./initialState";
-import { GameType } from "../../game-modules/GameModule";
+import { GameType } from "../../game-modules/GameType";
 
 // Reducers
 const updateZoomReducer: CaseReducer<IGameState, PayloadAction<Vector2d>> = (

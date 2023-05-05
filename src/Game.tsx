@@ -20,7 +20,6 @@ import {
 import {
   cardConstants,
   CounterTokenType,
-  HORIZONTAL_TYPE_CODES,
   StatusTokenType,
 } from "./constants/card-constants";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
@@ -59,7 +58,8 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import DeckSearchContainer from "./DeckSearchContainer";
 import log from "loglevel";
 import NotificationsContainer from "./Notifications/NotificationsContainer";
-import { GameType } from "./game-modules/GameModule";
+import { GameType } from "./game-modules/GameType";
+import GameManager from "./game-modules/GameModuleManager";
 
 const SCALE_BY = 1.02;
 
@@ -474,9 +474,9 @@ class Game extends Component<IProps, IState> {
       ? possiblePreviewCards
           .filter((_card) => !this.state.selecting && !iAmDragging)
           .map((card) => {
-            const isHorizontal = HORIZONTAL_TYPE_CODES.includes(
-              getCardType(card, this.props.cardsData)
-            );
+            const isHorizontal = GameManager.horizontalCardTypes[
+              this.props.currentGameType
+            ].includes(getCardType(card, this.props.cardsData));
             const imgUrls = getImgUrls(
               card,
               this.props.cardsData,
@@ -501,9 +501,7 @@ class Game extends Component<IProps, IState> {
               previewCardHeight / cardConstants.CARD_PREVIEW_HEIGHT;
             previewCardWidth *= previewCardRatio;
 
-            return imgUrls.some(
-              (url) => url.indexOf("card_back") !== -1
-            ) ? null : (
+            return imgUrls.some((url) => url.indexOf("_back") !== -1) ? null : (
               <Card
                 currentGameType={this.props.currentGameType}
                 name={this.getCardName(card)}
@@ -1066,15 +1064,16 @@ class Game extends Component<IProps, IState> {
     cacheImages(uniqueUrls);
   };
 
-  private handleImportDeck = (position: Vector2d) => (id: number, usePrivateApi: boolean) => {
-    this.clearDeckImporter();
-    this.props.fetchDecklistById({
-      gameType: this.props.currentGameType,
-      decklistId: id,
-      usePrivateApi: usePrivateApi,
-      position,
-    });
-  };
+  private handleImportDeck =
+    (position: Vector2d) => (id: number, usePrivateApi: boolean) => {
+      this.clearDeckImporter();
+      this.props.fetchDecklistById({
+        gameType: this.props.currentGameType,
+        decklistId: id,
+        usePrivateApi: usePrivateApi,
+        position,
+      });
+    };
 
   private handlePeerConnect = (peerId: string) => {
     this.clearPeerConnector();

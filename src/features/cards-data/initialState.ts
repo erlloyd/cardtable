@@ -1,4 +1,4 @@
-import { GameType } from "../../game-modules/GameModule";
+import { GameType } from "../../game-modules/GameType";
 import { CardData } from "../../external-api/common-card-data";
 import { loadState } from "../../store/localStorage";
 import { IGameState } from "../game/initialState";

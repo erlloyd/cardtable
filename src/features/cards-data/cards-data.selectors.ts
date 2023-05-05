@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { GameType } from "../../game-modules/GameModule";
+import { GameType } from "../../game-modules/GameType";
 import { CardData } from "../../external-api/common-card-data";
 import { RootState } from "../../store/rootReducer";
 import {
@@ -40,57 +40,86 @@ export const getCardsData = createSelector(
       lotrlcg: undefined,
     };
     // TODO: Make this a generic loop rather than hard-coding the types
-    let data = rawCardsData.data.marvelchampions;
-    if (data !== undefined) {
-      // This is stupid, have to do it for typescript
-      const eData = data;
-      const flattenedEntities = Object.keys(data.entities).reduce(
-        (result, key) => {
-          result[key] = eData.entities[key][0];
+
+    for (const gameType in rawCardsData.data) {
+      const data = rawCardsData.data[gameType as GameType];
+      if (data !== undefined) {
+        // This is stupid, have to do it for typescript
+        const eData = data;
+        const flattenedEntities = Object.keys(data.entities).reduce(
+          (result, key) => {
+            result[key] = eData.entities[key][0];
+            return result;
+          },
+          {} as ICardData
+        );
+
+        const flattenedEncounterEntities = Object.keys(
+          data.encounterEntities
+        ).reduce((result, key) => {
+          result[key] = eData.encounterEntities[key][0];
           return result;
-        },
-        {} as ICardData
-      );
+        }, {} as ICardData);
 
-      const flattenedEncounterEntities = Object.keys(
-        data.encounterEntities
-      ).reduce((result, key) => {
-        result[key] = eData.encounterEntities[key][0];
-        return result;
-      }, {} as ICardData);
-
-      dataToReturn.marvelchampions = {
-        entities: flattenedEntities,
-        encounterEntities: flattenedEncounterEntities,
-        setData: data.setData,
-      };
+        dataToReturn[gameType as GameType] = {
+          entities: flattenedEntities,
+          encounterEntities: flattenedEncounterEntities,
+          setData: data.setData,
+        };
+      }
     }
 
-    data = rawCardsData.data.lotrlcg;
-    if (data !== undefined) {
-      // This is stupid, have to do it for typescript
-      const eData = data;
-      const flattenedEntities = Object.keys(data.entities).reduce(
-        (result, key) => {
-          result[key] = eData.entities[key][0];
-          return result;
-        },
-        {} as ICardData
-      );
+    // let data = rawCardsData.data.marvelchampions;
+    // if (data !== undefined) {
+    //   // This is stupid, have to do it for typescript
+    //   const eData = data;
+    //   const flattenedEntities = Object.keys(data.entities).reduce(
+    //     (result, key) => {
+    //       result[key] = eData.entities[key][0];
+    //       return result;
+    //     },
+    //     {} as ICardData
+    //   );
 
-      const flattenedEncounterEntities = Object.keys(
-        data.encounterEntities
-      ).reduce((result, key) => {
-        result[key] = eData.encounterEntities[key][0];
-        return result;
-      }, {} as ICardData);
+    //   const flattenedEncounterEntities = Object.keys(
+    //     data.encounterEntities
+    //   ).reduce((result, key) => {
+    //     result[key] = eData.encounterEntities[key][0];
+    //     return result;
+    //   }, {} as ICardData);
 
-      dataToReturn.lotrlcg = {
-        entities: flattenedEntities,
-        encounterEntities: flattenedEncounterEntities,
-        setData: data.setData,
-      };
-    }
+    //   dataToReturn.marvelchampions = {
+    //     entities: flattenedEntities,
+    //     encounterEntities: flattenedEncounterEntities,
+    //     setData: data.setData,
+    //   };
+    // }
+
+    // data = rawCardsData.data.lotrlcg;
+    // if (data !== undefined) {
+    //   // This is stupid, have to do it for typescript
+    //   const eData = data;
+    //   const flattenedEntities = Object.keys(data.entities).reduce(
+    //     (result, key) => {
+    //       result[key] = eData.entities[key][0];
+    //       return result;
+    //     },
+    //     {} as ICardData
+    //   );
+
+    //   const flattenedEncounterEntities = Object.keys(
+    //     data.encounterEntities
+    //   ).reduce((result, key) => {
+    //     result[key] = eData.encounterEntities[key][0];
+    //     return result;
+    //   }, {} as ICardData);
+
+    //   dataToReturn.lotrlcg = {
+    //     entities: flattenedEntities,
+    //     encounterEntities: flattenedEncounterEntities,
+    //     setData: data.setData,
+    //   };
+    // }
     return { activeDataType: rawCardsData.activeDataType, data: dataToReturn };
   }
 );

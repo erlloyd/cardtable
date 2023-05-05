@@ -33,8 +33,9 @@ import {
 import { ICardDetails, ICardStack } from "./initialState";
 import log from "loglevel";
 import { sendNotification } from "../notifications/notifications.slice";
-import { GameType, ILoadedDeck } from "../../game-modules/GameModule";
+import { ILoadedDeck } from "../../game-modules/GameModule";
 import GameManager from "../../game-modules/GameModuleManager";
+import { GameType } from "../../game-modules/GameType";
 
 interface AddCardStackPayload {
   cardJsonIds: string[];

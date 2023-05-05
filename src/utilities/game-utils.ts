@@ -1,5 +1,5 @@
 import { GamePropertiesMap } from "../constants/game-type-properties-mapping";
-import { GameType } from "../game-modules/GameModule";
+import { GameType } from "../game-modules/GameType";
 import { cacheImages } from "./card-utils";
 
 export const cacheCommonImages = (gameType: GameType) => {

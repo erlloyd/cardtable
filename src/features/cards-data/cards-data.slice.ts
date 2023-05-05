@@ -16,8 +16,9 @@ import { receiveRemoteGameState } from "../../store/global.actions";
 // TODO: Get this into modules
 import { FORCE_CARD_BACK_MAP } from "../../constants/card-missing-image-map";
 import log from "loglevel";
-import { GameType, ILoadEncounterSetData } from "../../game-modules/GameModule";
+import { ILoadEncounterSetData } from "../../game-modules/GameModule";
 import GameManager from "../../game-modules/GameModuleManager";
+import { GameType } from "../../game-modules/GameType";
 
 // Reducers
 const loadCardsDataReducer: CaseReducer<

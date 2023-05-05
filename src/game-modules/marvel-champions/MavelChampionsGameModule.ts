@@ -5,7 +5,6 @@ import {
 import { ICardData, ISetData } from "../../features/cards-data/initialState";
 import {
   GameModule,
-  GameType,
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
@@ -25,6 +24,7 @@ import { RootState } from "../../store/rootReducer";
 import { CARD_PACK_REMAPPING } from "./remappedPacks";
 import { IEncounterEntity } from "../../features/cards-data/cards-data.selectors";
 import { loadEncounterEntities } from "./loadEncounterEntities";
+import { GameType } from "../GameType";
 
 export default class MarvelChampionsGameModule extends GameModule {
   constructor() {
@@ -107,7 +107,10 @@ export default class MarvelChampionsGameModule extends GameModule {
         },
       },
     };
-    super(properties, MissingCardImages, EXTRA_CARDS, CARD_PACK_REMAPPING);
+    super(properties, MissingCardImages, EXTRA_CARDS, CARD_PACK_REMAPPING, [
+      "main_scheme",
+      "side_scheme",
+    ]);
   }
 
   getSetData(): ISetData {

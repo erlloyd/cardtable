@@ -1,5 +1,5 @@
-import { CodeToImageMap, GameModule } from "./GameModule";
-import { GameType } from "./GameModule";
+import { GameModule, StringToStringMap } from "./GameModule";
+import { GameType } from "./GameType";
 import { GameProperties } from "./GameModule";
 
 import MarvelChampionsGameModule from "./marvel-champions/MavelChampionsGameModule";
@@ -24,7 +24,12 @@ const games: { type: GameType; module: GameModule }[] = [
 class GamePluginManager {
   private _games: null | { type: GameType; module: GameModule }[] = null;
   private _properties: null | { [key in GameType]: GameProperties } = null;
-  private _cardImageMap: null | { [key in GameType]: CodeToImageMap } = null;
+  private _cardImageMap: null | { [key in GameType]: StringToStringMap } = null;
+  private _horizontalCardTypes: null | { [key in GameType]: string[] } = null;
+
+  public get allRegisteredModules(): GameModule[] {
+    return this._games?.map((g) => g.module) ?? [];
+  }
 
   public get allRegisteredGameTypes(): GameType[] {
     return this._games?.map((g) => g.type) ?? [];
@@ -34,8 +39,12 @@ class GamePluginManager {
     return this._properties!;
   }
 
-  public get cardImageMap(): { [key in GameType]: CodeToImageMap } {
+  public get cardImageMap(): { [key in GameType]: StringToStringMap } {
     return this._cardImageMap!;
+  }
+
+  public get horizontalCardTypes(): { [key in GameType]: string[] } {
+    return this._horizontalCardTypes!;
   }
 
   getModuleForType(type: GameType): GameModule {
@@ -63,7 +72,12 @@ class GamePluginManager {
     this._cardImageMap = games.reduce((imageMap, g) => {
       imageMap[g.type] = g.module.imageMap;
       return imageMap;
-    }, {} as { [key in GameType]: CodeToImageMap });
+    }, {} as { [key in GameType]: StringToStringMap });
+
+    this._horizontalCardTypes = games.reduce((horizontalCards, g) => {
+      horizontalCards[g.type] = g.module.horizontalTypeCodes;
+      return horizontalCards;
+    }, {} as { [key in GameType]: string[] });
   }
 }
 
