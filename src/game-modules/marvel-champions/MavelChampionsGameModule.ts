@@ -105,6 +105,14 @@ export default class MarvelChampionsGameModule extends GameModule {
           imagePath:
             process.env.PUBLIC_URL + "/images/standard/generic_counter.png",
         },
+        acceleration: {
+          counterTokenType: CounterTokenType.Acceleration,
+          isNumeric: true,
+          touchMenuLetter: "Accel",
+          menuText: "Set Acceleration Tokens",
+          imagePath:
+            process.env.PUBLIC_URL + "/images/standard/acceleration.png",
+        },
       },
     };
     super(properties, MissingCardImages, EXTRA_CARDS, CARD_PACK_REMAPPING, [

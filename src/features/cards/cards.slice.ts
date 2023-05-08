@@ -91,6 +91,7 @@ const createNewEmptyCardStackWithId = (id: string): ICardStack => {
       damage: 0,
       threat: 0,
       generic: 0,
+      acceleration: 0,
     },
     modifiers: {},
     extraIcons: [],
@@ -365,6 +366,7 @@ const clearCardTokensReducer: CaseReducer<
         damage: 0,
         threat: 0,
         generic: 0,
+        acceleration: 0,
       };
 
       card.modifiers = {};
@@ -768,8 +770,15 @@ const adjustCounterTokenReducer: CaseReducer<
     if (action.payload.value !== undefined) {
       c.counterTokens[action.payload.tokenType] = action.payload.value;
     } else if (action.payload.delta !== undefined) {
+      if (
+        c.counterTokens[action.payload.tokenType] === null ||
+        c.counterTokens[action.payload.tokenType] === undefined
+      ) {
+        c.counterTokens[action.payload.tokenType] = 0;
+      }
       c.counterTokens[action.payload.tokenType] += action.payload.delta;
     }
+
     if (c.counterTokens[action.payload.tokenType] < 0) {
       c.counterTokens[action.payload.tokenType] = 0;
     }
@@ -1091,6 +1100,7 @@ const cardsSlice = createSlice({
           damage: 0,
           threat: 0,
           generic: 0,
+          acceleration: 0,
         },
         modifiers: {},
         extraIcons: [],
@@ -1356,6 +1366,7 @@ const handleLoadDeck = (
       damage: 0,
       threat: 0,
       generic: 0,
+      acceleration: 0,
     },
     modifiers: {},
     extraIcons: [],
@@ -1392,6 +1403,7 @@ const handleLoadDeck = (
       damage: 0,
       threat: 0,
       generic: 0,
+      acceleration: 0,
     },
     modifiers: {},
     extraIcons: [],
@@ -1420,6 +1432,7 @@ const handleLoadDeck = (
       damage: 0,
       threat: 0,
       generic: 0,
+      acceleration: 0,
     },
     modifiers: {},
     extraIcons: [],
@@ -1448,6 +1461,7 @@ const handleLoadDeck = (
       damage: 0,
       threat: 0,
       generic: 0,
+      acceleration: 0,
     },
     modifiers: {},
     extraIcons: [],

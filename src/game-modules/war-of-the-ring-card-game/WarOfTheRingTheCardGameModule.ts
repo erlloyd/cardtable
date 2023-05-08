@@ -15,7 +15,7 @@ import { properties } from "./properties";
 import log from "loglevel";
 import { GameType } from "../GameType";
 import { scenarios } from "./jsonMetadata/scenarios/scenarios";
-
+import { groupBy } from "lodash";
 interface Scenario {
   Name: string;
   Cards: ScenarioCard[];
@@ -32,6 +32,7 @@ interface ScenarioCard {
   FrontImage: string;
   BackImage: string;
   Type: string;
+  ScenarioDeck: string;
 }
 
 export default class WarOfTheRingTheCardGameModule extends GameModule {
@@ -99,7 +100,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
       subTypeCode: null,
       extraInfo: {
         campaign: false,
-        setCode: null,
+        setCode: c.ScenarioDeck,
         packCode: "TODO - wotr",
         setType: null,
         factionCode: null,
@@ -122,6 +123,13 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
       setData: value,
       cards: value.cardsInSet.map((cis) => encounterEntities[cis.code]),
     }));
+  }
+
+  splitEncounterCardsIntoStacksWhenLoading(
+    encounterCards: CardData[]
+  ): string[][] {
+    const temp = groupBy<CardData>(encounterCards, (e) => e.extraInfo.setCode);
+    return Object.values(temp).map((cardList) => cardList.map((c) => c.code));
   }
 }
 

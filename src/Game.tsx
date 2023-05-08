@@ -1526,6 +1526,12 @@ class Game extends Component<IProps, IState> {
           tokenType: CounterTokenType.Generic,
           value: 0,
         });
+
+        this.props.adjustCounterToken({
+          id: card?.id || "",
+          tokenType: CounterTokenType.Acceleration,
+          value: 0,
+        });
       },
     });
 
@@ -1878,13 +1884,64 @@ class Game extends Component<IProps, IState> {
 
   private handleKeyDown = (event: KeyboardEvent) => {
     const code = event.key.toLocaleLowerCase();
-    const intCode = parseInt(code);
+    let intCode = parseInt(code);
 
     if (event.key === "a" && !this.props.gameState.drawingArrow) {
       this.props.setDrawingArrow(true);
     }
 
-    if ((event.ctrlKey || event.metaKey) && !Number.isNaN(intCode)) {
+    // Map the shift cases
+    if (event.key === "!") {
+      intCode = 1;
+    } else if (event.key === "@") {
+      intCode = 2;
+    } else if (event.key === "#") {
+      intCode = 3;
+    } else if (event.key === "$") {
+      intCode = 4;
+    } else if (event.key === "%") {
+      intCode = 5;
+    } else if (event.key === "^") {
+      intCode = 6;
+    } else if (event.key === "&") {
+      intCode = 7;
+    } else if (event.key === "*") {
+      intCode = 8;
+    } else if (event.key === "(") {
+      intCode = 9;
+    } else if (event.key === ")") {
+      intCode = 0;
+    }
+
+    // If all else fails, try keyCode
+    if (Number.isNaN(intCode)) {
+      if (event.keyCode === 49) {
+        intCode = 1;
+      } else if (event.keyCode === 50) {
+        intCode = 2;
+      } else if (event.keyCode === 51) {
+        intCode = 3;
+      } else if (event.keyCode === 52) {
+        intCode = 4;
+      } else if (event.keyCode === 53) {
+        intCode = 5;
+      } else if (event.keyCode === 54) {
+        intCode = 6;
+      } else if (event.keyCode === 55) {
+        intCode = 7;
+      } else if (event.keyCode === 56) {
+        intCode = 8;
+      } else if (event.keyCode === 57) {
+        intCode = 9;
+      } else if (event.keyCode === 48) {
+        intCode = 0;
+      }
+    }
+
+    if (
+      (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) &&
+      !Number.isNaN(intCode)
+    ) {
       const tokenInfoForGameType =
         GamePropertiesMap[this.props.currentGameType].tokens;
       switch (intCode) {
@@ -1892,7 +1949,7 @@ class Game extends Component<IProps, IState> {
           if (!!tokenInfoForGameType.damage) {
             this.props.adjustCounterToken({
               tokenType: CounterTokenType.Damage,
-              delta: 1,
+              delta: event.shiftKey ? -1 : 1,
             });
           }
           break;
@@ -1900,7 +1957,7 @@ class Game extends Component<IProps, IState> {
           if (!!tokenInfoForGameType.threat) {
             this.props.adjustCounterToken({
               tokenType: CounterTokenType.Threat,
-              delta: 1,
+              delta: event.shiftKey ? -1 : 1,
             });
           }
           break;
@@ -1909,32 +1966,15 @@ class Game extends Component<IProps, IState> {
           if (!!tokenInfoForGameType.generic) {
             this.props.adjustCounterToken({
               tokenType: CounterTokenType.Generic,
-              delta: 1,
+              delta: event.shiftKey ? -1 : 1,
             });
           }
           break;
         case 4:
           if (!!tokenInfoForGameType.damage) {
             this.props.adjustCounterToken({
-              tokenType: CounterTokenType.Damage,
-              delta: -1,
-            });
-          }
-          break;
-        case 5:
-          if (!!tokenInfoForGameType.threat) {
-            this.props.adjustCounterToken({
-              tokenType: CounterTokenType.Threat,
-              delta: -1,
-            });
-          }
-          break;
-
-        case 6:
-          if (!!tokenInfoForGameType.generic) {
-            this.props.adjustCounterToken({
-              tokenType: CounterTokenType.Generic,
-              delta: -1,
+              tokenType: CounterTokenType.Acceleration,
+              delta: event.shiftKey ? -1 : 1,
             });
           }
           break;
@@ -2259,6 +2299,7 @@ class Game extends Component<IProps, IState> {
             },
           });
         },
+        hidden: !GamePropertiesMap[this.props.currentGameType].decklistApi,
       },
       {
         label: `Search for Online Deck`,
@@ -2267,6 +2308,8 @@ class Game extends Component<IProps, IState> {
             this.stage?.getPointerPosition() || { x: 0, y: 0 }
           );
         },
+        hidden:
+          !GamePropertiesMap[this.props.currentGameType].decklistSearchApi,
       },
       // {
       //   label: "Load Deck from json file",
@@ -2297,6 +2340,7 @@ class Game extends Component<IProps, IState> {
             this.stage?.getPointerPosition() || { x: 0, y: 0 }
           );
         },
+        hidden: !GamePropertiesMap[this.props.currentGameType].decklistApi,
       },
       {
         label: "Create new counter",

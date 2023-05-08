@@ -20,4 +20,5 @@ export enum CounterTokenType {
   Damage = "damage",
   Threat = "threat",
   Generic = "generic",
+  Acceleration = "acceleration",
 }

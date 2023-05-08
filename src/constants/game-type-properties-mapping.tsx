@@ -19,6 +19,7 @@ export interface GameProperties {
     damage: NumericTokenInfo | null;
     threat: NumericTokenInfo | null;
     generic: NumericTokenInfo | null;
+    acceleration: NumericTokenInfo | null;
   };
 }
 

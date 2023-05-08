@@ -15,6 +15,7 @@ export interface ContextMenuItem {
   fileLoadedAction?: (fileContents: string) => void;
   children?: ContextMenuItem[];
   fileUploader?: boolean;
+  hidden?: boolean;
 }
 
 interface IProps {
@@ -73,7 +74,9 @@ class ContextMenu extends Component<IProps, IState> {
               : undefined
           }
         >
-          {this.props.items.map((i, index) => this.renderMenuItem(i, index))}
+          {this.props.items.map((i, index) =>
+            !i.hidden ? this.renderMenuItem(i, index) : null
+          )}
         </Menu>
       </div>
     );

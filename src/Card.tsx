@@ -634,7 +634,7 @@ class Card extends Component<IProps, IState> {
         {stunnedToken}
         {confusedToken}
         {toughToken}
-        {cardTokens}
+        {this.props.isPreview ? null : cardTokens}
         {cardModifiers}
       </Group>
     );

@@ -114,6 +114,7 @@ const makeFakeCardStackFromJsonId = (jsonId: string): ICardStack => {
       damage: 0,
       threat: 0,
       generic: 0,
+      acceleration: 0,
     },
     modifiers: {},
     extraIcons: [],

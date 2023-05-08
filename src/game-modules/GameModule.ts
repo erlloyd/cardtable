@@ -93,9 +93,9 @@ export interface GameProperties {
     damage: NumericTokenInfo | null;
     threat: NumericTokenInfo | null;
     generic: NumericTokenInfo | null;
+    acceleration: NumericTokenInfo | null;
   };
 }
-
 export abstract class GameModule {
   properties: GameProperties;
   imageMap: StringToStringMap;
@@ -142,4 +142,8 @@ export abstract class GameModule {
     herosData: ICardData,
     encounterEntities: ICardData
   ): IEncounterEntity[];
+
+  splitEncounterCardsIntoStacksWhenLoading?(
+    encounterCards: CardData[]
+  ): string[][];
 }

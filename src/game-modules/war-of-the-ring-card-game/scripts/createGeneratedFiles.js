@@ -16,28 +16,92 @@ const outputDirLoadFile =
 const outputLoadFile = `${outputDirLoadFile}/scenarioList_wotr.ts`;
 
 const baseImgUrl = "https://ik.imagekit.io/cardtable/war_of_the_ring_card_game";
-const DeckToImagePathMap = {
-  Dúnedain: "/free_people_player_cards/",
-  Dwarf: "/free_people_player_cards/",
-  Elf: "/free_people_player_cards/",
-  Hobbit: "/free_people_player_cards/",
-  Rohan: "/free_people_player_cards/",
-  Wizard: "/free_people_player_cards/",
-  Isengard: "/shadow_player_cards/",
-  Monstrous: "/shadow_player_cards/",
-  Mordor: "/shadow_player_cards/",
-  Southron: "/shadow_player_cards/",
-  "Shadow Strongholds": "/shadow_strongholds/",
-  "Free People Strongholds": "/free_people_strongholds/",
-  Path1: "/Path1/",
-  Path2: "/Path2/",
-  Path3: "/Path3/",
-  Path4: "/Path4/",
-  Path5: "/Path5/",
-  Path6: "/Path6/",
-  Path7: "/Path7/",
-  Path8: "/Path8/",
-  Path9: "/Path9/",
+
+const DeckToMetadataMap = {
+  Dúnedain: {
+    imagePath: "/free_people_player_cards/",
+    scenarioDeck: "free_people",
+  },
+  Dwarf: {
+    imagePath: "/free_people_player_cards/",
+    scenarioDeck: "free_people",
+  },
+  Elf: {
+    imagePath: "/free_people_player_cards/",
+    scenarioDeck: "free_people",
+  },
+  Hobbit: {
+    imagePath: "/free_people_player_cards/",
+    scenarioDeck: "free_people",
+  },
+  Rohan: {
+    imagePath: "/free_people_player_cards/",
+    scenarioDeck: "free_people",
+  },
+  Wizard: {
+    imagePath: "/free_people_player_cards/",
+    scenarioDeck: "free_people",
+  },
+  Isengard: {
+    imagePath: "/shadow_player_cards/",
+    scenarioDeck: "shadow",
+  },
+  Monstrous: {
+    imagePath: "/shadow_player_cards/",
+    scenarioDeck: "shadow",
+  },
+  Mordor: {
+    imagePath: "/shadow_player_cards/",
+    scenarioDeck: "shadow",
+  },
+  Southron: {
+    imagePath: "/shadow_player_cards/",
+    scenarioDeck: "shadow",
+  },
+  "Shadow Strongholds": {
+    imagePath: "/shadow_strongholds/",
+    scenarioDeck: "strongholds",
+  },
+  "Free People Strongholds": {
+    imagePath: "/free_people_strongholds/",
+    scenarioDeck: "strongholds",
+  },
+  Path1: {
+    imagePath: "/Path1/",
+    scenarioDeck: "path",
+  },
+  Path2: {
+    imagePath: "/Path2/",
+    scenarioDeck: "path",
+  },
+  Path3: {
+    imagePath: "/Path3/",
+    scenarioDeck: "path",
+  },
+  Path4: {
+    imagePath: "/Path4/",
+    scenarioDeck: "path",
+  },
+  Path5: {
+    imagePath: "/Path5/",
+    scenarioDeck: "path",
+  },
+  Path6: {
+    imagePath: "/Path6/",
+    scenarioDeck: "path",
+  },
+  Path7: {
+    imagePath: "/Path7/",
+    scenarioDeck: "path",
+  },
+  Path8: {
+    imagePath: "/Path8/",
+    scenarioDeck: "path",
+  },
+  Path9: {
+    imagePath: "/Path9/",
+    scenarioDeck: "path",
+  },
 };
 
 const DeckToTypeMap = {
@@ -130,12 +194,13 @@ const doWork = async () => {
         const fullCard = {
           ...card,
           FrontImage: `${baseImgUrl}${DeckToAdjustmentsMap[card.Deck]}${
-            DeckToImagePathMap[card.Deck]
+            DeckToMetadataMap[card.Deck].imagePath
           }${card.Code}.png`,
           BackImage: `${baseImgUrl}${DeckToAdjustmentsMap[card.Deck]}${
-            DeckToImagePathMap[card.Deck]
+            DeckToMetadataMap[card.Deck].imagePath
           }${DeckToBackImageMap[card.Deck]}`,
           Type: DeckToTypeMap[card.Deck],
+          ScenarioDeck: DeckToMetadataMap[card.Deck].scenarioDeck,
         };
         cardsData[card.Code] = fullCard;
       }
