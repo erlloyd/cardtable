@@ -234,7 +234,7 @@ class CardTokens extends Component<IProps, IState> {
     ) : null;
 
     const threatX = this.props.x - desiredWidth / 2;
-    const threatY = damageY + desiredHeight + 5;
+    const threatY = damageY + (showDamage ? desiredHeight + 5 : 0);
     const showThreat =
       this.state.imagesLoaded.threat && !!this.props.card.counterTokens.threat;
 
@@ -279,7 +279,10 @@ class CardTokens extends Component<IProps, IState> {
     ) : null;
 
     const genericX = this.props.x - desiredWidth / 2;
-    const genericY = threatY + desiredHeight + 5;
+    const genericY =
+      damageY +
+      (showDamage ? desiredHeight + 5 : 0) +
+      (showThreat ? desiredHeight + 5 : 0);
     const showGeneric =
       this.state.imagesLoaded.generic &&
       !!this.props.card.counterTokens.generic;
@@ -325,7 +328,11 @@ class CardTokens extends Component<IProps, IState> {
     ) : null;
 
     const accelX = this.props.x - desiredWidth / 2;
-    const accelY = genericY + desiredHeight + 5;
+    const accelY =
+      damageY +
+      (showDamage ? desiredHeight + 5 : 0) +
+      (showThreat ? desiredHeight + 5 : 0) +
+      (showGeneric ? desiredHeight + 5 : 0);
     const showAccel =
       this.state.imagesLoaded.acceleration &&
       !!this.props.card.counterTokens.acceleration;
