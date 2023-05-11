@@ -43,9 +43,15 @@ import {
   shuffleStack,
   startCardMove,
 } from "./features/cards/cards.thunks";
-import { getCurrentCounters } from "./features/counters/counters.selectors";
 import {
+  getCurrentCounters,
+  getCurrentTokens,
+} from "./features/counters/counters.selectors";
+import {
+  createNewTokens,
+  flipToken,
   moveCounter,
+  moveToken,
   removeCounter,
   updateCounterColor,
   updateCounterValue,
@@ -102,6 +108,7 @@ const mapStateToProps = (state: RootState) => {
     multiselectMode: getMultiselectMode(state),
     gameState: getGame(state),
     counters: getCurrentCounters(state),
+    tokens: getCurrentTokens(state),
     peerId: getPeerId(state),
     multiplayerGameName: getMultiplayerGameName(state),
     dropTargetCardsById: getDropTargetCardsById(state),
@@ -174,6 +181,9 @@ const GameContainer = connect(mapStateToProps, {
   removeAnyDisconnectedArrows,
   endDisconnectedArrow,
   removeAllArrows,
+  createNewTokens,
+  moveToken,
+  flipToken,
 })(Game);
 
 export default GameContainer;

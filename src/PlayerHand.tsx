@@ -39,6 +39,7 @@ import {
 } from "./utilities/card-utils";
 import { GameType } from "./game-modules/GameType";
 import GameManager from "./game-modules/GameModuleManager";
+import { CardSizeType } from "./constants/card-constants";
 
 const grid = 8;
 
@@ -118,6 +119,7 @@ const makeFakeCardStackFromJsonId = (jsonId: string): ICardStack => {
     },
     modifiers: {},
     extraIcons: [],
+    sizeType: CardSizeType.Standard,
   };
 };
 

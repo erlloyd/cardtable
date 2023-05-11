@@ -1,12 +1,14 @@
 import { createAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/lib/types";
 import { ICardDetails } from "./initialState";
+import { CardSizeType } from "../../constants/card-constants";
 
 export interface AddCardStackWithSnapAndIdPayload {
   cardJsonIds: string[];
   position: Vector2d;
   snap: boolean;
   id: string;
+  sizeType: CardSizeType;
 }
 
 export interface PullCardOutOfCardStackWithIdPayload {

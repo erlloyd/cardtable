@@ -40,7 +40,7 @@ const getPointFromCards = (
   const card = cards.find((c) => c.id === cardId);
   let returnPos = !!card ? { x: card.x, y: card.y } : null;
   if (!!returnPos && alignToBottom) {
-    returnPos.y += cardConstants.CARD_HEIGHT / 2;
+    returnPos.y += cardConstants[card!.sizeType].CARD_HEIGHT / 2;
   }
 
   return returnPos;

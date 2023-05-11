@@ -2,6 +2,7 @@ import { createSelector } from "@reduxjs/toolkit";
 import { RootState } from "../../store/rootReducer";
 import { ICardStack } from "../cards/initialState";
 import { useWSLocalStorage } from "../../constants/app-constants";
+import { CardSizeType } from "../../constants/card-constants";
 
 export const getGame = (state: RootState) => state.game;
 
@@ -84,6 +85,7 @@ export const getMenuPreviewCard = createSelector(getGame, (game) => {
     cardStack: [{ jsonId: game.menuPreviewCardJsonId }],
     modifiers: {},
     extraIcons: [],
+    sizeType: CardSizeType.Standard, // TODO: FIX THIS TO USE THE ACTION CARD SIZE
   };
 
   return menuPreviewCard;

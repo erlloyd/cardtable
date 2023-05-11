@@ -53,4 +53,12 @@ export const properties: GameProperties = {
         "/images/from_modules/war-of-the-ring-card-game/path_defense.png",
     },
   },
+  iconCounters: [
+    {
+      counterName: "Corruption",
+      counterImage:
+        process.env.PUBLIC_URL +
+        "/images/from_modules/war-of-the-ring-card-game/corruption.png",
+    },
+  ],
 };

@@ -6,10 +6,14 @@ import { RootState } from "../../store/rootReducer";
 import { addNewCounterWithId } from "./counters.actions";
 
 export const addNewCounter =
-  (pos: Vector2d): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (
+    pos: Vector2d,
+    imgUrl?: string
+  ): ThunkAction<void, RootState, unknown, Action<string>> =>
   (dispatch) => {
     const payloadWithId = {
       pos,
+      imgUrl,
       id: uuidv4(),
     };
     dispatch(addNewCounterWithId(payloadWithId));

@@ -7,6 +7,7 @@ import { AxiosResponse } from "axios";
 import { RootState } from "../store/rootReducer";
 import { IEncounterEntity } from "../features/cards-data/cards-data.selectors";
 import { GameType } from "./GameType";
+import { IFlippableToken } from "../features/counters/initialState";
 
 export type CardPackRemapping = { [key: string]: string };
 
@@ -76,6 +77,11 @@ export interface ModifierInfo {
 export type StringToStringMap = { [key: string]: string };
 export type StringToStringArrayMap = { [key: string]: string[] };
 
+export interface IconCounter {
+  counterName: string;
+  counterImage: string;
+}
+
 export interface GameProperties {
   deckSite: string;
   decklistApi: string;
@@ -95,6 +101,7 @@ export interface GameProperties {
     generic: NumericTokenInfo | null;
     acceleration: NumericTokenInfo | null;
   };
+  iconCounters?: IconCounter[];
 }
 export abstract class GameModule {
   properties: GameProperties;
@@ -146,4 +153,6 @@ export abstract class GameModule {
   splitEncounterCardsIntoStacksWhenLoading?(
     encounterCards: CardData[]
   ): string[][];
+
+  getTokensForEncounterSet?(setCode: string): IFlippableToken[];
 }

@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { ICardStack } from "./features/cards/initialState";
 import { Rect, Text } from "react-konva";
-import { CounterTokenType, cardConstants } from "./constants/card-constants";
+import { cardConstants } from "./constants/card-constants";
 import { GameType } from "./game-modules/GameType";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 interface IProps {
@@ -183,7 +183,10 @@ class CardTokens extends Component<IProps, IState> {
     if (!this.props.card) return null;
 
     const damageX = this.props.x - desiredWidth / 2;
-    const damageY = this.props.y - cardConstants.CARD_HEIGHT / 2 + 20;
+    const damageY =
+      this.props.y -
+      cardConstants[this.props.card.sizeType].CARD_HEIGHT / 2 +
+      20;
     const showDamage =
       this.state.imagesLoaded.damage && !!this.props.card.counterTokens.damage;
 
@@ -201,12 +204,6 @@ class CardTokens extends Component<IProps, IState> {
         fillPatternImage={this.damageImg}
       ></Rect>
     ) : null;
-
-    console.log(
-      GamePropertiesMap[this.props.currentGameType].tokens[
-        CounterTokenType.Damage
-      ]
-    );
 
     const damageText = showDamage ? (
       <Text

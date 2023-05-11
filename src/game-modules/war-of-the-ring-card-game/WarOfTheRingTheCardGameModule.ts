@@ -16,6 +16,8 @@ import log from "loglevel";
 import { GameType } from "../GameType";
 import { scenarios } from "./jsonMetadata/scenarios/scenarios";
 import { groupBy } from "lodash";
+import { IFlippableToken } from "../../features/counters/initialState";
+import { CardSizeType } from "../../constants/card-constants";
 interface Scenario {
   Name: string;
   Cards: ScenarioCard[];
@@ -33,11 +35,12 @@ interface ScenarioCard {
   BackImage: string;
   Type: string;
   ScenarioDeck: string;
+  CardSize: CardSizeType;
 }
 
 export default class WarOfTheRingTheCardGameModule extends GameModule {
   constructor() {
-    super(properties, {}, {}, {}, ["stronghold", "path"]);
+    super(properties, {}, {}, {}, ["stronghold", "path", "misc"]);
   }
   getSetData(): ISetData {
     const setData: ISetData = {};
@@ -104,6 +107,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
         packCode: "TODO - wotr",
         setType: null,
         factionCode: null,
+        sizeType: c.CardSize,
       },
     }));
   }
@@ -130,6 +134,45 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
   ): string[][] {
     const temp = groupBy<CardData>(encounterCards, (e) => e.extraInfo.setCode);
     return Object.values(temp).map((cardList) => cardList.map((c) => c.code));
+  }
+
+  getTokensForEncounterSet(setCode: string): IFlippableToken[] {
+    switch (setCode) {
+      case "The Fellowship of the Ring":
+        return [
+          {
+            id: "wotr-card-game-fp-ring-token",
+            faceup: true,
+            imgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_front.png",
+            backImgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
+            position: { x: 0, y: 0 },
+          },
+          {
+            id: "wotr-card-game-shadow-ring-token",
+            faceup: true,
+            imgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/shadow_ring_front.png",
+            backImgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
+            position: { x: 0, y: 0 },
+          },
+          {
+            id: "wotr-card-game-player-order-token",
+            faceup: true,
+            imgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/turn_order_marker.png",
+            position: { x: 0, y: 0 },
+          },
+        ];
+    }
+    return [];
   }
 }
 

@@ -21,86 +21,112 @@ const DeckToMetadataMap = {
   Dúnedain: {
     imagePath: "/free_people_player_cards/",
     scenarioDeck: "free_people",
+    sizeType: "standard",
   },
   Dwarf: {
     imagePath: "/free_people_player_cards/",
     scenarioDeck: "free_people",
+    sizeType: "standard",
   },
   Elf: {
     imagePath: "/free_people_player_cards/",
     scenarioDeck: "free_people",
+    sizeType: "standard",
   },
   Hobbit: {
     imagePath: "/free_people_player_cards/",
     scenarioDeck: "free_people",
+    sizeType: "standard",
   },
   Rohan: {
     imagePath: "/free_people_player_cards/",
     scenarioDeck: "free_people",
+    sizeType: "standard",
   },
   Wizard: {
     imagePath: "/free_people_player_cards/",
     scenarioDeck: "free_people",
+    sizeType: "standard",
   },
   Isengard: {
     imagePath: "/shadow_player_cards/",
     scenarioDeck: "shadow",
+    sizeType: "standard",
   },
   Monstrous: {
     imagePath: "/shadow_player_cards/",
     scenarioDeck: "shadow",
+    sizeType: "standard",
   },
   Mordor: {
     imagePath: "/shadow_player_cards/",
     scenarioDeck: "shadow",
+    sizeType: "standard",
   },
   Southron: {
     imagePath: "/shadow_player_cards/",
     scenarioDeck: "shadow",
+    sizeType: "standard",
   },
   "Shadow Strongholds": {
     imagePath: "/shadow_strongholds/",
     scenarioDeck: "strongholds",
+    sizeType: "tarot",
   },
   "Free People Strongholds": {
     imagePath: "/free_people_strongholds/",
     scenarioDeck: "strongholds",
+    sizeType: "tarot",
   },
   Path1: {
     imagePath: "/Path1/",
     scenarioDeck: "path",
+    sizeType: "tarot",
   },
   Path2: {
     imagePath: "/Path2/",
     scenarioDeck: "path",
+    sizeType: "tarot",
   },
   Path3: {
     imagePath: "/Path3/",
     scenarioDeck: "path",
+    sizeType: "tarot",
   },
   Path4: {
     imagePath: "/Path4/",
     scenarioDeck: "path",
+    sizeType: "tarot",
   },
   Path5: {
     imagePath: "/Path5/",
     scenarioDeck: "path",
+    sizeType: "tarot",
   },
   Path6: {
     imagePath: "/Path6/",
     scenarioDeck: "path",
+    sizeType: "tarot",
   },
   Path7: {
     imagePath: "/Path7/",
     scenarioDeck: "path",
+    sizeType: "tarot",
   },
   Path8: {
     imagePath: "/Path8/",
     scenarioDeck: "path",
+    sizeType: "tarot",
   },
   Path9: {
     imagePath: "/Path9/",
     scenarioDeck: "path",
+    sizeType: "tarot",
+  },
+  Miscellaneous: {
+    imagePath: "/Miscellaneous/",
+    scenarioDeck: "misc",
+    sizeType: "tarot",
   },
 };
 
@@ -126,6 +152,7 @@ const DeckToTypeMap = {
   Path7: "path",
   Path8: "path",
   Path9: "path",
+  Miscellaneous: "misc",
 };
 const DeckToBackImageMap = {
   Dúnedain: "free_people_player_card_back.jpg",
@@ -149,6 +176,15 @@ const DeckToBackImageMap = {
   Path7: "path7_back.jpg",
   Path8: "path8_back.jpg",
   Path9: "path9_back.jpg",
+};
+
+const SpecificCardToBackImageMap = {
+  m1: "m2.png",
+  m2: "m1.png",
+  m3: "m4.png",
+  m4: "m3.png",
+  m5: "m6.png",
+  m6: "m5.png",
 };
 
 const resolution = 500;
@@ -175,6 +211,7 @@ DeckToAdjustmentsMap = {
   Path7: `/tr:w-${resolution}`,
   Path8: `/tr:w-${resolution}`,
   Path9: `/tr:w-${resolution}`,
+  Miscellaneous: `/tr:w-${resolution}`,
 };
 
 const doWork = async () => {
@@ -191,6 +228,9 @@ const doWork = async () => {
       const p = await readfile(`${packsInputFolder}/${pFilename}`);
       const jsonPack = JSON.parse(p);
       for (const card of jsonPack.AllCards) {
+        // See if there's a specific override for back for the card
+        let backImage = SpecificCardToBackImageMap[card.Code];
+
         const fullCard = {
           ...card,
           FrontImage: `${baseImgUrl}${DeckToAdjustmentsMap[card.Deck]}${
@@ -198,9 +238,10 @@ const doWork = async () => {
           }${card.Code}.png`,
           BackImage: `${baseImgUrl}${DeckToAdjustmentsMap[card.Deck]}${
             DeckToMetadataMap[card.Deck].imagePath
-          }${DeckToBackImageMap[card.Deck]}`,
+          }${backImage || DeckToBackImageMap[card.Deck]}`,
           Type: DeckToTypeMap[card.Deck],
           ScenarioDeck: DeckToMetadataMap[card.Deck].scenarioDeck,
+          CardSize: DeckToMetadataMap[card.Deck].sizeType,
         };
         cardsData[card.Code] = fullCard;
       }

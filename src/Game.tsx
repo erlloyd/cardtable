@@ -19,7 +19,9 @@ import {
 } from "./constants/app-constants";
 import {
   cardConstants,
+  CardSizeType,
   CounterTokenType,
+  ENOUNTER_LOAD_START,
   StatusTokenType,
 } from "./constants/card-constants";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
@@ -32,7 +34,7 @@ import EncounterLoaderContainer from "./EncounterLoaderContainer";
 import { ICardData } from "./features/cards-data/initialState";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import { ICardsState, ICardStack } from "./features/cards/initialState";
-import { ICounter } from "./features/counters/initialState";
+import { ICounter, IFlippableToken } from "./features/counters/initialState";
 import { IGameState } from "./features/game/initialState";
 import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
 import "./Game.scss";
@@ -60,6 +62,7 @@ import log from "loglevel";
 import NotificationsContainer from "./Notifications/NotificationsContainer";
 import { GameType } from "./game-modules/GameType";
 import GameManager from "./game-modules/GameModuleManager";
+import FlippableToken from "./FlippableToken";
 
 const SCALE_BY = 1.02;
 
@@ -76,7 +79,7 @@ interface IProps {
   isDoneLoadingJSONData: boolean;
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
   endCardMove: (id: string) => void;
-  cardFromHandMove: (pos: Vector2d) => void;
+  cardFromHandMove: (pos: Vector2d, sizeType: CardSizeType) => void;
   exhaustCard: (id?: string) => void;
   deleteCardStack: (id?: string) => void;
   selectCard: (payload: { id: string; unselectOtherCards: boolean }) => void;
@@ -137,7 +140,7 @@ interface IProps {
     jsonId: string;
     pos: Vector2d;
   }) => void;
-  addNewCounter: (pos: Vector2d) => void;
+  addNewCounter: (pos: Vector2d, imgurl?: string) => void;
   updateCounterValue: (payload: { id: string; delta: number }) => void;
   removeCounter: (id: string) => void;
   moveCounter: (payload: { id: string; newPos: Vector2d }) => void;
@@ -147,6 +150,7 @@ interface IProps {
   redo: () => void;
   clearHistory: () => void;
   counters: ICounter[];
+  tokens: IFlippableToken[];
   requestResync: () => void;
   peerId: string;
   multiplayerGameName: string;
@@ -191,6 +195,9 @@ interface IProps {
   }) => void;
   removeAnyDisconnectedArrows: (myRef: string) => void;
   removeAllArrows: () => void;
+  createNewTokens: (tokens: IFlippableToken[]) => void;
+  moveToken: (payload: { id: string; pos: Vector2d }) => void;
+  flipToken: (id: string) => void;
 }
 
 interface IState {
@@ -389,6 +396,7 @@ class Game extends Component<IProps, IState> {
               tough: card.statusTokens.tough,
               tokens: { damage: 0, threat: 0, generic: 0 },
             }}
+            sizeType={card.sizeType}
           />
         );
       });
@@ -418,6 +426,7 @@ class Game extends Component<IProps, IState> {
           typeCode={getCardType(card, this.props.cardsData)}
           faceup={card.faceup}
           isGhost={true}
+          sizeType={card.sizeType}
         />
       );
     });
@@ -454,6 +463,7 @@ class Game extends Component<IProps, IState> {
             typeCode={getCardType(card, this.props.cardsData)}
             faceup={card.faceup}
             numCardsInStack={card.cardStack.length}
+            sizeType={card.sizeType}
           />
         );
       });
@@ -482,23 +492,29 @@ class Game extends Component<IProps, IState> {
               this.props.cardsData,
               this.props.currentGameType
             );
-            const rawPos = this.getRawPreviewCardPosition(isHorizontal);
+            const rawPos = this.getRawPreviewCardPosition(
+              isHorizontal,
+              card.sizeType
+            );
             const previewPos = this.getRelativePositionFromTarget(
               this.stage,
               rawPos
             );
 
-            let previewCardHeight = cardConstants.CARD_PREVIEW_HEIGHT;
-            let previewCardWidth = cardConstants.CARD_PREVIEW_WIDTH;
+            let previewCardHeight =
+              cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT;
+            let previewCardWidth =
+              cardConstants[card.sizeType].CARD_PREVIEW_WIDTH;
 
             // Note that we only adjust the height, because the card will
             // be rotated if it supposed to be displayed horizontally
             previewCardHeight = Math.min(
-              cardConstants.CARD_PREVIEW_HEIGHT,
+              cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT,
               isHorizontal ? window.innerWidth : window.innerHeight
             );
             const previewCardRatio =
-              previewCardHeight / cardConstants.CARD_PREVIEW_HEIGHT;
+              previewCardHeight /
+              cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT;
             previewCardWidth *= previewCardRatio;
 
             return imgUrls.some((url) => url.indexOf("_back") !== -1) ? null : (
@@ -525,6 +541,7 @@ class Game extends Component<IProps, IState> {
                 height={previewCardHeight / this.props.gameState.stageZoom.y}
                 width={previewCardWidth / this.props.gameState.stageZoom.x}
                 isPreview={true}
+                sizeType={card.sizeType}
               />
             );
           })
@@ -569,7 +586,8 @@ class Game extends Component<IProps, IState> {
                 this.getRelativePositionFromTarget(
                   this.stage,
                   this.lastMousePos
-                )
+                ),
+                CardSizeType.Standard //TODO: Figure this out from metadata?
               );
             }
           }
@@ -581,7 +599,8 @@ class Game extends Component<IProps, IState> {
 
           if (this.props.gameState.draggingCardFromHand) {
             this.props.cardFromHandMove(
-              this.getRelativePositionFromTarget(this.stage, this.lastMousePos)
+              this.getRelativePositionFromTarget(this.stage, this.lastMousePos),
+              CardSizeType.Standard //TODO: Figure this out from metadata?
             );
           }
         }}
@@ -727,6 +746,7 @@ class Game extends Component<IProps, IState> {
                             counter.id
                           )}
                           onDragEnd={this.handleCounterDrag(counter.id)}
+                          counterImageUrl={counter.imgUrl}
                         ></Counter>
                       ))}
                     </Group>
@@ -736,6 +756,21 @@ class Game extends Component<IProps, IState> {
                       <FirstPlayerTokenContainer
                         currentGameType={this.props.currentGameType}
                       ></FirstPlayerTokenContainer>
+                      <Group>
+                        {this.props.tokens.map((token) => (
+                          <FlippableToken
+                            key={`${token.id}-token`}
+                            currentGameType={this.props.currentGameType}
+                            id={token.id}
+                            imgUrl={token.imgUrl}
+                            backImgUrl={token.backImgUrl}
+                            pos={token.position}
+                            faceup={token.faceup}
+                            updatePos={this.props.moveToken}
+                            flipToken={this.props.flipToken}
+                          ></FlippableToken>
+                        ))}
+                      </Group>
                       <CurvedArrowsContainer></CurvedArrowsContainer>
                       {previewCards}
                     </Group>
@@ -1030,39 +1065,56 @@ class Game extends Component<IProps, IState> {
     ) : null;
   };
 
-  private handleLoadEncounter = (position: Vector2d) => (cards: string[][]) => {
-    this.clearEncounterImporter();
-    cards.forEach((c, index) => {
-      this.props.addCardStack({
-        position: {
-          x: position.x + cardConstants.GRID_SNAP_WIDTH * index,
-          y: position.y,
-        },
-        cardJsonIds: c,
+  private handleLoadEncounter =
+    (position: Vector2d) => (cards: string[][], tokens: IFlippableToken[]) => {
+      this.clearEncounterImporter();
+      cards.forEach((c, index) => {
+        this.props.addCardStack({
+          position: {
+            x: position.x + ENOUNTER_LOAD_START * index,
+            y: position.y,
+          },
+          cardJsonIds: c,
+        });
       });
-    });
 
-    // Cache the images
-    const imgUrls = cards.flat().reduce((urls, code) => {
-      const faceupCard = getImgUrlsFromJsonId(
-        code,
-        true,
-        this.props.cardsData,
-        this.props.currentGameType
-      );
-      const facedownCard = getImgUrlsFromJsonId(
-        code,
-        false,
-        this.props.cardsData,
-        this.props.currentGameType
-      );
-      return urls.concat(faceupCard, facedownCard);
-    }, [] as string[]);
+      if (tokens.length > 0) {
+        // Put the tokens up a bit
+        this.props.createNewTokens(
+          tokens.map((t, idx) => ({
+            ...t,
+            position: {
+              x: position.x + 200 * idx,
+              y: position.y + 100,
+            },
+          }))
+        );
+      }
 
-    const uniqueUrls = Array.from(new Set(imgUrls));
+      // Cache the images
+      const imgUrls = cards.flat().reduce((urls, code) => {
+        const faceupCard = getImgUrlsFromJsonId(
+          code,
+          true,
+          this.props.cardsData,
+          this.props.currentGameType
+        );
+        const facedownCard = getImgUrlsFromJsonId(
+          code,
+          false,
+          this.props.cardsData,
+          this.props.currentGameType
+        );
+        return urls.concat(faceupCard, facedownCard);
+      }, [] as string[]);
 
-    cacheImages(uniqueUrls);
-  };
+      const tokenUrls = tokens.map((t) => t.imgUrl);
+
+      const uniqueUrls = Array.from(new Set(imgUrls));
+      const uniqueTokenUrls = Array.from(new Set(tokenUrls));
+
+      cacheImages(uniqueUrls.concat(uniqueTokenUrls));
+    };
 
   private handleImportDeck =
     (position: Vector2d) => (id: number, usePrivateApi: boolean) => {
@@ -1786,14 +1838,14 @@ class Game extends Component<IProps, IState> {
           x:
             draggingCard.x +
             (draggingCard.exhausted
-              ? cardConstants.CARD_HEIGHT
-              : cardConstants.CARD_WIDTH) /
+              ? cardConstants[draggingCard.sizeType].CARD_HEIGHT
+              : cardConstants[draggingCard.sizeType].CARD_WIDTH) /
               2,
           y:
             draggingCard.y -
             (draggingCard.exhausted
-              ? cardConstants.CARD_WIDTH
-              : cardConstants.CARD_HEIGHT) /
+              ? cardConstants[draggingCard.sizeType].CARD_WIDTH
+              : cardConstants[draggingCard.sizeType].CARD_HEIGHT) /
               2,
         };
         const distance = getDistance(
@@ -1802,8 +1854,8 @@ class Game extends Component<IProps, IState> {
         );
 
         const dragDistanceThreshold = !!(event.evt as any).touches
-          ? cardConstants.TOUCH_DRAG_SPLIT_DISTANCE
-          : cardConstants.MOUSE_DRAG_SPLIT_DISTANCE;
+          ? cardConstants[draggingCard.sizeType].TOUCH_DRAG_SPLIT_DISTANCE
+          : cardConstants[draggingCard.sizeType].MOUSE_DRAG_SPLIT_DISTANCE;
 
         if (distance < dragDistanceThreshold) {
           splitTopCard = true;
@@ -2006,17 +2058,20 @@ class Game extends Component<IProps, IState> {
     }
   };
 
-  private getRawPreviewCardPosition = (horizontal: boolean): Vector2d => {
+  private getRawPreviewCardPosition = (
+    horizontal: boolean,
+    sizeType: CardSizeType
+  ): Vector2d => {
     const pointerPos = this.stage?.getPointerPosition() ?? { x: 0, y: 0 };
     const screenMidPointX = window.innerWidth / 2;
     const screenMidPointY = window.innerHeight / 2;
 
     const widthToUse = horizontal
-      ? cardConstants.CARD_PREVIEW_HEIGHT
-      : cardConstants.CARD_PREVIEW_WIDTH;
+      ? cardConstants[sizeType].CARD_PREVIEW_HEIGHT
+      : cardConstants[sizeType].CARD_PREVIEW_WIDTH;
     const heightToUse = horizontal
-      ? cardConstants.CARD_PREVIEW_WIDTH
-      : cardConstants.CARD_PREVIEW_HEIGHT;
+      ? cardConstants[sizeType].CARD_PREVIEW_WIDTH
+      : cardConstants[sizeType].CARD_PREVIEW_HEIGHT;
 
     if (this.state.previewCardModal) {
       return {
@@ -2112,8 +2167,8 @@ class Game extends Component<IProps, IState> {
             selectRect.height,
             card.x - 50,
             card.y - 75,
-            cardConstants.CARD_WIDTH,
-            cardConstants.CARD_HEIGHT
+            cardConstants[card.sizeType].CARD_WIDTH,
+            cardConstants[card.sizeType].CARD_HEIGHT
           );
 
           if (intersects) {
@@ -2344,11 +2399,31 @@ class Game extends Component<IProps, IState> {
       },
       {
         label: "Create new counter",
-        action: () => {
-          this.props.addNewCounter(
-            this.getRelativePositionFromTarget(this.stage) ?? { x: 0, y: 0 }
-          );
-        },
+        children: [
+          {
+            label: "Generic",
+            action: () => {
+              this.props.addNewCounter(
+                this.getRelativePositionFromTarget(this.stage) ?? { x: 0, y: 0 }
+              );
+            },
+          },
+        ].concat(
+          (
+            GamePropertiesMap[this.props.currentGameType].iconCounters || []
+          ).map((c) => ({
+            label: c.counterName,
+            action: () => {
+              this.props.addNewCounter(
+                this.getRelativePositionFromTarget(this.stage) ?? {
+                  x: 0,
+                  y: 0,
+                },
+                c.counterImage
+              );
+            },
+          }))
+        ),
       },
       { label: "Remove all arrows", action: this.props.removeAllArrows },
       { label: "Reset Game", action: this.props.resetApp },

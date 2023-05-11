@@ -7,7 +7,7 @@ import { Group, Rect, Text } from "react-konva";
 import { animated, Spring } from "@react-spring/konva";
 import CardTokensContainer from "./CardTokensContainer";
 import { myPeerRef, PlayerColor } from "./constants/app-constants";
-import { cardConstants } from "./constants/card-constants";
+import { CardSizeType, cardConstants } from "./constants/card-constants";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import CardModifiersContainer from "./CardModifiersContainer";
 import { shouldRenderImageHorizontal } from "./utilities/card-utils";
@@ -79,6 +79,7 @@ interface IProps {
     id: string,
     event: KonvaEventObject<PointerEvent>
   ) => void;
+  sizeType: CardSizeType;
 }
 
 interface IState {
@@ -316,8 +317,10 @@ class Card extends Component<IProps, IState> {
   }
 
   private renderCard(imageLoaded: boolean) {
-    const heightToUse = this.props.height || cardConstants.CARD_HEIGHT;
-    const widthToUse = this.props.width || cardConstants.CARD_WIDTH;
+    const heightToUse =
+      this.props.height || cardConstants[this.props.sizeType].CARD_HEIGHT;
+    const widthToUse =
+      this.props.width || cardConstants[this.props.sizeType].CARD_WIDTH;
 
     return this.renderUnanimatedCard(heightToUse, widthToUse, imageLoaded);
   }
@@ -675,7 +678,10 @@ class Card extends Component<IProps, IState> {
     };
 
     const stunnedOffset = {
-      x: offset.x - cardConstants.CARD_WIDTH + dimensions.width / 2,
+      x:
+        offset.x -
+        cardConstants[this.props.sizeType].CARD_WIDTH +
+        dimensions.width / 2,
       y: offset.y - dimensions.height * slot - 5 * (slot + 1) - 10,
     };
 

@@ -3,7 +3,12 @@ import { Vector2d } from "konva/lib/types";
 import { PlayerColor } from "../../constants/app-constants";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import { addNewCounterWithId } from "./counters.actions";
-import { defaultState, ICountersState, initialState } from "./initialState";
+import {
+  defaultState,
+  ICountersState,
+  IFlippableToken,
+  initialState,
+} from "./initialState";
 
 // Reducers
 const updateCounterValueReducer: CaseReducer<
@@ -59,6 +64,38 @@ const moveFirstPlayerCounterReducer: CaseReducer<
   };
 };
 
+const createNewTokensReducer: CaseReducer<
+  ICountersState,
+  PayloadAction<IFlippableToken[]>
+> = (state, action) => {
+  if (state.flippableTokens === undefined || state.flippableTokens === null) {
+    state.flippableTokens = [];
+  }
+
+  state.flippableTokens = state.flippableTokens.concat(action.payload);
+};
+
+const moveTokenReducer: CaseReducer<
+  ICountersState,
+  PayloadAction<{ id: string; pos: Vector2d }>
+> = (state, action) => {
+  const t = state.flippableTokens.find((t) => t.id === action.payload.id);
+
+  if (!!t) {
+    t.position = action.payload.pos;
+  }
+};
+
+const flipTokenReducer: CaseReducer<ICountersState, PayloadAction<string>> = (
+  state,
+  action
+) => {
+  const t = state.flippableTokens.find((token) => token.id === action.payload);
+  if (!!t) {
+    t.faceup = !t.faceup;
+  }
+};
+
 // slice
 const countersSlice = createSlice({
   name: "counters",
@@ -68,6 +105,9 @@ const countersSlice = createSlice({
     removeCounter: removeCounterReducer,
     moveCounter: moveCounterReducer,
     moveFirstPlayerCounter: moveFirstPlayerCounterReducer,
+    createNewTokens: createNewTokensReducer,
+    moveToken: moveTokenReducer,
+    flipToken: flipTokenReducer,
     updateCounterColor: updateCounterColorReducer,
   },
   extraReducers: (builder) => {
@@ -77,8 +117,9 @@ const countersSlice = createSlice({
         action.payload.liveState.present.counters.firstPlayerCounterPosition;
     });
 
-    builder.addCase(resetApp, (state, action) => {
+    builder.addCase(resetApp, (state, _action) => {
       state.counters = [];
+      state.flippableTokens = [];
       state.firstPlayerCounterPosition =
         defaultState.firstPlayerCounterPosition;
     });
@@ -89,6 +130,7 @@ const countersSlice = createSlice({
         position: action.payload.pos,
         value: 0,
         color: "red",
+        imgUrl: action.payload.imgUrl,
       });
     });
   },
@@ -99,6 +141,9 @@ export const {
   removeCounter,
   moveCounter,
   moveFirstPlayerCounter,
+  createNewTokens,
+  moveToken,
+  flipToken,
   updateCounterColor,
 } = countersSlice.actions;
 
