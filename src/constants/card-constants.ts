@@ -3,8 +3,6 @@ export enum CardSizeType {
   Tarot = "tarot",
 }
 
-export const ENOUNTER_LOAD_START = 209 + 20;
-
 export const cardConstants = {
   [CardSizeType.Standard]: {
     CARD_HEIGHT: 209,
@@ -24,8 +22,8 @@ export const cardConstants = {
     CARD_PREVIEW_WIDTH: 278,
     MOUSE_DRAG_SPLIT_DISTANCE: 50,
     TOUCH_DRAG_SPLIT_DISTANCE: 100,
-    GRID_SNAP_WIDTH: 209 + 20,
-    GRID_SNAP_HEIGHT: 209 + 50,
+    GRID_SNAP_WIDTH: 375 + 20,
+    GRID_SNAP_HEIGHT: 375 + 50,
     ATTACHMENT_OFFSET: 50,
   },
 };

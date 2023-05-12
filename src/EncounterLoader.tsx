@@ -7,10 +7,11 @@ import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import { GameType } from "./game-modules/GameType";
 import GameManager from "./game-modules/GameModuleManager";
 import { IFlippableToken } from "./features/counters/initialState";
+import { CardData } from "./external-api/common-card-data";
 interface IProps {
   currentGameType: GameType;
   encounterData: IEncounterEntity[];
-  loadCards: (cards: string[][], tokens: IFlippableToken[]) => void;
+  loadCards: (cards: CardData[][], tokens: IFlippableToken[]) => void;
 }
 
 class EncounterLoader extends Component<IProps> {
@@ -48,7 +49,7 @@ class EncounterLoader extends Component<IProps> {
 
   private handleSelected = (_event: any, value: IEncounterEntity | null) => {
     if (!!value) {
-      let totalCards = [] as string[][];
+      let totalCards = [] as CardData[][];
 
       const filteredCards = value.cards
         // We don't want cards that show up as another card's 'back_link' to be loaded as separate cards
@@ -63,15 +64,15 @@ class EncounterLoader extends Component<IProps> {
         totalCards = GameManager.getModuleForType(this.props.currentGameType)
           .splitEncounterCardsIntoStacksWhenLoading!!(filteredCards);
       } else {
-        let campaignCards: string[] = [];
-        let questCards: string[] = [];
-        let encounterCards: string[] = [];
+        let campaignCards: CardData[] = [];
+        let questCards: CardData[] = [];
+        let encounterCards: CardData[] = [];
 
         filteredCards
           .filter((c) => c.typeCode.toLocaleLowerCase() === "quest")
           .forEach((c) => {
             questCards = questCards.concat(
-              Array.from({ length: c.quantity }).map((_i) => c.code)
+              Array.from({ length: c.quantity }).map((_i) => c)
             );
           });
 
@@ -80,7 +81,7 @@ class EncounterLoader extends Component<IProps> {
           .filter((c) => c.extraInfo.campaign === true)
           .forEach((c) => {
             campaignCards = campaignCards.concat(
-              Array.from({ length: c.quantity }).map((_i) => c.code)
+              Array.from({ length: c.quantity }).map((_i) => c)
             );
           });
 
@@ -92,7 +93,7 @@ class EncounterLoader extends Component<IProps> {
           )
           .forEach((c) => {
             encounterCards = encounterCards.concat(
-              Array.from({ length: c.quantity }).map((_i) => c.code)
+              Array.from({ length: c.quantity }).map((_i) => c)
             );
           });
 

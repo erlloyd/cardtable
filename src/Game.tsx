@@ -21,7 +21,6 @@ import {
   cardConstants,
   CardSizeType,
   CounterTokenType,
-  ENOUNTER_LOAD_START,
   StatusTokenType,
 } from "./constants/card-constants";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
@@ -63,6 +62,7 @@ import NotificationsContainer from "./Notifications/NotificationsContainer";
 import { GameType } from "./game-modules/GameType";
 import GameManager from "./game-modules/GameModuleManager";
 import FlippableToken from "./FlippableToken";
+import { CardData } from "./external-api/common-card-data";
 
 const SCALE_BY = 1.02;
 
@@ -1066,16 +1066,22 @@ class Game extends Component<IProps, IState> {
   };
 
   private handleLoadEncounter =
-    (position: Vector2d) => (cards: string[][], tokens: IFlippableToken[]) => {
+    (position: Vector2d) =>
+    (cards: CardData[][], tokens: IFlippableToken[]) => {
       this.clearEncounterImporter();
+      let offset = 0;
       cards.forEach((c, index) => {
         this.props.addCardStack({
           position: {
-            x: position.x + ENOUNTER_LOAD_START * index,
+            x: position.x + offset,
             y: position.y,
           },
-          cardJsonIds: c,
+          cardJsonIds: c.map((card) => card.code),
         });
+
+        offset +=
+          cardConstants[c[0].extraInfo.sizeType ?? CardSizeType.Standard]
+            .GRID_SNAP_WIDTH;
       });
 
       if (tokens.length > 0) {
@@ -1085,22 +1091,22 @@ class Game extends Component<IProps, IState> {
             ...t,
             position: {
               x: position.x + 200 * idx,
-              y: position.y + 100,
+              y: position.y + 200,
             },
           }))
         );
       }
 
       // Cache the images
-      const imgUrls = cards.flat().reduce((urls, code) => {
+      const imgUrls = cards.flat().reduce((urls, card) => {
         const faceupCard = getImgUrlsFromJsonId(
-          code,
+          card.code,
           true,
           this.props.cardsData,
           this.props.currentGameType
         );
         const facedownCard = getImgUrlsFromJsonId(
-          code,
+          card.code,
           false,
           this.props.cardsData,
           this.props.currentGameType

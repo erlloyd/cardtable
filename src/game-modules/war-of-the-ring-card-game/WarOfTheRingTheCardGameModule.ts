@@ -131,9 +131,9 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
 
   splitEncounterCardsIntoStacksWhenLoading(
     encounterCards: CardData[]
-  ): string[][] {
+  ): CardData[][] {
     const temp = groupBy<CardData>(encounterCards, (e) => e.extraInfo.setCode);
-    return Object.values(temp).map((cardList) => cardList.map((c) => c.code));
+    return Object.values(temp);
   }
 
   getTokensForEncounterSet(setCode: string): IFlippableToken[] {

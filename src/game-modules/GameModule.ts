@@ -152,7 +152,7 @@ export abstract class GameModule {
 
   splitEncounterCardsIntoStacksWhenLoading?(
     encounterCards: CardData[]
-  ): string[][];
+  ): CardData[][];
 
   getTokensForEncounterSet?(setCode: string): IFlippableToken[];
 }
