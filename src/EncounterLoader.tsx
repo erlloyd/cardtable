@@ -62,7 +62,10 @@ class EncounterLoader extends Component<IProps> {
           .splitEncounterCardsIntoStacksWhenLoading
       ) {
         totalCards = GameManager.getModuleForType(this.props.currentGameType)
-          .splitEncounterCardsIntoStacksWhenLoading!!(filteredCards);
+          .splitEncounterCardsIntoStacksWhenLoading!!(
+          value.setCode,
+          filteredCards
+        );
       } else {
         let campaignCards: CardData[] = [];
         let questCards: CardData[] = [];

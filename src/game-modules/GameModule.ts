@@ -151,6 +151,7 @@ export abstract class GameModule {
   ): IEncounterEntity[];
 
   splitEncounterCardsIntoStacksWhenLoading?(
+    setCode: string,
     encounterCards: CardData[]
   ): CardData[][];
 

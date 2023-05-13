@@ -15,7 +15,7 @@ import {
   PlayerColor,
   playerHandHeightPx,
   possibleColors,
-  useWSLocalStorage,
+  useWebRTCLocalStorage,
 } from "./constants/app-constants";
 import {
   cardConstants,
@@ -292,6 +292,13 @@ class Game extends Component<IProps, IState> {
   }
 
   public componentDidMount() {
+    if (!GamePropertiesMap[this.props.currentGameType]) {
+      this.props.resetApp();
+      this.props.quitGame();
+      this.props.clearHistory();
+      return null;
+    }
+
     if (!this.isSetUp) {
       document.addEventListener("keydown", this.handleKeyDown);
       document.addEventListener("keyup", this.handleKeyUp);
@@ -344,6 +351,10 @@ class Game extends Component<IProps, IState> {
     // if (!this.props.isDoneLoadingJSONData) {
     //   return <div>LOADING JSON DATA...</div>;
     // }
+
+    if (!GamePropertiesMap[this.props.currentGameType]) {
+      return null;
+    }
 
     const staticCards = this.props.cards.cards
       .filter((card) => !card.dragging)
@@ -1069,19 +1080,36 @@ class Game extends Component<IProps, IState> {
     (position: Vector2d) =>
     (cards: CardData[][], tokens: IFlippableToken[]) => {
       this.clearEncounterImporter();
-      let offset = 0;
+
+      const sizeTypeToOffsetMap: { [key in CardSizeType]: Vector2d } = {} as {
+        [key in CardSizeType]: Vector2d;
+      };
+
+      let yOffset = 0;
+      Object.values(CardSizeType).forEach((type) => {
+        console.log(type);
+        console.log(cardConstants[type]);
+        sizeTypeToOffsetMap[type] = { x: 0, y: yOffset };
+        // Tarot is the biggest card size, so use that
+        yOffset += cardConstants[CardSizeType.Tarot].CARD_HEIGHT + 20;
+      });
+
       cards.forEach((c, index) => {
+        const cardSizeType = c[0]?.extraInfo.sizeType ?? CardSizeType.Standard;
         this.props.addCardStack({
           position: {
-            x: position.x + offset,
-            y: position.y,
+            x: position.x + sizeTypeToOffsetMap[cardSizeType].x,
+            y: position.y + sizeTypeToOffsetMap[cardSizeType].y,
           },
           cardJsonIds: c.map((card) => card.code),
         });
 
-        offset +=
-          cardConstants[c[0].extraInfo.sizeType ?? CardSizeType.Standard]
-            .GRID_SNAP_WIDTH;
+        sizeTypeToOffsetMap[cardSizeType] = {
+          x:
+            sizeTypeToOffsetMap[cardSizeType].x +
+            cardConstants[cardSizeType].GRID_SNAP_WIDTH,
+          y: sizeTypeToOffsetMap[cardSizeType].y,
+        };
       });
 
       if (tokens.length > 0) {
@@ -2436,8 +2464,8 @@ class Game extends Component<IProps, IState> {
       {
         label: "Quit Game",
         action: () => {
-          this.props.quitGame();
           this.props.resetApp();
+          this.props.quitGame();
           this.props.clearHistory();
         },
       },
@@ -2492,8 +2520,9 @@ class Game extends Component<IProps, IState> {
               : []
           )
           .concat(
-            useWSLocalStorage
-              ? [
+            useWebRTCLocalStorage
+              ? []
+              : [
                   {
                     label: `Start hosting a new online game`,
                     action: () => {
@@ -2501,7 +2530,6 @@ class Game extends Component<IProps, IState> {
                     },
                   },
                 ]
-              : []
           ),
       },
       {

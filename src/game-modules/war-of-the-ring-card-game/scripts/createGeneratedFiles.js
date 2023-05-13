@@ -240,7 +240,7 @@ const doWork = async () => {
             DeckToMetadataMap[card.Deck].imagePath
           }${backImage || DeckToBackImageMap[card.Deck]}`,
           Type: DeckToTypeMap[card.Deck],
-          ScenarioDeck: DeckToMetadataMap[card.Deck].scenarioDeck,
+          ScenarioDeck: card.Deck,
           CardSize: DeckToMetadataMap[card.Deck].sizeType,
         };
         cardsData[card.Code] = fullCard;

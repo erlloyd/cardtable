@@ -130,15 +130,114 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
   }
 
   splitEncounterCardsIntoStacksWhenLoading(
+    setCode: string,
     encounterCards: CardData[]
   ): CardData[][] {
     const temp = groupBy<CardData>(encounterCards, (e) => e.extraInfo.setCode);
-    return Object.values(temp);
+
+    let returnVal = [] as CardData[][];
+    switch (setCode) {
+      case "The Fellowship of the Ring":
+        const balrog = [
+          ...temp["Monstrous"],
+          ...temp["Mordor"],
+          ...temp["Isengard"],
+        ];
+        const gandalf = [
+          ...temp["Dúnedain"],
+          ...temp["Dwarf"],
+          ...temp["Elf"],
+          ...temp["Hobbit"],
+          ...temp["Wizard"],
+        ];
+        const bg = [
+          ...temp["Free People Strongholds"],
+          ...temp["Shadow Strongholds"],
+        ];
+        const p = [
+          ...temp["Path1"],
+          ...temp["Path2"],
+          ...temp["Path3"],
+          ...temp["Path4"],
+          ...temp["Path5"],
+          ...temp["Path6"],
+        ];
+        const m = [...temp["Miscellaneous"]];
+        returnVal = [balrog, gandalf, bg, p, m];
+        break;
+      case "Trilogy":
+        const frodo = [
+          ...temp["Dwarf"],
+          ...temp["Hobbit"],
+          ...temp["Rohan"],
+          ...temp["Wizard"],
+        ];
+        const witchKing = [...temp["Mordor"]];
+        const aragorn = [...temp["Dúnedain"], ...temp["Elf"]];
+        const saruman = [
+          ...temp["Isengard"],
+          ...temp["Monstrous"],
+          ...temp["Southron"],
+        ];
+        const fpStrongholds = [...temp["Free People Strongholds"]];
+        const shadowStrongholds = [...temp["Shadow Strongholds"]];
+        const paths = [
+          ...temp["Path1"],
+          ...temp["Path2"],
+          ...temp["Path3"],
+          ...temp["Path4"],
+          ...temp["Path5"],
+          ...temp["Path6"],
+          ...temp["Path7"],
+          ...temp["Path8"],
+          ...temp["Path9"],
+        ];
+        const misc = [...temp["Miscellaneous"]];
+
+        returnVal = [
+          frodo,
+          witchKing,
+          aragorn,
+          saruman,
+          fpStrongholds,
+          shadowStrongholds,
+          paths,
+          misc,
+        ];
+        break;
+    }
+
+    return returnVal;
   }
 
   getTokensForEncounterSet(setCode: string): IFlippableToken[] {
     switch (setCode) {
       case "The Fellowship of the Ring":
+        return [
+          {
+            id: "wotr-card-game-fp-ring-token",
+            faceup: true,
+            imgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_front.png",
+            backImgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
+            position: { x: 0, y: 0 },
+          },
+          {
+            id: "wotr-card-game-shadow-ring-token",
+            faceup: true,
+            imgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/shadow_ring_front.png",
+            backImgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
+            position: { x: 0, y: 0 },
+          },
+        ];
+      case "Trilogy":
         return [
           {
             id: "wotr-card-game-fp-ring-token",
