@@ -1251,8 +1251,8 @@ const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "39017": "https://hallofheroeshome.files.wordpress.com/2022/11/39017.jpg?w=300",
   "39018": "https://hallofheroeshome.files.wordpress.com/2022/11/39018.jpg?w=300",
   "39019": "https://hallofheroeshome.files.wordpress.com/2022/11/39019.jpg?w=300",
-  "39020": "https://hallofheroeshome.files.wordpress.com/2022/11/390.jpg?w=300",
-  "39021": "https://hallofheroeshome.files.wordpress.com/2022/11/39017.jpg?w=300",
+  "39020": "https://hallofheroeshome.files.wordpress.com/2022/11/39020.jpg?w=300",
+  "39021": "https://hallofheroeshome.files.wordpress.com/2022/11/39021.jpg?w=300",
 
   // Mojo
   "39022": "https://hallofheroeshome.files.wordpress.com/2022/11/39022.jpg?w=300",
