@@ -1,8 +1,9 @@
 import { Component } from "react";
 import * as React from "react";
 import { IEncounterEntity } from "./features/cards-data/cards-data.selectors";
-import Autocomplete from "@material-ui/lab/Autocomplete";
+import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
+
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import { GameType } from "./game-modules/GameType";
 import GameManager from "./game-modules/GameModuleManager";
@@ -19,10 +20,10 @@ class EncounterLoader extends Component<IProps> {
     const multipleSetTypes =
       new Set(this.props.encounterData.map((e) => e.setData.setTypeCode)).size >
       1;
-
     return (
       <div onClick={this.cancelBubble} onKeyPress={this.cancelBubble}>
         <Autocomplete
+          disablePortal
           id="encounter-loader-combobox"
           groupBy={
             multipleSetTypes
@@ -31,7 +32,7 @@ class EncounterLoader extends Component<IProps> {
           }
           options={this.props.encounterData || []}
           getOptionLabel={(option) => option.setData.name}
-          style={{ width: 300 }}
+          sx={{ width: 300 }}
           onChange={this.handleSelected}
           renderInput={(params) => (
             <TextField
@@ -39,12 +40,36 @@ class EncounterLoader extends Component<IProps> {
               label={
                 GamePropertiesMap[this.props.currentGameType].encounterUiName
               }
-              variant="outlined"
             />
           )}
         />
       </div>
     );
+    // return (
+    //   <div onClick={this.cancelBubble} onKeyPress={this.cancelBubble}>
+    //     <Autocomplete
+    //       id="encounter-loader-combobox"
+    //       groupBy={
+    //         multipleSetTypes
+    //           ? (option) => option.setData.setTypeCode
+    //           : undefined
+    //       }
+    //       options={this.props.encounterData || []}
+    //       getOptionLabel={(option) => option.setData.name}
+    //       style={{ width: 300 }}
+    //       onChange={this.handleSelected}
+    //       renderInput={(params) => (
+    //         <TextField
+    //           {...params}
+    //           label={
+    //             GamePropertiesMap[this.props.currentGameType].encounterUiName
+    //           }
+    //           variant="outlined"
+    //         />
+    //       )}
+    //     />
+    //   </div>
+    // );
   }
 
   private handleSelected = (_event: any, value: IEncounterEntity | null) => {

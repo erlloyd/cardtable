@@ -5,8 +5,9 @@ import { GameProperties } from "./GameModule";
 import MarvelChampionsGameModule from "./marvel-champions/MavelChampionsGameModule";
 import LOTRLCGGameModule from "./lotr-lcg/LOTRLCGGameModule";
 import WarOfTheRingTheCardGameModule from "./war-of-the-ring-card-game/WarOfTheRingTheCardGameModule";
+import { showHiddenGamesLocalStorage } from "../constants/app-constants";
 
-const games: { type: GameType; module: GameModule }[] = [
+const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
     type: GameType.MarvelChampions,
     module: new MarvelChampionsGameModule(),
@@ -18,11 +19,14 @@ const games: { type: GameType; module: GameModule }[] = [
   {
     type: GameType.WarOfTheRingTheCardGame,
     module: new WarOfTheRingTheCardGameModule(),
+    hidden: true,
   },
 ];
 
 class GamePluginManager {
-  private _games: null | { type: GameType; module: GameModule }[] = null;
+  private _games:
+    | null
+    | { type: GameType; module: GameModule; hidden?: boolean }[] = null;
   private _properties: null | { [key in GameType]: GameProperties } = null;
   private _cardImageMap: null | { [key in GameType]: StringToStringMap } = null;
   private _horizontalCardTypes: null | { [key in GameType]: string[] } = null;
@@ -33,6 +37,14 @@ class GamePluginManager {
 
   public get allRegisteredGameTypes(): GameType[] {
     return this._games?.map((g) => g.type) ?? [];
+  }
+
+  public get allNonHiddenGameTypes(): GameType[] {
+    return (
+      this._games
+        ?.filter((g) => showHiddenGamesLocalStorage || !g.hidden)
+        .map((g) => g.type) ?? []
+    );
   }
 
   public get properties(): { [key in GameType]: GameProperties } {

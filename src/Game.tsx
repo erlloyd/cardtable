@@ -1087,8 +1087,6 @@ class Game extends Component<IProps, IState> {
 
       let yOffset = 0;
       Object.values(CardSizeType).forEach((type) => {
-        console.log(type);
-        console.log(cardConstants[type]);
         sizeTypeToOffsetMap[type] = { x: 0, y: yOffset };
         // Tarot is the biggest card size, so use that
         yOffset += cardConstants[CardSizeType.Tarot].CARD_HEIGHT + 20;

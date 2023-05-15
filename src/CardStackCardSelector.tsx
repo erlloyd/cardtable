@@ -3,15 +3,15 @@ import Select from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import * as React from "react";
-import Autocomplete from "@material-ui/lab/Autocomplete";
+import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import { CardData } from "./external-api/common-card-data";
 import { ICardData } from "./features/cards-data/initialState";
 import { ICardStack } from "./features/cards/initialState";
-import { AutocompleteHighlightChangeReason } from "@material-ui/lab/useAutocomplete";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import "./CardStackCardSelector.scss";
 import InputLabel from "@mui/material/InputLabel";
+import { AutocompleteHighlightChangeReason } from "@mui/material";
 
 interface IProps {
   cardsDataEntities: ICardData;

@@ -1,22 +1,34 @@
-import { useEffect, useState } from "react";
-import { GameType } from "./game-modules/GameType";
-import GameContainer from "./GameContainer";
-import "./App.scss";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import mainLogo from "./images/card-table-transparent.png";
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
-import { Button, IconButton, Snackbar } from "@mui/material";
-import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
-import { cacheCommonImages } from "./utilities/game-utils";
-import mixpanel from "mixpanel-browser";
+import {
+  Button,
+  FormControl,
+  IconButton,
+  InputLabel,
+  MenuItem,
+  Select,
+  Snackbar,
+} from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { H } from "highlight.run";
 import log from "loglevel";
+import mixpanel from "mixpanel-browser";
+import React, { useEffect, useState } from "react";
 import { useKonami } from "react-konami-code";
+import "./App.scss";
 import DevSettings from "./DevSettings";
+import GameContainer from "./GameContainer";
+import { GameType } from "./game-modules/GameType";
+import mainLogo from "./images/card-table-transparent.png";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import { cacheCommonImages } from "./utilities/game-utils";
+import GameManager from "./game-modules/GameModuleManager";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "light",
+  },
+});
 
 (window as any).log = log;
 
@@ -123,7 +135,8 @@ const App = (props: IProps) => {
   );
 
   return (
-    <div>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
       {showDevSettings && (
         <DevSettings
           onClose={() => {
@@ -152,7 +165,7 @@ const App = (props: IProps) => {
           )}
         </div>
       )}
-    </div>
+    </ThemeProvider>
   );
 };
 
@@ -189,6 +202,7 @@ const renderGamePicker = (
         alt="cardtable"
         src={mainLogo}
       ></img>
+
       <FormControl className="select">
         <InputLabel id="game-picker-label">Select Game</InputLabel>
         <Select
@@ -202,14 +216,18 @@ const renderGamePicker = (
           }}
           variant={"standard"}
         >
-          {Object.entries(GameType).map(([key, value]) => {
-            const label = camelCaseToSpaces(key);
-            return (
-              <MenuItem key={`menu-item-${key}`} value={value}>
-                {label}
-              </MenuItem>
-            );
-          })}
+          {Object.entries(GameType)
+            .filter(([_key, value]) =>
+              GameManager.allNonHiddenGameTypes.includes(value)
+            )
+            .map(([key, value]) => {
+              const label = camelCaseToSpaces(key);
+              return (
+                <MenuItem key={`menu-item-${key}`} value={value}>
+                  {label}
+                </MenuItem>
+              );
+            })}
         </Select>
       </FormControl>
     </div>
