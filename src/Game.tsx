@@ -1116,8 +1116,13 @@ class Game extends Component<IProps, IState> {
           tokens.map((t, idx) => ({
             ...t,
             position: {
-              x: position.x + 200 * idx,
-              y: position.y + 200,
+              x:
+                position.x -
+                cardConstants[
+                  CardSizeType.Tarot //Tarot is the largest card size
+                ].CARD_WIDTH *
+                  2,
+              y: position.y + 200 * idx,
             },
           }))
         );

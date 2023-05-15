@@ -18,6 +18,7 @@ import { scenarios } from "./jsonMetadata/scenarios/scenarios";
 import { groupBy } from "lodash";
 import { IFlippableToken } from "../../features/counters/initialState";
 import { CardSizeType } from "../../constants/card-constants";
+import { v4 as uuidv4 } from "uuid";
 interface Scenario {
   Name: string;
   Cards: ScenarioCard[];
@@ -155,12 +156,12 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
           ...temp["Shadow Strongholds"],
         ];
         const p = [
-          ...temp["Path1"],
-          ...temp["Path2"],
-          ...temp["Path3"],
-          ...temp["Path4"],
-          ...temp["Path5"],
           ...temp["Path6"],
+          ...temp["Path5"],
+          ...temp["Path4"],
+          ...temp["Path3"],
+          ...temp["Path2"],
+          ...temp["Path1"],
         ];
         const m = [...temp["Miscellaneous"]];
         returnVal = [balrog, gandalf, bg, p, m];
@@ -182,15 +183,15 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
         const fpStrongholds = [...temp["Free People Strongholds"]];
         const shadowStrongholds = [...temp["Shadow Strongholds"]];
         const paths = [
-          ...temp["Path1"],
-          ...temp["Path2"],
-          ...temp["Path3"],
-          ...temp["Path4"],
-          ...temp["Path5"],
-          ...temp["Path6"],
-          ...temp["Path7"],
-          ...temp["Path8"],
           ...temp["Path9"],
+          ...temp["Path8"],
+          ...temp["Path7"],
+          ...temp["Path6"],
+          ...temp["Path5"],
+          ...temp["Path4"],
+          ...temp["Path3"],
+          ...temp["Path2"],
+          ...temp["Path1"],
         ];
         const misc = [...temp["Miscellaneous"]];
 
@@ -205,6 +206,87 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
           misc,
         ];
         break;
+      case "Two-Player Duel":
+        const gandalf2p = [
+          ...temp["Dwarf"],
+          ...temp["Hobbit"],
+          ...temp["Rohan"],
+          ...temp["Wizard"],
+          ...temp["Dúnedain"],
+          ...temp["Elf"],
+        ];
+        const witchKing2p = [
+          ...temp["Mordor"],
+          ...temp["Isengard"],
+          ...temp["Monstrous"],
+          ...temp["Southron"],
+        ];
+
+        const fpStrongholds2p = [...temp["Free People Strongholds"]];
+        const shadowStrongholds2p = [...temp["Shadow Strongholds"]];
+        const paths2p = [
+          ...temp["Path9"],
+          ...temp["Path8"],
+          ...temp["Path7"],
+          ...temp["Path6"],
+          ...temp["Path5"],
+          ...temp["Path4"],
+          ...temp["Path3"],
+          ...temp["Path2"],
+          ...temp["Path1"],
+        ];
+        const misc2p = [...temp["Miscellaneous"]];
+
+        returnVal = [
+          gandalf2p,
+          witchKing2p,
+          fpStrongholds2p,
+          shadowStrongholds2p,
+          paths2p,
+          misc2p,
+        ];
+        break;
+      case "Three-Player Duel":
+        const gandalf3p = [
+          ...temp["Dwarf"],
+          ...temp["Hobbit"],
+          ...temp["Rohan"],
+          ...temp["Wizard"],
+          ...temp["Dúnedain"],
+          ...temp["Elf"],
+        ];
+        const witchKing3p = [...temp["Mordor"]];
+        const saruman3p = [
+          ...temp["Isengard"],
+          ...temp["Monstrous"],
+          ...temp["Southron"],
+        ];
+
+        const fpStrongholds3p = [...temp["Free People Strongholds"]];
+        const shadowStrongholds3p = [...temp["Shadow Strongholds"]];
+        const paths3p = [
+          ...temp["Path9"],
+          ...temp["Path8"],
+          ...temp["Path7"],
+          ...temp["Path6"],
+          ...temp["Path5"],
+          ...temp["Path4"],
+          ...temp["Path3"],
+          ...temp["Path2"],
+          ...temp["Path1"],
+        ];
+        const misc3p = [...temp["Miscellaneous"]];
+
+        returnVal = [
+          gandalf3p,
+          witchKing3p,
+          saruman3p,
+          fpStrongholds3p,
+          shadowStrongholds3p,
+          paths3p,
+          misc3p,
+        ];
+        break;
     }
 
     return returnVal;
@@ -215,7 +297,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
       case "The Fellowship of the Ring":
         return [
           {
-            id: "wotr-card-game-fp-ring-token",
+            id: uuidv4(),
             faceup: true,
             imgUrl:
               process.env.PUBLIC_URL +
@@ -226,7 +308,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             position: { x: 0, y: 0 },
           },
           {
-            id: "wotr-card-game-shadow-ring-token",
+            id: uuidv4(),
             faceup: true,
             imgUrl:
               process.env.PUBLIC_URL +
@@ -240,7 +322,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
       case "Trilogy":
         return [
           {
-            id: "wotr-card-game-fp-ring-token",
+            id: uuidv4(),
             faceup: true,
             imgUrl:
               process.env.PUBLIC_URL +
@@ -251,7 +333,18 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             position: { x: 0, y: 0 },
           },
           {
-            id: "wotr-card-game-shadow-ring-token",
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_front.png",
+            backImgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
+            position: { x: 0, y: 0 },
+          },
+          {
+            id: uuidv4(),
             faceup: true,
             imgUrl:
               process.env.PUBLIC_URL +
@@ -262,7 +355,88 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             position: { x: 0, y: 0 },
           },
           {
-            id: "wotr-card-game-player-order-token",
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/shadow_ring_front.png",
+            backImgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
+            position: { x: 0, y: 0 },
+          },
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/turn_order_marker.png",
+            position: { x: 0, y: 0 },
+          },
+        ];
+
+      case "Two-Player Duel":
+        return [
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_front.png",
+            backImgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
+            position: { x: 0, y: 0 },
+          },
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/shadow_ring_front.png",
+            backImgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
+            position: { x: 0, y: 0 },
+          },
+        ];
+      case "Three-Player Duel":
+        return [
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_front.png",
+            backImgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
+            position: { x: 0, y: 0 },
+          },
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/shadow_ring_front.png",
+            backImgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
+            position: { x: 0, y: 0 },
+          },
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/shadow_ring_front.png",
+            backImgUrl:
+              process.env.PUBLIC_URL +
+              "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
+            position: { x: 0, y: 0 },
+          },
+          {
+            id: uuidv4(),
             faceup: true,
             imgUrl:
               process.env.PUBLIC_URL +

@@ -113,6 +113,8 @@ const countersSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
       state.counters = action.payload.liveState.present.counters.counters;
+      state.flippableTokens =
+        action.payload.liveState.present.counters.flippableTokens;
       state.firstPlayerCounterPosition =
         action.payload.liveState.present.counters.firstPlayerCounterPosition;
     });
