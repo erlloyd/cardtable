@@ -8,7 +8,7 @@ import { saveState } from "./localStorage";
 import { websocketMiddleware } from "./websocket-server-multiplayer-middleware";
 import { peerJSMiddleware } from "./peer-js-redux-middleware";
 import log from "loglevel";
-import { useWSLocalStorage } from "../constants/app-constants";
+import { useWebRTCLocalStorage } from "../constants/app-constants";
 
 const baseCustomizedMiddleware = getDefaultMiddleware({
   thunk: true,
@@ -25,9 +25,9 @@ export default function configureStore() {
   log.debug("configuring store. NODE_ENV is " + process.env.NODE_ENV);
   const store = rtkConfigureStore({
     reducer: rootReducer,
-    middleware: useWSLocalStorage
-      ? wsCustomizedMiddleware
-      : peerJSCustomizedMiddleware,
+    middleware: useWebRTCLocalStorage
+      ? peerJSCustomizedMiddleware
+      : wsCustomizedMiddleware,
     devTools:
       process.env.NODE_ENV !== "production"
         ? {

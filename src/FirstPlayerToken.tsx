@@ -2,7 +2,7 @@ import { Component } from "react";
 import { Rect } from "react-konva";
 import { Vector2d } from "konva/lib/types";
 import { KonvaEventObject } from "konva/lib/Node";
-import { GameType } from "./game-modules/GameModule";
+import { GameType } from "./game-modules/GameType";
 
 interface IProps {
   currentGameType: GameType;

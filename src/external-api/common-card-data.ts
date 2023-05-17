@@ -1,3 +1,5 @@
+import { CardSizeType } from "../constants/card-constants";
+
 export interface CardData {
   code: string;
   name: string;
@@ -17,6 +19,7 @@ export interface CardData {
     packCode: string | null;
     factionCode: string | null;
     setType?: string | null;
+    sizeType?: CardSizeType;
   };
   duplicate_of?: string;
 }

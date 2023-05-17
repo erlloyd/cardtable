@@ -10,6 +10,7 @@ import { Vector2d } from "konva/lib/types";
 import { v4 as uuidv4 } from "uuid";
 import {
   cardConstants,
+  CardSizeType,
   CounterTokenType,
   StatusTokenType,
 } from "../../constants/card-constants";
@@ -91,9 +92,11 @@ const createNewEmptyCardStackWithId = (id: string): ICardStack => {
       damage: 0,
       threat: 0,
       generic: 0,
+      acceleration: 0,
     },
     modifiers: {},
     extraIcons: [],
+    sizeType: CardSizeType.Standard,
   };
 };
 
@@ -114,11 +117,11 @@ const transformGhostCardsWhenSnapping = (
       const snapCard = JSON.parse(JSON.stringify(card));
       snapCard.id = `${card.id}-grid`;
       snapCard.x =
-        Math.round(card.x / cardConstants.GRID_SNAP_WIDTH) *
-        cardConstants.GRID_SNAP_WIDTH;
+        Math.round(card.x / cardConstants[card.sizeType].GRID_SNAP_WIDTH) *
+        cardConstants[card.sizeType].GRID_SNAP_WIDTH;
       snapCard.y =
-        Math.round(card.y / cardConstants.GRID_SNAP_HEIGHT) *
-        cardConstants.GRID_SNAP_HEIGHT;
+        Math.round(card.y / cardConstants[card.sizeType].GRID_SNAP_HEIGHT) *
+        cardConstants[card.sizeType].GRID_SNAP_HEIGHT;
       snapCard.cardStack = [{ jsonId: `grid` }];
 
       // Check if there is already a snap card for this card
@@ -147,11 +150,11 @@ const transformGhostCardsWhenSnapping = (
         const snapCard = JSON.parse(JSON.stringify(card));
         snapCard.id = `${card.id}-grid`;
         snapCard.x =
-          Math.round(card.x / cardConstants.GRID_SNAP_WIDTH) *
-          cardConstants.GRID_SNAP_WIDTH;
+          Math.round(card.x / cardConstants[card.sizeType].GRID_SNAP_WIDTH) *
+          cardConstants[card.sizeType].GRID_SNAP_WIDTH;
         snapCard.y =
-          Math.round(card.y / cardConstants.GRID_SNAP_HEIGHT) *
-          cardConstants.GRID_SNAP_HEIGHT;
+          Math.round(card.y / cardConstants[card.sizeType].GRID_SNAP_HEIGHT) *
+          cardConstants[card.sizeType].GRID_SNAP_HEIGHT;
         snapCard.cardStack = [{ jsonId: `grid` }];
 
         // Check if there is already a snap card for this card
@@ -225,6 +228,7 @@ const foreachUnselectedCard = (
 const getDropTargetCard = (
   state: ICardsState,
   draggedCardPosition: Vector2d,
+  sizeType: CardSizeType,
   snapping: boolean = false,
   allowedDistance: number = CARD_DROP_TARGET_DISTANCE
 ): ICardStack | null => {
@@ -234,11 +238,13 @@ const getDropTargetCard = (
 
   if (snapping) {
     const wouldSnapX =
-      Math.round(draggedCardPosition.x / cardConstants.GRID_SNAP_WIDTH) *
-      cardConstants.GRID_SNAP_WIDTH;
+      Math.round(
+        draggedCardPosition.x / cardConstants[sizeType].GRID_SNAP_WIDTH
+      ) * cardConstants[sizeType].GRID_SNAP_WIDTH;
     const wouldSnapY =
-      Math.round(draggedCardPosition.y / cardConstants.GRID_SNAP_HEIGHT) *
-      cardConstants.GRID_SNAP_HEIGHT;
+      Math.round(
+        draggedCardPosition.y / cardConstants[sizeType].GRID_SNAP_HEIGHT
+      ) * cardConstants[sizeType].GRID_SNAP_HEIGHT;
 
     foreachUnselectedCard(state, (card) => {
       if (card.x === wouldSnapX && card.y === wouldSnapY) {
@@ -365,6 +371,7 @@ const clearCardTokensReducer: CaseReducer<
         damage: 0,
         threat: 0,
         generic: 0,
+        acceleration: 0,
       };
 
       card.modifiers = {};
@@ -392,11 +399,12 @@ const getAttachDrawPos = (
 
 const cardFromHandMoveWithSnapReducer: CaseReducer<
   ICardsState,
-  PayloadAction<{ x: number; y: number; snap: boolean }>
+  PayloadAction<{ x: number; y: number; sizeType: CardSizeType; snap: boolean }>
 > = (state, action) => {
   state.dropTargetCards[(action as any).ACTOR_REF] = getDropTargetCard(
     state,
     action.payload,
+    action.payload.sizeType,
     action.payload.snap,
     CARD_DROP_TARGET_DISTANCE * 2
   );
@@ -449,6 +457,7 @@ const cardMoveWithSnapReducer: CaseReducer<
     state.dropTargetCards[(action as any).ACTOR_REF] = getDropTargetCard(
       state,
       !!primaryCard ? { x: primaryCard.x, y: primaryCard.y } : { x: 0, y: 0 },
+      primaryCard.sizeType,
       action.payload.snap
     );
   }
@@ -551,11 +560,11 @@ const endCardMoveWithSnapReducer: CaseReducer<
     // GRID SNAPPING
     if (action.payload.snap && !card.attachedTo) {
       card.x =
-        Math.round(card.x / cardConstants.GRID_SNAP_WIDTH) *
-        cardConstants.GRID_SNAP_WIDTH;
+        Math.round(card.x / cardConstants[card.sizeType].GRID_SNAP_WIDTH) *
+        cardConstants[card.sizeType].GRID_SNAP_WIDTH;
       card.y =
-        Math.round(card.y / cardConstants.GRID_SNAP_HEIGHT) *
-        cardConstants.GRID_SNAP_HEIGHT;
+        Math.round(card.y / cardConstants[card.sizeType].GRID_SNAP_HEIGHT) *
+        cardConstants[card.sizeType].GRID_SNAP_HEIGHT;
     }
     if (!!state.attachTargetCards[(action as any).ACTOR_REF]) {
       attachTargetCardStacks.push(card);
@@ -586,8 +595,8 @@ const endCardMoveWithSnapReducer: CaseReducer<
   if (!!attachTarget && !!attachTargetCardFromState) {
     const drawPos = getAttachDrawPos(state, attachTarget);
     attachTargetCardStacks.forEach((cs, index) => {
-      cs.x = drawPos.x + index * cardConstants.ATTACHMENT_OFFSET;
-      cs.y = drawPos.y - index * cardConstants.ATTACHMENT_OFFSET;
+      cs.x = drawPos.x + index * cardConstants[cs.sizeType].ATTACHMENT_OFFSET;
+      cs.y = drawPos.y - index * cardConstants[cs.sizeType].ATTACHMENT_OFFSET;
 
       removeAttachedCard(state, cs);
 
@@ -637,8 +646,10 @@ const endCardMoveWithSnapReducer: CaseReducer<
           return;
         }
 
-        attachedCard.x = card.x + cardConstants.ATTACHMENT_OFFSET * (index + 1);
-        attachedCard.y = card.y - cardConstants.ATTACHMENT_OFFSET * (index + 1);
+        attachedCard.x =
+          card.x + cardConstants[card.sizeType].ATTACHMENT_OFFSET * (index + 1);
+        attachedCard.y =
+          card.y - cardConstants[card.sizeType].ATTACHMENT_OFFSET * (index + 1);
       });
     }
   });
@@ -768,8 +779,15 @@ const adjustCounterTokenReducer: CaseReducer<
     if (action.payload.value !== undefined) {
       c.counterTokens[action.payload.tokenType] = action.payload.value;
     } else if (action.payload.delta !== undefined) {
+      if (
+        c.counterTokens[action.payload.tokenType] === null ||
+        c.counterTokens[action.payload.tokenType] === undefined
+      ) {
+        c.counterTokens[action.payload.tokenType] = 0;
+      }
       c.counterTokens[action.payload.tokenType] += action.payload.delta;
     }
+
     if (c.counterTokens[action.payload.tokenType] < 0) {
       c.counterTokens[action.payload.tokenType] = 0;
     }
@@ -1057,15 +1075,16 @@ const cardsSlice = createSlice({
     });
 
     builder.addCase(addCardStackWithSnapAndId, (state, action) => {
+      const sizeType = action.payload.sizeType;
       const x = action.payload.snap
         ? Math.round(
-            action.payload.position.x / cardConstants.GRID_SNAP_WIDTH
-          ) * cardConstants.GRID_SNAP_WIDTH
+            action.payload.position.x / cardConstants[sizeType].GRID_SNAP_WIDTH
+          ) * cardConstants[sizeType].GRID_SNAP_WIDTH
         : action.payload.position.x;
       const y = action.payload.snap
         ? Math.round(
-            action.payload.position.y / cardConstants.GRID_SNAP_HEIGHT
-          ) * cardConstants.GRID_SNAP_HEIGHT
+            action.payload.position.y / cardConstants[sizeType].GRID_SNAP_HEIGHT
+          ) * cardConstants[sizeType].GRID_SNAP_HEIGHT
         : action.payload.position.y;
 
       const newStack: ICardStack = {
@@ -1091,9 +1110,11 @@ const cardsSlice = createSlice({
           damage: 0,
           threat: 0,
           generic: 0,
+          acceleration: 0,
         },
         modifiers: {},
         extraIcons: [],
+        sizeType,
       };
 
       state.cards.push(newStack);
@@ -1113,7 +1134,8 @@ const cardsSlice = createSlice({
         newCard.id = action.payload.id;
         newCard.selected = true;
         newCard.controlledBy = (action as any).ACTOR_REF;
-        newCard.x = newCard.x + cardConstants.GRID_SNAP_WIDTH;
+        newCard.x =
+          newCard.x + cardConstants[cardStackToUse.sizeType].GRID_SNAP_WIDTH;
 
         // Find the first instance of the card with the json id. Note that because there
         // might be multiple cards with the same json id, we can't just do a filter
@@ -1279,8 +1301,11 @@ const cardsSlice = createSlice({
             newCard.selected = true;
             newCard.controlledBy = (action as any).ACTOR_REF;
             newCard.faceup = !action.payload.facedown;
-            newCard.x = newCard.x + cardConstants.GRID_SNAP_WIDTH * (index + 1);
-            newCard.y += cardConstants.CARD_HEIGHT;
+            newCard.x =
+              newCard.x +
+              cardConstants[cardStackToUse.sizeType].GRID_SNAP_WIDTH *
+                (index + 1);
+            newCard.y += cardConstants[cardStackToUse.sizeType].CARD_HEIGHT;
 
             state.cards.push(newCard);
           }
@@ -1356,9 +1381,11 @@ const handleLoadDeck = (
       damage: 0,
       threat: 0,
       generic: 0,
+      acceleration: 0,
     },
     modifiers: {},
     extraIcons: [],
+    sizeType: CardSizeType.Standard,
   };
 
   let mainDeckStack: ICardDetails[] = [];
@@ -1369,7 +1396,7 @@ const handleLoadDeck = (
     mainDeckStack = mainDeckStack.concat(cardDetails);
   });
 
-  const cardPadding = cardConstants.GRID_SNAP_WIDTH;
+  const cardPadding = cardConstants[CardSizeType.Standard].GRID_SNAP_WIDTH;
 
   const newDeck: ICardStack = {
     controlledBy: (action as any).ACTOR_REF,
@@ -1392,9 +1419,11 @@ const handleLoadDeck = (
       damage: 0,
       threat: 0,
       generic: 0,
+      acceleration: 0,
     },
     modifiers: {},
     extraIcons: [],
+    sizeType: CardSizeType.Standard,
   };
 
   const encounterDeck: ICardStack = {
@@ -1420,9 +1449,11 @@ const handleLoadDeck = (
       damage: 0,
       threat: 0,
       generic: 0,
+      acceleration: 0,
     },
     modifiers: {},
     extraIcons: [],
+    sizeType: CardSizeType.Standard,
   };
 
   const obligationDeck: ICardStack = {
@@ -1448,9 +1479,11 @@ const handleLoadDeck = (
       damage: 0,
       threat: 0,
       generic: 0,
+      acceleration: 0,
     },
     modifiers: {},
     extraIcons: [],
+    sizeType: CardSizeType.Standard,
   };
 
   if (heroCard.cardStack.length > 0) {

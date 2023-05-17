@@ -33,8 +33,10 @@ import {
 import { ICardDetails, ICardStack } from "./initialState";
 import log from "loglevel";
 import { sendNotification } from "../notifications/notifications.slice";
-import { GameType, ILoadedDeck } from "../../game-modules/GameModule";
+import { ILoadedDeck } from "../../game-modules/GameModule";
 import GameManager from "../../game-modules/GameModuleManager";
+import { GameType } from "../../game-modules/GameType";
+import { CardSizeType } from "../../constants/card-constants";
 
 interface AddCardStackPayload {
   cardJsonIds: string[];
@@ -59,10 +61,13 @@ export interface DrawCardsOutOfCardStackPayload {
 }
 
 export const cardFromHandMove =
-  (pos: Vector2d): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (
+    pos: Vector2d,
+    sizeType: CardSizeType
+  ): ThunkAction<void, RootState, unknown, Action<string>> =>
   (dispatch, getState) => {
     const snap = getSnapCardsToGrid(getState());
-    dispatch(cardFromHandMoveWithSnap({ ...pos, snap }));
+    dispatch(cardFromHandMoveWithSnap({ ...pos, sizeType, snap }));
   };
 
 export const cardMove =
@@ -118,10 +123,23 @@ export const addCardStack =
   ): ThunkAction<void, RootState, unknown, Action<string>> =>
   (dispatch, getState) => {
     const snap = getSnapCardsToGrid(getState());
+
+    const cardsData = getCardsDataEntities(getState());
+
+    // For now, use the top card to determine what size it should be
+
+    const topCard =
+      payload.cardJsonIds && payload.cardJsonIds.length > 0
+        ? cardsData[payload.cardJsonIds[0]]
+        : null;
+
+    const sizeType = topCard?.extraInfo.sizeType ?? CardSizeType.Standard;
+
     const payloadWithId = {
       ...payload,
       snap,
       id: uuidv4(),
+      sizeType,
     };
     dispatch(addCardStackWithSnapAndId(payloadWithId));
   };

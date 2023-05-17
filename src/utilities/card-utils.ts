@@ -10,7 +10,7 @@ import {
 import { CardData } from "../external-api/common-card-data";
 import { ICardData } from "../features/cards-data/initialState";
 import { ICardStack } from "../features/cards/initialState";
-import { GameType } from "../game-modules/GameModule";
+import { GameType } from "../game-modules/GameType";
 import GameManager from "../game-modules/GameModuleManager";
 
 export const anyCardStackHasStatus = (

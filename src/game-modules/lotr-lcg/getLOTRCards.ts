@@ -1,6 +1,6 @@
 import { Vector2d } from "konva/lib/types";
 import { RootState } from "../../store/rootReducer";
-import { GameType } from "../GameModule";
+import { GameType } from "../GameType";
 import { getCardsDataHeroEntities } from "../../features/cards-data/cards-data.selectors";
 import { ICardDetails } from "../../features/cards/initialState";
 import { fixCardCode } from "../common-utils";

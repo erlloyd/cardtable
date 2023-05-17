@@ -5,7 +5,7 @@ import {
 import { ICardData, ISetData } from "../../features/cards-data/initialState";
 import {
   GameModule,
-  GameType,
+  GameProperties,
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
@@ -28,10 +28,11 @@ import { Vector2d } from "konva/lib/types";
 import { getLOTRCards } from "./getLOTRCards";
 import { IEncounterEntity } from "../../features/cards-data/cards-data.selectors";
 import { loadEncounterEntities } from "./loadEncounterEntities";
+import { GameType } from "../GameType";
 
 export default class LOTRLCGGameModule extends GameModule {
   constructor() {
-    const properties = {
+    const properties: GameProperties = {
       deckSite: "ringsdb.com",
       decklistApi: "https://ringsdb.com/api/public/decklist/",
       decklistSearchApi: "https://ringsdb.com/decklists/find",
@@ -130,9 +131,10 @@ export default class LOTRLCGGameModule extends GameModule {
           menuText: "Set Resource Tokens",
           imagePath: process.env.PUBLIC_URL + "/images/standard/resource.png",
         },
+        acceleration: null,
       },
     };
-    super(properties, {}, {}, {});
+    super(properties, {}, {}, {}, ["quest", "player_side_quest"]);
   }
 
   getSetData(): ISetData {

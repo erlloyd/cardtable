@@ -1,7 +1,7 @@
 import { Vector2d } from "konva/lib/types";
 import { myPeerRef, PlayerColor } from "../../constants/app-constants";
 import { loadState } from "../../store/localStorage";
-import { GameType } from "../../game-modules/GameModule";
+import { GameType } from "../../game-modules/GameType";
 
 export interface OnlineDeckDataMap {
   [key: string]: OnlineDeckData;

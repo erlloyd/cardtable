@@ -1,19 +1,16 @@
 // import { useState } from "react";
 import "./ContextualOptionsMenu.scss";
 
-import { GameType } from "./game-modules/GameModule";
+import { GameType } from "./game-modules/GameType";
 import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
 import { Vector2d } from "konva/lib/types";
 import Tooltip from "@mui/material/Tooltip";
 import { useState } from "react";
-import {
-  GamePropertiesMap,
-  NumericTokenInfo,
-  TokenInfo,
-} from "./constants/game-type-properties-mapping";
+import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import { anyCardStackHasStatus } from "./utilities/card-utils";
 import { ICardStack } from "./features/cards/initialState";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
+import { NumericTokenInfo, TokenInfo } from "./game-modules/GameModule";
 
 interface IProps {
   anyCardsSelected: boolean;

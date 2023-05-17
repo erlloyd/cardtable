@@ -1,6 +1,6 @@
-import { CodeToImageMap } from "../game-modules/GameModule";
+import { StringToStringMap } from "../game-modules/GameModule";
 import GameManager from "../game-modules/GameModuleManager";
-import { GameType } from "../game-modules/GameModule";
+import { GameType } from "../game-modules/GameType";
 
 export const CARD_ALREADY_ROTATED_MAP: { [key: string]: boolean } = {
   "05026": true,
@@ -17,4 +17,4 @@ export const FORCE_CARD_BACK_MAP: { [key: string]: string } = {
   "305145": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Osbera-SideB.png",
 };
 
-export const MISSING_CARD_IMAGE_MAP: { [key in GameType]: CodeToImageMap } = GameManager.cardImageMap;
+export const MISSING_CARD_IMAGE_MAP: { [key in GameType]: StringToStringMap } = GameManager.cardImageMap;

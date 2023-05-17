@@ -7,15 +7,13 @@ import { Group, Rect, Text } from "react-konva";
 import { animated, Spring } from "@react-spring/konva";
 import CardTokensContainer from "./CardTokensContainer";
 import { myPeerRef, PlayerColor } from "./constants/app-constants";
-import {
-  cardConstants,
-  HORIZONTAL_TYPE_CODES,
-} from "./constants/card-constants";
+import { CardSizeType, cardConstants } from "./constants/card-constants";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import CardModifiersContainer from "./CardModifiersContainer";
 import { shouldRenderImageHorizontal } from "./utilities/card-utils";
 import { debounce } from "lodash";
-import { GameType } from "./game-modules/GameModule";
+import { GameType } from "./game-modules/GameType";
+import GameManager from "./game-modules/GameModuleManager";
 
 // There is a bug somewhere in react-konva or react-spring/konva, where, if you use the generic
 // `animated` WithAnimations type, you get the following typescript error in typescript ~4.5:
@@ -81,6 +79,7 @@ interface IProps {
     id: string,
     event: KonvaEventObject<PointerEvent>
   ) => void;
+  sizeType: CardSizeType;
 }
 
 interface IState {
@@ -318,8 +317,10 @@ class Card extends Component<IProps, IState> {
   }
 
   private renderCard(imageLoaded: boolean) {
-    const heightToUse = this.props.height || cardConstants.CARD_HEIGHT;
-    const widthToUse = this.props.width || cardConstants.CARD_WIDTH;
+    const heightToUse =
+      this.props.height || cardConstants[this.props.sizeType].CARD_HEIGHT;
+    const widthToUse =
+      this.props.width || cardConstants[this.props.sizeType].CARD_WIDTH;
 
     return this.renderUnanimatedCard(heightToUse, widthToUse, imageLoaded);
   }
@@ -384,7 +385,7 @@ class Card extends Component<IProps, IState> {
               shouldRenderImageHorizontal(
                 this.props.code,
                 this.props.typeCode || "",
-                HORIZONTAL_TYPE_CODES,
+                GameManager.horizontalCardTypes[this.props.currentGameType],
                 this.plainCardBack
               )
                 ? 270
@@ -636,7 +637,7 @@ class Card extends Component<IProps, IState> {
         {stunnedToken}
         {confusedToken}
         {toughToken}
-        {cardTokens}
+        {this.props.isPreview ? null : cardTokens}
         {cardModifiers}
       </Group>
     );
@@ -677,7 +678,10 @@ class Card extends Component<IProps, IState> {
     };
 
     const stunnedOffset = {
-      x: offset.x - cardConstants.CARD_WIDTH + dimensions.width / 2,
+      x:
+        offset.x -
+        cardConstants[this.props.sizeType].CARD_WIDTH +
+        dimensions.width / 2,
       y: offset.y - dimensions.height * slot - 5 * (slot + 1) - 10,
     };
 
@@ -754,7 +758,7 @@ class Card extends Component<IProps, IState> {
     return shouldRenderImageHorizontal(
       this.props.code,
       this.props.typeCode || "",
-      HORIZONTAL_TYPE_CODES,
+      GameManager.horizontalCardTypes[this.props.currentGameType],
       this.plainCardBack
     )
       ? { width: widthHorizontal, height: heightHorizontal }

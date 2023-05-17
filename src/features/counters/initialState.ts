@@ -6,6 +6,14 @@ import JSONCrush from "jsoncrush";
 export interface ICountersState {
   counters: ICounter[];
   firstPlayerCounterPosition: Vector2d;
+  flippableTokens: IFlippableToken[];
+}
+export interface IFlippableToken {
+  id: string;
+  position: Vector2d;
+  faceup: boolean;
+  imgUrl: string;
+  backImgUrl?: string;
 }
 
 export interface ICounter {
@@ -13,6 +21,7 @@ export interface ICounter {
   position: Vector2d;
   value: number;
   color: PlayerColor;
+  imgUrl?: string;
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -24,9 +33,14 @@ const queryParamsCounters = !!queryParamsCountersString
 const localStorageState: ICountersState =
   queryParamsCounters || (loadState("liveState")?.counters ?? {});
 
+if (localStorageState.flippableTokens === undefined) {
+  localStorageState.flippableTokens = [];
+}
+
 export const defaultState: ICountersState = {
   counters: [],
   firstPlayerCounterPosition: { x: 100, y: 0 },
+  flippableTokens: [],
 };
 export const initialState: ICountersState = {
   ...defaultState,

@@ -2,7 +2,7 @@ import { Component } from "react";
 import { ICardStack } from "./features/cards/initialState";
 import { Rect, Text } from "react-konva";
 import { cardConstants } from "./constants/card-constants";
-import { GameType } from "./game-modules/GameModule";
+import { GameType } from "./game-modules/GameType";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 interface IProps {
   currentGameType: GameType;
@@ -16,6 +16,7 @@ interface IState {
     damage: boolean;
     threat: boolean;
     generic: boolean;
+    acceleration: boolean;
   };
 }
 
@@ -26,6 +27,7 @@ class CardTokens extends Component<IProps, IState> {
   private damageImg: HTMLImageElement;
   private threatImg: HTMLImageElement;
   private genericImg: HTMLImageElement;
+  private accelerationImg: HTMLImageElement;
   private unmounted: boolean;
 
   constructor(props: IProps) {
@@ -38,12 +40,14 @@ class CardTokens extends Component<IProps, IState> {
         damage: false,
         threat: false,
         generic: false,
+        acceleration: false,
       },
     };
 
     this.damageImg = new Image();
     this.threatImg = new Image();
     this.genericImg = new Image();
+    this.accelerationImg = new Image();
 
     const tokenInfo = GamePropertiesMap[this.props.currentGameType].tokens;
 
@@ -55,6 +59,7 @@ class CardTokens extends Component<IProps, IState> {
             damage: true,
             threat: this.state.imagesLoaded.threat,
             generic: this.state.imagesLoaded.generic,
+            acceleration: this.state.imagesLoaded.acceleration,
           },
         });
       }
@@ -72,6 +77,7 @@ class CardTokens extends Component<IProps, IState> {
             damage: this.state.imagesLoaded.damage,
             threat: true,
             generic: this.state.imagesLoaded.generic,
+            acceleration: this.state.imagesLoaded.acceleration,
           },
         });
       }
@@ -89,6 +95,7 @@ class CardTokens extends Component<IProps, IState> {
             damage: this.state.imagesLoaded.damage,
             threat: this.state.imagesLoaded.threat,
             generic: true,
+            acceleration: this.state.imagesLoaded.acceleration,
           },
         });
       }
@@ -96,6 +103,27 @@ class CardTokens extends Component<IProps, IState> {
 
     if (!!this.props.card?.counterTokens.generic && !!tokenInfo.generic) {
       this.genericImg.src = tokenInfo.generic.imagePath;
+    }
+
+    // ACCELERATION
+    this.accelerationImg.onload = () => {
+      if (!this.unmounted) {
+        this.setState({
+          imagesLoaded: {
+            damage: this.state.imagesLoaded.damage,
+            threat: this.state.imagesLoaded.threat,
+            generic: this.state.imagesLoaded.generic,
+            acceleration: true,
+          },
+        });
+      }
+    };
+
+    if (
+      !!this.props.card?.counterTokens.acceleration &&
+      !!tokenInfo.acceleration
+    ) {
+      this.accelerationImg.src = tokenInfo.acceleration.imagePath;
     }
   }
 
@@ -131,6 +159,16 @@ class CardTokens extends Component<IProps, IState> {
     ) {
       this.genericImg.src = tokenInfo.generic.imagePath;
     }
+
+    // ACCELERATION
+    if (
+      !this.state.imagesLoaded.acceleration &&
+      !prevProps.card?.counterTokens.acceleration &&
+      !!this.props.card?.counterTokens.acceleration &&
+      !!tokenInfo.acceleration
+    ) {
+      this.accelerationImg.src = tokenInfo.acceleration.imagePath;
+    }
   }
 
   public componentDidMount() {
@@ -145,7 +183,10 @@ class CardTokens extends Component<IProps, IState> {
     if (!this.props.card) return null;
 
     const damageX = this.props.x - desiredWidth / 2;
-    const damageY = this.props.y - cardConstants.CARD_HEIGHT / 2 + 20;
+    const damageY =
+      this.props.y -
+      cardConstants[this.props.card.sizeType].CARD_HEIGHT / 2 +
+      20;
     const showDamage =
       this.state.imagesLoaded.damage && !!this.props.card.counterTokens.damage;
 
@@ -179,6 +220,10 @@ class CardTokens extends Component<IProps, IState> {
         }
         text={`${this.props.card.counterTokens.damage}`}
         fill="white"
+        stroke={"black"}
+        strokeWidth={1}
+        shadowColor="black"
+        shadowBlur={10}
         align="center"
         verticalAlign="middle"
         fontSize={24}
@@ -186,7 +231,7 @@ class CardTokens extends Component<IProps, IState> {
     ) : null;
 
     const threatX = this.props.x - desiredWidth / 2;
-    const threatY = damageY + desiredHeight + 5;
+    const threatY = damageY + (showDamage ? desiredHeight + 5 : 0);
     const showThreat =
       this.state.imagesLoaded.threat && !!this.props.card.counterTokens.threat;
 
@@ -220,6 +265,10 @@ class CardTokens extends Component<IProps, IState> {
         }
         text={`${this.props.card.counterTokens.threat}`}
         fill="white"
+        stroke={"black"}
+        strokeWidth={1}
+        shadowColor="black"
+        shadowBlur={10}
         align="center"
         verticalAlign="middle"
         fontSize={24}
@@ -227,7 +276,10 @@ class CardTokens extends Component<IProps, IState> {
     ) : null;
 
     const genericX = this.props.x - desiredWidth / 2;
-    const genericY = threatY + desiredHeight + 5;
+    const genericY =
+      damageY +
+      (showDamage ? desiredHeight + 5 : 0) +
+      (showThreat ? desiredHeight + 5 : 0);
     const showGeneric =
       this.state.imagesLoaded.generic &&
       !!this.props.card.counterTokens.generic;
@@ -262,6 +314,60 @@ class CardTokens extends Component<IProps, IState> {
         }
         text={`${this.props.card.counterTokens.generic}`}
         fill="white"
+        stroke={"black"}
+        strokeWidth={1}
+        shadowColor="black"
+        shadowBlur={10}
+        align="center"
+        verticalAlign="middle"
+        fontSize={24}
+      ></Text>
+    ) : null;
+
+    const accelX = this.props.x - desiredWidth / 2;
+    const accelY =
+      damageY +
+      (showDamage ? desiredHeight + 5 : 0) +
+      (showThreat ? desiredHeight + 5 : 0) +
+      (showGeneric ? desiredHeight + 5 : 0);
+    const showAccel =
+      this.state.imagesLoaded.acceleration &&
+      !!this.props.card.counterTokens.acceleration;
+
+    const accelToken = showAccel ? (
+      <Rect
+        key={`${this.props.card.id}-accelToken`}
+        x={accelX}
+        y={accelY}
+        scale={{
+          x: desiredWidth / this.accelerationImg.naturalWidth,
+          y: desiredHeight / this.accelerationImg.naturalHeight,
+        }}
+        width={this.accelerationImg.naturalWidth}
+        height={this.accelerationImg.naturalHeight}
+        fillPatternImage={this.accelerationImg}
+      ></Rect>
+    ) : null;
+
+    const accelText = showAccel ? (
+      <Text
+        key={`${this.props.card.id}-accelText`}
+        x={accelX}
+        y={accelY}
+        width={
+          this.accelerationImg.naturalWidth *
+          (desiredWidth / this.accelerationImg.naturalWidth)
+        }
+        height={
+          this.accelerationImg.naturalHeight *
+          (desiredHeight / this.accelerationImg.naturalHeight)
+        }
+        text={`${this.props.card.counterTokens.acceleration}`}
+        fill="white"
+        stroke={"black"}
+        strokeWidth={1}
+        shadowColor="black"
+        shadowBlur={10}
         align="center"
         verticalAlign="middle"
         fontSize={24}
@@ -275,6 +381,8 @@ class CardTokens extends Component<IProps, IState> {
       threatText,
       genericToken,
       genericText,
+      accelToken,
+      accelText,
     ];
   }
 }

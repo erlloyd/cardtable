@@ -4,7 +4,7 @@ import {
   bulkLoadCardsDataForPack,
   bulkLoadCardsForEncounterSet,
 } from "./cards-data.slice";
-import { GameType } from "../../game-modules/GameModule";
+import { GameType } from "../../game-modules/GameType";
 import { doneLoadingJSON } from "../game/game.slice";
 import GameManager from "../../game-modules/GameModuleManager";
 

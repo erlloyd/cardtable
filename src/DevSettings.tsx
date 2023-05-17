@@ -3,9 +3,11 @@ import "./DevSettings.scss";
 import { Button, Checkbox } from "@mui/material";
 import {
   DEV_WS_LS_KEY,
-  USE_WS_LS_KEY,
+  USE_WEBRTC_LS_KEY,
+  SHOW_HIDDEN_GAMES_LS_KEY,
   useDevWSServerLocalStorage,
-  useWSLocalStorage,
+  useWebRTCLocalStorage,
+  showHiddenGamesLocalStorage,
 } from "./constants/app-constants";
 
 interface IProps {
@@ -13,13 +15,20 @@ interface IProps {
 }
 
 const DevSettings = (props: IProps) => {
-  const [useWSMP, setUseWSMP] = useState(!!localStorage.getItem("__ws_mp__"));
+  const [useWebRTCMP, setUseWebRTCMP] = useState(
+    !!localStorage.getItem(USE_WEBRTC_LS_KEY)
+  );
   const [useDevWS, setUseDevWS] = useState(
-    !!localStorage.getItem("__dev_ws__")
+    !!localStorage.getItem(DEV_WS_LS_KEY)
+  );
+  const [showHidden, setShowHidden] = useState(
+    !!localStorage.getItem(SHOW_HIDDEN_GAMES_LS_KEY)
   );
 
   const changesDetected =
-    useWSMP !== useWSLocalStorage || useDevWS !== useDevWSServerLocalStorage;
+    useWebRTCMP !== useWebRTCLocalStorage ||
+    useDevWS !== useDevWSServerLocalStorage ||
+    showHidden !== showHiddenGamesLocalStorage;
 
   const handleChange =
     (setter: (val: boolean) => void, lsKey: string) =>
@@ -36,10 +45,10 @@ const DevSettings = (props: IProps) => {
   return (
     <div className="dev-settings">
       <div>
-        <span>Use webservice multiplayer: </span>{" "}
+        <span>Use WebRTC multiplayer: </span>{" "}
         <Checkbox
-          onChange={handleChange(setUseWSMP, USE_WS_LS_KEY)}
-          checked={useWSMP}
+          onChange={handleChange(setUseWebRTCMP, USE_WEBRTC_LS_KEY)}
+          checked={useWebRTCMP}
           style={{
             color: "white",
           }}
@@ -50,6 +59,16 @@ const DevSettings = (props: IProps) => {
         <Checkbox
           onChange={handleChange(setUseDevWS, DEV_WS_LS_KEY)}
           checked={useDevWS}
+          style={{
+            color: "white",
+          }}
+        ></Checkbox>
+      </div>
+      <div>
+        <span>Show hidden games: </span>{" "}
+        <Checkbox
+          onChange={handleChange(setShowHidden, SHOW_HIDDEN_GAMES_LS_KEY)}
+          checked={showHidden}
           style={{
             color: "white",
           }}

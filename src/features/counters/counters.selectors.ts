@@ -8,6 +8,10 @@ export const getCurrentCounters = createSelector(getCounters, (counters) => {
   return counters.counters;
 });
 
+export const getCurrentTokens = createSelector(getCounters, (counters) => {
+  return counters.flippableTokens;
+});
+
 export const getFirstPlayerTokenPos = createSelector(
   getCounters,
   (counters) => counters.firstPlayerCounterPosition

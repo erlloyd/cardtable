@@ -2,7 +2,7 @@ import { Component } from "react";
 import { ICardStack } from "./features/cards/initialState";
 import { Group, Rect, Text } from "react-konva";
 import { cardConstants } from "./constants/card-constants";
-import { GameType } from "./game-modules/GameModule";
+import { GameType } from "./game-modules/GameType";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import cloneDeep from "lodash.clonedeep";
 
@@ -156,11 +156,13 @@ class CardModifiers extends Component<IProps, IState> {
           (this.props.cardWidth || 0) / 2 -
           desiredWidth -
           textWidth
-        : this.props.x + cardConstants.CARD_WIDTH / 2 - desiredWidth / 2;
+        : this.props.x +
+          cardConstants[this.props.card!.sizeType].CARD_WIDTH / 2 -
+          desiredWidth / 2;
       const modifierTextX = modifierX + desiredWidth - 2;
       const modifierY =
         this.props.y -
-        cardConstants.CARD_HEIGHT / 2 +
+        cardConstants[this.props.card!.sizeType].CARD_HEIGHT / 2 +
         10 * (m.slot - 1) +
         desiredHeight * (m.slot - 1);
       const showModifier =
@@ -221,11 +223,13 @@ class CardModifiers extends Component<IProps, IState> {
     additionalIcons.forEach((a, index) => {
       const iconX = this.props.isPreview
         ? this.props.x - (this.props.cardWidth || 0) / 2 + desiredWidth
-        : this.props.x - cardConstants.CARD_WIDTH / 2 - desiredWidth / 2;
+        : this.props.x -
+          cardConstants[this.props.card!.sizeType].CARD_WIDTH / 2 -
+          desiredWidth / 2;
 
       const iconY =
         this.props.y -
-        cardConstants.CARD_HEIGHT / 2 +
+        cardConstants[this.props.card!.sizeType].CARD_HEIGHT / 2 +
         10 * index +
         desiredHeight * index;
 

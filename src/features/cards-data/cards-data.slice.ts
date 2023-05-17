@@ -16,8 +16,9 @@ import { receiveRemoteGameState } from "../../store/global.actions";
 // TODO: Get this into modules
 import { FORCE_CARD_BACK_MAP } from "../../constants/card-missing-image-map";
 import log from "loglevel";
-import { GameType, ILoadEncounterSetData } from "../../game-modules/GameModule";
+import { ILoadEncounterSetData } from "../../game-modules/GameModule";
 import GameManager from "../../game-modules/GameModuleManager";
+import { GameType } from "../../game-modules/GameType";
 
 // Reducers
 const loadCardsDataReducer: CaseReducer<
@@ -258,7 +259,8 @@ const cardsDataSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
       state.activeDataType =
-        action.payload.game.activeGameType ?? GameType.MarvelChampions;
+        action.payload.game.activeGameType ??
+        GameManager.allRegisteredGameTypes[0];
     });
     builder.addCase(updateActiveGameType, (state, action) => {
       state.activeDataType = action.payload;

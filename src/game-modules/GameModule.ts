@@ -6,6 +6,8 @@ import { ICardDetails } from "../features/cards/initialState";
 import { AxiosResponse } from "axios";
 import { RootState } from "../store/rootReducer";
 import { IEncounterEntity } from "../features/cards-data/cards-data.selectors";
+import { GameType } from "./GameType";
+import { IFlippableToken } from "../features/counters/initialState";
 
 export type CardPackRemapping = { [key: string]: string };
 
@@ -72,7 +74,13 @@ export interface ModifierInfo {
   slot: number;
 }
 
-export type CodeToImageMap = { [key: string]: string };
+export type StringToStringMap = { [key: string]: string };
+export type StringToStringArrayMap = { [key: string]: string[] };
+
+export interface IconCounter {
+  counterName: string;
+  counterImage: string;
+}
 
 export interface GameProperties {
   deckSite: string;
@@ -91,25 +99,29 @@ export interface GameProperties {
     damage: NumericTokenInfo | null;
     threat: NumericTokenInfo | null;
     generic: NumericTokenInfo | null;
+    acceleration: NumericTokenInfo | null;
   };
+  iconCounters?: IconCounter[];
 }
-
 export abstract class GameModule {
   properties: GameProperties;
-  imageMap: CodeToImageMap;
+  imageMap: StringToStringMap;
   extraCards: ExtraCards;
   remappedPacks: CardPackRemapping;
+  horizontalTypeCodes: string[];
 
   constructor(
     properties: GameProperties,
-    imageMap: CodeToImageMap,
+    imageMap: StringToStringMap,
     extraCards: ExtraCards,
-    remappedPacks: CardPackRemapping
+    remappedPacks: CardPackRemapping,
+    horizontalTypeCodes: string[]
   ) {
     this.properties = properties;
     this.imageMap = imageMap;
     this.extraCards = extraCards;
     this.remappedPacks = remappedPacks;
+    this.horizontalTypeCodes = horizontalTypeCodes;
   }
 
   abstract getSetData(): ISetData;
@@ -137,9 +149,11 @@ export abstract class GameModule {
     herosData: ICardData,
     encounterEntities: ICardData
   ): IEncounterEntity[];
-}
 
-export enum GameType {
-  MarvelChampions = "marvelchampions",
-  LordOfTheRingsLivingCardGame = "lotrlcg",
+  splitEncounterCardsIntoStacksWhenLoading?(
+    setCode: string,
+    encounterCards: CardData[]
+  ): CardData[][];
+
+  getTokensForEncounterSet?(setCode: string): IFlippableToken[];
 }

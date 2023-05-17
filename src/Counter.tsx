@@ -12,12 +12,79 @@ interface IProps {
   updateCounterValueBy: (amount: number) => void;
   handleContextMenu: (event: KonvaEventObject<PointerEvent>) => void;
   onDragEnd: (event: KonvaEventObject<DragEvent>) => void;
+  counterImageUrl?: string;
 }
 
-class Counter extends Component<IProps> {
+interface IState {
+  counterImageLoaded: boolean;
+}
+
+class Counter extends Component<IProps, IState> {
   private touchTimer: any = null;
+  private unmounted: boolean;
+  private img: HTMLImageElement;
+
+  constructor(props: IProps) {
+    super(props);
+
+    this.unmounted = true;
+
+    this.state = {
+      counterImageLoaded: false,
+    };
+
+    this.img = new Image();
+
+    this.img.onload = () => {
+      if (!this.unmounted) {
+        this.setState({
+          counterImageLoaded: true,
+        });
+      }
+    };
+
+    if (!!this.props.counterImageUrl) {
+      this.img.src = this.props.counterImageUrl;
+    }
+  }
+
+  public componentDidUpdate(prevProps: IProps, prevState: IState) {
+    if (
+      !this.state.counterImageLoaded &&
+      !prevProps.counterImageUrl &&
+      !!this.props.counterImageUrl
+    ) {
+      this.img.src = this.props.counterImageUrl;
+    }
+  }
+
+  public componentDidMount() {
+    this.unmounted = false;
+  }
+
+  public componentWillUnmount() {
+    this.unmounted = true;
+  }
 
   render() {
+    const hasImage = !!this.props.counterImageUrl;
+
+    const desiredImageDim = 50;
+
+    const containerWidth = 200;
+    const containerHeight = 100;
+
+    const scale = {
+      x: desiredImageDim / this.img.naturalWidth,
+      y: desiredImageDim / this.img.naturalHeight,
+    };
+
+    const offsetX = -containerWidth / 2 + desiredImageDim / 2;
+    const scaledOffsetX = offsetX / scale.x;
+
+    const offsetY = -containerHeight / 2 + 5;
+    const scaledOffsetY = offsetY / scale.y;
+
     return (
       <Group
         x={this.props.pos.x}
@@ -33,18 +100,30 @@ class Counter extends Component<IProps> {
       >
         <Rect
           cornerRadius={30}
-          width={200}
-          height={100}
+          width={containerWidth}
+          height={containerHeight}
           fill={this.props.color}
         ></Rect>
         <Text
-          width={200}
-          height={100}
+          width={containerWidth}
+          height={containerHeight}
           fontSize={36}
           text={`${this.props.value}`}
           align={"center"}
           verticalAlign={"middle"}
+          offsetY={hasImage ? 20 : 0}
         ></Text>
+        {hasImage && this.state.counterImageLoaded && (
+          <Rect
+            key={`${this.props.id}-img`}
+            offsetX={scaledOffsetX}
+            offsetY={scaledOffsetY}
+            scale={scale}
+            width={this.img.naturalWidth}
+            height={this.img.naturalHeight}
+            fillPatternImage={this.img}
+          ></Rect>
+        )}
         <Text
           x={10}
           y={25}

@@ -1,5 +1,6 @@
 import { loadState } from "../../store/localStorage";
 import {
+  CardSizeType,
   CounterTokenType,
   StatusTokenType,
 } from "../../constants/card-constants";
@@ -33,6 +34,7 @@ export interface ICardStack {
   extraIcons: string[];
   attachedTo?: string | null;
   attachedCardIds?: string[] | null;
+  sizeType: CardSizeType;
 }
 
 export interface ICardDetails {
@@ -108,6 +110,11 @@ if (!!localStorageState.cards) {
       c.statusTokens.tough = 0;
     } else if ((c.statusTokens.tough as unknown as boolean) === true) {
       c.statusTokens.tough = 1;
+    }
+
+    // handle missing size type
+    if (!c.sizeType) {
+      c.sizeType = CardSizeType.Standard;
     }
   });
 }

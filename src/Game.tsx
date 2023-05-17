@@ -15,12 +15,12 @@ import {
   PlayerColor,
   playerHandHeightPx,
   possibleColors,
-  useWSLocalStorage,
+  useWebRTCLocalStorage,
 } from "./constants/app-constants";
 import {
   cardConstants,
+  CardSizeType,
   CounterTokenType,
-  HORIZONTAL_TYPE_CODES,
   StatusTokenType,
 } from "./constants/card-constants";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
@@ -33,7 +33,7 @@ import EncounterLoaderContainer from "./EncounterLoaderContainer";
 import { ICardData } from "./features/cards-data/initialState";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import { ICardsState, ICardStack } from "./features/cards/initialState";
-import { ICounter } from "./features/counters/initialState";
+import { ICounter, IFlippableToken } from "./features/counters/initialState";
 import { IGameState } from "./features/game/initialState";
 import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
 import "./Game.scss";
@@ -59,7 +59,10 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import DeckSearchContainer from "./DeckSearchContainer";
 import log from "loglevel";
 import NotificationsContainer from "./Notifications/NotificationsContainer";
-import { GameType } from "./game-modules/GameModule";
+import { GameType } from "./game-modules/GameType";
+import GameManager from "./game-modules/GameModuleManager";
+import FlippableToken from "./FlippableToken";
+import { CardData } from "./external-api/common-card-data";
 
 const SCALE_BY = 1.02;
 
@@ -76,7 +79,7 @@ interface IProps {
   isDoneLoadingJSONData: boolean;
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
   endCardMove: (id: string) => void;
-  cardFromHandMove: (pos: Vector2d) => void;
+  cardFromHandMove: (pos: Vector2d, sizeType: CardSizeType) => void;
   exhaustCard: (id?: string) => void;
   deleteCardStack: (id?: string) => void;
   selectCard: (payload: { id: string; unselectOtherCards: boolean }) => void;
@@ -137,7 +140,7 @@ interface IProps {
     jsonId: string;
     pos: Vector2d;
   }) => void;
-  addNewCounter: (pos: Vector2d) => void;
+  addNewCounter: (pos: Vector2d, imgurl?: string) => void;
   updateCounterValue: (payload: { id: string; delta: number }) => void;
   removeCounter: (id: string) => void;
   moveCounter: (payload: { id: string; newPos: Vector2d }) => void;
@@ -147,6 +150,7 @@ interface IProps {
   redo: () => void;
   clearHistory: () => void;
   counters: ICounter[];
+  tokens: IFlippableToken[];
   requestResync: () => void;
   peerId: string;
   multiplayerGameName: string;
@@ -191,6 +195,9 @@ interface IProps {
   }) => void;
   removeAnyDisconnectedArrows: (myRef: string) => void;
   removeAllArrows: () => void;
+  createNewTokens: (tokens: IFlippableToken[]) => void;
+  moveToken: (payload: { id: string; pos: Vector2d }) => void;
+  flipToken: (id: string) => void;
 }
 
 interface IState {
@@ -285,6 +292,13 @@ class Game extends Component<IProps, IState> {
   }
 
   public componentDidMount() {
+    if (!GamePropertiesMap[this.props.currentGameType]) {
+      this.props.resetApp();
+      this.props.quitGame();
+      this.props.clearHistory();
+      return null;
+    }
+
     if (!this.isSetUp) {
       document.addEventListener("keydown", this.handleKeyDown);
       document.addEventListener("keyup", this.handleKeyUp);
@@ -338,6 +352,10 @@ class Game extends Component<IProps, IState> {
     //   return <div>LOADING JSON DATA...</div>;
     // }
 
+    if (!GamePropertiesMap[this.props.currentGameType]) {
+      return null;
+    }
+
     const staticCards = this.props.cards.cards
       .filter((card) => !card.dragging)
       .map((card) => {
@@ -389,6 +407,7 @@ class Game extends Component<IProps, IState> {
               tough: card.statusTokens.tough,
               tokens: { damage: 0, threat: 0, generic: 0 },
             }}
+            sizeType={card.sizeType}
           />
         );
       });
@@ -418,6 +437,7 @@ class Game extends Component<IProps, IState> {
           typeCode={getCardType(card, this.props.cardsData)}
           faceup={card.faceup}
           isGhost={true}
+          sizeType={card.sizeType}
         />
       );
     });
@@ -454,6 +474,7 @@ class Game extends Component<IProps, IState> {
             typeCode={getCardType(card, this.props.cardsData)}
             faceup={card.faceup}
             numCardsInStack={card.cardStack.length}
+            sizeType={card.sizeType}
           />
         );
       });
@@ -474,36 +495,40 @@ class Game extends Component<IProps, IState> {
       ? possiblePreviewCards
           .filter((_card) => !this.state.selecting && !iAmDragging)
           .map((card) => {
-            const isHorizontal = HORIZONTAL_TYPE_CODES.includes(
-              getCardType(card, this.props.cardsData)
-            );
+            const isHorizontal = GameManager.horizontalCardTypes[
+              this.props.currentGameType
+            ].includes(getCardType(card, this.props.cardsData));
             const imgUrls = getImgUrls(
               card,
               this.props.cardsData,
               this.props.currentGameType
             );
-            const rawPos = this.getRawPreviewCardPosition(isHorizontal);
+            const rawPos = this.getRawPreviewCardPosition(
+              isHorizontal,
+              card.sizeType
+            );
             const previewPos = this.getRelativePositionFromTarget(
               this.stage,
               rawPos
             );
 
-            let previewCardHeight = cardConstants.CARD_PREVIEW_HEIGHT;
-            let previewCardWidth = cardConstants.CARD_PREVIEW_WIDTH;
+            let previewCardHeight =
+              cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT;
+            let previewCardWidth =
+              cardConstants[card.sizeType].CARD_PREVIEW_WIDTH;
 
             // Note that we only adjust the height, because the card will
             // be rotated if it supposed to be displayed horizontally
             previewCardHeight = Math.min(
-              cardConstants.CARD_PREVIEW_HEIGHT,
+              cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT,
               isHorizontal ? window.innerWidth : window.innerHeight
             );
             const previewCardRatio =
-              previewCardHeight / cardConstants.CARD_PREVIEW_HEIGHT;
+              previewCardHeight /
+              cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT;
             previewCardWidth *= previewCardRatio;
 
-            return imgUrls.some(
-              (url) => url.indexOf("card_back") !== -1
-            ) ? null : (
+            return imgUrls.some((url) => url.indexOf("_back") !== -1) ? null : (
               <Card
                 currentGameType={this.props.currentGameType}
                 name={this.getCardName(card)}
@@ -527,6 +552,7 @@ class Game extends Component<IProps, IState> {
                 height={previewCardHeight / this.props.gameState.stageZoom.y}
                 width={previewCardWidth / this.props.gameState.stageZoom.x}
                 isPreview={true}
+                sizeType={card.sizeType}
               />
             );
           })
@@ -571,7 +597,8 @@ class Game extends Component<IProps, IState> {
                 this.getRelativePositionFromTarget(
                   this.stage,
                   this.lastMousePos
-                )
+                ),
+                CardSizeType.Standard //TODO: Figure this out from metadata?
               );
             }
           }
@@ -583,7 +610,8 @@ class Game extends Component<IProps, IState> {
 
           if (this.props.gameState.draggingCardFromHand) {
             this.props.cardFromHandMove(
-              this.getRelativePositionFromTarget(this.stage, this.lastMousePos)
+              this.getRelativePositionFromTarget(this.stage, this.lastMousePos),
+              CardSizeType.Standard //TODO: Figure this out from metadata?
             );
           }
         }}
@@ -729,6 +757,7 @@ class Game extends Component<IProps, IState> {
                             counter.id
                           )}
                           onDragEnd={this.handleCounterDrag(counter.id)}
+                          counterImageUrl={counter.imgUrl}
                         ></Counter>
                       ))}
                     </Group>
@@ -738,6 +767,21 @@ class Game extends Component<IProps, IState> {
                       <FirstPlayerTokenContainer
                         currentGameType={this.props.currentGameType}
                       ></FirstPlayerTokenContainer>
+                      <Group>
+                        {this.props.tokens.map((token) => (
+                          <FlippableToken
+                            key={`${token.id}-token`}
+                            currentGameType={this.props.currentGameType}
+                            id={token.id}
+                            imgUrl={token.imgUrl}
+                            backImgUrl={token.backImgUrl}
+                            pos={token.position}
+                            faceup={token.faceup}
+                            updatePos={this.props.moveToken}
+                            flipToken={this.props.flipToken}
+                          ></FlippableToken>
+                        ))}
+                      </Group>
                       <CurvedArrowsContainer></CurvedArrowsContainer>
                       {previewCards}
                     </Group>
@@ -1032,49 +1076,93 @@ class Game extends Component<IProps, IState> {
     ) : null;
   };
 
-  private handleLoadEncounter = (position: Vector2d) => (cards: string[][]) => {
-    this.clearEncounterImporter();
-    cards.forEach((c, index) => {
-      this.props.addCardStack({
-        position: {
-          x: position.x + cardConstants.GRID_SNAP_WIDTH * index,
-          y: position.y,
-        },
-        cardJsonIds: c,
+  private handleLoadEncounter =
+    (position: Vector2d) =>
+    (cards: CardData[][], tokens: IFlippableToken[]) => {
+      this.clearEncounterImporter();
+
+      const sizeTypeToOffsetMap: { [key in CardSizeType]: Vector2d } = {} as {
+        [key in CardSizeType]: Vector2d;
+      };
+
+      let yOffset = 0;
+      Object.values(CardSizeType).forEach((type) => {
+        sizeTypeToOffsetMap[type] = { x: 0, y: yOffset };
+        // Tarot is the biggest card size, so use that
+        yOffset += cardConstants[CardSizeType.Tarot].CARD_HEIGHT + 20;
       });
-    });
 
-    // Cache the images
-    const imgUrls = cards.flat().reduce((urls, code) => {
-      const faceupCard = getImgUrlsFromJsonId(
-        code,
-        true,
-        this.props.cardsData,
-        this.props.currentGameType
-      );
-      const facedownCard = getImgUrlsFromJsonId(
-        code,
-        false,
-        this.props.cardsData,
-        this.props.currentGameType
-      );
-      return urls.concat(faceupCard, facedownCard);
-    }, [] as string[]);
+      cards.forEach((c, index) => {
+        const cardSizeType = c[0]?.extraInfo.sizeType ?? CardSizeType.Standard;
+        this.props.addCardStack({
+          position: {
+            x: position.x + sizeTypeToOffsetMap[cardSizeType].x,
+            y: position.y + sizeTypeToOffsetMap[cardSizeType].y,
+          },
+          cardJsonIds: c.map((card) => card.code),
+        });
 
-    const uniqueUrls = Array.from(new Set(imgUrls));
+        sizeTypeToOffsetMap[cardSizeType] = {
+          x:
+            sizeTypeToOffsetMap[cardSizeType].x +
+            cardConstants[cardSizeType].GRID_SNAP_WIDTH,
+          y: sizeTypeToOffsetMap[cardSizeType].y,
+        };
+      });
 
-    cacheImages(uniqueUrls);
-  };
+      if (tokens.length > 0) {
+        // Put the tokens up a bit
+        this.props.createNewTokens(
+          tokens.map((t, idx) => ({
+            ...t,
+            position: {
+              x:
+                position.x -
+                cardConstants[
+                  CardSizeType.Tarot //Tarot is the largest card size
+                ].CARD_WIDTH *
+                  2,
+              y: position.y + 200 * idx,
+            },
+          }))
+        );
+      }
 
-  private handleImportDeck = (position: Vector2d) => (id: number, usePrivateApi: boolean) => {
-    this.clearDeckImporter();
-    this.props.fetchDecklistById({
-      gameType: this.props.currentGameType,
-      decklistId: id,
-      usePrivateApi: usePrivateApi,
-      position,
-    });
-  };
+      // Cache the images
+      const imgUrls = cards.flat().reduce((urls, card) => {
+        const faceupCard = getImgUrlsFromJsonId(
+          card.code,
+          true,
+          this.props.cardsData,
+          this.props.currentGameType
+        );
+        const facedownCard = getImgUrlsFromJsonId(
+          card.code,
+          false,
+          this.props.cardsData,
+          this.props.currentGameType
+        );
+        return urls.concat(faceupCard, facedownCard);
+      }, [] as string[]);
+
+      const tokenUrls = tokens.map((t) => t.imgUrl);
+
+      const uniqueUrls = Array.from(new Set(imgUrls));
+      const uniqueTokenUrls = Array.from(new Set(tokenUrls));
+
+      cacheImages(uniqueUrls.concat(uniqueTokenUrls));
+    };
+
+  private handleImportDeck =
+    (position: Vector2d) => (id: number, usePrivateApi: boolean) => {
+      this.clearDeckImporter();
+      this.props.fetchDecklistById({
+        gameType: this.props.currentGameType,
+        decklistId: id,
+        usePrivateApi: usePrivateApi,
+        position,
+      });
+    };
 
   private handlePeerConnect = (peerId: string) => {
     this.clearPeerConnector();
@@ -1527,6 +1615,12 @@ class Game extends Component<IProps, IState> {
           tokenType: CounterTokenType.Generic,
           value: 0,
         });
+
+        this.props.adjustCounterToken({
+          id: card?.id || "",
+          tokenType: CounterTokenType.Acceleration,
+          value: 0,
+        });
       },
     });
 
@@ -1781,14 +1875,14 @@ class Game extends Component<IProps, IState> {
           x:
             draggingCard.x +
             (draggingCard.exhausted
-              ? cardConstants.CARD_HEIGHT
-              : cardConstants.CARD_WIDTH) /
+              ? cardConstants[draggingCard.sizeType].CARD_HEIGHT
+              : cardConstants[draggingCard.sizeType].CARD_WIDTH) /
               2,
           y:
             draggingCard.y -
             (draggingCard.exhausted
-              ? cardConstants.CARD_WIDTH
-              : cardConstants.CARD_HEIGHT) /
+              ? cardConstants[draggingCard.sizeType].CARD_WIDTH
+              : cardConstants[draggingCard.sizeType].CARD_HEIGHT) /
               2,
         };
         const distance = getDistance(
@@ -1797,8 +1891,8 @@ class Game extends Component<IProps, IState> {
         );
 
         const dragDistanceThreshold = !!(event.evt as any).touches
-          ? cardConstants.TOUCH_DRAG_SPLIT_DISTANCE
-          : cardConstants.MOUSE_DRAG_SPLIT_DISTANCE;
+          ? cardConstants[draggingCard.sizeType].TOUCH_DRAG_SPLIT_DISTANCE
+          : cardConstants[draggingCard.sizeType].MOUSE_DRAG_SPLIT_DISTANCE;
 
         if (distance < dragDistanceThreshold) {
           splitTopCard = true;
@@ -1879,13 +1973,64 @@ class Game extends Component<IProps, IState> {
 
   private handleKeyDown = (event: KeyboardEvent) => {
     const code = event.key.toLocaleLowerCase();
-    const intCode = parseInt(code);
+    let intCode = parseInt(code);
 
     if (event.key === "a" && !this.props.gameState.drawingArrow) {
       this.props.setDrawingArrow(true);
     }
 
-    if ((event.ctrlKey || event.metaKey) && !Number.isNaN(intCode)) {
+    // Map the shift cases
+    if (event.key === "!") {
+      intCode = 1;
+    } else if (event.key === "@") {
+      intCode = 2;
+    } else if (event.key === "#") {
+      intCode = 3;
+    } else if (event.key === "$") {
+      intCode = 4;
+    } else if (event.key === "%") {
+      intCode = 5;
+    } else if (event.key === "^") {
+      intCode = 6;
+    } else if (event.key === "&") {
+      intCode = 7;
+    } else if (event.key === "*") {
+      intCode = 8;
+    } else if (event.key === "(") {
+      intCode = 9;
+    } else if (event.key === ")") {
+      intCode = 0;
+    }
+
+    // If all else fails, try keyCode
+    if (Number.isNaN(intCode)) {
+      if (event.keyCode === 49) {
+        intCode = 1;
+      } else if (event.keyCode === 50) {
+        intCode = 2;
+      } else if (event.keyCode === 51) {
+        intCode = 3;
+      } else if (event.keyCode === 52) {
+        intCode = 4;
+      } else if (event.keyCode === 53) {
+        intCode = 5;
+      } else if (event.keyCode === 54) {
+        intCode = 6;
+      } else if (event.keyCode === 55) {
+        intCode = 7;
+      } else if (event.keyCode === 56) {
+        intCode = 8;
+      } else if (event.keyCode === 57) {
+        intCode = 9;
+      } else if (event.keyCode === 48) {
+        intCode = 0;
+      }
+    }
+
+    if (
+      (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) &&
+      !Number.isNaN(intCode)
+    ) {
       const tokenInfoForGameType =
         GamePropertiesMap[this.props.currentGameType].tokens;
       switch (intCode) {
@@ -1893,7 +2038,7 @@ class Game extends Component<IProps, IState> {
           if (!!tokenInfoForGameType.damage) {
             this.props.adjustCounterToken({
               tokenType: CounterTokenType.Damage,
-              delta: 1,
+              delta: event.shiftKey ? -1 : 1,
             });
           }
           break;
@@ -1901,7 +2046,7 @@ class Game extends Component<IProps, IState> {
           if (!!tokenInfoForGameType.threat) {
             this.props.adjustCounterToken({
               tokenType: CounterTokenType.Threat,
-              delta: 1,
+              delta: event.shiftKey ? -1 : 1,
             });
           }
           break;
@@ -1910,32 +2055,15 @@ class Game extends Component<IProps, IState> {
           if (!!tokenInfoForGameType.generic) {
             this.props.adjustCounterToken({
               tokenType: CounterTokenType.Generic,
-              delta: 1,
+              delta: event.shiftKey ? -1 : 1,
             });
           }
           break;
         case 4:
           if (!!tokenInfoForGameType.damage) {
             this.props.adjustCounterToken({
-              tokenType: CounterTokenType.Damage,
-              delta: -1,
-            });
-          }
-          break;
-        case 5:
-          if (!!tokenInfoForGameType.threat) {
-            this.props.adjustCounterToken({
-              tokenType: CounterTokenType.Threat,
-              delta: -1,
-            });
-          }
-          break;
-
-        case 6:
-          if (!!tokenInfoForGameType.generic) {
-            this.props.adjustCounterToken({
-              tokenType: CounterTokenType.Generic,
-              delta: -1,
+              tokenType: CounterTokenType.Acceleration,
+              delta: event.shiftKey ? -1 : 1,
             });
           }
           break;
@@ -1967,17 +2095,20 @@ class Game extends Component<IProps, IState> {
     }
   };
 
-  private getRawPreviewCardPosition = (horizontal: boolean): Vector2d => {
+  private getRawPreviewCardPosition = (
+    horizontal: boolean,
+    sizeType: CardSizeType
+  ): Vector2d => {
     const pointerPos = this.stage?.getPointerPosition() ?? { x: 0, y: 0 };
     const screenMidPointX = window.innerWidth / 2;
     const screenMidPointY = window.innerHeight / 2;
 
     const widthToUse = horizontal
-      ? cardConstants.CARD_PREVIEW_HEIGHT
-      : cardConstants.CARD_PREVIEW_WIDTH;
+      ? cardConstants[sizeType].CARD_PREVIEW_HEIGHT
+      : cardConstants[sizeType].CARD_PREVIEW_WIDTH;
     const heightToUse = horizontal
-      ? cardConstants.CARD_PREVIEW_WIDTH
-      : cardConstants.CARD_PREVIEW_HEIGHT;
+      ? cardConstants[sizeType].CARD_PREVIEW_WIDTH
+      : cardConstants[sizeType].CARD_PREVIEW_HEIGHT;
 
     if (this.state.previewCardModal) {
       return {
@@ -2073,8 +2204,8 @@ class Game extends Component<IProps, IState> {
             selectRect.height,
             card.x - 50,
             card.y - 75,
-            cardConstants.CARD_WIDTH,
-            cardConstants.CARD_HEIGHT
+            cardConstants[card.sizeType].CARD_WIDTH,
+            cardConstants[card.sizeType].CARD_HEIGHT
           );
 
           if (intersects) {
@@ -2260,6 +2391,7 @@ class Game extends Component<IProps, IState> {
             },
           });
         },
+        hidden: !GamePropertiesMap[this.props.currentGameType].decklistApi,
       },
       {
         label: `Search for Online Deck`,
@@ -2268,6 +2400,8 @@ class Game extends Component<IProps, IState> {
             this.stage?.getPointerPosition() || { x: 0, y: 0 }
           );
         },
+        hidden:
+          !GamePropertiesMap[this.props.currentGameType].decklistSearchApi,
       },
       // {
       //   label: "Load Deck from json file",
@@ -2298,22 +2432,43 @@ class Game extends Component<IProps, IState> {
             this.stage?.getPointerPosition() || { x: 0, y: 0 }
           );
         },
+        hidden: !GamePropertiesMap[this.props.currentGameType].decklistApi,
       },
       {
         label: "Create new counter",
-        action: () => {
-          this.props.addNewCounter(
-            this.getRelativePositionFromTarget(this.stage) ?? { x: 0, y: 0 }
-          );
-        },
+        children: [
+          {
+            label: "Generic",
+            action: () => {
+              this.props.addNewCounter(
+                this.getRelativePositionFromTarget(this.stage) ?? { x: 0, y: 0 }
+              );
+            },
+          },
+        ].concat(
+          (
+            GamePropertiesMap[this.props.currentGameType].iconCounters || []
+          ).map((c) => ({
+            label: c.counterName,
+            action: () => {
+              this.props.addNewCounter(
+                this.getRelativePositionFromTarget(this.stage) ?? {
+                  x: 0,
+                  y: 0,
+                },
+                c.counterImage
+              );
+            },
+          }))
+        ),
       },
       { label: "Remove all arrows", action: this.props.removeAllArrows },
       { label: "Reset Game", action: this.props.resetApp },
       {
         label: "Quit Game",
         action: () => {
-          this.props.quitGame();
           this.props.resetApp();
+          this.props.quitGame();
           this.props.clearHistory();
         },
       },
@@ -2368,8 +2523,9 @@ class Game extends Component<IProps, IState> {
               : []
           )
           .concat(
-            useWSLocalStorage
-              ? [
+            useWebRTCLocalStorage
+              ? []
+              : [
                   {
                     label: `Start hosting a new online game`,
                     action: () => {
@@ -2377,8 +2533,20 @@ class Game extends Component<IProps, IState> {
                     },
                   },
                 ]
-              : []
-          ),
+          )
+          .concat([
+            {
+              label: `Leave multiplayer game`,
+              action: () => {
+                const url = new URL(window.location as any);
+                if (!!url.searchParams.get("remote")) {
+                  url.searchParams.delete("remote");
+                }
+                window.history.pushState({}, "", url);
+                window.location.reload();
+              },
+            },
+          ]),
       },
       {
         label: `Copy game to clipboard`,
