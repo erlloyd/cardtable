@@ -19,7 +19,6 @@ const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
     type: GameType.WarOfTheRingTheCardGame,
     module: new WarOfTheRingTheCardGameModule(),
-    hidden: true,
   },
 ];
 

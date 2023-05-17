@@ -2533,7 +2533,20 @@ class Game extends Component<IProps, IState> {
                     },
                   },
                 ]
-          ),
+          )
+          .concat([
+            {
+              label: `Leave multiplayer game`,
+              action: () => {
+                const url = new URL(window.location as any);
+                if (!!url.searchParams.get("remote")) {
+                  url.searchParams.delete("remote");
+                }
+                window.history.pushState({}, "", url);
+                window.location.reload();
+              },
+            },
+          ]),
       },
       {
         label: `Copy game to clipboard`,
