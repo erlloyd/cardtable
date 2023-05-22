@@ -839,6 +839,43 @@ const clearAllModifiersReducer: CaseReducer<
   });
 };
 
+const setPlayerRoleReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{
+    playerNumber: number;
+    role: string | null;
+  }>
+> = (state, action) => {
+  const playerIndex = action.payload.playerNumber - 1;
+  if (playerIndex < 0 || playerIndex >= state.playerHands.length) {
+    log.error(
+      `Got an invalid playerNumber: ${action.payload.playerNumber}. PlayerHands length is ${state.playerHands.length}`
+    );
+    return;
+  }
+
+  const playerHand = state.playerHands[playerIndex];
+  playerHand.role = action.payload.role;
+};
+
+const clearPlayerRoleReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{
+    playerNumber: number;
+  }>
+> = (state, action) => {
+  const playerIndex = action.payload.playerNumber - 1;
+  if (playerIndex < 0 || playerIndex >= state.playerHands.length) {
+    log.error(
+      `Got an invalid playerNumber: ${action.payload.playerNumber}. PlayerHands length is ${state.playerHands.length}`
+    );
+    return;
+  }
+
+  const playerHand = state.playerHands[playerIndex];
+  playerHand.role = null;
+};
+
 const addToPlayerHandReducer: CaseReducer<
   ICardsState,
   PayloadAction<{
@@ -991,6 +1028,8 @@ const cardsSlice = createSlice({
     reorderPlayerHand: reorderPlayerHandReducer,
     removeFromPlayerHand: removeFromPlayerHandReducer,
     addToPlayerHand: addToPlayerHandReducer,
+    setPlayerRole: setPlayerRoleReducer,
+    clearPlayerRole: clearPlayerRoleReducer,
     addToExistingCardStack: addToExistingCardStackReducer,
     addExtraIcon: addExtraIconReducer,
     removeExtraIcon: removeExtraIconReducer,
@@ -1527,6 +1566,8 @@ export const {
   reorderPlayerHand,
   removeFromPlayerHand,
   addToPlayerHand,
+  setPlayerRole,
+  clearPlayerRole,
   addToExistingCardStack,
   addExtraIcon,
   removeExtraIcon,

@@ -18,7 +18,7 @@ import {
   playerHandElementId,
   playerHandHeightPx,
 } from "./constants/app-constants";
-import ContextMenu from "./ContextMenu";
+import ContextMenu, { ContextMenuItem } from "./ContextMenu";
 import { ICardData } from "./features/cards-data/initialState";
 import {
   ICardDetails,
@@ -145,6 +145,11 @@ interface IProps {
   currentGameType: GameType | null;
   dragging: boolean;
   setVisiblePlayerHandNumber: (num: number) => void;
+  setPlayerRole: (payload: {
+    playerNumber: number;
+    role: string | null;
+  }) => void;
+  clearPlayerRole: (payload: { playerNumber: number }) => void;
 }
 interface IState {
   modal: boolean;
@@ -211,13 +216,44 @@ class PlayerHand extends Component<IProps, IState> {
   // But in this example everything is just done in one place for simplicity
   render() {
     const cards = this.props.playerHandData?.cards ?? [];
+    const possibleRoles = GameManager.getModuleForType(
+      this.props.currentGameType ?? GameManager.allRegisteredGameTypes[0]
+    ).properties.roles;
     return (
       <div>
         {this.renderTopLayer()}
         {this.state.showMenu && (
           <ContextMenu
             anchorEl={this.state.anchorEl}
-            items={[
+            items={(!!possibleRoles
+              ? ([
+                  {
+                    label: "Select Role",
+                    children: possibleRoles.roles.map((r) => ({
+                      label: `${r.name} ${
+                        r.name === this.props.playerHandData?.role
+                          ? "(Current Role)"
+                          : ""
+                      }`,
+                      action: () => {
+                        this.props.setPlayerRole({
+                          playerNumber: this.props.playerNumber,
+                          role: r.name,
+                        });
+                      },
+                    })),
+                  },
+                  {
+                    label: "Clear Role",
+                    action: () => {
+                      this.props.clearPlayerRole({
+                        playerNumber: this.props.playerNumber,
+                      });
+                    },
+                  },
+                ] as ContextMenuItem[])
+              : ([] as ContextMenuItem[])
+            ).concat([
               {
                 label: "Show player hand",
                 children: Array.from({ length: MAX_PLAYERS }).map((_, i) => ({
@@ -230,7 +266,7 @@ class PlayerHand extends Component<IProps, IState> {
               },
               {
                 label: "Drop random card",
-                action: (wasTouch) => {
+                action: (wasTouch: boolean | undefined) => {
                   if (cards.length > 0) {
                     const randIndex = Math.floor(Math.random() * cards.length);
                     const cardDetails = cards[randIndex];
@@ -245,7 +281,7 @@ class PlayerHand extends Component<IProps, IState> {
                   }
                 },
               },
-            ]}
+            ])}
             hideContextMenu={() => {
               this.setState({ anchorEl: undefined, showMenu: false });
             }}
@@ -276,6 +312,9 @@ class PlayerHand extends Component<IProps, IState> {
                   <MoreHorizIcon fontSize="large" />
                 </IconButton>
                 <div className="player-number">P{this.props.playerNumber}</div>
+                {this.props.playerHandData?.role && (
+                  <div className="role">{this.props.playerHandData.role}</div>
+                )}
                 {cards.map((card, index) => (
                   <Draggable
                     key={`player-hand-${this.props.playerNumber}-${index}`}

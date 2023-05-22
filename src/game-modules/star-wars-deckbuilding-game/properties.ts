@@ -12,6 +12,9 @@ export const properties: GameProperties = {
     "/images/from_modules/star-wars-deckbuilding-game/death-star-playmat.jpg",
   possibleIcons: [],
   modifiers: [],
+  roles: {
+    roles: [{ name: "Empire" }, { name: "Rebel" }],
+  },
   tokens: {
     stunned: null,
     confused: null,

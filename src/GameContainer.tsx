@@ -8,6 +8,7 @@ import {
   getDropTargetCardsById,
   getMultiselectMode,
   getPanMode,
+  getPlayerCardsForPlayerNumber,
 } from "./features/cards/cards.selectors";
 import {
   addExtraIcon,
@@ -64,6 +65,7 @@ import {
   getPeerId,
   getPlayerColors,
   getPlayerNumbers,
+  getRotatePreviewCard180,
   isDoneLoadingJSONData,
 } from "./features/game/game.selectors";
 import {
@@ -81,6 +83,7 @@ import {
   showDeckSearch,
   toggleDrawCardsIntoHand,
   toggleSnapCardsToGrid,
+  togglePreviewCardRotation,
 } from "./features/game/game.slice";
 import {
   updateDisconnectedArrowPosition,
@@ -97,11 +100,18 @@ import { resetApp } from "./store/global.actions";
 import { RootState } from "./store/rootReducer";
 import { startNewArrow } from "./features/arrows/arrows.thunks";
 import { toggleNotes } from "./features/notes/notes.slice";
+import { myPeerRef } from "./constants/app-constants";
 
 const mapStateToProps = (state: RootState) => {
+  const playerNumbers = getPlayerNumbers(state);
+  const myPlayerNumber = playerNumbers[myPeerRef] ?? 1;
+
+  const currentPlayerNumber =
+    getGame(state).currentVisiblePlayerHandNumber ?? myPlayerNumber;
+
   return {
     playerColors: getPlayerColors(state),
-    playerNumbers: getPlayerNumbers(state),
+    playerNumbers: playerNumbers,
     cards: getCards(state),
     cardsData: getCardsDataEntities(state),
     panMode: getPanMode(state),
@@ -114,6 +124,9 @@ const mapStateToProps = (state: RootState) => {
     dropTargetCardsById: getDropTargetCardsById(state),
     menuPreviewCard: getMenuPreviewCard(state),
     isDoneLoadingJSONData: isDoneLoadingJSONData(state),
+    currentPlayerRole:
+      getPlayerCardsForPlayerNumber(currentPlayerNumber)(state)?.role ?? null,
+    rotatePreviewCard180: getRotatePreviewCard180(state),
   };
 };
 
@@ -184,6 +197,7 @@ const GameContainer = connect(mapStateToProps, {
   createNewTokens,
   moveToken,
   flipToken,
+  togglePreviewCardRotation,
 })(Game);
 
 export default GameContainer;

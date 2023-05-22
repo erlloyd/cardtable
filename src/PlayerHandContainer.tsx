@@ -2,6 +2,8 @@ import { connect } from "react-redux";
 import {
   reorderPlayerHand,
   removeFromPlayerHand,
+  setPlayerRole,
+  clearPlayerRole,
 } from "./features/cards/cards.slice";
 import { getPlayerCardsForPlayerNumber } from "./features/cards/cards.selectors";
 import PlayerHand from "./PlayerHand";
@@ -39,6 +41,8 @@ const PlayerHandContainer = connect(mapStateToProps, {
   startDraggingCardFromHand,
   stopDraggingCardFromHand,
   setVisiblePlayerHandNumber,
+  setPlayerRole,
+  clearPlayerRole,
 })(PlayerHand);
 
 export default PlayerHandContainer;

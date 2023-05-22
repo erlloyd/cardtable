@@ -68,6 +68,7 @@ const SCALE_BY = 1.02;
 
 interface IProps {
   currentGameType: GameType;
+  currentPlayerRole: string | null;
   cards: ICardsState;
   cardsData: ICardData;
   gameState: IGameState;
@@ -203,6 +204,8 @@ interface IProps {
   createNewTokens: (tokens: IFlippableToken[]) => void;
   moveToken: (payload: { id: string; pos: Vector2d }) => void;
   flipToken: (id: string) => void;
+  rotatePreviewCard180: boolean;
+  togglePreviewCardRotation: () => void;
 }
 
 interface IState {
@@ -367,6 +370,7 @@ class Game extends Component<IProps, IState> {
         return (
           <Card
             currentGameType={this.props.currentGameType}
+            currentPlayerRole={this.props.currentPlayerRole}
             code={this.getCardCode(card)}
             name={this.getCardName(card)}
             selectedColor={
@@ -421,6 +425,7 @@ class Game extends Component<IProps, IState> {
       return (
         <Card
           currentGameType={this.props.currentGameType}
+          currentPlayerRole={this.props.currentPlayerRole}
           name={this.getCardName(card)}
           code={this.getCardCode(card)}
           selectedColor={this.props.playerColors[card.controlledBy] ?? "black"}
@@ -453,6 +458,7 @@ class Game extends Component<IProps, IState> {
         return (
           <Card
             currentGameType={this.props.currentGameType}
+            currentPlayerRole={this.props.currentPlayerRole}
             name={this.getCardName(card)}
             code={this.getCardCode(card)}
             selectedColor={
@@ -541,6 +547,7 @@ class Game extends Component<IProps, IState> {
             return imgUrls.some((url) => url.indexOf("_back") !== -1) ? null : (
               <Card
                 currentGameType={this.props.currentGameType}
+                currentPlayerRole={this.props.currentPlayerRole}
                 name={this.getCardName(card)}
                 code={this.getCardCode(card)}
                 selectedColor={
@@ -563,6 +570,7 @@ class Game extends Component<IProps, IState> {
                 width={previewCardWidth / this.props.gameState.stageZoom.x}
                 isPreview={true}
                 sizeType={card.sizeType}
+                additionalRotation={this.props.rotatePreviewCard180 ? 180 : 0}
               />
             );
           })
@@ -911,6 +919,9 @@ class Game extends Component<IProps, IState> {
     return (
       <TopLayer
         position={{ x: 0, y: 0 }}
+        onSwipeUp={() => {
+          this.props.togglePreviewCardRotation();
+        }}
         completed={() => {
           this.props.clearPreviewCard();
           this.setState({
@@ -1967,6 +1978,8 @@ class Game extends Component<IProps, IState> {
     const intCode = parseInt(code);
     if (code === "p") {
       this.props.togglePanMode();
+    } else if (code === "r") {
+      this.props.togglePreviewCardRotation();
     } else if (code === "f") {
       this.props.flipCards();
     } else if (code === "h") {

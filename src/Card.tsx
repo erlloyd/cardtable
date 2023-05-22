@@ -38,6 +38,7 @@ export interface CardUIState {
 
 interface IProps {
   currentGameType: GameType;
+  currentPlayerRole: string | null;
   name: string;
   code: string;
   selectedColor: PlayerColor;
@@ -80,6 +81,7 @@ interface IProps {
     event: KonvaEventObject<PointerEvent>
   ) => void;
   sizeType: CardSizeType;
+  additionalRotation?: number;
 }
 
 interface IState {
@@ -382,14 +384,22 @@ class Card extends Component<IProps, IState> {
             strokeWidth={!!this.getStrokeColor() ? 4 : 0}
             fillPatternRotation={
               !imageLoaded ||
-              shouldRenderImageHorizontal(
+              (shouldRenderImageHorizontal(
                 this.props.code,
                 this.props.typeCode || "",
                 GameManager.horizontalCardTypes[this.props.currentGameType],
                 this.plainCardBack
               )
                 ? 270
-                : 0
+                : 0) +
+                GameManager.getModuleForType(
+                  this.props.currentGameType
+                ).additionalRotationForCardForRole(
+                  this.props.currentPlayerRole ?? "",
+                  this.props.code,
+                  this.props.typeCode
+                ) +
+                (this.props.additionalRotation ?? 0)
             }
             fillPatternImage={imgToUse}
             fillPatternScaleX={scale.width}

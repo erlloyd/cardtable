@@ -34,6 +34,7 @@ export interface IGameState {
   multiplayerGameName: string;
   previewCard: IPreviewCard | null;
   menuPreviewCardJsonId: string | null;
+  rotatePreviewCard180: boolean;
   activeGameType: GameType | null;
   draggingCardFromHand: boolean;
   drawCardsIntoHand: boolean;
@@ -59,6 +60,7 @@ localStorageState.peerId = "";
 localStorageState.multiplayerGameName = "";
 localStorageState.previewCard = null;
 localStorageState.menuPreviewCardJsonId = null;
+localStorageState.rotatePreviewCard180 = false;
 localStorageState.radialMenuPosition = null;
 localStorageState.specificCardLoaderPosition = null;
 localStorageState.deckSearchPosition = null;
@@ -80,6 +82,7 @@ const defaultState: IGameState = {
   multiplayerGameName: "",
   previewCard: null,
   menuPreviewCardJsonId: null,
+  rotatePreviewCard180: false,
   activeGameType: null,
   radialMenuPosition: null,
   specificCardLoaderPosition: null,

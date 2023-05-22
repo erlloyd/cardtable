@@ -105,3 +105,8 @@ export const isDoneLoadingJSONData = createSelector(
   getGame,
   (game) => game.allJsonDataLoaded
 );
+
+export const getRotatePreviewCard180 = createSelector(
+  getGame,
+  (game) => game.rotatePreviewCard180
+);

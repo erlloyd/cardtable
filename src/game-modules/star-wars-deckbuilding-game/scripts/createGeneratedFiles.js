@@ -75,13 +75,30 @@ const DeckToMetadataMap = {
     type: "galaxy_row",
     sizeType: "standard",
   },
-  "Galaxy Row": {
+  "Galaxy Row Rebel": {
     adjustment: `/tr:w-${resolution}`,
     imagePath: "/galaxy_row/",
     backImagePath: "/misc/",
     backImage: "card_back.png",
     scenarioDeck: "galaxy_row",
-    type: "galaxy_row",
+    type: "galaxy_row_rebel",
+    sizeType: "standard",
+  },
+  "Galaxy Row Empire": {
+    adjustment: `/tr:w-${resolution}`,
+    imagePath: "/galaxy_row/",
+    backImagePath: "/misc/",
+    backImage: "card_back.png",
+    scenarioDeck: "galaxy_row",
+    type: "galaxy_row_empire",
+  },
+  "Galaxy Row Neutral": {
+    adjustment: `/tr:w-${resolution}`,
+    imagePath: "/galaxy_row/",
+    backImagePath: "/misc/",
+    backImage: "card_back.png",
+    scenarioDeck: "galaxy_row",
+    type: "galaxy_row_neutral",
     sizeType: "standard",
   },
   Miscellaneous: {

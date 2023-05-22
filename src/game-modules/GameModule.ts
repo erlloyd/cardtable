@@ -90,6 +90,14 @@ export interface TextCounter {
   counterColor?: PlayerColor;
 }
 
+export interface Role {
+  name: string;
+}
+
+export interface RolesInfo {
+  roles: Role[];
+}
+
 export interface GameProperties {
   deckSite: string;
   decklistApi: string;
@@ -100,6 +108,7 @@ export interface GameProperties {
   backgroundImageLocation: string;
   possibleIcons: IconInfo[];
   modifiers: ModifierInfo[];
+  roles?: RolesInfo;
   tokens: {
     stunned: TokenInfo | null;
     confused: TokenInfo | null;
@@ -159,11 +168,18 @@ export abstract class GameModule {
     encounterEntities: ICardData
   ): IEncounterEntity[];
 
+  additionalRotationForCardForRole(
+    _role: string,
+    _code: string,
+    _typeCode?: string
+  ): number {
+    return 0;
+  }
+
   splitEncounterCardsIntoStacksWhenLoading?(
     setCode: string,
     encounterCards: CardData[]
   ): CardData[][];
-
   getTokensForEncounterSet?(setCode: string): IFlippableToken[];
   getCountersForEncounterSet?(setCode: string): ICounter[];
 }

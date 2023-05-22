@@ -7,6 +7,7 @@ import {
 import JSONCrush from "jsoncrush";
 
 export interface IPlayerHand {
+  role: string | null;
   cards: ICardDetails[];
 }
 
@@ -55,7 +56,7 @@ export interface ICardsState {
 export const MAX_PLAYERS = 6;
 
 export const generateDefaultPlayerHands = (): IPlayerHand[] =>
-  Array(MAX_PLAYERS).fill({ cards: [] });
+  Array(MAX_PLAYERS).fill({ cards: [], role: null });
 
 const queryParams = new URLSearchParams(window.location.search);
 

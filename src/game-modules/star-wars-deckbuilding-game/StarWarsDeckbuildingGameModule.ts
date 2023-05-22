@@ -145,6 +145,22 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
     });
   }
 
+  additionalRotationForCardForRole(
+    role: string,
+    _code: string,
+    typeCode?: string
+  ): number {
+    if (role === "Empire" && typeCode === "galaxy_row_rebel") {
+      return 180;
+    }
+
+    if (role === "Rebel" && typeCode === "galaxy_row_empire") {
+      return 180;
+    }
+
+    return 0;
+  }
+
   splitEncounterCardsIntoStacksWhenLoading(
     setCode: string,
     encounterCards: CardData[]
@@ -159,7 +175,12 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
         const rebel_bases = [...temp["Rebel Bases"]];
         const empire_bases = [...temp["Empire Bases"]];
         const always_available = [...temp["Always Available"]];
-        const galaxy_row = [...temp["Galaxy Row"], ...temp["Capital Ships"]];
+        const galaxy_row = [
+          ...temp["Galaxy Row Rebel"],
+          ...temp["Galaxy Row Empire"],
+          ...temp["Galaxy Row Neutral"],
+          ...temp["Capital Ships"],
+        ];
         const misc = [...temp["Miscellaneous"]];
         const force_tracker = [...temp["Force Tracker"]];
         returnVal = [

@@ -91,8 +91,16 @@ const setPreviewCardIdReducer: CaseReducer<
   }
 };
 
+const togglePreviewCardRotationReducer: CaseReducer<IGameState> = (state) => {
+  if (!!state.previewCard || !!state.menuPreviewCardJsonId) {
+    state.rotatePreviewCard180 = !state.rotatePreviewCard180;
+  }
+};
+
 const clearPreviewCardReducer: CaseReducer<IGameState> = (state) => {
   state.previewCard = null;
+  state.menuPreviewCardJsonId = null;
+  state.rotatePreviewCard180 = false;
 };
 
 const setMenuPreviewCardJsonIdReducer: CaseReducer<
@@ -103,7 +111,9 @@ const setMenuPreviewCardJsonIdReducer: CaseReducer<
 };
 
 const clearMenuPreviewCardJsonIdReducer: CaseReducer<IGameState> = (state) => {
+  state.previewCard = null;
   state.menuPreviewCardJsonId = null;
+  state.rotatePreviewCard180 = false;
 };
 
 const requestResyncReducer: CaseReducer<IGameState> = () => {};
@@ -204,6 +214,7 @@ const gameSlice = createSlice({
     setMultiplayerGameName: setMultiplayerGameNameReducer,
     requestResync: requestResyncReducer,
     setPreviewCardId: setPreviewCardIdReducer,
+    togglePreviewCardRotation: togglePreviewCardRotationReducer,
     clearPreviewCard: clearPreviewCardReducer,
     setMenuPreviewCardJsonId: setMenuPreviewCardJsonIdReducer,
     clearMenuPreviewCardJsonId: clearMenuPreviewCardJsonIdReducer,
@@ -270,6 +281,7 @@ export const {
   setMultiplayerGameName,
   requestResync,
   setPreviewCardId,
+  togglePreviewCardRotation,
   clearPreviewCard,
   setMenuPreviewCardJsonId,
   clearMenuPreviewCardJsonId,
