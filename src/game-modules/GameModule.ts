@@ -7,7 +7,8 @@ import { AxiosResponse } from "axios";
 import { RootState } from "../store/rootReducer";
 import { IEncounterEntity } from "../features/cards-data/cards-data.selectors";
 import { GameType } from "./GameType";
-import { IFlippableToken } from "../features/counters/initialState";
+import { ICounter, IFlippableToken } from "../features/counters/initialState";
+import { PlayerColor } from "../constants/app-constants";
 
 export type CardPackRemapping = { [key: string]: string };
 
@@ -80,6 +81,13 @@ export type StringToStringArrayMap = { [key: string]: string[] };
 export interface IconCounter {
   counterName: string;
   counterImage: string;
+  counterColor?: PlayerColor;
+}
+
+export interface TextCounter {
+  counterName: string;
+  counterText: string;
+  counterColor?: PlayerColor;
 }
 
 export interface GameProperties {
@@ -102,6 +110,7 @@ export interface GameProperties {
     acceleration: NumericTokenInfo | null;
   };
   iconCounters?: IconCounter[];
+  textCounters?: TextCounter[];
 }
 export abstract class GameModule {
   properties: GameProperties;
@@ -156,4 +165,5 @@ export abstract class GameModule {
   ): CardData[][];
 
   getTokensForEncounterSet?(setCode: string): IFlippableToken[];
+  getCountersForEncounterSet?(setCode: string): ICounter[];
 }

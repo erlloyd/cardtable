@@ -131,8 +131,9 @@ const countersSlice = createSlice({
         id: action.payload.id,
         position: action.payload.pos,
         value: 0,
-        color: "red",
+        color: action.payload.color || "red",
         imgUrl: action.payload.imgUrl,
+        text: action.payload.text,
       });
     });
   },

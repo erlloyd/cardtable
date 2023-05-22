@@ -13,6 +13,7 @@ interface IProps {
   handleContextMenu: (event: KonvaEventObject<PointerEvent>) => void;
   onDragEnd: (event: KonvaEventObject<DragEvent>) => void;
   counterImageUrl?: string;
+  counterText?: string;
 }
 
 interface IState {
@@ -68,6 +69,16 @@ class Counter extends Component<IProps, IState> {
 
   render() {
     const hasImage = !!this.props.counterImageUrl;
+    let hasText = !!this.props.counterText;
+
+    const hasAdditionalDisplay = hasImage || hasText;
+
+    if (hasImage && hasText) {
+      console.warn(
+        "Counter was created with both image and text. Image will be used"
+      );
+      hasText = false;
+    }
 
     const desiredImageDim = 50;
 
@@ -111,7 +122,7 @@ class Counter extends Component<IProps, IState> {
           text={`${this.props.value}`}
           align={"center"}
           verticalAlign={"middle"}
-          offsetY={hasImage ? 20 : 0}
+          offsetY={hasAdditionalDisplay ? 20 : 0}
         ></Text>
         {hasImage && this.state.counterImageLoaded && (
           <Rect
@@ -123,6 +134,19 @@ class Counter extends Component<IProps, IState> {
             height={this.img.naturalHeight}
             fillPatternImage={this.img}
           ></Rect>
+        )}
+        {hasText && (
+          <Text
+            key={`${this.props.id}-addl-text`}
+            width={containerWidth}
+            height={containerHeight}
+            fillPatternImage={this.img}
+            fontSize={24}
+            text={`${this.props.counterText}`}
+            align={"center"}
+            verticalAlign={"bottom"}
+            offsetY={5}
+          ></Text>
         )}
         <Text
           x={10}

@@ -140,7 +140,12 @@ interface IProps {
     jsonId: string;
     pos: Vector2d;
   }) => void;
-  addNewCounter: (pos: Vector2d, imgurl?: string) => void;
+  addNewCounter: (
+    pos: Vector2d,
+    imgurl?: string,
+    text?: string,
+    color?: PlayerColor
+  ) => void;
   updateCounterValue: (payload: { id: string; delta: number }) => void;
   removeCounter: (id: string) => void;
   moveCounter: (payload: { id: string; newPos: Vector2d }) => void;
@@ -517,6 +522,11 @@ class Game extends Component<IProps, IState> {
             let previewCardWidth =
               cardConstants[card.sizeType].CARD_PREVIEW_WIDTH;
 
+            // if height or width are zero, don't display the card
+            if (previewCardHeight === 0 || previewCardWidth === 0) {
+              return null;
+            }
+
             // Note that we only adjust the height, because the card will
             // be rotated if it supposed to be displayed horizontally
             previewCardHeight = Math.min(
@@ -758,6 +768,7 @@ class Game extends Component<IProps, IState> {
                           )}
                           onDragEnd={this.handleCounterDrag(counter.id)}
                           counterImageUrl={counter.imgUrl}
+                          counterText={counter.text}
                         ></Counter>
                       ))}
                     </Group>
@@ -1078,7 +1089,7 @@ class Game extends Component<IProps, IState> {
 
   private handleLoadEncounter =
     (position: Vector2d) =>
-    (cards: CardData[][], tokens: IFlippableToken[]) => {
+    (cards: CardData[][], tokens: IFlippableToken[], counters: ICounter[]) => {
       this.clearEncounterImporter();
 
       const sizeTypeToOffsetMap: { [key in CardSizeType]: Vector2d } = {} as {
@@ -1110,22 +1121,47 @@ class Game extends Component<IProps, IState> {
         };
       });
 
+      let lastTokenY = 0;
       if (tokens.length > 0) {
         // Put the tokens up a bit
         this.props.createNewTokens(
-          tokens.map((t, idx) => ({
-            ...t,
-            position: {
+          tokens.map((t, idx) => {
+            lastTokenY = position.y + 200 * idx;
+            console.log(`ERL: lastTokenY`, lastTokenY);
+            return {
+              ...t,
+              position: {
+                x:
+                  position.x -
+                  cardConstants[
+                    CardSizeType.Tarot //Tarot is the largest card size
+                  ].CARD_WIDTH *
+                    2,
+                y: lastTokenY,
+              },
+            };
+          })
+        );
+      }
+
+      if (counters.length > 0) {
+        // Put the counters up a bit
+        counters.forEach((c, idx) => {
+          this.props.addNewCounter(
+            {
               x:
                 position.x -
                 cardConstants[
                   CardSizeType.Tarot //Tarot is the largest card size
                 ].CARD_WIDTH *
                   2,
-              y: position.y + 200 * idx,
+              y: lastTokenY + 200 * (idx + 1),
             },
-          }))
-        );
+            c.imgUrl,
+            c.text,
+            c.color
+          );
+        });
       }
 
       // Cache the images
@@ -2445,22 +2481,43 @@ class Game extends Component<IProps, IState> {
               );
             },
           },
-        ].concat(
-          (
-            GamePropertiesMap[this.props.currentGameType].iconCounters || []
-          ).map((c) => ({
-            label: c.counterName,
-            action: () => {
-              this.props.addNewCounter(
-                this.getRelativePositionFromTarget(this.stage) ?? {
-                  x: 0,
-                  y: 0,
-                },
-                c.counterImage
-              );
-            },
-          }))
-        ),
+        ]
+          .concat(
+            (
+              GamePropertiesMap[this.props.currentGameType].iconCounters || []
+            ).map((c) => ({
+              label: c.counterName,
+              action: () => {
+                this.props.addNewCounter(
+                  this.getRelativePositionFromTarget(this.stage) ?? {
+                    x: 0,
+                    y: 0,
+                  },
+                  c.counterImage,
+                  undefined,
+                  c.counterColor
+                );
+              },
+            }))
+          )
+          .concat(
+            (
+              GamePropertiesMap[this.props.currentGameType].textCounters || []
+            ).map((c) => ({
+              label: c.counterName,
+              action: () => {
+                this.props.addNewCounter(
+                  this.getRelativePositionFromTarget(this.stage) ?? {
+                    x: 0,
+                    y: 0,
+                  },
+                  undefined,
+                  c.counterText,
+                  c.counterColor
+                );
+              },
+            }))
+          ),
       },
       { label: "Remove all arrows", action: this.props.removeAllArrows },
       { label: "Reset Game", action: this.props.resetApp },

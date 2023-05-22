@@ -7,12 +7,16 @@ import TextField from "@mui/material/TextField";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import { GameType } from "./game-modules/GameType";
 import GameManager from "./game-modules/GameModuleManager";
-import { IFlippableToken } from "./features/counters/initialState";
+import { ICounter, IFlippableToken } from "./features/counters/initialState";
 import { CardData } from "./external-api/common-card-data";
 interface IProps {
   currentGameType: GameType;
   encounterData: IEncounterEntity[];
-  loadCards: (cards: CardData[][], tokens: IFlippableToken[]) => void;
+  loadCards: (
+    cards: CardData[][],
+    tokens: IFlippableToken[],
+    counters: ICounter[]
+  ) => void;
 }
 
 class EncounterLoader extends Component<IProps> {
@@ -144,7 +148,16 @@ class EncounterLoader extends Component<IProps> {
           .getTokensForEncounterSet!!(value.setCode);
       }
 
-      this.props.loadCards(totalCards, tokens);
+      let counters = [] as ICounter[];
+      if (
+        !!GameManager.getModuleForType(this.props.currentGameType)
+          .getCountersForEncounterSet
+      ) {
+        counters = GameManager.getModuleForType(this.props.currentGameType)
+          .getCountersForEncounterSet!!(value.setCode);
+      }
+
+      this.props.loadCards(totalCards, tokens, counters);
     }
   };
 

@@ -6,6 +6,7 @@ import MarvelChampionsGameModule from "./marvel-champions/MavelChampionsGameModu
 import LOTRLCGGameModule from "./lotr-lcg/LOTRLCGGameModule";
 import WarOfTheRingTheCardGameModule from "./war-of-the-ring-card-game/WarOfTheRingTheCardGameModule";
 import { showHiddenGamesLocalStorage } from "../constants/app-constants";
+import StarWarsDeckbuildingGameModule from "./star-wars-deckbuilding-game/StarWarsDeckbuildingGameModule";
 
 const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
@@ -19,6 +20,11 @@ const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
     type: GameType.WarOfTheRingTheCardGame,
     module: new WarOfTheRingTheCardGameModule(),
+  },
+  {
+    type: GameType.StarWarsDeckbuildingGame,
+    module: new StarWarsDeckbuildingGameModule(),
+    hidden: true,
   },
 ];
 
@@ -77,8 +83,6 @@ class GamePluginManager {
       properties[g.type] = g.module.properties;
       return properties;
     }, {} as { [key in GameType]: GameProperties });
-
-    console.log(`this._properties`, this._properties);
 
     this._cardImageMap = games.reduce((imageMap, g) => {
       imageMap[g.type] = g.module.imageMap;

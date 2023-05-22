@@ -22,6 +22,7 @@ export interface ICounter {
   value: number;
   color: PlayerColor;
   imgUrl?: string;
+  text?: string;
 }
 
 const queryParams = new URLSearchParams(window.location.search);
