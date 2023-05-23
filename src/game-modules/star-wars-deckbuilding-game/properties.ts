@@ -13,6 +13,7 @@ export const properties: GameProperties = {
   possibleIcons: [],
   modifiers: [],
   roles: {
+    requireRole: true,
     roles: [{ name: "Empire" }, { name: "Rebel" }],
   },
   tokens: {

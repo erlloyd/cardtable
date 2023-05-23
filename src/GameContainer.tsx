@@ -1,5 +1,14 @@
 import { connect } from "react-redux";
 import { ActionCreators } from "redux-undo";
+import Game from "./Game";
+import { myPeerRef } from "./constants/app-constants";
+import {
+  endDisconnectedArrow,
+  removeAllArrows,
+  removeAnyDisconnectedArrows,
+  updateDisconnectedArrowPosition,
+} from "./features/arrows/arrows.slice";
+import { startNewArrow } from "./features/arrows/arrows.thunks";
 import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
 import { loadCardsData } from "./features/cards-data/cards-data.slice";
 import { allJsonData } from "./features/cards-data/cards-data.thunks";
@@ -13,10 +22,11 @@ import {
 import {
   addExtraIcon,
   addToExistingCardStack,
-  addToPlayerHand,
   adjustCounterToken,
   adjustModifier,
+  adjustStatusToken,
   clearAllModifiers,
+  clearMyGhostCards,
   deleteCardStack,
   exhaustCard,
   flipCards,
@@ -26,13 +36,12 @@ import {
   togglePanMode,
   toggleSelectCard,
   toggleToken,
-  adjustStatusToken,
   unselectAllCards,
   unselectCard,
-  clearMyGhostCards,
 } from "./features/cards/cards.slice";
 import {
   addCardStack,
+  addToPlayerHandWithRoleCheck,
   cardFromHandMove,
   cardMove,
   createDeckFromJson,
@@ -74,33 +83,24 @@ import {
   createNewMultiplayerGame,
   quitGame,
   requestResync,
+  setDrawingArrow,
   setPreviewCardId,
+  showDeckSearch,
   showRadialMenuAtPosition,
   showSpecificCardLoader,
+  toggleDrawCardsIntoHand,
+  togglePreviewCardRotation,
+  toggleSnapCardsToGrid,
   updatePosition,
   updateZoom,
-  setDrawingArrow,
-  showDeckSearch,
-  toggleDrawCardsIntoHand,
-  toggleSnapCardsToGrid,
-  togglePreviewCardRotation,
 } from "./features/game/game.slice";
-import {
-  updateDisconnectedArrowPosition,
-  removeAnyDisconnectedArrows,
-  endDisconnectedArrow,
-  removeAllArrows,
-} from "./features/arrows/arrows.slice";
 import {
   generateGameStateUrl,
   saveDeckAsJson,
 } from "./features/game/game.thunks";
-import Game from "./Game";
+import { toggleNotes } from "./features/notes/notes.slice";
 import { resetApp } from "./store/global.actions";
 import { RootState } from "./store/rootReducer";
-import { startNewArrow } from "./features/arrows/arrows.thunks";
-import { toggleNotes } from "./features/notes/notes.slice";
-import { myPeerRef } from "./constants/app-constants";
 
 const mapStateToProps = (state: RootState) => {
   const playerNumbers = getPlayerNumbers(state);
@@ -183,7 +183,7 @@ const GameContainer = connect(mapStateToProps, {
   showDeckSearch,
   adjustModifier,
   clearAllModifiers,
-  addToPlayerHand,
+  addToPlayerHandWithRoleCheck,
   addToExistingCardStack,
   addExtraIcon,
   removeExtraIcon,

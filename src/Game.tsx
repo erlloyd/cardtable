@@ -188,7 +188,7 @@ interface IProps {
     value?: number;
   }) => void;
   clearAllModifiers: (payload: { id?: string }) => void;
-  addToPlayerHand: (payload: { playerNumber: number }) => void;
+  addToPlayerHandWithRoleCheck: (payload: { playerNumber: number }) => void;
   addExtraIcon: (icon: string) => void;
   removeExtraIcon: (icon: string) => void;
   clearMyGhostCards: () => void;
@@ -1390,7 +1390,7 @@ class Game extends Component<IProps, IState> {
       {
         label: "Add all to hand",
         action: () => {
-          this.props.addToPlayerHand({
+          this.props.addToPlayerHandWithRoleCheck({
             playerNumber:
               this.props.gameState.currentVisiblePlayerHandNumber ??
               this.props.gameState.playerNumbers[myPeerRef],
@@ -1964,7 +1964,7 @@ class Game extends Component<IProps, IState> {
     this.props.endCardMove(cardId);
 
     if (event.target.y() > translatedMin.y) {
-      this.props.addToPlayerHand({
+      this.props.addToPlayerHandWithRoleCheck({
         playerNumber:
           this.props.gameState.currentVisiblePlayerHandNumber ??
           this.props.gameState.playerNumbers[myPeerRef],

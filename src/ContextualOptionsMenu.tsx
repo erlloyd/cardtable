@@ -11,6 +11,7 @@ import { anyCardStackHasStatus } from "./utilities/card-utils";
 import { ICardStack } from "./features/cards/initialState";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import { NumericTokenInfo, TokenInfo } from "./game-modules/GameModule";
+import GameManager from "./game-modules/GameModuleManager";
 
 interface IProps {
   anyCardsSelected: boolean;
@@ -52,7 +53,7 @@ interface IProps {
   deleteCardStack: (id?: string) => void;
   shuffleStack: (id?: string) => void;
   clearCardTokens: (id?: string) => void;
-  addToPlayerHand: (payload: { playerNumber: number }) => void;
+  addToPlayerHandWithRoleCheck: (payload: { playerNumber: number }) => void;
   setDrawingArrow: (val: boolean) => void;
   startNewArrow: (id?: string) => void;
   adjustModifier: (payload: {
@@ -95,6 +96,25 @@ const ContextualOptionsMenu = (props: IProps) => {
     }
     return null;
   }
+  let hasMods = false;
+  let hasStatusTokens = false;
+  let hasCounterTokens = false;
+  if (props.currentGameType) {
+    const currentProperties = GameManager.getModuleForType(
+      props.currentGameType
+    ).properties;
+
+    hasMods = currentProperties.modifiers.length > 0;
+    hasStatusTokens =
+      !!currentProperties.tokens.stunned ||
+      !!currentProperties.tokens.confused ||
+      !!currentProperties.tokens.tough;
+    hasCounterTokens =
+      !!currentProperties.tokens.damage ||
+      !!currentProperties.tokens.threat ||
+      !!currentProperties.tokens.generic ||
+      !!currentProperties.tokens.acceleration;
+  }
 
   return (
     <div>
@@ -113,48 +133,54 @@ const ContextualOptionsMenu = (props: IProps) => {
             Draw
           </button>
         </Tooltip>
-        <Tooltip title="Set Modifiers">
-          <button
-            onClick={(evt) => {
-              if (visibleMenus.includes(MenuType.ModifierActions)) {
-                setVisibleMenus([]);
-              } else {
-                setVisibleMenus([MenuType.ModifierActions]);
-                setVisibleMenuYPosition(evt.clientY);
-              }
-            }}
-          >
-            Mods
-          </button>
-        </Tooltip>
-        <Tooltip title="Set Statuses">
-          <button
-            onClick={(evt) => {
-              if (visibleMenus.includes(MenuType.StatusTokenActions)) {
-                setVisibleMenus([]);
-              } else {
-                setVisibleMenus([MenuType.StatusTokenActions]);
-                setVisibleMenuYPosition(evt.clientY);
-              }
-            }}
-          >
-            Status
-          </button>
-        </Tooltip>
-        <Tooltip title="Set Tokens">
-          <button
-            onClick={(evt) => {
-              if (visibleMenus.includes(MenuType.CounterTokenActions)) {
-                setVisibleMenus([]);
-              } else {
-                setVisibleMenus([MenuType.CounterTokenActions]);
-                setVisibleMenuYPosition(evt.clientY);
-              }
-            }}
-          >
-            Token
-          </button>
-        </Tooltip>
+        {hasMods && (
+          <Tooltip title="Set Modifiers">
+            <button
+              onClick={(evt) => {
+                if (visibleMenus.includes(MenuType.ModifierActions)) {
+                  setVisibleMenus([]);
+                } else {
+                  setVisibleMenus([MenuType.ModifierActions]);
+                  setVisibleMenuYPosition(evt.clientY);
+                }
+              }}
+            >
+              Mods
+            </button>
+          </Tooltip>
+        )}
+        {hasStatusTokens && (
+          <Tooltip title="Set Statuses">
+            <button
+              onClick={(evt) => {
+                if (visibleMenus.includes(MenuType.StatusTokenActions)) {
+                  setVisibleMenus([]);
+                } else {
+                  setVisibleMenus([MenuType.StatusTokenActions]);
+                  setVisibleMenuYPosition(evt.clientY);
+                }
+              }}
+            >
+              Status
+            </button>
+          </Tooltip>
+        )}
+        {hasCounterTokens && (
+          <Tooltip title="Set Tokens">
+            <button
+              onClick={(evt) => {
+                if (visibleMenus.includes(MenuType.CounterTokenActions)) {
+                  setVisibleMenus([]);
+                } else {
+                  setVisibleMenus([MenuType.CounterTokenActions]);
+                  setVisibleMenuYPosition(evt.clientY);
+                }
+              }}
+            >
+              Token
+            </button>
+          </Tooltip>
+        )}
         <Tooltip title="Flip cards">
           <button
             onClick={() => {
@@ -203,7 +229,7 @@ const ContextualOptionsMenu = (props: IProps) => {
         <Tooltip title="Draw into hand">
           <button
             onClick={() => {
-              props.addToPlayerHand({
+              props.addToPlayerHandWithRoleCheck({
                 playerNumber: props.playerNumber,
               });
             }}
@@ -666,7 +692,7 @@ const renderDrawActionsSubMenu = (
     <button
       key={"add-to-hand-button"}
       onClick={() => {
-        props.addToPlayerHand({
+        props.addToPlayerHandWithRoleCheck({
           playerNumber: props.playerNumber,
         });
         setVisibleMenus([]);

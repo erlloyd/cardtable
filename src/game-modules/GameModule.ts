@@ -95,6 +95,7 @@ export interface Role {
 }
 
 export interface RolesInfo {
+  requireRole?: boolean;
   roles: Role[];
 }
 

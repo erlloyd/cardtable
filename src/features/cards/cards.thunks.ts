@@ -24,8 +24,9 @@ import {
   setStackShuffling,
   startCardMoveWithSplitStackId,
 } from "./cards.actions";
-import { getCards } from "./cards.selectors";
+import { getCards, getPlayerCardsForPlayerNumber } from "./cards.selectors";
 import {
+  addToPlayerHand,
   cardFromHandMoveWithSnap,
   cardMoveWithSnap,
   endCardMoveWithSnap,
@@ -168,6 +169,27 @@ export const startCardMove =
     dispatch(startCardMoveWithSplitStackId(payloadWithId));
   };
 
+export const addToPlayerHandWithRoleCheck =
+  (payload: {
+    playerNumber: number;
+  }): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (dispatch, getState) => {
+    // Check first to see if there is a role required
+    if (failRoleCheck(getState())) {
+      dispatch(
+        sendNotification({
+          id: uuidv4(),
+          level: "error",
+          message: "This game requires you to select a role before playing.",
+        })
+      );
+      return;
+    }
+
+    dispatch(addToPlayerHand(payload));
+    return;
+  };
+
 export const drawCardsOutOfCardStack =
   (
     payload: DrawCardsOutOfCardStackPayload
@@ -180,6 +202,18 @@ export const drawCardsOutOfCardStack =
     const possibleIds = Array.from({ length: payload.numberToDraw }).map((_i) =>
       uuidv4()
     );
+
+    if (failRoleCheck(getState())) {
+      dispatch(
+        sendNotification({
+          id: uuidv4(),
+          level: "error",
+          message: "This game requires you to select a role before playing.",
+        })
+      );
+      return;
+    }
+
     const payloadWithIds = {
       ...payload,
       idsToUse: possibleIds,
@@ -389,4 +423,20 @@ const shuffle = (array: ICardDetails[]): ICardDetails[] => {
   }
 
   return returnArray;
+};
+
+const failRoleCheck = (state: RootState) => {
+  const currentGameType = getActiveGameType(state);
+  const playerNumberToUse =
+    getGame(state).currentVisiblePlayerHandNumber ??
+    getGame(state).playerNumbers[myPeerRef];
+  const playerHand = getPlayerCardsForPlayerNumber(playerNumberToUse)(state);
+  const drawCardsIntoHand = getGame(state).drawCardsIntoHand;
+  return (
+    drawCardsIntoHand &&
+    currentGameType &&
+    GameManager.getModuleForType(currentGameType).properties.roles
+      ?.requireRole &&
+    !playerHand?.role
+  );
 };

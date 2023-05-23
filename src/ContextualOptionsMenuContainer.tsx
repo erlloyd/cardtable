@@ -1,4 +1,8 @@
 import { connect } from "react-redux";
+import { ActionCreators } from "redux-undo";
+import ContextualOptionsMenu from "./ContextualOptionsMenu";
+import { myPeerRef } from "./constants/app-constants";
+import { startNewArrow } from "./features/arrows/arrows.thunks";
 import {
   anyCardsSelectedWithPeerRef,
   cardsSelectedWithPeerRef,
@@ -6,35 +10,31 @@ import {
   getPanMode,
 } from "./features/cards/cards.selectors";
 import {
+  adjustCounterToken,
+  adjustModifier,
+  adjustStatusToken,
+  clearCardTokens,
+  deleteCardStack,
   exhaustCard,
   flipCards,
-  togglePanMode,
-  toggleMultiselectMode,
-  toggleToken,
-  adjustStatusToken,
-  adjustCounterToken,
-  deleteCardStack,
-  addToPlayerHand,
-  clearCardTokens,
-  adjustModifier,
   toggleExtraIcon,
+  toggleMultiselectMode,
+  togglePanMode,
+  toggleToken,
 } from "./features/cards/cards.slice";
 import {
+  addToPlayerHandWithRoleCheck,
   drawCardsOutOfCardStack,
   shuffleStack,
 } from "./features/cards/cards.thunks";
 import { getGame, getSnapCardsToGrid } from "./features/game/game.selectors";
-import { RootState } from "./store/rootReducer";
-import ContextualOptionsMenu from "./ContextualOptionsMenu";
 import {
   setDrawingArrow,
   showRadialMenuAtPosition,
   toggleDrawCardsIntoHand,
   toggleSnapCardsToGrid,
 } from "./features/game/game.slice";
-import { myPeerRef } from "./constants/app-constants";
-import { ActionCreators } from "redux-undo";
-import { startNewArrow } from "./features/arrows/arrows.thunks";
+import { RootState } from "./store/rootReducer";
 
 const mapStateToProps = (state: RootState) => {
   const playerNumberToShow =
@@ -69,7 +69,7 @@ const ContextualOptionsMenuContainer = connect(mapStateToProps, {
   flipCards,
   exhaustCard,
   deleteCardStack,
-  addToPlayerHand,
+  addToPlayerHandWithRoleCheck,
   setDrawingArrow,
   startNewArrow,
   adjustModifier,
