@@ -915,13 +915,6 @@ const reorderPlayerHandReducer: CaseReducer<
 > = (state, action) => {
   if (state.playerHands.length >= action.payload.playerNumber) {
     const hand = state.playerHands[action.payload.playerNumber - 1];
-    // const result = Array.from(hand.cards);
-
-    console.log(action.payload.sourceIndeces);
-    console.log(action.payload.destinationIndex);
-
-    // find the cards to remove
-    // const toRemove = action.payload.sourceIndeces.map(i => hand.cards[i]);
 
     let result = [] as ICardDetails[];
     // go through the original, up to the index where we want to insert, and grab

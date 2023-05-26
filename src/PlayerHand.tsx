@@ -171,6 +171,7 @@ enum ImageLoadingStatus {
 
 class PlayerHand extends Component<IProps, IState> {
   private tapped: NodeJS.Timeout | null = null;
+  private dragStartTime: number = 0;
 
   constructor(props: IProps) {
     super(props);
@@ -186,11 +187,22 @@ class PlayerHand extends Component<IProps, IState> {
     this.onDragEnd = this.onDragEnd.bind(this);
     this.onDragStart = this.onDragStart.bind(this);
     this.onBeforeCapture = this.onBeforeCapture.bind(this);
-    this.clearSelectedCards = this.clearSelectedCards.bind(this);
+    this.clearSelectedCardsFromClick =
+      this.clearSelectedCardsFromClick.bind(this);
+    this.clearSelectedCardsFromTouch =
+      this.clearSelectedCardsFromTouch.bind(this);
   }
 
-  clearSelectedCards(event: MouseEvent) {
+  clearSelectedCardsFromClick(event: MouseEvent) {
     if (!event.defaultPrevented) {
+      this.setState({
+        selectedCardIndeces: [],
+      });
+    }
+  }
+
+  clearSelectedCardsFromTouch(event: TouchEvent) {
+    if (!event.defaultPrevented && event.target instanceof HTMLCanvasElement) {
       this.setState({
         selectedCardIndeces: [],
       });
@@ -201,6 +213,7 @@ class PlayerHand extends Component<IProps, IState> {
     this.setState({
       draggingIndex: dragStart.source.index,
     });
+    this.dragStartTime = new Date().getTime();
   }
 
   onBeforeCapture(beforeCapture: BeforeCapture) {
@@ -208,9 +221,24 @@ class PlayerHand extends Component<IProps, IState> {
   }
 
   onDragEnd(result: DropResult, provided: ResponderProvided) {
-    // First thing, make sure
+    const now = new Date().getTime();
+    const dragTimeDelta = now - this.dragStartTime;
+    this.dragStartTime = 0;
+
+    // Next thing, make sure dragging is cleared out
     this.setState({
       draggingIndex: null,
+    });
+
+    // if the drag was less that 75 ms, treat that like a "click"
+    if (dragTimeDelta < 75) {
+      this.props.stopDraggingCardFromHand();
+      this.singleClickLogic(null, result.source.index);
+      return;
+    }
+
+    // Next thing, make sure dragging is cleared out
+    this.setState({
       selectedCardIndeces: [],
     });
 
@@ -259,11 +287,13 @@ class PlayerHand extends Component<IProps, IState> {
   }
 
   componentDidMount(): void {
-    window.addEventListener("click", this.clearSelectedCards);
+    window.addEventListener("click", this.clearSelectedCardsFromClick);
+    window.addEventListener("touchend", this.clearSelectedCardsFromTouch);
   }
 
   componentWillUnmount(): void {
-    window.removeEventListener("click", this.clearSelectedCards);
+    window.removeEventListener("click", this.clearSelectedCardsFromClick);
+    window.removeEventListener("touchend", this.clearSelectedCardsFromTouch);
   }
 
   // Normally you would want to split things out into separate components.
@@ -422,7 +452,7 @@ class PlayerHand extends Component<IProps, IState> {
     );
   }
 
-  singleClickLogic = (event: React.MouseEvent, index: number) => {
+  singleClickLogic = (event: React.MouseEvent | null, index: number) => {
     // if we are selected, remove from selection
     if (this.state.selectedCardIndeces.includes(index)) {
       this.setState({
@@ -437,7 +467,7 @@ class PlayerHand extends Component<IProps, IState> {
       });
     }
 
-    event.preventDefault();
+    event?.preventDefault();
   };
 
   handleClick =
