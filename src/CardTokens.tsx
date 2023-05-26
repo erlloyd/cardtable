@@ -227,6 +227,7 @@ class CardTokens extends Component<IProps, IState> {
         align="center"
         verticalAlign="middle"
         fontSize={24}
+        fontStyle="bold"
       ></Text>
     ) : null;
 
@@ -272,6 +273,7 @@ class CardTokens extends Component<IProps, IState> {
         align="center"
         verticalAlign="middle"
         fontSize={24}
+        fontStyle="bold"
       ></Text>
     ) : null;
 
@@ -321,6 +323,7 @@ class CardTokens extends Component<IProps, IState> {
         align="center"
         verticalAlign="middle"
         fontSize={24}
+        fontStyle="bold"
       ></Text>
     ) : null;
 
@@ -371,6 +374,7 @@ class CardTokens extends Component<IProps, IState> {
         align="center"
         verticalAlign="middle"
         fontSize={24}
+        fontStyle="bold"
       ></Text>
     ) : null;
 

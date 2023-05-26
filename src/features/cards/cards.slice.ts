@@ -909,15 +909,47 @@ const reorderPlayerHandReducer: CaseReducer<
   ICardsState,
   PayloadAction<{
     playerNumber: number;
-    sourceIndex: number;
+    sourceIndeces: number[];
     destinationIndex: number;
   }>
 > = (state, action) => {
   if (state.playerHands.length >= action.payload.playerNumber) {
     const hand = state.playerHands[action.payload.playerNumber - 1];
-    const result = Array.from(hand.cards);
-    const [removed] = result.splice(action.payload.sourceIndex, 1);
-    result.splice(action.payload.destinationIndex, 0, removed);
+    // const result = Array.from(hand.cards);
+
+    console.log(action.payload.sourceIndeces);
+    console.log(action.payload.destinationIndex);
+
+    // find the cards to remove
+    // const toRemove = action.payload.sourceIndeces.map(i => hand.cards[i]);
+
+    let result = [] as ICardDetails[];
+    // go through the original, up to the index where we want to insert, and grab
+    // items that aren't being removed
+
+    for (let i = 0; i <= action.payload.destinationIndex; i++) {
+      if (!action.payload.sourceIndeces.includes(i)) {
+        result.push(hand.cards[i]);
+      }
+    }
+
+    // now add the other items in the order they were in the source array
+    action.payload.sourceIndeces
+      .sort()
+      .forEach((i) => result.push(hand.cards[i]));
+
+    // now add the rest of the cards that aren't being moved
+    if (action.payload.destinationIndex < hand.cards.length - 1) {
+      for (
+        let i = action.payload.destinationIndex + 1;
+        i < hand.cards.length;
+        i++
+      ) {
+        if (!action.payload.sourceIndeces.includes(i)) {
+          result.push(hand.cards[i]);
+        }
+      }
+    }
 
     hand.cards = result;
   }
@@ -927,14 +959,14 @@ const removeFromPlayerHandReducer: CaseReducer<
   ICardsState,
   PayloadAction<{
     playerNumber: number;
-    index: number;
+    indeces: number[];
   }>
 > = (state, action) => {
   if (state.playerHands.length >= action.payload.playerNumber) {
     const hand = state.playerHands[action.payload.playerNumber - 1];
-    const result = Array.from(hand.cards);
-    result.splice(action.payload.index, 1);
-
+    const result = hand.cards.filter(
+      (_c, index) => !action.payload.indeces.includes(index)
+    );
     hand.cards = result;
   }
 };
@@ -1115,11 +1147,13 @@ const cardsSlice = createSlice({
 
     builder.addCase(addCardStackWithSnapAndId, (state, action) => {
       const sizeType = action.payload.sizeType;
+
       const x = action.payload.snap
         ? Math.round(
             action.payload.position.x / cardConstants[sizeType].GRID_SNAP_WIDTH
           ) * cardConstants[sizeType].GRID_SNAP_WIDTH
         : action.payload.position.x;
+
       const y = action.payload.snap
         ? Math.round(
             action.payload.position.y / cardConstants[sizeType].GRID_SNAP_HEIGHT

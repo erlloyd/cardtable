@@ -1,11 +1,8 @@
-import { TextField } from "@mui/material";
-import {
-  Autocomplete,
-  AutocompleteHighlightChangeReason,
-} from "@material-ui/lab";
+import { Autocomplete, TextField } from "@mui/material";
 import { Vector2d } from "konva/lib/types";
 import { CardData } from "./external-api/common-card-data";
 import TopLayer from "./TopLayer";
+import { v4 as uuidv4 } from "uuid";
 
 interface IProps {
   position: Vector2d | null;
@@ -39,6 +36,11 @@ const SpecificCardLoader = (props: IProps) => {
           style={{ width: 300 }}
           onChange={handleSelected(props)}
           onHighlightChange={handleHighlightChange(props)}
+          renderOption={(props, option) => (
+            <li {...props} key={uuidv4()}>
+              {option.name}
+            </li>
+          )}
           renderInput={(params) => (
             <TextField
               {...params}
@@ -53,12 +55,7 @@ const SpecificCardLoader = (props: IProps) => {
 };
 
 const handleHighlightChange =
-  (props: IProps) =>
-  (
-    _event: any,
-    option: CardData | null,
-    reason: AutocompleteHighlightChangeReason
-  ) => {
+  (props: IProps) => (_event: any, option: CardData | null) => {
     if (!option) {
       props.clearPreview();
     } else {

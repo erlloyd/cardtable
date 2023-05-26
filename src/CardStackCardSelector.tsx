@@ -3,7 +3,6 @@ import Select from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import * as React from "react";
-import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import { CardData } from "./external-api/common-card-data";
 import { ICardData } from "./features/cards-data/initialState";
@@ -11,7 +10,8 @@ import { ICardStack } from "./features/cards/initialState";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import "./CardStackCardSelector.scss";
 import InputLabel from "@mui/material/InputLabel";
-import { AutocompleteHighlightChangeReason } from "@mui/material";
+import { Autocomplete, AutocompleteHighlightChangeReason } from "@mui/material";
+import { v4 as uuidv4 } from "uuid";
 
 interface IProps {
   cardsDataEntities: ICardData;
@@ -95,6 +95,11 @@ class CardStackCardSelector extends Component<IProps> {
         id="cardstack-card-selector-combobox"
         options={this.cardsDataInStack}
         getOptionLabel={(option) => option.name || "Unknown Card Name"}
+        renderOption={(props, option) => (
+          <li {...props} key={uuidv4()}>
+            {option.name || "Unknown Card Name"}
+          </li>
+        )}
         style={{ width: 300 }}
         onChange={this.handleSelected}
         onHighlightChange={this.handleHighlightChange}

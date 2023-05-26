@@ -640,7 +640,7 @@ class Game extends Component<IProps, IState> {
             this.captureLastMousePos = true;
             this.props.clearMyGhostCards();
           }}
-          droppedOnTable={(id: string, pos?: Vector2d) => {
+          droppedOnTable={(ids: string[], pos?: Vector2d) => {
             const myDropTargetCard =
               Object.values(this.props.dropTargetCardsById).filter(
                 (dt) => dt.ownerRef === myPeerRef
@@ -648,15 +648,30 @@ class Game extends Component<IProps, IState> {
             if (!!myDropTargetCard) {
               this.props.addToExistingCardStack({
                 existingStackId: myDropTargetCard.card?.id ?? "",
-                cardJsonIds: [id],
+                cardJsonIds: ids,
               });
             } else {
-              this.props.addCardStack({
-                cardJsonIds: [id],
-                position: this.getRelativePositionFromTarget(
+              ids.forEach((id, index) => {
+                const basePos = !!pos ? pos : this.lastMousePos;
+
+                const basePosTranslated = this.getRelativePositionFromTarget(
                   this.stage,
-                  !!pos ? pos : this.lastMousePos
-                ),
+                  basePos
+                );
+
+                //TODO: Try to figure out the card size here
+                const newPos = {
+                  x:
+                    basePosTranslated.x +
+                    index *
+                      cardConstants[CardSizeType.Standard].GRID_SNAP_WIDTH,
+                  y: basePosTranslated.y,
+                };
+
+                this.props.addCardStack({
+                  cardJsonIds: [id],
+                  position: newPos,
+                });
               });
             }
             this.props.clearMyGhostCards();
@@ -1138,7 +1153,6 @@ class Game extends Component<IProps, IState> {
         this.props.createNewTokens(
           tokens.map((t, idx) => {
             lastTokenY = position.y + 200 * idx;
-            console.log(`ERL: lastTokenY`, lastTokenY);
             return {
               ...t,
               position: {

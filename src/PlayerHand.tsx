@@ -40,6 +40,8 @@ import {
 import { GameType } from "./game-modules/GameType";
 import GameManager from "./game-modules/GameModuleManager";
 import { CardSizeType } from "./constants/card-constants";
+import { DragStart } from "react-beautiful-dnd";
+import { BeforeCapture } from "react-beautiful-dnd";
 
 const grid = 8;
 
@@ -124,16 +126,16 @@ const makeFakeCardStackFromJsonId = (jsonId: string): ICardStack => {
 };
 
 interface IProps {
-  droppedOnTable: (id: string, pos?: Vector2d) => void;
+  droppedOnTable: (ids: string[], pos?: Vector2d) => void;
   droppedBackInHand: () => void;
   reorderPlayerHand: (payload: {
     playerNumber: number;
-    sourceIndex: number;
+    sourceIndeces: number[];
     destinationIndex: number;
   }) => void;
   removeFromPlayerHand: (payload: {
     playerNumber: number;
-    index: number;
+    indeces: number[];
   }) => void;
   setPreviewCardJsonId: (jsonId: string) => void;
   clearPreviewCardJsonId: () => void;
@@ -156,6 +158,8 @@ interface IState {
   imgUrlToStatusMap: { [key: string]: ImageLoadingStatus };
   showMenu: boolean;
   anchorEl: HTMLElement | undefined;
+  selectedCardIndeces: number[];
+  draggingIndex: number | null;
 }
 
 enum ImageLoadingStatus {
@@ -175,16 +179,41 @@ class PlayerHand extends Component<IProps, IState> {
       imgUrlToStatusMap: {},
       showMenu: false,
       anchorEl: undefined,
+      selectedCardIndeces: [],
+      draggingIndex: null,
     };
+
     this.onDragEnd = this.onDragEnd.bind(this);
     this.onDragStart = this.onDragStart.bind(this);
+    this.onBeforeCapture = this.onBeforeCapture.bind(this);
+    this.clearSelectedCards = this.clearSelectedCards.bind(this);
   }
 
-  onDragStart() {
+  clearSelectedCards(event: MouseEvent) {
+    if (!event.defaultPrevented) {
+      this.setState({
+        selectedCardIndeces: [],
+      });
+    }
+  }
+
+  onDragStart(dragStart: DragStart) {
+    this.setState({
+      draggingIndex: dragStart.source.index,
+    });
+  }
+
+  onBeforeCapture(beforeCapture: BeforeCapture) {
     this.props.startDraggingCardFromHand();
   }
 
   onDragEnd(result: DropResult, provided: ResponderProvided) {
+    // First thing, make sure
+    this.setState({
+      draggingIndex: null,
+      selectedCardIndeces: [],
+    });
+
     // dropped outside the list
     if (!result.destination) {
       this.props.stopDraggingCardFromHand();
@@ -192,24 +221,49 @@ class PlayerHand extends Component<IProps, IState> {
     }
 
     if (result.destination?.droppableId !== result.source.droppableId) {
-      this.props.removeFromPlayerHand({
-        playerNumber: this.props.playerNumber,
-        index: result.source.index,
-      });
-      const cardDroppedJson = (this.props.playerHandData?.cards ?? [])[
-        result.source.index
-      ];
-      this.props.droppedOnTable(cardDroppedJson.jsonId);
+      if (this.state.selectedCardIndeces.length > 1) {
+        this.props.removeFromPlayerHand({
+          playerNumber: this.props.playerNumber,
+          indeces: this.state.selectedCardIndeces,
+        });
+      } else {
+        this.props.removeFromPlayerHand({
+          playerNumber: this.props.playerNumber,
+          indeces: [result.source.index],
+        });
+      }
+      const playerHandData = this.props.playerHandData?.cards ?? [];
+      if (result.source.index >= playerHandData.length) {
+        throw new Error("Index out of bounds in player hand drop logic");
+      }
+      const cardDroppedJson = playerHandData[result.source.index];
+      this.props.droppedOnTable(
+        this.state.selectedCardIndeces.length > 0
+          ? this.state.selectedCardIndeces.map((i) => playerHandData[i].jsonId)
+          : [cardDroppedJson.jsonId]
+      );
     } else {
+      let sourceIndeces = [result.source.index];
+      if (this.state.selectedCardIndeces.length > 0) {
+        sourceIndeces = this.state.selectedCardIndeces;
+      }
       this.props.reorderPlayerHand({
         playerNumber: this.props.playerNumber,
-        sourceIndex: result.source.index,
+        sourceIndeces: sourceIndeces,
         destinationIndex: result.destination.index,
       });
       this.props.droppedBackInHand();
     }
 
     this.props.stopDraggingCardFromHand();
+  }
+
+  componentDidMount(): void {
+    window.addEventListener("click", this.clearSelectedCards);
+  }
+
+  componentWillUnmount(): void {
+    window.removeEventListener("click", this.clearSelectedCards);
   }
 
   // Normally you would want to split things out into separate components.
@@ -272,12 +326,12 @@ class PlayerHand extends Component<IProps, IState> {
                     const cardDetails = cards[randIndex];
                     this.props.removeFromPlayerHand({
                       playerNumber: this.props.playerNumber,
-                      index: randIndex,
+                      indeces: [randIndex],
                     });
 
                     const dropPos = wasTouch ? { x: 100, y: 100 } : undefined;
 
-                    this.props.droppedOnTable(cardDetails.jsonId, dropPos);
+                    this.props.droppedOnTable([cardDetails.jsonId], dropPos);
                   }
                 },
               },
@@ -289,7 +343,8 @@ class PlayerHand extends Component<IProps, IState> {
         )}
         <DragDropContext
           onDragEnd={this.onDragEnd}
-          onBeforeCapture={this.onDragStart}
+          onBeforeCapture={this.onBeforeCapture}
+          onDragStart={this.onDragStart}
         >
           <Droppable droppableId="droppable" direction="horizontal">
             {(provided, snapshot) => (
@@ -329,9 +384,16 @@ class PlayerHand extends Component<IProps, IState> {
                           }
                         }}
                         onPointerLeave={this.props.clearPreviewCardJsonId}
-                        onClick={this.handleClickAndPointerUp(card)}
-                        // onPointerUp={this.handleClickAndPointerUp(card)}
-                        className="player-hand-card"
+                        onClick={this.handleClick(card, index)}
+                        className={cx({
+                          "player-hand-card": true,
+                          selected:
+                            this.state.selectedCardIndeces.includes(index),
+                          "multi-dragging":
+                            this.state.draggingIndex !== null &&
+                            this.state.selectedCardIndeces.includes(index) &&
+                            this.state.draggingIndex !== index,
+                        })}
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
@@ -340,7 +402,12 @@ class PlayerHand extends Component<IProps, IState> {
                           provided.draggableProps.style
                         )}
                       >
-                        {this.renderCardContents(card)}
+                        {this.renderCardContents(
+                          card,
+                          this.state.draggingIndex === index
+                            ? this.state.selectedCardIndeces.length
+                            : 0
+                        )}
                       </div>
                     )}
                   </Draggable>
@@ -355,8 +422,26 @@ class PlayerHand extends Component<IProps, IState> {
     );
   }
 
-  handleClickAndPointerUp =
-    (card: ICardDetails) => (event: React.MouseEvent) => {
+  singleClickLogic = (event: React.MouseEvent, index: number) => {
+    // if we are selected, remove from selection
+    if (this.state.selectedCardIndeces.includes(index)) {
+      this.setState({
+        selectedCardIndeces: this.state.selectedCardIndeces.filter(
+          (i) => i !== index
+        ),
+      });
+    } else {
+      // add it
+      this.setState({
+        selectedCardIndeces: this.state.selectedCardIndeces.concat([index]),
+      });
+    }
+
+    event.preventDefault();
+  };
+
+  handleClick =
+    (card: ICardDetails, index: number) => (event: React.MouseEvent) => {
       if (
         (event.nativeEvent as PointerEvent).pointerType === "touch" ||
         is_safari_or_uiwebview ||
@@ -366,6 +451,8 @@ class PlayerHand extends Component<IProps, IState> {
           //if tap is not set, set up single tap
           this.tapped = setTimeout(() => {
             this.tapped = null;
+
+            this.singleClickLogic(event, index);
           }, 200); //wait 200ms then run single click code
         } else {
           //tapped within 200ms of last tap. double tap
@@ -376,6 +463,8 @@ class PlayerHand extends Component<IProps, IState> {
         }
         event.preventDefault();
         event.stopPropagation();
+      } else {
+        this.singleClickLogic(event, index);
       }
     };
 
@@ -393,7 +482,7 @@ class PlayerHand extends Component<IProps, IState> {
     ) : null;
   }
 
-  renderCardContents(card: ICardDetails) {
+  renderCardContents(card: ICardDetails, numDragging: number) {
     const imgs = getImgUrls(
       makeFakeCardStackFromJsonId(card.jsonId),
       this.props.cardData,
@@ -425,32 +514,36 @@ class PlayerHand extends Component<IProps, IState> {
         false /* We're never showing card backs */
       );
       return (
-        <img
-          key={`card-${card.jsonId}-img-${index}`}
-          className={cx({
-            "hide-img": i !== firstLoadedImage,
-            "show-img": i === firstLoadedImage,
-            "rotate-card": shouldRotate,
-          })}
-          onLoad={() => {
-            this.setState({
-              imgUrlToStatusMap: {
-                ...this.state.imgUrlToStatusMap,
-                [i]: ImageLoadingStatus.Loaded,
-              },
-            });
-          }}
-          onError={() => {
-            this.setState({
-              imgUrlToStatusMap: {
-                ...this.state.imgUrlToStatusMap,
-                [i]: ImageLoadingStatus.LoadingFailed,
-              },
-            });
-          }}
-          alt="card"
-          src={i}
-        ></img>
+        <div key={`card-${card.jsonId}-img-${index}`}>
+          {numDragging > 1 ? (
+            <div className="num-dragging">{numDragging}</div>
+          ) : null}
+          <img
+            className={cx({
+              "hide-img": i !== firstLoadedImage,
+              "show-img": i === firstLoadedImage,
+              "rotate-card": shouldRotate,
+            })}
+            onLoad={() => {
+              this.setState({
+                imgUrlToStatusMap: {
+                  ...this.state.imgUrlToStatusMap,
+                  [i]: ImageLoadingStatus.Loaded,
+                },
+              });
+            }}
+            onError={() => {
+              this.setState({
+                imgUrlToStatusMap: {
+                  ...this.state.imgUrlToStatusMap,
+                  [i]: ImageLoadingStatus.LoadingFailed,
+                },
+              });
+            }}
+            alt="card"
+            src={i}
+          ></img>
+        </div>
       );
     });
   }
