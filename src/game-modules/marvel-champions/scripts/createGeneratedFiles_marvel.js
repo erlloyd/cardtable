@@ -1,4 +1,4 @@
-const mkdirp = require("mkdirp");
+const { mkdirp } = require("mkdirp");
 const fs = require("fs");
 const util = require("util");
 
