@@ -47,12 +47,16 @@ const grid = 8;
 
 const getItemStyle = (
   snapshot: DraggableStateSnapshot,
-  draggableStyle: any
+  draggableStyle: any,
+  selected: boolean,
+  selectedColor: string
 ): DraggingStyle | NotDraggingStyle | undefined => {
+  const outline = selected ? `2px solid ${selectedColor}` : "";
   return snapshot.dropAnimation &&
     snapshot.draggingOver === "droppable-while-dragging"
-    ? { ...draggableStyle, visibility: "hidden" }
+    ? { ...draggableStyle, outline, visibility: "hidden" }
     : {
+        outline,
         // some basic styles to make the items look a bit nicer
         userSelect: "none",
         margin: `10px ${grid}px 0 0`,
@@ -144,6 +148,7 @@ interface IProps {
   playerHandData: IPlayerHand | null;
   cardData: ICardData;
   playerNumber: number;
+  playerColor: string;
   currentGameType: GameType | null;
   dragging: boolean;
   setVisiblePlayerHandNumber: (num: number) => void;
@@ -346,7 +351,6 @@ class PlayerHand extends Component<IProps, IState> {
                     this.props.setVisiblePlayerHandNumber(i + 1);
                   },
                 })),
-                // .filter((_, i) => this.props.playerNumber !== i + 1),
               },
               {
                 label: "Drop random card",
@@ -429,7 +433,9 @@ class PlayerHand extends Component<IProps, IState> {
                         {...provided.dragHandleProps}
                         style={getItemStyle(
                           snapshot,
-                          provided.draggableProps.style
+                          provided.draggableProps.style,
+                          this.state.selectedCardIndeces.includes(index),
+                          this.props.playerColor
                         )}
                       >
                         {this.renderCardContents(
