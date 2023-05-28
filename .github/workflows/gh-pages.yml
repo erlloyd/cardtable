@@ -52,7 +52,7 @@ jobs:
           ls
 
       - name: Build 🔧
-        run: yarn build
+        run: yarn build:prod
 
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
