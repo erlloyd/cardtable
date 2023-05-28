@@ -175,6 +175,7 @@ enum ImageLoadingStatus {
 }
 
 class PlayerHand extends Component<IProps, IState> {
+  static whyDidYouRender = false;
   private tapped: NodeJS.Timeout | null = null;
   private dragStartTime: number = 0;
 

@@ -636,47 +636,8 @@ class Game extends Component<IProps, IState> {
       >
         <PlayerHandContainer
           playerNumber={this.props.playerNumbers[myPeerRef] ?? 1}
-          droppedBackInHand={() => {
-            this.captureLastMousePos = true;
-            this.props.clearMyGhostCards();
-          }}
-          droppedOnTable={(ids: string[], pos?: Vector2d) => {
-            const myDropTargetCard =
-              Object.values(this.props.dropTargetCardsById).filter(
-                (dt) => dt.ownerRef === myPeerRef
-              )[0] ?? null;
-            if (!!myDropTargetCard) {
-              this.props.addToExistingCardStack({
-                existingStackId: myDropTargetCard.card?.id ?? "",
-                cardJsonIds: ids,
-              });
-            } else {
-              ids.forEach((id, index) => {
-                const basePos = !!pos ? pos : this.lastMousePos;
-
-                const basePosTranslated = this.getRelativePositionFromTarget(
-                  this.stage,
-                  basePos
-                );
-
-                //TODO: Try to figure out the card size here
-                const newPos = {
-                  x:
-                    basePosTranslated.x +
-                    index *
-                      cardConstants[CardSizeType.Standard].GRID_SNAP_WIDTH,
-                  y: basePosTranslated.y,
-                };
-
-                this.props.addCardStack({
-                  cardJsonIds: [id],
-                  position: newPos,
-                });
-              });
-            }
-            this.props.clearMyGhostCards();
-            this.captureLastMousePos = true;
-          }}
+          droppedBackInHand={this.handleDroppedBackInHand}
+          droppedOnTable={this.handleDroppedOnTable}
         ></PlayerHandContainer>
         <SpecificCardLoaderContainer
           cardSelected={(id) => {
@@ -1913,6 +1874,48 @@ class Game extends Component<IProps, IState> {
       });
       this.props.setPreviewCardId(cardId);
     }
+  };
+
+  private handleDroppedBackInHand = () => {
+    this.captureLastMousePos = true;
+    this.props.clearMyGhostCards();
+  };
+
+  private handleDroppedOnTable = (ids: string[], pos?: Vector2d) => {
+    const myDropTargetCard =
+      Object.values(this.props.dropTargetCardsById).filter(
+        (dt) => dt.ownerRef === myPeerRef
+      )[0] ?? null;
+    if (!!myDropTargetCard) {
+      this.props.addToExistingCardStack({
+        existingStackId: myDropTargetCard.card?.id ?? "",
+        cardJsonIds: ids,
+      });
+    } else {
+      ids.forEach((id, index) => {
+        const basePos = !!pos ? pos : this.lastMousePos;
+
+        const basePosTranslated = this.getRelativePositionFromTarget(
+          this.stage,
+          basePos
+        );
+
+        //TODO: Try to figure out the card size here
+        const newPos = {
+          x:
+            basePosTranslated.x +
+            index * cardConstants[CardSizeType.Standard].GRID_SNAP_WIDTH,
+          y: basePosTranslated.y,
+        };
+
+        this.props.addCardStack({
+          cardJsonIds: [id],
+          position: newPos,
+        });
+      });
+    }
+    this.props.clearMyGhostCards();
+    this.captureLastMousePos = true;
   };
 
   private handleCardDragStart = (
