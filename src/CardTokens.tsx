@@ -24,6 +24,7 @@ const desiredWidth = 47;
 const desiredHeight = 47;
 
 class CardTokens extends Component<IProps, IState> {
+  static whyDidYouRender = true;
   private damageImg: HTMLImageElement;
   private threatImg: HTMLImageElement;
   private genericImg: HTMLImageElement;

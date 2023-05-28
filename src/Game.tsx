@@ -243,6 +243,7 @@ interface IState {
   stageHeight: number;
 }
 class Game extends Component<IProps, IState> {
+  static whyDidYouRender = true;
   public isSetUp = false;
 
   public stage: Konva.Stage | null = null;
@@ -908,12 +909,14 @@ class Game extends Component<IProps, IState> {
     );
   };
 
+  private showContextMenuAtPosition = (pos: Vector2d) => {
+    this.handleContextMenu(undefined, pos);
+  };
+
   private renderOptionsMenu = () => {
     return (
       <OptionsMenuContainer
-        showContextMenuAtPosition={(pos: Vector2d) => {
-          this.handleContextMenu(undefined, pos);
-        }}
+        showContextMenuAtPosition={this.showContextMenuAtPosition}
       ></OptionsMenuContainer>
     );
   };

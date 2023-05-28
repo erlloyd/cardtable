@@ -15,6 +15,7 @@ interface IProps {
 }
 
 class TokenValueModifier extends Component<IProps> {
+  static whyDidYouRender = true;
   inputValue: string = "0";
 
   private focusInputField = (input: any) => {

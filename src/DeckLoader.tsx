@@ -10,6 +10,7 @@ interface IProps {
 }
 
 class DeckLoader extends Component<IProps> {
+  static whyDidYouRender = true;
   deckId: string = "";
   privateApiSelected: boolean = false;
 

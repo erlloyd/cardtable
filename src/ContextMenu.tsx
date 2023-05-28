@@ -36,6 +36,7 @@ const isTargetFileInput = (target: EventTarget) => {
 };
 
 class ContextMenu extends Component<IProps, IState> {
+  static whyDidYouRender = true;
   private nestedRef: any;
 
   constructor(props: IProps) {

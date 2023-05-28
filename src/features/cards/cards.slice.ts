@@ -454,12 +454,23 @@ const cardMoveWithSnapReducer: CaseReducer<
     !!primaryCard &&
     (primaryCard as ICardStack).controlledBy === (action as any).ACTOR_REF
   ) {
-    state.dropTargetCards[(action as any).ACTOR_REF] = getDropTargetCard(
+    const potentialDropTargetCard = getDropTargetCard(
       state,
       !!primaryCard ? { x: primaryCard.x, y: primaryCard.y } : { x: 0, y: 0 },
       primaryCard.sizeType,
       action.payload.snap
     );
+
+    // Only update the drop target card if the card would actually
+    // be different (based on id). Otherwise we'll cause unnecessary
+    // re-renders
+    if (
+      state.dropTargetCards[(action as any).ACTOR_REF]?.id !==
+      potentialDropTargetCard?.id
+    ) {
+      state.dropTargetCards[(action as any).ACTOR_REF] =
+        potentialDropTargetCard;
+    }
   }
 
   // go through and find if any unselected cards are potential attach targets
@@ -488,18 +499,24 @@ const cardMoveWithSnapReducer: CaseReducer<
     });
   }
 
-  state.attachTargetCards[(action as any).ACTOR_REF] =
+  const existingAttachTargetCard =
+    state.attachTargetCards[(action as any).ACTOR_REF];
+  const potentialAttachTargetCard =
     possibleAttachTargets.sort((c1, c2) => c1.distance - c2.distance)[0]
       ?.card ?? null;
+
+  // If either is now null while the other isn't, just assign. Otherwise, check if the id is changing
+  if (potentialAttachTargetCard?.id !== existingAttachTargetCard?.id) {
+    state.attachTargetCards[(action as any).ACTOR_REF] =
+      potentialAttachTargetCard;
+  }
 
   const dropTarget = state.dropTargetCards[(action as any).ACTOR_REF];
   const attachTarget = state.attachTargetCards[(action as any).ACTOR_REF];
   if (!!attachTarget) {
     // First, figure out where we should draw the ghost card. Keep moving up
     // and to the right until there's not a card there
-
     const drawPos = getAttachDrawPos(state, attachTarget);
-
     // Next, check if there's already a ghost card where we were going to draw
     const existingGhostCard = state.ghostCards.find(
       (gc) =>
@@ -518,17 +535,26 @@ const cardMoveWithSnapReducer: CaseReducer<
       attachGhostCard.x = drawPos.x;
       attachGhostCard.y = drawPos.y;
       attachGhostCard.cardStack = [{ jsonId: "-1" }];
+      // TODO: Maybe make this smarter so we don't re-render?
       state.ghostCards.push(attachGhostCard);
     }
   } else {
     // remove all 'attachment' ghost cards
-    state.ghostCards = state.ghostCards.filter(
+    const potentialNewGhostCards = state.ghostCards.filter(
       (gc) => gc.cardStack.length > 0 && gc.cardStack[0].jsonId !== "-1"
     );
+
+    if (
+      potentialNewGhostCards.length !== state.ghostCards.length ||
+      potentialNewGhostCards.map((c) => c.id).join(",") !==
+        state.ghostCards.map((c) => c.id).join(",")
+    ) {
+      state.ghostCards = potentialNewGhostCards;
+    }
   }
 
   // Create the 'snap guideline' cards if we don't have a drop target or attach target
-  state.ghostCards = transformGhostCardsWhenSnapping(
+  const potentialNewGhostCards = transformGhostCardsWhenSnapping(
     state,
     action.payload.snap,
     (action as any).ACTOR_REF,
@@ -536,11 +562,34 @@ const cardMoveWithSnapReducer: CaseReducer<
     !!attachTarget
   );
 
+  if (
+    potentialNewGhostCards.length !== state.ghostCards.length ||
+    potentialNewGhostCards.map((c) => `${c.id}-${c.x}-${c.y}`).join(",") !==
+      state.ghostCards.map((c) => `${c.id}-${c.x}-${c.y}`).join(",")
+  ) {
+    state.ghostCards = potentialNewGhostCards;
+  }
+
   // put the moved cards at the end. TODO: we could just store the move order or move time
   // or something, and the array could be a selector
-  movedCards.forEach((movedCard) => {
-    state.cards.push(state.cards.splice(state.cards.indexOf(movedCard), 1)[0]);
-  });
+
+  // However, we only want to change the state if something is actually going to change. So if
+  // the moving cards are already at the end.... do nothing to the state to avoid re-renders
+
+  if (
+    movedCards.some(
+      (card, index) =>
+        state.cards[state.cards.length - movedCards.length + index].id !==
+        card.id
+    )
+  ) {
+    console.log("Something actually changed with moved cards, so update");
+    movedCards.forEach((movedCard) => {
+      state.cards.push(
+        state.cards.splice(state.cards.indexOf(movedCard), 1)[0]
+      );
+    });
+  }
 };
 
 const endCardMoveWithSnapReducer: CaseReducer<

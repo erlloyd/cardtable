@@ -20,6 +20,7 @@ interface IProps {
 }
 
 class EncounterLoader extends Component<IProps> {
+  static whyDidYouRender = true;
   render() {
     const multipleSetTypes =
       new Set(this.props.encounterData.map((e) => e.setData.setTypeCode)).size >

@@ -106,6 +106,7 @@ const stringArraysEqual = (array1: string[], array2: string[]) => {
 };
 
 class Card extends Component<IProps, IState> {
+  static whyDidYouRender = true;
   // tslint:disable-next-line:member-access
   static getDerivedStateFromProps(props: IProps, state: IState): IState | null {
     if (!stringArraysEqual(props.imgUrls, state.prevImgUrls ?? [])) {

@@ -8,6 +8,7 @@ interface IProps {
 }
 
 class PeerConnector extends Component<IProps> {
+  static whyDidYouRender = true;
   inputValue: string = "";
 
   private focusInputField = (input: any) => {

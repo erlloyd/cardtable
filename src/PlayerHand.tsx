@@ -175,7 +175,7 @@ enum ImageLoadingStatus {
 }
 
 class PlayerHand extends Component<IProps, IState> {
-  static whyDidYouRender = false;
+  static whyDidYouRender = true;
   private tapped: NodeJS.Timeout | null = null;
   private dragStartTime: number = 0;
 
@@ -200,7 +200,7 @@ class PlayerHand extends Component<IProps, IState> {
   }
 
   clearSelectedCardsFromClick(event: MouseEvent) {
-    if (!event.defaultPrevented) {
+    if (!event.defaultPrevented && this.state.selectedCardIndeces.length > 0) {
       this.setState({
         selectedCardIndeces: [],
       });

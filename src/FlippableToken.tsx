@@ -21,6 +21,7 @@ interface IState {
 }
 
 class FlippableToken extends Component<IProps, IState> {
+  static whyDidYouRender = true;
   constructor(props: IProps) {
     super(props);
 

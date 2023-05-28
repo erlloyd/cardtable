@@ -15,6 +15,7 @@ interface IState {
 }
 
 class FirstPlayerToken extends Component<IProps, IState> {
+  static whyDidYouRender = true;
   constructor(props: IProps) {
     super(props);
 
