@@ -80,11 +80,18 @@ const App = (props: IProps) => {
 
     // highlight.io
     if (process.env.NODE_ENV === "production") {
+      // For some reason the FPS is way more impactful
+      // on iOS devices, so limit it for those devices
+      // alert(window.navigator.userAgent);
+      const canvasFPS = window?.navigator?.userAgent?.includes("AppleWebKit")
+        ? 5
+        : 10;
+
       H.init("zg03k0g9", {
         version: "_REPLACE_VERSION_",
         enableCanvasRecording: true,
         samplingStrategy: {
-          canvas: 15,
+          canvas: canvasFPS,
           canvasQuality: "low",
           canvasMaxSnapshotDimension: 480,
         },
