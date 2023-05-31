@@ -969,25 +969,43 @@ const reorderPlayerHandReducer: CaseReducer<
     // go through the original, up to the index where we want to insert, and grab
     // items that aren't being removed
 
-    for (let i = 0; i <= action.payload.destinationIndex; i++) {
+    // console.log(
+    //   `moving indeces ${action.payload.sourceIndeces} to ${action.payload.destinationIndex}`
+    // );
+
+    const excludeFinalIndex = action.payload.sourceIndeces.every(
+      (i) => i > action.payload.destinationIndex
+    );
+
+    for (
+      let i = 0;
+      i <=
+      (excludeFinalIndex
+        ? action.payload.destinationIndex - 1
+        : action.payload.destinationIndex);
+      i++
+    ) {
       if (!action.payload.sourceIndeces.includes(i)) {
+        // console.log(`adding index ${i} to result`);
         result.push(hand.cards[i]);
       }
     }
 
     // now add the other items in the order they were in the source array
-    action.payload.sourceIndeces
-      .sort()
-      .forEach((i) => result.push(hand.cards[i]));
+    action.payload.sourceIndeces.sort().forEach((i) => {
+      // console.log(`adding moved card index ${i} to result`);
+      result.push(hand.cards[i]);
+    });
+
+    const start = excludeFinalIndex
+      ? action.payload.destinationIndex
+      : action.payload.destinationIndex + 1;
 
     // now add the rest of the cards that aren't being moved
     if (action.payload.destinationIndex < hand.cards.length - 1) {
-      for (
-        let i = action.payload.destinationIndex + 1;
-        i < hand.cards.length;
-        i++
-      ) {
+      for (let i = start; i < hand.cards.length; i++) {
         if (!action.payload.sourceIndeces.includes(i)) {
+          // console.log(`adding index ${i} to result (leftover)`);
           result.push(hand.cards[i]);
         }
       }

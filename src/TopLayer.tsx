@@ -54,7 +54,9 @@ const TopLayer = (props: IProps) => {
       {...handlers}
     >
       <div
-        className="top-layer-content-wrapper"
+        className={`top-layer-content-wrapper ${
+          !props.children && "no-content"
+        }`}
         style={containerStyle}
         onContextMenu={preventDefault}
         onClick={handleClick}

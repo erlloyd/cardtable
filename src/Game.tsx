@@ -874,7 +874,7 @@ class Game extends Component<IProps, IState> {
     if (!this.state.showContextMenu) return null;
 
     const containerRect = this.stage?.container().getBoundingClientRect();
-    const pointerPosition = this.state.contextMenuPosition;
+    const pointerPosition = this.state.contextMenuPosition ?? { x: 0, y: 0 };
     if (!containerRect || !pointerPosition) {
       throw new Error("Problem computing context menu position");
     }
@@ -950,7 +950,7 @@ class Game extends Component<IProps, IState> {
       !!GamePropertiesMap[this.props.currentGameType].privateDecklistApi;
 
     const containerRect = this.stage?.container().getBoundingClientRect();
-    const pointerPosition = this.state.deckImporterPosition;
+    const pointerPosition = this.state.deckImporterPosition ?? { x: 0, y: 0 };
     if (!containerRect || !pointerPosition) {
       throw new Error("Problem computing deck importer position");
     }
@@ -977,7 +977,10 @@ class Game extends Component<IProps, IState> {
     if (!this.state.showEncounterImporter) return null;
 
     const containerRect = this.stage?.container().getBoundingClientRect();
-    const pointerPosition = this.state.encounterImporterPosition;
+    const pointerPosition = this.state.encounterImporterPosition ?? {
+      x: 0,
+      y: 0,
+    };
     if (!containerRect || !pointerPosition) {
       throw new Error("Problem computing deck importer position");
     }
@@ -1003,7 +1006,7 @@ class Game extends Component<IProps, IState> {
     if (!this.state.showCardSearch) return null;
 
     const containerRect = this.stage?.container().getBoundingClientRect();
-    const pointerPosition = this.state.cardSearchPosition;
+    const pointerPosition = this.state.cardSearchPosition ?? { x: 0, y: 0 };
     if (!containerRect || !pointerPosition) {
       throw new Error("Problem computing card search position");
     }
@@ -1031,7 +1034,7 @@ class Game extends Component<IProps, IState> {
     if (!this.state.showPeerConnector) return null;
 
     const containerRect = this.stage?.container().getBoundingClientRect();
-    const pointerPosition = this.state.peerConnectorPosition;
+    const pointerPosition = this.state.peerConnectorPosition ?? { x: 0, y: 0 };
     if (!containerRect || !pointerPosition) {
       throw new Error("Problem computing peer connector position");
     }
@@ -1052,7 +1055,10 @@ class Game extends Component<IProps, IState> {
     if (!this.state.showTokenValueModifier) return null;
 
     const containerRect = this.stage?.container().getBoundingClientRect();
-    const pointerPosition = this.state.tokenValueModifierPosition;
+    const pointerPosition = this.state.tokenValueModifierPosition ?? {
+      x: 0,
+      y: 0,
+    };
     if (!containerRect || !pointerPosition) {
       throw new Error("Problem computing token Modifier position");
     }

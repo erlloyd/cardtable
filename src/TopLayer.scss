@@ -8,6 +8,10 @@
 }
 
 .top-layer-content-wrapper {
+  &.no-content {
+    border-radius: 0;
+    padding: 0px;
+  }
   position: absolute;
   padding: 10px;
   background-color: white;

@@ -81,29 +81,29 @@ const App = (props: IProps) => {
     // highlight.io
     if (process.env.NODE_ENV === "production") {
       // For some reason the FPS is way more impactful
-      // on iOS devices, so limit it for those devices
-      // alert(window.navigator.userAgent);
-      const canvasFPS = window?.navigator?.userAgent?.includes("AppleWebKit")
-        ? 5
-        : 10;
+      // on iOS devices, so don't use highlight for those devices
+      const forceDisableHighlight =
+        window?.navigator?.userAgent?.includes("AppleWebKit");
 
-      H.init("zg03k0g9", {
-        version: "_REPLACE_VERSION_",
-        enableCanvasRecording: true,
-        samplingStrategy: {
-          canvas: canvasFPS,
-          canvasQuality: "low",
-          canvasMaxSnapshotDimension: 480,
-        },
-        tracingOrigins: true,
-        networkRecording: {
-          enabled: true,
-          recordHeadersAndBody: true,
-          urlBlocklist: [
-            // insert urls you don't want to record here
-          ],
-        },
-      });
+      if (!forceDisableHighlight) {
+        H.init("zg03k0g9", {
+          version: "_REPLACE_VERSION_",
+          enableCanvasRecording: true,
+          samplingStrategy: {
+            canvas: 10,
+            canvasQuality: "low",
+            canvasMaxSnapshotDimension: 480,
+          },
+          tracingOrigins: true,
+          networkRecording: {
+            enabled: true,
+            recordHeadersAndBody: true,
+            urlBlocklist: [
+              // insert urls you don't want to record here
+            ],
+          },
+        });
+      }
     }
 
     // Service Worker

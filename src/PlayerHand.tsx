@@ -239,7 +239,7 @@ class PlayerHand extends Component<IProps, IState> {
     // if the drag was less that 75 ms, treat that like a "click"
     if (dragTimeDelta < 75) {
       this.props.stopDraggingCardFromHand();
-      this.singleClickLogic(null, result.source.index);
+      this.handleTapInClick(null, result.source.index, null, result);
       return;
     }
 
@@ -484,20 +484,7 @@ class PlayerHand extends Component<IProps, IState> {
         is_safari_or_uiwebview ||
         is_touch_supported
       ) {
-        if (!this.tapped) {
-          //if tap is not set, set up single tap
-          this.tapped = setTimeout(() => {
-            this.tapped = null;
-
-            this.singleClickLogic(event, index);
-          }, 200); //wait 200ms then run single click code
-        } else {
-          //tapped within 200ms of last tap. double tap
-          clearTimeout(this.tapped); //stop single tap callback
-          this.tapped = null;
-          this.setState({ modal: true });
-          this.props.setPreviewCardJsonId(card.jsonId);
-        }
+        this.handleTapInClick(card, index, event, null);
         event.preventDefault();
         event.stopPropagation();
       } else {
@@ -505,6 +492,36 @@ class PlayerHand extends Component<IProps, IState> {
       }
     };
 
+  handleTapInClick = (
+    card: ICardDetails | null,
+    index: number,
+    event: React.MouseEvent | null,
+    result: DropResult | null
+  ) => {
+    if (!this.tapped) {
+      //if tap is not set, set up single tap
+      this.tapped = setTimeout(() => {
+        this.tapped = null;
+
+        this.singleClickLogic(event, index);
+      }, 200); //wait 200ms then run single click code
+    } else {
+      let jsonId = "";
+      if (!card) {
+        const cards = this.props.playerHandData?.cards ?? [];
+        if (cards.length > 0 && !!result) {
+          jsonId = cards[result.source.index].jsonId;
+        }
+      } else {
+        jsonId = card.jsonId;
+      }
+      //tapped within 200ms of last tap. double tap
+      clearTimeout(this.tapped); //stop single tap callback
+      this.tapped = null;
+      this.setState({ modal: true });
+      this.props.setPreviewCardJsonId(jsonId);
+    }
+  };
   renderTopLayer() {
     return this.state.modal ? (
       <TopLayer
