@@ -2,6 +2,7 @@ export enum CardSizeType {
   Standard = "standard",
   Tarot = "tarot",
   DoubleStandardVertical = "doublestandardvertical",
+  PlayerBoard = "playerboard",
 }
 
 export const cardConstants = {
@@ -30,6 +31,17 @@ export const cardConstants = {
   [CardSizeType.DoubleStandardVertical]: {
     CARD_HEIGHT: 418,
     CARD_WIDTH: 150,
+    CARD_PREVIEW_HEIGHT: 0,
+    CARD_PREVIEW_WIDTH: 0,
+    MOUSE_DRAG_SPLIT_DISTANCE: 50,
+    TOUCH_DRAG_SPLIT_DISTANCE: 100,
+    GRID_SNAP_WIDTH: 209 + 20,
+    GRID_SNAP_HEIGHT: 209 + 50,
+    ATTACHMENT_OFFSET: 50,
+  },
+  [CardSizeType.PlayerBoard]: {
+    CARD_HEIGHT: 455,
+    CARD_WIDTH: 350,
     CARD_PREVIEW_HEIGHT: 0,
     CARD_PREVIEW_WIDTH: 0,
     MOUSE_DRAG_SPLIT_DISTANCE: 50,

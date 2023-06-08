@@ -119,6 +119,24 @@ const DeckToMetadataMap = {
     type: "force_tracker",
     sizeType: "doublestandardvertical",
   },
+  "Solo Leaders Rebel": {
+    adjustment: `/tr:w-800`,
+    imagePath: "/solo_leaders/",
+    backImagePath: "/solo_leaders/",
+    backImage: "leaders_rebel_ai_card.png",
+    scenarioDeck: "leaders",
+    type: "leaders_ai",
+    sizeType: "playerboard",
+  },
+  "Solo Leaders Empire": {
+    adjustment: `/tr:w-800`,
+    imagePath: "/solo_leaders/",
+    backImagePath: "/solo_leaders/",
+    backImage: "leaders_empire_ai_card.png",
+    scenarioDeck: "leaders",
+    type: "leaders_ai",
+    sizeType: "playerboard",
+  },
 };
 
 const SpecificCardToBackImageMap = {
@@ -177,10 +195,12 @@ const doWork = async () => {
       }
       const s = await readfile(`${scenariosInputFolder}/${sFilename}`);
       const sJSON = JSON.parse(s);
-      let sCards = sJSON.Cards.map((c) => ({
-        ...c,
-        ...cardsData[c.Code],
-      }));
+      let sCards = sJSON.Cards.map((c) => {
+        return {
+          ...cardsData[c.Code],
+          ...c,
+        };
+      });
       sJSON.Cards = sCards;
 
       // Write the full scenario to the public location and make an import entry
