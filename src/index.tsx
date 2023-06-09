@@ -8,8 +8,6 @@ import configureStore from "./store/configureStore";
 import AppContainer from "./AppContainer";
 import { ErrorBoundary } from "@highlight-run/react";
 
-console.log("ERL");
-
 const store = configureStore();
 
 ReactDOM.render(
