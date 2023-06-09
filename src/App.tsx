@@ -20,7 +20,6 @@ import DevSettings from "./DevSettings";
 import GameContainer from "./GameContainer";
 import { GameType } from "./game-modules/GameType";
 import mainLogo from "./images/card-table-transparent.png";
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import { cacheCommonImages } from "./utilities/game-utils";
 import GameManager from "./game-modules/GameModuleManager";
 
@@ -56,10 +55,13 @@ const App = (props: IProps) => {
 
   useKonami(toggleDevSetting);
 
-  const onSWUpdate = (registration: ServiceWorkerRegistration) => {
-    setShowReload(true);
-    setWaitingWorker(registration.waiting);
-  };
+  // TODO: this might not be necessary any more, but leaving in for
+  // a little bit to confirm
+
+  // const onSWUpdate = (registration: ServiceWorkerRegistration) => {
+  //   setShowReload(true);
+  //   setWaitingWorker(registration.waiting);
+  // };
 
   const clearQueryParams = props.clearQueryParams;
   useEffect(() => {
@@ -106,8 +108,8 @@ const App = (props: IProps) => {
       }
     }
 
-    // Service Worker
-    serviceWorkerRegistration.register({ onUpdate: onSWUpdate });
+    // Service Worker - this was replaced by auto stuff when switching to Vite
+    // serviceWorkerRegistration.register({ onUpdate: onSWUpdate });
   }, []);
 
   const reloadPage = () => {
@@ -242,31 +244,3 @@ const renderGamePicker = (
 };
 
 export default App;
-
-// import { useState } from "react";
-// // import reactLogo from './assets/react.svg'
-// // import viteLogo from '/vite.svg'
-// // import './App.css'
-
-// function App() {
-//   const [count, setCount] = useState(0);
-
-//   return (
-//     <>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.tsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   );
-// }
-
-// export default App;
