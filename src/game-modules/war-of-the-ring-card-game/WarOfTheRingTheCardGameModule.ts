@@ -300,10 +300,8 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_front.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
             position: { x: 0, y: 0 },
           },
@@ -311,10 +309,8 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_front.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
             position: { x: 0, y: 0 },
           },
@@ -325,10 +321,8 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_front.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
             position: { x: 0, y: 0 },
           },
@@ -336,10 +330,8 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_front.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
             position: { x: 0, y: 0 },
           },
@@ -347,10 +339,8 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_front.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
             position: { x: 0, y: 0 },
           },
@@ -358,10 +348,8 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_front.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
             position: { x: 0, y: 0 },
           },
@@ -369,7 +357,6 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/turn_order_marker.png",
             position: { x: 0, y: 0 },
           },
@@ -381,10 +368,8 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_front.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
             position: { x: 0, y: 0 },
           },
@@ -392,10 +377,8 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_front.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
             position: { x: 0, y: 0 },
           },
@@ -406,10 +389,8 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_front.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
             position: { x: 0, y: 0 },
           },
@@ -417,10 +398,8 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_front.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
             position: { x: 0, y: 0 },
           },
@@ -428,10 +407,8 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_front.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
             position: { x: 0, y: 0 },
           },
@@ -439,7 +416,6 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/war-of-the-ring-card-game/turn_order_marker.png",
             position: { x: 0, y: 0 },
           },
@@ -453,7 +429,7 @@ const getSpecificWOTRScenario = async (
   scenarioWithExtension: string
 ): Promise<AxiosResponse<Scenario>> => {
   const response = await axios.get<Scenario>(
-    process.env.PUBLIC_URL + "/json_data/scenarios/" + scenarioWithExtension
+    "/json_data/scenarios/" + scenarioWithExtension
   );
   return response;
 };

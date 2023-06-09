@@ -22,14 +22,14 @@ const peerJSCustomizedMiddleware =
   baseCustomizedMiddleware.concat(peerJSMiddleware);
 
 export default function configureStore() {
-  log.debug("configuring store. NODE_ENV is " + process.env.NODE_ENV);
+  log.debug("configuring store. NODE_ENV is " + import.meta.env.MODE);
   const store = rtkConfigureStore({
     reducer: rootReducer,
     middleware: useWebRTCLocalStorage
       ? peerJSCustomizedMiddleware
       : wsCustomizedMiddleware,
     devTools:
-      process.env.NODE_ENV !== "production"
+      import.meta.env.MODE !== "production"
         ? {
             stateSanitizer: (state) =>
               (state as any).cardsData

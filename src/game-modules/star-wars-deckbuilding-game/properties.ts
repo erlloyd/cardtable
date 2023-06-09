@@ -8,7 +8,6 @@ export const properties: GameProperties = {
   decklistSearchApiConstants: "",
   encounterUiName: "Scenario",
   backgroundImageLocation:
-    process.env.PUBLIC_URL +
     "/images/from_modules/star-wars-deckbuilding-game/death-star-playmat.jpg",
   possibleIcons: [],
   modifiers: [],
@@ -25,7 +24,7 @@ export const properties: GameProperties = {
       isNumeric: true,
       touchMenuLetter: "Dmg",
       menuText: "Set Damage",
-      imagePath: process.env.PUBLIC_URL + "/images/standard/damage.png",
+      imagePath: "/images/standard/damage.png",
     },
     threat: null,
     generic: null,

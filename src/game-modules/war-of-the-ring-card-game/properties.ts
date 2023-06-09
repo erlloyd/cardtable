@@ -8,7 +8,6 @@ export const properties: GameProperties = {
   decklistSearchApiConstants: "",
   encounterUiName: "Scenario",
   backgroundImageLocation:
-    process.env.PUBLIC_URL +
     "/images/from_modules/war-of-the-ring-card-game/middle-earth-map.jpg",
   possibleIcons: [],
   modifiers: [],
@@ -22,7 +21,6 @@ export const properties: GameProperties = {
       touchMenuLetter: "Atk",
       menuText: "Set Attack",
       imagePath:
-        process.env.PUBLIC_URL +
         "/images/from_modules/war-of-the-ring-card-game/stronghold_attack.png",
     },
     threat: {
@@ -31,7 +29,6 @@ export const properties: GameProperties = {
       touchMenuLetter: "Def",
       menuText: "Set Defense",
       imagePath:
-        process.env.PUBLIC_URL +
         "/images/from_modules/war-of-the-ring-card-game/stronghold_defense.png",
     },
     generic: {
@@ -40,7 +37,6 @@ export const properties: GameProperties = {
       touchMenuLetter: "Path Atk",
       menuText: "Set Path Attack",
       imagePath:
-        process.env.PUBLIC_URL +
         "/images/from_modules/war-of-the-ring-card-game/shadow_path_attack.png",
     },
     acceleration: {
@@ -49,7 +45,6 @@ export const properties: GameProperties = {
       touchMenuLetter: "Path Def",
       menuText: "Set Path Defense",
       imagePath:
-        process.env.PUBLIC_URL +
         "/images/from_modules/war-of-the-ring-card-game/path_defense.png",
     },
   },
@@ -57,7 +52,6 @@ export const properties: GameProperties = {
     {
       counterName: "Corruption",
       counterImage:
-        process.env.PUBLIC_URL +
         "/images/from_modules/war-of-the-ring-card-game/corruption.png",
     },
   ],

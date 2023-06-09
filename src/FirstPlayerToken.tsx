@@ -32,10 +32,7 @@ class FirstPlayerToken extends Component<IProps, IState> {
       });
     };
     image.src =
-      process.env.PUBLIC_URL +
-      "/images/table/first_player_token_" +
-      this.props.currentGameType +
-      ".png";
+      "/images/table/first_player_token_" + this.props.currentGameType + ".png";
   }
 
   render() {

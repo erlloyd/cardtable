@@ -68,7 +68,7 @@ const App = (props: IProps) => {
 
   useEffect(() => {
     //Default Log Level. Can override in the console with
-    if (process.env.NODE_ENV !== "production") {
+    if (import.meta.env.MODE !== "production") {
       log.setDefaultLevel("info");
     } else {
       log.setDefaultLevel("warn");
@@ -79,7 +79,7 @@ const App = (props: IProps) => {
     mixpanel.track("Cardtable loaded");
 
     // highlight.io
-    if (process.env.NODE_ENV === "production") {
+    if (import.meta.env.MODE === "production") {
       // For some reason the FPS is way more impactful
       // on iOS devices, so don't use highlight for those devices
       const forceDisableHighlight =
@@ -242,3 +242,31 @@ const renderGamePicker = (
 };
 
 export default App;
+
+// import { useState } from "react";
+// // import reactLogo from './assets/react.svg'
+// // import viteLogo from '/vite.svg'
+// // import './App.css'
+
+// function App() {
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     <>
+//       <h1>Vite + React</h1>
+//       <div className="card">
+//         <button onClick={() => setCount((count) => count + 1)}>
+//           count is {count}
+//         </button>
+//         <p>
+//           Edit <code>src/App.tsx</code> and save to test HMR
+//         </p>
+//       </div>
+//       <p className="read-the-docs">
+//         Click on the Vite and React logos to learn more
+//       </p>
+//     </>
+//   );
+// }
+
+// export default App;

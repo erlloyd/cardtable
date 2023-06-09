@@ -266,10 +266,8 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             position: { x: 0, y: 0 },
           },
@@ -280,10 +278,8 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             position: { x: 0, y: 0 },
           },
@@ -291,10 +287,8 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             position: { x: 0, y: 0 },
           },
@@ -306,10 +300,8 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             position: { x: 0, y: 0 },
           },
@@ -317,10 +309,8 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             position: { x: 0, y: 0 },
           },
@@ -328,10 +318,8 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             position: { x: 0, y: 0 },
           },
@@ -417,7 +405,7 @@ const getSpecificScenario = async (
   scenarioWithExtension: string
 ): Promise<AxiosResponse<Scenario>> => {
   const response = await axios.get<Scenario>(
-    process.env.PUBLIC_URL + "/json_data/scenarios/" + scenarioWithExtension
+    "/json_data/scenarios/" + scenarioWithExtension
   );
   return response;
 };
