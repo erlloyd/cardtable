@@ -46,7 +46,7 @@ interface ScenarioCard {
 
 export default class StarWarsDeckbuildingGameModule extends GameModule {
   constructor() {
-    super(properties, {}, {}, {}, ["capital_ship", "base"]);
+    super(properties, {}, {}, {}, ["capital_ship", "base", "leaders_ai"]);
   }
   getSetData(): ISetData {
     const setData: ISetData = {};
@@ -194,6 +194,66 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
           force_tracker,
         ];
         break;
+      case "2v2":
+        const rebel_starter2v2 = [...temp["Rebel Starter"]];
+        const empire_starter2v2 = [...temp["Empire Starter"]];
+        const rebel_bases2v2 = [...temp["Rebel Bases"]];
+        const empire_bases2v2 = [...temp["Empire Bases"]];
+        const always_available2v2 = [...temp["Always Available"]];
+        const galaxy_row2v2 = [
+          ...temp["Galaxy Row Rebel"],
+          ...temp["Galaxy Row Empire"],
+          ...temp["Galaxy Row Neutral"],
+          ...temp["Capital Ships"],
+        ];
+        const misc2v2 = [...temp["Miscellaneous"]];
+        const force_tracker2v2 = [...temp["Force Tracker"]];
+        returnVal = [
+          rebel_starter2v2,
+          rebel_starter2v2,
+          empire_starter2v2,
+          empire_starter2v2,
+          rebel_bases2v2,
+          rebel_bases2v2,
+          empire_bases2v2,
+          empire_bases2v2,
+          always_available2v2,
+          always_available2v2,
+          galaxy_row2v2,
+          galaxy_row2v2,
+          misc2v2,
+          misc2v2,
+          force_tracker2v2,
+        ];
+        break;
+      case "Solo: Leaders (Rebels)":
+      case "Solo: Leaders (Empire)":
+        const leader_board = [...temp["Solo Leaders Board"]];
+        const rebel_starter2 = [...temp["Rebel Starter"]];
+        const empire_starter2 = [...temp["Empire Starter"]];
+        const rebel_bases2 = [...temp["Rebel Bases"]];
+        const empire_bases2 = [...temp["Empire Bases"]];
+        const always_available2 = [...temp["Always Available"]];
+        const galaxy_row2 = [
+          ...temp["Galaxy Row Rebel"],
+          ...temp["Galaxy Row Empire"],
+          ...temp["Galaxy Row Neutral"],
+          ...temp["Capital Ships"],
+        ];
+        const leader = [...temp["Leader"]];
+        const force_tracker2 = [...temp["Force Tracker"]];
+        returnVal = [
+          rebel_starter2,
+          empire_starter2,
+          rebel_bases2,
+          empire_bases2,
+          always_available2,
+          galaxy_row2,
+          leader,
+          leader_board,
+          force_tracker2,
+        ];
+        break;
     }
     return returnVal;
   }
@@ -206,10 +266,60 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
             id: uuidv4(),
             faceup: true,
             imgUrl:
-              process.env.PUBLIC_URL +
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             backImgUrl:
-              process.env.PUBLIC_URL +
+              "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
+            position: { x: 0, y: 0 },
+          },
+        ];
+      case "2v2":
+        return [
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
+            backImgUrl:
+              "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
+            position: { x: 0, y: 0 },
+          },
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
+            backImgUrl:
+              "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
+            position: { x: 0, y: 0 },
+          },
+        ];
+      case "Solo: Leaders (Rebels)":
+      case "Solo: Leaders (Empire)":
+        return [
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
+            backImgUrl:
+              "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
+            position: { x: 0, y: 0 },
+          },
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
+            backImgUrl:
+              "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
+            position: { x: 0, y: 0 },
+          },
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
+            backImgUrl:
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             position: { x: 0, y: 0 },
           },
@@ -237,6 +347,55 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
             value: 0,
           },
         ];
+      case "2v2":
+        return [
+          {
+            id: "",
+            position: { x: 0, y: 0 },
+            text: "Resources",
+            color: "yellow",
+            value: 0,
+          },
+          {
+            id: "",
+            position: { x: 0, y: 0 },
+            text: "Resources",
+            color: "yellow",
+            value: 0,
+          },
+          {
+            id: "",
+            position: { x: 0, y: 0 },
+            text: "Resources",
+            color: "yellow",
+            value: 0,
+          },
+          {
+            id: "",
+            position: { x: 0, y: 0 },
+            text: "Resources",
+            color: "yellow",
+            value: 0,
+          },
+        ];
+      case "Solo: Leaders (Rebels)":
+      case "Solo: Leaders (Empire)":
+        return [
+          {
+            id: "",
+            position: { x: 0, y: 0 },
+            text: "Resources",
+            color: "yellow",
+            value: 0,
+          },
+          {
+            id: "",
+            position: { x: 0, y: 0 },
+            text: "AI Resources",
+            color: "yellow",
+            value: 0,
+          },
+        ];
     }
     return [];
   }
@@ -246,7 +405,7 @@ const getSpecificScenario = async (
   scenarioWithExtension: string
 ): Promise<AxiosResponse<Scenario>> => {
   const response = await axios.get<Scenario>(
-    process.env.PUBLIC_URL + "/json_data/scenarios/" + scenarioWithExtension
+    "/json_data/scenarios/" + scenarioWithExtension
   );
   return response;
 };

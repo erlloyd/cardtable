@@ -128,19 +128,13 @@ export const getImgUrlsFromJsonId = (
       if (!cardData.images.back) {
         const defaultBack =
           FORCE_CARD_BACK_MAP[topCardData.code] ||
-          process.env.PUBLIC_URL +
-            "/images/standard/card_back_" +
-            currentGameType +
-            ".png";
+          "/images/standard/card_back_" + currentGameType + ".png";
 
         return [
           topCardData.extraInfo.factionCode === "encounter" ||
           topCardData.typeCode === "side_scheme" ||
           FORCE_ENCOUNTER_CARD_BACK_MAP[topCardData.code]
-            ? process.env.PUBLIC_URL +
-              "/images/standard/encounter_card_back_" +
-              currentGameType +
-              ".png"
+            ? "/images/standard/encounter_card_back_" + currentGameType + ".png"
             : defaultBack,
         ];
       } else {
@@ -159,7 +153,7 @@ export const getImgUrlsFromJsonId = (
         generateLCGCDNImageUrl(currentGameType, topCardData, faceup),
         // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.png`,
         // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.jpg`,
-        // process.env.PUBLIC_URL +
+        //
         //   "/images/cards/" +
         //   bottomCardData.octgn_id +
         //   ".b.jpg",
@@ -170,14 +164,8 @@ export const getImgUrlsFromJsonId = (
         topCardData.extraInfo.factionCode === "encounter" ||
         topCardData.typeCode === "side_scheme" ||
         FORCE_ENCOUNTER_CARD_BACK_MAP[topCardData.code]
-          ? process.env.PUBLIC_URL +
-            "/images/standard/encounter_card_back_" +
-            currentGameType +
-            ".png"
-          : process.env.PUBLIC_URL +
-            "/images/standard/card_back_" +
-            currentGameType +
-            ".png",
+          ? "/images/standard/encounter_card_back_" + currentGameType + ".png"
+          : "/images/standard/card_back_" + currentGameType + ".png",
       ];
     }
   } else {
@@ -185,7 +173,7 @@ export const getImgUrlsFromJsonId = (
       generateLCGCDNImageUrl(currentGameType, topCardData, faceup),
       // `https://marvelcdb.com/bundles/cards/${topCardData.code}.png`,
       // `https://marvelcdb.com/bundles/cards/${topCardData.code}.jpg`,
-      // process.env.PUBLIC_URL +
+      //
       //   "/images/cards/" +
       //   topCardData.octgn_id +
       //   ".jpg",

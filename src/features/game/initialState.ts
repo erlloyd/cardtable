@@ -70,9 +70,6 @@ localStorageState.searchingForOnlineDecks = false;
 localStorageState.mostRecentOnlineDeckSearchResults = {};
 localStorageState.allJsonDataLoaded = false;
 
-// TESTING
-localStorageState.snapCardsToGrid = true;
-
 const defaultState: IGameState = {
   playerColors: {},
   playerNumbers: {},

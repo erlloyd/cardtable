@@ -52,7 +52,7 @@ jobs:
           ls
 
       - name: Build 🔧
-        run: yarn build:prod
+        run: yarn build
 
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
@@ -67,7 +67,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build # The folder the action should deploy.
+          FOLDER: dist # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
 
       - name: tag

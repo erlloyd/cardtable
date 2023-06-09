@@ -20,7 +20,6 @@ import DevSettings from "./DevSettings";
 import GameContainer from "./GameContainer";
 import { GameType } from "./game-modules/GameType";
 import mainLogo from "./images/card-table-transparent.png";
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import { cacheCommonImages } from "./utilities/game-utils";
 import GameManager from "./game-modules/GameModuleManager";
 
@@ -56,10 +55,13 @@ const App = (props: IProps) => {
 
   useKonami(toggleDevSetting);
 
-  const onSWUpdate = (registration: ServiceWorkerRegistration) => {
-    setShowReload(true);
-    setWaitingWorker(registration.waiting);
-  };
+  // TODO: this might not be necessary any more, but leaving in for
+  // a little bit to confirm
+
+  // const onSWUpdate = (registration: ServiceWorkerRegistration) => {
+  //   setShowReload(true);
+  //   setWaitingWorker(registration.waiting);
+  // };
 
   const clearQueryParams = props.clearQueryParams;
   useEffect(() => {
@@ -68,7 +70,7 @@ const App = (props: IProps) => {
 
   useEffect(() => {
     //Default Log Level. Can override in the console with
-    if (process.env.NODE_ENV !== "production") {
+    if (import.meta.env.MODE !== "production") {
       log.setDefaultLevel("info");
     } else {
       log.setDefaultLevel("warn");
@@ -79,7 +81,7 @@ const App = (props: IProps) => {
     mixpanel.track("Cardtable loaded");
 
     // highlight.io
-    if (process.env.NODE_ENV === "production") {
+    if (import.meta.env.MODE === "production") {
       // For some reason the FPS is way more impactful
       // on iOS devices, so don't use highlight for those devices
       const forceDisableHighlight =
@@ -106,8 +108,8 @@ const App = (props: IProps) => {
       }
     }
 
-    // Service Worker
-    serviceWorkerRegistration.register({ onUpdate: onSWUpdate });
+    // Service Worker - this was replaced by auto stuff when switching to Vite
+    // serviceWorkerRegistration.register({ onUpdate: onSWUpdate });
   }, []);
 
   const reloadPage = () => {

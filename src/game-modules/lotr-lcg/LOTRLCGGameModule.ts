@@ -38,63 +38,58 @@ export default class LOTRLCGGameModule extends GameModule {
       decklistSearchApi: "https://ringsdb.com/decklists/find",
       decklistSearchApiConstants: "numcores=3&sort=likes",
       encounterUiName: "Scenario",
-      backgroundImageLocation:
-        process.env.PUBLIC_URL + "/images/table/background_lotrlcg.jpg",
+      backgroundImageLocation: "/images/table/background_lotrlcg.jpg",
       possibleIcons: [
         {
           iconId: "tactics",
           iconName: "Tactics",
-          iconImageUrl:
-            process.env.PUBLIC_URL + "/images/standard/lotr/tactics.png",
+          iconImageUrl: "/images/standard/lotr/tactics.png",
         },
         {
           iconId: "leadership",
           iconName: "Leadership",
-          iconImageUrl:
-            process.env.PUBLIC_URL + "/images/standard/lotr/leadership.png",
+          iconImageUrl: "/images/standard/lotr/leadership.png",
         },
         {
           iconId: "spirit",
           iconName: "Spirit",
-          iconImageUrl:
-            process.env.PUBLIC_URL + "/images/standard/lotr/spirit.png",
+          iconImageUrl: "/images/standard/lotr/spirit.png",
         },
         {
           iconId: "lore",
           iconName: "Lore",
-          iconImageUrl:
-            process.env.PUBLIC_URL + "/images/standard/lotr/lore.png",
+          iconImageUrl: "/images/standard/lotr/lore.png",
         },
       ],
       modifiers: [
         {
           attributeId: "threat",
           attributeName: "Threat",
-          icon: process.env.PUBLIC_URL + "/images/standard/lotr/threat.png",
+          icon: "/images/standard/lotr/threat.png",
           slot: 1,
         },
         {
           attributeId: "willpower",
           attributeName: "Willpower",
-          icon: process.env.PUBLIC_URL + "/images/standard/lotr/willpower.png",
+          icon: "/images/standard/lotr/willpower.png",
           slot: 2,
         },
         {
           attributeId: "attack",
           attributeName: "Attack",
-          icon: process.env.PUBLIC_URL + "/images/standard/lotr/attack.png",
+          icon: "/images/standard/lotr/attack.png",
           slot: 3,
         },
         {
           attributeId: "defense",
           attributeName: "Defense",
-          icon: process.env.PUBLIC_URL + "/images/standard/lotr/defense.png",
+          icon: "/images/standard/lotr/defense.png",
           slot: 4,
         },
         {
           attributeId: "hitpoints",
           attributeName: "Hit Points",
-          icon: process.env.PUBLIC_URL + "/images/standard/lotr/hitpoints.png",
+          icon: "/images/standard/lotr/hitpoints.png",
           slot: 5,
         },
       ],
@@ -105,7 +100,7 @@ export default class LOTRLCGGameModule extends GameModule {
           touchMenuLetter: "Q",
           menuText: "Quest",
           menuRemoveText: "Remove From Quest",
-          imagePath: process.env.PUBLIC_URL + "/images/standard/quest.png",
+          imagePath: "/images/standard/quest.png",
         },
         confused: null,
         tough: null,
@@ -114,22 +109,21 @@ export default class LOTRLCGGameModule extends GameModule {
           isNumeric: true,
           touchMenuLetter: "Dmg",
           menuText: "Set Damage",
-          imagePath:
-            process.env.PUBLIC_URL + "/images/standard/damage_lotr.png",
+          imagePath: "/images/standard/damage_lotr.png",
         },
         threat: {
           counterTokenType: CounterTokenType.Threat,
           isNumeric: true,
           touchMenuLetter: "Prg",
           menuText: "Set Progress",
-          imagePath: process.env.PUBLIC_URL + "/images/standard/progress.png",
+          imagePath: "/images/standard/progress.png",
         },
         generic: {
           counterTokenType: CounterTokenType.Generic,
           isNumeric: true,
           touchMenuLetter: "Res",
           menuText: "Set Resource Tokens",
-          imagePath: process.env.PUBLIC_URL + "/images/standard/resource.png",
+          imagePath: "/images/standard/resource.png",
         },
         acceleration: null,
       },
@@ -313,9 +307,7 @@ export const cardDataSetCodeOverride: { [key: string]: (s: string) => string } =
 const getSpecificLOTRPack = async (
   packName: string
 ): Promise<{ res: AxiosResponse<CardPackLOTR>; packCode: string }> => {
-  const response = await axios.get<CardPackLOTR>(
-    process.env.PUBLIC_URL + "/json_data/" + packName
-  );
+  const response = await axios.get<CardPackLOTR>("/json_data/" + packName);
   return {
     res: response,
     packCode: packName.split(".json")[0],
@@ -326,7 +318,7 @@ const getSpecificLOTRScenario = async (
   scenario: string
 ): Promise<AxiosResponse<Scenario>> => {
   const response = await axios.get<Scenario>(
-    process.env.PUBLIC_URL + "/json_data/scenarios/" + scenario + ".json"
+    "/json_data/scenarios/" + scenario + ".json"
   );
   return response;
 };
