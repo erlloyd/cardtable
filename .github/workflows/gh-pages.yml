@@ -62,6 +62,9 @@ jobs:
           include: "dist/**"
           regex: false
 
+      - name: Support older service workers
+        run: cp dist/sw.js dist/service-worker.js
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
@@ -70,9 +73,10 @@ jobs:
           FOLDER: dist # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
 
-      - name: tag
-        uses: rickstaa/action-create-tag@v1
-        id: "tag_create"
-        with:
-          GITHUB_TOKEN: ${{ secrets.TAG_PAT }}
-          tag: "v${{ github.run_number }}"
+
+      # - name: tag
+      #   uses: rickstaa/action-create-tag@v1
+      #   id: "tag_create"
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.TAG_PAT }}
+      #     tag: "v${{ github.run_number }}"
