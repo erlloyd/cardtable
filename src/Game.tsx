@@ -326,7 +326,8 @@ class Game extends Component<IProps, IState> {
         log.error(e);
       };
       image.src =
-        GamePropertiesMap[this.props.currentGameType].backgroundImageLocation;
+        GamePropertiesMap[this.props.currentGameType].backgroundImageLocation ||
+        "/images/table/background_default.jpg";
       this.props.loadCardsData(this.props.currentGameType);
       this.props.allJsonData(this.props.currentGameType);
       this.isSetUp = true;
