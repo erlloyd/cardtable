@@ -338,6 +338,24 @@ const exhaustCardReducer: CaseReducer<
     });
 };
 
+const exhaustAllCardsReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<string | undefined>
+> = (state, action) => {
+  const cardsToChange = state.cards.filter(
+    (card) =>
+      card.controlledBy === (action as any).ACTOR_REF &&
+      (card.id === (action.payload ?? "") || card.selected)
+  );
+
+  let shouldExhaust = true;
+  if (cardsToChange.every((c) => c.exhausted)) {
+    shouldExhaust = false;
+  }
+
+  cardsToChange.forEach((c) => (c.exhausted = shouldExhaust));
+};
+
 const deleteCardStackReducer: CaseReducer<
   ICardsState,
   PayloadAction<string | undefined>
@@ -1101,6 +1119,7 @@ const cardsSlice = createSlice({
     unselectCard: unselectCardReducer,
     toggleSelectCard: toggleSelectCardReducer,
     exhaustCard: exhaustCardReducer,
+    exhaustAllCards: exhaustAllCardsReducer,
     deleteCardStack: deleteCardStackReducer,
     cardMoveWithSnap: cardMoveWithSnapReducer,
     endCardMoveWithSnap: endCardMoveWithSnapReducer,
@@ -1641,6 +1660,7 @@ export const {
   unselectCard,
   toggleSelectCard,
   exhaustCard,
+  exhaustAllCards,
   deleteCardStack,
   cardMoveWithSnap,
   endCardMoveWithSnap,

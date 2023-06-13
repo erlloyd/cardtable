@@ -81,7 +81,7 @@ interface IProps {
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
   endCardMove: (id: string) => void;
   cardFromHandMove: (pos: Vector2d, sizeType: CardSizeType) => void;
-  exhaustCard: (id?: string) => void;
+  exhaustAllCards: (id?: string) => void;
   deleteCardStack: (id?: string) => void;
   selectCard: (payload: { id: string; unselectOtherCards: boolean }) => void;
   unselectCard: (id: string) => void;
@@ -1860,7 +1860,7 @@ class Game extends Component<IProps, IState> {
     const modifierKeyHeld =
       event.evt.shiftKey || event.evt.metaKey || event.evt.ctrlKey;
     this.props.selectCard({ id: cardId, unselectOtherCards: !modifierKeyHeld });
-    this.props.exhaustCard(cardId);
+    this.props.exhaustAllCards(cardId);
   };
 
   private showOrToggleModalPreviewCard = (
@@ -2022,7 +2022,7 @@ class Game extends Component<IProps, IState> {
         "noreferrer"
       );
     } else if (code === "e") {
-      this.props.exhaustCard();
+      this.props.exhaustAllCards();
     } else if (code === "s") {
       this.props.shuffleStack();
     } else if (!Number.isNaN(intCode)) {

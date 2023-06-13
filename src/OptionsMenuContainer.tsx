@@ -5,7 +5,7 @@ import {
   getPanMode,
 } from "./features/cards/cards.selectors";
 import {
-  exhaustCard,
+  exhaustAllCards,
   flipCards,
   togglePanMode,
   toggleMultiselectMode,
@@ -43,7 +43,7 @@ const OptionsMenuContainer = connect(mapStateToProps, {
   toggleNotes,
   toggleMultiselectMode,
   flipCards,
-  exhaustCard,
+  exhaustAllCards,
   toggleToken,
   shuffleStack,
   adjustCounterToken,

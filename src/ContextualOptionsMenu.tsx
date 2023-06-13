@@ -49,7 +49,7 @@ interface IProps {
   playerNumber: number;
   selectedCardStacks: ICardStack[];
   flipCards: () => void;
-  exhaustCard: (id?: string) => void;
+  exhaustAllCards: (id?: string) => void;
   deleteCardStack: (id?: string) => void;
   shuffleStack: (id?: string) => void;
   clearCardTokens: (id?: string) => void;
@@ -193,7 +193,7 @@ const ContextualOptionsMenu = (props: IProps) => {
         <Tooltip title="Exhaust / ready cards">
           <button
             onClick={() => {
-              props.exhaustCard();
+              props.exhaustAllCards();
             }}
           >
             Exhaust

@@ -29,7 +29,7 @@ interface IProps {
   toggleNotes: () => void;
   toggleMultiselectMode: () => void;
   flipCards: () => void;
-  exhaustCard: (id?: string) => void;
+  exhaustAllCards: (id?: string) => void;
   toggleToken: (payload: {
     id?: string;
     tokenType: StatusTokenType;
