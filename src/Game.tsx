@@ -177,6 +177,8 @@ interface IProps {
     jsonContents: string;
   }) => void;
   generateGameStateUrl: () => void;
+  generateGameStateSave: () => void;
+  loadGameStateFromSave: (jsonString: string) => void;
   saveDeckAsJson: (stack: ICardStack | undefined) => void;
   showRadialMenuAtPosition: (payload: Vector2d) => void;
   showSpecificCardLoader: (payload: Vector2d) => void;
@@ -341,27 +343,6 @@ class Game extends Component<IProps, IState> {
   };
 
   public render() {
-    // TODO: This feels like a bad hack. I bet all the
-    //       swallowing of click events is keeping
-    //       focus from behaving 'normally' and doing
-    //       the expected thing with focus. But there are
-    //       a lot of things that don't work quite right
-    //       if the body has focus, so we're going to
-    //       force the game area to have focus if it
-    //       lost it
-    // if (document.activeElement === document.body) {
-    //   // setTimeout so we don't manually change the dom while rendering
-    //   setTimeout(() => {
-    //     const el = document.querySelector(".play-area") as HTMLElement;
-    //     el?.focus();
-    //   }, 0);
-    // }
-    // END HACK
-
-    // if (!this.props.isDoneLoadingJSONData) {
-    //   return <div>LOADING JSON DATA...</div>;
-    // }
-
     if (!GamePropertiesMap[this.props.currentGameType]) {
       return null;
     }
@@ -673,6 +654,8 @@ class Game extends Component<IProps, IState> {
         {this.renderCardSearch()}
         {this.renderPeerConnector()}
         {this.renderTokenModifier()}
+
+        {/* Game loader input (hidden) */}
 
         <ReactReduxContext.Consumer>
           {({ store }) => (
@@ -2644,6 +2627,19 @@ class Game extends Component<IProps, IState> {
               },
             },
           ]),
+      },
+      {
+        label: `Save game`,
+        action: () => {
+          this.props.generateGameStateSave();
+        },
+      },
+      {
+        label: "Load game",
+        fileLoadedAction: (jsonContents: string) => {
+          this.props.loadGameStateFromSave(jsonContents);
+        },
+        fileUploader: true,
       },
       {
         label: `Copy game to clipboard`,

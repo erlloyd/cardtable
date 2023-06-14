@@ -96,7 +96,9 @@ import {
 } from "./features/game/game.slice";
 import {
   generateGameStateUrl,
+  generateGameStateSave,
   saveDeckAsJson,
+  loadGameStateFromSave,
 } from "./features/game/game.thunks";
 import { toggleNotes } from "./features/notes/notes.slice";
 import { resetApp } from "./store/global.actions";
@@ -177,6 +179,8 @@ const GameContainer = connect(mapStateToProps, {
   createDeckFromTxt,
   createDeckFromJson,
   generateGameStateUrl,
+  generateGameStateSave,
+  loadGameStateFromSave,
   saveDeckAsJson,
   showRadialMenuAtPosition,
   showSpecificCardLoader,
