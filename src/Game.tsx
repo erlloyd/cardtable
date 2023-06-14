@@ -2440,6 +2440,28 @@ class Game extends Component<IProps, IState> {
         action: this.props.redo,
       },
       {
+        label: `Save game`,
+        action: () => {
+          this.props.generateGameStateSave();
+        },
+      },
+      {
+        label: "Load game",
+        fileLoadedAction: (jsonContents: string) => {
+          this.props.loadGameStateFromSave(jsonContents);
+        },
+        fileUploader: true,
+      },
+      { label: "Reset Game", action: this.props.resetApp },
+      {
+        label: "Quit Game",
+        action: () => {
+          this.props.resetApp();
+          this.props.quitGame();
+          this.props.clearHistory();
+        },
+      },
+      {
         label: "Load Deck by ID",
         action: () => {
           this.setState({
@@ -2543,15 +2565,6 @@ class Game extends Component<IProps, IState> {
           ),
       },
       { label: "Remove all arrows", action: this.props.removeAllArrows },
-      { label: "Reset Game", action: this.props.resetApp },
-      {
-        label: "Quit Game",
-        action: () => {
-          this.props.resetApp();
-          this.props.quitGame();
-          this.props.clearHistory();
-        },
-      },
       {
         label: "",
         labelHTML: "Multiplayer <span><b>(BETA)</b></span>",
@@ -2627,19 +2640,6 @@ class Game extends Component<IProps, IState> {
               },
             },
           ]),
-      },
-      {
-        label: `Save game`,
-        action: () => {
-          this.props.generateGameStateSave();
-        },
-      },
-      {
-        label: "Load game",
-        fileLoadedAction: (jsonContents: string) => {
-          this.props.loadGameStateFromSave(jsonContents);
-        },
-        fileUploader: true,
       },
       {
         label: `Copy game to clipboard`,
