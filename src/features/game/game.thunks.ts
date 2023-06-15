@@ -3,6 +3,65 @@ import { RootState } from "../../store/rootReducer";
 import JSONCrush from "jsoncrush";
 import { copyToClipboard, getBaseUrl } from "../../utilities/text-utils";
 import { ICardStack } from "../cards/initialState";
+import { saveAs } from "file-saver";
+import omit from "lodash.omit";
+import { getActiveGameType } from "./game.selectors";
+import { sendNotification } from "../notifications/notifications.slice";
+import { v4 as uuidv4 } from "uuid";
+import { receiveRemoteGameState } from "../../store/global.actions";
+
+export const generateGameStateSave =
+  (): ThunkAction<void, RootState, unknown, Action<any>> =>
+  (_dispatch, getState) => {
+    const state = getState();
+
+    const stateToSave = omit(state, ["cardsData"]);
+
+    var blob = new Blob([JSON.stringify(stateToSave)], {
+      type: "text/plain;charset=utf-8",
+    });
+    saveAs(
+      blob,
+      `${getActiveGameType(state)}-${new Date().toISOString()}.cardtable`
+    );
+  };
+
+export const loadGameStateFromSave =
+  (jsonString: string): ThunkAction<void, RootState, unknown, Action<any>> =>
+  (dispatch, getState) => {
+    // First, try to parse and make sure it is JSON
+    let gameJSON = {} as RootState;
+    try {
+      gameJSON = JSON.parse(jsonString);
+    } catch (e) {
+      dispatch(
+        sendNotification({
+          id: uuidv4(),
+          level: "error",
+          message: "The game file you tried to load appears to be invalid.",
+        })
+      );
+      return;
+    }
+
+    // Next, make sure that the game type matches the one we're currently in
+    const currentGameType = getActiveGameType(getState());
+
+    if (gameJSON.game?.activeGameType != currentGameType) {
+      dispatch(
+        sendNotification({
+          id: uuidv4(),
+          level: "error",
+          message: "The game file you tried to load is for a different game.",
+        })
+      );
+      return;
+    }
+
+    // Load the game
+    dispatch(receiveRemoteGameState(gameJSON));
+  };
+
 export const generateGameStateUrl =
   (): ThunkAction<void, RootState, unknown, Action<any>> =>
   (_dispatch, getState) => {

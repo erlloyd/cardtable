@@ -22,6 +22,7 @@ import { GameType } from "./game-modules/GameType";
 import mainLogo from "./images/card-table-transparent.png";
 import { cacheCommonImages } from "./utilities/game-utils";
 import GameManager from "./game-modules/GameModuleManager";
+import { ConfirmProvider } from "material-ui-confirm";
 
 const darkTheme = createTheme({
   palette: {
@@ -145,35 +146,39 @@ const App = (props: IProps) => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <CssBaseline />
-      {showDevSettings && (
-        <DevSettings
-          onClose={() => {
-            setShowDevSettings(false);
-          }}
-        ></DevSettings>
-      )}
-      {!!props.activeGameType ? (
-        <div>
-          <Snackbar
-            open={showReload}
-            onClose={handleClose}
-            anchorOrigin={{ vertical: "top", horizontal: "center" }}
-            message="New version available"
-            action={action}
-          />
-          <GameContainer currentGameType={props.activeGameType}></GameContainer>
-        </div>
-      ) : (
-        <div>
-          {renderGamePicker(
-            props,
-            toggleDevSetting,
-            numImageClicks,
-            setNumImageClicks
-          )}
-        </div>
-      )}
+      <ConfirmProvider>
+        <CssBaseline />
+        {showDevSettings && (
+          <DevSettings
+            onClose={() => {
+              setShowDevSettings(false);
+            }}
+          ></DevSettings>
+        )}
+        {!!props.activeGameType ? (
+          <div>
+            <Snackbar
+              open={showReload}
+              onClose={handleClose}
+              anchorOrigin={{ vertical: "top", horizontal: "center" }}
+              message="New version available"
+              action={action}
+            />
+            <GameContainer
+              currentGameType={props.activeGameType}
+            ></GameContainer>
+          </div>
+        ) : (
+          <div>
+            {renderGamePicker(
+              props,
+              toggleDevSetting,
+              numImageClicks,
+              setNumImageClicks
+            )}
+          </div>
+        )}
+      </ConfirmProvider>
     </ThemeProvider>
   );
 };

@@ -63,10 +63,20 @@ import { GameType } from "./game-modules/GameType";
 import GameManager from "./game-modules/GameModuleManager";
 import FlippableToken from "./FlippableToken";
 import { CardData } from "./external-api/common-card-data";
+import { ConfirmOptions, useConfirm } from "material-ui-confirm";
 
 const SCALE_BY = 1.02;
 
+// Wrapper for hook stuff
+const withConfirm = (Component: any) => {
+  return function WrappedComponent(props: IProps) {
+    const confirm = useConfirm();
+    return <Component {...props} confirm={confirm} />;
+  };
+};
+
 interface IProps {
+  confirm?: (options?: ConfirmOptions) => Promise<void>;
   currentGameType: GameType;
   currentPlayerRole: string | null;
   cards: ICardsState;
@@ -81,7 +91,7 @@ interface IProps {
   cardMove: (info: { id: string; dx: number; dy: number }) => void;
   endCardMove: (id: string) => void;
   cardFromHandMove: (pos: Vector2d, sizeType: CardSizeType) => void;
-  exhaustCard: (id?: string) => void;
+  exhaustAllCards: (id?: string) => void;
   deleteCardStack: (id?: string) => void;
   selectCard: (payload: { id: string; unselectOtherCards: boolean }) => void;
   unselectCard: (id: string) => void;
@@ -177,6 +187,8 @@ interface IProps {
     jsonContents: string;
   }) => void;
   generateGameStateUrl: () => void;
+  generateGameStateSave: () => void;
+  loadGameStateFromSave: (jsonString: string) => void;
   saveDeckAsJson: (stack: ICardStack | undefined) => void;
   showRadialMenuAtPosition: (payload: Vector2d) => void;
   showSpecificCardLoader: (payload: Vector2d) => void;
@@ -241,6 +253,7 @@ interface IState {
   previewCardModal: boolean;
   stageWidth: number;
   stageHeight: number;
+  forcePan: boolean;
 }
 class Game extends Component<IProps, IState> {
   static whyDidYouRender = true;
@@ -297,7 +310,12 @@ class Game extends Component<IProps, IState> {
       previewCardModal: false,
       stageWidth: window.innerWidth,
       stageHeight: window.innerHeight - playerHandHeightPx,
+      forcePan: false,
     };
+  }
+
+  get panMode(): boolean {
+    return this.props.panMode || this.state.forcePan;
   }
 
   public componentDidMount() {
@@ -341,27 +359,6 @@ class Game extends Component<IProps, IState> {
   };
 
   public render() {
-    // TODO: This feels like a bad hack. I bet all the
-    //       swallowing of click events is keeping
-    //       focus from behaving 'normally' and doing
-    //       the expected thing with focus. But there are
-    //       a lot of things that don't work quite right
-    //       if the body has focus, so we're going to
-    //       force the game area to have focus if it
-    //       lost it
-    // if (document.activeElement === document.body) {
-    //   // setTimeout so we don't manually change the dom while rendering
-    //   setTimeout(() => {
-    //     const el = document.querySelector(".play-area") as HTMLElement;
-    //     el?.focus();
-    //   }, 0);
-    // }
-    // END HACK
-
-    // if (!this.props.isDoneLoadingJSONData) {
-    //   return <div>LOADING JSON DATA...</div>;
-    // }
-
     if (!GamePropertiesMap[this.props.currentGameType]) {
       return null;
     }
@@ -674,6 +671,8 @@ class Game extends Component<IProps, IState> {
         {this.renderPeerConnector()}
         {this.renderTokenModifier()}
 
+        {/* Game loader input (hidden) */}
+
         <ReactReduxContext.Consumer>
           {({ store }) => (
             <div>
@@ -702,7 +701,7 @@ class Game extends Component<IProps, IState> {
                 onContextMenu={this.handleContextMenu}
                 scale={this.props.gameState.stageZoom}
                 onWheel={this.handleWheel}
-                draggable={this.props.panMode}
+                draggable={this.panMode}
                 onDragMove={this.noOp}
                 onDragEnd={this.noOp}
                 preventDefault={true}
@@ -1258,10 +1257,7 @@ class Game extends Component<IProps, IState> {
       return;
     }
     const mousePos = this.getRelativePositionFromTarget(this.stage);
-    if (
-      this.props.panMode ||
-      getDistance(this.state.selectStartPos, mousePos) < 30
-    ) {
+    if (this.panMode || getDistance(this.state.selectStartPos, mousePos) < 30) {
       this.props.unselectAllCards();
     }
   };
@@ -1860,7 +1856,7 @@ class Game extends Component<IProps, IState> {
     const modifierKeyHeld =
       event.evt.shiftKey || event.evt.metaKey || event.evt.ctrlKey;
     this.props.selectCard({ id: cardId, unselectOtherCards: !modifierKeyHeld });
-    this.props.exhaustCard(cardId);
+    this.props.exhaustAllCards(cardId);
   };
 
   private showOrToggleModalPreviewCard = (
@@ -2022,7 +2018,7 @@ class Game extends Component<IProps, IState> {
         "noreferrer"
       );
     } else if (code === "e") {
-      this.props.exhaustCard();
+      this.props.exhaustAllCards();
     } else if (code === "s") {
       this.props.shuffleStack();
     } else if (!Number.isNaN(intCode)) {
@@ -2051,9 +2047,21 @@ class Game extends Component<IProps, IState> {
     const code = event.key.toLocaleLowerCase();
     let intCode = parseInt(code);
 
+    if (code === "meta") {
+      this.setState({
+        forcePan: true,
+      });
+    }
+
     if (event.key === "a" && !this.props.gameState.drawingArrow) {
       this.props.setDrawingArrow(true);
     }
+
+    // console.log("event.key", event.key);
+    // console.log("intCode", intCode);
+    // console.log("keyCode", event.keyCode);
+    // console.log("key", event.key);
+    // console.log("META", event.metaKey);
 
     // Map the shift cases
     if (event.key === "!") {
@@ -2160,6 +2168,13 @@ class Game extends Component<IProps, IState> {
   };
 
   private handleKeyUp = (event: KeyboardEvent) => {
+    const code = event.key.toLocaleLowerCase();
+    if (code === "meta") {
+      this.setState({
+        forcePan: false,
+      });
+    }
+
     if (event.key === "a" && this.props.gameState.drawingArrow) {
       this.props.setDrawingArrow(false);
       this.props.removeAnyDisconnectedArrows(myPeerRef);
@@ -2221,7 +2236,7 @@ class Game extends Component<IProps, IState> {
     event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>
   ) => {
     // If we're in pan mode and not drawing an arrow, there is nothing to do
-    if (this.props.panMode && !this.props.gameState.drawingArrow) {
+    if (this.panMode && !this.props.gameState.drawingArrow) {
       return false;
     }
 
@@ -2265,7 +2280,7 @@ class Game extends Component<IProps, IState> {
     event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>
   ) => {
     // If we're in pan mode and not drawing an arrow, there is nothing to do
-    if (this.props.panMode && !this.props.gameState.drawingArrow) {
+    if (this.panMode && !this.props.gameState.drawingArrow) {
       return false;
     }
     // if we were selecting, check for intersection
@@ -2412,7 +2427,7 @@ class Game extends Component<IProps, IState> {
   };
 
   private handleMouseMove = (event: any) => {
-    if (this.props.panMode && !this.props.gameState.drawingArrow) {
+    if (this.panMode && !this.props.gameState.drawingArrow) {
       return false;
     }
 
@@ -2455,6 +2470,55 @@ class Game extends Component<IProps, IState> {
       {
         label: "Redo",
         action: this.props.redo,
+      },
+      {
+        label: `Save game`,
+        action: () => {
+          this.props.generateGameStateSave();
+        },
+      },
+      {
+        label: "Load game",
+        fileLoadedAction: (jsonContents: string) => {
+          this.props.loadGameStateFromSave(jsonContents);
+        },
+        fileUploader: true,
+      },
+      {
+        label: "Reset Game",
+        action: () => {
+          if (this.props.confirm) {
+            this.props
+              .confirm({
+                description: "This will reset the game",
+              })
+              .then(() => {
+                this.props.resetApp();
+              })
+              .catch(() => {
+                // do nothing on cancel
+              });
+          }
+        },
+      },
+      {
+        label: "Quit Game",
+        action: () => {
+          if (this.props.confirm) {
+            this.props
+              .confirm({
+                description: "This will take you back to game selection screen",
+              })
+              .then(() => {
+                this.props.resetApp();
+                this.props.quitGame();
+                this.props.clearHistory();
+              })
+              .catch(() => {
+                // do nothing on cancel
+              });
+          }
+        },
       },
       {
         label: "Load Deck by ID",
@@ -2560,15 +2624,6 @@ class Game extends Component<IProps, IState> {
           ),
       },
       { label: "Remove all arrows", action: this.props.removeAllArrows },
-      { label: "Reset Game", action: this.props.resetApp },
-      {
-        label: "Quit Game",
-        action: () => {
-          this.props.resetApp();
-          this.props.quitGame();
-          this.props.clearHistory();
-        },
-      },
       {
         label: "",
         labelHTML: "Multiplayer <span><b>(BETA)</b></span>",
@@ -2695,4 +2750,4 @@ class Game extends Component<IProps, IState> {
   };
 }
 
-export default Game;
+export default withConfirm(Game);
