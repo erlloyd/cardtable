@@ -63,10 +63,20 @@ import { GameType } from "./game-modules/GameType";
 import GameManager from "./game-modules/GameModuleManager";
 import FlippableToken from "./FlippableToken";
 import { CardData } from "./external-api/common-card-data";
+import { ConfirmOptions, useConfirm } from "material-ui-confirm";
 
 const SCALE_BY = 1.02;
 
+// Wrapper for hook stuff
+const withConfirm = (Component: any) => {
+  return function WrappedComponent(props: IProps) {
+    const confirm = useConfirm();
+    return <Component {...props} confirm={confirm} />;
+  };
+};
+
 interface IProps {
+  confirm?: (options?: ConfirmOptions) => Promise<void>;
   currentGameType: GameType;
   currentPlayerRole: string | null;
   cards: ICardsState;
@@ -2474,13 +2484,40 @@ class Game extends Component<IProps, IState> {
         },
         fileUploader: true,
       },
-      { label: "Reset Game", action: this.props.resetApp },
+      {
+        label: "Reset Game",
+        action: () => {
+          if (this.props.confirm) {
+            this.props
+              .confirm({
+                description: "This will reset the game",
+              })
+              .then(() => {
+                this.props.resetApp();
+              })
+              .catch(() => {
+                // do nothing on cancel
+              });
+          }
+        },
+      },
       {
         label: "Quit Game",
         action: () => {
-          this.props.resetApp();
-          this.props.quitGame();
-          this.props.clearHistory();
+          if (this.props.confirm) {
+            this.props
+              .confirm({
+                description: "This will take you back to game selection screen",
+              })
+              .then(() => {
+                this.props.resetApp();
+                this.props.quitGame();
+                this.props.clearHistory();
+              })
+              .catch(() => {
+                // do nothing on cancel
+              });
+          }
         },
       },
       {
@@ -2713,4 +2750,4 @@ class Game extends Component<IProps, IState> {
   };
 }
 
-export default Game;
+export default withConfirm(Game);
