@@ -243,6 +243,7 @@ interface IState {
   previewCardModal: boolean;
   stageWidth: number;
   stageHeight: number;
+  forcePan: boolean;
 }
 class Game extends Component<IProps, IState> {
   static whyDidYouRender = true;
@@ -299,7 +300,12 @@ class Game extends Component<IProps, IState> {
       previewCardModal: false,
       stageWidth: window.innerWidth,
       stageHeight: window.innerHeight - playerHandHeightPx,
+      forcePan: false,
     };
+  }
+
+  get panMode(): boolean {
+    return this.props.panMode || this.state.forcePan;
   }
 
   public componentDidMount() {
@@ -685,7 +691,7 @@ class Game extends Component<IProps, IState> {
                 onContextMenu={this.handleContextMenu}
                 scale={this.props.gameState.stageZoom}
                 onWheel={this.handleWheel}
-                draggable={this.props.panMode}
+                draggable={this.panMode}
                 onDragMove={this.noOp}
                 onDragEnd={this.noOp}
                 preventDefault={true}
@@ -1241,10 +1247,7 @@ class Game extends Component<IProps, IState> {
       return;
     }
     const mousePos = this.getRelativePositionFromTarget(this.stage);
-    if (
-      this.props.panMode ||
-      getDistance(this.state.selectStartPos, mousePos) < 30
-    ) {
+    if (this.panMode || getDistance(this.state.selectStartPos, mousePos) < 30) {
       this.props.unselectAllCards();
     }
   };
@@ -2034,9 +2037,21 @@ class Game extends Component<IProps, IState> {
     const code = event.key.toLocaleLowerCase();
     let intCode = parseInt(code);
 
+    if (code === "meta") {
+      this.setState({
+        forcePan: true,
+      });
+    }
+
     if (event.key === "a" && !this.props.gameState.drawingArrow) {
       this.props.setDrawingArrow(true);
     }
+
+    // console.log("event.key", event.key);
+    // console.log("intCode", intCode);
+    // console.log("keyCode", event.keyCode);
+    // console.log("key", event.key);
+    // console.log("META", event.metaKey);
 
     // Map the shift cases
     if (event.key === "!") {
@@ -2143,6 +2158,13 @@ class Game extends Component<IProps, IState> {
   };
 
   private handleKeyUp = (event: KeyboardEvent) => {
+    const code = event.key.toLocaleLowerCase();
+    if (code === "meta") {
+      this.setState({
+        forcePan: false,
+      });
+    }
+
     if (event.key === "a" && this.props.gameState.drawingArrow) {
       this.props.setDrawingArrow(false);
       this.props.removeAnyDisconnectedArrows(myPeerRef);
@@ -2204,7 +2226,7 @@ class Game extends Component<IProps, IState> {
     event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>
   ) => {
     // If we're in pan mode and not drawing an arrow, there is nothing to do
-    if (this.props.panMode && !this.props.gameState.drawingArrow) {
+    if (this.panMode && !this.props.gameState.drawingArrow) {
       return false;
     }
 
@@ -2248,7 +2270,7 @@ class Game extends Component<IProps, IState> {
     event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>
   ) => {
     // If we're in pan mode and not drawing an arrow, there is nothing to do
-    if (this.props.panMode && !this.props.gameState.drawingArrow) {
+    if (this.panMode && !this.props.gameState.drawingArrow) {
       return false;
     }
     // if we were selecting, check for intersection
@@ -2395,7 +2417,7 @@ class Game extends Component<IProps, IState> {
   };
 
   private handleMouseMove = (event: any) => {
-    if (this.props.panMode && !this.props.gameState.drawingArrow) {
+    if (this.panMode && !this.props.gameState.drawingArrow) {
       return false;
     }
 
