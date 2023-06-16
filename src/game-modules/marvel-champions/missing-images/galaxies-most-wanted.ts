@@ -143,6 +143,34 @@ const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "16120": "https://hallofheroeshome.files.wordpress.com/2021/04/bb7.jpg?w=300",
   "16121": "https://hallofheroeshome.files.wordpress.com/2021/04/bb9.jpg?w=300",
 
+  // Galactic Artifacts
+  "16122": "https://hallofheroeshome.files.wordpress.com/2021/04/ga1.jpg?w=300",
+  "16123": "https://hallofheroeshome.files.wordpress.com/2021/04/ga2.jpg?w=300",
+  "16124": "https://hallofheroeshome.files.wordpress.com/2021/04/ga3.jpg?w=300",
+  "16125": "https://hallofheroeshome.files.wordpress.com/2021/04/ga4.jpg?w=300",
+  "16126": "https://hallofheroeshome.files.wordpress.com/2021/04/ga5.jpg?w=300",
+  "16127": "https://hallofheroeshome.files.wordpress.com/2021/04/ga6.jpg?h=300",
+  "16128": "https://hallofheroeshome.files.wordpress.com/2021/04/ga7.jpg?h=300",
+  "16129": "https://hallofheroeshome.files.wordpress.com/2021/04/ga8.jpg?h=300",
+  "16130": "https://hallofheroeshome.files.wordpress.com/2021/04/ga9.jpg?h=300",
+
+  // Kree Militant
+  "16131": "https://hallofheroeshome.files.wordpress.com/2021/04/k1.jpg?w=300",
+  "16132": "https://hallofheroeshome.files.wordpress.com/2021/04/k2.jpg?w=300",
+  "16133": "https://hallofheroeshome.files.wordpress.com/2021/04/k5.jpg?w=300",
+  "16134": "https://hallofheroeshome.files.wordpress.com/2021/04/k7.jpg?w=300",
+
+  // Menagerie Medley
+  "16135": "https://hallofheroeshome.files.wordpress.com/2021/04/mm1.jpg?w=300",
+  "16136": "https://hallofheroeshome.files.wordpress.com/2021/04/mm5.jpg?w=300",
+  "16137": "https://hallofheroeshome.files.wordpress.com/2021/04/mm8.jpg?w=300",
+
+  // Space Pirates
+  "16138": "https://hallofheroeshome.files.wordpress.com/2021/04/sp1.jpg?w=300",
+  "16139": "https://hallofheroeshome.files.wordpress.com/2021/04/sp2.jpg?w=300",
+  "16140": "https://hallofheroeshome.files.wordpress.com/2021/04/sp6.jpg?h=300",
+  "16141": "https://hallofheroeshome.files.wordpress.com/2021/04/sp7.jpg?w=300",
+
   // Ship Command
   "16142": "https://hallofheroeshome.files.wordpress.com/2021/04/sc1.jpg?w=300",
   "16143": "https://hallofheroeshome.files.wordpress.com/2021/04/sc2.jpg?w=300",
@@ -151,6 +179,9 @@ const MISSING_CARD_IMAGE_MAP: { [key: string]: string } = {
   "16146": "https://hallofheroeshome.files.wordpress.com/2021/04/sc5.jpg?w=300",
   "16147": "https://hallofheroeshome.files.wordpress.com/2021/04/sc6.jpg?w=300",
   "16148": "https://hallofheroeshome.files.wordpress.com/2021/04/sc7.jpg?w=300",
+
+  // Power Stone
+  "16149": "https://hallofheroeshome.files.wordpress.com/2021/04/ps.jpg?w=300",
 };
 
 export default MISSING_CARD_IMAGE_MAP;
