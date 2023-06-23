@@ -234,13 +234,22 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
         const rebel_bases2 = [...temp["Rebel Bases"]];
         const empire_bases2 = [...temp["Empire Bases"]];
         const always_available2 = [...temp["Always Available"]];
-        const galaxy_row2 = [
+        let galaxy_row2 = [
           ...temp["Galaxy Row Rebel"],
           ...temp["Galaxy Row Empire"],
           ...temp["Galaxy Row Neutral"],
           ...temp["Capital Ships"],
         ];
-        const leader = [...temp["Leader"]];
+        // Manually remove the leader for now
+        // TODO: make this better
+        let leader: CardData[] = [];
+        if (setCode.includes("Rebel")) {
+          leader = galaxy_row2.filter((c) => c.code === "g31");
+          galaxy_row2 = galaxy_row2.filter((c) => c.code !== "g31");
+        } else if (setCode.includes("Empire")) {
+          leader = galaxy_row2.filter((c) => c.code === "g16");
+          galaxy_row2 = galaxy_row2.filter((c) => c.code !== "g16");
+        }
         const force_tracker2 = [...temp["Force Tracker"]];
         returnVal = [
           rebel_starter2,
