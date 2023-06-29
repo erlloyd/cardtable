@@ -43,7 +43,9 @@ export const websocketMiddleware = (storeAPI: any) => {
   const ws = new WebSocket(
     `wss://${
       !!useDevWSServerLocalStorage ? "local-" : ""
-    }cardtable-server.middle-earth.house${!useDevWSServerLocalStorage ? ":3333" : ""}`
+    }cardtable-server.middle-earth.house${
+      !useDevWSServerLocalStorage ? ":3333" : ""
+    }`
   );
 
   const handleRemoteAction = (action: any) => {
@@ -247,6 +249,18 @@ export const websocketMiddleware = (storeAPI: any) => {
         })
       );
     } else if (action.type === connectToRemoteGame.type) {
+      const validate = /^[a-zA-Z]+-[a-zA-Z]+-[a-zA-Z]+$/;
+      if (!validate.test(action.payload)) {
+        console.error(`The game ${action.payload} is not a valid game name`);
+        storeAPI.dispatch(
+          sendNotification({
+            id: uuidv4(),
+            level: "warning",
+            message: `The game ${action.payload} is not a valid game name.`,
+          })
+        );
+        return;
+      }
       log.debug("going to connect to game " + action.payload);
       ws.send(
         JSON.stringify({
