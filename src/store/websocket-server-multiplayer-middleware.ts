@@ -39,19 +39,15 @@ const updateUrl = (gameName: string) => {
   window.history.pushState({}, "", url);
 };
 
-export const websocketMiddleware = (storeAPI: any) => {
-  const ws = new WebSocket(
-    `wss://${
-      !!useDevWSServerLocalStorage ? "local-" : ""
-    }cardtable-server.middle-earth.house${
-      !useDevWSServerLocalStorage ? ":3333" : ""
-    }`
-  );
+const RECONNECT_LIMIT = 10;
+const RECONNECT_RETRY_MS = 3000;
+let currentReconnectCount = 0;
 
+export const websocketMiddleware = (storeAPI: any) => {
   const handleRemoteAction = (action: any) => {
     if (!action.INITIAL_STATE_MSG) {
       if (!!action.RESYNC) {
-        ws.send(
+        ws?.send(
           JSON.stringify({
             type: "remoteaction",
             game: getMultiplayerGameName(storeAPI.getState()),
@@ -77,150 +73,203 @@ export const websocketMiddleware = (storeAPI: any) => {
     }
   };
 
-  ws.addEventListener("open", () => {
-    log.debug("We are connected to the WS");
+  let ws: WebSocket | null = new WebSocket(
+    `wss://${
+      !!useDevWSServerLocalStorage ? "local-" : ""
+    }cardtable-server.middle-earth.house${
+      !useDevWSServerLocalStorage ? ":3333" : ""
+    }`
+  );
 
-    //Check for a query param
-    const url = new URL(window.location as any);
-    const remoteQueryParam = url.searchParams.get("remote");
-    if (!!remoteQueryParam) {
-      // connect to the remote game
-      log.debug(`going to connect to ${remoteQueryParam}`);
-      ws.send(
-        JSON.stringify({
-          type: "connecttogame",
-          payload: { game: remoteQueryParam, playerRef: myPeerRef },
-        })
+  const setup = () => {
+    if (ws === null) {
+      ws = new WebSocket(
+        `wss://${
+          !!useDevWSServerLocalStorage ? "local-" : ""
+        }cardtable-server.middle-earth.house${
+          !useDevWSServerLocalStorage ? ":3333" : ""
+        }`
       );
-    } else {
-      // create a new game
-      // NOTE: Commented out to try to be specific about when we create a new game
-      // ws.send(
-      //   JSON.stringify({
-      //     type: "newgame",
+    }
+    ws.addEventListener("open", () => {
+      log.debug("We are connected to the WS");
+      if (currentReconnectCount !== 0) {
+        storeAPI.dispatch(
+          sendNotification({
+            id: uuidv4(),
+            level: "success",
+            message: `Successfully reconnected to the muliplayer server.`,
+          })
+        );
+      }
+      currentReconnectCount = 0;
+      //Check for a query param
+      const url = new URL(window.location as any);
+      const remoteQueryParam = url.searchParams.get("remote");
+      if (!!remoteQueryParam) {
+        // connect to the remote game
+        log.debug(`going to connect to ${remoteQueryParam}`);
+        ws?.send(
+          JSON.stringify({
+            type: "connecttogame",
+            payload: { game: remoteQueryParam, playerRef: myPeerRef },
+          })
+        );
+      } else {
+        // create a new game
+        // NOTE: Commented out to try to be specific about when we create a new game
+        // ws.send(
+        //   JSON.stringify({
+        //     type: "newgame",
+        //   })
+        // );
+      }
+    });
+
+    ws.addEventListener("close", () => {
+      log.warn("WS connection closed");
+      // try to reconnect the websocket
+      if (currentReconnectCount < RECONNECT_LIMIT) {
+        if (currentReconnectCount % 2 == 0) {
+          storeAPI.dispatch(
+            sendNotification({
+              id: uuidv4(),
+              level: "warning",
+              message: `No connection to the multiplayer server. Trying to reconnect.`,
+            })
+          );
+        }
+        currentReconnectCount = currentReconnectCount + 1;
+
+        ws = null;
+        setTimeout(() => {
+          setup();
+        }, RECONNECT_RETRY_MS);
+      } else {
+        storeAPI.dispatch(
+          sendNotification({
+            id: uuidv4(),
+            level: "warning",
+            message: `Lost connection to the multiplayer server. Try refreshing the page.`,
+          })
+        );
+      }
+    });
+
+    ws.addEventListener("error", () => {
+      log.warn("WS connection errored");
+      // storeAPI.dispatch(
+      //   sendNotification({
+      //     id: uuidv4(),
+      //     level: "error",
+      //     message: `There was a problem with the multiplayer server connection. Multiplayer games are unavailable`,
       //   })
       // );
-    }
-  });
 
-  ws.addEventListener("close", () => {
-    log.warn("WS connection closed");
-    storeAPI.dispatch(
-      sendNotification({
-        id: uuidv4(),
-        level: "warning",
-        message: `Lost connection to the multiplayer server. Try refreshing the page.`,
-      })
-    );
-  });
+      ws?.close();
+    });
 
-  ws.addEventListener("error", () => {
-    log.warn("WS connection errored");
-    storeAPI.dispatch(
-      sendNotification({
-        id: uuidv4(),
-        level: "error",
-        message: `There was a problem with the multiplayer server connection. Multiplayer games are unavailable`,
-      })
-    );
-  });
+    ws.addEventListener("message", (msg) => {
+      try {
+        const data: IMessage = JSON.parse(msg.data);
 
-  ws.addEventListener("message", (msg) => {
-    try {
-      const data: IMessage = JSON.parse(msg.data);
-
-      switch (data.type) {
-        case "newgamecreated":
-          storeAPI.dispatch(setMultiplayerGameName(data.payload as string));
-          storeAPI.dispatch(
-            sendNotification({
-              id: uuidv4(),
-              level: "success",
-              message: `Successfully created game ${data.payload as string}`,
-            })
-          );
-          updateUrl(data.payload);
-          break;
-        case "connectedtogame":
-          storeAPI.dispatch(setMultiplayerGameName(data.payload as string));
-          storeAPI.dispatch(requestResync());
-          storeAPI.dispatch(
-            sendNotification({
-              id: uuidv4(),
-              level: "success",
-              message: `Successfully connected to game ${
-                data.payload as string
-              }`,
-            })
-          );
-          updateUrl(data.payload);
-          break;
-        case "newplayerconnected":
-          const currentPlayerColors = getPlayerColors(storeAPI.getState());
-          const currentPlayerNumbers = getPlayerNumbers(storeAPI.getState());
-
-          let newPlayerNumbers = cloneDeep(currentPlayerNumbers);
-
-          // First, figure out the first available player number
-          if (
-            !Object.keys(currentPlayerNumbers).includes(data.payload.playerRef)
-          ) {
-            const nextPlayerNum = misingPlayerNumInSeq(
-              Object.values(currentPlayerNumbers)
-            );
-            newPlayerNumbers[data.payload.playerRef] = nextPlayerNum;
-            log.debug(
-              "new player added, going to be player number " + nextPlayerNum
-            );
+        switch (data.type) {
+          case "newgamecreated":
+            storeAPI.dispatch(setMultiplayerGameName(data.payload as string));
             storeAPI.dispatch(
               sendNotification({
                 id: uuidv4(),
                 level: "success",
-                message: `Player number ${nextPlayerNum} joined the game!`,
+                message: `Successfully created game ${data.payload as string}`,
               })
             );
-          }
-
-          let newPlayerColors = cloneDeep(currentPlayerColors);
-          if (
-            !Object.keys(currentPlayerColors).includes(data.payload.playerRef)
-          ) {
-            const num = newPlayerNumbers[data.payload.playerRef];
-            const playerColorByNum =
-              possibleColors[(num - 1) % possibleColors.length];
-            newPlayerColors[data.payload.playerRef] = playerColorByNum;
-            log.debug(
-              "new player added, going to be player color " + playerColorByNum
+            updateUrl(data.payload);
+            break;
+          case "connectedtogame":
+            storeAPI.dispatch(setMultiplayerGameName(data.payload as string));
+            storeAPI.dispatch(requestResync());
+            storeAPI.dispatch(
+              sendNotification({
+                id: uuidv4(),
+                level: "success",
+                message: `Successfully connected to game ${
+                  data.payload as string
+                }`,
+              })
             );
-          }
+            updateUrl(data.payload);
+            break;
+          case "newplayerconnected":
+            const currentPlayerColors = getPlayerColors(storeAPI.getState());
+            const currentPlayerNumbers = getPlayerNumbers(storeAPI.getState());
 
-          storeAPI.dispatch(
-            setAllPlayerInfo({
-              colors: newPlayerColors,
-              numbers: newPlayerNumbers,
-            })
-          );
-          break;
-        case "playerleft":
-          const playerNums = getPlayerNumbers(storeAPI.getState());
-          const playerNumToRemove = playerNums[data.payload.playerRef];
-          storeAPI.dispatch(removePlayer(data.payload.playerRef));
-          storeAPI.dispatch(
-            sendNotification({
-              id: uuidv4(),
-              level: "info",
-              message: `Player number ${playerNumToRemove} left the game`,
-            })
-          );
-          break;
-        case "remoteaction":
-          handleRemoteAction(data.payload);
-          break;
+            let newPlayerNumbers = cloneDeep(currentPlayerNumbers);
+
+            // First, figure out the first available player number
+            if (
+              !Object.keys(currentPlayerNumbers).includes(
+                data.payload.playerRef
+              )
+            ) {
+              const nextPlayerNum = misingPlayerNumInSeq(
+                Object.values(currentPlayerNumbers)
+              );
+              newPlayerNumbers[data.payload.playerRef] = nextPlayerNum;
+              log.debug(
+                "new player added, going to be player number " + nextPlayerNum
+              );
+              storeAPI.dispatch(
+                sendNotification({
+                  id: uuidv4(),
+                  level: "success",
+                  message: `Player number ${nextPlayerNum} joined the game!`,
+                })
+              );
+            }
+
+            let newPlayerColors = cloneDeep(currentPlayerColors);
+            if (
+              !Object.keys(currentPlayerColors).includes(data.payload.playerRef)
+            ) {
+              const num = newPlayerNumbers[data.payload.playerRef];
+              const playerColorByNum =
+                possibleColors[(num - 1) % possibleColors.length];
+              newPlayerColors[data.payload.playerRef] = playerColorByNum;
+              log.debug(
+                "new player added, going to be player color " + playerColorByNum
+              );
+            }
+
+            storeAPI.dispatch(
+              setAllPlayerInfo({
+                colors: newPlayerColors,
+                numbers: newPlayerNumbers,
+              })
+            );
+            break;
+          case "playerleft":
+            const playerNums = getPlayerNumbers(storeAPI.getState());
+            const playerNumToRemove = playerNums[data.payload.playerRef];
+            storeAPI.dispatch(removePlayer(data.payload.playerRef));
+            storeAPI.dispatch(
+              sendNotification({
+                id: uuidv4(),
+                level: "info",
+                message: `Player number ${playerNumToRemove} left the game`,
+              })
+            );
+            break;
+          case "remoteaction":
+            handleRemoteAction(data.payload);
+            break;
+        }
+      } catch (e) {
+        log.error(`Problem handling message:`, e);
       }
-    } catch (e) {
-      log.error(`Problem handling message:`, e);
-    }
-  });
+    });
+  };
+
+  setup();
 
   return (next: any) => (action: any) => {
     const mpGameName = getMultiplayerGameName(storeAPI.getState());
@@ -242,7 +291,7 @@ export const websocketMiddleware = (storeAPI: any) => {
 
     if (action.type === createNewMultiplayerGame.type) {
       log.debug("going to create new game");
-      ws.send(
+      ws?.send(
         JSON.stringify({
           type: "newgame",
           payload: { playerRef: myPeerRef },
@@ -262,7 +311,7 @@ export const websocketMiddleware = (storeAPI: any) => {
         return;
       }
       log.debug("going to connect to game " + action.payload);
-      ws.send(
+      ws?.send(
         JSON.stringify({
           type: "connecttogame",
           payload: { game: action.payload, playerRef: myPeerRef },
@@ -270,8 +319,8 @@ export const websocketMiddleware = (storeAPI: any) => {
       );
       // setupConnection(activeCon, storeAPI);
     } else if (action.type === requestResync.type) {
-      if (!!ws.OPEN && !!mpGameName) {
-        ws.send(
+      if (!!ws?.OPEN && !!mpGameName) {
+        ws?.send(
           JSON.stringify({
             type: "resync",
             game: mpGameName,
@@ -283,7 +332,7 @@ export const websocketMiddleware = (storeAPI: any) => {
 
     if (
       !action.REMOTE_ACTION &&
-      !!ws.OPEN &&
+      !!ws?.OPEN &&
       !blacklistRemoteActions[action.type] &&
       !!mpGameName
     ) {
