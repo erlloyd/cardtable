@@ -34,6 +34,7 @@ import {
   doneLoadingJSON,
   removePlayer,
   showSpecificCardLoader,
+  togglePreviewCardRotation,
 } from "../features/game/game.slice";
 import { toggleNotes } from "../features/notes/notes.slice";
 import {
@@ -77,6 +78,7 @@ export const blacklistRemoteActions = {
   [clearNotification.type]: true,
   [removePlayer.type]: true,
   [showSpecificCardLoader.type]: true,
+  [togglePreviewCardRotation.type]: true,
 };
 
 export const misingPlayerNumInSeq = (
