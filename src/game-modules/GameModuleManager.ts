@@ -25,7 +25,6 @@ const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
     type: GameType.StarWarsDeckbuildingGame,
     module: new StarWarsDeckbuildingGameModule(),
-    hidden: true,
   },
   {
     type: GameType.StandardDeck,

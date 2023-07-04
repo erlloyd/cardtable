@@ -28,6 +28,8 @@ import {
 } from "./middleware-utilities";
 import log from "loglevel";
 import { sendNotification } from "../features/notifications/notifications.slice";
+import { RootState } from "./rootReducer";
+import { anyCardsDragging } from "../features/cards/cards.selectors";
 interface IMessage {
   type: string;
   payload: any;
@@ -39,12 +41,15 @@ const updateUrl = (gameName: string) => {
   window.history.pushState({}, "", url);
 };
 
+const STATE_CHECK_INTERVAL_MS = 5000;
 const RECONNECT_LIMIT = 10;
 const RECONNECT_RETRY_MS = 3000;
 let currentReconnectCount = 0;
+let stateCheckTimer: NodeJS.Timer | undefined;
 
 export const websocketMiddleware = (storeAPI: any) => {
   const handleRemoteAction = (action: any) => {
+    // console.log("remote action", action);
     if (!action.INITIAL_STATE_MSG) {
       if (!!action.RESYNC) {
         ws?.send(
@@ -124,10 +129,43 @@ export const websocketMiddleware = (storeAPI: any) => {
         //   })
         // );
       }
+
+      if (!!stateCheckTimer) {
+        clearInterval(stateCheckTimer);
+      }
+
+      stateCheckTimer = setInterval(() => {
+        const currentState: RootState = cloneDeep(storeAPI.getState());
+
+        const mpGameName = getMultiplayerGameName(storeAPI.getState());
+        const nothingDragging = anyCardsDragging(currentState); // THIS IS NAMED POORLY
+        // only check state if no cards are moving
+        if (nothingDragging && !!mpGameName) {
+          // @ts-ignore
+          delete currentState.cardsData;
+
+          ws?.send(
+            JSON.stringify({
+              PING: true,
+              state: currentState,
+              game: mpGameName,
+            })
+          );
+        }
+        // else {
+        //   log.debug(
+        //     `Some card is dragging or no multiplayer game, not checking remote state sync`
+        //   );
+        // }
+      }, STATE_CHECK_INTERVAL_MS);
     });
 
     ws.addEventListener("close", () => {
       log.warn("WS connection closed");
+      if (!!stateCheckTimer) {
+        clearInterval(stateCheckTimer);
+        stateCheckTimer = undefined;
+      }
       // try to reconnect the websocket
       if (currentReconnectCount < RECONNECT_LIMIT) {
         if (currentReconnectCount % 2 == 0) {
