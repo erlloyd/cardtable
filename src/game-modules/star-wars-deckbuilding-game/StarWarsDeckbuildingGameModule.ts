@@ -148,8 +148,12 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
   additionalRotationForCardForRole(
     role: string,
     _code: string,
+    faceup: boolean,
     typeCode?: string
   ): number {
+    // if we're facedown, then we don't rotate
+    if (!faceup) return 0;
+
     if (role === "Empire" && typeCode === "galaxy_row_rebel") {
       return 180;
     }

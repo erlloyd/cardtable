@@ -398,6 +398,7 @@ class Card extends Component<IProps, IState> {
                 ).additionalRotationForCardForRole(
                   this.props.currentPlayerRole ?? "",
                   this.props.code,
+                  this.props.faceup,
                   this.props.typeCode
                 ) +
                 (this.props.additionalRotation ?? 0)

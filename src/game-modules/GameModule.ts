@@ -172,6 +172,7 @@ export abstract class GameModule {
   additionalRotationForCardForRole(
     _role: string,
     _code: string,
+    _faceup: boolean,
     _typeCode?: string
   ): number {
     return 0;
