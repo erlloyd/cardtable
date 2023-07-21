@@ -94,6 +94,7 @@ interface IState {
     confused: boolean;
     tough: boolean;
   };
+  dragImageLoaded: boolean;
 }
 
 const stringArraysEqual = (array1: string[], array2: string[]) => {
@@ -120,6 +121,7 @@ class Card extends Component<IProps, IState> {
           confused: state.tokenImagesLoaded.confused,
           tough: state.tokenImagesLoaded.tough,
         },
+        dragImageLoaded: state.dragImageLoaded,
       };
     }
     // No state update necessary
@@ -130,6 +132,7 @@ class Card extends Component<IProps, IState> {
   private stunnedImg: HTMLImageElement;
   private confusedImg: HTMLImageElement;
   private toughImg: HTMLImageElement;
+  private dragImg: HTMLImageElement;
   private unmounted: boolean;
   private touchTimer: any = null;
   private rect: RectRef | null = null;
@@ -150,13 +153,26 @@ class Card extends Component<IProps, IState> {
         confused: false,
         tough: false,
       },
+      dragImageLoaded: false,
     };
 
     this.initCardImages(props);
 
+    this.dragImg = new Image();
+
     this.stunnedImg = new Image();
     this.confusedImg = new Image();
     this.toughImg = new Image();
+
+    this.dragImg.onload = () => {
+      if (!this.unmounted) {
+        this.setState({
+          dragImageLoaded: true,
+        });
+      }
+    };
+
+    this.dragImg.src = "/images/standard/share.png";
 
     // STUNNED
     this.stunnedImg.onload = () => {
@@ -349,6 +365,7 @@ class Card extends Component<IProps, IState> {
     widthToUse: number,
     imageLoaded: boolean
   ) => {
+    console.log("dragImageLoaded: ", this.state.dragImageLoaded);
     const imgToUse = imageLoaded
       ? this.imgs.find((i) => i.complete && i.naturalHeight !== 0)
       : undefined;
@@ -487,6 +504,12 @@ class Card extends Component<IProps, IState> {
       y: dragHandleSize / 2,
     };
 
+    const dragHandleScale = this.getScale(
+      this.dragImg,
+      dragHandleSize,
+      dragHandleSize
+    );
+
     const cardStackDragHandle =
       (this.props.numCardsInStack || 1) > 1 &&
       !this.props.isGhost &&
@@ -503,18 +526,29 @@ class Card extends Component<IProps, IState> {
             window.document.body.style.cursor = "default";
           }}
         >
-          <Group width={dragHandleSize} height={dragHandleSize}>
-            <Rect
-              offset={dragHandleOffset}
-              cornerRadius={[9, 9, 9, 9]}
-              opacity={0.6}
-              fill={"black"}
-              shadowForStrokeEnabled={false}
-              hitStrokeWidth={0}
-              width={dragHandleSize}
-              height={dragHandleSize}
-            />
-            <Text
+          <Rect
+            offset={dragHandleOffset}
+            cornerRadius={[9, 9, 9, 9]}
+            opacity={0.6}
+            fill={"black"}
+            shadowForStrokeEnabled={false}
+            hitStrokeWidth={0}
+            width={dragHandleSize}
+            height={dragHandleSize}
+          />
+          <Rect
+            offset={{ x: dragHandleOffset.x - 2, y: dragHandleOffset.y + 2 }}
+            rotation={this.props.exhausted ? -90 : 0}
+            cornerRadius={[9, 9, 9, 9]}
+            fillPatternImage={
+              this.state.dragImageLoaded ? this.dragImg : undefined
+            }
+            fillPatternScaleX={dragHandleScale.width}
+            fillPatternScaleY={dragHandleScale.height}
+            width={dragHandleSize}
+            height={dragHandleSize}
+          />
+          {/* <Text
               rotation={this.props.exhausted ? -90 : 0}
               offset={dragHandleOffset}
               key={`${this.props.id}-cardstackdraghandleicon`}
@@ -526,8 +560,7 @@ class Card extends Component<IProps, IState> {
               fontFamily={'"Font Awesome 6 Free"'}
               fill={"white"}
               text={`\uf14d`}
-            />
-          </Group>
+            /> */}
         </Group>
       ) : null;
 

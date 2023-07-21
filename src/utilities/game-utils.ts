@@ -7,7 +7,7 @@ export const cacheCommonImages = (gameType: GameType) => {
 
   // we don't need to cache background image because by loading a new
   // game type we will cache that automatically. Same with the first player token
-  const imgs = ([] as string[])
+  const imgs = (["/images/standard/share.png"] as string[])
     .concat(mapping.possibleIcons.map((i) => i.iconImageUrl))
     .concat(mapping.modifiers.map((m) => m.icon))
     .concat(
