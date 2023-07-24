@@ -32,11 +32,7 @@ import DeckLoader from "./DeckLoader";
 import EncounterLoaderContainer from "./EncounterLoaderContainer";
 import { ICardData } from "./features/cards-data/initialState";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
-import {
-  ICardsState,
-  ICardStack,
-  IPlayerBoard,
-} from "./features/cards/initialState";
+import { ICardsState, ICardStack } from "./features/cards/initialState";
 import { ICounter, IFlippableToken } from "./features/counters/initialState";
 import { IGameState } from "./features/game/initialState";
 import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";

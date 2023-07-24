@@ -9,7 +9,7 @@ interface IProps {
   pos: Vector2d;
   board: IPlayerBoard;
   handleContextMenu: (event: KonvaEventObject<PointerEvent>) => void;
-  onDragEnd: (event: KonvaEventObject<DragEvent>) => void;
+  onDragEnd: (id: string, event: KonvaEventObject<DragEvent>) => void;
 }
 
 interface IState {
@@ -80,7 +80,7 @@ class PlayerBoard extends Component<IProps, IState> {
         draggable={true}
         onClick={this.cancelBubble}
         onContextMenu={this.props.handleContextMenu}
-        onDragEnd={this.props.onDragEnd}
+        onDragEnd={this.handleDragEnd}
         onTouchStart={this.handleTouchStart}
         onMouseDown={this.cancelBubble}
         onTouchMove={this.handleTouchMove}
@@ -124,6 +124,12 @@ class PlayerBoard extends Component<IProps, IState> {
     if (!!this.touchTimer) {
       clearTimeout(this.touchTimer);
       this.touchTimer = null;
+    }
+  };
+
+  private handleDragEnd = (event: KonvaEventObject<DragEvent>) => {
+    if (!!this.props.onDragEnd) {
+      this.props.onDragEnd(this.props.id, event);
     }
   };
 }

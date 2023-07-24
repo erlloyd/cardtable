@@ -38,6 +38,7 @@ import {
   ICardSlot,
   ICardsState,
   ICardStack,
+  IDropTarget,
   initialState,
 } from "./initialState";
 import { myPeerRef } from "../../constants/app-constants";
@@ -233,38 +234,14 @@ const getDropTargetCard = (
   sizeType: CardSizeType,
   snapping: boolean = false,
   allowedDistance: number = CARD_DROP_TARGET_DISTANCE
-): ICardStack | null => {
+): IDropTarget | null => {
   // go through and find if any unselected cards are potential drop targets
   // If so, get the closest one. But only if the card is owned / controlled by us
 
   // NOTE: We're also treating "slots" on a player board as potential drop targets
 
-  const possibleDropTargets: { distance: number; card: ICardStack }[] = [];
-
-  // First go through all player board slots
-  let slots: ICardSlot[] = [];
-  state.playerBoards.forEach((pb, pbIndex) => {
-    pb.cardSlots.forEach((slot, slotIndex) => {
-      console.log(
-        "slots: about to check distance between drag and slot",
-        draggedCardPosition,
-        { x: pb.x + slot.relativeX, y: pb.y + slot.relativeY }
-      );
-      const distance = getDistance(
-        { x: pb.x + slot.relativeX, y: pb.y + slot.relativeY },
-        draggedCardPosition
-      );
-      if (distance < allowedDistance) {
-        console.log("slots: MATCH");
-        possibleDropTargets.push({
-          distance,
-          card: makeFakeCardStackFromJsonId(
-            `playerboard-${pbIndex}-${slotIndex}`
-          ),
-        });
-      }
-    });
-  });
+  const possibleDropTargets: { distance: number; dropTarget: IDropTarget }[] =
+    [];
 
   if (snapping && possibleDropTargets.length === 0) {
     const wouldSnapX =
@@ -281,7 +258,7 @@ const getDropTargetCard = (
         // give the smallest possible distance so it will be picked
         possibleDropTargets.push({
           distance: 0,
-          card,
+          dropTarget: { cardStack: card },
         });
       }
     });
@@ -297,15 +274,38 @@ const getDropTargetCard = (
       if (distance < allowedDistance) {
         possibleDropTargets.push({
           distance,
-          card,
+          dropTarget: { cardStack: card },
         });
       }
     });
   }
 
+  // Lastly go through all player board slots
+  if (possibleDropTargets.length === 0) {
+    state.playerBoards.forEach((pb, pbIndex) => {
+      pb.cardSlots.forEach((slot, slotIndex) => {
+        const distance = getDistance(
+          { x: pb.x + slot.relativeX, y: pb.y + slot.relativeY },
+          draggedCardPosition
+        );
+        if (distance < allowedDistance) {
+          possibleDropTargets.push({
+            distance,
+            dropTarget: {
+              newLocation: {
+                x: pb.x + slot.relativeX,
+                y: pb.y + slot.relativeY,
+              },
+            },
+          });
+        }
+      });
+    });
+  }
+
   return (
-    possibleDropTargets.sort((c1, c2) => c1.distance - c2.distance)[0]?.card ??
-    null
+    possibleDropTargets.sort((c1, c2) => c1.distance - c2.distance)[0]
+      ?.dropTarget ?? null
   );
 };
 
@@ -512,10 +512,19 @@ const cardMoveWithSnapReducer: CaseReducer<
     // Only update the drop target card if the card would actually
     // be different (based on id). Otherwise we'll cause unnecessary
     // re-renders
-    if (
-      state.dropTargetCards[(action as any).ACTOR_REF]?.id !==
-      potentialDropTargetCard?.id
-    ) {
+    const cardStackChanged =
+      state.dropTargetCards[(action as any).ACTOR_REF]?.cardStack?.id !==
+      potentialDropTargetCard?.cardStack?.id;
+
+    const newLocationXChanged =
+      state.dropTargetCards[(action as any).ACTOR_REF]?.newLocation?.x !==
+      potentialDropTargetCard?.newLocation?.x;
+
+    const newLocationYChanged =
+      state.dropTargetCards[(action as any).ACTOR_REF]?.newLocation?.y !==
+      potentialDropTargetCard?.newLocation?.y;
+
+    if (cardStackChanged || newLocationXChanged || newLocationYChanged) {
       state.dropTargetCards[(action as any).ACTOR_REF] =
         potentialDropTargetCard;
     }
@@ -644,7 +653,7 @@ const endCardMoveWithSnapReducer: CaseReducer<
   ICardsState,
   PayloadAction<{ id: string; snap: boolean }>
 > = (state, action) => {
-  let dropTargetCards: ICardDetails[] = [];
+  let dropTargetCardStacks: ICardStack[] = [];
   let attachTargetCardStacks: ICardStack[] = [];
 
   const cardsThatWereDragging = state.cards.filter(
@@ -667,7 +676,7 @@ const endCardMoveWithSnapReducer: CaseReducer<
       attachTargetCardStacks.push(card);
     } else if (!!state.dropTargetCards[(action as any).ACTOR_REF]) {
       // Add the cards to the drop Target card stack
-      dropTargetCards = dropTargetCards.concat(card.cardStack);
+      dropTargetCardStacks = dropTargetCardStacks.concat(card);
     }
   });
 
@@ -709,8 +718,8 @@ const endCardMoveWithSnapReducer: CaseReducer<
         log.error("How did this happen??");
       }
     });
-    // Now, if there was a drop target card, remove all those cards from the state
-  } else if (!!state.dropTargetCards[(action as any).ACTOR_REF]) {
+    // Now, if there was a drop target card (and an actual card stack), remove all those cards from the state
+  } else if (!!state.dropTargetCards[(action as any).ACTOR_REF]?.cardStack) {
     state.cards = state.cards.filter(
       (card) =>
         !(
@@ -720,13 +729,44 @@ const endCardMoveWithSnapReducer: CaseReducer<
     );
 
     const dropTargetCard = state.cards.find(
-      (card) => card.id === state.dropTargetCards[(action as any).ACTOR_REF]?.id
+      (card) =>
+        card.id ===
+        state.dropTargetCards[(action as any).ACTOR_REF]?.cardStack?.id
     );
-    if (!!dropTargetCard && dropTargetCards.length > 0) {
+    if (!!dropTargetCard && dropTargetCardStacks.length > 0) {
       // add the cards we've collected to the top of the stack
-      dropTargetCard.cardStack = dropTargetCards.concat(
+      const cardsCollected = dropTargetCardStacks.reduce(
+        (collected, card) => collected.concat(card.cardStack),
+        [] as ICardDetails[]
+      );
+
+      dropTargetCard.cardStack = cardsCollected.concat(
         dropTargetCard.cardStack
       );
+    }
+  } else if (!!state.dropTargetCards[(action as any).ACTOR_REF]?.newLocation) {
+    const newLocation =
+      state.dropTargetCards[(action as any).ACTOR_REF]?.newLocation;
+    // we need to add all the dragging cards to a single stack in the new location.
+    // grab the first cardStack from our dropTargets to use as the "base"
+    const newBaseStack = dropTargetCardStacks.shift();
+    if (!!newBaseStack && newLocation) {
+      // Remove all the _other_ moving cards
+      state.cards = state.cards.filter(
+        (card) => !dropTargetCardStacks.find((c) => c.id === card.id)
+      );
+
+      // Set it to the new location
+      newBaseStack.x = newLocation.x;
+      newBaseStack.y = newLocation.y;
+
+      // add the cards we've collected to the top of the stack
+      const cardsCollected = dropTargetCardStacks.reduce(
+        (collected, card) => collected.concat(card.cardStack),
+        [] as ICardDetails[]
+      );
+
+      newBaseStack.cardStack = cardsCollected.concat(newBaseStack.cardStack);
     }
   }
 
@@ -1140,6 +1180,18 @@ const clearMyGhostCardsReducer: CaseReducer<ICardsState> = (state, action) => {
   );
 };
 
+const movePlayerBoardReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{ id: string; newPos: Vector2d }>
+> = (state, action) => {
+  const board = state.playerBoards.find((pb) => pb.id === action.payload.id);
+
+  if (!!board) {
+    board.x = action.payload.newPos.x;
+    board.y = action.payload.newPos.y;
+  }
+};
+
 // slice
 const cardsSlice = createSlice({
   name: "cards",
@@ -1176,6 +1228,7 @@ const cardsSlice = createSlice({
     removeExtraIcon: removeExtraIconReducer,
     toggleExtraIcon: toggleExtraIconReducer,
     clearMyGhostCards: clearMyGhostCardsReducer,
+    movePlayerBoard: movePlayerBoardReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -1718,6 +1771,7 @@ export const {
   removeExtraIcon,
   toggleExtraIcon,
   clearMyGhostCards,
+  movePlayerBoard,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

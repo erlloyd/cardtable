@@ -5,10 +5,16 @@ import {
   StatusTokenType,
 } from "../../constants/card-constants";
 import JSONCrush from "jsoncrush";
+import { Vector2d } from "konva/lib/types";
 
 export interface IPlayerHand {
   role: string | null;
   cards: ICardDetails[];
+}
+
+export interface IDropTarget {
+  cardStack?: ICardStack;
+  newLocation?: Vector2d;
 }
 
 export interface ICardStack {
@@ -65,7 +71,7 @@ export interface ICardsState {
   ghostCards: ICardStack[];
   playerHands: IPlayerHand[];
   playerBoards: IPlayerBoard[];
-  dropTargetCards: { [key: string]: ICardStack | null };
+  dropTargetCards: { [key: string]: IDropTarget | null };
   attachTargetCards: { [key: string]: ICardStack | null };
   panMode: boolean;
   multiselectMode: boolean;
@@ -167,14 +173,14 @@ export const initialState: ICardsState = {
     playerBoards: [
       {
         id: "this is some id",
-        cardSlots: [{ relativeX: 350, relativeY: 200 }],
+        cardSlots: [{ relativeX: 345, relativeY: 191 }],
         code: "this is some code",
         image:
           "https://ik.imagekit.io/cardtable/star_wars_deckbuilding_game/solo_leaders/leaders_empire_ai_card.png",
         height: 350,
         width: 455,
-        x: 50,
-        y: 50,
+        x: 0,
+        y: 0,
         locked: false,
       },
     ],
