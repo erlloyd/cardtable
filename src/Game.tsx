@@ -32,7 +32,11 @@ import DeckLoader from "./DeckLoader";
 import EncounterLoaderContainer from "./EncounterLoaderContainer";
 import { ICardData } from "./features/cards-data/initialState";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
-import { ICardsState, ICardStack } from "./features/cards/initialState";
+import {
+  ICardsState,
+  ICardStack,
+  IPlayerBoard,
+} from "./features/cards/initialState";
 import { ICounter, IFlippableToken } from "./features/counters/initialState";
 import { IGameState } from "./features/game/initialState";
 import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
@@ -64,6 +68,7 @@ import GameManager from "./game-modules/GameModuleManager";
 import FlippableToken from "./FlippableToken";
 import { CardData } from "./external-api/common-card-data";
 import { ConfirmOptions, useConfirm } from "material-ui-confirm";
+import PlayerBoardsContainer from "./PlayerBoardsContainer";
 
 const SCALE_BY = 1.02;
 
@@ -737,6 +742,7 @@ class Game extends Component<IProps, IState> {
                         }
                       ></Rect>
                     </Group>
+                    <PlayerBoardsContainer></PlayerBoardsContainer>
                     <Group>
                       {this.props.counters.map((counter) => (
                         <Counter

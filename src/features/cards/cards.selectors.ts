@@ -5,6 +5,8 @@ import { ICardStack } from "./initialState";
 export const getCards = (state: RootState) => state.liveState.present.cards;
 export const getPlayerHands = (state: RootState) =>
   state.liveState.present.cards.playerHands;
+export const getPlayerBoards = (state: RootState) =>
+  state.liveState.present.cards.playerBoards;
 
 export const getCardMapById = createSelector(getCards, (cards) => {
   return cards.cards.reduce((map: { [k: string]: ICardStack }, card) => {

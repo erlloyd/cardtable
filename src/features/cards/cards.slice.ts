@@ -35,12 +35,14 @@ import { fetchDecklistById } from "./cards.thunks";
 import {
   generateDefaultPlayerHands,
   ICardDetails,
+  ICardSlot,
   ICardsState,
   ICardStack,
   initialState,
 } from "./initialState";
 import { myPeerRef } from "../../constants/app-constants";
 import log from "loglevel";
+import { makeFakeCardStackFromJsonId } from "../../utilities/card-utils";
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 const CARD_ATTACH_TARGET_MIN_DISTANCE = 50;
@@ -234,9 +236,37 @@ const getDropTargetCard = (
 ): ICardStack | null => {
   // go through and find if any unselected cards are potential drop targets
   // If so, get the closest one. But only if the card is owned / controlled by us
+
+  // NOTE: We're also treating "slots" on a player board as potential drop targets
+
   const possibleDropTargets: { distance: number; card: ICardStack }[] = [];
 
-  if (snapping) {
+  // First go through all player board slots
+  let slots: ICardSlot[] = [];
+  state.playerBoards.forEach((pb, pbIndex) => {
+    pb.cardSlots.forEach((slot, slotIndex) => {
+      console.log(
+        "slots: about to check distance between drag and slot",
+        draggedCardPosition,
+        { x: pb.x + slot.relativeX, y: pb.y + slot.relativeY }
+      );
+      const distance = getDistance(
+        { x: pb.x + slot.relativeX, y: pb.y + slot.relativeY },
+        draggedCardPosition
+      );
+      if (distance < allowedDistance) {
+        console.log("slots: MATCH");
+        possibleDropTargets.push({
+          distance,
+          card: makeFakeCardStackFromJsonId(
+            `playerboard-${pbIndex}-${slotIndex}`
+          ),
+        });
+      }
+    });
+  });
+
+  if (snapping && possibleDropTargets.length === 0) {
     const wouldSnapX =
       Math.round(
         draggedCardPosition.x / cardConstants[sizeType].GRID_SNAP_WIDTH
@@ -790,6 +820,7 @@ const flipCardsReducer: CaseReducer<ICardsState> = (state, action) => {
 const resetCardsReducer: CaseReducer<ICardsState> = (state) => {
   state.cards = [];
   state.playerHands = generateDefaultPlayerHands();
+  state.playerBoards = [];
 };
 
 const toggleTokenReducer: CaseReducer<
@@ -1108,7 +1139,6 @@ const clearMyGhostCardsReducer: CaseReducer<ICardsState> = (state, action) => {
     (gc) => gc.controlledBy !== (action as any).ACTOR_REF
   );
 };
-// Selectors
 
 // slice
 const cardsSlice = createSlice({
@@ -1217,6 +1247,7 @@ const cardsSlice = createSlice({
 
     builder.addCase(resetApp, (state) => {
       state.cards = [];
+      state.playerBoards = [];
       state.playerHands = generateDefaultPlayerHands();
       // state.previewCard = null;
       state.dropTargetCards = {};

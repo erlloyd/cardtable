@@ -38,6 +38,23 @@ export interface ICardStack {
   sizeType: CardSizeType;
 }
 
+export interface ICardSlot {
+  relativeX: number;
+  relativeY: number;
+}
+
+export interface IPlayerBoard {
+  id: string;
+  code: string;
+  x: number;
+  y: number;
+  height: number;
+  width: number;
+  cardSlots: ICardSlot[];
+  locked: boolean;
+  image: string;
+}
+
 export interface ICardDetails {
   jsonId: string;
 }
@@ -47,6 +64,7 @@ export interface ICardsState {
   cards: ICardStack[];
   ghostCards: ICardStack[];
   playerHands: IPlayerHand[];
+  playerBoards: IPlayerBoard[];
   dropTargetCards: { [key: string]: ICardStack | null };
   attachTargetCards: { [key: string]: ICardStack | null };
   panMode: boolean;
@@ -64,6 +82,11 @@ const queryParamsHandsString = queryParams.get("hands");
 const queryParamsHands = !!queryParamsHandsString
   ? JSON.parse(JSONCrush.uncrush(queryParamsHandsString))
   : null;
+
+// const queryParamsHandsString = queryParams.get("hands");
+// const queryParamsHands = !!queryParamsHandsString
+//   ? JSON.parse(JSONCrush.uncrush(queryParamsHandsString))
+//   : null;
 
 const queryParamsCardsString = queryParams.get("cards");
 const queryParamsCards = !!queryParamsCardsString
@@ -128,6 +151,7 @@ localStorageState.outOfSyncWithRemoteCount = 0;
 const defaultState: ICardsState = {
   outOfSyncWithRemoteCount: 0,
   cards: [],
+  playerBoards: [],
   ghostCards: [],
   dropTargetCards: {},
   attachTargetCards: {},
@@ -139,4 +163,20 @@ const defaultState: ICardsState = {
 export const initialState: ICardsState = {
   ...defaultState,
   ...localStorageState,
+  ...{
+    playerBoards: [
+      {
+        id: "this is some id",
+        cardSlots: [{ relativeX: 350, relativeY: 200 }],
+        code: "this is some code",
+        image:
+          "https://ik.imagekit.io/cardtable/star_wars_deckbuilding_game/solo_leaders/leaders_empire_ai_card.png",
+        height: 350,
+        width: 455,
+        x: 50,
+        y: 50,
+        locked: false,
+      },
+    ],
+  },
 };
