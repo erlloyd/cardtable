@@ -1,10 +1,8 @@
-import { Component, useCallback } from "react";
-import { Vector2d } from "konva/lib/types";
-import { Group, Rect, Text } from "react-konva";
 import { KonvaEventObject } from "konva/lib/Node";
-import { IPlayerBoard } from "./features/cards/initialState";
+import { Vector2d } from "konva/lib/types";
+import { useCallback } from "react";
 import PlayerBoard from "./PlayerBoard";
-import { paginationClasses } from "@mui/material";
+import { IPlayerBoard } from "./features/cards/initialState";
 
 interface IProps {
   boards: IPlayerBoard[];
@@ -12,7 +10,7 @@ interface IProps {
 }
 
 const PlayerBoards = (props: IProps) => {
-  const dragEnd = useCallback(
+  const moveBoard = useCallback(
     (id: string, event: KonvaEventObject<DragEvent>) => {
       if (props.movePlayerBoard) {
         props.movePlayerBoard({
@@ -23,6 +21,7 @@ const PlayerBoards = (props: IProps) => {
     },
     [props.movePlayerBoard]
   );
+
   return props.boards.map((pb) => (
     <PlayerBoard
       key={`${pb.id}-pb`}
@@ -30,7 +29,8 @@ const PlayerBoards = (props: IProps) => {
       pos={{ x: pb.x, y: pb.y }}
       board={pb}
       handleContextMenu={() => {}}
-      onDragEnd={dragEnd}
+      onDragEnd={moveBoard}
+      onDragMove={moveBoard}
     ></PlayerBoard>
   ));
 };

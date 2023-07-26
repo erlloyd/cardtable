@@ -12,9 +12,15 @@ export interface IPlayerHand {
   cards: ICardDetails[];
 }
 
+export interface IPlayerBoardSlotLocation {
+  boardId: string;
+  pos: Vector2d;
+  landscape: boolean;
+}
+
 export interface IDropTarget {
   cardStack?: ICardStack;
-  newLocation?: Vector2d;
+  playerBoardSlot?: IPlayerBoardSlotLocation;
 }
 
 export interface ICardStack {
@@ -47,6 +53,7 @@ export interface ICardStack {
 export interface ICardSlot {
   relativeX: number;
   relativeY: number;
+  landscape: boolean;
 }
 
 export interface IPlayerBoard {
@@ -59,6 +66,7 @@ export interface IPlayerBoard {
   cardSlots: ICardSlot[];
   locked: boolean;
   image: string;
+  attachedStackIds: string[];
 }
 
 export interface ICardDetails {
@@ -173,7 +181,12 @@ export const initialState: ICardsState = {
     playerBoards: [
       {
         id: "this is some id",
-        cardSlots: [{ relativeX: 345, relativeY: 191 }],
+        cardSlots: [
+          { relativeX: 345, relativeY: 191, landscape: false },
+          { relativeX: 139, relativeY: 221, landscape: true },
+          { relativeX: 139, relativeY: 165, landscape: true },
+          { relativeX: 139, relativeY: 125, landscape: true },
+        ],
         code: "this is some code",
         image:
           "https://ik.imagekit.io/cardtable/star_wars_deckbuilding_game/solo_leaders/leaders_empire_ai_card.png",
@@ -182,6 +195,7 @@ export const initialState: ICardsState = {
         x: 0,
         y: 0,
         locked: false,
+        attachedStackIds: [],
       },
     ],
   },

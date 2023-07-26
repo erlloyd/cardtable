@@ -282,8 +282,9 @@ const getDropTargetCard = (
 
   // Lastly go through all player board slots
   if (possibleDropTargets.length === 0) {
-    state.playerBoards.forEach((pb, pbIndex) => {
-      pb.cardSlots.forEach((slot, slotIndex) => {
+    state.playerBoards.forEach((pb) => {
+      pb.cardSlots.forEach((slot) => {
+        // console.log("CARD IS AT", draggedCardPosition);
         const distance = getDistance(
           { x: pb.x + slot.relativeX, y: pb.y + slot.relativeY },
           draggedCardPosition
@@ -292,9 +293,13 @@ const getDropTargetCard = (
           possibleDropTargets.push({
             distance,
             dropTarget: {
-              newLocation: {
-                x: pb.x + slot.relativeX,
-                y: pb.y + slot.relativeY,
+              playerBoardSlot: {
+                boardId: pb.id,
+                pos: {
+                  x: pb.x + slot.relativeX,
+                  y: pb.y + slot.relativeY,
+                },
+                landscape: slot.landscape,
               },
             },
           });
@@ -517,12 +522,12 @@ const cardMoveWithSnapReducer: CaseReducer<
       potentialDropTargetCard?.cardStack?.id;
 
     const newLocationXChanged =
-      state.dropTargetCards[(action as any).ACTOR_REF]?.newLocation?.x !==
-      potentialDropTargetCard?.newLocation?.x;
+      state.dropTargetCards[(action as any).ACTOR_REF]?.playerBoardSlot?.pos
+        .x !== potentialDropTargetCard?.playerBoardSlot?.pos.x;
 
     const newLocationYChanged =
-      state.dropTargetCards[(action as any).ACTOR_REF]?.newLocation?.y !==
-      potentialDropTargetCard?.newLocation?.y;
+      state.dropTargetCards[(action as any).ACTOR_REF]?.playerBoardSlot?.pos
+        .y !== potentialDropTargetCard?.playerBoardSlot?.pos.y;
 
     if (cardStackChanged || newLocationXChanged || newLocationYChanged) {
       state.dropTargetCards[(action as any).ACTOR_REF] =
@@ -744,21 +749,29 @@ const endCardMoveWithSnapReducer: CaseReducer<
         dropTargetCard.cardStack
       );
     }
-  } else if (!!state.dropTargetCards[(action as any).ACTOR_REF]?.newLocation) {
-    const newLocation =
-      state.dropTargetCards[(action as any).ACTOR_REF]?.newLocation;
+  } else if (
+    !!state.dropTargetCards[(action as any).ACTOR_REF]?.playerBoardSlot
+  ) {
+    const playerBoardId =
+      state.dropTargetCards[(action as any).ACTOR_REF]?.playerBoardSlot
+        ?.boardId;
+    const slot =
+      state.dropTargetCards[(action as any).ACTOR_REF]?.playerBoardSlot;
     // we need to add all the dragging cards to a single stack in the new location.
     // grab the first cardStack from our dropTargets to use as the "base"
     const newBaseStack = dropTargetCardStacks.shift();
-    if (!!newBaseStack && newLocation) {
+    if (!!newBaseStack && slot) {
       // Remove all the _other_ moving cards
       state.cards = state.cards.filter(
         (card) => !dropTargetCardStacks.find((c) => c.id === card.id)
       );
 
       // Set it to the new location
-      newBaseStack.x = newLocation.x;
-      newBaseStack.y = newLocation.y;
+      newBaseStack.x = slot.pos.x;
+      newBaseStack.y = slot.pos.y;
+
+      // If it's lanscape make sure the new base stack is exhausted
+      newBaseStack.exhausted = slot.landscape;
 
       // add the cards we've collected to the top of the stack
       const cardsCollected = dropTargetCardStacks.reduce(
@@ -767,6 +780,12 @@ const endCardMoveWithSnapReducer: CaseReducer<
       );
 
       newBaseStack.cardStack = cardsCollected.concat(newBaseStack.cardStack);
+
+      // make sure the new base stack is one of the ones on the playerboard
+      const attachingToBoard = state.playerBoards.find(
+        (pb) => pb.id === playerBoardId
+      );
+      attachingToBoard?.attachedStackIds.push(newBaseStack.id);
     }
   }
 
@@ -1187,8 +1206,19 @@ const movePlayerBoardReducer: CaseReducer<
   const board = state.playerBoards.find((pb) => pb.id === action.payload.id);
 
   if (!!board) {
+    const deltaX = action.payload.newPos.x - board.x;
+    const deltaY = action.payload.newPos.y - board.y;
+
     board.x = action.payload.newPos.x;
     board.y = action.payload.newPos.y;
+
+    // Go through all the attached cards in slots and update their position
+    state.cards.forEach((c) => {
+      if (board.attachedStackIds.includes(c.id)) {
+        c.x += deltaX;
+        c.y += deltaY;
+      }
+    });
   }
 };
 
@@ -1442,6 +1472,15 @@ const cardsSlice = createSlice({
           state,
           (action as any).ACTOR_REF,
           (card) => {
+            // since we're not splitting, remove the card from all player boards
+            state.playerBoards.forEach((pb) => {
+              if (pb.attachedStackIds.includes(card.id)) {
+                pb.attachedStackIds = pb.attachedStackIds.filter(
+                  (id) => id !== card.id
+                );
+              }
+            });
+
             card.dragging = true;
 
             // if the card has other attached cards, select them and drag them

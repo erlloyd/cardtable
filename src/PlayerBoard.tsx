@@ -1,7 +1,8 @@
-import { Component } from "react";
-import { Vector2d } from "konva/lib/types";
-import { Group, Rect, Text } from "react-konva";
 import { KonvaEventObject } from "konva/lib/Node";
+import { Vector2d } from "konva/lib/types";
+import { debounce } from "lodash";
+import { Component } from "react";
+import { Rect } from "react-konva";
 import { IPlayerBoard } from "./features/cards/initialState";
 
 interface IProps {
@@ -9,6 +10,7 @@ interface IProps {
   pos: Vector2d;
   board: IPlayerBoard;
   handleContextMenu: (event: KonvaEventObject<PointerEvent>) => void;
+  onDragMove: (id: string, event: KonvaEventObject<DragEvent>) => void;
   onDragEnd: (id: string, event: KonvaEventObject<DragEvent>) => void;
 }
 
@@ -80,6 +82,7 @@ class PlayerBoard extends Component<IProps, IState> {
         draggable={true}
         onClick={this.cancelBubble}
         onContextMenu={this.props.handleContextMenu}
+        onDragMove={this.handleDragMove}
         onDragEnd={this.handleDragEnd}
         onTouchStart={this.handleTouchStart}
         onMouseDown={this.cancelBubble}
@@ -126,6 +129,12 @@ class PlayerBoard extends Component<IProps, IState> {
       this.touchTimer = null;
     }
   };
+
+  private handleDragMove = debounce((event: KonvaEventObject<DragEvent>) => {
+    if (this.props.onDragMove) {
+      this.props.onDragMove(this.props.id, event);
+    }
+  }, 5);
 
   private handleDragEnd = (event: KonvaEventObject<DragEvent>) => {
     if (!!this.props.onDragEnd) {
