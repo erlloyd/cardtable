@@ -1,7 +1,7 @@
 import { Vector2d } from "konva/lib/types";
 import * as React from "react";
 import "./TopLayer.scss";
-import { useSwipeable } from "react-swipeable";
+import { SwipeableHandlers, useSwipeable } from "react-swipeable";
 
 interface IProps {
   trasparentBackground?: boolean;
@@ -13,14 +13,17 @@ interface IProps {
 }
 
 const TopLayer = (props: IProps) => {
-  const handlers = useSwipeable({
-    onSwipedUp: () => {
-      if (props.onSwipeUp) {
-        props.onSwipeUp();
-      }
-    },
-    preventScrollOnSwipe: true,
-  });
+  let handlers = {} as SwipeableHandlers;
+  if (props.onSwipeUp) {
+    handlers = useSwipeable({
+      onSwipedUp: () => {
+        if (props.onSwipeUp) {
+          props.onSwipeUp();
+        }
+      },
+      preventScrollOnSwipe: true,
+    });
+  }
 
   const offset = props.offsetContent ? 8 : 0;
   const containerStyle: React.CSSProperties = {
