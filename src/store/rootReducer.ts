@@ -5,6 +5,7 @@ import { startCardMoveWithSplitStackId } from "../features/cards/cards.actions";
 import cards, {
   cardFromHandMoveWithSnap,
   cardMoveWithSnap,
+  movePlayerBoard,
 } from "../features/cards/cards.slice";
 import game, {
   clearPreviewCard,
@@ -35,7 +36,7 @@ const rootReducer = combineReducers({
   notifications,
   liveState: undoable(undoableState, {
     limit: 40,
-    groupBy: groupByActionTypes([moveCounter.type]),
+    groupBy: groupByActionTypes([moveCounter.type, movePlayerBoard.type]),
     filter: excludeAction([
       startNewArrowForCards.type,
       updateDisconnectedArrowPosition.type,

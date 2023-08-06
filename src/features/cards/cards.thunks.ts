@@ -16,6 +16,8 @@ import {
 } from "../game/game.selectors";
 import { OnlineDeckDataMap } from "../game/initialState";
 import {
+  addCardStackToPlayerBoardWithId,
+  AddCardStackToPlayerBoardWithIdPayload,
   addCardStackWithSnapAndId,
   // createDeckFromTextFileWithIds,
   drawCardsOutOfCardStackWithIds,
@@ -31,7 +33,11 @@ import {
   cardMoveWithSnap,
   endCardMoveWithSnap,
 } from "./cards.slice";
-import { ICardDetails, ICardStack } from "./initialState";
+import {
+  ICardDetails,
+  ICardStack,
+  IPlayerBoardSlotLocation,
+} from "./initialState";
 import log from "loglevel";
 import { sendNotification } from "../notifications/notifications.slice";
 import { ILoadedDeck } from "../../game-modules/GameModule";
@@ -42,6 +48,11 @@ import { CardSizeType } from "../../constants/card-constants";
 interface AddCardStackPayload {
   cardJsonIds: string[];
   position: Vector2d;
+}
+
+interface AddCardStackToPlayerBoardLocationPayload {
+  cardJsonIds: string[];
+  slot: IPlayerBoardSlotLocation;
 }
 
 export interface PullCardOutOfCardStackPayload {
@@ -143,6 +154,30 @@ export const addCardStack =
       sizeType,
     };
     dispatch(addCardStackWithSnapAndId(payloadWithId));
+  };
+
+export const addCardStackToPlayerBoardSlot =
+  (
+    payload: AddCardStackToPlayerBoardLocationPayload
+  ): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (dispatch, getState) => {
+    const cardsData = getCardsDataEntities(getState());
+
+    // For now, use the top card to determine what size it should be
+
+    const topCard =
+      payload.cardJsonIds && payload.cardJsonIds.length > 0
+        ? cardsData[payload.cardJsonIds[0]]
+        : null;
+
+    const sizeType = topCard?.extraInfo.sizeType ?? CardSizeType.Standard;
+
+    const payloadWithId: AddCardStackToPlayerBoardWithIdPayload = {
+      ...payload,
+      id: uuidv4(),
+      sizeType,
+    };
+    dispatch(addCardStackToPlayerBoardWithId(payloadWithId));
   };
 
 export const pullCardOutOfCardStack =

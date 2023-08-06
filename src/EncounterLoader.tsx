@@ -9,13 +9,15 @@ import { GameType } from "./game-modules/GameType";
 import GameManager from "./game-modules/GameModuleManager";
 import { ICounter, IFlippableToken } from "./features/counters/initialState";
 import { CardData } from "./external-api/common-card-data";
+import { IPlayerBoard } from "./features/cards/initialState";
 interface IProps {
   currentGameType: GameType;
   encounterData: IEncounterEntity[];
   loadCards: (
     cards: CardData[][],
     tokens: IFlippableToken[],
-    counters: ICounter[]
+    counters: ICounter[],
+    playerBoards: IPlayerBoard[]
   ) => void;
 }
 
@@ -158,7 +160,16 @@ class EncounterLoader extends Component<IProps> {
           .getCountersForEncounterSet!!(value.setCode);
       }
 
-      this.props.loadCards(totalCards, tokens, counters);
+      let playerBoards = [] as IPlayerBoard[];
+      if (
+        !!GameManager.getModuleForType(this.props.currentGameType)
+          .getPlayerBoardsForEncounterSet
+      ) {
+        playerBoards = GameManager.getModuleForType(this.props.currentGameType)
+          .getPlayerBoardsForEncounterSet!!(value.setCode);
+      }
+
+      this.props.loadCards(totalCards, tokens, counters, playerBoards);
     }
   };
 

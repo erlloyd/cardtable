@@ -22,6 +22,8 @@ import {
 } from "../../features/counters/initialState";
 import { CardSizeType } from "../../constants/card-constants";
 import { v4 as uuidv4 } from "uuid";
+import { IPlayerBoard } from "../../features/cards/initialState";
+import { makeBasicPlayerBoard } from "../../utilities/playerboard-utils";
 
 interface Scenario {
   Name: string;
@@ -232,7 +234,6 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
         break;
       case "Solo: Leaders (Rebels)":
       case "Solo: Leaders (Empire)":
-        const leader_board = [...temp["Solo Leaders Board"]];
         const rebel_starter2 = [...temp["Rebel Starter"]];
         const empire_starter2 = [...temp["Empire Starter"]];
         const rebel_bases2 = [...temp["Rebel Bases"]];
@@ -263,7 +264,6 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
           always_available2,
           galaxy_row2,
           leader,
-          leader_board,
           force_tracker2,
         ];
         break;
@@ -408,6 +408,47 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
             color: "yellow",
             value: 0,
           },
+        ];
+    }
+    return [];
+  }
+
+  getPlayerBoardsForEncounterSet(setCode: string): IPlayerBoard[] {
+    const id = uuidv4();
+    switch (setCode) {
+      case "Solo: Leaders (Rebels)":
+        return [
+          makeBasicPlayerBoard({
+            id,
+            cardSlots: [
+              { relativeX: 345, relativeY: 191, landscape: false },
+              { relativeX: 139, relativeY: 221, landscape: true },
+              { relativeX: 139, relativeY: 165, landscape: true },
+              { relativeX: 139, relativeY: 125, landscape: true },
+            ],
+            code: id,
+            image:
+              "https://ik.imagekit.io/cardtable/star_wars_deckbuilding_game/solo_leaders/leaders_empire_ai_card.png",
+            height: 350,
+            width: 455,
+          }),
+        ];
+      case "Solo: Leaders (Empire)":
+        return [
+          makeBasicPlayerBoard({
+            id,
+            cardSlots: [
+              { relativeX: 345, relativeY: 191, landscape: false },
+              { relativeX: 139, relativeY: 221, landscape: true },
+              { relativeX: 139, relativeY: 165, landscape: true },
+              { relativeX: 139, relativeY: 125, landscape: true },
+            ],
+            code: id,
+            image:
+              "https://ik.imagekit.io/cardtable/star_wars_deckbuilding_game/solo_leaders/leaders_rebel_ai_card.png",
+            height: 350,
+            width: 455,
+          }),
         ];
     }
     return [];

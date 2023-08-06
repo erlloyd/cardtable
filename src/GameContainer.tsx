@@ -27,6 +27,7 @@ import {
   adjustStatusToken,
   clearAllModifiers,
   clearMyGhostCards,
+  createNewPlayerBoards,
   deleteCardStack,
   exhaustAllCards,
   flipCards,
@@ -41,6 +42,7 @@ import {
 } from "./features/cards/cards.slice";
 import {
   addCardStack,
+  addCardStackToPlayerBoardSlot,
   addToPlayerHandWithRoleCheck,
   cardFromHandMove,
   cardMove,
@@ -95,10 +97,10 @@ import {
   updateZoom,
 } from "./features/game/game.slice";
 import {
-  generateGameStateUrl,
   generateGameStateSave,
-  saveDeckAsJson,
+  generateGameStateUrl,
   loadGameStateFromSave,
+  saveDeckAsJson,
 } from "./features/game/game.thunks";
 import { toggleNotes } from "./features/notes/notes.slice";
 import { resetApp } from "./store/global.actions";
@@ -157,6 +159,7 @@ const GameContainer = connect(mapStateToProps, {
   updatePosition,
   resetApp,
   addCardStack,
+  addCardStackToPlayerBoardSlot,
   toggleToken,
   adjustStatusToken,
   adjustCounterToken,
@@ -199,6 +202,7 @@ const GameContainer = connect(mapStateToProps, {
   endDisconnectedArrow,
   removeAllArrows,
   createNewTokens,
+  createNewPlayerBoards,
   moveToken,
   flipToken,
   togglePreviewCardRotation,

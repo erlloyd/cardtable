@@ -69,6 +69,32 @@ export interface IPlayerBoard {
   attachedStackIds: string[];
 }
 
+export interface IPlayerBoardOptional {
+  id?: string;
+  code?: string;
+  x?: number;
+  y?: number;
+  height?: number;
+  width?: number;
+  cardSlots?: ICardSlot[];
+  locked?: boolean;
+  image?: string;
+  attachedStackIds?: string[];
+}
+
+export const DEFAULT_PLAYER_BOARD: IPlayerBoard = {
+  id: "",
+  code: "",
+  x: 0,
+  y: 0,
+  height: 0,
+  width: 0,
+  cardSlots: [],
+  locked: false,
+  image: "",
+  attachedStackIds: [],
+};
+
 export interface ICardDetails {
   jsonId: string;
 }
@@ -177,26 +203,26 @@ const defaultState: ICardsState = {
 export const initialState: ICardsState = {
   ...defaultState,
   ...localStorageState,
-  ...{
-    playerBoards: [
-      {
-        id: "this is some id",
-        cardSlots: [
-          { relativeX: 345, relativeY: 191, landscape: false },
-          { relativeX: 139, relativeY: 221, landscape: true },
-          { relativeX: 139, relativeY: 165, landscape: true },
-          { relativeX: 139, relativeY: 125, landscape: true },
-        ],
-        code: "this is some code",
-        image:
-          "https://ik.imagekit.io/cardtable/star_wars_deckbuilding_game/solo_leaders/leaders_empire_ai_card.png",
-        height: 350,
-        width: 455,
-        x: 0,
-        y: 0,
-        locked: false,
-        attachedStackIds: [],
-      },
-    ],
-  },
+  // ...{
+  //   playerBoards: [
+  //     {
+  //       id: "this is some id",
+  //       cardSlots: [
+  //         { relativeX: 345, relativeY: 191, landscape: false },
+  //         { relativeX: 139, relativeY: 221, landscape: true },
+  //         { relativeX: 139, relativeY: 165, landscape: true },
+  //         { relativeX: 139, relativeY: 125, landscape: true },
+  //       ],
+  //       code: "this is some code",
+  //       image:
+  //         "https://ik.imagekit.io/cardtable/star_wars_deckbuilding_game/solo_leaders/leaders_empire_ai_card.png",
+  //       height: 350,
+  //       width: 455,
+  //       x: 0,
+  //       y: 0,
+  //       locked: false,
+  //       attachedStackIds: [],
+  //     },
+  //   ],
+  // },
 };

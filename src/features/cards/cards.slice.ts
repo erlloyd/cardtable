@@ -22,6 +22,7 @@ import {
 } from "../../store/global.actions";
 import { getDistance } from "../../utilities/geo";
 import {
+  addCardStackToPlayerBoardWithId,
   addCardStackWithSnapAndId,
   createDeckFromTextFileWithIds,
   CreateDeckPayload,
@@ -40,6 +41,7 @@ import {
   ICardStack,
   IDropTarget,
   initialState,
+  IPlayerBoard,
 } from "./initialState";
 import { myPeerRef } from "../../constants/app-constants";
 import log from "loglevel";
@@ -107,10 +109,13 @@ const transformGhostCardsWhenSnapping = (
   state: ICardsState,
   shouldSnap: boolean,
   actorRef: string,
-  hasDropTarget: boolean,
-  hasAttachTarget: boolean,
+  dropTarget: IDropTarget | null,
+  attachTarget: ICardStack | null,
   card?: ICardStack
 ): ICardStack[] => {
+  const hasDropTarget = !!dropTarget;
+  const hasAttachTarget = !!attachTarget;
+
   let returnCards: ICardStack[] = state.ghostCards;
   if (shouldSnap && !hasDropTarget && !hasAttachTarget) {
     if (!!card && !card.attachedTo) {
@@ -179,11 +184,47 @@ const transformGhostCardsWhenSnapping = (
         }
       });
     }
-  } else if (shouldSnap && (hasDropTarget || hasAttachTarget)) {
+  } else if (hasDropTarget || hasAttachTarget) {
     // remove all snap cards
     returnCards = state.ghostCards.filter((gc) => !gc.id.includes("-grid"));
-  }
 
+    // if we have a drop target, but it's a player board slot, we still want to
+    // draw a ghost card
+    if (hasDropTarget && !!dropTarget.playerBoardSlot) {
+      //////////
+      ////TODO: Figure out how to generalize this
+      //////////
+
+      if (!!card) {
+        const pbCard: ICardStack = JSON.parse(JSON.stringify(card));
+        pbCard.id = `${card.id}-grid`;
+        pbCard.x = dropTarget.playerBoardSlot!!.pos.x;
+        pbCard.y = dropTarget.playerBoardSlot!!.pos.y;
+        pbCard.cardStack = [{ jsonId: `grid` }];
+        pbCard.exhausted = dropTarget.playerBoardSlot!!.landscape;
+
+        returnCards.push(pbCard);
+      } else {
+        foreachSelectedAndControlledCard(state, actorRef, (card) => {
+          if (card.attachedTo) return;
+          const snapCard = JSON.parse(JSON.stringify(card));
+          snapCard.id = `${card.id}-grid`;
+          snapCard.x = dropTarget.playerBoardSlot!!.pos.x;
+          snapCard.y = dropTarget.playerBoardSlot!!.pos.y;
+          snapCard.cardStack = [{ jsonId: `grid` }];
+
+          // add the new snap card (we already removed all other snap cards in this branch)
+          returnCards.push(snapCard);
+        });
+      }
+      //////////
+      ////END HACKY DUPLICATE SECTION
+      //////////
+    }
+  } else if (!shouldSnap && !hasDropTarget && !hasAttachTarget) {
+    // If we're not snapping and we have no target, we should clear all snap cards
+    returnCards = state.ghostCards.filter((gc) => !gc.id.includes("-grid"));
+  }
   return returnCards;
 };
 
@@ -472,8 +513,8 @@ const cardFromHandMoveWithSnapReducer: CaseReducer<
     state,
     action.payload.snap,
     (action as any).ACTOR_REF,
-    !!dropTarget,
-    false,
+    dropTarget,
+    null,
     newEmptyCard
   );
 };
@@ -620,8 +661,8 @@ const cardMoveWithSnapReducer: CaseReducer<
     state,
     action.payload.snap,
     (action as any).ACTOR_REF,
-    !!dropTarget,
-    !!attachTarget
+    dropTarget,
+    attachTarget
   );
 
   if (
@@ -1222,6 +1263,17 @@ const movePlayerBoardReducer: CaseReducer<
   }
 };
 
+const createNewPlayerBoardsReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<IPlayerBoard[]>
+> = (state, action) => {
+  if (state.playerBoards === undefined || state.playerBoards === null) {
+    state.playerBoards = [];
+  }
+
+  state.playerBoards = state.playerBoards.concat(action.payload);
+};
+
 // slice
 const cardsSlice = createSlice({
   name: "cards",
@@ -1259,6 +1311,7 @@ const cardsSlice = createSlice({
     toggleExtraIcon: toggleExtraIconReducer,
     clearMyGhostCards: clearMyGhostCardsReducer,
     movePlayerBoard: movePlayerBoardReducer,
+    createNewPlayerBoards: createNewPlayerBoardsReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -1384,6 +1437,46 @@ const cardsSlice = createSlice({
       };
 
       state.cards.push(newStack);
+    });
+
+    builder.addCase(addCardStackToPlayerBoardWithId, (state, action) => {
+      const sizeType = action.payload.sizeType;
+
+      const newStack: ICardStack = {
+        controlledBy: "",
+        x: action.payload.slot.pos.x,
+        y: action.payload.slot.pos.y,
+        dragging: false,
+        shuffling: false,
+        exhausted: action.payload.slot.landscape,
+        faceup: true,
+        fill: "red",
+        id: action.payload.id,
+        cardStack: action.payload.cardJsonIds.map((jsonId) => ({
+          jsonId,
+        })),
+        selected: false,
+        statusTokens: {
+          stunned: 0,
+          confused: 0,
+          tough: 0,
+        },
+        counterTokens: {
+          damage: 0,
+          threat: 0,
+          generic: 0,
+          acceleration: 0,
+        },
+        modifiers: {},
+        extraIcons: [],
+        sizeType,
+      };
+
+      state.cards.push(newStack);
+
+      state.playerBoards
+        .find((pb) => pb.id === action.payload.slot.boardId)
+        ?.attachedStackIds.push(action.payload.id);
     });
 
     builder.addCase(pullCardOutOfCardStackWithId, (state, action) => {
@@ -1811,6 +1904,7 @@ export const {
   toggleExtraIcon,
   clearMyGhostCards,
   movePlayerBoard,
+  createNewPlayerBoards,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

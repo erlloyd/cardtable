@@ -2,7 +2,7 @@ import { Vector2d } from "konva/lib/types";
 import { CounterTokenType, StatusTokenType } from "../constants/card-constants";
 import { CardData } from "../external-api/common-card-data";
 import { ICardData, ISetData } from "../features/cards-data/initialState";
-import { ICardDetails } from "../features/cards/initialState";
+import { ICardDetails, IPlayerBoard } from "../features/cards/initialState";
 import { AxiosResponse } from "axios";
 import { RootState } from "../store/rootReducer";
 import { IEncounterEntity } from "../features/cards-data/cards-data.selectors";
@@ -184,4 +184,5 @@ export abstract class GameModule {
   ): CardData[][];
   getTokensForEncounterSet?(setCode: string): IFlippableToken[];
   getCountersForEncounterSet?(setCode: string): ICounter[];
+  getPlayerBoardsForEncounterSet?(setCode: string): IPlayerBoard[];
 }
