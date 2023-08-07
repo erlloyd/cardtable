@@ -1,6 +1,6 @@
 import log from "loglevel";
 import { myPeerRef } from "../constants/app-constants";
-import { StatusTokenType } from "../constants/card-constants";
+import { CardSizeType, StatusTokenType } from "../constants/card-constants";
 import {
   CARD_ALREADY_ROTATED_MAP,
   FORCE_CARD_BACK_MAP,
@@ -12,6 +12,7 @@ import { ICardData } from "../features/cards-data/initialState";
 import { ICardStack } from "../features/cards/initialState";
 import { GameType } from "../game-modules/GameType";
 import GameManager from "../game-modules/GameModuleManager";
+import { v4 } from "uuid";
 
 export const anyCardStackHasStatus = (
   status: StatusTokenType,
@@ -236,3 +237,33 @@ export const getCardTypeWithoutStack = (
 
 export const getCardType = (card: ICardStack, cardsData: ICardData): string =>
   getCardTypeWithoutStack(card.cardStack[0].jsonId, card.faceup, cardsData);
+
+export const makeFakeCardStackFromJsonId = (jsonId: string): ICardStack => {
+  return {
+    controlledBy: myPeerRef,
+    dragging: false,
+    shuffling: false,
+    exhausted: false,
+    faceup: true,
+    fill: "anything",
+    id: v4(),
+    selected: false,
+    x: 0,
+    y: 0,
+    cardStack: [{ jsonId }],
+    statusTokens: {
+      stunned: 0,
+      confused: 0,
+      tough: 0,
+    },
+    counterTokens: {
+      damage: 0,
+      threat: 0,
+      generic: 0,
+      acceleration: 0,
+    },
+    modifiers: {},
+    extraIcons: [],
+    sizeType: CardSizeType.Standard,
+  };
+};

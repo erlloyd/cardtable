@@ -152,14 +152,6 @@ export default class StandardDeckGameModule extends GameModule {
     const temp = groupBy<CardData>(encounterCards, (e) => e.extraInfo.setCode);
     return Object.values(temp);
   }
-
-  getTokensForEncounterSet(setCode: string): IFlippableToken[] {
-    return [];
-  }
-
-  getCountersForEncounterSet(setCode: string): ICounter[] {
-    return [];
-  }
 }
 
 const getSpecificScenario = async (

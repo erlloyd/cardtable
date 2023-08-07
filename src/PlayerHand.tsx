@@ -73,7 +73,6 @@ const getListStyle = (isDraggingOver: boolean) =>
   ({
     background: isDraggingOver ? "lightblue" : "lightgrey",
     display: "flex",
-    alignItems: "flex-start",
     padding: grid,
     overflowX: "auto",
     overflowY: "hidden",

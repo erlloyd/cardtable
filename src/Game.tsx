@@ -32,7 +32,13 @@ import DeckLoader from "./DeckLoader";
 import EncounterLoaderContainer from "./EncounterLoaderContainer";
 import { ICardData } from "./features/cards-data/initialState";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
-import { ICardsState, ICardStack } from "./features/cards/initialState";
+import {
+  ICardsState,
+  ICardStack,
+  IDropTarget,
+  IPlayerBoard,
+  IPlayerBoardSlotLocation,
+} from "./features/cards/initialState";
 import { ICounter, IFlippableToken } from "./features/counters/initialState";
 import { IGameState } from "./features/game/initialState";
 import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
@@ -64,6 +70,7 @@ import GameManager from "./game-modules/GameModuleManager";
 import FlippableToken from "./FlippableToken";
 import { CardData } from "./external-api/common-card-data";
 import { ConfirmOptions, useConfirm } from "material-ui-confirm";
+import PlayerBoardsContainer from "./PlayerBoardsContainer";
 
 const SCALE_BY = 1.02;
 
@@ -126,6 +133,10 @@ interface IProps {
     cardJsonIds: string[];
     position: Vector2d;
   }) => void;
+  addCardStackToPlayerBoardSlot: (payload: {
+    cardJsonIds: string[];
+    slot: IPlayerBoardSlotLocation;
+  }) => void;
   addToExistingCardStack: (payload: {
     existingStackId: string;
     cardJsonIds: string[];
@@ -171,7 +182,7 @@ interface IProps {
   peerId: string;
   multiplayerGameName: string;
   dropTargetCardsById: {
-    [key: string]: { ownerRef: string; card: ICardStack | null };
+    [key: string]: { ownerRef: string; card: IDropTarget | null };
   };
   drawCardsOutOfCardStack: (payload: DrawCardsOutOfCardStackPayload) => void;
   quitGame: () => void;
@@ -214,6 +225,7 @@ interface IProps {
   removeAnyDisconnectedArrows: (myRef: string) => void;
   removeAllArrows: () => void;
   createNewTokens: (tokens: IFlippableToken[]) => void;
+  createNewPlayerBoards: (playerBoards: IPlayerBoard[]) => void;
   moveToken: (payload: { id: string; pos: Vector2d }) => void;
   flipToken: (id: string) => void;
   rotatePreviewCard180: boolean;
@@ -737,6 +749,7 @@ class Game extends Component<IProps, IState> {
                         }
                       ></Rect>
                     </Group>
+                    <PlayerBoardsContainer></PlayerBoardsContainer>
                     <Group>
                       {this.props.counters.map((counter) => (
                         <Counter
@@ -1085,7 +1098,12 @@ class Game extends Component<IProps, IState> {
 
   private handleLoadEncounter =
     (position: Vector2d) =>
-    (cards: CardData[][], tokens: IFlippableToken[], counters: ICounter[]) => {
+    (
+      cards: CardData[][],
+      tokens: IFlippableToken[],
+      counters: ICounter[],
+      playerBoards: IPlayerBoard[]
+    ) => {
       this.clearEncounterImporter();
 
       const sizeTypeToOffsetMap: { [key in CardSizeType]: Vector2d } = {} as {
@@ -1159,6 +1177,26 @@ class Game extends Component<IProps, IState> {
         });
       }
 
+      let lastPBY = position.y;
+      if (playerBoards.length > 0) {
+        // Put the player Boards right at the load spot
+        this.props.createNewPlayerBoards(
+          playerBoards.map((pb) => {
+            const pbToReturn: IPlayerBoard = {
+              ...pb,
+              ...{
+                x: position.x,
+                y: lastPBY,
+              },
+            };
+
+            lastPBY += pb.width + 10;
+
+            return pbToReturn;
+          })
+        );
+      }
+
       // Cache the images
       const imgUrls = cards.flat().reduce((urls, card) => {
         const faceupCard = getImgUrlsFromJsonId(
@@ -1177,11 +1215,15 @@ class Game extends Component<IProps, IState> {
       }, [] as string[]);
 
       const tokenUrls = tokens.map((t) => t.imgUrl);
+      const playerBoardUrls = playerBoards.map((pb) => pb.image);
 
       const uniqueUrls = Array.from(new Set(imgUrls));
       const uniqueTokenUrls = Array.from(new Set(tokenUrls));
+      const uniquePlayerBoardUrls = Array.from(new Set(playerBoardUrls));
 
-      cacheImages(uniqueUrls.concat(uniqueTokenUrls));
+      cacheImages(
+        uniqueUrls.concat(uniqueTokenUrls).concat(uniquePlayerBoardUrls)
+      );
     };
 
   private handleImportDeck =
@@ -1892,11 +1934,20 @@ class Game extends Component<IProps, IState> {
       Object.values(this.props.dropTargetCardsById).filter(
         (dt) => dt.ownerRef === myPeerRef
       )[0] ?? null;
+
+    console.log("myDropTargetCard", myDropTargetCard);
     if (!!myDropTargetCard) {
-      this.props.addToExistingCardStack({
-        existingStackId: myDropTargetCard.card?.id ?? "",
-        cardJsonIds: ids,
-      });
+      if (!!myDropTargetCard.card?.cardStack) {
+        this.props.addToExistingCardStack({
+          existingStackId: myDropTargetCard.card?.cardStack?.id ?? "",
+          cardJsonIds: ids,
+        });
+      } else if (!!myDropTargetCard.card?.playerBoardSlot) {
+        this.props.addCardStackToPlayerBoardSlot({
+          cardJsonIds: ids,
+          slot: myDropTargetCard.card.playerBoardSlot,
+        });
+      }
     } else {
       ids.forEach((id, index) => {
         const basePos = !!pos ? pos : this.lastMousePos;

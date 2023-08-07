@@ -5,10 +5,22 @@ import {
   StatusTokenType,
 } from "../../constants/card-constants";
 import JSONCrush from "jsoncrush";
+import { Vector2d } from "konva/lib/types";
 
 export interface IPlayerHand {
   role: string | null;
   cards: ICardDetails[];
+}
+
+export interface IPlayerBoardSlotLocation {
+  boardId: string;
+  pos: Vector2d;
+  landscape: boolean;
+}
+
+export interface IDropTarget {
+  cardStack?: ICardStack;
+  playerBoardSlot?: IPlayerBoardSlotLocation;
 }
 
 export interface ICardStack {
@@ -38,6 +50,51 @@ export interface ICardStack {
   sizeType: CardSizeType;
 }
 
+export interface ICardSlot {
+  relativeX: number;
+  relativeY: number;
+  landscape: boolean;
+}
+
+export interface IPlayerBoard {
+  id: string;
+  code: string;
+  x: number;
+  y: number;
+  height: number;
+  width: number;
+  cardSlots: ICardSlot[];
+  locked: boolean;
+  image: string;
+  attachedStackIds: string[];
+}
+
+export interface IPlayerBoardOptional {
+  id?: string;
+  code?: string;
+  x?: number;
+  y?: number;
+  height?: number;
+  width?: number;
+  cardSlots?: ICardSlot[];
+  locked?: boolean;
+  image?: string;
+  attachedStackIds?: string[];
+}
+
+export const DEFAULT_PLAYER_BOARD: IPlayerBoard = {
+  id: "",
+  code: "",
+  x: 0,
+  y: 0,
+  height: 0,
+  width: 0,
+  cardSlots: [],
+  locked: false,
+  image: "",
+  attachedStackIds: [],
+};
+
 export interface ICardDetails {
   jsonId: string;
 }
@@ -47,7 +104,8 @@ export interface ICardsState {
   cards: ICardStack[];
   ghostCards: ICardStack[];
   playerHands: IPlayerHand[];
-  dropTargetCards: { [key: string]: ICardStack | null };
+  playerBoards: IPlayerBoard[];
+  dropTargetCards: { [key: string]: IDropTarget | null };
   attachTargetCards: { [key: string]: ICardStack | null };
   panMode: boolean;
   multiselectMode: boolean;
@@ -64,6 +122,11 @@ const queryParamsHandsString = queryParams.get("hands");
 const queryParamsHands = !!queryParamsHandsString
   ? JSON.parse(JSONCrush.uncrush(queryParamsHandsString))
   : null;
+
+// const queryParamsHandsString = queryParams.get("hands");
+// const queryParamsHands = !!queryParamsHandsString
+//   ? JSON.parse(JSONCrush.uncrush(queryParamsHandsString))
+//   : null;
 
 const queryParamsCardsString = queryParams.get("cards");
 const queryParamsCards = !!queryParamsCardsString
@@ -128,6 +191,7 @@ localStorageState.outOfSyncWithRemoteCount = 0;
 const defaultState: ICardsState = {
   outOfSyncWithRemoteCount: 0,
   cards: [],
+  playerBoards: [],
   ghostCards: [],
   dropTargetCards: {},
   attachTargetCards: {},
@@ -139,4 +203,26 @@ const defaultState: ICardsState = {
 export const initialState: ICardsState = {
   ...defaultState,
   ...localStorageState,
+  // ...{
+  //   playerBoards: [
+  //     {
+  //       id: "this is some id",
+  //       cardSlots: [
+  //         { relativeX: 345, relativeY: 191, landscape: false },
+  //         { relativeX: 139, relativeY: 221, landscape: true },
+  //         { relativeX: 139, relativeY: 165, landscape: true },
+  //         { relativeX: 139, relativeY: 125, landscape: true },
+  //       ],
+  //       code: "this is some code",
+  //       image:
+  //         "https://ik.imagekit.io/cardtable/star_wars_deckbuilding_game/solo_leaders/leaders_empire_ai_card.png",
+  //       height: 350,
+  //       width: 455,
+  //       x: 0,
+  //       y: 0,
+  //       locked: false,
+  //       attachedStackIds: [],
+  //     },
+  //   ],
+  // },
 };

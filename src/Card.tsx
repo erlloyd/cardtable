@@ -365,7 +365,6 @@ class Card extends Component<IProps, IState> {
     widthToUse: number,
     imageLoaded: boolean
   ) => {
-    console.log("dragImageLoaded: ", this.state.dragImageLoaded);
     const imgToUse = imageLoaded
       ? this.imgs.find((i) => i.complete && i.naturalHeight !== 0)
       : undefined;
@@ -790,15 +789,19 @@ class Card extends Component<IProps, IState> {
     widthToUse: number,
     heightToUse: number
   ) {
-    const width = !!img ? widthToUse / img.naturalWidth : widthToUse;
+    const width =
+      !!img && img.naturalWidth ? widthToUse / img.naturalWidth : widthToUse;
 
-    const widthHorizontal = !!img ? heightToUse / img.naturalWidth : widthToUse;
+    const widthHorizontal =
+      !!img && img.naturalWidth ? heightToUse / img.naturalWidth : widthToUse;
 
-    const height = !!img ? heightToUse / img.naturalHeight : heightToUse;
+    const height =
+      !!img && img.naturalHeight
+        ? heightToUse / img.naturalHeight
+        : heightToUse;
 
-    const heightHorizontal = !!img
-      ? widthToUse / img.naturalHeight
-      : heightToUse;
+    const heightHorizontal =
+      !!img && img.naturalHeight ? widthToUse / img.naturalHeight : heightToUse;
 
     return shouldRenderImageHorizontal(
       this.props.code,

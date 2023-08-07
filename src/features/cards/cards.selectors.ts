@@ -1,10 +1,13 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { RootState } from "../../store/rootReducer";
-import { ICardStack } from "./initialState";
+import { ICardStack, IDropTarget } from "./initialState";
+import { v4 } from "uuid";
 
 export const getCards = (state: RootState) => state.liveState.present.cards;
 export const getPlayerHands = (state: RootState) =>
   state.liveState.present.cards.playerHands;
+export const getPlayerBoards = (state: RootState) =>
+  state.liveState.present.cards.playerBoards;
 
 export const getCardMapById = createSelector(getCards, (cards) => {
   return cards.cards.reduce((map: { [k: string]: ICardStack }, card) => {
@@ -31,13 +34,19 @@ export const getMultiselectMode = (state: RootState) =>
 
 export const getDropTargetCardsById = createSelector(getCards, (cards) => {
   const returnVal: {
-    [key: string]: { ownerRef: string; card: ICardStack | null };
+    [key: string]: { ownerRef: string; card: IDropTarget | null };
   } = {};
   Object.entries(cards.dropTargetCards).forEach(([key, value]) => {
     if (!!value) {
-      returnVal[value.id] = { ownerRef: key, card: value };
+      // There's only a card id if this isn't a player board slot, so
+      // use some dummy ids for player board slots
+      const randomid = `PLAYER_BOARD_SLOT-${v4()}`;
+      const idToUse = value.cardStack?.id || randomid;
+      returnVal[idToUse] = { ownerRef: key, card: value };
     }
   });
+
+  // console.log("returning droptargetsbyid", returnVal);
 
   return returnVal;
 });
