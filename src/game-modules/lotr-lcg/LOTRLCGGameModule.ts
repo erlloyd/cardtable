@@ -35,6 +35,7 @@ export default class LOTRLCGGameModule extends GameModule {
     const properties: GameProperties = {
       deckSite: "ringsdb.com",
       decklistApi: "https://ringsdb.com/api/public/decklist/",
+      allowSpecificCardSearch: true,
       decklistSearchApi: "https://ringsdb.com/decklists/find",
       decklistSearchApiConstants: "numcores=3&sort=likes",
       encounterUiName: "Scenario",

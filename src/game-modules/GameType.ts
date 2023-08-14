@@ -4,4 +4,5 @@ export enum GameType {
   WarOfTheRingTheCardGame = "wotr_cardgame",
   StarWarsDeckbuildingGame = "swdbg",
   StandardDeck = "standarddeck",
+  Lorcana = "lorcana",
 }

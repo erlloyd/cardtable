@@ -2623,7 +2623,7 @@ class Game extends Component<IProps, IState> {
             this.stage?.getPointerPosition() || { x: 0, y: 0 }
           );
         },
-        hidden: !GamePropertiesMap[this.props.currentGameType].decklistApi,
+        hidden: !GamePropertiesMap[this.props.currentGameType].allowSpecificCardSearch,
       },
       {
         label: "Create new counter",

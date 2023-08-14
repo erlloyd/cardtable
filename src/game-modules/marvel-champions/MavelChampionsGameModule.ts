@@ -5,6 +5,7 @@ import {
 import { ICardData, ISetData } from "../../features/cards-data/initialState";
 import {
   GameModule,
+  GameProperties,
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
@@ -28,9 +29,10 @@ import { GameType } from "../GameType";
 
 export default class MarvelChampionsGameModule extends GameModule {
   constructor() {
-    const properties = {
+    const properties: GameProperties = {
       deckSite: "marvelcdb.com",
       decklistApi: "https://marvelcdb.com/api/public/decklist/",
+      allowSpecificCardSearch: true,
       privateDecklistApi: "https://marvelcdb.com/api/public/deck/",
       decklistSearchApi: "https://marvelcdb.com/decklists",
       decklistSearchApiConstants: "sort=likes",

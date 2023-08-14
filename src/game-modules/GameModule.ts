@@ -102,6 +102,7 @@ export interface RolesInfo {
 export interface GameProperties {
   deckSite: string;
   decklistApi: string;
+  allowSpecificCardSearch?: boolean;
   privateDecklistApi?: string;
   decklistSearchApi: string;
   decklistSearchApiConstants?: string;

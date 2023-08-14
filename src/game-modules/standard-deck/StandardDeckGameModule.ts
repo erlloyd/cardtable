@@ -1,9 +1,11 @@
 import axios, { AxiosResponse } from "axios";
+import { groupBy } from "lodash";
+import log from "loglevel";
+import { CardSizeType } from "../../constants/card-constants";
 import { CardData } from "../../external-api/common-card-data";
 import { IEncounterEntity } from "../../features/cards-data/cards-data.selectors";
 import { ICardData, ISetData } from "../../features/cards-data/initialState";
 import { RootState } from "../../store/rootReducer";
-import { packList } from "./generated/scenarioList_std_deck";
 import {
   GameModule,
   ILoadCardsData,
@@ -11,17 +13,10 @@ import {
   ILoadedDeck,
   IPackMetadata,
 } from "../GameModule";
-import { properties } from "./properties";
-import log from "loglevel";
 import { GameType } from "../GameType";
+import { packList } from "./generated/scenarioList_std_deck";
 import { scenarios } from "./jsonMetadata/scenarios/scenarios";
-import { groupBy } from "lodash";
-import {
-  ICounter,
-  IFlippableToken,
-} from "../../features/counters/initialState";
-import { CardSizeType } from "../../constants/card-constants";
-import { v4 as uuidv4 } from "uuid";
+import { properties } from "./properties";
 
 interface Scenario {
   Name: string;

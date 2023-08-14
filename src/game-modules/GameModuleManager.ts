@@ -8,6 +8,7 @@ import WarOfTheRingTheCardGameModule from "./war-of-the-ring-card-game/WarOfTheR
 import { showHiddenGamesLocalStorage } from "../constants/app-constants";
 import StarWarsDeckbuildingGameModule from "./star-wars-deckbuilding-game/StarWarsDeckbuildingGameModule";
 import StandardDeckGameModule from "./standard-deck/StandardDeckGameModule";
+import LorcanaGameModule from "./lorcana/LorcanaGameModule";
 
 const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
@@ -29,6 +30,11 @@ const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
     type: GameType.StandardDeck,
     module: new StandardDeckGameModule(),
+  },
+  {
+    type: GameType.Lorcana,
+    module: new LorcanaGameModule(),
+    hidden: true,
   },
 ];
 
