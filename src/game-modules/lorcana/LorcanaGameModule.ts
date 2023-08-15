@@ -147,20 +147,17 @@ export default class LorcanaGameModule extends GameModule {
   }
 
   loadDeckFromText(text: string): string[] {
-    // first, try to json parse to see if this is JSON
-    try {
-      const jsonFormat = JSON.parse(text);
-      // TODO: now do something if it's json
-      return [];
-    } catch (_e) {
-      // We don't do anything here because it's
-      // probably a pixelborn string
-    }
-
     try {
       var pixelbornString = atob(text);
       const ids: string[] = [];
-      pixelbornString.split("|").forEach((cardInfo) => {
+      const deck = pixelbornString.split("|");
+
+      // if there is only one thing, the deck probably isn't valid
+      if (deck.length <= 1) {
+        throw new Error("Unable to load deck");
+      }
+
+      deck.forEach((cardInfo) => {
         const cardParts = cardInfo.split("$");
         const name = cardParts[0].toLocaleLowerCase();
         const quantity = Number(cardParts[1]);
@@ -170,9 +167,29 @@ export default class LorcanaGameModule extends GameModule {
       });
       return ids;
     } catch (e) {
-      console.error("Could not parse format");
+      const ids: string[] = [];
+
+      // try parsing line-by-line
+      const deck = text
+        .split("\n")
+        .filter((line) => line.indexOf("//") !== 0)
+        .filter((line) => !!line);
+
+      if (deck.length > 1) {
+        deck.forEach((cardInfo) => {
+          const quantity = parseInt(cardInfo);
+          let name = cardInfo.replace(`${quantity}`, "");
+          name = name.trim().toLocaleLowerCase().replace(" - ", "_");
+          for (let i = 0; i < quantity; i++) {
+            ids.push(name);
+          }
+        });
+
+        return ids;
+      }
+
+      throw new Error("Unable to load deck");
     }
-    return [];
   }
 
   isCardBackImg(imgUrl: string): boolean {

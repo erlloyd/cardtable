@@ -4,6 +4,7 @@ import { getActiveGameType, getGame } from "./features/game/game.selectors";
 import { RootState } from "./store/rootReducer";
 import { hideDeckTextImporter } from "./features/game/game.slice";
 import { addCardStack } from "./features/cards/cards.thunks";
+import { sendNotification } from "./features/notifications/notifications.slice";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -15,6 +16,7 @@ const mapStateToProps = (state: RootState) => {
 const DeckTextImporterContainer = connect(mapStateToProps, {
   hideDeckTextImporter,
   addCardStack,
+  sendNotification,
 })(DeckTextImporter);
 
 export default DeckTextImporterContainer;

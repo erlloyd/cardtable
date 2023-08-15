@@ -6,6 +6,8 @@ import { Button } from "@mui/material";
 import { useCallback, useState } from "react";
 import { Vector2d } from "konva/lib/types";
 import GameManager from "./game-modules/GameModuleManager";
+import { INotification } from "./features/notifications/initialState";
+import { v4 } from "uuid";
 
 interface IProps {
   gameType: GameType | null;
@@ -15,6 +17,7 @@ interface IProps {
     cardJsonIds: string[];
     position: Vector2d;
   }) => void;
+  sendNotification: (payload: INotification) => void;
 }
 
 const DeckTextImporter = (props: IProps) => {
@@ -25,13 +28,23 @@ const DeckTextImporter = (props: IProps) => {
       props.gameType &&
       !!GameManager.getModuleForType(props.gameType).loadDeckFromText
     ) {
-      const cardStack = GameManager.getModuleForType(props.gameType)
-        .loadDeckFromText!(currentTextValue);
+      try {
+        const cardStack = GameManager.getModuleForType(props.gameType)
+          .loadDeckFromText!(currentTextValue);
 
-      if (cardStack.length > 0) {
-        props.addCardStack({
-          cardJsonIds: cardStack,
-          position: props.positionToImport || { x: 100, y: 100 },
+        if (cardStack.length > 0) {
+          props.addCardStack({
+            cardJsonIds: cardStack,
+            position: props.positionToImport || { x: 100, y: 100 },
+          });
+        }
+      } catch (e) {
+        // Something went wrong, show an error
+        props.sendNotification({
+          id: v4(),
+          level: "error",
+          message:
+            "Could not load deck from the text provided. Check to make sure you copied the entire deck code",
         });
       }
     }
@@ -42,6 +55,7 @@ const DeckTextImporter = (props: IProps) => {
     props.hideDeckTextImporter,
     props.addCardStack,
     props.positionToImport,
+    props.sendNotification,
   ]);
 
   return props.positionToImport !== null ? (
@@ -66,7 +80,7 @@ const DeckTextImporter = (props: IProps) => {
           <TextField
             id="deck-text-import-textarea"
             label="Import Deck"
-            placeholder="Paste either Deck JSON or deck code"
+            placeholder="Paste deck code"
             multiline
             maxRows={8}
             minRows={6}
