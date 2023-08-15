@@ -35,20 +35,24 @@ export const getCardsData = createSelector(
     // which version of a card they want to use, we
     // should probably apply that here once. For now this
     // will just map everything
-    const dataToReturn: { [key in GameType]?: IGameCardsDataState } = {
-      marvelchampions: undefined,
-      lotrlcg: undefined,
-    };
-    // TODO: Make this a generic loop rather than hard-coding the types
 
-    for (const gameType in rawCardsData.data) {
-      const data = rawCardsData.data[gameType as GameType];
+    const dataToReturn: { [key in GameType]?: IGameCardsDataState } = {};
+
+    for (const gameTypeRaw in rawCardsData.data) {
+      const gameType = gameTypeRaw as GameType;
+
+      const useAltArt =
+        !!GameManager.getModuleForType(gameType).properties
+          .useAltCardArtByDefault;
+
+      const data = rawCardsData.data[gameType];
       if (data !== undefined) {
         // This is stupid, have to do it for typescript
         const eData = data;
         const flattenedEntities = Object.keys(data.entities).reduce(
           (result, key) => {
-            result[key] = eData.entities[key][0];
+            const index = useAltArt ? eData.entities[key].length - 1 : 0;
+            result[key] = eData.entities[key][index];
             return result;
           },
           {} as ICardData
@@ -57,7 +61,8 @@ export const getCardsData = createSelector(
         const flattenedEncounterEntities = Object.keys(
           data.encounterEntities
         ).reduce((result, key) => {
-          result[key] = eData.encounterEntities[key][0];
+          const index = useAltArt ? eData.encounterEntities[key].length - 1 : 0;
+          result[key] = eData.encounterEntities[key][index];
           return result;
         }, {} as ICardData);
 
@@ -68,58 +73,6 @@ export const getCardsData = createSelector(
         };
       }
     }
-
-    // let data = rawCardsData.data.marvelchampions;
-    // if (data !== undefined) {
-    //   // This is stupid, have to do it for typescript
-    //   const eData = data;
-    //   const flattenedEntities = Object.keys(data.entities).reduce(
-    //     (result, key) => {
-    //       result[key] = eData.entities[key][0];
-    //       return result;
-    //     },
-    //     {} as ICardData
-    //   );
-
-    //   const flattenedEncounterEntities = Object.keys(
-    //     data.encounterEntities
-    //   ).reduce((result, key) => {
-    //     result[key] = eData.encounterEntities[key][0];
-    //     return result;
-    //   }, {} as ICardData);
-
-    //   dataToReturn.marvelchampions = {
-    //     entities: flattenedEntities,
-    //     encounterEntities: flattenedEncounterEntities,
-    //     setData: data.setData,
-    //   };
-    // }
-
-    // data = rawCardsData.data.lotrlcg;
-    // if (data !== undefined) {
-    //   // This is stupid, have to do it for typescript
-    //   const eData = data;
-    //   const flattenedEntities = Object.keys(data.entities).reduce(
-    //     (result, key) => {
-    //       result[key] = eData.entities[key][0];
-    //       return result;
-    //     },
-    //     {} as ICardData
-    //   );
-
-    //   const flattenedEncounterEntities = Object.keys(
-    //     data.encounterEntities
-    //   ).reduce((result, key) => {
-    //     result[key] = eData.encounterEntities[key][0];
-    //     return result;
-    //   }, {} as ICardData);
-
-    //   dataToReturn.lotrlcg = {
-    //     entities: flattenedEntities,
-    //     encounterEntities: flattenedEncounterEntities,
-    //     setData: data.setData,
-    //   };
-    // }
     return { activeDataType: rawCardsData.activeDataType, data: dataToReturn };
   }
 );

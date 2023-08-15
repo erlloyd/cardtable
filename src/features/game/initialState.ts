@@ -43,6 +43,7 @@ export interface IGameState {
   searchingForOnlineDecks: boolean;
   mostRecentOnlineDeckSearchResults: OnlineDeckDataMap;
   allJsonDataLoaded: boolean;
+  showDeckTextImporterWithPosition: Vector2d | null;
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -69,6 +70,7 @@ localStorageState.drawingArrow = false;
 localStorageState.searchingForOnlineDecks = false;
 localStorageState.mostRecentOnlineDeckSearchResults = {};
 localStorageState.allJsonDataLoaded = false;
+localStorageState.showDeckTextImporterWithPosition = null;
 
 const defaultState: IGameState = {
   playerColors: {},
@@ -92,6 +94,7 @@ const defaultState: IGameState = {
   searchingForOnlineDecks: false,
   mostRecentOnlineDeckSearchResults: {},
   allJsonDataLoaded: false,
+  showDeckTextImporterWithPosition: null,
 };
 export const initialState: IGameState = {
   ...defaultState,

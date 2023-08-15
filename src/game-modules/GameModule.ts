@@ -2,13 +2,18 @@ import { Vector2d } from "konva/lib/types";
 import { CounterTokenType, StatusTokenType } from "../constants/card-constants";
 import { CardData } from "../external-api/common-card-data";
 import { ICardData, ISetData } from "../features/cards-data/initialState";
-import { ICardDetails, IPlayerBoard } from "../features/cards/initialState";
+import {
+  ICardDetails,
+  ICardStack,
+  IPlayerBoard,
+} from "../features/cards/initialState";
 import { AxiosResponse } from "axios";
 import { RootState } from "../store/rootReducer";
 import { IEncounterEntity } from "../features/cards-data/cards-data.selectors";
 import { GameType } from "./GameType";
 import { ICounter, IFlippableToken } from "../features/counters/initialState";
 import { PlayerColor } from "../constants/app-constants";
+import { ContextMenuItem } from "../ContextMenu";
 
 export type CardPackRemapping = { [key: string]: string };
 
@@ -122,6 +127,7 @@ export interface GameProperties {
   };
   iconCounters?: IconCounter[];
   textCounters?: TextCounter[];
+  useAltCardArtByDefault?: boolean;
 }
 export abstract class GameModule {
   properties: GameProperties;
@@ -178,6 +184,8 @@ export abstract class GameModule {
   ): number {
     return 0;
   }
+
+  loadDeckFromText?(text: string): string[];
 
   splitEncounterCardsIntoStacksWhenLoading?(
     setCode: string,

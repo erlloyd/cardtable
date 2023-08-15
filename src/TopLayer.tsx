@@ -6,6 +6,7 @@ import { SwipeableHandlers, useSwipeable } from "react-swipeable";
 interface IProps {
   trasparentBackground?: boolean;
   offsetContent?: boolean;
+  staticPosition?: boolean;
   position: Vector2d;
   completed: () => void;
   children?: React.ReactNode;
@@ -26,10 +27,14 @@ const TopLayer = (props: IProps) => {
   }
 
   const offset = props.offsetContent ? 8 : 0;
-  const containerStyle: React.CSSProperties = {
-    top: `${props.position.y + offset}px`,
-    left: `${props.position.x + offset}px`,
-  };
+  const containerStyle: React.CSSProperties = props.staticPosition
+    ? {
+        position: "static",
+      }
+    : {
+        top: `${props.position.y + offset}px`,
+        left: `${props.position.x + offset}px`,
+      };
 
   if (!props.trasparentBackground) {
     containerStyle.backgroundColor = "white";

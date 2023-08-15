@@ -95,9 +95,11 @@ class ContextMenu extends Component<IProps, IState> {
           label={i.label}
           labelHTML={i.labelHTML}
         >
-          {i.children.map((nestedI, nestedIndex) => {
-            return this.renderMenuItem(nestedI, index * 1000 + nestedIndex);
-          })}
+          {i.children
+            .filter((c) => !c.hidden)
+            .map((nestedI, nestedIndex) => {
+              return this.renderMenuItem(nestedI, index * 1000 + nestedIndex);
+            })}
         </NestedMenuItem>
       );
     } else if (!!i.fileUploader) {

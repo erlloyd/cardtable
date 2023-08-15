@@ -1,5 +1,4 @@
 import axios, { AxiosResponse } from "axios";
-import { groupBy } from "lodash";
 import log from "loglevel";
 import { CardSizeType } from "../../constants/card-constants";
 import { CardData } from "../../external-api/common-card-data";
@@ -14,8 +13,8 @@ import {
   IPackMetadata,
 } from "../GameModule";
 import { GameType } from "../GameType";
-import { properties } from "./properties";
 import { packList as lorcanaPackList } from "./generated/packsList";
+import { properties } from "./properties";
 
 interface LorcanaCard {
   id: number;
@@ -115,7 +114,9 @@ export default class LorcanaGameModule extends GameModule {
   }): CardData[] {
     const pack = packWithMetadata.pack as LorcanaCard[];
     return pack.map((c) => ({
-      code: `${c.card_set_id}_${c.number}`,
+      code: `${c.name.toLocaleLowerCase()}${
+        c.title ? "_" + c.title.toLocaleLowerCase() : ""
+      }`,
       name: `${c.name}${c.title ? " " + c.title : ""}`,
       images: {
         front: c.FrontImage,
@@ -143,6 +144,10 @@ export default class LorcanaGameModule extends GameModule {
     _state: RootState
   ): [string[], ILoadedDeck] {
     throw new Error("Method not implemented.");
+  }
+
+  loadDeckFromText(_text: string): string[] {
+    return ["tinker bell_giant fairy"];
   }
 
   getEncounterEntitiesFromState(

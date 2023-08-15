@@ -27,4 +27,5 @@ export const properties: GameProperties = {
     acceleration: null,
   },
   iconCounters: [],
+  useAltCardArtByDefault: true,
 };

@@ -71,6 +71,7 @@ import FlippableToken from "./FlippableToken";
 import { CardData } from "./external-api/common-card-data";
 import { ConfirmOptions, useConfirm } from "material-ui-confirm";
 import PlayerBoardsContainer from "./PlayerBoardsContainer";
+import DeckTextImporterContainer from "./DeckTextImporterContainer";
 
 const SCALE_BY = 1.02;
 
@@ -204,6 +205,7 @@ interface IProps {
   showRadialMenuAtPosition: (payload: Vector2d) => void;
   showSpecificCardLoader: (payload: Vector2d) => void;
   showDeckSearch: (payload: Vector2d) => void;
+  showDeckTextImporter: (pos: Vector2d) => void;
   adjustModifier: (payload: {
     id?: string;
     modifierId: string;
@@ -671,6 +673,7 @@ class Game extends Component<IProps, IState> {
               : { x: 0, y: 0 }
           )}
         ></DeckSearchContainer>
+        <DeckTextImporterContainer></DeckTextImporterContainer>
         <NotesContainer></NotesContainer>
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
@@ -2515,6 +2518,69 @@ class Game extends Component<IProps, IState> {
 
     const menuItems: ContextMenuItem[] = [
       {
+        label: "Import / Load",
+        children: [
+          {
+            label: "Import Deck by ID",
+            action: () => {
+              this.setState({
+                showDeckImporter: true,
+                deckImporterPosition: this.stage?.getPointerPosition() ?? {
+                  x: 0,
+                  y: 0,
+                },
+              });
+            },
+            hidden: !GamePropertiesMap[this.props.currentGameType].decklistApi,
+          },
+          {
+            label: `Search for Online Deck to Import`,
+            action: () => {
+              this.props.showDeckSearch(
+                this.stage?.getPointerPosition() || { x: 0, y: 0 }
+              );
+            },
+            hidden:
+              !GamePropertiesMap[this.props.currentGameType].decklistSearchApi,
+          },
+          {
+            label: "Import Deck from Text",
+            action: () => {
+              this.props.showDeckTextImporter(
+                this.stage?.getPointerPosition() || { x: 100, y: 100 }
+              );
+            },
+            hidden: !GameManager.getModuleForType(this.props.currentGameType)
+              .loadDeckFromText,
+          },
+          {
+            label: `Load ${
+              GamePropertiesMap[this.props.currentGameType].encounterUiName
+            }`,
+            action: () => {
+              this.setState({
+                showEncounterImporter: true,
+                encounterImporterPosition:
+                  this.stage?.getPointerPosition() ?? null,
+              });
+            },
+            hidden:
+              !GamePropertiesMap[this.props.currentGameType].encounterUiName,
+          },
+          {
+            label: `Load Specific Card`,
+            action: () => {
+              this.props.showSpecificCardLoader(
+                this.stage?.getPointerPosition() || { x: 0, y: 0 }
+              );
+            },
+            hidden:
+              !GamePropertiesMap[this.props.currentGameType]
+                .allowSpecificCardSearch,
+          },
+        ],
+      },
+      {
         label: "Undo",
         action: this.props.undo,
       },
@@ -2571,29 +2637,6 @@ class Game extends Component<IProps, IState> {
           }
         },
       },
-      {
-        label: "Load Deck by ID",
-        action: () => {
-          this.setState({
-            showDeckImporter: true,
-            deckImporterPosition: this.stage?.getPointerPosition() ?? {
-              x: 0,
-              y: 0,
-            },
-          });
-        },
-        hidden: !GamePropertiesMap[this.props.currentGameType].decklistApi,
-      },
-      {
-        label: `Search for Online Deck`,
-        action: () => {
-          this.props.showDeckSearch(
-            this.stage?.getPointerPosition() || { x: 0, y: 0 }
-          );
-        },
-        hidden:
-          !GamePropertiesMap[this.props.currentGameType].decklistSearchApi,
-      },
       // {
       //   label: "Load Deck from json file",
       //   fileLoadedAction: (jsonContents: string) => {
@@ -2605,26 +2648,6 @@ class Game extends Component<IProps, IState> {
       //   },
       //   fileUploader: true,
       // },
-      {
-        label: `Load ${
-          GamePropertiesMap[this.props.currentGameType].encounterUiName
-        }`,
-        action: () => {
-          this.setState({
-            showEncounterImporter: true,
-            encounterImporterPosition: this.stage?.getPointerPosition() ?? null,
-          });
-        },
-      },
-      {
-        label: `Load Specific Card`,
-        action: () => {
-          this.props.showSpecificCardLoader(
-            this.stage?.getPointerPosition() || { x: 0, y: 0 }
-          );
-        },
-        hidden: !GamePropertiesMap[this.props.currentGameType].allowSpecificCardSearch,
-      },
       {
         label: "Create new counter",
         children: [
