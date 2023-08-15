@@ -557,7 +557,11 @@ class Game extends Component<IProps, IState> {
               cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT;
             previewCardWidth *= previewCardRatio;
 
-            return imgUrls.some((url) => url.indexOf("_back") !== -1) ? null : (
+            return imgUrls.some((url) =>
+              GameManager.getModuleForType(
+                this.props.currentGameType
+              ).isCardBackImg(url)
+            ) ? null : (
               <Card
                 currentGameType={this.props.currentGameType}
                 currentPlayerRole={this.props.currentPlayerRole}

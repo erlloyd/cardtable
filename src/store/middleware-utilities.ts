@@ -35,6 +35,10 @@ import {
   removePlayer,
   showSpecificCardLoader,
   togglePreviewCardRotation,
+  showDeckTextImporter,
+  hideDeckTextImporter,
+  showDeckSearch,
+  hideDeckSearch,
 } from "../features/game/game.slice";
 import { toggleNotes } from "../features/notes/notes.slice";
 import {
@@ -79,6 +83,10 @@ export const blacklistRemoteActions = {
   [removePlayer.type]: true,
   [showSpecificCardLoader.type]: true,
   [togglePreviewCardRotation.type]: true,
+  [showDeckTextImporter.type]: true,
+  [hideDeckTextImporter.type]: true,
+  [showDeckSearch.type]: true,
+  [hideDeckSearch.type]: true,
 };
 
 export const misingPlayerNumInSeq = (

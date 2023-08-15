@@ -35,8 +35,14 @@ const DeckTextImporter = (props: IProps) => {
         });
       }
     }
+    setCurrentTextValue("");
     props.hideDeckTextImporter();
-  }, [props.hideDeckTextImporter, props.addCardStack, props.positionToImport]);
+  }, [
+    currentTextValue,
+    props.hideDeckTextImporter,
+    props.addCardStack,
+    props.positionToImport,
+  ]);
 
   return props.positionToImport !== null ? (
     <TopLayer
@@ -45,6 +51,7 @@ const DeckTextImporter = (props: IProps) => {
       offsetContent={false}
       position={{ x: 0, y: 0 }}
       completed={() => {
+        setCurrentTextValue("");
         props.hideDeckTextImporter();
       }}
     >
@@ -65,13 +72,19 @@ const DeckTextImporter = (props: IProps) => {
             minRows={6}
             value={currentTextValue}
             style={{ width: "100%", paddingBottom: "10px" }}
-            onChange={(e) => setCurrentTextValue(e.target.value)}
+            onChange={(e) => {
+              setCurrentTextValue(e.target.value);
+            }}
           />
           <div className="button-group">
             <Button variant="outlined" onClick={props.hideDeckTextImporter}>
               Cancel
             </Button>
-            <Button variant="contained" onClick={handleDeckImport}>
+            <Button
+              disabled={currentTextValue === ""}
+              variant="contained"
+              onClick={handleDeckImport}
+            >
               Import
             </Button>
           </div>

@@ -185,6 +185,10 @@ export abstract class GameModule {
     return 0;
   }
 
+  isCardBackImg(imgUrl: string): boolean {
+    return imgUrl.indexOf("_back") !== -1;
+  }
+
   loadDeckFromText?(text: string): string[];
 
   splitEncounterCardsIntoStacksWhenLoading?(

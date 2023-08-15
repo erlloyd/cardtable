@@ -146,8 +146,37 @@ export default class LorcanaGameModule extends GameModule {
     throw new Error("Method not implemented.");
   }
 
-  loadDeckFromText(_text: string): string[] {
-    return ["tinker bell_giant fairy"];
+  loadDeckFromText(text: string): string[] {
+    // first, try to json parse to see if this is JSON
+    try {
+      const jsonFormat = JSON.parse(text);
+      // TODO: now do something if it's json
+      return [];
+    } catch (_e) {
+      // We don't do anything here because it's
+      // probably a pixelborn string
+    }
+
+    try {
+      var pixelbornString = atob(text);
+      const ids: string[] = [];
+      pixelbornString.split("|").forEach((cardInfo) => {
+        const cardParts = cardInfo.split("$");
+        const name = cardParts[0].toLocaleLowerCase();
+        const quantity = Number(cardParts[1]);
+        for (let i = 0; i < quantity; i++) {
+          ids.push(name);
+        }
+      });
+      return ids;
+    } catch (e) {
+      console.error("Could not parse format");
+    }
+    return [];
+  }
+
+  isCardBackImg(imgUrl: string): boolean {
+    return imgUrl.indexOf("card-back") !== -1;
   }
 
   getEncounterEntitiesFromState(
