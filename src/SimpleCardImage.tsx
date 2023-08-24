@@ -1,15 +1,20 @@
 import { SceneContext } from "konva/lib/Context";
 import { ShapeConfig } from "konva/lib/Shape";
 import { ImageConfig } from "konva/lib/shapes/Image";
-import { useCallback } from "react";
-import { Group, Image } from "react-konva";
+import { MutableRefObject, useCallback } from "react";
+import { Group, Image, Rect, Text } from "react-konva";
 import useImage from "use-image";
 
 interface IProps extends ShapeConfig {
   imgUrls: string[];
+  imageRef: MutableRefObject<any>;
+  selected: boolean;
+  dropTargetColor?: string;
+  code: string;
+  name: string;
 }
 
-export const SimpleImage = (props: IProps) => {
+export const SimpleCardImage = (props: IProps) => {
   // console.log("simple image props", props);
   const calcClipFunc = useCallback(
     (ctx: SceneContext) => {
@@ -90,11 +95,35 @@ export const SimpleImage = (props: IProps) => {
     !!props.imgUrls && props.imgUrls.length > 0 ? props.imgUrls[0] : "";
   const [image, status] = useImage(imageToUse);
 
-  if (!image) return null;
+  const cardNameText =
+    status === "failed" ? (
+      <Text
+        offset={{ x: -3, y: -50 }}
+        width={props.width ?? 0}
+        height={props.height ?? 50 - 50}
+        key={`${props.id}-cardnametext`}
+        fontSize={24}
+        text={`${props.name} ${props.code}`}
+        fill="black"
+      ></Text>
+    ) : null;
+
+  const placeholderRect =
+    status !== "loaded" ? (
+      <Rect
+        width={props.width || 0}
+        height={props.height || 0}
+        offset={{ x: 0, y: 0 }}
+        fill={"gray"}
+        cornerRadius={9}
+      />
+    ) : null;
 
   const radius = 5;
 
-  const horizontalImage = image.naturalWidth > image.naturalHeight;
+  const horizontalImage = image
+    ? image.naturalWidth > image.naturalHeight
+    : false;
   const rotation = horizontalImage ? -90 : 0;
   const offset = horizontalImage
     ? { x: props.height || 0, y: 0 }
@@ -102,9 +131,29 @@ export const SimpleImage = (props: IProps) => {
   const widthToUse = horizontalImage ? props.height : props.width;
   const heightToUse = horizontalImage ? props.width : props.height;
 
-  return (
-    status !== "loading" && (
-      <Group {...props} clipFunc={calcClipFunc}>
+  const groupOffset = { x: (props.width || 0) / 2, y: (props.height || 0) / 2 };
+  const groupPos = {
+    x: props.x || 0 + groupOffset.x,
+    y: props.y || 0 + groupOffset.y,
+  };
+
+  const selectedBox =
+    props.selected || !!getStrokeColor(props) ? (
+      <Rect
+        offset={offset}
+        x={offset.x}
+        y={offset.y}
+        width={horizontalImage ? heightToUse : widthToUse}
+        height={horizontalImage ? widthToUse : heightToUse}
+        cornerRadius={9}
+        stroke={getStrokeColor(props)}
+        strokeWidth={6}
+      />
+    ) : null;
+
+  const imageElement =
+    image && status === "loaded" ? (
+      <Group clipFunc={calcClipFunc}>
         <Image
           offset={offset}
           rotation={rotation}
@@ -115,6 +164,36 @@ export const SimpleImage = (props: IProps) => {
           hitStrokeWidth={0}
         />
       </Group>
+    ) : null;
+
+  console.log("placeholderrect", placeholderRect);
+
+  return (
+    status !== "loading" && (
+      <Group
+        ref={props.imageRef}
+        offset={groupOffset}
+        x={groupPos.x}
+        y={groupPos.y}
+        {...props}
+      >
+        {selectedBox}
+        {placeholderRect}
+        {cardNameText}
+        {imageElement}
+      </Group>
     )
   );
+};
+
+const getStrokeColor = (props: IProps) => {
+  if (!!props.dropTargetColor) {
+    return props.dropTargetColor;
+  }
+
+  if (props.selected) {
+    return props.selectedColor;
+  }
+
+  return "";
 };

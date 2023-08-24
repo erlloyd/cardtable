@@ -43,7 +43,10 @@ import { sendNotification } from "../notifications/notifications.slice";
 import { ILoadedDeck } from "../../game-modules/GameModule";
 import GameManager from "../../game-modules/GameModuleManager";
 import { GameType } from "../../game-modules/GameType";
-import { CardSizeType } from "../../constants/card-constants";
+import {
+  CardSizeType,
+  stackShuffleAnimationMS,
+} from "../../constants/card-constants";
 
 interface AddCardStackPayload {
   cardJsonIds: string[];
@@ -115,17 +118,16 @@ export const shuffleStack =
       .forEach((stackToShuffle) => {
         dispatch(setStackShuffling({ id: stackToShuffle.id, shuffling: true }));
         const shuffledStack = shuffle(stackToShuffle.cardStack);
-        dispatch(
-          replaceCardStack({ id: stackToShuffle.id, newStack: shuffledStack })
-        );
-
         // We have to do a setTimeout here, because if we do it in this event loop,
         // the overall change for this card is nothing for the shuffling param
         setTimeout(() => {
           dispatch(
             setStackShuffling({ id: stackToShuffle.id, shuffling: false })
           );
-        });
+          dispatch(
+            replaceCardStack({ id: stackToShuffle.id, newStack: shuffledStack })
+          );
+        }, stackShuffleAnimationMS);
       });
   };
 

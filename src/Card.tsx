@@ -1,11 +1,25 @@
+import { Spring, animated } from "@react-spring/konva";
 import { KonvaEventObject } from "konva/lib/Node";
+import { debounce } from "lodash";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Image, Group, Rect } from "react-konva";
+import { SimpleCardImage } from "./SimpleCardImage";
 import { PlayerColor, myPeerRef } from "./constants/app-constants";
-import { CardSizeType, cardConstants } from "./constants/card-constants";
+import {
+  CardSizeType,
+  cardConstants,
+  stackShuffleAnimationS,
+} from "./constants/card-constants";
 import { GameType } from "./game-modules/GameType";
-import { SimpleImage } from "./SimpleImage";
-import { Group, Rect } from "react-konva";
-import { animated, Spring } from "@react-spring/konva";
-import { useCallback, useEffect } from "react";
+import useImage from "use-image";
+
+export const useIsMount = () => {
+  const isMountRef = useRef(true);
+  useEffect(() => {
+    isMountRef.current = false;
+  }, []);
+  return isMountRef.current;
+};
 
 // There is a bug somewhere in react-konva or react-spring/konva, where, if you use the generic
 // `animated` WithAnimations type, you get the following typescript error in typescript ~4.5:
@@ -92,10 +106,36 @@ interface IState {
 }
 
 const Card = (props: IProps) => {
+  const isMount = useIsMount();
+  const [showDragHandle, setShowDragHandle] = useState(true);
+
   // set up shuffling effect
+  const shuffleRef = useRef(null);
+
   useEffect(() => {
-    console.log("SHUFFLING");
+    if (!isMount && props.shuffling) {
+      if (shuffleRef?.current) {
+        (shuffleRef.current as any).to({
+          // note, we don't need to do this over and over because the component will be swapped out,
+          // so rotation will always go back to zero after shuffling
+          rotation: getCurrentRotation(props.exhausted) + 360,
+          duration: stackShuffleAnimationS,
+        });
+      } else {
+        console.error("Shuffle reference doesn't exist!");
+      }
+    }
   }, [props.shuffling]);
+
+  // set up draghandle hiding
+  useEffect(() => {
+    if (!isMount) {
+      setShowDragHandle(false);
+    }
+  }, [props.exhausted]);
+
+  // Images
+  const [dragImg, dragImgStatus] = useImage("/images/standard/share.png");
 
   // HANDLERS
   const handleClick = useCallback(
@@ -104,10 +144,8 @@ const Card = (props: IProps) => {
       const delta = time - lastTap;
       lastTap = time;
       if (delta < lastTapDelta) {
-        console.log("detected double");
         handleDoubleClick(event);
       } else {
-        console.log("detected single");
         handleTapOrClick(event, props.id, false, props.handleClick);
       }
     },
@@ -120,7 +158,6 @@ const Card = (props: IProps) => {
       const delta = time - lastTap;
       lastTap = time;
       if (delta < lastTapDelta) {
-        console.log("detected double");
         handleDoubleTap(event);
       } else {
         handleTapOrClick(event, props.id, true, props.handleClick);
@@ -131,8 +168,8 @@ const Card = (props: IProps) => {
 
   const handleDoubleClick = useCallback(
     (event: KonvaEventObject<MouseEvent>) => {
+      setShowDragHandle(false);
       if (props.handleDoubleClick) {
-        // this.setState({ showDragHandle: false });
         props.handleDoubleClick(props.id, event);
         event.cancelBubble = true;
       }
@@ -142,8 +179,8 @@ const Card = (props: IProps) => {
 
   const handleDoubleTap = useCallback(
     (event: KonvaEventObject<TouchEvent>) => {
+      setShowDragHandle(false);
       if (props.handleDoubleTap) {
-        // this.setState({ showDragHandle: false });
         props.handleDoubleTap(props.id, event);
         event.cancelBubble = true;
       }
@@ -151,8 +188,68 @@ const Card = (props: IProps) => {
     [props.handleDoubleTap, props.id]
   );
 
-  // console.log(props.selected);
+  const handleDragStart = useCallback(
+    (event: KonvaEventObject<DragEvent>) => {
+      if (props.handleDragStart) {
+        props.handleDragStart(props.id, event);
+      }
+    },
+    [props.handleDragStart, props.id]
+  );
+  const handleDragMove = useCallback(
+    debounce((event: any) => {
+      if (props.handleDragMove) {
+        props.handleDragMove({
+          id: props.id,
+          dx: event.target.x() - props.x,
+          dy: event.target.y() - props.y,
+        });
+      }
+    }, 5),
+    [props.handleDragMove, props.id, props.x, props.y]
+  );
 
+  const handleDragEnd = useCallback(
+    (event: KonvaEventObject<DragEvent>) => {
+      if (props.handleDragEnd && props.dragging) {
+        // First make sure the cursor is back to normal
+        window.document.body.style.cursor = "grab";
+
+        // Next, cancel any outstanding move things that haven't debounced
+        handleDragMove.cancel();
+
+        props.handleDragEnd(props.id, event);
+      }
+    },
+    [props.handleDragEnd, props.dragging, props.id]
+  );
+
+  const handleHover = useCallback(() => {
+    window.document.body.style.cursor = "grab";
+    if (props.handleHover) {
+      props.handleHover(props.id);
+    }
+  }, [props.handleHover, props.id]);
+
+  const handleHoverLeave = useCallback(() => {
+    window.document.body.style.cursor = "default";
+    if (props.handleHoverLeave) {
+      props.handleHoverLeave(props.id);
+    }
+  }, [props.handleHoverLeave, props.id]);
+
+  const handleContextMenu = useCallback(
+    (event: KonvaEventObject<PointerEvent>) => {
+      if (!!props.handleContextMenu) {
+        props.handleContextMenu(props.id, event);
+      }
+    },
+    [props.handleContextMenu, props.id]
+  );
+
+  // RENDERABLE PIECES
+
+  // Global location calculations
   const heightToUse = props.height || cardConstants[props.sizeType].CARD_HEIGHT;
   const widthToUse = props.width || cardConstants[props.sizeType].CARD_WIDTH;
 
@@ -161,9 +258,16 @@ const Card = (props: IProps) => {
     y: heightToUse / 2,
   };
 
+  // CARD STACK INDICATOR
+
   const cardStackOffset = {
-    x: 6,
-    y: -6,
+    x: offset.x + 6,
+    y: offset.y - 6,
+  };
+
+  const cardStackLocation = {
+    x: offset.x,
+    y: offset.y,
   };
 
   const cardStack =
@@ -177,35 +281,157 @@ const Card = (props: IProps) => {
         fill={"gray"}
         shadowForStrokeEnabled={false}
         hitStrokeWidth={0}
+        x={cardStackLocation.x}
+        y={cardStackLocation.y}
       />
     ) : null;
 
+  // GHOST CARD FOR SNAP TO GRID
+  const gridGhostCard =
+    props.isGhost && props.imgUrls.length === 0 ? (
+      <Rect
+        cornerRadius={[9, 9, 9, 9]}
+        width={widthToUse}
+        height={heightToUse}
+        opacity={0.5}
+        fill={"gray"}
+      />
+    ) : null;
+
+  // ACTUAL CARD ITSELF
   const card = (
-    <SimpleImage
+    <SimpleCardImage
+      imageRef={shuffleRef}
       imgUrls={props.imgUrls}
       width={widthToUse}
       height={heightToUse}
-      stroke={getStrokeColor(props)}
-      strokeWidth={!!getStrokeColor(props) ? 4 : 0}
-    ></SimpleImage>
+      selected={props.selected}
+      selectedColor={props.selectedColor}
+      opacity={props.isGhost ? 0.5 : 1}
+      dropTargetColor={props.dropTargetColor}
+      name={props.name}
+      code={props.code}
+    ></SimpleCardImage>
   );
 
-  const selectedBox = props.selected ? (
-    <Rect
-      width={widthToUse}
-      height={heightToUse}
-      cornerRadius={9}
-      stroke={"red"}
-      strokeWidth={4}
-    />
-  ) : null;
+  // CARD COUNT TEXT
+  const countDim = 40;
 
+  const stackCountMainOffset = {
+    x: -widthToUse / 2,
+    y: 0,
+  };
+
+  const stackCountoffset = {
+    x: 20,
+    y: 20,
+  };
+
+  const cardStackCount =
+    (props.numCardsInStack || 1) > 1 && !props.isGhost ? (
+      <Spring
+        key={`${props.id}-cardStackCount`}
+        to={{
+          textRotation: props.exhausted ? -90 : 0,
+        }}
+      >
+        {(animatedProps: any) => (
+          <AnimatedAny.Group
+            width={countDim}
+            height={countDim}
+            offset={stackCountMainOffset}
+            {...animatedProps}
+          >
+            <AnimatedAny.Group width={countDim} height={countDim}>
+              <AnimatedAny.Rect
+                offset={stackCountoffset}
+                cornerRadius={[9, 9, 9, 9]}
+                opacity={0.6}
+                fill={"black"}
+                shadowForStrokeEnabled={false}
+                hitStrokeWidth={0}
+                width={countDim}
+                height={countDim}
+              />
+              <AnimatedAny.Text
+                rotation={animatedProps.textRotation}
+                offset={stackCountoffset}
+                key={`${props.id}-cardstackcounttext`}
+                width={countDim}
+                height={countDim}
+                verticalAlign={"middle"}
+                align={"center"}
+                fontSize={(props.numCardsInStack || 1) > 99 ? 18 : 24}
+                fill={"white"}
+                text={`${props.numCardsInStack}`}
+              />
+            </AnimatedAny.Group>
+          </AnimatedAny.Group>
+        )}
+      </Spring>
+    ) : null;
+
+  // DRAG HANDLE
+  const dragHandleSize = 40;
+  const dragHandleMainOffset = {
+    x: props.exhausted ? 0 : -widthToUse + dragHandleSize,
+    y: 0,
+  };
+
+  const dragHandleOffset = {
+    x: 0,
+    y: 0,
+  };
+
+  const cardStackDragHandle =
+    (props.numCardsInStack || 1) > 1 &&
+    !props.isGhost &&
+    showDragHandle &&
+    dragImgStatus === "loaded" &&
+    !!dragImg ? (
+      <Group
+        width={dragHandleSize}
+        height={dragHandleSize}
+        offset={dragHandleMainOffset}
+        onMouseEnter={() => {
+          window.document.body.style.cursor = "ne-resize";
+        }}
+        onMouseLeave={() => {
+          window.document.body.style.cursor = "default";
+        }}
+      >
+        <Rect
+          offset={dragHandleOffset}
+          cornerRadius={[9, 9, 9, 9]}
+          opacity={0.6}
+          fill={"black"}
+          shadowForStrokeEnabled={false}
+          hitStrokeWidth={0}
+          width={dragHandleSize}
+          height={dragHandleSize}
+        />
+        <Image
+          rotation={props.exhausted ? -90 : 0}
+          offset={{ x: dragHandleSize / 2, y: dragHandleSize / 2 }}
+          x={dragHandleSize / 2}
+          y={dragHandleSize / 2}
+          image={dragImg}
+          width={dragHandleSize}
+          height={dragHandleSize}
+        />
+      </Group>
+    ) : null;
+
+  // FINAL RENDER
   return (
     <Spring
       key={`${props.id}-card`}
       to={{
-        rotation: props.exhausted ? 90 : 0,
+        rotation: getCurrentRotation(props.exhausted),
         textRotation: props.exhausted ? -90 : 0,
+      }}
+      onRest={() => {
+        setShowDragHandle(true);
       }}
     >
       {(animatedProps: any) => (
@@ -218,27 +444,28 @@ const Card = (props: IProps) => {
           x={props.x}
           y={props.y}
           offset={offset}
-          onClick={(e: any) => {
-            console.log("handleClick");
-            handleClick(e);
-          }}
+          onClick={handleClick}
           onTap={handleTap}
+          onDragStart={handleDragStart}
+          onDragMove={handleDragMove}
+          onDragEnd={handleDragEnd}
+          onMouseOver={handleHover}
+          onMouseOut={handleHoverLeave}
+          onContextMenu={handleContextMenu}
         >
-          {/* <Group
-            onDblClick={(e: any) => {
-              console.log("double click");
-              handleDoubleClick(e);
-            }}
-            onDblTap={handleDoubleTap}
-          > */}
           {cardStack}
           {card}
-          {selectedBox}
-          {/* </Group> */}
+          {cardStackCount}
+          {cardStackDragHandle}
+          {gridGhostCard}
         </AnimatedAny.Group>
       )}
     </Spring>
   );
+};
+
+const getCurrentRotation = (exhausted: boolean) => {
+  return exhausted ? 90 : 0;
 };
 
 const handleTapOrClick = (
@@ -255,18 +482,6 @@ const handleTapOrClick = (
     callback(id, event, wasTouch);
     event.cancelBubble = true;
   }
-};
-
-const getStrokeColor = (props: IProps) => {
-  if (!!props.dropTargetColor) {
-    return props.dropTargetColor;
-  }
-
-  if (props.selected) {
-    return props.selectedColor;
-  }
-
-  return "";
 };
 
 export default Card;
