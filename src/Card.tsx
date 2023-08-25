@@ -584,13 +584,13 @@ const Card = (props: IProps) => {
         >
           {cardStack}
           {card}
+          {cardStackCount}
+          {cardStackDragHandle}
           {cardTokens}
           {stunnedStatusToken}
           {confusedStatusToken}
           {toughStatusToken}
           {cardModifiers}
-          {cardStackCount}
-          {cardStackDragHandle}
           {gridGhostCard}
         </AnimatedAny.Group>
       )}
