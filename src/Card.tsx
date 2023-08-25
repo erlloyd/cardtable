@@ -12,9 +12,14 @@ import {
 } from "./constants/card-constants";
 import { GameType } from "./game-modules/GameType";
 import useImage from "use-image";
+import CardTokensContainer from "./CardTokensContainer";
+import CardModifiersContainer from "./CardModifiersContainer";
+import CardStatusToken from "./CardStatusToken";
+import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 
 export const useIsMount = () => {
   const isMountRef = useRef(true);
+
   useEffect(() => {
     isMountRef.current = false;
   }, []);
@@ -107,6 +112,7 @@ interface IState {
 
 const Card = (props: IProps) => {
   const isMount = useIsMount();
+  const touchTimerRef = useRef<any>(null);
   const [showDragHandle, setShowDragHandle] = useState(true);
 
   // set up shuffling effect
@@ -246,6 +252,54 @@ const Card = (props: IProps) => {
     },
     [props.handleContextMenu, props.id]
   );
+
+  const handleMouseDown = useCallback(
+    (event: any) => {
+      event.cancelBubble = true;
+      if (props.handleMouseDownWhenNotDraggable && !!props.disableDragging) {
+        props.handleMouseDownWhenNotDraggable(props.id);
+      }
+    },
+    [props.handleMouseDownWhenNotDraggable, props.disableDragging, props.id]
+  );
+
+  const handleMouseUp = useCallback(() => {
+    if (props.handleMouseUpWhenNotDraggable && !!props.disableDragging) {
+      props.handleMouseUpWhenNotDraggable(props.id);
+    }
+  }, [props.handleMouseUpWhenNotDraggable, props.disableDragging, props.id]);
+
+  const handleTouchStart = useCallback(
+    (event: KonvaEventObject<TouchEvent>) => {
+      event.cancelBubble = true;
+      if (!!touchTimerRef.current) {
+        clearTimeout(touchTimerRef.current);
+        touchTimerRef.current = null;
+      }
+
+      touchTimerRef.current = setTimeout(() => {
+        handleContextMenu(event as unknown as KonvaEventObject<PointerEvent>);
+      }, 750);
+    },
+    []
+  );
+
+  const handleTouchMove = useCallback(() => {
+    if (!!touchTimerRef.current) {
+      clearTimeout(touchTimerRef.current);
+      touchTimerRef.current = null;
+    }
+  }, []);
+
+  const handleTouchEnd = useCallback(() => {
+    if (!!touchTimerRef.current) {
+      clearTimeout(touchTimerRef.current);
+      touchTimerRef.current = null;
+    }
+    if (!!props.handleMouseUpWhenNotDraggable) {
+      props.handleMouseUpWhenNotDraggable(props.id);
+    }
+  }, [props.handleMouseUpWhenNotDraggable, props.id]);
 
   // RENDERABLE PIECES
 
@@ -422,6 +476,76 @@ const Card = (props: IProps) => {
       </Group>
     ) : null;
 
+  const tokenInfo = GamePropertiesMap[props.currentGameType].tokens;
+  // CARD STATUS TOKEN - STUNNED
+  const shouldRenderStunned = !!props.cardState?.stunned && !!tokenInfo.stunned;
+
+  const stunnedStatusToken = shouldRenderStunned ? (
+    <CardStatusToken
+      id={props.id}
+      imgUrl={tokenInfo.stunned?.imagePath || ""}
+      numberToRender={props.cardState?.stunned || 0}
+      offset={{ x: 0, y: 0 }}
+      slot={0}
+      sizeType={props.sizeType}
+    />
+  ) : null;
+
+  // CARD STATUS TOKEN - CONFUSED
+  const shouldRenderConfused =
+    !!props.cardState?.confused && !!tokenInfo.confused;
+
+  const confusedStatusToken = shouldRenderConfused ? (
+    <CardStatusToken
+      id={props.id}
+      imgUrl={tokenInfo.confused?.imagePath || ""}
+      numberToRender={props.cardState?.confused || 0}
+      offset={{ x: 0, y: 0 }}
+      slot={1}
+      sizeType={props.sizeType}
+    />
+  ) : null;
+
+  // CARD STATUS TOKEN - STUNNED
+  const shouldRenderTough = !!props.cardState?.tough && !!tokenInfo.tough;
+
+  const toughStatusToken = shouldRenderTough ? (
+    <CardStatusToken
+      id={props.id}
+      imgUrl={tokenInfo.tough?.imagePath || ""}
+      numberToRender={props.cardState?.tough || 0}
+      offset={{ x: 0, y: 0 }}
+      slot={2}
+      sizeType={props.sizeType}
+    />
+  ) : null;
+
+  // CARD TOKENS
+  const cardTokens =
+    props.dragging || props.isGhost ? null : (
+      <CardTokensContainer
+        currentGameType={props.currentGameType}
+        key={`${props.id}-cardTokens`}
+        id={props.id}
+        x={widthToUse / 2}
+        y={heightToUse / 2}
+      ></CardTokensContainer>
+    );
+
+  // CARD MODIFIERS
+  const cardModifiers =
+    props.dragging || props.isGhost ? null : (
+      <CardModifiersContainer
+        currentGameType={props.currentGameType}
+        key={`${props.id}-cardModifiers`}
+        id={props.id}
+        x={widthToUse / 2}
+        y={heightToUse / 2}
+        cardHeight={props.height}
+        cardWidth={props.width}
+        isPreview={!!props.isPreview}
+      ></CardModifiersContainer>
+    );
   // FINAL RENDER
   return (
     <Spring
@@ -452,9 +576,19 @@ const Card = (props: IProps) => {
           onMouseOver={handleHover}
           onMouseOut={handleHoverLeave}
           onContextMenu={handleContextMenu}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {cardStack}
           {card}
+          {cardTokens}
+          {stunnedStatusToken}
+          {confusedStatusToken}
+          {toughStatusToken}
+          {cardModifiers}
           {cardStackCount}
           {cardStackDragHandle}
           {gridGhostCard}
