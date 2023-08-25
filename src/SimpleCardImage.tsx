@@ -166,8 +166,6 @@ export const SimpleCardImage = (props: IProps) => {
       </Group>
     ) : null;
 
-  console.log("placeholderrect", placeholderRect);
-
   return (
     status !== "loading" && (
       <Group
