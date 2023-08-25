@@ -167,20 +167,18 @@ export const SimpleCardImage = (props: IProps) => {
     ) : null;
 
   return (
-    status !== "loading" && (
-      <Group
-        ref={props.imageRef}
-        offset={groupOffset}
-        x={groupPos.x}
-        y={groupPos.y}
-        {...props}
-      >
-        {selectedBox}
-        {placeholderRect}
-        {cardNameText}
-        {imageElement}
-      </Group>
-    )
+    <Group
+      ref={props.imageRef}
+      offset={groupOffset}
+      x={groupPos.x}
+      y={groupPos.y}
+      {...props}
+    >
+      {selectedBox}
+      {placeholderRect}
+      {cardNameText}
+      {imageElement}
+    </Group>
   );
 };
 
