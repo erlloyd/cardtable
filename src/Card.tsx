@@ -1,19 +1,30 @@
-// tslint:disable:no-console
+import { Spring, animated } from "@react-spring/konva";
 import { KonvaEventObject } from "konva/lib/Node";
-import { Rect as RectRef } from "konva/lib/shapes/Rect";
-import { Vector2d } from "konva/lib/types";
-import { Component } from "react";
-import { Group, Rect, Text } from "react-konva";
-import { animated, Spring } from "@react-spring/konva";
-import CardTokensContainer from "./CardTokensContainer";
-import { myPeerRef, PlayerColor } from "./constants/app-constants";
-import { CardSizeType, cardConstants } from "./constants/card-constants";
-import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
-import CardModifiersContainer from "./CardModifiersContainer";
-import { shouldRenderImageHorizontal } from "./utilities/card-utils";
 import { debounce } from "lodash";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Image, Group, Rect } from "react-konva";
+import { SimpleCardImage } from "./SimpleCardImage";
+import { PlayerColor, myPeerRef } from "./constants/app-constants";
+import {
+  CardSizeType,
+  cardConstants,
+  stackShuffleAnimationS,
+} from "./constants/card-constants";
 import { GameType } from "./game-modules/GameType";
-import GameManager from "./game-modules/GameModuleManager";
+import useImage from "use-image";
+import CardTokensContainer from "./CardTokensContainer";
+import CardModifiersContainer from "./CardModifiersContainer";
+import CardStatusToken from "./CardStatusToken";
+import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
+
+export const useIsMount = () => {
+  const isMountRef = useRef(true);
+
+  useEffect(() => {
+    isMountRef.current = false;
+  }, []);
+  return isMountRef.current;
+};
 
 // There is a bug somewhere in react-konva or react-spring/konva, where, if you use the generic
 // `animated` WithAnimations type, you get the following typescript error in typescript ~4.5:
@@ -23,12 +34,14 @@ import GameManager from "./game-modules/GameModuleManager";
 // We are explicitly casting to an any for now just until this bug is (hopefully) fixed
 const AnimatedAny = animated as any;
 
+let lastTap = 0;
+const lastTapDelta = 300;
+
 export interface CardTokens {
   damage: number;
   threat: number;
   generic: number;
 }
-
 export interface CardUIState {
   stunned: number;
   confused: number;
@@ -86,7 +99,7 @@ interface IProps {
 
 interface IState {
   showDragHandle: boolean;
-  imageLoaded: boolean;
+  images: HTMLImageElement[];
   imageLoadFailed: number;
   prevImgUrls: string[];
   tokenImagesLoaded: {
@@ -97,851 +110,512 @@ interface IState {
   dragImageLoaded: boolean;
 }
 
-const stringArraysEqual = (array1: string[], array2: string[]) => {
-  return (
-    array1.length === array2.length &&
-    array1.every((value, index) => {
-      return value === array2[index];
-    })
+const Card = (props: IProps) => {
+  const isMount = useIsMount();
+  const touchTimerRef = useRef<any>(null);
+  const [showDragHandle, setShowDragHandle] = useState(true);
+
+  // set up shuffling effect
+  const shuffleRef = useRef(null);
+
+  useEffect(() => {
+    if (!isMount && props.shuffling) {
+      if (shuffleRef?.current) {
+        (shuffleRef.current as any).to({
+          // note, we don't need to do this over and over because the component will be swapped out,
+          // so rotation will always go back to zero after shuffling
+          rotation: getCurrentRotation(props.exhausted) + 360,
+          duration: stackShuffleAnimationS,
+        });
+      } else {
+        console.error("Shuffle reference doesn't exist!");
+      }
+    }
+  }, [props.shuffling]);
+
+  // set up draghandle hiding
+  useEffect(() => {
+    if (!isMount) {
+      setShowDragHandle(false);
+    }
+  }, [props.exhausted]);
+
+  // Images
+  const [dragImg, dragImgStatus] = useImage("/images/standard/share.png");
+
+  // HANDLERS
+  const handleClick = useCallback(
+    (event: KonvaEventObject<MouseEvent>) => {
+      const time = new Date().getTime();
+      const delta = time - lastTap;
+      lastTap = time;
+      if (delta < lastTapDelta) {
+        handleDoubleClick(event);
+      } else {
+        handleTapOrClick(event, props.id, false, props.handleClick);
+      }
+    },
+    [props.handleClick, props.id]
   );
-};
 
-class Card extends Component<IProps, IState> {
-  static whyDidYouRender = true;
-  // tslint:disable-next-line:member-access
-  static getDerivedStateFromProps(props: IProps, state: IState): IState | null {
-    if (!stringArraysEqual(props.imgUrls, state.prevImgUrls ?? [])) {
-      return {
-        showDragHandle: true,
-        imageLoaded: false,
-        imageLoadFailed: 0,
-        prevImgUrls: props.imgUrls,
-        tokenImagesLoaded: {
-          stunned: state.tokenImagesLoaded.stunned,
-          confused: state.tokenImagesLoaded.confused,
-          tough: state.tokenImagesLoaded.tough,
-        },
-        dragImageLoaded: state.dragImageLoaded,
-      };
-    }
-    // No state update necessary
-    return null;
-  }
+  const handleTap = useCallback(
+    (event: KonvaEventObject<TouchEvent>) => {
+      const time = new Date().getTime();
+      const delta = time - lastTap;
+      lastTap = time;
+      if (delta < lastTapDelta) {
+        handleDoubleTap(event);
+      } else {
+        handleTapOrClick(event, props.id, true, props.handleClick);
+      }
+    },
+    [props.handleClick, props.id]
+  );
 
-  private imgs: HTMLImageElement[] = [];
-  private stunnedImg: HTMLImageElement;
-  private confusedImg: HTMLImageElement;
-  private toughImg: HTMLImageElement;
-  private dragImg: HTMLImageElement;
-  private unmounted: boolean;
-  private touchTimer: any = null;
-  private rect: RectRef | null = null;
-  private shuffleToggle = false;
+  const handleDoubleClick = useCallback(
+    (event: KonvaEventObject<MouseEvent>) => {
+      setShowDragHandle(false);
+      if (props.handleDoubleClick) {
+        props.handleDoubleClick(props.id, event);
+        event.cancelBubble = true;
+      }
+    },
+    [props.handleDoubleClick, props.id]
+  );
 
-  constructor(props: IProps) {
-    super(props);
+  const handleDoubleTap = useCallback(
+    (event: KonvaEventObject<TouchEvent>) => {
+      setShowDragHandle(false);
+      if (props.handleDoubleTap) {
+        props.handleDoubleTap(props.id, event);
+        event.cancelBubble = true;
+      }
+    },
+    [props.handleDoubleTap, props.id]
+  );
 
-    this.unmounted = true;
-
-    this.state = {
-      showDragHandle: true,
-      imageLoaded: false,
-      imageLoadFailed: 0,
-      prevImgUrls: this.props.imgUrls,
-      tokenImagesLoaded: {
-        stunned: false,
-        confused: false,
-        tough: false,
-      },
-      dragImageLoaded: false,
-    };
-
-    this.initCardImages(props);
-
-    this.dragImg = new Image();
-
-    this.stunnedImg = new Image();
-    this.confusedImg = new Image();
-    this.toughImg = new Image();
-
-    this.dragImg.onload = () => {
-      if (!this.unmounted) {
-        this.setState({
-          dragImageLoaded: true,
+  const handleDragStart = useCallback(
+    (event: KonvaEventObject<DragEvent>) => {
+      if (props.handleDragStart) {
+        props.handleDragStart(props.id, event);
+      }
+    },
+    [props.handleDragStart, props.id]
+  );
+  const handleDragMove = useCallback(
+    debounce((event: any) => {
+      if (props.handleDragMove) {
+        props.handleDragMove({
+          id: props.id,
+          dx: event.target.x() - props.x,
+          dy: event.target.y() - props.y,
         });
       }
-    };
+    }, 5),
+    [props.handleDragMove, props.id, props.x, props.y]
+  );
 
-    this.dragImg.src = "/images/standard/share.png";
+  const handleDragEnd = useCallback(
+    (event: KonvaEventObject<DragEvent>) => {
+      if (props.handleDragEnd && props.dragging) {
+        // First make sure the cursor is back to normal
+        window.document.body.style.cursor = "grab";
 
-    // STUNNED
-    this.stunnedImg.onload = () => {
-      if (!this.unmounted) {
-        this.setState({
-          tokenImagesLoaded: {
-            stunned: true,
-            confused: this.state.tokenImagesLoaded.confused,
-            tough: this.state.tokenImagesLoaded.tough,
-          },
-        });
+        // Next, cancel any outstanding move things that haven't debounced
+        handleDragMove.cancel();
+
+        props.handleDragEnd(props.id, event);
       }
-    };
+    },
+    [props.handleDragEnd, props.dragging, props.id]
+  );
 
-    const tokenInfo = GamePropertiesMap[props.currentGameType].tokens;
-
-    if (!!props.cardState?.stunned && !!tokenInfo.stunned) {
-      this.stunnedImg.src = tokenInfo.stunned.imagePath;
+  const handleHover = useCallback(() => {
+    window.document.body.style.cursor = "grab";
+    if (props.handleHover) {
+      props.handleHover(props.id);
     }
+  }, [props.handleHover, props.id]);
 
-    // CONFUSED
-    this.confusedImg.onload = () => {
-      if (!this.unmounted) {
-        this.setState({
-          tokenImagesLoaded: {
-            stunned: this.state.tokenImagesLoaded.stunned,
-            confused: true,
-            tough: this.state.tokenImagesLoaded.tough,
-          },
-        });
+  const handleHoverLeave = useCallback(() => {
+    window.document.body.style.cursor = "default";
+    if (props.handleHoverLeave) {
+      props.handleHoverLeave(props.id);
+    }
+  }, [props.handleHoverLeave, props.id]);
+
+  const handleContextMenu = useCallback(
+    (event: KonvaEventObject<PointerEvent>) => {
+      if (!!props.handleContextMenu) {
+        props.handleContextMenu(props.id, event);
       }
-    };
+    },
+    [props.handleContextMenu, props.id]
+  );
 
-    if (!!props.cardState?.confused && !!tokenInfo.confused) {
-      this.confusedImg.src = tokenInfo.confused.imagePath;
-    }
-
-    // TOUGH
-    this.toughImg.onload = () => {
-      if (!this.unmounted) {
-        this.setState({
-          tokenImagesLoaded: {
-            stunned: this.state.tokenImagesLoaded.stunned,
-            confused: this.state.tokenImagesLoaded.confused,
-            tough: true,
-          },
-        });
+  const handleMouseDown = useCallback(
+    (event: any) => {
+      event.cancelBubble = true;
+      if (props.handleMouseDownWhenNotDraggable && !!props.disableDragging) {
+        props.handleMouseDownWhenNotDraggable(props.id);
       }
-    };
+    },
+    [props.handleMouseDownWhenNotDraggable, props.disableDragging, props.id]
+  );
 
-    if (!!props.cardState?.tough && !!tokenInfo.tough) {
-      this.toughImg.src = tokenInfo.tough.imagePath;
+  const handleMouseUp = useCallback(() => {
+    if (props.handleMouseUpWhenNotDraggable && !!props.disableDragging) {
+      props.handleMouseUpWhenNotDraggable(props.id);
     }
-  }
+  }, [props.handleMouseUpWhenNotDraggable, props.disableDragging, props.id]);
 
-  public componentDidUpdate(prevProps: IProps, prevState: IState) {
-    // If we changed exhausted => unexhausted or vice versa, hide
-    // the drag handle, becuase there's not a great way to
-    // animate between the two positions
-    if (
-      this.state.showDragHandle &&
-      prevProps.exhausted !== this.props.exhausted
-    ) {
-      this.setState({ showDragHandle: false });
-    }
-
-    // if we just went from not shuffling -> shuffling, animate
-    if (!prevProps.shuffling && this.props.shuffling) {
-      if (!!this.rect) {
-        this.shuffleToggle = !this.shuffleToggle;
-        this.rect.to({
-          rotation: this.currentRotation + (this.shuffleToggle ? 360 : -360),
-          duration: 0.2,
-        });
+  const handleTouchStart = useCallback(
+    (event: KonvaEventObject<TouchEvent>) => {
+      event.cancelBubble = true;
+      if (!!touchTimerRef.current) {
+        clearTimeout(touchTimerRef.current);
+        touchTimerRef.current = null;
       }
+
+      touchTimerRef.current = setTimeout(() => {
+        handleContextMenu(event as unknown as KonvaEventObject<PointerEvent>);
+      }, 750);
+    },
+    []
+  );
+
+  const handleTouchMove = useCallback(() => {
+    if (!!touchTimerRef.current) {
+      clearTimeout(touchTimerRef.current);
+      touchTimerRef.current = null;
     }
+  }, []);
 
-    if (
-      !this.state.imageLoaded &&
-      !stringArraysEqual(prevProps.imgUrls, this.props.imgUrls)
-    ) {
-      this.setState({
-        imageLoaded: false,
-        imageLoadFailed: 0,
-      });
-      this.initCardImages(this.props);
+  const handleTouchEnd = useCallback(() => {
+    if (!!touchTimerRef.current) {
+      clearTimeout(touchTimerRef.current);
+      touchTimerRef.current = null;
     }
-
-    const tokenInfo = GamePropertiesMap[this.props.currentGameType].tokens;
-
-    // STUNNED
-    if (
-      !this.state.tokenImagesLoaded.stunned &&
-      !prevProps.cardState?.stunned &&
-      !!this.props.cardState?.stunned &&
-      !!tokenInfo.stunned
-    ) {
-      this.stunnedImg.src = tokenInfo.stunned.imagePath;
+    if (!!props.handleMouseUpWhenNotDraggable) {
+      props.handleMouseUpWhenNotDraggable(props.id);
     }
+  }, [props.handleMouseUpWhenNotDraggable, props.id]);
 
-    // CONFUSED
-    if (
-      !this.state.tokenImagesLoaded.confused &&
-      !prevProps.cardState?.confused &&
-      !!this.props.cardState?.confused &&
-      !!tokenInfo.confused
-    ) {
-      this.confusedImg.src = tokenInfo.confused.imagePath;
-    }
+  // RENDERABLE PIECES
 
-    // TOUGH
-    if (
-      !this.state.tokenImagesLoaded.tough &&
-      !prevProps.cardState?.tough &&
-      !!this.props.cardState?.tough &&
-      !!tokenInfo.tough
-    ) {
-      this.toughImg.src = tokenInfo.tough.imagePath;
-    }
-  }
+  // Global location calculations
+  const heightToUse = props.height || cardConstants[props.sizeType].CARD_HEIGHT;
+  const widthToUse = props.width || cardConstants[props.sizeType].CARD_WIDTH;
 
-  private initCardImages = (props: IProps) => {
-    this.imgs = props.imgUrls.map(() => new Image());
-
-    // When the image loads, set a flag in the state
-    this.imgs.forEach(
-      (img) =>
-        (img.onload = () => {
-          if (!this.unmounted) {
-            this.setState({
-              imageLoaded: true,
-            });
-          }
-        })
-    );
-
-    this.imgs.forEach(
-      (img) =>
-        (img.onerror = () => {
-          if (!this.unmounted) {
-            this.setState({
-              imageLoadFailed: this.state.imageLoadFailed + 1,
-            });
-          }
-        })
-    );
-
-    props.imgUrls.forEach((imgUrl, index) => (this.imgs[index].src = imgUrl));
+  const offset = {
+    x: widthToUse / 2,
+    y: heightToUse / 2,
   };
 
-  public componentDidMount() {
-    this.unmounted = false;
-  }
+  // CARD STACK INDICATOR
 
-  public componentWillUnmount() {
-    this.unmounted = true;
-  }
-
-  public render() {
-    return this.renderCard(this.state.imageLoaded);
-  }
-
-  private renderCard(imageLoaded: boolean) {
-    const heightToUse =
-      this.props.height || cardConstants[this.props.sizeType].CARD_HEIGHT;
-    const widthToUse =
-      this.props.width || cardConstants[this.props.sizeType].CARD_WIDTH;
-
-    return this.renderUnanimatedCard(heightToUse, widthToUse, imageLoaded);
-  }
-
-  // Unfortunately, if you try to use shadow / blur to indicate selection
-  // (which I did at first and looks better, imo) the performance in horrible,
-  // even with some reccommended settings (shadowForStrokeEnabled = false and
-  // hitStrokeWidth = 0). So we'll just use stroke / border for everything
-  private getStrokeColor = () => {
-    if (!!this.props.dropTargetColor) {
-      return this.props.dropTargetColor;
-    }
-
-    if (this.props.selected) {
-      return this.props.selectedColor;
-    }
-
-    return "";
+  const cardStackOffset = {
+    x: offset.x + 6,
+    y: offset.y - 6,
   };
 
-  private renderUnanimatedCard = (
-    heightToUse: number,
-    widthToUse: number,
-    imageLoaded: boolean
-  ) => {
-    const imgToUse = imageLoaded
-      ? this.imgs.find((i) => i.complete && i.naturalHeight !== 0)
-      : undefined;
+  const cardStackLocation = {
+    x: offset.x,
+    y: offset.y,
+  };
 
-    const scale = this.getScale(imgToUse, widthToUse, heightToUse);
-    const offset = {
-      x: widthToUse / 2,
-      y: heightToUse / 2,
-    };
+  const cardStack =
+    (props.numCardsInStack || 1) > 1 ? (
+      <Rect
+        cornerRadius={[9, 9, 9, 9]}
+        width={widthToUse}
+        height={heightToUse}
+        offset={cardStackOffset}
+        opacity={props.isGhost ? 0.5 : 1}
+        fill={"gray"}
+        shadowForStrokeEnabled={false}
+        hitStrokeWidth={0}
+        x={cardStackLocation.x}
+        y={cardStackLocation.y}
+      />
+    ) : null;
 
-    const card = (
+  // GHOST CARD FOR SNAP TO GRID
+  const gridGhostCard =
+    props.isGhost && props.imgUrls.length === 0 ? (
+      <Rect
+        cornerRadius={[9, 9, 9, 9]}
+        width={widthToUse}
+        height={heightToUse}
+        opacity={0.5}
+        fill={"gray"}
+      />
+    ) : null;
+
+  // ACTUAL CARD ITSELF
+  const card = (
+    <SimpleCardImage
+      imageRef={shuffleRef}
+      imgUrls={props.imgUrls}
+      width={widthToUse}
+      height={heightToUse}
+      selected={props.selected}
+      selectedColor={props.selectedColor}
+      opacity={props.isGhost ? 0.5 : 1}
+      dropTargetColor={props.dropTargetColor}
+      name={props.name}
+      code={props.code}
+    ></SimpleCardImage>
+  );
+
+  // CARD COUNT TEXT
+  const countDim = 40;
+
+  const stackCountMainOffset = {
+    x: -widthToUse / 2,
+    y: 0,
+  };
+
+  const stackCountoffset = {
+    x: 20,
+    y: 20,
+  };
+
+  const cardStackCount =
+    (props.numCardsInStack || 1) > 1 && !props.isGhost ? (
       <Spring
-        key={`${this.props.id}-card`}
+        key={`${props.id}-cardStackCount`}
         to={{
-          rotation: this.props.exhausted ? 90 : 0,
-        }}
-        onRest={() => {
-          this.setState({ showDragHandle: true });
+          textRotation: props.exhausted ? -90 : 0,
         }}
       >
         {(animatedProps: any) => (
-          <AnimatedAny.Rect
+          <AnimatedAny.Group
+            width={countDim}
+            height={countDim}
+            offset={stackCountMainOffset}
             {...animatedProps}
-            ref={(node: any) => {
-              if (!!node) {
-                this.rect = node;
-              }
-            }}
-            cornerRadius={9}
-            width={widthToUse}
-            height={heightToUse}
-            offset={offset}
-            stroke={this.getStrokeColor()}
-            strokeWidth={!!this.getStrokeColor() ? 4 : 0}
-            fillPatternRotation={
-              !imageLoaded ||
-              (shouldRenderImageHorizontal(
-                this.props.code,
-                this.props.typeCode || "",
-                GameManager.horizontalCardTypes[this.props.currentGameType],
-                this.plainCardBack
-              )
-                ? 270
-                : 0) +
-                GameManager.getModuleForType(
-                  this.props.currentGameType
-                ).additionalRotationForCardForRole(
-                  this.props.currentPlayerRole ?? "",
-                  this.props.code,
-                  this.props.faceup,
-                  this.props.typeCode
-                ) +
-                (this.props.additionalRotation ?? 0)
-            }
-            fillPatternImage={imgToUse}
-            fillPatternScaleX={scale.width}
-            fillPatternScaleY={scale.height}
-            fill={imageLoaded ? undefined : "gray"}
-            shadowForStrokeEnabled={false}
-            hitStrokeWidth={0}
-            opacity={this.props.isGhost ? 0.5 : 1}
-          />
+          >
+            <AnimatedAny.Group width={countDim} height={countDim}>
+              <AnimatedAny.Rect
+                offset={stackCountoffset}
+                cornerRadius={[9, 9, 9, 9]}
+                opacity={0.6}
+                fill={"black"}
+                shadowForStrokeEnabled={false}
+                hitStrokeWidth={0}
+                width={countDim}
+                height={countDim}
+              />
+              <AnimatedAny.Text
+                rotation={animatedProps.textRotation}
+                offset={stackCountoffset}
+                key={`${props.id}-cardstackcounttext`}
+                width={countDim}
+                height={countDim}
+                verticalAlign={"middle"}
+                align={"center"}
+                fontSize={(props.numCardsInStack || 1) > 99 ? 18 : 24}
+                fill={"white"}
+                text={`${props.numCardsInStack}`}
+              />
+            </AnimatedAny.Group>
+          </AnimatedAny.Group>
         )}
       </Spring>
-    );
+    ) : null;
 
-    const countDim = 40;
-
-    const stackCountMainOffset = {
-      x: 0,
-      y: heightToUse / 2,
-    };
-
-    const stackCountoffset = {
-      x: 20,
-      y: 20,
-    };
-
-    // const card
-
-    const cardStackCount =
-      (this.props.numCardsInStack || 1) > 1 && !this.props.isGhost ? (
-        <Spring
-          key={`${this.props.id}-cardStackCount`}
-          to={{
-            rotation: this.props.exhausted ? 90 : 0,
-            textRotation: this.props.exhausted ? -90 : 0,
-          }}
-        >
-          {(animatedProps: any) => (
-            <AnimatedAny.Group
-              width={countDim}
-              height={countDim}
-              offset={stackCountMainOffset}
-              {...animatedProps}
-            >
-              <AnimatedAny.Group width={countDim} height={countDim}>
-                <AnimatedAny.Rect
-                  offset={stackCountoffset}
-                  cornerRadius={[9, 9, 9, 9]}
-                  opacity={0.6}
-                  fill={"black"}
-                  shadowForStrokeEnabled={false}
-                  hitStrokeWidth={0}
-                  width={countDim}
-                  height={countDim}
-                />
-                <AnimatedAny.Text
-                  rotation={animatedProps.textRotation}
-                  offset={stackCountoffset}
-                  key={`${this.props.id}-cardstackcounttext`}
-                  width={countDim}
-                  height={countDim}
-                  verticalAlign={"middle"}
-                  align={"center"}
-                  fontSize={(this.props.numCardsInStack || 1) > 99 ? 18 : 24}
-                  fill={"white"}
-                  text={`${this.props.numCardsInStack}`}
-                />
-              </AnimatedAny.Group>
-            </AnimatedAny.Group>
-          )}
-        </Spring>
-      ) : null;
-
-    const dragHandleSize = 40;
-    const dragHandleMainOffset = {
-      x: this.props.exhausted
-        ? widthToUse / 2 - dragHandleSize / 2
-        : -widthToUse / 2 + dragHandleSize / 2,
-      y: heightToUse / 2 - dragHandleSize / 2,
-    };
-
-    const dragHandleOffset = {
-      x: dragHandleSize / 2,
-      y: dragHandleSize / 2,
-    };
-
-    const dragHandleScale = this.getScale(
-      this.dragImg,
-      dragHandleSize,
-      dragHandleSize
-    );
-
-    const cardStackDragHandle =
-      (this.props.numCardsInStack || 1) > 1 &&
-      !this.props.isGhost &&
-      this.state.showDragHandle ? (
-        <Group
-          width={dragHandleSize}
-          height={dragHandleSize}
-          offset={dragHandleMainOffset}
-          rotation={this.props.exhausted ? 90 : 0}
-          onMouseEnter={() => {
-            window.document.body.style.cursor = "ne-resize";
-          }}
-          onMouseLeave={() => {
-            window.document.body.style.cursor = "default";
-          }}
-        >
-          <Rect
-            offset={dragHandleOffset}
-            cornerRadius={[9, 9, 9, 9]}
-            opacity={0.6}
-            fill={"black"}
-            shadowForStrokeEnabled={false}
-            hitStrokeWidth={0}
-            width={dragHandleSize}
-            height={dragHandleSize}
-          />
-          <Rect
-            offset={{ x: dragHandleOffset.x - 2, y: dragHandleOffset.y + 2 }}
-            rotation={this.props.exhausted ? -90 : 0}
-            cornerRadius={[9, 9, 9, 9]}
-            fillPatternImage={
-              this.state.dragImageLoaded ? this.dragImg : undefined
-            }
-            fillPatternScaleX={dragHandleScale.width}
-            fillPatternScaleY={dragHandleScale.height}
-            width={dragHandleSize}
-            height={dragHandleSize}
-          />
-          {/* <Text
-              rotation={this.props.exhausted ? -90 : 0}
-              offset={dragHandleOffset}
-              key={`${this.props.id}-cardstackdraghandleicon`}
-              width={dragHandleSize}
-              height={dragHandleSize}
-              verticalAlign={"middle"}
-              align={"center"}
-              fontSize={(this.props.numCardsInStack || 1) > 99 ? 18 : 24}
-              fontFamily={'"Font Awesome 6 Free"'}
-              fill={"white"}
-              text={`\uf14d`}
-            /> */}
-        </Group>
-      ) : null;
-
-    const cardStackOffset = {
-      x: offset.x + 6,
-      y: offset.y - 6,
-    };
-
-    const cardStack =
-      (this.props.numCardsInStack || 1) > 1 ? (
-        <Spring
-          key={`${this.props.id}-cardStack`}
-          to={{
-            rotation: this.props.exhausted ? 90 : 0,
-          }}
-        >
-          {(animatedProps: any) => (
-            <AnimatedAny.Rect
-              {...animatedProps}
-              cornerRadius={[9, 9, 9, 9]}
-              width={widthToUse}
-              height={heightToUse}
-              offset={cardStackOffset}
-              opacity={this.props.isGhost ? 0.5 : 1}
-              fill={"gray"}
-              shadowForStrokeEnabled={false}
-              hitStrokeWidth={0}
-            />
-          )}
-        </Spring>
-      ) : null;
-
-    const shouldRenderStunned =
-      !!this.props.cardState?.stunned && this.state.tokenImagesLoaded.stunned;
-
-    const stunnedToken = this.getTokenInSlot(
-      shouldRenderStunned,
-      this.props.cardState?.stunned || 0,
-      this.stunnedImg,
-      offset,
-      0
-    );
-    const confusedToken = this.getTokenInSlot(
-      !!this.props.cardState?.confused && this.state.tokenImagesLoaded.confused,
-      this.props.cardState?.confused || 0,
-      this.confusedImg,
-      offset,
-      1
-    );
-    const toughToken = this.getTokenInSlot(
-      !!this.props.cardState?.tough && this.state.tokenImagesLoaded.tough,
-      this.props.cardState?.tough || 0,
-      this.toughImg,
-      offset,
-      2
-    );
-
-    const cardTokens =
-      this.props.dragging || this.props.isGhost ? null : (
-        <CardTokensContainer
-          currentGameType={this.props.currentGameType}
-          key={`${this.props.id}-cardTokens`}
-          id={this.props.id}
-          x={0}
-          y={0}
-        ></CardTokensContainer>
-      );
-
-    const cardModifiers =
-      this.props.dragging || this.props.isGhost ? null : (
-        <CardModifiersContainer
-          currentGameType={this.props.currentGameType}
-          key={`${this.props.id}-cardModifiers`}
-          id={this.props.id}
-          x={0}
-          y={0}
-          cardHeight={this.props.height}
-          cardWidth={this.props.width}
-          isPreview={!!this.props.isPreview}
-        ></CardModifiersContainer>
-      );
-
-    const noImageCardNameText = this.renderCardName(
-      offset,
-      widthToUse,
-      heightToUse
-    );
-
-    return (
-      <Group
-        draggable={
-          (this.props.controlledBy === "" ||
-            this.props.controlledBy === myPeerRef) &&
-          !this.props.disableDragging
-        }
-        onDragStart={this.handleDragStart}
-        onDragMove={this.handleDragMove}
-        onDragEnd={this.handleDragEnd}
-        onDblClick={this.handleDoubleClick}
-        onDblTap={this.handleDoubleTap}
-        onClick={this.handleClick}
-        onTap={this.handleTap}
-        onMouseDown={this.handleMouseDown}
-        onMouseUp={this.handleMouseUp}
-        onTouchStart={this.handleTouchStart}
-        onTouchMove={this.handleTouchMove}
-        onTouchEnd={this.handleTouchEnd}
-        onMouseOver={this.handleMouseOver}
-        onMouseOut={this.handleMouseOut}
-        onContextMenu={this.handleContextMenu}
-        x={this.props.x}
-        y={this.props.y}
-      >
-        {cardStack}
-        {card}
-        {cardStackCount}
-        {cardStackDragHandle}
-        {noImageCardNameText}
-        {stunnedToken}
-        {confusedToken}
-        {toughToken}
-        {this.props.isPreview ? null : cardTokens}
-        {cardModifiers}
-      </Group>
-    );
+  // DRAG HANDLE
+  const dragHandleSize = 40;
+  const dragHandleMainOffset = {
+    x: props.exhausted ? 0 : -widthToUse + dragHandleSize,
+    y: 0,
   };
 
-  private renderCardName(
-    offset: Vector2d,
-    cardWidth: number,
-    cardHeight: number
-  ) {
-    const textOffset = { x: offset.x - 10, y: offset.y - 20 };
-    const textItem =
-      this.state.imageLoadFailed === this.props.imgUrls.length &&
-      this.state.imageLoadFailed !== 0 ? (
-        <Text
-          key={`${this.props.id}-cardnametext`}
-          offset={textOffset}
-          width={cardWidth - 10}
-          height={cardHeight - 20}
-          fontSize={24}
-          text={`${this.props.name} ${this.props.code}`}
-        ></Text>
-      ) : null;
+  const dragHandleOffset = {
+    x: 0,
+    y: 0,
+  };
 
-    return textItem;
-  }
-
-  private getTokenInSlot(
-    shouldRender: boolean,
-    numberToRender: number,
-    img: HTMLImageElement,
-    offset: { x: number; y: number },
-    slot: 0 | 1 | 2
-  ) {
-    const dimensions = {
-      width: img.naturalWidth / 2,
-      height: img.naturalHeight / 2,
-    };
-
-    const stunnedOffset = {
-      x:
-        offset.x -
-        cardConstants[this.props.sizeType].CARD_WIDTH +
-        dimensions.width / 2,
-      y: offset.y - dimensions.height * slot - 5 * (slot + 1) - 10,
-    };
-
-    const textOffset = {
-      x: stunnedOffset.x - 5,
-      y: stunnedOffset.y - 5,
-    };
-
-    const numberText =
-      numberToRender > 1 ? (
-        <Group width={20} height={20} offset={textOffset}>
-          <Rect width={20} height={20} fill="white"></Rect>
-          <Text
-            width={20}
-            height={20}
-            text={`${numberToRender}`}
-            fill="black"
-            background="white"
-            align="center"
-            verticalAlign="middle"
-            fontSize={20}
-          ></Text>
-        </Group>
-      ) : null;
-
-    return shouldRender ? (
+  const cardStackDragHandle =
+    (props.numCardsInStack || 1) > 1 &&
+    !props.isGhost &&
+    showDragHandle &&
+    dragImgStatus === "loaded" &&
+    !!dragImg ? (
       <Group
-        width={dimensions.width}
-        height={dimensions.height}
-        key={`${this.props.id}-status${slot}-group`}
+        width={dragHandleSize}
+        height={dragHandleSize}
+        offset={dragHandleMainOffset}
+        onMouseEnter={() => {
+          window.document.body.style.cursor = "ne-resize";
+        }}
+        onMouseLeave={() => {
+          window.document.body.style.cursor = "default";
+        }}
       >
         <Rect
-          key={`${this.props.id}-status${slot}`}
-          native={true}
-          cornerRadius={8}
-          width={dimensions.width}
-          height={dimensions.height}
-          fillPatternScaleX={0.5}
-          fillPatternScaleY={0.5}
-          offset={stunnedOffset}
-          fillPatternImage={img}
+          offset={dragHandleOffset}
+          cornerRadius={[9, 9, 9, 9]}
+          opacity={0.6}
+          fill={"black"}
+          shadowForStrokeEnabled={false}
+          hitStrokeWidth={0}
+          width={dragHandleSize}
+          height={dragHandleSize}
         />
-        {numberText}
+        <Image
+          rotation={props.exhausted ? -90 : 0}
+          offset={{ x: dragHandleSize / 2, y: dragHandleSize / 2 }}
+          x={dragHandleSize / 2}
+          y={dragHandleSize / 2}
+          image={dragImg}
+          width={dragHandleSize}
+          height={dragHandleSize}
+        />
       </Group>
     ) : null;
-  }
 
-  private get plainCardBack() {
-    return (
-      this.props.imgUrls.some((i) => i.includes("standard")) &&
-      this.props.imgUrls.some((i) => i.includes("_back"))
+  const tokenInfo = GamePropertiesMap[props.currentGameType].tokens;
+  // CARD STATUS TOKEN - STUNNED
+  const shouldRenderStunned = !!props.cardState?.stunned && !!tokenInfo.stunned;
+
+  const stunnedStatusToken = shouldRenderStunned ? (
+    <CardStatusToken
+      id={props.id}
+      imgUrl={tokenInfo.stunned?.imagePath || ""}
+      numberToRender={props.cardState?.stunned || 0}
+      offset={{ x: 0, y: 0 }}
+      slot={0}
+      sizeType={props.sizeType}
+    />
+  ) : null;
+
+  // CARD STATUS TOKEN - CONFUSED
+  const shouldRenderConfused =
+    !!props.cardState?.confused && !!tokenInfo.confused;
+
+  const confusedStatusToken = shouldRenderConfused ? (
+    <CardStatusToken
+      id={props.id}
+      imgUrl={tokenInfo.confused?.imagePath || ""}
+      numberToRender={props.cardState?.confused || 0}
+      offset={{ x: 0, y: 0 }}
+      slot={1}
+      sizeType={props.sizeType}
+    />
+  ) : null;
+
+  // CARD STATUS TOKEN - STUNNED
+  const shouldRenderTough = !!props.cardState?.tough && !!tokenInfo.tough;
+
+  const toughStatusToken = shouldRenderTough ? (
+    <CardStatusToken
+      id={props.id}
+      imgUrl={tokenInfo.tough?.imagePath || ""}
+      numberToRender={props.cardState?.tough || 0}
+      offset={{ x: 0, y: 0 }}
+      slot={2}
+      sizeType={props.sizeType}
+    />
+  ) : null;
+
+  // CARD TOKENS
+  const cardTokens =
+    props.dragging || props.isGhost ? null : (
+      <CardTokensContainer
+        currentGameType={props.currentGameType}
+        key={`${props.id}-cardTokens`}
+        id={props.id}
+        x={widthToUse / 2}
+        y={heightToUse / 2}
+      ></CardTokensContainer>
     );
-  }
 
-  private get currentRotation() {
-    return this.props.exhausted ? 90 : 0;
-  }
+  // CARD MODIFIERS
+  const cardModifiers =
+    props.dragging || props.isGhost ? null : (
+      <CardModifiersContainer
+        currentGameType={props.currentGameType}
+        key={`${props.id}-cardModifiers`}
+        id={props.id}
+        x={widthToUse / 2}
+        y={heightToUse / 2}
+        cardHeight={props.height}
+        cardWidth={props.width}
+        isPreview={!!props.isPreview}
+      ></CardModifiersContainer>
+    );
+  // FINAL RENDER
+  return (
+    <Spring
+      key={`${props.id}-card`}
+      to={{
+        rotation: getCurrentRotation(props.exhausted),
+        textRotation: props.exhausted ? -90 : 0,
+      }}
+      onRest={() => {
+        setShowDragHandle(true);
+      }}
+    >
+      {(animatedProps: any) => (
+        <AnimatedAny.Group
+          {...animatedProps}
+          draggable={
+            (props.controlledBy === "" || props.controlledBy === myPeerRef) &&
+            !props.disableDragging
+          }
+          x={props.x}
+          y={props.y}
+          offset={offset}
+          onClick={handleClick}
+          onTap={handleTap}
+          onDragStart={handleDragStart}
+          onDragMove={handleDragMove}
+          onDragEnd={handleDragEnd}
+          onMouseOver={handleHover}
+          onMouseOut={handleHoverLeave}
+          onContextMenu={handleContextMenu}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {cardStack}
+          {card}
+          {cardStackCount}
+          {cardStackDragHandle}
+          {cardTokens}
+          {stunnedStatusToken}
+          {confusedStatusToken}
+          {toughStatusToken}
+          {cardModifiers}
+          {gridGhostCard}
+        </AnimatedAny.Group>
+      )}
+    </Spring>
+  );
+};
 
-  private getScale(
-    img: HTMLImageElement | undefined,
-    widthToUse: number,
-    heightToUse: number
-  ) {
-    const width =
-      !!img && img.naturalWidth ? widthToUse / img.naturalWidth : widthToUse;
+const getCurrentRotation = (exhausted: boolean) => {
+  return exhausted ? 90 : 0;
+};
 
-    const widthHorizontal =
-      !!img && img.naturalWidth ? heightToUse / img.naturalWidth : widthToUse;
-
-    const height =
-      !!img && img.naturalHeight
-        ? heightToUse / img.naturalHeight
-        : heightToUse;
-
-    const heightHorizontal =
-      !!img && img.naturalHeight ? widthToUse / img.naturalHeight : heightToUse;
-
-    return shouldRenderImageHorizontal(
-      this.props.code,
-      this.props.typeCode || "",
-      GameManager.horizontalCardTypes[this.props.currentGameType],
-      this.plainCardBack
-    )
-      ? { width: widthHorizontal, height: heightHorizontal }
-      : { width, height };
-  }
-
-  private handleContextMenu = (event: KonvaEventObject<PointerEvent>): void => {
-    if (!!this.props.handleContextMenu) {
-      this.props.handleContextMenu(this.props.id, event);
-    }
-  };
-
-  private handleDoubleClick = (event: KonvaEventObject<MouseEvent>) => {
-    if (this.props.handleDoubleClick) {
-      this.setState({ showDragHandle: false });
-      this.props.handleDoubleClick(this.props.id, event);
-    }
-  };
-
-  private handleDoubleTap = (event: KonvaEventObject<TouchEvent>) => {
-    if (this.props.handleDoubleTap) {
-      this.setState({ showDragHandle: false });
-      this.props.handleDoubleTap(this.props.id, event);
-    }
-  };
-
-  private handleDragStart = (event: KonvaEventObject<DragEvent>) => {
-    if (this.props.handleDragStart) {
-      this.props.handleDragStart(this.props.id, event);
-    }
-  };
-
-  private handleDragMove = debounce((event: any) => {
-    if (this.props.handleDragMove) {
-      this.props.handleDragMove({
-        id: this.props.id,
-        dx: event.target.x() - this.props.x,
-        dy: event.target.y() - this.props.y,
-      });
-    }
-  }, 5);
-
-  private handleDragEnd = (event: KonvaEventObject<DragEvent>) => {
-    if (this.props.handleDragEnd && this.props.dragging) {
-      // First make sure the cursor is back to normal
-      window.document.body.style.cursor = "grab";
-
-      // Next, cancel any outstanding move things that haven't debounced
-      this.handleDragMove.cancel();
-
-      this.props.handleDragEnd(this.props.id, event);
-    }
-  };
-
-  private handleTap = (event: KonvaEventObject<TouchEvent>) => {
-    this.handleTapOrClick(event, true);
-  };
-
-  private handleClick = (event: KonvaEventObject<MouseEvent>) => {
-    this.handleTapOrClick(event, false);
-  };
-
-  private handleTapOrClick = (
+const handleTapOrClick = (
+  event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>,
+  id: string,
+  wasTouch: boolean,
+  callback?: (
+    id: string,
     event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>,
     wasTouch: boolean
-  ) => {
-    if (this.props.handleClick) {
-      this.props.handleClick(this.props.id, event, wasTouch);
-      event.cancelBubble = true;
-    }
-  };
-
-  private handleMouseDown = (event: any) => {
+  ) => void
+): void => {
+  if (!!callback) {
+    callback(id, event, wasTouch);
     event.cancelBubble = true;
-    if (
-      this.props.handleMouseDownWhenNotDraggable &&
-      !!this.props.disableDragging
-    ) {
-      this.props.handleMouseDownWhenNotDraggable(this.props.id);
-    }
-  };
-
-  private handleMouseUp = (event: any) => {
-    if (
-      this.props.handleMouseUpWhenNotDraggable &&
-      !!this.props.disableDragging
-    ) {
-      this.props.handleMouseUpWhenNotDraggable(this.props.id);
-    }
-  };
-
-  private handleTouchStart = (event: KonvaEventObject<TouchEvent>) => {
-    event.cancelBubble = true;
-    if (!!this.touchTimer) {
-      clearTimeout(this.touchTimer);
-      this.touchTimer = null;
-    }
-
-    this.touchTimer = setTimeout(() => {
-      this.handleContextMenu(
-        event as unknown as KonvaEventObject<PointerEvent>
-      );
-    }, 750);
-  };
-
-  private handleTouchMove = (event: KonvaEventObject<TouchEvent>) => {
-    if (!!this.touchTimer) {
-      clearTimeout(this.touchTimer);
-      this.touchTimer = null;
-    }
-  };
-
-  private handleTouchEnd = (event: KonvaEventObject<TouchEvent>) => {
-    if (!!this.touchTimer) {
-      clearTimeout(this.touchTimer);
-      this.touchTimer = null;
-    }
-    if (!!this.props.handleMouseUpWhenNotDraggable) {
-      this.props.handleMouseUpWhenNotDraggable(this.props.id);
-    }
-  };
-
-  private handleMouseOver = () => {
-    window.document.body.style.cursor = "grab";
-    if (this.props.handleHover) {
-      this.props.handleHover(this.props.id);
-    }
-  };
-
-  private handleMouseOut = () => {
-    window.document.body.style.cursor = "default";
-    if (this.props.handleHoverLeave) {
-      this.props.handleHoverLeave(this.props.id);
-    }
-  };
-}
+  }
+};
 
 export default Card;

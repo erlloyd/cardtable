@@ -36,6 +36,25 @@ const checkMissingImageMap = (
   return missingImageMapForGame[code] ?? null;
 };
 
+const generateCerebroImageUrl = (
+  _currentGameType: GameType,
+  card: CardData,
+  faceup: boolean
+): string => {
+  if (!card) {
+    return `https://lcgcdn.s3.amazonaws.com/mc/NOPE.jpg`;
+  }
+
+  // console.log(card);
+
+  const codeToUse = faceup
+    ? card.code.toUpperCase()
+    : card.backLink?.toUpperCase();
+  const imgUrlToGrab = `https://cerebrodatastorage.blob.core.windows.net/cerebro-cards/official/${codeToUse}.jpg`;
+  // console.log(`Grabbing image from ${imgUrlToGrab}`);
+  return imgUrlToGrab;
+};
+
 const generateLCGCDNImageUrl = (
   currentGameType: GameType,
   card: CardData,
@@ -151,7 +170,7 @@ export const getImgUrlsFromJsonId = (
   if (!faceup) {
     if (!!topCardData.backLink || !!topCardData.doubleSided) {
       urls = [
-        generateLCGCDNImageUrl(currentGameType, topCardData, faceup),
+        generateCerebroImageUrl(currentGameType, topCardData, faceup),
         // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.png`,
         // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.jpg`,
         //
@@ -171,7 +190,7 @@ export const getImgUrlsFromJsonId = (
     }
   } else {
     urls = [
-      generateLCGCDNImageUrl(currentGameType, topCardData, faceup),
+      generateCerebroImageUrl(currentGameType, topCardData, faceup),
       // `https://marvelcdb.com/bundles/cards/${topCardData.code}.png`,
       // `https://marvelcdb.com/bundles/cards/${topCardData.code}.jpg`,
       //

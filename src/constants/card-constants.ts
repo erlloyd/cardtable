@@ -64,3 +64,6 @@ export enum CounterTokenType {
   Generic = "generic",
   Acceleration = "acceleration",
 }
+
+export const stackShuffleAnimationMS = 200;
+export const stackShuffleAnimationS = stackShuffleAnimationMS / 1000;

@@ -10,4 +10,6 @@ const MISSING_CARD_IMAGE_MAP = {
   ...KitchenSink,
 };
 
+// const MISSING_CARD_IMAGE_MAP = {};
+
 export default MISSING_CARD_IMAGE_MAP;
