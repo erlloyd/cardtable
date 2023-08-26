@@ -194,6 +194,7 @@
         "attack": 1,
         "attack_text": "<b>Forced Interrupt</b>: When Arclight attacks you or an ally you control, choose:\n\u2022 Confuse a character you control.\n\u2022 Arclight gets +2 ATK for this attack.",
         "code": "40070a",
+        "back_link": "40070b",
         "double_sided": true,
         "faction_code": "encounter",
         "health": 10,
@@ -213,9 +214,20 @@
         "type_code": "villain"
     },
     {
+        "code": "40071a",
+        "back_link": "40071b",
+        "faction_code": "encounter",
+        "name": "Blockbuster",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "marauders",
+        "type_code": "villain"
+    },
+    {
         "attack": 1,
         "attack_text": "<b>Forced Interrupt</b>: When Chimera attacks you or an ally you control, choose:\n\u2022 Spend a [mental] resource.\n\u2022 Chimera gets +2 ATK for this attack.",
         "code": "40072a",
+        "back_link": "40072b",
         "double_sided": true,
         "faction_code": "encounter",
         "health": 11,
@@ -238,6 +250,7 @@
         "attack": 1,
         "attack_text": "<b>Forced Interrupt</b>: When Greycrow attacks you or an ally you control, choose:\n\u2022 Discard the highest-cost card you control.\n\u2022 Greycrow gets +X ATK for this attack, where X is the printed cost of the highest-cost card you control.",
         "code": "40073a",
+        "back_link": "40073b",
         "double_sided": true,
         "faction_code": "encounter",
         "health": 9,
@@ -254,6 +267,16 @@
         "set_position": 4,
         "stage": null,
         "traits": "Marauder. Mercenary.",
+        "type_code": "villain"
+    },
+    {
+        "code": "40074a",
+        "back_link": "40074b",
+        "faction_code": "encounter",
+        "name": "Harpoon",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "marauders",
         "type_code": "villain"
     },
     {
@@ -303,6 +326,45 @@
         "type_code": "villain"
     },
     {
+        "code": "40076a",
+        "back_link": "40076b",
+        "faction_code": "encounter",
+        "name": "Vertigo",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "marauders",
+        "type_code": "villain"
+    },
+    {
+        "code": "40077a",
+        "back_link": "40077b",
+        "faction_code": "encounter",
+        "name": "Knock, Knock",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "morlock_siege",
+        "type_code": "main_scheme"
+    },
+    {
+        "code": "40077b",
+        "faction_code": "encounter",
+        "name": "Knock, Knock",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "morlock_siege",
+        "type_code": "main_scheme"
+    },
+    {
+        "code": "40078a",
+        "back_link": "40078b",
+        "faction_code": "encounter",
+        "name": "Mutant Massacre",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "morlock_siege",
+        "type_code": "main_scheme"
+    },
+    {
         "base_threat": 0,
         "base_threat_fixed": true,
         "code": "40078b",
@@ -332,7 +394,7 @@
         "octgn_id": "104e1218-df9b-43f7-93e0-ca2ef9040079",
         "pack_code": "next_evol",
         "position": 79,
-        "quantity": 1,
+        "quantity": 4,
         "resource_mental": 1,
         "set_code": "morlock_siege",
         "set_position": 3,
@@ -359,6 +421,7 @@
     },
     {
         "code": "40081a",
+        "back_link": "40081b",
         "faction_code": "encounter",
         "name": "Routed",
         "octgn_id": "104e1218-df9b-43f7-93e0-ca2ef9040081",
@@ -404,6 +467,60 @@
         "text": "Attach to the villain.\nWhile there is exactly 1 villain under Routed, attached villain gains steady.\nWhile there are exactly 2 villains under Routed, attached villain gains stalwart.\n<b>Hero Action</b>: Attached villain attacks you \u2192 discard this card.",
         "traits": "Condition.",
         "type_code": "attachment"
+    },
+    {
+        "code": "40084",
+        "faction_code": "encounter",
+        "name": "By Any Means",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "morlock_siege",
+        "type_code": "side_scheme"
+    },
+    {
+        "code": "40085",
+        "faction_code": "encounter",
+        "name": "In the Midst of Chaos",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "morlock_siege",
+        "type_code": "side_scheme"
+    },
+    {
+        "code": "40086",
+        "faction_code": "encounter",
+        "name": "Maraudin' Ain't Easy",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "morlock_siege",
+        "type_code": "side_scheme"
+    },
+    {
+        "code": "40087",
+        "faction_code": "encounter",
+        "name": "Territorial Control",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "morlock_siege",
+        "type_code": "side_scheme"
+    },
+    {
+        "code": "40088",
+        "faction_code": "encounter",
+        "name": "Back in Action",
+        "pack_code": "next_evol",
+        "quantity": 2,
+        "set_code": "morlock_siege",
+        "type_code": "treachery"
+    },
+    {
+        "code": "40089",
+        "faction_code": "encounter",
+        "name": "Seek the Weak",
+        "pack_code": "next_evol",
+        "quantity": 3,
+        "set_code": "morlock_siege",
+        "type_code": "treachery"
     },
     {
         "base_threat": 1,
