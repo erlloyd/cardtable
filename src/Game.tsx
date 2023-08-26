@@ -385,6 +385,7 @@ class Game extends Component<IProps, IState> {
             currentGameType={this.props.currentGameType}
             currentPlayerRole={this.props.currentPlayerRole}
             code={this.getCardCode(card)}
+            backLinkCode={this.getCardCode(card, true)}
             name={this.getCardName(card)}
             selectedColor={
               this.props.playerColors[card.controlledBy] ?? "black"
@@ -441,6 +442,7 @@ class Game extends Component<IProps, IState> {
           currentPlayerRole={this.props.currentPlayerRole}
           name={this.getCardName(card)}
           code={this.getCardCode(card)}
+          backLinkCode={this.getCardCode(card, true)}
           selectedColor={this.props.playerColors[card.controlledBy] ?? "black"}
           controlledBy={card.controlledBy}
           key={`ghost${card.id}`}
@@ -474,6 +476,7 @@ class Game extends Component<IProps, IState> {
             currentPlayerRole={this.props.currentPlayerRole}
             name={this.getCardName(card)}
             code={this.getCardCode(card)}
+            backLinkCode={this.getCardCode(card, true)}
             selectedColor={
               this.props.playerColors[card.controlledBy] ?? "black"
             }
@@ -567,6 +570,7 @@ class Game extends Component<IProps, IState> {
                 currentPlayerRole={this.props.currentPlayerRole}
                 name={this.getCardName(card)}
                 code={this.getCardCode(card)}
+                backLinkCode={this.getCardCode(card, true)}
                 selectedColor={
                   this.props.playerColors[card.controlledBy] ?? "black"
                 }
@@ -2804,7 +2808,7 @@ class Game extends Component<IProps, IState> {
     return this.props.cardsData[cardInQuestion.jsonId]?.name ?? "";
   };
 
-  private getCardCode = (card: ICardStack) => {
+  private getCardCode = (card: ICardStack, returnBackCode?: boolean) => {
     const cardInQuestion = card.faceup
       ? card.cardStack[0]
       : card.cardStack[card.cardStack.length - 1];
@@ -2815,9 +2819,11 @@ class Game extends Component<IProps, IState> {
 
     const idToGrab = cardInQuestion?.jsonId ?? "missing-id";
 
-    return (
-      this.props.cardsData[idToGrab]?.code ?? `code missing for ${idToGrab}`
-    );
+    const frontCode =
+      this.props.cardsData[idToGrab]?.code ?? `code missing for ${idToGrab}`;
+    const backCode =
+      this.props.cardsData[idToGrab]?.backLink ?? `Back of ${frontCode}`;
+    return returnBackCode ? backCode : frontCode;
   };
 
   private handleResize = () => {

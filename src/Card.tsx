@@ -54,6 +54,7 @@ interface IProps {
   currentPlayerRole: string | null;
   name: string;
   code: string;
+  backLinkCode?: string;
   selectedColor: PlayerColor;
   controlledBy: string;
   dragging: boolean;
@@ -364,7 +365,9 @@ const Card = (props: IProps) => {
       opacity={props.isGhost ? 0.5 : 1}
       dropTargetColor={props.dropTargetColor}
       name={props.name}
-      code={props.code}
+      code={
+        !!props.backLinkCode && !props.faceup ? props.backLinkCode : props.code
+      }
     ></SimpleCardImage>
   );
 

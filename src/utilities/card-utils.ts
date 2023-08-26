@@ -151,7 +151,8 @@ export const getImgUrlsFromJsonId = (
           "/images/standard/card_back_" + currentGameType + ".png";
 
         return [
-          topCardData.extraInfo.factionCode === "encounter" ||
+          (topCardData.extraInfo.factionCode === "encounter" &&
+            topCardData.typeCode !== "ally") ||
           topCardData.typeCode === "side_scheme" ||
           FORCE_ENCOUNTER_CARD_BACK_MAP[topCardData.code]
             ? "/images/standard/encounter_card_back_" + currentGameType + ".png"
@@ -181,7 +182,8 @@ export const getImgUrlsFromJsonId = (
     } else {
       cardData = null;
       urls = [
-        topCardData.extraInfo.factionCode === "encounter" ||
+        (topCardData.extraInfo.factionCode === "encounter" &&
+          topCardData.typeCode !== "ally") ||
         topCardData.typeCode === "side_scheme" ||
         FORCE_ENCOUNTER_CARD_BACK_MAP[topCardData.code]
           ? "/images/standard/encounter_card_back_" + currentGameType + ".png"
