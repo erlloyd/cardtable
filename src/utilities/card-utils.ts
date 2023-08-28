@@ -49,10 +49,16 @@ const generateCerebroImageUrl = (
 
   const backLink = card.backLink || card.code;
 
-  const codeToUse = faceup ? card.code.toUpperCase() : backLink.toUpperCase();
+  let codeToUse = faceup ? card.code.toUpperCase() : backLink.toUpperCase();
 
   const potentialSuffix = faceup ? "A" : "B";
-  const alreadyHasSuffix = codeToUse?.endsWith("A") || codeToUse?.endsWith("B");
+  let alreadyHasSuffix = codeToUse?.endsWith("A") || codeToUse?.endsWith("B");
+  const hasCorrectSuffix = codeToUse?.endsWith(potentialSuffix);
+
+  if (alreadyHasSuffix && !hasCorrectSuffix && codeToUse) {
+    codeToUse = codeToUse.slice(0, codeToUse.length - 1);
+    alreadyHasSuffix = false;
+  }
 
   let suffix = "";
 
