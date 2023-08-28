@@ -47,10 +47,20 @@ const generateCerebroImageUrl = (
 
   // console.log(card);
 
-  const codeToUse = faceup
-    ? card.code.toUpperCase()
-    : card.backLink?.toUpperCase();
-  const imgUrlToGrab = `https://cerebrodatastorage.blob.core.windows.net/cerebro-cards/official/${codeToUse}.jpg`;
+  const backLink = card.backLink || card.code;
+
+  const codeToUse = faceup ? card.code.toUpperCase() : backLink.toUpperCase();
+
+  const potentialSuffix = faceup ? "A" : "B";
+  const alreadyHasSuffix = codeToUse?.endsWith("A") || codeToUse?.endsWith("B");
+
+  let suffix = "";
+
+  if (!alreadyHasSuffix && !!card.doubleSided) {
+    suffix = potentialSuffix;
+  }
+
+  const imgUrlToGrab = `https://cerebrodatastorage.blob.core.windows.net/cerebro-cards/official/${codeToUse}${suffix}.jpg`;
   // console.log(`Grabbing image from ${imgUrlToGrab}`);
   return imgUrlToGrab;
 };
