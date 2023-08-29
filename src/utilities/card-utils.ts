@@ -186,15 +186,7 @@ export const getImgUrlsFromJsonId = (
 
   if (!faceup) {
     if (!!topCardData.backLink || !!topCardData.doubleSided) {
-      urls = [
-        generateCerebroImageUrl(currentGameType, topCardData, faceup),
-        // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.png`,
-        // `https://marvelcdb.com/bundles/cards/${bottomCardData.back_link}.jpg`,
-        //
-        //   "/images/cards/" +
-        //   bottomCardData.octgn_id +
-        //   ".b.jpg",
-      ];
+      urls = [generateCerebroImageUrl(currentGameType, topCardData, faceup)];
     } else {
       cardData = null;
       urls = [
@@ -207,15 +199,7 @@ export const getImgUrlsFromJsonId = (
       ];
     }
   } else {
-    urls = [
-      generateCerebroImageUrl(currentGameType, topCardData, faceup),
-      // `https://marvelcdb.com/bundles/cards/${topCardData.code}.png`,
-      // `https://marvelcdb.com/bundles/cards/${topCardData.code}.jpg`,
-      //
-      //   "/images/cards/" +
-      //   topCardData.octgn_id +
-      //   ".jpg",
-    ];
+    urls = [generateCerebroImageUrl(currentGameType, topCardData, faceup)];
   }
 
   let codeForMissingCheck = "";
