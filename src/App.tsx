@@ -88,25 +88,23 @@ const App = (props: IProps) => {
       const forceDisableHighlight =
         window?.navigator?.userAgent?.includes("AppleWebKit");
 
-      if (!forceDisableHighlight) {
-        H.init("zg03k0g9", {
-          version: "_REPLACE_VERSION_",
-          enableCanvasRecording: true,
-          samplingStrategy: {
-            canvas: 10,
-            canvasQuality: "low",
-            canvasMaxSnapshotDimension: 480,
-          },
-          tracingOrigins: true,
-          networkRecording: {
-            enabled: true,
-            recordHeadersAndBody: true,
-            urlBlocklist: [
-              // insert urls you don't want to record here
-            ],
-          },
-        });
-      }
+      H.init("zg03k0g9", {
+        version: "_REPLACE_VERSION_",
+        enableCanvasRecording: !forceDisableHighlight,
+        samplingStrategy: {
+          canvas: 10,
+          canvasQuality: "low",
+          canvasMaxSnapshotDimension: 480,
+        },
+        tracingOrigins: true,
+        networkRecording: {
+          enabled: true,
+          recordHeadersAndBody: true,
+          urlBlocklist: [
+            // insert urls you don't want to record here
+          ],
+        },
+      });
     }
 
     // Service Worker - this was replaced by auto stuff when switching to Vite

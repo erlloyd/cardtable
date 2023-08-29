@@ -131,7 +131,7 @@ export const websocketMiddleware = (storeAPI: any) => {
       }
 
       if (!!stateCheckTimer) {
-        clearInterval(stateCheckTimer);
+        clearInterval(stateCheckTimer as any); // any cast due to TS typing weirdness..
       }
 
       stateCheckTimer = setInterval(() => {
@@ -163,7 +163,7 @@ export const websocketMiddleware = (storeAPI: any) => {
     ws.addEventListener("close", () => {
       log.warn("WS connection closed");
       if (!!stateCheckTimer) {
-        clearInterval(stateCheckTimer);
+        clearInterval(stateCheckTimer as any); // any cast due to TS typing weirdness..
         stateCheckTimer = undefined;
       }
       // try to reconnect the websocket
