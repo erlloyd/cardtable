@@ -1946,7 +1946,6 @@ class Game extends Component<IProps, IState> {
         (dt) => dt.ownerRef === myPeerRef
       )[0] ?? null;
 
-    console.log("myDropTargetCard", myDropTargetCard);
     if (!!myDropTargetCard) {
       if (!!myDropTargetCard.card?.cardStack) {
         this.props.addToExistingCardStack({

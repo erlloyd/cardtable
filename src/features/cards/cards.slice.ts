@@ -686,7 +686,6 @@ const cardMoveWithSnapReducer: CaseReducer<
         card.id
     )
   ) {
-    console.log("Something actually changed with moved cards, so update");
     movedCards.forEach((movedCard) => {
       state.cards.push(
         state.cards.splice(state.cards.indexOf(movedCard), 1)[0]
