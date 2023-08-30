@@ -1289,6 +1289,33 @@
         "type_code": "attachment"
     },
     {
+        "code": "40152",
+        "faction_code": "encounter",
+        "name": "Aerial Bombardment",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "flight",
+        "type_code": "attachment"
+    },
+    {
+        "code": "40153",
+        "faction_code": "encounter",
+        "name": "Out of Reach",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "flight",
+        "type_code": "attachment"
+    },
+    {
+        "code": "40154",
+        "faction_code": "encounter",
+        "name": "High Ground",
+        "pack_code": "next_evol",
+        "quantity": 2,
+        "set_code": "flight",
+        "type_code": "treachery"
+    },
+    {
         "attack": 1,
         "code": "40155",
         "faction_code": "encounter",
@@ -1305,6 +1332,24 @@
         "type_code": "attachment"
     },
     {
+        "code": "40156",
+        "faction_code": "encounter",
+        "name": "Impervious",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "super_strength",
+        "type_code": "attachment"
+    },
+    {
+        "code": "40157",
+        "faction_code": "encounter",
+        "name": "Thrown Object",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "super_strength",
+        "type_code": "attachment"
+    },
+    {
         "boost": 2,
         "code": "40158",
         "faction_code": "encounter",
@@ -1313,7 +1358,7 @@
         "octgn_id": "104e1218-df9b-43f7-93e0-ca2ef9040158",
         "pack_code": "next_evol",
         "position": 158,
-        "quantity": 1,
+        "quantity": 2,
         "set_code": "super_strength",
         "set_position": 5,
         "text": "<b>When Revealed</b>: Discard the upgrade you control with the lowest cost (highest cost instead if the villain has the [[PSIONIC]] trait). If no upgrade was discarded this way, this card gains surge.",
@@ -1334,6 +1379,33 @@
         "text": "Setup. Attach to the villain.\nPermanent.\nAttached villain gains the [[PSIONIC]] trait and retaliate 1. <i>(After this character is attacked, deal 1 damage to the attacking character.)</i>",
         "traits": "Superpower.",
         "type_code": "attachment"
+    },
+    {
+        "code": "40160",
+        "faction_code": "encounter",
+        "name": "Manufactured Drama",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "telepathy",
+        "type_code": "obligation"
+    },
+    {
+        "code": "40161",
+        "faction_code": "encounter",
+        "name": "Sowing Discord",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "telepathy",
+        "type_code": "obligation"
+    },
+    {
+        "code": "40162",
+        "faction_code": "encounter",
+        "name": "One Step Ahead",
+        "pack_code": "next_evol",
+        "quantity": 2,
+        "set_code": "telepathy",
+        "type_code": "treachery"
     },
     {
         "attack": 0,
@@ -1358,6 +1430,34 @@
         "type_code": "villain"
     },
     {
+        "code": "40164",
+        "faction_code": "encounter",
+        "name": "Stryfe",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "stryfe",
+        "type_code": "villain"
+    },
+    {
+        "code": "40165",
+        "faction_code": "encounter",
+        "name": "Stryfe",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "stryfe",
+        "type_code": "villain"
+    },
+    {
+        "code": "40166a",
+        "back_link": "40166b",
+        "faction_code": "encounter",
+        "name": "Uncontrollable Power",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "stryfe",
+        "type_code": "main_scheme"
+    },
+    {
         "base_threat": 0,
         "base_threat_fixed": true,
         "code": "40166b",
@@ -1375,6 +1475,16 @@
         "stage": 1,
         "text": "<b>Forced Response</b>: After resolving step one of the villain phase, each player places X threat here, where X is the number of cards of the most common type in their hand. Each player may discard 1 card from their hand before calculating the value of X.\n<b>If this stage is completed, the players lose the game.</b>",
         "threat": 9,
+        "type_code": "main_scheme"
+    },
+    {
+        "code": "40167a",
+        "back_link": "40167b",
+        "faction_code": "encounter",
+        "name": "Left to Your Fate",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "stryfe",
         "type_code": "main_scheme"
     },
     {
@@ -1437,6 +1547,114 @@
         "type_code": "side_scheme"
     },
     {
+        "code": "40169",
+        "faction_code": "encounter",
+        "name": "Mental Transferal",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "stryfe",
+        "type_code": "attachment"
+    },
+    {
+        "code": "40170",
+        "faction_code": "encounter",
+        "name": "Mind Alteration",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "stryfe",
+        "type_code": "attachment"
+    },
+    {
+        "code": "40171",
+        "faction_code": "encounter",
+        "name": "Mind Trap",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "stryfe",
+        "type_code": "attachment"
+    },
+    {
+        "code": "40172",
+        "faction_code": "encounter",
+        "name": "Psionic Amnesia",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "stryfe",
+        "type_code": "attachment"
+    },
+    {
+        "code": "40173",
+        "faction_code": "encounter",
+        "name": "Psychic Inertia",
+        "pack_code": "next_evol",
+        "quantity": 2,
+        "set_code": "stryfe",
+        "type_code": "attachment"
+    },
+    {
+        "code": "40174",
+        "faction_code": "encounter",
+        "name": "Zero",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "stryfe",
+        "type_code": "minion"
+    },
+    {
+        "code": "40175",
+        "faction_code": "encounter",
+        "name": "Cerebral Erasure",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "stryfe",
+        "type_code": "side_scheme"
+    },
+    {
+        "code": "40176",
+        "faction_code": "encounter",
+        "name": "Telepathic Camouflage",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "stryfe",
+        "type_code": "side_scheme"
+    },
+    {
+        "code": "40177",
+        "faction_code": "encounter",
+        "name": "Psionic Surge",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "stryfe",
+        "type_code": "treachery"
+    },
+    {
+        "code": "40178",
+        "faction_code": "encounter",
+        "name": "Psychic Overrid",
+        "pack_code": "next_evol",
+        "quantity": 2,
+        "set_code": "stryfe",
+        "type_code": "treachery"
+    },
+    {
+        "code": "40179",
+        "faction_code": "encounter",
+        "name": "Telekinetic Wave",
+        "pack_code": "next_evol",
+        "quantity": 3,
+        "set_code": "stryfe",
+        "type_code": "treachery"
+    },
+    {
+        "code": "40180",
+        "faction_code": "encounter",
+        "name": "Strobe",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "extreme_measures",
+        "type_code": "minion"
+    },
+    {
         "attack": 1,
         "attack_text": "<b>Forced Response</b>: After Tempo activates against you, discard cards from the top of your deck equal to twice the number of cards in your hand.",
         "code": "40181",
@@ -1455,5 +1673,77 @@
         "text": "While Tempo is engaged with you, you get +1 hand size.",
         "traits": "Mutant Liberation Front.",
         "type_code": "minion"
+    },
+    {
+        "code": "40182",
+        "faction_code": "encounter",
+        "name": "Thumbelina",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "extreme_measures",
+        "type_code": "minion"
+    },
+    {
+        "code": "40183",
+        "faction_code": "encounter",
+        "name": "Wildside",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "extreme_measures",
+        "type_code": "minion"
+    },
+    {
+        "code": "40184",
+        "faction_code": "encounter",
+        "name": "Extreme Measures",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "extreme_measures",
+        "type_code": "side_scheme"
+    },
+    {
+        "code": "40185",
+        "faction_code": "encounter",
+        "name": "Dragoness",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "mutant_insurrection",
+        "type_code": "minion"
+    },
+    {
+        "code": "40186",
+        "faction_code": "encounter",
+        "name": "Forearm",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "mutant_insurrection",
+        "type_code": "minion"
+    },
+    {
+        "code": "40187",
+        "faction_code": "encounter",
+        "name": "Reaper",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "mutant_insurrection",
+        "type_code": "minion"
+    },
+    {
+        "code": "40188",
+        "faction_code": "encounter",
+        "name": "Samurai",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "mutant_insurrection",
+        "type_code": "minion"
+    },
+    {
+        "code": "40189",
+        "faction_code": "encounter",
+        "name": "Mutant Insurrection",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "mutant_insurrection",
+        "type_code": "side_scheme"
     }
 ]
