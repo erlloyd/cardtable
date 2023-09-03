@@ -115,6 +115,7 @@ const Card = (props: IProps) => {
   const isMount = useIsMount();
   const touchTimerRef = useRef<any>(null);
   const [showDragHandle, setShowDragHandle] = useState(true);
+  const shuffleToggleRef = useRef(true);
 
   // set up shuffling effect
   const shuffleRef = useRef(null);
@@ -123,11 +124,13 @@ const Card = (props: IProps) => {
     if (!isMount && props.shuffling) {
       if (shuffleRef?.current) {
         (shuffleRef.current as any).to({
-          // note, we don't need to do this over and over because the component will be swapped out,
-          // so rotation will always go back to zero after shuffling
-          rotation: getCurrentRotation(props.exhausted) + 360,
+          rotation:
+            getCurrentRotation(props.exhausted) +
+            (shuffleToggleRef.current ? 360 : -360),
           duration: stackShuffleAnimationS,
         });
+
+        shuffleToggleRef.current = !shuffleToggleRef.current;
       } else {
         console.error("Shuffle reference doesn't exist!");
       }

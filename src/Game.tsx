@@ -72,6 +72,7 @@ import { CardData } from "./external-api/common-card-data";
 import { ConfirmOptions, useConfirm } from "material-ui-confirm";
 import PlayerBoardsContainer from "./PlayerBoardsContainer";
 import DeckTextImporterContainer from "./DeckTextImporterContainer";
+import { debounce } from "lodash";
 
 const SCALE_BY = 1.02;
 
@@ -345,6 +346,7 @@ class Game extends Component<IProps, IState> {
       document.addEventListener("keyup", this.handleKeyUp);
       document.addEventListener("keypress", this.handleKeyPress);
       window.addEventListener("resize", this.handleResize);
+      window.addEventListener("orientationchange", this.handleResize);
 
       const image = new Image();
       image.onload = () => {
@@ -376,6 +378,8 @@ class Game extends Component<IProps, IState> {
     if (!GamePropertiesMap[this.props.currentGameType]) {
       return null;
     }
+
+    // alert(`STAGE DIM: ${this.state.stageHeight} x ${this.state.stageWidth}`);
 
     const staticCards = this.props.cards.cards
       .filter((card) => !card.dragging)
@@ -2825,12 +2829,12 @@ class Game extends Component<IProps, IState> {
     return returnBackCode ? backCode : frontCode;
   };
 
-  private handleResize = () => {
+  private handleResize = debounce(() => {
     this.setState({
       stageHeight: window.innerHeight - playerHandHeightPx,
       stageWidth: window.innerWidth,
     });
-  };
+  }, 100);
 }
 
 export default withConfirm(Game);
