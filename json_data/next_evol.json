@@ -1076,6 +1076,120 @@
         "type_code": "upgrade"
     },
     {
+        "code": "40190a",
+        "back_link": "40190b",
+        "faction_code": "campaign",
+        "name": "Assemble the Team",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "next_evol_campaign",  
+        "type_code": "player_side_scheme"
+    },
+    {
+        "code": "40190b",
+        "faction_code": "campaign",
+        "name": "Team Assembled",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "next_evol_campaign",  
+        "type_code": "environment"
+    },
+    {
+        "code": "40191a",
+        "back_link": "40191b",
+        "faction_code": "campaign",
+        "name": "Establish Safehouse",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "next_evol_campaign",  
+        "type_code": "player_side_scheme"
+    },
+    {
+        "code": "40191b",
+        "faction_code": "campaign",
+        "name": "Safehouse Established",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "next_evol_campaign",  
+        "type_code": "environment"
+    },
+    {
+        "code": "40192a",
+        "back_link": "40192b",
+        "faction_code": "campaign",
+        "name": "Gear Up",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "next_evol_campaign",  
+        "type_code": "player_side_scheme"
+    },
+    {
+        "code": "40192b",
+        "faction_code": "campaign",
+        "name": "Geared Up",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "next_evol_campaign",  
+        "type_code": "environment"
+    },
+    {
+        "code": "40193a",
+        "back_link": "40193b",
+        "faction_code": "campaign",
+        "name": "Mission Prep",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "next_evol_campaign",  
+        "type_code": "player_side_scheme"
+    },
+    {
+        "code": "40193b",
+        "faction_code": "campaign",
+        "name": "Mission Prepped",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "next_evol_campaign",  
+        "type_code": "environment"
+    },
+    {
+        "code": "40194a",
+        "back_link": "40194b",
+        "faction_code": "campaign",
+        "name": "Practice Maneuvers",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "next_evol_campaign",  
+        "type_code": "player_side_scheme"
+    },
+    {
+        "code": "40194b",
+        "faction_code": "campaign",
+        "name": "Practiced Maneuvers",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "next_evol_campaign",  
+        "type_code": "environment"
+    },
+    {
+        "code": "40195a",
+        "back_link": "40195b",
+        "faction_code": "campaign",
+        "name": "Prepare Defenses",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "next_evol_campaign",  
+        "type_code": "player_side_scheme"
+    },
+    {
+        "code": "40195b",
+        "faction_code": "campaign",
+        "name": "Prepared Defenses",
+        "pack_code": "next_evol",
+        "quantity": 1,
+        "set_code": "next_evol_campaign",  
+        "type_code": "environment"
+    },
+    {
         "code": "40196",
         "deck_limit": 1,
         "faction_code": "campaign",
@@ -1084,10 +1198,73 @@
         "octgn_id": "104e1218-df9b-43f7-93e0-ca2ef9040196",
         "pack_code": "next_evol",
         "position": 196,
-        "quantity": 1,
+        "quantity": 4,
         "resource_wild": 2,
         "set_code": "next_evol_campaign",
         "set_position": 7,
         "type_code": "resource"
+    },
+    {
+        "code": "40197",
+        "faction_code": "campaign",
+        "name": "Safehouse",
+        "pack_code": "next_evol",
+        "set_code": "next_evol_campaign",  
+        "quantity": 1,
+        "type_code": "support"
+    },
+    {
+        "code": "40198",
+        "faction_code": "encounter",
+        "name": "Lady Mastermind",
+        "pack_code": "next_evol",
+        "set_code": "next_evol_campaign",  
+        "quantity": 1,
+        "type_code": "minion"
+    },
+    {
+        "code": "40199",
+        "faction_code": "encounter",
+        "name": "Malice",
+        "pack_code": "next_evol",
+        "set_code": "next_evol_campaign",  
+        "quantity": 1,
+        "type_code": "minion"
+    },
+    {
+        "code": "40200",
+        "faction_code": "encounter",
+        "name": "Scambler",
+        "pack_code": "next_evol",
+        "set_code": "next_evol_campaign",  
+        "quantity": 1,
+        "type_code": "minion"
+    },
+    {
+        "code": "40201",
+        "faction_code": "encounter",
+        "name": "Vanisher",
+        "pack_code": "next_evol",
+        "set_code": "next_evol_campaign",  
+        "quantity": 1,
+        "type_code": "minion"
+    },
+    {
+        "code": "40202",
+        "faction_code": "encounter",
+        "name": "Under Pressure",
+        "pack_code": "next_evol",
+        "set_code": "next_evol_campaign",  
+        "quantity": 1,
+        "type_code": "side_scheme"
+    },
+    {
+        "code": "40203",
+        "faction_code": "encounter",
+        "name": "Overburdened",
+        "pack_code": "next_evol",
+        "set_code": "next_evol_campaign",  
+        "quantity": 1,
+        "type_code": "treachery"
     }
 ]
