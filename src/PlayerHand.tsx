@@ -391,6 +391,17 @@ class PlayerHand extends Component<IProps, IState> {
                   }
                 },
               },
+              {
+                label: "Flip cards",
+                action: () => {
+                  if (this.state.selectedCardIndeces.length > 0) {
+                    this.props.flipInPlayerHand({
+                      playerNumber: this.props.playerNumber,
+                      indeces: this.state.selectedCardIndeces,
+                    });
+                  }
+                },
+              },
             ])}
             hideContextMenu={() => {
               this.setState({ anchorEl: undefined, showMenu: false });
@@ -413,6 +424,9 @@ class PlayerHand extends Component<IProps, IState> {
               >
                 <IconButton
                   onClick={(event) => {
+                    // we don't want this to make it to the window
+                    // level handler that deselects the cards
+                    event.stopPropagation();
                     this.setState({
                       showMenu: true,
                       anchorEl: event.nativeEvent.target as HTMLElement,
