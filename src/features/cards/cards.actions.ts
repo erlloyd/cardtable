@@ -9,6 +9,7 @@ export interface AddCardStackWithSnapAndIdPayload {
   snap: boolean;
   id: string;
   sizeType: CardSizeType;
+  faceup?: boolean;
 }
 
 export interface AddCardStackToPlayerBoardWithIdPayload {
@@ -16,6 +17,7 @@ export interface AddCardStackToPlayerBoardWithIdPayload {
   slot: IPlayerBoardSlotLocation;
   id: string;
   sizeType: CardSizeType;
+  faceup?: boolean;
 }
 
 export interface PullCardOutOfCardStackWithIdPayload {

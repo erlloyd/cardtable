@@ -24,6 +24,7 @@ import {
   ICardDetails,
   ICardStack,
   IPlayerHand,
+  IPlayerHandCard,
   MAX_PLAYERS,
 } from "./features/cards/initialState";
 import "./PlayerHand.scss";
@@ -98,13 +99,16 @@ const getListStyle2 = (isDraggingOver: boolean, isDraggingAtAll: boolean) => {
   } as React.CSSProperties;
 };
 
-const makeFakeCardStackFromJsonId = (jsonId: string): ICardStack => {
+const makeFakeCardStackFromJsonId = (
+  jsonId: string,
+  faceup?: boolean
+): ICardStack => {
   return {
     controlledBy: myPeerRef,
     dragging: false,
     shuffling: false,
     exhausted: false,
-    faceup: true,
+    faceup: faceup === undefined || !!faceup,
     fill: "anything",
     id: "fake-id",
     selected: false,
@@ -129,7 +133,7 @@ const makeFakeCardStackFromJsonId = (jsonId: string): ICardStack => {
 };
 
 interface IProps {
-  droppedOnTable: (ids: string[], pos?: Vector2d) => void;
+  droppedOnTable: (ids: string[], faceup: boolean, pos?: Vector2d) => void;
   droppedBackInHand: () => void;
   reorderPlayerHand: (payload: {
     playerNumber: number;
@@ -137,6 +141,10 @@ interface IProps {
     destinationIndex: number;
   }) => void;
   removeFromPlayerHand: (payload: {
+    playerNumber: number;
+    indeces: number[];
+  }) => void;
+  flipInPlayerHand: (payload: {
     playerNumber: number;
     indeces: number[];
   }) => void;
@@ -177,6 +185,7 @@ class PlayerHand extends Component<IProps, IState> {
   static whyDidYouRender = true;
   private tapped: NodeJS.Timeout | null = null;
   private dragStartTime: number = 0;
+  private topLevelDivRef: HTMLDivElement | null = null;
 
   constructor(props: IProps) {
     super(props);
@@ -272,8 +281,11 @@ class PlayerHand extends Component<IProps, IState> {
       const cardDroppedJson = playerHandData[result.source.index];
       this.props.droppedOnTable(
         this.state.selectedCardIndeces.length > 0
-          ? this.state.selectedCardIndeces.map((i) => playerHandData[i].jsonId)
-          : [cardDroppedJson.jsonId]
+          ? this.state.selectedCardIndeces.map(
+              (i) => playerHandData[i].cardDetails.jsonId
+            )
+          : [cardDroppedJson.cardDetails.jsonId],
+        cardDroppedJson.faceup
       );
     } else {
       let sourceIndeces = [result.source.index];
@@ -309,7 +321,13 @@ class PlayerHand extends Component<IProps, IState> {
       this.props.currentGameType ?? GameManager.allRegisteredGameTypes[0]
     ).properties.roles;
     return (
-      <div>
+      <div
+        ref={(val) => {
+          this.topLevelDivRef = val;
+        }}
+        tabIndex={0}
+        onKeyUp={this.handleKeyUp}
+      >
         {this.renderTopLayer()}
         {this.state.showMenu && (
           <ContextMenu
@@ -357,7 +375,7 @@ class PlayerHand extends Component<IProps, IState> {
                 action: (wasTouch: boolean | undefined) => {
                   if (cards.length > 0) {
                     const randIndex = Math.floor(Math.random() * cards.length);
-                    const cardDetails = cards[randIndex];
+                    const handCard = cards[randIndex];
                     this.props.removeFromPlayerHand({
                       playerNumber: this.props.playerNumber,
                       indeces: [randIndex],
@@ -365,7 +383,11 @@ class PlayerHand extends Component<IProps, IState> {
 
                     const dropPos = wasTouch ? { x: 100, y: 100 } : undefined;
 
-                    this.props.droppedOnTable([cardDetails.jsonId], dropPos);
+                    this.props.droppedOnTable(
+                      [handCard.cardDetails.jsonId],
+                      handCard.faceup,
+                      dropPos
+                    );
                   }
                 },
               },
@@ -414,11 +436,13 @@ class PlayerHand extends Component<IProps, IState> {
                       <div
                         onPointerEnter={(event) => {
                           if (event.pointerType === "mouse") {
-                            this.props.setPreviewCardJsonId(card.jsonId);
+                            this.props.setPreviewCardJsonId(
+                              card.cardDetails.jsonId
+                            );
                           }
                         }}
                         onPointerLeave={this.props.clearPreviewCardJsonId}
-                        onClick={this.handleClick(card, index)}
+                        onClick={this.handleClick(card.cardDetails, index)}
                         className={cx({
                           "player-hand-card": true,
                           selected:
@@ -478,6 +502,9 @@ class PlayerHand extends Component<IProps, IState> {
 
   handleClick =
     (card: ICardDetails, index: number) => (event: React.MouseEvent) => {
+      if (this.topLevelDivRef) {
+        this.topLevelDivRef.focus();
+      }
       if (
         (event.nativeEvent as PointerEvent).pointerType === "touch" ||
         is_safari_or_uiwebview ||
@@ -509,7 +536,7 @@ class PlayerHand extends Component<IProps, IState> {
       if (!card) {
         const cards = this.props.playerHandData?.cards ?? [];
         if (cards.length > 0 && !!result) {
-          jsonId = cards[result.source.index].jsonId;
+          jsonId = cards[result.source.index].cardDetails.jsonId;
         }
       } else {
         jsonId = card.jsonId;
@@ -535,9 +562,9 @@ class PlayerHand extends Component<IProps, IState> {
     ) : null;
   }
 
-  renderCardContents(card: ICardDetails, numDragging: number) {
+  renderCardContents(card: IPlayerHandCard, numDragging: number) {
     const imgs = getImgUrls(
-      makeFakeCardStackFromJsonId(card.jsonId),
+      makeFakeCardStackFromJsonId(card.cardDetails.jsonId, card.faceup),
       this.props.cardData,
       this.props.currentGameType ?? GameManager.allRegisteredGameTypes[0]
     );
@@ -554,20 +581,20 @@ class PlayerHand extends Component<IProps, IState> {
 
     return imgs.map((i, index) => {
       const cardType = getCardTypeWithoutStack(
-        card.jsonId,
-        true /* cards in hand are always faceup */,
+        card.cardDetails.jsonId,
+        card.faceup,
         this.props.cardData
       );
       const shouldRotate = shouldRenderImageHorizontal(
-        card.jsonId,
+        card.cardDetails.jsonId,
         cardType,
         GameManager.horizontalCardTypes[
           this.props.currentGameType ?? GameManager.allRegisteredGameTypes[0]
         ],
-        false /* We're never showing card backs */
+        i.includes("back")
       );
       return (
-        <div key={`card-${card.jsonId}-img-${index}`}>
+        <div key={`card-${card.cardDetails.jsonId}-img-${index}`}>
           {numDragging > 1 ? (
             <div className="num-dragging">{numDragging}</div>
           ) : null}
@@ -617,5 +644,14 @@ class PlayerHand extends Component<IProps, IState> {
       </Droppable>
     ) : null;
   }
+
+  private handleKeyUp = (event: React.KeyboardEvent<HTMLDivElement>): void => {
+    if (event.code === "KeyF") {
+      this.props.flipInPlayerHand({
+        playerNumber: this.props.playerNumber,
+        indeces: this.state.selectedCardIndeces,
+      });
+    }
+  };
 }
 export default PlayerHand;

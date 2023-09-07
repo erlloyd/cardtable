@@ -7,9 +7,13 @@ import {
 import JSONCrush from "jsoncrush";
 import { Vector2d } from "konva/lib/types";
 
+export interface IPlayerHandCard {
+  faceup: boolean;
+  cardDetails: ICardDetails;
+}
 export interface IPlayerHand {
   role: string | null;
-  cards: ICardDetails[];
+  cards: IPlayerHandCard[];
 }
 
 export interface IPlayerBoardSlotLocation {
@@ -119,7 +123,7 @@ export const generateDefaultPlayerHands = (): IPlayerHand[] =>
 const queryParams = new URLSearchParams(window.location.search);
 
 const queryParamsHandsString = queryParams.get("hands");
-const queryParamsHands = !!queryParamsHandsString
+let queryParamsHands = !!queryParamsHandsString
   ? JSON.parse(JSONCrush.uncrush(queryParamsHandsString))
   : null;
 
@@ -139,6 +143,21 @@ if (queryParamsCards && queryParamsHands) {
 
 const localStorageState: ICardsState =
   queryParamsCards || (loadState("liveState")?.cards ?? {});
+
+// Fix up new / old player hands format
+if (!!localStorageState.playerHands) {
+  localStorageState.playerHands.forEach((hand) => {
+    if (!!hand.cards && hand.cards.length > 0) {
+      hand.cards.forEach((handCard) => {
+        if (!!(handCard as any).jsonId) {
+          handCard.faceup = true;
+          handCard.cardDetails = { jsonId: (handCard as any).jsonId };
+          delete (handCard as any).jsonId;
+        }
+      });
+    }
+  });
+}
 
 // Make sure initially, none of the cards are "owned" / "selected" / "shuffling"
 if (!!localStorageState.cards) {

@@ -117,6 +117,7 @@ export default class MarvelChampionsGameModule extends GameModule {
     super(properties, MissingCardImages, EXTRA_CARDS, CARD_PACK_REMAPPING, [
       "main_scheme",
       "side_scheme",
+      "player_side_scheme",
     ]);
   }
 

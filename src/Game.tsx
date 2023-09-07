@@ -134,6 +134,7 @@ interface IProps {
   addCardStack: (payload: {
     cardJsonIds: string[];
     position: Vector2d;
+    faceup?: boolean;
   }) => void;
   addCardStackToPlayerBoardSlot: (payload: {
     cardJsonIds: string[];
@@ -1944,7 +1945,11 @@ class Game extends Component<IProps, IState> {
     this.props.clearMyGhostCards();
   };
 
-  private handleDroppedOnTable = (ids: string[], pos?: Vector2d) => {
+  private handleDroppedOnTable = (
+    ids: string[],
+    faceup: boolean,
+    pos?: Vector2d
+  ) => {
     const myDropTargetCard =
       Object.values(this.props.dropTargetCardsById).filter(
         (dt) => dt.ownerRef === myPeerRef
@@ -1982,6 +1987,7 @@ class Game extends Component<IProps, IState> {
         this.props.addCardStack({
           cardJsonIds: [id],
           position: newPos,
+          faceup,
         });
       });
     }

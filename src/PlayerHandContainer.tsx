@@ -6,6 +6,7 @@ import { getPlayerCardsForPlayerNumber } from "./features/cards/cards.selectors"
 import {
   clearPlayerRole,
   removeFromPlayerHand,
+  flipInPlayerHand,
   reorderPlayerHand,
   setPlayerRole,
 } from "./features/cards/cards.slice";
@@ -41,6 +42,7 @@ const mapStateToProps = (state: RootState, ownProps: IProps) => {
 const PlayerHandContainer = connect(mapStateToProps, {
   reorderPlayerHand,
   removeFromPlayerHand,
+  flipInPlayerHand,
   setPreviewCardJsonId: setMenuPreviewCardJsonId,
   clearPreviewCardJsonId: clearMenuPreviewCardJsonId,
   startDraggingCardFromHand,

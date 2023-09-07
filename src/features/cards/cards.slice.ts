@@ -42,6 +42,7 @@ import {
   IDropTarget,
   initialState,
   IPlayerBoard,
+  IPlayerHandCard,
 } from "./initialState";
 import { myPeerRef } from "../../constants/app-constants";
 import log from "loglevel";
@@ -1090,9 +1091,9 @@ const addToPlayerHandReducer: CaseReducer<
   const playerHand = state.playerHands[playerIndex];
 
   foreachSelectedAndControlledCard(state, (action as any).ACTOR_REF, (card) => {
-    state.playerHands[playerIndex].cards = card.cardStack.concat(
-      playerHand.cards
-    );
+    state.playerHands[playerIndex].cards = card.cardStack
+      .map((id) => ({ faceup: true, cardDetails: id }))
+      .concat(playerHand.cards);
   });
 
   deleteCardStackReducer(state, {
@@ -1113,7 +1114,7 @@ const reorderPlayerHandReducer: CaseReducer<
   if (state.playerHands.length >= action.payload.playerNumber) {
     const hand = state.playerHands[action.payload.playerNumber - 1];
 
-    let result = [] as ICardDetails[];
+    let result = [] as IPlayerHandCard[];
     // go through the original, up to the index where we want to insert, and grab
     // items that aren't being removed
 
@@ -1176,6 +1177,23 @@ const removeFromPlayerHandReducer: CaseReducer<
       (_c, index) => !action.payload.indeces.includes(index)
     );
     hand.cards = result;
+  }
+};
+
+const flipInPlayerHandReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{
+    playerNumber: number;
+    indeces: number[];
+  }>
+> = (state, action) => {
+  if (state.playerHands.length >= action.payload.playerNumber) {
+    const hand = state.playerHands[action.payload.playerNumber - 1];
+    hand.cards.forEach((c, index) => {
+      if (action.payload.indeces.includes(index)) {
+        c.faceup = !c.faceup;
+      }
+    });
   }
 };
 
@@ -1301,6 +1319,7 @@ const cardsSlice = createSlice({
     clearCardTokens: clearCardTokensReducer,
     reorderPlayerHand: reorderPlayerHandReducer,
     removeFromPlayerHand: removeFromPlayerHandReducer,
+    flipInPlayerHand: flipInPlayerHandReducer,
     addToPlayerHand: addToPlayerHandReducer,
     setPlayerRole: setPlayerRoleReducer,
     clearPlayerRole: clearPlayerRoleReducer,
@@ -1412,7 +1431,7 @@ const cardsSlice = createSlice({
         dragging: false,
         shuffling: false,
         exhausted: false,
-        faceup: true,
+        faceup: action.payload.faceup === undefined || !!action.payload.faceup,
         fill: "red",
         id: action.payload.id,
         cardStack: action.payload.cardJsonIds.map((jsonId) => ({
@@ -1448,7 +1467,7 @@ const cardsSlice = createSlice({
         dragging: false,
         shuffling: false,
         exhausted: action.payload.slot.landscape,
-        faceup: true,
+        faceup: action.payload.faceup === undefined || !!action.payload.faceup,
         fill: "red",
         id: action.payload.id,
         cardStack: action.payload.cardJsonIds.map((jsonId) => ({
@@ -1655,7 +1674,10 @@ const cardsSlice = createSlice({
           if (action.payload.drawIntoHand) {
             const playerIndex = action.payload.playerNumber - 1;
             state.playerHands[playerIndex].cards.push({
-              jsonId: topCardDetails.jsonId,
+              faceup: true,
+              cardDetails: {
+                jsonId: topCardDetails.jsonId,
+              },
             });
           } else {
             const newCardStack: ICardDetails[] = [
@@ -1894,6 +1916,7 @@ export const {
   clearAllModifiers,
   reorderPlayerHand,
   removeFromPlayerHand,
+  flipInPlayerHand,
   addToPlayerHand,
   setPlayerRole,
   clearPlayerRole,

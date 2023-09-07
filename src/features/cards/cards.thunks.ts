@@ -51,11 +51,13 @@ import {
 interface AddCardStackPayload {
   cardJsonIds: string[];
   position: Vector2d;
+  faceup?: boolean;
 }
 
 interface AddCardStackToPlayerBoardLocationPayload {
   cardJsonIds: string[];
   slot: IPlayerBoardSlotLocation;
+  faceup?: boolean;
 }
 
 export interface PullCardOutOfCardStackPayload {
