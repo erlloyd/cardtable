@@ -34,3 +34,7 @@ export const possibleColors: PlayerColor[] = [
 export const playerHandHeightPx: number = 90;
 
 export const playerHandElementId: string = "card-table-player-hand-area";
+
+export const defaultPlaymatWidth: number = 2880;
+
+export const defaultPlaymatHeight: number = 1440;

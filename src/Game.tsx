@@ -73,6 +73,8 @@ import { ConfirmOptions, useConfirm } from "material-ui-confirm";
 import PlayerBoardsContainer from "./PlayerBoardsContainer";
 import DeckTextImporterContainer from "./DeckTextImporterContainer";
 import { debounce } from "lodash";
+import Playmat from "./Playmat";
+import PlaymatGroup from "./PlaymatGroup";
 
 const SCALE_BY = 1.02;
 
@@ -736,35 +738,15 @@ class Game extends Component<IProps, IState> {
               >
                 <Provider store={store}>
                   <Layer>
-                    <Group>
-                      <Rect
-                        fill={
-                          this.state.playmatImageLoaded
-                            ? undefined
-                            : "lightgray"
-                        }
-                        scale={{
-                          x: playmatScale,
-                          y: playmatScale,
-                        }}
-                        width={
-                          this.state.playmatImageLoaded
-                            ? this.state.playmatImage?.naturalWidth
-                            : 2880
-                        }
-                        height={
-                          this.state.playmatImageLoaded
-                            ? this.state.playmatImage?.naturalHeight
-                            : 1440
-                        }
-                        fillPatternImage={
-                          this.state.playmatImageLoaded &&
-                          !!this.state.playmatImage
-                            ? this.state.playmatImage
-                            : undefined
-                        }
-                      ></Rect>
-                    </Group>
+                    <PlaymatGroup
+                      imgUrls={[
+                        GamePropertiesMap[this.props.currentGameType]
+                          .backgroundImageLocation ||
+                          "/images/table/background_default.jpg",
+                        "/images/from_modules/lorcana/playermat2.jpg",
+                      ]}
+                      startingPos={{ x: 50, y: 50 }}
+                    />
                     <PlayerBoardsContainer></PlayerBoardsContainer>
                     <Group>
                       {this.props.counters.map((counter) => (
