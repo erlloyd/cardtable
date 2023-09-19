@@ -6,7 +6,7 @@ export const properties: GameProperties = {
   decklistSearchApi: "",
   decklistSearchApiConstants: "",
   encounterUiName: "Deck",
-  backgroundImageLocation: "",
+  initialPlaymatImageLocation: "",
   possibleIcons: [],
   modifiers: [],
   tokens: {

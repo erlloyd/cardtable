@@ -39,7 +39,7 @@ export default class LOTRLCGGameModule extends GameModule {
       decklistSearchApi: "https://ringsdb.com/decklists/find",
       decklistSearchApiConstants: "numcores=3&sort=likes",
       encounterUiName: "Scenario",
-      backgroundImageLocation: "/images/table/background_lotrlcg.jpg",
+      initialPlaymatImageLocation: "/images/table/background_lotrlcg.jpg",
       possibleIcons: [
         {
           iconId: "tactics",

@@ -37,7 +37,8 @@ export default class MarvelChampionsGameModule extends GameModule {
       decklistSearchApi: "https://marvelcdb.com/decklists",
       decklistSearchApiConstants: "sort=likes",
       encounterUiName: "Encounter Set",
-      backgroundImageLocation: "/images/table/background_marvelchampions.png",
+      initialPlaymatImageLocation:
+        "/images/table/background_marvelchampions.png",
       possibleIcons: [],
       modifiers: [
         {

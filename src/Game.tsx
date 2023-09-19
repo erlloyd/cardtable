@@ -1,55 +1,68 @@
+import CloseIcon from "@material-ui/icons/Close";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { IconButton, Snackbar } from "@mui/material";
 import * as Intersects from "intersects";
 import Konva from "konva";
 import { KonvaEventObject } from "konva/lib/Node";
 import { Vector2d } from "konva/lib/types";
-import React from "react";
-import { Component } from "react";
+import { debounce } from "lodash";
+import log from "loglevel";
+import { ConfirmOptions, useConfirm } from "material-ui-confirm";
+import React, { Component } from "react";
 import { Group, Layer, Rect, Stage } from "react-konva";
 import { Provider, ReactReduxContext } from "react-redux";
 import Card from "./Card";
 import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
 import CardtableAlertsContainer from "./CardtableAlertsContainer";
-import {
-  myPeerRef,
-  PlayerColor,
-  playerHandHeightPx,
-  possibleColors,
-  useWebRTCLocalStorage,
-} from "./constants/app-constants";
-import {
-  cardConstants,
-  CardSizeType,
-  CounterTokenType,
-  StatusTokenType,
-} from "./constants/card-constants";
-import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import ContextMenu, { ContextMenuItem } from "./ContextMenu";
 import ContextualOptionsMenuContainer from "./ContextualOptionsMenuContainer";
 import Counter from "./Counter";
 import CurvedArrowsContainer from "./CurvedArrowsContainer";
 import DeckLoader from "./DeckLoader";
+import DeckSearchContainer from "./DeckSearchContainer";
+import DeckTextImporterContainer from "./DeckTextImporterContainer";
 import EncounterLoaderContainer from "./EncounterLoaderContainer";
+import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
+import FlippableToken from "./FlippableToken";
+import "./Game.scss";
+import NotesContainer from "./NotesContainer";
+import NotificationsContainer from "./Notifications/NotificationsContainer";
+import OptionsMenuContainer from "./OptionsMenuContainer";
+import PeerConnector from "./PeerConnector";
+import PlayerBoardsContainer from "./PlayerBoardsContainer";
+import PlayerHandContainer from "./PlayerHandContainer";
+import PlaymatGroupContainer from "./PlaymatGroupContainer";
+import SpecificCardLoaderContainer from "./SpecificCardLoaderContainer";
+import TokenValueModifier from "./TokenValueModifier";
+import TopLayer from "./TopLayer";
+import {
+  PlayerColor,
+  myPeerRef,
+  playerHandHeightPx,
+  possibleColors,
+  useWebRTCLocalStorage,
+} from "./constants/app-constants";
+import {
+  CardSizeType,
+  CounterTokenType,
+  StatusTokenType,
+  cardConstants,
+} from "./constants/card-constants";
+import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
+import { CardData } from "./external-api/common-card-data";
 import { ICardData } from "./features/cards-data/initialState";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import {
-  ICardsState,
   ICardStack,
+  ICardsState,
   IDropTarget,
   IPlayerBoard,
   IPlayerBoardSlotLocation,
 } from "./features/cards/initialState";
 import { ICounter, IFlippableToken } from "./features/counters/initialState";
 import { IGameState } from "./features/game/initialState";
-import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
-import "./Game.scss";
-import NotesContainer from "./NotesContainer";
-import OptionsMenuContainer from "./OptionsMenuContainer";
-import PeerConnector from "./PeerConnector";
-import PlayerHandContainer from "./PlayerHandContainer";
-import SpecificCardLoaderContainer from "./SpecificCardLoaderContainer";
-import TokenValueModifier from "./TokenValueModifier";
-import TopLayer from "./TopLayer";
+import GameManager from "./game-modules/GameModuleManager";
+import { GameType } from "./game-modules/GameType";
 import {
   anyCardStackHasStatus,
   cacheImages,
@@ -60,21 +73,6 @@ import {
 } from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
 import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
-import CloseIcon from "@material-ui/icons/Close";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import DeckSearchContainer from "./DeckSearchContainer";
-import log from "loglevel";
-import NotificationsContainer from "./Notifications/NotificationsContainer";
-import { GameType } from "./game-modules/GameType";
-import GameManager from "./game-modules/GameModuleManager";
-import FlippableToken from "./FlippableToken";
-import { CardData } from "./external-api/common-card-data";
-import { ConfirmOptions, useConfirm } from "material-ui-confirm";
-import PlayerBoardsContainer from "./PlayerBoardsContainer";
-import DeckTextImporterContainer from "./DeckTextImporterContainer";
-import { debounce } from "lodash";
-import Playmat from "./Playmat";
-import PlaymatGroup from "./PlaymatGroup";
 
 const SCALE_BY = 1.02;
 
@@ -236,6 +234,7 @@ interface IProps {
   flipToken: (id: string) => void;
   rotatePreviewCard180: boolean;
   togglePreviewCardRotation: () => void;
+  addNewPlaymatInColumn: (imgUrl: string) => void;
 }
 
 interface IState {
@@ -363,7 +362,8 @@ class Game extends Component<IProps, IState> {
         log.error(e);
       };
       image.src =
-        GamePropertiesMap[this.props.currentGameType].backgroundImageLocation ||
+        GamePropertiesMap[this.props.currentGameType]
+          .initialPlaymatImageLocation ||
         "/images/table/background_default.jpg";
       this.props.loadCardsData(this.props.currentGameType);
       this.props.allJsonData(this.props.currentGameType);
@@ -738,16 +738,8 @@ class Game extends Component<IProps, IState> {
               >
                 <Provider store={store}>
                   <Layer>
-                    <PlaymatGroup
-                      imgUrls={[
-                        GamePropertiesMap[this.props.currentGameType]
-                          .backgroundImageLocation ||
-                          "/images/table/background_default.jpg",
-                        "/images/from_modules/lorcana/playermat2.jpg",
-                      ]}
-                      startingPos={{ x: 50, y: 50 }}
-                    />
-                    <PlayerBoardsContainer></PlayerBoardsContainer>
+                    <PlaymatGroupContainer />
+                    <PlayerBoardsContainer />
                     <Group>
                       {this.props.counters.map((counter) => (
                         <Counter
@@ -2578,6 +2570,20 @@ class Game extends Component<IProps, IState> {
                 .allowSpecificCardSearch,
           },
         ],
+      },
+      {
+        label: "Add Playmat",
+        children: GamePropertiesMap[
+          this.props.currentGameType
+        ].additionalPlaymatImageOptions?.map((po) => ({
+          label: po.displayName,
+          action: () => {
+            this.props.addNewPlaymatInColumn(po.imgUrl);
+          },
+        })),
+        hidden:
+          !GamePropertiesMap[this.props.currentGameType]
+            .additionalPlaymatImageOptions,
       },
       {
         label: "Undo",

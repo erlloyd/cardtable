@@ -106,6 +106,7 @@ import {
 import { toggleNotes } from "./features/notes/notes.slice";
 import { resetApp } from "./store/global.actions";
 import { RootState } from "./store/rootReducer";
+import { addNewPlaymatInColumn } from "./features/playmats/playmats.thunks";
 
 const mapStateToProps = (state: RootState) => {
   const playerNumbers = getPlayerNumbers(state);
@@ -208,6 +209,7 @@ const GameContainer = connect(mapStateToProps, {
   moveToken,
   flipToken,
   togglePreviewCardRotation,
+  addNewPlaymatInColumn,
 })(Game);
 
 export default GameContainer;

@@ -1,7 +1,5 @@
 import { Vector2d } from "konva/lib/types";
-import { useCallback, useEffect, useState } from "react";
-import { Group, Rect } from "react-konva";
-import useImage from "use-image";
+import { useCallback, useState } from "react";
 import Playmat from "./Playmat";
 import { defaultPlaymatHeight } from "./constants/app-constants";
 interface IProps {

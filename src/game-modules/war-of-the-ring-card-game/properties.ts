@@ -7,7 +7,7 @@ export const properties: GameProperties = {
   decklistSearchApi: "",
   decklistSearchApiConstants: "",
   encounterUiName: "Scenario",
-  backgroundImageLocation:
+  initialPlaymatImageLocation:
     "/images/from_modules/war-of-the-ring-card-game/middle-earth-map.jpg",
   possibleIcons: [],
   modifiers: [],

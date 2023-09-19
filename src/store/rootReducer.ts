@@ -12,6 +12,7 @@ import game, {
   setPreviewCardId,
   stopDraggingCardFromHand,
 } from "../features/game/game.slice";
+import playmats from "../features/playmats/playmats.slice";
 
 import notifications from "../features/notifications/notifications.slice";
 
@@ -28,6 +29,7 @@ const undoableState = combineReducers({
   counters,
   cards,
   notes,
+  playmats,
 });
 
 const rootReducer = combineReducers({
