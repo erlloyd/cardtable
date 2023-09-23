@@ -224,9 +224,17 @@ class PlayerHand extends Component<IProps, IState> {
   }
 
   onDragStart(dragStart: DragStart) {
-    this.setState({
+    const newState = {
       draggingIndex: dragStart.source.index,
-    });
+    } as IState;
+
+    if (!this.state.selectedCardIndeces.includes(dragStart.source.index)) {
+      newState.selectedCardIndeces = this.state.selectedCardIndeces.concat([
+        dragStart.source.index,
+      ]);
+    }
+
+    this.setState(newState);
     this.dragStartTime = new Date().getTime();
   }
 

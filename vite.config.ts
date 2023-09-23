@@ -6,7 +6,7 @@ import { VitePWA } from "vite-plugin-pwa";
 
 const getCache = ({ name, pattern, maxEntries }: any) => ({
   urlPattern: pattern,
-  handler: "CacheFirst" as const,
+  handler: "StaleWhileRevalidate" as const,
   options: {
     cacheName: name,
     expiration: {
