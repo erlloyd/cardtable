@@ -73,6 +73,7 @@ import {
 } from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
 import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
+import { CARD_SHOULD_BE_HORIZONTAL_MAP } from "./constants/card-missing-image-map";
 
 const SCALE_BY = 1.02;
 
@@ -529,9 +530,12 @@ class Game extends Component<IProps, IState> {
       ? possiblePreviewCards
           .filter((_card) => !this.state.selecting && !iAmDragging)
           .map((card) => {
-            const isHorizontal = GameManager.horizontalCardTypes[
-              this.props.currentGameType
-            ].includes(getCardType(card, this.props.cardsData));
+            const isHorizontal =
+              CARD_SHOULD_BE_HORIZONTAL_MAP[this.getCardCode(card)] ||
+              GameManager.horizontalCardTypes[
+                this.props.currentGameType
+              ].includes(getCardType(card, this.props.cardsData));
+
             const imgUrls = getImgUrls(
               card,
               this.props.cardsData,

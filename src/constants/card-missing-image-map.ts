@@ -2,6 +2,10 @@ import { StringToStringMap } from "../game-modules/GameModule";
 import GameManager from "../game-modules/GameModuleManager";
 import { GameType } from "../game-modules/GameType";
 
+export const CARD_SHOULD_BE_HORIZONTAL_MAP: { [key: string]: boolean } = {
+  "42001c": true,
+};
+
 export const CARD_ALREADY_ROTATED_MAP: { [key: string]: boolean } = {
   "05026": true,
   "30025": true,
