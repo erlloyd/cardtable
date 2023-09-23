@@ -3,6 +3,7 @@ import { myPeerRef } from "../constants/app-constants";
 import { CardSizeType, StatusTokenType } from "../constants/card-constants";
 import {
   CARD_ALREADY_ROTATED_MAP,
+  CARD_SHOULD_BE_HORIZONTAL_MAP,
   FORCE_CARD_BACK_MAP,
   FORCE_ENCOUNTER_CARD_BACK_MAP,
   MISSING_CARD_IMAGE_MAP,
@@ -235,7 +236,10 @@ export const shouldRenderImageHorizontal = (
 ): boolean => {
   const shouldRotateByType =
     typeCodes.includes(type.toLocaleLowerCase()) && !plainCardBack;
-  return shouldRotateByType && !CARD_ALREADY_ROTATED_MAP[code];
+  return (
+    CARD_SHOULD_BE_HORIZONTAL_MAP[code] ||
+    (shouldRotateByType && !CARD_ALREADY_ROTATED_MAP[code])
+  );
 };
 
 export const getCardTypeWithoutStack = (

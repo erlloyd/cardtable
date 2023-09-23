@@ -18,4 +18,5 @@ export const EXTRA_CARDS: ExtraCards = {
     { jsonId: "36004" },
     { jsonId: "36005" },
   ],
+  angel: [{ jsonId: "42001c" }],
 };
