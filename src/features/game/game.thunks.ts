@@ -5,17 +5,29 @@ import { copyToClipboard, getBaseUrl } from "../../utilities/text-utils";
 import { ICardStack } from "../cards/initialState";
 import { saveAs } from "file-saver";
 import omit from "lodash.omit";
+import cloneDeep from "lodash.clonedeep";
 import { getActiveGameType } from "./game.selectors";
 import { sendNotification } from "../notifications/notifications.slice";
 import { v4 as uuidv4 } from "uuid";
 import { receiveRemoteGameState } from "../../store/global.actions";
+import gameSlice from "./game.slice";
 
 export const generateGameStateSave =
   (): ThunkAction<void, RootState, unknown, Action<any>> =>
   (_dispatch, getState) => {
     const state = getState();
 
-    const stateToSave = omit(state, ["cardsData"]);
+    const stateToSave = cloneDeep(omit(state, ["cardsData"]));
+
+    // sanitize a bit
+    // We don't need to persist ghost cards
+    stateToSave.liveState.present.cards.ghostCards = [];
+    stateToSave.liveState.present.cards.cards =
+      stateToSave.liveState.present.cards.cards.map((c) => ({
+        ...c,
+        controlledBy: "",
+        selected: false,
+      }));
 
     var blob = new Blob([JSON.stringify(stateToSave)], {
       type: "text/plain;charset=utf-8",
@@ -57,6 +69,15 @@ export const loadGameStateFromSave =
       );
       return;
     }
+
+    // Sanitize the card data
+    gameJSON.liveState.present.cards.ghostCards = [];
+    gameJSON.liveState.present.cards.cards =
+      gameJSON.liveState.present.cards.cards.map((c) => ({
+        ...c,
+        controlledBy: "",
+        selected: false,
+      }));
 
     // Load the game
     dispatch(receiveRemoteGameState(gameJSON));
