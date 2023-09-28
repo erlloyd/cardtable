@@ -236,6 +236,7 @@ interface IProps {
   rotatePreviewCard180: boolean;
   togglePreviewCardRotation: () => void;
   addNewPlaymatInColumn: (imgUrl: string) => void;
+  resetPlaymats: () => void;
 }
 
 interface IState {
@@ -2579,12 +2580,21 @@ class Game extends Component<IProps, IState> {
         label: "Add Playmat",
         children: GamePropertiesMap[
           this.props.currentGameType
-        ].additionalPlaymatImageOptions?.map((po) => ({
+        ].additionalPlaymatImageOptions?.additionalImages.map((po) => ({
           label: po.displayName,
           action: () => {
             this.props.addNewPlaymatInColumn(po.imgUrl);
           },
         })),
+        hidden:
+          !GamePropertiesMap[this.props.currentGameType]
+            .additionalPlaymatImageOptions,
+      },
+      {
+        label: "Reset Playmats",
+        action: () => {
+          this.props.resetPlaymats();
+        },
         hidden:
           !GamePropertiesMap[this.props.currentGameType]
             .additionalPlaymatImageOptions,

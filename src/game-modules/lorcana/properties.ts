@@ -9,16 +9,19 @@ export const properties: GameProperties = {
   decklistSearchApiConstants: "",
   encounterUiName: "",
   initialPlaymatImageLocation: "/images/from_modules/lorcana/playermat1.jpg",
-  additionalPlaymatImageOptions: [
-    {
-      displayName: "Columns #1",
-      imgUrl: "/images/from_modules/lorcana/playermat1.jpg",
-    },
-    {
-      displayName: "Columns #2",
-      imgUrl: "/images/from_modules/lorcana/playermat2.jpg",
-    },
-  ],
+  additionalPlaymatImageOptions: {
+    layout: "row",
+    additionalImages: [
+      {
+        displayName: "Columns #1",
+        imgUrl: "/images/from_modules/lorcana/playermat1.jpg",
+      },
+      {
+        displayName: "Columns #2",
+        imgUrl: "/images/from_modules/lorcana/playermat2.jpg",
+      },
+    ],
+  },
   possibleIcons: [],
   modifiers: [],
   tokens: {

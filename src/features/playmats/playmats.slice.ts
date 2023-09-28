@@ -1,15 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { CaseReducer, createSlice } from "@reduxjs/toolkit";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
-import { initialState } from "./initialState";
+import { IPlaymatsState, initialState } from "./initialState";
 import { addNewPlaymatInColumnWithId } from "./playmats.actions";
 
 // Reducers
+const resetPlaymatsReducer: CaseReducer<IPlaymatsState> = (state) => {
+  state.playmats = [];
+};
 
 // slice
 const playmatsSlice = createSlice({
   name: "playmats",
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    resetPlaymats: resetPlaymatsReducer,
+  },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
       state.playmats = action.payload.liveState.present.playmats.playmats;
@@ -37,6 +42,6 @@ const playmatsSlice = createSlice({
   },
 });
 
-export const {} = playmatsSlice.actions;
+export const { resetPlaymats } = playmatsSlice.actions;
 
 export default playmatsSlice.reducer;

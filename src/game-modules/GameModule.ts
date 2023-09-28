@@ -118,7 +118,10 @@ export interface GameProperties {
   decklistSearchApiConstants?: string;
   encounterUiName: string;
   initialPlaymatImageLocation: string;
-  additionalPlaymatImageOptions?: IPlaymatOption[];
+  additionalPlaymatImageOptions?: {
+    layout: "row" | "column";
+    additionalImages: IPlaymatOption[];
+  };
   possibleIcons: IconInfo[];
   modifiers: ModifierInfo[];
   roles?: RolesInfo;

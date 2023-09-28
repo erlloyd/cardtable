@@ -15,6 +15,10 @@ const mapStateToProps = (state: RootState) => {
         : "/images/table/background_default.jpg",
     ].concat(getPlaymatsInColumnRowOrder(state).map((p) => p.imgUrl)),
     startingPos: { x: 50, y: 50 },
+    defaultLayoutDirection:
+      !!gameType && !!GamePropertiesMap[gameType].additionalPlaymatImageOptions
+        ? GamePropertiesMap[gameType].additionalPlaymatImageOptions!.layout
+        : "row",
   };
 };
 
