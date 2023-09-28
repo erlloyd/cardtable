@@ -528,7 +528,7 @@ const Card = (props: IProps) => {
 
   // CARD TOKENS
   const cardTokens =
-    props.dragging || props.isGhost ? null : (
+    props.dragging || props.isGhost || props.isPreview ? null : (
       <CardTokensContainer
         currentGameType={props.currentGameType}
         key={`${props.id}-cardTokens`}
@@ -540,7 +540,7 @@ const Card = (props: IProps) => {
 
   // CARD MODIFIERS
   const cardModifiers =
-    props.dragging || props.isGhost ? null : (
+    props.dragging || props.isGhost || props.isPreview ? null : (
       <CardModifiersContainer
         currentGameType={props.currentGameType}
         key={`${props.id}-cardModifiers`}

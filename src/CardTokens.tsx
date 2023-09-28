@@ -183,11 +183,11 @@ class CardTokens extends Component<IProps, IState> {
   render() {
     if (!this.props.card) return null;
 
-    const damageX = this.props.x - desiredWidth / 2;
-    const damageY =
-      this.props.y -
-      cardConstants[this.props.card.sizeType].CARD_HEIGHT / 2 +
-      20;
+    const generalX = cardConstants[this.props.card.sizeType].CARD_WIDTH / 2;
+
+    const damageX = generalX;
+    const damageY = desiredHeight / 2 + 20;
+    this.props.y - cardConstants[this.props.card.sizeType].CARD_HEIGHT / 2 + 20;
     const showDamage =
       this.state.imagesLoaded.damage && !!this.props.card.counterTokens.damage;
 
@@ -196,6 +196,8 @@ class CardTokens extends Component<IProps, IState> {
         key={`${this.props.card.id}-damageToken`}
         x={damageX}
         y={damageY}
+        offsetX={this.damageImg.naturalWidth / 2}
+        offsetY={this.damageImg.naturalHeight / 2}
         scale={{
           x: desiredWidth / this.damageImg.naturalWidth,
           y: desiredHeight / this.damageImg.naturalHeight,
@@ -203,6 +205,7 @@ class CardTokens extends Component<IProps, IState> {
         width={this.damageImg.naturalWidth}
         height={this.damageImg.naturalHeight}
         fillPatternImage={this.damageImg}
+        rotation={this.props.card.exhausted ? -90 : 0}
       ></Rect>
     ) : null;
 
@@ -211,6 +214,8 @@ class CardTokens extends Component<IProps, IState> {
         key={`${this.props.card.id}-damageText`}
         x={damageX}
         y={damageY}
+        offsetX={desiredWidth / 2}
+        offsetY={desiredHeight / 2}
         width={
           this.damageImg.naturalWidth *
           (desiredWidth / this.damageImg.naturalWidth)
@@ -229,10 +234,11 @@ class CardTokens extends Component<IProps, IState> {
         verticalAlign="middle"
         fontSize={24}
         fontStyle="bold"
+        rotation={this.props.card.exhausted ? -90 : 0}
       ></Text>
     ) : null;
 
-    const threatX = this.props.x - desiredWidth / 2;
+    const threatX = generalX;
     const threatY = damageY + (showDamage ? desiredHeight + 5 : 0);
     const showThreat =
       this.state.imagesLoaded.threat && !!this.props.card.counterTokens.threat;
@@ -242,6 +248,8 @@ class CardTokens extends Component<IProps, IState> {
         key={`${this.props.card.id}-threatToken`}
         x={threatX}
         y={threatY}
+        offsetX={this.threatImg.naturalWidth / 2}
+        offsetY={this.threatImg.naturalHeight / 2}
         scale={{
           x: desiredWidth / this.threatImg.naturalWidth,
           y: desiredHeight / this.threatImg.naturalHeight,
@@ -249,6 +257,7 @@ class CardTokens extends Component<IProps, IState> {
         width={this.threatImg.naturalWidth}
         height={this.threatImg.naturalHeight}
         fillPatternImage={this.threatImg}
+        rotation={this.props.card.exhausted ? -90 : 0}
       ></Rect>
     ) : null;
 
@@ -257,6 +266,8 @@ class CardTokens extends Component<IProps, IState> {
         key={`${this.props.card.id}-threatText`}
         x={threatX}
         y={threatY}
+        offsetX={desiredWidth / 2}
+        offsetY={desiredHeight / 2}
         width={
           this.threatImg.naturalWidth *
           (desiredWidth / this.threatImg.naturalWidth)
@@ -275,10 +286,11 @@ class CardTokens extends Component<IProps, IState> {
         verticalAlign="middle"
         fontSize={24}
         fontStyle="bold"
+        rotation={this.props.card.exhausted ? -90 : 0}
       ></Text>
     ) : null;
 
-    const genericX = this.props.x - desiredWidth / 2;
+    const genericX = generalX;
     const genericY =
       damageY +
       (showDamage ? desiredHeight + 5 : 0) +
@@ -292,6 +304,8 @@ class CardTokens extends Component<IProps, IState> {
         key={`${this.props.card.id}-genericToken`}
         x={genericX}
         y={genericY}
+        offsetX={this.genericImg.naturalWidth / 2}
+        offsetY={this.genericImg.naturalHeight / 2}
         scale={{
           x: desiredWidth / this.genericImg.naturalWidth,
           y: desiredHeight / this.genericImg.naturalHeight,
@@ -299,6 +313,7 @@ class CardTokens extends Component<IProps, IState> {
         width={this.genericImg.naturalWidth}
         height={this.genericImg.naturalHeight}
         fillPatternImage={this.genericImg}
+        rotation={this.props.card.exhausted ? -90 : 0}
       ></Rect>
     ) : null;
 
@@ -307,6 +322,8 @@ class CardTokens extends Component<IProps, IState> {
         key={`${this.props.card.id}-genericText`}
         x={genericX}
         y={genericY}
+        offsetX={desiredWidth / 2}
+        offsetY={desiredHeight / 2}
         width={
           this.genericImg.naturalWidth *
           (desiredWidth / this.genericImg.naturalWidth)
@@ -325,10 +342,11 @@ class CardTokens extends Component<IProps, IState> {
         verticalAlign="middle"
         fontSize={24}
         fontStyle="bold"
+        rotation={this.props.card.exhausted ? -90 : 0}
       ></Text>
     ) : null;
 
-    const accelX = this.props.x - desiredWidth / 2;
+    const accelX = generalX;
     const accelY =
       damageY +
       (showDamage ? desiredHeight + 5 : 0) +
@@ -343,6 +361,8 @@ class CardTokens extends Component<IProps, IState> {
         key={`${this.props.card.id}-accelToken`}
         x={accelX}
         y={accelY}
+        offsetX={this.accelerationImg.naturalWidth / 2}
+        offsetY={this.accelerationImg.naturalHeight / 2}
         scale={{
           x: desiredWidth / this.accelerationImg.naturalWidth,
           y: desiredHeight / this.accelerationImg.naturalHeight,
@@ -350,6 +370,7 @@ class CardTokens extends Component<IProps, IState> {
         width={this.accelerationImg.naturalWidth}
         height={this.accelerationImg.naturalHeight}
         fillPatternImage={this.accelerationImg}
+        rotation={this.props.card.exhausted ? -90 : 0}
       ></Rect>
     ) : null;
 
@@ -358,6 +379,8 @@ class CardTokens extends Component<IProps, IState> {
         key={`${this.props.card.id}-accelText`}
         x={accelX}
         y={accelY}
+        offsetX={desiredWidth / 2}
+        offsetY={desiredHeight / 2}
         width={
           this.accelerationImg.naturalWidth *
           (desiredWidth / this.accelerationImg.naturalWidth)
@@ -376,6 +399,7 @@ class CardTokens extends Component<IProps, IState> {
         verticalAlign="middle"
         fontSize={24}
         fontStyle="bold"
+        rotation={this.props.card.exhausted ? -90 : 0}
       ></Text>
     ) : null;
 
