@@ -7,7 +7,7 @@ export const properties: GameProperties = {
   decklistSearchApi: "",
   decklistSearchApiConstants: "",
   encounterUiName: "Scenario",
-  backgroundImageLocation:
+  initialPlaymatImageLocation:
     "/images/from_modules/star-wars-deckbuilding-game/death-star-playmat.jpg",
   possibleIcons: [],
   modifiers: [],

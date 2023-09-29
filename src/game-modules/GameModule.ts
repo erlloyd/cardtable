@@ -104,6 +104,11 @@ export interface RolesInfo {
   roles: Role[];
 }
 
+export interface IPlaymatOption {
+  displayName: string;
+  imgUrl: string;
+}
+
 export interface GameProperties {
   deckSite: string;
   decklistApi: string;
@@ -112,7 +117,11 @@ export interface GameProperties {
   decklistSearchApi: string;
   decklistSearchApiConstants?: string;
   encounterUiName: string;
-  backgroundImageLocation: string;
+  initialPlaymatImageLocation: string;
+  additionalPlaymatImageOptions?: {
+    layout: "row" | "column";
+    additionalImages: IPlaymatOption[];
+  };
   possibleIcons: IconInfo[];
   modifiers: ModifierInfo[];
   roles?: RolesInfo;
