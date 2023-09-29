@@ -17,7 +17,9 @@ const playmatsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
-      state.playmats = action.payload.liveState.present.playmats.playmats;
+      // Playmats can be undefined if it's an older save file
+      state.playmats =
+        action.payload.liveState.present.playmats?.playmats ?? [];
     });
 
     builder.addCase(resetApp, (state, _action) => {
