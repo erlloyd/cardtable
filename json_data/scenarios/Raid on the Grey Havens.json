@@ -847,57 +847,6 @@
         },
         {
             "Title": "Captain Sahír",
-            "Slug": "Captain-Sahir-Enemy-TGH",
-            "IsUnique": true,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Captain-Sahír-Enemy.jpg",
-                "Stats": {
-                    "EngagementCost": "4",
-                    "Threat": "6",
-                    "Attack": "6",
-                    "Defense": "2",
-                    "HitPoints": "5"
-                },
-                "Traits": [
-                    "Corsair.",
-                    "Raider."
-                ],
-                "Keywords": [
-                    "Victory 6."
-                ],
-                "Text": [
-                    "Captain Sahír engages the first player.",
-                    "For each point of damage Captain Sahír would take, discard 1 resource from him and cancel that damage.",
-                    "Forced: After Captain Sahír attacks, place 2 resource tokens on him (4 instead if his attack destroyed a character)."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Grey Havens",
-            "EncounterInfo": {
-                "EncounterSet": "The Stormcaller Elite",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 76,
-            "Quantity": 1,
-            "Artist": "Sara Winters",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "11076",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Captain Sahír",
             "Slug": "Captain-Sahir-Objective-Ally-TGH",
             "IsUnique": true,
             "CardType": "Objective_Ally",
@@ -926,7 +875,31 @@
                 "Shadow": null,
                 "FlavorText": null
             },
-            "Back": null,
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Captain-Sahír-Enemy.jpg",
+                "Stats": {
+                    "EngagementCost": "4",
+                    "Threat": "6",
+                    "Attack": "6",
+                    "Defense": "2",
+                    "HitPoints": "5"
+                },
+                "Traits": [
+                    "Corsair.",
+                    "Raider."
+                ],
+                "Keywords": [
+                    "Victory 6."
+                ],
+                "Text": [
+                    "Captain Sahír engages the first player.",
+                    "For each point of damage Captain Sahír would take, discard 1 resource from him and cancel that damage.",
+                    "Forced: After Captain Sahír attacks, place 2 resource tokens on him (4 instead if his attack destroyed a character)."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
             "CardSet": "The Grey Havens",
             "EncounterInfo": {
                 "EncounterSet": "The Stormcaller Elite",
@@ -941,55 +914,6 @@
             "HasErrata": false,
             "OctgnGuid": "",
             "RingsDbCardId": "11077",
-            "RingsDbPopularity": 0,
-            "RingsDbVotes": 0,
-            "Categories": null
-        },
-        {
-            "Title": "Na'asiyah",
-            "Slug": "Na'asiyah-Enemy-TGH",
-            "IsUnique": true,
-            "CardType": "Enemy",
-            "CardSubType": "None",
-            "Sphere": null,
-            "Front": {
-                "Subtitle": null,
-                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Na'asiyah-Enemy.jpg",
-                "Stats": {
-                    "EngagementCost": "8",
-                    "Threat": "1",
-                    "Attack": "2",
-                    "Defense": "2",
-                    "HitPoints": "4"
-                },
-                "Traits": [
-                    "Corsair.",
-                    "Raider."
-                ],
-                "Keywords": [],
-                "Text": [
-                    "Na’asiyah engages the last player.",
-                    "Forced: When Na’asiyah engages you, discard each event in your hand. Add 1 resource to Na’asiyah for each event discarded in this way.",
-                    "Forced: When Na’asiyah attacks or defends, she gets +1 Attack and +1 Defense for this attack for each resource on her. After this attack, discard 1 resource from her."
-                ],
-                "Shadow": null,
-                "FlavorText": null
-            },
-            "Back": null,
-            "CardSet": "The Grey Havens",
-            "EncounterInfo": {
-                "EncounterSet": "The Stormcaller Elite",
-                "EasyModeQuantity": 0,
-                "IncludedEncounterSets": [],
-                "StageNumber": null,
-                "StageLetter": null
-            },
-            "Number": 78,
-            "Quantity": 1,
-            "Artist": "Ilich Henriquez",
-            "HasErrata": false,
-            "OctgnGuid": "",
-            "RingsDbCardId": "11078",
             "RingsDbPopularity": 0,
             "RingsDbVotes": 0,
             "Categories": null
@@ -1024,7 +948,29 @@
                 "Shadow": null,
                 "FlavorText": null
             },
-            "Back": null,
+            "Back": {
+                "Subtitle": null,
+                "ImagePath": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/The-Grey-Havens/Na'asiyah-Enemy.jpg",
+                "Stats": {
+                    "EngagementCost": "8",
+                    "Threat": "1",
+                    "Attack": "2",
+                    "Defense": "2",
+                    "HitPoints": "4"
+                },
+                "Traits": [
+                    "Corsair.",
+                    "Raider."
+                ],
+                "Keywords": [],
+                "Text": [
+                    "Na’asiyah engages the last player.",
+                    "Forced: When Na’asiyah engages you, discard each event in your hand. Add 1 resource to Na’asiyah for each event discarded in this way.",
+                    "Forced: When Na’asiyah attacks or defends, she gets +1 Attack and +1 Defense for this attack for each resource on her. After this attack, discard 1 resource from her."
+                ],
+                "Shadow": null,
+                "FlavorText": null
+            },
             "CardSet": "The Grey Havens",
             "EncounterInfo": {
                 "EncounterSet": "The Stormcaller Elite",
