@@ -43,6 +43,7 @@ import GameManager from "./game-modules/GameModuleManager";
 import { CardSizeType } from "./constants/card-constants";
 import { DragStart } from "react-beautiful-dnd";
 import { BeforeCapture } from "react-beautiful-dnd";
+import { GameModule } from "./game-modules/GameModule";
 
 const grid = 8;
 
@@ -607,7 +608,8 @@ class PlayerHand extends Component<IProps, IState> {
         card.faceup,
         this.props.cardData
       );
-      const shouldRotate = shouldRenderImageHorizontal(
+
+      let shouldRotate = shouldRenderImageHorizontal(
         card.cardDetails.jsonId,
         cardType,
         GameManager.horizontalCardTypes[
@@ -615,6 +617,16 @@ class PlayerHand extends Component<IProps, IState> {
         ],
         i.includes("back")
       );
+
+      if (
+        !!this.props.currentGameType &&
+        GameManager.getModuleForType(this.props.currentGameType)
+          .shouldRotateCard
+      ) {
+        shouldRotate = GameManager.getModuleForType(this.props.currentGameType)
+          .shouldRotateCard!(card.cardDetails.jsonId, cardType, card.faceup);
+      }
+
       return (
         <div key={`card-${card.cardDetails.jsonId}-img-${index}`}>
           {numDragging > 1 ? (

@@ -8,6 +8,7 @@ import { Vector2d } from "konva/lib/types";
 import GameManager from "./game-modules/GameModuleManager";
 import { INotification } from "./features/notifications/initialState";
 import { v4 } from "uuid";
+import { CardSizeType, cardConstants } from "./constants/card-constants";
 
 interface IProps {
   gameType: GameType | null;
@@ -29,15 +30,26 @@ const DeckTextImporter = (props: IProps) => {
       !!GameManager.getModuleForType(props.gameType).loadDeckFromText
     ) {
       try {
-        const cardStack = GameManager.getModuleForType(props.gameType)
+        const cardStacks = GameManager.getModuleForType(props.gameType)
           .loadDeckFromText!(currentTextValue);
 
-        if (cardStack.length > 0) {
-          props.addCardStack({
-            cardJsonIds: cardStack,
-            position: props.positionToImport || { x: 100, y: 100 },
-          });
-        }
+        let startPosition = props.positionToImport || { x: 100, y: 100 };
+
+        cardStacks.forEach((cardStack, index) => {
+          if (cardStack.length > 0) {
+            // TODO: Support other sizes other than standard cards
+            props.addCardStack({
+              cardJsonIds: cardStack,
+              position: {
+                x:
+                  startPosition.x +
+                  (cardConstants[CardSizeType.Standard].CARD_WIDTH + 10) *
+                    index,
+                y: startPosition.y,
+              },
+            });
+          }
+        });
       } catch (e) {
         // Something went wrong, show an error
         props.sendNotification({

@@ -1,14 +1,15 @@
 import { GameModule, StringToStringMap } from "./GameModule";
 import { GameType } from "./GameType";
 import { GameProperties } from "./GameModule";
+import { showHiddenGamesLocalStorage } from "../constants/app-constants";
 
 import MarvelChampionsGameModule from "./marvel-champions/MavelChampionsGameModule";
 import LOTRLCGGameModule from "./lotr-lcg/LOTRLCGGameModule";
 import WarOfTheRingTheCardGameModule from "./war-of-the-ring-card-game/WarOfTheRingTheCardGameModule";
-import { showHiddenGamesLocalStorage } from "../constants/app-constants";
 import StarWarsDeckbuildingGameModule from "./star-wars-deckbuilding-game/StarWarsDeckbuildingGameModule";
 import StandardDeckGameModule from "./standard-deck/StandardDeckGameModule";
 import LorcanaGameModule from "./lorcana/LorcanaGameModule";
+import StarWarsUnlimitedGameModule from "./star-wars-unlimited/StarWarsUnlimitedGameModule";
 
 const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
@@ -34,6 +35,11 @@ const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
     type: GameType.Lorcana,
     module: new LorcanaGameModule(),
+    hidden: true,
+  },
+  {
+    type: GameType.StarWarsUnlimited,
+    module: new StarWarsUnlimitedGameModule(),
     hidden: true,
   },
 ];

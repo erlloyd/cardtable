@@ -531,11 +531,25 @@ class Game extends Component<IProps, IState> {
       ? possiblePreviewCards
           .filter((_card) => !this.state.selecting && !iAmDragging)
           .map((card) => {
-            const isHorizontal =
+            let isHorizontal =
               CARD_SHOULD_BE_HORIZONTAL_MAP[this.getCardCode(card)] ||
               GameManager.horizontalCardTypes[
                 this.props.currentGameType
               ].includes(getCardType(card, this.props.cardsData));
+
+            if (
+              !!this.props.currentGameType &&
+              GameManager.getModuleForType(this.props.currentGameType)
+                .shouldRotateCard
+            ) {
+              isHorizontal = GameManager.getModuleForType(
+                this.props.currentGameType
+              ).shouldRotateCard!(
+                this.getCardCode(card),
+                getCardType(card, this.props.cardsData),
+                card.faceup
+              );
+            }
 
             const imgUrls = getImgUrls(
               card,

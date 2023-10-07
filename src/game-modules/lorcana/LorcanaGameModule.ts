@@ -146,7 +146,7 @@ export default class LorcanaGameModule extends GameModule {
     throw new Error("Method not implemented.");
   }
 
-  loadDeckFromText(text: string): string[] {
+  loadDeckFromText(text: string): string[][] {
     try {
       var pixelbornString = atob(text);
       const ids: string[] = [];
@@ -165,7 +165,7 @@ export default class LorcanaGameModule extends GameModule {
           ids.push(name);
         }
       });
-      return ids;
+      return [ids];
     } catch (e) {
       const ids: string[] = [];
 
@@ -185,7 +185,7 @@ export default class LorcanaGameModule extends GameModule {
           }
         });
 
-        return ids;
+        return [ids];
       }
 
       throw new Error("Unable to load deck");

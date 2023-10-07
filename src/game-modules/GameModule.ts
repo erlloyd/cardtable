@@ -198,7 +198,7 @@ export abstract class GameModule {
     return imgUrl.indexOf("_back") !== -1;
   }
 
-  loadDeckFromText?(text: string): string[];
+  loadDeckFromText?(text: string): string[][];
 
   splitEncounterCardsIntoStacksWhenLoading?(
     setCode: string,
@@ -207,4 +207,5 @@ export abstract class GameModule {
   getTokensForEncounterSet?(setCode: string): IFlippableToken[];
   getCountersForEncounterSet?(setCode: string): ICounter[];
   getPlayerBoardsForEncounterSet?(setCode: string): IPlayerBoard[];
+  shouldRotateCard?(code: string, type: string, faceup: boolean): boolean;
 }
