@@ -46,8 +46,6 @@ const generateCerebroImageUrl = (
     return `https://lcgcdn.s3.amazonaws.com/mc/NOPE.jpg`;
   }
 
-  // console.log(card);
-
   const backLink = card.backLink || card.code;
 
   let codeToUse = faceup ? card.code.toUpperCase() : backLink.toUpperCase();
@@ -68,7 +66,6 @@ const generateCerebroImageUrl = (
   }
 
   const imgUrlToGrab = `https://cerebrodatastorage.blob.core.windows.net/cerebro-cards/official/${codeToUse}${suffix}.jpg`;
-  // console.log(`Grabbing image from ${imgUrlToGrab}`);
   return imgUrlToGrab;
 };
 
