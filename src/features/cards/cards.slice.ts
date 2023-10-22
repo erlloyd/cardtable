@@ -9,6 +9,7 @@ import {
 import { Vector2d } from "konva/lib/types";
 import { v4 as uuidv4 } from "uuid";
 import {
+  CardAttachLocation,
   cardConstants,
   CardSizeType,
   CounterTokenType,
@@ -47,6 +48,9 @@ import {
 import { myPeerRef } from "../../constants/app-constants";
 import log from "loglevel";
 import { makeFakeCardStackFromJsonId } from "../../utilities/card-utils";
+
+// TODO: Make this passed in
+const attachPosition = CardAttachLocation.Below;
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 const CARD_ATTACH_TARGET_MIN_DISTANCE = 50;
@@ -481,8 +485,12 @@ const getAttachDrawPos = (
   let drawPos = { x: 0, y: 0 };
   let takenSpace = true;
   for (let i = 0; takenSpace; i++) {
-    const xToDraw = baseCard.x + (i + 1) * 50;
-    const yToDraw = baseCard.y - (i + 1) * 50;
+    let xToDraw = baseCard.x + (i + 1) * 50;
+    let yToDraw = baseCard.y - (i + 1) * 50;
+
+    // TODO: START HERE
+    switch (attachPosition as CardAttachLocation) {
+    }
 
     drawPos = { x: xToDraw, y: yToDraw };
 
@@ -577,6 +585,33 @@ const cardMoveWithSnapReducer: CaseReducer<
     }
   }
 
+  const canAttachUnder = (
+    distance: number,
+    card: ICardStack,
+    primaryCard: ICardStack | null
+  ): boolean => {
+    return (
+      distance < CARD_ATTACH_TARGET_MAX_DISTANCE &&
+      distance > CARD_ATTACH_TARGET_MIN_DISTANCE &&
+      card.x < (primaryCard?.x ?? 0) + 50 &&
+      card.x > (primaryCard?.x ?? 0) - 50 &&
+      card.y < (primaryCard?.y ?? 0)
+    );
+  };
+
+  const canAttachUpAndRight = (
+    distance: number,
+    card: ICardStack,
+    primaryCard: ICardStack | null
+  ): boolean => {
+    return (
+      distance < CARD_ATTACH_TARGET_MAX_DISTANCE &&
+      distance > CARD_ATTACH_TARGET_MIN_DISTANCE &&
+      card.x < (primaryCard?.x ?? 0) &&
+      card.y > (primaryCard?.y ?? 0)
+    );
+  };
+
   // go through and find if any unselected cards are potential attach targets
   // If so, get the closest one. But only if the card is owned / controlled by us
   const possibleAttachTargets: { distance: number; card: ICardStack }[] = [];
@@ -589,12 +624,25 @@ const cardMoveWithSnapReducer: CaseReducer<
         !!primaryCard ? { x: primaryCard.x, y: primaryCard.y } : { x: 0, y: 0 },
         { x: card.x, y: card.y }
       );
-      if (
-        distance < CARD_ATTACH_TARGET_MAX_DISTANCE &&
-        distance > CARD_ATTACH_TARGET_MIN_DISTANCE &&
-        card.x < (primaryCard?.x ?? 0) &&
-        card.y > (primaryCard?.y ?? 0)
-      ) {
+      console.log("ATTACH: distance ", distance);
+      console.log(`ATTACH: card: {x: ${card.x}, y: ${card.y}}`);
+      console.log(
+        `ATTACH: primaryCard: {x: ${primaryCard?.x}, y: ${primaryCard?.y}}`
+      );
+
+      let canAttach = false;
+      switch (attachPosition as CardAttachLocation) {
+        case CardAttachLocation.Below:
+          canAttach = canAttachUnder(distance, card, primaryCard);
+          break;
+        case CardAttachLocation.UpAndRight:
+          canAttach = canAttachUpAndRight(distance, card, primaryCard);
+          break;
+        default:
+          break;
+      }
+
+      if (canAttach) {
         possibleAttachTargets.push({
           distance,
           card,
@@ -618,8 +666,8 @@ const cardMoveWithSnapReducer: CaseReducer<
   const dropTarget = state.dropTargetCards[(action as any).ACTOR_REF];
   const attachTarget = state.attachTargetCards[(action as any).ACTOR_REF];
   if (!!attachTarget) {
-    // First, figure out where we should draw the ghost card. Keep moving up
-    // and to the right until there's not a card there
+    // First, figure out where we should draw the ghost card. Keep moving
+    // until there's not a card there
     const drawPos = getAttachDrawPos(state, attachTarget);
     // Next, check if there's already a ghost card where we were going to draw
     const existingGhostCard = state.ghostCards.find(

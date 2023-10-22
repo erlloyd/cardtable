@@ -5,6 +5,11 @@ export enum CardSizeType {
   PlayerBoard = "playerboard",
 }
 
+export enum CardAttachLocation {
+  UpAndRight = "upandright",
+  Below = "below",
+}
+
 export const cardConstants = {
   [CardSizeType.Standard]: {
     CARD_HEIGHT: 209,
