@@ -185,6 +185,8 @@ const SpecificCardToBackImageMap = {
   m4: "m3.png",
   m5: "m6.png",
   m6: "m5.png",
+  m7: "m8.png",
+  m8: "m7.png",
 };
 
 const resolution = 500;

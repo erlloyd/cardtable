@@ -287,6 +287,46 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
           misc3p,
         ];
         break;
+      case "Duel (Solo)":
+        const gandalf2pSolo = [
+          ...temp["Dwarf"],
+          ...temp["Hobbit"],
+          ...temp["Rohan"],
+          ...temp["Wizard"],
+          ...temp["Dúnedain"],
+          ...temp["Elf"],
+        ];
+        const botDuelSolo = [
+          ...temp["Mordor"],
+          ...temp["Isengard"],
+          ...temp["Monstrous"],
+          ...temp["Southron"],
+        ];
+
+        const fpStrongholds2pSolo = [...temp["Free People Strongholds"]];
+        const shadowStrongholds2pSolo = [...temp["Shadow Strongholds"]];
+        const paths2pSolo = [
+          ...temp["Path9"],
+          ...temp["Path8"],
+          ...temp["Path7"],
+          ...temp["Path6"],
+          ...temp["Path5"],
+          ...temp["Path4"],
+          ...temp["Path3"],
+          ...temp["Path2"],
+          ...temp["Path1"],
+        ];
+        const misc2pSolo = [...temp["Miscellaneous"]];
+
+        returnVal = [
+          gandalf2pSolo,
+          botDuelSolo,
+          fpStrongholds2pSolo,
+          shadowStrongholds2pSolo,
+          paths2pSolo,
+          misc2pSolo,
+        ];
+        break;
     }
 
     return returnVal;
@@ -417,6 +457,18 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             faceup: true,
             imgUrl:
               "/images/from_modules/war-of-the-ring-card-game/turn_order_marker.png",
+            position: { x: 0, y: 0 },
+          },
+        ];
+      case "Duel (Solo)":
+        return [
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_front.png",
+            backImgUrl:
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
             position: { x: 0, y: 0 },
           },
         ];
