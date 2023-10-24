@@ -1,4 +1,5 @@
 import {
+  CardAttachLocation,
   CounterTokenType,
   StatusTokenType,
 } from "../../constants/card-constants";
@@ -114,6 +115,7 @@ export default class MarvelChampionsGameModule extends GameModule {
           imagePath: "/images/standard/acceleration.png",
         },
       },
+      defaultAttachLocation: CardAttachLocation.UpAndRight,
     };
     super(properties, MissingCardImages, EXTRA_CARDS, CARD_PACK_REMAPPING, [
       "main_scheme",

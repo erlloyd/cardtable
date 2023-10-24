@@ -1,4 +1,7 @@
-import { CounterTokenType } from "../../constants/card-constants";
+import {
+  CardAttachLocation,
+  CounterTokenType,
+} from "../../constants/card-constants";
 import { GameProperties } from "../GameModule";
 
 export const properties: GameProperties = {
@@ -55,4 +58,5 @@ export const properties: GameProperties = {
         "/images/from_modules/war-of-the-ring-card-game/corruption.png",
     },
   ],
+  defaultAttachLocation: CardAttachLocation.UpAndRight,
 };
