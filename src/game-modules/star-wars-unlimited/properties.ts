@@ -1,4 +1,7 @@
-import { CounterTokenType } from "../../constants/card-constants";
+import {
+  CardAttachLocation,
+  CounterTokenType,
+} from "../../constants/card-constants";
 import { GameProperties } from "../GameModule";
 
 export const properties: GameProperties = {
@@ -42,4 +45,5 @@ export const properties: GameProperties = {
   },
   iconCounters: [],
   useAltCardArtByDefault: true,
+  defaultAttachLocation: CardAttachLocation.Below,
 };

@@ -9,6 +9,7 @@ import {
 import { Vector2d } from "konva/lib/types";
 import { v4 as uuidv4 } from "uuid";
 import {
+  CardAttachLocation,
   cardConstants,
   CardSizeType,
   CounterTokenType,
@@ -476,13 +477,28 @@ const clearCardTokensReducer: CaseReducer<
 
 const getAttachDrawPos = (
   state: Draft<ICardsState>,
-  baseCard: ICardStack
+  baseCard: ICardStack,
+  attachLocation: CardAttachLocation
 ): Vector2d => {
   let drawPos = { x: 0, y: 0 };
   let takenSpace = true;
   for (let i = 0; takenSpace; i++) {
-    const xToDraw = baseCard.x + (i + 1) * 50;
-    const yToDraw = baseCard.y - (i + 1) * 50;
+    let xToDraw = baseCard.x;
+    let yToDraw = baseCard.y;
+
+    switch (attachLocation) {
+      case CardAttachLocation.UpAndRight:
+        xToDraw = baseCard.x + (i + 1) * 50;
+        yToDraw = baseCard.y - (i + 1) * 50;
+        break;
+      case CardAttachLocation.Below:
+        xToDraw = baseCard.x;
+        yToDraw = baseCard.y + (i + 1) * 35;
+        break;
+      default:
+        xToDraw = baseCard.x;
+        yToDraw = baseCard.y;
+    }
 
     drawPos = { x: xToDraw, y: yToDraw };
 
@@ -522,7 +538,13 @@ const cardFromHandMoveWithSnapReducer: CaseReducer<
 
 const cardMoveWithSnapReducer: CaseReducer<
   ICardsState,
-  PayloadAction<{ id: string; dx: number; dy: number; snap: boolean }>
+  PayloadAction<{
+    id: string;
+    dx: number;
+    dy: number;
+    snap: boolean;
+    attachLocation: CardAttachLocation;
+  }>
 > = (state, action) => {
   const movedCards: ICardStack[] = [];
   let primaryCard: ICardStack | null = null;
@@ -577,6 +599,33 @@ const cardMoveWithSnapReducer: CaseReducer<
     }
   }
 
+  const canAttachUnder = (
+    distance: number,
+    card: ICardStack,
+    primaryCard: ICardStack | null
+  ): boolean => {
+    return (
+      distance < CARD_ATTACH_TARGET_MAX_DISTANCE &&
+      distance > CARD_ATTACH_TARGET_MIN_DISTANCE &&
+      card.x < (primaryCard?.x ?? 0) + 50 &&
+      card.x > (primaryCard?.x ?? 0) - 50 &&
+      card.y < (primaryCard?.y ?? 0)
+    );
+  };
+
+  const canAttachUpAndRight = (
+    distance: number,
+    card: ICardStack,
+    primaryCard: ICardStack | null
+  ): boolean => {
+    return (
+      distance < CARD_ATTACH_TARGET_MAX_DISTANCE &&
+      distance > CARD_ATTACH_TARGET_MIN_DISTANCE &&
+      card.x < (primaryCard?.x ?? 0) &&
+      card.y > (primaryCard?.y ?? 0)
+    );
+  };
+
   // go through and find if any unselected cards are potential attach targets
   // If so, get the closest one. But only if the card is owned / controlled by us
   const possibleAttachTargets: { distance: number; card: ICardStack }[] = [];
@@ -589,12 +638,25 @@ const cardMoveWithSnapReducer: CaseReducer<
         !!primaryCard ? { x: primaryCard.x, y: primaryCard.y } : { x: 0, y: 0 },
         { x: card.x, y: card.y }
       );
-      if (
-        distance < CARD_ATTACH_TARGET_MAX_DISTANCE &&
-        distance > CARD_ATTACH_TARGET_MIN_DISTANCE &&
-        card.x < (primaryCard?.x ?? 0) &&
-        card.y > (primaryCard?.y ?? 0)
-      ) {
+      console.log("ATTACH: distance ", distance);
+      console.log(`ATTACH: card: {x: ${card.x}, y: ${card.y}}`);
+      console.log(
+        `ATTACH: primaryCard: {x: ${primaryCard?.x}, y: ${primaryCard?.y}}`
+      );
+
+      let canAttach = false;
+      switch (action.payload.attachLocation) {
+        case CardAttachLocation.Below:
+          canAttach = canAttachUnder(distance, card, primaryCard);
+          break;
+        case CardAttachLocation.UpAndRight:
+          canAttach = canAttachUpAndRight(distance, card, primaryCard);
+          break;
+        default:
+          break;
+      }
+
+      if (canAttach) {
         possibleAttachTargets.push({
           distance,
           card,
@@ -618,9 +680,13 @@ const cardMoveWithSnapReducer: CaseReducer<
   const dropTarget = state.dropTargetCards[(action as any).ACTOR_REF];
   const attachTarget = state.attachTargetCards[(action as any).ACTOR_REF];
   if (!!attachTarget) {
-    // First, figure out where we should draw the ghost card. Keep moving up
-    // and to the right until there's not a card there
-    const drawPos = getAttachDrawPos(state, attachTarget);
+    // First, figure out where we should draw the ghost card. Keep moving
+    // until there's not a card there
+    const drawPos = getAttachDrawPos(
+      state,
+      attachTarget,
+      action.payload.attachLocation
+    );
     // Next, check if there's already a ghost card where we were going to draw
     const existingGhostCard = state.ghostCards.find(
       (gc) =>
@@ -695,9 +761,44 @@ const cardMoveWithSnapReducer: CaseReducer<
   }
 };
 
+const getAttachmentOffset = (
+  drawPos: Vector2d,
+  index: number,
+  location: CardAttachLocation,
+  size: CardSizeType
+): Vector2d => {
+  let result = { x: 0, y: 0 };
+  switch (location) {
+    case CardAttachLocation.UpAndRight:
+      result = {
+        x:
+          drawPos.x +
+          index * cardConstants[size].ATTACHMENT_OFFSET_UP_AND_RIGHT,
+        y:
+          drawPos.y -
+          index * cardConstants[size].ATTACHMENT_OFFSET_UP_AND_RIGHT,
+      };
+      break;
+    case CardAttachLocation.Below:
+      result = {
+        x: drawPos.x,
+        y: drawPos.y + index * cardConstants[size].ATTACHMENT_OFFSET_BELOW,
+      };
+      break;
+    default:
+      break;
+  }
+
+  return result;
+};
+
 const endCardMoveWithSnapReducer: CaseReducer<
   ICardsState,
-  PayloadAction<{ id: string; snap: boolean }>
+  PayloadAction<{
+    id: string;
+    snap: boolean;
+    attachLocation: CardAttachLocation;
+  }>
 > = (state, action) => {
   let dropTargetCardStacks: ICardStack[] = [];
   let attachTargetCardStacks: ICardStack[] = [];
@@ -745,10 +846,21 @@ const endCardMoveWithSnapReducer: CaseReducer<
   }
 
   if (!!attachTarget && !!attachTargetCardFromState) {
-    const drawPos = getAttachDrawPos(state, attachTarget);
+    const drawPos = getAttachDrawPos(
+      state,
+      attachTarget,
+      action.payload.attachLocation
+    );
     attachTargetCardStacks.forEach((cs, index) => {
-      cs.x = drawPos.x + index * cardConstants[cs.sizeType].ATTACHMENT_OFFSET;
-      cs.y = drawPos.y - index * cardConstants[cs.sizeType].ATTACHMENT_OFFSET;
+      const attachOffset = getAttachmentOffset(
+        drawPos,
+        index,
+        action.payload.attachLocation,
+        cs.sizeType
+      );
+
+      cs.x = attachOffset.x;
+      cs.y = attachOffset.y;
 
       removeAttachedCard(state, cs);
 
@@ -843,10 +955,15 @@ const endCardMoveWithSnapReducer: CaseReducer<
           return;
         }
 
-        attachedCard.x =
-          card.x + cardConstants[card.sizeType].ATTACHMENT_OFFSET * (index + 1);
-        attachedCard.y =
-          card.y - cardConstants[card.sizeType].ATTACHMENT_OFFSET * (index + 1);
+        const attachOffset = getAttachmentOffset(
+          { x: card.x, y: card.y },
+          index + 1,
+          action.payload.attachLocation,
+          card.sizeType
+        );
+
+        attachedCard.x = attachOffset.x;
+        attachedCard.y = attachOffset.y;
       });
     }
   });

@@ -1,5 +1,9 @@
 import { Vector2d } from "konva/lib/types";
-import { CounterTokenType, StatusTokenType } from "../constants/card-constants";
+import {
+  CardAttachLocation,
+  CounterTokenType,
+  StatusTokenType,
+} from "../constants/card-constants";
 import { CardData } from "../external-api/common-card-data";
 import { ICardData, ISetData } from "../features/cards-data/initialState";
 import {
@@ -137,6 +141,7 @@ export interface GameProperties {
   iconCounters?: IconCounter[];
   textCounters?: TextCounter[];
   useAltCardArtByDefault?: boolean;
+  defaultAttachLocation: CardAttachLocation;
 }
 export abstract class GameModule {
   properties: GameProperties;

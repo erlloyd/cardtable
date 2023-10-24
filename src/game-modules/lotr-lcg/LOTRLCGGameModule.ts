@@ -1,4 +1,5 @@
 import {
+  CardAttachLocation,
   CounterTokenType,
   StatusTokenType,
 } from "../../constants/card-constants";
@@ -128,6 +129,7 @@ export default class LOTRLCGGameModule extends GameModule {
         },
         acceleration: null,
       },
+      defaultAttachLocation: CardAttachLocation.UpAndRight,
     };
     super(properties, {}, {}, {}, ["quest", "player_side_quest"]);
   }

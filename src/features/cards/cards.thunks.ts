@@ -95,14 +95,22 @@ export const cardMove =
   }): ThunkAction<void, RootState, unknown, Action<string>> =>
   (dispatch, getState) => {
     const snap = getSnapCardsToGrid(getState());
-    dispatch(cardMoveWithSnap({ ...info, snap }));
+    const currentGameType =
+      getActiveGameType(getState()) ?? GameType.MarvelChampions;
+    const attachLocation =
+      GameManager.properties[currentGameType].defaultAttachLocation;
+    dispatch(cardMoveWithSnap({ ...info, snap, attachLocation }));
   };
 
 export const endCardMove =
   (id: string): ThunkAction<void, RootState, unknown, Action<string>> =>
   (dispatch, getState) => {
     const snap = getSnapCardsToGrid(getState());
-    dispatch(endCardMoveWithSnap({ id, snap }));
+    const currentGameType =
+      getActiveGameType(getState()) ?? GameType.MarvelChampions;
+    const attachLocation =
+      GameManager.properties[currentGameType].defaultAttachLocation;
+    dispatch(endCardMoveWithSnap({ id, snap, attachLocation }));
   };
 
 export const shuffleStack =

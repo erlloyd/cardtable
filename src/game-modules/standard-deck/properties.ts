@@ -1,3 +1,4 @@
+import { CardAttachLocation } from "../../constants/card-constants";
 import { GameProperties } from "../GameModule";
 
 export const properties: GameProperties = {
@@ -19,4 +20,5 @@ export const properties: GameProperties = {
     acceleration: null,
   },
   iconCounters: [],
+  defaultAttachLocation: CardAttachLocation.UpAndRight,
 };
