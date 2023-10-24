@@ -139,6 +139,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
     let returnVal = [] as CardData[][];
     switch (setCode) {
       case "The Fellowship of the Ring":
+      case "The Fellowship of the Ring (Solo)":
         const balrog = [
           ...temp["Monstrous"],
           ...temp["Mordor"],
@@ -167,6 +168,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
         returnVal = [balrog, gandalf, bg, p, m];
         break;
       case "Trilogy":
+      case "Trilogy (Co-op or Solo)":
         const frodo = [
           ...temp["Dwarf"],
           ...temp["Hobbit"],
@@ -207,6 +209,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
         ];
         break;
       case "Two-Player Duel":
+      case "Duel (Solo)":
         const gandalf2p = [
           ...temp["Dwarf"],
           ...temp["Hobbit"],
@@ -361,7 +364,34 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             position: { x: 0, y: 0 },
           },
         ];
-
+      case "Trilogy (Co-op or Solo)":
+        return [
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_front.png",
+            backImgUrl:
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
+            position: { x: 0, y: 0 },
+          },
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_front.png",
+            backImgUrl:
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
+            position: { x: 0, y: 0 },
+          },
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              "/images/from_modules/war-of-the-ring-card-game/turn_order_marker.png",
+            position: { x: 0, y: 0 },
+          },
+        ];
       case "Two-Player Duel":
         return [
           {
@@ -417,6 +447,19 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
             faceup: true,
             imgUrl:
               "/images/from_modules/war-of-the-ring-card-game/turn_order_marker.png",
+            position: { x: 0, y: 0 },
+          },
+        ];
+      case "Duel (Solo)":
+      case "The Fellowship of the Ring (Solo)":
+        return [
+          {
+            id: uuidv4(),
+            faceup: true,
+            imgUrl:
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_front.png",
+            backImgUrl:
+              "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
             position: { x: 0, y: 0 },
           },
         ];
