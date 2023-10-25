@@ -495,6 +495,14 @@ const getAttachDrawPos = (
         xToDraw = baseCard.x;
         yToDraw = baseCard.y + (i + 1) * 35;
         break;
+      case CardAttachLocation.Left:
+        xToDraw = baseCard.x - (i + 1) * 35;
+        yToDraw = baseCard.y;
+        break;
+      case CardAttachLocation.DownAndLeft:
+        xToDraw = baseCard.x - (i + 1) * 50;
+        yToDraw = baseCard.y + (i + 1) * 50;
+        break;
       default:
         xToDraw = baseCard.x;
         yToDraw = baseCard.y;
@@ -626,6 +634,33 @@ const cardMoveWithSnapReducer: CaseReducer<
     );
   };
 
+  const canAttachLeft = (
+    distance: number,
+    card: ICardStack,
+    primaryCard: ICardStack | null
+  ): boolean => {
+    return (
+      distance < CARD_ATTACH_TARGET_MAX_DISTANCE &&
+      distance > CARD_ATTACH_TARGET_MIN_DISTANCE &&
+      card.x > (primaryCard?.x ?? 0) &&
+      card.y > (primaryCard?.y ?? 0) - 50 &&
+      card.y < (primaryCard?.y ?? 0) + 50
+    );
+  };
+
+  const canAttachDownAndLeft = (
+    distance: number,
+    card: ICardStack,
+    primaryCard: ICardStack | null
+  ): boolean => {
+    return (
+      distance < CARD_ATTACH_TARGET_MAX_DISTANCE &&
+      distance > CARD_ATTACH_TARGET_MIN_DISTANCE &&
+      card.x > (primaryCard?.x ?? 0) &&
+      card.y < (primaryCard?.y ?? 0)
+    );
+  };
+
   // go through and find if any unselected cards are potential attach targets
   // If so, get the closest one. But only if the card is owned / controlled by us
   const possibleAttachTargets: { distance: number; card: ICardStack }[] = [];
@@ -638,11 +673,6 @@ const cardMoveWithSnapReducer: CaseReducer<
         !!primaryCard ? { x: primaryCard.x, y: primaryCard.y } : { x: 0, y: 0 },
         { x: card.x, y: card.y }
       );
-      console.log("ATTACH: distance ", distance);
-      console.log(`ATTACH: card: {x: ${card.x}, y: ${card.y}}`);
-      console.log(
-        `ATTACH: primaryCard: {x: ${primaryCard?.x}, y: ${primaryCard?.y}}`
-      );
 
       let canAttach = false;
       switch (action.payload.attachLocation) {
@@ -651,6 +681,12 @@ const cardMoveWithSnapReducer: CaseReducer<
           break;
         case CardAttachLocation.UpAndRight:
           canAttach = canAttachUpAndRight(distance, card, primaryCard);
+          break;
+        case CardAttachLocation.Left:
+          canAttach = canAttachLeft(distance, card, primaryCard);
+          break;
+        case CardAttachLocation.DownAndLeft:
+          canAttach = canAttachDownAndLeft(distance, card, primaryCard);
           break;
         default:
           break;
@@ -783,6 +819,22 @@ const getAttachmentOffset = (
       result = {
         x: drawPos.x,
         y: drawPos.y + index * cardConstants[size].ATTACHMENT_OFFSET_BELOW,
+      };
+      break;
+    case CardAttachLocation.Left:
+      result = {
+        x: drawPos.x - index * cardConstants[size].ATTACHMENT_OFFSET_LEFT,
+        y: drawPos.y,
+      };
+      break;
+    case CardAttachLocation.DownAndLeft:
+      result = {
+        x:
+          drawPos.x -
+          index * cardConstants[size].ATTACHMENT_OFFSET_UP_AND_RIGHT,
+        y:
+          drawPos.y +
+          index * cardConstants[size].ATTACHMENT_OFFSET_UP_AND_RIGHT,
       };
       break;
     default:

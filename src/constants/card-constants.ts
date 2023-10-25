@@ -8,6 +8,8 @@ export enum CardSizeType {
 export enum CardAttachLocation {
   UpAndRight = "upandright",
   Below = "below",
+  Left = "left",
+  DownAndLeft = "downandleft",
 }
 
 export const cardConstants = {
@@ -22,6 +24,8 @@ export const cardConstants = {
     GRID_SNAP_HEIGHT: 209 + 50,
     ATTACHMENT_OFFSET_UP_AND_RIGHT: 50,
     ATTACHMENT_OFFSET_BELOW: 35,
+    ATTACHMENT_OFFSET_LEFT: 35,
+    ATTACHMENT_OFFSET_DOWN_AND_LEFT: 50,
   },
   [CardSizeType.Tarot]: {
     CARD_HEIGHT: 375,
@@ -34,6 +38,8 @@ export const cardConstants = {
     GRID_SNAP_HEIGHT: 375 + 50,
     ATTACHMENT_OFFSET_UP_AND_RIGHT: 50,
     ATTACHMENT_OFFSET_BELOW: 35,
+    ATTACHMENT_OFFSET_LEFT: 35,
+    ATTACHMENT_OFFSET_DOWN_AND_LEFT: 50,
   },
   [CardSizeType.DoubleStandardVertical]: {
     CARD_HEIGHT: 418,
@@ -46,6 +52,8 @@ export const cardConstants = {
     GRID_SNAP_HEIGHT: 209 + 50,
     ATTACHMENT_OFFSET_UP_AND_RIGHT: 50,
     ATTACHMENT_OFFSET_BELOW: 35,
+    ATTACHMENT_OFFSET_LEFT: 35,
+    ATTACHMENT_OFFSET_DOWN_AND_LEFT: 50,
   },
   [CardSizeType.PlayerBoard]: {
     CARD_HEIGHT: 455,
@@ -58,6 +66,8 @@ export const cardConstants = {
     GRID_SNAP_HEIGHT: 209 + 50,
     ATTACHMENT_OFFSET_UP_AND_RIGHT: 50,
     ATTACHMENT_OFFSET_BELOW: 35,
+    ATTACHMENT_OFFSET_LEFT: 35,
+    ATTACHMENT_OFFSET_DOWN_AND_LEFT: 50,
   },
 };
 
