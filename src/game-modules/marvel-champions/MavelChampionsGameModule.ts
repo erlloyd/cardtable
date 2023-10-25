@@ -115,7 +115,7 @@ export default class MarvelChampionsGameModule extends GameModule {
           imagePath: "/images/standard/acceleration.png",
         },
       },
-      defaultAttachLocation: CardAttachLocation.Left,
+      defaultAttachLocation: CardAttachLocation.DownAndLeft,
     };
     super(properties, MissingCardImages, EXTRA_CARDS, CARD_PACK_REMAPPING, [
       "main_scheme",

@@ -187,6 +187,7 @@ class PlayerHand extends Component<IProps, IState> {
   private tapped: NodeJS.Timeout | null = null;
   private dragStartTime: number = 0;
   private topLevelDivRef: HTMLDivElement | null = null;
+  private selectedIndecesBeforeDrag: number[] = [];
 
   constructor(props: IProps) {
     super(props);
@@ -235,6 +236,7 @@ class PlayerHand extends Component<IProps, IState> {
       ]);
     }
 
+    this.selectedIndecesBeforeDrag = this.state.selectedCardIndeces;
     this.setState(newState);
     this.dragStartTime = new Date().getTime();
   }
@@ -253,12 +255,29 @@ class PlayerHand extends Component<IProps, IState> {
       draggingIndex: null,
     });
 
-    // if the drag was less that 75 ms, treat that like a "click"
+    // if the drag was less than 75 ms, treat that like a "click"
     if (dragTimeDelta < 75) {
       this.props.stopDraggingCardFromHand();
-      this.handleTapInClick(null, result.source.index, null, result);
+
+      // If the card wasn't selected before the drag started, it should be selected after. But
+      // dragging itself "selects" the card, so if we don't force it to be selected it will
+      // always deselect
+      const forceSelected = !this.selectedIndecesBeforeDrag.includes(
+        result.source.index
+      );
+
+      this.handleTapInClick(
+        null,
+        result.source.index,
+        null,
+        result,
+        forceSelected
+      );
+      this.selectedIndecesBeforeDrag = [];
       return;
     }
+
+    this.selectedIndecesBeforeDrag = [];
 
     // Next thing, make sure dragging is cleared out
     this.setState({
@@ -505,14 +524,22 @@ class PlayerHand extends Component<IProps, IState> {
     );
   }
 
-  singleClickLogic = (event: React.MouseEvent | null, index: number) => {
+  singleClickLogic = (
+    event: React.MouseEvent | null,
+    index: number,
+    forceSelected: boolean = false
+  ) => {
     // if we are selected, remove from selection
     if (this.state.selectedCardIndeces.includes(index)) {
-      this.setState({
-        selectedCardIndeces: this.state.selectedCardIndeces.filter(
+      // only remove it if we are not forcing it to stay selected
+      if (!forceSelected) {
+        const newSelInd = this.state.selectedCardIndeces.filter(
           (i) => i !== index
-        ),
-      });
+        );
+        this.setState({
+          selectedCardIndeces: newSelInd,
+        });
+      }
     } else {
       // add it
       this.setState({
@@ -545,14 +572,15 @@ class PlayerHand extends Component<IProps, IState> {
     card: ICardDetails | null,
     index: number,
     event: React.MouseEvent | null,
-    result: DropResult | null
+    result: DropResult | null,
+    forceSelected: boolean = false
   ) => {
     if (!this.tapped) {
       //if tap is not set, set up single tap
       this.tapped = setTimeout(() => {
         this.tapped = null;
 
-        this.singleClickLogic(event, index);
+        this.singleClickLogic(event, index, forceSelected);
       }, 200); //wait 200ms then run single click code
     } else {
       let jsonId = "";
