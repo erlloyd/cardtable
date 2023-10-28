@@ -10,10 +10,12 @@ import {
   togglePanMode,
   toggleMultiselectMode,
   toggleToken,
-  adjustCounterToken,
 } from "./features/cards/cards.slice";
 import { toggleNotes } from "./features/notes/notes.slice";
-import { shuffleStack } from "./features/cards/cards.thunks";
+import {
+  shuffleStack,
+  adjustCounterToken,
+} from "./features/cards/cards.thunks";
 import { getGame, getSnapCardsToGrid } from "./features/game/game.selectors";
 import { RootState } from "./store/rootReducer";
 import OptionsMenu from "./OptionsMenu";

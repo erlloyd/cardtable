@@ -22,7 +22,6 @@ import {
 import {
   addExtraIcon,
   addToExistingCardStack,
-  adjustCounterToken,
   adjustModifier,
   adjustStatusToken,
   clearAllModifiers,
@@ -41,6 +40,7 @@ import {
   unselectCard,
 } from "./features/cards/cards.slice";
 import {
+  adjustCounterToken,
   addCardStack,
   addCardStackToPlayerBoardSlot,
   addToPlayerHandWithRoleCheck,

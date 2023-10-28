@@ -1,7 +1,11 @@
 import { createAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/lib/types";
 import { ICardDetails, IPlayerBoardSlotLocation } from "./initialState";
-import { CardSizeType } from "../../constants/card-constants";
+import {
+  CardSizeType,
+  CounterTokenType,
+  StatusTokenType,
+} from "../../constants/card-constants";
 
 export interface AddCardStackWithSnapAndIdPayload {
   cardJsonIds: string[];

@@ -37,11 +37,33 @@ export const properties: GameProperties = {
       isNumeric: true,
       touchMenuLetter: "Dmg",
       menuText: "Set Damage",
-      imagePath: "/images/standard/damage.png",
+      imagePath:
+        "/images/from_modules/star-wars-unlimited/swu_damage_token.png",
     },
-    threat: null,
-    generic: null,
-    acceleration: null,
+    threat: {
+      counterTokenType: CounterTokenType.Threat,
+      isNumeric: true,
+      touchMenuLetter: "Shld",
+      menuText: "Set Shields",
+      imagePath:
+        "/images/from_modules/star-wars-unlimited/swu_shield_token.png",
+    },
+    generic: {
+      counterTokenType: CounterTokenType.Generic,
+      isNumeric: true,
+      touchMenuLetter: "XP",
+      menuText: "Set XP",
+      imagePath: "/images/from_modules/star-wars-unlimited/swu_xp_token.png",
+    },
+    acceleration: {
+      counterTokenType: CounterTokenType.Acceleration,
+      isNumeric: true,
+      singleOnly: true,
+      touchMenuLetter: "Impt",
+      menuText: "Set Important",
+      imagePath:
+        "/images/from_modules/star-wars-unlimited/swu_important_token.png",
+    },
   },
   iconCounters: [],
   useAltCardArtByDefault: true,

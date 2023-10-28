@@ -10,7 +10,6 @@ import {
   getPanMode,
 } from "./features/cards/cards.selectors";
 import {
-  adjustCounterToken,
   adjustModifier,
   adjustStatusToken,
   clearCardTokens,
@@ -23,6 +22,7 @@ import {
   toggleToken,
 } from "./features/cards/cards.slice";
 import {
+  adjustCounterToken,
   addToPlayerHandWithRoleCheck,
   drawCardsOutOfCardStack,
   shuffleStack,

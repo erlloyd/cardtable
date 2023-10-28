@@ -1127,15 +1127,21 @@ const adjustStatusTokenReducer: CaseReducer<
   });
 };
 
-const adjustCounterTokenReducer: CaseReducer<
+const adjustCounterTokenWithMaxReducer: CaseReducer<
   ICardsState,
   PayloadAction<{
     id?: string;
     tokenType: CounterTokenType;
     delta?: number;
     value?: number;
+    max?: number;
   }>
 > = (state, action) => {
+  const valueToUse =
+    action.payload.value !== undefined && action.payload.max !== undefined
+      ? Math.min(action.payload.value, action.payload.max)
+      : action.payload.value;
+
   let cardsToToggle = state.cards.filter(
     (c) =>
       (!!action.payload.id && action.payload.id === c.id) ||
@@ -1143,8 +1149,8 @@ const adjustCounterTokenReducer: CaseReducer<
   );
 
   cardsToToggle.forEach((c) => {
-    if (action.payload.value !== undefined) {
-      c.counterTokens[action.payload.tokenType] = action.payload.value;
+    if (valueToUse !== undefined) {
+      c.counterTokens[action.payload.tokenType] = valueToUse;
     } else if (action.payload.delta !== undefined) {
       if (
         c.counterTokens[action.payload.tokenType] === null ||
@@ -1153,6 +1159,11 @@ const adjustCounterTokenReducer: CaseReducer<
         c.counterTokens[action.payload.tokenType] = 0;
       }
       c.counterTokens[action.payload.tokenType] += action.payload.delta;
+
+      //Adjust if there's a max
+      if (action.payload.max !== undefined && c.counterTokens[action.payload.tokenType] > action.payload.max) {
+        c.counterTokens[action.payload.tokenType] = action.payload.max
+      }
     }
 
     if (c.counterTokens[action.payload.tokenType] < 0) {
@@ -1481,7 +1492,7 @@ const cardsSlice = createSlice({
     flipCards: flipCardsReducer,
     resetCards: resetCardsReducer,
     toggleToken: toggleTokenReducer,
-    adjustCounterToken: adjustCounterTokenReducer,
+    adjustCounterTokenWithMax: adjustCounterTokenWithMaxReducer,
     adjustStatusToken: adjustStatusTokenReducer,
     adjustModifier: adjustModifierReducer,
     clearAllModifiers: clearAllModifiersReducer,
@@ -2079,7 +2090,7 @@ export const {
   resetCards,
   toggleToken,
   adjustStatusToken,
-  adjustCounterToken,
+  adjustCounterTokenWithMax,
   clearCardTokens,
   adjustModifier,
   clearAllModifiers,

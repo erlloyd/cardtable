@@ -63,6 +63,7 @@ export interface TokenInfoBase {
 export interface NumericTokenInfo extends TokenInfoBase {
   isNumeric: boolean;
   counterTokenType: CounterTokenType;
+  singleOnly?: boolean;
 }
 
 export interface TokenInfo extends TokenInfoBase {

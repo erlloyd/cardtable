@@ -209,34 +209,38 @@ class CardTokens extends Component<IProps, IState> {
       ></Rect>
     ) : null;
 
-    const damageText = showDamage ? (
-      <Text
-        key={`${this.props.card.id}-damageText`}
-        x={damageX}
-        y={damageY}
-        offsetX={desiredWidth / 2}
-        offsetY={desiredHeight / 2}
-        width={
-          this.damageImg.naturalWidth *
-          (desiredWidth / this.damageImg.naturalWidth)
-        }
-        height={
-          this.damageImg.naturalHeight *
-          (desiredHeight / this.damageImg.naturalHeight)
-        }
-        text={`${this.props.card.counterTokens.damage}`}
-        fill="white"
-        stroke={"black"}
-        strokeWidth={1}
-        shadowColor="black"
-        shadowBlur={10}
-        align="center"
-        verticalAlign="middle"
-        fontSize={24}
-        fontStyle="bold"
-        rotation={this.props.card.exhausted ? -90 : 0}
-      ></Text>
-    ) : null;
+    const damageSingleOnly =
+      !!GamePropertiesMap[this.props.currentGameType].tokens.damage?.singleOnly;
+
+    const damageText =
+      showDamage && !damageSingleOnly ? (
+        <Text
+          key={`${this.props.card.id}-damageText`}
+          x={damageX}
+          y={damageY}
+          offsetX={desiredWidth / 2}
+          offsetY={desiredHeight / 2}
+          width={
+            this.damageImg.naturalWidth *
+            (desiredWidth / this.damageImg.naturalWidth)
+          }
+          height={
+            this.damageImg.naturalHeight *
+            (desiredHeight / this.damageImg.naturalHeight)
+          }
+          text={`${this.props.card.counterTokens.damage}`}
+          fill="white"
+          stroke={"black"}
+          strokeWidth={1}
+          shadowColor="black"
+          shadowBlur={10}
+          align="center"
+          verticalAlign="middle"
+          fontSize={24}
+          fontStyle="bold"
+          rotation={this.props.card.exhausted ? -90 : 0}
+        ></Text>
+      ) : null;
 
     const threatX = generalX;
     const threatY = damageY + (showDamage ? desiredHeight + 5 : 0);
@@ -261,34 +265,38 @@ class CardTokens extends Component<IProps, IState> {
       ></Rect>
     ) : null;
 
-    const threatText = showThreat ? (
-      <Text
-        key={`${this.props.card.id}-threatText`}
-        x={threatX}
-        y={threatY}
-        offsetX={desiredWidth / 2}
-        offsetY={desiredHeight / 2}
-        width={
-          this.threatImg.naturalWidth *
-          (desiredWidth / this.threatImg.naturalWidth)
-        }
-        height={
-          this.threatImg.naturalHeight *
-          (desiredHeight / this.threatImg.naturalHeight)
-        }
-        text={`${this.props.card.counterTokens.threat}`}
-        fill="white"
-        stroke={"black"}
-        strokeWidth={1}
-        shadowColor="black"
-        shadowBlur={10}
-        align="center"
-        verticalAlign="middle"
-        fontSize={24}
-        fontStyle="bold"
-        rotation={this.props.card.exhausted ? -90 : 0}
-      ></Text>
-    ) : null;
+    const threatSingleOnly =
+      !!GamePropertiesMap[this.props.currentGameType].tokens.threat?.singleOnly;
+
+    const threatText =
+      showThreat && !threatSingleOnly ? (
+        <Text
+          key={`${this.props.card.id}-threatText`}
+          x={threatX}
+          y={threatY}
+          offsetX={desiredWidth / 2}
+          offsetY={desiredHeight / 2}
+          width={
+            this.threatImg.naturalWidth *
+            (desiredWidth / this.threatImg.naturalWidth)
+          }
+          height={
+            this.threatImg.naturalHeight *
+            (desiredHeight / this.threatImg.naturalHeight)
+          }
+          text={`${this.props.card.counterTokens.threat}`}
+          fill="white"
+          stroke={"black"}
+          strokeWidth={1}
+          shadowColor="black"
+          shadowBlur={10}
+          align="center"
+          verticalAlign="middle"
+          fontSize={24}
+          fontStyle="bold"
+          rotation={this.props.card.exhausted ? -90 : 0}
+        ></Text>
+      ) : null;
 
     const genericX = generalX;
     const genericY =
@@ -317,34 +325,39 @@ class CardTokens extends Component<IProps, IState> {
       ></Rect>
     ) : null;
 
-    const genericText = showGeneric ? (
-      <Text
-        key={`${this.props.card.id}-genericText`}
-        x={genericX}
-        y={genericY}
-        offsetX={desiredWidth / 2}
-        offsetY={desiredHeight / 2}
-        width={
-          this.genericImg.naturalWidth *
-          (desiredWidth / this.genericImg.naturalWidth)
-        }
-        height={
-          this.genericImg.naturalHeight *
-          (desiredHeight / this.genericImg.naturalHeight)
-        }
-        text={`${this.props.card.counterTokens.generic}`}
-        fill="white"
-        stroke={"black"}
-        strokeWidth={1}
-        shadowColor="black"
-        shadowBlur={10}
-        align="center"
-        verticalAlign="middle"
-        fontSize={24}
-        fontStyle="bold"
-        rotation={this.props.card.exhausted ? -90 : 0}
-      ></Text>
-    ) : null;
+    const genericSingleOnly =
+      !!GamePropertiesMap[this.props.currentGameType].tokens.generic
+        ?.singleOnly;
+
+    const genericText =
+      showGeneric && !genericSingleOnly ? (
+        <Text
+          key={`${this.props.card.id}-genericText`}
+          x={genericX}
+          y={genericY}
+          offsetX={desiredWidth / 2}
+          offsetY={desiredHeight / 2}
+          width={
+            this.genericImg.naturalWidth *
+            (desiredWidth / this.genericImg.naturalWidth)
+          }
+          height={
+            this.genericImg.naturalHeight *
+            (desiredHeight / this.genericImg.naturalHeight)
+          }
+          text={`${this.props.card.counterTokens.generic}`}
+          fill="white"
+          stroke={"black"}
+          strokeWidth={1}
+          shadowColor="black"
+          shadowBlur={10}
+          align="center"
+          verticalAlign="middle"
+          fontSize={24}
+          fontStyle="bold"
+          rotation={this.props.card.exhausted ? -90 : 0}
+        ></Text>
+      ) : null;
 
     const accelX = generalX;
     const accelY =
@@ -374,34 +387,39 @@ class CardTokens extends Component<IProps, IState> {
       ></Rect>
     ) : null;
 
-    const accelText = showAccel ? (
-      <Text
-        key={`${this.props.card.id}-accelText`}
-        x={accelX}
-        y={accelY}
-        offsetX={desiredWidth / 2}
-        offsetY={desiredHeight / 2}
-        width={
-          this.accelerationImg.naturalWidth *
-          (desiredWidth / this.accelerationImg.naturalWidth)
-        }
-        height={
-          this.accelerationImg.naturalHeight *
-          (desiredHeight / this.accelerationImg.naturalHeight)
-        }
-        text={`${this.props.card.counterTokens.acceleration}`}
-        fill="white"
-        stroke={"black"}
-        strokeWidth={1}
-        shadowColor="black"
-        shadowBlur={10}
-        align="center"
-        verticalAlign="middle"
-        fontSize={24}
-        fontStyle="bold"
-        rotation={this.props.card.exhausted ? -90 : 0}
-      ></Text>
-    ) : null;
+    const accelSingleOnly =
+      !!GamePropertiesMap[this.props.currentGameType].tokens.acceleration
+        ?.singleOnly;
+
+    const accelText =
+      showAccel && !accelSingleOnly ? (
+        <Text
+          key={`${this.props.card.id}-accelText`}
+          x={accelX}
+          y={accelY}
+          offsetX={desiredWidth / 2}
+          offsetY={desiredHeight / 2}
+          width={
+            this.accelerationImg.naturalWidth *
+            (desiredWidth / this.accelerationImg.naturalWidth)
+          }
+          height={
+            this.accelerationImg.naturalHeight *
+            (desiredHeight / this.accelerationImg.naturalHeight)
+          }
+          text={`${this.props.card.counterTokens.acceleration}`}
+          fill="white"
+          stroke={"black"}
+          strokeWidth={1}
+          shadowColor="black"
+          shadowBlur={10}
+          align="center"
+          verticalAlign="middle"
+          fontSize={24}
+          fontStyle="bold"
+          rotation={this.props.card.exhausted ? -90 : 0}
+        ></Text>
+      ) : null;
 
     return [
       damageToken,

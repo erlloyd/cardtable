@@ -29,6 +29,7 @@ import {
 import { getCards, getPlayerCardsForPlayerNumber } from "./cards.selectors";
 import {
   addToPlayerHand,
+  adjustCounterTokenWithMax,
   cardFromHandMoveWithSnap,
   cardMoveWithSnap,
   endCardMoveWithSnap,
@@ -45,6 +46,7 @@ import GameManager from "../../game-modules/GameModuleManager";
 import { GameType } from "../../game-modules/GameType";
 import {
   CardSizeType,
+  CounterTokenType,
   stackShuffleAnimationMS,
 } from "../../constants/card-constants";
 
@@ -268,6 +270,44 @@ export const drawCardsOutOfCardStack =
       playerNumber: playerNumberToUse,
     };
     dispatch(drawCardsOutOfCardStackWithIds(payloadWithIds));
+  };
+
+export const adjustCounterToken =
+  (payload: {
+    id?: string;
+    tokenType: CounterTokenType;
+    delta?: number;
+    value?: number;
+  }): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (dispatch, getState) => {
+    const currentGameType = getActiveGameType(getState());
+    let isSingle = false;
+    switch (payload.tokenType) {
+      case CounterTokenType.Damage:
+        isSingle = !!GameManager.getModuleForType(
+          currentGameType ?? GameType.MarvelChampions
+        ).properties.tokens.damage?.singleOnly;
+        break;
+      case CounterTokenType.Threat:
+        isSingle = !!GameManager.getModuleForType(
+          currentGameType ?? GameType.MarvelChampions
+        ).properties.tokens.threat?.singleOnly;
+        break;
+      case CounterTokenType.Generic:
+        isSingle = !!GameManager.getModuleForType(
+          currentGameType ?? GameType.MarvelChampions
+        ).properties.tokens.generic?.singleOnly;
+        break;
+      case CounterTokenType.Acceleration:
+        isSingle = !!GameManager.getModuleForType(
+          currentGameType ?? GameType.MarvelChampions
+        ).properties.tokens.acceleration?.singleOnly;
+        break;
+    }
+
+    dispatch(
+      adjustCounterTokenWithMax({ ...payload, max: isSingle ? 1 : undefined })
+    );
   };
 
 export const createDeckFromTxt =
