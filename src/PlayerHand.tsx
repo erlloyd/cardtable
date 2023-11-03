@@ -153,6 +153,7 @@ interface IProps {
   clearPreviewCardJsonId: () => void;
   startDraggingCardFromHand: () => void;
   stopDraggingCardFromHand: () => void;
+  allPlayerHandsData: { numCards: number; role: string | null }[];
   playerHandData: IPlayerHand | null;
   cardData: ICardData;
   playerNumber: number;
@@ -405,8 +406,10 @@ class PlayerHand extends Component<IProps, IState> {
             ).concat([
               {
                 label: "Show player hand",
-                children: Array.from({ length: MAX_PLAYERS }).map((_, i) => ({
-                  label: `Player ${i + 1}`,
+                children: this.props.allPlayerHandsData.map((handData, i) => ({
+                  label: `Player ${i + 1}${
+                    handData.role ? " - " + handData.role : ""
+                  } (${handData.numCards})`,
                   action: () => {
                     this.props.setVisiblePlayerHandNumber(i + 1);
                   },

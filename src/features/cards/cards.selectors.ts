@@ -60,3 +60,10 @@ export const getPlayerCardsForPlayerNumber = (num: number) =>
     const index = num - 1;
     return index >= 0 && index < playerHands.length ? playerHands[index] : null;
   });
+
+export const getAllPlayerHandData = createSelector(
+  getPlayerHands,
+  (playerHands) => {
+    return playerHands.map((h) => ({ numCards: h.cards.length, role: h.role }));
+  }
+);

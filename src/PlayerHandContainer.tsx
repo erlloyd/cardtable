@@ -2,7 +2,10 @@ import { connect } from "react-redux";
 import PlayerHand from "./PlayerHand";
 import { myPeerRef } from "./constants/app-constants";
 import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
-import { getPlayerCardsForPlayerNumber } from "./features/cards/cards.selectors";
+import {
+  getAllPlayerHandData,
+  getPlayerCardsForPlayerNumber,
+} from "./features/cards/cards.selectors";
 import {
   clearPlayerRole,
   removeFromPlayerHand,
@@ -30,6 +33,7 @@ const mapStateToProps = (state: RootState, ownProps: IProps) => {
   const myPlayerColor = getPlayerColors(state)[myPeerRef];
 
   return {
+    allPlayerHandsData: getAllPlayerHandData(state),
     playerHandData: getPlayerCardsForPlayerNumber(playerNumberToShow)(state),
     cardData: getCardsDataEntities(state),
     currentGameType: getGame(state).activeGameType,
