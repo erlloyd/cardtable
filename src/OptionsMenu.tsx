@@ -50,7 +50,7 @@ interface IProps {
   toggleSnapCardsToGrid: () => void;
 }
 class OptionsMenu extends Component<IProps> {
-  static whyDidYouRender = true;
+  static whyDidYouRender = false;
   render() {
     return (
       <div className="options-menu">

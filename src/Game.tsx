@@ -275,7 +275,7 @@ interface IState {
   forcePan: boolean;
 }
 class Game extends Component<IProps, IState> {
-  static whyDidYouRender = true;
+  static whyDidYouRender = false;
   public isSetUp = false;
 
   public stage: Konva.Stage | null = null;

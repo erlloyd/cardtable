@@ -28,7 +28,7 @@ const desiredHeight = 36;
 const textWidth = 40;
 
 class CardModifiers extends Component<IProps, IState> {
-  static whyDidYouRender = true;
+  static whyDidYouRender = false;
   private imgs: { [K: string]: HTMLImageElement };
   private unmounted: boolean;
 

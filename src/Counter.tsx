@@ -21,7 +21,7 @@ interface IState {
 }
 
 class Counter extends Component<IProps, IState> {
-  static whyDidYouRender = true;
+  static whyDidYouRender = false;
   private touchTimer: any = null;
   private unmounted: boolean;
   private img: HTMLImageElement;

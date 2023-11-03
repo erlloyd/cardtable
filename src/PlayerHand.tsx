@@ -183,7 +183,11 @@ enum ImageLoadingStatus {
 }
 
 class PlayerHand extends Component<IProps, IState> {
-  static whyDidYouRender = true;
+  // static whyDidYouRender = false;
+  // static whyDidYouRender = {
+  //   logOnDifferentValues: true,
+  //   customName: "PlayerHand",
+  // };
   private tapped: NodeJS.Timeout | null = null;
   private dragStartTime: number = 0;
   private topLevelDivRef: HTMLDivElement | null = null;
@@ -250,6 +254,8 @@ class PlayerHand extends Component<IProps, IState> {
     const dragTimeDelta = now - this.dragStartTime;
     this.dragStartTime = 0;
 
+    let removePayload;
+
     // Next thing, make sure dragging is cleared out
     this.setState({
       draggingIndex: null,
@@ -279,28 +285,27 @@ class PlayerHand extends Component<IProps, IState> {
 
     this.selectedIndecesBeforeDrag = [];
 
-    // Next thing, make sure dragging is cleared out
-    this.setState({
-      selectedCardIndeces: [],
-    });
-
     // dropped outside the list
     if (!result.destination) {
+      // make sure dragging is cleared out
+      this.setState({
+        selectedCardIndeces: [],
+      });
       this.props.stopDraggingCardFromHand();
       return;
     }
 
     if (result.destination?.droppableId !== result.source.droppableId) {
       if (this.state.selectedCardIndeces.length > 1) {
-        this.props.removeFromPlayerHand({
+        removePayload = {
           playerNumber: this.props.playerNumber,
           indeces: this.state.selectedCardIndeces,
-        });
+        };
       } else {
-        this.props.removeFromPlayerHand({
+        removePayload = {
           playerNumber: this.props.playerNumber,
           indeces: [result.source.index],
-        });
+        };
       }
       const playerHandData = this.props.playerHandData?.cards ?? [];
       if (result.source.index >= playerHandData.length) {
@@ -329,6 +334,15 @@ class PlayerHand extends Component<IProps, IState> {
     }
 
     this.props.stopDraggingCardFromHand();
+
+    // last thing, make sure dragging is cleared out
+    this.setState({
+      selectedCardIndeces: [],
+    });
+
+    if (!!removePayload) {
+      this.props.removeFromPlayerHand(removePayload);
+    }
   }
 
   componentDidMount(): void {

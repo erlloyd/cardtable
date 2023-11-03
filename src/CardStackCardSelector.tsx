@@ -23,7 +23,7 @@ interface IProps {
 }
 
 class CardStackCardSelector extends Component<IProps> {
-  static whyDidYouRender = true;
+  static whyDidYouRender = false;
   private cardsDataInStack: CardData[] = [];
 
   constructor(props: IProps) {

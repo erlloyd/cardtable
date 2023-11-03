@@ -22,7 +22,9 @@ const getCache = ({ name, pattern, maxEntries }: any) => ({
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      jsxImportSource: "@welldone-software/why-did-you-render", // <-----
+    }),
     viteTsconfigPaths(),
     svgrPlugin(),
     VitePWA({

@@ -1161,8 +1161,11 @@ const adjustCounterTokenWithMaxReducer: CaseReducer<
       c.counterTokens[action.payload.tokenType] += action.payload.delta;
 
       //Adjust if there's a max
-      if (action.payload.max !== undefined && c.counterTokens[action.payload.tokenType] > action.payload.max) {
-        c.counterTokens[action.payload.tokenType] = action.payload.max
+      if (
+        action.payload.max !== undefined &&
+        c.counterTokens[action.payload.tokenType] > action.payload.max
+      ) {
+        c.counterTokens[action.payload.tokenType] = action.payload.max;
       }
     }
 
@@ -1351,6 +1354,7 @@ const removeFromPlayerHandReducer: CaseReducer<
     indeces: number[];
   }>
 > = (state, action) => {
+  console.log("REMOVING FROM PLAYER HAND");
   if (state.playerHands.length >= action.payload.playerNumber) {
     const hand = state.playerHands[action.payload.playerNumber - 1];
     const result = hand.cards.filter(
