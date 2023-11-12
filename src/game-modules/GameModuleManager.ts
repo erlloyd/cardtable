@@ -35,12 +35,10 @@ const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
     type: GameType.Lorcana,
     module: new LorcanaGameModule(),
-    hidden: true,
   },
   {
     type: GameType.StarWarsUnlimited,
     module: new StarWarsUnlimitedGameModule(),
-    hidden: true,
   },
 ];
 
