@@ -406,6 +406,44 @@
     },
     {
         "Set": "SOR",
+        "Number": "016",
+        "Name": "Grand Admiral Thrawn",
+        "Subtitle": "Patient and Insightful",
+        "Type": "Leader",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            },
+            {
+                "S": "Villainy"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "IMPERIAL"
+            },
+            {
+                "S": "OFFICIAL"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "6",
+        "Power": "3",
+        "HP": "9",
+        "FrontText": "When the action phase starts: Look at the top card of each player's deck.\nAction [{C=1}, {Exhaust}]: Reveal the top card of any player's deck. Exhaust a unit that costs the same as or less than the revealed card.",
+        "EpicAction": "Epic Action: If you control 7 or more resources, deploy this leader. (Flip him, ready him, and move him to the ground arena.)",
+        "DoubleSided": true,
+        "BackText": "When the action phase starts: Look at the top card of each player's deck.\nOn Attack: You may reveal the top card of any player's deck. Exhaust a unit that costs the same as or less than the revealed card.",
+        "Rarity": "R",
+        "Unique": true,
+        "Artist": "Ivan Dedov",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/016.png",
+        "BackArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/016-b.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "017",
         "Name": "Han Solo",
         "Subtitle": "Audacious Smuggler",
@@ -1029,6 +1067,37 @@
         "Unique": false,
         "Artist": "Francois Cannels",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/060.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "062",
+        "Name": "Regional Governor",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Vigilance"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "IMPERIAL"
+            },
+            {
+                "S": "OFFICIAL"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "2",
+        "Power": "1",
+        "HP": "4",
+        "FrontText": "When Played: Name a card. While this unit is in play, opponents can't play the named card.",
+        "DoubleSided": false,
+        "Rarity": "R",
+        "Unique": false,
+        "Artist": "Yvette Chua",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/062.png"
     },
     {
         "Set": "SOR",
@@ -1833,6 +1902,37 @@
     },
     {
         "Set": "SOR",
+        "Number": "111",
+        "Name": "Patrolling V-Wing",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Command"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "VEHICLE"
+            },
+            {
+                "S": "FIGHTER"
+            }
+        ],
+        "Arenas": [
+            "Space"
+        ],
+        "Cost": "2",
+        "Power": "1",
+        "HP": "1",
+        "FrontText": "When Played: Draw a card.",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Artist": "Amad Mir",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/111.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "112",
         "Name": "Consortium StarViper",
         "Type": "Unit",
@@ -2196,6 +2296,47 @@
     },
     {
         "Set": "SOR",
+        "Number": "131",
+        "Name": "Fifth Brother",
+        "Subtitle": "Fear Hunter",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Aggression"
+            },
+            {
+                "S": "Villainy"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "FORCE"
+            },
+            {
+                "S": "IMPERIAL"
+            },
+            {
+                "S": "INQUISITOR"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "3",
+        "Power": "2",
+        "HP": "4",
+        "FrontText": "This unit gains RAID 1 for each damage on him. (He gets +1/+0 while attacking for each damage on him.)\nOn Attack: You may deal 1 damage to this unit and 1 damage to another ground unit.",
+        "DoubleSided": false,
+        "Rarity": "U",
+        "Unique": true,
+        "Keywords": [
+            "Raid"
+        ],
+        "Artist": "Eslam Aboshady",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/131.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "132",
         "Name": "Imperial Interceptor",
         "Type": "Unit",
@@ -2446,6 +2587,44 @@
     },
     {
         "Set": "SOR",
+        "Number": "147",
+        "Name": "Black One",
+        "Subtitle": "Scourge of Starkiller Base",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Aggression"
+            },
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "RESISTANCE"
+            },
+            {
+                "S": "VEHICLE"
+            },
+            {
+                "S": "FIGHTER"
+            }
+        ],
+        "Arenas": [
+            "Space"
+        ],
+        "Cost": "6",
+        "Power": "4",
+        "HP": "4",
+        "FrontText": "When Played/When Defeated: You may discard your hand. If you do, draw 3 cards.",
+        "DoubleSided": false,
+        "Rarity": "L",
+        "Unique": true,
+        "Artist": "Amad Mir",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/147.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "149",
         "Name": "Mace Windu",
         "Subtitle": "Party Crasher",
@@ -2686,6 +2865,37 @@
     },
     {
         "Set": "SOR",
+        "Number": "176",
+        "Name": "ISB Agent",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            },
+            {
+                "S": "Villainy"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "IMPERIAL"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "1",
+        "Power": "1",
+        "HP": "3",
+        "FrontText": "When Played: You may reveal an event from your hand. If you do, deal 1 damage to a unit.",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Artist": "Yvette Chua",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/176.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "179",
         "Name": "Boba Fett",
         "Subtitle": "Disintegrator",
@@ -2718,6 +2928,46 @@
         "Unique": true,
         "Artist": "French Carlomagno",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/179.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "180",
+        "Name": "Seventh Fleet Defender",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            },
+            {
+                "S": "Villainy"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "IMPERIAL"
+            },
+            {
+                "S": "VEHICLE"
+            },
+            {
+                "S": "FIGHTER"
+            }
+        ],
+        "Arenas": [
+            "Space"
+        ],
+        "Cost": "3",
+        "Power": "3",
+        "HP": "2",
+        "FrontText": "SHIELDED (When you play this unit, give a Shield token to it.)",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Keywords": [
+            "Shielded"
+        ],
+        "Artist": "Francois Cannels",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/180.png"
     },
     {
         "Set": "SOR",
@@ -2794,6 +3044,47 @@
         "Unique": true,
         "Artist": "André Mealha",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/184.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "185",
+        "Name": "Chimaera",
+        "Subtitle": "Flagship of the Seventh Fleet",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            },
+            {
+                "S": "Villainy"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "IMPERIAL"
+            },
+            {
+                "S": "VEHICLE"
+            },
+            {
+                "S": "CAPITAL SHIP"
+            }
+        ],
+        "Arenas": [
+            "Space"
+        ],
+        "Cost": "8",
+        "Power": "8",
+        "HP": "7",
+        "FrontText": "SHIELDED (When you play this unit, give a Shield token to it.) \nOn Attack: Name a card. An opponent reveals their hand and discards a card with that name from it.",
+        "DoubleSided": false,
+        "Rarity": "R",
+        "Unique": true,
+        "Keywords": [
+            "Shielded"
+        ],
+        "Artist": "Francois Cannels",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/185.png"
     },
     {
         "Set": "SOR",
@@ -3094,6 +3385,43 @@
     },
     {
         "Set": "SOR",
+        "Number": "208",
+        "Name": "Outer Rim Headhunter",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "FRINGE"
+            },
+            {
+                "S": "VEHICLE"
+            },
+            {
+                "S": "FIGHTER"
+            }
+        ],
+        "Arenas": [
+            "Space"
+        ],
+        "Cost": "2",
+        "Power": "1",
+        "HP": "3",
+        "FrontText": "RAID 1 (This unit gets +1/+0 while attacking.) \nOn Attack: If you control a leader unit, you may exhaust a non-leader unit.",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Keywords": [
+            "Raid"
+        ],
+        "Artist": "Christian Papazoglakis",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/208.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "214",
         "Name": "Smuggling Compartment",
         "Type": "Upgrade",
@@ -3116,6 +3444,29 @@
         "Unique": false,
         "Artist": "Amad Mir",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/214.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "215",
+        "Name": "Snapshot Reflexes",
+        "Type": "Event",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "LEARNED"
+            }
+        ],
+        "Cost": "1",
+        "FrontText": "When Played: You may attack with attached unit.",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Artist": "Amélie Hutt",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/215.png"
     },
     {
         "Set": "SOR",
