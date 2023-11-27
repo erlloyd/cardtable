@@ -111,6 +111,16 @@ interface IState {
   dragImageLoaded: boolean;
 }
 
+const debouncedHandleMove = debounce((event: any, props: IProps) => {
+  if (props.handleDragMove && props.dragging) {
+    props.handleDragMove({
+      id: props.id,
+      dx: event.target.x() - props.x,
+      dy: event.target.y() - props.y,
+    });
+  }
+}, 5);
+
 const Card = (props: IProps) => {
   const isMount = useIsMount();
   const touchTimerRef = useRef<any>(null);
@@ -122,11 +132,12 @@ const Card = (props: IProps) => {
 
   useEffect(() => {
     if (!isMount && props.shuffling) {
+      const shuffleDeg = props.exhausted ? 360 + 90 : 360;
       if (shuffleRef?.current) {
         (shuffleRef.current as any).to({
           rotation:
             getCurrentRotation(props.exhausted) +
-            (shuffleToggleRef.current ? 360 : -360),
+            (shuffleToggleRef.current ? shuffleDeg : -1 * shuffleDeg),
           duration: stackShuffleAnimationS,
         });
 
@@ -135,7 +146,7 @@ const Card = (props: IProps) => {
         console.error("Shuffle reference doesn't exist!");
       }
     }
-  }, [props.shuffling]);
+  }, [props.shuffling, props.exhausted]);
 
   // set up draghandle hiding
   useEffect(() => {
@@ -206,18 +217,25 @@ const Card = (props: IProps) => {
     },
     [props.handleDragStart, props.id]
   );
-  const handleDragMove = useCallback(
-    debounce((event: any) => {
-      if (props.handleDragMove) {
-        props.handleDragMove({
-          id: props.id,
-          dx: event.target.x() - props.x,
-          dy: event.target.y() - props.y,
-        });
-      }
-    }, 5),
-    [props.handleDragMove, props.id, props.x, props.y]
-  );
+
+  // Moved this a bit - I'd like to not make a new function
+  // every time, but memoizing the debounce seems to cause some issues
+
+  // const handleDragMove = useCallback(
+  //   debounce((event: any) => {
+  //     // only do this if we are dragging - otherwise we can get
+  //     // some extra instances of this from debouncing.
+  //     if (props.handleDragMove && props.dragging) {
+  //       console.log("MOVING");
+  //       props.handleDragMove({
+  //         id: props.id,
+  //         dx: event.target.x() - props.x,
+  //         dy: event.target.y() - props.y,
+  //       });
+  //     }
+  //   }, 0),
+  //   [props.handleDragMove, props.id, props.x, props.y, props.dragging]
+  // );
 
   const handleDragEnd = useCallback(
     (event: KonvaEventObject<DragEvent>) => {
@@ -226,7 +244,8 @@ const Card = (props: IProps) => {
         window.document.body.style.cursor = "grab";
 
         // Next, cancel any outstanding move things that haven't debounced
-        handleDragMove.cancel();
+        // handleDragMove.cancel();
+        debouncedHandleMove.cancel();
 
         props.handleDragEnd(props.id, event);
       }
@@ -577,7 +596,7 @@ const Card = (props: IProps) => {
           onClick={handleClick}
           onTap={handleTap}
           onDragStart={handleDragStart}
-          onDragMove={handleDragMove}
+          onDragMove={(e: any) => debouncedHandleMove(e, props)}
           onDragEnd={handleDragEnd}
           onMouseOver={handleHover}
           onMouseOut={handleHoverLeave}

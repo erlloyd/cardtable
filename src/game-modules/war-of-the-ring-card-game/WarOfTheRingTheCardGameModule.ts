@@ -152,10 +152,14 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
           ...temp["Hobbit"],
           ...temp["Wizard"],
         ];
-        const bg = [
-          ...temp["Free People Strongholds"],
-          ...temp["Shadow Strongholds"],
-        ];
+        // battlegrounds need to be in the order they appear in the scenario
+        const bg = encounterCards
+          .filter(
+            (e) =>
+              e.extraInfo.setCode === "Free People Strongholds" ||
+              e.extraInfo.setCode === "Shadow Strongholds"
+          )
+          .reverse();
         const p = [
           ...temp["Path6"],
           ...temp["Path5"],
@@ -297,27 +301,6 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
 
   getTokensForEncounterSet(setCode: string): IFlippableToken[] {
     switch (setCode) {
-      case "The Fellowship of the Ring":
-        return [
-          {
-            id: uuidv4(),
-            faceup: true,
-            imgUrl:
-              "/images/from_modules/war-of-the-ring-card-game/fp_ring_front.png",
-            backImgUrl:
-              "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
-            position: { x: 0, y: 0 },
-          },
-          {
-            id: uuidv4(),
-            faceup: true,
-            imgUrl:
-              "/images/from_modules/war-of-the-ring-card-game/shadow_ring_front.png",
-            backImgUrl:
-              "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
-            position: { x: 0, y: 0 },
-          },
-        ];
       case "Trilogy":
         return [
           {
@@ -451,7 +434,6 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
           },
         ];
       case "Duel (Solo)":
-      case "The Fellowship of the Ring (Solo)":
         return [
           {
             id: uuidv4(),
