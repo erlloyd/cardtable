@@ -136,6 +136,17 @@ export const getCardsDataEncounterEntities = createSelector(
   }
 );
 
+export const getCardsDataEncounterEntitiesArrayWithoutDuplicates =
+  createSelector(getCardsDataEncounterEntities, (cardsData) => {
+    return Object.values(cardsData).filter((c) => !c.duplicate_of);
+  });
+
+export const getAllCardsDataEntitesArrayWithoutDuplicates = createSelector(
+  getCardsDataHeroEntitiesArrayWithoutDuplicates,
+  getCardsDataEncounterEntitiesArrayWithoutDuplicates,
+  (heroCards, encounterCards) => heroCards.concat(encounterCards)
+);
+
 export const getCardsDataSetData = createSelector(getCardsData, (cardsData) => {
   const data = getCurrentCardData(cardsData);
   return data.setData;

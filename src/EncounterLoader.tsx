@@ -9,7 +9,9 @@ import { GameType } from "./game-modules/GameType";
 import GameManager from "./game-modules/GameModuleManager";
 import { ICounter, IFlippableToken } from "./features/counters/initialState";
 import { CardData } from "./external-api/common-card-data";
+import startCase from "lodash.startcase";
 import { IPlayerBoard } from "./features/cards/initialState";
+
 interface IProps {
   currentGameType: GameType;
   encounterData: IEncounterEntity[];
@@ -34,7 +36,7 @@ class EncounterLoader extends Component<IProps> {
           id="encounter-loader-combobox"
           groupBy={
             multipleSetTypes
-              ? (option) => option.setData.setTypeCode
+              ? (option) => startCase(option.setData.setTypeCode)
               : undefined
           }
           options={this.props.encounterData || []}

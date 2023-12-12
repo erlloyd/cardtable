@@ -6,4 +6,5 @@ export enum GameType {
   StandardDeck = "standarddeck",
   Lorcana = "lorcana",
   StarWarsUnlimited = "star-wars-unlimited",
+  MarvelLegendary = "marvel-legendary",
 }

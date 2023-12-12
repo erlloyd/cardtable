@@ -10,6 +10,7 @@ interface IProps {
   id: string;
   imgUrl: string;
   pos: Vector2d;
+  customWidth?: number;
   playmatImageLoaded: (
     id: string,
     playmatWidth: number,
@@ -22,9 +23,11 @@ const Playmat = (props: IProps) => {
 
   const isLoaded = playmatImgStatus === "loaded";
 
+  const desiredWidth = props.customWidth ?? 2880;
+
   const playmatScale =
     isLoaded && !!playmatImg?.naturalWidth
-      ? 2880 / playmatImg?.naturalWidth
+      ? desiredWidth / playmatImg?.naturalWidth
       : 1;
 
   useEffect(() => {

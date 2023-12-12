@@ -19,6 +19,9 @@ const mapStateToProps = (state: RootState) => {
       !!gameType && !!GamePropertiesMap[gameType].additionalPlaymatImageOptions
         ? GamePropertiesMap[gameType].additionalPlaymatImageOptions!.layout
         : "row",
+    customWidth: !!gameType
+      ? GamePropertiesMap[gameType].customPlaymatWidth
+      : undefined,
   };
 };
 

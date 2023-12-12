@@ -109,6 +109,7 @@ export interface ICardsState {
   ghostCards: ICardStack[];
   playerHands: IPlayerHand[];
   playerBoards: IPlayerBoard[];
+  tableCardSlots: ICardSlot[];
   dropTargetCards: { [key: string]: IDropTarget | null };
   attachTargetCards: { [key: string]: ICardStack | null };
   panMode: boolean;
@@ -211,6 +212,7 @@ const defaultState: ICardsState = {
   outOfSyncWithRemoteCount: 0,
   cards: [],
   playerBoards: [],
+  tableCardSlots: [],
   ghostCards: [],
   dropTargetCards: {},
   attachTargetCards: {},
@@ -222,6 +224,31 @@ const defaultState: ICardsState = {
 export const initialState: ICardsState = {
   ...defaultState,
   ...localStorageState,
+  ...{
+    tableCardSlots: [
+      { landscape: false, relativeX: 143, relativeY: 205 },
+      { landscape: false, relativeX: 315, relativeY: 205 },
+      { landscape: false, relativeX: 492, relativeY: 205 },
+      { landscape: false, relativeX: 1220, relativeY: 202 },
+      { landscape: false, relativeX: 1399, relativeY: 201 },
+      { landscape: false, relativeX: 143, relativeY: 485 },
+      { landscape: false, relativeX: 315, relativeY: 485 },
+      { landscape: false, relativeX: 1399, relativeY: 481 },
+      { landscape: false, relativeX: 143, relativeY: 766 },
+      { landscape: false, relativeX: 315, relativeY: 766 },
+      { landscape: false, relativeX: 1399, relativeY: 762 },
+      { landscape: false, relativeX: 1214, relativeY: 476 },
+      { landscape: false, relativeX: 1033, relativeY: 476 },
+      { landscape: false, relativeX: 858, relativeY: 476 },
+      { landscape: false, relativeX: 681, relativeY: 476 },
+      { landscape: false, relativeX: 502, relativeY: 476 },
+      { landscape: false, relativeX: 1214, relativeY: 757 },
+      { landscape: false, relativeX: 1033, relativeY: 757 },
+      { landscape: false, relativeX: 858, relativeY: 757 },
+      { landscape: false, relativeX: 681, relativeY: 757 },
+      { landscape: false, relativeX: 502, relativeY: 757 },
+    ],
+  },
   // ...{
   //   playerBoards: [
   //     {

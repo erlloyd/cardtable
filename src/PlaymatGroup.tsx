@@ -9,6 +9,7 @@ interface IProps {
   imgUrls: string[];
   startingPos: Vector2d;
   defaultLayoutDirection: "row" | "column";
+  customWidth?: number;
 }
 
 const PlaymatGroup = (props: IProps) => {
@@ -38,6 +39,7 @@ const PlaymatGroup = (props: IProps) => {
         imgUrl={url}
         pos={{ x: currentXPos, y: currentYPos }}
         playmatImageLoaded={handlePlaymatLoaded}
+        customWidth={props.customWidth}
       />
     );
 

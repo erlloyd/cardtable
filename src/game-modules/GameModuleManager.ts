@@ -10,6 +10,7 @@ import StarWarsDeckbuildingGameModule from "./star-wars-deckbuilding-game/StarWa
 import StandardDeckGameModule from "./standard-deck/StandardDeckGameModule";
 import LorcanaGameModule from "./lorcana/LorcanaGameModule";
 import StarWarsUnlimitedGameModule from "./star-wars-unlimited/StarWarsUnlimitedGameModule";
+import MarvelLegendaryGameModule from "./marvel-legendary/MarvelLegendaryGameModule";
 
 const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
@@ -39,6 +40,11 @@ const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
     type: GameType.StarWarsUnlimited,
     module: new StarWarsUnlimitedGameModule(),
+  },
+  {
+    type: GameType.MarvelLegendary,
+    module: new MarvelLegendaryGameModule(),
+    hidden: true,
   },
 ];
 

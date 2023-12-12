@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { getCardsDataHeroEntitiesArrayWithoutDuplicates } from "./features/cards-data/cards-data.selectors";
+import { getAllCardsDataEntitesArrayWithoutDuplicates } from "./features/cards-data/cards-data.selectors";
 import { getSpecificCardLoaderPosition } from "./features/game/game.selectors";
 import {
   hideSpecificCardLoader,
@@ -12,7 +12,7 @@ import { RootState } from "./store/rootReducer";
 const mapStateToProps = (state: RootState) => {
   return {
     position: getSpecificCardLoaderPosition(state),
-    heroData: getCardsDataHeroEntitiesArrayWithoutDuplicates(state),
+    heroData: getAllCardsDataEntitesArrayWithoutDuplicates(state),
   };
 };
 

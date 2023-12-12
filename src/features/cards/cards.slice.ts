@@ -48,6 +48,7 @@ import {
 import { myPeerRef } from "../../constants/app-constants";
 import log from "loglevel";
 import { makeFakeCardStackFromJsonId } from "../../utilities/card-utils";
+import { makeBasicPlayerBoard } from "../../utilities/playerboard-utils";
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 const CARD_ATTACH_TARGET_MIN_DISTANCE = 50;
@@ -323,16 +324,26 @@ const getDropTargetCard = (
     });
   }
 
-  // Lastly go through all player board slots
+  // Lastly go through all player board slots (including the main play area slots)
   if (possibleDropTargets.length === 0) {
-    state.playerBoards.forEach((pb) => {
+    const boards = state.playerBoards.concat([
+      makeBasicPlayerBoard({
+        id: "TABLE",
+        cardSlots: state.tableCardSlots,
+        x: 0,
+        y: 0,
+      }),
+    ]);
+
+    boards.forEach((pb) => {
       pb.cardSlots.forEach((slot) => {
-        // console.log("CARD IS AT", draggedCardPosition);
+        console.log("CARD IS AT", draggedCardPosition);
         const distance = getDistance(
           { x: pb.x + slot.relativeX, y: pb.y + slot.relativeY },
           draggedCardPosition
         );
         if (distance < allowedDistance) {
+          console.log("FOUND A SLOT");
           possibleDropTargets.push({
             distance,
             dropTarget: {
@@ -1090,6 +1101,7 @@ const resetCardsReducer: CaseReducer<ICardsState> = (state) => {
   state.cards = [];
   state.playerHands = generateDefaultPlayerHands();
   state.playerBoards = [];
+  state.tableCardSlots = [];
 };
 
 const toggleTokenReducer: CaseReducer<

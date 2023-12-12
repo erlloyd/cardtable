@@ -123,6 +123,7 @@ export interface GameProperties {
   decklistSearchApiConstants?: string;
   encounterUiName: string;
   initialPlaymatImageLocation: string;
+  customPlaymatWidth?: number;
   additionalPlaymatImageOptions?: {
     layout: "row" | "column";
     additionalImages: IPlaymatOption[];
