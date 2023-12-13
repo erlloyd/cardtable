@@ -16,6 +16,7 @@ import CardTokensContainer from "./CardTokensContainer";
 import CardModifiersContainer from "./CardModifiersContainer";
 import CardStatusToken from "./CardStatusToken";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
+import GameManager from "./game-modules/GameModuleManager";
 
 export const useIsMount = () => {
   const isMountRef = useRef(true);
@@ -136,7 +137,7 @@ const Card = (props: IProps) => {
       if (shuffleRef?.current) {
         (shuffleRef.current as any).to({
           rotation:
-            getCurrentRotation(props.exhausted) +
+            getCurrentRotation(props) +
             (shuffleToggleRef.current ? shuffleDeg : -1 * shuffleDeg),
           duration: stackShuffleAnimationS,
         });
@@ -576,7 +577,7 @@ const Card = (props: IProps) => {
     <Spring
       key={`${props.id}-card`}
       to={{
-        rotation: getCurrentRotation(props.exhausted),
+        rotation: getCurrentRotation(props),
         textRotation: props.exhausted ? -90 : 0,
       }}
       onRest={() => {
@@ -623,8 +624,19 @@ const Card = (props: IProps) => {
   );
 };
 
-const getCurrentRotation = (exhausted: boolean) => {
-  return exhausted ? 90 : 0;
+const getCurrentRotation = (props: IProps) => {
+  return (
+    (props.exhausted ? 90 : 0) +
+    (props.additionalRotation ?? 0) +
+    GameManager.getModuleForType(
+      props.currentGameType
+    ).additionalRotationForCardForRole(
+      props.currentPlayerRole ?? "",
+      props.code,
+      props.faceup,
+      props.typeCode
+    )
+  );
 };
 
 const handleTapOrClick = (
