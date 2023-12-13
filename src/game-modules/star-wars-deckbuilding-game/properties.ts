@@ -16,7 +16,7 @@ export const properties: GameProperties = {
   modifiers: [],
   roles: {
     requireRole: true,
-    roles: [{ name: "Empire" }, { name: "Rebel" }],
+    roles: [{ name: "Empire" }, { name: "Rebel" }, { name: "Solo" }],
   },
   tokens: {
     stunned: null,
