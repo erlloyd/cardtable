@@ -42,6 +42,47 @@
     },
     {
         "Set": "SOR",
+        "Number": "002",
+        "Name": "Iden Versio",
+        "Subtitle": "Infero Squad Commander",
+        "Type": "Leader",
+        "Aspects": [
+            {
+                "S": "Vigilance"
+            },
+            {
+                "S": "Villainy"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "IMPERIAL"
+            },
+            {
+                "S": "TROOPER"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "6",
+        "Power": "4",
+        "HP": "4",
+        "FrontText": "Action [{Exhaust}]: If an enemy unit was defeated this phase, heal 1 damage from your base.",
+        "EpicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+        "DoubleSided": true,
+        "BackText": "SHIELDED (When you deploy this leader, give her a Shield token.)\nWhen an enemy unit is defeated: Heal 1 damage from your base.",
+        "Rarity": "R",
+        "Unique": true,
+        "Keywords": [
+            "Shielded"
+        ],
+        "Artist": "Amélie Hutt",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/002.png",
+        "BackArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/002-b.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "003",
         "Name": "Chewbacca",
         "Subtitle": "Walking Carpet",
@@ -157,6 +198,47 @@
         "Artist": "Tomas Oleksak",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/007.png",
         "BackArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/007-b.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "008",
+        "Name": "Hera Syndulla",
+        "Subtitle": "Spectre Two",
+        "Type": "Leader",
+        "Aspects": [
+            {
+                "S": "Command"
+            },
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "REBEL"
+            },
+            {
+                "S": "TWI'LEK"
+            },
+            {
+                "S": "SPECTRE"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "6",
+        "Power": "4",
+        "HP": "6",
+        "FrontText": "Ignore the aspect penalty on SPECTRE cards you play.",
+        "EpicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+        "DoubleSided": true,
+        "BackText": "Ignore the aspect penalty on SPECTRE cards you play.\nOn Attack: You may give an Experience token to another unique unit.",
+        "Rarity": "R",
+        "Unique": true,
+        "Artist": "Sandra Chlewińska",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/008.png",
+        "BackArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/008-b.png"
     },
     {
         "Set": "SOR",
@@ -479,6 +561,41 @@
     },
     {
         "Set": "SOR",
+        "Number": "018",
+        "Name": "Jyn Erso",
+        "Subtitle": "Resisting Oppression",
+        "Type": "Leader",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            },
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "REBEL"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "6",
+        "Power": "4",
+        "HP": "7",
+        "FrontText": "Action [{Exhaust}]: Attack with a unit. The defender gets -1/-0 for this attack.",
+        "EpicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+        "DoubleSided": true,
+        "BackText": "While a friendly unit is attacking, the defender gets -1/-0.",
+        "Rarity": "C",
+        "Unique": true,
+        "Artist": "Amélie Hutt",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/018.png",
+        "BackArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/018-b.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "019",
         "Name": "Security Complex",
         "Subtitle": "Scarif",
@@ -556,6 +673,24 @@
     },
     {
         "Set": "SOR",
+        "Number": "024",
+        "Name": "Echo Base",
+        "Subtitle": "Hoth",
+        "Type": "Base",
+        "Aspects": [
+            {
+                "S": "Command"
+            }
+        ],
+        "HP": "30",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Artist": "Stephen Zavala",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/024.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "025",
         "Name": "Tarkintown",
         "Subtitle": "Lothal",
@@ -593,6 +728,25 @@
     },
     {
         "Set": "SOR",
+        "Number": "028",
+        "Name": "Jedha City",
+        "Subtitle": "Jedha",
+        "Type": "Base",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            }
+        ],
+        "HP": "25",
+        "FrontText": "Epic Action: Give a non-leader unit -4/-0 for this phase.",
+        "DoubleSided": false,
+        "Rarity": "R",
+        "Unique": false,
+        "Artist": "Rocío Espín",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/028.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "029",
         "Name": "Administrator's Tower",
         "Subtitle": "Cloud City",
@@ -608,6 +762,43 @@
         "Unique": false,
         "Artist": "Tyler Edlin",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/029.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "032",
+        "Name": "Scout Bike Pursuer",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Vigilance"
+            },
+            {
+                "S": "Villainy"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "IMPERIAL"
+            },
+            {
+                "S": "TROOPER"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "2",
+        "Power": "1",
+        "HP": "4",
+        "FrontText": "GRIT (This unit gets +1/+0 for each damage on it.)",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Keywords": [
+            "Grit"
+        ],
+        "Artist": "Mickael Balloul",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/032.png"
     },
     {
         "Set": "SOR",
@@ -683,6 +874,46 @@
     },
     {
         "Set": "SOR",
+        "Number": "037",
+        "Name": "Academy Defense Walker",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Vigilance"
+            },
+            {
+                "S": "Villainy"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "IMPERIAL"
+            },
+            {
+                "S": "VEHICLE"
+            },
+            {
+                "S": "WALKER"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "6",
+        "Power": "5",
+        "HP": "5",
+        "FrontText": "SENTINEL (Units in this arena can't attack your non-Sentinel units or your base.) \nWhen Played: Give an Experience token to each friendly damaged unit.",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Keywords": [
+            "Sentinel"
+        ],
+        "Artist": "Ario Murti",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/037.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "038",
         "Name": "Count Dooku",
         "Subtitle": "Darth Tyrannus",
@@ -721,6 +952,70 @@
         ],
         "Artist": "Mona Finden",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/038.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "040",
+        "Name": "Avenger",
+        "Subtitle": "Hunting Star Destroyer",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Vigilance"
+            },
+            {
+                "S": "Villainy"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "IMPERIAL"
+            },
+            {
+                "S": "VEHICLE"
+            },
+            {
+                "S": "CAPITAL SHIP"
+            }
+        ],
+        "Arenas": [
+            "Space"
+        ],
+        "Cost": "9",
+        "Power": "8",
+        "HP": "8",
+        "FrontText": "When Played/On Attack: An opponent chooses a non-leader unit they control. Defeat that unit.",
+        "DoubleSided": false,
+        "Rarity": "L",
+        "Unique": true,
+        "Artist": "Francois Cannels",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/040.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "042",
+        "Name": "Search Your Feelings",
+        "Type": "Event",
+        "Aspects": [
+            {
+                "S": "Vigilance"
+            },
+            {
+                "S": "Villainy"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "INNATE"
+            }
+        ],
+        "Cost": "4",
+        "FrontText": "Search your deck for a card and draw it. (Then, shuffle your deck.)",
+        "DoubleSided": false,
+        "Rarity": "R",
+        "Unique": false,
+        "Artist": "David Nash",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/042.png"
     },
     {
         "Set": "SOR",
@@ -948,6 +1243,88 @@
     },
     {
         "Set": "SOR",
+        "Number": "051",
+        "Name": "Luke Skywalker",
+        "Subtitle": "Jedi Knight",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Vigilance"
+            },
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "FORCE"
+            },
+            {
+                "S": "JEDI"
+            },
+            {
+                "S": "REBEL"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "7",
+        "Power": "6",
+        "HP": "7",
+        "FrontText": "RESTORE 3\nWhen Played: Give an enemy unit -3/-3 for this phase. If a friendly unit was defeated this phase, give that enemy unit -6/-6 for this phase instead.",
+        "DoubleSided": false,
+        "Rarity": "L",
+        "Unique": true,
+        "Keywords": [
+            "Restore"
+        ],
+        "Artist": "Eric Hibbeler",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/051.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "052",
+        "Name": "Redemption",
+        "Subtitle": "Medical Frigate",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Vigilance"
+            },
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "REBEL"
+            },
+            {
+                "S": "VEHICLE"
+            },
+            {
+                "S": "CAPITAL SHIP"
+            }
+        ],
+        "Arenas": [
+            "Space"
+        ],
+        "Cost": "8",
+        "Power": "6",
+        "HP": "9",
+        "FrontText": "SENTINEL (Units in this arena can't attack your non-Sentinel units or your base.) \nWhen Played: Heal up to 8 total damage from any number of units and/or bases. Deal that much damage to this unit.",
+        "DoubleSided": false,
+        "Rarity": "R",
+        "Unique": true,
+        "Keywords": [
+            "Sentinel"
+        ],
+        "Artist": "Christian Papazoglakis",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/052.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "053",
         "Name": "Luke's Lightsaber",
         "Type": "Upgrade",
@@ -979,6 +1356,40 @@
         "Unique": true,
         "Artist": "French Carlomagno",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/053.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "054",
+        "Name": "Jedi Lightsaber",
+        "Type": "Upgrade",
+        "Aspects": [
+            {
+                "S": "Vigilance"
+            },
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "ITEM"
+            },
+            {
+                "S": "WEAPON"
+            },
+            {
+                "S": "LIGHTSABER"
+            }
+        ],
+        "Cost": "3",
+        "Power": "3",
+        "HP": "3",
+        "FrontText": "Attach to a non-VEHICLE unit.\nIf attached unit is a FORCE unit, it gains: \"On Attack: Give the defender -2/-2 for this phase.\"",
+        "DoubleSided": false,
+        "Rarity": "R",
+        "Unique": false,
+        "Artist": "Arthur Mougne",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/054.png"
     },
     {
         "Set": "SOR",
@@ -1132,6 +1543,37 @@
         ],
         "Artist": "Tomas Oleksak",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/063.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "064",
+        "Name": "Wilderness Fighter",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Vigilance"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "TROOPER"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "3",
+        "Power": "2",
+        "HP": "4",
+        "FrontText": "SHIELDED (When you play this unit, give a Shield token to it.)",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Keywords": [
+            "Shielded"
+        ],
+        "Artist": "Ash Pierce",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/064.png"
     },
     {
         "Set": "SOR",
@@ -1663,6 +2105,48 @@
     },
     {
         "Set": "SOR",
+        "Number": "090",
+        "Name": "Devastator",
+        "Subtitle": "Inescapable",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Command"
+            },
+            {
+                "S": "Villainy"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "IMPERIAL"
+            },
+            {
+                "S": "VEHICLE"
+            },
+            {
+                "S": "CAPITAL SHIP"
+            }
+        ],
+        "Arenas": [
+            "Space"
+        ],
+        "Cost": "10",
+        "Power": "10",
+        "HP": "10",
+        "FrontText": "SENTINEL\nOVERWHELM\nWhen Played: You may deal damage to a unit equal to the number of resources you control.",
+        "DoubleSided": false,
+        "Rarity": "L",
+        "Unique": true,
+        "Keywords": [
+            "Overwhelm",
+            "Sentinel"
+        ],
+        "Artist": "Ignacio Bazan Lazcano",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/090.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "092",
         "Name": "Overwhelming Barrage",
         "Type": "Event",
@@ -1686,6 +2170,39 @@
         "Unique": false,
         "Artist": "Francois Cannels",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/092.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "095",
+        "Name": "Battlefield Marine",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Command"
+            },
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "REBEL"
+            },
+            {
+                "S": "TROOPER"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "2",
+        "Power": "3",
+        "HP": "3",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Artist": "David Buisan",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/095.png"
     },
     {
         "Set": "SOR",
@@ -1841,6 +2358,32 @@
         ],
         "Artist": "Amélie Hutt",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/102.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "106",
+        "Name": "Attack Pattern Delta",
+        "Type": "Event",
+        "Aspects": [
+            {
+                "S": "Command"
+            },
+            {
+                "S": "Command"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "TACTIC"
+            }
+        ],
+        "Cost": "3",
+        "FrontText": "Give a friendly unit +3/+3 for this phase.\nGive another friendly unit +2/+2 for this phase.\nGive a third friendly unit +1/+1 for this phase.",
+        "DoubleSided": false,
+        "Rarity": "U",
+        "Unique": false,
+        "Artist": "French Carlomagno",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/106.png"
     },
     {
         "Set": "SOR",
@@ -2068,6 +2611,31 @@
         "Unique": true,
         "Artist": "Eslam Aboshady",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/118.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "120",
+        "Name": "Academy Training",
+        "Type": "Upgrade",
+        "Aspects": [
+            {
+                "S": "Command"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "LEARNED"
+            }
+        ],
+        "Cost": "2",
+        "Power": "2",
+        "HP": "2",
+        "FrontText": "",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Artist": "David Buisan",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/120.png"
     },
     {
         "Set": "SOR",
@@ -2374,6 +2942,43 @@
     },
     {
         "Set": "SOR",
+        "Number": "134",
+        "Name": "Ruthless Raider",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Aggression"
+            },
+            {
+                "S": "Villainy"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "IMPERIAL"
+            },
+            {
+                "S": "VEHICLE"
+            },
+            {
+                "S": "CAPITAL SHIP"
+            }
+        ],
+        "Arenas": [
+            "Space"
+        ],
+        "Cost": "6",
+        "Power": "4",
+        "HP": "6",
+        "FrontText": "When Played/When Defeated: Deal 2 damage to an enemy base and 2 damage to an enemy unit.",
+        "DoubleSided": false,
+        "Rarity": "U",
+        "Unique": false,
+        "Artist": "Christian Papazoglakis",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/134.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "135",
         "Name": "Emperor Palpatine",
         "Subtitle": "Master of the Dark Side",
@@ -2512,6 +3117,83 @@
     },
     {
         "Set": "SOR",
+        "Number": "140",
+        "Name": "SpecForce Soldier",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Aggression"
+            },
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "REBEL"
+            },
+            {
+                "S": "TROOPER"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "1",
+        "Power": "2",
+        "HP": "2",
+        "FrontText": "When Played: A unit loses SENTINEL for this phase.",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Keywords": [
+            "Sentinel"
+        ],
+        "Artist": "Didier Nguyen",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/140.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "141",
+        "Name": "Green Squadron A-Wing",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Aggression"
+            },
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "REBEL"
+            },
+            {
+                "S": "VEHICLE"
+            },
+            {
+                "S": "FIGHTER"
+            }
+        ],
+        "Arenas": [
+            "Space"
+        ],
+        "Cost": "2",
+        "Power": "1",
+        "HP": "3",
+        "FrontText": "RAID 2 (This unit gets +2/+0 while attacking.)",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Keywords": [
+            "Raid"
+        ],
+        "Artist": "Francois Cannels",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/141.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "142",
         "Name": "Sabine Wren",
         "Subtitle": "Explosives Artist",
@@ -2584,6 +3266,85 @@
         ],
         "Artist": "Yvette Chua",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/143.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "144",
+        "Name": "Red Three",
+        "Subtitle": "Unstoppable",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Aggression"
+            },
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "REBEL"
+            },
+            {
+                "S": "VEHICLE"
+            },
+            {
+                "S": "FIGHTER"
+            }
+        ],
+        "Arenas": [
+            "Space"
+        ],
+        "Cost": "3",
+        "Power": "2",
+        "HP": "3",
+        "FrontText": "RAID 1 (This unit gets +1/+0 while attacking.)\nEach other friendly Heroism unit gains RAID 1.",
+        "DoubleSided": false,
+        "Rarity": "R",
+        "Unique": true,
+        "Keywords": [
+            "Raid"
+        ],
+        "Artist": "Fernando Correa",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/144.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "145",
+        "Name": "K-2SO",
+        "Subtitle": "Cassian's Counterpart",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Aggression"
+            },
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "REBEL"
+            },
+            {
+                "S": "DROID"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "4",
+        "Power": "4",
+        "HP": "4",
+        "FrontText": "OVERWHELM\nWhen Defeated: For each opponent, choose one: either deal 3 damage to that player's base, or that player discards a card from their hand.",
+        "DoubleSided": false,
+        "Rarity": "R",
+        "Unique": true,
+        "Keywords": [
+            "Overwhelm"
+        ],
+        "Artist": "Ross Taylor",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/145.png"
     },
     {
         "Set": "SOR",
@@ -2666,6 +3427,32 @@
     },
     {
         "Set": "SOR",
+        "Number": "152",
+        "Name": "For a Cause I Believe In",
+        "Type": "Event",
+        "Aspects": [
+            {
+                "S": "Aggression"
+            },
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "INNATE"
+            }
+        ],
+        "Cost": "3",
+        "FrontText": "Reveal the top 4 cards of your deck. For each Heroism card revealed this way, deal 1 damage to an enemy base. You may discard any of the revealed cards and put the rest back on top of your deck in any order.",
+        "DoubleSided": false,
+        "Rarity": "R",
+        "Unique": false,
+        "Artist": "Eric Hibbeler",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/152.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "155",
         "Name": "Aggression",
         "Type": "Event",
@@ -2689,6 +3476,41 @@
         "Unique": false,
         "Artist": "Sandra Chlewińska",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/155.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "156",
+        "Name": "Benthic \"Two Tubes\"",
+        "Subtitle": "Partisan Lieutenant",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Aggression"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "REBEL"
+            },
+            {
+                "S": "TROOPER"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "1",
+        "Power": "2",
+        "HP": "2",
+        "FrontText": "On Attack: Another friendly Aggression unit gains RAID 2 for this phase. (it gets +2/+0 while attacking.)",
+        "DoubleSided": false,
+        "Rarity": "U",
+        "Unique": true,
+        "Keywords": [
+            "Raid"
+        ],
+        "Artist": "Omercan Cirit",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/156.png"
     },
     {
         "Set": "SOR",
@@ -2720,6 +3542,68 @@
         ],
         "Artist": "Ario Murti",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/157.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "159",
+        "Name": "Partisan Insurgent",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Aggression"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "REBEL"
+            },
+            {
+                "S": "TROOPER"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "2",
+        "Power": "1",
+        "HP": "4",
+        "FrontText": "While you control another Aggression unit, this unit gains RAID 2. (It gets +2/+0 while attacking.)",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Keywords": [
+            "Raid"
+        ],
+        "Artist": "Joshua Carson",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/159.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "161",
+        "Name": "Ardent Sympathizer",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Aggression"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "TROOPER"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "3",
+        "Power": "3",
+        "HP": "3",
+        "FrontText": "While you have the initiative, this unit gets +2/+0.",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Artist": "Luke Harrington",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/161.png"
     },
     {
         "Set": "SOR",
@@ -2819,6 +3703,66 @@
     },
     {
         "Set": "SOR",
+        "Number": "166",
+        "Name": "Infiltrator's Skill",
+        "Type": "Upgrade",
+        "Aspects": [
+            {
+                "S": "Aggression"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "ITEM"
+            },
+            {
+                "S": "WEAPON"
+            },
+            {
+                "S": "LIGHTSABER"
+            }
+        ],
+        "Cost": "1",
+        "Power": "1",
+        "HP": "1",
+        "FrontText": "Attached unit gains SABOTEUR. (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Keywords": [
+            "Saboteur"
+        ],
+        "Artist": "Sandra Chlewińska",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/166.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "168",
+        "Name": "Precision Fire",
+        "Type": "Event",
+        "Aspects": [
+            {
+                "S": "Aggression"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "TACTIC"
+            }
+        ],
+        "Cost": "1",
+        "FrontText": "Attack with a unit. It gains SABOTEUR for this attack. If it's a TROOPER, it also gains +2/+0 for this attack. (Ignore Sentinel and defeat the defender's Shields.)",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Keywords": [
+            "Saboteur"
+        ],
+        "Artist": "Ash Pierce",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/168.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "171",
         "Name": "Mission Briefing",
         "Type": "Event",
@@ -2893,6 +3837,43 @@
         "Unique": false,
         "Artist": "Yvette Chua",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/176.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "178",
+        "Name": "Cartel Spacer",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            },
+            {
+                "S": "Villainy"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "UNDERWORLD"
+            },
+            {
+                "S": "VEHICLE"
+            },
+            {
+                "S": "FIGHTER"
+            }
+        ],
+        "Arenas": [
+            "Space"
+        ],
+        "Cost": "2",
+        "Power": "2",
+        "HP": "3",
+        "FrontText": "When Played: If you control another Cunning unit, exhaust an enemy unit that costs 4 or less.",
+        "DoubleSided": false,
+        "Rarity": "U",
+        "Unique": false,
+        "Artist": "Arthur Mougne",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/178.png"
     },
     {
         "Set": "SOR",
@@ -3088,6 +4069,32 @@
     },
     {
         "Set": "SOR",
+        "Number": "186",
+        "Name": "No Good to Me Dead",
+        "Type": "Event",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            },
+            {
+                "S": "Villainy"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "PLAN"
+            }
+        ],
+        "Cost": "2",
+        "FrontText": "Exhaust a unit. That unit can't ready this round (including during the regroup phase).",
+        "DoubleSided": false,
+        "Rarity": "U",
+        "Unique": false,
+        "Artist": "Denis Medri",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/186.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "189",
         "Name": "Leia Organa",
         "Subtitle": "Defiant Princess",
@@ -3120,6 +4127,37 @@
         "Unique": true,
         "Artist": "Robynn Frauhn",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/189.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "190",
+        "Name": "Lothal Insurgent",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            },
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "REBEL"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "2",
+        "Power": "3",
+        "HP": "2",
+        "FrontText": "When Played: If you played another card this phase, each opponent draws a card then discards a random card from their hand.",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Artist": "Kevin Libranda",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/190.png"
     },
     {
         "Set": "SOR",
@@ -3385,6 +4423,247 @@
     },
     {
         "Set": "SOR",
+        "Number": "199",
+        "Name": "Bamboozle",
+        "Type": "Event",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            },
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "TRICK"
+            }
+        ],
+        "Cost": "2",
+        "FrontText": "You may discard a Cunning card from your hand instead of paying this event's cost. Exhaust a unit and return each upgrade on it to its owner's hand.",
+        "DoubleSided": false,
+        "Rarity": "U",
+        "Unique": false,
+        "Artist": "Ario Murti",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/199.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "200",
+        "Name": "Spark of Rebellion",
+        "Type": "Event",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            },
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "SPECTRE"
+            }
+        ],
+        "Cost": "2",
+        "FrontText": "Look at an opponent's hand and discard a card from it.",
+        "DoubleSided": false,
+        "Rarity": "R",
+        "Unique": false,
+        "Artist": "Kevin Libranda",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/200.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "201",
+        "Name": "Bodhi Rook",
+        "Subtitle": "Imperial Defector",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            },
+            {
+                "S": "Cunning"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "IMPERIAL"
+            },
+            {
+                "S": "REBEL"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "3",
+        "Power": "3",
+        "HP": "3",
+        "FrontText": "When Played: Look at an opponent's hand and discard a non-unit card from it.",
+        "DoubleSided": false,
+        "Rarity": "R",
+        "Unique": true,
+        "Artist": "Ario Murti",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/201.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "202",
+        "Name": "Cantina Bouncer",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            },
+            {
+                "S": "Cunning"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "FRINGE"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "5",
+        "Power": "3",
+        "HP": "5",
+        "FrontText": "When Played: You may return a non-leader unit to its owner's hand.",
+        "DoubleSided": false,
+        "Rarity": "U",
+        "Unique": false,
+        "Artist": "James Daly",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/202.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "203",
+        "Name": "Cunning",
+        "Type": "Event",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            },
+            {
+                "S": "Cunning"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "INNATE"
+            }
+        ],
+        "Cost": "4",
+        "FrontText": "Choose two, in any order:\nReturn a non-leader unit with 4 or less power to its owner's hand.\nGive a unit +4/+0 for this phase.\nExhaust up to 2 units.\nAn opponent discards a random card from their hand.",
+        "DoubleSided": false,
+        "Rarity": "L",
+        "Unique": false,
+        "Artist": "Sandra Chlewińska",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/203.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "204",
+        "Name": "Greedo",
+        "Subtitle": "Slow on the Draw",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "UNDERWORLD"
+            },
+            {
+                "S": "BOUNTY HUNTER"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "1",
+        "Power": "3",
+        "HP": "1",
+        "FrontText": "When Defeated: You may discard a card from your deck. If it's not a unit, deal 2 damage to a ground unit.",
+        "DoubleSided": false,
+        "Rarity": "U",
+        "Unique": true,
+        "Artist": "Aitor Prieto",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/204.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "206",
+        "Name": "Mining Guild TIE Fighter",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "FRINGE"
+            },
+            {
+                "S": "VEHICLE"
+            },
+            {
+                "S": "FIGHTER"
+            }
+        ],
+        "Arenas": [
+            "Space"
+        ],
+        "Cost": "1",
+        "Power": "1",
+        "HP": "2",
+        "FrontText": "On Attack: You may pay 2. If you do, draw a card.",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Artist": "André Mealha",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/206.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "207",
+        "Name": "Crafty Smuggler",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "UNDERWORLD"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "2",
+        "Power": "2",
+        "HP": "2",
+        "FrontText": "SHIELDED (When you play this unit, give a Shield token to it.)",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Keywords": [
+            "Shielded"
+        ],
+        "Artist": "Amad Mir",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/207.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "208",
         "Name": "Outer Rim Headhunter",
         "Type": "Unit",
@@ -3419,6 +4698,37 @@
         ],
         "Artist": "Christian Papazoglakis",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/208.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "213",
+        "Name": "Syndicate Lackeys",
+        "Type": "Unit",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "UNDERWORLD"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "5",
+        "Power": "5",
+        "HP": "4",
+        "FrontText": "AMBUSH (After you play this unit, it may ready and attack an enemy unit.)",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Keywords": [
+            "Ambush"
+        ],
+        "Artist": "Aitor Prieto",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/213.png"
     },
     {
         "Set": "SOR",
@@ -3536,6 +4846,29 @@
         "Unique": false,
         "Artist": "Ario Murti",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/220.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "221",
+        "Name": "Outmaneuver",
+        "Type": "Event",
+        "Aspects": [
+            {
+                "S": "Cunning"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "TACTIC"
+            }
+        ],
+        "Cost": "3",
+        "FrontText": "Choose an arena (ground or space). Exhaust each unit in that arena.",
+        "DoubleSided": false,
+        "Rarity": "U",
+        "Unique": false,
+        "Artist": "Leonardo Giammichele",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/221.png"
     },
     {
         "Set": "SOR",
@@ -4186,6 +5519,29 @@
     },
     {
         "Set": "SOR",
+        "Number": "245",
+        "Name": "Medal Ceremony",
+        "Type": "Event",
+        "Aspects": [
+            {
+                "S": "Heroism"
+            }
+        ],
+        "Traits": [
+            {
+                "S": "REBEL"
+            }
+        ],
+        "Cost": "0",
+        "FrontText": "Give an Experience token to each of up to 3 REBEL units that attacked this phase.",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Artist": "Ario Murti",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/245.png"
+    },
+    {
+        "Set": "SOR",
         "Number": "246",
         "Name": "You're My Only Hope",
         "Type": "Event",
@@ -4206,5 +5562,31 @@
         "Unique": false,
         "Artist": "Gretel Lusky",
         "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/246.png"
+    },
+    {
+        "Set": "SOR",
+        "Number": "248",
+        "Name": "Volunteer Soldier",
+        "Type": "Unit",
+        "Traits": [
+            {
+                "S": "TROOPER"
+            }
+        ],
+        "Arenas": [
+            "Ground"
+        ],
+        "Cost": "3",
+        "Power": "2",
+        "HP": "3",
+        "FrontText": "RAID 1 (This unit gets +1/+0 while attacking.)\nIf you control a TROOPER unit, this unit costs 1 less to play.",
+        "DoubleSided": false,
+        "Rarity": "C",
+        "Unique": false,
+        "Keywords": [
+            "Raid"
+        ],
+        "Artist": "Steve Morris",
+        "FrontArt": "https://d3alac64utt23z.cloudfront.net/images/cards/SOR/248.png"
     }
 ]
