@@ -49,6 +49,8 @@ import { myPeerRef } from "../../constants/app-constants";
 import log from "loglevel";
 import { makeFakeCardStackFromJsonId } from "../../utilities/card-utils";
 import { makeBasicPlayerBoard } from "../../utilities/playerboard-utils";
+import { updateActiveGameType } from "../game/game.slice";
+import GameManager from "../../game-modules/GameModuleManager";
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 const CARD_ATTACH_TARGET_MIN_DISTANCE = 50;
@@ -337,13 +339,13 @@ const getDropTargetCard = (
 
     boards.forEach((pb) => {
       pb.cardSlots.forEach((slot) => {
-        console.log("CARD IS AT", draggedCardPosition);
+        // console.log("CARD IS AT", draggedCardPosition);
         const distance = getDistance(
           { x: pb.x + slot.relativeX, y: pb.y + slot.relativeY },
           draggedCardPosition
         );
         if (distance < allowedDistance) {
-          console.log("FOUND A SLOT");
+          // console.log("FOUND A SLOT");
           possibleDropTargets.push({
             distance,
             dropTarget: {
@@ -1603,6 +1605,12 @@ const cardsSlice = createSlice({
       state.dropTargetCards = {};
       state.ghostCards = [];
       state.panMode = true;
+    });
+
+    builder.addCase(updateActiveGameType, (state, action) => {
+      state.tableCardSlots =
+        GameManager.getModuleForType(action.payload).properties
+          .tableCardSlots ?? [];
     });
 
     builder.addCase(addCardStackWithSnapAndId, (state, action) => {

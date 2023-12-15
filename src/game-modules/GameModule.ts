@@ -8,7 +8,7 @@ import { CardData } from "../external-api/common-card-data";
 import { ICardData, ISetData } from "../features/cards-data/initialState";
 import {
   ICardDetails,
-  ICardStack,
+  ICardSlot,
   IPlayerBoard,
 } from "../features/cards/initialState";
 import { AxiosResponse } from "axios";
@@ -144,6 +144,7 @@ export interface GameProperties {
   textCounters?: TextCounter[];
   useAltCardArtByDefault?: boolean;
   defaultAttachLocation: CardAttachLocation;
+  tableCardSlots?: ICardSlot[];
 }
 export abstract class GameModule {
   properties: GameProperties;

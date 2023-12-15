@@ -64,7 +64,7 @@ interface MarvelLegendaryPack {
   schemes?: MarvelLegendaryCardWithId[];
   bystanders?: MarvelLegendaryCardWithId[];
   starterdeck?: MarvelLegendaryHero[];
-  misc?: MarvelLegendaryCardWithId[];
+  misc?: MarvelLegendaryHero[];
   packName: string;
 }
 
@@ -332,30 +332,32 @@ export default class MarvelLegendaryGameModule extends GameModule {
     });
 
     pack.misc?.forEach((h) => {
-      cards = cards.concat([
-        {
-          code: `${pack.packName}_${h.name}`,
-          name: `${h.name}`,
-          images: {
-            front: h.imageUrl,
-            back: "/images/from_modules/marvel-legendary/marvel-legendary-card_back.png",
-          },
-          octgnId: null,
-          quantity: h.qtd || 1,
-          doubleSided: false,
-          backLink: null,
-          typeCode: "misc",
-          subTypeCode: null,
-          extraInfo: {
-            campaign: false,
-            setCode: `${pack.packName}_misc_${h.name}`,
-            packCode: "TODO - legendary",
-            setType: null,
-            factionCode: null,
-            sizeType: CardSizeType.Standard,
-          },
-        },
-      ]);
+      cards = cards.concat(
+        h.cards.map((c) => {
+          return {
+            code: `${pack.packName}_${h.filterName || h.name}_${c.name}`,
+            name: `${c.name}`,
+            images: {
+              front: c.imageUrl,
+              back: "/images/from_modules/marvel-legendary/marvel-legendary-card_back.png",
+            },
+            octgnId: null,
+            quantity: c.qtd || 1,
+            doubleSided: false,
+            backLink: null,
+            typeCode: "misc",
+            subTypeCode: null,
+            extraInfo: {
+              campaign: false,
+              setCode: `${pack.packName}_misc_${h.name}`,
+              packCode: "TODO - legendary",
+              setType: null,
+              factionCode: null,
+              sizeType: CardSizeType.Standard,
+            },
+          };
+        })
+      );
     });
 
     return cards;
@@ -422,6 +424,8 @@ export default class MarvelLegendaryGameModule extends GameModule {
       return orderMap;
     }, {} as { [key: string]: number });
 
+    originalOrder["misc"] = -1;
+
     return toReturn.sort(
       (a, b) =>
         originalOrder[a.setData.setTypeCode] -
@@ -430,9 +434,15 @@ export default class MarvelLegendaryGameModule extends GameModule {
   }
 
   splitEncounterCardsIntoStacksWhenLoading(
-    _setCode: string,
+    setCode: string,
     encounterCards: CardData[]
   ): CardData[][] {
+    if (setCode === "GeneralCards_misc_Standard Game Cards") {
+      return encounterCards.map((e) =>
+        Array.from({ length: e.quantity }).map((_i) => e)
+      );
+    }
+
     let returnCards: CardData[] = [];
     encounterCards.forEach((ec) => {
       returnCards = returnCards.concat(
