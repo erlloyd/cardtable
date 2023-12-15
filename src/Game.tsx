@@ -722,103 +722,103 @@ class Game extends Component<IProps, IState> {
 
         {/* Game loader input (hidden) */}
 
-        <ReactReduxContext.Consumer>
-          {({ store }) => (
-            <div>
-              <Provider store={store}>
-                <CardtableAlertsContainer></CardtableAlertsContainer>
-                <NotificationsContainer></NotificationsContainer>
-              </Provider>
-              <Stage
-                ref={(ref) => {
-                  if (!ref) return;
+        {/* <ReactReduxContext.Consumer>
+          {({ store }) => ( */}
+        <div>
+          {/* <Provider store={store}> */}
+          <CardtableAlertsContainer></CardtableAlertsContainer>
+          <NotificationsContainer></NotificationsContainer>
+          {/* </Provider> */}
+          <Stage
+            ref={(ref) => {
+              if (!ref) return;
 
-                  this.stage = ref;
-                }}
-                x={this.props.gameState.stagePosition.x}
-                y={this.props.gameState.stagePosition.y}
-                width={this.state.stageWidth}
-                height={this.state.stageHeight}
-                onClick={this.handleStageClickOrTap}
-                onTap={this.handleStageClickOrTap}
-                onMouseDown={this.handleMouseDown}
-                onMouseUp={this.handleMouseUp}
-                onMouseMove={this.handleMouseMove}
-                onTouchStart={this.handleTouchStart}
-                onTouchMove={this.handleTouchMove}
-                onTouchEnd={this.handleTouchEnd}
-                onContextMenu={this.handleContextMenu}
-                scale={this.props.gameState.stageZoom}
-                onWheel={this.handleWheel}
-                draggable={this.panMode}
-                onDragMove={this.noOp}
-                onDragEnd={this.noOp}
-                preventDefault={true}
-              >
-                <Provider store={store}>
-                  <Layer>
-                    <PlaymatGroupContainer />
-                    <PlayerBoardsContainer />
-                    <Group>
-                      {this.props.counters.map((counter) => (
-                        <Counter
-                          key={`${counter.id}-counter`}
-                          id={counter.id}
-                          pos={counter.position}
-                          value={counter.value}
-                          color={counter.color}
-                          updateCounterValueBy={this.handleCounterValueUpdate(
-                            counter.id
-                          )}
-                          handleContextMenu={this.handleCounterContextMenu(
-                            counter.id
-                          )}
-                          onDragEnd={this.handleCounterDrag(counter.id)}
-                          counterImageUrl={counter.imgUrl}
-                          counterText={counter.text}
-                        ></Counter>
-                      ))}
-                    </Group>
-                    <Group preventDefault={true}>
-                      {ghostCards.concat(staticCards).concat(movingCards)}
+              this.stage = ref;
+            }}
+            x={this.props.gameState.stagePosition.x}
+            y={this.props.gameState.stagePosition.y}
+            width={this.state.stageWidth}
+            height={this.state.stageHeight}
+            onClick={this.handleStageClickOrTap}
+            onTap={this.handleStageClickOrTap}
+            onMouseDown={this.handleMouseDown}
+            onMouseUp={this.handleMouseUp}
+            onMouseMove={this.handleMouseMove}
+            onTouchStart={this.handleTouchStart}
+            onTouchMove={this.handleTouchMove}
+            onTouchEnd={this.handleTouchEnd}
+            onContextMenu={this.handleContextMenu}
+            scale={this.props.gameState.stageZoom}
+            onWheel={this.handleWheel}
+            draggable={this.panMode}
+            onDragMove={this.noOp}
+            onDragEnd={this.noOp}
+            preventDefault={true}
+          >
+            {/* <Provider store={store}> */}
+            <Layer>
+              <PlaymatGroupContainer />
+              <PlayerBoardsContainer />
+              <Group>
+                {this.props.counters.map((counter) => (
+                  <Counter
+                    key={`${counter.id}-counter`}
+                    id={counter.id}
+                    pos={counter.position}
+                    value={counter.value}
+                    color={counter.color}
+                    updateCounterValueBy={this.handleCounterValueUpdate(
+                      counter.id
+                    )}
+                    handleContextMenu={this.handleCounterContextMenu(
+                      counter.id
+                    )}
+                    onDragEnd={this.handleCounterDrag(counter.id)}
+                    counterImageUrl={counter.imgUrl}
+                    counterText={counter.text}
+                  ></Counter>
+                ))}
+              </Group>
+              <Group preventDefault={true}>
+                {ghostCards.concat(staticCards).concat(movingCards)}
 
-                      <FirstPlayerTokenContainer
-                        currentGameType={this.props.currentGameType}
-                      ></FirstPlayerTokenContainer>
-                      <Group>
-                        {this.props.tokens.map((token) => (
-                          <FlippableToken
-                            key={`${token.id}-token`}
-                            currentGameType={this.props.currentGameType}
-                            id={token.id}
-                            imgUrl={token.imgUrl}
-                            backImgUrl={token.backImgUrl}
-                            pos={token.position}
-                            faceup={token.faceup}
-                            updatePos={this.props.moveToken}
-                            flipToken={this.props.flipToken}
-                          ></FlippableToken>
-                        ))}
-                      </Group>
-                      <CurvedArrowsContainer></CurvedArrowsContainer>
-                      {previewCards}
-                    </Group>
-                    <Group>
-                      <Rect
-                        x={this.state.selectStartPos.x}
-                        y={this.state.selectStartPos.y}
-                        width={this.state.selectRect.width}
-                        height={this.state.selectRect.height}
-                        stroke="yellow"
-                        strokeWidth={4}
-                      />
-                    </Group>
-                  </Layer>
-                </Provider>
-              </Stage>
-            </div>
-          )}
-        </ReactReduxContext.Consumer>
+                <FirstPlayerTokenContainer
+                  currentGameType={this.props.currentGameType}
+                ></FirstPlayerTokenContainer>
+                <Group>
+                  {this.props.tokens.map((token) => (
+                    <FlippableToken
+                      key={`${token.id}-token`}
+                      currentGameType={this.props.currentGameType}
+                      id={token.id}
+                      imgUrl={token.imgUrl}
+                      backImgUrl={token.backImgUrl}
+                      pos={token.position}
+                      faceup={token.faceup}
+                      updatePos={this.props.moveToken}
+                      flipToken={this.props.flipToken}
+                    ></FlippableToken>
+                  ))}
+                </Group>
+                <CurvedArrowsContainer></CurvedArrowsContainer>
+                {previewCards}
+              </Group>
+              <Group>
+                <Rect
+                  x={this.state.selectStartPos.x}
+                  y={this.state.selectStartPos.y}
+                  width={this.state.selectRect.width}
+                  height={this.state.selectRect.height}
+                  stroke="yellow"
+                  strokeWidth={4}
+                />
+              </Group>
+            </Layer>
+            {/* </Provider> */}
+          </Stage>
+        </div>
+        {/* )} */}
+        {/* </ReactReduxContext.Consumer> */}
       </div>
     );
   }
