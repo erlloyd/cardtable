@@ -201,7 +201,10 @@ const Card = (props: IProps) => {
 
   const handleDoubleTap = useCallback(
     (event: KonvaEventObject<TouchEvent>) => {
-      setShowDragHandle(false);
+      // If we hide the drag handle, it doesn't come
+      // back because in touch mode double tap doesn't
+      // rotate the card
+      // setShowDragHandle(false);
       if (props.handleDoubleTap) {
         props.handleDoubleTap(props.id, event);
         event.cancelBubble = true;

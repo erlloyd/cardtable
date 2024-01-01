@@ -27,6 +27,7 @@ interface MarvelLegendaryCard {
   imageUrl: string;
   rarity?: number;
   qtd?: number;
+  divided?: string;
 }
 
 interface MarvelLegendaryCardWithId {
@@ -59,7 +60,7 @@ interface MarvelLegendaryPack {
   id: number;
   heroes: MarvelLegendaryHero[];
   masterminds?: MarvelLegendaryCardGroup[];
-  henchmen?: MarvelLegendaryCardWithId[];
+  henchmen?: (MarvelLegendaryCardWithId | MarvelLegendaryCardGroup)[];
   villains?: MarvelLegendaryCardGroup[];
   schemes?: MarvelLegendaryCardWithId[];
   bystanders?: MarvelLegendaryCardWithId[];
@@ -70,7 +71,7 @@ interface MarvelLegendaryPack {
 
 export default class MarvelLegendaryGameModule extends GameModule {
   constructor() {
-    super(properties, {}, {}, {}, []);
+    super(properties, {}, {}, {}, ["divided_hero"]);
   }
 
   getSetData(): ISetData {
@@ -123,39 +124,41 @@ export default class MarvelLegendaryGameModule extends GameModule {
 
     pack.heroes.forEach((h) => {
       cards = cards.concat(
-        h.cards.map((c) => {
-          let quantity = 1;
-          if (c.rarity === 1) {
-            quantity = 5;
-          } else if (c.rarity === 2) {
-            quantity = 3;
-          } else if (c.rarity === 3) {
-            quantity = 1;
-          }
+        h.cards
+          .filter((c) => !!c.imageUrl)
+          .map((c) => {
+            let quantity = 1;
+            if (c.rarity === 1) {
+              quantity = 5;
+            } else if (c.rarity === 2) {
+              quantity = 3;
+            } else if (c.rarity === 3) {
+              quantity = 1;
+            }
 
-          return {
-            code: `${pack.packName}_${h.filterName || h.name}_${c.name}`,
-            name: `${c.name}`,
-            images: {
-              front: c.imageUrl,
-              back: "/images/from_modules/marvel-legendary/marvel-legendary-card_back.png",
-            },
-            octgnId: null,
-            quantity,
-            doubleSided: false,
-            backLink: null,
-            typeCode: "hero",
-            subTypeCode: null,
-            extraInfo: {
-              campaign: false,
-              setCode: `${pack.packName}_heroes_${h.filterName || h.name}`,
-              packCode: "TODO - legendary",
-              setType: null,
-              factionCode: null,
-              sizeType: CardSizeType.Standard,
-            },
-          };
-        })
+            return {
+              code: `${pack.packName}_${h.filterName || h.name}_${c.name}`,
+              name: `${c.name}`,
+              images: {
+                front: c.imageUrl,
+                back: "/images/from_modules/marvel-legendary/marvel-legendary-card_back.png",
+              },
+              octgnId: null,
+              quantity,
+              doubleSided: false,
+              backLink: null,
+              typeCode: !!c.divided ? "divided_hero" : "hero",
+              subTypeCode: null,
+              extraInfo: {
+                campaign: false,
+                setCode: `${pack.packName}_heroes_${h.filterName || h.name}`,
+                packCode: "TODO - legendary",
+                setType: null,
+                factionCode: null,
+                sizeType: CardSizeType.Standard,
+              },
+            };
+          })
       );
     });
 
@@ -189,30 +192,57 @@ export default class MarvelLegendaryGameModule extends GameModule {
     });
 
     pack.henchmen?.forEach((h) => {
-      cards = cards.concat([
-        {
-          code: `${pack.packName}_${h.name}`,
-          name: `${h.name}`,
-          images: {
-            front: h.imageUrl,
-            back: "/images/from_modules/marvel-legendary/marvel-legendary-card_back.png",
+      if (!!(h as MarvelLegendaryCard).imageUrl) {
+        cards = cards.concat([
+          {
+            code: `${pack.packName}_${h.name}`,
+            name: `${h.name}`,
+            images: {
+              front: (h as MarvelLegendaryCard).imageUrl,
+              back: "/images/from_modules/marvel-legendary/marvel-legendary-card_back.png",
+            },
+            octgnId: null,
+            quantity: 10,
+            doubleSided: false,
+            backLink: null,
+            typeCode: "henchmen",
+            subTypeCode: null,
+            extraInfo: {
+              campaign: false,
+              setCode: `${pack.packName}_henchmen_${h.name}`,
+              packCode: "TODO - legendary",
+              setType: null,
+              factionCode: null,
+              sizeType: CardSizeType.Standard,
+            },
           },
-          octgnId: null,
-          quantity: 10,
-          doubleSided: false,
-          backLink: null,
-          typeCode: "henchmen",
-          subTypeCode: null,
-          extraInfo: {
-            campaign: false,
-            setCode: `${pack.packName}_henchmen_${h.name}`,
-            packCode: "TODO - legendary",
-            setType: null,
-            factionCode: null,
-            sizeType: CardSizeType.Standard,
-          },
-        },
-      ]);
+        ]);
+      } else {
+        cards = cards.concat(
+          (h as MarvelLegendaryCardGroup).cards?.map((hc) => ({
+            code: `${pack.packName}_${hc.name}`,
+            name: `${hc.name}`,
+            images: {
+              front: (hc as MarvelLegendaryCard).imageUrl,
+              back: "/images/from_modules/marvel-legendary/marvel-legendary-card_back.png",
+            },
+            octgnId: null,
+            quantity: hc.qtd ?? 1,
+            doubleSided: false,
+            backLink: null,
+            typeCode: "henchmen",
+            subTypeCode: null,
+            extraInfo: {
+              campaign: false,
+              setCode: `${pack.packName}_henchmen_${h.name}`,
+              packCode: "TODO - legendary",
+              setType: null,
+              factionCode: null,
+              sizeType: CardSizeType.Standard,
+            },
+          }))
+        );
+      }
     });
 
     pack.villains?.forEach((h) => {
@@ -437,7 +467,7 @@ export default class MarvelLegendaryGameModule extends GameModule {
     setCode: string,
     encounterCards: CardData[]
   ): CardData[][] {
-    if (setCode === "GeneralCards_misc_Standard Game Cards") {
+    if (setCode.includes("GeneralCards_misc_Standard Game Cards")) {
       return encounterCards.map((e) =>
         Array.from({ length: e.quantity }).map((_i) => e)
       );
