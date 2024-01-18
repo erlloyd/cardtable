@@ -35,11 +35,10 @@ interface MarvelLegendaryCardWithId {
   name: string;
   imageUrl: string;
   qtd?: number;
-  cards?: [
-    {
-      qtd: number;
-    }
-  ];
+  cards?: {
+    imageUrl?: string;
+    qtd: number;
+  }[];
 }
 
 interface MarvelLegendaryHero {
@@ -277,13 +276,22 @@ export default class MarvelLegendaryGameModule extends GameModule {
     });
 
     pack.schemes?.forEach((h) => {
+      let front = h.imageUrl;
+      let back =
+        "/images/from_modules/marvel-legendary/marvel-legendary-card_back.png";
+      //Check if the card is double-sided
+      if (!h.imageUrl && !!h.cards && !!h.cards[0] && !!h.cards[1]) {
+        front = h.cards[0].imageUrl ?? "no front image";
+        back = h.cards[1].imageUrl ?? "no back image";
+      }
+
       cards = cards.concat([
         {
           code: `${pack.packName}_${h.name}`,
           name: `${h.name}`,
           images: {
-            front: h.imageUrl,
-            back: "/images/from_modules/marvel-legendary/marvel-legendary-card_back.png",
+            front,
+            back,
           },
           octgnId: null,
           quantity: 1,

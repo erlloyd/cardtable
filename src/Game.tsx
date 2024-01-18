@@ -586,6 +586,13 @@ class Game extends Component<IProps, IState> {
               cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT;
             previewCardWidth *= previewCardRatio;
 
+            if (imgUrls.some((url) => url === undefined)) {
+              console.warn(
+                `Card img is undefined for ${this.getCardName(card)}`
+              );
+              return null;
+            }
+
             return imgUrls.some((url) =>
               GameManager.getModuleForType(
                 this.props.currentGameType
