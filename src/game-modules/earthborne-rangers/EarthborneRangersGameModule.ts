@@ -152,7 +152,15 @@ export default class EarthborneRangersGameModule extends GameModule {
     _setCode: string,
     encounterCards: CardData[]
   ): CardData[][] {
-    return [encounterCards];
+    let returnVal: CardData[] = [];
+    encounterCards.forEach(
+      (e) =>
+        (returnVal = returnVal.concat(
+          Array.from({ length: e.quantity }).map((_i) => e)
+        ))
+    );
+
+    return [returnVal];
   }
 }
 
