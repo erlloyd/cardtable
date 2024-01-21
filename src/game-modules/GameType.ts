@@ -7,4 +7,5 @@ export enum GameType {
   Lorcana = "lorcana",
   StarWarsUnlimited = "star-wars-unlimited",
   MarvelLegendary = "marvel-legendary",
+  EarthborneRangers = "earthborne-rangers",
 }

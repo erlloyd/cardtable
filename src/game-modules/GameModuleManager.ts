@@ -11,6 +11,7 @@ import StandardDeckGameModule from "./standard-deck/StandardDeckGameModule";
 import LorcanaGameModule from "./lorcana/LorcanaGameModule";
 import StarWarsUnlimitedGameModule from "./star-wars-unlimited/StarWarsUnlimitedGameModule";
 import MarvelLegendaryGameModule from "./marvel-legendary/MarvelLegendaryGameModule";
+import EarthborneRangersGameModule from "./earthborne-rangers/EarthborneRangersGameModule";
 
 const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
@@ -44,6 +45,11 @@ const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
     type: GameType.MarvelLegendary,
     module: new MarvelLegendaryGameModule(),
+    hidden: true,
+  },
+  {
+    type: GameType.EarthborneRangers,
+    module: new EarthborneRangersGameModule(),
     hidden: true,
   },
 ];
