@@ -11,11 +11,15 @@ import {
   ILoadEncounterSetData,
   ILoadedDeck,
   IPackMetadata,
+  NumericTokenInfo,
+  TokensInfo,
 } from "../GameModule";
 import { GameType } from "../GameType";
 import { packList as ebrPackList } from "./generated/setList_earthborne-rangers";
 import { properties } from "./properties";
 import setList from "./external/sets/sets.json";
+import { ICardStack } from "../../features/cards/initialState";
+import { GamePropertiesMap } from "../../constants/game-type-properties-mapping";
 
 interface EBRCard {
   name: string;
@@ -161,6 +165,41 @@ export default class EarthborneRangersGameModule extends GameModule {
     );
 
     return [returnVal];
+  }
+
+  getCustomTokenInfoForCard?(
+    _card: ICardStack,
+    cardType: string,
+    defaultTokenInfo: TokensInfo
+  ): TokensInfo | null {
+    if (cardType === "aspect") {
+      return {
+        ...defaultTokenInfo,
+        damage: {
+          ...defaultTokenInfo.damage,
+          imagePath:
+            "/images/from_modules/earthborne-rangers/awareness_token.png",
+          overridePosition: { x: 40, y: 50 },
+        } as NumericTokenInfo,
+        threat: {
+          ...defaultTokenInfo.threat,
+          imagePath: "/images/from_modules/earthborne-rangers/spirit_token.png",
+          overridePosition: { x: 115, y: 50 },
+        } as NumericTokenInfo,
+        generic: {
+          ...defaultTokenInfo.generic,
+          imagePath:
+            "/images/from_modules/earthborne-rangers/fitness_token.png",
+          overridePosition: { x: 40, y: 160 },
+        } as NumericTokenInfo,
+        acceleration: {
+          ...defaultTokenInfo.acceleration,
+          imagePath: "/images/from_modules/earthborne-rangers/focus_token.png",
+          overridePosition: { x: 115, y: 160 },
+        } as NumericTokenInfo,
+      };
+    }
+    return defaultTokenInfo;
   }
 }
 

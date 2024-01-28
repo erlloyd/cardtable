@@ -9,6 +9,7 @@ import { ICardData, ISetData } from "../features/cards-data/initialState";
 import {
   ICardDetails,
   ICardSlot,
+  ICardStack,
   IPlayerBoard,
 } from "../features/cards/initialState";
 import { AxiosResponse } from "axios";
@@ -59,6 +60,7 @@ export interface TokenInfoBase {
   touchMenuLetter: string | null;
   menuText: string;
   imagePath: string;
+  overridePosition?: Vector2d;
 }
 export interface NumericTokenInfo extends TokenInfoBase {
   isNumeric: boolean;
@@ -109,6 +111,16 @@ export interface RolesInfo {
   roles: Role[];
 }
 
+export interface TokensInfo {
+  stunned: TokenInfo | null;
+  confused: TokenInfo | null;
+  tough: TokenInfo | null;
+  damage: NumericTokenInfo | null;
+  threat: NumericTokenInfo | null;
+  generic: NumericTokenInfo | null;
+  acceleration: NumericTokenInfo | null;
+}
+
 export interface IPlaymatOption {
   displayName: string;
   imgUrl: string;
@@ -131,15 +143,7 @@ export interface GameProperties {
   possibleIcons: IconInfo[];
   modifiers: ModifierInfo[];
   roles?: RolesInfo;
-  tokens: {
-    stunned: TokenInfo | null;
-    confused: TokenInfo | null;
-    tough: TokenInfo | null;
-    damage: NumericTokenInfo | null;
-    threat: NumericTokenInfo | null;
-    generic: NumericTokenInfo | null;
-    acceleration: NumericTokenInfo | null;
-  };
+  tokens: TokensInfo;
   iconCounters?: IconCounter[];
   textCounters?: TextCounter[];
   useAltCardArtByDefault?: boolean;
@@ -216,4 +220,9 @@ export abstract class GameModule {
   getCountersForEncounterSet?(setCode: string): ICounter[];
   getPlayerBoardsForEncounterSet?(setCode: string): IPlayerBoard[];
   shouldRotateCard?(code: string, type: string, faceup: boolean): boolean;
+  getCustomTokenInfoForCard?(
+    card: ICardStack,
+    cardType: string,
+    defaultTokenInfo: TokensInfo
+  ): TokensInfo | null;
 }

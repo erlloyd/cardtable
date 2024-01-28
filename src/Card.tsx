@@ -18,7 +18,7 @@ import CardStatusToken from "./CardStatusToken";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import GameManager from "./game-modules/GameModuleManager";
 
-export const useIsMount = () => {
+const useIsMount = () => {
   const isMountRef = useRef(true);
 
   useEffect(() => {

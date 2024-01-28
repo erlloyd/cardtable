@@ -4,11 +4,17 @@ import { Rect, Text } from "react-konva";
 import { cardConstants } from "./constants/card-constants";
 import { GameType } from "./game-modules/GameType";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
+import { TokensInfo } from "./game-modules/GameModule";
+import GameManager from "./game-modules/GameModuleManager";
+import { ICardData } from "./features/cards-data/initialState";
+import { getCardType } from "./utilities/card-utils";
+import useImage from "use-image";
 interface IProps {
   currentGameType: GameType;
   x: number;
   y: number;
-  card: ICardStack | undefined;
+  card: ICardStack;
+  cardData: ICardData;
 }
 
 interface IState {
@@ -23,415 +29,297 @@ interface IState {
 const desiredWidth = 47;
 const desiredHeight = 47;
 
-class CardTokens extends Component<IProps, IState> {
-  static whyDidYouRender = false;
-  private damageImg: HTMLImageElement;
-  private threatImg: HTMLImageElement;
-  private genericImg: HTMLImageElement;
-  private accelerationImg: HTMLImageElement;
-  private unmounted: boolean;
-
-  constructor(props: IProps) {
-    super(props);
-
-    this.unmounted = true;
-
-    this.state = {
-      imagesLoaded: {
-        damage: false,
-        threat: false,
-        generic: false,
-        acceleration: false,
-      },
-    };
-
-    this.damageImg = new Image();
-    this.threatImg = new Image();
-    this.genericImg = new Image();
-    this.accelerationImg = new Image();
-
-    const tokenInfo = GamePropertiesMap[this.props.currentGameType].tokens;
-
-    // DAMAGE
-    this.damageImg.onload = () => {
-      if (!this.unmounted) {
-        this.setState({
-          imagesLoaded: {
-            damage: true,
-            threat: this.state.imagesLoaded.threat,
-            generic: this.state.imagesLoaded.generic,
-            acceleration: this.state.imagesLoaded.acceleration,
-          },
-        });
-      }
-    };
-
-    if (!!this.props.card?.counterTokens.damage && !!tokenInfo.damage) {
-      this.damageImg.src = tokenInfo.damage.imagePath;
-    }
-
-    // THREAT
-    this.threatImg.onload = () => {
-      if (!this.unmounted) {
-        this.setState({
-          imagesLoaded: {
-            damage: this.state.imagesLoaded.damage,
-            threat: true,
-            generic: this.state.imagesLoaded.generic,
-            acceleration: this.state.imagesLoaded.acceleration,
-          },
-        });
-      }
-    };
-
-    if (!!this.props.card?.counterTokens.threat && !!tokenInfo.threat) {
-      this.threatImg.src = tokenInfo.threat.imagePath;
-    }
-
-    // GENERIC
-    this.genericImg.onload = () => {
-      if (!this.unmounted) {
-        this.setState({
-          imagesLoaded: {
-            damage: this.state.imagesLoaded.damage,
-            threat: this.state.imagesLoaded.threat,
-            generic: true,
-            acceleration: this.state.imagesLoaded.acceleration,
-          },
-        });
-      }
-    };
-
-    if (!!this.props.card?.counterTokens.generic && !!tokenInfo.generic) {
-      this.genericImg.src = tokenInfo.generic.imagePath;
-    }
-
-    // ACCELERATION
-    this.accelerationImg.onload = () => {
-      if (!this.unmounted) {
-        this.setState({
-          imagesLoaded: {
-            damage: this.state.imagesLoaded.damage,
-            threat: this.state.imagesLoaded.threat,
-            generic: this.state.imagesLoaded.generic,
-            acceleration: true,
-          },
-        });
-      }
-    };
-
-    if (
-      !!this.props.card?.counterTokens.acceleration &&
-      !!tokenInfo.acceleration
-    ) {
-      this.accelerationImg.src = tokenInfo.acceleration.imagePath;
-    }
+const getCorrectTokenInfoHelper = (
+  currentGameType: GameType,
+  cardType: string,
+  card?: ICardStack
+): TokensInfo => {
+  let hasCustom;
+  if (
+    !!GameManager.getModuleForType(currentGameType).getCustomTokenInfoForCard
+  ) {
+    hasCustom = !!card
+      ? GameManager.getModuleForType(currentGameType)
+          .getCustomTokenInfoForCard!!(
+          card,
+          cardType,
+          GameManager.getModuleForType(currentGameType).properties.tokens
+        )
+      : null;
   }
 
-  public componentDidUpdate(prevProps: IProps, prevState: IState) {
-    const tokenInfo = GamePropertiesMap[this.props.currentGameType].tokens;
+  return hasCustom ?? GamePropertiesMap[currentGameType].tokens;
+};
 
-    // DAMAGE
-    if (
-      !this.state.imagesLoaded.damage &&
-      !prevProps.card?.counterTokens.damage &&
-      !!this.props.card?.counterTokens.damage &&
-      !!tokenInfo.damage
-    ) {
-      this.damageImg.src = tokenInfo.damage.imagePath;
-    }
+const CardTokens = (props: IProps) => {
+  if (!props.card) return null;
 
-    // THREAT
-    if (
-      !this.state.imagesLoaded.threat &&
-      !prevProps.card?.counterTokens.threat &&
-      !!this.props.card?.counterTokens.threat &&
-      !!tokenInfo.threat
-    ) {
-      this.threatImg.src = tokenInfo.threat.imagePath;
-    }
+  const tokenInfo = getCorrectTokenInfoHelper(
+    props.currentGameType,
+    getCardType(props.card, props.cardData),
+    props.card
+  );
 
-    // GENERIC
-    if (
-      !this.state.imagesLoaded.generic &&
-      !prevProps.card?.counterTokens.generic &&
-      !!this.props.card?.counterTokens.generic &&
-      !!tokenInfo.generic
-    ) {
-      this.genericImg.src = tokenInfo.generic.imagePath;
-    }
+  const damageTokenInfo = tokenInfo.damage;
+  const threatTokenInfo = tokenInfo.threat;
+  const genericTokenInfo = tokenInfo.generic;
+  const accelTokenInfo = tokenInfo.acceleration;
 
-    // ACCELERATION
-    if (
-      !this.state.imagesLoaded.acceleration &&
-      !prevProps.card?.counterTokens.acceleration &&
-      !!this.props.card?.counterTokens.acceleration &&
-      !!tokenInfo.acceleration
-    ) {
-      this.accelerationImg.src = tokenInfo.acceleration.imagePath;
-    }
-  }
+  const [damageImg, damageImgStatus] = useImage(
+    damageTokenInfo?.imagePath || ""
+  );
 
-  public componentDidMount() {
-    this.unmounted = false;
-  }
+  const [threatImg, threatImgStatus] = useImage(
+    threatTokenInfo?.imagePath || ""
+  );
 
-  public componentWillUnmount() {
-    this.unmounted = true;
-  }
+  const [genericImg, genericImgStatus] = useImage(
+    genericTokenInfo?.imagePath || ""
+  );
 
-  render() {
-    if (!this.props.card) return null;
+  const [accelImg, accelImgStatus] = useImage(accelTokenInfo?.imagePath || "");
 
-    const generalX = cardConstants[this.props.card.sizeType].CARD_WIDTH / 2;
+  const generalX = cardConstants[props.card.sizeType].CARD_WIDTH / 2;
 
-    const damageX = generalX;
-    const damageY = desiredHeight / 2 + 20;
-    this.props.y - cardConstants[this.props.card.sizeType].CARD_HEIGHT / 2 + 20;
-    const showDamage =
-      this.state.imagesLoaded.damage && !!this.props.card.counterTokens.damage;
+  const damageX = damageTokenInfo?.overridePosition?.x ?? generalX;
+  const damageY =
+    damageTokenInfo?.overridePosition?.y ?? desiredHeight / 2 + 20;
+  props.y - cardConstants[props.card.sizeType].CARD_HEIGHT / 2 + 20;
+  const showDamage =
+    !!props.card.counterTokens.damage &&
+    damageImgStatus === "loaded" &&
+    !!damageImg;
 
-    const damageToken = showDamage ? (
-      <Rect
-        key={`${this.props.card.id}-damageToken`}
+  const damageToken = showDamage ? (
+    <Rect
+      key={`${props.card.id}-damageToken`}
+      x={damageX}
+      y={damageY}
+      offsetX={damageImg.naturalWidth / 2}
+      offsetY={damageImg.naturalHeight / 2}
+      scale={{
+        x: desiredWidth / damageImg.naturalWidth,
+        y: desiredHeight / damageImg.naturalHeight,
+      }}
+      width={damageImg.naturalWidth}
+      height={damageImg.naturalHeight}
+      fillPatternImage={damageImg}
+      rotation={props.card.exhausted ? -90 : 0}
+    ></Rect>
+  ) : null;
+
+  const damageSingleOnly = !!tokenInfo.damage?.singleOnly;
+
+  const damageText =
+    showDamage && !damageSingleOnly ? (
+      <Text
+        key={`${props.card.id}-damageText`}
         x={damageX}
         y={damageY}
-        offsetX={this.damageImg.naturalWidth / 2}
-        offsetY={this.damageImg.naturalHeight / 2}
-        scale={{
-          x: desiredWidth / this.damageImg.naturalWidth,
-          y: desiredHeight / this.damageImg.naturalHeight,
-        }}
-        width={this.damageImg.naturalWidth}
-        height={this.damageImg.naturalHeight}
-        fillPatternImage={this.damageImg}
-        rotation={this.props.card.exhausted ? -90 : 0}
-      ></Rect>
+        offsetX={desiredWidth / 2}
+        offsetY={desiredHeight / 2}
+        width={damageImg.naturalWidth * (desiredWidth / damageImg.naturalWidth)}
+        height={
+          damageImg.naturalHeight * (desiredHeight / damageImg.naturalHeight)
+        }
+        text={`${props.card.counterTokens.damage}`}
+        fill="white"
+        stroke={"black"}
+        strokeWidth={1}
+        shadowColor="black"
+        shadowBlur={10}
+        align="center"
+        verticalAlign="middle"
+        fontSize={24}
+        fontStyle="bold"
+        rotation={props.card.exhausted ? -90 : 0}
+      ></Text>
     ) : null;
 
-    const damageSingleOnly =
-      !!GamePropertiesMap[this.props.currentGameType].tokens.damage?.singleOnly;
+  const threatX = threatTokenInfo?.overridePosition?.x ?? generalX;
+  const threatY =
+    threatTokenInfo?.overridePosition?.y ??
+    damageY + (showDamage ? desiredHeight + 5 : 0);
 
-    const damageText =
-      showDamage && !damageSingleOnly ? (
-        <Text
-          key={`${this.props.card.id}-damageText`}
-          x={damageX}
-          y={damageY}
-          offsetX={desiredWidth / 2}
-          offsetY={desiredHeight / 2}
-          width={
-            this.damageImg.naturalWidth *
-            (desiredWidth / this.damageImg.naturalWidth)
-          }
-          height={
-            this.damageImg.naturalHeight *
-            (desiredHeight / this.damageImg.naturalHeight)
-          }
-          text={`${this.props.card.counterTokens.damage}`}
-          fill="white"
-          stroke={"black"}
-          strokeWidth={1}
-          shadowColor="black"
-          shadowBlur={10}
-          align="center"
-          verticalAlign="middle"
-          fontSize={24}
-          fontStyle="bold"
-          rotation={this.props.card.exhausted ? -90 : 0}
-        ></Text>
-      ) : null;
+  const showThreat =
+    !!props.card.counterTokens.threat &&
+    threatImgStatus === "loaded" &&
+    !!threatImg;
 
-    const threatX = generalX;
-    const threatY = damageY + (showDamage ? desiredHeight + 5 : 0);
-    const showThreat =
-      this.state.imagesLoaded.threat && !!this.props.card.counterTokens.threat;
+  const threatToken = showThreat ? (
+    <Rect
+      key={`${props.card.id}-threatToken`}
+      x={threatX}
+      y={threatY}
+      offsetX={threatImg.naturalWidth / 2}
+      offsetY={threatImg.naturalHeight / 2}
+      scale={{
+        x: desiredWidth / threatImg.naturalWidth,
+        y: desiredHeight / threatImg.naturalHeight,
+      }}
+      width={threatImg.naturalWidth}
+      height={threatImg.naturalHeight}
+      fillPatternImage={threatImg}
+      rotation={props.card.exhausted ? -90 : 0}
+    ></Rect>
+  ) : null;
 
-    const threatToken = showThreat ? (
-      <Rect
-        key={`${this.props.card.id}-threatToken`}
+  const threatSingleOnly = !!tokenInfo.threat?.singleOnly;
+
+  const threatText =
+    showThreat && !threatSingleOnly ? (
+      <Text
+        key={`${props.card.id}-threatText`}
         x={threatX}
         y={threatY}
-        offsetX={this.threatImg.naturalWidth / 2}
-        offsetY={this.threatImg.naturalHeight / 2}
-        scale={{
-          x: desiredWidth / this.threatImg.naturalWidth,
-          y: desiredHeight / this.threatImg.naturalHeight,
-        }}
-        width={this.threatImg.naturalWidth}
-        height={this.threatImg.naturalHeight}
-        fillPatternImage={this.threatImg}
-        rotation={this.props.card.exhausted ? -90 : 0}
-      ></Rect>
+        offsetX={desiredWidth / 2}
+        offsetY={desiredHeight / 2}
+        width={threatImg.naturalWidth * (desiredWidth / threatImg.naturalWidth)}
+        height={
+          threatImg.naturalHeight * (desiredHeight / threatImg.naturalHeight)
+        }
+        text={`${props.card.counterTokens.threat}`}
+        fill="white"
+        stroke={"black"}
+        strokeWidth={1}
+        shadowColor="black"
+        shadowBlur={10}
+        align="center"
+        verticalAlign="middle"
+        fontSize={24}
+        fontStyle="bold"
+        rotation={props.card.exhausted ? -90 : 0}
+      ></Text>
     ) : null;
 
-    const threatSingleOnly =
-      !!GamePropertiesMap[this.props.currentGameType].tokens.threat?.singleOnly;
-
-    const threatText =
-      showThreat && !threatSingleOnly ? (
-        <Text
-          key={`${this.props.card.id}-threatText`}
-          x={threatX}
-          y={threatY}
-          offsetX={desiredWidth / 2}
-          offsetY={desiredHeight / 2}
-          width={
-            this.threatImg.naturalWidth *
-            (desiredWidth / this.threatImg.naturalWidth)
-          }
-          height={
-            this.threatImg.naturalHeight *
-            (desiredHeight / this.threatImg.naturalHeight)
-          }
-          text={`${this.props.card.counterTokens.threat}`}
-          fill="white"
-          stroke={"black"}
-          strokeWidth={1}
-          shadowColor="black"
-          shadowBlur={10}
-          align="center"
-          verticalAlign="middle"
-          fontSize={24}
-          fontStyle="bold"
-          rotation={this.props.card.exhausted ? -90 : 0}
-        ></Text>
-      ) : null;
-
-    const genericX = generalX;
-    const genericY =
-      damageY +
+  const genericX = genericTokenInfo?.overridePosition?.x ?? generalX;
+  const genericY =
+    genericTokenInfo?.overridePosition?.y ??
+    damageY +
       (showDamage ? desiredHeight + 5 : 0) +
       (showThreat ? desiredHeight + 5 : 0);
-    const showGeneric =
-      this.state.imagesLoaded.generic &&
-      !!this.props.card.counterTokens.generic;
+  const showGeneric =
+    !!props.card.counterTokens.generic &&
+    genericImgStatus === "loaded" &&
+    !!genericImg;
 
-    const genericToken = showGeneric ? (
-      <Rect
-        key={`${this.props.card.id}-genericToken`}
+  const genericToken = showGeneric ? (
+    <Rect
+      key={`${props.card.id}-genericToken`}
+      x={genericX}
+      y={genericY}
+      offsetX={genericImg.naturalWidth / 2}
+      offsetY={genericImg.naturalHeight / 2}
+      scale={{
+        x: desiredWidth / genericImg.naturalWidth,
+        y: desiredHeight / genericImg.naturalHeight,
+      }}
+      width={genericImg.naturalWidth}
+      height={genericImg.naturalHeight}
+      fillPatternImage={genericImg}
+      rotation={props.card.exhausted ? -90 : 0}
+    ></Rect>
+  ) : null;
+
+  const genericSingleOnly = !!tokenInfo.generic?.singleOnly;
+
+  const genericText =
+    showGeneric && !genericSingleOnly ? (
+      <Text
+        key={`${props.card.id}-genericText`}
         x={genericX}
         y={genericY}
-        offsetX={this.genericImg.naturalWidth / 2}
-        offsetY={this.genericImg.naturalHeight / 2}
-        scale={{
-          x: desiredWidth / this.genericImg.naturalWidth,
-          y: desiredHeight / this.genericImg.naturalHeight,
-        }}
-        width={this.genericImg.naturalWidth}
-        height={this.genericImg.naturalHeight}
-        fillPatternImage={this.genericImg}
-        rotation={this.props.card.exhausted ? -90 : 0}
-      ></Rect>
+        offsetX={desiredWidth / 2}
+        offsetY={desiredHeight / 2}
+        width={
+          genericImg.naturalWidth * (desiredWidth / genericImg.naturalWidth)
+        }
+        height={
+          genericImg.naturalHeight * (desiredHeight / genericImg.naturalHeight)
+        }
+        text={`${props.card.counterTokens.generic}`}
+        fill="white"
+        stroke={"black"}
+        strokeWidth={1}
+        shadowColor="black"
+        shadowBlur={10}
+        align="center"
+        verticalAlign="middle"
+        fontSize={24}
+        fontStyle="bold"
+        rotation={props.card.exhausted ? -90 : 0}
+      ></Text>
     ) : null;
 
-    const genericSingleOnly =
-      !!GamePropertiesMap[this.props.currentGameType].tokens.generic
-        ?.singleOnly;
-
-    const genericText =
-      showGeneric && !genericSingleOnly ? (
-        <Text
-          key={`${this.props.card.id}-genericText`}
-          x={genericX}
-          y={genericY}
-          offsetX={desiredWidth / 2}
-          offsetY={desiredHeight / 2}
-          width={
-            this.genericImg.naturalWidth *
-            (desiredWidth / this.genericImg.naturalWidth)
-          }
-          height={
-            this.genericImg.naturalHeight *
-            (desiredHeight / this.genericImg.naturalHeight)
-          }
-          text={`${this.props.card.counterTokens.generic}`}
-          fill="white"
-          stroke={"black"}
-          strokeWidth={1}
-          shadowColor="black"
-          shadowBlur={10}
-          align="center"
-          verticalAlign="middle"
-          fontSize={24}
-          fontStyle="bold"
-          rotation={this.props.card.exhausted ? -90 : 0}
-        ></Text>
-      ) : null;
-
-    const accelX = generalX;
-    const accelY =
-      damageY +
+  const accelX = accelTokenInfo?.overridePosition?.x ?? generalX;
+  const accelY =
+    accelTokenInfo?.overridePosition?.y ??
+    damageY +
       (showDamage ? desiredHeight + 5 : 0) +
       (showThreat ? desiredHeight + 5 : 0) +
       (showGeneric ? desiredHeight + 5 : 0);
-    const showAccel =
-      this.state.imagesLoaded.acceleration &&
-      !!this.props.card.counterTokens.acceleration;
 
-    const accelToken = showAccel ? (
-      <Rect
-        key={`${this.props.card.id}-accelToken`}
+  const showAccel =
+    !!props.card.counterTokens.acceleration &&
+    accelImgStatus === "loaded" &&
+    !!accelImg;
+
+  const accelToken = showAccel ? (
+    <Rect
+      key={`${props.card.id}-accelToken`}
+      x={accelX}
+      y={accelY}
+      offsetX={accelImg.naturalWidth / 2}
+      offsetY={accelImg.naturalHeight / 2}
+      scale={{
+        x: desiredWidth / accelImg.naturalWidth,
+        y: desiredHeight / accelImg.naturalHeight,
+      }}
+      width={accelImg.naturalWidth}
+      height={accelImg.naturalHeight}
+      fillPatternImage={accelImg}
+      rotation={props.card.exhausted ? -90 : 0}
+    ></Rect>
+  ) : null;
+
+  const accelSingleOnly = !!tokenInfo.acceleration?.singleOnly;
+
+  const accelText =
+    showAccel && !accelSingleOnly ? (
+      <Text
+        key={`${props.card.id}-accelText`}
         x={accelX}
         y={accelY}
-        offsetX={this.accelerationImg.naturalWidth / 2}
-        offsetY={this.accelerationImg.naturalHeight / 2}
-        scale={{
-          x: desiredWidth / this.accelerationImg.naturalWidth,
-          y: desiredHeight / this.accelerationImg.naturalHeight,
-        }}
-        width={this.accelerationImg.naturalWidth}
-        height={this.accelerationImg.naturalHeight}
-        fillPatternImage={this.accelerationImg}
-        rotation={this.props.card.exhausted ? -90 : 0}
-      ></Rect>
+        offsetX={desiredWidth / 2}
+        offsetY={desiredHeight / 2}
+        width={accelImg.naturalWidth * (desiredWidth / accelImg.naturalWidth)}
+        height={
+          accelImg.naturalHeight * (desiredHeight / accelImg.naturalHeight)
+        }
+        text={`${props.card.counterTokens.acceleration}`}
+        fill="white"
+        stroke={"black"}
+        strokeWidth={1}
+        shadowColor="black"
+        shadowBlur={10}
+        align="center"
+        verticalAlign="middle"
+        fontSize={24}
+        fontStyle="bold"
+        rotation={props.card.exhausted ? -90 : 0}
+      ></Text>
     ) : null;
 
-    const accelSingleOnly =
-      !!GamePropertiesMap[this.props.currentGameType].tokens.acceleration
-        ?.singleOnly;
-
-    const accelText =
-      showAccel && !accelSingleOnly ? (
-        <Text
-          key={`${this.props.card.id}-accelText`}
-          x={accelX}
-          y={accelY}
-          offsetX={desiredWidth / 2}
-          offsetY={desiredHeight / 2}
-          width={
-            this.accelerationImg.naturalWidth *
-            (desiredWidth / this.accelerationImg.naturalWidth)
-          }
-          height={
-            this.accelerationImg.naturalHeight *
-            (desiredHeight / this.accelerationImg.naturalHeight)
-          }
-          text={`${this.props.card.counterTokens.acceleration}`}
-          fill="white"
-          stroke={"black"}
-          strokeWidth={1}
-          shadowColor="black"
-          shadowBlur={10}
-          align="center"
-          verticalAlign="middle"
-          fontSize={24}
-          fontStyle="bold"
-          rotation={this.props.card.exhausted ? -90 : 0}
-        ></Text>
-      ) : null;
-
-    return [
-      damageToken,
-      damageText,
-      threatToken,
-      threatText,
-      genericToken,
-      genericText,
-      accelToken,
-      accelText,
-    ];
-  }
-}
+  return [
+    damageToken,
+    damageText,
+    threatToken,
+    threatText,
+    genericToken,
+    genericText,
+    accelToken,
+    accelText,
+  ];
+};
 
 export default CardTokens;

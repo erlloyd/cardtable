@@ -1716,7 +1716,7 @@ class Game extends Component<IProps, IState> {
     const extraIconsForGameType =
       GamePropertiesMap[this.props.currentGameType].possibleIcons;
 
-    if (modifiersForGameType.length > 0) {
+    if (modifiersForGameType.length > 0 || extraIconsForGameType.length > 0) {
       menuItems.push({
         label: "Modifiers",
         children: modifiersForGameType

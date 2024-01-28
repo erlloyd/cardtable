@@ -104,7 +104,9 @@ const ContextualOptionsMenu = (props: IProps) => {
       props.currentGameType
     ).properties;
 
-    hasMods = currentProperties.modifiers.length > 0;
+    hasMods =
+      currentProperties.modifiers.length > 0 ||
+      currentProperties.possibleIcons.length > 0;
     hasStatusTokens =
       !!currentProperties.tokens.stunned ||
       !!currentProperties.tokens.confused ||
