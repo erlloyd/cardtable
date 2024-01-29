@@ -49,8 +49,9 @@ import { myPeerRef } from "../../constants/app-constants";
 import log from "loglevel";
 import { makeFakeCardStackFromJsonId } from "../../utilities/card-utils";
 import { makeBasicPlayerBoard } from "../../utilities/playerboard-utils";
-import { updateActiveGameType } from "../game/game.slice";
 import GameManager from "../../game-modules/GameModuleManager";
+import { addNewPlaymatInColumnWithId } from "../playmats/playmats.actions";
+import { resetPlaymats } from "../playmats/playmats.slice";
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 const CARD_ATTACH_TARGET_MIN_DISTANCE = 50;
@@ -1536,6 +1537,8 @@ const cardsSlice = createSlice({
       state.cards = action.payload.liveState.present.cards.cards;
       state.ghostCards = action.payload.liveState.present.cards.ghostCards;
       state.playerHands = action.payload.liveState.present.cards.playerHands;
+      state.tableCardSlots =
+        action.payload.liveState.present.cards.tableCardSlots;
     });
 
     builder.addCase(verifyRemoteGameState, (state, action) => {
@@ -1598,7 +1601,39 @@ const cardsSlice = createSlice({
       }
     });
 
-    builder.addCase(resetApp, (state) => {
+    builder.addCase(addNewPlaymatInColumnWithId, (state, action) => {
+      let tableSlots =
+        GameManager.getModuleForType(action.payload.currentGameType).properties
+          .tableCardSlots ?? [];
+
+      if (
+        !!GameManager.getModuleForType(action.payload.currentGameType)
+          .getTableCardSlots
+      ) {
+        tableSlots =
+          GameManager.getModuleForType(action.payload.currentGameType)
+            .getTableCardSlots!!(action.payload.currentNumPlaymats + 2) ?? // add 1 for the default playmat, and add 1 for the new playmat that is being added
+          tableSlots;
+      }
+
+      state.tableCardSlots = tableSlots;
+    });
+
+    // builder.addCase(resetPlaymats, (state, action) => {
+    //   let tableSlots =
+    //     GameManager.getModuleForType(action.payload).properties
+    //       .tableCardSlots ?? [];
+
+    //   if (!!GameManager.getModuleForType(action.payload).getTableCardSlots) {
+    //     tableSlots =
+    //       GameManager.getModuleForType(action.payload).getTableCardSlots!!(1) ??
+    //       tableSlots;
+    //   }
+
+    //   state.tableCardSlots = tableSlots;
+    // });
+
+    builder.addCase(resetApp, (state, action) => {
       state.cards = [];
       state.playerBoards = [];
       state.playerHands = generateDefaultPlayerHands();
@@ -1606,12 +1641,18 @@ const cardsSlice = createSlice({
       state.dropTargetCards = {};
       state.ghostCards = [];
       state.panMode = true;
-    });
 
-    builder.addCase(updateActiveGameType, (state, action) => {
-      state.tableCardSlots =
+      let tableSlots =
         GameManager.getModuleForType(action.payload).properties
           .tableCardSlots ?? [];
+
+      if (!!GameManager.getModuleForType(action.payload).getTableCardSlots) {
+        tableSlots =
+          GameManager.getModuleForType(action.payload).getTableCardSlots!!(1) ??
+          tableSlots;
+      }
+
+      state.tableCardSlots = tableSlots;
     });
 
     builder.addCase(addCardStackWithSnapAndId, (state, action) => {

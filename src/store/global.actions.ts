@@ -1,7 +1,8 @@
 import { createAction } from "@reduxjs/toolkit";
 import { RootState } from "./rootReducer";
+import { GameType } from "../game-modules/GameType";
 
-export const resetApp = createAction("resetAction");
+export const resetApp = createAction<GameType>("resetAction");
 
 export const receiveRemoteGameState = createAction<RootState>(
   "receiveRemoteGameState"

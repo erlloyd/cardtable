@@ -18,7 +18,7 @@ import { GameType } from "../GameType";
 import { packList as ebrPackList } from "./generated/setList_earthborne-rangers";
 import { properties } from "./properties";
 import setList from "./external/sets/sets.json";
-import { ICardStack } from "../../features/cards/initialState";
+import { ICardSlot, ICardStack } from "../../features/cards/initialState";
 import { GamePropertiesMap } from "../../constants/game-type-properties-mapping";
 
 interface EBRCard {
@@ -210,6 +210,87 @@ export default class EarthborneRangersGameModule extends GameModule {
       };
     }
     return defaultTokenInfo;
+  }
+
+  getTableCardSlots?(numPlaymats: number): ICardSlot[] | undefined {
+    // Global with 1 or 2 playmats
+    const globalWith1or2playmats = [
+      { landscape: false, relativeX: 505, relativeY: 218 },
+      { landscape: false, relativeX: 677, relativeY: 218 },
+      { landscape: false, relativeX: 953, relativeY: 218 },
+      { landscape: false, relativeX: 1123, relativeY: 218 },
+      { landscape: true, relativeX: 824, relativeY: 513 },
+    ];
+
+    const globalWith3to5playmats = [
+      { landscape: false, relativeX: 1290, relativeY: 218 },
+      { landscape: false, relativeX: 1464, relativeY: 218 },
+      { landscape: false, relativeX: 1737, relativeY: 218 },
+      { landscape: false, relativeX: 1911, relativeY: 218 },
+      { landscape: true, relativeX: 1603, relativeY: 513 },
+    ];
+
+    const playerPlaymat1 = [
+      { landscape: false, relativeX: 228, relativeY: 1728 },
+      { landscape: false, relativeX: 419, relativeY: 1728 },
+      { landscape: false, relativeX: 964, relativeY: 1728 },
+      { landscape: false, relativeX: 1152, relativeY: 1728 },
+      { landscape: true, relativeX: 1371, relativeY: 1760 },
+    ];
+    const playerPlaymat2 = [
+      { landscape: false, relativeX: 1798, relativeY: 1728 },
+      { landscape: false, relativeX: 1989, relativeY: 1728 },
+      { landscape: false, relativeX: 2532, relativeY: 1728 },
+      { landscape: false, relativeX: 2723, relativeY: 1728 },
+      { landscape: true, relativeX: 2940, relativeY: 1760 },
+    ];
+    const playerPlaymat3 = [
+      { landscape: false, relativeX: 228, relativeY: 2664 },
+      { landscape: false, relativeX: 419, relativeY: 2664 },
+      { landscape: false, relativeX: 964, relativeY: 2664 },
+      { landscape: false, relativeX: 1152, relativeY: 2664 },
+      { landscape: true, relativeX: 1371, relativeY: 2696 },
+    ];
+    const playerPlaymat4 = [
+      { landscape: false, relativeX: 1798, relativeY: 2664 },
+      { landscape: false, relativeX: 1989, relativeY: 2664 },
+      { landscape: false, relativeX: 2532, relativeY: 2664 },
+      { landscape: false, relativeX: 2723, relativeY: 2664 },
+      { landscape: true, relativeX: 2940, relativeY: 2696 },
+    ];
+
+    let returnSlots = [] as ICardSlot[];
+
+    switch (numPlaymats) {
+      case 1:
+        returnSlots = globalWith1or2playmats;
+        break;
+      case 2:
+        returnSlots = globalWith1or2playmats.concat(playerPlaymat1);
+        break;
+      case 3:
+        returnSlots = globalWith3to5playmats
+          .concat(playerPlaymat1)
+          .concat(playerPlaymat2);
+        break;
+      case 4:
+        returnSlots = globalWith3to5playmats
+          .concat(playerPlaymat1)
+          .concat(playerPlaymat2)
+          .concat(playerPlaymat3);
+        break;
+      case 5:
+        returnSlots = globalWith3to5playmats
+          .concat(playerPlaymat1)
+          .concat(playerPlaymat2)
+          .concat(playerPlaymat3)
+          .concat(playerPlaymat4);
+        break;
+      default:
+        returnSlots = globalWith1or2playmats;
+    }
+
+    return returnSlots;
   }
 }
 

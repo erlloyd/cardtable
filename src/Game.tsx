@@ -131,7 +131,7 @@ interface IProps {
   // }) => void;
   updateZoom: (zoom: Vector2d) => void;
   updatePosition: (pos: Vector2d) => void;
-  resetApp: () => void;
+  resetApp: (currentGameType: GameType) => void;
   addCardStack: (payload: {
     cardJsonIds: string[];
     position: Vector2d;
@@ -339,7 +339,7 @@ class Game extends Component<IProps, IState> {
 
   public componentDidMount() {
     if (!GamePropertiesMap[this.props.currentGameType]) {
-      this.props.resetApp();
+      this.props.resetApp(this.props.currentGameType);
       this.props.quitGame();
       this.props.clearHistory();
       return null;
@@ -2705,7 +2705,7 @@ class Game extends Component<IProps, IState> {
                 description: "This will reset the game",
               })
               .then(() => {
-                this.props.resetApp();
+                this.props.resetApp(this.props.currentGameType);
               })
               .catch(() => {
                 // do nothing on cancel
@@ -2722,7 +2722,7 @@ class Game extends Component<IProps, IState> {
                 description: "This will take you back to game selection screen",
               })
               .then(() => {
-                this.props.resetApp();
+                this.props.resetApp(this.props.currentGameType);
                 this.props.quitGame();
                 this.props.clearHistory();
               })

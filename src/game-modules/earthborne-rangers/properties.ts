@@ -15,7 +15,7 @@ export const properties: GameProperties = {
     "/images/from_modules/earthborne-rangers/ebr_global_board.png",
   customPlaymatWidth: 1540,
   additionalPlaymatImageOptions: {
-    layout: "column",
+    layout: "ebr",
     additionalImages: [
       {
         displayName: "Player Mat",
@@ -80,11 +80,4 @@ export const properties: GameProperties = {
   iconCounters: [],
   useAltCardArtByDefault: true,
   defaultAttachLocation: CardAttachLocation.UpAndRight,
-  tableCardSlots: [
-    { landscape: false, relativeX: 505, relativeY: 218 },
-    { landscape: false, relativeX: 677, relativeY: 218 },
-    { landscape: false, relativeX: 953, relativeY: 218 },
-    { landscape: false, relativeX: 1123, relativeY: 218 },
-    { landscape: true, relativeX: 824, relativeY: 513 },
-  ],
 };

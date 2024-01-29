@@ -11,6 +11,9 @@ import { sendNotification } from "../notifications/notifications.slice";
 import { v4 as uuidv4 } from "uuid";
 import { receiveRemoteGameState } from "../../store/global.actions";
 import gameSlice from "./game.slice";
+import { GameType } from "../../game-modules/GameType";
+import { GamePropertiesMap } from "../../constants/game-type-properties-mapping";
+import { getPlaymatsInColumnRowOrder } from "../playmats/playmats.selectors";
 
 export const generateGameStateSave =
   (): ThunkAction<void, RootState, unknown, Action<any>> =>

@@ -26,3 +26,10 @@ export const getPlaymatsInColumnRowOrder = createSelector(
     });
   }
 );
+
+export const getPlaymatUrlsIncludeInitial = createSelector(
+  [getPlaymatsInColumnRowOrder, (state, initialUrl) => initialUrl],
+  (playmatArray, initialUrl) => {
+    return [initialUrl].concat(playmatArray.map((p) => p.imgUrl));
+  }
+);

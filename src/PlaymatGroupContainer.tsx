@@ -2,19 +2,25 @@ import { connect } from "react-redux";
 import PlaymatGroup from "./PlaymatGroup";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import { getActiveGameType } from "./features/game/game.selectors";
-import { getPlaymatsInColumnRowOrder } from "./features/playmats/playmats.selectors";
+import {
+  getPlaymatUrlsIncludeInitial,
+  getPlaymatsInColumnRowOrder,
+} from "./features/playmats/playmats.selectors";
 import { RootState } from "./store/rootReducer";
+
+const startingPos = { x: 50, y: 50 };
 
 const mapStateToProps = (state: RootState) => {
   const gameType = getActiveGameType(state);
   return {
-    imgUrls: [
+    imgUrls: getPlaymatUrlsIncludeInitial(
+      state,
       !!gameType
         ? GamePropertiesMap[gameType].initialPlaymatImageLocation ||
-          "/images/table/background_default.jpg"
-        : "/images/table/background_default.jpg",
-    ].concat(getPlaymatsInColumnRowOrder(state).map((p) => p.imgUrl)),
-    startingPos: { x: 50, y: 50 },
+            "/images/table/background_default.jpg"
+        : "/images/table/background_default.jpg"
+    ),
+    startingPos,
     defaultLayoutDirection:
       !!gameType && !!GamePropertiesMap[gameType].additionalPlaymatImageOptions
         ? GamePropertiesMap[gameType].additionalPlaymatImageOptions!.layout

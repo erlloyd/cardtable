@@ -10,7 +10,6 @@ import {
   IGameCardsDataStateStored,
 } from "./initialState";
 import { CardData } from "../../external-api/common-card-data";
-import { updateActiveGameType } from "../game/game.slice";
 import { receiveRemoteGameState } from "../../store/global.actions";
 
 // TODO: Get this into modules
@@ -19,6 +18,7 @@ import log from "loglevel";
 import { ILoadEncounterSetData } from "../../game-modules/GameModule";
 import GameManager from "../../game-modules/GameModuleManager";
 import { GameType } from "../../game-modules/GameType";
+import { updateActiveGameType } from "../game/game.slice";
 
 // Reducers
 const loadCardsDataReducer: CaseReducer<

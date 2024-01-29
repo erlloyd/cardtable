@@ -126,6 +126,8 @@ export interface IPlaymatOption {
   imgUrl: string;
 }
 
+export type IPlaymatLayout = "row" | "column" | "ebr";
+
 export interface GameProperties {
   deckSite: string;
   decklistApi: string;
@@ -137,7 +139,7 @@ export interface GameProperties {
   initialPlaymatImageLocation: string;
   customPlaymatWidth?: number;
   additionalPlaymatImageOptions?: {
-    layout: "row" | "column";
+    layout: IPlaymatLayout;
     additionalImages: IPlaymatOption[];
   };
   possibleIcons: IconInfo[];
@@ -225,4 +227,5 @@ export abstract class GameModule {
     cardType: string,
     defaultTokenInfo: TokensInfo
   ): TokensInfo | null;
+  getTableCardSlots?(numPlaymats: number): ICardSlot[] | undefined;
 }
