@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import log from "loglevel";
-import { CardSizeType } from "../../constants/card-constants";
+import { CardSizeType, CounterTokenType } from "../../constants/card-constants";
 import { CardData } from "../../external-api/common-card-data";
 import { IEncounterEntity } from "../../features/cards-data/cards-data.selectors";
 import { ICardData, ISetData } from "../../features/cards-data/initialState";
@@ -180,22 +180,32 @@ export default class EarthborneRangersGameModule extends GameModule {
           imagePath:
             "/images/from_modules/earthborne-rangers/awareness_token.png",
           overridePosition: { x: 40, y: 50 },
+          menuText: "Set Awareness",
+          touchMenuLetter: "Awr",
         } as NumericTokenInfo,
         threat: {
           ...defaultTokenInfo.threat,
           imagePath: "/images/from_modules/earthborne-rangers/spirit_token.png",
           overridePosition: { x: 115, y: 50 },
+          menuText: "Set Spirit",
+          touchMenuLetter: "Spr",
         } as NumericTokenInfo,
         generic: {
           ...defaultTokenInfo.generic,
           imagePath:
             "/images/from_modules/earthborne-rangers/fitness_token.png",
           overridePosition: { x: 40, y: 160 },
+          menuText: "Set Fitness",
+          touchMenuLetter: "Fit",
         } as NumericTokenInfo,
         acceleration: {
           ...defaultTokenInfo.acceleration,
           imagePath: "/images/from_modules/earthborne-rangers/focus_token.png",
           overridePosition: { x: 115, y: 160 },
+          menuText: "Set Focus",
+          touchMenuLetter: "Foc",
+          counterTokenType: CounterTokenType.Acceleration,
+          isNumeric: true,
         } as NumericTokenInfo,
       };
     }

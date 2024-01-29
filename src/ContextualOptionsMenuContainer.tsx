@@ -35,6 +35,7 @@ import {
   toggleSnapCardsToGrid,
 } from "./features/game/game.slice";
 import { RootState } from "./store/rootReducer";
+import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
 
 const mapStateToProps = (state: RootState) => {
   const playerNumberToShow =
@@ -49,6 +50,7 @@ const mapStateToProps = (state: RootState) => {
     multiselectMode: getMultiselectMode(state),
     drawCardsIntoHand: getGame(state).drawCardsIntoHand,
     snapCardsToGrid: getSnapCardsToGrid(state),
+    cardData: getCardsDataEntities(state),
   };
 };
 

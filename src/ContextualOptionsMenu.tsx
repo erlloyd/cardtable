@@ -7,11 +7,12 @@ import { Vector2d } from "konva/lib/types";
 import Tooltip from "@mui/material/Tooltip";
 import { useState } from "react";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
-import { anyCardStackHasStatus } from "./utilities/card-utils";
+import { anyCardStackHasStatus, getCardType } from "./utilities/card-utils";
 import { ICardStack } from "./features/cards/initialState";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import { NumericTokenInfo, TokenInfo } from "./game-modules/GameModule";
 import GameManager from "./game-modules/GameModuleManager";
+import { ICardData } from "./features/cards-data/initialState";
 
 interface IProps {
   anyCardsSelected: boolean;
@@ -65,6 +66,7 @@ interface IProps {
   toggleExtraIcon: (icon: string) => void;
   showCardSelector: (cardStack: ICardStack, isSelect: boolean) => void;
   drawCardsOutOfCardStack: (payload: DrawCardsOutOfCardStackPayload) => void;
+  cardData: ICardData;
 }
 
 enum MenuType {
@@ -100,22 +102,37 @@ const ContextualOptionsMenu = (props: IProps) => {
   let hasStatusTokens = false;
   let hasCounterTokens = false;
   if (props.currentGameType) {
-    const currentProperties = GameManager.getModuleForType(
+    const defaultProperties = GameManager.getModuleForType(
       props.currentGameType
     ).properties;
 
+    let currentTokenProperties = defaultProperties.tokens;
+    if (
+      !!GameManager.getModuleForType(props.currentGameType)
+        .getCustomTokenInfoForCard &&
+      props.selectedCardStacks.length > 0
+    ) {
+      currentTokenProperties =
+        GameManager.getModuleForType(props.currentGameType)
+          .getCustomTokenInfoForCard!!(
+          props.selectedCardStacks[0],
+          getCardType(props.selectedCardStacks[0], props.cardData),
+          currentTokenProperties
+        ) ?? currentTokenProperties;
+    }
+
     hasMods =
-      currentProperties.modifiers.length > 0 ||
-      currentProperties.possibleIcons.length > 0;
+      defaultProperties.modifiers.length > 0 ||
+      defaultProperties.possibleIcons.length > 0;
     hasStatusTokens =
-      !!currentProperties.tokens.stunned ||
-      !!currentProperties.tokens.confused ||
-      !!currentProperties.tokens.tough;
+      !!currentTokenProperties.stunned ||
+      !!currentTokenProperties.confused ||
+      !!currentTokenProperties.tough;
     hasCounterTokens =
-      !!currentProperties.tokens.damage ||
-      !!currentProperties.tokens.threat ||
-      !!currentProperties.tokens.generic ||
-      !!currentProperties.tokens.acceleration;
+      !!currentTokenProperties.damage ||
+      !!currentTokenProperties.threat ||
+      !!currentTokenProperties.generic ||
+      !!currentTokenProperties.acceleration;
   }
 
   return (
@@ -303,7 +320,24 @@ const renderStatusTokenActionsSubMenu = (props: IProps, ypos: number) => {
     return null;
   }
 
-  const buttons = Object.values(GamePropertiesMap[props.currentGameType].tokens)
+  const defaultTokens = GamePropertiesMap[props.currentGameType].tokens;
+  let tokenInfo = defaultTokens;
+
+  if (
+    !!GameManager.getModuleForType(props.currentGameType)
+      .getCustomTokenInfoForCard &&
+    props.selectedCardStacks.length > 0
+  ) {
+    tokenInfo =
+      GameManager.getModuleForType(props.currentGameType)
+        .getCustomTokenInfoForCard!!(
+        props.selectedCardStacks[0],
+        getCardType(props.selectedCardStacks[0], props.cardData),
+        defaultTokens
+      ) ?? defaultTokens;
+  }
+
+  const buttons = Object.values(tokenInfo)
     .filter(
       (tokenInfo): tokenInfo is TokenInfo =>
         !!tokenInfo && !(tokenInfo as NumericTokenInfo).isNumeric
@@ -372,7 +406,24 @@ const renderModifierTokenActionsSubMenu = (props: IProps, ypos: number) => {
     return null;
   }
 
-  let buttons = Object.values(GamePropertiesMap[props.currentGameType].tokens)
+  const defaultTokens = GamePropertiesMap[props.currentGameType].tokens;
+  let tokenInfo = defaultTokens;
+
+  if (
+    !!GameManager.getModuleForType(props.currentGameType)
+      .getCustomTokenInfoForCard &&
+    props.selectedCardStacks.length > 0
+  ) {
+    tokenInfo =
+      GameManager.getModuleForType(props.currentGameType)
+        .getCustomTokenInfoForCard!!(
+        props.selectedCardStacks[0],
+        getCardType(props.selectedCardStacks[0], props.cardData),
+        defaultTokens
+      ) ?? defaultTokens;
+  }
+
+  let buttons = Object.values(tokenInfo)
     .filter(
       (tokenInfo): tokenInfo is NumericTokenInfo =>
         !!tokenInfo && (tokenInfo as NumericTokenInfo).isNumeric

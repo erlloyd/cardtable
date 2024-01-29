@@ -1480,8 +1480,24 @@ class Game extends Component<IProps, IState> {
       },
     });
 
-    const tokenInfoForGameType =
+    const defaultTokenInfoForGameType =
       GamePropertiesMap[this.props.currentGameType].tokens;
+
+    let tokenInfoForGameType = defaultTokenInfoForGameType;
+
+    if (
+      !!GameManager.getModuleForType(this.props.currentGameType)
+        .getCustomTokenInfoForCard &&
+      mySelectedCards.length > 0
+    ) {
+      tokenInfoForGameType =
+        GameManager.getModuleForType(this.props.currentGameType)
+          .getCustomTokenInfoForCard!!(
+          mySelectedCards[0],
+          getCardType(mySelectedCards[0], this.props.cardsData),
+          defaultTokenInfoForGameType
+        ) ?? defaultTokenInfoForGameType;
+    }
 
     if (!!tokenInfoForGameType.stunned) {
       if (tokenInfoForGameType.stunned.canStackMultiple) {
@@ -1673,6 +1689,27 @@ class Game extends Component<IProps, IState> {
             tokenValueModifierProps: {
               id: card?.id || "",
               tokenType: CounterTokenType.Generic,
+            },
+            tokenValueModifierPosition:
+              this.stage?.getPointerPosition() ?? null,
+          });
+        },
+      });
+    }
+
+    if (!!tokenInfoForGameType.acceleration) {
+      menuItems.push({
+        label: tokenInfoForGameType.acceleration.menuText,
+        action: () => {
+          this.setState({
+            showContextMenu: false,
+            contextMenuItems: [],
+            contextMenuPosition: null,
+
+            showTokenValueModifier: true,
+            tokenValueModifierProps: {
+              id: card?.id || "",
+              tokenType: CounterTokenType.Acceleration,
             },
             tokenValueModifierPosition:
               this.stage?.getPointerPosition() ?? null,
@@ -2186,8 +2223,26 @@ class Game extends Component<IProps, IState> {
       (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) &&
       !Number.isNaN(intCode)
     ) {
-      const tokenInfoForGameType =
+      const defaultTokenInfoForGameType =
         GamePropertiesMap[this.props.currentGameType].tokens;
+
+      let tokenInfoForGameType = defaultTokenInfoForGameType;
+      const mySelectedCards = getMySelectedCards(this.props.cards.cards);
+
+      if (
+        !!GameManager.getModuleForType(this.props.currentGameType)
+          .getCustomTokenInfoForCard &&
+        mySelectedCards.length > 0
+      ) {
+        tokenInfoForGameType =
+          GameManager.getModuleForType(this.props.currentGameType)
+            .getCustomTokenInfoForCard!!(
+            mySelectedCards[0],
+            getCardType(mySelectedCards[0], this.props.cardsData),
+            defaultTokenInfoForGameType
+          ) ?? defaultTokenInfoForGameType;
+      }
+
       switch (intCode) {
         case 1:
           if (!!tokenInfoForGameType.damage) {
@@ -2215,7 +2270,7 @@ class Game extends Component<IProps, IState> {
           }
           break;
         case 4:
-          if (!!tokenInfoForGameType.damage) {
+          if (!!tokenInfoForGameType.acceleration) {
             this.props.adjustCounterToken({
               tokenType: CounterTokenType.Acceleration,
               delta: event.shiftKey ? -1 : 1,
