@@ -1619,19 +1619,22 @@ const cardsSlice = createSlice({
       state.tableCardSlots = tableSlots;
     });
 
-    // builder.addCase(resetPlaymats, (state, action) => {
-    //   let tableSlots =
-    //     GameManager.getModuleForType(action.payload).properties
-    //       .tableCardSlots ?? [];
+    builder.addCase(resetPlaymats, (state, action) => {
+      let tableSlots =
+        GameManager.getModuleForType((action as any).CURRENT_GAME_TYPE)
+          .properties.tableCardSlots ?? [];
 
-    //   if (!!GameManager.getModuleForType(action.payload).getTableCardSlots) {
-    //     tableSlots =
-    //       GameManager.getModuleForType(action.payload).getTableCardSlots!!(1) ??
-    //       tableSlots;
-    //   }
+      if (
+        !!GameManager.getModuleForType((action as any).CURRENT_GAME_TYPE)
+          .getTableCardSlots
+      ) {
+        tableSlots =
+          GameManager.getModuleForType((action as any).CURRENT_GAME_TYPE)
+            .getTableCardSlots!!(1) ?? tableSlots;
+      }
 
-    //   state.tableCardSlots = tableSlots;
-    // });
+      state.tableCardSlots = tableSlots;
+    });
 
     builder.addCase(resetApp, (state, action) => {
       state.cards = [];

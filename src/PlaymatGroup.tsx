@@ -1,5 +1,5 @@
 import { Vector2d } from "konva/lib/types";
-import { useCallback, useState } from "react";
+import { useCallback, useReducer, useRef, useState } from "react";
 import Playmat from "./Playmat";
 import {
   defaultPlaymatHeight,
@@ -14,15 +14,23 @@ interface IProps {
 }
 
 const PlaymatGroup = (props: IProps) => {
-  const [playmatDimensions, setPlaymatDimensions] = useState(
+  // const [playmatDimensions, setPlaymatDimensions] = useState(
+  //   {} as { [key: string]: { width: number; height: number } }
+  // );
+  const [_, forceUpdate] = useReducer((x) => x + 1, 0);
+
+  const playmatDimensions = useRef(
     {} as { [key: string]: { width: number; height: number } }
   );
   const handlePlaymatLoaded = useCallback(
     (id: string, playmatWidth: number, playmatHeight: number) => {
-      playmatDimensions[id] = { width: playmatWidth, height: playmatHeight };
-      setPlaymatDimensions(playmatDimensions);
+      playmatDimensions.current = {
+        ...playmatDimensions.current,
+        [id]: { width: playmatWidth, height: playmatHeight },
+      };
+      forceUpdate();
     },
-    [setPlaymatDimensions, playmatDimensions]
+    []
   );
 
   // Build up the playmat list
@@ -37,13 +45,11 @@ const PlaymatGroup = (props: IProps) => {
   if (props.defaultLayoutDirection === "ebr" && multiplePlayerPlaymats) {
     overrideFirstXPos =
       currentXPos +
-      ((playmatDimensions[0]?.width || defaultPlaymatWidth) + 30) / 2;
+      ((playmatDimensions.current[0]?.width || defaultPlaymatWidth) + 30) / 2;
   }
 
   props.imgUrls.forEach((url, index) => {
     // For now, only do one direction
-
-    console.log(`Playmat index ${index}`);
 
     playmats.push(
       <Playmat
@@ -60,26 +66,28 @@ const PlaymatGroup = (props: IProps) => {
 
     if (props.defaultLayoutDirection === "column") {
       currentYPos +=
-        (playmatDimensions[`${index}`]?.height || defaultPlaymatHeight) + 30;
+        (playmatDimensions.current[`${index}`]?.height ||
+          defaultPlaymatHeight) + 30;
     } else if (props.defaultLayoutDirection === "row") {
       currentXPos +=
-        (playmatDimensions[`${index}`]?.width || defaultPlaymatWidth) + 30;
+        (playmatDimensions.current[`${index}`]?.width || defaultPlaymatWidth) +
+        30;
     } else if (props.defaultLayoutDirection === "ebr") {
       if (index === 0) {
-        console.log("index is 0");
         currentYPos +=
-          (playmatDimensions[`${index}`]?.height || defaultPlaymatHeight) + 30;
+          (playmatDimensions.current[`${index}`]?.height ||
+            defaultPlaymatHeight) + 30;
       }
 
       if (index !== 0 && index % 2 === 0) {
-        console.log("index is even");
         currentXPos = props.startingPos.x;
         currentYPos +=
-          (playmatDimensions[`${index}`]?.height || defaultPlaymatHeight) + 30;
+          (playmatDimensions.current[`${index}`]?.height ||
+            defaultPlaymatHeight) + 30;
       } else if (index % 2 === 1) {
         currentXPos +=
-          (playmatDimensions[`${index}`]?.width || defaultPlaymatWidth) + 30;
-        console.log("index is odd");
+          (playmatDimensions.current[`${index}`]?.width ||
+            defaultPlaymatWidth) + 30;
       }
     }
   });

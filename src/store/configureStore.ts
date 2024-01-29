@@ -6,6 +6,7 @@ import { websocketMiddleware } from "./websocket-server-multiplayer-middleware";
 import { peerJSMiddleware } from "./peer-js-redux-middleware";
 import log from "loglevel";
 import { useWebRTCLocalStorage } from "../constants/app-constants";
+import { addCurrentGameTypeMiddleware } from "./addCurrentGameTypeMiddleware";
 
 export default function configureStore() {
   log.debug("configuring store. NODE_ENV is " + import.meta.env.MODE);
@@ -16,7 +17,7 @@ export default function configureStore() {
         thunk: true,
         immutableCheck: false,
         serializableCheck: false,
-      });
+      }).concat(addCurrentGameTypeMiddleware);
 
       const wsCustomizedMiddleware =
         baseCustomizedMiddleware.concat(websocketMiddleware);
