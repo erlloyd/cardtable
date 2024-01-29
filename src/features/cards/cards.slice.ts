@@ -326,6 +326,8 @@ const getDropTargetCard = (
     });
   }
 
+  // console.log("CARD IS AT", draggedCardPosition);
+
   // Lastly go through all player board slots (including the main play area slots)
   if (possibleDropTargets.length === 0) {
     const boards = state.playerBoards.concat([
@@ -339,7 +341,6 @@ const getDropTargetCard = (
 
     boards.forEach((pb) => {
       pb.cardSlots.forEach((slot) => {
-        // console.log("CARD IS AT", draggedCardPosition);
         const distance = getDistance(
           { x: pb.x + slot.relativeX, y: pb.y + slot.relativeY },
           draggedCardPosition

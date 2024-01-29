@@ -12,7 +12,17 @@ export const properties: GameProperties = {
   decklistSearchApiConstants: "",
   encounterUiName: "Sets",
   initialPlaymatImageLocation:
-    "/images/from_modules/earthborne-rangers/ebr-playmat.webp",
+    "/images/from_modules/earthborne-rangers/ebr_global_board.png",
+  customPlaymatWidth: 1540,
+  additionalPlaymatImageOptions: {
+    layout: "column",
+    additionalImages: [
+      {
+        displayName: "Player Mat",
+        imgUrl: "/images/from_modules/earthborne-rangers/ebr_player_board.png",
+      },
+    ],
+  },
   possibleIcons: [
     {
       iconId: "blue_ranger_token",
@@ -70,4 +80,11 @@ export const properties: GameProperties = {
   iconCounters: [],
   useAltCardArtByDefault: true,
   defaultAttachLocation: CardAttachLocation.UpAndRight,
+  tableCardSlots: [
+    { landscape: false, relativeX: 505, relativeY: 218 },
+    { landscape: false, relativeX: 677, relativeY: 218 },
+    { landscape: false, relativeX: 953, relativeY: 218 },
+    { landscape: false, relativeX: 1123, relativeY: 218 },
+    { landscape: true, relativeX: 824, relativeY: 513 },
+  ],
 };
