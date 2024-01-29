@@ -132,7 +132,8 @@ export const clearQueryParams =
 
 export const saveDeckAsJson =
   (
-    cardStack: ICardStack | undefined
+    cardStack: ICardStack | undefined,
+    currentGameType: GameType
   ): ThunkAction<void, RootState, unknown, Action<any>> =>
   () => {
     if (!cardStack || cardStack.cardStack.length < 1) return;
@@ -140,25 +141,10 @@ export const saveDeckAsJson =
     const topCard = cardStack.cardStack[0];
 
     // convert to an object
-    const objectData: any = {
-      data: {
-        investigator_code: topCard.jsonId,
-      },
+    const cardTableDeck: any = {
+      gameTypeForDeck: currentGameType,
+      cardsInStack: cardStack.cardStack.map((c) => c.jsonId),
     };
-
-    const slots: { [key: string]: number } = {};
-
-    cardStack.cardStack.forEach((c, index) => {
-      if (index === 0) return;
-
-      if (!!slots[c.jsonId]) {
-        slots[c.jsonId] = slots[c.jsonId] + 1;
-      } else {
-        slots[c.jsonId] = 1;
-      }
-    });
-
-    objectData.data.slots = slots;
 
     let filename = `${topCard.jsonId}_deck.json`;
     let contentType = "application/json;charset=utf-8;";
@@ -170,7 +156,7 @@ export const saveDeckAsJson =
       "data:" +
       contentType +
       "," +
-      encodeURIComponent(JSON.stringify(objectData, null, 2));
+      encodeURIComponent(JSON.stringify(cardTableDeck, null, 2));
     a.target = "_blank";
     document.body.appendChild(a);
     a.click();

@@ -12,14 +12,15 @@ export const properties: GameProperties = {
   decklistSearchApiConstants: "",
   encounterUiName: "Sets",
   initialPlaymatImageLocation:
-    "/images/from_modules/earthborne-rangers/ebr_global_board.png",
+    "/images/from_modules/earthborne-rangers/ebr_global_board_smaller.jpg",
   customPlaymatWidth: 1540,
   additionalPlaymatImageOptions: {
     layout: "ebr",
     additionalImages: [
       {
         displayName: "Player Mat",
-        imgUrl: "/images/from_modules/earthborne-rangers/ebr_player_board.png",
+        imgUrl:
+          "/images/from_modules/earthborne-rangers/ebr_player_board_smaller.jpg",
       },
     ],
   },
