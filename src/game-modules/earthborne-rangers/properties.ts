@@ -83,7 +83,7 @@ export const properties: GameProperties = {
   defaultAttachLocation: CardAttachLocation.UpAndRight,
   additionalResourcesUris: [
     {
-      url: "/images/from_modules/earthborne-rangers/valley_map.jpeg",
+      url: "https://ik.imagekit.io/cardtable/earthborne_rangers/misc/valley_map.jpeg",
       display: "Valley Map",
     },
     {
