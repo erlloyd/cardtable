@@ -2591,6 +2591,10 @@ class Game extends Component<IProps, IState> {
       event.cancelBubble = true;
     }
 
+    const additionalResources =
+      GameManager.getModuleForType(this.props.currentGameType).properties
+        .additionalResourcesUris ?? [];
+
     const menuItems: ContextMenuItem[] = [
       {
         label: "Import / Load",
@@ -2663,6 +2667,16 @@ class Game extends Component<IProps, IState> {
             hidden:
               !GamePropertiesMap[this.props.currentGameType]
                 .allowSpecificCardSearch,
+          },
+          {
+            label: "Load Additional Resources",
+            children: additionalResources.map((ar) => ({
+              label: ar.display,
+              action: () => {
+                window.open(ar.url, "_blank", "noreferrer");
+              },
+            })),
+            hidden: additionalResources.length === 0,
           },
         ],
       },

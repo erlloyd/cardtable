@@ -81,4 +81,22 @@ export const properties: GameProperties = {
   iconCounters: [],
   useAltCardArtByDefault: true,
   defaultAttachLocation: CardAttachLocation.UpAndRight,
+  additionalResourcesUris: [
+    {
+      url: "/images/from_modules/earthborne-rangers/valley_map.jpeg",
+      display: "Valley Map",
+    },
+    {
+      url: "https://thelivingvalley.earthbornegames.com/",
+      display: "The Living Valley",
+    },
+    {
+      url: "https://thelivingvalley.earthbornegames.com/docs/category/campaign-guide",
+      display: "Online Campaign Guide",
+    },
+    {
+      url: "https://rangersdb.com/campaigns",
+      display: "Online Campaign Tracker",
+    },
+  ],
 };

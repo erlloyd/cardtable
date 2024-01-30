@@ -126,6 +126,8 @@ export interface IPlaymatOption {
   imgUrl: string;
 }
 
+export type AdditionalResource = { url: string; display: string };
+
 export type IPlaymatLayout = "row" | "column" | "ebr";
 
 export interface GameProperties {
@@ -151,6 +153,7 @@ export interface GameProperties {
   useAltCardArtByDefault?: boolean;
   defaultAttachLocation: CardAttachLocation;
   tableCardSlots?: ICardSlot[];
+  additionalResourcesUris?: AdditionalResource[];
 }
 export abstract class GameModule {
   properties: GameProperties;

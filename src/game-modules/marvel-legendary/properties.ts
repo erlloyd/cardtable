@@ -12,7 +12,7 @@ export const properties: GameProperties = {
   decklistSearchApiConstants: "",
   encounterUiName: "Card Sets",
   initialPlaymatImageLocation:
-    "/images/from_modules/marvel-legendary/spiderman-legendary.png",
+    "/images/from_modules/marvel-legendary/marvel_legendary_playmat1.webp",
   customPlaymatWidth: 1440,
   possibleIcons: [],
   modifiers: [],
