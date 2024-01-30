@@ -5,8 +5,8 @@ import {
 import { GameProperties } from "../GameModule";
 
 export const properties: GameProperties = {
-  deckSite: "",
-  decklistApi: "",
+  deckSite: "rangersdb.com",
+  decklistApi: "https://gapi.rangersdb.com/v1/graphql",
   decklistSearchApi: "",
   allowSpecificCardSearch: true,
   decklistSearchApiConstants: "",

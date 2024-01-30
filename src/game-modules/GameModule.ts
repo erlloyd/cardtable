@@ -228,4 +228,5 @@ export abstract class GameModule {
     defaultTokenInfo: TokensInfo
   ): TokensInfo | null;
   getTableCardSlots?(numPlaymats: number): ICardSlot[] | undefined;
+  async loadDecklistFromAPI?(id: number): Promise<any>;
 }

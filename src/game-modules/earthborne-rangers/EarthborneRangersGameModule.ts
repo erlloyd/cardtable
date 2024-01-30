@@ -20,6 +20,8 @@ import { properties } from "./properties";
 import setList from "./external/sets/sets.json";
 import { ICardSlot, ICardStack } from "../../features/cards/initialState";
 import { GamePropertiesMap } from "../../constants/game-type-properties-mapping";
+import { getEBRCards } from "./getEBRCards";
+import { Vector2d } from "konva/lib/types";
 
 interface EBRCard {
   name: string;
@@ -110,14 +112,11 @@ export default class EarthborneRangersGameModule extends GameModule {
   }
 
   parseDecklist(
-    _response: AxiosResponse<any, any>,
-    _state: RootState
+    response: AxiosResponse<any, any>,
+    state: RootState,
+    payload: { gameType: GameType; decklistId: number; position: Vector2d }
   ): [string[], ILoadedDeck] {
-    throw new Error("Method not implemented.");
-  }
-
-  loadDeckFromText(text: string): string[][] {
-    throw new Error("Method not implemented.");
+    return [[], getEBRCards(response, state, payload)];
   }
 
   isCardBackImg(imgUrl: string): boolean {
@@ -149,7 +148,13 @@ export default class EarthborneRangersGameModule extends GameModule {
         },
       ]);
     });
-    return returnEntities;
+    return returnEntities.sort((a, b) =>
+      a.setData.setTypeCode < b.setData.setTypeCode
+        ? -1
+        : a.setData.setTypeCode === b.setData.setTypeCode
+        ? 0
+        : 1
+    );
   }
 
   splitEncounterCardsIntoStacksWhenLoading(
@@ -291,6 +296,23 @@ export default class EarthborneRangersGameModule extends GameModule {
     }
 
     return returnSlots;
+  }
+
+  async loadDecklistFromAPI(id: number) {
+    const body = {
+      operationName: "getDeck",
+      variables: {
+        deckId: id,
+      },
+      query:
+        "query getDeck($deckId: Int!) {\n  deck: rangers_deck_by_pk(id: $deckId) {\n    ...DeckDetail\n    __typename\n  }\n}\n\nfragment DeckDetail on rangers_deck {\n  ...Deck\n  copy_count\n  comment_count\n  like_count\n  liked_by_user\n  original_deck {\n    deck {\n      id\n      name\n      user {\n        id\n        handle\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  campaign {\n    id\n    name\n    rewards\n    latest_decks {\n      deck {\n        id\n        slots\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  user {\n    handle\n    __typename\n  }\n  comments(order_by: {created_at: asc}, limit: 5) {\n    ...BasicDeckComment\n    __typename\n  }\n  __typename\n}\n\nfragment Deck on rangers_deck {\n  id\n  user_id\n  slots\n  side_slots\n  extra_slots\n  version\n  name\n  description\n  awa\n  spi\n  fit\n  foc\n  created_at\n  updated_at\n  meta\n  user {\n    ...UserInfo\n    __typename\n  }\n  published\n  previous_deck {\n    id\n    meta\n    slots\n    side_slots\n    version\n    __typename\n  }\n  next_deck {\n    id\n    meta\n    slots\n    side_slots\n    version\n    __typename\n  }\n  __typename\n}\n\nfragment UserInfo on rangers_users {\n  id\n  handle\n  __typename\n}\n\nfragment BasicDeckComment on rangers_comment {\n  id\n  user {\n    ...UserInfo\n    __typename\n  }\n  text\n  created_at\n  updated_at\n  response_count\n  comment_id\n  __typename\n}",
+    };
+    const response = axios.post(
+      "https://corsproxy.io/?" + encodeURIComponent(properties.decklistApi),
+      body
+    );
+
+    return response;
   }
 }
 

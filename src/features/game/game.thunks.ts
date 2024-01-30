@@ -1,19 +1,16 @@
 import { Action, ThunkAction } from "@reduxjs/toolkit";
-import { RootState } from "../../store/rootReducer";
-import JSONCrush from "jsoncrush";
-import { copyToClipboard, getBaseUrl } from "../../utilities/text-utils";
-import { ICardStack } from "../cards/initialState";
 import { saveAs } from "file-saver";
-import omit from "lodash.omit";
+import JSONCrush from "jsoncrush";
 import cloneDeep from "lodash.clonedeep";
-import { getActiveGameType } from "./game.selectors";
-import { sendNotification } from "../notifications/notifications.slice";
+import omit from "lodash.omit";
 import { v4 as uuidv4 } from "uuid";
-import { receiveRemoteGameState } from "../../store/global.actions";
-import gameSlice from "./game.slice";
 import { GameType } from "../../game-modules/GameType";
-import { GamePropertiesMap } from "../../constants/game-type-properties-mapping";
-import { getPlaymatsInColumnRowOrder } from "../playmats/playmats.selectors";
+import { receiveRemoteGameState } from "../../store/global.actions";
+import { RootState } from "../../store/rootReducer";
+import { copyToClipboard, getBaseUrl } from "../../utilities/text-utils";
+import { CardtableJSONDeck, ICardStack } from "../cards/initialState";
+import { sendNotification } from "../notifications/notifications.slice";
+import { getActiveGameType } from "./game.selectors";
 
 export const generateGameStateSave =
   (): ThunkAction<void, RootState, unknown, Action<any>> =>
@@ -141,7 +138,7 @@ export const saveDeckAsJson =
     const topCard = cardStack.cardStack[0];
 
     // convert to an object
-    const cardTableDeck: any = {
+    const cardTableDeck: CardtableJSONDeck = {
       gameTypeForDeck: currentGameType,
       cardsInStack: cardStack.cardStack.map((c) => c.jsonId),
     };

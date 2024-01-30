@@ -6,6 +6,12 @@ import {
 } from "../../constants/card-constants";
 import JSONCrush from "jsoncrush";
 import { Vector2d } from "konva/lib/types";
+import { GameType } from "../../game-modules/GameType";
+
+export interface CardtableJSONDeck {
+  gameTypeForDeck: GameType;
+  cardsInStack: string[];
+}
 
 export interface IPlayerHandCard {
   faceup: boolean;

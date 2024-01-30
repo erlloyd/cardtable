@@ -1,7 +1,7 @@
 import { Action, createAsyncThunk, ThunkAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Vector2d } from "konva/lib/types";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4, v4 } from "uuid";
 import { scrapeApi } from "../../constants/api-constants";
 import { myPeerRef } from "../../constants/app-constants";
 import { GamePropertiesMap } from "../../constants/game-type-properties-mapping";
@@ -35,13 +35,14 @@ import {
   endCardMoveWithSnap,
 } from "./cards.slice";
 import {
+  CardtableJSONDeck,
   ICardDetails,
   ICardStack,
   IPlayerBoardSlotLocation,
 } from "./initialState";
 import log from "loglevel";
 import { sendNotification } from "../notifications/notifications.slice";
-import { ILoadedDeck } from "../../game-modules/GameModule";
+import { GameModule, ILoadedDeck } from "../../game-modules/GameModule";
 import GameManager from "../../game-modules/GameModuleManager";
 import { GameType } from "../../game-modules/GameType";
 import {
@@ -348,21 +349,39 @@ export const createDeckFromJson =
     position: Vector2d;
     jsonContents: string;
   }): ThunkAction<void, RootState, unknown, Action<string>> =>
-  (_dispatch, _getState) => {
-    console.error(`NOT SUPPORTED`);
-    // if (payload.gameType === GameType.MarvelChampions) {
-    //   // const heroCardsDataByName = getCardsDataHerosByName(getState());
-    //   // const playerCardsDataByName = getCardsDataPlayerCardsByName(getState());
-    //   dispatch(
-    //     createDeckFromTextFileWithIds(
-    //       getMarvelCards(JSON.parse(payload.jsonContents), getState(), {
-    //         gameType: payload.gameType,
-    //         decklistId: -1,
-    //         position: payload.position,
-    //       })
-    //     )
-    //   );
-    // }
+  (dispatch, getState) => {
+    const currentGameType = getActiveGameType(getState());
+
+    try {
+      const deckContents = JSON.parse(
+        payload.jsonContents
+      ) as CardtableJSONDeck;
+      if (deckContents.gameTypeForDeck !== currentGameType) {
+        dispatch(
+          sendNotification({
+            id: v4(),
+            level: "error",
+            message: "This deck is for a different game",
+          })
+        );
+      } else {
+        // create the deck
+        dispatch(
+          addCardStack({
+            position: payload.position,
+            cardJsonIds: deckContents.cardsInStack,
+          })
+        );
+      }
+    } catch (e) {
+      dispatch(
+        sendNotification({
+          id: v4(),
+          level: "error",
+          message: "Could not load deck from json",
+        })
+      );
+    }
   };
 
 export const getListOfDecklistsFromSearchTerm = createAsyncThunk(
@@ -415,7 +434,14 @@ export const fetchDecklistById = createAsyncThunk(
     const apiUrl =
       payload.usePrivateApi && privateApiUrl ? privateApiUrl : publicApiUrl;
     try {
-      response = await axios.get(`${apiUrl}${payload.decklistId}`);
+      if (
+        !!GameManager.getModuleForType(payload.gameType).loadDecklistFromAPI
+      ) {
+        response = await GameManager.getModuleForType(payload.gameType)
+          .loadDecklistFromAPI!!(payload.decklistId);
+      } else {
+        response = await axios.get(`${apiUrl}${payload.decklistId}`);
+      }
     } catch (e) {
       let errorMessage = `Couldn't load deck ${payload.decklistId}. `;
       if (privateApiUrl) {

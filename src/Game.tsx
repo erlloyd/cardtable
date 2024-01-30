@@ -2596,6 +2596,17 @@ class Game extends Component<IProps, IState> {
         label: "Import / Load",
         children: [
           {
+            label: "Load Deck from json file",
+            fileLoadedAction: (jsonContents: string) => {
+              this.props.createDeckFromJson({
+                gameType: this.props.currentGameType,
+                position: this.stage?.getPointerPosition() ?? { x: 0, y: 0 },
+                jsonContents,
+              });
+            },
+            fileUploader: true,
+          },
+          {
             label: "Import Deck by ID",
             action: () => {
               this.setState({
@@ -2735,17 +2746,6 @@ class Game extends Component<IProps, IState> {
           }
         },
       },
-      // {
-      //   label: "Load Deck from json file",
-      //   fileLoadedAction: (jsonContents: string) => {
-      //     this.props.createDeckFromJson({
-      //       gameType: this.props.currentGameType,
-      //       position: this.stage?.getPointerPosition() ?? { x: 0, y: 0 },
-      //       jsonContents,
-      //     });
-      //   },
-      //   fileUploader: true,
-      // },
       {
         label: "Create new counter",
         children: [
