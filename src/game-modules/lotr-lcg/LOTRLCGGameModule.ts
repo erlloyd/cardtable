@@ -30,107 +30,10 @@ import { getLOTRCards } from "./getLOTRCards";
 import { IEncounterEntity } from "../../features/cards-data/cards-data.selectors";
 import { loadEncounterEntities } from "./loadEncounterEntities";
 import { GameType } from "../GameType";
+import { properties } from "./properties";
 
 export default class LOTRLCGGameModule extends GameModule {
   constructor() {
-    const properties: GameProperties = {
-      deckSite: "ringsdb.com",
-      decklistApi: "https://ringsdb.com/api/public/decklist/",
-      allowSpecificCardSearch: true,
-      decklistSearchApi: "https://ringsdb.com/decklists/find",
-      decklistSearchApiConstants: "numcores=3&sort=likes",
-      encounterUiName: "Scenario",
-      initialPlaymatImageLocation: "/images/table/background_lotrlcg.jpg",
-      possibleIcons: [
-        {
-          iconId: "tactics",
-          iconName: "Tactics",
-          iconImageUrl: "/images/standard/lotr/tactics.png",
-        },
-        {
-          iconId: "leadership",
-          iconName: "Leadership",
-          iconImageUrl: "/images/standard/lotr/leadership.png",
-        },
-        {
-          iconId: "spirit",
-          iconName: "Spirit",
-          iconImageUrl: "/images/standard/lotr/spirit.png",
-        },
-        {
-          iconId: "lore",
-          iconName: "Lore",
-          iconImageUrl: "/images/standard/lotr/lore.png",
-        },
-      ],
-      modifiers: [
-        {
-          attributeId: "threat",
-          attributeName: "Threat",
-          icon: "/images/standard/lotr/threat.png",
-          slot: 1,
-        },
-        {
-          attributeId: "willpower",
-          attributeName: "Willpower",
-          icon: "/images/standard/lotr/willpower.png",
-          slot: 2,
-        },
-        {
-          attributeId: "attack",
-          attributeName: "Attack",
-          icon: "/images/standard/lotr/attack.png",
-          slot: 3,
-        },
-        {
-          attributeId: "defense",
-          attributeName: "Defense",
-          icon: "/images/standard/lotr/defense.png",
-          slot: 4,
-        },
-        {
-          attributeId: "hitpoints",
-          attributeName: "Hit Points",
-          icon: "/images/standard/lotr/hitpoints.png",
-          slot: 5,
-        },
-      ],
-      tokens: {
-        stunned: {
-          canStackMultiple: false,
-          tokenType: StatusTokenType.Stunned,
-          touchMenuLetter: "Q",
-          menuText: "Quest",
-          menuRemoveText: "Remove From Quest",
-          imagePath: "/images/standard/quest.png",
-        },
-        confused: null,
-        tough: null,
-        damage: {
-          counterTokenType: CounterTokenType.Damage,
-          isNumeric: true,
-          touchMenuLetter: "Dmg",
-          menuText: "Set Damage",
-          imagePath: "/images/standard/damage_lotr.png",
-        },
-        threat: {
-          counterTokenType: CounterTokenType.Threat,
-          isNumeric: true,
-          touchMenuLetter: "Prg",
-          menuText: "Set Progress",
-          imagePath: "/images/standard/progress.png",
-        },
-        generic: {
-          counterTokenType: CounterTokenType.Generic,
-          isNumeric: true,
-          touchMenuLetter: "Res",
-          menuText: "Set Resource Tokens",
-          imagePath: "/images/standard/resource.png",
-        },
-        acceleration: null,
-      },
-      defaultAttachLocation: CardAttachLocation.UpAndRight,
-    };
     super(properties, {}, {}, {}, ["quest", "player_side_quest"]);
   }
 

@@ -27,96 +27,10 @@ import { CARD_PACK_REMAPPING } from "./remappedPacks";
 import { IEncounterEntity } from "../../features/cards-data/cards-data.selectors";
 import { loadEncounterEntities } from "./loadEncounterEntities";
 import { GameType } from "../GameType";
+import { properties } from "./properties";
 
 export default class MarvelChampionsGameModule extends GameModule {
   constructor() {
-    const properties: GameProperties = {
-      deckSite: "marvelcdb.com",
-      decklistApi: "https://marvelcdb.com/api/public/decklist/",
-      allowSpecificCardSearch: true,
-      privateDecklistApi: "https://marvelcdb.com/api/public/deck/",
-      decklistSearchApi: "https://marvelcdb.com/decklists",
-      decklistSearchApiConstants: "sort=likes",
-      encounterUiName: "Encounter Set",
-      initialPlaymatImageLocation:
-        "/images/table/background_marvelchampions.png",
-      possibleIcons: [],
-      modifiers: [
-        {
-          attributeId: "thwart",
-          attributeName: "Thwart",
-          icon: "/images/standard/marvel/thwart.png",
-          slot: 1,
-        },
-        {
-          attributeId: "attack",
-          attributeName: "Attack",
-          icon: "/images/standard/marvel/attack.png",
-          slot: 2,
-        },
-        {
-          attributeId: "defense",
-          attributeName: "Defense",
-          icon: "/images/standard/marvel/defense.png",
-          slot: 3,
-        },
-      ],
-      tokens: {
-        stunned: {
-          canStackMultiple: true,
-          tokenType: StatusTokenType.Stunned,
-          touchMenuLetter: null,
-          menuText: "Stun",
-          menuRemoveText: "Remove Stun",
-          imagePath: "/images/standard/stunned.png",
-        },
-        confused: {
-          canStackMultiple: true,
-          tokenType: StatusTokenType.Confused,
-          touchMenuLetter: null,
-          menuText: "Confuse",
-          menuRemoveText: "Remove Confuse",
-          imagePath: "/images/standard/confused.png",
-        },
-        tough: {
-          canStackMultiple: true,
-          tokenType: StatusTokenType.Tough,
-          touchMenuLetter: null,
-          menuText: "Tough",
-          menuRemoveText: "Remove Tough",
-          imagePath: "/images/standard/tough.png",
-        },
-        damage: {
-          counterTokenType: CounterTokenType.Damage,
-          isNumeric: true,
-          touchMenuLetter: "Dmg",
-          menuText: "Set Damage",
-          imagePath: "/images/standard/damage.png",
-        },
-        threat: {
-          counterTokenType: CounterTokenType.Threat,
-          isNumeric: true,
-          touchMenuLetter: "Thr",
-          menuText: "Set Threat",
-          imagePath: "/images/standard/threat.png",
-        },
-        generic: {
-          counterTokenType: CounterTokenType.Generic,
-          isNumeric: true,
-          touchMenuLetter: "Gen",
-          menuText: "Set Generic Tokens",
-          imagePath: "/images/standard/generic_counter.png",
-        },
-        acceleration: {
-          counterTokenType: CounterTokenType.Acceleration,
-          isNumeric: true,
-          touchMenuLetter: "Accel",
-          menuText: "Set Acceleration Tokens",
-          imagePath: "/images/standard/acceleration.png",
-        },
-      },
-      defaultAttachLocation: CardAttachLocation.DownAndLeft,
-    };
     super(properties, MissingCardImages, EXTRA_CARDS, CARD_PACK_REMAPPING, [
       "main_scheme",
       "side_scheme",
