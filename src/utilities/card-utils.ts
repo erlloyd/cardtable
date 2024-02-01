@@ -191,6 +191,8 @@ export const getImgUrlsFromJsonId = (
         (topCardData.extraInfo.factionCode === "encounter" &&
           topCardData.typeCode !== "ally") ||
         topCardData.typeCode === "side_scheme" ||
+        topCardData.typeCode === "minion" ||
+        topCardData.typeCode === "treachery" ||
         FORCE_ENCOUNTER_CARD_BACK_MAP[topCardData.code]
           ? "/images/standard/encounter_card_back_" + currentGameType + ".png"
           : "/images/standard/card_back_" + currentGameType + ".png",
