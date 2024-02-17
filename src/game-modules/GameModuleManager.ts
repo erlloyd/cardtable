@@ -116,7 +116,9 @@ class GamePluginManager {
     }, {} as { [key in GameType]: StringToStringMap });
 
     this._horizontalCardTypes = games.reduce((horizontalCards, g) => {
-      horizontalCards[g.type] = g.module.horizontalTypeCodes;
+      horizontalCards[g.type] = ["custom_landscape"].concat(
+        g.module.horizontalTypeCodes
+      );
       return horizontalCards;
     }, {} as { [key in GameType]: string[] });
   }

@@ -53,6 +53,7 @@ const storeCardData =
   (cs: {
     location: Draft<IGameCardsDataStateStored> | undefined;
     card: CardData;
+    forceOverride?: boolean; //This will force replace any other existing card data for a card code
   }) => {
     const stateLocation = isPlayerPack
       ? (cs.location as IGameCardsDataStateStored).entities
@@ -75,6 +76,12 @@ const storeCardData =
             (c) => JSON.stringify(cs.card) === JSON.stringify(c)
           )
         ) {
+          return;
+        }
+
+        // if we are explicitly overriding, just store it
+        if (!!cs.forceOverride) {
+          stateLocation[cs.card.code] = [cs.card];
           return;
         }
 
@@ -130,6 +137,25 @@ const storeCardData =
       }
     }
   };
+
+const addRawCardsDataReducer: CaseReducer<
+  ICardsDataState,
+  PayloadAction<{
+    gameType: GameType;
+    cards: CardData[];
+    storeAsPlayerCards: boolean;
+  }>
+> = (state, action) => {
+  // get the location we should use
+  const location = state.data[action.payload.gameType];
+  action.payload.cards.forEach((c) => {
+    storeCardData(action.payload.storeAsPlayerCards)({
+      location,
+      card: c,
+      forceOverride: true, // For custom cards, we always want to explicitly store whatever was just loaded
+    });
+  });
+};
 
 const bulkLoadCardsForEncounterSetReducer: CaseReducer<
   ICardsDataState,
@@ -255,6 +281,7 @@ const cardsDataSlice = createSlice({
     bulkLoadCardsDataForPack: bulkLoadCardsDataForPackReducer,
     loadCardsForEncounterSet: loadCardsForEncounterSetReducer,
     bulkLoadCardsForEncounterSet: bulkLoadCardsForEncounterSetReducer,
+    addRawCardsData: addRawCardsDataReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -274,6 +301,7 @@ export const {
   bulkLoadCardsDataForPack,
   loadCardsForEncounterSet,
   bulkLoadCardsForEncounterSet,
+  addRawCardsData,
 } = cardsDataSlice.actions;
 
 export default cardsDataSlice.reducer;

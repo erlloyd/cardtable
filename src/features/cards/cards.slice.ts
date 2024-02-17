@@ -341,7 +341,7 @@ const getDropTargetCard = (
     ]);
 
     boards.forEach((pb) => {
-      pb.cardSlots.forEach((slot) => {
+      pb.cardSlots?.forEach((slot) => {
         const distance = getDistance(
           { x: pb.x + slot.relativeX, y: pb.y + slot.relativeY },
           draggedCardPosition

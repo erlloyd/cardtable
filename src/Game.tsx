@@ -240,6 +240,7 @@ interface IProps {
   togglePreviewCardRotation: () => void;
   addNewPlaymatInColumn: (imgUrl: string) => void;
   resetPlaymats: () => void;
+  parseCsvCustomCards: (gameType: GameType, csvString: string) => void;
 }
 
 interface IState {
@@ -2607,6 +2608,16 @@ class Game extends Component<IProps, IState> {
                 position: this.stage?.getPointerPosition() ?? { x: 0, y: 0 },
                 jsonContents,
               });
+            },
+            fileUploader: true,
+          },
+          {
+            label: "Import Custom Cards",
+            fileLoadedAction: (csvContents: string) => {
+              this.props.parseCsvCustomCards(
+                this.props.currentGameType,
+                csvContents
+              );
             },
             fileUploader: true,
           },
