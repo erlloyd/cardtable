@@ -158,9 +158,33 @@ export const getEncounterEntities = (gameType: GameType) =>
     getCardsDataHeroEntities,
     getCardsDataEncounterEntities,
     (setData, herosData, encounterEntities): IEncounterEntity[] => {
+      const herosDataNoCustom = Object.entries(herosData).reduce(
+        (result, [key, value]) => {
+          if (!value.customCard) {
+            result[key] = herosData[key];
+          }
+          return result;
+        },
+        {} as ICardData
+      );
+
+      const encounterDataNoCustom = Object.entries(encounterEntities).reduce(
+        (result, [key, value]) => {
+          if (!value.customCard) {
+            result[key] = herosData[key];
+          }
+          return result;
+        },
+        {} as ICardData
+      );
+
       return GameManager.getModuleForType(
         gameType
-      ).getEncounterEntitiesFromState(setData, herosData, encounterEntities);
+      ).getEncounterEntitiesFromState(
+        setData,
+        herosDataNoCustom,
+        encounterDataNoCustom
+      );
     }
   );
 

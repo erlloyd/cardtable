@@ -30,6 +30,10 @@ import log from "loglevel";
 import { sendNotification } from "../features/notifications/notifications.slice";
 import { RootState } from "./rootReducer";
 import { anyCardsDragging } from "../features/cards/cards.selectors";
+import { CardData } from "../external-api/common-card-data";
+import { addRawCardsData } from "../features/cards-data/cards-data.slice";
+import { GameType } from "../game-modules/GameType";
+import merge from "lodash.merge";
 interface IMessage {
   type: string;
   payload: any;
@@ -52,13 +56,20 @@ export const websocketMiddleware = (storeAPI: any) => {
     // console.log("remote action", action);
     if (!action.INITIAL_STATE_MSG) {
       if (!!action.RESYNC) {
+        const { cardsData: _, ...stateWithoutCardsData } = storeAPI.getState();
+        const customCardString = action.CUSTOM_CARDS
+          ? localStorage.getItem("cardtable-custom-cards")
+          : null;
         ws?.send(
           JSON.stringify({
             type: "remoteaction",
             game: getMultiplayerGameName(storeAPI.getState()),
             payload: {
               INITIAL_STATE_MSG: true,
-              state: storeAPI.getState(),
+              state: stateWithoutCardsData,
+              customCards: customCardString
+                ? JSON.parse(customCardString)
+                : undefined,
             },
           })
         );
@@ -73,6 +84,54 @@ export const websocketMiddleware = (storeAPI: any) => {
     } else {
       log.debug("going to replace (most of) state with", action.state);
       setTimeout(() => {
+        // store the custom cards in localstorage
+        let existingCustomCards: {
+          [key: string]: {
+            [key: string]: { card: CardData; playerCard: boolean };
+          };
+        } | null = JSON.parse(
+          localStorage.getItem("cardtable-custom-cards") ?? "{}"
+        );
+        if (!existingCustomCards) {
+          existingCustomCards = {};
+        }
+
+        if (action.customCards) {
+          Object.entries(action.customCards).forEach(
+            ([gameType, customCards]) => {
+              //split into player and non-player
+              const playerCards = Object.values(customCards as any)
+                .filter((c: any) => c.playerCard)
+                .map((c: any) => c.card);
+              storeAPI.dispatch(
+                addRawCardsData({
+                  gameType: gameType as GameType,
+                  cards: playerCards,
+                  storeAsPlayerCards: true,
+                })
+              );
+
+              const nonPlayerCards = Object.values(customCards as any)
+                .filter((c: any) => !c.playerCard)
+                .map((c: any) => c.card);
+              storeAPI.dispatch(
+                addRawCardsData({
+                  gameType: gameType as GameType,
+                  cards: nonPlayerCards,
+                  storeAsPlayerCards: false,
+                })
+              );
+            }
+          );
+
+          // Now store in localstorage
+          const newCustomCards = merge(existingCustomCards, action.customCards);
+          localStorage.setItem(
+            "cardtable-custom-cards",
+            JSON.stringify(newCustomCards)
+          );
+        }
+
         storeAPI.dispatch(receiveRemoteGameState(action.state));
       }, 0);
     }
@@ -225,7 +284,7 @@ export const websocketMiddleware = (storeAPI: any) => {
             break;
           case "connectedtogame":
             storeAPI.dispatch(setMultiplayerGameName(data.payload as string));
-            storeAPI.dispatch(requestResync());
+            storeAPI.dispatch(requestResync({ includeCustomCards: false }));
             storeAPI.dispatch(
               sendNotification({
                 id: uuidv4(),
@@ -362,7 +421,10 @@ export const websocketMiddleware = (storeAPI: any) => {
           JSON.stringify({
             type: "resync",
             game: mpGameName,
-            payload: { RESYNC: true },
+            payload: {
+              RESYNC: true,
+              CUSTOM_CARDS: action.payload.includeCustomCards,
+            },
           })
         );
       }

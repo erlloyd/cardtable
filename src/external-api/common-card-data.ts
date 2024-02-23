@@ -22,4 +22,5 @@ export interface CardData {
     sizeType?: CardSizeType;
   };
   duplicate_of?: string;
+  customCard?: boolean;
 }

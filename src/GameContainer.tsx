@@ -14,6 +14,7 @@ import { loadCardsData } from "./features/cards-data/cards-data.slice";
 import {
   allJsonData,
   parseCsvCustomCards,
+  removeCustomCards,
 } from "./features/cards-data/cards-data.thunks";
 import {
   getCards,
@@ -216,6 +217,7 @@ const GameContainer = connect(mapStateToProps, {
   addNewPlaymatInColumn,
   resetPlaymats,
   parseCsvCustomCards,
+  removeCustomCards,
 })(Game);
 
 export default GameContainer;

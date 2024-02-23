@@ -182,7 +182,7 @@ interface IProps {
   clearHistory: () => void;
   counters: ICounter[];
   tokens: IFlippableToken[];
-  requestResync: () => void;
+  requestResync: (payload: { includeCustomCards: boolean }) => void;
   peerId: string;
   multiplayerGameName: string;
   dropTargetCardsById: {
@@ -241,6 +241,7 @@ interface IProps {
   addNewPlaymatInColumn: (imgUrl: string) => void;
   resetPlaymats: () => void;
   parseCsvCustomCards: (gameType: GameType, csvString: string) => void;
+  removeCustomCards: () => void;
 }
 
 interface IState {
@@ -2612,16 +2613,6 @@ class Game extends Component<IProps, IState> {
             fileUploader: true,
           },
           {
-            label: "Import Custom Cards",
-            fileLoadedAction: (csvContents: string) => {
-              this.props.parseCsvCustomCards(
-                this.props.currentGameType,
-                csvContents
-              );
-            },
-            fileUploader: true,
-          },
-          {
             label: "Import Deck by ID",
             action: () => {
               this.setState({
@@ -2688,6 +2679,33 @@ class Game extends Component<IProps, IState> {
               },
             })),
             hidden: additionalResources.length === 0,
+          },
+        ],
+      },
+      {
+        label: "Custom Content",
+        children: [
+          {
+            label: "Import Custom Cards",
+            fileLoadedAction: (csvContents: string) => {
+              this.props.parseCsvCustomCards(
+                this.props.currentGameType,
+                csvContents
+              );
+            },
+            fileUploader: true,
+          },
+          {
+            label: "Sync All Custom Cards from Online Game",
+            action: () => {
+              this.props.requestResync({ includeCustomCards: true });
+            },
+          },
+          {
+            label: "Remove All Custom Cards",
+            action: () => {
+              this.props.removeCustomCards();
+            },
           },
         ],
       },
@@ -2845,9 +2863,10 @@ class Game extends Component<IProps, IState> {
           // },
           {
             label: "Request resync from Remote Game",
-            action: this.props.requestResync,
+            action: () => {
+              this.props.requestResync({ includeCustomCards: false });
+            },
           },
-
           {
             label: `Copy my online game link`,
             action: () => {

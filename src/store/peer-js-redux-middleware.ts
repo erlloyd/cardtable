@@ -1,5 +1,6 @@
 import Peer, { DataConnection } from "peerjs";
 import cloneDeep from "lodash.clonedeep";
+import merge from "lodash.merge";
 import {
   adjectives,
   animals,
@@ -22,6 +23,9 @@ import { RootState } from "./rootReducer";
 import { anyCardsDragging } from "../features/cards/cards.selectors";
 import { blacklistRemoteActions } from "./middleware-utilities";
 import loglevellog from "loglevel";
+import { CardData } from "../external-api/common-card-data";
+import { addRawCardsData } from "../features/cards-data/cards-data.slice";
+import { GameType } from "../game-modules/GameType";
 
 const STATE_CHECK_INTERVAL_MS = 5000;
 
@@ -55,6 +59,54 @@ const setupConnection = (conn: any, storeAPI: any) => {
     } else {
       loglevellog.debug("going to replace (most of) state with", data.state);
       setTimeout(() => {
+        // store the custom cards in localstorage
+        let existingCustomCards: {
+          [key: string]: {
+            [key: string]: { card: CardData; playerCard: boolean };
+          };
+        } | null = JSON.parse(
+          localStorage.getItem("cardtable-custom-cards") ?? "{}"
+        );
+        if (!existingCustomCards) {
+          existingCustomCards = {};
+        }
+
+        if (data.customCards) {
+          Object.entries(data.customCards).forEach(
+            ([gameType, customCards]) => {
+              //split into player and non-player
+              const playerCards = Object.values(customCards as any)
+                .filter((c: any) => c.playerCard)
+                .map((c: any) => c.card);
+              storeAPI.dispatch(
+                addRawCardsData({
+                  gameType: gameType as GameType,
+                  cards: playerCards,
+                  storeAsPlayerCards: true,
+                })
+              );
+
+              const nonPlayerCards = Object.values(customCards as any)
+                .filter((c: any) => !c.playerCard)
+                .map((c: any) => c.card);
+              storeAPI.dispatch(
+                addRawCardsData({
+                  gameType: gameType as GameType,
+                  cards: nonPlayerCards,
+                  storeAsPlayerCards: false,
+                })
+              );
+            }
+          );
+
+          // Now store in localstorage
+          const newCustomCards = merge(existingCustomCards, data.customCards);
+          localStorage.setItem(
+            "cardtable-custom-cards",
+            JSON.stringify(newCustomCards)
+          );
+        }
+
         storeAPI.dispatch(receiveRemoteGameState(data.state));
       }, 0);
     }

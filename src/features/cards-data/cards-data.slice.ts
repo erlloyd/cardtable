@@ -147,7 +147,15 @@ const addRawCardsDataReducer: CaseReducer<
   }>
 > = (state, action) => {
   // get the location we should use
-  const location = state.data[action.payload.gameType];
+  let location = state.data[action.payload.gameType];
+  if (!location) {
+    state.data[action.payload.gameType] = {
+      entities: {},
+      encounterEntities: {},
+      setData: {},
+    };
+    location = state.data[action.payload.gameType];
+  }
   action.payload.cards.forEach((c) => {
     storeCardData(action.payload.storeAsPlayerCards)({
       location,

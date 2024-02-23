@@ -19,6 +19,8 @@ export interface CustomCard {
   landscape: boolean;
   frontImageUrl: string;
   backImageUrl: string;
+  set?: string;
+  setType?: string;
 }
 
 export interface InputCustomCard {
@@ -27,7 +29,24 @@ export interface InputCustomCard {
   landscape: "Y" | "N" | "y" | "n" | "YES" | "NO" | "Yes" | "No" | "yes" | "no";
   frontImageUrl: string;
   backImageUrl: string;
+  set?: string;
+  setType?: string;
 }
+
+export const removeCustomCards =
+  (): ThunkAction<void, RootState, unknown, Action<string>> =>
+  async (dispatch) => {
+    localStorage.removeItem("cardtable-custom-cards");
+
+    dispatch(
+      sendNotification({
+        id: v4(),
+        level: "info",
+        message:
+          "Custom content removed. Any custom cards will not load after page is refreshed.",
+      })
+    );
+  };
 
 export const allJsonData =
   (gameType: GameType): ThunkAction<void, RootState, unknown, Action<string>> =>
@@ -124,13 +143,15 @@ export const parseCsvCustomCards =
       extraInfo: {
         factionCode: null,
         packCode: null,
-        setCode: null,
+        setCode: c.set ?? null,
+        setType: c.setType ?? null,
       },
       name: c.name,
       typeCode: c.landscape ? "custom_landscape" : "custom",
       quantity: 1,
       octgnId: null,
       subTypeCode: null,
+      customCard: true,
     }));
 
     const isPlayerCard = false;

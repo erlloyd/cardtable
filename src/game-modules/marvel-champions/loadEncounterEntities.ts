@@ -26,6 +26,7 @@ export const loadEncounterEntities = (
     });
 
   const setDataToReturn = Object.entries(setTypesEncounters)
+    .filter(([key, _value]) => key !== "unknown")
     .map(([key, value]) => ({
       setCode: key,
       setData: setData[key],
