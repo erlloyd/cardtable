@@ -72,7 +72,7 @@ interface ScenarioCard {
 
 export default class LorcanaGameModule extends GameModule {
   constructor() {
-    super(properties, {}, {}, {}, []);
+    super(properties, {}, {}, {}, ["location"]);
   }
 
   getSetData(): ISetData {

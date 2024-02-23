@@ -57,6 +57,20 @@ const NestedMenuItem = React.forwardRef<
     }
   };
   const handleMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
+    // There was an issue that came up in a Chrome release (detected in v122.0.6261.69) where
+    // mousing over a file upload window results in a "MouseLeave" event. This didn't use to happen.
+    // This is a problem if a submenu contains a file uploader, because when you go to upload the file,
+    // you will close the submenu, but then that removes the file upload `input` element from the DOM,
+    // so the file upload fails. So we need to try to detect if there is a window as part of the
+
+    if (
+      e.relatedTarget &&
+      (e.relatedTarget as Window)?.self == e.relatedTarget
+    ) {
+      // it's a window, don't do anything
+      return;
+    }
+
     setIsSubMenuOpen(false);
 
     if (ContainerProps.onMouseLeave) {
