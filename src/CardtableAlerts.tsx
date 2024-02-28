@@ -1,10 +1,11 @@
 import React from "react";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import { Button, Snackbar } from "@mui/material";
+import { GameType } from "./game-modules/GameType";
 
 interface IProps {
   open: boolean;
-  requestResync: () => void;
+  requestResync: (payload: { includeCustomCards: boolean }) => void;
 }
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
@@ -25,7 +26,7 @@ const CardtableAlerts = (props: IProps) => {
   };
 
   const handleResync = () => {
-    props.requestResync();
+    props.requestResync({ includeCustomCards: false });
   };
 
   return (
