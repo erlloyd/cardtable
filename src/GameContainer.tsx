@@ -11,7 +11,11 @@ import {
 import { startNewArrow } from "./features/arrows/arrows.thunks";
 import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
 import { loadCardsData } from "./features/cards-data/cards-data.slice";
-import { allJsonData } from "./features/cards-data/cards-data.thunks";
+import {
+  allJsonData,
+  parseCsvCustomCards,
+  removeCustomCards,
+} from "./features/cards-data/cards-data.thunks";
 import {
   getCards,
   getDropTargetCardsById,
@@ -212,6 +216,8 @@ const GameContainer = connect(mapStateToProps, {
   togglePreviewCardRotation,
   addNewPlaymatInColumn,
   resetPlaymats,
+  parseCsvCustomCards,
+  removeCustomCards,
 })(Game);
 
 export default GameContainer;

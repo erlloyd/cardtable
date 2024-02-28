@@ -1,36 +1,4 @@
-import cloneDeep from "lodash.clonedeep";
-import { v4 as uuidv4 } from "uuid";
-import {
-  myPeerRef,
-  possibleColors,
-  useDevWSServerLocalStorage,
-} from "../constants/app-constants";
-import {
-  getActiveGameType,
-  getMultiplayerGameName,
-  getPlayerColors,
-  getPlayerNumbers,
-} from "../features/game/game.selectors";
-import {
-  connectToRemoteGame,
-  requestResync,
-  setMultiplayerGameName,
-  setAllPlayerInfo,
-  createNewMultiplayerGame,
-  removePlayer,
-} from "../features/game/game.slice";
-import {
-  receiveRemoteGameState,
-  verifyRemoteGameState,
-} from "./global.actions";
-import {
-  blacklistRemoteActions,
-  misingPlayerNumInSeq,
-} from "./middleware-utilities";
-import log from "loglevel";
-import { sendNotification } from "../features/notifications/notifications.slice";
-import { RootState } from "./rootReducer";
-import { anyCardsDragging } from "../features/cards/cards.selectors";
+import { getActiveGameType } from "../features/game/game.selectors";
 
 export const addCurrentGameTypeMiddleware = (storeAPI: any) => {
   return (next: any) => (action: any) => {

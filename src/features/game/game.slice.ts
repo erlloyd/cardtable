@@ -116,7 +116,10 @@ const clearMenuPreviewCardJsonIdReducer: CaseReducer<IGameState> = (state) => {
   state.rotatePreviewCard180 = false;
 };
 
-const requestResyncReducer: CaseReducer<IGameState> = () => {};
+const requestResyncReducer: CaseReducer<
+  IGameState,
+  PayloadAction<{ includeCustomCards: boolean }>
+> = () => {};
 
 const updateActiveGameTypeReducer: CaseReducer<
   IGameState,

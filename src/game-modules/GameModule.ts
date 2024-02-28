@@ -14,7 +14,10 @@ import {
 } from "../features/cards/initialState";
 import { AxiosResponse } from "axios";
 import { RootState } from "../store/rootReducer";
-import { IEncounterEntity } from "../features/cards-data/cards-data.selectors";
+import {
+  ICardSetToLoad,
+  IEncounterEntity,
+} from "../features/cards-data/cards-data.selectors";
 import { GameType } from "./GameType";
 import { ICounter, IFlippableToken } from "../features/counters/initialState";
 import { PlayerColor } from "../constants/app-constants";
@@ -199,8 +202,77 @@ export abstract class GameModule {
   abstract getEncounterEntitiesFromState(
     setData: ISetData,
     herosData: ICardData,
-    encounterEntities: ICardData
+    encounterEntities: ICardData,
+    customCards?: boolean
   ): IEncounterEntity[];
+
+  getCustomLoadSetsFromState(
+    setData: ISetData,
+    herosData: ICardData,
+    encounterEntities: ICardData
+  ): ICardSetToLoad[] {
+    const filteredSetData = {} as ISetData;
+    Object.values(herosData).forEach((v) => {
+      if (v.customCard) {
+        const setForCard = setData[v.extraInfo.setCode ?? "unknown"];
+        if (!setForCard) {
+          console.error(`Could not find set for card ${v.name} (${v.code})`);
+        } else {
+          filteredSetData[setForCard.name] = filteredSetData[
+            setForCard.name
+          ] ?? { ...setForCard };
+
+          filteredSetData[setForCard.name].cardsInSet = filteredSetData[
+            setForCard.name
+          ].cardsInSet.concat([{ code: v.code, quantity: v.quantity }]);
+        }
+      }
+    });
+
+    Object.values(encounterEntities).forEach((v) => {
+      if (v.customCard) {
+        const setForCard = setData[v.extraInfo.setCode ?? "unknown"];
+        if (!setForCard) {
+          console.error(`Could not find set for card ${v.name} (${v.code})`);
+        } else {
+          filteredSetData[setForCard.name] = filteredSetData[
+            setForCard.name
+          ] ?? { ...setForCard };
+
+          filteredSetData[setForCard.name].cardsInSet = filteredSetData[
+            setForCard.name
+          ].cardsInSet.concat([{ code: v.code, quantity: v.quantity }]);
+        }
+      }
+    });
+
+    const setDataToReturn = Object.entries(filteredSetData).map(
+      ([key, value]) => {
+        const encounterEntity: IEncounterEntity = {
+          setCode: key,
+          setData: value,
+          cards: value.cardsInSet.map((cis) => encounterEntities[cis.code]),
+        };
+
+        return encounterEntity;
+      }
+    );
+
+    // Go through and get the original index of every "type" of set
+    const originalOrder = setDataToReturn.reduce((orderMap, entity, index) => {
+      if (!orderMap[entity.setData.setTypeCode]) {
+        orderMap[entity.setData.setTypeCode] = index;
+      }
+
+      return orderMap;
+    }, {} as { [key: string]: number });
+
+    return setDataToReturn.sort(
+      (a, b) =>
+        originalOrder[a.setData.setTypeCode] -
+        originalOrder[b.setData.setTypeCode]
+    );
+  }
 
   additionalRotationForCardForRole(
     _role: string,

@@ -40,6 +40,7 @@ import {
   myPeerRef,
   playerHandHeightPx,
   possibleColors,
+  showCustomCardsMenuLocalStorage,
   useWebRTCLocalStorage,
 } from "./constants/app-constants";
 import {
@@ -182,7 +183,7 @@ interface IProps {
   clearHistory: () => void;
   counters: ICounter[];
   tokens: IFlippableToken[];
-  requestResync: () => void;
+  requestResync: (payload: { includeCustomCards: boolean }) => void;
   peerId: string;
   multiplayerGameName: string;
   dropTargetCardsById: {
@@ -240,6 +241,8 @@ interface IProps {
   togglePreviewCardRotation: () => void;
   addNewPlaymatInColumn: (imgUrl: string) => void;
   resetPlaymats: () => void;
+  parseCsvCustomCards: (gameType: GameType, csvString: string) => void;
+  removeCustomCards: (gameType: GameType) => void;
 }
 
 interface IState {
@@ -261,6 +264,7 @@ interface IState {
   deckImporterPosition: Vector2d | null;
   showEncounterImporter: boolean;
   encounterImporterPosition: Vector2d | null;
+  importerForCustomCards: boolean;
   showCardSearch: boolean;
   cardSearchTouchBased: boolean;
   cardSearchPosition: Vector2d | null;
@@ -317,6 +321,7 @@ class Game extends Component<IProps, IState> {
       showDeckImporter: false,
       deckImporterPosition: null,
       showEncounterImporter: false,
+      importerForCustomCards: false,
       encounterImporterPosition: null,
       showCardSearch: false,
       cardSearchTouchBased: false,
@@ -1029,6 +1034,7 @@ class Game extends Component<IProps, IState> {
           loadCards={this.handleLoadEncounter(
             this.getRelativePositionFromTarget(this.stage)
           )}
+          customCards={this.state.importerForCustomCards}
         />
       </TopLayer>
     );
@@ -2650,6 +2656,7 @@ class Game extends Component<IProps, IState> {
             action: () => {
               this.setState({
                 showEncounterImporter: true,
+                importerForCustomCards: false,
                 encounterImporterPosition:
                   this.stage?.getPointerPosition() ?? null,
               });
@@ -2679,6 +2686,45 @@ class Game extends Component<IProps, IState> {
             hidden: additionalResources.length === 0,
           },
         ],
+      },
+      {
+        label: "Custom Content",
+        children: [
+          {
+            label: "Import Custom Cards",
+            fileLoadedAction: (csvContents: string) => {
+              this.props.parseCsvCustomCards(
+                this.props.currentGameType,
+                csvContents
+              );
+            },
+            fileUploader: true,
+          },
+          {
+            label: "Load Custom Sets",
+            action: () => {
+              this.setState({
+                showEncounterImporter: true,
+                importerForCustomCards: true,
+                encounterImporterPosition:
+                  this.stage?.getPointerPosition() ?? null,
+              });
+            },
+          },
+          {
+            label: "Sync All Custom Cards from Online Game",
+            action: () => {
+              this.props.requestResync({ includeCustomCards: true });
+            },
+          },
+          {
+            label: "Remove All Custom Data for this Game",
+            action: () => {
+              this.props.removeCustomCards(this.props.currentGameType);
+            },
+          },
+        ],
+        hidden: !showCustomCardsMenuLocalStorage,
       },
       {
         label: "Add Playmat",
@@ -2834,9 +2880,10 @@ class Game extends Component<IProps, IState> {
           // },
           {
             label: "Request resync from Remote Game",
-            action: this.props.requestResync,
+            action: () => {
+              this.props.requestResync({ includeCustomCards: false });
+            },
           },
-
           {
             label: `Copy my online game link`,
             action: () => {

@@ -6,9 +6,12 @@ import {
   ICardData,
   ICardsDataStateUserView,
   IGameCardsDataState,
+  ISetData,
   Set,
 } from "../cards-data/initialState";
 import GameManager from "../../game-modules/GameModuleManager";
+
+export type ICardSetToLoad = IEncounterEntity;
 
 export interface IEncounterEntity {
   setCode: string;
@@ -152,15 +155,91 @@ export const getCardsDataSetData = createSelector(getCardsData, (cardsData) => {
   return data.setData;
 });
 
-export const getEncounterEntities = (gameType: GameType) =>
+export const getEncounterEntities = (
+  gameType: GameType,
+  customCards: boolean
+) =>
   createSelector(
     getCardsDataSetData,
     getCardsDataHeroEntities,
     getCardsDataEncounterEntities,
     (setData, herosData, encounterEntities): IEncounterEntity[] => {
-      return GameManager.getModuleForType(
-        gameType
-      ).getEncounterEntitiesFromState(setData, herosData, encounterEntities);
+      // Now filter to either exclude or include custom cards, depending
+      // on the value passed in
+
+      const customSetData = {} as ISetData;
+
+      const herosDataFiltered = Object.entries(herosData).reduce(
+        (result, [key, value]) => {
+          if (!customCards && !value.customCard) {
+            result[key] = herosData[key];
+          } else if (customCards && !!value.customCard) {
+            result[key] = herosData[key];
+
+            //Add a new set info if it doesn't exist
+            if (
+              value.extraInfo.setCode &&
+              !setData[value.extraInfo.setCode] &&
+              !customSetData[value.extraInfo.setCode]
+            ) {
+              customSetData[value.extraInfo.setCode] = {
+                name: value.extraInfo.setCode,
+                cardsInSet: [],
+                setTypeCode: value.extraInfo.setType ?? "Custom",
+              };
+            }
+          }
+          return result;
+        },
+        {} as ICardData
+      );
+
+      const encounterDataFiltered = Object.entries(encounterEntities).reduce(
+        (result, [key, value]) => {
+          if (!customCards && !value.customCard) {
+            result[key] = encounterEntities[key];
+          } else if (customCards && !!value.customCard) {
+            result[key] = encounterEntities[key];
+
+            //Add a new set info if it doesn't exist
+            if (
+              value.extraInfo.setCode &&
+              !setData[value.extraInfo.setCode] &&
+              !customSetData[value.extraInfo.setCode]
+            ) {
+              customSetData[value.extraInfo.setCode] = {
+                name: value.extraInfo.setCode,
+                cardsInSet: [],
+                setTypeCode: value.extraInfo.setType ?? "Custom",
+              };
+            }
+          }
+          return result;
+        },
+        {} as ICardData
+      );
+
+      let returnVal = [] as IEncounterEntity[];
+
+      if (customCards) {
+        returnVal = GameManager.getModuleForType(
+          gameType
+        ).getCustomLoadSetsFromState(
+          { ...setData, ...customSetData },
+          herosDataFiltered,
+          encounterDataFiltered
+        );
+      } else {
+        returnVal = GameManager.getModuleForType(
+          gameType
+        ).getEncounterEntitiesFromState(
+          { ...setData, ...customSetData },
+          herosDataFiltered,
+          encounterDataFiltered,
+          customCards
+        );
+      }
+      return returnVal;
     }
   );
 
