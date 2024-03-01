@@ -296,6 +296,8 @@ class Game extends Component<IProps, IState> {
   private lastMousePos: Vector2d = { x: 0, y: 0 };
   private captureLastMousePos = true;
 
+  private resizeObserver: ResizeObserver | null = null;
+
   constructor(props: IProps) {
     super(props);
 
@@ -336,7 +338,7 @@ class Game extends Component<IProps, IState> {
       playmatImageLoaded: false,
       previewCardModal: false,
       stageWidth: window.innerWidth,
-      stageHeight: window.innerHeight - playerHandHeightPx,
+      stageHeight: window.innerHeight,
       forcePan: false,
     };
   }
@@ -357,8 +359,40 @@ class Game extends Component<IProps, IState> {
       document.addEventListener("keydown", this.handleKeyDown);
       document.addEventListener("keyup", this.handleKeyUp);
       document.addEventListener("keypress", this.handleKeyPress);
-      window.addEventListener("resize", this.handleResize);
-      window.addEventListener("orientationchange", this.handleResize);
+
+      // Commented out as part of fixing issue with orientation change on android on 3/1/2024
+      // window.addEventListener("resize", this.handleResize);
+      // window.addEventListener("orientationchange", this.handleResize);
+
+      // This is being used instead of the preious approach of listening to document level resize and orientation change
+      // events. For some reason, responding to those events and using `window.innerHeight` or `window.innerWidth` in any
+      // code in that event causes a bug if you set a Konva stage width or height based on it. On some devices (android
+      // primarily) after a few rotations the window dimensions would be x4 bigger (so maybe an "ultra-hd" issue?). In any
+      // case, using a resizeObserver combined with rerendering when a change occurs (which happens because of the call to
+      // setState in the callback) Everything appears to be working
+      this.resizeObserver = new ResizeObserver((entries) => {
+        if (entries.length !== 1) {
+          console.error(
+            `Got unexpected number of resized entries (expected 1, got ${entries.length}`
+          );
+          return;
+        }
+
+        this.setState({
+          stageHeight: entries[0].contentRect.height,
+          stageWidth: entries[0].contentRect.width,
+        });
+      });
+
+      // Observe the play area
+      const pa = document.querySelector(".play-area");
+      if (pa) {
+        this.resizeObserver.observe(pa);
+      } else {
+        console.error(
+          "Couldn't find .play-area to observe. Resizing will not work."
+        );
+      }
 
       const image = new Image();
       image.onload = () => {
@@ -384,14 +418,15 @@ class Game extends Component<IProps, IState> {
   public componentWillUnmount = () => {
     document.removeEventListener("keydown", this.handleKeyDown);
     document.removeEventListener("keypress", this.handleKeyPress);
-    window.removeEventListener("resize", this.handleResize);
+
+    // Commented out as part of fixing issue with orientation change on android on 3/1/2024
+    // window.removeEventListener("resize", this.handleResize);
   };
 
   public render() {
     if (!GamePropertiesMap[this.props.currentGameType]) {
       return null;
     }
-
     // alert(`STAGE DIM: ${this.state.stageHeight} x ${this.state.stageWidth}`);
 
     const staticCards = this.props.cards.cards
@@ -753,7 +788,7 @@ class Game extends Component<IProps, IState> {
             x={this.props.gameState.stagePosition.x}
             y={this.props.gameState.stagePosition.y}
             width={this.state.stageWidth}
-            height={this.state.stageHeight}
+            height={this.state.stageHeight - playerHandHeightPx}
             onClick={this.handleStageClickOrTap}
             onTap={this.handleStageClickOrTap}
             onMouseDown={this.handleMouseDown}
@@ -2977,12 +3012,13 @@ class Game extends Component<IProps, IState> {
     return returnBackCode ? backCode : frontCode;
   };
 
-  private handleResize = debounce(() => {
-    this.setState({
-      stageHeight: window.innerHeight - playerHandHeightPx,
-      stageWidth: window.innerWidth,
-    });
-  }, 100);
+  // Commented out as part of fixing issue with orientation change on android on 3/1/2024
+  // private handleResize = debounce(() => {
+  //   this.setState({
+  //     stageHeight: window.innerHeight - playerHandHeightPx,
+  //     stageWidth: window.innerWidth,
+  //   });
+  // }, 100);
 }
 
 export default withConfirm(Game);
