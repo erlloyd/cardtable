@@ -130,10 +130,14 @@ export const parseCsvCustomCards =
     csvString: string
   ): ThunkAction<void, RootState, unknown, Action<string>> =>
   async (dispatch) => {
-    const parsedCsv = Papa.parse(csvString, { header: true });
+    const parsedCsv = Papa.parse(csvString, {
+      header: true,
+      skipEmptyLines: true,
+    });
 
     // go through and convert to array of json
     if (parsedCsv.errors.length > 0) {
+      console.error(parsedCsv.errors);
       dispatch(
         sendNotification({
           id: v4(),
