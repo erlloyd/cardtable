@@ -39,6 +39,8 @@ import {
   hideDeckTextImporter,
   showDeckSearch,
   hideDeckSearch,
+  showCardPeekForCards,
+  hideCardPeek,
 } from "../features/game/game.slice";
 import { toggleNotes } from "../features/notes/notes.slice";
 import {
@@ -87,6 +89,8 @@ export const blacklistRemoteActions = {
   [hideDeckTextImporter.type]: true,
   [showDeckSearch.type]: true,
   [hideDeckSearch.type]: true,
+  [showCardPeekForCards.type]: true,
+  [hideCardPeek.type]: true,
 };
 
 export const misingPlayerNumInSeq = (

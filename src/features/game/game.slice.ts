@@ -165,6 +165,17 @@ const hideDeckSearchReducer: CaseReducer<IGameState> = (state) => {
   state.deckSearchPosition = null;
 };
 
+const showCardPeekForCardsReducer: CaseReducer<
+  IGameState,
+  PayloadAction<number>
+> = (state, action) => {
+  state.showCardPeekCards = action.payload;
+};
+
+const hideCardPeekReducer: CaseReducer<IGameState> = (state) => {
+  state.showCardPeekCards = null;
+};
+
 const showDeckTextImporterReducer: CaseReducer<
   IGameState,
   PayloadAction<Vector2d>
@@ -240,6 +251,8 @@ const gameSlice = createSlice({
     hideSpecificCardLoader: hideSpecificCardLoaderReducer,
     showDeckSearch: showDeckSearchReducer,
     hideDeckSearch: hideDeckSearchReducer,
+    showCardPeekForCards: showCardPeekForCardsReducer,
+    hideCardPeek: hideCardPeekReducer,
     showDeckTextImporter: showDeckTextImporterReducer,
     hideDeckTextImporter: hideDeckTextImporterReducer,
     stopDraggingCardFromHand: stopDraggingCardFromHandReducer,
@@ -309,6 +322,8 @@ export const {
   hideSpecificCardLoader,
   showDeckSearch,
   hideDeckSearch,
+  showCardPeekForCards,
+  hideCardPeek,
   showDeckTextImporter,
   hideDeckTextImporter,
   stopDraggingCardFromHand,

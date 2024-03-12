@@ -85,15 +85,16 @@ const App = (props: IProps) => {
     if (import.meta.env.MODE === "production") {
       // For some reason the FPS is way more impactful
       // on iOS devices, so don't use highlight for those devices
-      const forceDisableHighlight =
-        window?.navigator?.userAgent?.includes("AppleWebKit");
+      // const forceDisableHighlight =
+      //   window?.navigator?.userAgent?.includes("AppleWebKit");
+
+      const forceDisableHighlight = false;
 
       H.init("zg03k0g9", {
         version: "_REPLACE_VERSION_",
         enableCanvasRecording: !forceDisableHighlight,
         samplingStrategy: {
-          canvas: 10,
-          canvasQuality: "low",
+          canvasManualSnapshot: 3,
           canvasMaxSnapshotDimension: 480,
         },
         tracingOrigins: true,

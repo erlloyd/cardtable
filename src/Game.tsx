@@ -8,7 +8,7 @@ import { Vector2d } from "konva/lib/types";
 import { debounce } from "lodash";
 import log from "loglevel";
 import { ConfirmOptions, useConfirm } from "material-ui-confirm";
-import React, { Component } from "react";
+import React, { Component, ElementRef } from "react";
 import { Group, Layer, Rect, Stage } from "react-konva";
 import { Provider, ReactReduxContext } from "react-redux";
 import Card from "./Card";
@@ -35,6 +35,7 @@ import PlaymatGroupContainer from "./PlaymatGroupContainer";
 import SpecificCardLoaderContainer from "./SpecificCardLoaderContainer";
 import TokenValueModifier from "./TokenValueModifier";
 import TopLayer from "./TopLayer";
+import { H } from "highlight.run";
 import {
   PlayerColor,
   myPeerRef,
@@ -75,6 +76,7 @@ import {
 import { getCenter, getDistance } from "./utilities/geo";
 import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
 import { CARD_SHOULD_BE_HORIZONTAL_MAP } from "./constants/card-missing-image-map";
+import CardPeekContainer from "./CardPeekContainer";
 
 const SCALE_BY = 1.02;
 
@@ -243,6 +245,7 @@ interface IProps {
   resetPlaymats: () => void;
   parseCsvCustomCards: (gameType: GameType, csvString: string) => void;
   removeCustomCards: (gameType: GameType) => void;
+  showCardPeekForCards: (numCards: number) => void;
 }
 
 interface IState {
@@ -297,6 +300,8 @@ class Game extends Component<IProps, IState> {
   private captureLastMousePos = true;
 
   private resizeObserver: ResizeObserver | null = null;
+
+  private canvasEl: HTMLCanvasElement | null = null;
 
   constructor(props: IProps) {
     super(props);
@@ -427,6 +432,12 @@ class Game extends Component<IProps, IState> {
     if (!GamePropertiesMap[this.props.currentGameType]) {
       return null;
     }
+
+    // try manual snapshotting
+    if (import.meta.env.MODE === "production" && !!this.canvasEl) {
+      H.snapshot(this.canvasEl);
+    }
+
     // alert(`STAGE DIM: ${this.state.stageHeight} x ${this.state.stageWidth}`);
 
     const staticCards = this.props.cards.cards
@@ -759,6 +770,7 @@ class Game extends Component<IProps, IState> {
         ></DeckSearchContainer>
         <DeckTextImporterContainer></DeckTextImporterContainer>
         <NotesContainer></NotesContainer>
+        <CardPeekContainer></CardPeekContainer>
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
         {this.renderPreviewCardModal()}
@@ -774,7 +786,14 @@ class Game extends Component<IProps, IState> {
 
         {/* <ReactReduxContext.Consumer>
           {({ store }) => ( */}
-        <div>
+        <div
+          ref={(el) => {
+            const canvas = el?.querySelector("canvas");
+            if (!!canvas) {
+              this.canvasEl = canvas;
+            }
+          }}
+        >
           {/* <Provider store={store}> */}
           <CardtableAlertsContainer></CardtableAlertsContainer>
           <NotificationsContainer></NotificationsContainer>
@@ -1471,7 +1490,44 @@ class Game extends Component<IProps, IState> {
 
     const menuItems: ContextMenuItem[] = [
       {
-        label: "Add all to hand",
+        label: "Peek",
+        children: [
+          {
+            label: "Peek at 3",
+            action: () => {
+              this.props.showCardPeekForCards(3);
+            },
+          },
+          {
+            label: "Peek at 5",
+            action: () => {
+              this.props.showCardPeekForCards(5);
+            },
+          },
+          {
+            label: "Peek at 10",
+            action: () => {
+              this.props.showCardPeekForCards(10);
+            },
+          },
+          {
+            label: "Peek at X",
+            action: () => {},
+          },
+        ],
+        hidden:
+          true ||
+          mySelectedCards.length !== 1 ||
+          mySelectedCards[0].cardStack.length < 2,
+      },
+      {
+        label: `Add ${
+          mySelectedCards.length > 1 ||
+          (mySelectedCards.length > 0 &&
+            mySelectedCards[0].cardStack.length > 1)
+            ? "all "
+            : ""
+        } to hand`,
         action: () => {
           this.props.addToPlayerHandWithRoleCheck({
             playerNumber:

@@ -91,6 +91,7 @@ import {
   requestResync,
   setDrawingArrow,
   setPreviewCardId,
+  showCardPeekForCards,
   showDeckSearch,
   showDeckTextImporter,
   showRadialMenuAtPosition,
@@ -218,6 +219,7 @@ const GameContainer = connect(mapStateToProps, {
   resetPlaymats,
   parseCsvCustomCards,
   removeCustomCards,
+  showCardPeekForCards,
 })(Game);
 
 export default GameContainer;
