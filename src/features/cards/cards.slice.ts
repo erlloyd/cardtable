@@ -1,4 +1,5 @@
 import isEqual from "lodash.isequal";
+import sortBy from "lodash.sortby";
 import {
   CaseReducer,
   createSlice,
@@ -1542,11 +1543,19 @@ const cardsSlice = createSlice({
     });
 
     builder.addCase(verifyRemoteGameState, (state, action) => {
-      const cardsThatArentDragging = original(state.cards)?.filter(
+      let cardsThatArentDragging = original(state.cards)?.filter(
         (c) => !c.dragging
       );
-      const remoteCardsThatArentDragging =
+
+      cardsThatArentDragging = sortBy(cardsThatArentDragging, (c) => c.id);
+
+      let remoteCardsThatArentDragging =
         action.payload.liveState.present.cards.cards.filter((c) => !c.dragging);
+
+      remoteCardsThatArentDragging = sortBy(
+        remoteCardsThatArentDragging,
+        (c) => c.id
+      );
 
       const cardsInSync = isEqual(
         cardsThatArentDragging,
