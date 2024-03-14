@@ -5,11 +5,9 @@ import {
   DEV_WS_LS_KEY,
   USE_WEBRTC_LS_KEY,
   SHOW_HIDDEN_GAMES_LS_KEY,
-  SHOW_CUSTOM_CARDS_MENU_LS_KEY,
   useDevWSServerLocalStorage,
   useWebRTCLocalStorage,
   showHiddenGamesLocalStorage,
-  showCustomCardsMenuLocalStorage,
 } from "./constants/app-constants";
 
 interface IProps {
@@ -26,15 +24,11 @@ const DevSettings = (props: IProps) => {
   const [showHidden, setShowHidden] = useState(
     !!localStorage.getItem(SHOW_HIDDEN_GAMES_LS_KEY)
   );
-  const [showCustomCards, setShowCustomCards] = useState(
-    !!localStorage.getItem(SHOW_CUSTOM_CARDS_MENU_LS_KEY)
-  );
 
   const changesDetected =
     useWebRTCMP !== useWebRTCLocalStorage ||
     useDevWS !== useDevWSServerLocalStorage ||
-    showHidden !== showHiddenGamesLocalStorage ||
-    showCustomCards !== showCustomCardsMenuLocalStorage;
+    showHidden !== showHiddenGamesLocalStorage;
 
   const handleChange =
     (setter: (val: boolean) => void, lsKey: string) =>
@@ -75,19 +69,6 @@ const DevSettings = (props: IProps) => {
         <Checkbox
           onChange={handleChange(setShowHidden, SHOW_HIDDEN_GAMES_LS_KEY)}
           checked={showHidden}
-          style={{
-            color: "white",
-          }}
-        ></Checkbox>
-      </div>
-      <div>
-        <span>Show custom card menu: </span>{" "}
-        <Checkbox
-          onChange={handleChange(
-            setShowCustomCards,
-            SHOW_CUSTOM_CARDS_MENU_LS_KEY
-          )}
-          checked={showCustomCards}
           style={{
             color: "white",
           }}

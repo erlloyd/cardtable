@@ -4,15 +4,10 @@ import { v4 as uuidv4 } from "uuid";
 export const DEV_WS_LS_KEY = "__dev_ws__";
 export const USE_WEBRTC_LS_KEY = "__webrtc_mp__";
 export const SHOW_HIDDEN_GAMES_LS_KEY = "__show_hidden_games__";
-export const SHOW_CUSTOM_CARDS_MENU_LS_KEY = "__show_custom_cards_menu__";
 export const useDevWSServerLocalStorage = !!localStorage.getItem(DEV_WS_LS_KEY);
 export const useWebRTCLocalStorage = !!localStorage.getItem(USE_WEBRTC_LS_KEY);
 export const showHiddenGamesLocalStorage = !!localStorage.getItem(
   SHOW_HIDDEN_GAMES_LS_KEY
-);
-
-export const showCustomCardsMenuLocalStorage = !!localStorage.getItem(
-  SHOW_CUSTOM_CARDS_MENU_LS_KEY
 );
 
 // Peer ref (for webrtc mode)

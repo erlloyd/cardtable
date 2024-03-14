@@ -41,7 +41,6 @@ import {
   myPeerRef,
   playerHandHeightPx,
   possibleColors,
-  showCustomCardsMenuLocalStorage,
   useWebRTCLocalStorage,
 } from "./constants/app-constants";
 import {
@@ -2815,7 +2814,6 @@ class Game extends Component<IProps, IState> {
             },
           },
         ],
-        hidden: !showCustomCardsMenuLocalStorage,
       },
       {
         label: "Add Playmat",
