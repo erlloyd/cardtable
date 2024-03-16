@@ -45,12 +45,10 @@ const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
     type: GameType.MarvelLegendary,
     module: new MarvelLegendaryGameModule(),
-    hidden: true,
   },
   {
     type: GameType.EarthborneRangers,
     module: new EarthborneRangersGameModule(),
-    hidden: true,
   },
 ];
 
