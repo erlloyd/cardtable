@@ -7,6 +7,9 @@ interface IProps {
   trasparentBackground?: boolean;
   offsetContent?: boolean;
   staticPosition?: boolean;
+  noPadding?: boolean;
+  fullHeight?: boolean;
+  fullWidth?: boolean;
   position: Vector2d;
   completed: () => void;
   children?: React.ReactNode;
@@ -62,9 +65,11 @@ const TopLayer = (props: IProps) => {
       {...handlers}
     >
       <div
-        className={`top-layer-content-wrapper ${
-          !props.children && "no-content"
-        }`}
+        className={`top-layer-content-wrapper 
+        ${(!props.children || props.noPadding) && "no-content"} 
+        ${props.fullHeight && "full-height"} 
+        ${props.fullWidth && "full-width"}
+        `}
         style={containerStyle}
         onContextMenu={preventDefault}
         onClick={handleClick}

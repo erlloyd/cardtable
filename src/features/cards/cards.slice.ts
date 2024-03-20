@@ -1492,6 +1492,50 @@ const createNewPlayerBoardsReducer: CaseReducer<
   state.playerBoards = state.playerBoards.concat(action.payload);
 };
 
+const reorderTopCardsOfStackReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<{
+    stackId: string;
+    numCards: number;
+    top: string[];
+    bottom: string[];
+    draw: string[];
+  }>
+> = (state, action) => {
+  // first get the stack
+  const cardStack = state.cards.find((c) => c.id === action.payload.stackId);
+
+  if (!cardStack) {
+    console.error(
+      `Can't find a stack with id ${action.payload.stackId} to modify`
+    );
+    return;
+  }
+
+  if (cardStack.cardStack.length < action.payload.numCards) {
+    console.error(
+      `Problem handling peek: wanted to manipulate ${action.payload.numCards} cards, but the stack only has ${cardStack.cardStack.length} cards`
+    );
+    return;
+  }
+
+  //Remove the top numCards
+  let newStack = [...cardStack.cardStack].slice(action.payload.numCards);
+
+  //Stick it back together!
+  newStack = action.payload.draw
+    .map((t) => ({ jsonId: t }))
+    .concat(action.payload.top.map((t) => ({ jsonId: t })))
+    .concat(newStack)
+    .concat(action.payload.bottom.map((b) => ({ jsonId: b })));
+
+  cardStack.cardStack = newStack;
+
+  // Now draw the other cards
+  // TODO:
+  // console.log("TODO: Draw the draw cards");
+};
+
 // slice
 const cardsSlice = createSlice({
   name: "cards",
@@ -1531,6 +1575,7 @@ const cardsSlice = createSlice({
     clearMyGhostCards: clearMyGhostCardsReducer,
     movePlayerBoard: movePlayerBoardReducer,
     createNewPlayerBoards: createNewPlayerBoardsReducer,
+    reorderTopCardsOfStack: reorderTopCardsOfStackReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -2185,6 +2230,7 @@ export const {
   clearMyGhostCards,
   movePlayerBoard,
   createNewPlayerBoards,
+  reorderTopCardsOfStack,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

@@ -12,6 +12,16 @@
     border-radius: 0;
     padding: 0px;
   }
+  &.no-padding {
+    border-radius: 0;
+    padding: 0px;
+  }
+  &.full-height {
+    height: 100%;
+  }
+  &.full-width {
+    width: 100%;
+  }
   position: absolute;
   padding: 10px;
   border-radius: 1rem;

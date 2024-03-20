@@ -1,28 +1,64 @@
 import TopLayer from "./TopLayer";
 import "./CardPeek.scss";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import { ICardStack } from "./features/cards/initialState";
+import { ICardData } from "./features/cards-data/initialState";
+import { GameType } from "./game-modules/GameType";
+import cx from "classnames";
+import {
+  getCardTypeWithoutStack,
+  getImgUrlsFromJsonId,
+  shouldRenderImageHorizontal,
+} from "./utilities/card-utils";
+import GameManager from "./game-modules/GameModuleManager";
+import {
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+} from "@mui/material";
+import { useState } from "react";
 interface IProps {
+  currentGameType: GameType;
+  cardsDataEntities: ICardData;
   visible: boolean;
   numToPeek: number | null;
+  cardStack: ICardStack | null;
   hideCardPeek: () => {};
+  reorderAndDrawCardsFromTop: (payload: {
+    stackId: string;
+    numCards: number;
+    top: string[];
+    bottom: string[];
+    draw: string[];
+  }) => void;
 }
 
-// fake data generator
-const getItems = (count: number) =>
-  Array.from({ length: count }, (v, k) => k).map((k) => ({
-    id: `item-${k}`,
-    content: `item ${k}`,
-  }));
+interface PeekedCardImageInfo {
+  jsonId: string;
+  img: HTMLImageElement | undefined;
+  status: "loaded" | "loading" | "failed";
+}
+
+const reorder = (list: any[], startIndex: number, endIndex: number) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+};
 
 const grid = 8;
 
 const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
   // some basic styles to make the items look a bit nicer
   userSelect: "none",
-  padding: grid * 2,
   margin: `0 ${grid}px 0 0`,
-  //height: "28px",
-
+  // width: "60px",
+  // height: "80px",
+  // height: "200px",
+  // width: "100px",
   // change background colour if dragging
   background: isDragging ? "lightgreen" : "grey",
 
@@ -37,69 +73,256 @@ const getListStyle = (isDraggingOver: boolean, itemsLength: number) => ({
   display: "flex",
   padding: grid,
   margin: 12,
-  width: itemsLength * 68,
+  // height: "120px",
+  height: "100%",
+  overflow: "auto",
 });
 
-const items = getItems(5);
-
 const CardPeek = (props: IProps) => {
-  return props.visible ? (
+  if (!props.visible) return null;
+
+  const cards = props.cardStack?.cardStack ?? [];
+  const peekedCards = cards.slice(0, props.numToPeek ?? 5);
+  const peekedCardImgs = peekedCards.map((c, index) => ({
+    jsonId: c.jsonId,
+    imgUrl:
+      getImgUrlsFromJsonId(
+        c.jsonId,
+        true,
+        props.cardsDataEntities,
+        props.currentGameType
+      )[0] ?? "missing",
+  }));
+
+  const [newIndeces, setNewIndeces] = useState(
+    Array.from(Array(peekedCards.length).keys())
+  );
+
+  const initialActionValues = peekedCardImgs.map(() => "top");
+
+  let reorderedCardImgs: { jsonId: string; imgUrl: string }[] = [];
+
+  newIndeces.forEach((i) => {
+    reorderedCardImgs.push(peekedCardImgs[i]);
+  });
+
+  const [actionValues, setActionValues] = useState(initialActionValues);
+
+  console.log("actionValues", actionValues);
+
+  return (
     <TopLayer
       staticPosition={true}
       trasparentBackground={true}
       offsetContent={false}
       position={{ x: 0, y: 0 }}
-      completed={() => {
-        props.hideCardPeek();
-      }}
+      noPadding={true}
+      fullHeight={true}
+      fullWidth={true}
+      completed={() => {}}
     >
       <div
         onClick={(event) => {
           event.stopPropagation();
           event.preventDefault();
-          props.hideCardPeek();
         }}
         className="card-peek-wrapper"
       >
+        <div className="buttons" onClick={(e) => e.stopPropagation()}>
+          <Button
+            variant={"contained"}
+            onClick={() => {
+              //Get the cards that we are going to draw
+              const cardsToDraw: string[] = [];
+              const cardsOnTop: string[] = [];
+              const cardsOnBottom: string[] = [];
+
+              reorderedCardImgs.forEach((imgInfo, i) => {
+                // get the action
+                const action = actionValues[i];
+
+                switch (action) {
+                  case "top":
+                    cardsOnTop.push(imgInfo.jsonId);
+                    break;
+                  case "bottom":
+                    cardsOnBottom.push(imgInfo.jsonId);
+                    break;
+                  case "draw":
+                    cardsToDraw.push(imgInfo.jsonId);
+                    break;
+                }
+              });
+
+              console.log("New Top Cards", cardsOnTop);
+              console.log("New Bottom Cards", cardsOnBottom);
+              console.log("Cards To Draw", cardsToDraw);
+
+              if (props.cardStack?.id) {
+                props.reorderAndDrawCardsFromTop({
+                  stackId: props.cardStack?.id,
+                  numCards: reorderedCardImgs.length,
+                  top: cardsOnTop,
+                  bottom: cardsOnBottom,
+                  draw: cardsToDraw,
+                });
+              } else {
+                console.error("CardPeek has no card stack....");
+              }
+
+              props.hideCardPeek();
+            }}
+          >
+            Done
+          </Button>
+          <Button
+            variant={"contained"}
+            onClick={() => {
+              props.hideCardPeek();
+            }}
+          >
+            Cancel
+          </Button>
+        </div>
         <div className="peek-content">
-          <DragDropContext onDragEnd={() => {}}>
-            <Droppable droppableId="droppable0" direction="horizontal">
-              {(provided, snapshot) => (
-                <div
-                  ref={provided.innerRef}
-                  style={getListStyle(snapshot.isDraggingOver, items.length)}
-                  {...provided.droppableProps}
-                >
-                  {items.map((item, index) => (
-                    <Draggable
-                      key={item.id}
-                      draggableId={item.id}
-                      index={index}
-                    >
-                      {(provided, snapshot) => (
-                        <div
-                          ref={provided.innerRef}
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
-                          style={getItemStyle(
-                            snapshot.isDragging,
-                            provided.draggableProps.style
-                          )}
+          <div
+            onClick={(event) => {
+              event.stopPropagation();
+              event.preventDefault();
+            }}
+          >
+            <DragDropContext
+              onDragEnd={(result) => {
+                // dropped outside the list
+                if (!result.destination) {
+                  return;
+                }
+
+                const newActionValues = reorder(
+                  actionValues,
+                  result.source.index,
+                  result.destination.index
+                );
+
+                const newerIndeces = reorder(
+                  newIndeces,
+                  result.source.index,
+                  result.destination.index
+                );
+
+                setActionValues(newActionValues);
+                setNewIndeces(newerIndeces);
+              }}
+            >
+              <Droppable droppableId="droppable0" direction="horizontal">
+                {(provided, snapshot) => (
+                  <div
+                    ref={provided.innerRef}
+                    style={getListStyle(
+                      snapshot.isDraggingOver,
+                      reorderedCardImgs.length
+                    )}
+                    {...provided.droppableProps}
+                  >
+                    {reorderedCardImgs.map((pCardImageInfo, index) => {
+                      const currentActionValue = actionValues[index];
+
+                      const cardType = getCardTypeWithoutStack(
+                        pCardImageInfo.jsonId,
+                        true,
+                        props.cardsDataEntities
+                      );
+
+                      let shouldRotate = shouldRenderImageHorizontal(
+                        pCardImageInfo.jsonId,
+                        cardType,
+                        GameManager.horizontalCardTypes[
+                          props.currentGameType ??
+                            GameManager.allRegisteredGameTypes[0]
+                        ],
+                        pCardImageInfo.imgUrl.includes("back")
+                      );
+
+                      if (
+                        !!props.currentGameType &&
+                        GameManager.getModuleForType(props.currentGameType)
+                          .shouldRotateCard
+                      ) {
+                        shouldRotate = GameManager.getModuleForType(
+                          props.currentGameType
+                        ).shouldRotateCard!(
+                          pCardImageInfo.jsonId,
+                          cardType,
+                          true
+                        );
+                      }
+
+                      return (
+                        <Draggable
+                          key={`${pCardImageInfo.jsonId}-${index}`}
+                          draggableId={`${pCardImageInfo.jsonId}-${index}`}
+                          index={index}
                         >
-                          {item.content}
-                        </div>
-                      )}
-                    </Draggable>
-                  ))}
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-          </DragDropContext>
+                          {(provided, snapshot) => (
+                            <div
+                              ref={provided.innerRef}
+                              {...provided.draggableProps}
+                              style={getItemStyle(
+                                snapshot.isDragging,
+                                provided.draggableProps.style
+                              )}
+                            >
+                              <FormControl className="select">
+                                <Select
+                                  id="game-picker"
+                                  labelId="game-picker-label"
+                                  onChange={(ai) => {
+                                    actionValues[index] = ai.target.value;
+                                    setActionValues([...actionValues]);
+                                  }}
+                                  variant={"standard"}
+                                  value={currentActionValue}
+                                >
+                                  <MenuItem key={`menu-item-top`} value={"top"}>
+                                    Top of Deck
+                                  </MenuItem>
+                                  <MenuItem
+                                    key={`menu-item-bottom`}
+                                    value={"bottom"}
+                                  >
+                                    Bottom of Deck
+                                  </MenuItem>
+                                  <MenuItem
+                                    key={`menu-item-draw`}
+                                    value={"draw"}
+                                  >
+                                    Draw
+                                  </MenuItem>
+                                </Select>
+                              </FormControl>
+                              <img
+                                {...provided.dragHandleProps}
+                                className={cx({
+                                  "peek-img": true,
+                                  "rotate-card": shouldRotate,
+                                })}
+                                src={pCardImageInfo.imgUrl}
+                              ></img>
+                            </div>
+                          )}
+                        </Draggable>
+                      );
+                    })}
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            </DragDropContext>
+          </div>
         </div>
       </div>
     </TopLayer>
-  ) : null;
+  );
 };
 
 export default CardPeek;

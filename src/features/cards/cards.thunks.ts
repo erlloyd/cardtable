@@ -33,6 +33,7 @@ import {
   cardFromHandMoveWithSnap,
   cardMoveWithSnap,
   endCardMoveWithSnap,
+  reorderTopCardsOfStack,
 } from "./cards.slice";
 import {
   CardtableJSONDeck,
@@ -79,6 +80,27 @@ export interface DrawCardsOutOfCardStackPayload {
   numberToDraw: number;
   facedown?: boolean;
 }
+
+export const reorderAndDrawCardsFromTop =
+  (info: {
+    stackId: string;
+    numCards: number;
+    top: string[];
+    bottom: string[];
+    draw: string[];
+  }): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (dispatch) => {
+    dispatch(reorderTopCardsOfStack(info));
+
+    if (info.draw.length > 0) {
+      dispatch(
+        drawCardsOutOfCardStack({
+          cardStackId: info.stackId,
+          numberToDraw: info.draw.length,
+        })
+      );
+    }
+  };
 
 export const cardFromHandMove =
   (
