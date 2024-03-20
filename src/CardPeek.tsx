@@ -154,10 +154,6 @@ const CardPeek = (props: IProps) => {
                 }
               });
 
-              console.log("New Top Cards", cardsOnTop);
-              console.log("New Bottom Cards", cardsOnBottom);
-              console.log("Cards To Draw", cardsToDraw);
-
               if (props.cardStack?.id) {
                 props.reorderAndDrawCardsFromTop({
                   stackId: props.cardStack?.id,

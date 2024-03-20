@@ -154,7 +154,7 @@ export const parseCsvCustomCards =
         const returnObj = {
           ...d,
           landscape: d.landscape.toLocaleLowerCase().includes("y"),
-          quantity: +(d.quantity ?? "1"),
+          quantity: +(d.quantity || "1"),
         } as CustomCard;
         return returnObj;
       }
@@ -174,7 +174,7 @@ export const parseCsvCustomCards =
       },
       name: c.name,
       typeCode: c.landscape ? "custom_landscape" : "custom",
-      quantity: c.quantity ?? 1,
+      quantity: c.quantity || 1,
       octgnId: null,
       subTypeCode: null,
       customCard: true,
