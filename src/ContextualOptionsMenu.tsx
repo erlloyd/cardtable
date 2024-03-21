@@ -13,8 +13,19 @@ import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import { NumericTokenInfo, TokenInfo } from "./game-modules/GameModule";
 import GameManager from "./game-modules/GameModuleManager";
 import { ICardData } from "./features/cards-data/initialState";
+import { ConfirmOptions, useConfirm } from "material-ui-confirm";
+import { TextField } from "@mui/material";
+
+// Wrapper for hook stuff
+const withConfirm = (Component: any) => {
+  return function WrappedComponent(props: IProps) {
+    const confirm = useConfirm();
+    return <Component {...props} confirm={confirm} />;
+  };
+};
 
 interface IProps {
+  confirm?: (options?: ConfirmOptions) => Promise<void>;
   anyCardsSelected: boolean;
   currentGameType: GameType | null;
   panMode: boolean;
@@ -67,6 +78,7 @@ interface IProps {
   showCardSelector: (cardStack: ICardStack, isSelect: boolean) => void;
   drawCardsOutOfCardStack: (payload: DrawCardsOutOfCardStackPayload) => void;
   cardData: ICardData;
+  showCardPeekForCards: (numCards: number) => void;
 }
 
 enum MenuType {
@@ -76,6 +88,7 @@ enum MenuType {
   ModifierActions = "modifieractions",
   DrawActions = "drawactions",
   DrawNumber = "drawnumber",
+  PeekNumber = "peeknumber",
   ModifierNumber = "modifiernumber",
   ModifierExtraIcons = "modifierextraicons",
 }
@@ -150,6 +163,20 @@ const ContextualOptionsMenu = (props: IProps) => {
             }}
           >
             Draw
+          </button>
+        </Tooltip>
+        <Tooltip title="Peek cards on top of stack">
+          <button
+            onClick={(evt) => {
+              if (visibleMenus.includes(MenuType.PeekNumber)) {
+                setVisibleMenus([]);
+              } else {
+                setVisibleMenus([MenuType.PeekNumber]);
+                setVisibleMenuYPosition(evt.clientY);
+              }
+            }}
+          >
+            Peek
           </button>
         </Tooltip>
         {hasMods && (
@@ -245,17 +272,6 @@ const ContextualOptionsMenu = (props: IProps) => {
             Delete
           </button>
         </Tooltip>
-        <Tooltip title="Draw into hand">
-          <button
-            onClick={() => {
-              props.addToPlayerHandWithRoleCheck({
-                playerNumber: props.playerNumber,
-              });
-            }}
-          >
-            Hand
-          </button>
-        </Tooltip>
         <Tooltip title="Start a new arrow">
           <button
             onClick={() => {
@@ -306,6 +322,14 @@ const ContextualOptionsMenu = (props: IProps) => {
 
       {visibleMenus.includes(MenuType.DrawNumber) &&
         renderDrawNumberSubMenu(
+          props,
+          currentDrawMode,
+          setVisibleMenus,
+          visibleMenuYPosition
+        )}
+
+      {visibleMenus.includes(MenuType.PeekNumber) &&
+        renderPeekNumberSubMenu(
           props,
           currentDrawMode,
           setVisibleMenus,
@@ -813,4 +837,71 @@ const renderDrawNumberSubMenu = (
   );
 };
 
-export default ContextualOptionsMenu;
+const renderPeekNumberSubMenu = (
+  props: IProps,
+  currentDrawMode: DrawMode,
+  setVisibleMenus: (m: MenuType[]) => void,
+  ypos: number
+) => {
+  const buttons = [1, 3, 5, 10, "X"].map((num) => {
+    return (
+      <button
+        key={`draw-${num}-cards-button`}
+        onClick={() => {
+          if (props.selectedCardStacks.length === 1) {
+            if (typeof num === "number") {
+              props.showCardPeekForCards(num);
+              setVisibleMenus([]);
+            } else {
+              if (props.confirm) {
+                let numToPeek = 5;
+                props
+                  .confirm({
+                    title: "How many?",
+                    description: "",
+                    content: (
+                      <TextField
+                        type="number"
+                        onChange={(e) => (numToPeek = +e.target.value)}
+                        onKeyUp={(e) => {
+                          e.stopPropagation();
+                        }}
+                        onKeyDown={(e) => {
+                          e.stopPropagation();
+                        }}
+                        onKeyPress={(e) => {
+                          e.stopPropagation();
+                        }}
+                      ></TextField>
+                    ),
+                  })
+                  .then(() => {
+                    setVisibleMenus([]);
+                    props.showCardPeekForCards(numToPeek);
+                  })
+                  .catch(() => {
+                    // do nothing on cancel
+                  });
+              }
+            }
+          } else {
+            setVisibleMenus([]);
+          }
+        }}
+      >
+        {num}
+      </button>
+    );
+  });
+
+  return (
+    <div
+      className="contextual-options-menu inset auto-width"
+      style={{ top: `${Math.max(ypos - 10, 0)}px` }}
+    >
+      {buttons}
+    </div>
+  );
+};
+
+export default withConfirm(ContextualOptionsMenu);

@@ -30,6 +30,7 @@ import {
 import { getGame, getSnapCardsToGrid } from "./features/game/game.selectors";
 import {
   setDrawingArrow,
+  showCardPeekForCards,
   showRadialMenuAtPosition,
   toggleDrawCardsIntoHand,
   toggleSnapCardsToGrid,
@@ -77,6 +78,7 @@ const ContextualOptionsMenuContainer = connect(mapStateToProps, {
   adjustModifier,
   toggleExtraIcon,
   drawCardsOutOfCardStack,
+  showCardPeekForCards,
 })(ContextualOptionsMenu);
 
 export default ContextualOptionsMenuContainer;

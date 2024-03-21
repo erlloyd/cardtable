@@ -62,7 +62,7 @@ const getItemStyle = (
         // some basic styles to make the items look a bit nicer
         userSelect: "none",
         margin: `10px ${grid}px 0 0`,
-        zIndex: 101,
+        // zIndex: 101,
         // change background colour if dragging
         // background: snapshot.isDragging ? "lightgreen" : "grey",
 
@@ -96,7 +96,7 @@ const getListStyle2 = (isDraggingOver: boolean, isDraggingAtAll: boolean) => {
     height: "",
     width: "100vw",
     boxSizing: "border-box",
-    zIndex: 100,
+    // zIndex: 100,
   } as React.CSSProperties;
 };
 

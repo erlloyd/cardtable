@@ -21,6 +21,9 @@ $menuWidth: 95px;
 
   &.inset {
     right: $menuWidth;
+    &.auto-width {
+      width: auto;
+    }
   }
 
   &.inset2 {

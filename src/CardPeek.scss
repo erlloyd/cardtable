@@ -5,6 +5,14 @@
   justify-content: center;
   width: 100%;
   height: 100%;
+  @media only screen and (max-height: 500px) {
+    background-color: gray;
+  }
+
+  @media only screen and (min-height: 501px) {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 }
 
 .buttons {
@@ -12,12 +20,14 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-color: lightgray;
+  background-color: gray;
   padding: 10px;
 }
 
 .peek-img {
   height: 300px;
+  max-height: 50vh;
+  margin-top: 5px;
 }
 
 .select {
@@ -26,7 +36,17 @@
 
 .peek-content {
   width: 90%;
-  background-color: lightgray;
+  background-color: gray;
+
+  .MuiInput-input {
+    padding-left: 10px;
+  }
+
+  .dragging {
+    .MuiInput-input {
+      background-color: lightgreen;
+    }
+  }
 }
 
 .deck-text-importer-background {

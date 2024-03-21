@@ -1,6 +1,6 @@
 import CloseIcon from "@material-ui/icons/Close";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import { IconButton, Snackbar } from "@mui/material";
+import { IconButton, Input, Snackbar, TextField } from "@mui/material";
 import * as Intersects from "intersects";
 import Konva from "konva";
 import { KonvaEventObject } from "konva/lib/Node";
@@ -76,6 +76,7 @@ import { getCenter, getDistance } from "./utilities/geo";
 import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
 import { CARD_SHOULD_BE_HORIZONTAL_MAP } from "./constants/card-missing-image-map";
 import CardPeekContainer from "./CardPeekContainer";
+import { FormControl } from "@material-ui/core";
 
 const SCALE_BY = 1.02;
 
@@ -1511,11 +1512,40 @@ class Game extends Component<IProps, IState> {
           },
           {
             label: "Peek at X",
-            action: () => {},
+            action: () => {
+              if (this.props.confirm) {
+                let numToPeek = 5;
+                this.props
+                  .confirm({
+                    title: "How many?",
+                    description: "",
+                    content: (
+                      <TextField
+                        type="number"
+                        onChange={(e) => (numToPeek = +e.target.value)}
+                        onKeyUp={(e) => {
+                          e.stopPropagation();
+                        }}
+                        onKeyDown={(e) => {
+                          e.stopPropagation();
+                        }}
+                        onKeyPress={(e) => {
+                          e.stopPropagation();
+                        }}
+                      ></TextField>
+                    ),
+                  })
+                  .then(() => {
+                    this.props.showCardPeekForCards(numToPeek);
+                  })
+                  .catch(() => {
+                    // do nothing on cancel
+                  });
+              }
+            },
           },
         ],
         hidden:
-          true ||
           mySelectedCards.length !== 1 ||
           mySelectedCards[0].cardStack.length < 2,
       },

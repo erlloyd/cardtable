@@ -51,16 +51,10 @@ const reorder = (list: any[], startIndex: number, endIndex: number) => {
 
 const grid = 8;
 
-const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
+const getItemStyle = (_isDragging: boolean, draggableStyle: any) => ({
   // some basic styles to make the items look a bit nicer
   userSelect: "none",
   margin: `0 ${grid}px 0 0`,
-  // width: "60px",
-  // height: "80px",
-  // height: "200px",
-  // width: "100px",
-  // change background colour if dragging
-  background: isDragging ? "lightgreen" : "grey",
 
   // styles we need to apply on draggables
   ...draggableStyle,
@@ -107,8 +101,6 @@ const CardPeek = (props: IProps) => {
   });
 
   const [actionValues, setActionValues] = useState(initialActionValues);
-
-  console.log("actionValues", actionValues);
 
   return (
     <TopLayer
@@ -278,6 +270,11 @@ const CardPeek = (props: IProps) => {
                                   }}
                                   variant={"standard"}
                                   value={currentActionValue}
+                                  className={
+                                    snapshot.isDragging
+                                      ? `dragging`
+                                      : `not-dragging`
+                                  }
                                 >
                                   <MenuItem key={`menu-item-top`} value={"top"}>
                                     Top of Deck
