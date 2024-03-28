@@ -53,6 +53,7 @@ import { makeBasicPlayerBoard } from "../../utilities/playerboard-utils";
 import GameManager from "../../game-modules/GameModuleManager";
 import { addNewPlaymatInColumnWithId } from "../playmats/playmats.actions";
 import { resetPlaymats } from "../playmats/playmats.slice";
+import { removePlayer } from "../game/game.slice";
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 const CARD_ATTACH_TARGET_MIN_DISTANCE = 50;
@@ -1500,6 +1501,7 @@ const reorderTopCardsOfStackReducer: CaseReducer<
     top: string[];
     bottom: string[];
     draw: string[];
+    reveal: string[];
   }>
 > = (state, action) => {
   // first get the stack
@@ -1524,7 +1526,8 @@ const reorderTopCardsOfStackReducer: CaseReducer<
 
   //Stick it back together!
   newStack = action.payload.draw
-    .map((t) => ({ jsonId: t }))
+    .map((d) => ({ jsonId: d }))
+    .concat(action.payload.reveal.map((r) => ({ jsonId: r })))
     .concat(action.payload.top.map((t) => ({ jsonId: t })))
     .concat(newStack)
     .concat(action.payload.bottom.map((b) => ({ jsonId: b })));
@@ -1578,6 +1581,17 @@ const cardsSlice = createSlice({
     reorderTopCardsOfStack: reorderTopCardsOfStackReducer,
   },
   extraReducers: (builder) => {
+    builder.addCase(removePlayer, (state, action) => {
+      // Go through all cards and make sure the players cards aren't
+      // selected
+      state.cards.forEach((c) => {
+        if (c.controlledBy === action.payload) {
+          c.selected = false;
+          c.controlledBy = "";
+        }
+      });
+    });
+
     builder.addCase(receiveRemoteGameState, (state, action) => {
       // TODO: find a way to keep this automatic
       state.cards = action.payload.liveState.present.cards.cards;

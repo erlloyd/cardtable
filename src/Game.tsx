@@ -1493,6 +1493,12 @@ class Game extends Component<IProps, IState> {
         label: "Peek",
         children: [
           {
+            label: "Peek at 1",
+            action: () => {
+              this.props.showCardPeekForCards(1);
+            },
+          },
+          {
             label: "Peek at 3",
             action: () => {
               this.props.showCardPeekForCards(3);

@@ -32,7 +32,9 @@ class PeerConnector extends Component<IProps> {
       >
         <TextField
           label="Enter peer id"
-          autoCapitalize="none"
+          inputProps={{
+            autoCapitalize: "none",
+          }}
           ref={this.focusInputField}
           onKeyPress={(event) => {
             if (event.key === "Enter") {

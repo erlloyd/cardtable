@@ -79,6 +79,7 @@ export interface DrawCardsOutOfCardStackPayload {
   cardStackId: string;
   numberToDraw: number;
   facedown?: boolean;
+  forceOnTable?: boolean;
 }
 
 export const reorderAndDrawCardsFromTop =
@@ -88,15 +89,42 @@ export const reorderAndDrawCardsFromTop =
     top: string[];
     bottom: string[];
     draw: string[];
+    reveal: string[];
+    randomTop: boolean;
+    randomBottom: boolean;
   }): ThunkAction<void, RootState, unknown, Action<string>> =>
   (dispatch) => {
-    dispatch(reorderTopCardsOfStack(info));
+    let topToUse = info.top;
+    let bottomToUse = info.bottom;
+
+    if (topToUse.length > 0 && info.randomTop) {
+      topToUse = shuffle<string>(info.top);
+    }
+
+    if (bottomToUse.length > 0 && info.randomBottom) {
+      bottomToUse = shuffle<string>(info.bottom);
+    }
+
+    dispatch(
+      reorderTopCardsOfStack({ ...info, top: topToUse, bottom: bottomToUse })
+    );
 
     if (info.draw.length > 0) {
       dispatch(
         drawCardsOutOfCardStack({
           cardStackId: info.stackId,
           numberToDraw: info.draw.length,
+        })
+      );
+    }
+
+    if (info.reveal.length > 0) {
+      dispatch(
+        drawCardsOutOfCardStack({
+          cardStackId: info.stackId,
+          numberToDraw: info.reveal.length,
+          facedown: false,
+          forceOnTable: true,
         })
       );
     }
@@ -152,7 +180,7 @@ export const shuffleStack =
       .filter((s): s is ICardStack => !!s && s.cardStack.length > 1)
       .forEach((stackToShuffle) => {
         dispatch(setStackShuffling({ id: stackToShuffle.id, shuffling: true }));
-        const shuffledStack = shuffle(stackToShuffle.cardStack);
+        const shuffledStack = shuffle<ICardDetails>(stackToShuffle.cardStack);
         // We have to do a setTimeout here, because if we do it in this event loop,
         // the overall change for this card is nothing for the shuffling param
         setTimeout(() => {
@@ -270,7 +298,8 @@ export const drawCardsOutOfCardStack =
     const playerNumberToUse =
       getGame(getState()).currentVisiblePlayerHandNumber ??
       getGame(getState()).playerNumbers[myPeerRef];
-    const drawCardsIntoHand = getGame(getState()).drawCardsIntoHand;
+    const drawCardsIntoHand =
+      !payload.forceOnTable && getGame(getState()).drawCardsIntoHand;
     const possibleIds = Array.from({ length: payload.numberToDraw }).map((_i) =>
       uuidv4()
     );
@@ -539,7 +568,7 @@ export const fetchDecklistById = createAsyncThunk(
   }
 );
 
-const shuffle = (array: ICardDetails[]): ICardDetails[] => {
+const shuffle = <T>(array: T[]): T[] => {
   const returnArray = JSON.parse(JSON.stringify(array));
   var currentIndex = returnArray.length,
     temporaryValue,

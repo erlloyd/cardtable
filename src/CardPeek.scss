@@ -15,13 +15,35 @@
   }
 }
 
+.button-group {
+  button {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
 .buttons {
   width: 90%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: gray;
   padding: 10px;
+}
+
+.random {
+  margin-top: -10px;
+  margin-bottom: -10px;
+  width: 90%;
+  background-color: gray;
+  padding-left: 20px;
+  .MuiFormControlLabel-label {
+    font-size: 0.85rem;
+  }
+  .MuiFormGroup-root {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .peek-img {

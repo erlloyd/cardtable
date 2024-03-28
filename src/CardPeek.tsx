@@ -13,8 +13,10 @@ import {
 import GameManager from "./game-modules/GameModuleManager";
 import {
   Button,
+  Checkbox,
   FormControl,
-  InputLabel,
+  FormControlLabel,
+  FormGroup,
   MenuItem,
   Select,
 } from "@mui/material";
@@ -32,6 +34,9 @@ interface IProps {
     top: string[];
     bottom: string[];
     draw: string[];
+    reveal: string[];
+    randomTop: boolean;
+    randomBottom: boolean;
   }) => void;
 }
 
@@ -92,6 +97,9 @@ const CardPeek = (props: IProps) => {
     Array.from(Array(peekedCards.length).keys())
   );
 
+  const [randomTop, setRandomTop] = useState(false);
+  const [randomBottom, setRandomBottom] = useState(false);
+
   const initialActionValues = peekedCardImgs.map(() => "top");
 
   let reorderedCardImgs: { jsonId: string; imgUrl: string }[] = [];
@@ -116,67 +124,156 @@ const CardPeek = (props: IProps) => {
       <div
         onClick={(event) => {
           event.stopPropagation();
-          event.preventDefault();
         }}
         className="card-peek-wrapper"
       >
-        <div className="buttons" onClick={(e) => e.stopPropagation()}>
-          <Button
-            variant={"contained"}
-            onClick={() => {
-              //Get the cards that we are going to draw
-              const cardsToDraw: string[] = [];
-              const cardsOnTop: string[] = [];
-              const cardsOnBottom: string[] = [];
+        <div
+          className="buttons"
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        >
+          <div className="button-group">
+            <Button
+              style={{
+                color: "white",
+                borderColor: "white",
+              }}
+              variant={"outlined"}
+              onClick={() => {
+                setActionValues(actionValues.map((_) => "top"));
+              }}
+            >
+              Set all to Top
+            </Button>
+            <Button
+              variant={"outlined"}
+              style={{
+                color: "white",
+                borderColor: "white",
+              }}
+              onClick={() => {
+                setActionValues(actionValues.map((_) => "bottom"));
+              }}
+            >
+              Set all to Bottom
+            </Button>
+          </div>
+          <div className="button-group">
+            <Button
+              variant={"contained"}
+              onClick={() => {
+                //Get the cards that we are going to draw
+                const cardsToDraw: string[] = [];
+                const cardsToReveal: string[] = [];
+                const cardsOnTop: string[] = [];
+                const cardsOnBottom: string[] = [];
 
-              reorderedCardImgs.forEach((imgInfo, i) => {
-                // get the action
-                const action = actionValues[i];
+                reorderedCardImgs.forEach((imgInfo, i) => {
+                  // get the action
+                  const action = actionValues[i];
 
-                switch (action) {
-                  case "top":
-                    cardsOnTop.push(imgInfo.jsonId);
-                    break;
-                  case "bottom":
-                    cardsOnBottom.push(imgInfo.jsonId);
-                    break;
-                  case "draw":
-                    cardsToDraw.push(imgInfo.jsonId);
-                    break;
-                }
-              });
-
-              if (props.cardStack?.id) {
-                props.reorderAndDrawCardsFromTop({
-                  stackId: props.cardStack?.id,
-                  numCards: reorderedCardImgs.length,
-                  top: cardsOnTop,
-                  bottom: cardsOnBottom,
-                  draw: cardsToDraw,
+                  switch (action) {
+                    case "top":
+                      cardsOnTop.push(imgInfo.jsonId);
+                      break;
+                    case "bottom":
+                      cardsOnBottom.push(imgInfo.jsonId);
+                      break;
+                    case "draw":
+                      cardsToDraw.push(imgInfo.jsonId);
+                      break;
+                    case "reveal":
+                      cardsToReveal.push(imgInfo.jsonId);
+                      break;
+                  }
                 });
-              } else {
-                console.error("CardPeek has no card stack....");
-              }
 
-              props.hideCardPeek();
-            }}
-          >
-            Done
-          </Button>
-          <Button
-            variant={"contained"}
-            onClick={() => {
-              props.hideCardPeek();
-            }}
-          >
-            Cancel
-          </Button>
+                if (props.cardStack?.id) {
+                  props.reorderAndDrawCardsFromTop({
+                    stackId: props.cardStack?.id,
+                    numCards: reorderedCardImgs.length,
+                    top: cardsOnTop,
+                    bottom: cardsOnBottom,
+                    draw: cardsToDraw,
+                    reveal: cardsToReveal,
+                    randomTop,
+                    randomBottom,
+                  });
+                } else {
+                  console.error("CardPeek has no card stack....");
+                }
+
+                props.hideCardPeek();
+              }}
+            >
+              Done
+            </Button>
+            <Button
+              variant={"contained"}
+              onClick={() => {
+                props.hideCardPeek();
+              }}
+            >
+              Cancel
+            </Button>
+          </div>
+        </div>
+        <div className="random">
+          <FormGroup>
+            <FormControlLabel
+              style={{
+                color: "white",
+                borderColor: "white",
+              }}
+              control={
+                <Checkbox
+                  checked={randomTop}
+                  disabled={actionValues.every((a) => a !== "top")}
+                  size="small"
+                  style={{
+                    color: actionValues.every((a) => a !== "top")
+                      ? "darkgray"
+                      : "white",
+                    borderColor: "white",
+                  }}
+                  onChange={(c) => {
+                    setRandomTop(c.target.checked);
+                  }}
+                />
+              }
+              label="Random on Top?"
+            />
+            <FormControlLabel
+              style={{
+                color: "white",
+                borderColor: "white",
+                fontSize: ".5rem",
+              }}
+              control={
+                <Checkbox
+                  checked={randomBottom}
+                  disabled={actionValues.every((a) => a !== "bottom")}
+                  size="small"
+                  style={{
+                    color: actionValues.every((a) => a !== "bottom")
+                      ? "darkgray"
+                      : "white",
+                    borderColor: "white",
+                  }}
+                  onChange={(c) => {
+                    setRandomBottom(c.target.checked);
+                  }}
+                />
+              }
+              label="Random on Bottom?"
+            />
+          </FormGroup>
         </div>
         <div className="peek-content">
           <div
             onClick={(event) => {
               event.stopPropagation();
-              event.preventDefault();
             }}
           >
             <DragDropContext
@@ -290,6 +387,12 @@ const CardPeek = (props: IProps) => {
                                     value={"draw"}
                                   >
                                     Draw
+                                  </MenuItem>
+                                  <MenuItem
+                                    key={`menu-item-reveal`}
+                                    value={"reveal"}
+                                  >
+                                    Reveal
                                   </MenuItem>
                                 </Select>
                               </FormControl>
