@@ -43,7 +43,10 @@ const NestedMenuItem = React.forwardRef<
   useImperativeHandle(ref, () => menuItemRef.current as unknown as any);
 
   const containerRef = useRef<HTMLDivElement>(null);
-  useImperativeHandle(containerRefProp, () => containerRef.current);
+  useImperativeHandle(
+    containerRefProp as React.Ref<HTMLDivElement | null>,
+    () => containerRef.current
+  );
 
   const menuContainerRef = useRef<HTMLDivElement>(null);
 
