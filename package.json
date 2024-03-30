@@ -3,6 +3,9 @@
   "homepage": "https://card-table.app",
   "version": "1.0.4",
   "private": true,
+  "resolutions": {
+    "@babel/traverse": "^7.23.2"
+  },
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
