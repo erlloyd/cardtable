@@ -361,7 +361,8 @@ class PlayerHand extends Component<IProps, IState> {
   render() {
     const cards = this.props.playerHandData?.cards ?? [];
     const possibleRoles = GameManager.getModuleForType(
-      this.props.currentGameType ?? GameManager.allRegisteredGameTypes[0]
+      this.props.currentGameType ??
+        (GameManager.allRegisteredGameTypes[0] as GameType)
     ).properties.roles;
     return (
       <div
@@ -634,7 +635,8 @@ class PlayerHand extends Component<IProps, IState> {
     const imgs = getImgUrls(
       makeFakeCardStackFromJsonId(card.cardDetails.jsonId, card.faceup),
       this.props.cardData,
-      this.props.currentGameType ?? GameManager.allRegisteredGameTypes[0]
+      this.props.currentGameType ??
+        (GameManager.allRegisteredGameTypes[0] as GameType)
     );
 
     // Only want to show the first image if multiple are loaded

@@ -21,4 +21,4 @@ export const FORCE_CARD_BACK_MAP: { [key: string]: string } = {
   "305145": "https://s3.amazonaws.com/hallofbeorn-resources/Images/Cards/Mustering-of-the-Rohirrim/Osbera-SideB.png",
 };
 
-export const MISSING_CARD_IMAGE_MAP: { [key in GameType]: StringToStringMap } = GameManager.cardImageMap;
+export const MISSING_CARD_IMAGE_MAP: { [key in GameType | string]: StringToStringMap } = GameManager.cardImageMap;
