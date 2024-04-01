@@ -15,6 +15,7 @@ import GameManager from "./game-modules/GameModuleManager";
 import { ICardData } from "./features/cards-data/initialState";
 import { ConfirmOptions, useConfirm } from "material-ui-confirm";
 import { TextField } from "@mui/material";
+import { myPeerRef } from "./constants/app-constants";
 
 // Wrapper for hook stuff
 const withConfirm = (Component: any) => {
@@ -778,6 +779,28 @@ const renderDrawActionsSubMenu = (
       All to hand
     </button>,
   ];
+
+  if (
+    props.selectedCardStacks.length === 1 &&
+    props.selectedCardStacks[0].cardStack.length > 1
+  ) {
+    drawMenu.push(
+      <button
+        key={"all-to-table-button"}
+        onClick={() => {
+          props.drawCardsOutOfCardStack({
+            cardStackId: props.selectedCardStacks[0].id,
+            numberToDraw: props.selectedCardStacks[0].cardStack.length,
+            facedown: false,
+            forceOnTable: true,
+          });
+          setVisibleMenus([]);
+        }}
+      >
+        All on table
+      </button>
+    );
+  }
 
   const renderDrawMenuItems = drawMenu.filter((mi) => {
     if (
