@@ -1580,6 +1580,20 @@ class Game extends Component<IProps, IState> {
         },
       },
       {
+        label: `Place all on table`,
+        action: () => {
+          this.props.drawCardsOutOfCardStack({
+            cardStackId: mySelectedCards[0].id,
+            numberToDraw: mySelectedCards[0].cardStack.length,
+            facedown: false,
+            forceOnTable: true,
+          });
+        },
+        hidden:
+          mySelectedCards.length !== 1 ||
+          mySelectedCards[0].cardStack.length < 2,
+      },
+      {
         label: "Flip",
         action: () => {
           this.props.flipCards();

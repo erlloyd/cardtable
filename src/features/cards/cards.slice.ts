@@ -1982,7 +1982,11 @@ const cardsSlice = createSlice({
       //Next, for each card we should draw, remove it from the stack and make a new stack, which should be selected
       // In the case that we're told to draw it into our hand, we don't need to make
       // any new stacks
+      const maxPerRow = 8;
       for (let index = 0; index < action.payload.numberToDraw; index++) {
+        const row = Math.floor(index / maxPerRow);
+        const column = index % maxPerRow;
+
         if (!!cardStackToUse) {
           const topCardDetails = cardStackToUse.cardStack.shift();
           if (!topCardDetails) {
@@ -2010,8 +2014,11 @@ const cardsSlice = createSlice({
             newCard.x =
               newCard.x +
               cardConstants[cardStackToUse.sizeType].GRID_SNAP_WIDTH *
-                (index + 1);
-            newCard.y += cardConstants[cardStackToUse.sizeType].CARD_HEIGHT;
+                (column + 1);
+            newCard.y =
+              newCard.y +
+              cardConstants[cardStackToUse.sizeType].GRID_SNAP_HEIGHT *
+                (row + 1);
 
             state.cards.push(newCard);
           }
