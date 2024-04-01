@@ -20,6 +20,7 @@ export interface CardData {
     factionCode: string | null;
     setType?: string | null;
     sizeType?: CardSizeType;
+    setPosition?: number;
   };
   duplicate_of?: string;
   customCard?: boolean;

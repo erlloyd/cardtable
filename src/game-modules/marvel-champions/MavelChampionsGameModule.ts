@@ -100,6 +100,7 @@ export default class MarvelChampionsGameModule extends GameModule {
           setCode: cardMarvelFormat.set_code ?? null,
           packCode: cardMarvelFormat.pack_code,
           factionCode: cardMarvelFormat.faction_code,
+          setPosition: cardMarvelFormat.set_position,
         },
         duplicate_of: cardMarvelFormat.duplicate_of,
       };

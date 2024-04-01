@@ -27,11 +27,21 @@ export const loadEncounterEntities = (
 
   const setDataToReturn = Object.entries(setTypesEncounters)
     .filter(([key, _value]) => key !== "unknown")
-    .map(([key, value]) => ({
-      setCode: key,
-      setData: setData[key],
-      cards: value,
-    }))
+    .map(([key, value]) => {
+      const shouldSortCardsBySetPosition = value.every(
+        (c) => !!c.extraInfo.setPosition !== undefined
+      );
+      return {
+        setCode: key,
+        setData: setData[key],
+        cards: shouldSortCardsBySetPosition
+          ? value.sort(
+              (a, b) =>
+                (a.extraInfo.setPosition ?? 0) - (b.extraInfo.setPosition ?? 0)
+            )
+          : value,
+      };
+    })
     .filter(
       (set) =>
         set.setData.setTypeCode !== "nemesis" &&

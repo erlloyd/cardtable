@@ -18,6 +18,7 @@ export interface CardData {
   position: number;
   quantity: number;
   set_code?: string;
+  set_position?: number;
   text?: string;
   thwart?: number | null;
   traits?: string;
