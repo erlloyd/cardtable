@@ -43,12 +43,22 @@ const Notifications = ({
       clearNotification(id);
     };
 
+  const bottomOffset = lastNotification?.forceDefaultPosition ? 10 : 90;
+
   return (
     <Snackbar
       open={hasNotification}
       onClose={handleClose(lastNotification?.id ?? "")}
       anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-      sx={{ bottom: { xs: 90, sm: 90, m: 90, l: 90, xl: 90 } }}
+      sx={{
+        bottom: {
+          xs: bottomOffset,
+          sm: bottomOffset,
+          m: bottomOffset,
+          l: bottomOffset,
+          xl: bottomOffset,
+        },
+      }}
     >
       <Alert
         onClose={handleClose(lastNotification?.id ?? "")}

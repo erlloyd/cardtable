@@ -243,7 +243,11 @@ interface IProps {
   togglePreviewCardRotation: () => void;
   addNewPlaymatInColumn: (imgUrl: string) => void;
   resetPlaymats: () => void;
-  parseCsvCustomCards: (gameType: GameType, csvString: string) => void;
+  parseCsvCustomCards: (
+    gameType: GameType,
+    csvString: string,
+    expectNewGame: boolean
+  ) => void;
   removeCustomCards: (gameType: GameType) => void;
   showCardPeekForCards: (numCards: number) => void;
 }
@@ -414,8 +418,13 @@ class Game extends Component<IProps, IState> {
         GamePropertiesMap[this.props.currentGameType]
           .initialPlaymatImageLocation ||
         "/images/table/background_default.jpg";
-      this.props.loadCardsData(this.props.currentGameType);
-      this.props.allJsonData(this.props.currentGameType);
+
+      // Right now this is the best way to tell if we are loading a standard module
+      // or a custom module
+      if (Object.values(GameType).includes(this.props.currentGameType)) {
+        this.props.loadCardsData(this.props.currentGameType);
+        this.props.allJsonData(this.props.currentGameType);
+      }
       this.isSetUp = true;
     }
   }
@@ -796,7 +805,6 @@ class Game extends Component<IProps, IState> {
         >
           {/* <Provider store={store}> */}
           <CardtableAlertsContainer></CardtableAlertsContainer>
-          <NotificationsContainer></NotificationsContainer>
           {/* </Provider> */}
           <Stage
             ref={(ref) => {
@@ -2821,7 +2829,8 @@ class Game extends Component<IProps, IState> {
             fileLoadedAction: (csvContents: string) => {
               this.props.parseCsvCustomCards(
                 this.props.currentGameType,
-                csvContents
+                csvContents,
+                false // don't allow full games to be loaded here
               );
             },
             fileUploader: true,

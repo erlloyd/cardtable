@@ -4,6 +4,7 @@ export interface INotification {
   id: string;
   message: string;
   level: INotificationType;
+  forceDefaultPosition?: boolean;
 }
 
 export interface INotificationsState {

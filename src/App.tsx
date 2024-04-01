@@ -13,7 +13,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { H } from "highlight.run";
 import log from "loglevel";
 import mixpanel from "mixpanel-browser";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useKonami } from "react-konami-code";
 import "./App.scss";
 import DevSettings from "./DevSettings";
@@ -23,6 +23,10 @@ import mainLogo from "./images/card-table-transparent.png";
 import { cacheCommonImages } from "./utilities/game-utils";
 import GameManager from "./game-modules/GameModuleManager";
 import { ConfirmProvider } from "material-ui-confirm";
+import { INotification } from "./features/notifications/initialState";
+import { v4 } from "uuid";
+import NotificationsContainer from "./Notifications/NotificationsContainer";
+import { showCustomGamesLocalStorage } from "./constants/app-constants";
 
 const darkTheme = createTheme({
   palette: {
@@ -36,9 +40,16 @@ interface IProps {
   activeGameType: GameType | null;
   updateActiveGameType: (val: GameType) => void;
   clearQueryParams: () => void;
+  parseCsvCustomCards: (
+    gameType: GameType,
+    csvString: string,
+    expectNewGame: boolean
+  ) => void;
+  sendNotification: (payload: INotification) => void;
 }
 
 const App = (props: IProps) => {
+  const fileInputRef = useRef();
   const [showReload, setShowReload] = useState(false);
   const [waitingWorker, setWaitingWorker] = useState<ServiceWorker | null>(
     null
@@ -85,14 +96,14 @@ const App = (props: IProps) => {
     if (import.meta.env.MODE === "production") {
       // For some reason the FPS is way more impactful
       // on iOS devices, so don't use highlight for those devices
-      // const forceDisableHighlight =
+      // const forceDisableHighlightCanvas =
       //   window?.navigator?.userAgent?.includes("AppleWebKit");
 
-      const forceDisableHighlight = false;
+      const forceDisableHighlightCanvas = true;
 
       H.init("zg03k0g9", {
         version: "_REPLACE_VERSION_",
-        enableCanvasRecording: !forceDisableHighlight,
+        enableCanvasRecording: !forceDisableHighlightCanvas,
         samplingStrategy: {
           canvasManualSnapshot: 3,
           canvasMaxSnapshotDimension: 480,
@@ -147,6 +158,7 @@ const App = (props: IProps) => {
     <ThemeProvider theme={darkTheme}>
       <ConfirmProvider>
         <CssBaseline />
+        <NotificationsContainer></NotificationsContainer>
         {showDevSettings && (
           <DevSettings
             onClose={() => {
@@ -173,7 +185,8 @@ const App = (props: IProps) => {
               props,
               toggleDevSetting,
               numImageClicks,
-              setNumImageClicks
+              setNumImageClicks,
+              fileInputRef
             )}
           </div>
         )}
@@ -198,7 +211,8 @@ const renderGamePicker = (
   props: IProps,
   toggleDevSetting: () => void,
   numImageClicks: number,
-  setNumImageClicks: (n: number) => void
+  setNumImageClicks: (n: number) => void,
+  fileInputRef: React.MutableRefObject<any>
 ) => {
   return (
     <div className="game-picker">
@@ -243,6 +257,43 @@ const renderGamePicker = (
             })}
         </Select>
       </FormControl>
+      <div
+        className={`custom-picker ${
+          showCustomGamesLocalStorage ? "" : "hidden"
+        }`}
+      >
+        <Button onClick={() => fileInputRef.current.click()} variant="outlined">
+          Import Custom Game...
+        </Button>
+        <input
+          onChange={(e) => {
+            if (!!e.target.files && e.target.files[0]) {
+              const file = e.target.files[0];
+              // setting up the reader
+              const reader = new FileReader();
+              reader.readAsText(file, "UTF-8");
+
+              // here we tell the reader what to do when it's done reading...
+              reader.onload = (readerEvent) => {
+                const content: string = readerEvent.target?.result as string; // this is the content!
+                props.parseCsvCustomCards(GameType.StandardDeck, content, true);
+              };
+            } else {
+              props.sendNotification({
+                id: v4(),
+                level: "error",
+                message: "Unable to load file",
+                forceDefaultPosition: true,
+              });
+            }
+            e.target.value = "";
+          }}
+          multiple={false}
+          ref={fileInputRef}
+          type="file"
+          hidden
+        />
+      </div>
     </div>
   );
 };

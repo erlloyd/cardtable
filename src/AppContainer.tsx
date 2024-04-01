@@ -4,6 +4,8 @@ import { getActiveGameType } from "./features/game/game.selectors";
 import { clearQueryParams } from "./features/game/game.thunks";
 import { RootState } from "./store/rootReducer";
 import { updateActiveGameType } from "./features/game/game.slice";
+import { parseCsvCustomCards } from "./features/cards-data/cards-data.thunks";
+import { sendNotification } from "./features/notifications/notifications.slice";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -14,6 +16,8 @@ const mapStateToProps = (state: RootState) => {
 const AppContainer = connect(mapStateToProps, {
   updateActiveGameType,
   clearQueryParams,
+  parseCsvCustomCards,
+  sendNotification,
 })(App);
 
 export default AppContainer;

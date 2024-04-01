@@ -295,7 +295,7 @@ const cardsDataSlice = createSlice({
     builder.addCase(receiveRemoteGameState, (state, action) => {
       state.activeDataType =
         action.payload.game.activeGameType ??
-        GameManager.allRegisteredGameTypes[0];
+        (GameManager.allRegisteredGameTypes[0] as GameType);
     });
     builder.addCase(updateActiveGameType, (state, action) => {
       state.activeDataType = action.payload;

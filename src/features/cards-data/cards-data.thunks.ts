@@ -6,7 +6,7 @@ import {
   bulkLoadCardsForEncounterSet,
 } from "./cards-data.slice";
 import { GameType } from "../../game-modules/GameType";
-import { doneLoadingJSON } from "../game/game.slice";
+import { doneLoadingJSON, updateActiveGameType } from "../game/game.slice";
 import GameManager from "../../game-modules/GameModuleManager";
 import Papa from "papaparse";
 import { sendNotification } from "../notifications/notifications.slice";
@@ -34,6 +34,11 @@ export interface InputCustomCard {
   set?: string;
   setType?: string;
   quantity?: string;
+}
+
+export interface CustomGame {
+  gameType: string;
+  gameName: string;
 }
 
 export const removeCustomCards =
@@ -127,7 +132,8 @@ export const allJsonData =
 export const parseCsvCustomCards =
   (
     gameType: GameType,
-    csvString: string
+    csvString: string,
+    expectNewGame: boolean
   ): ThunkAction<void, RootState, unknown, Action<string>> =>
   async (dispatch) => {
     const parsedCsv = Papa.parse(csvString, {
@@ -147,6 +153,52 @@ export const parseCsvCustomCards =
         })
       );
       return;
+    }
+
+    // First check to see if we are opening a new game
+    const firstCard = parsedCsv.data[0] as InputCustomCard;
+    if (
+      firstCard.id &&
+      firstCard.name &&
+      !firstCard.backImageUrl &&
+      !firstCard.frontImageUrl
+    ) {
+      // we assume this means it is for a new game.
+      if (!expectNewGame) {
+        console.error(parsedCsv.errors);
+        dispatch(
+          sendNotification({
+            id: v4(),
+            level: "error",
+            message:
+              "This custom content appears to be for a complete game. Please quit this game and load from the main screen.",
+          })
+        );
+        return;
+      }
+
+      const newGameInfo: CustomGame = {
+        gameType: firstCard.id,
+        gameName: firstCard.name,
+      };
+
+      gameType = newGameInfo.gameType as GameType;
+      parsedCsv.data.shift();
+    } else if (
+      !!firstCard.id &&
+      !!firstCard.name &&
+      firstCard.frontImageUrl &&
+      firstCard.backImageUrl &&
+      expectNewGame
+    ) {
+      dispatch(
+        sendNotification({
+          id: v4(),
+          level: "error",
+          message:
+            "This custom content appears to be for an existing game. Please start a game, then import the content.",
+        })
+      );
     }
 
     const customCards = (parsedCsv.data as InputCustomCard[]).map(
@@ -182,6 +234,11 @@ export const parseCsvCustomCards =
 
     const isPlayerCard = false;
 
+    // First, we need to make sure we add the new module
+    if (expectNewGame) {
+      GameManager.registerCustomModule(gameType);
+    }
+
     dispatch(
       addRawCardsData({
         gameType,
@@ -215,4 +272,8 @@ export const parseCsvCustomCards =
       "cardtable-custom-cards",
       JSON.stringify(existingCustomCards)
     );
+
+    if (expectNewGame) {
+      dispatch(updateActiveGameType(gameType));
+    }
   };
