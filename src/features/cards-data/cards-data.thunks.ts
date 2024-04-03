@@ -177,16 +177,16 @@ export const parseCsvCustomCards =
         // return;
 
         //for now, just remove this "fake" card
-        parsedCsv.data = parsedCsv.data.slice(1);
+        parsedCsv.data.shift();
+      } else {
+        const newGameInfo: CustomGame = {
+          gameType: firstCard.id,
+          gameName: firstCard.name,
+        };
+
+        gameType = newGameInfo.gameType as GameType;
+        parsedCsv.data.shift();
       }
-
-      const newGameInfo: CustomGame = {
-        gameType: firstCard.id,
-        gameName: firstCard.name,
-      };
-
-      gameType = newGameInfo.gameType as GameType;
-      parsedCsv.data.shift();
     } else if (
       !!firstCard.id &&
       !!firstCard.name &&
