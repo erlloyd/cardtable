@@ -2875,24 +2875,74 @@ class Game extends Component<IProps, IState> {
         ],
       },
       {
-        label: "Add Playmat",
-        children: GamePropertiesMap[
-          this.props.currentGameType
-        ].additionalPlaymatImageOptions?.additionalImages.map((po) => ({
-          label: po.displayName,
-          action: () => {
-            this.props.addNewPlaymatInColumn(po.imgUrl);
+        label: "Playmats",
+        children: [
+          {
+            label: "Change initial playmat image",
+            action: () => {
+              if (this.props.confirm) {
+                let imageToLoad = "";
+                this.props
+                  .confirm({
+                    title: "Image Url?",
+                    description: "",
+                    content: (
+                      <TextField
+                        className="playmat-image-textbox"
+                        onChange={(e) => {
+                          imageToLoad = e.target.value;
+                        }}
+                        onKeyUp={(e) => {
+                          e.stopPropagation();
+                        }}
+                        onKeyDown={(e) => {
+                          e.stopPropagation();
+                        }}
+                        onKeyPress={(e) => {
+                          e.stopPropagation();
+                        }}
+                      ></TextField>
+                    ),
+                  })
+                  .then(() => {
+                    console.log(imageToLoad);
+                  })
+                  .catch(() => {
+                    // do nothing on cancel
+                  });
+              }
+            },
+            hidden: true,
           },
-        })),
-        hidden:
-          !GamePropertiesMap[this.props.currentGameType]
-            .additionalPlaymatImageOptions,
-      },
-      {
-        label: "Reset Playmats",
-        action: () => {
-          this.props.resetPlaymats();
-        },
+          {
+            label: "Reset initial playmat image",
+            action: () => {},
+            hidden: true,
+          },
+          {
+            label: "Add Playmat",
+            children: GamePropertiesMap[
+              this.props.currentGameType
+            ].additionalPlaymatImageOptions?.additionalImages.map((po) => ({
+              label: po.displayName,
+              action: () => {
+                this.props.addNewPlaymatInColumn(po.imgUrl);
+              },
+            })),
+            hidden:
+              !GamePropertiesMap[this.props.currentGameType]
+                .additionalPlaymatImageOptions,
+          },
+          {
+            label: "Reset Playmats",
+            action: () => {
+              this.props.resetPlaymats();
+            },
+            hidden:
+              !GamePropertiesMap[this.props.currentGameType]
+                .additionalPlaymatImageOptions,
+          },
+        ],
         hidden:
           !GamePropertiesMap[this.props.currentGameType]
             .additionalPlaymatImageOptions,
