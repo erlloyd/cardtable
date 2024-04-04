@@ -6,6 +6,8 @@ import {
 import { GameProperties } from "../GameModule";
 
 export const properties: GameProperties = {
+  heroImageUrl:
+    "https://cf.geekdo-images.com/kRvUgYiaOq07kC67ZK5UoQ__itemrep/img/enmioYOA6vc3rEJuWZA27jQtU9c=/fit-in/246x300/filters:strip_icc()/pic4900321.jpg",
   deckSite: "marvelcdb.com",
   decklistApi: "https://marvelcdb.com/api/public/decklist/",
   allowSpecificCardSearch: true,

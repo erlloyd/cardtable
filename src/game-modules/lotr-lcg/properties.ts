@@ -6,6 +6,8 @@ import {
 import { GameProperties } from "../GameModule";
 
 export const properties: GameProperties = {
+  heroImageUrl:
+    "https://cf.geekdo-images.com/ZmXi5BbtoWl58ZnKcUy1vw__itemrep/img/pbBXQjhJ3fJVgcsI4mdT0qdHULI=/fit-in/246x300/filters:strip_icc()/pic906495.jpg",
   deckSite: "ringsdb.com",
   decklistApi: "https://ringsdb.com/api/public/decklist/",
   allowSpecificCardSearch: true,

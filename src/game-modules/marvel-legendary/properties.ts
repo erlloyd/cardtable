@@ -5,6 +5,8 @@ import {
 import { GameProperties } from "../GameModule";
 
 export const properties: GameProperties = {
+  heroImageUrl:
+    "https://cf.geekdo-images.com/ZrRidumkzu62HuwKdgQpHA__imagepage/img/rEh0oKbvD45eDIZqPZOfx0UmfhA=/fit-in/900x600/filters:no_upscale():strip_icc()/pic1430769.jpg",
   deckSite: "",
   decklistApi: "",
   decklistSearchApi: "",

@@ -5,6 +5,8 @@ import {
 import { GameProperties } from "../GameModule";
 
 export const properties: GameProperties = {
+  heroImageUrl:
+    "https://cf.geekdo-images.com/FCz9Iu2kG-5-XLtWAeymwQ__imagepage/img/Y_9WX_TRX7QJXlOdGlE_HAp6CvY=/fit-in/900x600/filters:no_upscale():strip_icc()/pic6293682.jpg",
   deckSite: "rangersdb.com",
   decklistApi: "https://gapi.rangersdb.com/v1/graphql",
   decklistSearchApi: "",

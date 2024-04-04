@@ -134,6 +134,7 @@ export type AdditionalResource = { url: string; display: string };
 export type IPlaymatLayout = "row" | "column" | "ebr";
 
 export interface GameProperties {
+  heroImageUrl: string;
   deckSite: string;
   decklistApi: string;
   allowSpecificCardSearch?: boolean;

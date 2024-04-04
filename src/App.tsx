@@ -28,6 +28,8 @@ import { v4 } from "uuid";
 import NotificationsContainer from "./Notifications/NotificationsContainer";
 import { showCustomGamesLocalStorage } from "./constants/app-constants";
 
+const legacy = false;
+
 const darkTheme = createTheme({
   palette: {
     mode: "light",
@@ -181,13 +183,21 @@ const App = (props: IProps) => {
           </div>
         ) : (
           <div>
-            {renderGamePicker(
-              props,
-              toggleDevSetting,
-              numImageClicks,
-              setNumImageClicks,
-              fileInputRef
-            )}
+            {legacy
+              ? renderGamePickerLegacy(
+                  props,
+                  toggleDevSetting,
+                  numImageClicks,
+                  setNumImageClicks,
+                  fileInputRef
+                )
+              : renderGamePicker(
+                  props,
+                  toggleDevSetting,
+                  numImageClicks,
+                  setNumImageClicks,
+                  fileInputRef
+                )}
           </div>
         )}
       </ConfirmProvider>
@@ -208,6 +218,112 @@ const camelCaseToSpaces = (str: string) => {
 };
 
 const renderGamePicker = (
+  props: IProps,
+  toggleDevSetting: () => void,
+  numImageClicks: number,
+  setNumImageClicks: (n: number) => void,
+  fileInputRef: React.MutableRefObject<any>
+) => {
+  return (
+    <div className="game-picker">
+      <img
+        onClick={() => {
+          if (numImageClicks >= 9) {
+            toggleDevSetting();
+            setNumImageClicks(0);
+          } else {
+            setNumImageClicks(numImageClicks + 1);
+          }
+        }}
+        className="logo"
+        alt="cardtable"
+        src={mainLogo}
+      ></img>
+
+      <div className="game-group">
+        {Object.entries(GameType)
+          .filter(([_key, value]) =>
+            GameManager.allNonHiddenGameTypes.includes(value)
+          )
+          .map(([key, value]) => {
+            const label = camelCaseToSpaces(key);
+            const heroImageUrl = GameManager.properties[value].heroImageUrl;
+            return (
+              <div
+                className="game-square-wrapper"
+                key={key}
+                onClick={() => {
+                  props.updateActiveGameType(value);
+
+                  // Cache the common images
+                  cacheCommonImages(value);
+                }}
+              >
+                <div className="game-square">
+                  {!!heroImageUrl ? (
+                    <img alt={label} src={heroImageUrl} />
+                  ) : (
+                    <>{label}</>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+      </div>
+      {showCustomGamesLocalStorage ? (
+        <>
+          <div>Custom Games</div>
+
+          <div className="game-group">
+            <div
+              className="game-square-wrapper"
+              onClick={() => fileInputRef.current.click()}
+            >
+              <div className="game-square add-new-game">+</div>
+            </div>
+            <input
+              onChange={(e) => {
+                if (!!e.target.files && e.target.files[0]) {
+                  const file = e.target.files[0];
+                  // setting up the reader
+                  const reader = new FileReader();
+                  reader.readAsText(file, "UTF-8");
+
+                  // here we tell the reader what to do when it's done reading...
+                  reader.onload = (readerEvent) => {
+                    const content: string = readerEvent.target
+                      ?.result as string; // this is the content!
+                    props.parseCsvCustomCards(
+                      GameType.StandardDeck,
+                      content,
+                      true
+                    );
+                  };
+                } else {
+                  props.sendNotification({
+                    id: v4(),
+                    level: "error",
+                    message: "Unable to load file",
+                    forceDefaultPosition: true,
+                  });
+                }
+                e.target.value = "";
+              }}
+              multiple={false}
+              ref={fileInputRef}
+              type="file"
+              hidden
+            />
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
+    </div>
+  );
+};
+
+const renderGamePickerLegacy = (
   props: IProps,
   toggleDevSetting: () => void,
   numImageClicks: number,
