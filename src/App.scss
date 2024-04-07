@@ -39,6 +39,12 @@ body {
   justify-content: center;
 }
 
+.custom-game-text {
+  font-size: 2rem;
+  color: rgb(56, 104, 153);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .game-square-wrapper {
   &:hover {
     cursor: pointer;
@@ -48,7 +54,25 @@ body {
   // width: 10rem;
   // height: 10rem;
 }
+.remove-game {
+  background-color: lightcoral;
+  font-size: 1.5rem;
+  border-radius: 1.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  align-content: center;
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+}
 .game-square {
+  &.relative {
+    position: relative;
+  }
+  &.no-image {
+    background-color: lightsteelblue;
+  }
+
   img {
     max-width: 100%;
     object-fit: cover;

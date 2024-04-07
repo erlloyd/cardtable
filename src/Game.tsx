@@ -124,6 +124,7 @@ interface IProps {
   flipCards: () => void;
   loadCardsData: (gameType: GameType) => void;
   allJsonData: (payload: GameType) => void;
+  allCustomData: (payload: GameType) => void;
   shuffleStack: (id?: string) => void;
   fetchDecklistById: any;
   // fetchDecklistById: (payload: {
@@ -424,6 +425,9 @@ class Game extends Component<IProps, IState> {
       if (Object.values(GameType).includes(this.props.currentGameType)) {
         this.props.loadCardsData(this.props.currentGameType);
         this.props.allJsonData(this.props.currentGameType);
+      } else {
+        // we still want to load custom data if there is any (there should be...)
+        this.props.allCustomData(this.props.currentGameType);
       }
       this.isSetUp = true;
     }

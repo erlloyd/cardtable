@@ -12,6 +12,7 @@ import LorcanaGameModule from "./lorcana/LorcanaGameModule";
 import StarWarsUnlimitedGameModule from "./star-wars-unlimited/StarWarsUnlimitedGameModule";
 import MarvelLegendaryGameModule from "./marvel-legendary/MarvelLegendaryGameModule";
 import EarthborneRangersGameModule from "./earthborne-rangers/EarthborneRangersGameModule";
+import GenericCustomGameModule from "./generic-custom-game/GenericCustomGameModule";
 
 const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
@@ -145,7 +146,7 @@ class GamePluginManager {
     ) {
       throw new Error("Cannot register custom module first");
     }
-    const mod = new StandardDeckGameModule();
+    const mod = new GenericCustomGameModule();
     this._games = this._games.concat({
       type,
       module: mod,

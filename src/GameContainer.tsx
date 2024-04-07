@@ -13,6 +13,7 @@ import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors
 import { loadCardsData } from "./features/cards-data/cards-data.slice";
 import {
   allJsonData,
+  allCustomData,
   parseCsvCustomCards,
   removeCustomCards,
 } from "./features/cards-data/cards-data.thunks";
@@ -150,6 +151,7 @@ const GameContainer = connect(mapStateToProps, {
   deleteCardStack,
   loadCardsData,
   allJsonData,
+  allCustomData,
   selectCard,
   unselectCard,
   toggleSelectCard,

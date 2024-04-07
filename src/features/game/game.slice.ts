@@ -8,16 +8,41 @@ import {
 } from "../../store/global.actions";
 import { getListOfDecklistsFromSearchTerm } from "../cards/cards.thunks";
 import { MAX_PLAYERS } from "../cards/initialState";
-import { IGameState, initialState } from "./initialState";
+import { ICustomGame, IGameState, initialState } from "./initialState";
 import { GameType } from "../../game-modules/GameType";
 
 // Reducers
+const addCustomGameReducer: CaseReducer<
+  IGameState,
+  PayloadAction<ICustomGame>
+> = (state, action) => {
+  // Replace the current custom game if necessary
+  if (state.customGames.some((cg) => cg.gameType === action.payload.gameType)) {
+    const existingIndex = state.customGames.findIndex(
+      (cg) => cg.gameType === action.payload.gameType
+    );
+    state.customGames[existingIndex] = action.payload;
+  } else {
+    state.customGames.push(action.payload);
+  }
+  return state;
+};
+
+const removeCustomGameReducer: CaseReducer<
+  IGameState,
+  PayloadAction<string>
+> = (state, action) => {
+  state.customGames = state.customGames.filter(
+    (g) => g.gameType !== action.payload
+  );
+  return state;
+};
+
 const updateZoomReducer: CaseReducer<IGameState, PayloadAction<Vector2d>> = (
   state,
   action
 ) => {
   state.stageZoom = action.payload;
-  return state;
 };
 
 const updatePositionReducer: CaseReducer<
@@ -261,6 +286,8 @@ const gameSlice = createSlice({
     setVisiblePlayerHandNumber: setVisiblePlayerHandNumberReducer,
     setDrawingArrow: setDrawingArrowReducer,
     doneLoadingJSON: doneLoadingJSONReducer,
+    addCustomGame: addCustomGameReducer,
+    removeCustomGame: removeCustomGameReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -332,6 +359,8 @@ export const {
   setVisiblePlayerHandNumber,
   setDrawingArrow,
   doneLoadingJSON,
+  addCustomGame,
+  removeCustomGame,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

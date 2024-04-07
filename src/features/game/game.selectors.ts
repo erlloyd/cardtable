@@ -6,6 +6,10 @@ import { CardSizeType } from "../../constants/card-constants";
 
 export const getGame = (state: RootState) => state.game;
 
+export const getCustomGames = createSelector(getGame, (game) => {
+  return game.customGames;
+});
+
 export const getCurrentZoom = createSelector(getGame, (game) => {
   return game.stageZoom;
 });

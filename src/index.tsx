@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import configureStore from "./store/configureStore";
 import AppContainer from "./AppContainer";
 import { ErrorBoundary } from "@highlight-run/react";
+import { ConfirmProvider } from "material-ui-confirm";
 
 const store = configureStore();
 
@@ -14,7 +15,9 @@ ReactDOM.render(
   <ErrorBoundary>
     <React.StrictMode>
       <Provider store={store}>
-        <AppContainer />
+        <ConfirmProvider>
+          <AppContainer />
+        </ConfirmProvider>
       </Provider>
     </React.StrictMode>
   </ErrorBoundary>,

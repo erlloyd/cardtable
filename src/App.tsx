@@ -1,34 +1,25 @@
 import CloseIcon from "@material-ui/icons/Close";
-import {
-  Button,
-  FormControl,
-  IconButton,
-  InputLabel,
-  MenuItem,
-  Select,
-  Snackbar,
-} from "@mui/material";
+import { Button, IconButton, Snackbar } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { H } from "highlight.run";
 import log from "loglevel";
+import { ConfirmOptions, useConfirm } from "material-ui-confirm";
 import mixpanel from "mixpanel-browser";
 import React, { useEffect, useRef, useState } from "react";
 import { useKonami } from "react-konami-code";
+import { v4 } from "uuid";
 import "./App.scss";
 import DevSettings from "./DevSettings";
 import GameContainer from "./GameContainer";
+import NotificationsContainer from "./Notifications/NotificationsContainer";
+import { showCustomGamesLocalStorage } from "./constants/app-constants";
+import { INotification } from "./features/notifications/initialState";
+import GameManager from "./game-modules/GameModuleManager";
 import { GameType } from "./game-modules/GameType";
 import mainLogo from "./images/card-table-transparent.png";
 import { cacheCommonImages } from "./utilities/game-utils";
-import GameManager from "./game-modules/GameModuleManager";
-import { ConfirmProvider } from "material-ui-confirm";
-import { INotification } from "./features/notifications/initialState";
-import { v4 } from "uuid";
-import NotificationsContainer from "./Notifications/NotificationsContainer";
-import { showCustomGamesLocalStorage } from "./constants/app-constants";
-
-const legacy = false;
+import { ICustomGame } from "./features/game/initialState";
 
 const darkTheme = createTheme({
   palette: {
@@ -38,7 +29,16 @@ const darkTheme = createTheme({
 
 (window as any).log = log;
 
+// Wrapper for hook stuff
+const withConfirm = (Component: any) => {
+  return function WrappedComponent(props: IProps) {
+    const confirm = useConfirm();
+    return <Component {...props} confirm={confirm} />;
+  };
+};
+
 interface IProps {
+  confirm?: (options?: ConfirmOptions) => Promise<void>;
   activeGameType: GameType | null;
   updateActiveGameType: (val: GameType) => void;
   clearQueryParams: () => void;
@@ -48,6 +48,9 @@ interface IProps {
     expectNewGame: boolean
   ) => void;
   sendNotification: (payload: INotification) => void;
+  customGames: ICustomGame[];
+  removeCustomCards: (gameType: GameType, message?: string) => void;
+  removeCustomGame: (gameType: string) => void;
 }
 
 const App = (props: IProps) => {
@@ -125,6 +128,13 @@ const App = (props: IProps) => {
     // serviceWorkerRegistration.register({ onUpdate: onSWUpdate });
   }, []);
 
+  // register any custom games the first time this loads
+  useEffect(() => {
+    props.customGames.forEach((cg) =>
+      GameManager.registerCustomModule(cg.gameType)
+    );
+  }, []);
+
   const reloadPage = () => {
     waitingWorker?.postMessage({ type: "SKIP_WAITING" });
     setShowReload(false);
@@ -158,49 +168,37 @@ const App = (props: IProps) => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <ConfirmProvider>
-        <CssBaseline />
-        <NotificationsContainer></NotificationsContainer>
-        {showDevSettings && (
-          <DevSettings
-            onClose={() => {
-              setShowDevSettings(false);
-            }}
-          ></DevSettings>
-        )}
-        {!!props.activeGameType ? (
-          <div>
-            <Snackbar
-              open={showReload}
-              onClose={handleClose}
-              anchorOrigin={{ vertical: "top", horizontal: "center" }}
-              message="New version available"
-              action={action}
-            />
-            <GameContainer
-              currentGameType={props.activeGameType}
-            ></GameContainer>
-          </div>
-        ) : (
-          <div>
-            {legacy
-              ? renderGamePickerLegacy(
-                  props,
-                  toggleDevSetting,
-                  numImageClicks,
-                  setNumImageClicks,
-                  fileInputRef
-                )
-              : renderGamePicker(
-                  props,
-                  toggleDevSetting,
-                  numImageClicks,
-                  setNumImageClicks,
-                  fileInputRef
-                )}
-          </div>
-        )}
-      </ConfirmProvider>
+      <CssBaseline />
+      <NotificationsContainer></NotificationsContainer>
+      {showDevSettings && (
+        <DevSettings
+          onClose={() => {
+            setShowDevSettings(false);
+          }}
+        ></DevSettings>
+      )}
+      {!!props.activeGameType ? (
+        <div>
+          <Snackbar
+            open={showReload}
+            onClose={handleClose}
+            anchorOrigin={{ vertical: "top", horizontal: "center" }}
+            message="New version available"
+            action={action}
+          />
+          <GameContainer currentGameType={props.activeGameType}></GameContainer>
+        </div>
+      ) : (
+        <div>
+          {renderGamePicker(
+            props,
+            toggleDevSetting,
+            numImageClicks,
+            setNumImageClicks,
+            fileInputRef
+          )}
+        </div>
+      )}
     </ThemeProvider>
   );
 };
@@ -259,7 +257,9 @@ const renderGamePicker = (
                   cacheCommonImages(value);
                 }}
               >
-                <div className="game-square">
+                <div
+                  className={`game-square ${!!heroImageUrl ? "" : "no-image"}`}
+                >
                   {!!heroImageUrl ? (
                     <img alt={label} src={heroImageUrl} />
                   ) : (
@@ -272,7 +272,7 @@ const renderGamePicker = (
       </div>
       {showCustomGamesLocalStorage ? (
         <>
-          <div>Custom Games</div>
+          <div className="custom-game-text">Custom Games</div>
 
           <div className="game-group">
             <div
@@ -281,6 +281,61 @@ const renderGamePicker = (
             >
               <div className="game-square add-new-game">+</div>
             </div>
+            {props.customGames.map((cg) => {
+              {
+                const label = cg.name || camelCaseToSpaces(cg.gameType);
+                const heroImageUrl = cg.heroImageUrl;
+                return (
+                  <div
+                    className="game-square-wrapper"
+                    key={`custom-${cg.gameType}`}
+                    onClick={() => {
+                      props.updateActiveGameType(cg.gameType as GameType);
+
+                      // Cache the common images
+                      cacheCommonImages(cg.gameType as GameType);
+                    }}
+                  >
+                    <div
+                      className={`game-square relative ${
+                        !!heroImageUrl ? "" : "no-image"
+                      }`}
+                    >
+                      <div
+                        className="remove-game"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (props.confirm) {
+                            props
+                              .confirm({
+                                title: "Remove?",
+                                description: `This will remove ${label} from Cardtable. Are you sure?`,
+                              })
+                              .then(() => {
+                                props.removeCustomCards(
+                                  cg.gameType as GameType,
+                                  `Removed ${label}`
+                                );
+                                props.removeCustomGame(cg.gameType);
+                              });
+                          } else {
+                            console.error("NO CONFIRM");
+                          }
+                        }}
+                      >
+                        -
+                      </div>
+                      {!!heroImageUrl ? (
+                        <img alt={label} src={heroImageUrl} />
+                      ) : (
+                        <>{label}</>
+                      )}
+                    </div>
+                  </div>
+                );
+              }
+            })}
+
             <input
               onChange={(e) => {
                 if (!!e.target.files && e.target.files[0]) {
@@ -294,7 +349,7 @@ const renderGamePicker = (
                     const content: string = readerEvent.target
                       ?.result as string; // this is the content!
                     props.parseCsvCustomCards(
-                      GameType.StandardDeck,
+                      GameType.StandardDeck, //TODO: replace this with indicator it's a custom game
                       content,
                       true
                     );
@@ -323,95 +378,4 @@ const renderGamePicker = (
   );
 };
 
-const renderGamePickerLegacy = (
-  props: IProps,
-  toggleDevSetting: () => void,
-  numImageClicks: number,
-  setNumImageClicks: (n: number) => void,
-  fileInputRef: React.MutableRefObject<any>
-) => {
-  return (
-    <div className="game-picker">
-      <img
-        onClick={() => {
-          if (numImageClicks >= 9) {
-            toggleDevSetting();
-            setNumImageClicks(0);
-          } else {
-            setNumImageClicks(numImageClicks + 1);
-          }
-        }}
-        className="logo"
-        alt="cardtable"
-        src={mainLogo}
-      ></img>
-
-      <FormControl className="select">
-        <InputLabel id="game-picker-label">Select Game</InputLabel>
-        <Select
-          id="game-picker"
-          labelId="game-picker-label"
-          onChange={(e) => {
-            props.updateActiveGameType(e.target.value as GameType);
-
-            // Cache the common images
-            cacheCommonImages(e.target.value as GameType);
-          }}
-          variant={"standard"}
-        >
-          {Object.entries(GameType)
-            .filter(([_key, value]) =>
-              GameManager.allNonHiddenGameTypes.includes(value)
-            )
-            .map(([key, value]) => {
-              const label = camelCaseToSpaces(key);
-              return (
-                <MenuItem key={`menu-item-${key}`} value={value}>
-                  {label}
-                </MenuItem>
-              );
-            })}
-        </Select>
-      </FormControl>
-      <div
-        className={`custom-picker ${
-          showCustomGamesLocalStorage ? "" : "hidden"
-        }`}
-      >
-        <Button onClick={() => fileInputRef.current.click()} variant="outlined">
-          Import Custom Game...
-        </Button>
-        <input
-          onChange={(e) => {
-            if (!!e.target.files && e.target.files[0]) {
-              const file = e.target.files[0];
-              // setting up the reader
-              const reader = new FileReader();
-              reader.readAsText(file, "UTF-8");
-
-              // here we tell the reader what to do when it's done reading...
-              reader.onload = (readerEvent) => {
-                const content: string = readerEvent.target?.result as string; // this is the content!
-                props.parseCsvCustomCards(GameType.StandardDeck, content, true);
-              };
-            } else {
-              props.sendNotification({
-                id: v4(),
-                level: "error",
-                message: "Unable to load file",
-                forceDefaultPosition: true,
-              });
-            }
-            e.target.value = "";
-          }}
-          multiple={false}
-          ref={fileInputRef}
-          type="file"
-          hidden
-        />
-      </div>
-    </div>
-  );
-};
-
-export default App;
+export default withConfirm(App);

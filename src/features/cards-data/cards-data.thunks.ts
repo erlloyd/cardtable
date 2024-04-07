@@ -6,13 +6,18 @@ import {
   bulkLoadCardsForEncounterSet,
 } from "./cards-data.slice";
 import { GameType } from "../../game-modules/GameType";
-import { doneLoadingJSON, updateActiveGameType } from "../game/game.slice";
+import {
+  addCustomGame,
+  doneLoadingJSON,
+  updateActiveGameType,
+} from "../game/game.slice";
 import GameManager from "../../game-modules/GameModuleManager";
 import Papa from "papaparse";
 import { sendNotification } from "../notifications/notifications.slice";
 import { v4 } from "uuid";
 import { CardData } from "../../external-api/common-card-data";
 import omit from "lodash.omit";
+import { ICustomGame } from "../game/initialState";
 
 export interface CustomCard {
   id: string;
@@ -34,15 +39,14 @@ export interface InputCustomCard {
   set?: string;
   setType?: string;
   quantity?: string;
-}
-
-export interface CustomGame {
-  gameType: string;
-  gameName: string;
+  gameImageUrl?: string;
 }
 
 export const removeCustomCards =
-  (gameType: GameType): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (
+    gameType: GameType,
+    message?: string
+  ): ThunkAction<void, RootState, unknown, Action<string>> =>
   async (dispatch) => {
     const currentCustomCardsString = localStorage.getItem(
       "cardtable-custom-cards"
@@ -69,29 +73,16 @@ export const removeCustomCards =
         id: v4(),
         level: "info",
         message:
+          message ||
           "Custom content removed. Any custom cards will not load after page is refreshed.",
       })
     );
   };
 
-export const allJsonData =
+export const allCustomData =
   (gameType: GameType): ThunkAction<void, RootState, unknown, Action<string>> =>
   async (dispatch) => {
-    const gameModule = GameManager.getModuleForType(gameType);
-
-    const cardsData = await gameModule.getCardsData();
-
-    if (!!cardsData && cardsData.length > 0) {
-      dispatch(bulkLoadCardsDataForPack(cardsData));
-    }
-
-    const scenarioData = await gameModule.getEncounterSetData();
-
-    if (!!scenarioData && scenarioData.length > 0) {
-      dispatch(bulkLoadCardsForEncounterSet(scenarioData));
-    }
-
-    // now get any localStorage custom cards
+    // get any localStorage custom cards
     let existingCustomCards: {
       [key: string]: { [key: string]: { card: CardData; playerCard: boolean } };
     } | null = JSON.parse(
@@ -125,6 +116,26 @@ export const allJsonData =
         })
       );
     }
+  };
+
+export const allJsonData =
+  (gameType: GameType): ThunkAction<void, RootState, unknown, Action<string>> =>
+  async (dispatch) => {
+    const gameModule = GameManager.getModuleForType(gameType);
+
+    const cardsData = await gameModule.getCardsData();
+
+    if (!!cardsData && cardsData.length > 0) {
+      dispatch(bulkLoadCardsDataForPack(cardsData));
+    }
+
+    const scenarioData = await gameModule.getEncounterSetData();
+
+    if (!!scenarioData && scenarioData.length > 0) {
+      dispatch(bulkLoadCardsForEncounterSet(scenarioData));
+    }
+
+    dispatch(allCustomData(gameType));
 
     dispatch(doneLoadingJSON());
   };
@@ -157,6 +168,7 @@ export const parseCsvCustomCards =
 
     // First check to see if we are opening a new game
     const firstCard = parsedCsv.data[0] as InputCustomCard;
+    let newGameInfo: ICustomGame | null = null;
     if (
       firstCard.id &&
       firstCard.name &&
@@ -179,9 +191,10 @@ export const parseCsvCustomCards =
         //for now, just remove this "fake" card
         parsedCsv.data.shift();
       } else {
-        const newGameInfo: CustomGame = {
+        newGameInfo = {
           gameType: firstCard.id,
-          gameName: firstCard.name,
+          name: firstCard.name,
+          heroImageUrl: firstCard.gameImageUrl ?? "",
         };
 
         gameType = newGameInfo.gameType as GameType;
@@ -238,8 +251,9 @@ export const parseCsvCustomCards =
     const isPlayerCard = false;
 
     // First, we need to make sure we add the new module
-    if (expectNewGame) {
+    if (expectNewGame && !!newGameInfo) {
       GameManager.registerCustomModule(gameType);
+      dispatch(addCustomGame(newGameInfo));
     }
 
     dispatch(
@@ -276,7 +290,7 @@ export const parseCsvCustomCards =
       JSON.stringify(existingCustomCards)
     );
 
-    if (expectNewGame) {
-      dispatch(updateActiveGameType(gameType));
-    }
+    // if (expectNewGame) {
+    //   dispatch(updateActiveGameType(gameType));
+    // }
   };

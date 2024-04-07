@@ -3,6 +3,11 @@ import { myPeerRef, PlayerColor } from "../../constants/app-constants";
 import { loadState } from "../../store/localStorage";
 import { GameType } from "../../game-modules/GameType";
 
+export interface ICustomGame {
+  gameType: string;
+  name: string;
+  heroImageUrl: string;
+}
 export interface OnlineDeckDataMap {
   [key: string]: OnlineDeckData;
 }
@@ -45,6 +50,7 @@ export interface IGameState {
   mostRecentOnlineDeckSearchResults: OnlineDeckDataMap;
   allJsonDataLoaded: boolean;
   showDeckTextImporterWithPosition: Vector2d | null;
+  customGames: ICustomGame[];
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -98,6 +104,7 @@ const defaultState: IGameState = {
   mostRecentOnlineDeckSearchResults: {},
   allJsonDataLoaded: false,
   showDeckTextImporterWithPosition: null,
+  customGames: [],
 };
 export const initialState: IGameState = {
   ...defaultState,
