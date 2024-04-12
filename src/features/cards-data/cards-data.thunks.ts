@@ -178,18 +178,18 @@ export const parseCsvCustomCards =
       // we assume this means it is for a new game.
       if (!expectNewGame) {
         // console.error(parsedCsv.errors);
-        // dispatch(
-        //   sendNotification({
-        //     id: v4(),
-        //     level: "error",
-        //     message:
-        //       "This custom content appears to be for a complete game. Please quit this game and load from the main screen.",
-        //   })
-        // );
-        // return;
+        dispatch(
+          sendNotification({
+            id: v4(),
+            level: "error",
+            message:
+              "This custom content appears to be for a complete game. Please quit this game and load from the main screen.",
+          })
+        );
+        return;
 
         //for now, just remove this "fake" card
-        parsedCsv.data.shift();
+        // parsedCsv.data.shift();
       } else {
         newGameInfo = {
           gameType: firstCard.id,
