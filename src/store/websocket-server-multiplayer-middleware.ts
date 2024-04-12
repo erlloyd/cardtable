@@ -27,7 +27,10 @@ import {
   misingPlayerNumInSeq,
 } from "./middleware-utilities";
 import log from "loglevel";
-import { sendNotification } from "../features/notifications/notifications.slice";
+import {
+  sendAndForceNotification,
+  sendNotification,
+} from "../features/notifications/notifications.slice";
 import { RootState } from "./rootReducer";
 import { anyCardsDragging } from "../features/cards/cards.selectors";
 import { CardData } from "../external-api/common-card-data";
@@ -35,6 +38,7 @@ import { addRawCardsData } from "../features/cards-data/cards-data.slice";
 import { GameType } from "../game-modules/GameType";
 import merge from "lodash.merge";
 import pick from "lodash.pick";
+import GameManager from "../game-modules/GameModuleManager";
 interface IMessage {
   type: string;
   payload: any;
@@ -92,6 +96,32 @@ export const websocketMiddleware = (storeAPI: any) => {
     } else {
       log.debug("going to replace (most of) state with", action.state);
       setTimeout(() => {
+        // first check if we are about to try to load
+        // a custom game we know nothing about.....
+        const aboutToLoadGameType = (action.state as RootState).game
+          .activeGameType;
+
+        // if we're about to load a null game type, just don't
+        if (!aboutToLoadGameType) {
+          return;
+        }
+
+        // if we're about to load a game type that we don't have, error
+        if (
+          aboutToLoadGameType &&
+          !GameManager.properties[aboutToLoadGameType]
+        ) {
+          storeAPI.dispatch(
+            sendAndForceNotification({
+              id: uuidv4(),
+              level: "error",
+              message: `Unable to connect to game. The current game is a custom game you haven't added to Cardtable.`,
+            })
+          );
+
+          return;
+        }
+
         // store the custom cards in localstorage
         let existingCustomCards: {
           [key: string]: {

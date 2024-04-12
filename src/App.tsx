@@ -13,7 +13,6 @@ import "./App.scss";
 import DevSettings from "./DevSettings";
 import GameContainer from "./GameContainer";
 import NotificationsContainer from "./Notifications/NotificationsContainer";
-import { showCustomGamesLocalStorage } from "./constants/app-constants";
 import { INotification } from "./features/notifications/initialState";
 import GameManager from "./game-modules/GameModuleManager";
 import { GameType } from "./game-modules/GameType";
@@ -126,13 +125,6 @@ const App = (props: IProps) => {
 
     // Service Worker - this was replaced by auto stuff when switching to Vite
     // serviceWorkerRegistration.register({ onUpdate: onSWUpdate });
-  }, []);
-
-  // register any custom games the first time this loads
-  useEffect(() => {
-    props.customGames.forEach((cg) =>
-      GameManager.registerCustomModule(cg.gameType)
-    );
   }, []);
 
   const reloadPage = () => {
@@ -270,110 +262,103 @@ const renderGamePicker = (
             );
           })}
       </div>
-      {showCustomGamesLocalStorage ? (
-        <>
-          <div className="custom-game-text">Custom Games</div>
+      <div className="custom-game-text">Custom Games</div>
 
-          <div className="game-group">
-            <div
-              className="game-square-wrapper"
-              onClick={() => fileInputRef.current.click()}
-            >
-              <div className="game-square add-new-game">+</div>
-            </div>
-            {props.customGames.map((cg) => {
-              {
-                const label = cg.name || camelCaseToSpaces(cg.gameType);
-                const heroImageUrl = cg.heroImageUrl;
-                return (
+      <div className="game-group">
+        <div
+          className="game-square-wrapper"
+          onClick={() => fileInputRef.current.click()}
+        >
+          <div className="game-square add-new-game">+</div>
+        </div>
+        {props.customGames.map((cg) => {
+          {
+            const label = cg.name || camelCaseToSpaces(cg.gameType);
+            const heroImageUrl = cg.heroImageUrl;
+            return (
+              <div
+                className="game-square-wrapper"
+                key={`custom-${cg.gameType}`}
+                onClick={() => {
+                  props.updateActiveGameType(cg.gameType as GameType);
+
+                  // Cache the common images
+                  cacheCommonImages(cg.gameType as GameType);
+                }}
+              >
+                <div
+                  className={`game-square relative ${
+                    !!heroImageUrl ? "" : "no-image"
+                  }`}
+                >
                   <div
-                    className="game-square-wrapper"
-                    key={`custom-${cg.gameType}`}
-                    onClick={() => {
-                      props.updateActiveGameType(cg.gameType as GameType);
-
-                      // Cache the common images
-                      cacheCommonImages(cg.gameType as GameType);
+                    className="remove-game"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (props.confirm) {
+                        props
+                          .confirm({
+                            title: "Remove?",
+                            description: `This will remove ${label} from Cardtable. Are you sure?`,
+                          })
+                          .then(() => {
+                            props.removeCustomCards(
+                              cg.gameType as GameType,
+                              `Removed ${label}`
+                            );
+                            props.removeCustomGame(cg.gameType);
+                          });
+                      } else {
+                        console.error("NO CONFIRM");
+                      }
                     }}
                   >
-                    <div
-                      className={`game-square relative ${
-                        !!heroImageUrl ? "" : "no-image"
-                      }`}
-                    >
-                      <div
-                        className="remove-game"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          if (props.confirm) {
-                            props
-                              .confirm({
-                                title: "Remove?",
-                                description: `This will remove ${label} from Cardtable. Are you sure?`,
-                              })
-                              .then(() => {
-                                props.removeCustomCards(
-                                  cg.gameType as GameType,
-                                  `Removed ${label}`
-                                );
-                                props.removeCustomGame(cg.gameType);
-                              });
-                          } else {
-                            console.error("NO CONFIRM");
-                          }
-                        }}
-                      >
-                        -
-                      </div>
-                      {!!heroImageUrl ? (
-                        <img alt={label} src={heroImageUrl} />
-                      ) : (
-                        <>{label}</>
-                      )}
-                    </div>
+                    -
                   </div>
+                  {!!heroImageUrl ? (
+                    <img alt={label} src={heroImageUrl} />
+                  ) : (
+                    <>{label}</>
+                  )}
+                </div>
+              </div>
+            );
+          }
+        })}
+
+        <input
+          onChange={(e) => {
+            if (!!e.target.files && e.target.files[0]) {
+              const file = e.target.files[0];
+              // setting up the reader
+              const reader = new FileReader();
+              reader.readAsText(file, "UTF-8");
+
+              // here we tell the reader what to do when it's done reading...
+              reader.onload = (readerEvent) => {
+                const content: string = readerEvent.target?.result as string; // this is the content!
+                props.parseCsvCustomCards(
+                  GameType.StandardDeck, //TODO: replace this with indicator it's a custom game
+                  content,
+                  true
                 );
-              }
-            })}
-
-            <input
-              onChange={(e) => {
-                if (!!e.target.files && e.target.files[0]) {
-                  const file = e.target.files[0];
-                  // setting up the reader
-                  const reader = new FileReader();
-                  reader.readAsText(file, "UTF-8");
-
-                  // here we tell the reader what to do when it's done reading...
-                  reader.onload = (readerEvent) => {
-                    const content: string = readerEvent.target
-                      ?.result as string; // this is the content!
-                    props.parseCsvCustomCards(
-                      GameType.StandardDeck, //TODO: replace this with indicator it's a custom game
-                      content,
-                      true
-                    );
-                  };
-                } else {
-                  props.sendNotification({
-                    id: v4(),
-                    level: "error",
-                    message: "Unable to load file",
-                    forceDefaultPosition: true,
-                  });
-                }
-                e.target.value = "";
-              }}
-              multiple={false}
-              ref={fileInputRef}
-              type="file"
-              hidden
-            />
-          </div>
-        </>
-      ) : (
-        <></>
-      )}
+              };
+            } else {
+              props.sendNotification({
+                id: v4(),
+                level: "error",
+                message: "Unable to load file",
+                forceDefaultPosition: true,
+              });
+            }
+            e.target.value = "";
+          }}
+          multiple={false}
+          ref={fileInputRef}
+          type="file"
+          hidden
+        />
+      </div>
     </div>
   );
 };

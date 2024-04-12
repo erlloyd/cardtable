@@ -13,6 +13,13 @@ const sendNotificationReducer: CaseReducer<
   state.notificationsQueue.push(action.payload);
 };
 
+const sendAndForceNotificationReducer: CaseReducer<
+  INotificationsState,
+  PayloadAction<INotification>
+> = (state, action) => {
+  state.notificationsQueue[0] = action.payload;
+};
+
 const clearNotificationReducer: CaseReducer<
   INotificationsState,
   PayloadAction<string>
@@ -28,11 +35,12 @@ const notificationsSlice = createSlice({
   initialState: initialState,
   reducers: {
     sendNotification: sendNotificationReducer,
+    sendAndForceNotification: sendAndForceNotificationReducer,
     clearNotification: clearNotificationReducer,
   },
 });
 
-export const { sendNotification, clearNotification } =
+export const { sendNotification, sendAndForceNotification, clearNotification } =
   notificationsSlice.actions;
 
 export default notificationsSlice.reducer;

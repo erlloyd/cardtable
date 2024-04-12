@@ -2,6 +2,7 @@ import { Vector2d } from "konva/lib/types";
 import { myPeerRef, PlayerColor } from "../../constants/app-constants";
 import { loadState } from "../../store/localStorage";
 import { GameType } from "../../game-modules/GameType";
+import GameManager from "../../game-modules/GameModuleManager";
 
 export interface ICustomGame {
   gameType: string;
@@ -79,6 +80,16 @@ localStorageState.searchingForOnlineDecks = false;
 localStorageState.mostRecentOnlineDeckSearchResults = {};
 localStorageState.allJsonDataLoaded = false;
 localStorageState.showDeckTextImporterWithPosition = null;
+
+// Register any custom games we have previously loaded
+
+// Note, we have to do this here because we need
+// the custom modules registered before any content is rendered
+if (localStorageState.customGames) {
+  localStorageState.customGames.forEach((cg) =>
+    GameManager.registerCustomModule(cg.gameType)
+  );
+}
 
 const defaultState: IGameState = {
   playerColors: {},

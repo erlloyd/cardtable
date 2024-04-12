@@ -41,10 +41,12 @@ import {
   hideDeckSearch,
   showCardPeekForCards,
   hideCardPeek,
+  quitGame,
 } from "../features/game/game.slice";
 import { toggleNotes } from "../features/notes/notes.slice";
 import {
   clearNotification,
+  sendAndForceNotification,
   sendNotification,
 } from "../features/notifications/notifications.slice";
 import {
@@ -81,6 +83,7 @@ export const blacklistRemoteActions = {
   [bulkLoadCardsDataForPack.type]: true,
   [bulkLoadCardsForEncounterSet.type]: true,
   [sendNotification.type]: true,
+  [sendAndForceNotification.type]: true,
   [clearNotification.type]: true,
   [removePlayer.type]: true,
   [showSpecificCardLoader.type]: true,
@@ -91,6 +94,7 @@ export const blacklistRemoteActions = {
   [hideDeckSearch.type]: true,
   [showCardPeekForCards.type]: true,
   [hideCardPeek.type]: true,
+  [quitGame.type]: true,
 };
 
 export const misingPlayerNumInSeq = (
