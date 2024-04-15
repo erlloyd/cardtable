@@ -125,9 +125,11 @@ const CardTokens = (props: IProps) => {
         text={`${props.card.counterTokens.damage}`}
         fill="white"
         stroke={"black"}
-        strokeWidth={1}
-        shadowColor="black"
-        shadowBlur={10}
+        strokeWidth={5}
+        fillAfterStrokeEnabled={true}
+        // I wish I could just blur but iOS devices have horrible performance with them
+        // shadowColor="black"
+        // shadowBlur={10}
         align="center"
         verticalAlign="middle"
         fontSize={24}
@@ -181,9 +183,11 @@ const CardTokens = (props: IProps) => {
         text={`${props.card.counterTokens.threat}`}
         fill="white"
         stroke={"black"}
-        strokeWidth={1}
-        shadowColor="black"
-        shadowBlur={10}
+        strokeWidth={5}
+        fillAfterStrokeEnabled={true}
+        // I wish I could just blur but iOS devices have horrible performance with them
+        // shadowColor="black"
+        // shadowBlur={10}
         align="center"
         verticalAlign="middle"
         fontSize={24}
@@ -240,9 +244,11 @@ const CardTokens = (props: IProps) => {
         text={`${props.card.counterTokens.generic}`}
         fill="white"
         stroke={"black"}
-        strokeWidth={1}
-        shadowColor="black"
-        shadowBlur={10}
+        strokeWidth={5}
+        fillAfterStrokeEnabled={true}
+        // I wish I could just blur but iOS devices have horrible performance with them
+        // shadowColor="black"
+        // shadowBlur={10}
         align="center"
         verticalAlign="middle"
         fontSize={24}
@@ -299,9 +305,11 @@ const CardTokens = (props: IProps) => {
         text={`${props.card.counterTokens.acceleration}`}
         fill="white"
         stroke={"black"}
-        strokeWidth={1}
-        shadowColor="black"
-        shadowBlur={10}
+        strokeWidth={5}
+        fillAfterStrokeEnabled={true}
+        // I wish I could just blur but iOS devices have horrible performance with them
+        // shadowColor="black"
+        // shadowBlur={10}
         align="center"
         verticalAlign="middle"
         fontSize={24}
