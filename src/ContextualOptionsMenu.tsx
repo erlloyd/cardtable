@@ -1,21 +1,20 @@
 // import { useState } from "react";
 import "./ContextualOptionsMenu.scss";
 
-import { GameType } from "./game-modules/GameType";
-import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
-import { Vector2d } from "konva/lib/types";
+import { TextField } from "@mui/material";
 import Tooltip from "@mui/material/Tooltip";
+import { Vector2d } from "konva/lib/types";
+import { ConfirmOptions, useConfirm } from "material-ui-confirm";
 import { useState } from "react";
+import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
-import { anyCardStackHasStatus, getCardType } from "./utilities/card-utils";
-import { ICardStack } from "./features/cards/initialState";
+import { ICardData } from "./features/cards-data/initialState";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
+import { ICardStack } from "./features/cards/initialState";
 import { NumericTokenInfo, TokenInfo } from "./game-modules/GameModule";
 import GameManager from "./game-modules/GameModuleManager";
-import { ICardData } from "./features/cards-data/initialState";
-import { ConfirmOptions, useConfirm } from "material-ui-confirm";
-import { TextField } from "@mui/material";
-import { myPeerRef } from "./constants/app-constants";
+import { GameType } from "./game-modules/GameType";
+import { anyCardStackHasStatus, getCardType } from "./utilities/card-utils";
 
 // Wrapper for hook stuff
 const withConfirm = (Component: any) => {
@@ -80,6 +79,7 @@ interface IProps {
   drawCardsOutOfCardStack: (payload: DrawCardsOutOfCardStackPayload) => void;
   cardData: ICardData;
   showCardPeekForCards: (numCards: number) => void;
+  toggleTopCardOfStackFaceup: (cardStackId: string) => void;
 }
 
 enum MenuType {
@@ -866,7 +866,15 @@ const renderPeekNumberSubMenu = (
   setVisibleMenus: (m: MenuType[]) => void,
   ypos: number
 ) => {
-  const buttons = [1, 3, 5, 10, "X"].map((num) => {
+  const selectedStack = props.selectedCardStacks[0];
+  const buttons = [
+    1,
+    3,
+    5,
+    10,
+    "X",
+    `Top ${selectedStack.topCardFaceup ? "facedown" : "faceup"}`,
+  ].map((num) => {
     return (
       <button
         key={`draw-${num}-cards-button`}
@@ -876,7 +884,12 @@ const renderPeekNumberSubMenu = (
               props.showCardPeekForCards(num);
               setVisibleMenus([]);
             } else {
-              if (props.confirm) {
+              if (num.startsWith("Top")) {
+                // toggle
+                props.toggleTopCardOfStackFaceup(
+                  props.selectedCardStacks[0].id
+                );
+              } else if (props.confirm) {
                 let numToPeek = 5;
                 props
                   .confirm({

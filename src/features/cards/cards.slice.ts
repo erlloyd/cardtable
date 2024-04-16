@@ -92,6 +92,7 @@ const createNewEmptyCardStackWithId = (id: string): ICardStack => {
     shuffling: false,
     exhausted: false,
     faceup: true,
+    topCardFaceup: false,
     fill: "red",
     id,
     cardStack: [],
@@ -375,6 +376,15 @@ const getDropTargetCard = (
 };
 
 // Reducers
+const toggleTopCardOfStackFaceupReducer: CaseReducer<
+  ICardsState,
+  PayloadAction<string>
+> = (state, action) => {
+  mutateCardWithId(state, action.payload, (action as any).ACTOR_REF, (card) => {
+    card.topCardFaceup = !card.topCardFaceup;
+  });
+};
+
 const selectCardReducer: CaseReducer<
   ICardsState,
   PayloadAction<{ id: string; unselectOtherCards: boolean }>
@@ -1544,6 +1554,7 @@ const cardsSlice = createSlice({
   name: "cards",
   initialState: initialState,
   reducers: {
+    toggleTopCardOfStackFaceup: toggleTopCardOfStackFaceupReducer,
     selectCard: selectCardReducer,
     unselectCard: unselectCardReducer,
     toggleSelectCard: toggleSelectCardReducer,
@@ -1749,6 +1760,7 @@ const cardsSlice = createSlice({
         shuffling: false,
         exhausted: false,
         faceup: action.payload.faceup === undefined || !!action.payload.faceup,
+        topCardFaceup: false,
         fill: "red",
         id: action.payload.id,
         cardStack: action.payload.cardJsonIds.map((jsonId) => ({
@@ -1785,6 +1797,7 @@ const cardsSlice = createSlice({
         shuffling: false,
         exhausted: action.payload.slot.landscape,
         faceup: action.payload.faceup === undefined || !!action.payload.faceup,
+        topCardFaceup: false,
         fill: "red",
         id: action.payload.id,
         cardStack: action.payload.cardJsonIds.map((jsonId) => ({
@@ -1868,7 +1881,7 @@ const cardsSlice = createSlice({
         });
       }
 
-      // If we are splitting, make a new stack of cards
+      // If we are splitting, make a new stack of cards and clear out some items on the card
       if (action.payload.splitTopCard) {
         const cardToMove = state.cards.find((c) => c.id === action.payload.id);
 
@@ -1885,6 +1898,20 @@ const cardsSlice = createSlice({
           controlledBy: (action as any).ACTOR_REF,
           dragging: true,
           cardStack: [topCard],
+          topCardFaceup: false,
+          statusTokens: {
+            stunned: 0,
+            confused: 0,
+            tough: 0,
+          },
+          counterTokens: {
+            damage: 0,
+            threat: 0,
+            generic: 0,
+            acceleration: 0,
+          },
+          modifiers: {},
+          extraIcons: [],
         });
 
         cardToMove.id = action.payload.splitCardId;
@@ -2082,6 +2109,7 @@ const handleLoadDeck = (
     shuffling: false,
     exhausted: false,
     faceup: true,
+    topCardFaceup: false,
     fill: "red",
     id: action.payload.heroId,
     cardStack: heroCardStack,
@@ -2120,6 +2148,7 @@ const handleLoadDeck = (
     shuffling: false,
     exhausted: false,
     faceup: true,
+    topCardFaceup: false,
     fill: "red",
     id: action.payload.dataId,
     cardStack: mainDeckStack,
@@ -2148,6 +2177,7 @@ const handleLoadDeck = (
     shuffling: false,
     exhausted: false,
     faceup: true,
+    topCardFaceup: false,
     fill: "red",
     id: action.payload.encounterDeckId,
     cardStack: action.payload.relatedEncounterDeck.map((jsonId) => ({
@@ -2178,6 +2208,7 @@ const handleLoadDeck = (
     shuffling: false,
     exhausted: false,
     faceup: true,
+    topCardFaceup: false,
     fill: "red",
     id: action.payload.obligationDeckId,
     cardStack: action.payload.relatedObligationDeck.map((jsonId) => ({
@@ -2217,6 +2248,7 @@ const handleLoadDeck = (
 };
 
 export const {
+  toggleTopCardOfStackFaceup,
   selectCard,
   unselectCard,
   toggleSelectCard,

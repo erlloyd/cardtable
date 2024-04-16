@@ -41,6 +41,7 @@ import {
   togglePanMode,
   toggleSelectCard,
   toggleToken,
+  toggleTopCardOfStackFaceup,
   unselectAllCards,
   unselectCard,
 } from "./features/cards/cards.slice";
@@ -222,6 +223,7 @@ const GameContainer = connect(mapStateToProps, {
   parseCsvCustomCards,
   removeCustomCards,
   showCardPeekForCards,
+  toggleTopCardOfStackFaceup,
 })(Game);
 
 export default GameContainer;

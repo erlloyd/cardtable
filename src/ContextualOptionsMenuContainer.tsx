@@ -20,6 +20,7 @@ import {
   toggleMultiselectMode,
   togglePanMode,
   toggleToken,
+  toggleTopCardOfStackFaceup,
 } from "./features/cards/cards.slice";
 import {
   adjustCounterToken,
@@ -79,6 +80,7 @@ const ContextualOptionsMenuContainer = connect(mapStateToProps, {
   toggleExtraIcon,
   drawCardsOutOfCardStack,
   showCardPeekForCards,
+  toggleTopCardOfStackFaceup,
 })(ContextualOptionsMenu);
 
 export default ContextualOptionsMenuContainer;

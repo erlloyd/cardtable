@@ -58,6 +58,7 @@ export interface ICardStack {
   attachedTo?: string | null;
   attachedCardIds?: string[] | null;
   sizeType: CardSizeType;
+  topCardFaceup: boolean;
 }
 
 export interface ICardSlot {
@@ -176,6 +177,10 @@ if (!!localStorageState.cards) {
     // handle missing modifiers
     if (!c.modifiers) {
       c.modifiers = {};
+    }
+
+    if (!c.topCardFaceup) {
+      c.topCardFaceup = false;
     }
 
     // handle missing possibleIcons

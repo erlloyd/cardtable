@@ -110,6 +110,7 @@ const makeFakeCardStackFromJsonId = (
     shuffling: false,
     exhausted: false,
     faceup: faceup === undefined || !!faceup,
+    topCardFaceup: false,
     fill: "anything",
     id: "fake-id",
     selected: false,

@@ -36,6 +36,12 @@ export const properties: GameProperties = {
       icon: "/images/standard/marvel/defense.png",
       slot: 3,
     },
+    {
+      attributeId: "hitpoints",
+      attributeName: "Hit Points",
+      icon: "/images/standard/lotr/hitpoints.png",
+      slot: 4,
+    },
   ],
   tokens: {
     stunned: {

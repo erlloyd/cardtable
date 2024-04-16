@@ -134,7 +134,7 @@ export const getImgUrls = (
 ): string[] =>
   getImgUrlsFromJsonId(
     card.cardStack[0].jsonId,
-    card.faceup,
+    card.faceup || (!card.faceup && card.topCardFaceup),
     cardsData,
     currentGameType
   );
@@ -269,6 +269,7 @@ export const makeFakeCardStackFromJsonId = (jsonId: string): ICardStack => {
     shuffling: false,
     exhausted: false,
     faceup: true,
+    topCardFaceup: false,
     fill: "anything",
     id: v4(),
     selected: false,

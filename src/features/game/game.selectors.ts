@@ -69,6 +69,7 @@ export const getMenuPreviewCard = createSelector(getGame, (game) => {
     controlledBy: "",
     exhausted: false,
     faceup: true,
+    topCardFaceup: false,
     fill: "gray",
     x: 0,
     y: 0,

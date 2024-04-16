@@ -251,6 +251,7 @@ interface IProps {
   ) => void;
   removeCustomCards: (gameType: GameType) => void;
   showCardPeekForCards: (numCards: number) => void;
+  toggleTopCardOfStackFaceup: (id: string) => void;
 }
 
 interface IState {
@@ -1560,6 +1561,12 @@ class Game extends Component<IProps, IState> {
                     // do nothing on cancel
                   });
               }
+            },
+          },
+          {
+            label: `Top card ${card?.topCardFaceup ? "facedown" : "faceup"}`,
+            action: () => {
+              this.props.toggleTopCardOfStackFaceup(card?.id ?? "");
             },
           },
         ],
