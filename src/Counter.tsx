@@ -1,10 +1,20 @@
 import { Component } from "react";
 import { Vector2d } from "konva/lib/types";
-import { Group, Rect, Text } from "react-konva";
+import { Circle, Group, Rect, Text } from "react-konva";
 import { KonvaEventObject } from "konva/lib/Node";
 import { PlayerColor } from "./constants/app-constants";
+import { ConfirmOptions, useConfirm } from "material-ui-confirm";
+
+// Wrapper for hook stuff
+const withConfirm = (Component: any) => {
+  return function WrappedComponent(props: IProps) {
+    const confirm = useConfirm();
+    return <Component {...props} confirm={confirm} />;
+  };
+};
 
 interface IProps {
+  confirm?: (options?: ConfirmOptions) => Promise<void>;
   id: string;
   pos: Vector2d;
   value: number;
@@ -18,6 +28,7 @@ interface IProps {
 
 interface IState {
   counterImageLoaded: boolean;
+  hoveredOverOptions: boolean;
 }
 
 class Counter extends Component<IProps, IState> {
@@ -33,6 +44,7 @@ class Counter extends Component<IProps, IState> {
 
     this.state = {
       counterImageLoaded: false,
+      hoveredOverOptions: false,
     };
 
     this.img = new Image();
@@ -102,13 +114,14 @@ class Counter extends Component<IProps, IState> {
         x={this.props.pos.x}
         y={this.props.pos.y}
         draggable={true}
-        onClick={this.cancelBubble}
         onContextMenu={this.props.handleContextMenu}
         onDragEnd={this.props.onDragEnd}
         onTouchStart={this.handleTouchStart}
         onMouseDown={this.cancelBubble}
         onTouchMove={this.handleTouchMove}
         onTouchEnd={this.handleTouchEnd}
+        onMouseEnter={this.handleMouseEnterCounter}
+        onMouseLeave={this.handleMouseLeaveCounter}
       >
         <Rect
           cornerRadius={30}
@@ -116,6 +129,7 @@ class Counter extends Component<IProps, IState> {
           height={containerHeight}
           fill={this.props.color}
         ></Rect>
+
         <Text
           width={containerWidth}
           height={containerHeight}
@@ -173,6 +187,36 @@ class Counter extends Component<IProps, IState> {
           onClick={this.handleIncrement}
           onTap={this.handleIncrement}
         ></Text>
+
+        <Group
+          width={30}
+          onClick={this.props.handleContextMenu}
+          onTap={this.props.handleContextMenu}
+          onMouseEnter={this.handleMouseEnterMenuButton}
+          onMouseLeave={this.handleMouseLeaveMenuButton}
+        >
+          <Circle
+            width={30}
+            height={30}
+            stroke={"black"}
+            fill={this.state.hoveredOverOptions ? "grey" : "white"}
+            opacity={0.5}
+            align={"center"}
+            verticalAlign={"middle"}
+            offsetY={-20}
+            offsetX={-25}
+          ></Circle>
+          <Text
+            width={30}
+            height={30}
+            fontSize={24}
+            text={"..."}
+            align={"center"}
+            verticalAlign={"middle"}
+            offsetX={-10}
+            offsetY={1}
+          ></Text>
+        </Group>
       </Group>
     );
   }
@@ -216,6 +260,28 @@ class Counter extends Component<IProps, IState> {
       this.touchTimer = null;
     }
   };
+
+  private handleMouseEnterCounter = (event: KonvaEventObject<MouseEvent>) => {
+    window.document.body.style.cursor = "grab";
+  };
+
+  private handleMouseLeaveCounter = (event: KonvaEventObject<MouseEvent>) => {
+    window.document.body.style.cursor = "default";
+  };
+
+  private handleMouseEnterMenuButton = (
+    _event: KonvaEventObject<MouseEvent>
+  ) => {
+    this.setState({ hoveredOverOptions: true });
+    window.document.body.style.cursor = "pointer";
+  };
+
+  private handleMouseLeaveMenuButton = (
+    _event: KonvaEventObject<MouseEvent>
+  ) => {
+    this.setState({ hoveredOverOptions: false });
+    window.document.body.style.cursor = "grab";
+  };
 }
 
-export default Counter;
+export default withConfirm(Counter);

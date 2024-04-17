@@ -1449,6 +1449,43 @@ class Game extends Component<IProps, IState> {
           },
         },
         {
+          label: "Set Value",
+          action: () => {
+            let numToSet = 0;
+            if (this.props.confirm) {
+              this.props
+                .confirm({
+                  title: "New value?",
+                  description: "",
+                  content: (
+                    <TextField
+                      type="number"
+                      onChange={(e) => (numToSet = +e.target.value)}
+                      onKeyUp={(e) => {
+                        e.stopPropagation();
+                      }}
+                      onKeyDown={(e) => {
+                        e.stopPropagation();
+                      }}
+                      onKeyPress={(e) => {
+                        e.stopPropagation();
+                      }}
+                    ></TextField>
+                  ),
+                })
+                .then(() => {
+                  this.props.updateCounterValue({
+                    id: counterId,
+                    delta: numToSet - (counter?.value ?? 0),
+                  });
+                })
+                .catch(() => {
+                  // do nothing on cancel
+                });
+            }
+          },
+        },
+        {
           label: "Reset",
           action: () => {
             this.props.updateCounterValue({
