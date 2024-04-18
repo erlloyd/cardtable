@@ -1,23 +1,27 @@
-import { IconButton } from "@mui/material";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import { IconButton } from "@mui/material";
 import cx from "classnames";
 import { Vector2d } from "konva/lib/types";
 import React, { Component } from "react";
 import {
+  BeforeCapture,
   DragDropContext,
   Draggable,
   DraggableStateSnapshot,
   DraggingStyle,
+  DragStart,
   Droppable,
   DropResult,
   NotDraggingStyle,
   ResponderProvided,
 } from "react-beautiful-dnd";
+import AllPlayerHand from "./AllPlayerHand";
 import {
   myPeerRef,
   playerHandElementId,
   playerHandHeightPx,
 } from "./constants/app-constants";
+import { CardSizeType } from "./constants/card-constants";
 import ContextMenu, { ContextMenuItem } from "./ContextMenu";
 import { ICardData } from "./features/cards-data/initialState";
 import {
@@ -25,8 +29,9 @@ import {
   ICardStack,
   IPlayerHand,
   IPlayerHandCard,
-  MAX_PLAYERS,
 } from "./features/cards/initialState";
+import GameManager from "./game-modules/GameModuleManager";
+import { GameType } from "./game-modules/GameType";
 import "./PlayerHand.scss";
 import TopLayer from "./TopLayer";
 import {
@@ -38,12 +43,6 @@ import {
   getImgUrls,
   shouldRenderImageHorizontal,
 } from "./utilities/card-utils";
-import { GameType } from "./game-modules/GameType";
-import GameManager from "./game-modules/GameModuleManager";
-import { CardSizeType } from "./constants/card-constants";
-import { DragStart } from "react-beautiful-dnd";
-import { BeforeCapture } from "react-beautiful-dnd";
-import { GameModule } from "./game-modules/GameModule";
 
 const grid = 8;
 
@@ -167,6 +166,8 @@ interface IProps {
     role: string | null;
   }) => void;
   clearPlayerRole: (payload: { playerNumber: number }) => void;
+  showFullHandUI: boolean;
+  toggleShowFullHandUI: () => void;
 }
 interface IState {
   modal: boolean;
@@ -374,6 +375,9 @@ class PlayerHand extends Component<IProps, IState> {
         onKeyUp={this.handleKeyUp}
       >
         {this.renderTopLayer()}
+        {this.props.showFullHandUI && (
+          <AllPlayerHand {...this.props}></AllPlayerHand>
+        )}
         {this.state.showMenu && (
           <ContextMenu
             anchorEl={this.state.anchorEl}
@@ -447,6 +451,12 @@ class PlayerHand extends Component<IProps, IState> {
                       indeces: this.state.selectedCardIndeces,
                     });
                   }
+                },
+              },
+              {
+                label: "View Entire Hand",
+                action: () => {
+                  this.props.toggleShowFullHandUI();
                 },
               },
             ])}

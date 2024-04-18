@@ -12,6 +12,10 @@ import { ICustomGame, IGameState, initialState } from "./initialState";
 import { GameType } from "../../game-modules/GameType";
 
 // Reducers
+const toggleShowFullHandUIReducer: CaseReducer<IGameState> = (state) => {
+  state.showFullHandUI = !state.showFullHandUI;
+};
+
 const addCustomGameReducer: CaseReducer<
   IGameState,
   PayloadAction<ICustomGame>
@@ -288,6 +292,7 @@ const gameSlice = createSlice({
     doneLoadingJSON: doneLoadingJSONReducer,
     addCustomGame: addCustomGameReducer,
     removeCustomGame: removeCustomGameReducer,
+    toggleShowFullHandUI: toggleShowFullHandUIReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -361,6 +366,7 @@ export const {
   doneLoadingJSON,
   addCustomGame,
   removeCustomGame,
+  toggleShowFullHandUI,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

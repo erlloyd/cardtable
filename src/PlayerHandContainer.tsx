@@ -13,12 +13,17 @@ import {
   reorderPlayerHand,
   setPlayerRole,
 } from "./features/cards/cards.slice";
-import { getGame, getPlayerColors } from "./features/game/game.selectors";
+import {
+  getGame,
+  getPlayerColors,
+  getShowFullHandUI,
+} from "./features/game/game.selectors";
 import {
   clearMenuPreviewCardJsonId,
   setMenuPreviewCardJsonId,
   setVisiblePlayerHandNumber,
   stopDraggingCardFromHand,
+  toggleShowFullHandUI,
 } from "./features/game/game.slice";
 import { startDraggingCardFromHand } from "./store/global.actions";
 import { RootState } from "./store/rootReducer";
@@ -40,6 +45,7 @@ const mapStateToProps = (state: RootState, ownProps: IProps) => {
     dragging: getGame(state).draggingCardFromHand,
     playerNumber: playerNumberToShow,
     playerColor: myPlayerColor,
+    showFullHandUI: getShowFullHandUI(state),
   };
 };
 
@@ -54,6 +60,7 @@ const PlayerHandContainer = connect(mapStateToProps, {
   setVisiblePlayerHandNumber,
   setPlayerRole,
   clearPlayerRole,
+  toggleShowFullHandUI,
 })(PlayerHand);
 
 export default PlayerHandContainer;

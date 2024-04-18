@@ -52,6 +52,7 @@ export interface IGameState {
   allJsonDataLoaded: boolean;
   showDeckTextImporterWithPosition: Vector2d | null;
   customGames: ICustomGame[];
+  showFullHandUI: boolean;
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -116,6 +117,7 @@ const defaultState: IGameState = {
   allJsonDataLoaded: false,
   showDeckTextImporterWithPosition: null,
   customGames: [],
+  showFullHandUI: false,
 };
 export const initialState: IGameState = {
   ...defaultState,

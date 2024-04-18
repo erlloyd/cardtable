@@ -143,8 +143,11 @@ export const getImgUrlsFromJsonId = (
   cardJsonId: string,
   faceup: boolean,
   cardsData: ICardData,
-  currentGameType: GameType
+  currentGameTypeParam: GameType | null
 ): string[] => {
+  const currentGameType =
+    currentGameTypeParam ?? (GameManager.allRegisteredGameTypes[0] as GameType);
+
   if (Object.keys(cardsData).length === 0) return [];
 
   let urls: string[] = [];

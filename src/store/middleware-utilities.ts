@@ -42,6 +42,7 @@ import {
   showCardPeekForCards,
   hideCardPeek,
   quitGame,
+  toggleShowFullHandUI,
 } from "../features/game/game.slice";
 import { toggleNotes } from "../features/notes/notes.slice";
 import {
@@ -95,6 +96,7 @@ export const blacklistRemoteActions = {
   [showCardPeekForCards.type]: true,
   [hideCardPeek.type]: true,
   [quitGame.type]: true,
+  [toggleShowFullHandUI.type]: true,
 };
 
 export const misingPlayerNumInSeq = (
