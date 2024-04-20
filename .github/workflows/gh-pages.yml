@@ -68,7 +68,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: "_REPLACE_GITHUB_PAT_"
-          replace: ${{ secrets.TAG_PAT }}
+          replace: ${{ secrets.READONLY_PAT }}
           include: "dist/**"
           regex: false
 
