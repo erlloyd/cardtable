@@ -27,6 +27,7 @@ export interface CustomCard {
   backImageUrl: string;
   set?: string;
   setType?: string;
+  loadOrder?: number;
   quantity?: number;
 }
 
@@ -38,6 +39,7 @@ export interface InputCustomCard {
   backImageUrl: string;
   set?: string;
   setType?: string;
+  loadOrder?: string;
   quantity?: string;
   gameImageUrl?: string;
 }
@@ -223,6 +225,7 @@ export const parseCsvCustomCards =
           ...d,
           landscape: d.landscape.toLocaleLowerCase().includes("y"),
           quantity: +(d.quantity || "1"),
+          loadOrder: d.loadOrder ? +d.loadOrder : undefined,
         } as CustomCard;
         return returnObj;
       }
@@ -239,6 +242,7 @@ export const parseCsvCustomCards =
         packCode: null,
         setCode: c.set ?? null,
         setType: c.setType ?? null,
+        loadOrder: c.loadOrder,
       },
       name: c.name,
       typeCode: c.landscape ? "custom_landscape" : "custom",

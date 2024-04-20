@@ -21,6 +21,7 @@ export interface CardData {
     setType?: string | null;
     sizeType?: CardSizeType;
     setPosition?: number;
+    loadOrder?: number;
   };
   duplicate_of?: string;
   customCard?: boolean;

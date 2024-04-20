@@ -64,10 +64,13 @@ export default class GenericCustomGameModule extends GameModule {
   }
 
   splitEncounterCardsIntoStacksWhenLoading(
-    setCode: string,
+    _setCode: string,
     encounterCards: CardData[]
   ): CardData[][] {
-    const temp = groupBy<CardData>(encounterCards, (e) => e.extraInfo.setCode);
+    const temp = groupBy<CardData>(
+      encounterCards,
+      (e) => e.extraInfo.loadOrder
+    );
     return Object.values(temp);
   }
 }

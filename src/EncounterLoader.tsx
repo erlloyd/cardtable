@@ -11,10 +11,12 @@ import { ICounter, IFlippableToken } from "./features/counters/initialState";
 import { CardData } from "./external-api/common-card-data";
 import startCase from "lodash.startcase";
 import { IPlayerBoard } from "./features/cards/initialState";
+import GenericCustomGameModule from "./game-modules/generic-custom-game/GenericCustomGameModule";
 
 interface IProps {
   currentGameType: GameType;
   encounterData: IEncounterEntity[];
+  customCards: boolean;
   loadCards: (
     cards: CardData[][],
     tokens: IFlippableToken[],
@@ -89,9 +91,14 @@ class EncounterLoader extends Component<IProps> {
         // We don't want cards that show up as another card's 'back_link' to be loaded as separate cards
         .filter((c) => !value.cards.some((oc) => oc.backLink === c.code));
 
-      // Check if the module wants to break the encounter cards up at all into other
-      // stacks
-      if (
+      // First check if we are loading custom content
+      if (this.props.customCards) {
+        const customGameModule = new GenericCustomGameModule();
+        totalCards = customGameModule.splitEncounterCardsIntoStacksWhenLoading(
+          "",
+          filteredCards
+        );
+      } else if (
         !!GameManager.getModuleForType(this.props.currentGameType)
           .splitEncounterCardsIntoStacksWhenLoading
       ) {
