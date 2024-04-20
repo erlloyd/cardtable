@@ -29,7 +29,8 @@ export const loadAndStoreChangelog =
     } else {
       // Get details from Oktokit
       const octokit = new Octokit({
-        auth: "_REPLACE_GITHUB_PAT_",
+        // auth: "_REPLACE_GITHUB_PAT_",
+        auth: "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",
       });
 
       const tags = await octokit.request("GET /repos/{owner}/{repo}/tags", {

@@ -22,11 +22,8 @@ const Changelog = (props: IProps) => {
         fullWidth={true}
         completed={props.toggleShowCurrentChangelog}
       >
-        <div
-          className="changelog-container"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className="changelog">
+        <div className="changelog-container">
+          <div className="changelog" onClick={(e) => e.stopPropagation()}>
             {props.mostRecentChangelog ? (
               props.mostRecentChangelog.map((ce) => {
                 return (
@@ -40,7 +37,7 @@ const Changelog = (props: IProps) => {
               <div>Loading changelog...</div>
             )}
           </div>
-          <div className="buttons">
+          <div className="buttons" onClick={(e) => e.stopPropagation()}>
             <Button
               variant="outlined"
               onClick={props.toggleShowCurrentChangelog}
