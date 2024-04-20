@@ -64,6 +64,14 @@ jobs:
           include: "dist/**"
           regex: false
 
+      - name: Find and Replace Github PAT
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "_REPLACE_GITHUB_PAT_"
+          replace: ${{ secrets.TAG_PAT }}
+          include: "dist/**"
+          regex: false
+
       - name: Support older service workers
         run: cp dist/sw.js dist/service-worker.js
       - name: Fix permissions
