@@ -8,10 +8,29 @@ import {
 } from "../../store/global.actions";
 import { getListOfDecklistsFromSearchTerm } from "../cards/cards.thunks";
 import { MAX_PLAYERS } from "../cards/initialState";
-import { ICustomGame, IGameState, initialState } from "./initialState";
+import {
+  IChangelogEntry,
+  ICustomGame,
+  IGameState,
+  initialState,
+} from "./initialState";
 import { GameType } from "../../game-modules/GameType";
 
 // Reducers
+const updateAndShowChangelogReducer: CaseReducer<
+  IGameState,
+  PayloadAction<IChangelogEntry[]>
+> = (state, action) => {
+  state.mostRecentChangelog = action.payload;
+  state.showChangelog = true;
+};
+
+const toggleShowCurrentChangelogReducer: CaseReducer<IGameState> = (state) => {
+  if (!!state.mostRecentChangelog) {
+    state.showChangelog = !state.showChangelog;
+  }
+};
+
 const toggleShowFullHandUIReducer: CaseReducer<IGameState> = (state) => {
   state.showFullHandUI = !state.showFullHandUI;
 };
@@ -293,6 +312,8 @@ const gameSlice = createSlice({
     addCustomGame: addCustomGameReducer,
     removeCustomGame: removeCustomGameReducer,
     toggleShowFullHandUI: toggleShowFullHandUIReducer,
+    updateAndShowChangelog: updateAndShowChangelogReducer,
+    toggleShowCurrentChangelog: toggleShowCurrentChangelogReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -367,6 +388,8 @@ export const {
   addCustomGame,
   removeCustomGame,
   toggleShowFullHandUI,
+  updateAndShowChangelog,
+  toggleShowCurrentChangelog,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

@@ -27,6 +27,11 @@ export interface IPreviewCard {
   id: string;
 }
 
+export interface IChangelogEntry {
+  version: string;
+  message: string;
+}
+
 export interface IGameState {
   stageZoom: Vector2d;
   stagePosition: Vector2d;
@@ -53,6 +58,8 @@ export interface IGameState {
   showDeckTextImporterWithPosition: Vector2d | null;
   customGames: ICustomGame[];
   showFullHandUI: boolean;
+  mostRecentChangelog: IChangelogEntry[] | null;
+  showChangelog: boolean;
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -81,6 +88,8 @@ localStorageState.searchingForOnlineDecks = false;
 localStorageState.mostRecentOnlineDeckSearchResults = {};
 localStorageState.allJsonDataLoaded = false;
 localStorageState.showDeckTextImporterWithPosition = null;
+localStorageState.mostRecentChangelog = null;
+localStorageState.showChangelog = false;
 
 // Register any custom games we have previously loaded
 
@@ -118,6 +127,8 @@ const defaultState: IGameState = {
   showDeckTextImporterWithPosition: null,
   customGames: [],
   showFullHandUI: false,
+  mostRecentChangelog: null,
+  showChangelog: false,
 };
 export const initialState: IGameState = {
   ...defaultState,

@@ -6,6 +6,14 @@ import { CardSizeType } from "../../constants/card-constants";
 
 export const getGame = (state: RootState) => state.game;
 
+export const getMostRecentChangelog = createSelector(getGame, (game) => {
+  return game.mostRecentChangelog;
+});
+
+export const getShowChangelog = createSelector(getGame, (game) => {
+  return game.showChangelog;
+});
+
 export const getShowFullHandUI = createSelector(getGame, (game) => {
   return game.showFullHandUI;
 });

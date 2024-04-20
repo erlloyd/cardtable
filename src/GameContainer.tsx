@@ -107,6 +107,7 @@ import {
 import {
   generateGameStateSave,
   generateGameStateUrl,
+  loadAndStoreChangelog,
   loadGameStateFromSave,
   saveDeckAsJson,
 } from "./features/game/game.thunks";
@@ -224,6 +225,7 @@ const GameContainer = connect(mapStateToProps, {
   removeCustomCards,
   showCardPeekForCards,
   toggleTopCardOfStackFaceup,
+  loadAndStoreChangelog,
 })(Game);
 
 export default GameContainer;

@@ -77,6 +77,7 @@ import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
 import { CARD_SHOULD_BE_HORIZONTAL_MAP } from "./constants/card-missing-image-map";
 import CardPeekContainer from "./CardPeekContainer";
 import { FormControl } from "@material-ui/core";
+import ChangelogContainer from "./ChangelogContainer";
 
 const SCALE_BY = 1.02;
 
@@ -252,6 +253,7 @@ interface IProps {
   removeCustomCards: (gameType: GameType) => void;
   showCardPeekForCards: (numCards: number) => void;
   toggleTopCardOfStackFaceup: (id: string) => void;
+  loadAndStoreChangelog: () => void;
 }
 
 interface IState {
@@ -785,6 +787,7 @@ class Game extends Component<IProps, IState> {
         <DeckTextImporterContainer></DeckTextImporterContainer>
         <NotesContainer></NotesContainer>
         <CardPeekContainer></CardPeekContainer>
+        <ChangelogContainer></ChangelogContainer>
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
         {this.renderPreviewCardModal()}
@@ -1014,6 +1017,7 @@ class Game extends Component<IProps, IState> {
   };
 
   private showContextMenuAtPosition = (pos: Vector2d) => {
+    this.setState({ showEmptyMessage: false });
     this.handleContextMenu(undefined, pos);
   };
 
@@ -3187,7 +3191,7 @@ class Game extends Component<IProps, IState> {
       },
       {
         label: `Version _REPLACE_VERSION_`,
-        action: () => {},
+        action: this.props.loadAndStoreChangelog,
       },
     ];
 

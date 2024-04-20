@@ -10,7 +10,63 @@ import { RootState } from "../../store/rootReducer";
 import { copyToClipboard, getBaseUrl } from "../../utilities/text-utils";
 import { CardtableJSONDeck, ICardStack } from "../cards/initialState";
 import { sendNotification } from "../notifications/notifications.slice";
-import { getActiveGameType } from "./game.selectors";
+import { getActiveGameType, getMostRecentChangelog } from "./game.selectors";
+import { Octokit } from "@octokit/core";
+import {
+  toggleShowCurrentChangelog,
+  updateAndShowChangelog,
+} from "./game.slice";
+import { IChangelogEntry } from "./initialState";
+
+export const loadAndStoreChangelog =
+  (): ThunkAction<void, RootState, unknown, Action<any>> =>
+  async (dispatch, getState) => {
+    const existingChangelog = getMostRecentChangelog(getState());
+
+    // if we have a changelog, just show it, otherwise, load from github
+    if (!!existingChangelog) {
+      dispatch(toggleShowCurrentChangelog());
+    } else {
+      // Get details from Oktokit
+      const octokit = new Octokit({
+        auth: "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",
+      });
+
+      const tags = await octokit.request("GET /repos/{owner}/{repo}/tags", {
+        owner: "erlloyd",
+        repo: "cardtable",
+        headers: {
+          "X-GitHub-Api-Version": "2022-11-28",
+        },
+      });
+
+      const commits = await octokit.request(
+        "GET /repos/{owner}/{repo}/commits",
+        {
+          owner: "erlloyd",
+          repo: "cardtable",
+          headers: {
+            "X-GitHub-Api-Version": "2022-11-28",
+          },
+        }
+      );
+
+      // go through the tags, grab the commit info
+      const changelogEntries = tags.data
+        .map((tag) => {
+          const relatedCommit = commits.data.find(
+            (commit) => commit.sha === tag.commit.sha
+          );
+          return {
+            version: tag.name,
+            message: relatedCommit?.commit.message,
+          } as IChangelogEntry;
+        })
+        .filter((ce) => !!ce.message && !ce.message.includes("[no-changelog]"));
+
+      dispatch(updateAndShowChangelog(changelogEntries));
+    }
+  };
 
 export const generateGameStateSave =
   (): ThunkAction<void, RootState, unknown, Action<any>> =>
