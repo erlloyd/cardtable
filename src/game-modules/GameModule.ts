@@ -249,10 +249,20 @@ export abstract class GameModule {
 
     const setDataToReturn = Object.entries(filteredSetData).map(
       ([key, value]) => {
+        let cards: CardData[] = [];
+        const cardsBeforeQuantity = value.cardsInSet.map(
+          (cis) => encounterEntities[cis.code]
+        );
+        cardsBeforeQuantity.forEach((c) => {
+          cards = cards.concat(
+            Array.from({ length: c.quantity }).map((_i) => c)
+          );
+        });
+
         const encounterEntity: IEncounterEntity = {
           setCode: key,
           setData: value,
-          cards: value.cardsInSet.map((cis) => encounterEntities[cis.code]),
+          cards,
         };
 
         return encounterEntity;
