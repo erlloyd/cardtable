@@ -943,29 +943,34 @@ class Game extends Component<IProps, IState> {
 
     const action = (
       <React.Fragment>
-        <IconButton
-          size="small"
-          aria-label="close"
-          color="inherit"
-          onClick={handleClose}
-        >
-          <CloseIcon fontSize="small" />
-        </IconButton>
+        <div className="icon-button">
+          <IconButton
+            size="small"
+            aria-label="close"
+            color="inherit"
+            onClick={handleClose}
+          >
+            <CloseIcon fontSize="small" />
+          </IconButton>
+        </div>
       </React.Fragment>
     );
 
     const message = (
       <React.Fragment>
         <div className="snack-text">
-          Use the
+          <span>Use the</span>
           <MoreVertIcon fontSize="small" />
-          button to load a deck or scenario
+          <span>button to load a deck or scenario</span>
         </div>
       </React.Fragment>
     );
 
     return (
       <Snackbar
+        style={{
+          minWidth: "348px",
+        }}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
         open={true}
         message={message}
