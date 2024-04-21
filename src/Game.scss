@@ -13,8 +13,20 @@
   width: 100%;
 }
 
-.snack-text {
-  display: flex;
+.empty-message-snackbar {
+  .snack-text {
+    display: flex;
+    @media only screen and (max-width: 420px) {
+      font-size: 0.8rem;
+    }
+    @media only screen and (max-width: 390px) {
+      font-size: 0.75rem;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    min-width: 348px;
+  }
 }
 
 .play-area {

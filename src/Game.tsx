@@ -968,9 +968,7 @@ class Game extends Component<IProps, IState> {
 
     return (
       <Snackbar
-        style={{
-          minWidth: "348px",
-        }}
+        className="empty-message-snackbar"
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
         open={true}
         message={message}
