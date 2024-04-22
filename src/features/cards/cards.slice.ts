@@ -1912,6 +1912,7 @@ const cardsSlice = createSlice({
           },
           modifiers: {},
           extraIcons: [],
+          // attachedCardIds: null,
         });
 
         cardToMove.id = action.payload.splitCardId;

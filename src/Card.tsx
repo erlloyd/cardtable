@@ -71,7 +71,11 @@ interface IProps {
   ) => void;
   handleDoubleClick?: (id: string, event: KonvaEventObject<MouseEvent>) => void;
   handleDoubleTap?: (id: string, event: KonvaEventObject<TouchEvent>) => void;
-  handleDragStart?: (id: string, event: KonvaEventObject<DragEvent>) => void;
+  handleDragStart?: (
+    id: string,
+    event: KonvaEventObject<DragEvent>,
+    forceSplit: boolean
+  ) => void;
   handleDragMove?: (info: { id: string; dx: number; dy: number }) => void;
   handleDragEnd?: (id: string, event: KonvaEventObject<DragEvent>) => void;
   handleHover?: (id: string) => void;
@@ -125,6 +129,7 @@ const debouncedHandleMove = debounce((event: any, props: IProps) => {
 const Card = (props: IProps) => {
   const isMount = useIsMount();
   const touchTimerRef = useRef<any>(null);
+  const dragHandleMouseDownRef = useRef<boolean>(false);
   const [showDragHandle, setShowDragHandle] = useState(true);
   const shuffleToggleRef = useRef(true);
 
@@ -216,10 +221,10 @@ const Card = (props: IProps) => {
   const handleDragStart = useCallback(
     (event: KonvaEventObject<DragEvent>) => {
       if (props.handleDragStart) {
-        props.handleDragStart(props.id, event);
+        props.handleDragStart(props.id, event, dragHandleMouseDownRef.current);
       }
     },
-    [props.handleDragStart, props.id]
+    [props.handleDragStart, props.id, dragHandleMouseDownRef.current]
   );
 
   // Moved this a bit - I'd like to not make a new function
@@ -455,7 +460,7 @@ const Card = (props: IProps) => {
     ) : null;
 
   // DRAG HANDLE
-  const dragHandleSize = 40;
+  const dragHandleSize = 48;
   const dragHandleMainOffset = {
     x: props.exhausted ? 0 : -widthToUse + dragHandleSize,
     y: 0,
@@ -481,6 +486,12 @@ const Card = (props: IProps) => {
         }}
         onMouseLeave={() => {
           window.document.body.style.cursor = "default";
+        }}
+        onMouseDown={() => {
+          dragHandleMouseDownRef.current = true;
+        }}
+        onMouseUp={() => {
+          dragHandleMouseDownRef.current = false;
         }}
       >
         <Rect

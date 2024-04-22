@@ -2246,7 +2246,8 @@ class Game extends Component<IProps, IState> {
 
   private handleCardDragStart = (
     cardId: string,
-    event: KonvaEventObject<DragEvent>
+    event: KonvaEventObject<DragEvent>,
+    forceSplit: boolean
   ) => {
     let splitTopCard = false;
     // If multiple things are selected, you can't pull something off the top of a stack,
@@ -2260,7 +2261,7 @@ class Game extends Component<IProps, IState> {
       const draggingCard = this.props.cards.cards.find((c) => c.id === cardId);
       const hasStack = (draggingCard?.cardStack || []).length > 1;
       if (!!draggingCard && hasStack) {
-        // Check if we're dragging in the upper right corner of the card
+        // Check if we're dragging in the upper right corner of the card - TOUCH ONLY NOW
         const upperRightPoint = {
           x:
             draggingCard.x +
@@ -2282,9 +2283,9 @@ class Game extends Component<IProps, IState> {
 
         const dragDistanceThreshold = !!(event.evt as any).touches
           ? cardConstants[draggingCard.sizeType].TOUCH_DRAG_SPLIT_DISTANCE
-          : cardConstants[draggingCard.sizeType].MOUSE_DRAG_SPLIT_DISTANCE;
+          : 0; //We set this to 0 for non-touches so we completely respect the forceSplit flag when splitting
 
-        if (distance < dragDistanceThreshold) {
+        if (forceSplit || distance < dragDistanceThreshold) {
           splitTopCard = true;
         }
       }
