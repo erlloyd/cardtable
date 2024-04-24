@@ -257,6 +257,7 @@ const Card = (props: IProps) => {
         debouncedHandleMove.cancel();
 
         props.handleDragEnd(props.id, event);
+        dragHandleMouseDownRef.current = false;
       }
     },
     [props.handleDragEnd, props.dragging, props.id]

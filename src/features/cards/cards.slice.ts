@@ -1893,6 +1893,8 @@ const cardsSlice = createSlice({
         cardToMove.controlledBy = "";
 
         const topCard = cardToMove.cardStack.shift();
+        // make sure to grab the cards that are attached
+        const currentlyAttachedCardIds = cardToMove.attachedCardIds ?? [];
         const newCard = Object.assign({}, cardToMove, {
           selected: true,
           controlledBy: (action as any).ACTOR_REF,
@@ -1912,10 +1914,16 @@ const cardsSlice = createSlice({
           },
           modifiers: {},
           extraIcons: [],
-          // attachedCardIds: null,
+          attachedCardIds: null,
         });
 
+        // It might make more sense to update the new card id, but there's something that gets messed up
         cardToMove.id = action.payload.splitCardId;
+
+        // make sure the cards that were attached to the previous card stack id are attached to the new id
+        state.cards
+          .filter((c) => currentlyAttachedCardIds.includes(c.id))
+          .forEach((c) => (c.attachedTo = action.payload.splitCardId));
 
         state.cards.push(newCard);
       }
