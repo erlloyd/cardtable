@@ -10,7 +10,10 @@ import { GameType } from "../../game-modules/GameType";
 
 export interface CardtableJSONDeck {
   gameTypeForDeck: GameType;
-  cardsInStack: string[];
+  // Deprecated
+  cardsInStack?: string[];
+  // Use this one
+  stacks?: string[][];
 }
 
 export interface IPlayerHandCard {

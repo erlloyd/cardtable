@@ -17,6 +17,8 @@ import {
   updateAndShowChangelog,
 } from "./game.slice";
 import { IChangelogEntry } from "./initialState";
+import { cardsSelectedWithPeerRef, getCards } from "../cards/cards.selectors";
+import { myPeerRef } from "../../constants/app-constants";
 
 export const loadAndStoreChangelog =
   (): ThunkAction<void, RootState, unknown, Action<any>> =>
@@ -185,21 +187,26 @@ export const clearQueryParams =
 
 export const saveDeckAsJson =
   (
-    cardStack: ICardStack | undefined,
     currentGameType: GameType
   ): ThunkAction<void, RootState, unknown, Action<any>> =>
-  () => {
-    if (!cardStack || cardStack.cardStack.length < 1) return;
+  (_dispatch, getState) => {
+    const cardStacks = cardsSelectedWithPeerRef(myPeerRef)(getState());
 
-    const topCard = cardStack.cardStack[0];
+    if (!cardStacks || cardStacks.length < 1) return;
+
+    let stacks: string[][] = [];
+    cardStacks.forEach((cs) => {
+      stacks.push(cs.cardStack.map((c) => c.jsonId));
+    });
+    const topCard = stacks[0][0];
 
     // convert to an object
     const cardTableDeck: CardtableJSONDeck = {
       gameTypeForDeck: currentGameType,
-      cardsInStack: cardStack.cardStack.map((c) => c.jsonId),
+      stacks,
     };
 
-    let filename = `${topCard.jsonId}_deck.json`;
+    let filename = `${topCard}_deck.json`;
     let contentType = "application/json;charset=utf-8;";
 
     var a = document.createElement("a");

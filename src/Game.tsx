@@ -209,10 +209,7 @@ interface IProps {
   generateGameStateUrl: () => void;
   generateGameStateSave: () => void;
   loadGameStateFromSave: (jsonString: string) => void;
-  saveDeckAsJson: (
-    stack: ICardStack | undefined,
-    currentGameType: GameType
-  ) => void;
+  saveDeckAsJson: (currentGameType: GameType) => void;
   showRadialMenuAtPosition: (payload: Vector2d) => void;
   showSpecificCardLoader: (payload: Vector2d) => void;
   showDeckSearch: (payload: Vector2d) => void;
@@ -1686,9 +1683,9 @@ class Game extends Component<IProps, IState> {
     });
 
     menuItems.push({
-      label: "Save Deck as json file",
+      label: "Save Deck(s) as json file",
       action: () => {
-        this.props.saveDeckAsJson(card, this.props.currentGameType);
+        this.props.saveDeckAsJson(this.props.currentGameType);
       },
     });
 
@@ -2810,7 +2807,7 @@ class Game extends Component<IProps, IState> {
         label: "Import / Load",
         children: [
           {
-            label: "Load Deck from json file",
+            label: "Load Deck(s) from json file",
             fileLoadedAction: (jsonContents: string) => {
               this.props.createDeckFromJson({
                 gameType: this.props.currentGameType,

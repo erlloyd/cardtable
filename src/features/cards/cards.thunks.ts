@@ -47,6 +47,7 @@ import { GameModule, ILoadedDeck } from "../../game-modules/GameModule";
 import GameManager from "../../game-modules/GameModuleManager";
 import { GameType } from "../../game-modules/GameType";
 import {
+  cardConstants,
   CardSizeType,
   CounterTokenType,
   stackShuffleAnimationMS,
@@ -417,12 +418,32 @@ export const createDeckFromJson =
         );
       } else {
         // create the deck
-        dispatch(
-          addCardStack({
-            position: payload.position,
-            cardJsonIds: deckContents.cardsInStack,
-          })
-        );
+        // Handle legacy case
+        if (deckContents.cardsInStack) {
+          dispatch(
+            addCardStack({
+              position: payload.position,
+              cardJsonIds: deckContents.cardsInStack,
+            })
+          );
+        } else if (deckContents.stacks) {
+          deckContents.stacks.forEach((s, index) => {
+            dispatch(
+              addCardStack({
+                position: {
+                  x:
+                    payload.position.x +
+                    cardConstants[CardSizeType.Standard].GRID_SNAP_WIDTH *
+                      index,
+                  y: payload.position.y,
+                },
+                cardJsonIds: s,
+              })
+            );
+          });
+        } else {
+          throw new Error("Deck file is not formatted correctly");
+        }
       }
     } catch (e) {
       dispatch(
