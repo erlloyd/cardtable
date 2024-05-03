@@ -5,6 +5,7 @@ import { showHiddenGamesLocalStorage } from "../constants/app-constants";
 
 import MarvelChampionsGameModule from "./marvel-champions/MavelChampionsGameModule";
 import LOTRLCGGameModule from "./lotr-lcg/LOTRLCGGameModule";
+import ArkhamHorrorCardGameModule from "./arkham-horror-card-game/ArkhamHorrorCardGameModule";
 import WarOfTheRingTheCardGameModule from "./war-of-the-ring-card-game/WarOfTheRingTheCardGameModule";
 import StarWarsDeckbuildingGameModule from "./star-wars-deckbuilding-game/StarWarsDeckbuildingGameModule";
 import StandardDeckGameModule from "./standard-deck/StandardDeckGameModule";
@@ -22,6 +23,11 @@ const games: { type: GameType; module: GameModule; hidden?: boolean }[] = [
   {
     type: GameType.LordOfTheRingsLivingCardGame,
     module: new LOTRLCGGameModule(),
+  },
+  {
+    type: GameType.ArkhamHorrorCardGame,
+    module: new ArkhamHorrorCardGameModule(),
+    hidden: true,
   },
   {
     type: GameType.WarOfTheRingTheCardGame,
