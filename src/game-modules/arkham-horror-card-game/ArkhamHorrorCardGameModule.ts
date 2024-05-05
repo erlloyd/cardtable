@@ -18,6 +18,8 @@ import { GameType } from "../GameType";
 import SetData from "./generated/sets.json";
 import Packs from "../../external/arkhamdb-json-data/packs.json";
 import Cycles from "../../external/arkhamdb-json-data/cycles.json";
+import { getArkhamCards } from "./getArkhamCards";
+import { Vector2d } from "konva/lib/types";
 
 interface ArkhamCard {
   code: string;
@@ -31,11 +33,12 @@ interface ArkhamCard {
   duplicate_of?: string;
   cycle_code?: string;
   encounter_code?: string;
+  faction_code: string;
 }
 
 export default class ArkhamHorrorCardGameModule extends GameModule {
   constructor() {
-    super(properties, {}, {}, {}, []);
+    super(properties, {}, {}, {}, ["agenda", "act", "investigator"]);
   }
   getSetData(): ISetData {
     const setData = {} as ISetData;
@@ -44,9 +47,16 @@ export default class ArkhamHorrorCardGameModule extends GameModule {
 
       const cycleForSet = Cycles.find((c) => c.code === packForSet?.cycle_code);
 
+      let setTypeCode = cycleForSet?.name ?? "Unknown";
+      if (set.isScenario) {
+        setTypeCode = `${setTypeCode} - Scenarios`;
+      } else {
+        setTypeCode = `${setTypeCode} - Sets`;
+      }
+
       setData[set.code] = {
         name: set.name,
-        setTypeCode: cycleForSet?.name ?? "Unknown",
+        setTypeCode,
         cardsInSet: [],
       };
     });
@@ -92,15 +102,35 @@ export default class ArkhamHorrorCardGameModule extends GameModule {
   }): CardData[] {
     const arkhamPack = packWithMetadata.pack as ArkhamCard[];
     return arkhamPack.map((cardArkhamFormat) => {
+      let cardFront = `https://arkhamdb.com/bundles/cards/${cardArkhamFormat.code}.png`;
+      if (
+        cardArkhamFormat.double_sided &&
+        cardArkhamFormat.type_code === "location"
+      ) {
+        cardFront = `https://arkhamdb.com/bundles/cards/${cardArkhamFormat.code}b.png`;
+      }
+
+      let cardBack =
+        "https://cf.geekdo-images.com/erRoLUaNt05c5Kd_9Oj86A__imagepagezoom/img/5IfbG6qVdSH85KACxaaoBHxutKU=/fit-in/1200x900/filters:no_upscale():strip_icc()/pic3311650.png";
+
+      if (cardArkhamFormat.double_sided) {
+        if (cardArkhamFormat.type_code === "location") {
+          cardBack = `https://arkhamdb.com/bundles/cards/${cardArkhamFormat.code}.png`;
+        } else {
+          cardBack = `https://arkhamdb.com/bundles/cards/${cardArkhamFormat.code}b.png`;
+        }
+      } else if (cardArkhamFormat.faction_code === "mythos") {
+        cardBack =
+          "https://cf.geekdo-images.com/oW7K1XsgHSf7g-qiqd_T1A__imagepage/img/HyIcISpk-Wd33AkCjR7bN0s_WPM=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5595580.jpg";
+      }
+
       const mappedCardData: CardData = {
         code: cardArkhamFormat.code,
         octgnId: "",
         name: cardArkhamFormat.name,
         images: {
-          front: `https://arkhamdb.com/bundles/cards/${cardArkhamFormat.code}.png`,
-          back: cardArkhamFormat.double_sided
-            ? `https://arkhamdb.com/bundles/cards/${cardArkhamFormat.code}b.png`
-            : "https://cf.geekdo-images.com/erRoLUaNt05c5Kd_9Oj86A__imagepagezoom/img/5IfbG6qVdSH85KACxaaoBHxutKU=/fit-in/1200x900/filters:no_upscale():strip_icc()/pic3311650.png",
+          front: cardFront,
+          back: cardBack,
         },
         quantity: cardArkhamFormat.quantity,
         doubleSided: !!cardArkhamFormat.double_sided,
@@ -110,7 +140,7 @@ export default class ArkhamHorrorCardGameModule extends GameModule {
         extraInfo: {
           setCode: cardArkhamFormat.encounter_code ?? null,
           packCode: cardArkhamFormat.pack_code,
-          factionCode: "",
+          factionCode: cardArkhamFormat.faction_code,
         },
         duplicate_of: cardArkhamFormat.duplicate_of,
       };
@@ -118,10 +148,14 @@ export default class ArkhamHorrorCardGameModule extends GameModule {
     });
   }
   parseDecklist(
-    _response: AxiosResponse<any, any>,
-    _state: RootState
+    response: AxiosResponse<any, any>,
+    state: RootState,
+    payload: { gameType: GameType; decklistId: number; position: Vector2d }
   ): [string[], ILoadedDeck] {
-    throw new Error("Method not implemented.");
+    const returnCards = getArkhamCards(response, state, payload);
+    const codes = [returnCards.data.investigator_code];
+
+    return [codes, returnCards];
   }
   getEncounterEntitiesFromState(
     setData: ISetData,
@@ -185,11 +219,39 @@ export default class ArkhamHorrorCardGameModule extends GameModule {
     _setCode: string,
     encounterCards: CardData[]
   ): CardData[][] {
-    const temp = groupBy<CardData>(
+    const scenarioStack = filterAndExpand(
       encounterCards,
-      (e) => e.extraInfo.loadOrder
+      (c) => c.typeCode === "scenario"
     );
-    return Object.values(temp);
+    const agendaStack = filterAndExpand(
+      encounterCards,
+      (c) => c.typeCode === "agenda"
+    );
+    const actStack = filterAndExpand(
+      encounterCards,
+      (c) => c.typeCode === "act"
+    );
+    const locationStack = filterAndExpand(
+      encounterCards,
+      (c) => c.typeCode === "location"
+    );
+    const remainingStack = filterAndExpand(
+      encounterCards,
+      (c) =>
+        c.typeCode !== "scenario" &&
+        c.typeCode !== "agenda" &&
+        c.typeCode !== "act" &&
+        c.typeCode !== "location"
+    );
+
+    const splitStacks = [
+      scenarioStack,
+      agendaStack,
+      actStack,
+      locationStack,
+      remainingStack,
+    ];
+    return splitStacks.filter((stack) => stack.length > 0);
   }
 }
 
@@ -203,4 +265,18 @@ const getSpecificArkhamPack = async (
     res: response,
     packCode: packName.split(".json")[0],
   };
+};
+
+const filterAndExpand = (
+  cards: CardData[],
+  filterFn: (c: CardData) => boolean
+): CardData[] => {
+  let returnStack: CardData[] = [];
+  cards.filter(filterFn).forEach((c) => {
+    returnStack = returnStack.concat(
+      Array.from({ length: c.quantity }).map((_i) => c)
+    );
+  });
+
+  return returnStack;
 };

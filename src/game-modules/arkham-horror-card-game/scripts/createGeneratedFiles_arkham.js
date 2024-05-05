@@ -65,6 +65,14 @@ const doWork = async () => {
               (e) => e.code === pf.encounter_code
             );
             encounter.pack_code = pf.pack_code;
+
+            if (encounter.isScenario === undefined) {
+              encounter.isScenario = false;
+            }
+
+            if (!encounter.isScenario && pf.type_code === "scenario") {
+              encounter.isScenario = true;
+            }
           }
         });
       });

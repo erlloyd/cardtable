@@ -1,4 +1,13 @@
 .card-peek-wrapper {
+  .buttons {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: gray;
+    padding: 10px;
+  }
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,15 +29,6 @@
     margin-left: 5px;
     margin-right: 5px;
   }
-}
-
-.buttons {
-  width: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: gray;
-  padding: 10px;
 }
 
 .random {

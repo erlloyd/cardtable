@@ -10,7 +10,7 @@ export const properties: GameProperties = {
   deckSite: "arkhamdb.com",
   decklistApi: "https://arkhamdb.com/api/public/decklist/",
   allowSpecificCardSearch: true,
-  privateDecklistApi: "",
+  privateDecklistApi: "https://arkhamdb.com/api/public/deck/",
   decklistSearchApi: "",
   decklistSearchApiConstants: "",
   encounterUiName: "Encounter Set",
@@ -98,10 +98,10 @@ export const properties: GameProperties = {
   },
   defaultAttachLocation: CardAttachLocation.DownAndLeft,
   additionalResourcesUris: [
-    { url: "https://marvelcdb.com/", display: "MarvelCDB" },
-    { url: "https://hallofheroeslcg.com/", display: "Hall of Heroes" },
+    { url: "https://arkhamdb.com/", display: "ArkhamDB" },
+    { url: "https://hallofarkham.com/", display: "Hall of Arkham" },
     {
-      url: "https://images-cdn.fantasyflightgames.com/filer_public/b6/30/b630ddfe-e745-435b-a284-572dd510e15d/mc_rulesreference_v15-compressed.pdf",
+      url: "https://images-cdn.fantasyflightgames.com/filer_public/c4/b0/c4b0d66c-d79e-411b-bdb5-b5d8c457d4bc/ahc01_rules_reference_web.pdf",
       display: "Rules Reference (PDF)",
     },
   ],
