@@ -37,6 +37,13 @@ const checkMissingImageMap = (
   return missingImageMapForGame[code] ?? null;
 };
 
+const cardsWithValidExtensions: { [key: string]: boolean } = {
+  "01043A": true,
+  "01043B": true,
+  "01043C": true,
+  "01043D": true,
+};
+
 const generateCerebroImageUrl = (
   _currentGameType: GameType,
   card: CardData,
@@ -49,22 +56,22 @@ const generateCerebroImageUrl = (
   const backLink = card.backLink || card.code;
 
   let codeToUse = faceup ? card.code.toUpperCase() : backLink.toUpperCase();
-
-  const potentialSuffix = faceup ? "A" : "B";
-  let alreadyHasSuffix = codeToUse?.endsWith("A") || codeToUse?.endsWith("B");
-  const hasCorrectSuffix = codeToUse?.endsWith(potentialSuffix);
-
-  if (alreadyHasSuffix && !hasCorrectSuffix && codeToUse) {
-    codeToUse = codeToUse.slice(0, codeToUse.length - 1);
-    alreadyHasSuffix = false;
-  }
-
   let suffix = "";
 
-  if (!alreadyHasSuffix && !!card.doubleSided) {
-    suffix = potentialSuffix;
-  }
+  if (!cardsWithValidExtensions[codeToUse]) {
+    const potentialSuffix = faceup ? "A" : "B";
+    let alreadyHasSuffix = codeToUse?.endsWith("A") || codeToUse?.endsWith("B");
+    const hasCorrectSuffix = codeToUse?.endsWith(potentialSuffix);
 
+    if (alreadyHasSuffix && !hasCorrectSuffix && codeToUse) {
+      codeToUse = codeToUse.slice(0, codeToUse.length - 1);
+      alreadyHasSuffix = false;
+    }
+
+    if (!alreadyHasSuffix && !!card.doubleSided) {
+      suffix = potentialSuffix;
+    }
+  }
   const imgUrlToGrab = `https://cerebrodatastorage.blob.core.windows.net/cerebro-cards/official/${codeToUse}${suffix}.jpg`;
   return imgUrlToGrab;
 };
