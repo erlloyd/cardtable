@@ -22,6 +22,7 @@ import { GameType } from "./GameType";
 import { ICounter, IFlippableToken } from "../features/counters/initialState";
 import { PlayerColor } from "../constants/app-constants";
 import { ContextMenuItem } from "../ContextMenu";
+import { ITokenBag } from "../features/token-bags/initialState";
 
 export type CardPackRemapping = { [key: string]: string };
 
@@ -158,6 +159,7 @@ export interface GameProperties {
   defaultAttachLocation: CardAttachLocation;
   tableCardSlots?: ICardSlot[];
   additionalResourcesUris?: AdditionalResource[];
+  tokenBags?: ITokenBag[];
 }
 export abstract class GameModule {
   properties: GameProperties;

@@ -13,7 +13,7 @@ import game, {
   stopDraggingCardFromHand,
 } from "../features/game/game.slice";
 import playmats from "../features/playmats/playmats.slice";
-
+import tokenBags from "../features/token-bags/token-bags.slice";
 import notifications from "../features/notifications/notifications.slice";
 
 import counters, { moveCounter } from "../features/counters/counters.slice";
@@ -30,6 +30,7 @@ const undoableState = combineReducers({
   cards,
   notes,
   playmats,
+  tokenBags,
 });
 
 const rootReducer = combineReducers({

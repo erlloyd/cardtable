@@ -116,6 +116,7 @@ import { resetApp } from "./store/global.actions";
 import { RootState } from "./store/rootReducer";
 import { addNewPlaymatInColumn } from "./features/playmats/playmats.thunks";
 import { resetPlaymats } from "./features/playmats/playmats.slice";
+import { spawnTokenBags } from "./features/token-bags/token-bags.thunks";
 
 const mapStateToProps = (state: RootState) => {
   const playerNumbers = getPlayerNumbers(state);
@@ -153,6 +154,7 @@ const GameContainer = connect(mapStateToProps, {
   deleteCardStack,
   loadCardsData,
   allJsonData,
+  spawnTokenBags,
   allCustomData,
   selectCard,
   unselectCard,

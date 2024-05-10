@@ -78,6 +78,7 @@ import { CARD_SHOULD_BE_HORIZONTAL_MAP } from "./constants/card-missing-image-ma
 import CardPeekContainer from "./CardPeekContainer";
 import { FormControl } from "@material-ui/core";
 import ChangelogContainer from "./ChangelogContainer";
+import TokenBagsContainer from "./TokenBagsContainer";
 
 const SCALE_BY = 1.02;
 
@@ -125,6 +126,7 @@ interface IProps {
   flipCards: () => void;
   loadCardsData: (gameType: GameType) => void;
   allJsonData: (payload: GameType) => void;
+  spawnTokenBags: (payload: GameType) => void;
   allCustomData: (payload: GameType) => void;
   shuffleStack: (id?: string) => void;
   fetchDecklistById: any;
@@ -425,6 +427,7 @@ class Game extends Component<IProps, IState> {
       if (Object.values(GameType).includes(this.props.currentGameType)) {
         this.props.loadCardsData(this.props.currentGameType);
         this.props.allJsonData(this.props.currentGameType);
+        this.props.spawnTokenBags(this.props.currentGameType);
       } else {
         // we still want to load custom data if there is any (there should be...)
         this.props.allCustomData(this.props.currentGameType);
@@ -841,6 +844,7 @@ class Game extends Component<IProps, IState> {
             <Layer>
               <PlaymatGroupContainer />
               <PlayerBoardsContainer />
+              <TokenBagsContainer />
               <Group>
                 {this.props.counters.map((counter) => (
                   <Counter

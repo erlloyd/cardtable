@@ -105,4 +105,13 @@ export const properties: GameProperties = {
       display: "Rules Reference (PDF)",
     },
   ],
+  tokenBags: [
+    {
+      id: "",
+      bagImgUrl:
+        "https://play-lh.googleusercontent.com/JEbONh12jcLUgJeF0XSpFo8ihbvqG29ljZlYEx3EHuRgJwX6SgIlpAGMnO-5CgPbXY8",
+      position: { x: 0, y: 0 },
+      tokens: [],
+    },
+  ],
 };
