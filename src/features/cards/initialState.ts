@@ -170,8 +170,13 @@ if (!!localStorageState.playerHands) {
   });
 }
 
-// Make sure initially, none of the cards are "owned" / "selected" / "shuffling"
 if (!!localStorageState.cards) {
+  // First, get rid of any card stacks with zero cards
+  localStorageState.cards = localStorageState.cards.filter(
+    (c) => !!c.cardStack && c.cardStack.length > 0
+  );
+
+  // Make sure initially, none of the cards are "owned" / "selected" / "shuffling"
   localStorageState.cards.forEach((c) => {
     c.controlledBy = "";
     c.selected = false;
