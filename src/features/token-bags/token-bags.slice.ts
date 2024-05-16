@@ -1,11 +1,31 @@
-import { CaseReducer, createSlice } from "@reduxjs/toolkit";
+import { CaseReducer, PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import { ITokenBag, ITokenBagsState, initialState } from "./initialState";
 import { addNewTokenBagWithId } from "./token-bags.actions";
+import { Vector2d } from "konva/lib/types";
 
 // Reducers
 const resetTokenBagsReducer: CaseReducer<ITokenBagsState> = (state) => {
   state.bags = [];
+};
+
+const setTokenBagPositionReducer: CaseReducer<
+  ITokenBagsState,
+  PayloadAction<{ x: number; y: number; id: string }>
+> = (state, action) => {
+  // Get the bag matching that id and set the position
+  const bag = state.bags.find((b) => b.id === action.payload.id);
+
+  if (bag) {
+    bag.position = { x: action.payload.x, y: action.payload.y };
+  }
+};
+
+const setTokenBagMenuPositionReducer: CaseReducer<
+  ITokenBagsState,
+  PayloadAction<Vector2d | null>
+> = (state, action) => {
+  state.menuPosition = action.payload;
 };
 
 // slice
@@ -14,6 +34,8 @@ const playmatsSlice = createSlice({
   initialState: initialState,
   reducers: {
     resetTokenBags: resetTokenBagsReducer,
+    setTokenBagPosition: setTokenBagPositionReducer,
+    setTokenBagMenuPosition: setTokenBagMenuPositionReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -38,6 +60,7 @@ const playmatsSlice = createSlice({
   },
 });
 
-export const { resetTokenBags } = playmatsSlice.actions;
+export const { resetTokenBags, setTokenBagPosition, setTokenBagMenuPosition } =
+  playmatsSlice.actions;
 
 export default playmatsSlice.reducer;

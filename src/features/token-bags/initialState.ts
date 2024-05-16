@@ -6,6 +6,7 @@ import { v4 } from "uuid";
 
 export interface ITokenBagsState {
   bags: ITokenBag[];
+  menuPosition: Vector2d | null;
 }
 
 export interface ITokenBag {
@@ -36,8 +37,11 @@ const queryParamsTokenBags = !!queryParamsTokenBagsString
 const localStorageState: ITokenBagsState =
   queryParamsTokenBags || (loadState("liveState")?.tokenBags ?? {});
 
+localStorageState.menuPosition = null;
+
 const defaultState: ITokenBagsState = {
   bags: [],
+  menuPosition: null,
 };
 export const initialState: ITokenBagsState = {
   ...defaultState,
