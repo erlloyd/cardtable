@@ -19,4 +19,12 @@ export const EXTRA_CARDS: ExtraCards = {
     { jsonId: "36005" },
   ],
   angel: [{ jsonId: "42001c" }],
+  iceman: [
+    { jsonId: "46002" },
+    { jsonId: "46002" },
+    { jsonId: "46002" },
+    { jsonId: "46002" },
+    { jsonId: "46002" },
+    { jsonId: "46002" },
+  ],
 };
