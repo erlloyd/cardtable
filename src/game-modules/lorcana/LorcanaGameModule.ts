@@ -11,12 +11,16 @@ import {
   ILoadEncounterSetData,
   ILoadedDeck,
   IPackMetadata,
+  filterAndExpand,
 } from "../GameModule";
 import { GameType } from "../GameType";
 import { packList as lorcanaPackList } from "./generated/packsList";
 import { properties } from "./properties";
+import { groupBy } from "lodash";
+import { ICounter } from "../../features/counters/initialState";
 
 interface LorcanaCard {
+  quest?: string;
   id: number;
   name: string;
   title: string;
@@ -47,6 +51,7 @@ interface LorcanaCard {
   FrontImage: string;
   FrontImageAlt: string;
   BackImage: string;
+  Quantity?: number;
 }
 
 interface Scenario {
@@ -72,11 +77,17 @@ interface ScenarioCard {
 
 export default class LorcanaGameModule extends GameModule {
   constructor() {
-    super(properties, {}, {}, {}, ["location"]);
+    super(properties, {}, {}, {}, ["location", "quest_battleground"]);
   }
 
   getSetData(): ISetData {
-    const setData: ISetData = {};
+    const setData: ISetData = {
+      deep_trouble: {
+        name: "Deep Trouble",
+        setTypeCode: "quest",
+        cardsInSet: [],
+      },
+    };
     return setData;
   }
   async getCardsData(): Promise<ILoadCardsData[]> {
@@ -113,6 +124,13 @@ export default class LorcanaGameModule extends GameModule {
     metadata: IPackMetadata;
   }): CardData[] {
     const pack = packWithMetadata.pack as LorcanaCard[];
+
+    // check if this is a quest
+    let isQuest: boolean = false;
+    if (pack.some((c) => !!c.quest)) {
+      isQuest = true;
+    }
+
     return pack.map((c) => ({
       code: `${c.name.toLocaleLowerCase()}${
         c.title ? "_" + c.title.toLocaleLowerCase() : ""
@@ -123,18 +141,21 @@ export default class LorcanaGameModule extends GameModule {
         back: c.BackImage,
       },
       octgnId: null,
-      quantity: 1,
+      quantity: c.Quantity ?? 1,
       doubleSided: false,
       backLink: null,
       typeCode: c.type,
       subTypeCode: null,
       extraInfo: {
         campaign: false,
-        setCode: `${c.card_set_id}`,
+        setCode: c.quest ?? `${c.card_set_id}`,
         packCode: "TODO - lorcana",
-        setType: null,
+        setType: isQuest ? "quest" : null,
         factionCode: null,
-        sizeType: CardSizeType.Standard,
+        sizeType:
+          c.type === "quest_villain" || c.type === "quest_battleground"
+            ? CardSizeType.Tarot
+            : CardSizeType.Standard,
       },
     }));
   }
@@ -197,18 +218,57 @@ export default class LorcanaGameModule extends GameModule {
   }
 
   getEncounterEntitiesFromState(
-    _setData: ISetData,
-    _herosData: ICardData,
-    encounterEntities: ICardData
+    setData: ISetData,
+    herosData: ICardData,
+    encounterEntities: ICardData,
+    customCards?: boolean
   ): IEncounterEntity[] {
-    return [];
+    //first just get quest cards
+    const questCards = Object.values(herosData).filter(
+      (c) => c.extraInfo.setType === "quest"
+    );
+    const dataToReturn = Object.entries(setData).map(([setCode, setData]) => {
+      const relatedCards = questCards.filter(
+        (qc) => qc.extraInfo.setCode === setCode
+      );
+      const encounterEntity: IEncounterEntity = {
+        cards: relatedCards,
+        setCode,
+        setData,
+      };
+
+      return encounterEntity;
+    });
+    return dataToReturn;
   }
 
   splitEncounterCardsIntoStacksWhenLoading(
     _setCode: string,
-    _encounterCards: CardData[]
+    encounterCards: CardData[]
   ): CardData[][] {
-    return [];
+    const groups = groupBy(encounterCards, (c) => c.typeCode);
+    return Object.values(groups).map((g) => filterAndExpand(g, null));
+  }
+
+  getCountersForEncounterSet?(setCode: string): ICounter[] {
+    const counters: ICounter[] = [
+      {
+        id: "",
+        position: { x: 0, y: 0 },
+        text: "Ursula Lore",
+        color: "magenta",
+        value: 0,
+      },
+      {
+        id: "",
+        position: { x: 0, y: 0 },
+        text: "Ursula Draw",
+        color: "yellow",
+        value: 2,
+      },
+    ];
+
+    return counters;
   }
 }
 

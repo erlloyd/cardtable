@@ -12,7 +12,7 @@ export const properties: GameProperties = {
   decklistSearchApi: "",
   allowSpecificCardSearch: true,
   decklistSearchApiConstants: "",
-  encounterUiName: "",
+  encounterUiName: "Quest",
   initialPlaymatImageLocation: "/images/from_modules/lorcana/playermat1.jpg",
   additionalPlaymatImageOptions: {
     layout: "row",

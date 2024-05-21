@@ -10,6 +10,7 @@ import {
   ILoadEncounterSetData,
   ILoadedDeck,
   IPackMetadata,
+  filterAndExpand,
 } from "../GameModule";
 import { properties } from "./properties";
 import { packList as arkhamPackList } from "./generated/packsList";
@@ -265,18 +266,4 @@ const getSpecificArkhamPack = async (
     res: response,
     packCode: packName.split(".json")[0],
   };
-};
-
-const filterAndExpand = (
-  cards: CardData[],
-  filterFn: (c: CardData) => boolean
-): CardData[] => {
-  let returnStack: CardData[] = [];
-  cards.filter(filterFn).forEach((c) => {
-    returnStack = returnStack.concat(
-      Array.from({ length: c.quantity }).map((_i) => c)
-    );
-  });
-
-  return returnStack;
 };

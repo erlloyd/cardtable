@@ -318,3 +318,18 @@ export abstract class GameModule {
   getTableCardSlots?(numPlaymats: number): ICardSlot[] | undefined;
   async loadDecklistFromAPI?(id: number): Promise<any>;
 }
+
+export const filterAndExpand = (
+  cards: CardData[],
+  filterFn: ((c: CardData) => boolean) | null
+): CardData[] => {
+  let returnStack: CardData[] = [];
+  const filteredCards = filterFn ? cards.filter(filterFn) : cards;
+  filteredCards.forEach((c) => {
+    returnStack = returnStack.concat(
+      Array.from({ length: c.quantity }).map((_i) => c)
+    );
+  });
+
+  return returnStack;
+};
