@@ -3,7 +3,7 @@ import { GameProperties } from "../GameModule";
 
 export const properties: GameProperties = {
   heroImageUrl:
-    "https://images.ctfassets.net/sm166qdr1jca/2B0MXRrvv3ToeRH38QbhKg/5d52594452841f338feba538e8ab5c1f/Website_Red_Riderback.jpg",
+    "https://qph.cf2.quoracdn.net/main-qimg-1d9b75afe8648ff0079363ee1e39bd93",
   deckSite: "",
   decklistApi: "",
   decklistSearchApi: "",

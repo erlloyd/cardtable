@@ -103,7 +103,13 @@ interface IProps {
   playerNumbers: { [key: string]: number };
   menuPreviewCard: ICardStack | null;
   isDoneLoadingJSONData: boolean;
-  cardMove: (info: { id: string; dx: number; dy: number }) => void;
+  cardMove: (info: {
+    id: string;
+    dx: number;
+    abs_x?: number;
+    dy: number;
+    abs_y?: number;
+  }) => void;
   endCardMove: (id: string) => void;
   cardFromHandMove: (pos: Vector2d, sizeType: CardSizeType) => void;
   exhaustAllCards: (id?: string) => void;

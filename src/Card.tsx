@@ -76,7 +76,13 @@ interface IProps {
     event: KonvaEventObject<DragEvent>,
     forceSplit: boolean
   ) => void;
-  handleDragMove?: (info: { id: string; dx: number; dy: number }) => void;
+  handleDragMove?: (info: {
+    id: string;
+    dx: number;
+    abs_x?: number;
+    dy: number;
+    abs_y?: number;
+  }) => void;
   handleDragEnd?: (id: string, event: KonvaEventObject<DragEvent>) => void;
   handleHover?: (id: string) => void;
   handleHoverLeave?: (id: string) => void;
@@ -121,7 +127,9 @@ const debouncedHandleMove = debounce((event: any, props: IProps) => {
     props.handleDragMove({
       id: props.id,
       dx: event.target.x() - props.x,
+      abs_x: event.target.x(),
       dy: event.target.y() - props.y,
+      abs_y: event.target.y(),
     });
   }
 }, 5);

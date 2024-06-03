@@ -145,7 +145,9 @@ export const cardMove =
   (info: {
     id: string;
     dx: number;
+    abs_x?: number;
     dy: number;
+    abs_y?: number;
   }): ThunkAction<void, RootState, unknown, Action<string>> =>
   (dispatch, getState) => {
     const snap = getSnapCardsToGrid(getState());

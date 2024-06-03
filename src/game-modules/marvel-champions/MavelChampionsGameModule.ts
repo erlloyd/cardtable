@@ -1,33 +1,27 @@
-import {
-  CardAttachLocation,
-  CounterTokenType,
-  StatusTokenType,
-} from "../../constants/card-constants";
+import axios, { AxiosResponse } from "axios";
+import log from "loglevel";
+import { CardPack as CardPackMarvel } from "../../external-api/marvel-card-data";
+import SetData from "../../external/marvelsdb-json-data/sets.json";
 import { ICardData, ISetData } from "../../features/cards-data/initialState";
+import { packList as marvelPackList } from "../../generated/packsList";
 import {
   GameModule,
-  GameProperties,
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
 } from "../GameModule";
-import SetData from "../../external/marvelsdb-json-data/sets.json";
-import { packList as marvelPackList } from "../../generated/packsList";
-import log from "loglevel";
-import axios, { AxiosResponse } from "axios";
-import { CardPack as CardPackMarvel } from "../../external-api/marvel-card-data";
 
-import MissingCardImages from "./missing-images";
-import { CardData } from "../../external-api/common-card-data";
 import { Vector2d } from "konva/lib/types";
-import { getMarvelCards } from "./getMarvelCards";
-import { EXTRA_CARDS } from "./extraCards";
-import { RootState } from "../../store/rootReducer";
-import { CARD_PACK_REMAPPING } from "./remappedPacks";
+import { CardData } from "../../external-api/common-card-data";
 import { IEncounterEntity } from "../../features/cards-data/cards-data.selectors";
-import { loadEncounterEntities } from "./loadEncounterEntities";
+import { RootState } from "../../store/rootReducer";
 import { GameType } from "../GameType";
+import { EXTRA_CARDS } from "./extraCards";
+import { getMarvelCards } from "./getMarvelCards";
+import { loadEncounterEntities } from "./loadEncounterEntities";
+import MissingCardImages from "./missing-images";
 import { properties } from "./properties";
+import { CARD_PACK_REMAPPING } from "./remappedPacks";
 
 export default class MarvelChampionsGameModule extends GameModule {
   constructor() {
