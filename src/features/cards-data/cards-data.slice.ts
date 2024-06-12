@@ -59,7 +59,13 @@ const storeCardData =
       ? (cs.location as IGameCardsDataStateStored).entities
       : (cs.location as IGameCardsDataStateStored).encounterEntities;
 
-    if (!(cs.card.code[0] === "0" && cs.card.code[1] === "0")) {
+    if (
+      !(
+        cs.card.code[0] === "0" &&
+        cs.card.code[1] === "0" &&
+        !cs.card.code.includes("-")
+      )
+    ) {
       if (
         stateLocation[cs.card.code] &&
         stateLocation[cs.card.code].length > 0
