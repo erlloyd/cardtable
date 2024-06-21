@@ -6,6 +6,14 @@ import { CardSizeType } from "../../constants/card-constants";
 
 export const getGame = (state: RootState) => state.game;
 
+export const isRemoteUndoing = createSelector(getGame, (game) => {
+  return game.remoteUndoing;
+});
+
+export const isUndoing = createSelector(getGame, (game) => {
+  return game.undoing;
+});
+
 export const getMostRecentChangelog = createSelector(getGame, (game) => {
   return game.mostRecentChangelog;
 });

@@ -17,6 +17,21 @@ import {
 import { GameType } from "../../game-modules/GameType";
 
 // Reducers
+const startUndoRedoReducer: CaseReducer<IGameState> = (state, action) => {
+  state.undoing = true;
+
+  if (action.REMOTE_ACTION) {
+    state.remoteUndoing = true;
+  }
+};
+
+const endUndoRedoReducer: CaseReducer<IGameState> = (state, action) => {
+  state.undoing = false;
+  if (action.REMOTE_ACTION) {
+    state.remoteUndoing = false;
+  }
+};
+
 const updateAndShowChangelogReducer: CaseReducer<
   IGameState,
   PayloadAction<IChangelogEntry[]>
@@ -314,6 +329,8 @@ const gameSlice = createSlice({
     toggleShowFullHandUI: toggleShowFullHandUIReducer,
     updateAndShowChangelog: updateAndShowChangelogReducer,
     toggleShowCurrentChangelog: toggleShowCurrentChangelogReducer,
+    startUndoRedo: startUndoRedoReducer,
+    endUndoRedo: endUndoRedoReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -390,6 +407,8 @@ export const {
   toggleShowFullHandUI,
   updateAndShowChangelog,
   toggleShowCurrentChangelog,
+  startUndoRedo,
+  endUndoRedo,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

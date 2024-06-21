@@ -17,6 +17,7 @@ import {
   setAllPlayerInfo,
   createNewMultiplayerGame,
   removePlayer,
+  endUndoRedo,
 } from "../features/game/game.slice";
 import {
   receiveRemoteGameState,
@@ -56,35 +57,59 @@ const RECONNECT_RETRY_MS = 3000;
 let currentReconnectCount = 0;
 let stateCheckTimer: NodeJS.Timer | undefined;
 
+const sendResync = (ws: WebSocket | null, mpGameName: string, action: any) => {
+  if (!!ws?.OPEN && !!mpGameName) {
+    ws?.send(
+      JSON.stringify({
+        type: "resync",
+        game: mpGameName,
+        payload: {
+          RESYNC: true,
+          CUSTOM_CARDS: action.payload.includeCustomCards,
+          CURRENT_GAME_TYPE: action.CURRENT_GAME_TYPE,
+        },
+      })
+    );
+  }
+};
+
+const sendInitialStateMessage = (
+  storeAPI: any,
+  action: any,
+  ws: WebSocket | null
+) => {
+  const { cardsData: _, ...stateWithoutCardsData } = storeAPI.getState();
+  const customCardString = action.CUSTOM_CARDS
+    ? localStorage.getItem("cardtable-custom-cards")
+    : null;
+
+  let customCardsObject = customCardString
+    ? JSON.parse(customCardString)
+    : undefined;
+
+  if (customCardsObject && action.CURRENT_GAME_TYPE) {
+    customCardsObject = pick(customCardsObject, action.CURRENT_GAME_TYPE);
+  }
+
+  ws?.send(
+    JSON.stringify({
+      type: "remoteaction",
+      game: getMultiplayerGameName(storeAPI.getState()),
+      payload: {
+        INITIAL_STATE_MSG: true,
+        state: stateWithoutCardsData,
+        customCards: customCardsObject,
+      },
+    })
+  );
+};
+
 export const websocketMiddleware = (storeAPI: any) => {
   const handleRemoteAction = (action: any) => {
     // console.log("remote action", action);
     if (!action.INITIAL_STATE_MSG) {
       if (!!action.RESYNC) {
-        const { cardsData: _, ...stateWithoutCardsData } = storeAPI.getState();
-        const customCardString = action.CUSTOM_CARDS
-          ? localStorage.getItem("cardtable-custom-cards")
-          : null;
-
-        let customCardsObject = customCardString
-          ? JSON.parse(customCardString)
-          : undefined;
-
-        if (customCardsObject && action.CURRENT_GAME_TYPE) {
-          customCardsObject = pick(customCardsObject, action.CURRENT_GAME_TYPE);
-        }
-
-        ws?.send(
-          JSON.stringify({
-            type: "remoteaction",
-            game: getMultiplayerGameName(storeAPI.getState()),
-            payload: {
-              INITIAL_STATE_MSG: true,
-              state: stateWithoutCardsData,
-              customCards: customCardsObject,
-            },
-          })
-        );
+        sendInitialStateMessage(storeAPI, action, ws);
       } else if (!!action.PING) {
         // Check local state
         action.REMOTE_ACTION = true;
@@ -454,19 +479,7 @@ export const websocketMiddleware = (storeAPI: any) => {
       );
       // setupConnection(activeCon, storeAPI);
     } else if (action.type === requestResync.type) {
-      if (!!ws?.OPEN && !!mpGameName) {
-        ws?.send(
-          JSON.stringify({
-            type: "resync",
-            game: mpGameName,
-            payload: {
-              RESYNC: true,
-              CUSTOM_CARDS: action.payload.includeCustomCards,
-              CURRENT_GAME_TYPE: action.CURRENT_GAME_TYPE,
-            },
-          })
-        );
-      }
+      sendResync(ws, mpGameName, action);
     }
 
     if (
@@ -476,12 +489,19 @@ export const websocketMiddleware = (storeAPI: any) => {
       !!mpGameName
     ) {
       log.trace(`Sending ${action.type} over the websocket`);
+
       const message = {
         type: "remoteaction",
         game: mpGameName,
         payload: action,
       };
       ws.send(JSON.stringify(message));
+
+      //if we are done undoing / redoing send the state if we
+      // have a multiplayer game
+      if (!!mpGameName && action.type === endUndoRedo.type) {
+        sendInitialStateMessage(storeAPI, action, ws);
+      }
     }
 
     return next(action);

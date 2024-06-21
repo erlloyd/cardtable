@@ -576,7 +576,9 @@ const cardMoveWithSnapReducer: CaseReducer<
   PayloadAction<{
     id: string;
     dx: number;
+    abs_x?: number;
     dy: number;
+    abs_y?: number;
     snap: boolean;
     attachLocation: CardAttachLocation;
   }>
@@ -593,8 +595,17 @@ const cardMoveWithSnapReducer: CaseReducer<
         primaryCard = card;
       }
 
-      card.x += action.payload.dx;
-      card.y += action.payload.dy;
+      if (action.payload.abs_x !== undefined) {
+        card.x = action.payload.abs_x;
+      } else {
+        card.x += action.payload.dx;
+      }
+
+      if (action.payload.abs_y !== undefined) {
+        card.y = action.payload.abs_y;
+      } else {
+        card.y += action.payload.dy;
+      }
 
       movedCards.push(card);
     });
@@ -1613,6 +1624,12 @@ const cardsSlice = createSlice({
     });
 
     builder.addCase(verifyRemoteGameState, (state, action) => {
+      //if the remote state is undoing, don't do a check right now
+      if (action.payload.game.undoing) {
+        console.log("Somone is undoing, skipping sync check");
+        return;
+      }
+
       let cardsThatArentDragging = original(state.cards)?.filter(
         (c) => !c.dragging
       );

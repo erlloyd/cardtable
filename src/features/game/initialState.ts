@@ -60,6 +60,8 @@ export interface IGameState {
   showFullHandUI: boolean;
   mostRecentChangelog: IChangelogEntry[] | null;
   showChangelog: boolean;
+  undoing: boolean;
+  remoteUndoing: boolean;
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -90,6 +92,8 @@ localStorageState.allJsonDataLoaded = false;
 localStorageState.showDeckTextImporterWithPosition = null;
 localStorageState.mostRecentChangelog = null;
 localStorageState.showChangelog = false;
+localStorageState.undoing = false;
+localStorageState.remoteUndoing = false;
 
 // Register any custom games we have previously loaded
 
@@ -129,6 +133,8 @@ const defaultState: IGameState = {
   showFullHandUI: false,
   mostRecentChangelog: null,
   showChangelog: false,
+  undoing: false,
+  remoteUndoing: false,
 };
 export const initialState: IGameState = {
   ...defaultState,

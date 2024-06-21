@@ -12,8 +12,8 @@ import { startNewArrow } from "./features/arrows/arrows.thunks";
 import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
 import { loadCardsData } from "./features/cards-data/cards-data.slice";
 import {
-  allJsonData,
   allCustomData,
+  allJsonData,
   parseCsvCustomCards,
   removeCustomCards,
 } from "./features/cards-data/cards-data.thunks";
@@ -46,10 +46,10 @@ import {
   unselectCard,
 } from "./features/cards/cards.slice";
 import {
-  adjustCounterToken,
   addCardStack,
   addCardStackToPlayerBoardSlot,
   addToPlayerHandWithRoleCheck,
+  adjustCounterToken,
   cardFromHandMove,
   cardMove,
   createDeckFromJson,
@@ -111,12 +111,13 @@ import {
   loadGameStateFromSave,
   saveDeckAsJson,
 } from "./features/game/game.thunks";
+import { redo, undo } from "./features/game/undo-redo.thunks";
 import { toggleNotes } from "./features/notes/notes.slice";
+import { resetPlaymats } from "./features/playmats/playmats.slice";
+import { addNewPlaymatInColumn } from "./features/playmats/playmats.thunks";
+import { spawnTokenBags } from "./features/token-bags/token-bags.thunks";
 import { resetApp } from "./store/global.actions";
 import { RootState } from "./store/rootReducer";
-import { addNewPlaymatInColumn } from "./features/playmats/playmats.thunks";
-import { resetPlaymats } from "./features/playmats/playmats.slice";
-import { spawnTokenBags } from "./features/token-bags/token-bags.thunks";
 
 const mapStateToProps = (state: RootState) => {
   const playerNumbers = getPlayerNumbers(state);
@@ -185,8 +186,8 @@ const GameContainer = connect(mapStateToProps, {
   connectToRemoteGame,
   createNewMultiplayerGame,
   requestResync,
-  undo: ActionCreators.undo,
-  redo: ActionCreators.redo,
+  undo,
+  redo,
   clearHistory: ActionCreators.clearHistory,
   drawCardsOutOfCardStack,
   setPreviewCardId,

@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import { ActionCreators } from "redux-undo";
 import ContextualOptionsMenu from "./ContextualOptionsMenu";
 import { myPeerRef } from "./constants/app-constants";
 import { startNewArrow } from "./features/arrows/arrows.thunks";
@@ -38,6 +37,7 @@ import {
 } from "./features/game/game.slice";
 import { RootState } from "./store/rootReducer";
 import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
+import { redo, undo } from "./features/game/undo-redo.thunks";
 
 const mapStateToProps = (state: RootState) => {
   const playerNumberToShow =
@@ -63,8 +63,8 @@ const ContextualOptionsMenuContainer = connect(mapStateToProps, {
   adjustStatusToken,
   adjustCounterToken,
   showRadialMenuAtPosition,
-  undo: ActionCreators.undo,
-  redo: ActionCreators.redo,
+  undo,
+  redo,
   toggleDrawCardsIntoHand,
   toggleSnapCardsToGrid,
   //For sure using

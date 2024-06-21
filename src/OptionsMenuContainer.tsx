@@ -25,8 +25,8 @@ import {
   toggleSnapCardsToGrid,
 } from "./features/game/game.slice";
 import { myPeerRef } from "./constants/app-constants";
-import { ActionCreators } from "redux-undo";
 import { isNoteVisible } from "./features/notes/notes.selectors";
+import { undo, redo } from "./features/game/undo-redo.thunks";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -50,8 +50,8 @@ const OptionsMenuContainer = connect(mapStateToProps, {
   shuffleStack,
   adjustCounterToken,
   showRadialMenuAtPosition,
-  undo: ActionCreators.undo,
-  redo: ActionCreators.redo,
+  undo,
+  redo,
   toggleDrawCardsIntoHand,
   toggleSnapCardsToGrid,
 })(OptionsMenu);

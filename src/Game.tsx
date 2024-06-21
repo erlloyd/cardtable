@@ -79,6 +79,7 @@ import CardPeekContainer from "./CardPeekContainer";
 import { FormControl } from "@material-ui/core";
 import ChangelogContainer from "./ChangelogContainer";
 import TokenBagsContainer from "./TokenBagsContainer";
+import RemoteUndoOverlayContainer from "./RemoteUndoOverlayContainer";
 
 const SCALE_BY = 1.02;
 
@@ -820,6 +821,7 @@ class Game extends Component<IProps, IState> {
           {/* <Provider store={store}> */}
           <CardtableAlertsContainer></CardtableAlertsContainer>
           {/* </Provider> */}
+          <RemoteUndoOverlayContainer />
           <Stage
             ref={(ref) => {
               if (!ref) return;

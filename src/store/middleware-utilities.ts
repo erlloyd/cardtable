@@ -4,6 +4,7 @@
 // screen of the player initiating the action. Zooming is
 // a great example. One player adjusting their zoom shouldn't
 
+import { ActionTypes } from "redux-undo";
 import {
   bulkLoadCardsDataForPack,
   bulkLoadCardsForEncounterSet,
@@ -97,6 +98,9 @@ export const blacklistRemoteActions = {
   [hideCardPeek.type]: true,
   [quitGame.type]: true,
   [toggleShowFullHandUI.type]: true,
+  // We want to handle undo / redo differently when via multiplayer
+  [ActionTypes.UNDO]: true,
+  [ActionTypes.REDO]: true,
 };
 
 export const misingPlayerNumInSeq = (
