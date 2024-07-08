@@ -51,7 +51,10 @@ import log from "loglevel";
 import { makeFakeCardStackFromJsonId } from "../../utilities/card-utils";
 import { makeBasicPlayerBoard } from "../../utilities/playerboard-utils";
 import GameManager from "../../game-modules/GameModuleManager";
-import { addNewPlaymatInColumnWithId } from "../playmats/playmats.actions";
+import {
+  addNewPlaymatInColumnWithId,
+  initBoardSlotsOnPlaymats,
+} from "../playmats/playmats.actions";
 import { resetPlaymats } from "../playmats/playmats.slice";
 import { removePlayer } from "../game/game.slice";
 
@@ -1695,6 +1698,24 @@ const cardsSlice = createSlice({
       if (!!cardToReplaceStack) {
         cardToReplaceStack.cardStack = action.payload.newStack;
       }
+    });
+
+    builder.addCase(initBoardSlotsOnPlaymats, (state, action) => {
+      let tableSlots =
+        GameManager.getModuleForType(action.payload.currentGameType).properties
+          .tableCardSlots ?? [];
+
+      if (
+        !!GameManager.getModuleForType(action.payload.currentGameType)
+          .getTableCardSlots
+      ) {
+        tableSlots =
+          GameManager.getModuleForType(action.payload.currentGameType)
+            .getTableCardSlots!!(action.payload.currentNumPlaymats + 2) ?? // add 1 for the default playmat, and add 1 for the new playmat that is being added
+          tableSlots;
+      }
+
+      state.tableCardSlots = tableSlots;
     });
 
     builder.addCase(addNewPlaymatInColumnWithId, (state, action) => {

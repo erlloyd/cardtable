@@ -114,7 +114,10 @@ import {
 import { redo, undo } from "./features/game/undo-redo.thunks";
 import { toggleNotes } from "./features/notes/notes.slice";
 import { resetPlaymats } from "./features/playmats/playmats.slice";
-import { addNewPlaymatInColumn } from "./features/playmats/playmats.thunks";
+import {
+  addNewPlaymatInColumn,
+  initBoardSlots,
+} from "./features/playmats/playmats.thunks";
 import { spawnTokenBags } from "./features/token-bags/token-bags.thunks";
 import { resetApp } from "./store/global.actions";
 import { RootState } from "./store/rootReducer";
@@ -229,6 +232,7 @@ const GameContainer = connect(mapStateToProps, {
   showCardPeekForCards,
   toggleTopCardOfStackFaceup,
   loadAndStoreChangelog,
+  initBoardSlots,
 })(Game);
 
 export default GameContainer;

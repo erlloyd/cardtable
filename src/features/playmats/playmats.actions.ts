@@ -13,7 +13,15 @@ export interface AddNewPlaymatInColumnWithIdPayload {
   currentGameType: GameType;
 }
 
+export interface InitBoardSlotsOnPlaymatsPayload {
+  currentNumPlaymats: number;
+  currentGameType: GameType;
+}
+
 export const addNewPlaymatInColumnWithId =
   createAction<AddNewPlaymatInColumnWithIdPayload>(
     "addNewPlaymatInColumnWithId"
   );
+
+export const initBoardSlotsOnPlaymats =
+  createAction<InitBoardSlotsOnPlaymatsPayload>("initBoardSlotsOnPlaymats");

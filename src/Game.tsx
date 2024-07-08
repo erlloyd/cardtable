@@ -260,6 +260,7 @@ interface IProps {
   showCardPeekForCards: (numCards: number) => void;
   toggleTopCardOfStackFaceup: (id: string) => void;
   loadAndStoreChangelog: () => void;
+  initBoardSlots: () => void;
 }
 
 interface IState {
@@ -439,6 +440,9 @@ class Game extends Component<IProps, IState> {
         // we still want to load custom data if there is any (there should be...)
         this.props.allCustomData(this.props.currentGameType);
       }
+      // Make sure the table slots are loaded for all playmats
+      this.props.initBoardSlots();
+
       this.isSetUp = true;
     }
   }
