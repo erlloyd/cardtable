@@ -26,7 +26,11 @@ import {
   setStackShuffling,
   startCardMoveWithSplitStackId,
 } from "./cards.actions";
-import { getCards, getPlayerCardsForPlayerNumber } from "./cards.selectors";
+import {
+  cardsSelectedWithPeerRef,
+  getCards,
+  getPlayerCardsForPlayerNumber,
+} from "./cards.selectors";
 import {
   addToPlayerHand,
   adjustCounterTokenWithMax,
@@ -155,7 +159,26 @@ export const cardMove =
       getActiveGameType(getState()) ?? GameType.MarvelChampions;
     const attachLocation =
       GameManager.properties[currentGameType].defaultAttachLocation;
-    dispatch(cardMoveWithSnap({ ...info, snap, attachLocation }));
+
+    // get all of the selected cards for the person that are dragging
+    // so we can calculate their new positions.
+    const myDraggingCards = cardsSelectedWithPeerRef(myPeerRef)(
+      getState()
+    ).filter((c) => c.dragging);
+
+    // for each of the cards, apply the dx / dy
+    const absPosMap = {} as { [key: string]: Vector2d };
+
+    myDraggingCards.forEach((c) => {
+      absPosMap[c.id] = { x: c.x + info.dx, y: c.y + info.dy };
+    });
+
+    //Now overwirte this card in the map with the abs pos
+    if (info.abs_x !== undefined && info.abs_y !== undefined) {
+      absPosMap[info.id] = { x: info.abs_x, y: info.abs_y };
+    }
+
+    dispatch(cardMoveWithSnap({ ...info, snap, attachLocation, absPosMap }));
   };
 
 export const endCardMove =

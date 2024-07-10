@@ -579,9 +579,8 @@ const cardMoveWithSnapReducer: CaseReducer<
   PayloadAction<{
     id: string;
     dx: number;
-    abs_x?: number;
     dy: number;
-    abs_y?: number;
+    absPosMap: { [key: string]: Vector2d };
     snap: boolean;
     attachLocation: CardAttachLocation;
   }>
@@ -598,15 +597,12 @@ const cardMoveWithSnapReducer: CaseReducer<
         primaryCard = card;
       }
 
-      if (action.payload.abs_x !== undefined) {
-        card.x = action.payload.abs_x;
+      if (action.payload.absPosMap && action.payload.absPosMap[card.id]) {
+        const newCardPos = action.payload.absPosMap[card.id];
+        card.x = newCardPos.x;
+        card.y = newCardPos.y;
       } else {
         card.x += action.payload.dx;
-      }
-
-      if (action.payload.abs_y !== undefined) {
-        card.y = action.payload.abs_y;
-      } else {
         card.y += action.payload.dy;
       }
 
