@@ -8,6 +8,9 @@
 }
 
 .top-layer-content-wrapper {
+  position: absolute;
+  padding: 10px;
+  border-radius: 1rem;
   &.no-content {
     border-radius: 0;
     padding: 0px;
@@ -22,7 +25,4 @@
   &.full-width {
     width: 100%;
   }
-  position: absolute;
-  padding: 10px;
-  border-radius: 1rem;
 }
