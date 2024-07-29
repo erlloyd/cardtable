@@ -55,6 +55,8 @@ const cardsWithValidExtensions: { [key: string]: boolean } = {
   "47010A": true,
   "47010B": true,
   "47010C": true,
+  "47007B": true,
+  "47008B": true,
 };
 
 const generateCerebroImageUrl = (
