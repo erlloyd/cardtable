@@ -9,6 +9,7 @@ import {
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
+  ILoadedDeckMetadata,
   IPackMetadata,
 } from "../GameModule";
 import { properties } from "./properties";
@@ -123,7 +124,7 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
   parseDecklist(
     _response: AxiosResponse<any, any>,
     _state: RootState
-  ): [string[], ILoadedDeck] {
+  ): [string[], ILoadedDeck, ILoadedDeckMetadata] {
     throw new Error("Method not implemented.");
   }
   getEncounterEntitiesFromState(

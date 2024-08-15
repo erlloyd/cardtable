@@ -12,9 +12,10 @@ import { getCardsDataEntities } from "../cards-data/cards-data.selectors";
 import {
   getActiveGameType,
   getGame,
+  getRecentlyLoadedDecksForGameType,
   getSnapCardsToGrid,
 } from "../game/game.selectors";
-import { OnlineDeckDataMap } from "../game/initialState";
+import { IRecentlyLoadedDeck, OnlineDeckDataMap } from "../game/initialState";
 import {
   addCardStackToPlayerBoardWithId,
   AddCardStackToPlayerBoardWithIdPayload,
@@ -47,7 +48,11 @@ import {
 } from "./initialState";
 import log from "loglevel";
 import { sendNotification } from "../notifications/notifications.slice";
-import { GameModule, ILoadedDeck } from "../../game-modules/GameModule";
+import {
+  GameModule,
+  ILoadedDeck,
+  ILoadedDeckMetadata,
+} from "../../game-modules/GameModule";
 import GameManager from "../../game-modules/GameModuleManager";
 import { GameType } from "../../game-modules/GameType";
 import {
@@ -56,6 +61,7 @@ import {
   CounterTokenType,
   stackShuffleAnimationMS,
 } from "../../constants/card-constants";
+import { storeRecentlyLoadedDeck } from "../game/game.slice";
 
 interface AddCardStackPayload {
   cardJsonIds: string[];
@@ -512,6 +518,115 @@ export const getListOfDecklistsFromSearchTerm = createAsyncThunk(
   }
 );
 
+export const fetchRecentDeck =
+  (options: {
+    recentDeck: IRecentlyLoadedDeck;
+    newLoadPos: Vector2d;
+  }): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (dispatch) => {
+    const payload = JSON.parse(options.recentDeck.data);
+    switch (options.recentDeck.type) {
+      case "by-id":
+        dispatch(
+          fetchDecklistById({
+            ...payload,
+            position: options.newLoadPos,
+            fallbackResponse: options.recentDeck.rawPayloadFallback,
+          })
+        );
+        break;
+      case "by-text":
+        dispatch(
+          fetchDecklistByText({
+            ...payload,
+            position: options.newLoadPos,
+            fallbackResponse: options.recentDeck.rawPayloadFallback,
+          })
+        );
+        break;
+      default:
+    }
+  };
+
+export const fetchDecklistByText =
+  (payload: {
+    gameType: GameType;
+    position: Vector2d;
+    text: string;
+    fallbackResponse?: { data: any };
+  }): ThunkAction<void, RootState, unknown, Action<string>> =>
+  (dispatch, getState) => {
+    if (
+      payload.gameType &&
+      !!GameManager.getModuleForType(payload.gameType).loadDeckFromText
+    ) {
+      let metadataFromLoad: ILoadedDeckMetadata | null = null;
+      try {
+        const [cardStacks, metadata] = GameManager.getModuleForType(
+          payload.gameType
+        ).loadDeckFromText!(payload.text);
+
+        metadataFromLoad = metadata;
+
+        let startPosition = payload.position || { x: 100, y: 100 };
+
+        cardStacks.forEach((cardStack, index) => {
+          if (cardStack.length > 0) {
+            // TODO: Support other sizes other than standard cards
+            dispatch(
+              addCardStack({
+                cardJsonIds: cardStack,
+                position: {
+                  x:
+                    startPosition.x +
+                    cardConstants[CardSizeType.Standard].GRID_SNAP_WIDTH *
+                      index,
+                  y: startPosition.y,
+                },
+              })
+            );
+          }
+        });
+      } catch (e) {
+        // Something went wrong, show an error
+        dispatch(
+          sendNotification({
+            id: v4(),
+            level: "error",
+            message:
+              "Could not load deck from the text provided. Check to make sure you copied the entire deck code",
+          })
+        );
+        return;
+      }
+
+      // If we got here, store as recently loaded
+      const currentRecentDecks = getRecentlyLoadedDecksForGameType(
+        payload.gameType
+      )(getState() as RootState);
+      // If we got here (and we weren't doing a recent deck), let's store the deck in recently loaded
+
+      const potentialDisplayName = metadataFromLoad?.displayName ?? "";
+
+      if (
+        !payload.fallbackResponse &&
+        !!potentialDisplayName &&
+        !currentRecentDecks.find(
+          (rd) => rd.displayName === potentialDisplayName
+        )
+      ) {
+        dispatch(
+          storeRecentlyLoadedDeck({
+            displayName: potentialDisplayName,
+            data: JSON.stringify(payload),
+            type: "by-text",
+            rawPayloadFallback: undefined,
+          })
+        );
+      }
+    }
+  };
+
 export const fetchDecklistById = createAsyncThunk(
   "decklist/fetchByIdStatus",
   async (
@@ -520,6 +635,7 @@ export const fetchDecklistById = createAsyncThunk(
       decklistId: number;
       usePrivateApi: boolean;
       position: Vector2d;
+      fallbackResponse?: { data: any };
     },
     thunkApi
   ) => {
@@ -540,27 +656,33 @@ export const fetchDecklistById = createAsyncThunk(
         response = await axios.get(`${apiUrl}${payload.decklistId}`);
       }
     } catch (e) {
-      let errorMessage = `Couldn't load deck ${payload.decklistId}. `;
-      if (privateApiUrl) {
-        if (payload.usePrivateApi) {
-          errorMessage +=
-            ' Ensure the id is correct and not a public deck id, and that "Share your decks" is checked in the user\'s settings.';
+      // If we failed, but we have a fallbackResponse (generally because this deck was loaded previously) then use that
+
+      if (!payload.fallbackResponse) {
+        let errorMessage = `Couldn't load deck ${payload.decklistId}. `;
+        if (privateApiUrl) {
+          if (payload.usePrivateApi) {
+            errorMessage +=
+              ' Ensure the id is correct and not a public deck id, and that "Share your decks" is checked in the user\'s settings.';
+          } else {
+            errorMessage +=
+              'Ensure the id is correct and not a private deck. If it is private, check the use the "private deck" option';
+          }
         } else {
           errorMessage +=
-            'Ensure the id is correct and not a private deck. If it is private, check the use the "private deck" option';
+            "Ensure the id is correct and not a private deck. This game can only support public decks at this time.";
         }
+        thunkApi.dispatch(
+          sendNotification({
+            id: uuidv4(),
+            level: "error",
+            message: errorMessage,
+          })
+        );
+        throw e;
       } else {
-        errorMessage +=
-          "Ensure the id is correct and not a private deck. This game can only support public decks at this time.";
+        response = payload.fallbackResponse;
       }
-      thunkApi.dispatch(
-        sendNotification({
-          id: uuidv4(),
-          level: "error",
-          message: errorMessage,
-        })
-      );
-      throw e;
     }
 
     if (!response) throw new Error("Empty response");
@@ -569,9 +691,10 @@ export const fetchDecklistById = createAsyncThunk(
 
     let codes: string[] = [];
     let returnCards: ILoadedDeck | null = null;
+    let metadata: ILoadedDeckMetadata | null = null;
 
     try {
-      [codes, returnCards] = GameManager.getModuleForType(
+      [codes, returnCards, metadata] = GameManager.getModuleForType(
         payload.gameType
       ).parseDecklist(response, state, payload);
     } catch (e) {
@@ -582,6 +705,36 @@ export const fetchDecklistById = createAsyncThunk(
     if (returnCards === null) {
       throw new Error(`returnCards was null`);
     }
+
+    const currentRecentDecks = getRecentlyLoadedDecksForGameType(
+      payload.gameType
+    )(thunkApi.getState() as RootState);
+    // If we got here (and we weren't doing a recent deck), let's store the deck in recently loaded
+
+    const potentialDisplayName =
+      metadata?.displayName ?? `${payload.decklistId}`;
+
+    if (
+      !payload.fallbackResponse &&
+      !currentRecentDecks.find((rd) => rd.displayName === potentialDisplayName)
+    ) {
+      thunkApi.dispatch(
+        storeRecentlyLoadedDeck({
+          displayName: potentialDisplayName,
+          data: JSON.stringify(payload),
+          type: "by-id",
+          rawPayloadFallback: { data: response.data },
+        })
+      );
+    }
+
+    // thunkApi.dispatch(
+    //   sendNotification({
+    //     id: uuidv4(),
+    //     level: "error",
+    //     message: "TEST",
+    //   })
+    // );
 
     // Cache the images
     codes = codes

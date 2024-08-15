@@ -1,4 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
+import { GameType } from "../game-modules/GameType";
+import { PayloadAction } from "@reduxjs/toolkit";
 
 // For multiplayer type
 export const DEV_WS_LS_KEY = "__dev_ws__";
@@ -38,3 +40,8 @@ export const playerHandElementId: string = "card-table-player-hand-area";
 export const defaultPlaymatWidth: number = 2880;
 
 export const defaultPlaymatHeight: number = 1440;
+
+export const MAX_RECENTLY_LOADED_DECKS: number = 10;
+
+export type CardtableAction<T> =
+  | PayloadAction<T> & { CURRENT_GAME_TYPE?: GameType };

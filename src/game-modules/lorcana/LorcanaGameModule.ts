@@ -10,6 +10,7 @@ import {
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
+  ILoadedDeckMetadata,
   IPackMetadata,
   filterAndExpand,
 } from "../GameModule";
@@ -163,11 +164,11 @@ export default class LorcanaGameModule extends GameModule {
   parseDecklist(
     _response: AxiosResponse<any, any>,
     _state: RootState
-  ): [string[], ILoadedDeck] {
+  ): [string[], ILoadedDeck, ILoadedDeckMetadata] {
     throw new Error("Method not implemented.");
   }
 
-  loadDeckFromText(text: string): string[][] {
+  loadDeckFromText(text: string): [string[][], ILoadedDeckMetadata] {
     try {
       var pixelbornString = atob(text);
       const ids: string[] = [];
@@ -186,7 +187,7 @@ export default class LorcanaGameModule extends GameModule {
           ids.push(name);
         }
       });
-      return [ids];
+      return [[ids], { displayName: `` }];
     } catch (e) {
       const ids: string[] = [];
 
@@ -206,7 +207,7 @@ export default class LorcanaGameModule extends GameModule {
           }
         });
 
-        return [ids];
+        return [[ids], { displayName: `` }];
       }
 
       throw new Error("Unable to load deck");

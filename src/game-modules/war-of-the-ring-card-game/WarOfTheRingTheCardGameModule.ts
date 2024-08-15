@@ -9,6 +9,7 @@ import {
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
+  ILoadedDeckMetadata,
   IPackMetadata,
 } from "../GameModule";
 import { properties } from "./properties";
@@ -115,7 +116,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
   parseDecklist(
     response: AxiosResponse<any, any>,
     state: RootState
-  ): [string[], ILoadedDeck] {
+  ): [string[], ILoadedDeck, ILoadedDeckMetadata] {
     throw new Error("Method not implemented.");
   }
   getEncounterEntitiesFromState(

@@ -1,20 +1,20 @@
 import CloseIcon from "@material-ui/icons/Close";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import { IconButton, Input, Snackbar, TextField } from "@mui/material";
+import { IconButton, Snackbar } from "@mui/material";
+import { H } from "highlight.run";
 import * as Intersects from "intersects";
 import Konva from "konva";
 import { KonvaEventObject } from "konva/lib/Node";
 import { Vector2d } from "konva/lib/types";
-import { debounce } from "lodash";
 import log from "loglevel";
 import { ConfirmOptions, useConfirm } from "material-ui-confirm";
-import React, { Component, ElementRef } from "react";
+import React, { Component } from "react";
 import { Group, Layer, Rect, Stage } from "react-konva";
-import { Provider, ReactReduxContext } from "react-redux";
 import Card from "./Card";
+import CardPeekContainer from "./CardPeekContainer";
 import CardStackCardSelectorContainer from "./CardStackCardSelectorContainer";
 import CardtableAlertsContainer from "./CardtableAlertsContainer";
-import ContextMenu, { ContextMenuItem } from "./ContextMenu";
+import ChangelogContainer from "./ChangelogContainer";
 import ContextualOptionsMenuContainer from "./ContextualOptionsMenuContainer";
 import Counter from "./Counter";
 import CurvedArrowsContainer from "./CurvedArrowsContainer";
@@ -25,23 +25,22 @@ import EncounterLoaderContainer from "./EncounterLoaderContainer";
 import FirstPlayerTokenContainer from "./FirstPlayerTokenContainer";
 import FlippableToken from "./FlippableToken";
 import "./Game.scss";
+import GameContextMenuContainer from "./GameContextMenuContainer";
 import NotesContainer from "./NotesContainer";
-import NotificationsContainer from "./Notifications/NotificationsContainer";
 import OptionsMenuContainer from "./OptionsMenuContainer";
 import PeerConnector from "./PeerConnector";
 import PlayerBoardsContainer from "./PlayerBoardsContainer";
 import PlayerHandContainer from "./PlayerHandContainer";
 import PlaymatGroupContainer from "./PlaymatGroupContainer";
+import RemoteUndoOverlayContainer from "./RemoteUndoOverlayContainer";
 import SpecificCardLoaderContainer from "./SpecificCardLoaderContainer";
+import TokenBagsContainer from "./TokenBagsContainer";
 import TokenValueModifier from "./TokenValueModifier";
 import TopLayer from "./TopLayer";
-import { H } from "highlight.run";
 import {
   PlayerColor,
   myPeerRef,
   playerHandHeightPx,
-  possibleColors,
-  useWebRTCLocalStorage,
 } from "./constants/app-constants";
 import {
   CardSizeType,
@@ -49,6 +48,7 @@ import {
   StatusTokenType,
   cardConstants,
 } from "./constants/card-constants";
+import { CARD_SHOULD_BE_HORIZONTAL_MAP } from "./constants/card-missing-image-map";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import { CardData } from "./external-api/common-card-data";
 import { ICardData } from "./features/cards-data/initialState";
@@ -65,7 +65,6 @@ import { IGameState } from "./features/game/initialState";
 import GameManager from "./game-modules/GameModuleManager";
 import { GameType } from "./game-modules/GameType";
 import {
-  anyCardStackHasStatus,
   cacheImages,
   getCardType,
   getImgUrls,
@@ -73,13 +72,6 @@ import {
   getMySelectedCards,
 } from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
-import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
-import { CARD_SHOULD_BE_HORIZONTAL_MAP } from "./constants/card-missing-image-map";
-import CardPeekContainer from "./CardPeekContainer";
-import { FormControl } from "@material-ui/core";
-import ChangelogContainer from "./ChangelogContainer";
-import TokenBagsContainer from "./TokenBagsContainer";
-import RemoteUndoOverlayContainer from "./RemoteUndoOverlayContainer";
 
 const SCALE_BY = 1.02;
 
@@ -90,7 +82,6 @@ const withConfirm = (Component: any) => {
     return <Component {...props} confirm={confirm} />;
   };
 };
-
 interface IProps {
   confirm?: (options?: ConfirmOptions) => Promise<void>;
   currentGameType: GameType;
@@ -159,16 +150,6 @@ interface IProps {
     existingStackId: string;
     cardJsonIds: string[];
   }) => void;
-  toggleToken: (payload: {
-    id?: string;
-    tokenType: StatusTokenType;
-    value?: boolean;
-  }) => void;
-  adjustStatusToken: (payload: {
-    id?: string;
-    tokenType: StatusTokenType;
-    delta: number;
-  }) => void;
   adjustCounterToken: (payload: {
     id?: string;
     tokenType: CounterTokenType;
@@ -187,16 +168,13 @@ interface IProps {
     color?: PlayerColor
   ) => void;
   updateCounterValue: (payload: { id: string; delta: number }) => void;
-  removeCounter: (id: string) => void;
   moveCounter: (payload: { id: string; newPos: Vector2d }) => void;
-  createNewMultiplayerGame: () => void;
   connectToRemoteGame: (peerId: string) => void;
   undo: () => void;
   redo: () => void;
   clearHistory: () => void;
   counters: ICounter[];
   tokens: IFlippableToken[];
-  requestResync: (payload: { includeCustomCards: boolean }) => void;
   peerId: string;
   multiplayerGameName: string;
   dropTargetCardsById: {
@@ -204,35 +182,13 @@ interface IProps {
   };
   drawCardsOutOfCardStack: (payload: DrawCardsOutOfCardStackPayload) => void;
   quitGame: () => void;
-  updateCounterColor: (payload: { id: string; newColor: PlayerColor }) => void;
   createDeckFromTxt: (payload: {
     gameType: GameType;
     position: Vector2d;
     txtContents: string;
   }) => void;
-  createDeckFromJson: (payload: {
-    gameType: GameType;
-    position: Vector2d;
-    jsonContents: string;
-  }) => void;
-  generateGameStateUrl: () => void;
-  generateGameStateSave: () => void;
-  loadGameStateFromSave: (jsonString: string) => void;
-  saveDeckAsJson: (currentGameType: GameType) => void;
   showRadialMenuAtPosition: (payload: Vector2d) => void;
-  showSpecificCardLoader: (payload: Vector2d) => void;
-  showDeckSearch: (payload: Vector2d) => void;
-  showDeckTextImporter: (pos: Vector2d) => void;
-  adjustModifier: (payload: {
-    id?: string;
-    modifierId: string;
-    delta?: number;
-    value?: number;
-  }) => void;
-  clearAllModifiers: (payload: { id?: string }) => void;
   addToPlayerHandWithRoleCheck: (payload: { playerNumber: number }) => void;
-  addExtraIcon: (icon: string) => void;
-  removeExtraIcon: (icon: string) => void;
   clearMyGhostCards: () => void;
   setDrawingArrow: (val: boolean) => void;
   startNewArrow: (startCardId: string) => void;
@@ -242,24 +198,12 @@ interface IProps {
     myRef: string;
   }) => void;
   removeAnyDisconnectedArrows: (myRef: string) => void;
-  removeAllArrows: () => void;
   createNewTokens: (tokens: IFlippableToken[]) => void;
   createNewPlayerBoards: (playerBoards: IPlayerBoard[]) => void;
   moveToken: (payload: { id: string; pos: Vector2d }) => void;
   flipToken: (id: string) => void;
   rotatePreviewCard180: boolean;
   togglePreviewCardRotation: () => void;
-  addNewPlaymatInColumn: (imgUrl: string) => void;
-  resetPlaymats: () => void;
-  parseCsvCustomCards: (
-    gameType: GameType,
-    csvString: string,
-    expectNewGame: boolean
-  ) => void;
-  removeCustomCards: (gameType: GameType) => void;
-  showCardPeekForCards: (numCards: number) => void;
-  toggleTopCardOfStackFaceup: (id: string) => void;
-  loadAndStoreChangelog: () => void;
   initBoardSlots: () => void;
 }
 
@@ -277,7 +221,8 @@ interface IState {
   selecting: boolean;
   showContextMenu: boolean;
   contextMenuPosition: Vector2d | null;
-  contextMenuItems: ContextMenuItem[];
+  contextMenuCard: ICardStack | null;
+  contextMenuCounterId: string | null;
   showDeckImporter: boolean;
   deckImporterPosition: Vector2d | null;
   showEncounterImporter: boolean;
@@ -339,7 +284,8 @@ class Game extends Component<IProps, IState> {
       selecting: false,
       showContextMenu: false,
       contextMenuPosition: null,
-      contextMenuItems: [],
+      contextMenuCard: null,
+      contextMenuCounterId: null,
       showDeckImporter: false,
       deckImporterPosition: null,
       showEncounterImporter: false,
@@ -993,24 +939,109 @@ class Game extends Component<IProps, IState> {
     );
   };
 
+  private handleCounterTokenModification = (
+    card: ICardStack,
+    type: CounterTokenType
+  ) => {
+    this.setState({
+      showContextMenu: false,
+      contextMenuPosition: null,
+      contextMenuCard: null,
+      contextMenuCounterId: null,
+
+      showTokenValueModifier: true,
+      tokenValueModifierProps: {
+        id: card.id || "",
+        tokenType: type,
+      },
+      tokenValueModifierPosition: this.stage?.getPointerPosition() ?? null,
+    });
+  };
+
+  private handleImportDeckFromMenu = () => {
+    const pointerPosition = this.stage?.getPointerPosition() ?? { x: 0, y: 0 };
+
+    this.setState({
+      showDeckImporter: true,
+      deckImporterPosition: pointerPosition,
+    });
+  };
+
+  private handleFindSpecificCard = (card: ICardStack) => {
+    const pointerPosition = this.stage?.getPointerPosition() ?? null;
+    this.setState({
+      showCardSearch: true,
+      cardSearchPosition: pointerPosition ?? null,
+      cardStackForSearching: card,
+    });
+  };
+
+  private handleShowEncounterLoader = (custom: boolean) => {
+    const pointerPosition = this.stage?.getPointerPosition() ?? null;
+    this.setState({
+      showEncounterImporter: true,
+      importerForCustomCards: custom,
+      encounterImporterPosition: pointerPosition,
+    });
+  };
+
+  private handleConnectToOnlineGame = () => {
+    const pointerPosition = this.stage?.getPointerPosition() ?? null;
+    this.setState({
+      showPeerConnector: true,
+      peerConnectorPosition: pointerPosition,
+    });
+  };
+
   private renderContextMenu = () => {
     if (!this.state.showContextMenu) return null;
 
     const containerRect = this.stage?.container().getBoundingClientRect();
-    const pointerPosition = this.state.contextMenuPosition ?? { x: 0, y: 0 };
-    if (!containerRect || !pointerPosition) {
+    const pointerPositionForMenu = this.state.contextMenuPosition ?? {
+      x: 0,
+      y: 0,
+    };
+    if (!containerRect || !pointerPositionForMenu) {
       throw new Error("Problem computing context menu position");
     }
 
+    const card =
+      this.props.cards.cards.find(
+        (c) => c.id === this.state.contextMenuCard?.id ?? "missing"
+      ) ?? null;
+    const mySelectedCards = getMySelectedCards(this.props.cards.cards);
+
+    const counter =
+      this.props.counters.find(
+        (c) => c.id === (this.state.contextMenuCounterId ?? "no-counter-id")
+      ) ?? null;
+
+    const pointerPosition = this.stage?.getPointerPosition() ?? null;
+
     return (
-      <ContextMenu
+      <GameContextMenuContainer
+        confirm={this.props.confirm}
         position={{
-          x: containerRect.left + pointerPosition.x,
-          y: Math.max(containerRect.top, 0) + pointerPosition.y,
+          x: containerRect.left + pointerPositionForMenu.x,
+          y: Math.max(containerRect.top, 0) + pointerPositionForMenu.y,
         }}
-        items={this.state.contextMenuItems}
-        hideContextMenu={() => this.clearContextMenu()}
-      ></ContextMenu>
+        pointerPosition={pointerPosition}
+        relativePosition={
+          this.getRelativePositionFromTarget(this.stage) ?? {
+            x: 0,
+            y: 0,
+          }
+        }
+        card={card}
+        counter={counter}
+        mySelectedCards={mySelectedCards}
+        handleCounterTokenModification={this.handleCounterTokenModification}
+        handleImportDeck={this.handleImportDeckFromMenu}
+        clearContextMenu={this.clearContextMenu}
+        handleFindSpecificCard={this.handleFindSpecificCard}
+        handleShowEncounterLoader={this.handleShowEncounterLoader}
+        handleConnectToOnlineGame={this.handleConnectToOnlineGame}
+      ></GameContextMenuContainer>
     );
   };
 
@@ -1364,7 +1395,8 @@ class Game extends Component<IProps, IState> {
     this.setState({
       showContextMenu: false,
       contextMenuPosition: null,
-      contextMenuItems: [],
+      contextMenuCard: null,
+      contextMenuCounterId: null,
     });
   };
 
@@ -1459,81 +1491,10 @@ class Game extends Component<IProps, IState> {
       event.evt.preventDefault();
       event.cancelBubble = true;
 
-      const counter = this.props.counters.find((c) => c.id === counterId);
-
-      const menuItems: ContextMenuItem[] = [
-        {
-          label: "Remove",
-          action: () => {
-            this.props.removeCounter(counterId);
-          },
-        },
-        {
-          label: "Set Value",
-          action: () => {
-            let numToSet = 0;
-            if (this.props.confirm) {
-              this.props
-                .confirm({
-                  title: "New value?",
-                  description: "",
-                  content: (
-                    <TextField
-                      type="number"
-                      onChange={(e) => (numToSet = +e.target.value)}
-                      onKeyUp={(e) => {
-                        e.stopPropagation();
-                      }}
-                      onKeyDown={(e) => {
-                        e.stopPropagation();
-                      }}
-                      onKeyPress={(e) => {
-                        e.stopPropagation();
-                      }}
-                    ></TextField>
-                  ),
-                })
-                .then(() => {
-                  this.props.updateCounterValue({
-                    id: counterId,
-                    delta: numToSet - (counter?.value ?? 0),
-                  });
-                })
-                .catch(() => {
-                  // do nothing on cancel
-                });
-            }
-          },
-        },
-        {
-          label: "Reset",
-          action: () => {
-            this.props.updateCounterValue({
-              id: counterId,
-              delta: (counter?.value ?? 0) * -1,
-            });
-          },
-        },
-        {
-          label: "Set Color",
-          children: possibleColors.map((color) => {
-            return {
-              label: color,
-              action: () => {
-                this.props.updateCounterColor({
-                  id: counterId,
-                  newColor: color,
-                });
-              },
-            };
-          }),
-        },
-      ];
-
       this.setState({
         showContextMenu: true,
         contextMenuPosition: this.stage?.getPointerPosition() ?? null,
-        contextMenuItems: menuItems,
+        contextMenuCounterId: counterId,
       });
     };
 
@@ -1554,570 +1515,11 @@ class Game extends Component<IProps, IState> {
     });
 
     const card = this.props.cards.cards.find((c) => c.id === cardId);
-    const numCardsInStack = card?.cardStack?.length || 0;
-
-    const mySelectedCards = getMySelectedCards(this.props.cards.cards);
-
-    const menuItems: ContextMenuItem[] = [
-      {
-        label: "Peek",
-        children: [
-          {
-            label: "Peek at 1",
-            action: () => {
-              this.props.showCardPeekForCards(1);
-            },
-          },
-          {
-            label: "Peek at 3",
-            action: () => {
-              this.props.showCardPeekForCards(3);
-            },
-          },
-          {
-            label: "Peek at 5",
-            action: () => {
-              this.props.showCardPeekForCards(5);
-            },
-          },
-          {
-            label: "Peek at 10",
-            action: () => {
-              this.props.showCardPeekForCards(10);
-            },
-          },
-          {
-            label: "Peek at X",
-            action: () => {
-              if (this.props.confirm) {
-                let numToPeek = 5;
-                this.props
-                  .confirm({
-                    title: "How many?",
-                    description: "",
-                    content: (
-                      <TextField
-                        type="number"
-                        onChange={(e) => (numToPeek = +e.target.value)}
-                        onKeyUp={(e) => {
-                          e.stopPropagation();
-                        }}
-                        onKeyDown={(e) => {
-                          e.stopPropagation();
-                        }}
-                        onKeyPress={(e) => {
-                          e.stopPropagation();
-                        }}
-                      ></TextField>
-                    ),
-                  })
-                  .then(() => {
-                    this.props.showCardPeekForCards(numToPeek);
-                  })
-                  .catch(() => {
-                    // do nothing on cancel
-                  });
-              }
-            },
-          },
-          {
-            label: `Top card ${card?.topCardFaceup ? "facedown" : "faceup"}`,
-            action: () => {
-              this.props.toggleTopCardOfStackFaceup(card?.id ?? "");
-            },
-          },
-        ],
-        hidden:
-          mySelectedCards.length !== 1 ||
-          mySelectedCards[0].cardStack.length < 2,
-      },
-      {
-        label: `Add ${
-          mySelectedCards.length > 1 ||
-          (mySelectedCards.length > 0 &&
-            mySelectedCards[0].cardStack.length > 1)
-            ? "all "
-            : ""
-        } to hand`,
-        action: () => {
-          this.props.addToPlayerHandWithRoleCheck({
-            playerNumber:
-              this.props.gameState.currentVisiblePlayerHandNumber ??
-              this.props.gameState.playerNumbers[myPeerRef],
-          });
-        },
-      },
-      {
-        label: `Place all on table`,
-        action: () => {
-          this.props.drawCardsOutOfCardStack({
-            cardStackId: mySelectedCards[0].id,
-            numberToDraw: mySelectedCards[0].cardStack.length,
-            facedown: false,
-            forceOnTable: true,
-          });
-        },
-        hidden:
-          mySelectedCards.length !== 1 ||
-          mySelectedCards[0].cardStack.length < 2,
-      },
-      {
-        label: "Flip",
-        action: () => {
-          this.props.flipCards();
-        },
-      },
-    ];
-
-    if (numCardsInStack > 1) {
-      menuItems.push({
-        label: "Shuffle",
-        action: () => {
-          this.props.shuffleStack();
-        },
-      });
-
-      menuItems.push({
-        label: "Find Specific Card",
-        action: () => {
-          if (!!card) {
-            this.setState({
-              showCardSearch: true,
-              cardSearchPosition: this.stage?.getPointerPosition() ?? null,
-              cardStackForSearching: card,
-            });
-          }
-        },
-      });
-    }
-
-    menuItems.push({
-      label: "Delete",
-      action: () => {
-        this.props.deleteCardStack();
-      },
-    });
-
-    menuItems.push({
-      label: "Save Deck(s) as json file",
-      action: () => {
-        this.props.saveDeckAsJson(this.props.currentGameType);
-      },
-    });
-
-    const defaultTokenInfoForGameType =
-      GamePropertiesMap[this.props.currentGameType].tokens;
-
-    let tokenInfoForGameType = defaultTokenInfoForGameType;
-
-    if (
-      !!GameManager.getModuleForType(this.props.currentGameType)
-        .getCustomTokenInfoForCard &&
-      mySelectedCards.length > 0
-    ) {
-      tokenInfoForGameType =
-        GameManager.getModuleForType(this.props.currentGameType)
-          .getCustomTokenInfoForCard!!(
-          mySelectedCards[0],
-          getCardType(mySelectedCards[0], this.props.cardsData),
-          defaultTokenInfoForGameType
-        ) ?? defaultTokenInfoForGameType;
-    }
-
-    if (!!tokenInfoForGameType.stunned) {
-      if (tokenInfoForGameType.stunned.canStackMultiple) {
-        // Add status token
-        menuItems.push({
-          label: `Add ${tokenInfoForGameType.stunned.menuText}`,
-          action: () => {
-            this.props.adjustStatusToken({
-              tokenType: StatusTokenType.Stunned,
-              delta: 1,
-            });
-          },
-        });
-
-        if (card?.statusTokens?.stunned ?? -1 > 0) {
-          // Remove status token
-          menuItems.push({
-            label: `Remove ${tokenInfoForGameType.stunned.menuText}`,
-            action: () => {
-              this.props.adjustStatusToken({
-                tokenType: StatusTokenType.Stunned,
-                delta: -1,
-              });
-            },
-          });
-        }
-      } else {
-        menuItems.push({
-          label: anyCardStackHasStatus(StatusTokenType.Stunned, mySelectedCards)
-            ? tokenInfoForGameType.stunned.menuRemoveText
-            : tokenInfoForGameType.stunned.menuText,
-          action: () => {
-            this.props.toggleToken({
-              id: card?.id || "",
-              tokenType: StatusTokenType.Stunned,
-              value: !anyCardStackHasStatus(
-                StatusTokenType.Stunned,
-                mySelectedCards
-              ),
-            });
-          },
-        });
-      }
-    }
-
-    if (!!tokenInfoForGameType.confused) {
-      if (tokenInfoForGameType.confused.canStackMultiple) {
-        // Add status token
-        menuItems.push({
-          label: `Add ${tokenInfoForGameType.confused.menuText}`,
-          action: () => {
-            this.props.adjustStatusToken({
-              tokenType: StatusTokenType.Confused,
-              delta: 1,
-            });
-          },
-        });
-
-        if (card?.statusTokens?.confused ?? -1 > 0) {
-          // Remove status token
-          menuItems.push({
-            label: `Remove ${tokenInfoForGameType.confused.menuText}`,
-            action: () => {
-              this.props.adjustStatusToken({
-                tokenType: StatusTokenType.Confused,
-                delta: -1,
-              });
-            },
-          });
-        }
-      } else {
-        menuItems.push({
-          label: anyCardStackHasStatus(
-            StatusTokenType.Confused,
-            mySelectedCards
-          )
-            ? tokenInfoForGameType.confused.menuRemoveText
-            : tokenInfoForGameType.confused.menuText,
-          action: () => {
-            this.props.toggleToken({
-              id: card?.id || "",
-              tokenType: StatusTokenType.Confused,
-              value: !anyCardStackHasStatus(
-                StatusTokenType.Confused,
-                mySelectedCards
-              ),
-            });
-          },
-        });
-      }
-    }
-
-    if (!!tokenInfoForGameType.tough) {
-      if (tokenInfoForGameType.tough.canStackMultiple) {
-        // Add status token
-        menuItems.push({
-          label: `Add ${tokenInfoForGameType.tough.menuText}`,
-          action: () => {
-            this.props.adjustStatusToken({
-              tokenType: StatusTokenType.Tough,
-              delta: 1,
-            });
-          },
-        });
-
-        if (card?.statusTokens?.tough ?? -1 > 0) {
-          // Remove status token
-          menuItems.push({
-            label: `Remove ${tokenInfoForGameType.tough.menuText}`,
-            action: () => {
-              this.props.adjustStatusToken({
-                tokenType: StatusTokenType.Tough,
-                delta: -1,
-              });
-            },
-          });
-        }
-      } else {
-        menuItems.push({
-          label: anyCardStackHasStatus(StatusTokenType.Tough, mySelectedCards)
-            ? tokenInfoForGameType.tough.menuRemoveText
-            : tokenInfoForGameType.tough.menuText,
-          action: () => {
-            this.props.toggleToken({
-              id: card?.id || "",
-              tokenType: StatusTokenType.Tough,
-              value: !anyCardStackHasStatus(
-                StatusTokenType.Tough,
-                mySelectedCards
-              ),
-            });
-          },
-        });
-      }
-    }
-
-    if (!!tokenInfoForGameType.damage) {
-      menuItems.push({
-        label: tokenInfoForGameType.damage.menuText,
-        action: () => {
-          this.setState({
-            showContextMenu: false,
-            contextMenuItems: [],
-            contextMenuPosition: null,
-
-            showTokenValueModifier: true,
-            tokenValueModifierProps: {
-              id: card?.id || "",
-              tokenType: CounterTokenType.Damage,
-            },
-            tokenValueModifierPosition:
-              this.stage?.getPointerPosition() ?? null,
-          });
-        },
-      });
-    }
-
-    if (!!tokenInfoForGameType.threat) {
-      menuItems.push({
-        label: tokenInfoForGameType.threat.menuText,
-        action: () => {
-          this.setState({
-            showContextMenu: false,
-            contextMenuItems: [],
-            contextMenuPosition: null,
-
-            showTokenValueModifier: true,
-            tokenValueModifierProps: {
-              id: card?.id || "",
-              tokenType: CounterTokenType.Threat,
-            },
-            tokenValueModifierPosition:
-              this.stage?.getPointerPosition() ?? null,
-          });
-        },
-      });
-    }
-
-    if (!!tokenInfoForGameType.generic) {
-      menuItems.push({
-        label: tokenInfoForGameType.generic.menuText,
-        action: () => {
-          this.setState({
-            showContextMenu: false,
-            contextMenuItems: [],
-            contextMenuPosition: null,
-
-            showTokenValueModifier: true,
-            tokenValueModifierProps: {
-              id: card?.id || "",
-              tokenType: CounterTokenType.Generic,
-            },
-            tokenValueModifierPosition:
-              this.stage?.getPointerPosition() ?? null,
-          });
-        },
-      });
-    }
-
-    if (!!tokenInfoForGameType.acceleration) {
-      menuItems.push({
-        label: tokenInfoForGameType.acceleration.menuText,
-        action: () => {
-          this.setState({
-            showContextMenu: false,
-            contextMenuItems: [],
-            contextMenuPosition: null,
-
-            showTokenValueModifier: true,
-            tokenValueModifierProps: {
-              id: card?.id || "",
-              tokenType: CounterTokenType.Acceleration,
-            },
-            tokenValueModifierPosition:
-              this.stage?.getPointerPosition() ?? null,
-          });
-        },
-      });
-    }
-
-    menuItems.push({
-      label: "Remove All Tokens",
-      action: () => {
-        this.props.adjustCounterToken({
-          id: card?.id || "",
-          tokenType: CounterTokenType.Damage,
-          value: 0,
-        });
-
-        this.props.adjustCounterToken({
-          id: card?.id || "",
-          tokenType: CounterTokenType.Threat,
-          value: 0,
-        });
-
-        this.props.adjustCounterToken({
-          id: card?.id || "",
-          tokenType: CounterTokenType.Generic,
-          value: 0,
-        });
-
-        this.props.adjustCounterToken({
-          id: card?.id || "",
-          tokenType: CounterTokenType.Acceleration,
-          value: 0,
-        });
-      },
-    });
-
-    const modifiersForGameType =
-      GamePropertiesMap[this.props.currentGameType].modifiers;
-
-    const extraIconsForGameType =
-      GamePropertiesMap[this.props.currentGameType].possibleIcons;
-
-    if (modifiersForGameType.length > 0 || extraIconsForGameType.length > 0) {
-      menuItems.push({
-        label: "Modifiers",
-        children: modifiersForGameType
-          .map((m) => {
-            return {
-              label: m.attributeName,
-              children: [
-                {
-                  label: "Add 1",
-                  action: () => {
-                    this.props.adjustModifier({
-                      id: card?.id || "",
-                      modifierId: m.attributeId,
-                      delta: 1,
-                    });
-                  },
-                },
-                {
-                  label: "Remove 1",
-                  action: () => {
-                    this.props.adjustModifier({
-                      id: card?.id || "",
-                      modifierId: m.attributeId,
-                      delta: -1,
-                    });
-                  },
-                },
-                {
-                  label: "-3",
-                  action: () => {
-                    this.props.adjustModifier({
-                      id: card?.id || "",
-                      modifierId: m.attributeId,
-                      value: -3,
-                    });
-                  },
-                },
-                {
-                  label: "-2",
-                  action: () => {
-                    this.props.adjustModifier({
-                      id: card?.id || "",
-                      modifierId: m.attributeId,
-                      value: -2,
-                    });
-                  },
-                },
-                {
-                  label: "-1",
-                  action: () => {
-                    this.props.adjustModifier({
-                      id: card?.id || "",
-                      modifierId: m.attributeId,
-                      value: -1,
-                    });
-                  },
-                },
-                {
-                  label: "0",
-                  action: () => {
-                    this.props.adjustModifier({
-                      id: card?.id || "",
-                      modifierId: m.attributeId,
-                      value: 0,
-                    });
-                  },
-                },
-                {
-                  label: "1",
-                  action: () => {
-                    this.props.adjustModifier({
-                      id: card?.id || "",
-                      modifierId: m.attributeId,
-                      value: 1,
-                    });
-                  },
-                },
-                {
-                  label: "2",
-                  action: () => {
-                    this.props.adjustModifier({
-                      id: card?.id || "",
-                      modifierId: m.attributeId,
-                      value: 2,
-                    });
-                  },
-                },
-                {
-                  label: "3",
-                  action: () => {
-                    this.props.adjustModifier({
-                      id: card?.id || "",
-                      modifierId: m.attributeId,
-                      value: 3,
-                    });
-                  },
-                },
-              ],
-            } as ContextMenuItem;
-          })
-          .concat(
-            extraIconsForGameType.length > 0
-              ? [
-                  {
-                    label: "Add Icon",
-                    children: extraIconsForGameType.map((icon) => ({
-                      label: icon.iconName,
-                      action: () => {
-                        this.props.addExtraIcon(icon.iconId);
-                      },
-                    })),
-                  },
-                  {
-                    label: "Remove Icon",
-                    children: extraIconsForGameType.map((icon) => ({
-                      label: icon.iconName,
-                      action: () => {
-                        this.props.removeExtraIcon(icon.iconId);
-                      },
-                    })),
-                  },
-                ]
-              : []
-          )
-          .concat([
-            {
-              label: "Clear all modifiers",
-              action: () => {
-                this.props.clearAllModifiers({ id: card?.id || "" });
-              },
-            },
-          ]),
-      });
-    }
 
     this.setState({
       showContextMenu: true,
       contextMenuPosition: this.stage?.getPointerPosition() ?? null,
-      contextMenuItems: menuItems,
+      contextMenuCard: !!card ? card : null,
     });
   };
 
@@ -2814,408 +2216,9 @@ class Game extends Component<IProps, IState> {
       event.cancelBubble = true;
     }
 
-    const additionalResources =
-      GameManager.getModuleForType(this.props.currentGameType).properties
-        .additionalResourcesUris ?? [];
-
-    const menuItems: ContextMenuItem[] = [
-      {
-        label: "Import / Load",
-        children: [
-          {
-            label: "Load Deck(s) from json file",
-            fileLoadedAction: (jsonContents: string) => {
-              this.props.createDeckFromJson({
-                gameType: this.props.currentGameType,
-                position: this.stage?.getPointerPosition() ?? { x: 0, y: 0 },
-                jsonContents,
-              });
-            },
-            fileUploader: true,
-          },
-          {
-            label: "Import Deck by ID",
-            action: () => {
-              this.setState({
-                showDeckImporter: true,
-                deckImporterPosition: this.stage?.getPointerPosition() ?? {
-                  x: 0,
-                  y: 0,
-                },
-              });
-            },
-            hidden: !GamePropertiesMap[this.props.currentGameType].decklistApi,
-          },
-          {
-            label: `Search for Online Deck to Import`,
-            action: () => {
-              this.props.showDeckSearch(
-                this.stage?.getPointerPosition() || { x: 0, y: 0 }
-              );
-            },
-            hidden:
-              !GamePropertiesMap[this.props.currentGameType].decklistSearchApi,
-          },
-          {
-            label: "Import Deck from Text",
-            action: () => {
-              this.props.showDeckTextImporter(
-                this.stage?.getPointerPosition() || { x: 100, y: 100 }
-              );
-            },
-            hidden: !GameManager.getModuleForType(this.props.currentGameType)
-              .loadDeckFromText,
-          },
-          {
-            label: `Load ${
-              GamePropertiesMap[this.props.currentGameType].encounterUiName
-            }`,
-            action: () => {
-              this.setState({
-                showEncounterImporter: true,
-                importerForCustomCards: false,
-                encounterImporterPosition:
-                  this.stage?.getPointerPosition() ?? null,
-              });
-            },
-            hidden:
-              !GamePropertiesMap[this.props.currentGameType].encounterUiName,
-          },
-          {
-            label: `Load Specific Card`,
-            action: () => {
-              this.props.showSpecificCardLoader(
-                this.stage?.getPointerPosition() || { x: 0, y: 0 }
-              );
-            },
-            hidden:
-              !GamePropertiesMap[this.props.currentGameType]
-                .allowSpecificCardSearch,
-          },
-          {
-            label: "Load Additional Resources",
-            children: additionalResources.map((ar) => ({
-              label: ar.display,
-              action: () => {
-                window.open(ar.url, "_blank", "noreferrer");
-              },
-            })),
-            hidden: additionalResources.length === 0,
-          },
-        ],
-      },
-      {
-        label: "Custom Content",
-        children: [
-          {
-            label: "Import Custom Cards",
-            fileLoadedAction: (csvContents: string) => {
-              this.props.parseCsvCustomCards(
-                this.props.currentGameType,
-                csvContents,
-                false // don't allow full games to be loaded here
-              );
-            },
-            fileUploader: true,
-          },
-          {
-            label: "Load Custom Sets",
-            action: () => {
-              this.setState({
-                showEncounterImporter: true,
-                importerForCustomCards: true,
-                encounterImporterPosition:
-                  this.stage?.getPointerPosition() ?? null,
-              });
-            },
-          },
-          {
-            label: "Sync All Custom Cards from Online Game",
-            action: () => {
-              this.props.requestResync({ includeCustomCards: true });
-            },
-          },
-          {
-            label: "Remove All Custom Data for this Game",
-            action: () => {
-              this.props.removeCustomCards(this.props.currentGameType);
-            },
-          },
-        ],
-      },
-      {
-        label: "Playmats",
-        children: [
-          {
-            label: "Change initial playmat image",
-            action: () => {
-              if (this.props.confirm) {
-                let imageToLoad = "";
-                this.props
-                  .confirm({
-                    title: "Image Url?",
-                    description: "",
-                    content: (
-                      <TextField
-                        className="playmat-image-textbox"
-                        onChange={(e) => {
-                          imageToLoad = e.target.value;
-                        }}
-                        onKeyUp={(e) => {
-                          e.stopPropagation();
-                        }}
-                        onKeyDown={(e) => {
-                          e.stopPropagation();
-                        }}
-                        onKeyPress={(e) => {
-                          e.stopPropagation();
-                        }}
-                      ></TextField>
-                    ),
-                  })
-                  .then(() => {
-                    console.log(imageToLoad);
-                  })
-                  .catch(() => {
-                    // do nothing on cancel
-                  });
-              }
-            },
-            hidden: true,
-          },
-          {
-            label: "Reset initial playmat image",
-            action: () => {},
-            hidden: true,
-          },
-          {
-            label: "Add Playmat",
-            children: GamePropertiesMap[
-              this.props.currentGameType
-            ].additionalPlaymatImageOptions?.additionalImages.map((po) => ({
-              label: po.displayName,
-              action: () => {
-                this.props.addNewPlaymatInColumn(po.imgUrl);
-              },
-            })),
-            hidden:
-              !GamePropertiesMap[this.props.currentGameType]
-                .additionalPlaymatImageOptions,
-          },
-          {
-            label: "Reset Playmats",
-            action: () => {
-              this.props.resetPlaymats();
-            },
-            hidden:
-              !GamePropertiesMap[this.props.currentGameType]
-                .additionalPlaymatImageOptions,
-          },
-        ],
-        hidden:
-          !GamePropertiesMap[this.props.currentGameType]
-            .additionalPlaymatImageOptions,
-      },
-      {
-        label: "Undo",
-        action: this.props.undo,
-      },
-      {
-        label: "Redo",
-        action: this.props.redo,
-      },
-      {
-        label: `Save game`,
-        action: () => {
-          this.props.generateGameStateSave();
-        },
-      },
-      {
-        label: "Load game",
-        fileLoadedAction: (jsonContents: string) => {
-          this.props.loadGameStateFromSave(jsonContents);
-        },
-        fileUploader: true,
-      },
-      {
-        label: "Reset Game",
-        action: () => {
-          if (this.props.confirm) {
-            this.props
-              .confirm({
-                description: "This will reset the game",
-              })
-              .then(() => {
-                this.props.resetApp(this.props.currentGameType);
-              })
-              .catch(() => {
-                // do nothing on cancel
-              });
-          }
-        },
-      },
-      {
-        label: "Quit Game",
-        action: () => {
-          if (this.props.confirm) {
-            this.props
-              .confirm({
-                description: "This will take you back to game selection screen",
-              })
-              .then(() => {
-                this.props.resetApp(this.props.currentGameType);
-                this.props.quitGame();
-                this.props.clearHistory();
-              })
-              .catch(() => {
-                // do nothing on cancel
-              });
-          }
-        },
-      },
-      {
-        label: "Create new counter",
-        children: [
-          {
-            label: "Generic",
-            action: () => {
-              this.props.addNewCounter(
-                this.getRelativePositionFromTarget(this.stage) ?? { x: 0, y: 0 }
-              );
-            },
-          },
-        ]
-          .concat(
-            (
-              GamePropertiesMap[this.props.currentGameType].iconCounters || []
-            ).map((c) => ({
-              label: c.counterName,
-              action: () => {
-                this.props.addNewCounter(
-                  this.getRelativePositionFromTarget(this.stage) ?? {
-                    x: 0,
-                    y: 0,
-                  },
-                  c.counterImage,
-                  undefined,
-                  c.counterColor
-                );
-              },
-            }))
-          )
-          .concat(
-            (
-              GamePropertiesMap[this.props.currentGameType].textCounters || []
-            ).map((c) => ({
-              label: c.counterName,
-              action: () => {
-                this.props.addNewCounter(
-                  this.getRelativePositionFromTarget(this.stage) ?? {
-                    x: 0,
-                    y: 0,
-                  },
-                  undefined,
-                  c.counterText,
-                  c.counterColor
-                );
-              },
-            }))
-          ),
-      },
-      { label: "Remove all arrows", action: this.props.removeAllArrows },
-      {
-        label: "",
-        labelHTML: "Multiplayer <span><b>(BETA)</b></span>",
-        children: [
-          {
-            label: "Connect to online game",
-            action: () => {
-              this.setState({
-                showPeerConnector: true,
-                peerConnectorPosition: this.stage?.getPointerPosition() ?? null,
-              });
-            },
-          },
-          // {
-          //   label: "Connect to Internet Game",
-          //   action: () => {
-          //     this.setState({
-          //       showPeerConnector: true,
-          //       peerConnectorPosition: this.stage?.getPointerPosition() ?? null,
-          //     });
-          //   },
-          // },
-          {
-            label: "Request resync from Remote Game",
-            action: () => {
-              this.props.requestResync({ includeCustomCards: false });
-            },
-          },
-          {
-            label: `Copy my online game link`,
-            action: () => {
-              if (!!this.props.peerId) {
-                copyToClipboard(generateRemoteGameUrl(this.props.peerId));
-              }
-            },
-          },
-        ]
-          .concat(
-            !!this.props.peerId
-              ? [
-                  {
-                    label: `Peer id is ${this.props.peerId} (click to copy)`,
-                    action: () => {
-                      if (!!this.props.peerId) {
-                        copyToClipboard(this.props.peerId);
-                      }
-                    },
-                  },
-                ]
-              : []
-          )
-          .concat(
-            useWebRTCLocalStorage
-              ? []
-              : [
-                  {
-                    label: `Start hosting a new online game`,
-                    action: () => {
-                      this.props.createNewMultiplayerGame();
-                    },
-                  },
-                ]
-          )
-          .concat([
-            {
-              label: `Leave multiplayer game`,
-              action: () => {
-                const url = new URL(window.location as any);
-                if (!!url.searchParams.get("remote")) {
-                  url.searchParams.delete("remote");
-                }
-                window.history.pushState({}, "", url);
-                window.location.reload();
-              },
-            },
-          ]),
-      },
-      {
-        label: `Copy game to clipboard`,
-        action: () => {
-          this.props.generateGameStateUrl();
-        },
-      },
-      {
-        label: `Version _REPLACE_VERSION_`,
-        action: this.props.loadAndStoreChangelog,
-      },
-    ];
-
     this.setState({
       showContextMenu: true,
       contextMenuPosition: pos ?? this.stage?.getPointerPosition() ?? null,
-      contextMenuItems: menuItems,
     });
   };
 

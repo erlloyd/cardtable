@@ -12,6 +12,7 @@ import { ICardDetails } from "../../features/cards/initialState";
 import { EXTRA_CARDS } from "./extraCards";
 
 export interface MarvelDeckData {
+  name: string;
   investigator_code: string;
   slots: { [key: string]: number };
 }
@@ -117,6 +118,7 @@ const replaceDuplicateCards = (
     }
   });
   return {
+    name: data.name,
     investigator_code: data.investigator_code,
     slots: newSlots,
   };

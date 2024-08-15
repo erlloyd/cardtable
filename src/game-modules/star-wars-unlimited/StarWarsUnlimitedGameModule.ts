@@ -10,6 +10,7 @@ import {
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
+  ILoadedDeckMetadata,
   IPackMetadata,
 } from "../GameModule";
 import { GameType } from "../GameType";
@@ -56,10 +57,18 @@ interface SWUDeckCard {
   count: number;
 }
 
+interface SWUDeckMetadata {
+  name: string;
+  author: string;
+}
+
 interface SWUDBDeck {
+  metadata: SWUDeckMetadata;
   leader: SWUDeckCard;
+  secondleader: SWUDeckCard | null;
   base: SWUDeckCard;
   deck: SWUDeckCard[];
+  sideboard?: SWUDeckCard[] | null;
 }
 
 export default class StarWarsUnlimitedGameModule extends GameModule {
@@ -134,27 +143,42 @@ export default class StarWarsUnlimitedGameModule extends GameModule {
   parseDecklist(
     _response: AxiosResponse<any, any>,
     _state: RootState
-  ): [string[], ILoadedDeck] {
+  ): [string[], ILoadedDeck, ILoadedDeckMetadata] {
     throw new Error("Method not implemented.");
   }
 
-  loadDeckFromText(text: string): string[][] {
+  loadDeckFromText(text: string): [string[][], ILoadedDeckMetadata] {
     try {
       // the string should be JSON
       const deckInfo: SWUDBDeck = JSON.parse(text);
       const base = [deckInfo.base.id];
       const leader = [deckInfo.leader.id];
+
+      if (!!deckInfo.secondleader) {
+        leader.push(deckInfo.secondleader.id);
+      }
+
       const deck: string[] = [];
       deckInfo.deck.forEach((c) => {
         for (let i = 0; i < c.count; i++) {
           deck.push(c.id);
         }
       });
-      return [base, leader, deck];
+
+      const sideboard: string[] = [];
+      deckInfo.sideboard?.forEach((c) => {
+        for (let i = 0; i < c.count; i++) {
+          sideboard.push(c.id);
+        }
+      });
+
+      return [
+        [leader, base, deck, sideboard],
+        { displayName: `${deckInfo.metadata.name}` },
+      ];
     } catch (e) {
       throw new Error("Unable to load deck");
     }
-    return [];
   }
 
   isCardBackImg(imgUrl: string): boolean {

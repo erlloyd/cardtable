@@ -32,6 +32,15 @@ export interface IChangelogEntry {
   message: string;
 }
 
+export type DeckLoadType = "by-id" | "by-text";
+
+export interface IRecentlyLoadedDeck {
+  displayName: string;
+  data: string;
+  type: DeckLoadType;
+  rawPayloadFallback: any;
+}
+
 export interface IGameState {
   stageZoom: Vector2d;
   stagePosition: Vector2d;
@@ -62,6 +71,7 @@ export interface IGameState {
   showChangelog: boolean;
   undoing: boolean;
   remoteUndoing: boolean;
+  recentlyLoadedDecks: { [key in GameType]: IRecentlyLoadedDeck[] };
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -135,6 +145,7 @@ const defaultState: IGameState = {
   showChangelog: false,
   undoing: false,
   remoteUndoing: false,
+  recentlyLoadedDecks: {} as any,
 };
 export const initialState: IGameState = {
   ...defaultState,

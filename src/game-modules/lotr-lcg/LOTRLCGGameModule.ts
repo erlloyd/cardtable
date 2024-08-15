@@ -10,6 +10,7 @@ import {
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
+  ILoadedDeckMetadata,
   IPackMetadata,
 } from "../GameModule";
 import Scenarios from "../../external/ringsteki-json-data/scenarios.json";
@@ -169,9 +170,10 @@ export default class LOTRLCGGameModule extends GameModule {
     response: AxiosResponse<any, any>,
     state: RootState,
     payload: { gameType: GameType; decklistId: number; position: Vector2d }
-  ): [string[], ILoadedDeck] {
+  ): [string[], ILoadedDeck, ILoadedDeckMetadata] {
+    const displayName = `${response.data.name} (${payload.decklistId})`;
     const returnCards = getLOTRCards(response, state, payload);
-    return [[], returnCards];
+    return [[], returnCards, { displayName }];
   }
 
   getEncounterEntitiesFromState(

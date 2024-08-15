@@ -14,58 +14,29 @@ interface IProps {
   gameType: GameType | null;
   hideDeckTextImporter: () => void;
   positionToImport: Vector2d | null;
-  addCardStack: (payload: {
-    cardJsonIds: string[];
-    position: Vector2d;
-  }) => void;
   sendNotification: (payload: INotification) => void;
+  fetchDecklistByText: (payload: {
+    gameType: GameType;
+    position: Vector2d;
+    text: string;
+    fallbackResponse?: { data: any };
+  }) => void;
 }
 
 const DeckTextImporter = (props: IProps) => {
   const [currentTextValue, setCurrentTextValue] = useState("");
 
   const handleDeckImport = useCallback(() => {
-    if (
-      props.gameType &&
-      !!GameManager.getModuleForType(props.gameType).loadDeckFromText
-    ) {
-      try {
-        const cardStacks = GameManager.getModuleForType(props.gameType)
-          .loadDeckFromText!(currentTextValue);
-
-        let startPosition = props.positionToImport || { x: 100, y: 100 };
-
-        cardStacks.forEach((cardStack, index) => {
-          if (cardStack.length > 0) {
-            // TODO: Support other sizes other than standard cards
-            props.addCardStack({
-              cardJsonIds: cardStack,
-              position: {
-                x:
-                  startPosition.x +
-                  (cardConstants[CardSizeType.Standard].CARD_WIDTH + 10) *
-                    index,
-                y: startPosition.y,
-              },
-            });
-          }
-        });
-      } catch (e) {
-        // Something went wrong, show an error
-        props.sendNotification({
-          id: v4(),
-          level: "error",
-          message:
-            "Could not load deck from the text provided. Check to make sure you copied the entire deck code",
-        });
-      }
-    }
+    props.fetchDecklistByText({
+      gameType: props.gameType ?? GameType.MarvelChampions,
+      position: props.positionToImport || { x: 100, y: 100 },
+      text: currentTextValue,
+    });
     setCurrentTextValue("");
     props.hideDeckTextImporter();
   }, [
     currentTextValue,
     props.hideDeckTextImporter,
-    props.addCardStack,
     props.positionToImport,
     props.sendNotification,
   ]);

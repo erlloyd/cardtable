@@ -10,6 +10,7 @@ import {
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
+  ILoadedDeckMetadata,
   IPackMetadata,
 } from "../GameModule";
 import { GameType } from "../GameType";
@@ -404,7 +405,7 @@ export default class MarvelLegendaryGameModule extends GameModule {
   parseDecklist(
     _response: AxiosResponse<any, any>,
     _state: RootState
-  ): [string[], ILoadedDeck] {
+  ): [string[], ILoadedDeck, ILoadedDeckMetadata] {
     throw new Error("Method not implemented.");
   }
 

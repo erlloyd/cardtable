@@ -10,6 +10,7 @@ import {
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
+  ILoadedDeckMetadata,
   IPackMetadata,
   NumericTokenInfo,
   TokensInfo,
@@ -115,8 +116,9 @@ export default class EarthborneRangersGameModule extends GameModule {
     response: AxiosResponse<any, any>,
     state: RootState,
     payload: { gameType: GameType; decklistId: number; position: Vector2d }
-  ): [string[], ILoadedDeck] {
-    return [[], getEBRCards(response, state, payload)];
+  ): [string[], ILoadedDeck, ILoadedDeckMetadata] {
+    const name = `${response.data.data.deck.name} (${payload.decklistId})`;
+    return [[], getEBRCards(response, state, payload), { displayName: name }];
   }
 
   isCardBackImg(imgUrl: string): boolean {

@@ -9,6 +9,7 @@ import {
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
+  ILoadedDeckMetadata,
 } from "../GameModule";
 
 import { Vector2d } from "konva/lib/types";
@@ -17,7 +18,7 @@ import { IEncounterEntity } from "../../features/cards-data/cards-data.selectors
 import { RootState } from "../../store/rootReducer";
 import { GameType } from "../GameType";
 import { EXTRA_CARDS } from "./extraCards";
-import { getMarvelCards } from "./getMarvelCards";
+import { getMarvelCards, MarvelDeckData } from "./getMarvelCards";
 import { loadEncounterEntities } from "./loadEncounterEntities";
 import MissingCardImages from "./missing-images";
 import { properties } from "./properties";
@@ -110,11 +111,17 @@ export default class MarvelChampionsGameModule extends GameModule {
     response: AxiosResponse<any, any>,
     state: RootState,
     payload: { gameType: GameType; decklistId: number; position: Vector2d }
-  ): [string[], ILoadedDeck] {
+  ): [string[], ILoadedDeck, ILoadedDeckMetadata] {
     const returnCards = getMarvelCards(response, state, payload);
     const codes = [returnCards.data.investigator_code];
 
-    return [codes, returnCards];
+    const data = response.data as MarvelDeckData;
+
+    return [
+      codes,
+      returnCards,
+      { displayName: `${data.name} (${payload.decklistId})` },
+    ];
   }
 
   getEncounterEntitiesFromState(

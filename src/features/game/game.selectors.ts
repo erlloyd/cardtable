@@ -3,6 +3,7 @@ import { RootState } from "../../store/rootReducer";
 import { ICardStack } from "../cards/initialState";
 import { useWebRTCLocalStorage } from "../../constants/app-constants";
 import { CardSizeType } from "../../constants/card-constants";
+import { GameType } from "../../game-modules/GameType";
 
 export const getGame = (state: RootState) => state.game;
 
@@ -135,3 +136,6 @@ export const getRotatePreviewCard180 = createSelector(
   getGame,
   (game) => game.rotatePreviewCard180
 );
+
+export const getRecentlyLoadedDecksForGameType = (gameType: GameType) =>
+  createSelector(getGame, (game) => game.recentlyLoadedDecks[gameType] ?? []);

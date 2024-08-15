@@ -1,6 +1,11 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/lib/types";
-import { myPeerRef, PlayerColor } from "../../constants/app-constants";
+import {
+  CardtableAction,
+  MAX_RECENTLY_LOADED_DECKS,
+  myPeerRef,
+  PlayerColor,
+} from "../../constants/app-constants";
 import {
   receiveRemoteGameState,
   resetApp,
@@ -13,6 +18,7 @@ import {
   ICustomGame,
   IGameState,
   initialState,
+  IRecentlyLoadedDeck,
 } from "./initialState";
 import { GameType } from "../../game-modules/GameType";
 
@@ -286,6 +292,37 @@ const doneLoadingJSONReducer: CaseReducer<IGameState> = (state) => {
   state.allJsonDataLoaded = true;
 };
 
+const storeRecentlyLoadedDeckReducer: CaseReducer<
+  IGameState,
+  CardtableAction<IRecentlyLoadedDeck>
+> = (state, action) => {
+  if (!action.CURRENT_GAME_TYPE) return;
+  if (state.recentlyLoadedDecks[action.CURRENT_GAME_TYPE]) {
+    const decks = state.recentlyLoadedDecks[action.CURRENT_GAME_TYPE];
+    const numToRemove = decks.length - MAX_RECENTLY_LOADED_DECKS - 1;
+    const newDecks = decks.slice(0, -1 * numToRemove);
+    state.recentlyLoadedDecks[action.CURRENT_GAME_TYPE] = newDecks;
+  }
+
+  // Now add the deck to the end of the list
+  let decks = state.recentlyLoadedDecks[action.CURRENT_GAME_TYPE];
+  if (!decks) {
+    decks = [];
+  }
+  const decksWithNew = [...[action.payload], ...decks];
+  state.recentlyLoadedDecks[action.CURRENT_GAME_TYPE] = decksWithNew;
+};
+
+const clearRecentlyLoadedDecksReducer: CaseReducer<
+  IGameState,
+  CardtableAction<undefined>
+> = (state, action) => {
+  if (!action.CURRENT_GAME_TYPE) return;
+  if (state.recentlyLoadedDecks[action.CURRENT_GAME_TYPE]) {
+    state.recentlyLoadedDecks[action.CURRENT_GAME_TYPE] = [];
+  }
+};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -331,6 +368,8 @@ const gameSlice = createSlice({
     toggleShowCurrentChangelog: toggleShowCurrentChangelogReducer,
     startUndoRedo: startUndoRedoReducer,
     endUndoRedo: endUndoRedoReducer,
+    storeRecentlyLoadedDeck: storeRecentlyLoadedDeckReducer,
+    clearRecentlyLoadedDecks: clearRecentlyLoadedDecksReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -409,6 +448,8 @@ export const {
   toggleShowCurrentChangelog,
   startUndoRedo,
   endUndoRedo,
+  storeRecentlyLoadedDeck,
+  clearRecentlyLoadedDecks,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

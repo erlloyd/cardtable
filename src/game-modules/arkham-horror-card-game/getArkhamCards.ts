@@ -9,6 +9,7 @@ import { fixCardCode } from "../common-utils";
 import { MarvelDeckData } from "../marvel-champions/getMarvelCards";
 
 export interface ArkhamDeckData {
+  name: string;
   investigator_code: string;
   slots: { [key: string]: number };
 }
@@ -40,7 +41,7 @@ const fixCodeList = (list: string[]) => list.map((l) => fixCardCode(l));
 const fixCardDetailsCardCodes = (details: ICardDetails[]): ICardDetails[] =>
   details.map((d) => ({ jsonId: fixCardCode(d.jsonId) }));
 
-const fixSlotsCardCodes = (data: MarvelDeckData): MarvelDeckData => {
+const fixSlotsCardCodes = (data: ArkhamDeckData): ArkhamDeckData => {
   // Some cards (in LOTR I've found are special in rings db but aren't represented in the
   // data as such. These cards are prefixed with `99`. So if we find any card codes starting
   // with 99, just remove the 99
@@ -74,6 +75,7 @@ const replaceDuplicateCards = (
     }
   });
   return {
+    name: data.name,
     investigator_code: data.investigator_code,
     slots: newSlots,
   };

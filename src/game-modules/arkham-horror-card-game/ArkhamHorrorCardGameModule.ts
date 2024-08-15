@@ -9,6 +9,7 @@ import {
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
+  ILoadedDeckMetadata,
   IPackMetadata,
   filterAndExpand,
 } from "../GameModule";
@@ -19,7 +20,7 @@ import { GameType } from "../GameType";
 import SetData from "./generated/sets.json";
 import Packs from "../../external/arkhamdb-json-data/packs.json";
 import Cycles from "../../external/arkhamdb-json-data/cycles.json";
-import { getArkhamCards } from "./getArkhamCards";
+import { ArkhamDeckData, getArkhamCards } from "./getArkhamCards";
 import { Vector2d } from "konva/lib/types";
 
 interface ArkhamCard {
@@ -152,11 +153,13 @@ export default class ArkhamHorrorCardGameModule extends GameModule {
     response: AxiosResponse<any, any>,
     state: RootState,
     payload: { gameType: GameType; decklistId: number; position: Vector2d }
-  ): [string[], ILoadedDeck] {
+  ): [string[], ILoadedDeck, ILoadedDeckMetadata] {
     const returnCards = getArkhamCards(response, state, payload);
     const codes = [returnCards.data.investigator_code];
 
-    return [codes, returnCards];
+    const data = response.data as ArkhamDeckData;
+    const displayName = `${data.name} (${payload.decklistId})`;
+    return [codes, returnCards, { displayName }];
   }
   getEncounterEntitiesFromState(
     setData: ISetData,

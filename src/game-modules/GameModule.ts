@@ -39,6 +39,10 @@ export interface ILoadedDeck {
   obligationDeckId: string;
 }
 
+export interface ILoadedDeckMetadata {
+  displayName: string;
+}
+
 export interface IDeckData {
   slots: { [key: string]: number };
 }
@@ -200,7 +204,7 @@ export abstract class GameModule {
       decklistId: number;
       position: Vector2d;
     }
-  ): [string[], ILoadedDeck];
+  ): [string[], ILoadedDeck, ILoadedDeckMetadata];
 
   abstract getEncounterEntitiesFromState(
     setData: ISetData,
@@ -300,7 +304,7 @@ export abstract class GameModule {
     return imgUrl.indexOf("_back") !== -1;
   }
 
-  loadDeckFromText?(text: string): string[][];
+  loadDeckFromText?(text: string): [string[][], ILoadedDeckMetadata];
 
   splitEncounterCardsIntoStacksWhenLoading?(
     setCode: string,
