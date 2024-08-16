@@ -38,6 +38,7 @@ import TokenBagsContainer from "./TokenBagsContainer";
 import TokenValueModifier from "./TokenValueModifier";
 import TopLayer from "./TopLayer";
 import {
+  COLORS,
   PlayerColor,
   myPeerRef,
   playerHandHeightPx,
@@ -424,7 +425,7 @@ class Game extends Component<IProps, IState> {
             backLinkCode={this.getCardCode(card, true)}
             name={this.getCardName(card)}
             selectedColor={
-              this.props.playerColors[card.controlledBy] ?? "black"
+              this.props.playerColors[card.controlledBy] ?? COLORS.BLACK
             }
             controlledBy={card.controlledBy}
             key={card.id}

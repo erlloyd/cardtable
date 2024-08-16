@@ -1,5 +1,5 @@
 import { Vector2d } from "konva/lib/types";
-import { myPeerRef, PlayerColor } from "../../constants/app-constants";
+import { COLORS, myPeerRef, PlayerColor } from "../../constants/app-constants";
 import { loadState } from "../../store/localStorage";
 import { GameType } from "../../game-modules/GameType";
 import GameManager from "../../game-modules/GameModuleManager";
@@ -82,7 +82,7 @@ const localStorageState: IGameState = !!queryParamsGameType
   : loadState("game");
 
 localStorageState.playerColors = {};
-localStorageState.playerColors[myPeerRef] = "red";
+localStorageState.playerColors[myPeerRef] = COLORS.RED;
 localStorageState.playerNumbers = {};
 localStorageState.playerNumbers[myPeerRef] = 1;
 localStorageState.peerId = "";

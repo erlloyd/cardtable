@@ -1,3 +1,4 @@
+import { COLORS } from "../../constants/app-constants";
 import {
   CardAttachLocation,
   CounterTokenType,
@@ -39,7 +40,7 @@ export const properties: GameProperties = {
     {
       counterName: "Resources",
       counterText: "Resources",
-      counterColor: "yellow",
+      counterColor: COLORS.YELLOW,
     },
   ],
   defaultAttachLocation: CardAttachLocation.UpAndRight,

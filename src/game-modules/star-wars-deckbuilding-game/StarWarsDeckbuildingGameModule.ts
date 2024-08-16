@@ -25,6 +25,7 @@ import { CardSizeType } from "../../constants/card-constants";
 import { v4 as uuidv4 } from "uuid";
 import { IPlayerBoard } from "../../features/cards/initialState";
 import { makeBasicPlayerBoard } from "../../utilities/playerboard-utils";
+import { COLORS } from "../../constants/app-constants";
 
 interface Scenario {
   Name: string;
@@ -350,14 +351,14 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
             id: "",
             position: { x: 0, y: 0 },
             text: "Resources",
-            color: "yellow",
+            color: COLORS.YELLOW,
             value: 0,
           },
           {
             id: "",
             position: { x: 0, y: 0 },
             text: "Resources",
-            color: "yellow",
+            color: COLORS.YELLOW,
             value: 0,
           },
         ];
@@ -367,28 +368,28 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
             id: "",
             position: { x: 0, y: 0 },
             text: "Resources",
-            color: "yellow",
+            color: COLORS.YELLOW,
             value: 0,
           },
           {
             id: "",
             position: { x: 0, y: 0 },
             text: "Resources",
-            color: "yellow",
+            color: COLORS.YELLOW,
             value: 0,
           },
           {
             id: "",
             position: { x: 0, y: 0 },
             text: "Resources",
-            color: "yellow",
+            color: COLORS.YELLOW,
             value: 0,
           },
           {
             id: "",
             position: { x: 0, y: 0 },
             text: "Resources",
-            color: "yellow",
+            color: COLORS.YELLOW,
             value: 0,
           },
         ];
@@ -399,14 +400,14 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
             id: "",
             position: { x: 0, y: 0 },
             text: "Resources",
-            color: "yellow",
+            color: COLORS.YELLOW,
             value: 0,
           },
           {
             id: "",
             position: { x: 0, y: 0 },
             text: "AI Resources",
-            color: "yellow",
+            color: COLORS.YELLOW,
             value: 0,
           },
         ];

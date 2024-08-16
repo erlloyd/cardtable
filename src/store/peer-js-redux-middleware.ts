@@ -8,7 +8,7 @@ import {
   Config,
   uniqueNamesGenerator,
 } from "unique-names-generator";
-import { myPeerRef } from "../constants/app-constants";
+import { COLORS, myPeerRef } from "../constants/app-constants";
 import {
   connectToRemoteGame,
   requestResync,
@@ -174,14 +174,14 @@ export const peerJSMiddleware = (storeAPI: any) => {
       // this just changes the connecting client to blue
       const setPlayerInfoAction = setPlayerInfo({
         ref: activeCon.metadata.ref,
-        color: "blue",
+        color: COLORS.BLUE,
         playerNumber: 2,
       });
       activeCon.send(setPlayerInfoAction);
       activeCon.send(
         setPlayerInfo({
           ref: myPeerRef,
-          color: "red",
+          color: COLORS.RED,
           playerNumber: 1,
         })
       );

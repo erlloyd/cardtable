@@ -1,5 +1,5 @@
 import { Vector2d } from "konva/lib/types";
-import { myPeerRef, PlayerColor } from "../../constants/app-constants";
+import { COLORS, myPeerRef, PlayerColor } from "../../constants/app-constants";
 import { loadState } from "../../store/localStorage";
 import JSONCrush from "jsoncrush";
 
@@ -24,7 +24,7 @@ const localStorageState: IArrowsState =
   queryParamsArrows || (loadState("liveState")?.arrows ?? {});
 
 localStorageState.arrows = {
-  [myPeerRef]: [{ startCardId: "blah", color: "red" }],
+  [myPeerRef]: [{ startCardId: "blah", color: COLORS.RED }],
 };
 
 const defaultState: IArrowsState = {

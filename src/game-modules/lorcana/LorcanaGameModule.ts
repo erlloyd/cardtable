@@ -19,6 +19,7 @@ import { packList as lorcanaPackList } from "./generated/packsList";
 import { properties } from "./properties";
 import { groupBy } from "lodash";
 import { ICounter } from "../../features/counters/initialState";
+import { COLORS } from "../../constants/app-constants";
 
 interface LorcanaCard {
   quest?: string;
@@ -257,14 +258,14 @@ export default class LorcanaGameModule extends GameModule {
         id: "",
         position: { x: 0, y: 0 },
         text: "Ursula Lore",
-        color: "magenta",
+        color: COLORS.PURPLE,
         value: 0,
       },
       {
         id: "",
         position: { x: 0, y: 0 },
         text: "Ursula Draw",
-        color: "yellow",
+        color: COLORS.YELLOW,
         value: 2,
       },
     ];
