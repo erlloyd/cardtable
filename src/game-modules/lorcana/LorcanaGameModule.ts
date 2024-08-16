@@ -215,7 +215,7 @@ export default class LorcanaGameModule extends GameModule {
   }
 
   isCardBackImg(imgUrl: string): boolean {
-    return imgUrl.indexOf("card-back") !== -1;
+    return imgUrl.indexOf("pic7940425") !== -1;
   }
 
   getEncounterEntitiesFromState(
