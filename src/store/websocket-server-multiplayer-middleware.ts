@@ -394,7 +394,7 @@ export const websocketMiddleware = (storeAPI: any) => {
               const num = newPlayerNumbers[data.payload.playerRef];
               const playerColorByNum =
                 possibleColors[(num - 1) % possibleColors.length];
-              newPlayerColors[data.payload.playerRef] = playerColorByNum;
+              newPlayerColors[data.payload.playerRef] = playerColorByNum.color;
               log.debug(
                 "new player added, going to be player color " + playerColorByNum
               );
