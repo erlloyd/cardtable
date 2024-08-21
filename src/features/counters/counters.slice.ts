@@ -1,6 +1,6 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/lib/types";
-import { PlayerColor } from "../../constants/app-constants";
+import { PlayerColor, COLORS } from "../../constants/app-constants";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import { addNewCounterWithId } from "./counters.actions";
 import {
@@ -131,7 +131,7 @@ const countersSlice = createSlice({
         id: action.payload.id,
         position: action.payload.pos,
         value: 0,
-        color: action.payload.color || "red",
+        color: action.payload.color || COLORS.RED,
         imgUrl: action.payload.imgUrl,
         text: action.payload.text,
       });

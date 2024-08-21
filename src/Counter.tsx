@@ -29,6 +29,8 @@ interface IProps {
 interface IState {
   counterImageLoaded: boolean;
   hoveredOverOptions: boolean;
+  hoveredOverPlus: boolean;
+  hoveredOverMinus: boolean;
 }
 
 class Counter extends Component<IProps, IState> {
@@ -45,6 +47,8 @@ class Counter extends Component<IProps, IState> {
     this.state = {
       counterImageLoaded: false,
       hoveredOverOptions: false,
+      hoveredOverPlus: false,
+      hoveredOverMinus: false,
     };
 
     this.img = new Image();
@@ -124,20 +128,28 @@ class Counter extends Component<IProps, IState> {
         onMouseLeave={this.handleMouseLeaveCounter}
       >
         <Rect
-          cornerRadius={30}
+          cornerRadius={100}
           width={containerWidth}
           height={containerHeight}
           fill={this.props.color}
+          // stroke={"black"}
+          // strokeWidth={3}
         ></Rect>
 
         <Text
           width={containerWidth}
           height={containerHeight}
-          fontSize={36}
+          fontSize={40}
+          fontStyle="bold"
           text={`${this.props.value}`}
+          fill="white"
+          stroke={"black"}
+          strokeWidth={6}
+          fillAfterStrokeEnabled={true}
           align={"center"}
           verticalAlign={"middle"}
-          offsetY={hasAdditionalDisplay ? 20 : 0}
+          offsetY={hasText ? 10 : hasImage ? 23 : -2}
+          letterSpacing={2}
         ></Text>
         {hasImage && this.state.counterImageLoaded && (
           <Rect
@@ -157,36 +169,74 @@ class Counter extends Component<IProps, IState> {
             height={containerHeight}
             fillPatternImage={this.img}
             fontSize={24}
+            fontStyle="bold"
             text={`${this.props.counterText}`}
             align={"center"}
             verticalAlign={"bottom"}
-            offsetY={5}
+            offsetY={10}
           ></Text>
         )}
-        <Text
-          x={10}
-          y={25}
-          width={50}
-          height={50}
-          fontSize={36}
-          text={`-`}
-          align={"center"}
-          verticalAlign={"middle"}
+        <Group
+          width={40}
           onClick={this.handleDecrement}
           onTap={this.handleDecrement}
-        ></Text>
-        <Text
-          x={140}
-          y={25}
-          width={50}
-          height={50}
-          fontSize={36}
-          text={`+`}
-          align={"center"}
-          verticalAlign={"middle"}
+          onMouseEnter={this.handleMouseEnterMinusButton}
+          onMouseLeave={this.handleMouseLeaveMinusButton}
+          offsetY={hasText ? 10 : 0}
+        >
+          <Circle
+            width={40}
+            height={40}
+            fill={this.state.hoveredOverMinus ? "white" : "#e0e0e0"}
+            align={"center"}
+            verticalAlign={"middle"}
+            x={30}
+            y={50}
+            stroke="white"
+            strokeWidth={this.state.hoveredOverMinus ? 3 : 0}
+          ></Circle>
+          <Text
+            x={5}
+            y={25}
+            width={50}
+            height={50}
+            fontSize={this.state.hoveredOverMinus ? 40 : 36}
+            text={`-`}
+            align={"center"}
+            verticalAlign={"middle"}
+          ></Text>
+        </Group>
+        <Group
+          width={40}
           onClick={this.handleIncrement}
           onTap={this.handleIncrement}
-        ></Text>
+          onMouseEnter={this.handleMouseEnterPlusButton}
+          onMouseLeave={this.handleMouseLeavePlusButton}
+          offsetY={hasText ? 10 : 0}
+        >
+          <Circle
+            width={40}
+            height={40}
+            fill={this.state.hoveredOverPlus ? "white" : "#e0e0e0"}
+            align={"center"}
+            verticalAlign={"middle"}
+            x={170}
+            y={50}
+            stroke="white"
+            strokeWidth={this.state.hoveredOverPlus ? 3 : 0}
+          ></Circle>
+          <Text
+            x={145}
+            y={28}
+            width={50}
+            height={50}
+            fontSize={this.state.hoveredOverPlus ? 40 : 36}
+            text={`+`}
+            align={"center"}
+            verticalAlign={"middle"}
+            fill={this.state.hoveredOverPlus ? "black" : "#333"}
+          ></Text>
+        </Group>
 
         <Group
           width={30}
@@ -198,23 +248,22 @@ class Counter extends Component<IProps, IState> {
           <Circle
             width={30}
             height={30}
-            stroke={"black"}
-            fill={this.state.hoveredOverOptions ? "grey" : "white"}
-            opacity={0.5}
+            fill={this.state.hoveredOverOptions ? "#333" : "black"}
             align={"center"}
             verticalAlign={"middle"}
-            offsetY={-20}
-            offsetX={-25}
+            offsetY={-15}
+            offsetX={-10}
           ></Circle>
           <Text
             width={30}
             height={30}
             fontSize={24}
+            fill={this.state.hoveredOverOptions ? "white" : "#999"}
             text={"..."}
             align={"center"}
             verticalAlign={"middle"}
-            offsetX={-10}
-            offsetY={1}
+            offsetY={5}
+            offsetX={5}
           ></Text>
         </Group>
       </Group>
@@ -267,6 +316,34 @@ class Counter extends Component<IProps, IState> {
 
   private handleMouseLeaveCounter = (event: KonvaEventObject<MouseEvent>) => {
     window.document.body.style.cursor = "default";
+  };
+
+  private handleMouseEnterPlusButton = (
+    _event: KonvaEventObject<MouseEvent>
+  ) => {
+    this.setState({ hoveredOverPlus: true });
+    window.document.body.style.cursor = "pointer";
+  };
+
+  private handleMouseLeavePlusButton = (
+    _event: KonvaEventObject<MouseEvent>
+  ) => {
+    this.setState({ hoveredOverPlus: false });
+    window.document.body.style.cursor = "grab";
+  };
+
+  private handleMouseEnterMinusButton = (
+    _event: KonvaEventObject<MouseEvent>
+  ) => {
+    this.setState({ hoveredOverMinus: true });
+    window.document.body.style.cursor = "pointer";
+  };
+
+  private handleMouseLeaveMinusButton = (
+    _event: KonvaEventObject<MouseEvent>
+  ) => {
+    this.setState({ hoveredOverMinus: false });
+    window.document.body.style.cursor = "grab";
   };
 
   private handleMouseEnterMenuButton = (

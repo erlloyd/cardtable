@@ -2,6 +2,7 @@ import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/lib/types";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import { IArrowsState, initialState } from "./initialState";
+import { COLORS } from "../../constants/app-constants";
 
 // Reducers
 const startNewArrowForCardsReducer: CaseReducer<
@@ -14,7 +15,10 @@ const startNewArrowForCardsReducer: CaseReducer<
     state.arrows[action.payload.myRef] = myArrows;
   }
   state.arrows[action.payload.myRef] = myArrows.concat(
-    action.payload.startCardIds.map((sc) => ({ startCardId: sc, color: "red" }))
+    action.payload.startCardIds.map((sc) => ({
+      startCardId: sc,
+      color: COLORS.RED,
+    }))
   );
 };
 

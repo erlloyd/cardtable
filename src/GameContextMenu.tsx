@@ -182,11 +182,11 @@ const createCounterContextMenuItems = (props: IProps): ContextMenuItem[] => {
       label: "Set Color",
       children: possibleColors.map((color) => {
         return {
-          label: color,
+          label: color.label,
           action: () => {
             props.updateCounterColor({
               id: props.counter!.id,
-              newColor: color,
+              newColor: color.color,
             });
           },
         };

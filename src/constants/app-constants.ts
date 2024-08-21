@@ -16,21 +16,35 @@ export const showHiddenGamesLocalStorage = !!localStorage.getItem(
 export const myPeerRef = uuidv4();
 (window as any).myPeerRef = myPeerRef;
 
-export type PlayerColor =
-  | "red"
-  | "cyan"
-  | "green"
-  | "blue"
-  | "magenta"
-  | "yellow";
+export const COLORS = {
+  RED: "#e74c3c",
+  BLUE: "#2980b9",
+  GREEN: "#27ae60",
+  TURQUOISE: "#1abc9c",
+  PURPLE: "#8e44ad",
+  YELLOW: "#f1c40f",
+  ORANGE: "#e67e22",
+  GRAY: "#95a5a6",
+  WHITE: "white",
+  BLACK: "black",
+} as const;
 
-export const possibleColors: PlayerColor[] = [
-  "red",
-  "blue",
-  "green",
-  "cyan",
-  "magenta",
-  "yellow",
+export type PlayerColor = (typeof COLORS)[keyof typeof COLORS];
+
+export const possibleColors: {
+  label: string;
+  color: PlayerColor;
+}[] = [
+  { label: "Red", color: COLORS.RED },
+  { label: "Blue", color: COLORS.BLUE },
+  { label: "Green", color: COLORS.GREEN },
+  { label: "Turquoise", color: COLORS.TURQUOISE },
+  { label: "Purple", color: COLORS.PURPLE },
+  { label: "Yellow", color: COLORS.YELLOW },
+  { label: "Orange", color: COLORS.ORANGE },
+  { label: "Gray", color: COLORS.GRAY },
+  { label: "White", color: COLORS.WHITE },
+  { label: "Black", color: COLORS.BLACK },
 ];
 
 export const playerHandHeightPx: number = 90;
