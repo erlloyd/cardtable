@@ -21,13 +21,6 @@ const setTokenBagPositionReducer: CaseReducer<
   }
 };
 
-const setTokenBagMenuPositionReducer: CaseReducer<
-  ITokenBagsState,
-  PayloadAction<Vector2d | null>
-> = (state, action) => {
-  state.menuPosition = action.payload;
-};
-
 // slice
 const playmatsSlice = createSlice({
   name: "token-bags",
@@ -35,7 +28,6 @@ const playmatsSlice = createSlice({
   reducers: {
     resetTokenBags: resetTokenBagsReducer,
     setTokenBagPosition: setTokenBagPositionReducer,
-    setTokenBagMenuPosition: setTokenBagMenuPositionReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -60,7 +52,6 @@ const playmatsSlice = createSlice({
   },
 });
 
-export const { resetTokenBags, setTokenBagPosition, setTokenBagMenuPosition } =
-  playmatsSlice.actions;
+export const { resetTokenBags, setTokenBagPosition } = playmatsSlice.actions;
 
 export default playmatsSlice.reducer;
