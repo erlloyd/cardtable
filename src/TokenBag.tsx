@@ -3,12 +3,11 @@ import useImage from "use-image";
 import { ITokenBag } from "./features/token-bags/initialState";
 import { Vector2d } from "konva/lib/types";
 import { Stage } from "konva/lib/Stage";
-import { TokenBagMenuInfo } from "./features/game/initialState";
 
 interface IProps {
   bag: ITokenBag;
   setTokenBagPosition: (payload: { x: number; y: number; id: string }) => void;
-  setTokenBagMenuPosition: (payload: TokenBagMenuInfo) => void;
+  setTokenBagMenuPosition: (position: Vector2d | null) => void;
 }
 
 const TokenBag = (props: IProps) => {
@@ -19,10 +18,7 @@ const TokenBag = (props: IProps) => {
       onClick={(e) => {
         const newPos = { x: e.evt.x, y: e.evt.y };
         console.log(newPos);
-        props.setTokenBagMenuPosition({
-          position: newPos,
-          bagId: props.bag.id,
-        });
+        props.setTokenBagMenuPosition(newPos);
       }}
       onTap={(e) => {
         // keep going until we get to stage
@@ -30,14 +26,11 @@ const TokenBag = (props: IProps) => {
         while (target.parent !== null) {
           target = target.parent;
         }
-        const newPos = (target as Stage).pointerPos ?? { x: 100, y: 100 };
+        const newPos = (target as Stage).pointerPos;
 
         console.log(e.currentTarget);
         console.log(newPos);
-        props.setTokenBagMenuPosition({
-          position: newPos,
-          bagId: props.bag.id,
-        });
+        props.setTokenBagMenuPosition(newPos);
       }}
       draggable={true}
       x={props.bag.position.x}

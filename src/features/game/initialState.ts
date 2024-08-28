@@ -41,11 +41,6 @@ export interface IRecentlyLoadedDeck {
   rawPayloadFallback: any;
 }
 
-export interface TokenBagMenuInfo {
-  position: Vector2d;
-  bagId: string;
-}
-
 export interface IGameState {
   stageZoom: Vector2d;
   stagePosition: Vector2d;
@@ -77,7 +72,6 @@ export interface IGameState {
   undoing: boolean;
   remoteUndoing: boolean;
   recentlyLoadedDecks: { [key in GameType]: IRecentlyLoadedDeck[] };
-  tokenBagMenu: TokenBagMenuInfo | null;
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -110,7 +104,6 @@ localStorageState.mostRecentChangelog = null;
 localStorageState.showChangelog = false;
 localStorageState.undoing = false;
 localStorageState.remoteUndoing = false;
-localStorageState.tokenBagMenu = null;
 
 // Register any custom games we have previously loaded
 
@@ -153,7 +146,6 @@ const defaultState: IGameState = {
   undoing: false,
   remoteUndoing: false,
   recentlyLoadedDecks: {} as any,
-  tokenBagMenu: null,
 };
 export const initialState: IGameState = {
   ...defaultState,

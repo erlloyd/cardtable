@@ -73,7 +73,6 @@ import {
   getMySelectedCards,
 } from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
-import TokenBagMenuContainer from "./TokenBagMenuContainer";
 
 const SCALE_BY = 1.02;
 
@@ -757,7 +756,6 @@ class Game extends Component<IProps, IState> {
         {this.renderCardSearch()}
         {this.renderPeerConnector()}
         {this.renderTokenModifier()}
-        <TokenBagMenuContainer />
 
         {/* Game loader input (hidden) */}
 
@@ -1010,7 +1008,7 @@ class Game extends Component<IProps, IState> {
 
     const card =
       this.props.cards.cards.find(
-        (c) => c.id === this.state.contextMenuCard?.id || "missing"
+        (c) => c.id === this.state.contextMenuCard?.id ?? "missing"
       ) ?? null;
     const mySelectedCards = getMySelectedCards(this.props.cards.cards);
 
