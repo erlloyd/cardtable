@@ -1010,7 +1010,7 @@ class Game extends Component<IProps, IState> {
 
     const card =
       this.props.cards.cards.find(
-        (c) => c.id === this.state.contextMenuCard?.id || "missing"
+        (c) => c.id === (this.state.contextMenuCard?.id || "missing")
       ) ?? null;
     const mySelectedCards = getMySelectedCards(this.props.cards.cards);
 
