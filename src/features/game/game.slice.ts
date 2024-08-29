@@ -19,6 +19,7 @@ import {
   IGameState,
   initialState,
   IRecentlyLoadedDeck,
+  TokenBagMenuInfo,
 } from "./initialState";
 import { GameType } from "../../game-modules/GameType";
 
@@ -323,6 +324,13 @@ const clearRecentlyLoadedDecksReducer: CaseReducer<
   }
 };
 
+const setTokenBagMenuPositionReducer: CaseReducer<
+  IGameState,
+  CardtableAction<TokenBagMenuInfo>
+> = (state, action) => {
+  state.tokenBagMenu = action.payload;
+};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -370,6 +378,7 @@ const gameSlice = createSlice({
     endUndoRedo: endUndoRedoReducer,
     storeRecentlyLoadedDeck: storeRecentlyLoadedDeckReducer,
     clearRecentlyLoadedDecks: clearRecentlyLoadedDecksReducer,
+    setTokenBagMenuPosition: setTokenBagMenuPositionReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -450,6 +459,7 @@ export const {
   endUndoRedo,
   storeRecentlyLoadedDeck,
   clearRecentlyLoadedDecks,
+  setTokenBagMenuPosition,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;
