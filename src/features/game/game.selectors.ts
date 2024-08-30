@@ -139,3 +139,8 @@ export const getRotatePreviewCard180 = createSelector(
 
 export const getRecentlyLoadedDecksForGameType = (gameType: GameType) =>
   createSelector(getGame, (game) => game.recentlyLoadedDecks[gameType] ?? []);
+
+export const getTokenBagMenu = createSelector(
+  getGame,
+  (game) => game.tokenBagMenu
+);

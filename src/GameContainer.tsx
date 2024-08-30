@@ -71,6 +71,9 @@ import {
   moveCounter,
   moveToken,
   removeCounter,
+  selectToken,
+  unselectAllTokens,
+  unselectToken,
   updateCounterColor,
   updateCounterValue,
 } from "./features/counters/counters.slice";
@@ -233,6 +236,9 @@ const GameContainer = connect(mapStateToProps, {
   toggleTopCardOfStackFaceup,
   loadAndStoreChangelog,
   initBoardSlots,
+  selectToken,
+  unselectToken,
+  unselectAllTokens,
 })(Game);
 
 export default GameContainer;

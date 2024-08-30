@@ -61,6 +61,7 @@ import { resetApp } from "./store/global.actions";
 import { ActionCreators } from "redux-undo";
 import { addNewCounter } from "./features/counters/counters.thunks";
 import { removeAllArrows } from "./features/arrows/arrows.slice";
+import { spawnTokenBags } from "./features/token-bags/token-bags.thunks";
 
 const mapStateToProps = (state: RootState) => {
   const currentGameType = getActiveGameType(state) ?? GameType.MarvelChampions;
@@ -107,6 +108,7 @@ const GameContextMenuContainer = connect(mapStateToProps, {
   generateGameStateSave,
   loadGameStateFromSave,
   resetApp,
+  spawnTokenBags,
   quitGame,
   clearHistory: ActionCreators.clearHistory,
   addNewCounter,

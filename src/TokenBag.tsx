@@ -18,7 +18,6 @@ const TokenBag = (props: IProps) => {
     <Image
       onClick={(e) => {
         const newPos = { x: e.evt.x, y: e.evt.y };
-        console.log(newPos);
         props.setTokenBagMenuPosition({
           position: newPos,
           bagId: props.bag.id,
@@ -32,8 +31,6 @@ const TokenBag = (props: IProps) => {
         }
         const newPos = (target as Stage).pointerPos ?? { x: 100, y: 100 };
 
-        console.log(e.currentTarget);
-        console.log(newPos);
         props.setTokenBagMenuPosition({
           position: newPos,
           bagId: props.bag.id,

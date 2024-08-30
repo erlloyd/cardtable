@@ -29,7 +29,7 @@ export const COLORS = {
   BLACK: "black",
 } as const;
 
-export type PlayerColor = (typeof COLORS)[keyof typeof COLORS];
+export type PlayerColor = typeof COLORS[keyof typeof COLORS];
 
 export const possibleColors: {
   label: string;
@@ -58,4 +58,4 @@ export const defaultPlaymatHeight: number = 1440;
 export const MAX_RECENTLY_LOADED_DECKS: number = 10;
 
 export type CardtableAction<T> =
-  | PayloadAction<T> & { CURRENT_GAME_TYPE?: GameType };
+  | PayloadAction<T> & { CURRENT_GAME_TYPE?: GameType; ACTOR_REF?: string };

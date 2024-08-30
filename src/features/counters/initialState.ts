@@ -14,6 +14,7 @@ export interface IFlippableToken {
   faceup: boolean;
   imgUrl: string;
   backImgUrl?: string;
+  controlledBy: string | null;
 }
 
 export interface ICounter {
@@ -37,6 +38,10 @@ const localStorageState: ICountersState =
 if (localStorageState.flippableTokens === undefined) {
   localStorageState.flippableTokens = [];
 }
+
+localStorageState.flippableTokens.forEach((ft) => {
+  ft.controlledBy = null;
+});
 
 export const defaultState: ICountersState = {
   counters: [],

@@ -108,10 +108,146 @@ export const properties: GameProperties = {
   tokenBags: [
     {
       id: "",
+      code: "chaosBag",
+      quantity: 1,
       bagImgUrl:
         "https://play-lh.googleusercontent.com/JEbONh12jcLUgJeF0XSpFo8ihbvqG29ljZlYEx3EHuRgJwX6SgIlpAGMnO-5CgPbXY8",
       position: { x: 0, y: 0 },
-      tokens: [],
+      tokens: [
+        {
+          code: "+1",
+          name: "+1",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_+1.png",
+        },
+        {
+          code: "0",
+          name: "0",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_0.png",
+        },
+        {
+          code: "-1",
+          name: "-1",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_-1.png",
+        },
+        {
+          code: "-2",
+          name: "-2",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_-2.png",
+        },
+        {
+          code: "-3",
+          name: "-3",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_-3.png",
+        },
+        {
+          code: "-4",
+          name: "-4",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_-4.png",
+        },
+        {
+          code: "-5",
+          name: "-5",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_-5.png",
+        },
+        {
+          code: "-6",
+          name: "-6",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_-6.png",
+        },
+        {
+          code: "-7",
+          name: "-7",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_-7.png",
+        },
+        {
+          code: "-8",
+          name: "-8",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_-8.png",
+        },
+        {
+          code: "fail",
+          name: "Auto-fail",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_fail.png",
+        },
+        {
+          code: "eldersign",
+          name: "Elder sign",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_elder_sign.png",
+        },
+        {
+          code: "skull",
+          name: "Skull",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_skull.png",
+        },
+        {
+          code: "tablet",
+          name: "Tablet",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_tablet.png",
+        },
+        {
+          code: "elderthing",
+          name: "Elder Thing",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_elderthing.png",
+        },
+        {
+          code: "cultist",
+          name: "Cultist",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_cultist.png",
+        },
+        {
+          code: "frost",
+          name: "Frost",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_frost.png",
+        },
+        {
+          code: "bless",
+          name: "Bless",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_bless.png",
+        },
+        {
+          code: "curse",
+          name: "Curse",
+          currentNumberInBag: 0,
+          frontImgUrl:
+            "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/token_curse.png",
+        },
+      ],
     },
   ],
 };

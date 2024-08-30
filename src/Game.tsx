@@ -74,6 +74,7 @@ import {
 } from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
 import TokenBagMenuContainer from "./TokenBagMenuContainer";
+import TokenEditorContainer from "./TokenEditorContainer";
 
 const SCALE_BY = 1.02;
 
@@ -113,6 +114,7 @@ interface IProps {
   toggleSelectCard: (id: string) => void;
   startCardMove: (payload: { id: string; splitTopCard: boolean }) => void;
   unselectAllCards: (payload?: any) => void;
+  unselectAllTokens: (payload?: any) => void;
   selectMultipleCards: (cards: {
     ids: string[];
     unselectOtherCards?: boolean;
@@ -207,6 +209,8 @@ interface IProps {
   rotatePreviewCard180: boolean;
   togglePreviewCardRotation: () => void;
   initBoardSlots: () => void;
+  selectToken: (id: string) => void;
+  unselectToken: (id: string) => void;
 }
 
 interface IState {
@@ -746,6 +750,7 @@ class Game extends Component<IProps, IState> {
         <DeckTextImporterContainer></DeckTextImporterContainer>
         <NotesContainer></NotesContainer>
         <CardPeekContainer></CardPeekContainer>
+        <TokenEditorContainer></TokenEditorContainer>
         <ChangelogContainer></ChangelogContainer>
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
@@ -842,8 +847,15 @@ class Game extends Component<IProps, IState> {
                       backImgUrl={token.backImgUrl}
                       pos={token.position}
                       faceup={token.faceup}
+                      controlledBy={token.controlledBy}
+                      selectedColor={
+                        this.props.playerColors[token.controlledBy ?? ""] ??
+                        COLORS.BLACK
+                      }
                       updatePos={this.props.moveToken}
                       flipToken={this.props.flipToken}
+                      selectToken={this.props.selectToken}
+                      unselectToken={this.props.unselectToken}
                     ></FlippableToken>
                   ))}
                 </Group>
@@ -1448,6 +1460,7 @@ class Game extends Component<IProps, IState> {
     const mousePos = this.getRelativePositionFromTarget(this.stage);
     if (this.panMode || getDistance(this.state.selectStartPos, mousePos) < 30) {
       this.props.unselectAllCards();
+      this.props.unselectAllTokens();
     }
   };
 

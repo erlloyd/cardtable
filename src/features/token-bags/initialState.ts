@@ -10,6 +10,8 @@ export interface ITokenBagsState {
 
 export interface ITokenBag {
   id: string;
+  code: string;
+  quantity: number;
   position: Vector2d;
   tokens: IToken[];
   bagImgUrl: string;

@@ -1,6 +1,10 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/lib/types";
-import { PlayerColor, COLORS } from "../../constants/app-constants";
+import {
+  PlayerColor,
+  COLORS,
+  CardtableAction,
+} from "../../constants/app-constants";
 import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import { addNewCounterWithId } from "./counters.actions";
 import {
@@ -86,13 +90,61 @@ const moveTokenReducer: CaseReducer<
   }
 };
 
-const flipTokenReducer: CaseReducer<ICountersState, PayloadAction<string>> = (
+const flipTokenReducer: CaseReducer<ICountersState, CardtableAction<string>> = (
   state,
   action
 ) => {
   const t = state.flippableTokens.find((token) => token.id === action.payload);
   if (!!t) {
     t.faceup = !t.faceup;
+  }
+};
+
+const selectTokenReducer: CaseReducer<
+  ICountersState,
+  CardtableAction<string>
+> = (state, action) => {
+  // get the token
+  const token = state.flippableTokens.find((ft) => ft.id === action.payload);
+  if (token && !token.controlledBy) {
+    token.controlledBy = action.ACTOR_REF ?? null;
+  }
+};
+
+const selectMultipleTokensReducer: CaseReducer<
+  ICountersState,
+  CardtableAction<string[]>
+> = (state, action) => {
+  // get the token
+  const tokens = state.flippableTokens.filter((ft) =>
+    action.payload.some((id) => ft.id === id && !ft.controlledBy)
+  );
+  if (tokens.length > 0) {
+    tokens.forEach((token) => (token.controlledBy = action.ACTOR_REF ?? null));
+  }
+};
+
+const unselectTokenReducer: CaseReducer<
+  ICountersState,
+  CardtableAction<string>
+> = (state, action) => {
+  // get the token
+  const token = state.flippableTokens.find((ft) => ft.id === action.payload);
+  if (token && token.controlledBy === action.ACTOR_REF) {
+    token.controlledBy = null;
+  }
+};
+
+const unselectAllTokensReducer: CaseReducer<
+  ICountersState,
+  CardtableAction<any>
+> = (state, action) => {
+  // get the token
+  const tokens = state.flippableTokens.filter(
+    (ft) => ft.controlledBy === action.ACTOR_REF
+  );
+  if (tokens.length > 0) {
+    tokens.forEach((token) => (token.controlledBy = null));
   }
 };
 
@@ -109,6 +161,10 @@ const countersSlice = createSlice({
     moveToken: moveTokenReducer,
     flipToken: flipTokenReducer,
     updateCounterColor: updateCounterColorReducer,
+    selectToken: selectTokenReducer,
+    selectMultipleTokens: selectMultipleTokensReducer,
+    unselectToken: unselectTokenReducer,
+    unselectAllTokens: unselectAllTokensReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -148,6 +204,10 @@ export const {
   moveToken,
   flipToken,
   updateCounterColor,
+  selectToken,
+  selectMultipleTokens,
+  unselectToken,
+  unselectAllTokens,
 } = countersSlice.actions;
 
 export default countersSlice.reducer;

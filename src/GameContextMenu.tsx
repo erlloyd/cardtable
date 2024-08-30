@@ -103,6 +103,7 @@ interface IProps {
   generateGameStateSave: () => void;
   loadGameStateFromSave: (jsonString: string) => void;
   resetApp: (currentGameType: GameType) => void;
+  spawnTokenBags: (payload: GameType) => void;
   quitGame: () => void;
   clearHistory: () => void;
   addNewCounter: (
@@ -950,6 +951,7 @@ const createGlobalContextMenuItems = (props: IProps): ContextMenuItem[] => {
             })
             .then(() => {
               props.resetApp(props.currentGameType);
+              props.spawnTokenBags(props.currentGameType);
             })
             .catch(() => {
               // do nothing on cancel

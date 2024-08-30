@@ -4,6 +4,8 @@ import { IToken } from "./initialState";
 
 export interface AddNewTokenBagWithIdPayload {
   id: string;
+  code: string;
+  quantity: number;
   position: Vector2d;
   imgUrl: string;
   initialTokens: IToken[];

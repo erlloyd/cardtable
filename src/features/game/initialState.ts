@@ -78,6 +78,7 @@ export interface IGameState {
   remoteUndoing: boolean;
   recentlyLoadedDecks: { [key in GameType]: IRecentlyLoadedDeck[] };
   tokenBagMenu: TokenBagMenuInfo | null;
+  showTokenBagAdjusterForId: string | null;
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -111,6 +112,7 @@ localStorageState.showChangelog = false;
 localStorageState.undoing = false;
 localStorageState.remoteUndoing = false;
 localStorageState.tokenBagMenu = null;
+localStorageState.showTokenBagAdjusterForId = null;
 
 // Register any custom games we have previously loaded
 
@@ -154,6 +156,7 @@ const defaultState: IGameState = {
   remoteUndoing: false,
   recentlyLoadedDecks: {} as any,
   tokenBagMenu: null,
+  showTokenBagAdjusterForId: null,
 };
 export const initialState: IGameState = {
   ...defaultState,

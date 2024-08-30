@@ -3,6 +3,7 @@ import { receiveRemoteGameState, resetApp } from "../../store/global.actions";
 import { ITokenBag, ITokenBagsState, initialState } from "./initialState";
 import { addNewTokenBagWithId } from "./token-bags.actions";
 import { Vector2d } from "konva/lib/types";
+import { CardtableAction } from "../../constants/app-constants";
 
 // Reducers
 const resetTokenBagsReducer: CaseReducer<ITokenBagsState> = (state) => {
@@ -21,6 +22,39 @@ const setTokenBagPositionReducer: CaseReducer<
   }
 };
 
+const addTokenToBagWithCodeReducer: CaseReducer<
+  ITokenBagsState,
+  CardtableAction<{ id: string; code: string }>
+> = (state, action) => {
+  // Get the bag matching that id and set the position
+  const bag = state.bags.find((b) => b.id === action.payload.id);
+
+  if (bag) {
+    const token = bag.tokens.find((t) => t.code === action.payload.code);
+    if (token) {
+      token.currentNumberInBag += 1;
+    } else {
+      // TODO, go see if the properties for token bag tokens for this game
+      // have a token type with this code, if so, add it to the state with a value of 1
+    }
+  }
+};
+
+const removeTokenFromBagWithCodeReducer: CaseReducer<
+  ITokenBagsState,
+  CardtableAction<{ id: string; code: string }>
+> = (state, action) => {
+  // Get the bag matching that id and set the position
+  const bag = state.bags.find((b) => b.id === action.payload.id);
+
+  if (bag) {
+    const token = bag.tokens.find((t) => t.code === action.payload.code);
+    if (token && token.currentNumberInBag > 0) {
+      token.currentNumberInBag -= 1;
+    }
+  }
+};
+
 // slice
 const playmatsSlice = createSlice({
   name: "token-bags",
@@ -28,6 +62,8 @@ const playmatsSlice = createSlice({
   reducers: {
     resetTokenBags: resetTokenBagsReducer,
     setTokenBagPosition: setTokenBagPositionReducer,
+    addTokenToBagWithCode: addTokenToBagWithCodeReducer,
+    removeTokenFromBagWithCode: removeTokenFromBagWithCodeReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -40,18 +76,27 @@ const playmatsSlice = createSlice({
     });
 
     builder.addCase(addNewTokenBagWithId, (state, action) => {
-      const bag: ITokenBag = {
-        bagImgUrl: action.payload.imgUrl,
-        id: action.payload.id,
-        position: action.payload.position,
-        tokens: action.payload.initialTokens,
-      };
+      for (let i = 0; i < action.payload.quantity; i++) {
+        const bag: ITokenBag = {
+          bagImgUrl: action.payload.imgUrl,
+          code: action.payload.code,
+          quantity: action.payload.quantity,
+          id: action.payload.id,
+          position: action.payload.position,
+          tokens: action.payload.initialTokens,
+        };
 
-      state.bags.push(bag);
+        state.bags.push(bag);
+      }
     });
   },
 });
 
-export const { resetTokenBags, setTokenBagPosition } = playmatsSlice.actions;
+export const {
+  resetTokenBags,
+  setTokenBagPosition,
+  addTokenToBagWithCode,
+  removeTokenFromBagWithCode,
+} = playmatsSlice.actions;
 
 export default playmatsSlice.reducer;

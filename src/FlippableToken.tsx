@@ -1,8 +1,10 @@
 import { Component } from "react";
-import { Rect } from "react-konva";
+import { Image as KonvaImage, Rect } from "react-konva";
 import { Vector2d } from "konva/lib/types";
 import { KonvaEventObject } from "konva/lib/Node";
 import { GameType } from "./game-modules/GameType";
+import { myPeerRef, PlayerColor } from "./constants/app-constants";
+import Konva from "konva";
 
 interface IProps {
   id: string;
@@ -11,8 +13,12 @@ interface IProps {
   currentGameType: GameType;
   pos: Vector2d;
   faceup: boolean;
+  controlledBy: string | null;
+  selectedColor: PlayerColor;
   updatePos: (payload: { id: string; pos: Vector2d }) => void;
   flipToken: (id: string) => void;
+  selectToken: (id: string) => void;
+  unselectToken: (id: string) => void;
 }
 
 interface IState {
@@ -60,18 +66,17 @@ class FlippableToken extends Component<IProps, IState> {
     }
 
     return (
-      <Rect
-        onDblClick={() => {
-          this.props.flipToken(this.props.id);
-        }}
-        onDblTap={() => {
-          this.props.flipToken(this.props.id);
-        }}
+      <KonvaImage
+        onClick={this.handleClick}
+        onTap={this.handleClick}
+        onDblClick={this.handleDblClick}
+        onDblTap={this.handleDblClick}
         x={this.props.pos.x}
         y={this.props.pos.y}
         draggable={true}
         onTouchStart={this.cancelBubble}
         onMouseDown={this.cancelBubble}
+        onDragStart={this.handleDragStart}
         onDragEnd={this.handleDragEnd}
         scale={{
           x: 100 / (imgToUse?.naturalWidth ?? 1),
@@ -79,8 +84,10 @@ class FlippableToken extends Component<IProps, IState> {
         }}
         width={imgToUse?.naturalWidth ?? 0}
         height={imgToUse?.naturalHeight ?? 0}
-        fillPatternImage={imgToUse}
-      ></Rect>
+        image={imgToUse}
+        strokeWidth={this.props.controlledBy ? 5 : 0}
+        stroke={this.props.selectedColor}
+      ></KonvaImage>
     );
   }
 
@@ -88,6 +95,10 @@ class FlippableToken extends Component<IProps, IState> {
     e: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>
   ) => {
     e.cancelBubble = true;
+  };
+
+  private handleDragStart = () => {
+    this.props.selectToken(this.props.id);
   };
 
   private handleDragEnd = (event: KonvaEventObject<DragEvent>) => {
@@ -98,6 +109,21 @@ class FlippableToken extends Component<IProps, IState> {
         y: event.target.y(),
       },
     });
+  };
+
+  private handleClick = (evt: Konva.KonvaEventObject<MouseEvent>) => {
+    if (!this.props.controlledBy) {
+      this.props.selectToken(this.props.id);
+    } else if (this.props.controlledBy === myPeerRef) {
+      this.props.unselectToken(this.props.id);
+    }
+    evt.cancelBubble = true;
+  };
+
+  private handleDblClick = (evt: Konva.KonvaEventObject<MouseEvent>) => {
+    this.props.selectToken(this.props.id);
+    this.props.flipToken(this.props.id);
+    evt.cancelBubble = true;
   };
 }
 
