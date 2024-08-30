@@ -77,7 +77,10 @@ import {
   updateCounterColor,
   updateCounterValue,
 } from "./features/counters/counters.slice";
-import { addNewCounter } from "./features/counters/counters.thunks";
+import {
+  addNewCounter,
+  handleTokenSelect,
+} from "./features/counters/counters.thunks";
 import {
   getGame,
   getMenuPreviewCard,
@@ -236,8 +239,7 @@ const GameContainer = connect(mapStateToProps, {
   toggleTopCardOfStackFaceup,
   loadAndStoreChangelog,
   initBoardSlots,
-  selectToken,
-  unselectToken,
+  handleTokenSelect,
   unselectAllTokens,
 })(Game);
 

@@ -209,8 +209,7 @@ interface IProps {
   rotatePreviewCard180: boolean;
   togglePreviewCardRotation: () => void;
   initBoardSlots: () => void;
-  selectToken: (id: string) => void;
-  unselectToken: (id: string) => void;
+  handleTokenSelect: (id: string) => void;
 }
 
 interface IState {
@@ -854,8 +853,7 @@ class Game extends Component<IProps, IState> {
                       }
                       updatePos={this.props.moveToken}
                       flipToken={this.props.flipToken}
-                      selectToken={this.props.selectToken}
-                      unselectToken={this.props.unselectToken}
+                      handleTokenSelect={this.props.handleTokenSelect}
                     ></FlippableToken>
                   ))}
                 </Group>

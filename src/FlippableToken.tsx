@@ -17,8 +17,7 @@ interface IProps {
   selectedColor: PlayerColor;
   updatePos: (payload: { id: string; pos: Vector2d }) => void;
   flipToken: (id: string) => void;
-  selectToken: (id: string) => void;
-  unselectToken: (id: string) => void;
+  handleTokenSelect: (id: string, forceSelected?: boolean) => void;
 }
 
 interface IState {
@@ -98,7 +97,7 @@ class FlippableToken extends Component<IProps, IState> {
   };
 
   private handleDragStart = () => {
-    this.props.selectToken(this.props.id);
+    this.props.handleTokenSelect(this.props.id, true);
   };
 
   private handleDragEnd = (event: KonvaEventObject<DragEvent>) => {
@@ -112,16 +111,12 @@ class FlippableToken extends Component<IProps, IState> {
   };
 
   private handleClick = (evt: Konva.KonvaEventObject<MouseEvent>) => {
-    if (!this.props.controlledBy) {
-      this.props.selectToken(this.props.id);
-    } else if (this.props.controlledBy === myPeerRef) {
-      this.props.unselectToken(this.props.id);
-    }
+    this.props.handleTokenSelect(this.props.id);
     evt.cancelBubble = true;
   };
 
   private handleDblClick = (evt: Konva.KonvaEventObject<MouseEvent>) => {
-    this.props.selectToken(this.props.id);
+    this.props.handleTokenSelect(this.props.id, true);
     this.props.flipToken(this.props.id);
     evt.cancelBubble = true;
   };
