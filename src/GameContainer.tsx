@@ -79,6 +79,8 @@ import {
 } from "./features/counters/counters.slice";
 import {
   addNewCounter,
+  handleTokenEndMove,
+  handleTokenMove,
   handleTokenSelect,
 } from "./features/counters/counters.thunks";
 import {
@@ -228,7 +230,7 @@ const GameContainer = connect(mapStateToProps, {
   removeAllArrows,
   createNewTokens,
   createNewPlayerBoards,
-  moveToken,
+  handleTokenEndMove,
   flipToken,
   togglePreviewCardRotation,
   addNewPlaymatInColumn,
@@ -241,6 +243,7 @@ const GameContainer = connect(mapStateToProps, {
   initBoardSlots,
   handleTokenSelect,
   unselectAllTokens,
+  handleTokenMove,
 })(Game);
 
 export default GameContainer;

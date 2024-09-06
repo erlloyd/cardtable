@@ -22,6 +22,18 @@ const setTokenBagPositionReducer: CaseReducer<
   }
 };
 
+const addMultipleTokensToBagWithCodeReducer: CaseReducer<
+  ITokenBagsState,
+  CardtableAction<{ id: string; codes: string[] }>
+> = (state, action) => {
+  action.payload.codes.forEach((code) => {
+    addTokenToBagWithCodeReducer(state, {
+      ...action,
+      payload: { id: action.payload.id, code },
+    });
+  });
+};
+
 const addTokenToBagWithCodeReducer: CaseReducer<
   ITokenBagsState,
   CardtableAction<{ id: string; code: string }>
@@ -63,6 +75,7 @@ const playmatsSlice = createSlice({
     resetTokenBags: resetTokenBagsReducer,
     setTokenBagPosition: setTokenBagPositionReducer,
     addTokenToBagWithCode: addTokenToBagWithCodeReducer,
+    addMultipleTokensToBagWithCode: addMultipleTokensToBagWithCodeReducer,
     removeTokenFromBagWithCode: removeTokenFromBagWithCodeReducer,
   },
   extraReducers: (builder) => {
@@ -97,6 +110,7 @@ export const {
   setTokenBagPosition,
   addTokenToBagWithCode,
   removeTokenFromBagWithCode,
+  addMultipleTokensToBagWithCode,
 } = playmatsSlice.actions;
 
 export default playmatsSlice.reducer;

@@ -5,6 +5,8 @@ import { KonvaEventObject } from "konva/lib/Node";
 import { GameType } from "./game-modules/GameType";
 import { myPeerRef, PlayerColor } from "./constants/app-constants";
 import Konva from "konva";
+import { debounce } from "lodash";
+import { tokenConstants } from "./constants/card-constants";
 
 interface IProps {
   id: string;
@@ -15,15 +17,36 @@ interface IProps {
   faceup: boolean;
   controlledBy: string | null;
   selectedColor: PlayerColor;
-  updatePos: (payload: { id: string; pos: Vector2d }) => void;
+  handleTokenEndMove: (payload: { id: string; pos: Vector2d }) => void;
   flipToken: (id: string) => void;
-  handleTokenSelect: (id: string, forceSelected?: boolean) => void;
+  handleTokenSelect: (payload: {
+    ids: string[];
+    forceSelected?: boolean;
+    forceMultiSelectMode?: boolean;
+  }) => void;
+  handleTokenMove: (payload: {
+    id: string;
+    abs_x: number;
+    dx: number;
+    abs_y: number;
+    dy: number;
+  }) => void;
 }
 
 interface IState {
   img: HTMLImageElement | null;
   backImg: HTMLImageElement | null;
 }
+
+const debouncedHandleMove = debounce((event: any, props: IProps) => {
+  props.handleTokenMove({
+    id: props.id,
+    abs_x: event.target.x(),
+    dx: event.target.x() - props.pos.x,
+    abs_y: event.target.y(),
+    dy: event.target.y() - props.pos.y,
+  });
+}, 5);
 
 class FlippableToken extends Component<IProps, IState> {
   static whyDidYouRender = false;
@@ -76,10 +99,15 @@ class FlippableToken extends Component<IProps, IState> {
         onTouchStart={this.cancelBubble}
         onMouseDown={this.cancelBubble}
         onDragStart={this.handleDragStart}
+        onDragMove={this.handleDragMove}
         onDragEnd={this.handleDragEnd}
         scale={{
-          x: 100 / (imgToUse?.naturalWidth ?? 1),
-          y: 100 / (imgToUse?.naturalWidth ?? 1),
+          x:
+            tokenConstants.FLIPPABLE_TOKEN_WIDTH /
+            (imgToUse?.naturalWidth ?? 1),
+          y:
+            tokenConstants.FLIPPABLE_TOKEN_HEIGHT /
+            (imgToUse?.naturalHeight ?? 1),
         }}
         width={imgToUse?.naturalWidth ?? 0}
         height={imgToUse?.naturalHeight ?? 0}
@@ -96,12 +124,23 @@ class FlippableToken extends Component<IProps, IState> {
     e.cancelBubble = true;
   };
 
-  private handleDragStart = () => {
-    this.props.handleTokenSelect(this.props.id, true);
+  private handleDragMove = (e: any) => {
+    debouncedHandleMove(e, this.props);
+  };
+
+  private handleDragStart = (evt: Konva.KonvaEventObject<DragEvent>) => {
+    // first check if we already have this token selected
+    const isTokenSelected = this.props.controlledBy === myPeerRef;
+
+    this.props.handleTokenSelect({
+      ids: [this.props.id],
+      forceSelected: true,
+      forceMultiSelectMode: isTokenSelected,
+    });
   };
 
   private handleDragEnd = (event: KonvaEventObject<DragEvent>) => {
-    this.props.updatePos({
+    this.props.handleTokenEndMove({
       id: this.props.id,
       pos: {
         x: event.target.x(),
@@ -111,12 +150,27 @@ class FlippableToken extends Component<IProps, IState> {
   };
 
   private handleClick = (evt: Konva.KonvaEventObject<MouseEvent>) => {
-    this.props.handleTokenSelect(this.props.id);
+    // Here check if modifier held down
+    const modifierKeyHeld =
+      evt.evt.shiftKey || evt.evt.metaKey || evt.evt.ctrlKey;
+
+    this.props.handleTokenSelect({
+      ids: [this.props.id],
+      forceMultiSelectMode: modifierKeyHeld,
+    });
     evt.cancelBubble = true;
   };
 
   private handleDblClick = (evt: Konva.KonvaEventObject<MouseEvent>) => {
-    this.props.handleTokenSelect(this.props.id, true);
+    // Here check if modifier held down
+    const modifierKeyHeld =
+      evt.evt.shiftKey || evt.evt.metaKey || evt.evt.ctrlKey;
+
+    this.props.handleTokenSelect({
+      ids: [this.props.id],
+      forceSelected: true,
+      forceMultiSelectMode: modifierKeyHeld,
+    });
     this.props.flipToken(this.props.id);
     evt.cancelBubble = true;
   };

@@ -313,6 +313,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "fp_ring",
           },
           {
             id: uuidv4(),
@@ -323,6 +324,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "fp_ring",
           },
           {
             id: uuidv4(),
@@ -333,6 +335,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "shadow_ring",
           },
           {
             id: uuidv4(),
@@ -343,6 +346,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "shadow_ring",
           },
           {
             id: uuidv4(),
@@ -351,6 +355,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
               "/images/from_modules/war-of-the-ring-card-game/turn_order_marker.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "turn_order_marker",
           },
         ];
       case "Trilogy (Co-op or Solo)":
@@ -364,6 +369,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "fp_ring",
           },
           {
             id: uuidv4(),
@@ -374,6 +380,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "fp_ring",
           },
           {
             id: uuidv4(),
@@ -382,6 +389,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
               "/images/from_modules/war-of-the-ring-card-game/turn_order_marker.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "turn_order_marker",
           },
         ];
       case "Two-Player Duel":
@@ -395,6 +403,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "fp_ring",
           },
           {
             id: uuidv4(),
@@ -405,6 +414,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "shadow_ring",
           },
         ];
       case "Three-Player Duel":
@@ -418,6 +428,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "fp_ring",
           },
           {
             id: uuidv4(),
@@ -428,6 +439,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "shadow_ring",
           },
           {
             id: uuidv4(),
@@ -438,6 +450,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
               "/images/from_modules/war-of-the-ring-card-game/shadow_ring_back.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "shadow_ring",
           },
           {
             id: uuidv4(),
@@ -446,6 +459,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
               "/images/from_modules/war-of-the-ring-card-game/turn_order_marker.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "turn_order_marker",
           },
         ];
       case "Duel (Solo)":
@@ -459,6 +473,7 @@ export default class WarOfTheRingTheCardGameModule extends GameModule {
               "/images/from_modules/war-of-the-ring-card-game/fp_ring_back.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "fp_ring",
           },
         ];
     }

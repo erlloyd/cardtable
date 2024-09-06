@@ -48,6 +48,7 @@ import {
   CounterTokenType,
   StatusTokenType,
   cardConstants,
+  tokenConstants,
 } from "./constants/card-constants";
 import { CARD_SHOULD_BE_HORIZONTAL_MAP } from "./constants/card-missing-image-map";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
@@ -204,12 +205,23 @@ interface IProps {
   removeAnyDisconnectedArrows: (myRef: string) => void;
   createNewTokens: (tokens: IFlippableToken[]) => void;
   createNewPlayerBoards: (playerBoards: IPlayerBoard[]) => void;
-  moveToken: (payload: { id: string; pos: Vector2d }) => void;
+  handleTokenEndMove: (payload: { id: string; pos: Vector2d }) => void;
   flipToken: (id: string) => void;
   rotatePreviewCard180: boolean;
   togglePreviewCardRotation: () => void;
   initBoardSlots: () => void;
-  handleTokenSelect: (id: string) => void;
+  handleTokenSelect: (payload: {
+    ids: string[];
+    forceSelected?: boolean;
+    forceMultiSelectMode?: boolean;
+  }) => void;
+  handleTokenMove: (info: {
+    id: string;
+    dx: number;
+    abs_x?: number;
+    dy: number;
+    abs_y?: number;
+  }) => void;
 }
 
 interface IState {
@@ -851,9 +863,10 @@ class Game extends Component<IProps, IState> {
                         this.props.playerColors[token.controlledBy ?? ""] ??
                         COLORS.BLACK
                       }
-                      updatePos={this.props.moveToken}
+                      handleTokenEndMove={this.props.handleTokenEndMove}
                       flipToken={this.props.flipToken}
                       handleTokenSelect={this.props.handleTokenSelect}
+                      handleTokenMove={this.props.handleTokenMove}
                     ></FlippableToken>
                   ))}
                 </Group>
@@ -2054,36 +2067,65 @@ class Game extends Component<IProps, IState> {
     // if we were selecting, check for intersection
     if (this.state.drewASelectionRect) {
       const selectRect = this.getSelectionRectInfo();
-      const selectedCards: any[] = this.props.cards.cards.reduce<ICardStack[]>(
-        (currSelectedCards, card) => {
-          const intersects = Intersects.boxBox(
-            selectRect.x,
-            selectRect.y,
-            selectRect.width,
-            selectRect.height,
-            card.x - 50,
-            card.y - 75,
-            cardConstants[card.sizeType].CARD_WIDTH,
-            cardConstants[card.sizeType].CARD_HEIGHT
-          );
+      const selectedCards: ICardStack[] = this.props.cards.cards.reduce<
+        ICardStack[]
+      >((currSelectedCards, card) => {
+        const intersects = Intersects.boxBox(
+          selectRect.x,
+          selectRect.y,
+          selectRect.width,
+          selectRect.height,
+          card.x - 50,
+          card.y - 75,
+          cardConstants[card.sizeType].CARD_WIDTH,
+          cardConstants[card.sizeType].CARD_HEIGHT
+        );
 
-          if (intersects) {
-            currSelectedCards.push(card);
-          }
+        if (intersects) {
+          currSelectedCards.push(card);
+        }
 
-          return currSelectedCards;
-        },
-        []
-      );
+        return currSelectedCards;
+      }, []);
+
+      const selectedTokens: IFlippableToken[] = this.props.tokens.reduce<
+        IFlippableToken[]
+      >((currSelectedTokens, token) => {
+        const intersects = Intersects.boxBox(
+          selectRect.x,
+          selectRect.y,
+          selectRect.width,
+          selectRect.height,
+          token.position.x,
+          token.position.y,
+          tokenConstants.FLIPPABLE_TOKEN_WIDTH,
+          tokenConstants.FLIPPABLE_TOKEN_HEIGHT
+        );
+
+        if (intersects) {
+          currSelectedTokens.push(token);
+        }
+
+        return currSelectedTokens;
+      }, []);
 
       // Here check if modifier held down
       const modifierKeyHeld =
         event.evt.shiftKey || event.evt.metaKey || event.evt.ctrlKey;
 
-      this.props.selectMultipleCards({
-        ids: selectedCards.map((card) => card.id),
-        unselectOtherCards: !modifierKeyHeld,
-      });
+      if (selectedCards.length > 0) {
+        this.props.selectMultipleCards({
+          ids: selectedCards.map((card) => card.id),
+          unselectOtherCards: !modifierKeyHeld,
+        });
+      }
+
+      if (selectedTokens.length > 0) {
+        this.props.handleTokenSelect({
+          ids: selectedTokens.map((t) => t.id),
+          forceSelected: true,
+        });
+      }
     }
 
     this.setState({

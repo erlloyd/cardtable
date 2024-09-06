@@ -4,6 +4,7 @@ import { ITokenBag } from "./features/token-bags/initialState";
 import { Vector2d } from "konva/lib/types";
 import { Stage } from "konva/lib/Stage";
 import { TokenBagMenuInfo } from "./features/game/initialState";
+import { tokenBagConstants } from "./constants/card-constants";
 
 interface IProps {
   bag: ITokenBag;
@@ -39,6 +40,8 @@ const TokenBag = (props: IProps) => {
       draggable={true}
       x={props.bag.position.x}
       y={props.bag.position.y}
+      height={tokenBagConstants.TOKEN_BAG_HEIGHT}
+      width={tokenBagConstants.TOKEN_BAG_WIDTH}
       image={image}
       onDragEnd={(e) => {
         props.setTokenBagPosition({

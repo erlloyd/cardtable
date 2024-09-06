@@ -10,6 +10,7 @@ export interface ICountersState {
 }
 export interface IFlippableToken {
   id: string;
+  code: string;
   position: Vector2d;
   faceup: boolean;
   imgUrl: string;

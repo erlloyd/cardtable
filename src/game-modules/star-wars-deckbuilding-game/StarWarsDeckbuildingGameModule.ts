@@ -286,6 +286,7 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "force_tracker",
           },
         ];
       case "2v2":
@@ -299,6 +300,7 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "force_tracker",
           },
           {
             id: uuidv4(),
@@ -309,6 +311,7 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "force_tracker",
           },
         ];
       case "Solo: Leaders (Rebels)":
@@ -323,6 +326,7 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "force_tracker",
           },
           {
             id: uuidv4(),
@@ -333,6 +337,7 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "force_tracker",
           },
           {
             id: uuidv4(),
@@ -343,6 +348,7 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
               "/images/from_modules/star-wars-deckbuilding-game/force_tracker.png",
             position: { x: 0, y: 0 },
             controlledBy: null,
+            code: "force_tracker",
           },
         ];
     }

@@ -82,3 +82,13 @@ export enum CounterTokenType {
 
 export const stackShuffleAnimationMS = 200;
 export const stackShuffleAnimationS = stackShuffleAnimationMS / 1000;
+
+export const tokenConstants = {
+  FLIPPABLE_TOKEN_HEIGHT: 100,
+  FLIPPABLE_TOKEN_WIDTH: 100,
+};
+
+export const tokenBagConstants = {
+  TOKEN_BAG_HEIGHT: 512,
+  TOKEN_BAG_WIDTH: 512,
+};

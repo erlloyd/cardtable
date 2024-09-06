@@ -16,3 +16,8 @@ export const getFirstPlayerTokenPos = createSelector(
   getCounters,
   (counters) => counters.firstPlayerCounterPosition
 );
+
+export const tokensSelectedWithPeerRef = (peerRef: string) =>
+  createSelector(getCurrentTokens, (tokens) => {
+    return tokens.filter((t) => t.controlledBy === peerRef);
+  });

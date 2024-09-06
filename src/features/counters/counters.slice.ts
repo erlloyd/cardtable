@@ -79,6 +79,28 @@ const createNewTokensReducer: CaseReducer<
   state.flippableTokens = state.flippableTokens.concat(action.payload);
 };
 
+const removeTokensReducer: CaseReducer<
+  ICountersState,
+  PayloadAction<string[]>
+> = (state, action) => {
+  state.flippableTokens = state.flippableTokens.filter(
+    (t) => !action.payload.includes(t.id)
+  );
+};
+
+const movingTokensReducer: CaseReducer<
+  ICountersState,
+  CardtableAction<{ idToPosMap: { [key: string]: Vector2d } }>
+> = (state, action) => {
+  Object.entries(action.payload.idToPosMap).forEach(([id, pos]) => {
+    const token = state.flippableTokens.find((t) => t.id === id);
+
+    if (!token) return;
+
+    token.position = pos;
+  });
+};
+
 const moveTokenReducer: CaseReducer<
   ICountersState,
   PayloadAction<{ id: string; pos: Vector2d }>
@@ -135,6 +157,21 @@ const unselectTokenReducer: CaseReducer<
   }
 };
 
+const unselectMultipleTokensReducer: CaseReducer<
+  ICountersState,
+  CardtableAction<string[]>
+> = (state, action) => {
+  /// get the token
+  const tokens = state.flippableTokens.filter((ft) =>
+    action.payload.some(
+      (id) => ft.id === id && ft.controlledBy === action.ACTOR_REF
+    )
+  );
+  if (tokens.length > 0) {
+    tokens.forEach((token) => (token.controlledBy = null));
+  }
+};
+
 const unselectAllTokensReducer: CaseReducer<
   ICountersState,
   CardtableAction<any>
@@ -158,13 +195,16 @@ const countersSlice = createSlice({
     moveCounter: moveCounterReducer,
     moveFirstPlayerCounter: moveFirstPlayerCounterReducer,
     createNewTokens: createNewTokensReducer,
+    removeTokens: removeTokensReducer,
     moveToken: moveTokenReducer,
     flipToken: flipTokenReducer,
     updateCounterColor: updateCounterColorReducer,
     selectToken: selectTokenReducer,
     selectMultipleTokens: selectMultipleTokensReducer,
     unselectToken: unselectTokenReducer,
+    unselectMultipleTokens: unselectMultipleTokensReducer,
     unselectAllTokens: unselectAllTokensReducer,
+    movingTokens: movingTokensReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -201,6 +241,7 @@ export const {
   moveCounter,
   moveFirstPlayerCounter,
   createNewTokens,
+  removeTokens,
   moveToken,
   flipToken,
   updateCounterColor,
@@ -208,6 +249,8 @@ export const {
   selectMultipleTokens,
   unselectToken,
   unselectAllTokens,
+  movingTokens,
+  unselectMultipleTokens,
 } = countersSlice.actions;
 
 export default countersSlice.reducer;

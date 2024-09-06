@@ -85,6 +85,7 @@ export const drawRandomTokenFromBag =
           imgUrl: randomToken.frontImgUrl,
           backImgUrl: randomToken.backImgUrl,
           controlledBy: null,
+          code: randomToken.code,
         },
       ])
     );
