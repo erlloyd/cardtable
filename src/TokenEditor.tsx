@@ -8,6 +8,7 @@ interface IProps {
   currentGameType: GameType;
   visible: boolean;
   bag: ITokenBag | null;
+  viewOnly: boolean;
 
   hideTokenBagEditor: () => void;
   addTokenToBagWithCode: (payload: { id: string; code: string }) => void;
@@ -72,30 +73,35 @@ const TokenEditor = (props: IProps) => {
                 <div key={t.code} className="token-modifier">
                   <div className="border-box-div">
                     <div className="num-adjuster">
-                      <Button
-                        variant="contained"
-                        onClick={() => {
-                          props.removeTokenFromBagWithCode({
-                            id: props.bag!.id,
-                            code: t.code,
-                          });
-                        }}
-                      >
-                        -
-                      </Button>
+                      {!props.viewOnly && (
+                        <Button
+                          variant="contained"
+                          onClick={() => {
+                            props.removeTokenFromBagWithCode({
+                              id: props.bag!.id,
+                              code: t.code,
+                            });
+                          }}
+                        >
+                          -
+                        </Button>
+                      )}
+
                       <div>In Bag: {numInBag}</div>
                       <img src={t.frontImgUrl} />
-                      <Button
-                        variant="contained"
-                        onClick={() => {
-                          props.addTokenToBagWithCode({
-                            id: props.bag!.id,
-                            code: t.code,
-                          });
-                        }}
-                      >
-                        +
-                      </Button>
+                      {!props.viewOnly && (
+                        <Button
+                          variant="contained"
+                          onClick={() => {
+                            props.addTokenToBagWithCode({
+                              id: props.bag!.id,
+                              code: t.code,
+                            });
+                          }}
+                        >
+                          +
+                        </Button>
+                      )}
                     </div>
                   </div>
                 </div>

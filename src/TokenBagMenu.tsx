@@ -9,7 +9,7 @@ interface IProps {
   bag: ITokenBag | null;
 
   clearContextMenu: () => void;
-  showTokenBagEditor: (bag: ITokenBag) => void;
+  showTokenBagEditor: (payload: { bag: ITokenBag; viewOnly: boolean }) => void;
   drawRandomTokenFromBag: (bagId: string) => void;
 }
 
@@ -27,12 +27,17 @@ const TokenBagMenu = (props: IProps) => {
       label: "Add or remove tokens",
       action: () => {
         if (!!props.bag) {
-          props.showTokenBagEditor(props.bag);
+          props.showTokenBagEditor({ bag: props.bag, viewOnly: false });
         }
       },
     },
     {
       label: "Show tokens",
+      action: () => {
+        if (!!props.bag) {
+          props.showTokenBagEditor({ bag: props.bag, viewOnly: true });
+        }
+      },
     },
   ];
 

@@ -15,11 +15,15 @@ import {
 } from "./features/token-bags/token-bags.slice";
 
 const mapStateToProps = (state: RootState) => {
-  const bagId = getGame(state).showTokenBagAdjusterForId;
+  const metadata = getGame(state).showTokenBagAdjuster;
+  const bagId = metadata?.id;
+  const viewOnly = !!metadata?.viewOnly;
+
   return {
     currentGameType: getActiveGameType(state) ?? GameType.MarvelChampions,
-    visible: !!bagId,
+    visible: !!metadata,
     bag: getTokenBagById(bagId ?? "")(state),
+    viewOnly,
   };
 };
 

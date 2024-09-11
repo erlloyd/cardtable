@@ -338,13 +338,16 @@ const clearTokenBagMenuReducer: CaseReducer<IGameState> = (state) => {
 
 const showTokenBagEditorReducer: CaseReducer<
   IGameState,
-  CardtableAction<ITokenBag>
+  CardtableAction<{ bag: ITokenBag; viewOnly: boolean }>
 > = (state, action) => {
-  state.showTokenBagAdjusterForId = action.payload.id;
+  state.showTokenBagAdjuster = {
+    id: action.payload.bag.id,
+    viewOnly: action.payload.viewOnly,
+  };
 };
 
 const hideTokenBagEditorReducer: CaseReducer<IGameState> = (state) => {
-  state.showTokenBagAdjusterForId = null;
+  state.showTokenBagAdjuster = null;
 };
 
 // slice

@@ -257,6 +257,12 @@ export default class ArkhamHorrorCardGameModule extends GameModule {
     ];
     return splitStacks.filter((stack) => stack.length > 0);
   }
+
+  isCardBackImg(imgUrl: string): boolean {
+    return (
+      imgUrl.indexOf("pic5595580") !== -1 || imgUrl.indexOf("pic3311650") !== -1
+    );
+  }
 }
 
 const getSpecificArkhamPack = async (

@@ -16,7 +16,10 @@ import playmats from "../features/playmats/playmats.slice";
 import tokenBags from "../features/token-bags/token-bags.slice";
 import notifications from "../features/notifications/notifications.slice";
 
-import counters, { moveCounter } from "../features/counters/counters.slice";
+import counters, {
+  moveCounter,
+  movingTokens,
+} from "../features/counters/counters.slice";
 import arrows, {
   startNewArrowForCards,
   updateDisconnectedArrowPosition,
@@ -50,6 +53,7 @@ const rootReducer = combineReducers({
       cardFromHandMoveWithSnap.type,
       setPreviewCardId.type,
       clearPreviewCard.type,
+      movingTokens.type,
     ]),
   }),
 });
