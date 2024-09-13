@@ -149,7 +149,7 @@ interface IProps {
     playerNumber: number;
     indeces: number[];
   }) => void;
-  setPreviewCardJsonId: (jsonId: string) => void;
+  setPreviewCardJsonId: (payload: { id: string; modal?: boolean }) => void;
   clearPreviewCardJsonId: () => void;
   startDraggingCardFromHand: () => void;
   stopDraggingCardFromHand: () => void;
@@ -507,9 +507,9 @@ class PlayerHand extends Component<IProps, IState> {
                       <div
                         onPointerEnter={(event) => {
                           if (event.pointerType === "mouse") {
-                            this.props.setPreviewCardJsonId(
-                              card.cardDetails.jsonId
-                            );
+                            this.props.setPreviewCardJsonId({
+                              id: card.cardDetails.jsonId,
+                            });
                           }
                         }}
                         onPointerLeave={this.props.clearPreviewCardJsonId}
@@ -624,8 +624,8 @@ class PlayerHand extends Component<IProps, IState> {
       //tapped within 200ms of last tap. double tap
       clearTimeout(this.tapped); //stop single tap callback
       this.tapped = null;
-      this.setState({ modal: true });
-      this.props.setPreviewCardJsonId(jsonId);
+      // this.setState({ modal: true });
+      this.props.setPreviewCardJsonId({ id: jsonId, modal: true });
     }
   };
   renderTopLayer() {

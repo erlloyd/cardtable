@@ -114,7 +114,7 @@ export const getMenuPreviewCard = createSelector(getGame, (game) => {
     sizeType: CardSizeType.Standard, // TODO: FIX THIS TO USE THE ACTION CARD SIZE
   };
 
-  return menuPreviewCard;
+  return { card: menuPreviewCard, modal: game.menuPreviewCardModal };
 });
 
 export const getIsSearchingForOnlineDecks = createSelector(

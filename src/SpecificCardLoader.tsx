@@ -9,7 +9,7 @@ interface IProps {
   heroData: CardData[];
   hideSpecificCardLoader: () => void;
   cardSelected: (jsonId: string) => void;
-  preview: (jsonId: string) => void;
+  preview: (payload: { id: string; modal?: boolean }) => void;
   clearPreview: () => void;
 }
 
@@ -59,7 +59,7 @@ const handleHighlightChange =
     if (!option) {
       props.clearPreview();
     } else {
-      props.preview(option.code);
+      props.preview({ id: option.code });
     }
   };
 

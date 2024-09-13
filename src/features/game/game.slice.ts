@@ -171,19 +171,22 @@ const togglePreviewCardRotationReducer: CaseReducer<IGameState> = (state) => {
 const clearPreviewCardReducer: CaseReducer<IGameState> = (state) => {
   state.previewCard = null;
   state.menuPreviewCardJsonId = null;
+  state.menuPreviewCardModal = false;
   state.rotatePreviewCard180 = false;
 };
 
 const setMenuPreviewCardJsonIdReducer: CaseReducer<
   IGameState,
-  PayloadAction<string>
+  PayloadAction<{ id: string; modal?: boolean }>
 > = (state, action) => {
-  state.menuPreviewCardJsonId = action.payload;
+  state.menuPreviewCardJsonId = action.payload.id;
+  state.menuPreviewCardModal = !!action.payload.modal;
 };
 
 const clearMenuPreviewCardJsonIdReducer: CaseReducer<IGameState> = (state) => {
   state.previewCard = null;
   state.menuPreviewCardJsonId = null;
+  state.menuPreviewCardModal = false;
   state.rotatePreviewCard180 = false;
 };
 

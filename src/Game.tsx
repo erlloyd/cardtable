@@ -97,7 +97,7 @@ interface IProps {
   multiselectMode: boolean;
   playerColors: { [key: string]: PlayerColor };
   playerNumbers: { [key: string]: number };
-  menuPreviewCard: ICardStack | null;
+  menuPreviewCard: { card: ICardStack; modal: boolean } | null;
   isDoneLoadingJSONData: boolean;
   cardMove: (info: {
     id: string;
@@ -564,116 +564,136 @@ class Game extends Component<IProps, IState> {
     );
 
     const possiblePreviewCards = !!this.props.menuPreviewCard
-      ? [this.props.menuPreviewCard]
+      ? [this.props.menuPreviewCard.card]
       : this.props.cards.cards.filter(
           (card) =>
             !!this.props.gameState.previewCard &&
             card.id === this.props.gameState.previewCard.id
         );
 
-    const previewCards = this.stage
-      ? possiblePreviewCards
-          .filter((_card) => !this.state.selecting && !iAmDragging)
-          .map((card) => {
-            let isHorizontal =
-              CARD_SHOULD_BE_HORIZONTAL_MAP[this.getCardCode(card)] ||
-              GameManager.horizontalCardTypes[
-                this.props.currentGameType
-              ].includes(getCardType(card, this.props.cardsData));
+    const previewCardsMetadata = possiblePreviewCards
+      .filter((_card) => !this.state.selecting && !iAmDragging)
+      .map((card) => {
+        let isHorizontal =
+          CARD_SHOULD_BE_HORIZONTAL_MAP[this.getCardCode(card)] ||
+          GameManager.horizontalCardTypes[this.props.currentGameType].includes(
+            getCardType(card, this.props.cardsData)
+          );
 
-            if (
-              !!this.props.currentGameType &&
-              GameManager.getModuleForType(this.props.currentGameType)
-                .shouldRotateCard
-            ) {
-              isHorizontal = GameManager.getModuleForType(
-                this.props.currentGameType
-              ).shouldRotateCard!(
-                this.getCardCode(card),
-                getCardType(card, this.props.cardsData),
-                card.faceup
-              );
-            }
+        if (
+          !!this.props.currentGameType &&
+          GameManager.getModuleForType(this.props.currentGameType)
+            .shouldRotateCard
+        ) {
+          isHorizontal = GameManager.getModuleForType(
+            this.props.currentGameType
+          ).shouldRotateCard!(
+            this.getCardCode(card),
+            getCardType(card, this.props.cardsData),
+            card.faceup
+          );
+        }
 
-            const imgUrls = getImgUrls(
-              card,
-              this.props.cardsData,
-              this.props.currentGameType
-            );
-            const rawPos = this.getRawPreviewCardPosition(
-              isHorizontal,
-              card.sizeType
-            );
-            const previewPos = this.getRelativePositionFromTarget(
-              this.stage,
-              rawPos
-            );
+        const imgUrls = getImgUrls(
+          card,
+          this.props.cardsData,
+          this.props.currentGameType
+        );
+        const rawPos = this.getRawPreviewCardPosition(
+          isHorizontal,
+          card.sizeType
+        );
+        const previewPos = this.getRelativePositionFromTarget(
+          this.stage,
+          rawPos
+        );
 
-            let previewCardHeight =
-              cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT;
-            let previewCardWidth =
-              cardConstants[card.sizeType].CARD_PREVIEW_WIDTH;
+        let previewCardHeight =
+          cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT;
+        let previewCardWidth = cardConstants[card.sizeType].CARD_PREVIEW_WIDTH;
 
-            // if height or width are zero, don't display the card
-            if (previewCardHeight === 0 || previewCardWidth === 0) {
-              return null;
-            }
+        // if height or width are zero, don't display the card
+        if (previewCardHeight === 0 || previewCardWidth === 0) {
+          return null;
+        }
 
-            // Note that we only adjust the height, because the card will
-            // be rotated if it supposed to be displayed horizontally
-            previewCardHeight = Math.min(
-              cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT,
-              isHorizontal ? window.innerWidth : window.innerHeight
-            );
-            const previewCardRatio =
-              previewCardHeight /
-              cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT;
-            previewCardWidth *= previewCardRatio;
+        // Note that we only adjust the height, because the card will
+        // be rotated if it supposed to be displayed horizontally
+        previewCardHeight = Math.min(
+          cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT,
+          isHorizontal ? window.innerWidth : window.innerHeight
+        );
+        const previewCardRatio =
+          previewCardHeight / cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT;
+        previewCardWidth *= previewCardRatio;
 
-            if (imgUrls.some((url) => url === undefined)) {
-              console.warn(
-                `Card img is undefined for ${this.getCardName(card)}`
-              );
-              return null;
-            }
+        if (imgUrls.some((url) => url === undefined)) {
+          console.warn(`Card img is undefined for ${this.getCardName(card)}`);
+          return null;
+        }
 
-            return imgUrls.some((url) =>
-              GameManager.getModuleForType(
-                this.props.currentGameType
-              ).isCardBackImg(url)
-            ) ? null : (
-              <Card
-                currentGameType={this.props.currentGameType}
-                currentPlayerRole={this.props.currentPlayerRole}
-                name={this.getCardName(card)}
-                code={this.getCardCode(card)}
-                backLinkCode={this.getCardCode(card, true)}
-                selectedColor={
-                  this.props.playerColors[card.controlledBy] ?? "black"
-                }
-                controlledBy={card.controlledBy}
-                key={`preview${card.id}`}
-                id={card.id}
-                x={previewPos.x}
-                y={previewPos.y}
-                exhausted={isHorizontal}
-                fill={card.fill}
-                selected={false}
-                dragging={false}
-                shuffling={false}
-                imgUrls={imgUrls}
-                typeCode={getCardType(card, this.props.cardsData)}
-                faceup={card.faceup}
-                height={previewCardHeight / this.props.gameState.stageZoom.y}
-                width={previewCardWidth / this.props.gameState.stageZoom.x}
-                isPreview={true}
-                sizeType={card.sizeType}
-                additionalRotation={this.props.rotatePreviewCard180 ? 180 : 0}
-              />
-            );
-          })
-          .filter((c): c is JSX.Element => c !== null)
-      : [];
+        return imgUrls.some((url) =>
+          GameManager.getModuleForType(
+            this.props.currentGameType
+          ).isCardBackImg(url)
+        )
+          ? null
+          : {
+              name: this.getCardName(card),
+              code: this.getCardCode(card),
+              backLinkCode: this.getCardCode(card, true),
+              selectedColor:
+                this.props.playerColors[card.controlledBy] ?? "black",
+              controlledBy: card.controlledBy,
+              key: `preview${card.id}`,
+              id: card.id,
+              x: previewPos.x,
+              y: previewPos.y,
+              exhausted: isHorizontal,
+              fill: card.fill,
+              imgUrls,
+              typeCode: getCardType(card, this.props.cardsData),
+              faceup: card.faceup,
+              height: previewCardHeight / this.props.gameState.stageZoom.y,
+              width: previewCardWidth / this.props.gameState.stageZoom.x,
+              sizeType: card.sizeType,
+            };
+      })
+      .filter((c) => c !== null);
+
+    const previewCards =
+      this.stage &&
+      !this.state.previewCardModal &&
+      !this.props.gameState.menuPreviewCardModal
+        ? previewCardsMetadata.map((cardInfo) => (
+            <Card
+              currentGameType={this.props.currentGameType}
+              currentPlayerRole={this.props.currentPlayerRole}
+              name={cardInfo.name}
+              code={cardInfo.code}
+              backLinkCode={cardInfo.backLinkCode}
+              selectedColor={cardInfo.selectedColor}
+              controlledBy={cardInfo.controlledBy}
+              key={cardInfo.key}
+              id={cardInfo.id}
+              x={cardInfo.x}
+              y={cardInfo.y}
+              exhausted={cardInfo.exhausted}
+              fill={cardInfo.fill}
+              selected={false}
+              dragging={false}
+              shuffling={false}
+              imgUrls={cardInfo.imgUrls}
+              typeCode={cardInfo.typeCode}
+              faceup={cardInfo.faceup}
+              height={cardInfo.height}
+              width={cardInfo.width}
+              isPreview={true}
+              sizeType={cardInfo.sizeType}
+              additionalRotation={this.props.rotatePreviewCard180 ? 180 : 0}
+            />
+          ))
+        : [];
 
     const playmatScale =
       this.state.playmatImageLoaded && !!this.state.playmatImage?.naturalWidth
@@ -765,7 +785,9 @@ class Game extends Component<IProps, IState> {
         <ChangelogContainer></ChangelogContainer>
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
-        {this.renderPreviewCardModal()}
+        {this.renderPreviewCardModal(
+          previewCardsMetadata.map((m) => m.imgUrls)
+        )}
         {this.renderOptionsMenu()}
         {this.renderContextualOptionsMenu()}
         {this.renderDeckImporter()}
@@ -1071,10 +1093,24 @@ class Game extends Component<IProps, IState> {
     );
   };
 
-  private renderPreviewCardModal = () => {
-    if (!this.state.previewCardModal) return null;
+  private renderPreviewCardModal = (previewCardUrls: string[][]) => {
+    if (
+      !this.state.previewCardModal &&
+      !this.props.gameState.menuPreviewCardModal
+    )
+      return null;
+
+    if (previewCardUrls.length === 0 || previewCardUrls[0].length === 0)
+      return null;
+
+    const imgUrl = previewCardUrls[0][0];
+
     return (
       <TopLayer
+        trasparentBackground={true}
+        fullHeight={true}
+        fullWidth={true}
+        noPadding={true}
         position={{ x: 0, y: 0 }}
         onSwipeUp={() => {
           this.props.togglePreviewCardRotation();
@@ -1085,7 +1121,11 @@ class Game extends Component<IProps, IState> {
             previewCardModal: false,
           });
         }}
-      ></TopLayer>
+      >
+        <div className="preview-card-modal">
+          <img src={imgUrl}></img>
+        </div>
+      </TopLayer>
     );
   };
 
@@ -1982,12 +2022,12 @@ class Game extends Component<IProps, IState> {
       ? cardConstants[sizeType].CARD_PREVIEW_WIDTH
       : cardConstants[sizeType].CARD_PREVIEW_HEIGHT;
 
-    if (this.state.previewCardModal) {
-      return {
-        x: screenMidPointX,
-        y: screenMidPointY,
-      };
-    }
+    // if (this.state.previewCardModal) {
+    //   return {
+    //     x: screenMidPointX,
+    //     y: screenMidPointY,
+    //   };
+    // }
 
     // const mySelectedCards = getMySelectedCards(this.props.cards.cards);
     // const anySelectedCards = mySelectedCards.length > 0;

@@ -17,7 +17,7 @@ interface IProps {
   cardsDataEntities: ICardData;
   card: ICardStack;
   cardSelected: (jsonId: string) => void;
-  preview: (jsonId: string) => void;
+  preview: (payload: { id: string; modal?: boolean }) => void;
   clearPreview: () => void;
   touchBased: boolean;
 }
@@ -74,7 +74,7 @@ class CardStackCardSelector extends Component<IProps> {
                       onClick={(e) => {
                         e.stopPropagation();
                         e.preventDefault();
-                        this.props.preview(cd.code);
+                        this.props.preview({ id: cd.code });
                       }}
                       className="mobile-only"
                     >
@@ -119,7 +119,7 @@ class CardStackCardSelector extends Component<IProps> {
     if (!option) {
       this.props.clearPreview();
     } else {
-      this.props.preview(option.code);
+      this.props.preview({ id: option.code });
     }
   };
 

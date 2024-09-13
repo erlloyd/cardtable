@@ -48,3 +48,20 @@
     align-items: center;
   }
 }
+
+.preview-card-modal {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  img {
+    max-height: 80%;
+    max-width: 80%;
+    border-radius: 20px;
+  }
+}
