@@ -1,36 +1,45 @@
-import { Component } from "react";
-import Select from "@mui/material/Select";
-import FormControl from "@mui/material/FormControl";
-import MenuItem from "@mui/material/MenuItem";
-import * as React from "react";
+import { Button } from "@mui/material";
 import TextField from "@mui/material/TextField";
-import { CardData } from "./external-api/common-card-data";
+import cx from "classnames";
+import Fuse from "fuse.js";
+import * as React from "react";
+import { Component } from "react";
+import "./CardStackCardSelector.scss";
+import TopLayer from "./TopLayer";
 import { ICardData } from "./features/cards-data/initialState";
 import { ICardStack } from "./features/cards/initialState";
-import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
-import "./CardStackCardSelector.scss";
-import InputLabel from "@mui/material/InputLabel";
-import { Autocomplete, AutocompleteHighlightChangeReason } from "@mui/material";
-import { v4 as uuidv4 } from "uuid";
+import GameManager from "./game-modules/GameModuleManager";
+import { GameType } from "./game-modules/GameType";
+import {
+  getCardTypeWithoutStack,
+  getImgUrlsFromJsonId,
+  shouldRenderImageHorizontal,
+} from "./utilities/card-utils";
 
 interface IProps {
+  currentGameType: GameType;
   cardsDataEntities: ICardData;
   card: ICardStack;
   cardSelected: (jsonId: string) => void;
   preview: (payload: { id: string; modal?: boolean }) => void;
   clearPreview: () => void;
+  completed: () => void;
   touchBased: boolean;
 }
 
-class CardStackCardSelector extends Component<IProps> {
+interface IState {
+  currentSearchString: string;
+}
+
+class CardStackCardSelector extends Component<IProps, IState> {
   static whyDidYouRender = false;
-  private cardsDataInStack: CardData[] = [];
 
   constructor(props: IProps) {
     super(props);
-    this.cardsDataInStack = props.card.cardStack.map((c) => {
-      return this.props.cardsDataEntities[c.jsonId];
-    });
+
+    this.state = {
+      currentSearchString: "",
+    };
   }
 
   componentWillUnmount() {
@@ -38,96 +47,119 @@ class CardStackCardSelector extends Component<IProps> {
   }
 
   render() {
+    const haystack = this.props.card.cardStack.map((details) => ({
+      jsonId: details.jsonId,
+      name: this.props.cardsDataEntities[details.jsonId].name,
+    }));
+
+    let filteredResults = haystack;
+
+    if (this.state.currentSearchString !== "") {
+      const options = {
+        // Search in `name`
+        keys: ["name"],
+      };
+
+      const f = new Fuse(haystack, options);
+      filteredResults = f
+        .search(this.state.currentSearchString)
+        .map((r) => r.item);
+    }
     return (
-      <div onClick={this.cancelBubble} onKeyPress={this.cancelBubble}>
-        {this.props.touchBased
-          ? this.renderTouchList()
-          : this.renderAutocomplete()}
-      </div>
+      <TopLayer
+        staticPosition={true}
+        trasparentBackground={true}
+        blurBackground={true}
+        offsetContent={false}
+        position={{ x: 0, y: 0 }}
+        noPadding={true}
+        fullHeight={true}
+        fullWidth={true}
+        completed={this.props.completed}
+      >
+        <div className="card-selector-wrapper">
+          <div className="text-field-wrapper">
+            <div className="text-field-background">
+              <TextField
+                value={this.state.currentSearchString}
+                variant="outlined"
+                onClick={this.cancelBubble}
+                onKeyDown={this.cancelBubble}
+                onKeyUp={this.cancelBubble}
+                onChange={this.handleSearchTermChange}
+              ></TextField>
+            </div>
+            <Button variant="contained" onClick={this.handleReset}>
+              Reset
+            </Button>
+          </div>
+
+          <div className="card-images-selector">
+            {filteredResults.map((cardDetails, index) => {
+              const imgUrl =
+                getImgUrlsFromJsonId(
+                  cardDetails.jsonId,
+                  true,
+                  this.props.cardsDataEntities,
+                  this.props.currentGameType
+                )[0] ?? "missing";
+
+              const cardType = getCardTypeWithoutStack(
+                cardDetails.jsonId,
+                true,
+                this.props.cardsDataEntities
+              );
+
+              let shouldRotate = shouldRenderImageHorizontal(
+                cardDetails.jsonId,
+                cardType,
+                GameManager.horizontalCardTypes[
+                  this.props.currentGameType ??
+                    GameManager.allRegisteredGameTypes[0]
+                ],
+                imgUrl.includes("back")
+              );
+
+              if (
+                !!this.props.currentGameType &&
+                GameManager.getModuleForType(this.props.currentGameType)
+                  .shouldRotateCard
+              ) {
+                shouldRotate = GameManager.getModuleForType(
+                  this.props.currentGameType
+                ).shouldRotateCard!(cardDetails.jsonId, cardType, true);
+              }
+
+              return (
+                <img
+                  key={`full-hand-image-${cardDetails.jsonId}-${index}`}
+                  className={cx({
+                    "full-hand-img": true,
+                    "rotate-card": shouldRotate,
+                  })}
+                  src={imgUrl}
+                  onClick={() => {
+                    this.props.cardSelected(cardDetails.jsonId);
+                  }}
+                  onDoubleClick={this.cancelBubble}
+                ></img>
+              );
+            })}
+          </div>
+        </div>
+      </TopLayer>
     );
   }
 
-  private renderTouchList = () => {
-    return (
-      <div className="card-picker-select">
-        <FormControl className="select">
-          <InputLabel id="game-picker-label">Select Card...</InputLabel>
-          <Select
-            id="touch-cardstack-list"
-            onChange={(e) => {
-              if (!!e.target.value) {
-                const val: string = (e.target.value as string) || "";
-                this.handleSelected(e, this.props.cardsDataEntities[val]);
-              }
-            }}
-            variant="outlined"
-          >
-            {this.cardsDataInStack.map((cd, index) => {
-              return (
-                <MenuItem
-                  key={`select-item-card-${cd.code}-${index}`}
-                  value={cd.code}
-                >
-                  <div className="card-picker-row">
-                    <div>{cd.name}</div>
-                    <div
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        e.preventDefault();
-                        this.props.preview({ id: cd.code });
-                      }}
-                      className="mobile-only"
-                    >
-                      <InfoOutlinedIcon />
-                    </div>
-                  </div>
-                </MenuItem>
-              );
-            })}
-          </Select>
-        </FormControl>
-      </div>
-    );
+  private handleReset = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    this.setState({ currentSearchString: "" });
   };
 
-  private renderAutocomplete = () => {
-    return (
-      <Autocomplete
-        id="cardstack-card-selector-combobox"
-        options={this.cardsDataInStack}
-        getOptionLabel={(option) => option.name || "Unknown Card Name"}
-        renderOption={(props, option) => (
-          <li {...props} key={uuidv4()}>
-            {option.name || "Unknown Card Name"}
-          </li>
-        )}
-        style={{ width: 300 }}
-        onChange={this.handleSelected}
-        onHighlightChange={this.handleHighlightChange}
-        renderInput={(params) => (
-          <TextField {...params} label="Find Card..." variant="outlined" />
-        )}
-      />
-    );
-  };
-
-  private handleHighlightChange = (
-    _event: any,
-    option: CardData | null,
-    reason: AutocompleteHighlightChangeReason
+  private handleSearchTermChange = (
+    event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    if (!option) {
-      this.props.clearPreview();
-    } else {
-      this.props.preview({ id: option.code });
-    }
-  };
-
-  private handleSelected = (_event: any, value: CardData | null) => {
-    this.props.clearPreview();
-    if (!!value && !!this.props.cardSelected) {
-      this.props.cardSelected(value.code);
-    }
+    this.setState({ currentSearchString: event.target.value });
   };
 
   private cancelBubble = (event: React.SyntheticEvent) => {

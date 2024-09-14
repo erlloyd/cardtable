@@ -11,6 +11,10 @@
   position: absolute;
   padding: 10px;
   border-radius: 1rem;
+  &.blur {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
   &.no-content {
     border-radius: 0;
     padding: 0px;

@@ -689,17 +689,6 @@ const renderDrawActionsSubMenu = (
       Find Card
     </button>,
     <button
-      key={"Select-cards-button"}
-      onClick={() => {
-        if (props.selectedCardStacks.length === 1) {
-          props.showCardSelector(props.selectedCardStacks[0], true);
-          setVisibleMenus([]);
-        }
-      }}
-    >
-      Select Card
-    </button>,
-    <button
       key={"draw-one-faceup-button"}
       onClick={() => {
         if (props.selectedCardStacks.length === 1) {

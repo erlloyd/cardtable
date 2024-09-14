@@ -7,9 +7,12 @@ import {
 } from "./features/game/game.slice";
 
 import { RootState } from "./store/rootReducer";
+import { getActiveGameType } from "./features/game/game.selectors";
+import { GameType } from "./game-modules/GameType";
 
 const mapStateToProps = (state: RootState) => {
   return {
+    currentGameType: getActiveGameType(state) ?? GameType.MarvelChampions,
     cardsDataEntities: getCardsDataEntities(state),
   };
 };

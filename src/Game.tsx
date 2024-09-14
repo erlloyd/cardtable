@@ -1239,17 +1239,17 @@ class Game extends Component<IProps, IState> {
     };
 
     return !!this.state.cardStackForSearching ? (
-      <TopLayer position={pos} completed={this.clearCardSearch}>
-        <CardStackCardSelectorContainer
-          touchBased={this.state.cardSearchTouchBased}
-          card={this.state.cardStackForSearching}
-          cardSelected={this.handleCardSelectedFromCardStack(
-            this.state.cardStackForSearching.id,
-            pos
-          )}
-        />
-      </TopLayer>
-    ) : null;
+      <CardStackCardSelectorContainer
+        touchBased={this.state.cardSearchTouchBased}
+        card={this.state.cardStackForSearching}
+        cardSelected={this.handleCardSelectedFromCardStack(
+          this.state.cardStackForSearching.id,
+          pos
+        )}
+        completed={this.clearCardSearch}
+      />
+    ) : // </TopLayer>
+    null;
   };
 
   private renderPeerConnector = () => {

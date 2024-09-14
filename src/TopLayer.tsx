@@ -10,6 +10,7 @@ interface IProps {
   noPadding?: boolean;
   fullHeight?: boolean;
   fullWidth?: boolean;
+  blurBackground?: boolean;
   position: Vector2d;
   completed: () => void;
   children?: React.ReactNode;
@@ -67,8 +68,9 @@ const TopLayer = (props: IProps) => {
       <div
         className={`top-layer-content-wrapper 
         ${(!props.children || props.noPadding) && "no-content"} 
-        ${props.fullHeight && "full-height"} 
-        ${props.fullWidth && "full-width"}
+        ${!!props.fullHeight && "full-height"} 
+        ${!!props.fullWidth && "full-width"} 
+        ${!!props.blurBackground && "blur"}
         `}
         style={containerStyle}
         onContextMenu={preventDefault}

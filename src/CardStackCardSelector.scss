@@ -1,26 +1,37 @@
 @import "./mixins/devices";
 
-.card-picker-select {
-  .select {
-    width: 20%;
-    min-width: 200px;
+.card-selector-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  .text-field-wrapper {
+    margin-right: -100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    .text-field-background {
+      padding: 0px;
+      margin-right: 5px;
+      background-color: white;
+      border-radius: 5px;
+    }
+  }
+  .card-images-selector {
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    align-items: center;
   }
 }
 
-.card-picker-row {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  .mobile-only {
-    visibility: hidden;
-    @include for-touch-device {
-      visibility: visible;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-  }
+.full-hand-img {
+  border-radius: 15px;
+  height: 300px;
+  max-height: 50vh;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
