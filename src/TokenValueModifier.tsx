@@ -1,17 +1,12 @@
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 import * as React from "react";
 import { Component } from "react";
-import { CounterTokenType } from "./constants/card-constants";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
 
 interface IProps {
   id: string;
-  tokenType: CounterTokenType;
-  updated: (payload: {
-    id: string;
-    tokenType: CounterTokenType;
-    value: number;
-  }) => void;
+  tokenType: string;
+  updated: (payload: { id: string; tokenType: string; value: number }) => void;
 }
 
 class TokenValueModifier extends Component<IProps> {

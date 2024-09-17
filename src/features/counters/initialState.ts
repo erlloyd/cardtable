@@ -1,4 +1,4 @@
-import { Vector2d } from "konva/lib/types";
+import { IRect, Vector2d } from "konva/lib/types";
 import { PlayerColor } from "../../constants/app-constants";
 import { loadState } from "../../store/localStorage";
 import JSONCrush from "jsoncrush";
@@ -15,6 +15,7 @@ export interface IFlippableToken {
   faceup: boolean;
   imgUrl: string;
   backImgUrl?: string;
+  crop?: IRect;
   controlledBy: string | null;
 }
 

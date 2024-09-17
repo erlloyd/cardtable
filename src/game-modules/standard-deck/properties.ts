@@ -16,11 +16,8 @@ export const properties: GameProperties = {
     stunned: null,
     confused: null,
     tough: null,
-    damage: null,
-    threat: null,
-    generic: null,
-    acceleration: null,
   },
+  counterTokens: [],
   iconCounters: [],
   defaultAttachLocation: CardAttachLocation.UpAndRight,
 };

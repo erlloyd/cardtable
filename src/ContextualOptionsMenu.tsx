@@ -6,12 +6,12 @@ import Tooltip from "@mui/material/Tooltip";
 import { Vector2d } from "konva/lib/types";
 import { ConfirmOptions, useConfirm } from "material-ui-confirm";
 import { useState } from "react";
-import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
+import { StatusTokenType } from "./constants/card-constants";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
 import { ICardData } from "./features/cards-data/initialState";
 import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
 import { ICardStack } from "./features/cards/initialState";
-import { NumericTokenInfo, TokenInfo } from "./game-modules/GameModule";
+import { TokenInfo } from "./game-modules/GameModule";
 import GameManager from "./game-modules/GameModuleManager";
 import { GameType } from "./game-modules/GameType";
 import { anyCardStackHasStatus, getCardType } from "./utilities/card-utils";
@@ -46,7 +46,7 @@ interface IProps {
   }) => void;
   adjustCounterToken: (payload: {
     id?: string;
-    tokenType: CounterTokenType;
+    tokenType: string;
     delta?: number;
     value?: number;
   }) => void;
@@ -121,18 +121,19 @@ const ContextualOptionsMenu = (props: IProps) => {
     ).properties;
 
     let currentTokenProperties = defaultProperties.tokens;
+    let currentCounterTokenProperties = defaultProperties.counterTokens;
     if (
       !!GameManager.getModuleForType(props.currentGameType)
         .getCustomTokenInfoForCard &&
       props.selectedCardStacks.length > 0
     ) {
-      currentTokenProperties =
+      currentCounterTokenProperties =
         GameManager.getModuleForType(props.currentGameType)
           .getCustomTokenInfoForCard!!(
           props.selectedCardStacks[0],
           getCardType(props.selectedCardStacks[0], props.cardData),
-          currentTokenProperties
-        ) ?? currentTokenProperties;
+          currentCounterTokenProperties
+        ) ?? currentCounterTokenProperties;
     }
 
     hasMods =
@@ -142,11 +143,7 @@ const ContextualOptionsMenu = (props: IProps) => {
       !!currentTokenProperties.stunned ||
       !!currentTokenProperties.confused ||
       !!currentTokenProperties.tough;
-    hasCounterTokens =
-      !!currentTokenProperties.damage ||
-      !!currentTokenProperties.threat ||
-      !!currentTokenProperties.generic ||
-      !!currentTokenProperties.acceleration;
+    hasCounterTokens = currentCounterTokenProperties.length > 0;
   }
 
   return (
@@ -348,25 +345,8 @@ const renderStatusTokenActionsSubMenu = (props: IProps, ypos: number) => {
   const defaultTokens = GamePropertiesMap[props.currentGameType].tokens;
   let tokenInfo = defaultTokens;
 
-  if (
-    !!GameManager.getModuleForType(props.currentGameType)
-      .getCustomTokenInfoForCard &&
-    props.selectedCardStacks.length > 0
-  ) {
-    tokenInfo =
-      GameManager.getModuleForType(props.currentGameType)
-        .getCustomTokenInfoForCard!!(
-        props.selectedCardStacks[0],
-        getCardType(props.selectedCardStacks[0], props.cardData),
-        defaultTokens
-      ) ?? defaultTokens;
-  }
-
   const buttons = Object.values(tokenInfo)
-    .filter(
-      (tokenInfo): tokenInfo is TokenInfo =>
-        !!tokenInfo && !(tokenInfo as NumericTokenInfo).isNumeric
-    )
+    .filter((tokenInfo): tokenInfo is TokenInfo => !!tokenInfo)
     .reduce((elements, tokenInfo) => {
       const action = () => {
         props.toggleToken({
@@ -431,7 +411,7 @@ const renderModifierTokenActionsSubMenu = (props: IProps, ypos: number) => {
     return null;
   }
 
-  const defaultTokens = GamePropertiesMap[props.currentGameType].tokens;
+  const defaultTokens = GamePropertiesMap[props.currentGameType].counterTokens;
   let tokenInfo = defaultTokens;
 
   if (
@@ -448,11 +428,8 @@ const renderModifierTokenActionsSubMenu = (props: IProps, ypos: number) => {
       ) ?? defaultTokens;
   }
 
-  let buttons = Object.values(tokenInfo)
-    .filter(
-      (tokenInfo): tokenInfo is NumericTokenInfo =>
-        !!tokenInfo && (tokenInfo as NumericTokenInfo).isNumeric
-    )
+  let buttons = tokenInfo
+    .filter((tokenInfo) => !!tokenInfo)
     .flatMap((tokenInfo) => {
       const addTokenInfo = {
         ...tokenInfo,
@@ -467,7 +444,7 @@ const renderModifierTokenActionsSubMenu = (props: IProps, ypos: number) => {
     .map((tokenInfo) => {
       const action = () => {
         props.adjustCounterToken({
-          tokenType: tokenInfo.counterTokenType,
+          tokenType: tokenInfo.type,
           delta: tokenInfo.touchMenuLetter?.indexOf("+") !== -1 ? 1 : -1,
         });
       };

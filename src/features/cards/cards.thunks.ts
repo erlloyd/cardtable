@@ -8,14 +8,29 @@ import { GamePropertiesMap } from "../../constants/game-type-properties-mapping"
 import { RootState } from "../../store/rootReducer";
 import { cacheImages, getImgUrlsFromJsonId } from "../../utilities/card-utils";
 // import { convertMarvelTxtToDeckInfo } from "../../utilities/marvel-txt-converter";
+import log from "loglevel";
+import {
+  cardConstants,
+  CardSizeType,
+  stackShuffleAnimationMS,
+} from "../../constants/card-constants";
+import {
+  ILoadedDeck,
+  ILoadedDeckMetadata,
+} from "../../game-modules/GameModule";
+import GameManager from "../../game-modules/GameModuleManager";
+import { GameType } from "../../game-modules/GameType";
 import { getCardsDataEntities } from "../cards-data/cards-data.selectors";
+import { createNewTokens } from "../counters/counters.slice";
 import {
   getActiveGameType,
   getGame,
   getRecentlyLoadedDecksForGameType,
   getSnapCardsToGrid,
 } from "../game/game.selectors";
+import { storeRecentlyLoadedDeck } from "../game/game.slice";
 import { IRecentlyLoadedDeck, OnlineDeckDataMap } from "../game/initialState";
+import { sendNotification } from "../notifications/notifications.slice";
 import {
   addCardStackToPlayerBoardWithId,
   AddCardStackToPlayerBoardWithIdPayload,
@@ -46,22 +61,6 @@ import {
   ICardStack,
   IPlayerBoardSlotLocation,
 } from "./initialState";
-import log from "loglevel";
-import { sendNotification } from "../notifications/notifications.slice";
-import {
-  GameModule,
-  ILoadedDeck,
-  ILoadedDeckMetadata,
-} from "../../game-modules/GameModule";
-import GameManager from "../../game-modules/GameModuleManager";
-import { GameType } from "../../game-modules/GameType";
-import {
-  cardConstants,
-  CardSizeType,
-  CounterTokenType,
-  stackShuffleAnimationMS,
-} from "../../constants/card-constants";
-import { storeRecentlyLoadedDeck } from "../game/game.slice";
 
 interface AddCardStackPayload {
   cardJsonIds: string[];
@@ -359,35 +358,20 @@ export const drawCardsOutOfCardStack =
 export const adjustCounterToken =
   (payload: {
     id?: string;
-    tokenType: CounterTokenType;
+    tokenType: string;
     delta?: number;
     value?: number;
   }): ThunkAction<void, RootState, unknown, Action<string>> =>
   (dispatch, getState) => {
     const currentGameType = getActiveGameType(getState());
     let isSingle = false;
-    switch (payload.tokenType) {
-      case CounterTokenType.Damage:
-        isSingle = !!GameManager.getModuleForType(
-          currentGameType ?? GameType.MarvelChampions
-        ).properties.tokens.damage?.singleOnly;
-        break;
-      case CounterTokenType.Threat:
-        isSingle = !!GameManager.getModuleForType(
-          currentGameType ?? GameType.MarvelChampions
-        ).properties.tokens.threat?.singleOnly;
-        break;
-      case CounterTokenType.Generic:
-        isSingle = !!GameManager.getModuleForType(
-          currentGameType ?? GameType.MarvelChampions
-        ).properties.tokens.generic?.singleOnly;
-        break;
-      case CounterTokenType.Acceleration:
-        isSingle = !!GameManager.getModuleForType(
-          currentGameType ?? GameType.MarvelChampions
-        ).properties.tokens.acceleration?.singleOnly;
-        break;
-    }
+
+    // get the token info
+    const info = GameManager.getModuleForType(
+      currentGameType ?? GameType.MarvelChampions
+    ).properties.counterTokens.find((ct) => ct.type === payload.tokenType);
+
+    isSingle = !!info && !!info.singleOnly;
 
     dispatch(
       adjustCounterTokenWithMax({ ...payload, max: isSingle ? 1 : undefined })
@@ -762,6 +746,16 @@ export const fetchDecklistById = createAsyncThunk(
     const uniqueUrls = Array.from(new Set(imgUrls));
 
     cacheImages(uniqueUrls);
+
+    // Create any tokens
+    if (metadata?.relatedTokens && metadata?.relatedTokens?.length > 0) {
+      // go through the tokens and set the x and y
+      metadata.relatedTokens.forEach((t, index) => {
+        t.position.x = payload.position.x - 200;
+        t.position.y = payload.position.y - 75 * index;
+      });
+      thunkApi.dispatch(createNewTokens(metadata.relatedTokens));
+    }
 
     return returnCards;
   }

@@ -1,28 +1,26 @@
 import axios, { AxiosResponse } from "axios";
+import { Vector2d } from "konva/lib/types";
 import log from "loglevel";
-import { CardSizeType, CounterTokenType } from "../../constants/card-constants";
+import { CardSizeType } from "../../constants/card-constants";
 import { CardData } from "../../external-api/common-card-data";
 import { IEncounterEntity } from "../../features/cards-data/cards-data.selectors";
 import { ICardData, ISetData } from "../../features/cards-data/initialState";
+import { ICardSlot, ICardStack } from "../../features/cards/initialState";
 import { RootState } from "../../store/rootReducer";
 import {
+  CounterTokenInfo,
   GameModule,
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
   ILoadedDeckMetadata,
   IPackMetadata,
-  NumericTokenInfo,
-  TokensInfo,
 } from "../GameModule";
 import { GameType } from "../GameType";
-import { packList as ebrPackList } from "./generated/setList_earthborne-rangers";
-import { properties } from "./properties";
 import setList from "./external/sets/sets.json";
-import { ICardSlot, ICardStack } from "../../features/cards/initialState";
-import { GamePropertiesMap } from "../../constants/game-type-properties-mapping";
+import { packList as ebrPackList } from "./generated/setList_earthborne-rangers";
 import { getEBRCards } from "./getEBRCards";
-import { Vector2d } from "konva/lib/types";
+import { properties } from "./properties";
 
 interface EBRCard {
   name: string;
@@ -177,46 +175,43 @@ export default class EarthborneRangersGameModule extends GameModule {
   getCustomTokenInfoForCard?(
     _card: ICardStack,
     cardType: string,
-    defaultTokenInfo: TokensInfo
-  ): TokensInfo | null {
+    defaultTokens: CounterTokenInfo[]
+  ): CounterTokenInfo[] | null {
     if (cardType === "aspect") {
-      return {
-        ...defaultTokenInfo,
-        damage: {
-          ...defaultTokenInfo.damage,
+      return [
+        {
+          type: defaultTokens[0].type,
           imagePath:
             "/images/from_modules/earthborne-rangers/awareness_token.png",
           overridePosition: { x: 40, y: 50 },
           menuText: "Set Awareness",
           touchMenuLetter: "Awr",
-        } as NumericTokenInfo,
-        threat: {
-          ...defaultTokenInfo.threat,
+        },
+        {
+          type: defaultTokens[1].type,
           imagePath: "/images/from_modules/earthborne-rangers/spirit_token.png",
           overridePosition: { x: 115, y: 50 },
           menuText: "Set Spirit",
           touchMenuLetter: "Spr",
-        } as NumericTokenInfo,
-        generic: {
-          ...defaultTokenInfo.generic,
+        },
+        {
+          type: defaultTokens[2].type,
           imagePath:
             "/images/from_modules/earthborne-rangers/fitness_token.png",
           overridePosition: { x: 40, y: 160 },
           menuText: "Set Fitness",
           touchMenuLetter: "Fit",
-        } as NumericTokenInfo,
-        acceleration: {
-          ...defaultTokenInfo.acceleration,
+        },
+        {
+          type: defaultTokens[3].type,
           imagePath: "/images/from_modules/earthborne-rangers/focus_token.png",
           overridePosition: { x: 115, y: 160 },
           menuText: "Set Focus",
           touchMenuLetter: "Foc",
-          counterTokenType: CounterTokenType.Acceleration,
-          isNumeric: true,
-        } as NumericTokenInfo,
-      };
+        },
+      ];
     }
-    return defaultTokenInfo;
+    return defaultTokens;
   }
 
   getTableCardSlots?(numPlaymats: number): ICardSlot[] | undefined {

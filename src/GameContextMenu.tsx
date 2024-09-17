@@ -1,23 +1,23 @@
-import { ConfirmOptions, useConfirm } from "material-ui-confirm";
-import ContextMenu, { ContextMenuItem } from "./ContextMenu";
-import { ICardStack } from "./features/cards/initialState";
 import { TextField } from "@mui/material";
-import { IGameState, IRecentlyLoadedDeck } from "./features/game/initialState";
+import { Vector2d } from "konva/lib/types";
+import { ConfirmOptions } from "material-ui-confirm";
 import {
   PlayerColor,
   myPeerRef,
   possibleColors,
   useWebRTCLocalStorage,
 } from "./constants/app-constants";
-import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
+import { StatusTokenType } from "./constants/card-constants";
 import { GamePropertiesMap } from "./constants/game-type-properties-mapping";
-import GameManager from "./game-modules/GameModuleManager";
-import { anyCardStackHasStatus, getCardType } from "./utilities/card-utils";
-import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
-import { GameType } from "./game-modules/GameType";
+import ContextMenu, { ContextMenuItem } from "./ContextMenu";
 import { ICardData } from "./features/cards-data/initialState";
-import { Vector2d } from "konva/lib/types";
+import { DrawCardsOutOfCardStackPayload } from "./features/cards/cards.thunks";
+import { ICardStack } from "./features/cards/initialState";
 import { ICounter } from "./features/counters/initialState";
+import { IGameState, IRecentlyLoadedDeck } from "./features/game/initialState";
+import GameManager from "./game-modules/GameModuleManager";
+import { GameType } from "./game-modules/GameType";
+import { anyCardStackHasStatus, getCardType } from "./utilities/card-utils";
 import { copyToClipboard, generateRemoteGameUrl } from "./utilities/text-utils";
 
 interface IProps {
@@ -35,10 +35,7 @@ interface IProps {
   peerId: string;
   recentlyLoadedDecks: IRecentlyLoadedDeck[];
 
-  handleCounterTokenModification: (
-    card: ICardStack,
-    type: CounterTokenType
-  ) => void;
+  handleCounterTokenModification: (card: ICardStack, type: string) => void;
   handleImportDeck: () => void;
   clearContextMenu: () => void;
   handleFindSpecificCard: (card: ICardStack) => void;
@@ -63,12 +60,7 @@ interface IProps {
     tokenType: StatusTokenType;
     value?: boolean;
   }) => void;
-  adjustCounterToken: (payload: {
-    id?: string;
-    tokenType: CounterTokenType;
-    delta?: number;
-    value?: number;
-  }) => void;
+  clearCardTokens: (id?: string) => void;
   adjustModifier: (payload: {
     id?: string;
     modifierId: string;
@@ -350,18 +342,22 @@ const createCardContextMenuItems = (props: IProps): ContextMenuItem[] => {
 
   let tokenInfoForGameType = defaultTokenInfoForGameType;
 
+  const defaultCounterTokenInfoForGameType =
+    GamePropertiesMap[props.currentGameType].counterTokens;
+  let counterTokenInfoForGameType = defaultCounterTokenInfoForGameType;
+
   if (
     !!GameManager.getModuleForType(props.currentGameType)
       .getCustomTokenInfoForCard &&
     mySelectedCards.length > 0
   ) {
-    tokenInfoForGameType =
+    counterTokenInfoForGameType =
       GameManager.getModuleForType(props.currentGameType)
         .getCustomTokenInfoForCard!!(
         mySelectedCards[0],
         getCardType(mySelectedCards[0], props.cardsData),
-        defaultTokenInfoForGameType
-      ) ?? defaultTokenInfoForGameType;
+        defaultCounterTokenInfoForGameType
+      ) ?? defaultCounterTokenInfoForGameType;
   }
 
   if (!!tokenInfoForGameType.stunned) {
@@ -496,79 +492,21 @@ const createCardContextMenuItems = (props: IProps): ContextMenuItem[] => {
     }
   }
 
-  if (!!tokenInfoForGameType.damage) {
+  counterTokenInfoForGameType.forEach((cti) => {
     menuItems.push({
-      label: tokenInfoForGameType.damage.menuText,
+      label: cti.menuText,
       action: () => {
         if (card) {
-          props.handleCounterTokenModification(card, CounterTokenType.Damage);
+          props.handleCounterTokenModification(card, cti.type);
         }
       },
     });
-  }
-
-  if (!!tokenInfoForGameType.threat) {
-    menuItems.push({
-      label: tokenInfoForGameType.threat.menuText,
-      action: () => {
-        if (card) {
-          props.handleCounterTokenModification(card, CounterTokenType.Threat);
-        }
-      },
-    });
-  }
-
-  if (!!tokenInfoForGameType.generic) {
-    menuItems.push({
-      label: tokenInfoForGameType.generic.menuText,
-      action: () => {
-        if (card) {
-          props.handleCounterTokenModification(card, CounterTokenType.Generic);
-        }
-      },
-    });
-  }
-
-  if (!!tokenInfoForGameType.acceleration) {
-    menuItems.push({
-      label: tokenInfoForGameType.acceleration.menuText,
-      action: () => {
-        if (card) {
-          props.handleCounterTokenModification(
-            card,
-            CounterTokenType.Acceleration
-          );
-        }
-      },
-    });
-  }
+  });
 
   menuItems.push({
     label: "Remove All Tokens",
     action: () => {
-      props.adjustCounterToken({
-        id: card?.id || "",
-        tokenType: CounterTokenType.Damage,
-        value: 0,
-      });
-
-      props.adjustCounterToken({
-        id: card?.id || "",
-        tokenType: CounterTokenType.Threat,
-        value: 0,
-      });
-
-      props.adjustCounterToken({
-        id: card?.id || "",
-        tokenType: CounterTokenType.Generic,
-        value: 0,
-      });
-
-      props.adjustCounterToken({
-        id: card?.id || "",
-        tokenType: CounterTokenType.Acceleration,
-        value: 0,
-      });
+      props.clearCardTokens();
     },
   });
 

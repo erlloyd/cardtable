@@ -25,7 +25,7 @@ export const getArkhamCards = (
     position: payload.position,
     heroId: uuidv4(),
     data: fixSlotsCardCodes(
-      replaceDuplicateCards(response.data, heroCardsData)
+      replaceDuplicateCardsAndBasicWeakness(response.data, heroCardsData)
     ),
     dataId: uuidv4(),
     extraHeroCards: [],
@@ -56,12 +56,19 @@ const fixSlotsCardCodes = (data: ArkhamDeckData): ArkhamDeckData => {
   return { ...data, slots: fixedSlots };
 };
 
-const replaceDuplicateCards = (
+const replaceDuplicateCardsAndBasicWeakness = (
   data: ArkhamDeckData,
   heroData: ICardData
 ): ArkhamDeckData => {
   const newSlots: { [key: string]: number } = {};
+
+  let needsBasicWeakness: boolean = false;
+
   Object.keys(data.slots).forEach((jsonId) => {
+    if (jsonId === "01000") {
+      needsBasicWeakness = true;
+      return;
+    }
     const cardData = heroData[jsonId];
     if (cardData && cardData.duplicate_of) {
       // Go all the way down the `duplicate_of` chain
@@ -74,6 +81,17 @@ const replaceDuplicateCards = (
       newSlots[jsonId] = data.slots[jsonId];
     }
   });
+
+  // If we need a basic weakness, go get one
+  if (needsBasicWeakness) {
+    const basicWeaknesses = Object.values(heroData).filter(
+      (cd) => cd.subTypeCode === "basicweakness"
+    );
+    const randomBasicWeakness =
+      basicWeaknesses[Math.floor(Math.random() * basicWeaknesses.length)];
+    newSlots[randomBasicWeakness.code] = 1;
+  }
+
   return {
     name: data.name,
     investigator_code: data.investigator_code,

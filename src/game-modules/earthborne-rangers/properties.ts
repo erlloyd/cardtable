@@ -1,8 +1,5 @@
 import { scrapeApi } from "../../constants/api-constants";
-import {
-  CardAttachLocation,
-  CounterTokenType,
-} from "../../constants/card-constants";
+import { CardAttachLocation } from "../../constants/card-constants";
 import { GameProperties } from "../GameModule";
 
 export const properties: GameProperties = {
@@ -59,29 +56,27 @@ export const properties: GameProperties = {
     stunned: null,
     confused: null,
     tough: null,
-    damage: {
-      counterTokenType: CounterTokenType.Damage,
-      isNumeric: true,
+  },
+  counterTokens: [
+    {
+      type: "progress",
       touchMenuLetter: "Prg",
       menuText: "Set Progress",
       imagePath: "/images/from_modules/earthborne-rangers/progress_token.png",
     },
-    threat: {
-      counterTokenType: CounterTokenType.Threat,
-      isNumeric: true,
+    {
+      type: "harm",
       touchMenuLetter: "Harm",
       menuText: "Set Harm",
       imagePath: "/images/from_modules/earthborne-rangers/harm_token.png",
     },
-    generic: {
-      counterTokenType: CounterTokenType.Generic,
-      isNumeric: true,
+    {
+      type: "general",
       touchMenuLetter: "Gen",
       menuText: "Set General",
       imagePath: "/images/from_modules/earthborne-rangers/general_token.png",
     },
-    acceleration: null,
-  },
+  ],
   iconCounters: [],
   useAltCardArtByDefault: true,
   defaultAttachLocation: CardAttachLocation.UpAndRight,

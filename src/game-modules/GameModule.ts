@@ -1,10 +1,15 @@
+import { AxiosResponse } from "axios";
 import { Vector2d } from "konva/lib/types";
+import { PlayerColor } from "../constants/app-constants";
 import {
   CardAttachLocation,
-  CounterTokenType,
   StatusTokenType,
 } from "../constants/card-constants";
 import { CardData } from "../external-api/common-card-data";
+import {
+  ICardSetToLoad,
+  IEncounterEntity,
+} from "../features/cards-data/cards-data.selectors";
 import { ICardData, ISetData } from "../features/cards-data/initialState";
 import {
   ICardDetails,
@@ -12,17 +17,10 @@ import {
   ICardStack,
   IPlayerBoard,
 } from "../features/cards/initialState";
-import { AxiosResponse } from "axios";
-import { RootState } from "../store/rootReducer";
-import {
-  ICardSetToLoad,
-  IEncounterEntity,
-} from "../features/cards-data/cards-data.selectors";
-import { GameType } from "./GameType";
 import { ICounter, IFlippableToken } from "../features/counters/initialState";
-import { PlayerColor } from "../constants/app-constants";
-import { ContextMenuItem } from "../ContextMenu";
 import { ITokenBag } from "../features/token-bags/initialState";
+import { RootState } from "../store/rootReducer";
+import { GameType } from "./GameType";
 
 export type CardPackRemapping = { [key: string]: string };
 
@@ -41,6 +39,7 @@ export interface ILoadedDeck {
 
 export interface ILoadedDeckMetadata {
   displayName: string;
+  relatedTokens?: IFlippableToken[];
 }
 
 export interface IDeckData {
@@ -69,11 +68,6 @@ export interface TokenInfoBase {
   menuText: string;
   imagePath: string;
   overridePosition?: Vector2d;
-}
-export interface NumericTokenInfo extends TokenInfoBase {
-  isNumeric: boolean;
-  counterTokenType: CounterTokenType;
-  singleOnly?: boolean;
 }
 
 export interface TokenInfo extends TokenInfoBase {
@@ -123,12 +117,12 @@ export interface TokensInfo {
   stunned: TokenInfo | null;
   confused: TokenInfo | null;
   tough: TokenInfo | null;
-  damage: NumericTokenInfo | null;
-  threat: NumericTokenInfo | null;
-  generic: NumericTokenInfo | null;
-  acceleration: NumericTokenInfo | null;
 }
 
+export interface CounterTokenInfo extends TokenInfoBase {
+  type: string;
+  singleOnly?: boolean;
+}
 export interface IPlaymatOption {
   displayName: string;
   imgUrl: string;
@@ -157,6 +151,7 @@ export interface GameProperties {
   modifiers: ModifierInfo[];
   roles?: RolesInfo;
   tokens: TokensInfo;
+  counterTokens: CounterTokenInfo[];
   iconCounters?: IconCounter[];
   textCounters?: TextCounter[];
   useAltCardArtByDefault?: boolean;
@@ -317,8 +312,8 @@ export abstract class GameModule {
   getCustomTokenInfoForCard?(
     card: ICardStack,
     cardType: string,
-    defaultTokenInfo: TokensInfo
-  ): TokensInfo | null;
+    defaultTokens: CounterTokenInfo[]
+  ): CounterTokenInfo[] | null;
   getTableCardSlots?(numPlaymats: number): ICardSlot[] | undefined;
   async loadDecklistFromAPI?(id: number): Promise<any>;
 }

@@ -1,21 +1,21 @@
 import { Component } from "react";
 import "./OptionsMenu.scss";
 //Icons
+import GridOnIcon from "@material-ui/icons/GridOn";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import OpenWithIcon from "@material-ui/icons/OpenWith";
 import SelectAllIcon from "@material-ui/icons/SelectAll";
-import GridOnIcon from "@material-ui/icons/GridOn";
 // import InfoIcon from "@material-ui/icons/Info";
-import UndoIcon from "@material-ui/icons/Undo";
-import RedoIcon from "@material-ui/icons/Redo";
 import HelpIcon from "@material-ui/icons/Help";
-import PanToolIcon from "@material-ui/icons/PanTool";
 import NotesIcon from "@material-ui/icons/Notes";
-import { GameType } from "./game-modules/GameType";
-import { CounterTokenType, StatusTokenType } from "./constants/card-constants";
-import { Vector2d } from "konva/lib/types";
-import cx from "classnames";
+import PanToolIcon from "@material-ui/icons/PanTool";
+import RedoIcon from "@material-ui/icons/Redo";
+import UndoIcon from "@material-ui/icons/Undo";
 import Tooltip from "@mui/material/Tooltip";
+import cx from "classnames";
+import { Vector2d } from "konva/lib/types";
+import { StatusTokenType } from "./constants/card-constants";
+import { GameType } from "./game-modules/GameType";
 
 interface IProps {
   anyCardsSelected: boolean;
@@ -36,12 +36,6 @@ interface IProps {
     value?: boolean;
   }) => void;
   shuffleStack: (id?: string) => void;
-  adjustCounterToken: (payload: {
-    id?: string;
-    tokenType: CounterTokenType;
-    delta?: number;
-    value?: number;
-  }) => void;
   showRadialMenuAtPosition: (payload: Vector2d) => void;
   showContextMenuAtPosition: (payload: Vector2d) => void;
   undo: () => void;

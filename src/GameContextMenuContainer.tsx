@@ -1,6 +1,36 @@
 import { connect } from "react-redux";
-import GameContextMenu from "./GameContextMenu";
-import { RootState } from "./store/rootReducer";
+import { ActionCreators } from "redux-undo";
+import { removeAllArrows } from "./features/arrows/arrows.slice";
+import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
+import {
+  parseCsvCustomCards,
+  removeCustomCards,
+} from "./features/cards-data/cards-data.thunks";
+import {
+  addExtraIcon,
+  adjustModifier,
+  adjustStatusToken,
+  clearAllModifiers,
+  clearCardTokens,
+  deleteCardStack,
+  flipCards,
+  removeExtraIcon,
+  toggleToken,
+  toggleTopCardOfStackFaceup,
+} from "./features/cards/cards.slice";
+import {
+  addToPlayerHandWithRoleCheck,
+  createDeckFromJson,
+  drawCardsOutOfCardStack,
+  fetchRecentDeck,
+  shuffleStack,
+} from "./features/cards/cards.thunks";
+import {
+  removeCounter,
+  updateCounterColor,
+  updateCounterValue,
+} from "./features/counters/counters.slice";
+import { addNewCounter } from "./features/counters/counters.thunks";
 import {
   getActiveGameType,
   getGame,
@@ -18,50 +48,20 @@ import {
   showSpecificCardLoader,
 } from "./features/game/game.slice";
 import {
-  addExtraIcon,
-  adjustModifier,
-  adjustStatusToken,
-  clearAllModifiers,
-  deleteCardStack,
-  flipCards,
-  removeExtraIcon,
-  toggleToken,
-  toggleTopCardOfStackFaceup,
-} from "./features/cards/cards.slice";
-import {
-  addToPlayerHandWithRoleCheck,
-  adjustCounterToken,
-  createDeckFromJson,
-  drawCardsOutOfCardStack,
-  fetchRecentDeck,
-  shuffleStack,
-} from "./features/cards/cards.thunks";
-import { GameType } from "./game-modules/GameType";
-import { getCardsDataEntities } from "./features/cards-data/cards-data.selectors";
-import {
   generateGameStateSave,
   generateGameStateUrl,
   loadAndStoreChangelog,
   loadGameStateFromSave,
   saveDeckAsJson,
 } from "./features/game/game.thunks";
-import {
-  removeCounter,
-  updateCounterColor,
-  updateCounterValue,
-} from "./features/counters/counters.slice";
-import {
-  parseCsvCustomCards,
-  removeCustomCards,
-} from "./features/cards-data/cards-data.thunks";
-import { addNewPlaymatInColumn } from "./features/playmats/playmats.thunks";
-import { resetPlaymats } from "./features/playmats/playmats.slice";
 import { redo, undo } from "./features/game/undo-redo.thunks";
-import { resetApp } from "./store/global.actions";
-import { ActionCreators } from "redux-undo";
-import { addNewCounter } from "./features/counters/counters.thunks";
-import { removeAllArrows } from "./features/arrows/arrows.slice";
+import { resetPlaymats } from "./features/playmats/playmats.slice";
+import { addNewPlaymatInColumn } from "./features/playmats/playmats.thunks";
 import { spawnTokenBags } from "./features/token-bags/token-bags.thunks";
+import { GameType } from "./game-modules/GameType";
+import GameContextMenu from "./GameContextMenu";
+import { resetApp } from "./store/global.actions";
+import { RootState } from "./store/rootReducer";
 
 const mapStateToProps = (state: RootState) => {
   const currentGameType = getActiveGameType(state) ?? GameType.MarvelChampions;
@@ -86,7 +86,7 @@ const GameContextMenuContainer = connect(mapStateToProps, {
   saveDeckAsJson,
   adjustStatusToken,
   toggleToken,
-  adjustCounterToken,
+  clearCardTokens,
   adjustModifier,
   addExtraIcon,
   removeExtraIcon,

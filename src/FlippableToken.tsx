@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { Image as KonvaImage, Rect } from "react-konva";
-import { Vector2d } from "konva/lib/types";
+import { IRect, Vector2d } from "konva/lib/types";
 import { KonvaEventObject } from "konva/lib/Node";
 import { GameType } from "./game-modules/GameType";
 import { myPeerRef, PlayerColor } from "./constants/app-constants";
@@ -17,6 +17,7 @@ interface IProps {
   faceup: boolean;
   controlledBy: string | null;
   selectedColor: PlayerColor;
+  crop?: IRect;
   handleTokenEndMove: (payload: { id: string; pos: Vector2d }) => void;
   flipToken: (id: string) => void;
   handleTokenSelect: (payload: {
@@ -101,6 +102,7 @@ class FlippableToken extends Component<IProps, IState> {
         onDragStart={this.handleDragStart}
         onDragMove={this.handleDragMove}
         onDragEnd={this.handleDragEnd}
+        crop={this.props.crop}
         scale={{
           x:
             tokenConstants.FLIPPABLE_TOKEN_WIDTH /

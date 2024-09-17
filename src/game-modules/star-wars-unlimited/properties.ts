@@ -1,7 +1,4 @@
-import {
-  CardAttachLocation,
-  CounterTokenType,
-} from "../../constants/card-constants";
+import { CardAttachLocation } from "../../constants/card-constants";
 import { GameProperties } from "../GameModule";
 
 export const properties: GameProperties = {
@@ -34,39 +31,37 @@ export const properties: GameProperties = {
     stunned: null,
     confused: null,
     tough: null,
-    damage: {
-      counterTokenType: CounterTokenType.Damage,
-      isNumeric: true,
+  },
+  counterTokens: [
+    {
+      type: "damage",
       touchMenuLetter: "Dmg",
       menuText: "Set Damage",
       imagePath:
         "/images/from_modules/star-wars-unlimited/swu_damage_token.png",
     },
-    threat: {
-      counterTokenType: CounterTokenType.Threat,
-      isNumeric: true,
+    {
+      type: "shield",
       touchMenuLetter: "Shld",
       menuText: "Set Shields",
       imagePath:
         "/images/from_modules/star-wars-unlimited/swu_shield_token.png",
     },
-    generic: {
-      counterTokenType: CounterTokenType.Generic,
-      isNumeric: true,
+    {
+      type: "xp",
       touchMenuLetter: "XP",
       menuText: "Set XP",
       imagePath: "/images/from_modules/star-wars-unlimited/swu_xp_token.png",
     },
-    acceleration: {
-      counterTokenType: CounterTokenType.Acceleration,
-      isNumeric: true,
+    {
+      type: "important",
       singleOnly: true,
       touchMenuLetter: "Impt",
       menuText: "Set Important",
       imagePath:
         "/images/from_modules/star-wars-unlimited/swu_important_token.png",
     },
-  },
+  ],
   iconCounters: [],
   useAltCardArtByDefault: true,
   defaultAttachLocation: CardAttachLocation.Below,

@@ -121,12 +121,7 @@ const makeFakeCardStackFromJsonId = (
       confused: 0,
       tough: 0,
     },
-    counterTokens: {
-      damage: 0,
-      threat: 0,
-      generic: 0,
-      acceleration: 0,
-    },
+    counterTokensList: [],
     modifiers: {},
     extraIcons: [],
     sizeType: CardSizeType.Standard,

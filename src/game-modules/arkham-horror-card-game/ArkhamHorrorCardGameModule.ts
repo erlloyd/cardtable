@@ -22,6 +22,7 @@ import Packs from "../../external/arkhamdb-json-data/packs.json";
 import Cycles from "../../external/arkhamdb-json-data/cycles.json";
 import { ArkhamDeckData, getArkhamCards } from "./getArkhamCards";
 import { Vector2d } from "konva/lib/types";
+import { v4 } from "uuid";
 
 interface ArkhamCard {
   code: string;
@@ -31,6 +32,7 @@ interface ArkhamCard {
   pack_code: string;
   quantity: number;
   type_code: string;
+  subtype_code?: string;
   double_sided?: boolean;
   duplicate_of?: string;
   cycle_code?: string;
@@ -138,7 +140,7 @@ export default class ArkhamHorrorCardGameModule extends GameModule {
         doubleSided: !!cardArkhamFormat.double_sided,
         backLink: null,
         typeCode: cardArkhamFormat.type_code,
-        subTypeCode: null,
+        subTypeCode: cardArkhamFormat.subtype_code ?? null,
         extraInfo: {
           setCode: cardArkhamFormat.encounter_code ?? null,
           packCode: cardArkhamFormat.pack_code,
@@ -159,7 +161,24 @@ export default class ArkhamHorrorCardGameModule extends GameModule {
 
     const data = response.data as ArkhamDeckData;
     const displayName = `${data.name} (${payload.decklistId})`;
-    return [codes, returnCards, { displayName }];
+    return [
+      codes,
+      returnCards,
+      {
+        displayName,
+        relatedTokens: [
+          {
+            code: `${payload.decklistId}-investigator-token`,
+            controlledBy: null,
+            faceup: true,
+            imgUrl: `https://arkhamdb.com/bundles/cards/${returnCards.data.investigator_code}.png`,
+            id: v4(),
+            crop: { x: 0, y: 50, width: 200, height: 200 },
+            position: { x: 0, y: 0 },
+          },
+        ],
+      },
+    ];
   }
   getEncounterEntitiesFromState(
     setData: ISetData,

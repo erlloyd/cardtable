@@ -1,7 +1,6 @@
 import {
-  StatusTokenType,
-  CounterTokenType,
   CardAttachLocation,
+  StatusTokenType,
 } from "../../constants/card-constants";
 import { GameProperties } from "../GameModule";
 
@@ -80,29 +79,27 @@ export const properties: GameProperties = {
     },
     confused: null,
     tough: null,
-    damage: {
-      counterTokenType: CounterTokenType.Damage,
-      isNumeric: true,
+  },
+  counterTokens: [
+    {
+      type: "damage",
       touchMenuLetter: "Dmg",
       menuText: "Set Damage",
       imagePath: "/images/standard/damage_lotr.png",
     },
-    threat: {
-      counterTokenType: CounterTokenType.Threat,
-      isNumeric: true,
+    {
+      type: "progress",
       touchMenuLetter: "Prg",
       menuText: "Set Progress",
       imagePath: "/images/standard/progress.png",
     },
-    generic: {
-      counterTokenType: CounterTokenType.Generic,
-      isNumeric: true,
+    {
+      type: "resource",
       touchMenuLetter: "Res",
       menuText: "Set Resource Tokens",
       imagePath: "/images/standard/resource.png",
     },
-    acceleration: null,
-  },
+  ],
   defaultAttachLocation: CardAttachLocation.UpAndRight,
   additionalResourcesUris: [
     { url: "https://ringsdb.com/", display: "RingsDB" },

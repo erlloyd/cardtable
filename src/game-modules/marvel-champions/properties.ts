@@ -1,7 +1,6 @@
 import {
-  StatusTokenType,
-  CounterTokenType,
   CardAttachLocation,
+  StatusTokenType,
 } from "../../constants/card-constants";
 import { GameProperties } from "../GameModule";
 
@@ -68,35 +67,33 @@ export const properties: GameProperties = {
       menuRemoveText: "Remove Tough",
       imagePath: "/images/standard/tough.png",
     },
-    damage: {
-      counterTokenType: CounterTokenType.Damage,
-      isNumeric: true,
+  },
+  counterTokens: [
+    {
+      type: "damage",
       touchMenuLetter: "Dmg",
       menuText: "Set Damage",
       imagePath: "/images/standard/damage.png",
     },
-    threat: {
-      counterTokenType: CounterTokenType.Threat,
-      isNumeric: true,
+    {
+      type: "threat",
       touchMenuLetter: "Thr",
       menuText: "Set Threat",
       imagePath: "/images/standard/threat.png",
     },
-    generic: {
-      counterTokenType: CounterTokenType.Generic,
-      isNumeric: true,
+    {
+      type: "generic",
       touchMenuLetter: "Gen",
       menuText: "Set Generic Tokens",
       imagePath: "/images/standard/generic_counter.png",
     },
-    acceleration: {
-      counterTokenType: CounterTokenType.Acceleration,
-      isNumeric: true,
+    {
+      type: "acceleration",
       touchMenuLetter: "Accel",
       menuText: "Set Acceleration Tokens",
       imagePath: "/images/standard/acceleration.png",
     },
-  },
+  ],
   defaultAttachLocation: CardAttachLocation.DownAndLeft,
   additionalResourcesUris: [
     { url: "https://marvelcdb.com/", display: "MarvelCDB" },

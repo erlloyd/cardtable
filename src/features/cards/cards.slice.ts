@@ -1,5 +1,3 @@
-import isEqual from "lodash.isequal";
-import sortBy from "lodash.sortby";
 import {
   CaseReducer,
   createSlice,
@@ -8,14 +6,18 @@ import {
   PayloadAction,
 } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/lib/types";
+import isEqual from "lodash.isequal";
+import sortBy from "lodash.sortby";
+import log from "loglevel";
 import { v4 as uuidv4 } from "uuid";
+import { myPeerRef } from "../../constants/app-constants";
 import {
   CardAttachLocation,
   cardConstants,
   CardSizeType,
-  CounterTokenType,
   StatusTokenType,
 } from "../../constants/card-constants";
+import GameManager from "../../game-modules/GameModuleManager";
 import {
   receiveRemoteGameState,
   resetApp,
@@ -23,6 +25,13 @@ import {
   verifyRemoteGameState,
 } from "../../store/global.actions";
 import { getDistance } from "../../utilities/geo";
+import { makeBasicPlayerBoard } from "../../utilities/playerboard-utils";
+import { removePlayer } from "../game/game.slice";
+import {
+  addNewPlaymatInColumnWithId,
+  initBoardSlotsOnPlaymats,
+} from "../playmats/playmats.actions";
+import { resetPlaymats } from "../playmats/playmats.slice";
 import {
   addCardStackToPlayerBoardWithId,
   addCardStackWithSnapAndId,
@@ -38,7 +47,6 @@ import { fetchDecklistById } from "./cards.thunks";
 import {
   generateDefaultPlayerHands,
   ICardDetails,
-  ICardSlot,
   ICardsState,
   ICardStack,
   IDropTarget,
@@ -46,17 +54,6 @@ import {
   IPlayerBoard,
   IPlayerHandCard,
 } from "./initialState";
-import { myPeerRef } from "../../constants/app-constants";
-import log from "loglevel";
-import { makeFakeCardStackFromJsonId } from "../../utilities/card-utils";
-import { makeBasicPlayerBoard } from "../../utilities/playerboard-utils";
-import GameManager from "../../game-modules/GameModuleManager";
-import {
-  addNewPlaymatInColumnWithId,
-  initBoardSlotsOnPlaymats,
-} from "../playmats/playmats.actions";
-import { resetPlaymats } from "../playmats/playmats.slice";
-import { removePlayer } from "../game/game.slice";
 
 const CARD_DROP_TARGET_DISTANCE = 30;
 const CARD_ATTACH_TARGET_MIN_DISTANCE = 50;
@@ -105,12 +102,7 @@ const createNewEmptyCardStackWithId = (id: string): ICardStack => {
       confused: 0,
       tough: 0,
     },
-    counterTokens: {
-      damage: 0,
-      threat: 0,
-      generic: 0,
-      acceleration: 0,
-    },
+    counterTokensList: [],
     modifiers: {},
     extraIcons: [],
     sizeType: CardSizeType.Standard,
@@ -493,12 +485,7 @@ const clearCardTokensReducer: CaseReducer<
         confused: 0,
       };
 
-      card.counterTokens = {
-        damage: 0,
-        threat: 0,
-        generic: 0,
-        acceleration: 0,
-      };
+      card.counterTokensList = [];
 
       card.modifiers = {};
       card.extraIcons = [];
@@ -1169,7 +1156,7 @@ const adjustCounterTokenWithMaxReducer: CaseReducer<
   ICardsState,
   PayloadAction<{
     id?: string;
-    tokenType: CounterTokenType;
+    tokenType: string;
     delta?: number;
     value?: number;
     max?: number;
@@ -1187,28 +1174,37 @@ const adjustCounterTokenWithMaxReducer: CaseReducer<
   );
 
   cardsToToggle.forEach((c) => {
-    if (valueToUse !== undefined) {
-      c.counterTokens[action.payload.tokenType] = valueToUse;
-    } else if (action.payload.delta !== undefined) {
-      if (
-        c.counterTokens[action.payload.tokenType] === null ||
-        c.counterTokens[action.payload.tokenType] === undefined
-      ) {
-        c.counterTokens[action.payload.tokenType] = 0;
+    let newValue = valueToUse;
+    const existingToken = c.counterTokensList.find(
+      (ct) => ct.type === action.payload.tokenType
+    );
+
+    if (valueToUse === undefined && action.payload.delta !== undefined) {
+      if (!existingToken) {
+        newValue = 0;
+      } else {
+        newValue = existingToken.count;
       }
-      c.counterTokens[action.payload.tokenType] += action.payload.delta;
+
+      newValue += action.payload.delta;
 
       //Adjust if there's a max
-      if (
-        action.payload.max !== undefined &&
-        c.counterTokens[action.payload.tokenType] > action.payload.max
-      ) {
-        c.counterTokens[action.payload.tokenType] = action.payload.max;
+      if (action.payload.max !== undefined && newValue > action.payload.max) {
+        newValue = action.payload.max;
       }
     }
 
-    if (c.counterTokens[action.payload.tokenType] < 0) {
-      c.counterTokens[action.payload.tokenType] = 0;
+    if (newValue === undefined || newValue < 0) {
+      newValue = 0;
+    }
+
+    if (!!existingToken) {
+      existingToken.count = newValue;
+    } else {
+      c.counterTokensList.push({
+        type: action.payload.tokenType,
+        count: newValue,
+      });
     }
   });
 };
@@ -1806,12 +1802,7 @@ const cardsSlice = createSlice({
           confused: 0,
           tough: 0,
         },
-        counterTokens: {
-          damage: 0,
-          threat: 0,
-          generic: 0,
-          acceleration: 0,
-        },
+        counterTokensList: [],
         modifiers: {},
         extraIcons: [],
         sizeType,
@@ -1843,12 +1834,7 @@ const cardsSlice = createSlice({
           confused: 0,
           tough: 0,
         },
-        counterTokens: {
-          damage: 0,
-          threat: 0,
-          generic: 0,
-          acceleration: 0,
-        },
+        counterTokensList: [],
         modifiers: {},
         extraIcons: [],
         sizeType,
@@ -2161,12 +2147,7 @@ const handleLoadDeck = (
       confused: 0,
       tough: 0,
     },
-    counterTokens: {
-      damage: 0,
-      threat: 0,
-      generic: 0,
-      acceleration: 0,
-    },
+    counterTokensList: [],
     modifiers: {},
     extraIcons: [],
     sizeType: CardSizeType.Standard,
@@ -2200,12 +2181,7 @@ const handleLoadDeck = (
       confused: 0,
       tough: 0,
     },
-    counterTokens: {
-      damage: 0,
-      threat: 0,
-      generic: 0,
-      acceleration: 0,
-    },
+    counterTokensList: [],
     modifiers: {},
     extraIcons: [],
     sizeType: CardSizeType.Standard,
@@ -2231,12 +2207,7 @@ const handleLoadDeck = (
       confused: 0,
       tough: 0,
     },
-    counterTokens: {
-      damage: 0,
-      threat: 0,
-      generic: 0,
-      acceleration: 0,
-    },
+    counterTokensList: [],
     modifiers: {},
     extraIcons: [],
     sizeType: CardSizeType.Standard,
@@ -2262,12 +2233,7 @@ const handleLoadDeck = (
       confused: 0,
       tough: 0,
     },
-    counterTokens: {
-      damage: 0,
-      threat: 0,
-      generic: 0,
-      acceleration: 0,
-    },
+    counterTokensList: [],
     modifiers: {},
     extraIcons: [],
     sizeType: CardSizeType.Standard,

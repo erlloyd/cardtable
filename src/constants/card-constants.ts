@@ -73,13 +73,6 @@ export enum StatusTokenType {
   Tough = "tough",
 }
 
-export enum CounterTokenType {
-  Damage = "damage",
-  Threat = "threat",
-  Generic = "generic",
-  Acceleration = "acceleration",
-}
-
 export const stackShuffleAnimationMS = 200;
 export const stackShuffleAnimationS = stackShuffleAnimationMS / 1000;
 

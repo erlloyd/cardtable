@@ -1,7 +1,4 @@
-import {
-  CardAttachLocation,
-  CounterTokenType,
-} from "../../constants/card-constants";
+import { CardAttachLocation } from "../../constants/card-constants";
 import { GameProperties } from "../GameModule";
 
 export const properties: GameProperties = {
@@ -22,11 +19,8 @@ export const properties: GameProperties = {
     stunned: null,
     confused: null,
     tough: null,
-    damage: null,
-    threat: null,
-    generic: null,
-    acceleration: null,
   },
+  counterTokens: [],
   iconCounters: [],
   useAltCardArtByDefault: true,
   defaultAttachLocation: CardAttachLocation.UpAndRight,

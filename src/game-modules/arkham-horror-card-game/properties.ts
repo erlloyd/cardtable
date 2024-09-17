@@ -1,7 +1,6 @@
 import {
-  StatusTokenType,
-  CounterTokenType,
   CardAttachLocation,
+  StatusTokenType,
 } from "../../constants/card-constants";
 import { GameProperties } from "../GameModule";
 
@@ -67,35 +66,44 @@ export const properties: GameProperties = {
       menuRemoveText: "Remove Tough",
       imagePath: "/images/standard/tough.png",
     },
-    damage: {
-      counterTokenType: CounterTokenType.Damage,
-      isNumeric: true,
+  },
+  counterTokens: [
+    {
+      type: "damage",
       touchMenuLetter: "Dmg",
       menuText: "Set Damage",
-      imagePath: "/images/standard/damage.png",
+      imagePath:
+        "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/counter_damage.png",
     },
-    threat: {
-      counterTokenType: CounterTokenType.Threat,
-      isNumeric: true,
-      touchMenuLetter: "Thr",
-      menuText: "Set Threat",
-      imagePath: "/images/standard/threat.png",
+    {
+      type: "horror",
+      touchMenuLetter: "Hr",
+      menuText: "Set Horror",
+      imagePath:
+        "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/counter_horror.png",
     },
-    generic: {
-      counterTokenType: CounterTokenType.Generic,
-      isNumeric: true,
-      touchMenuLetter: "Gen",
-      menuText: "Set Generic Tokens",
-      imagePath: "/images/standard/generic_counter.png",
+    {
+      type: "resource",
+      touchMenuLetter: "Rsc",
+      menuText: "Set Resource Tokens",
+      imagePath:
+        "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/counter_resource.png",
     },
-    acceleration: {
-      counterTokenType: CounterTokenType.Acceleration,
-      isNumeric: true,
-      touchMenuLetter: "Accel",
-      menuText: "Set Acceleration Tokens",
-      imagePath: "/images/standard/acceleration.png",
+    {
+      type: "clue",
+      touchMenuLetter: "Clue",
+      menuText: "Set Clue Tokens",
+      imagePath:
+        "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/counter_clue.png",
     },
-  },
+    {
+      type: "doom",
+      touchMenuLetter: "Doom",
+      menuText: "Set Doom Tokens",
+      imagePath:
+        "https://ik.imagekit.io/cardtable/arkham_horror_card_game/tokens/counter_doom.png",
+    },
+  ],
   defaultAttachLocation: CardAttachLocation.DownAndLeft,
   additionalResourcesUris: [
     { url: "https://arkhamdb.com/", display: "ArkhamDB" },

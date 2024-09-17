@@ -1,12 +1,8 @@
-import { loadState } from "../../store/localStorage";
-import {
-  CardSizeType,
-  CounterTokenType,
-  StatusTokenType,
-} from "../../constants/card-constants";
 import JSONCrush from "jsoncrush";
 import { Vector2d } from "konva/lib/types";
+import { CardSizeType, StatusTokenType } from "../../constants/card-constants";
 import { GameType } from "../../game-modules/GameType";
+import { loadState } from "../../store/localStorage";
 
 export interface CardtableJSONDeck {
   gameTypeForDeck: GameType;
@@ -36,6 +32,11 @@ export interface IDropTarget {
   playerBoardSlot?: IPlayerBoardSlotLocation;
 }
 
+export interface ICounterTokenInfo {
+  type: string;
+  count: number;
+}
+
 export interface ICardStack {
   controlledBy: string;
   dragging: boolean;
@@ -51,9 +52,7 @@ export interface ICardStack {
   statusTokens: {
     [K in StatusTokenType]: number;
   };
-  counterTokens: {
-    [K in CounterTokenType]: number;
-  };
+  counterTokensList: ICounterTokenInfo[];
   modifiers: {
     [K: string]: number;
   };
@@ -218,6 +217,20 @@ if (!!localStorageState.cards) {
     // handle missing size type
     if (!c.sizeType) {
       c.sizeType = CardSizeType.Standard;
+    }
+
+    // handle old way of handling counter tokens
+    if ((c as any).counterTokens) {
+      c.counterTokensList = Object.entries((c as any).counterTokens).map(
+        ([k, v]) => ({
+          type: k,
+          count: v as number,
+        })
+      );
+
+      // TODO: Swap these when counter token list
+      //  is done
+      // delete (c as any).counterTokens;
     }
   });
 }

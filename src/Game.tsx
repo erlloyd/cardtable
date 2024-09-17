@@ -34,7 +34,9 @@ import PlayerHandContainer from "./PlayerHandContainer";
 import PlaymatGroupContainer from "./PlaymatGroupContainer";
 import RemoteUndoOverlayContainer from "./RemoteUndoOverlayContainer";
 import SpecificCardLoaderContainer from "./SpecificCardLoaderContainer";
+import TokenBagMenuContainer from "./TokenBagMenuContainer";
 import TokenBagsContainer from "./TokenBagsContainer";
+import TokenEditorContainer from "./TokenEditorContainer";
 import TokenValueModifier from "./TokenValueModifier";
 import TopLayer from "./TopLayer";
 import {
@@ -45,8 +47,6 @@ import {
 } from "./constants/app-constants";
 import {
   CardSizeType,
-  CounterTokenType,
-  StatusTokenType,
   cardConstants,
   tokenConstants,
 } from "./constants/card-constants";
@@ -74,8 +74,6 @@ import {
   getMySelectedCards,
 } from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
-import TokenBagMenuContainer from "./TokenBagMenuContainer";
-import TokenEditorContainer from "./TokenEditorContainer";
 
 const SCALE_BY = 1.02;
 
@@ -157,7 +155,7 @@ interface IProps {
   }) => void;
   adjustCounterToken: (payload: {
     id?: string;
-    tokenType: CounterTokenType;
+    tokenType: string;
     delta?: number;
     value?: number;
   }) => void;
@@ -252,7 +250,7 @@ interface IState {
   showPeerConnector: boolean;
   peerConnectorPosition: Vector2d | null;
   showTokenValueModifier: boolean;
-  tokenValueModifierProps: { id: string; tokenType: CounterTokenType } | null;
+  tokenValueModifierProps: { id: string; tokenType: string } | null;
   tokenValueModifierPosition: Vector2d | null;
   playmatImage: HTMLImageElement | null;
   playmatImageLoaded: boolean;
@@ -880,6 +878,7 @@ class Game extends Component<IProps, IState> {
                       backImgUrl={token.backImgUrl}
                       pos={token.position}
                       faceup={token.faceup}
+                      crop={token.crop}
                       controlledBy={token.controlledBy}
                       selectedColor={
                         this.props.playerColors[token.controlledBy ?? ""] ??
@@ -987,10 +986,7 @@ class Game extends Component<IProps, IState> {
     );
   };
 
-  private handleCounterTokenModification = (
-    card: ICardStack,
-    type: CounterTokenType
-  ) => {
+  private handleCounterTokenModification = (card: ICardStack, type: string) => {
     this.setState({
       showContextMenu: false,
       contextMenuPosition: null,
@@ -1919,7 +1915,7 @@ class Game extends Component<IProps, IState> {
       !Number.isNaN(intCode)
     ) {
       const defaultTokenInfoForGameType =
-        GamePropertiesMap[this.props.currentGameType].tokens;
+        GamePropertiesMap[this.props.currentGameType].counterTokens;
 
       let tokenInfoForGameType = defaultTokenInfoForGameType;
       const mySelectedCards = getMySelectedCards(this.props.cards.cards);
@@ -1938,40 +1934,15 @@ class Game extends Component<IProps, IState> {
           ) ?? defaultTokenInfoForGameType;
       }
 
-      switch (intCode) {
-        case 1:
-          if (!!tokenInfoForGameType.damage) {
-            this.props.adjustCounterToken({
-              tokenType: CounterTokenType.Damage,
-              delta: event.shiftKey ? -1 : 1,
-            });
-          }
-          break;
-        case 2:
-          if (!!tokenInfoForGameType.threat) {
-            this.props.adjustCounterToken({
-              tokenType: CounterTokenType.Threat,
-              delta: event.shiftKey ? -1 : 1,
-            });
-          }
-          break;
-
-        case 3:
-          if (!!tokenInfoForGameType.generic) {
-            this.props.adjustCounterToken({
-              tokenType: CounterTokenType.Generic,
-              delta: event.shiftKey ? -1 : 1,
-            });
-          }
-          break;
-        case 4:
-          if (!!tokenInfoForGameType.acceleration) {
-            this.props.adjustCounterToken({
-              tokenType: CounterTokenType.Acceleration,
-              delta: event.shiftKey ? -1 : 1,
-            });
-          }
-          break;
+      // Try to get the token info
+      if (intCode > 0) {
+        const info = tokenInfoForGameType[intCode - 1];
+        if (info) {
+          this.props.adjustCounterToken({
+            tokenType: info.type,
+            delta: event.shiftKey ? -1 : 1,
+          });
+        }
       }
       event.preventDefault();
     }

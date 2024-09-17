@@ -1,36 +1,32 @@
+import axios, { AxiosResponse } from "axios";
+import { Vector2d } from "konva/lib/types";
+import log from "loglevel";
 import {
-  CardAttachLocation,
-  CounterTokenType,
-  StatusTokenType,
-} from "../../constants/card-constants";
+  CardData as CardDataLOTR,
+  CardPack as CardPackLOTR,
+  Scenario,
+} from "../../external-api/beorn-json-data";
+import { CardData } from "../../external-api/common-card-data";
+import {
+  default as Scenarios,
+  default as scenarioListLOTR,
+} from "../../external/ringsteki-json-data/scenarios.json";
+import { IEncounterEntity } from "../../features/cards-data/cards-data.selectors";
 import { ICardData, ISetData } from "../../features/cards-data/initialState";
+import { packList as lotrPackList } from "../../generated/packsList_lotr";
+import { RootState } from "../../store/rootReducer";
 import {
   GameModule,
-  GameProperties,
   ILoadCardsData,
   ILoadEncounterSetData,
   ILoadedDeck,
   ILoadedDeckMetadata,
   IPackMetadata,
 } from "../GameModule";
-import Scenarios from "../../external/ringsteki-json-data/scenarios.json";
-import { packList as lotrPackList } from "../../generated/packsList_lotr";
-import log from "loglevel";
-import axios, { AxiosResponse } from "axios";
-import {
-  CardPack as CardPackLOTR,
-  CardData as CardDataLOTR,
-  Scenario,
-} from "../../external-api/beorn-json-data";
-import scenarioListLOTR from "../../external/ringsteki-json-data/scenarios.json";
-import { CardData } from "../../external-api/common-card-data";
-import { MISSING_BACK_IMAGE_MAP } from "./missing-images";
-import { RootState } from "../../store/rootReducer";
-import { Vector2d } from "konva/lib/types";
-import { getLOTRCards } from "./getLOTRCards";
-import { IEncounterEntity } from "../../features/cards-data/cards-data.selectors";
-import { loadEncounterEntities } from "./loadEncounterEntities";
 import { GameType } from "../GameType";
+import { getLOTRCards } from "./getLOTRCards";
+import { loadEncounterEntities } from "./loadEncounterEntities";
+import { MISSING_BACK_IMAGE_MAP } from "./missing-images";
 import { properties } from "./properties";
 
 export default class LOTRLCGGameModule extends GameModule {
