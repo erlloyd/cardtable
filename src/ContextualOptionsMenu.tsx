@@ -149,82 +149,6 @@ const ContextualOptionsMenu = (props: IProps) => {
   return (
     <div>
       <div className="contextual-options-menu">
-        <Tooltip title="Get Cards from stack">
-          <button
-            onClick={(evt) => {
-              if (visibleMenus.includes(MenuType.DrawActions)) {
-                setVisibleMenus([]);
-              } else {
-                setVisibleMenus([MenuType.DrawActions]);
-                setVisibleMenuYPosition(evt.clientY);
-              }
-            }}
-          >
-            Draw
-          </button>
-        </Tooltip>
-        <Tooltip title="Peek cards on top of stack">
-          <button
-            onClick={(evt) => {
-              if (visibleMenus.includes(MenuType.PeekNumber)) {
-                setVisibleMenus([]);
-              } else {
-                setVisibleMenus([MenuType.PeekNumber]);
-                setVisibleMenuYPosition(evt.clientY);
-              }
-            }}
-          >
-            Peek
-          </button>
-        </Tooltip>
-        {hasMods && (
-          <Tooltip title="Set Modifiers">
-            <button
-              onClick={(evt) => {
-                if (visibleMenus.includes(MenuType.ModifierActions)) {
-                  setVisibleMenus([]);
-                } else {
-                  setVisibleMenus([MenuType.ModifierActions]);
-                  setVisibleMenuYPosition(evt.clientY);
-                }
-              }}
-            >
-              Mods
-            </button>
-          </Tooltip>
-        )}
-        {hasStatusTokens && (
-          <Tooltip title="Set Statuses">
-            <button
-              onClick={(evt) => {
-                if (visibleMenus.includes(MenuType.StatusTokenActions)) {
-                  setVisibleMenus([]);
-                } else {
-                  setVisibleMenus([MenuType.StatusTokenActions]);
-                  setVisibleMenuYPosition(evt.clientY);
-                }
-              }}
-            >
-              Status
-            </button>
-          </Tooltip>
-        )}
-        {hasCounterTokens && (
-          <Tooltip title="Set Tokens">
-            <button
-              onClick={(evt) => {
-                if (visibleMenus.includes(MenuType.CounterTokenActions)) {
-                  setVisibleMenus([]);
-                } else {
-                  setVisibleMenus([MenuType.CounterTokenActions]);
-                  setVisibleMenuYPosition(evt.clientY);
-                }
-              }}
-            >
-              Token
-            </button>
-          </Tooltip>
-        )}
         <Tooltip title="Flip cards">
           <button
             onClick={() => {
@@ -252,6 +176,84 @@ const ContextualOptionsMenu = (props: IProps) => {
             Shuffle
           </button>
         </Tooltip>
+        <Tooltip title="Get Cards from stack">
+          <button
+            onClick={(evt) => {
+              if (visibleMenus.includes(MenuType.DrawActions)) {
+                setVisibleMenus([]);
+              } else {
+                setVisibleMenus([MenuType.DrawActions]);
+                setVisibleMenuYPosition(evt.clientY);
+              }
+            }}
+          >
+            Draw
+          </button>
+        </Tooltip>
+
+        {hasCounterTokens && (
+          <Tooltip title="Set Tokens">
+            <button
+              onClick={(evt) => {
+                if (visibleMenus.includes(MenuType.CounterTokenActions)) {
+                  setVisibleMenus([]);
+                } else {
+                  setVisibleMenus([MenuType.CounterTokenActions]);
+                  setVisibleMenuYPosition(evt.clientY);
+                }
+              }}
+            >
+              Token
+            </button>
+          </Tooltip>
+        )}
+        {hasStatusTokens && (
+          <Tooltip title="Set Statuses">
+            <button
+              onClick={(evt) => {
+                if (visibleMenus.includes(MenuType.StatusTokenActions)) {
+                  setVisibleMenus([]);
+                } else {
+                  setVisibleMenus([MenuType.StatusTokenActions]);
+                  setVisibleMenuYPosition(evt.clientY);
+                }
+              }}
+            >
+              Status
+            </button>
+          </Tooltip>
+        )}
+        {hasMods && (
+          <Tooltip title="Set Modifiers">
+            <button
+              onClick={(evt) => {
+                if (visibleMenus.includes(MenuType.ModifierActions)) {
+                  setVisibleMenus([]);
+                } else {
+                  setVisibleMenus([MenuType.ModifierActions]);
+                  setVisibleMenuYPosition(evt.clientY);
+                }
+              }}
+            >
+              Mods
+            </button>
+          </Tooltip>
+        )}
+        <Tooltip title="Peek cards on top of stack">
+          <button
+            onClick={(evt) => {
+              if (visibleMenus.includes(MenuType.PeekNumber)) {
+                setVisibleMenus([]);
+              } else {
+                setVisibleMenus([MenuType.PeekNumber]);
+                setVisibleMenuYPosition(evt.clientY);
+              }
+            }}
+          >
+            Peek
+          </button>
+        </Tooltip>
+
         <Tooltip title="Clear card stack">
           <button
             onClick={() => {
