@@ -74,6 +74,7 @@ import {
   getMySelectedCards,
 } from "./utilities/card-utils";
 import { getCenter, getDistance } from "./utilities/geo";
+import SettingsContainer from "./SettingsContainer";
 
 const SCALE_BY = 1.02;
 
@@ -781,6 +782,7 @@ class Game extends Component<IProps, IState> {
         <CardPeekContainer></CardPeekContainer>
         <TokenEditorContainer></TokenEditorContainer>
         <ChangelogContainer></ChangelogContainer>
+        <SettingsContainer></SettingsContainer>
         {this.renderEmptyMessage()}
         {this.renderContextMenu()}
         {this.renderPreviewCardModal(
@@ -1537,7 +1539,10 @@ class Game extends Component<IProps, IState> {
       isZoomIn = event.evt.deltaX > 0;
     }
 
-    const newScale = isZoomIn ? oldScale * SCALE_BY : oldScale / SCALE_BY;
+    const scaleBy =
+      (SCALE_BY - 1) * this.props.gameState.settings.scrollMultiplier + 1;
+
+    const newScale = isZoomIn ? oldScale * scaleBy : oldScale / scaleBy;
 
     this.props.updateZoom({ x: newScale, y: newScale });
 
