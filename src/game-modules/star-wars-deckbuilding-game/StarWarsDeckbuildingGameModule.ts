@@ -175,22 +175,40 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
   ): CardData[][] {
     const temp = groupBy<CardData>(encounterCards, (e) => e.extraInfo.setCode);
     console.log(temp);
+
+    // Base game
+    const rebel_starter = [...(temp["Rebel Starter"] || [])];
+    const empire_starter = [...(temp["Empire Starter"] || [])];
+    const rebel_bases = [...(temp["Rebel Bases"] || [])];
+    const empire_bases = [...(temp["Empire Bases"] || [])];
+    const always_available = [...(temp["Always Available"] || [])];
+
+    // Clone wars
+    const republic_starter = [...(temp["Republic Starter"] || [])];
+    const separatist_starter = [...(temp["Separatist Starter"] || [])];
+    const republic_bases = [...(temp["Republic Bases"] || [])];
+    const separatist_bases = [...(temp["Separatist Bases"] || [])];
+    const always_available_clone_wars = [
+      ...temp["Always Available Clone Wars"],
+    ];
+
+    const misc = [...temp["Miscellaneous"]];
+    const force_tracker = [...temp["Force Tracker"]];
+
+    let galaxy_row = [];
+
     let returnVal = [] as CardData[][];
     switch (setCode) {
       case "Standard":
-        const rebel_starter = [...temp["Rebel Starter"]];
-        const empire_starter = [...temp["Empire Starter"]];
-        const rebel_bases = [...temp["Rebel Bases"]];
-        const empire_bases = [...temp["Empire Bases"]];
-        const always_available = [...temp["Always Available"]];
-        const galaxy_row = [
+        galaxy_row = [
           ...temp["Galaxy Row Rebel"],
           ...temp["Galaxy Row Empire"],
           ...temp["Galaxy Row Neutral"],
-          ...temp["Capital Ships"],
+          ...temp["Capital Ships Rebel"],
+          ...temp["Capital Ships Empire"],
+          ...temp["Capital Ships Neutral"],
         ];
-        const misc = [...temp["Miscellaneous"]];
-        const force_tracker = [...temp["Force Tracker"]];
+
         returnVal = [
           rebel_starter,
           empire_starter,
@@ -202,71 +220,86 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
           force_tracker,
         ];
         break;
+      case "Standard (Clone Wars)":
+        galaxy_row = [
+          ...temp["Galaxy Row Republic"],
+          ...temp["Galaxy Row Separatist"],
+          ...temp["Galaxy Row Neutral Clone Wars"],
+          ...temp["Capital Ships Republic"],
+          ...temp["Capital Ships Separatist"],
+          ...temp["Capital Ships Neutral Clone Wars"],
+        ];
+
+        returnVal = [
+          republic_starter,
+          separatist_starter,
+          republic_bases,
+          separatist_bases,
+          always_available_clone_wars,
+          galaxy_row,
+          misc,
+          force_tracker,
+        ];
+        break;
       case "2v2":
-        const rebel_starter2v2 = [...temp["Rebel Starter"]];
-        const empire_starter2v2 = [...temp["Empire Starter"]];
-        const rebel_bases2v2 = [...temp["Rebel Bases"]];
-        const empire_bases2v2 = [...temp["Empire Bases"]];
-        const always_available2v2 = [...temp["Always Available"]];
-        const galaxy_row2v2 = [
+        galaxy_row = [
           ...temp["Galaxy Row Rebel"],
           ...temp["Galaxy Row Empire"],
           ...temp["Galaxy Row Neutral"],
-          ...temp["Capital Ships"],
+          ...temp["Capital Ships Rebel"],
+          ...temp["Capital Ships Empire"],
+          ...temp["Capital Ships Neutral"],
         ];
         const misc2v2 = [...temp["Miscellaneous"]];
         const force_tracker2v2 = [...temp["Force Tracker"]];
         returnVal = [
-          rebel_starter2v2,
-          rebel_starter2v2,
-          empire_starter2v2,
-          empire_starter2v2,
-          rebel_bases2v2,
-          rebel_bases2v2,
-          empire_bases2v2,
-          empire_bases2v2,
-          always_available2v2,
-          always_available2v2,
-          galaxy_row2v2,
-          galaxy_row2v2,
-          misc2v2,
-          misc2v2,
-          force_tracker2v2,
+          rebel_starter,
+          rebel_starter,
+          empire_starter,
+          empire_starter,
+          rebel_bases,
+          rebel_bases,
+          empire_bases,
+          empire_bases,
+          always_available,
+          always_available,
+          galaxy_row,
+          galaxy_row,
+          misc,
+          misc,
+          force_tracker,
         ];
         break;
       case "Solo: Leaders (Rebels)":
       case "Solo: Leaders (Empire)":
-        const rebel_starter2 = [...temp["Rebel Starter"]];
-        const empire_starter2 = [...temp["Empire Starter"]];
-        const rebel_bases2 = [...temp["Rebel Bases"]];
-        const empire_bases2 = [...temp["Empire Bases"]];
-        const always_available2 = [...temp["Always Available"]];
-        let galaxy_row2 = [
+        galaxy_row = [
           ...temp["Galaxy Row Rebel"],
           ...temp["Galaxy Row Empire"],
           ...temp["Galaxy Row Neutral"],
-          ...temp["Capital Ships"],
+          ...temp["Capital Ships Rebel"],
+          ...temp["Capital Ships Empire"],
+          ...temp["Capital Ships Neutral"],
         ];
         // Manually remove the leader for now
         // TODO: make this better
         let leader: CardData[] = [];
         if (setCode.includes("Rebel")) {
-          leader = galaxy_row2.filter((c) => c.code === "g31");
-          galaxy_row2 = galaxy_row2.filter((c) => c.code !== "g31");
+          leader = galaxy_row.filter((c) => c.code === "g31");
+          galaxy_row = galaxy_row.filter((c) => c.code !== "g31");
         } else if (setCode.includes("Empire")) {
-          leader = galaxy_row2.filter((c) => c.code === "g16");
-          galaxy_row2 = galaxy_row2.filter((c) => c.code !== "g16");
+          leader = galaxy_row.filter((c) => c.code === "g16");
+          galaxy_row = galaxy_row.filter((c) => c.code !== "g16");
         }
-        const force_tracker2 = [...temp["Force Tracker"]];
+
         returnVal = [
-          rebel_starter2,
-          empire_starter2,
-          rebel_bases2,
-          empire_bases2,
-          always_available2,
-          galaxy_row2,
+          rebel_starter,
+          empire_starter,
+          rebel_bases,
+          empire_bases,
+          always_available,
+          galaxy_row,
           leader,
-          force_tracker2,
+          force_tracker,
         ];
         break;
     }
@@ -276,6 +309,7 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
   getTokensForEncounterSet(setCode: string): IFlippableToken[] {
     switch (setCode) {
       case "Standard":
+      case "Standard (Clone Wars)":
         return [
           {
             id: uuidv4(),
@@ -358,6 +392,7 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
   getCountersForEncounterSet(setCode: string): ICounter[] {
     switch (setCode) {
       case "Standard":
+      case "Standard (Clone Wars)":
         return [
           {
             id: "",

@@ -1961,6 +1961,10 @@ class Game extends Component<IProps, IState> {
     } else if ((event.ctrlKey || event.metaKey) && event.key === "z") {
       event.preventDefault();
       this.props.undo();
+    } else if ((event.ctrlKey || event.metaKey) && event.key === "c") {
+      console.log("COPY");
+    } else if ((event.ctrlKey || event.metaKey) && event.key === "v") {
+      console.log("PASTE");
     }
   };
 
