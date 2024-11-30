@@ -139,3 +139,10 @@ export const getTokenBagMenu = createSelector(
   getGame,
   (game) => game.tokenBagMenu
 );
+
+export const isSettingsUiVisible = createSelector(
+  getGame,
+  (game) => !!game.settings.visible
+);
+
+export const getSettings = createSelector(getGame, (game) => game.settings);

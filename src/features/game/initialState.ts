@@ -80,6 +80,18 @@ export interface IGameState {
   recentlyLoadedDecks: { [key in GameType]: IRecentlyLoadedDeck[] };
   tokenBagMenu: TokenBagMenuInfo | null;
   showTokenBagAdjuster: { id: string; viewOnly: boolean } | null;
+  settings: {
+    visible: boolean;
+    scrollMultiplier: number;
+  };
+}
+
+export interface ISettings {
+  scrollMultiplier: number;
+}
+
+export interface ISettingsState extends ISettings {
+  visible: boolean;
 }
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -115,6 +127,14 @@ localStorageState.undoing = false;
 localStorageState.remoteUndoing = false;
 localStorageState.tokenBagMenu = null;
 localStorageState.showTokenBagAdjuster = null;
+
+if (!localStorageState.settings) {
+  localStorageState.settings = { visible: false, scrollMultiplier: 1.0 };
+} else {
+  if (!localStorageState.settings.scrollMultiplier) {
+    localStorageState.settings.scrollMultiplier = 1.0;
+  }
+}
 
 // Register any custom games we have previously loaded
 
@@ -160,6 +180,10 @@ const defaultState: IGameState = {
   recentlyLoadedDecks: {} as any,
   tokenBagMenu: null,
   showTokenBagAdjuster: null,
+  settings: {
+    visible: false,
+    scrollMultiplier: 1.0,
+  },
 };
 export const initialState: IGameState = {
   ...defaultState,

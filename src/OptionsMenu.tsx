@@ -11,6 +11,7 @@ import NotesIcon from "@material-ui/icons/Notes";
 import PanToolIcon from "@material-ui/icons/PanTool";
 import RedoIcon from "@material-ui/icons/Redo";
 import UndoIcon from "@material-ui/icons/Undo";
+import SettingsIcon from "@material-ui/icons/Settings";
 import Tooltip from "@mui/material/Tooltip";
 import cx from "classnames";
 import { Vector2d } from "konva/lib/types";
@@ -42,6 +43,7 @@ interface IProps {
   redo: () => void;
   toggleDrawCardsIntoHand: () => void;
   toggleSnapCardsToGrid: () => void;
+  showSettingsUi: () => void;
 }
 class OptionsMenu extends Component<IProps> {
   static whyDidYouRender = false;
@@ -153,6 +155,15 @@ class OptionsMenu extends Component<IProps> {
             }}
           >
             <HelpIcon fontSize="large" />
+          </button>
+        </Tooltip>
+        <Tooltip title="Settings">
+          <button
+            onClick={() => {
+              this.props.showSettingsUi();
+            }}
+          >
+            <SettingsIcon fontSize="large" />
           </button>
         </Tooltip>
       </div>

@@ -21,6 +21,7 @@ import { RootState } from "./store/rootReducer";
 import OptionsMenu from "./OptionsMenu";
 import {
   showRadialMenuAtPosition,
+  showSettingsUi,
   toggleDrawCardsIntoHand,
   toggleSnapCardsToGrid,
 } from "./features/game/game.slice";
@@ -54,6 +55,7 @@ const OptionsMenuContainer = connect(mapStateToProps, {
   redo,
   toggleDrawCardsIntoHand,
   toggleSnapCardsToGrid,
+  showSettingsUi,
 })(OptionsMenu);
 
 export default OptionsMenuContainer;

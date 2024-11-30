@@ -19,6 +19,7 @@ import {
   IGameState,
   initialState,
   IRecentlyLoadedDeck,
+  ISettings,
   TokenBagMenuInfo,
 } from "./initialState";
 import { GameType } from "../../game-modules/GameType";
@@ -353,6 +354,21 @@ const hideTokenBagEditorReducer: CaseReducer<IGameState> = (state) => {
   state.showTokenBagAdjuster = null;
 };
 
+const showSettingsUiReducer: CaseReducer<IGameState> = (state) => {
+  state.settings.visible = true;
+};
+
+const hideSettingsUiReducer: CaseReducer<IGameState> = (state) => {
+  state.settings.visible = false;
+};
+
+const updateSettingsReducer: CaseReducer<
+  IGameState,
+  CardtableAction<ISettings>
+> = (state, action) => {
+  state.settings = { ...state.settings, ...action.payload };
+};
+
 // slice
 const gameSlice = createSlice({
   name: "game",
@@ -404,6 +420,9 @@ const gameSlice = createSlice({
     clearTokenBagMenu: clearTokenBagMenuReducer,
     showTokenBagEditor: showTokenBagEditorReducer,
     hideTokenBagEditor: hideTokenBagEditorReducer,
+    showSettingsUi: showSettingsUiReducer,
+    hideSettingsUi: hideSettingsUiReducer,
+    updateSettings: updateSettingsReducer,
   },
   extraReducers: (builder) => {
     builder.addCase(receiveRemoteGameState, (state, action) => {
@@ -488,6 +507,9 @@ export const {
   clearTokenBagMenu,
   showTokenBagEditor,
   hideTokenBagEditor,
+  showSettingsUi,
+  hideSettingsUi,
+  updateSettings,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

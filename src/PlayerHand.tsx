@@ -190,6 +190,7 @@ class PlayerHand extends Component<IProps, IState> {
   private dragStartTime: number = 0;
   private topLevelDivRef: HTMLDivElement | null = null;
   private selectedIndecesBeforeDrag: number[] = [];
+  private preventClear: boolean = false;
 
   constructor(props: IProps) {
     super(props);
@@ -212,10 +213,18 @@ class PlayerHand extends Component<IProps, IState> {
   }
 
   clearSelectedCardsFromClick(event: MouseEvent) {
-    if (!event.defaultPrevented && this.state.selectedCardIndeces.length > 0) {
+    if (
+      !event.defaultPrevented &&
+      this.state.selectedCardIndeces.length > 0 &&
+      !this.preventClear
+    ) {
       this.setState({
         selectedCardIndeces: [],
       });
+    }
+
+    if (this.preventClear) {
+      this.preventClear = false;
     }
   }
 
@@ -387,6 +396,7 @@ class PlayerHand extends Component<IProps, IState> {
                           : ""
                       }`,
                       action: () => {
+                        this.preventClear = true;
                         this.props.setPlayerRole({
                           playerNumber: this.props.playerNumber,
                           role: r.name,
@@ -397,6 +407,7 @@ class PlayerHand extends Component<IProps, IState> {
                   {
                     label: "Clear Role",
                     action: () => {
+                      this.preventClear = true;
                       this.props.clearPlayerRole({
                         playerNumber: this.props.playerNumber,
                       });
@@ -412,6 +423,7 @@ class PlayerHand extends Component<IProps, IState> {
                     handData.role ? " - " + handData.role : ""
                   } (${handData.numCards})`,
                   action: () => {
+                    this.preventClear = true;
                     this.props.setVisiblePlayerHandNumber(i + 1);
                   },
                 })),
@@ -440,6 +452,7 @@ class PlayerHand extends Component<IProps, IState> {
               {
                 label: "Flip cards",
                 action: () => {
+                  this.preventClear = true;
                   if (this.state.selectedCardIndeces.length > 0) {
                     this.props.flipInPlayerHand({
                       playerNumber: this.props.playerNumber,
@@ -449,8 +462,16 @@ class PlayerHand extends Component<IProps, IState> {
                 },
               },
               {
+                label: "Select all cards",
+                action: () => {
+                  this.preventClear = true;
+                  this.handleSelectAll();
+                },
+              },
+              {
                 label: "View Entire Hand",
                 action: () => {
+                  this.preventClear = true;
                   this.props.toggleShowFullHandUI();
                 },
               },
@@ -566,6 +587,7 @@ class PlayerHand extends Component<IProps, IState> {
       }
     } else {
       // add it
+      console.log(this.state.selectedCardIndeces);
       this.setState({
         selectedCardIndeces: this.state.selectedCardIndeces.concat([index]),
       });
@@ -738,6 +760,14 @@ class PlayerHand extends Component<IProps, IState> {
         playerNumber: this.props.playerNumber,
         indeces: this.state.selectedCardIndeces,
       });
+    }
+  };
+
+  private handleSelectAll = (): void => {
+    const cards = this.props.playerHandData?.cards ?? [];
+    if (cards.length > 0) {
+      const indeces = Array.from({ length: cards.length }, (_, i) => i);
+      this.setState({ selectedCardIndeces: indeces });
     }
   };
 }

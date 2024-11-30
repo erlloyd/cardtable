@@ -44,6 +44,9 @@ import {
   hideCardPeek,
   quitGame,
   toggleShowFullHandUI,
+  hideSettingsUi,
+  showSettingsUi,
+  updateSettings,
 } from "../features/game/game.slice";
 import { toggleNotes } from "../features/notes/notes.slice";
 import {
@@ -98,6 +101,9 @@ export const blacklistRemoteActions = {
   [hideCardPeek.type]: true,
   [quitGame.type]: true,
   [toggleShowFullHandUI.type]: true,
+  [updateSettings.type]: true,
+  [showSettingsUi.type]: true,
+  [hideSettingsUi.type]: true,
   // We want to handle undo / redo differently when via multiplayer
   [ActionTypes.UNDO]: true,
   [ActionTypes.REDO]: true,
