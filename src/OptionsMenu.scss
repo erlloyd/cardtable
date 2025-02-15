@@ -1,5 +1,5 @@
-@import "./mixins/variables";
-@import "./mixins/devices";
+@use "mixins/variables";
+@use "mixins/devices";
 
 .options-menu {
   width: 55px;
@@ -10,7 +10,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  max-height: calc(100% - $playerHandPx);
+  max-height: calc(100% - variables.$playerHandPx);
   overflow-y: auto;
   padding: 5px 5px;
   background-color: gray;
@@ -20,7 +20,7 @@
 
   .render-touch-only {
     display: none;
-    @include for-touch-device {
+    @include devices.for-touch-device {
       display: flex;
     }
   }

@@ -1,4 +1,4 @@
-@import "./mixins/devices";
+@use "mixins/devices";
 
 #context-menu-layer {
   position: absolute;
@@ -41,7 +41,7 @@
 
 .mobile-only {
   display: none;
-  @include for-touch-device {
+  @include devices.for-touch-device {
     display: flex;
     flex-direction: column;
     justify-content: center;
