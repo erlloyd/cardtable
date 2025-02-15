@@ -1,0 +1,39 @@
+diff --git a/node_modules/@hello-pangea/dnd/dist/dnd.cjs.js b/node_modules/@hello-pangea/dnd/dist/dnd.cjs.js
+index 0f16990..dc5487e 100644
+--- a/node_modules/@hello-pangea/dnd/dist/dnd.cjs.js
++++ b/node_modules/@hello-pangea/dnd/dist/dnd.cjs.js
+@@ -5341,7 +5341,7 @@ function useKeyboardSensor(api) {
+ const idle = {
+   type: 'IDLE'
+ };
+-const timeForLongPress = 120;
++const timeForLongPress = 25;
+ const forcePressThreshold = 0.15;
+ function getWindowBindings({
+   cancel,
+diff --git a/node_modules/@hello-pangea/dnd/dist/dnd.esm.js b/node_modules/@hello-pangea/dnd/dist/dnd.esm.js
+index 87a2110..2204137 100644
+--- a/node_modules/@hello-pangea/dnd/dist/dnd.esm.js
++++ b/node_modules/@hello-pangea/dnd/dist/dnd.esm.js
+@@ -5339,7 +5339,7 @@ function useKeyboardSensor(api) {
+ const idle = {
+   type: 'IDLE'
+ };
+-const timeForLongPress = 120;
++const timeForLongPress = 25;
+ const forcePressThreshold = 0.15;
+ function getWindowBindings({
+   cancel,
+diff --git a/node_modules/@hello-pangea/dnd/dist/dnd.js b/node_modules/@hello-pangea/dnd/dist/dnd.js
+index b27398a..40675e2 100644
+--- a/node_modules/@hello-pangea/dnd/dist/dnd.js
++++ b/node_modules/@hello-pangea/dnd/dist/dnd.js
+@@ -6807,7 +6807,7 @@ ${latestSubscriptionCallbackError.current.stack}
+   const idle = {
+     type: 'IDLE'
+   };
+-  const timeForLongPress = 120;
++  const timeForLongPress = 25;
+   const forcePressThreshold = 0.15;
+   function getWindowBindings({
+     cancel,

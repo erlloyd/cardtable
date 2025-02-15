@@ -14,7 +14,7 @@ import {
   DropResult,
   NotDraggingStyle,
   ResponderProvided,
-} from "react-beautiful-dnd";
+} from "@hello-pangea/dnd";
 import AllPlayerHand from "./AllPlayerHand";
 import {
   myPeerRef,
