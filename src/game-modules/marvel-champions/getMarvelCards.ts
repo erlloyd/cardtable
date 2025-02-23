@@ -13,7 +13,8 @@ import { EXTRA_CARDS } from "./extraCards";
 
 export interface MarvelDeckData {
   name: string;
-  investigator_code: string;
+  investigator_code?: string;
+  hero_code?: string;
   slots: { [key: string]: number };
 }
 
@@ -23,7 +24,10 @@ export const getMarvelCards = (
   payload: { gameType: GameType; decklistId: number; position: Vector2d }
 ) => {
   const heroCardsData = getCardsDataHeroEntities(state);
-  const heroSet = heroCardsData[response.data.investigator_code];
+  const heroSet =
+    heroCardsData[
+      response.data.investigator_code ?? response.data.hero_code ?? "unknown"
+    ];
   const heroSetCode = heroSet.extraInfo.setCode;
   const encounterCardsData = getCardsDataEncounterEntities(state);
 
@@ -120,6 +124,7 @@ const replaceDuplicateCards = (
   return {
     name: data.name,
     investigator_code: data.investigator_code,
+    hero_code: data.hero_code,
     slots: newSlots,
   };
 };
