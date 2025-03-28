@@ -45,6 +45,7 @@ export const convertMarvelTxtToDeckInfo = (
   return {
     data: {
       investigator_code: hero.code,
+      hero_code: hero.code,
       slots,
     },
   };

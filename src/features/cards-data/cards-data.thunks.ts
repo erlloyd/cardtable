@@ -223,7 +223,7 @@ export const parseCsvCustomCards =
       (d: InputCustomCard): CustomCard => {
         const returnObj = {
           ...d,
-          landscape: d.landscape.toLocaleLowerCase().includes("y"),
+          landscape: (d.landscape || "no").toLocaleLowerCase().includes("y"),
           quantity: +(d.quantity || "1"),
           loadOrder: d.loadOrder ? +d.loadOrder : undefined,
         } as CustomCard;

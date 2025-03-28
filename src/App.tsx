@@ -53,7 +53,7 @@ interface IProps {
 }
 
 const App = (props: IProps) => {
-  const fileInputRef = useRef();
+  const fileInputRef = useRef(null);
   const [showReload, setShowReload] = useState(false);
   const [waitingWorker, setWaitingWorker] = useState<ServiceWorker | null>(
     null
@@ -212,7 +212,7 @@ const renderGamePicker = (
   toggleDevSetting: () => void,
   numImageClicks: number,
   setNumImageClicks: (n: number) => void,
-  fileInputRef: React.MutableRefObject<any>
+  fileInputRef: React.RefObject<any>
 ) => {
   return (
     <div className="game-picker">

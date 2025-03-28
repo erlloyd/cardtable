@@ -2119,9 +2119,14 @@ const handleLoadDeck = (
   log.debug("got decklist");
   log.debug(action);
 
-  const potentialHeroCard: ICardDetails[] = action.payload.data
-    .investigator_code
-    ? [{ jsonId: action.payload.data.investigator_code }]
+  // MarvelCDB switched from `investigator_code` to `hero_code` at some point
+  const codeToUse =
+    action.payload.data.hero_code ??
+    action.payload.data.investigator_code ??
+    "unknown";
+
+  const potentialHeroCard: ICardDetails[] = codeToUse
+    ? [{ jsonId: codeToUse }]
     : [];
 
   const heroCardStack = [

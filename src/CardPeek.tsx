@@ -1,6 +1,6 @@
 import TopLayer from "./TopLayer";
 import "./CardPeek.scss";
-import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 import { ICardStack } from "./features/cards/initialState";
 import { ICardData } from "./features/cards-data/initialState";
 import { GameType } from "./game-modules/GameType";

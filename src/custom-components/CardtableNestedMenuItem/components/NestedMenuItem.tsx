@@ -39,13 +39,13 @@ const NestedMenuItem = React.forwardRef<
 
   const { ref: containerRefProp, ...ContainerProps } = ContainerPropsProp;
 
-  const menuItemRef = useRef<HTMLLIElement>(null);
+  const menuItemRef = useRef<HTMLLIElement | null>(null);
   useImperativeHandle(ref, () => menuItemRef.current as unknown as any);
 
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   useImperativeHandle(
     containerRefProp as React.Ref<HTMLDivElement | null>,
-    () => containerRef.current
+    () => containerRef.current as HTMLDivElement
   );
 
   const menuContainerRef = useRef<HTMLDivElement>(null);
@@ -82,56 +82,56 @@ const NestedMenuItem = React.forwardRef<
   };
 
   // Check if any immediate children are active
-  const isSubmenuFocused = () => {
-    const active = containerRef?.current?.ownerDocument.activeElement;
-    const children = menuContainerRef?.current?.children;
-    if (!!children) {
-      var childrenArr = Array.prototype.slice.call(children);
-      for (const child of childrenArr) {
-        if (child === active) {
-          return true;
-        }
-      }
-    }
-    return false;
-  };
+  // const isSubmenuFocused = () => {
+  //   const active = containerRef?.current?.ownerDocument.activeElement;
+  //   const children = menuContainerRef?.current?.children;
+  //   if (!!children) {
+  //     var childrenArr = Array.prototype.slice.call(children);
+  //     for (const child of childrenArr) {
+  //       if (child === active) {
+  //         return true;
+  //       }
+  //     }
+  //   }
+  //   return false;
+  // };
 
-  const handleFocus = (e: React.FocusEvent<HTMLElement>) => {
-    if (e.target === containerRef.current) {
-      setIsSubMenuOpen(true);
-    }
+  // const handleFocus = (e: React.FocusEvent<HTMLElement>) => {
+  //   if (e.target === containerRef.current) {
+  //     setIsSubMenuOpen(true);
+  //   }
 
-    if (ContainerProps.onFocus) {
-      ContainerProps.onFocus(e);
-    }
-  };
+  //   if (ContainerProps.onFocus) {
+  //     ContainerProps.onFocus(e);
+  //   }
+  // };
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Escape") {
-      return;
-    }
+  // const handleKeyDown = (e: React.KeyboardEvent) => {
+  //   if (e.key === "Escape") {
+  //     return;
+  //   }
 
-    if (isSubmenuFocused()) {
-      e.stopPropagation();
-    }
+  //   if (isSubmenuFocused()) {
+  //     e.stopPropagation();
+  //   }
 
-    const active = containerRef?.current?.ownerDocument.activeElement ?? false;
+  //   const active = containerRef?.current?.ownerDocument.activeElement ?? false;
 
-    if (e.key === "ArrowLeft" && isSubmenuFocused()) {
-      containerRef?.current?.focus();
-    }
+  //   if (e.key === "ArrowLeft" && isSubmenuFocused()) {
+  //     containerRef?.current?.focus();
+  //   }
 
-    if (
-      e.key === "ArrowRight" &&
-      e.target === containerRef.current &&
-      e.target === active
-    ) {
-      const firstChild = menuContainerRef?.current?.children[0] ?? null;
-      if ((firstChild as any)?.focus) {
-        (firstChild as any)?.focus();
-      }
-    }
-  };
+  //   if (
+  //     e.key === "ArrowRight" &&
+  //     e.target === containerRef.current &&
+  //     e.target === active
+  //   ) {
+  //     const firstChild = menuContainerRef?.current?.children[0] ?? null;
+  //     if ((firstChild as any)?.focus) {
+  //       (firstChild as any)?.focus();
+  //     }
+  //   }
+  // };
 
   const open = isSubMenuOpen && parentMenuOpen;
 
@@ -145,11 +145,11 @@ const NestedMenuItem = React.forwardRef<
     <div
       {...ContainerProps}
       ref={containerRef}
-      onFocus={handleFocus}
+      // onFocus={handleFocus}
       tabIndex={tabIndex}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onKeyDown={handleKeyDown}
+      // onKeyDown={handleKeyDown}
     >
       <IconMenuItem
         MenuItemProps={MenuItemProps}

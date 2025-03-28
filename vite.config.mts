@@ -21,6 +21,9 @@ const getCache = ({ name, pattern, maxEntries }: any) => ({
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    allowedHosts: [".middle-earth.house"],
+  },
   plugins: [
     react({
       jsxImportSource: "@welldone-software/why-did-you-render", // <-----
@@ -30,6 +33,7 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       workbox: {
+        maximumFileSizeToCacheInBytes: 5 * 1024 ** 2, // 5 MB
         runtimeCaching: [
           getCache({
             pattern: /.*\.(jpg|png)$/,

@@ -113,7 +113,11 @@ export default class MarvelChampionsGameModule extends GameModule {
     payload: { gameType: GameType; decklistId: number; position: Vector2d }
   ): [string[], ILoadedDeck, ILoadedDeckMetadata] {
     const returnCards = getMarvelCards(response, state, payload);
-    const codes = [returnCards.data.investigator_code];
+    const codes = [
+      returnCards.data.investigator_code ??
+        returnCards.data.hero_code ??
+        "unknown",
+    ];
 
     const data = response.data as MarvelDeckData;
 
