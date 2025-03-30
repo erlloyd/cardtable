@@ -133,6 +133,10 @@ export default class LOTRLCGGameModule extends GameModule {
         }
       }
 
+      if (!cardLOTRFormat.Front || !cardLOTRFormat.Front.ImagePath) {
+        console.log(`No Front`, cardLOTRFormat);
+      }
+
       const mappedCardData: CardData = {
         code: packWithMetadata.metadata.encounterPack
           ? cardLOTRFormat.Slug

@@ -2123,7 +2123,7 @@ const handleLoadDeck = (
   const codeToUse =
     action.payload.data.hero_code ??
     action.payload.data.investigator_code ??
-    "unknown";
+    "";
 
   const potentialHeroCard: ICardDetails[] = codeToUse
     ? [{ jsonId: codeToUse }]
