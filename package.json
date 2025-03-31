@@ -98,6 +98,7 @@
   "scripts": {
     "start": "vite --host 0.0.0.0 --port 3000",
     "build": "tsc && vite build",
+    "test": "vitest",
     "serve": "vite preview --host 0.0.0.0 --port 3000",
     "postinstall": "scripts/postinstall.sh",
     "setup-images": "scripts/setup-images.sh"
@@ -118,6 +119,10 @@
     ]
   },
   "devDependencies": {
-    "@welldone-software/why-did-you-render": "^10.0.1"
+    "@vitest/coverage-v8": "^3.0.9",
+    "@vitest/ui": "^3.0.9",
+    "@welldone-software/why-did-you-render": "^10.0.1",
+    "jsdom": "^26.0.0",
+    "vitest": "^3.0.9"
   }
 }
