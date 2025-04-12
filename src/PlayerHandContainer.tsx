@@ -46,6 +46,7 @@ const mapStateToProps = (state: RootState, ownProps: IProps) => {
     playerNumber: playerNumberToShow,
     playerColor: myPlayerColor,
     showFullHandUI: getShowFullHandUI(state),
+    settings: getGame(state).settings,
   };
 };
 

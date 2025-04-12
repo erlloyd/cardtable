@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 import { GameType } from "../game-modules/GameType";
 import { PayloadAction } from "@reduxjs/toolkit";
+import { ISettings } from "../features/game/initialState";
 
 // For multiplayer type
 export const DEV_WS_LS_KEY = "__dev_ws__";
@@ -29,7 +30,7 @@ export const COLORS = {
   BLACK: "black",
 } as const;
 
-export type PlayerColor = typeof COLORS[keyof typeof COLORS];
+export type PlayerColor = (typeof COLORS)[keyof typeof COLORS];
 
 export const possibleColors: {
   label: string;
@@ -47,7 +48,11 @@ export const possibleColors: {
   { label: "Black", color: COLORS.BLACK },
 ];
 
-export const playerHandHeightPx: number = 90;
+const playerHandHeightPx: number = 90;
+
+export const getPlayerHandHeightPx = (settings: ISettings): number => {
+  return settings.hideHandUI ? 0 : playerHandHeightPx;
+};
 
 export const playerHandElementId: string = "card-table-player-hand-area";
 

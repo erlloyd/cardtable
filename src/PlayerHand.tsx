@@ -19,7 +19,7 @@ import AllPlayerHand from "./AllPlayerHand";
 import {
   myPeerRef,
   playerHandElementId,
-  playerHandHeightPx,
+  getPlayerHandHeightPx,
 } from "./constants/app-constants";
 import { CardSizeType } from "./constants/card-constants";
 import ContextMenu, { ContextMenuItem } from "./ContextMenu";
@@ -43,6 +43,8 @@ import {
   getImgUrls,
   shouldRenderImageHorizontal,
 } from "./utilities/card-utils";
+import { ISettings } from "./features/game/initialState";
+import { properties } from "./game-modules/marvel-champions/properties";
 
 const grid = 8;
 
@@ -70,7 +72,7 @@ const getItemStyle = (
       };
 };
 
-const getListStyle = (isDraggingOver: boolean) =>
+const getListStyle = (isDraggingOver: boolean, settings: ISettings) =>
   ({
     background: isDraggingOver ? "lightblue" : "lightgrey",
     display: "flex",
@@ -80,7 +82,7 @@ const getListStyle = (isDraggingOver: boolean) =>
     position: "absolute",
     bottom: "0px",
     width: "100vw",
-    height: `${playerHandHeightPx}px`,
+    height: `${getPlayerHandHeightPx(settings)}px`,
     boxSizing: "border-box",
   } as React.CSSProperties);
 
@@ -163,6 +165,7 @@ interface IProps {
   clearPlayerRole: (payload: { playerNumber: number }) => void;
   showFullHandUI: boolean;
   toggleShowFullHandUI: () => void;
+  settings: ISettings;
 }
 interface IState {
   modal: boolean;
@@ -187,6 +190,10 @@ let selectedIndecesBeforeDrag: number[] = [];
 let preventClear: boolean = false;
 
 const PlayerHand = (props: IProps) => {
+  if (props.settings.hideHandUI) {
+    return null;
+  }
+
   const [modal, setModal] = React.useState(false);
   const [imgUrlToStatusMap, setImgUrlToStatusMap] = React.useState<{
     [key: string]: ImageLoadingStatus;
@@ -712,7 +719,7 @@ const PlayerHand = (props: IProps) => {
               id={playerHandElementId}
               onClick={props.clearPreviewCardJsonId}
               ref={provided.innerRef}
-              style={getListStyle(snapshot.isDraggingOver)}
+              style={getListStyle(snapshot.isDraggingOver, props.settings)}
               {...provided.droppableProps}
             >
               <IconButton

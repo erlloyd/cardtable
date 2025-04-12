@@ -7,6 +7,17 @@
 }
 
 .settings-panel {
+  h1 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  .settings-checkbox {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 1rem;
+  }
+
   width: 100%;
   height: 100%;
   padding: 20px;
@@ -14,6 +25,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
 
   @media only screen and (min-width: 501px) {
     width: 80%;

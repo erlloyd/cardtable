@@ -18,6 +18,10 @@ const Settings = (props: IProps) => {
     props.settings.scrollMultiplier
   );
 
+  const [previewMultiplier, setPreviewMultiplier] = useState(
+    props.settings.previewMultiplier
+  );
+
   return (
     <TopLayer
       trasparentBackground={true}
@@ -60,6 +64,54 @@ const Settings = (props: IProps) => {
               });
             }}
           />
+          <div>Preview Card Size (x{props.settings.previewMultiplier})</div>
+          <Slider
+            key="preview-size-slider"
+            aria-label="Size"
+            value={previewMultiplier}
+            valueLabelDisplay="auto"
+            step={0.1}
+            marks
+            min={0.4}
+            max={2.0}
+            onClick={stopProp}
+            onChange={(_, value) => {
+              if (Array.isArray(value)) {
+                console.error("slider returned multiple values");
+                return;
+              }
+              setPreviewMultiplier(value);
+            }}
+            onChangeCommitted={(_, value) => {
+              if (Array.isArray(value)) {
+                console.error("slider returned multiple values");
+                return;
+              }
+              props.updateSettings({
+                ...props.settings,
+                previewMultiplier: value,
+              });
+            }}
+          />
+          <FormGroup>
+            <FormControlLabel
+              control={
+                <input
+                  type="checkbox"
+                  className="settings-checkbox"
+                  checked={props.settings.hideHandUI}
+                  onClick={stopProp}
+                  onChange={(e) => {
+                    props.updateSettings({
+                      ...props.settings,
+                      hideHandUI: e.target.checked,
+                    });
+                  }}
+                />
+              }
+              label="Hide Player Hand UI"
+            />
+          </FormGroup>
         </div>
       </div>
     </TopLayer>

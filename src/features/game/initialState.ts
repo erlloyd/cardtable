@@ -83,11 +83,15 @@ export interface IGameState {
   settings: {
     visible: boolean;
     scrollMultiplier: number;
+    previewMultiplier: number;
+    hideHandUI: boolean;
   };
 }
 
 export interface ISettings {
   scrollMultiplier: number;
+  previewMultiplier: number;
+  hideHandUI: boolean;
 }
 
 export interface ISettingsState extends ISettings {
@@ -129,10 +133,23 @@ localStorageState.tokenBagMenu = null;
 localStorageState.showTokenBagAdjuster = null;
 
 if (!localStorageState.settings) {
-  localStorageState.settings = { visible: false, scrollMultiplier: 1.0 };
+  localStorageState.settings = {
+    visible: false,
+    scrollMultiplier: 1.0,
+    previewMultiplier: 1.0,
+    hideHandUI: false,
+  };
 } else {
   if (!localStorageState.settings.scrollMultiplier) {
     localStorageState.settings.scrollMultiplier = 1.0;
+  }
+
+  if (!localStorageState.settings.previewMultiplier) {
+    localStorageState.settings.previewMultiplier = 1.0;
+  }
+
+  if (localStorageState.settings.hideHandUI === undefined) {
+    localStorageState.settings.hideHandUI = false;
   }
 }
 
@@ -183,6 +200,8 @@ const defaultState: IGameState = {
   settings: {
     visible: false,
     scrollMultiplier: 1.0,
+    previewMultiplier: 1.0,
+    hideHandUI: false,
   },
 };
 export const initialState: IGameState = {

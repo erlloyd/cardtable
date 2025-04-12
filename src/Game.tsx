@@ -43,7 +43,7 @@ import {
   COLORS,
   PlayerColor,
   myPeerRef,
-  playerHandHeightPx,
+  getPlayerHandHeightPx,
 } from "./constants/app-constants";
 import {
   CardSizeType,
@@ -608,8 +608,11 @@ class Game extends Component<IProps, IState> {
         );
 
         let previewCardHeight =
-          cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT;
-        let previewCardWidth = cardConstants[card.sizeType].CARD_PREVIEW_WIDTH;
+          cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT *
+          this.props.gameState.settings.previewMultiplier;
+        let previewCardWidth =
+          cardConstants[card.sizeType].CARD_PREVIEW_WIDTH *
+          this.props.gameState.settings.previewMultiplier;
 
         // if height or width are zero, don't display the card
         if (previewCardHeight === 0 || previewCardWidth === 0) {
@@ -619,11 +622,14 @@ class Game extends Component<IProps, IState> {
         // Note that we only adjust the height, because the card will
         // be rotated if it supposed to be displayed horizontally
         previewCardHeight = Math.min(
-          cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT,
+          cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT *
+            this.props.gameState.settings.previewMultiplier,
           isHorizontal ? window.innerWidth : window.innerHeight
         );
         const previewCardRatio =
-          previewCardHeight / cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT;
+          previewCardHeight /
+          (cardConstants[card.sizeType].CARD_PREVIEW_HEIGHT *
+            this.props.gameState.settings.previewMultiplier);
         previewCardWidth *= previewCardRatio;
 
         if (imgUrls.some((url) => url === undefined)) {
@@ -822,7 +828,10 @@ class Game extends Component<IProps, IState> {
             x={this.props.gameState.stagePosition.x}
             y={this.props.gameState.stagePosition.y}
             width={this.state.stageWidth}
-            height={this.state.stageHeight - playerHandHeightPx}
+            height={
+              this.state.stageHeight -
+              getPlayerHandHeightPx(this.props.gameState.settings)
+            }
             onClick={this.handleStageClickOrTap}
             onTap={this.handleStageClickOrTap}
             onMouseDown={this.handleMouseDown}
@@ -1782,13 +1791,19 @@ class Game extends Component<IProps, IState> {
     event: KonvaEventObject<DragEvent>
   ) => {
     // const verticalMax = window.innerHeight;
-    const verticalMin = window.innerHeight - playerHandHeightPx;
+    const verticalMin =
+      window.innerHeight - getPlayerHandHeightPx(this.props.gameState.settings);
     // const max = { x: 0, y: verticalMax };
     const min = { x: 0, y: verticalMin };
 
     // const translatedMax = this.getRelativePositionFromTarget(this.stage, max);
     const translatedMin = this.getRelativePositionFromTarget(this.stage, min);
     this.props.endCardMove(cardId);
+
+    // Don't worry about checking if we should add to player hand if we're hiding the UI
+    if (this.props.gameState.settings.hideHandUI) {
+      return;
+    }
 
     if (event.target.y() > translatedMin.y) {
       this.props.addToPlayerHandWithRoleCheck({
@@ -1993,14 +2008,19 @@ class Game extends Component<IProps, IState> {
   ): Vector2d => {
     const pointerPos = this.stage?.getPointerPosition() ?? { x: 0, y: 0 };
     const screenMidPointX = window.innerWidth / 2;
-    const screenMidPointY = window.innerHeight / 2;
 
     const widthToUse = horizontal
-      ? cardConstants[sizeType].CARD_PREVIEW_HEIGHT
-      : cardConstants[sizeType].CARD_PREVIEW_WIDTH;
+      ? cardConstants[sizeType].CARD_PREVIEW_HEIGHT *
+        this.props.gameState.settings.previewMultiplier
+      : cardConstants[sizeType].CARD_PREVIEW_WIDTH *
+        this.props.gameState.settings.previewMultiplier;
     const heightToUse = horizontal
-      ? cardConstants[sizeType].CARD_PREVIEW_WIDTH
-      : cardConstants[sizeType].CARD_PREVIEW_HEIGHT;
+      ? cardConstants[sizeType].CARD_PREVIEW_WIDTH *
+        this.props.gameState.settings.previewMultiplier
+      : cardConstants[sizeType].CARD_PREVIEW_HEIGHT *
+        this.props.gameState.settings.previewMultiplier;
+
+    console.log(widthToUse, heightToUse);
 
     // if (this.state.previewCardModal) {
     //   return {
