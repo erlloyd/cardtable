@@ -249,8 +249,16 @@ const getSpecificLOTRPack = async (
 const getSpecificLOTRScenario = async (
   scenario: string
 ): Promise<AxiosResponse<Scenario>> => {
-  const response = await axios.get<Scenario>(
-    "/json_data/scenarios/" + scenario + ".json"
-  );
-  return response;
+  try {
+    const response = await axios.get<Scenario>(
+      "/json_data/scenarios/" + scenario + ".json"
+    );
+    return response;
+  } catch (e) {
+    return {
+      status: 500,
+      config: { url: "/json_data/scenarios/" + scenario + ".json" },
+      data: "failed to get JSON",
+    } as unknown as AxiosResponse<Scenario>;
+  }
 };
