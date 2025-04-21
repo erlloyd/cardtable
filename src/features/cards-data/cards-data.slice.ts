@@ -190,8 +190,9 @@ const loadCardsForEncounterSetReducer: CaseReducer<
   const activeData = state.data[action.payload.gameType];
   const activeSet = activeData?.setData[action.payload.setCode];
 
-  if (!action.payload.cards.map) {
+  if (!action.payload.cards || !action.payload.cards.map) {
     log.warn("No cards found for scenario " + action.payload.setCode);
+    log.warn(action.payload);
     return;
   }
 

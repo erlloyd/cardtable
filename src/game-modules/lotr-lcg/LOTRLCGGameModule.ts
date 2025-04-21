@@ -79,22 +79,39 @@ export default class LOTRLCGGameModule extends GameModule {
     );
 
     const failedScenario = resultsListLOTRScenarios.filter(
-      (r) => r.status !== 200
+      (r) => r.status !== 200 || typeof r.data === "string"
     );
     if (failedScenario.length > 0) {
       log.error(
-        "Failed to load some JSON data:",
-        failedScenario.map((r) => r.data.Slug)
+        "Failed to load some JSON data",
+        failedScenario.map((r) => r.config.url)
       );
     }
 
-    return resultsListLOTRScenarios.map((r) => {
-      return {
-        gameType: GameType.LordOfTheRingsLivingCardGame,
-        setCode: r.data.Slug,
-        cards: r.data.AllCards,
-      };
-    });
+    const toReturn = resultsListLOTRScenarios
+      .map((r) => {
+        if (typeof r.data === "string") {
+          return null;
+        }
+
+        if (
+          r.data.AllCards &&
+          r.data.AllCards.length > 0 &&
+          r.data.AllCards[0].CAMPAIGN &&
+          !r.data.AllCards[0].Title
+        ) {
+          // there are a few weird cards in the JSON data that are not actually cards
+          r.data.AllCards = r.data.AllCards.filter((c) => !!c.Title);
+        }
+
+        return {
+          gameType: GameType.LordOfTheRingsLivingCardGame,
+          setCode: r.data.Slug,
+          cards: r.data.AllCards,
+        };
+      })
+      .filter((r) => !!r) as ILoadEncounterSetData[];
+    return toReturn;
   }
 
   checkIsPlayerPack(_packCode: string): boolean {
@@ -106,64 +123,71 @@ export default class LOTRLCGGameModule extends GameModule {
     metadata: IPackMetadata;
   }): CardData[] {
     const lotrPack = packWithMetadata.pack as CardPackLOTR;
-    return lotrPack.cards.map((cardLOTRFormat) => {
-      let cardBackImage = cardLOTRFormat.Back?.ImagePath;
-
-      if (cardLOTRFormat.Back && !cardLOTRFormat.Back.ImagePath) {
-        const frontImage = cardLOTRFormat.Front.ImagePath;
-        const frontImageWithoutExtension = frontImage
-          .split(".")
-          .slice(0, -1)
-          .join(".");
-        if (
-          frontImageWithoutExtension[frontImageWithoutExtension.length - 1] !==
-          "A"
-        ) {
-          if (MISSING_BACK_IMAGE_MAP[cardLOTRFormat.RingsDbCardId]) {
-            cardBackImage =
-              MISSING_BACK_IMAGE_MAP[cardLOTRFormat.RingsDbCardId];
-          } else {
-            log.warn(
-              `No Non-B Back Image Path for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`,
-              cardLOTRFormat.RingsDbCardId
-            );
+    return lotrPack.cards
+      .map((cardLOTRFormat) => {
+        if (!cardLOTRFormat.Front || !cardLOTRFormat.Front.ImagePath) {
+          if (cardLOTRFormat.CAMPAIGN) {
+            // probably a blank card, skip it
+            return null;
           }
-        } else {
-          cardBackImage = frontImage.replaceAll("A.", "B.");
+          console.log(`No Front`, cardLOTRFormat);
         }
-      }
 
-      if (!cardLOTRFormat.Front || !cardLOTRFormat.Front.ImagePath) {
-        console.log(`No Front`, cardLOTRFormat);
-      }
+        let cardBackImage = cardLOTRFormat.Back?.ImagePath;
 
-      const mappedCardData: CardData = {
-        code: packWithMetadata.metadata.encounterPack
-          ? cardLOTRFormat.Slug
-          : getCardCodeIncludingOverrides(cardLOTRFormat),
-        name: cardLOTRFormat.Title,
-        images: {
-          front: cardLOTRFormat.Front.ImagePath,
-          back: cardBackImage ?? null,
-        },
-        octgnId: cardLOTRFormat.OctgnGuid ?? null,
-        quantity: cardLOTRFormat.Quantity ?? 1,
-        doubleSided: !!cardLOTRFormat.Back,
-        backLink: null,
-        typeCode: cardLOTRFormat.CardType,
-        subTypeCode: cardLOTRFormat.CardSubType,
-        extraInfo: {
-          campaign: cardLOTRFormat.CAMPAIGN,
-          setCode: cardLOTRFormat.CardSet ?? null,
-          packCode: "TODO - lotr",
-          setType: packWithMetadata.metadata.setType,
-          factionCode: packWithMetadata.metadata.encounterPack
-            ? "encounter"
-            : "player",
-        },
-      };
-      return mappedCardData;
-    });
+        if (cardLOTRFormat.Back && !cardLOTRFormat.Back.ImagePath) {
+          const frontImage = cardLOTRFormat.Front.ImagePath;
+          const frontImageWithoutExtension = frontImage
+            .split(".")
+            .slice(0, -1)
+            .join(".");
+          if (
+            frontImageWithoutExtension[
+              frontImageWithoutExtension.length - 1
+            ] !== "A"
+          ) {
+            if (MISSING_BACK_IMAGE_MAP[cardLOTRFormat.RingsDbCardId]) {
+              cardBackImage =
+                MISSING_BACK_IMAGE_MAP[cardLOTRFormat.RingsDbCardId];
+            } else {
+              log.warn(
+                `No Non-B Back Image Path for ${cardLOTRFormat.Slug} from ${cardLOTRFormat.CardSet}`,
+                cardLOTRFormat.RingsDbCardId
+              );
+            }
+          } else {
+            cardBackImage = frontImage.replaceAll("A.", "B.");
+          }
+        }
+
+        const mappedCardData: CardData = {
+          code: packWithMetadata.metadata.encounterPack
+            ? cardLOTRFormat.Slug
+            : getCardCodeIncludingOverrides(cardLOTRFormat),
+          name: cardLOTRFormat.Title,
+          images: {
+            front: cardLOTRFormat.Front.ImagePath,
+            back: cardBackImage ?? null,
+          },
+          octgnId: cardLOTRFormat.OctgnGuid ?? null,
+          quantity: cardLOTRFormat.Quantity ?? 1,
+          doubleSided: !!cardLOTRFormat.Back,
+          backLink: null,
+          typeCode: cardLOTRFormat.CardType,
+          subTypeCode: cardLOTRFormat.CardSubType,
+          extraInfo: {
+            campaign: cardLOTRFormat.CAMPAIGN,
+            setCode: cardLOTRFormat.CardSet ?? null,
+            packCode: "TODO - lotr",
+            setType: packWithMetadata.metadata.setType,
+            factionCode: packWithMetadata.metadata.encounterPack
+              ? "encounter"
+              : "player",
+          },
+        };
+        return mappedCardData;
+      })
+      .filter((card) => !!card) as CardData[];
   }
 
   parseDecklist(
