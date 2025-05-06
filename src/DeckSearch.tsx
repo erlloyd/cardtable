@@ -1,8 +1,4 @@
-import { TextField } from "@mui/material";
-import {
-  Autocomplete,
-  // AutocompleteHighlightChangeReason,
-} from "@material-ui/lab";
+import { Autocomplete, TextField } from "@mui/material";
 import { Vector2d } from "konva/lib/types";
 import TopLayer from "./TopLayer";
 import { GameType } from "./game-modules/GameType";

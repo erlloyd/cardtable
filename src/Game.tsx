@@ -2020,8 +2020,6 @@ class Game extends Component<IProps, IState> {
       : cardConstants[sizeType].CARD_PREVIEW_HEIGHT *
         this.props.gameState.settings.previewMultiplier;
 
-    console.log(widthToUse, heightToUse);
-
     // if (this.state.previewCardModal) {
     //   return {
     //     x: screenMidPointX,
