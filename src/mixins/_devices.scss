@@ -1,9 +1,0 @@
-// The last 2 cases below are to work around a bug where pixel 7 devices don't report pointer correctly, see https://github.com/ionic-team/ionic-framework/issues/26240 and https://bugs.chromium.org/p/chromium/issues/detail?id=1384181
-@mixin for-touch-device {
-  @media (hover: none) and (pointer: none),
-    (hover: none) and (pointer: coarse),
-    (hover: none) and (device-width: 412px) and (device-height: 892px),
-    (hover: none) and (device-width: 892px) and (device-height: 412px) {
-    @content;
-  }
-}

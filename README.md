@@ -1,25 +1,38 @@
-## Cardtable
+# sv
 
-Play some awesome card games, by yourself or with your friends, in the browser!
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-NOTE: While cardtable allows you to play some Living Card Games (LCGs) from Fantasy Flight Games, Cardtable is not affiliated with or endorsed by FFG or any other company.
+## Creating a project
 
-### Go play right now!
+If you're seeing this, you've probably already done this step. Congrats!
 
-You can go check out the site right now at https://card-table.app! Or go read the documentation at https://erlloyd.github.io/cardtable-docs
+```bash
+# create a new project in the current directory
+npx sv create
 
-### Developing and contributing
+# create a new project in my-app
+npx sv create my-app
+```
 
-Getting cardtable running locally so you can try it out or make some changes should be easy. Here are some prerequisites:
+## Developing
 
-- NodeJS >= v16 (I've only been testing with v16. Newer versions will probably work, though)
-- Yarn v1
-- VSCode (recommended)
-  - ESLint plugin
-  - Prettier plugin
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-And that's it!
+```bash
+npm run dev
 
-To get up and running locally, simply clone the repo, run `yarn`, following by `yarn start`. Then you should be able to visit http://localhost:3000 and see cardtable running locally!
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-Enjoy!
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
