@@ -2,12 +2,16 @@
     import { Stage, Layer, Rect } from 'svelte-konva';
     import Konva from 'konva';
 
+    // Track window dimensions
+    let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
+
     // Define the rectangle configuration
     let rectConfig = { 
-        x: window.innerWidth / 2, // Center horizontally
-        y: window.innerHeight / 2, // Center vertically
+        x: windowWidth / 2, // Center horizontally
+        y: windowHeight / 2, // Center vertically
         width: 100, 
-        height: 200, // Increased height
+        height: 200, 
         fill: 'blue', 
         draggable: true, 
         rotation: 0, 
@@ -39,9 +43,7 @@
     };
 </script>
 
-<h1>Card Table</h1>
-
-<Stage config={{ width: window.innerWidth, height: window.innerHeight }}>
+<Stage config={{ width: windowWidth, height: windowHeight }}>
     <Layer>
         <Rect
             config={rectConfig}
