@@ -1,59 +1,36 @@
 <script lang="ts">
-    import { Stage, Layer, Rect } from 'svelte-konva';
-    import Konva from 'konva';
+    import { Stage, Layer } from 'svelte-konva';
+    import CardStack from '../components/CardStack.svelte';
 
     // Track window dimensions
     let windowWidth = window.innerWidth;
     let windowHeight = window.innerHeight;
 
-    // Define the rectangle configuration
-    let rectConfig = { 
-        x: windowWidth / 2, // Center horizontally
-        y: windowHeight / 2, // Center vertically
-        width: 100, 
-        height: 200, 
-        fill: 'blue', 
-        draggable: true, 
-        rotation: 0, 
-        offsetX: 50, // Half of the width
-        offsetY: 100 // Half of the new height
-    };
+    // Function to generate a rectangle configuration
+    function generateRectConfig(index: number) {
+        const width = Math.random() * 150 + 50; // Random width between 50 and 200
+        const height = Math.random() * 150 + 50; // Random height between 50 and 200
+        return {
+            x: Math.random() * windowWidth, // Random x position
+            y: Math.random() * windowHeight, // Random y position
+            width,
+            height,
+            fill: `hsl(${Math.random() * 360}, 100%, 50%)`, // Random color
+            draggable: true,
+            rotation: 0,
+            offsetX: width / 2,
+            offsetY: height / 2
+        };
+    }
 
-    let isRotated = false; // Track rotation state
-
-    // Animate the rotation using Konva.Animation
-    const animateRotation = () => {
-        let startRotation = rectConfig.rotation;
-        let targetRotation = isRotated ? 0 : 90; // Toggle between 0 and 90 degrees
-        isRotated = !isRotated;
-
-        const animation = new Konva.Animation((frame) => {
-            if (!frame) return;
-
-            const progress = Math.min(frame.time / 200, 1); // 200ms duration for faster animation
-            rectConfig.rotation = startRotation + (targetRotation - startRotation) * progress;
-
-            if (progress >= 1) {
-                rectConfig.rotation = targetRotation; // Ensure final value
-                animation.stop();
-            }
-        });
-
-        animation.start();
-    };
+    // Generate 100 rectangle configurations
+    let rectConfigs = Array.from({ length: 100 }, (_, index) => generateRectConfig(index));
 </script>
 
 <Stage config={{ width: windowWidth, height: windowHeight }}>
     <Layer>
-        <Rect
-            config={rectConfig}
-            on:dragend={() => {
-                console.log("Rectangle configuration:", rectConfig);
-            }}
-            on:dblclick={() => {
-                animateRotation();
-                console.log("Rectangle rotated to:", rectConfig.rotation, "degrees");
-            }}
-        />
+        {#each rectConfigs as rectConfig}
+            <CardStack rectConfig={rectConfig} />
+        {/each}
     </Layer>
 </Stage>
