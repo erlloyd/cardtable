@@ -42,6 +42,7 @@ const cardsWithValidExtensions: { [key: string]: boolean } = {
   "01043B": true,
   "01043C": true,
   "01043D": true,
+  "01144B": true,
   "45179A": true,
   "45179B": true,
   "45180A": true,
@@ -90,44 +91,6 @@ const generateCerebroImageUrl = (
   }
   const imgUrlToGrab = `https://cerebrodatastorage.blob.core.windows.net/cerebro-cards/official/${codeToUse}${suffix}.jpg`;
   return imgUrlToGrab;
-};
-
-const generateLCGCDNImageUrl = (
-  currentGameType: GameType,
-  card: CardData,
-  faceup: boolean
-): string => {
-  if (!card) {
-    return `https://lcgcdn.s3.amazonaws.com/mc/NOPE.jpg`;
-  }
-
-  // get the first two digits
-  let codeToUse = card.code;
-
-  if (!faceup && !!card.backLink) {
-    codeToUse = card.backLink;
-  }
-
-  const groupCode =
-    GameManager.getModuleForType(currentGameType).remappedPacks[
-      card.extraInfo.packCode ?? ""
-    ] ?? codeToUse.substring(0, 2);
-  let cardCode = codeToUse.substring(2);
-
-  //trim leading "0" chars
-  while (cardCode[0] === "0") {
-    cardCode = cardCode.substring(1);
-  }
-
-  cardCode = cardCode.toLocaleUpperCase();
-
-  let cardSuffix = "";
-
-  if (!!card.doubleSided) {
-    cardSuffix = faceup ? "A" : "B";
-  }
-
-  return `https://lcgcdn.s3.amazonaws.com/mc/MC${groupCode}en_${cardCode}${cardSuffix}.jpg`;
 };
 
 export const cacheImages = async (imgUrls: string[]) => {

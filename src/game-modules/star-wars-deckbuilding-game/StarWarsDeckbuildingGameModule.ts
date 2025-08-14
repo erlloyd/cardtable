@@ -189,7 +189,7 @@ export default class StarWarsDeckbuildingGameModule extends GameModule {
     const republic_bases = [...(temp["Republic Bases"] || [])];
     const separatist_bases = [...(temp["Separatist Bases"] || [])];
     const always_available_clone_wars = [
-      ...temp["Always Available Clone Wars"],
+      ...(temp["Always Available Clone Wars"] || []),
     ];
 
     const misc = [...temp["Miscellaneous"]];
