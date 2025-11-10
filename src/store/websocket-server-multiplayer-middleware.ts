@@ -201,21 +201,13 @@ export const websocketMiddleware = (storeAPI: any) => {
   };
 
   let ws: WebSocket | null = new WebSocket(
-    `wss://${
-      !!useDevWSServerLocalStorage ? "local-" : ""
-    }cardtable-server.middle-earth.house${
-      !useDevWSServerLocalStorage ? ":3333" : ""
-    }`
+    `${import.meta.env.VITE_WS_PROTOCOL}://${import.meta.env.VITE_WS_DOMAIN}${import.meta.env.VITE_WS_PORT}`
   );
 
   const setup = () => {
     if (ws === null) {
       ws = new WebSocket(
-        `wss://${
-          !!useDevWSServerLocalStorage ? "local-" : ""
-        }cardtable-server.middle-earth.house${
-          !useDevWSServerLocalStorage ? ":3333" : ""
-        }`
+        `${import.meta.env.VITE_WS_PROTOCOL}://${import.meta.env.VITE_WS_DOMAIN}${import.meta.env.VITE_WS_PORT}`
       );
     }
     ws.addEventListener("open", () => {
