@@ -24,6 +24,13 @@ const darkTheme = createTheme({
   palette: {
     mode: "light",
   },
+  components: {
+    MuiTooltip: {
+      defaultProps: {
+        disableTouchListener: true,
+      },
+    },
+  },
 });
 
 (window as any).log = log;
