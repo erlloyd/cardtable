@@ -314,7 +314,7 @@ describe("getImgUrlsFromJsonId", () => {
       cardsData,
       GameType.MarvelChampions
     );
-    expect(result[0]).toContain("cerebrodatastorage.blob.core.windows.net");
+    expect(result[0]).toContain("pub-d27e6715f4ba4529bc9d8fd13938a5a1.r2.dev");
     expect(result[0]).toContain("789");
   });
 
@@ -343,7 +343,7 @@ describe("getImgUrlsFromJsonId", () => {
       cardsData,
       GameType.MarvelChampions
     );
-    expect(result[0]).toContain("cerebrodatastorage.blob.core.windows.net");
+    expect(result[0]).toContain("pub-d27e6715f4ba4529bc9d8fd13938a5a1.r2.dev");
   });
 
   it("should use Cerebro URL for cards with backLink when facedown", () => {
@@ -371,6 +371,6 @@ describe("getImgUrlsFromJsonId", () => {
       cardsData,
       GameType.MarvelChampions
     );
-    expect(result[0]).toContain("cerebrodatastorage.blob.core.windows.net");
+    expect(result[0]).toContain("pub-d27e6715f4ba4529bc9d8fd13938a5a1.r2.dev");
   });
 });
