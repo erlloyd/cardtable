@@ -89,7 +89,7 @@ const generateCerebroImageUrl = (
       suffix = potentialSuffix;
     }
   }
-  const imgUrlToGrab = `https://cerebrodatastorage.blob.core.windows.net/cerebro-cards/official/${codeToUse}${suffix}.jpg`;
+  const imgUrlToGrab = `https://pub-d27e6715f4ba4529bc9d8fd13938a5a1.r2.dev/cerebro-cards/official/${codeToUse}${suffix}.jpg`;
   return imgUrlToGrab;
 };
 
